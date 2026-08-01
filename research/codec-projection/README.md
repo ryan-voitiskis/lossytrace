@@ -22,6 +22,17 @@ Raw reports, case identities, paths, timings, and scores stay under the private
 retained corpus. Only a path-free aggregate and a human-readable disposition
 may be committed after evaluation.
 
+## Outcome
+
+The 2026-08-02 observed evaluation rejected both representations: each alerted
+on one supported negative group and neither alerted on any of 471 supported
+MP3-128 groups. The frozen stop rule therefore prohibited the conditional
+robustness stage, candidate freezing, external-transfer evaluation, and public
+integration. See the
+[`result`](../../docs/research/codec-projection-result-20260802.md) and committed
+[`path-free aggregate`](evidence/observed-20260802-002-aggregate.json). The
+subsystem remains research-only negative-result infrastructure.
+
 ## Build and test
 
 ```sh

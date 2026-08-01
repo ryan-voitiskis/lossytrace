@@ -1,0 +1,1253 @@
+{
+  "candidate_frozen": false,
+  "correlations": {
+    "cases": {
+      "paired_count": 2029,
+      "pearson": 0.8747310903136966,
+      "spearman": 0.9317499951669255
+    },
+    "groups": {
+      "aggregation": "negative_maximum_or_target_positive_median",
+      "paired_count": 992,
+      "pearson": 0.9096315695596826,
+      "spearman": 0.8704173739466523
+    }
+  },
+  "criteria": {
+    "domain_family_aliases": {
+      "public_tier_a_controlled": "public_tier_a",
+      "public_tier_a_originals": "public_tier_a"
+    },
+    "maximum_negative_one_sided_95_wilson_upper": 0.025,
+    "minimum_domain_recall": 0.85,
+    "minimum_domain_target_source_groups": 10,
+    "minimum_overall_one_sided_95_wilson_lower": 0.85,
+    "minimum_overall_recall": 0.9,
+    "minimum_positive_group_support": 0.75,
+    "one_sided_95_z": 1.6448536269514722,
+    "threshold": "next_float_above_maximum_supported_training_negative",
+    "threshold_direction": "higher_or_equal_is_more_mp3_128_like"
+  },
+  "disposition": {
+    "direction_status": "rejected",
+    "external_transfer_authorized": false,
+    "public_integration_authorized": false,
+    "reason": "Neither fixed representation passed every observed gate; stop this direction.",
+    "robustness_authorized": false
+  },
+  "failure_overlap": {
+    "negative_case_alerts": {
+      "both": 0,
+      "neither": 1730,
+      "paired_count": 1734,
+      "r1_only": 2,
+      "r2_only": 2
+    },
+    "negative_group_alerts": {
+      "both": 0,
+      "neither": 595,
+      "paired_count": 597,
+      "r1_only": 1,
+      "r2_only": 1
+    },
+    "negative_group_unsupported": {
+      "both": 76,
+      "neither": 521,
+      "paired_count": 597,
+      "r1_only": 0,
+      "r2_only": 0
+    },
+    "target_positive_case_misses": {
+      "both": 471,
+      "neither": 56,
+      "paired_count": 527,
+      "r1_only": 0,
+      "r2_only": 0
+    },
+    "target_positive_group_misses": {
+      "both": 471,
+      "neither": 56,
+      "paired_count": 527,
+      "r1_only": 0,
+      "r2_only": 0
+    },
+    "target_positive_group_unsupported": {
+      "both": 56,
+      "neither": 471,
+      "paired_count": 527,
+      "r1_only": 0,
+      "r2_only": 0
+    }
+  },
+  "feature_version": 0,
+  "future_codec_only_opened": false,
+  "independent_validation": false,
+  "inputs": {
+    "audio_inventory_sha256": "52cabf360429abe7941c4e0a68d89561dcbb7745d2bf87f4f5992b68c23f445f",
+    "evaluation_artifacts": {
+      "analyzer_sha256": "325f2f4b9b9789ac7eaeba72357367535b4f05b1fe3ac558a19ceacec430e631",
+      "config_sha256": "2f122d7eeed263c0700f78675b1382923c09f8f333903b970afe7cfb18670603",
+      "preregistration_sha256": "d6b66a9e6e892c59db64edfb909fd29a1968cedb7100a8a30e5941f0eb7419c1",
+      "raw_report_sha256": "952dfd0405d0f1458d7a1ed26a67d725674346ca015cdcedbf8b2e5b5d887ecb"
+    },
+    "measurement_commitments": {
+      "baseline_report_sha256": "4c9ddedc847801a8db3a4bdda318faa7a15e478ee4698bd17a2c3d47287aacc9",
+      "config_sha256": "2f122d7eeed263c0700f78675b1382923c09f8f333903b970afe7cfb18670603",
+      "ffmpeg_sha256": "1332dc2de372bade9a8a63da0d6cdfab9de97fcefbae707bcc0b0506e1203327",
+      "harness_sha256": "b749397528462970312af71ed9396164b44ab86d2ae9621c592a72268202432d",
+      "lame_cli_sha256": "11095c200ebbef2b43adc795aee0ae1adcfc91a1467b70f524582327bc3f685a",
+      "linked_libmp3lame_sha256": "463453796b54698b8016af58ab86066ffbafe5229c10c500e4fe6b92d7a63934",
+      "manifest_sha256": "e19b5b408fedf348fa9b6499d5cdd1b6b734d84b19b895d5b0a528f0c4423b7a",
+      "oracle_sha256": "fb285afb0e9db3d077f5826467c986dabcdeb2e1e578c09bb2c907172606c5e6",
+      "preregistration_sha256": "d6b66a9e6e892c59db64edfb909fd29a1968cedb7100a8a30e5941f0eb7419c1",
+      "repository_commit": "b0fbf48c47fe71af889c4fa059771aba8478a60d"
+    }
+  },
+  "inventory": {
+    "case_count": 2261,
+    "negative_case_count": 1734,
+    "negative_source_group_count": 597,
+    "source_domain_family_count": 7,
+    "target_positive_case_count": 527
+  },
+  "public_verdict_enabled": false,
+  "release_heldout_opened": false,
+  "representations": {
+    "r1_cycle_residual_retention": {
+      "domain_distributions": [
+        {
+          "case_count": 144,
+          "population": "negative",
+          "score_maximum": 0.476520878303042,
+          "score_median": 0.4662541790812691,
+          "score_minimum": 0.3268504136200543,
+          "score_q25": 0.4607450158033392,
+          "score_q75": 0.47024735754133146,
+          "source_domain": "demand_maestro_consumed_transfer",
+          "support_coverage": 0.8333333333333334,
+          "supported_case_count": 120
+        },
+        {
+          "case_count": 36,
+          "population": "target_positive",
+          "score_maximum": 0.4750935200435891,
+          "score_median": 0.4662081155336936,
+          "score_minimum": 0.4487865412928441,
+          "score_q25": 0.4619749786040829,
+          "score_q75": 0.4722848523082309,
+          "source_domain": "demand_maestro_consumed_transfer",
+          "support_coverage": 0.7777777777777778,
+          "supported_case_count": 28
+        },
+        {
+          "case_count": 600,
+          "population": "negative",
+          "score_maximum": 0.4623385903665598,
+          "score_median": 0.39697766862697403,
+          "score_minimum": 0.008878202450955558,
+          "score_q25": 0.3772450743084676,
+          "score_q75": 0.42106735977808474,
+          "source_domain": "musdb18hq_consumed_transfer",
+          "support_coverage": 0.9733333333333334,
+          "supported_case_count": 584
+        },
+        {
+          "case_count": 150,
+          "population": "target_positive",
+          "score_maximum": 0.4619943069417263,
+          "score_median": 0.41213879687724025,
+          "score_minimum": 0.33212532243228077,
+          "score_q25": 0.3981841242029359,
+          "score_q75": 0.43138806992984047,
+          "source_domain": "musdb18hq_consumed_transfer",
+          "support_coverage": 0.9733333333333334,
+          "supported_case_count": 146
+        },
+        {
+          "case_count": 106,
+          "population": "negative",
+          "score_maximum": 0.47568487644918317,
+          "score_median": 0.47437229660276736,
+          "score_minimum": 0.47369452638333265,
+          "score_q25": 0.4742835339196424,
+          "score_q75": 0.47443404025483943,
+          "source_domain": "nsynth_test_sparse",
+          "support_coverage": 0.9056603773584906,
+          "supported_case_count": 96
+        },
+        {
+          "case_count": 53,
+          "population": "target_positive",
+          "score_maximum": 0.4746965129357873,
+          "score_median": 0.47435620858013583,
+          "score_minimum": 0.47342987625230076,
+          "score_q25": 0.47424351568101486,
+          "score_q75": 0.474423019243153,
+          "source_domain": "nsynth_test_sparse",
+          "support_coverage": 0.9056603773584906,
+          "supported_case_count": 48
+        },
+        {
+          "case_count": 400,
+          "population": "negative",
+          "score_maximum": 0.4764875094699817,
+          "score_median": 0.47437179239077976,
+          "score_minimum": 0.4688901970317657,
+          "score_q25": 0.47427382462702544,
+          "score_q75": 0.47444823391182844,
+          "source_domain": "nsynth_train_sparse",
+          "support_coverage": 0.81,
+          "supported_case_count": 324
+        },
+        {
+          "case_count": 200,
+          "population": "target_positive",
+          "score_maximum": 0.4752529048506572,
+          "score_median": 0.47435552759630994,
+          "score_minimum": 0.46737824157183827,
+          "score_q25": 0.47420941933505645,
+          "score_q75": 0.4744266434031934,
+          "source_domain": "nsynth_train_sparse",
+          "support_coverage": 0.81,
+          "supported_case_count": 162
+        },
+        {
+          "case_count": 200,
+          "population": "negative",
+          "score_maximum": 0.47537856812848833,
+          "score_median": 0.4340614445301696,
+          "score_minimum": 0.20637434842958738,
+          "score_q25": 0.38754313221723546,
+          "score_q75": 0.46669839832865145,
+          "source_domain": "private_full_mix_training",
+          "support_coverage": 0.98,
+          "supported_case_count": 196
+        },
+        {
+          "case_count": 40,
+          "population": "target_positive",
+          "score_maximum": 0.4748423688816114,
+          "score_median": 0.4452589423739258,
+          "score_minimum": 0.3302224674736157,
+          "score_q25": 0.4023419169938249,
+          "score_q75": 0.46469122072191643,
+          "source_domain": "private_full_mix_training",
+          "support_coverage": 0.975,
+          "supported_case_count": 39
+        },
+        {
+          "case_count": 144,
+          "population": "negative",
+          "score_maximum": 0.47445918826627737,
+          "score_median": 0.4719325418396528,
+          "score_minimum": 0.13711725784199102,
+          "score_q25": 0.4694484481827197,
+          "score_q75": 0.4735958683664551,
+          "source_domain": "public_tier_a",
+          "support_coverage": 1.0,
+          "supported_case_count": 144
+        },
+        {
+          "case_count": 48,
+          "population": "target_positive",
+          "score_maximum": 0.47498748919809725,
+          "score_median": 0.4732776454542589,
+          "score_minimum": 0.3640199980878693,
+          "score_q25": 0.4708027490666073,
+          "score_q75": 0.47414952834528246,
+          "source_domain": "public_tier_a",
+          "support_coverage": 1.0,
+          "supported_case_count": 48
+        },
+        {
+          "case_count": 140,
+          "population": "negative",
+          "score_maximum": 0.482646577720409,
+          "score_median": 0.4497597840174491,
+          "score_minimum": 0.3176145141648855,
+          "score_q25": 0.43275628365439883,
+          "score_q75": 0.46886069501970545,
+          "source_domain": "sqam_consumed_transfer",
+          "support_coverage": 0.6714285714285714,
+          "supported_case_count": 94
+        },
+        {
+          "case_count": 0,
+          "population": "target_positive",
+          "score_maximum": null,
+          "score_median": null,
+          "score_minimum": null,
+          "score_q25": null,
+          "score_q75": null,
+          "source_domain": "sqam_consumed_transfer",
+          "support_coverage": null,
+          "supported_case_count": 0
+        }
+      ],
+      "domain_gates": [
+        {
+          "minimum_group_rule_applies": true,
+          "recall_passed": false,
+          "source_domain": "demand_maestro_consumed_transfer",
+          "support_passed": true
+        },
+        {
+          "minimum_group_rule_applies": true,
+          "recall_passed": false,
+          "source_domain": "musdb18hq_consumed_transfer",
+          "support_passed": true
+        },
+        {
+          "minimum_group_rule_applies": true,
+          "recall_passed": false,
+          "source_domain": "nsynth_test_sparse",
+          "support_passed": true
+        },
+        {
+          "minimum_group_rule_applies": true,
+          "recall_passed": false,
+          "source_domain": "nsynth_train_sparse",
+          "support_passed": true
+        },
+        {
+          "minimum_group_rule_applies": true,
+          "recall_passed": false,
+          "source_domain": "private_full_mix_training",
+          "support_passed": true
+        },
+        {
+          "minimum_group_rule_applies": true,
+          "recall_passed": false,
+          "source_domain": "public_tier_a",
+          "support_passed": true
+        },
+        {
+          "minimum_group_rule_applies": false,
+          "recall_passed": true,
+          "source_domain": "sqam_consumed_transfer",
+          "support_passed": true
+        }
+      ],
+      "folds": [
+        {
+          "held_out_source_domain": "demand_maestro_consumed_transfer",
+          "negative_cases": {
+            "one_sided_95_wilson_lower": 1.734723475976807e-18,
+            "one_sided_95_wilson_upper": 0.022049072747129528,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 0.8333333333333334,
+            "supported_count": 120,
+            "total_count": 144
+          },
+          "negative_groups": {
+            "one_sided_95_wilson_lower": 6.938893903907228e-18,
+            "one_sided_95_wilson_upper": 0.08272430812509929,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 0.8333333333333334,
+            "supported_count": 30,
+            "total_count": 36
+          },
+          "target_positive_cases": {
+            "one_sided_95_wilson_lower": 0.0,
+            "one_sided_95_wilson_upper": 0.08811254092083348,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 0.7777777777777778,
+            "supported_count": 28,
+            "total_count": 36
+          },
+          "target_positive_groups": {
+            "one_sided_95_wilson_lower": 0.0,
+            "one_sided_95_wilson_upper": 0.08811254092083348,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 0.7777777777777778,
+            "supported_count": 28,
+            "total_count": 36
+          },
+          "threshold_inclusive": 0.48264657772040903,
+          "training_maximum_negative_score": 0.482646577720409,
+          "training_supported_negative_case_count": 1438,
+          "valid": true
+        },
+        {
+          "held_out_source_domain": "musdb18hq_consumed_transfer",
+          "negative_cases": {
+            "one_sided_95_wilson_lower": 0.0,
+            "one_sided_95_wilson_upper": 0.004611416210876654,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 0.9733333333333334,
+            "supported_count": 584,
+            "total_count": 600
+          },
+          "negative_groups": {
+            "one_sided_95_wilson_lower": 0.0,
+            "one_sided_95_wilson_upper": 0.018193965007972948,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 0.9733333333333334,
+            "supported_count": 146,
+            "total_count": 150
+          },
+          "target_positive_cases": {
+            "one_sided_95_wilson_lower": 0.0,
+            "one_sided_95_wilson_upper": 0.018193965007972948,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 0.9733333333333334,
+            "supported_count": 146,
+            "total_count": 150
+          },
+          "target_positive_groups": {
+            "one_sided_95_wilson_lower": 0.0,
+            "one_sided_95_wilson_upper": 0.018193965007972948,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 0.9733333333333334,
+            "supported_count": 146,
+            "total_count": 150
+          },
+          "threshold_inclusive": 0.48264657772040903,
+          "training_maximum_negative_score": 0.482646577720409,
+          "training_supported_negative_case_count": 974,
+          "valid": true
+        },
+        {
+          "held_out_source_domain": "nsynth_test_sparse",
+          "negative_cases": {
+            "one_sided_95_wilson_lower": 0.0,
+            "one_sided_95_wilson_upper": 0.027410248294247718,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 0.9056603773584906,
+            "supported_count": 96,
+            "total_count": 106
+          },
+          "negative_groups": {
+            "one_sided_95_wilson_lower": 0.0,
+            "one_sided_95_wilson_upper": 0.05335794214580871,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 0.9056603773584906,
+            "supported_count": 48,
+            "total_count": 53
+          },
+          "target_positive_cases": {
+            "one_sided_95_wilson_lower": 0.0,
+            "one_sided_95_wilson_upper": 0.05335794214580871,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 0.9056603773584906,
+            "supported_count": 48,
+            "total_count": 53
+          },
+          "target_positive_groups": {
+            "one_sided_95_wilson_lower": 0.0,
+            "one_sided_95_wilson_upper": 0.05335794214580871,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 0.9056603773584906,
+            "supported_count": 48,
+            "total_count": 53
+          },
+          "threshold_inclusive": 0.48264657772040903,
+          "training_maximum_negative_score": 0.482646577720409,
+          "training_supported_negative_case_count": 1462,
+          "valid": true
+        },
+        {
+          "held_out_source_domain": "nsynth_train_sparse",
+          "negative_cases": {
+            "one_sided_95_wilson_lower": 8.673617379884035e-19,
+            "one_sided_95_wilson_upper": 0.008281290318771593,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 0.81,
+            "supported_count": 324,
+            "total_count": 400
+          },
+          "negative_groups": {
+            "one_sided_95_wilson_lower": 1.734723475976807e-18,
+            "one_sided_95_wilson_upper": 0.01642654762770305,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 0.81,
+            "supported_count": 162,
+            "total_count": 200
+          },
+          "target_positive_cases": {
+            "one_sided_95_wilson_lower": 1.734723475976807e-18,
+            "one_sided_95_wilson_upper": 0.01642654762770305,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 0.81,
+            "supported_count": 162,
+            "total_count": 200
+          },
+          "target_positive_groups": {
+            "one_sided_95_wilson_lower": 1.734723475976807e-18,
+            "one_sided_95_wilson_upper": 0.01642654762770305,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 0.81,
+            "supported_count": 162,
+            "total_count": 200
+          },
+          "threshold_inclusive": 0.48264657772040903,
+          "training_maximum_negative_score": 0.482646577720409,
+          "training_supported_negative_case_count": 1234,
+          "valid": true
+        },
+        {
+          "held_out_source_domain": "private_full_mix_training",
+          "negative_cases": {
+            "one_sided_95_wilson_lower": 0.0,
+            "one_sided_95_wilson_upper": 0.01361584285503561,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 0.98,
+            "supported_count": 196,
+            "total_count": 200
+          },
+          "negative_groups": {
+            "one_sided_95_wilson_lower": 0.0,
+            "one_sided_95_wilson_upper": 0.06335344864545808,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 1.0,
+            "supported_count": 40,
+            "total_count": 40
+          },
+          "target_positive_cases": {
+            "one_sided_95_wilson_lower": 6.938893903907228e-18,
+            "one_sided_95_wilson_upper": 0.06487251405975225,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 0.975,
+            "supported_count": 39,
+            "total_count": 40
+          },
+          "target_positive_groups": {
+            "one_sided_95_wilson_lower": 6.938893903907228e-18,
+            "one_sided_95_wilson_upper": 0.06487251405975225,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 0.975,
+            "supported_count": 39,
+            "total_count": 40
+          },
+          "threshold_inclusive": 0.48264657772040903,
+          "training_maximum_negative_score": 0.482646577720409,
+          "training_supported_negative_case_count": 1362,
+          "valid": true
+        },
+        {
+          "held_out_source_domain": "public_tier_a",
+          "negative_cases": {
+            "one_sided_95_wilson_lower": 0.0,
+            "one_sided_95_wilson_upper": 0.01844199878474248,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 1.0,
+            "supported_count": 144,
+            "total_count": 144
+          },
+          "negative_groups": {
+            "one_sided_95_wilson_lower": 0.0,
+            "one_sided_95_wilson_upper": 0.05335794214580871,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 1.0,
+            "supported_count": 48,
+            "total_count": 48
+          },
+          "target_positive_cases": {
+            "one_sided_95_wilson_lower": 0.0,
+            "one_sided_95_wilson_upper": 0.05335794214580871,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 1.0,
+            "supported_count": 48,
+            "total_count": 48
+          },
+          "target_positive_groups": {
+            "one_sided_95_wilson_lower": 0.0,
+            "one_sided_95_wilson_upper": 0.05335794214580871,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 1.0,
+            "supported_count": 48,
+            "total_count": 48
+          },
+          "threshold_inclusive": 0.48264657772040903,
+          "training_maximum_negative_score": 0.482646577720409,
+          "training_supported_negative_case_count": 1414,
+          "valid": true
+        },
+        {
+          "held_out_source_domain": "sqam_consumed_transfer",
+          "negative_cases": {
+            "one_sided_95_wilson_lower": 0.007066031887382911,
+            "one_sided_95_wilson_upper": 0.062273772373977014,
+            "predicted_count": 2,
+            "predicted_rate": 0.02127659574468085,
+            "support_coverage": 0.6714285714285714,
+            "supported_count": 94,
+            "total_count": 140
+          },
+          "negative_groups": {
+            "one_sided_95_wilson_lower": 0.004761043694912058,
+            "one_sided_95_wilson_upper": 0.08990733989174213,
+            "predicted_count": 1,
+            "predicted_rate": 0.02127659574468085,
+            "support_coverage": 0.6714285714285714,
+            "supported_count": 47,
+            "total_count": 70
+          },
+          "target_positive_cases": {
+            "one_sided_95_wilson_lower": null,
+            "one_sided_95_wilson_upper": null,
+            "predicted_count": 0,
+            "predicted_rate": null,
+            "support_coverage": null,
+            "supported_count": 0,
+            "total_count": 0
+          },
+          "target_positive_groups": {
+            "one_sided_95_wilson_lower": null,
+            "one_sided_95_wilson_upper": null,
+            "predicted_count": 0,
+            "predicted_rate": null,
+            "support_coverage": null,
+            "supported_count": 0,
+            "total_count": 0
+          },
+          "threshold_inclusive": 0.4765208783030421,
+          "training_maximum_negative_score": 0.476520878303042,
+          "training_supported_negative_case_count": 1464,
+          "valid": true
+        }
+      ],
+      "gates": {
+        "all_folds_valid": true,
+        "false_positive_control_passed": false,
+        "passed": false,
+        "recall_passed": false,
+        "support_coverage_passed": true
+      },
+      "pooled_out_of_fold": {
+        "negative_cases": {
+          "one_sided_95_wilson_lower": 0.00042489599866509745,
+          "one_sided_95_wilson_upper": 0.0038715861162474646,
+          "predicted_count": 2,
+          "predicted_rate": 0.0012836970474967907,
+          "support_coverage": 0.8985005767012687,
+          "supported_count": 1558,
+          "total_count": 1734
+        },
+        "negative_groups": {
+          "one_sided_95_wilson_lower": 0.00042831657207618827,
+          "one_sided_95_wilson_upper": 0.008556777271040388,
+          "predicted_count": 1,
+          "predicted_rate": 0.0019193857965451055,
+          "support_coverage": 0.8726968174204355,
+          "supported_count": 521,
+          "total_count": 597
+        },
+        "target_positive_cases": {
+          "one_sided_95_wilson_lower": 0.0,
+          "one_sided_95_wilson_upper": 0.005711445625836537,
+          "predicted_count": 0,
+          "predicted_rate": 0.0,
+          "support_coverage": 0.8937381404174574,
+          "supported_count": 471,
+          "total_count": 527
+        },
+        "target_positive_groups": {
+          "one_sided_95_wilson_lower": 0.0,
+          "one_sided_95_wilson_upper": 0.005711445625836537,
+          "predicted_count": 0,
+          "predicted_rate": 0.0,
+          "support_coverage": 0.8937381404174574,
+          "supported_count": 471,
+          "total_count": 527
+        }
+      },
+      "score_field": "r1_cycle_residual_retention",
+      "threshold_direction": "higher_or_equal_is_more_mp3_128_like"
+    },
+    "r2_residual_directional_recurrence": {
+      "domain_distributions": [
+        {
+          "case_count": 144,
+          "population": "negative",
+          "score_maximum": 0.9998021938017311,
+          "score_median": 0.7863323763089609,
+          "score_minimum": 0.2914500110168525,
+          "score_q25": 0.7238727961615127,
+          "score_q75": 0.8872255860520736,
+          "source_domain": "demand_maestro_consumed_transfer",
+          "support_coverage": 0.8333333333333334,
+          "supported_case_count": 120
+        },
+        {
+          "case_count": 36,
+          "population": "target_positive",
+          "score_maximum": 0.9997561106616542,
+          "score_median": 0.7717070414434888,
+          "score_minimum": 0.3899179769223879,
+          "score_q25": 0.722676459855891,
+          "score_q75": 0.8682957358600287,
+          "source_domain": "demand_maestro_consumed_transfer",
+          "support_coverage": 0.7777777777777778,
+          "supported_case_count": 28
+        },
+        {
+          "case_count": 600,
+          "population": "negative",
+          "score_maximum": 0.8307149252906478,
+          "score_median": 0.36917679624577393,
+          "score_minimum": 0.01856838939420646,
+          "score_q25": 0.23049836018278186,
+          "score_q75": 0.5134746248332496,
+          "source_domain": "musdb18hq_consumed_transfer",
+          "support_coverage": 0.9733333333333334,
+          "supported_case_count": 584
+        },
+        {
+          "case_count": 150,
+          "population": "target_positive",
+          "score_maximum": 0.8244274284797053,
+          "score_median": 0.3761853746615463,
+          "score_minimum": 0.046970079180762514,
+          "score_q25": 0.2434044977531234,
+          "score_q75": 0.5249304502922533,
+          "source_domain": "musdb18hq_consumed_transfer",
+          "support_coverage": 0.9733333333333334,
+          "supported_case_count": 146
+        },
+        {
+          "case_count": 106,
+          "population": "negative",
+          "score_maximum": 0.9999917041108479,
+          "score_median": 0.999407191549182,
+          "score_minimum": 0.9805990611361534,
+          "score_q25": 0.9985832519316481,
+          "score_q75": 0.9999039655297146,
+          "source_domain": "nsynth_test_sparse",
+          "support_coverage": 0.9056603773584906,
+          "supported_case_count": 96
+        },
+        {
+          "case_count": 53,
+          "population": "target_positive",
+          "score_maximum": 0.9999906017651041,
+          "score_median": 0.999231037169852,
+          "score_minimum": 0.9824251784505671,
+          "score_q25": 0.9983055932070597,
+          "score_q75": 0.9998993662440864,
+          "source_domain": "nsynth_test_sparse",
+          "support_coverage": 0.9056603773584906,
+          "supported_case_count": 48
+        },
+        {
+          "case_count": 400,
+          "population": "negative",
+          "score_maximum": 0.9999873913728632,
+          "score_median": 0.9993427173191799,
+          "score_minimum": 0.7948620303464985,
+          "score_q25": 0.9971581361197253,
+          "score_q75": 0.9998396799162472,
+          "source_domain": "nsynth_train_sparse",
+          "support_coverage": 0.81,
+          "supported_case_count": 324
+        },
+        {
+          "case_count": 200,
+          "population": "target_positive",
+          "score_maximum": 0.9999864444163993,
+          "score_median": 0.9993174021812548,
+          "score_minimum": 0.8377006402744146,
+          "score_q25": 0.997238827350731,
+          "score_q75": 0.9998408655161447,
+          "source_domain": "nsynth_train_sparse",
+          "support_coverage": 0.81,
+          "supported_case_count": 162
+        },
+        {
+          "case_count": 200,
+          "population": "negative",
+          "score_maximum": 0.9992403822799439,
+          "score_median": 0.5606634864159121,
+          "score_minimum": 0.022735492468862275,
+          "score_q25": 0.21104293588774603,
+          "score_q75": 0.895612913976052,
+          "source_domain": "private_full_mix_training",
+          "support_coverage": 0.98,
+          "supported_case_count": 196
+        },
+        {
+          "case_count": 40,
+          "population": "target_positive",
+          "score_maximum": 0.9993024357309497,
+          "score_median": 0.5776041737146019,
+          "score_minimum": 0.03478952991292231,
+          "score_q25": 0.2492411517995413,
+          "score_q75": 0.8728989484129694,
+          "source_domain": "private_full_mix_training",
+          "support_coverage": 0.975,
+          "supported_case_count": 39
+        },
+        {
+          "case_count": 144,
+          "population": "negative",
+          "score_maximum": 0.9998919690823151,
+          "score_median": 0.9796482079899109,
+          "score_minimum": 0.05195745817430205,
+          "score_q25": 0.9558025623797591,
+          "score_q75": 0.9910646415166251,
+          "source_domain": "public_tier_a",
+          "support_coverage": 1.0,
+          "supported_case_count": 144
+        },
+        {
+          "case_count": 48,
+          "population": "target_positive",
+          "score_maximum": 0.9998707788532796,
+          "score_median": 0.9825615301187649,
+          "score_minimum": 0.0877812487063074,
+          "score_q25": 0.9618634247774697,
+          "score_q75": 0.9930416894392888,
+          "source_domain": "public_tier_a",
+          "support_coverage": 1.0,
+          "supported_case_count": 48
+        },
+        {
+          "case_count": 140,
+          "population": "negative",
+          "score_maximum": 0.9999917661789041,
+          "score_median": 0.6496202025036708,
+          "score_minimum": 0.11775861295843533,
+          "score_q25": 0.4970003188848776,
+          "score_q75": 0.8383267794625002,
+          "source_domain": "sqam_consumed_transfer",
+          "support_coverage": 0.6714285714285714,
+          "supported_case_count": 94
+        },
+        {
+          "case_count": 0,
+          "population": "target_positive",
+          "score_maximum": null,
+          "score_median": null,
+          "score_minimum": null,
+          "score_q25": null,
+          "score_q75": null,
+          "source_domain": "sqam_consumed_transfer",
+          "support_coverage": null,
+          "supported_case_count": 0
+        }
+      ],
+      "domain_gates": [
+        {
+          "minimum_group_rule_applies": true,
+          "recall_passed": false,
+          "source_domain": "demand_maestro_consumed_transfer",
+          "support_passed": true
+        },
+        {
+          "minimum_group_rule_applies": true,
+          "recall_passed": false,
+          "source_domain": "musdb18hq_consumed_transfer",
+          "support_passed": true
+        },
+        {
+          "minimum_group_rule_applies": true,
+          "recall_passed": false,
+          "source_domain": "nsynth_test_sparse",
+          "support_passed": true
+        },
+        {
+          "minimum_group_rule_applies": true,
+          "recall_passed": false,
+          "source_domain": "nsynth_train_sparse",
+          "support_passed": true
+        },
+        {
+          "minimum_group_rule_applies": true,
+          "recall_passed": false,
+          "source_domain": "private_full_mix_training",
+          "support_passed": true
+        },
+        {
+          "minimum_group_rule_applies": true,
+          "recall_passed": false,
+          "source_domain": "public_tier_a",
+          "support_passed": true
+        },
+        {
+          "minimum_group_rule_applies": false,
+          "recall_passed": true,
+          "source_domain": "sqam_consumed_transfer",
+          "support_passed": true
+        }
+      ],
+      "folds": [
+        {
+          "held_out_source_domain": "demand_maestro_consumed_transfer",
+          "negative_cases": {
+            "one_sided_95_wilson_lower": 1.734723475976807e-18,
+            "one_sided_95_wilson_upper": 0.022049072747129528,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 0.8333333333333334,
+            "supported_count": 120,
+            "total_count": 144
+          },
+          "negative_groups": {
+            "one_sided_95_wilson_lower": 6.938893903907228e-18,
+            "one_sided_95_wilson_upper": 0.08272430812509929,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 0.8333333333333334,
+            "supported_count": 30,
+            "total_count": 36
+          },
+          "target_positive_cases": {
+            "one_sided_95_wilson_lower": 0.0,
+            "one_sided_95_wilson_upper": 0.08811254092083348,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 0.7777777777777778,
+            "supported_count": 28,
+            "total_count": 36
+          },
+          "target_positive_groups": {
+            "one_sided_95_wilson_lower": 0.0,
+            "one_sided_95_wilson_upper": 0.08811254092083348,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 0.7777777777777778,
+            "supported_count": 28,
+            "total_count": 36
+          },
+          "threshold_inclusive": 0.9999917661789042,
+          "training_maximum_negative_score": 0.9999917661789041,
+          "training_supported_negative_case_count": 1438,
+          "valid": true
+        },
+        {
+          "held_out_source_domain": "musdb18hq_consumed_transfer",
+          "negative_cases": {
+            "one_sided_95_wilson_lower": 0.0,
+            "one_sided_95_wilson_upper": 0.004611416210876654,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 0.9733333333333334,
+            "supported_count": 584,
+            "total_count": 600
+          },
+          "negative_groups": {
+            "one_sided_95_wilson_lower": 0.0,
+            "one_sided_95_wilson_upper": 0.018193965007972948,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 0.9733333333333334,
+            "supported_count": 146,
+            "total_count": 150
+          },
+          "target_positive_cases": {
+            "one_sided_95_wilson_lower": 0.0,
+            "one_sided_95_wilson_upper": 0.018193965007972948,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 0.9733333333333334,
+            "supported_count": 146,
+            "total_count": 150
+          },
+          "target_positive_groups": {
+            "one_sided_95_wilson_lower": 0.0,
+            "one_sided_95_wilson_upper": 0.018193965007972948,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 0.9733333333333334,
+            "supported_count": 146,
+            "total_count": 150
+          },
+          "threshold_inclusive": 0.9999917661789042,
+          "training_maximum_negative_score": 0.9999917661789041,
+          "training_supported_negative_case_count": 974,
+          "valid": true
+        },
+        {
+          "held_out_source_domain": "nsynth_test_sparse",
+          "negative_cases": {
+            "one_sided_95_wilson_lower": 0.0,
+            "one_sided_95_wilson_upper": 0.027410248294247718,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 0.9056603773584906,
+            "supported_count": 96,
+            "total_count": 106
+          },
+          "negative_groups": {
+            "one_sided_95_wilson_lower": 0.0,
+            "one_sided_95_wilson_upper": 0.05335794214580871,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 0.9056603773584906,
+            "supported_count": 48,
+            "total_count": 53
+          },
+          "target_positive_cases": {
+            "one_sided_95_wilson_lower": 0.0,
+            "one_sided_95_wilson_upper": 0.05335794214580871,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 0.9056603773584906,
+            "supported_count": 48,
+            "total_count": 53
+          },
+          "target_positive_groups": {
+            "one_sided_95_wilson_lower": 0.0,
+            "one_sided_95_wilson_upper": 0.05335794214580871,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 0.9056603773584906,
+            "supported_count": 48,
+            "total_count": 53
+          },
+          "threshold_inclusive": 0.9999917661789042,
+          "training_maximum_negative_score": 0.9999917661789041,
+          "training_supported_negative_case_count": 1462,
+          "valid": true
+        },
+        {
+          "held_out_source_domain": "nsynth_train_sparse",
+          "negative_cases": {
+            "one_sided_95_wilson_lower": 8.673617379884035e-19,
+            "one_sided_95_wilson_upper": 0.008281290318771593,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 0.81,
+            "supported_count": 324,
+            "total_count": 400
+          },
+          "negative_groups": {
+            "one_sided_95_wilson_lower": 1.734723475976807e-18,
+            "one_sided_95_wilson_upper": 0.01642654762770305,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 0.81,
+            "supported_count": 162,
+            "total_count": 200
+          },
+          "target_positive_cases": {
+            "one_sided_95_wilson_lower": 1.734723475976807e-18,
+            "one_sided_95_wilson_upper": 0.01642654762770305,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 0.81,
+            "supported_count": 162,
+            "total_count": 200
+          },
+          "target_positive_groups": {
+            "one_sided_95_wilson_lower": 1.734723475976807e-18,
+            "one_sided_95_wilson_upper": 0.01642654762770305,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 0.81,
+            "supported_count": 162,
+            "total_count": 200
+          },
+          "threshold_inclusive": 0.9999917661789042,
+          "training_maximum_negative_score": 0.9999917661789041,
+          "training_supported_negative_case_count": 1234,
+          "valid": true
+        },
+        {
+          "held_out_source_domain": "private_full_mix_training",
+          "negative_cases": {
+            "one_sided_95_wilson_lower": 0.0,
+            "one_sided_95_wilson_upper": 0.01361584285503561,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 0.98,
+            "supported_count": 196,
+            "total_count": 200
+          },
+          "negative_groups": {
+            "one_sided_95_wilson_lower": 0.0,
+            "one_sided_95_wilson_upper": 0.06335344864545808,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 1.0,
+            "supported_count": 40,
+            "total_count": 40
+          },
+          "target_positive_cases": {
+            "one_sided_95_wilson_lower": 6.938893903907228e-18,
+            "one_sided_95_wilson_upper": 0.06487251405975225,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 0.975,
+            "supported_count": 39,
+            "total_count": 40
+          },
+          "target_positive_groups": {
+            "one_sided_95_wilson_lower": 6.938893903907228e-18,
+            "one_sided_95_wilson_upper": 0.06487251405975225,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 0.975,
+            "supported_count": 39,
+            "total_count": 40
+          },
+          "threshold_inclusive": 0.9999917661789042,
+          "training_maximum_negative_score": 0.9999917661789041,
+          "training_supported_negative_case_count": 1362,
+          "valid": true
+        },
+        {
+          "held_out_source_domain": "public_tier_a",
+          "negative_cases": {
+            "one_sided_95_wilson_lower": 0.0,
+            "one_sided_95_wilson_upper": 0.01844199878474248,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 1.0,
+            "supported_count": 144,
+            "total_count": 144
+          },
+          "negative_groups": {
+            "one_sided_95_wilson_lower": 0.0,
+            "one_sided_95_wilson_upper": 0.05335794214580871,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 1.0,
+            "supported_count": 48,
+            "total_count": 48
+          },
+          "target_positive_cases": {
+            "one_sided_95_wilson_lower": 0.0,
+            "one_sided_95_wilson_upper": 0.05335794214580871,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 1.0,
+            "supported_count": 48,
+            "total_count": 48
+          },
+          "target_positive_groups": {
+            "one_sided_95_wilson_lower": 0.0,
+            "one_sided_95_wilson_upper": 0.05335794214580871,
+            "predicted_count": 0,
+            "predicted_rate": 0.0,
+            "support_coverage": 1.0,
+            "supported_count": 48,
+            "total_count": 48
+          },
+          "threshold_inclusive": 0.9999917661789042,
+          "training_maximum_negative_score": 0.9999917661789041,
+          "training_supported_negative_case_count": 1414,
+          "valid": true
+        },
+        {
+          "held_out_source_domain": "sqam_consumed_transfer",
+          "negative_cases": {
+            "one_sided_95_wilson_lower": 0.007066031887382911,
+            "one_sided_95_wilson_upper": 0.062273772373977014,
+            "predicted_count": 2,
+            "predicted_rate": 0.02127659574468085,
+            "support_coverage": 0.6714285714285714,
+            "supported_count": 94,
+            "total_count": 140
+          },
+          "negative_groups": {
+            "one_sided_95_wilson_lower": 0.004761043694912058,
+            "one_sided_95_wilson_upper": 0.08990733989174213,
+            "predicted_count": 1,
+            "predicted_rate": 0.02127659574468085,
+            "support_coverage": 0.6714285714285714,
+            "supported_count": 47,
+            "total_count": 70
+          },
+          "target_positive_cases": {
+            "one_sided_95_wilson_lower": null,
+            "one_sided_95_wilson_upper": null,
+            "predicted_count": 0,
+            "predicted_rate": null,
+            "support_coverage": null,
+            "supported_count": 0,
+            "total_count": 0
+          },
+          "target_positive_groups": {
+            "one_sided_95_wilson_lower": null,
+            "one_sided_95_wilson_upper": null,
+            "predicted_count": 0,
+            "predicted_rate": null,
+            "support_coverage": null,
+            "supported_count": 0,
+            "total_count": 0
+          },
+          "threshold_inclusive": 0.999991704110848,
+          "training_maximum_negative_score": 0.9999917041108479,
+          "training_supported_negative_case_count": 1464,
+          "valid": true
+        }
+      ],
+      "gates": {
+        "all_folds_valid": true,
+        "false_positive_control_passed": false,
+        "passed": false,
+        "recall_passed": false,
+        "support_coverage_passed": true
+      },
+      "pooled_out_of_fold": {
+        "negative_cases": {
+          "one_sided_95_wilson_lower": 0.00042489599866509745,
+          "one_sided_95_wilson_upper": 0.0038715861162474646,
+          "predicted_count": 2,
+          "predicted_rate": 0.0012836970474967907,
+          "support_coverage": 0.8985005767012687,
+          "supported_count": 1558,
+          "total_count": 1734
+        },
+        "negative_groups": {
+          "one_sided_95_wilson_lower": 0.00042831657207618827,
+          "one_sided_95_wilson_upper": 0.008556777271040388,
+          "predicted_count": 1,
+          "predicted_rate": 0.0019193857965451055,
+          "support_coverage": 0.8726968174204355,
+          "supported_count": 521,
+          "total_count": 597
+        },
+        "target_positive_cases": {
+          "one_sided_95_wilson_lower": 0.0,
+          "one_sided_95_wilson_upper": 0.005711445625836537,
+          "predicted_count": 0,
+          "predicted_rate": 0.0,
+          "support_coverage": 0.8937381404174574,
+          "supported_count": 471,
+          "total_count": 527
+        },
+        "target_positive_groups": {
+          "one_sided_95_wilson_lower": 0.0,
+          "one_sided_95_wilson_upper": 0.005711445625836537,
+          "predicted_count": 0,
+          "predicted_rate": 0.0,
+          "support_coverage": 0.8937381404174574,
+          "supported_count": 471,
+          "total_count": 527
+        }
+      },
+      "score_field": "r2_residual_directional_recurrence",
+      "threshold_direction": "higher_or_equal_is_more_mp3_128_like"
+    }
+  },
+  "schema_version": 1,
+  "state": "codec_projection_observed_evaluation_v1",
+  "surviving_representations": [],
+  "warning": "Consumed development evidence only. No result authorizes a lossy-source, authenticity, codec, or provenance verdict."
+}
