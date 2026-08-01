@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "registry_id": "audio-integrity-public-hard-negative-sources-20260731",
+  "reviewed_at": "2026-07-31",
+  "release_use_policy": "CC BY 4.0 permits commercial use with attribution. These provider-declared PCM samples are development-only Tier B sparse and bandwidth-limited hard negatives. They are not Tier A masters and must never count toward the disjoint release corpus.",
+  "sources": [
+    {
+      "source_id": "nsynth-valid-jsonwav-2017",
+      "title": "NSynth validation split",
+      "version": "2017-04-10 corrected release",
+      "official_page_url": "https://magenta.withgoogle.com/datasets/nsynth",
+      "provider_metadata_url": "https://magenta.withgoogle.com/datasets/nsynth",
+      "license": "CC BY 4.0",
+      "release_role": "development_sparse_bandwidth_hard_negative",
+      "ground_truth_basis": "Google documents four-second musical-note examples distributed as 16-bit PCM WAV and generated from annotated commercial sample-library instruments.",
+      "partition_basis": "official instrument ID; NSynth documents that validation and test instruments do not overlap with the train split",
+      "limitations": "The provider does not establish the pre-dataset encoding history of the commercial samples. Audio is monophonic 16 kHz single notes rather than complete recordings, so this is Tier B invariant evidence only.",
+      "artifact": {
+        "filename": "nsynth-valid.jsonwav.tar.gz",
+        "url": "https://storage.googleapis.com/download.magenta.tensorflow.org/datasets/nsynth/nsynth-valid.jsonwav.tar.gz",
+        "bytes": 1068767009,
+        "provider_checksum": "md5:87e94a00a19b6dbc99cf6d4c0c0cae87"
+      }
+    },
+    {
+      "source_id": "nsynth-test-jsonwav-2017",
+      "title": "NSynth test split",
+      "version": "2017-04-10 corrected release",
+      "official_page_url": "https://magenta.withgoogle.com/datasets/nsynth",
+      "provider_metadata_url": "https://magenta.withgoogle.com/datasets/nsynth",
+      "license": "CC BY 4.0",
+      "release_role": "development_sparse_bandwidth_hard_negative",
+      "ground_truth_basis": "Google documents four-second musical-note examples distributed as 16-bit PCM WAV and generated from annotated commercial sample-library instruments.",
+      "partition_basis": "official instrument ID; NSynth documents that validation and test instruments do not overlap with the train split",
+      "limitations": "The provider does not establish the pre-dataset encoding history of the commercial samples. Audio is monophonic 16 kHz single notes rather than complete recordings, so this is Tier B invariant evidence only.",
+      "artifact": {
+        "filename": "nsynth-test.jsonwav.tar.gz",
+        "url": "https://storage.googleapis.com/download.magenta.tensorflow.org/datasets/nsynth/nsynth-test.jsonwav.tar.gz",
+        "bytes": 349501546,
+        "provider_checksum": "md5:5e6f8719bf7e16ad0a00d518b78af77d"
+      }
+    }
+  ]
+}

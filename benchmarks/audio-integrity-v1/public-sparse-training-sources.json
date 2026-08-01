@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "registry_id": "audio-integrity-public-sparse-training-sources-20260731",
+  "reviewed_at": "2026-07-31",
+  "release_use_policy": "CC BY 4.0 permits commercial use with attribution. This provider-declared PCM training split is development-only Tier B sparse-domain training data. Its instruments are officially disjoint from NSynth validation and test, but it is not Tier A release evidence and must never count toward the disjoint release corpus.",
+  "sources": [
+    {
+      "source_id": "nsynth-train-jsonwav-2017",
+      "title": "NSynth training split",
+      "version": "2017-04-10 corrected release",
+      "official_page_url": "https://magenta.withgoogle.com/datasets/nsynth",
+      "provider_metadata_url": "https://magenta.withgoogle.com/datasets/nsynth",
+      "license": "CC BY 4.0",
+      "release_role": "development_sparse_domain_training",
+      "ground_truth_basis": "Google documents 289,205 four-second musical-note examples distributed as 16-bit PCM WAV and states that training instruments do not overlap with validation or test.",
+      "partition_basis": "official training-split instrument ID; Google documents that train instruments do not overlap with validation or test",
+      "limitations": "The provider does not establish the pre-dataset encoding history of the commercial samples. Audio is monophonic 16 kHz single notes rather than complete recordings, so this is Tier B training data only.",
+      "artifact": {
+        "filename": "nsynth-train.jsonwav.tar.gz",
+        "url": "https://storage.googleapis.com/download.magenta.tensorflow.org/datasets/nsynth/nsynth-train.jsonwav.tar.gz",
+        "bytes": 23815298079,
+        "provider_checksum": "md5:fde6665a93865503ba598b9fac388660"
+      }
+    }
+  ]
+}

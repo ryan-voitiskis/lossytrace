@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "corpus_id": "audio-integrity-v1-private",
+  "corpus_version": 1,
+  "audio_root_env": "REKLAW_AUDIO_INTEGRITY_ROOT",
+  "analysis_max_seconds": 0,
+  "repetitions": 1,
+  "cases": [
+    {
+      "case_id": "tier-a-001-original-wav24",
+      "source_group": "tier-a-001",
+      "partition_group": "session-a",
+      "relative_path": "sources/tier-a-001.wav",
+      "provenance_tier": "tier_a_confirmed_pcm",
+      "split": "development",
+      "class": "untouched_pcm",
+      "expectation": "negative"
+    },
+    {
+      "case_id": "tier-a-001-lowpass-15700-wav24",
+      "source_group": "tier-a-001",
+      "partition_group": "session-a",
+      "relative_path": "generated/tier-a-001-lowpass-15700.wav",
+      "provenance_tier": "tier_a_confirmed_pcm",
+      "split": "development",
+      "class": "lowpass_only_pcm",
+      "expectation": "negative"
+    },
+    {
+      "case_id": "tier-a-001-mp3-128-wav24",
+      "source_group": "tier-a-001",
+      "partition_group": "session-a",
+      "relative_path": "generated/tier-a-001-mp3-128-wav24.wav",
+      "provenance_tier": "tier_a_confirmed_pcm",
+      "split": "development",
+      "class": "mp3_128",
+      "expectation": "controlled_positive"
+    },
+    {
+      "case_id": "tier-a-001-aac-256-flac24",
+      "source_group": "tier-a-001",
+      "partition_group": "session-a",
+      "relative_path": "generated/tier-a-001-aac-256-flac24.flac",
+      "provenance_tier": "tier_a_confirmed_pcm",
+      "split": "development",
+      "class": "aac_lc_256",
+      "expectation": "controlled_positive"
+    },
+    {
+      "case_id": "tier-a-001-opus-160-aiff16",
+      "source_group": "tier-a-001",
+      "partition_group": "session-a",
+      "relative_path": "generated/tier-a-001-opus-160-aiff16.aiff",
+      "provenance_tier": "tier_a_confirmed_pcm",
+      "split": "development",
+      "class": "opus_160",
+      "expectation": "controlled_positive"
+    },
+    {
+      "case_id": "tier-a-002-original-wav24",
+      "source_group": "tier-a-002",
+      "partition_group": "session-b",
+      "relative_path": "sources/tier-a-002.wav",
+      "provenance_tier": "tier_a_confirmed_pcm",
+      "split": "held_out",
+      "class": "untouched_pcm",
+      "expectation": "negative"
+    },
+    {
+      "case_id": "tier-a-002-vorbis-q5-flac16",
+      "source_group": "tier-a-002",
+      "partition_group": "session-b",
+      "relative_path": "generated/tier-a-002-vorbis-q5-flac16.flac",
+      "provenance_tier": "tier_a_confirmed_pcm",
+      "split": "held_out",
+      "class": "vorbis_q5",
+      "expectation": "controlled_positive"
+    }
+  ],
+  "recipes": [
+    {
+      "case_id": "tier-a-001-lowpass-15700-wav24",
+      "source_relative_path": "sources/tier-a-001.wav",
+      "output_relative_path": "generated/tier-a-001-lowpass-15700.wav",
+      "intermediate_codec": "pcm",
+      "pre_filters": [
+        "lowpass=f=15700:p=2"
+      ],
+      "output_bits_per_sample": 24,
+      "sample_rate_hz": 44100
+    },
+    {
+      "case_id": "tier-a-001-mp3-128-wav24",
+      "source_relative_path": "sources/tier-a-001.wav",
+      "output_relative_path": "generated/tier-a-001-mp3-128-wav24.wav",
+      "intermediate_codec": "mp3",
+      "encoder": "libmp3lame",
+      "bitrate": "128k",
+      "output_bits_per_sample": 24,
+      "sample_rate_hz": 44100
+    },
+    {
+      "case_id": "tier-a-001-aac-256-flac24",
+      "source_relative_path": "sources/tier-a-001.wav",
+      "output_relative_path": "generated/tier-a-001-aac-256-flac24.flac",
+      "intermediate_codec": "aac",
+      "encoder": "aac",
+      "bitrate": "256k",
+      "output_bits_per_sample": 24,
+      "sample_rate_hz": 48000
+    },
+    {
+      "case_id": "tier-a-001-opus-160-aiff16",
+      "source_relative_path": "sources/tier-a-001.wav",
+      "output_relative_path": "generated/tier-a-001-opus-160-aiff16.aiff",
+      "intermediate_codec": "opus",
+      "encoder": "libopus",
+      "bitrate": "160k",
+      "output_bits_per_sample": 16,
+      "sample_rate_hz": 48000
+    },
+    {
+      "case_id": "tier-a-002-vorbis-q5-flac16",
+      "source_relative_path": "sources/tier-a-002.wav",
+      "output_relative_path": "generated/tier-a-002-vorbis-q5-flac16.flac",
+      "intermediate_codec": "vorbis",
+      "encoder": "vorbis",
+      "quality": 5,
+      "output_bits_per_sample": 16,
+      "channel_count": 2,
+      "sample_rate_hz": 44100
+    }
+  ]
+}

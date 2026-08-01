@@ -1,0 +1,126 @@
+{
+  "corpora": {
+    "codec_settings_holdout": {
+      "analysis_seconds": 45,
+      "controlled_positives": 440,
+      "negative_excerpts": 40,
+      "source_groups": 40,
+      "settings": [
+        "aac_lc_96",
+        "aac_lc_192",
+        "aac_lc_320",
+        "mp3_96",
+        "mp3_192",
+        "mp3_vbr_q2",
+        "opus_64",
+        "opus_128",
+        "opus_192",
+        "vorbis_q1",
+        "vorbis_q7"
+      ],
+      "source_groups_held_out": false,
+      "thresholds_retuned": false
+    },
+    "primary_development": {
+      "analysis_seconds": 90,
+      "controlled_positives": 320,
+      "development_negatives": 240,
+      "source_groups": 40
+    }
+  },
+  "disposition": {
+    "feature_version": 0,
+    "held_out_opened": false,
+    "likely_lossy_derived_enabled": false,
+    "public_verdict_enabled": false,
+    "reason": "The explainable-only development gate failed, learned-probe results remain private research, and no disjoint Tier A held-out release corpus has run.",
+    "state": "development_only",
+    "stratum_cache_schema": 21
+  },
+  "explainable_only_nested": {
+    "maximum_individual_family_negative_pass_rate": 0.0,
+    "controlled_positive_count": 320,
+    "detected_positive_count": 20,
+    "development_false_positive_count": 0,
+    "development_negative_count": 240,
+    "feature_families_required": 2,
+    "limitations": [
+      "Tier B source expectations are not confirmed pristine PCM ground truth.",
+      "Thresholds were refit inside each source-group training fold.",
+      "The exact transform-grid probe is research-only and excluded from product timing."
+    ]
+  },
+  "external_c4dm_sample": {
+    "controlled_positive_count": 64,
+    "detected_positive_count": 61,
+    "negative_count": 48,
+    "negative_rows_labelled_lossy": 30
+  },
+  "learned_probe_cross_validation": {
+    "alternate_ensemble": {
+      "case_level_auc": 0.958398,
+      "controlled_positive_count": 320,
+      "controlled_positives_above_zero_false_positive_boundary": 250
+    },
+    "primary_ensemble": {
+      "case_level_auc": 0.967708,
+      "controlled_positive_count": 320,
+      "controlled_positives_above_zero_false_positive_boundary": 279
+    },
+    "status": "research_only"
+  },
+  "settings_holdout_results": {
+    "alternate_model_ensemble": {
+      "case_level_auc": 0.9500568181818182,
+      "controlled_positive_count": 440,
+      "controlled_positives_above_fixed_model_floor_0_9": 274,
+      "controlled_positives_above_zero_false_positive_boundary": 168,
+      "negative_count": 40,
+      "negatives_above_fixed_model_floor_0_9": 1,
+      "zero_false_positive_boundary": 0.9864321172237396
+    },
+    "alternate_model_plus_frozen_dsp": {
+      "controlled_positive_count": 440,
+      "detected_positive_count": 242,
+      "negative_count": 40,
+      "negative_rows_selected": 1
+    },
+    "post_hoc_cross_policy_consensus": {
+      "controlled_positive_count": 440,
+      "detected_by_class": {
+        "aac_lc_192": 12,
+        "aac_lc_320": 0,
+        "aac_lc_96": 1,
+        "mp3_192": 20,
+        "mp3_96": 37,
+        "mp3_vbr_q2": 16,
+        "opus_128": 20,
+        "opus_192": 19,
+        "opus_64": 31,
+        "vorbis_q1": 25,
+        "vorbis_q7": 34
+      },
+      "detected_positive_count": 215,
+      "negative_count": 40,
+      "negative_rows_selected": 0,
+      "requires_new_untouched_gate": true,
+      "selected_after_observing_settings_holdout": true
+    },
+    "primary_model_ensemble": {
+      "case_level_auc": 0.9648863636363636,
+      "controlled_positive_count": 440,
+      "controlled_positives_above_fixed_model_floor_0_9": 306,
+      "controlled_positives_above_zero_false_positive_boundary": 318,
+      "negative_count": 40,
+      "negatives_above_fixed_model_floor_0_9": 0,
+      "zero_false_positive_boundary": 0.8690166890621185
+    },
+    "primary_model_plus_frozen_dsp": {
+      "controlled_positive_count": 440,
+      "detected_positive_count": 266,
+      "negative_count": 40,
+      "negative_rows_selected": 0
+    }
+  },
+  "schema_version": 1
+}

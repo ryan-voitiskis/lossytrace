@@ -1,0 +1,848 @@
+{
+  "archive_source_subset": {
+    "archive_name": "audio-integrity-exact-transform-research-20260731-001.tar.zst",
+    "archive_sha256": "10f6eff479639844c0836c531e2e08d2a442fb167b0ccffe11580dc02a63c8db",
+    "files": [
+      {
+        "destination": "research/exact-transform/archive-code/research-v4/README.md",
+        "destination_sha256": "a4d3b7a1869f84ed98893b097f20d58a54a55046e8db037cd7d74225a7a4d380",
+        "origin": "exact_transform_archive_source_subset"
+      },
+      {
+        "destination": "research/exact-transform/archive-code/research-v4/build_exact_transform_archive_inventory.py",
+        "destination_sha256": "ebf7042d24f1a9239e756ed09cf2363ce64f650d9fae268c0b35e44fae45090c",
+        "origin": "exact_transform_archive_source_subset"
+      },
+      {
+        "destination": "research/exact-transform/archive-code/research-v4/evaluate_observed_aac_phase_v30.py",
+        "destination_sha256": "afaa45cbad9695deaec734a9bc9c748cebbb7240c9530642746411d4c4ac926a",
+        "origin": "exact_transform_archive_source_subset"
+      },
+      {
+        "destination": "research/exact-transform/archive-code/research-v4/evaluate_observed_exact_mp3_hybrid_v32.py",
+        "destination_sha256": "6f09645a112bbaef8f3238318c8e225f9a9498d356ecc9ffca7d91a626b3d04f",
+        "origin": "exact_transform_archive_source_subset"
+      },
+      {
+        "destination": "research/exact-transform/archive-code/research-v4/evaluate_observed_exact_mp3_hybrid_v32_broad.py",
+        "destination_sha256": "97b809ef1b82608de460d02c4211c77f6e95c3db69a32d7a01ab04075d83ddfc",
+        "origin": "exact_transform_archive_source_subset"
+      },
+      {
+        "destination": "research/exact-transform/archive-code/research-v4/evaluate_observed_exact_mp3_tail_flatness_v33.py",
+        "destination_sha256": "337562c771d7a866d791618010a1cc3140f27f58411a8d17913e300357218b83",
+        "origin": "exact_transform_archive_source_subset"
+      },
+      {
+        "destination": "research/exact-transform/archive-code/research-v4/evaluate_observed_mp3_frame_v31.py",
+        "destination_sha256": "8e8b483a2f18244ad7f89f1c9e01d76cb470aa5f286c2d763ccbcf57cb2e1051",
+        "origin": "exact_transform_archive_source_subset"
+      },
+      {
+        "destination": "research/exact-transform/archive-code/research-v4/evaluate_observed_quantization_rule.py",
+        "destination_sha256": "634a0152c86a8f4715dbc049dc1bb76127bec1c85f3fb1c5acf728eb660bd7a5",
+        "origin": "exact_transform_archive_source_subset"
+      },
+      {
+        "destination": "research/exact-transform/archive-code/research-v4/evaluate_observed_v29.py",
+        "destination_sha256": "77210e0f04618f8bfb5da0261b5609aa5da79594d84c21ba2f9b5414d69451af",
+        "origin": "exact_transform_archive_source_subset"
+      },
+      {
+        "destination": "research/exact-transform/archive-code/research-v4/evaluate_observed_v32_v33_union_diagnostic.py",
+        "destination_sha256": "97cf109586ecad45b7a510f7da7dbcdbb3ee48b579473d2d2d265f90c8d0051f",
+        "origin": "exact_transform_archive_source_subset"
+      },
+      {
+        "destination": "research/exact-transform/archive-code/research-v4/mp3_history_probe/Cargo.lock",
+        "destination_sha256": "14e51b5d88eeb73527a7f730c537c4b76c8950825d79c89e0b7d8d1d6cb97973",
+        "origin": "exact_transform_archive_source_subset"
+      },
+      {
+        "destination": "research/exact-transform/archive-code/research-v4/mp3_history_probe/Cargo.toml",
+        "destination_sha256": "b299f435b621479f968129a8aeb90beebe1177186ae9abbd7f67da30515a42b5",
+        "origin": "exact_transform_archive_source_subset"
+      },
+      {
+        "destination": "research/exact-transform/archive-code/research-v4/mp3_history_probe/src/main.rs",
+        "destination_sha256": "c9e9d52fbeef15bfed781554b328f1baf808338ac011d1773a666062e3aaef00",
+        "origin": "exact_transform_archive_source_subset"
+      },
+      {
+        "destination": "research/exact-transform/archive-code/research-v4/run_consumed_quantization.py",
+        "destination_sha256": "04bb5f7cd56d9637f75297814a89e93cd0b71578cfd95f866547ec44f2b23691",
+        "origin": "exact_transform_archive_source_subset"
+      },
+      {
+        "destination": "research/exact-transform/archive-code/research-v4/run_exact_mp3_hybrid_observed.py",
+        "destination_sha256": "b1b58879aaf3bf5053d40ffe13a099424a85d57af6ae50682b03477a958e73f9",
+        "origin": "exact_transform_archive_source_subset"
+      },
+      {
+        "destination": "research/exact-transform/archive-code/research-v4/run_mp3_history_observed.py",
+        "destination_sha256": "1e0d709efd51be32b67d3f5f37ec62fa3b5b2fa29e31b608fd8a7bd1a7d13c97",
+        "origin": "exact_transform_archive_source_subset"
+      },
+      {
+        "destination": "research/exact-transform/archive-code/research-v4/run_recompression_calibration_probe.py",
+        "destination_sha256": "341271ac0a6ff9d288f53269eb41465f53887250fa1858bf47466ea6637ea524",
+        "origin": "exact_transform_archive_source_subset"
+      },
+      {
+        "destination": "research/exact-transform/archive-code/research-v4/run_retained_observed_quantization.py",
+        "destination_sha256": "4fe0b694e8c4d2c07541eb0d7057e07d2a3d5d226e2a013751138a583c08d72a",
+        "origin": "exact_transform_archive_source_subset"
+      },
+      {
+        "destination": "research/exact-transform/archive-code/research-v4/verify_frozen_policy_replay.py",
+        "destination_sha256": "cd05d72b68965ab51694d952ffd66ada0d434188aa0f1c5df2ebc4f7f92d53e3",
+        "origin": "exact_transform_archive_source_subset"
+      }
+    ],
+    "verified_archive_file_count": 14093
+  },
+  "created_at": "2026-08-01T02:35:54Z",
+  "migrated_files": [
+    {
+      "destination": ".gitignore",
+      "destination_sha256": "9403ce265b72d9c49cb4e5eeb7b90eff008335eac5a64620d38394ed92192af4",
+      "exact_copy": false,
+      "origin": "reklawdbox_worktree",
+      "relationship": "adapted repository exclusions",
+      "source": ".gitignore",
+      "source_sha256": "75319a002b40c6cab46f6ec14f0ecf3b1fb398e48bf4b785f1740fdd293b2610"
+    },
+    {
+      "destination": "Cargo.lock",
+      "destination_sha256": "eb8c25b24e0fa1f4b69201c3f5a6b7cddd31692de72746c1c78b18413240ec0c",
+      "exact_copy": false,
+      "origin": "reklawdbox_worktree",
+      "relationship": "regenerated standalone dependency lock",
+      "source": "Cargo.lock",
+      "source_sha256": "5567bcb59da84fcad636cf660716d5653b390c15021b6cd974de9d704fa5646f"
+    },
+    {
+      "destination": "clippy.toml",
+      "destination_sha256": "6b7bdcc88d7194c479545971142aff8ea7cc9556e58da93b502978391130220d",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "copied research lint policy",
+      "source": "clippy.toml",
+      "source_sha256": "6b7bdcc88d7194c479545971142aff8ea7cc9556e58da93b502978391130220d"
+    },
+    {
+      "destination": "docs/research/original-reklawdbox-plan.md",
+      "destination_sha256": "78dd39121b6c2caa5f5c4b3a3cef295627d1662fce1392fa21f0a145d10b7752",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "copied historical plan",
+      "source": "docs/tmp/audio-integrity-lossy-source-detection-plan.md",
+      "source_sha256": "78dd39121b6c2caa5f5c4b3a3cef295627d1662fce1392fa21f0a145d10b7752"
+    },
+    {
+      "destination": "Cargo.toml",
+      "destination_sha256": "9446599e393bfe87af377feba01d1a0cc3aaad91594e57a0d51aae18ae98d1d8",
+      "exact_copy": false,
+      "origin": "reklawdbox_worktree",
+      "relationship": "adapted standalone package metadata and dependencies",
+      "source": "stratum-dsp/Cargo.toml",
+      "source_sha256": "d09c4b9ae1a17f2e328de3e1641b9651fe1860670f0683297b97f0b37100cc6c"
+    },
+    {
+      "destination": "src/compression_trace.rs",
+      "destination_sha256": "91778aaf9e64ca588d0a6d987092c3453cb151e08eef26916b71016210b45e5e",
+      "exact_copy": false,
+      "origin": "reklawdbox_worktree",
+      "relationship": "copied measurement implementation; standalone pipeline test adapted",
+      "source": "stratum-dsp/src/features/compression_trace.rs",
+      "source_sha256": "0e73d594fe13e1e0c6aebd6d29837ecbc626b2e68f16cbf5fff053b719e225b4"
+    },
+    {
+      "destination": "src/lib.rs",
+      "destination_sha256": "26ddb6e998991c8859a306630c541afa21860a4290b2b1dc8b238b2cb00c6578",
+      "exact_copy": false,
+      "origin": "reklawdbox_worktree",
+      "relationship": "standalone analysis configuration extracted",
+      "source": "stratum-dsp/src/config.rs",
+      "source_sha256": "cffa7b1636007ae35cfe1b74ff9f92e1e5ad2b241c3a00874146e349d12e7323"
+    },
+    {
+      "destination": "src/lib.rs",
+      "destination_sha256": "26ddb6e998991c8859a306630c541afa21860a4290b2b1dc8b238b2cb00c6578",
+      "exact_copy": false,
+      "origin": "reklawdbox_worktree",
+      "relationship": "standalone evidence result extracted",
+      "source": "stratum-dsp/src/analysis/result.rs",
+      "source_sha256": "a7cb3d1693de6506327e8af08322ea67e139c1266a15cfd1284cbc7685ab098b"
+    },
+    {
+      "destination": "src/lib.rs",
+      "destination_sha256": "26ddb6e998991c8859a306630c541afa21860a4290b2b1dc8b238b2cb00c6578",
+      "exact_copy": false,
+      "origin": "reklawdbox_worktree",
+      "relationship": "standalone module boundary extracted",
+      "source": "stratum-dsp/src/features/mod.rs",
+      "source_sha256": "86e38d22c1ab872bff5c00e0495b8cb03bc994845d9b153879c9e90c343009ff"
+    },
+    {
+      "destination": "src/lib.rs",
+      "destination_sha256": "26ddb6e998991c8859a306630c541afa21860a4290b2b1dc8b238b2cb00c6578",
+      "exact_copy": false,
+      "origin": "reklawdbox_worktree",
+      "relationship": "shared-STFT integration replaced by standalone pipeline",
+      "source": "stratum-dsp/src/lib.rs",
+      "source_sha256": "55baef18d4f3b32d02c7d91a304234ef3da4ae8befb3a916e00e73e170a51f6c"
+    },
+    {
+      "destination": "src/lib.rs",
+      "destination_sha256": "26ddb6e998991c8859a306630c541afa21860a4290b2b1dc8b238b2cb00c6578",
+      "exact_copy": false,
+      "origin": "reklawdbox_worktree",
+      "relationship": "Reklawdbox compatibility plumbing removed",
+      "source": "stratum-dsp/src/analysis/confidence.rs",
+      "source_sha256": "e263fe5380e543297cc4f0026d8caa5fd000ccd3d41c05cd680ec6fb7cba0445"
+    },
+    {
+      "destination": "examples/audio_integrity_benchmark.rs",
+      "destination_sha256": "2fba65426df962e1fd0b2f9d280485973b67ae21c4aa81b4ebc0ce00416251ea",
+      "exact_copy": false,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package and environment names adapted",
+      "source": "stratum-dsp/examples/audio_integrity_benchmark.rs",
+      "source_sha256": "93c52969792453414d2ecedb126e483aff4c9aaba3984d68133f9888bdfbf60b"
+    },
+    {
+      "destination": "examples/audio_integrity_benchmark_v30.rs",
+      "destination_sha256": "8424fa47b957799f7bbfad1f735e15c297161dc0402732800e287ad317bac6db",
+      "exact_copy": false,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package and environment names adapted",
+      "source": "stratum-dsp/examples/audio_integrity_benchmark_v30.rs",
+      "source_sha256": "0a2d7c02fb3648a8fac5058d1f1e65e5fdadfb03f3734444575b12323428d608"
+    },
+    {
+      "destination": "benchmarks/audio-integrity-v1/README.md",
+      "destination_sha256": "f7b14c408c215615645fa635917c4512cb6b1f88f2e4ff5fe323d235152a27c1",
+      "exact_copy": false,
+      "origin": "reklawdbox_worktree",
+      "relationship": "repository paths adapted",
+      "source": "stratum-dsp/benchmarks/audio-integrity-v1/README.md",
+      "source_sha256": "1f601c8bcb8330f30a2fde31a931dd167be1861340c52396126cf39ab8b10a2c"
+    },
+    {
+      "destination": "benchmarks/audio-integrity-v1/baseline.json",
+      "destination_sha256": "21ceb0744ca01cd6c38ee364697959c28f154f07991ac6f87ab7a0d6a9377240",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "copied",
+      "source": "stratum-dsp/benchmarks/audio-integrity-v1/baseline.json",
+      "source_sha256": "21ceb0744ca01cd6c38ee364697959c28f154f07991ac6f87ab7a0d6a9377240"
+    },
+    {
+      "destination": "benchmarks/audio-integrity-v1/development-report.json",
+      "destination_sha256": "397f041689eeae3efe4d69beae6e245726d43d9c71b3d94af0b474c05c1df2b3",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "copied",
+      "source": "stratum-dsp/benchmarks/audio-integrity-v1/development-report.json",
+      "source_sha256": "397f041689eeae3efe4d69beae6e245726d43d9c71b3d94af0b474c05c1df2b3"
+    },
+    {
+      "destination": "benchmarks/audio-integrity-v1/development-research-report.json",
+      "destination_sha256": "47dd1d26fe28a8f75b0707df24e7028159c0ddf538022d2d1716fe9232b1079b",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "copied",
+      "source": "stratum-dsp/benchmarks/audio-integrity-v1/development-research-report.json",
+      "source_sha256": "47dd1d26fe28a8f75b0707df24e7028159c0ddf538022d2d1716fe9232b1079b"
+    },
+    {
+      "destination": "benchmarks/audio-integrity-v1/development-source-domains.json",
+      "destination_sha256": "81bbfadcea5d33f435f4621775104ee7a6750a42fd8b6a9cf93fb10f14fb07b3",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "copied",
+      "source": "stratum-dsp/benchmarks/audio-integrity-v1/development-source-domains.json",
+      "source_sha256": "81bbfadcea5d33f435f4621775104ee7a6750a42fd8b6a9cf93fb10f14fb07b3"
+    },
+    {
+      "destination": "benchmarks/audio-integrity-v1/fingerprints.json",
+      "destination_sha256": "dc83516a6d1fd3021d01f30d0f8e0f888e8b9e695544339ec7a8ce75f6fc486d",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "copied",
+      "source": "stratum-dsp/benchmarks/audio-integrity-v1/fingerprints.json",
+      "source_sha256": "dc83516a6d1fd3021d01f30d0f8e0f888e8b9e695544339ec7a8ce75f6fc486d"
+    },
+    {
+      "destination": "benchmarks/audio-integrity-v1/manifest.example.json",
+      "destination_sha256": "c674dfc3ef6df630694a29ab4c118837d67cc1e0e787bd3dc6d79d7ddbac013a",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "copied",
+      "source": "stratum-dsp/benchmarks/audio-integrity-v1/manifest.example.json",
+      "source_sha256": "c674dfc3ef6df630694a29ab4c118837d67cc1e0e787bd3dc6d79d7ddbac013a"
+    },
+    {
+      "destination": "benchmarks/audio-integrity-v1/public-hard-negative-sources.json",
+      "destination_sha256": "dd4cbf27aa894c351b0b80caec05f5b430ea3a1360880452fb87c8f46f0a8489",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "copied",
+      "source": "stratum-dsp/benchmarks/audio-integrity-v1/public-hard-negative-sources.json",
+      "source_sha256": "dd4cbf27aa894c351b0b80caec05f5b430ea3a1360880452fb87c8f46f0a8489"
+    },
+    {
+      "destination": "benchmarks/audio-integrity-v1/public-sparse-training-sources.json",
+      "destination_sha256": "863d20c0d469de2c7a8539d16368a438f6ddb47656f1948e84cf3f175493eeb4",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "copied",
+      "source": "stratum-dsp/benchmarks/audio-integrity-v1/public-sparse-training-sources.json",
+      "source_sha256": "863d20c0d469de2c7a8539d16368a438f6ddb47656f1948e84cf3f175493eeb4"
+    },
+    {
+      "destination": "benchmarks/audio-integrity-v1/public-tier-a-sources.json",
+      "destination_sha256": "d89ae312eee20ea4dcc66e50e42f0a28db66f470bda78e0449f9d858a974e5d2",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "copied",
+      "source": "stratum-dsp/benchmarks/audio-integrity-v1/public-tier-a-sources.json",
+      "source_sha256": "d89ae312eee20ea4dcc66e50e42f0a28db66f470bda78e0449f9d858a974e5d2"
+    },
+    {
+      "destination": "benchmarks/audio-integrity-v1/public-untouched-sources.json",
+      "destination_sha256": "86a8710845dab6cbafb100c5bee47cb093cdd0f3a143df35f0e8880f04e0b137",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "copied",
+      "source": "stratum-dsp/benchmarks/audio-integrity-v1/public-untouched-sources.json",
+      "source_sha256": "86a8710845dab6cbafb100c5bee47cb093cdd0f3a143df35f0e8880f04e0b137"
+    },
+    {
+      "destination": "scripts/acquire-audio-integrity-independent-gate.py",
+      "destination_sha256": "d49525ade95fe031b633ab9bf4bfe63f8ddbc74627e000ca49b2d621e1de1dcc",
+      "exact_copy": false,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/acquire-audio-integrity-independent-gate.py",
+      "source_sha256": "5648dfec4fbd8f06963d1f9ff5b5291c035cf5dbb194bb50a2c4e76541705628"
+    },
+    {
+      "destination": "scripts/analyze-audio-integrity-aac-quantization.py",
+      "destination_sha256": "1bfdc6e59461ca08e17df5518bab2d3e4fdfc069eadbdb7d5ca645a251fc65d7",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/analyze-audio-integrity-aac-quantization.py",
+      "source_sha256": "1bfdc6e59461ca08e17df5518bab2d3e4fdfc069eadbdb7d5ca645a251fc65d7"
+    },
+    {
+      "destination": "scripts/analyze-audio-integrity-cnn-rule-ensemble.py",
+      "destination_sha256": "e7563c78695fab5f0da00aaf565e7c323f08e20f22510f0a0414c62525829fc2",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/analyze-audio-integrity-cnn-rule-ensemble.py",
+      "source_sha256": "e7563c78695fab5f0da00aaf565e7c323f08e20f22510f0a0414c62525829fc2"
+    },
+    {
+      "destination": "scripts/analyze-audio-integrity-crnn-source-groups.py",
+      "destination_sha256": "fcc84af2409d443c821a5401d07ab0cf33d72bb13ddaf0a7f25426db097f2075",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/analyze-audio-integrity-crnn-source-groups.py",
+      "source_sha256": "fcc84af2409d443c821a5401d07ab0cf33d72bb13ddaf0a7f25426db097f2075"
+    },
+    {
+      "destination": "scripts/analyze-audio-integrity-explainable-policy.py",
+      "destination_sha256": "79354bcd6d1764e7cf9af21bd77061daf18170668a6d8b18a1cd0200877285c8",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/analyze-audio-integrity-explainable-policy.py",
+      "source_sha256": "79354bcd6d1764e7cf9af21bd77061daf18170668a6d8b18a1cd0200877285c8"
+    },
+    {
+      "destination": "scripts/analyze-audio-integrity-forensic.py",
+      "destination_sha256": "3ce3773c9d89ad935af74a7fa52612a63700a89c9422c2abfaf8f280cfa5d2d5",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/analyze-audio-integrity-forensic.py",
+      "source_sha256": "3ce3773c9d89ad935af74a7fa52612a63700a89c9422c2abfaf8f280cfa5d2d5"
+    },
+    {
+      "destination": "scripts/analyze-audio-integrity-long-block-hybrid.py",
+      "destination_sha256": "a1b6cd6dab774c4e66ef8f672a64d7b489bffa1d900e4a8c217bf5c25136bc7c",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/analyze-audio-integrity-long-block-hybrid.py",
+      "source_sha256": "a1b6cd6dab774c4e66ef8f672a64d7b489bffa1d900e4a8c217bf5c25136bc7c"
+    },
+    {
+      "destination": "scripts/analyze-audio-integrity-pilot.py",
+      "destination_sha256": "4e42dbf78a52b11ba2201f51d9ad0357f9abba82c8da6f70545f44e94df22646",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/analyze-audio-integrity-pilot.py",
+      "source_sha256": "4e42dbf78a52b11ba2201f51d9ad0357f9abba82c8da6f70545f44e94df22646"
+    },
+    {
+      "destination": "scripts/analyze-audio-integrity-stable-rule-set.py",
+      "destination_sha256": "c71f4279d8d8298014ce5c7e356c03cc0a80efae9b3556eed074c4dda697b74e",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/analyze-audio-integrity-stable-rule-set.py",
+      "source_sha256": "c71f4279d8d8298014ce5c7e356c03cc0a80efae9b3556eed074c4dda697b74e"
+    },
+    {
+      "destination": "scripts/audio_integrity_conservative_v28_policy.py",
+      "destination_sha256": "b3292ebfe62b276cbb59fe6fbc7074f6ed8da0254eac3148fd5ad57ea7ba2a80",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/audio_integrity_conservative_v28_policy.py",
+      "source_sha256": "b3292ebfe62b276cbb59fe6fbc7074f6ed8da0254eac3148fd5ad57ea7ba2a80"
+    },
+    {
+      "destination": "scripts/audio_integrity_verified_mp3_v29_frozen_policy.py",
+      "destination_sha256": "8a52f7eb5a596a6307cd5ff399c8213fd2cdba6e772c89d81fd720ade54cec07",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/audio_integrity_verified_mp3_v29_frozen_policy.py",
+      "source_sha256": "8a52f7eb5a596a6307cd5ff399c8213fd2cdba6e772c89d81fd720ade54cec07"
+    },
+    {
+      "destination": "scripts/audio_integrity_verified_mp3_v29_policy.py",
+      "destination_sha256": "1f249e9bbc4f6f7c4737f0ef882ac7bc17ffb58ce454a2250081db828142f068",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/audio_integrity_verified_mp3_v29_policy.py",
+      "source_sha256": "1f249e9bbc4f6f7c4737f0ef882ac7bc17ffb58ce454a2250081db828142f068"
+    },
+    {
+      "destination": "scripts/benchmark-audio-integrity.py",
+      "destination_sha256": "31a4acddb1aff7f4e2e638fd542679be8f2426a0a0403d0b5add822209cb40ad",
+      "exact_copy": false,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/benchmark-audio-integrity.py",
+      "source_sha256": "2832abb9c8c071f0cb9af1ea2f87cb12dc4e24babebf56de6210ff387efc190a"
+    },
+    {
+      "destination": "scripts/combine-audio-integrity-policy-evaluations.py",
+      "destination_sha256": "e52b0791e95999aceb6882f8cd4b47da1ad76bc59c4c6faece3828f35a1ee195",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/combine-audio-integrity-policy-evaluations.py",
+      "source_sha256": "e52b0791e95999aceb6882f8cd4b47da1ad76bc59c4c6faece3828f35a1ee195"
+    },
+    {
+      "destination": "scripts/evaluate-audio-integrity-aac-quantization.py",
+      "destination_sha256": "7f59cd94816d858ffb9bd2e799613fef648e8d2b627a141988c1272e3328847b",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/evaluate-audio-integrity-aac-quantization.py",
+      "source_sha256": "7f59cd94816d858ffb9bd2e799613fef648e8d2b627a141988c1272e3328847b"
+    },
+    {
+      "destination": "scripts/evaluate-audio-integrity-frozen-policy.py",
+      "destination_sha256": "26fed7d89a2e77173822dd1637fc6945a80f2b3edf676bda973987a5c198f293",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/evaluate-audio-integrity-frozen-policy.py",
+      "source_sha256": "26fed7d89a2e77173822dd1637fc6945a80f2b3edf676bda973987a5c198f293"
+    },
+    {
+      "destination": "scripts/evaluate-audio-integrity-frozen-rules.py",
+      "destination_sha256": "546ad6f801a60e577de61f1975c0f1bc30ba2ec6497cb3926b866391940ef9fe",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/evaluate-audio-integrity-frozen-rules.py",
+      "source_sha256": "546ad6f801a60e577de61f1975c0f1bc30ba2ec6497cb3926b866391940ef9fe"
+    },
+    {
+      "destination": "scripts/evaluate-audio-integrity-independent-external.py",
+      "destination_sha256": "c8698d6ad34c4c2bb0dfefb90c60f8b00ec9f084da51e8578e45217a4b8e19c8",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/evaluate-audio-integrity-independent-external.py",
+      "source_sha256": "c8698d6ad34c4c2bb0dfefb90c60f8b00ec9f084da51e8578e45217a4b8e19c8"
+    },
+    {
+      "destination": "scripts/evaluate-audio-integrity-musdb18hq-external.py",
+      "destination_sha256": "eebb1345d440ce8c254e611ddbb3ff64ec5bebd3e926c1090cf7d46ffbe9fe75",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/evaluate-audio-integrity-musdb18hq-external.py",
+      "source_sha256": "eebb1345d440ce8c254e611ddbb3ff64ec5bebd3e926c1090cf7d46ffbe9fe75"
+    },
+    {
+      "destination": "scripts/fetch-audio-integrity-public-sources.py",
+      "destination_sha256": "5c8077f3e3cdf4e35e8efe847d14d02730ea1f0c009d8498f6cce36fce68213a",
+      "exact_copy": false,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/fetch-audio-integrity-public-sources.py",
+      "source_sha256": "6ba936c8c9d210901e0c5108b909eb2ad2eef75263ddc1dc5773d0ba151a3620"
+    },
+    {
+      "destination": "scripts/freeze-audio-integrity-independent-candidate.py",
+      "destination_sha256": "39636ccd33a2851987ec24d509962e5d1e6f679723d37a405c9afeade5d590b6",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/freeze-audio-integrity-independent-candidate.py",
+      "source_sha256": "39636ccd33a2851987ec24d509962e5d1e6f679723d37a405c9afeade5d590b6"
+    },
+    {
+      "destination": "scripts/freeze-audio-integrity-musdb18hq-candidate.py",
+      "destination_sha256": "09626b49d3c5836bce837cf27adca304eb1e928e7b7e5eb25cede023d18f2576",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/freeze-audio-integrity-musdb18hq-candidate.py",
+      "source_sha256": "09626b49d3c5836bce837cf27adca304eb1e928e7b7e5eb25cede023d18f2576"
+    },
+    {
+      "destination": "scripts/gate-audio-integrity-release.py",
+      "destination_sha256": "ade8729447c3109d96711cae4e722bfa29438d1758d16913ac24b7dfd243c2e7",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/gate-audio-integrity-release.py",
+      "source_sha256": "ade8729447c3109d96711cae4e722bfa29438d1758d16913ac24b7dfd243c2e7"
+    },
+    {
+      "destination": "scripts/measure-audio-integrity-forensic-performance.py",
+      "destination_sha256": "1843d82de954fc7de52f2cdc2284141c7fdbb54c594e2bd3a2222be94b2edc98",
+      "exact_copy": false,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/measure-audio-integrity-forensic-performance.py",
+      "source_sha256": "b07135cef763f4e849c83071a3f4cf0a4bd0714e45cfffda5e0c5dd25d6f65c3"
+    },
+    {
+      "destination": "scripts/measure-audio-integrity-independent-support.py",
+      "destination_sha256": "fc04a4f3df44a068ab7694d0da7ee71272731113d95e1606bd0ba227cdb39b0c",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/measure-audio-integrity-independent-support.py",
+      "source_sha256": "fc04a4f3df44a068ab7694d0da7ee71272731113d95e1606bd0ba227cdb39b0c"
+    },
+    {
+      "destination": "scripts/measure-audio-integrity-low-bandwidth-support.py",
+      "destination_sha256": "9ead2f8762d080fed08f40eb82f9a668c837629a1ef46db74cebde34bfc28f98",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/measure-audio-integrity-low-bandwidth-support.py",
+      "source_sha256": "9ead2f8762d080fed08f40eb82f9a668c837629a1ef46db74cebde34bfc28f98"
+    },
+    {
+      "destination": "scripts/merge-audio-integrity-cnn-feature-caches.py",
+      "destination_sha256": "438329b21937b866e7de2e3df65112c4726d2dd5448f026e76c83da671adb8aa",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/merge-audio-integrity-cnn-feature-caches.py",
+      "source_sha256": "438329b21937b866e7de2e3df65112c4726d2dd5448f026e76c83da671adb8aa"
+    },
+    {
+      "destination": "scripts/run-audio-integrity-frozen-external-transfer.py",
+      "destination_sha256": "890478924e89afb04d5d803d3c56ec1b548b8d61805ff49d6e1470da06f2a99f",
+      "exact_copy": false,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/run-audio-integrity-frozen-external-transfer.py",
+      "source_sha256": "635a3a21d4cc7c066bbbbb98f0d72d26710a17276fb5a9bcd223a5a08a7b5dc2"
+    },
+    {
+      "destination": "scripts/run-audio-integrity-independent-external.py",
+      "destination_sha256": "9e8c5dd22525572d808eccee25777a8e222bd95aa2d56b42f31659511a56583b",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/run-audio-integrity-independent-external.py",
+      "source_sha256": "9e8c5dd22525572d808eccee25777a8e222bd95aa2d56b42f31659511a56583b"
+    },
+    {
+      "destination": "scripts/run-audio-integrity-observed-transform.py",
+      "destination_sha256": "7eb8c16790d0f5ee9bc9ca9c75fb25cfe1614f17289fe494bcb0e6d949646f28",
+      "exact_copy": false,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/run-audio-integrity-observed-transform.py",
+      "source_sha256": "1be0d19ea94b6d8ea2633f055b43dd2fd2d94871c186269ad042c304cb8946b7"
+    },
+    {
+      "destination": "scripts/score-audio-integrity-cnn.py",
+      "destination_sha256": "63da7e8841d549b73d1f53d0ba4975b42f24487777591b99518dcc20cf8986e9",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/score-audio-integrity-cnn.py",
+      "source_sha256": "63da7e8841d549b73d1f53d0ba4975b42f24487777591b99518dcc20cf8986e9"
+    },
+    {
+      "destination": "scripts/stage-audio-integrity-independent-external.py",
+      "destination_sha256": "e3183f2f02f973a5f28164f324bcd7ce7623b86225b2907cd970dc2d4ad99bfb",
+      "exact_copy": false,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/stage-audio-integrity-independent-external.py",
+      "source_sha256": "f010aa9db592894ebeee3c089272bbbb480bf22c0b2c7d0aef03eeea67ff51af"
+    },
+    {
+      "destination": "scripts/stage-audio-integrity-musdb18hq-external.py",
+      "destination_sha256": "f97dc10598ae2582981355e7bb66a27f599d5add8dcbc5e08e348adf8975545e",
+      "exact_copy": false,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/stage-audio-integrity-musdb18hq-external.py",
+      "source_sha256": "754cae413279ea465a2f2352545478b4a50bd359fc850c9e1f15a39240800b2d"
+    },
+    {
+      "destination": "scripts/stage-audio-integrity-nsynth-hard-negatives.py",
+      "destination_sha256": "27b663b557de91527147ee5f94e976cda44eecc2aaea396f15e90a0051edfa69",
+      "exact_copy": false,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/stage-audio-integrity-nsynth-hard-negatives.py",
+      "source_sha256": "184a7fe762660b1a67934482302b033b274f89aca5db438e8baf76f8ac2d492f"
+    },
+    {
+      "destination": "scripts/stage-audio-integrity-nsynth-sparse-training.py",
+      "destination_sha256": "1b58a873561085cc1cd4af01131aa03778ce69a6b77a99dc28c9d60a0b21ede7",
+      "exact_copy": false,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/stage-audio-integrity-nsynth-sparse-training.py",
+      "source_sha256": "3ded27a4dd1d43a31c0408c87f081ac810029e51c20a7d70c238cf6ff6e3dc6c"
+    },
+    {
+      "destination": "scripts/stage-audio-integrity-pilot.py",
+      "destination_sha256": "6d9f0743fad2c71343a2a717accb6cf79fce0b85cc41b33e18597c027cf2ebb5",
+      "exact_copy": false,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/stage-audio-integrity-pilot.py",
+      "source_sha256": "72783c9ed842a269d1bd127a64d00c348f0e42c8ed7fe46407177b73c2e569db"
+    },
+    {
+      "destination": "scripts/stage-audio-integrity-private-compact-training.py",
+      "destination_sha256": "bd9209ec040a0cdbbe3f1b75eca43076ae20ea440ba9ade6efc864776ec1e509",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/stage-audio-integrity-private-compact-training.py",
+      "source_sha256": "bd9209ec040a0cdbbe3f1b75eca43076ae20ea440ba9ade6efc864776ec1e509"
+    },
+    {
+      "destination": "scripts/stage-audio-integrity-public-negatives.py",
+      "destination_sha256": "a745df6bd003c5cc90f8bf7bbd016a09fcf5eeb9cd025a28684f33da5c62b997",
+      "exact_copy": false,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/stage-audio-integrity-public-negatives.py",
+      "source_sha256": "2f092deab6278c603474be603d2b111ea330435b6109369c0241d555d859e0cd"
+    },
+    {
+      "destination": "scripts/stage-audio-integrity-public-transcodes.py",
+      "destination_sha256": "b98bbb5d9cf6cbfb9d1d19dfc9688eebd08e462a685f67893e5248b54bed8ea6",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/stage-audio-integrity-public-transcodes.py",
+      "source_sha256": "b98bbb5d9cf6cbfb9d1d19dfc9688eebd08e462a685f67893e5248b54bed8ea6"
+    },
+    {
+      "destination": "scripts/train-audio-integrity-broad-transfer-crnn.py",
+      "destination_sha256": "15830e5a755856c54b7fe541a12c35bff97ae399f1e18392d6f52c8524868a27",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/train-audio-integrity-broad-transfer-crnn.py",
+      "source_sha256": "15830e5a755856c54b7fe541a12c35bff97ae399f1e18392d6f52c8524868a27"
+    },
+    {
+      "destination": "scripts/train-audio-integrity-cnn-domain-holdout.py",
+      "destination_sha256": "3f0f90dd2768327ef711d16b30713083fad57ac94ebddcbb4c18d900516d2550",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/train-audio-integrity-cnn-domain-holdout.py",
+      "source_sha256": "3f0f90dd2768327ef711d16b30713083fad57ac94ebddcbb4c18d900516d2550"
+    },
+    {
+      "destination": "scripts/train-audio-integrity-cnn.py",
+      "destination_sha256": "9c626cdd3baecf76d34785baba02f60b643e795323d86dbca3dec33ecedab92b",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/train-audio-integrity-cnn.py",
+      "source_sha256": "9c626cdd3baecf76d34785baba02f60b643e795323d86dbca3dec33ecedab92b"
+    },
+    {
+      "destination": "scripts/train-audio-integrity-crnn-domain-holdout.py",
+      "destination_sha256": "586d9c3ad7c25a3495849c00203f0db921f7ead1fa48958bbad9224cdff2f42d",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/train-audio-integrity-crnn-domain-holdout.py",
+      "source_sha256": "586d9c3ad7c25a3495849c00203f0db921f7ead1fa48958bbad9224cdff2f42d"
+    },
+    {
+      "destination": "scripts/train-audio-integrity-source-paired-crnn.py",
+      "destination_sha256": "1fab6425ef3838717df30fcc8e4c7d6f39a12f77de2fc497a3b3fa2838ce41fa",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/train-audio-integrity-source-paired-crnn.py",
+      "source_sha256": "1fab6425ef3838717df30fcc8e4c7d6f39a12f77de2fc497a3b3fa2838ce41fa"
+    },
+    {
+      "destination": "scripts/tests/test_audio_integrity_aac_quantization.py",
+      "destination_sha256": "ce79e88ef15849f7569ca663085182e07ff56c23a788636154b7b018c775a118",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package and environment names adapted",
+      "source": "scripts/tests/test_audio_integrity_aac_quantization.py",
+      "source_sha256": "ce79e88ef15849f7569ca663085182e07ff56c23a788636154b7b018c775a118"
+    },
+    {
+      "destination": "scripts/tests/test_audio_integrity_aac_quantization_analysis.py",
+      "destination_sha256": "0e3859c41e2d932b990f49598076bedbdf4a3138afb29867461b485ad9b269af",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package and environment names adapted",
+      "source": "scripts/tests/test_audio_integrity_aac_quantization_analysis.py",
+      "source_sha256": "0e3859c41e2d932b990f49598076bedbdf4a3138afb29867461b485ad9b269af"
+    },
+    {
+      "destination": "scripts/tests/test_audio_integrity_broad_transfer_crnn.py",
+      "destination_sha256": "5f361fab491299203fb0305462d6e5603ef1b8741076a5b51d7b886d839b41ed",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package and environment names adapted",
+      "source": "scripts/tests/test_audio_integrity_broad_transfer_crnn.py",
+      "source_sha256": "5f361fab491299203fb0305462d6e5603ef1b8741076a5b51d7b886d839b41ed"
+    },
+    {
+      "destination": "scripts/tests/test_audio_integrity_cnn_cache_tools.py",
+      "destination_sha256": "06be6635f362d15222257ee28e957904f3198db59fecd043390647fe341fd56e",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package and environment names adapted",
+      "source": "scripts/tests/test_audio_integrity_cnn_cache_tools.py",
+      "source_sha256": "06be6635f362d15222257ee28e957904f3198db59fecd043390647fe341fd56e"
+    },
+    {
+      "destination": "scripts/tests/test_audio_integrity_crnn_domain_holdout.py",
+      "destination_sha256": "aad574fc37ba16177e6c3980827604040d8f4bc6868bca1c11bdc4bf2ca73558",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package and environment names adapted",
+      "source": "scripts/tests/test_audio_integrity_crnn_domain_holdout.py",
+      "source_sha256": "aad574fc37ba16177e6c3980827604040d8f4bc6868bca1c11bdc4bf2ca73558"
+    },
+    {
+      "destination": "scripts/tests/test_audio_integrity_crnn_source_groups.py",
+      "destination_sha256": "610a207b4eecb13cf7669f53c41e5d9b200bf45f37702f2594ff016b9dcafdaf",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package and environment names adapted",
+      "source": "scripts/tests/test_audio_integrity_crnn_source_groups.py",
+      "source_sha256": "610a207b4eecb13cf7669f53c41e5d9b200bf45f37702f2594ff016b9dcafdaf"
+    },
+    {
+      "destination": "scripts/tests/test_audio_integrity_harness.py",
+      "destination_sha256": "b226015ff1ca8dfe4637ab64bad1b93f206307d8b9e0773ea1aaf37cdf7d97e0",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package and environment names adapted",
+      "source": "scripts/tests/test_audio_integrity_harness.py",
+      "source_sha256": "b226015ff1ca8dfe4637ab64bad1b93f206307d8b9e0773ea1aaf37cdf7d97e0"
+    },
+    {
+      "destination": "scripts/tests/test_audio_integrity_long_block_hybrid.py",
+      "destination_sha256": "e6528b6bc81b733acf6ecc877b4f2762cdbd77e8177682ca4fa4ff8be847b39a",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package and environment names adapted",
+      "source": "scripts/tests/test_audio_integrity_long_block_hybrid.py",
+      "source_sha256": "e6528b6bc81b733acf6ecc877b4f2762cdbd77e8177682ca4fa4ff8be847b39a"
+    },
+    {
+      "destination": "scripts/tests/test_audio_integrity_musdb18hq_external.py",
+      "destination_sha256": "61dd1c7a2548d5db4df887e61cc38c4f44f34c9258f05d18dd74843c1bf629cc",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package and environment names adapted",
+      "source": "scripts/tests/test_audio_integrity_musdb18hq_external.py",
+      "source_sha256": "61dd1c7a2548d5db4df887e61cc38c4f44f34c9258f05d18dd74843c1bf629cc"
+    },
+    {
+      "destination": "scripts/tests/test_audio_integrity_nsynth_sparse_training.py",
+      "destination_sha256": "7109e3448462716d6971d4ebdbdf649a047392a8100e439da69165d05df804fb",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package and environment names adapted",
+      "source": "scripts/tests/test_audio_integrity_nsynth_sparse_training.py",
+      "source_sha256": "7109e3448462716d6971d4ebdbdf649a047392a8100e439da69165d05df804fb"
+    },
+    {
+      "destination": "scripts/tests/test_audio_integrity_private_compact_training.py",
+      "destination_sha256": "b9c47f2258d71b40f9a15e9cf9a6b3550f2f498b3d6a06d6d0a4a4a3e0f16708",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package and environment names adapted",
+      "source": "scripts/tests/test_audio_integrity_private_compact_training.py",
+      "source_sha256": "b9c47f2258d71b40f9a15e9cf9a6b3550f2f498b3d6a06d6d0a4a4a3e0f16708"
+    },
+    {
+      "destination": "scripts/tests/test_audio_integrity_source_paired_crnn.py",
+      "destination_sha256": "f6ac5a669754ee0d5372ffdabbb48034eb212354de332cf8f9558be6f344dd01",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package and environment names adapted",
+      "source": "scripts/tests/test_audio_integrity_source_paired_crnn.py",
+      "source_sha256": "f6ac5a669754ee0d5372ffdabbb48034eb212354de332cf8f9558be6f344dd01"
+    },
+    {
+      "destination": "scripts/tests/test_audio_integrity_verified_mp3_v29.py",
+      "destination_sha256": "45f0dd7e2ee0444aeb512f4e166121923945d4184e47ba6053ae3ab13b61ecaa",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package and environment names adapted",
+      "source": "scripts/tests/test_audio_integrity_verified_mp3_v29.py",
+      "source_sha256": "45f0dd7e2ee0444aeb512f4e166121923945d4184e47ba6053ae3ab13b61ecaa"
+    }
+  ],
+  "retained_corpora": {
+    "case_count": 5560,
+    "inventory_name": "retained-corpora-inventory-20260731-005.json",
+    "inventory_sha256": "ea262c976f93123446ba2d406f0825ed6ffa230c6eee1fcc7aa0443d6af41272",
+    "stored_outside_git": true,
+    "verified_commitment_count": 40
+  },
+  "schema_version": 1,
+  "scope_note": "Only audio-integrity changes are mapped; unrelated Reklawdbox work is excluded.",
+  "source_commit": "d5603cba505c68b58dd7040b62bfb0f5fa49ac21",
+  "source_repository": "reklawdbox",
+  "source_worktree_dirty": true
+}

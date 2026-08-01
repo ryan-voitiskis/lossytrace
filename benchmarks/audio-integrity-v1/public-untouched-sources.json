@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "registry_id": "audio-integrity-public-untouched-sources-20260731",
+  "reviewed_at": "2026-07-31",
+  "release_use_policy": "The EBU permits this package as an R&D tool and states that downloading agrees not to use the material commercially other than as an R&D tool. It is retained only for development transfer research. It is not the sealed release-held-out corpus, must not be shipped with Reklawdbox, and cannot by itself satisfy the 150-partition release gate.",
+  "sources": [
+    {
+      "source_id": "ebu-tech3253-sqam-flac-v1",
+      "title": "EBU Tech 3253 Sound Quality Assessment Material",
+      "version": "QC.EBU.IO test material 523 version 1; stored 2024-05-10",
+      "official_page_url": "https://tech.ebu.ch/publications/sqamcd",
+      "provider_metadata_url": "https://qc.ebu.io/testmaterials/523/1/export.json",
+      "handbook_url": "https://tech.ebu.ch/docs/tech/tech3253.pdf",
+      "terms": "R&D tool; no commercial use other than as an R&D tool",
+      "release_role": "untouched_development_transfer",
+      "ground_truth_basis": "EBU identifies the package as FLAC lossless audio test sequences from Tech 3253. The handbook documents original recording and Compact Disc sources and includes material selected for bit-rate-reduction assessment.",
+      "partition_basis": "One official SQAM track per source case; recording-session/reference dependencies must be retained as partition-group metadata and never split across fitting and evaluation.",
+      "limitations": "The package contains 70 tracks but some tracks share recording sessions or Compact Disc sources. It is suitable for a frozen development transfer check, not an independent 150-partition Tier A release corpus. Terms prohibit distribution with the product.",
+      "artifact": {
+        "filename": "TECH3253_SQAM_FLAC.zip",
+        "url": "https://qc.ebu.io/testmaterials/523/1/download/",
+        "bytes": 175545976,
+        "provider_etag": "\"aec89ca407910382d98a7fea74f64a14-9\"",
+        "captured_md5": "19cbe71586424b2e5d579e1c7ad864d4",
+        "captured_sha256": "7d6fcd0fc42354637291792534b61bf129612f221f8efef97b62e8942a8686aa",
+        "checksum_basis": "Two independent HTTPS downloads returned the same provider byte count, multipart ETag, MD5, SHA-256, and byte-for-byte content; the provider publishes no cryptographic checksum."
+      }
+    }
+  ]
+}

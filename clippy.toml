@@ -1,0 +1,2 @@
+# The research benchmark keeps the frozen probe's nine parameters explicit.
+too-many-arguments-threshold = 9

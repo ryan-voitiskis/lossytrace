@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "map_id": "audio-integrity-development-source-domains-20260731-001",
+  "purpose": "Macro-domain holdouts for detecting corpus shortcut learning across the retained 1254-case development corpus.",
+  "development_only": true,
+  "release_evidence": false,
+  "rules": [
+    {
+      "domain_id": "tier_b_private_full_mix",
+      "source_group_prefix": "dev-",
+      "expected_partition_group_count": 40,
+      "expected_case_count": 600,
+      "expected_negative_count": 280,
+      "expected_controlled_positive_count": 320,
+      "notes": "Trusted commercial lossless full-mix development sources and their controlled variants; not Tier A provenance."
+    },
+    {
+      "domain_id": "tier_a_guitarset",
+      "source_group_prefix": "tier-a-guitarset-",
+      "expected_partition_group_count": 6,
+      "expected_case_count": 42,
+      "expected_negative_count": 18,
+      "expected_controlled_positive_count": 24,
+      "notes": "GuitarSet player partitions plus controlled variants."
+    },
+    {
+      "domain_id": "tier_a_vocalset",
+      "source_group_prefix": "tier-a-vocalset-",
+      "expected_partition_group_count": 20,
+      "expected_case_count": 140,
+      "expected_negative_count": 60,
+      "expected_controlled_positive_count": 80,
+      "notes": "VocalSet singer partitions plus controlled variants."
+    },
+    {
+      "domain_id": "tier_a_groove",
+      "source_group_prefix": "tier-a-groove-",
+      "expected_partition_group_count": 9,
+      "expected_case_count": 63,
+      "expected_negative_count": 27,
+      "expected_controlled_positive_count": 36,
+      "notes": "Groove drummer partitions plus controlled variants."
+    },
+    {
+      "domain_id": "tier_a_choralebricks",
+      "source_group_prefix": "tier-a-choralebricks-",
+      "expected_partition_group_count": 13,
+      "expected_case_count": 91,
+      "expected_negative_count": 39,
+      "expected_controlled_positive_count": 52,
+      "notes": "ChoraleBricks instrument partitions plus controlled variants."
+    },
+    {
+      "domain_id": "tier_b_nsynth",
+      "source_group_prefix": "tier-b-nsynth-",
+      "expected_partition_group_count": 53,
+      "expected_case_count": 318,
+      "expected_negative_count": 106,
+      "expected_controlled_positive_count": 212,
+      "notes": "Sparse and bandwidth-limited NSynth test instruments; not Tier A provenance."
+    }
+  ],
+  "expected_totals": {
+    "domain_count": 6,
+    "partition_group_count": 141,
+    "case_count": 1254,
+    "negative_count": 530,
+    "controlled_positive_count": 724
+  }
+}

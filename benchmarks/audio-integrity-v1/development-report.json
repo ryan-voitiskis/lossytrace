@@ -1,0 +1,2539 @@
+{
+  "class_analysis": {
+    "aac_lc_128": {
+      "cases": 40,
+      "features": {
+        "band_rupture_score": {
+          "auc_best_direction_vs_all_development_negatives": 0.75125,
+          "auc_higher_vs_all_development_negatives": 0.75125,
+          "paired_delta_from_untouched": {
+            "count": 40,
+            "max": 0.28128142,
+            "median": 0.062075745000000015,
+            "min": -0.04696036999999999,
+            "p05": -0.010031815999999971,
+            "p95": 0.22422051459999987
+          },
+          "raw": {
+            "count": 40,
+            "max": 0.5072785,
+            "median": 0.202670035,
+            "min": 0.018585075,
+            "p05": 0.0430950432,
+            "p95": 0.37296759199999985
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 40,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.08762160119728664,
+              "low": 0.0
+            },
+            "threshold": 0.5421249
+          }
+        },
+        "isolated_hole_ratio": {
+          "auc_best_direction_vs_all_development_negatives": 0.515625,
+          "auc_higher_vs_all_development_negatives": 0.484375,
+          "paired_delta_from_untouched": {
+            "count": 40,
+            "max": 9.282629999999995e-05,
+            "median": -3.7686749999999813e-06,
+            "min": -0.000732391,
+            "p05": -6.979244699999995e-05,
+            "p95": 5.824041899999998e-05
+          },
+          "raw": {
+            "count": 40,
+            "max": 0.0009678413,
+            "median": 0.00045379066999999996,
+            "min": 0.0003332963,
+            "p05": 0.0003618021295,
+            "p95": 0.0007155494599999999
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 40,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.08762160119728664,
+              "low": 0.0
+            },
+            "threshold": 0.002062559
+          }
+        },
+        "median_active_bin_fraction": {
+          "auc_best_direction_vs_all_development_negatives": 0.5043229166666666,
+          "auc_higher_vs_all_development_negatives": 0.5043229166666666,
+          "paired_delta_from_untouched": {
+            "count": 40,
+            "max": 0.01804880000000003,
+            "median": 0.000487802999999995,
+            "min": -0.16682929999999996,
+            "p05": -0.05819514449999997,
+            "p95": 0.012829271499999973
+          },
+          "raw": {
+            "count": 40,
+            "max": 0.7619512,
+            "median": 0.2880488,
+            "min": 0.026341463,
+            "p05": 0.036829267500000006,
+            "p95": 0.6957073114999999
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 40,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.08762160119728664,
+              "low": 0.0
+            },
+            "threshold": 0.9287805
+          }
+        },
+        "spectral_edge_drop_db": {
+          "auc_best_direction_vs_all_development_negatives": 0.6619770455386894,
+          "auc_higher_vs_all_development_negatives": 0.6619770455386894,
+          "paired_delta_from_untouched": {
+            "count": 36,
+            "max": 58.24066930000001,
+            "median": 5.733258999999999,
+            "min": -5.6490040000000015,
+            "p05": -0.07361932499999968,
+            "p95": 56.381237999999996
+          },
+          "raw": {
+            "count": 37,
+            "max": 65.261246,
+            "median": 18.9114,
+            "min": 6.8387814,
+            "p05": 7.3390495399999995,
+            "p95": 64.2998112
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 37,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.09405782583720251,
+              "low": -6.938893903907228e-18
+            },
+            "threshold": 72.57904
+          }
+        },
+        "spectral_edge_hz": {
+          "auc_best_direction_vs_all_development_negatives": 0.6844378625200543,
+          "auc_higher_vs_all_development_negatives": 0.6844378625200543,
+          "paired_delta_from_untouched": {
+            "count": 36,
+            "max": 3746.7780000000002,
+            "median": 484.4970000000003,
+            "min": -2702.4159999999974,
+            "p05": -306.8477500000008,
+            "p95": 3528.753749999999
+          },
+          "raw": {
+            "count": 37,
+            "max": 17431.129,
+            "median": 16106.836,
+            "min": 11929.395,
+            "p05": 12304.0726,
+            "p95": 17398.828
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 37,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.09405782583720251,
+              "low": -6.938893903907228e-18
+            },
+            "threshold": 20133.545
+          }
+        },
+        "spectral_edge_persistence": {
+          "auc_best_direction_vs_all_development_negatives": 0.5958287054177465,
+          "auc_higher_vs_all_development_negatives": 0.5958287054177465,
+          "paired_delta_from_untouched": {
+            "count": 36,
+            "max": 0.7862797340000001,
+            "median": 0.030044322500000012,
+            "min": -0.280700937,
+            "p05": -0.06606256999999999,
+            "p95": 0.5890022222500001
+          },
+          "raw": {
+            "count": 37,
+            "max": 0.8159893,
+            "median": 0.13091922,
+            "min": 0.00862069,
+            "p05": 0.0161854486,
+            "p95": 0.5993216999999994
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 37,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.09405782583720251,
+              "low": -6.938893903907228e-18
+            },
+            "threshold": 0.90134645
+          }
+        },
+        "spectral_edge_spread_hz": {
+          "auc_best_direction_vs_all_development_negatives": 0.6058867086264347,
+          "auc_higher_vs_all_development_negatives": 0.3941132913735653,
+          "paired_delta_from_untouched": {
+            "count": 36,
+            "max": 150.73242399999998,
+            "median": -21.533200000000008,
+            "min": -220.71533,
+            "p05": -199.18213,
+            "p95": 114.39513850000002
+          },
+          "raw": {
+            "count": 37,
+            "max": 301.46484,
+            "median": 107.666016,
+            "min": 23.4375,
+            "p05": 64.59961,
+            "p95": 241.1718719999999
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 37,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.09405782583720251,
+              "low": -6.938893903907228e-18
+            },
+            "threshold": 430.66406
+          }
+        },
+        "spectral_hole_ratio": {
+          "auc_best_direction_vs_all_development_negatives": 0.5135416666666667,
+          "auc_higher_vs_all_development_negatives": 0.4864583333333333,
+          "paired_delta_from_untouched": {
+            "count": 40,
+            "max": 9.282629999999995e-05,
+            "median": -4.227584999999979e-06,
+            "min": -0.0007329592999999999,
+            "p05": -6.955620099999995e-05,
+            "p95": 5.824041899999998e-05
+          },
+          "raw": {
+            "count": 40,
+            "max": 0.0009678413,
+            "median": 0.00045379066999999996,
+            "min": 0.0003332963,
+            "p05": 0.0003618021295,
+            "p95": 0.0007239774135
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 40,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.08762160119728664,
+              "low": 0.0
+            },
+            "threshold": 0.002062559
+          }
+        }
+      }
+    },
+    "aac_lc_256": {
+      "cases": 40,
+      "features": {
+        "band_rupture_score": {
+          "auc_best_direction_vs_all_development_negatives": 0.5048958333333333,
+          "auc_higher_vs_all_development_negatives": 0.4951041666666667,
+          "paired_delta_from_untouched": {
+            "count": 40,
+            "max": 0.005630124,
+            "median": 0.0006308620000000029,
+            "min": -0.01002786,
+            "p05": -0.006350134999999995,
+            "p95": 0.0020916009999999976
+          },
+          "raw": {
+            "count": 40,
+            "max": 0.5317101,
+            "median": 0.08774855000000001,
+            "min": 0.017280238,
+            "p05": 0.0249756071,
+            "p95": 0.3197273504999999
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 40,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.08762160119728664,
+              "low": 0.0
+            },
+            "threshold": 0.5421249
+          }
+        },
+        "isolated_hole_ratio": {
+          "auc_best_direction_vs_all_development_negatives": 0.5105208333333333,
+          "auc_higher_vs_all_development_negatives": 0.4894791666666667,
+          "paired_delta_from_untouched": {
+            "count": 40,
+            "max": 7.102166000000002e-05,
+            "median": -1.7344299999999969e-06,
+            "min": -0.0005669034,
+            "p05": -2.8241577000000025e-05,
+            "p95": 2.060769949999996e-05
+          },
+          "raw": {
+            "count": 40,
+            "max": 0.0011333289,
+            "median": 0.000455920765,
+            "min": 0.00033075022,
+            "p05": 0.000373613931,
+            "p95": 0.0007362041669999998
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 40,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.08762160119728664,
+              "low": 0.0
+            },
+            "threshold": 0.002062559
+          }
+        },
+        "median_active_bin_fraction": {
+          "auc_best_direction_vs_all_development_negatives": 0.5047916666666667,
+          "auc_higher_vs_all_development_negatives": 0.4952083333333333,
+          "paired_delta_from_untouched": {
+            "count": 40,
+            "max": 0.004878060000000017,
+            "median": -0.0019512149999999923,
+            "min": -0.009756099999999934,
+            "p05": -0.006365850499999967,
+            "p95": 0.0011219515000000068
+          },
+          "raw": {
+            "count": 40,
+            "max": 0.9268293,
+            "median": 0.27414634000000004,
+            "min": 0.026341463,
+            "p05": 0.036829267500000006,
+            "p95": 0.7298536899999999
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 40,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.08762160119728664,
+              "low": 0.0
+            },
+            "threshold": 0.9287805
+          }
+        },
+        "spectral_edge_drop_db": {
+          "auc_best_direction_vs_all_development_negatives": 0.529927187461434,
+          "auc_higher_vs_all_development_negatives": 0.470072812538566,
+          "paired_delta_from_untouched": {
+            "count": 36,
+            "max": 7.565574000000002,
+            "median": 0.1262311499999993,
+            "min": -0.6461299999999994,
+            "p05": -0.5235280500000004,
+            "p95": 2.697312250000001
+          },
+          "raw": {
+            "count": 37,
+            "max": 29.238796,
+            "median": 8.413316,
+            "min": 6.9045544,
+            "p05": 7.00691514,
+            "p95": 25.04018239999999
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 37,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.09405782583720251,
+              "low": -6.938893903907228e-18
+            },
+            "threshold": 72.57904
+          }
+        },
+        "spectral_edge_hz": {
+          "auc_best_direction_vs_all_development_negatives": 0.5022213994816734,
+          "auc_higher_vs_all_development_negatives": 0.5022213994816734,
+          "paired_delta_from_untouched": {
+            "count": 36,
+            "max": 678.2960000000003,
+            "median": 0.0,
+            "min": -613.6970000000001,
+            "p05": -156.11500000000024,
+            "p95": 215.3318749999994
+          },
+          "raw": {
+            "count": 37,
+            "max": 20133.545,
+            "median": 14319.58,
+            "min": 11304.932,
+            "p05": 11918.6284,
+            "p95": 17670.1466
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 37,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.09405782583720251,
+              "low": -6.938893903907228e-18
+            },
+            "threshold": 20133.545
+          }
+        },
+        "spectral_edge_persistence": {
+          "auc_best_direction_vs_all_development_negatives": 0.5521411822781686,
+          "auc_higher_vs_all_development_negatives": 0.44785881772183145,
+          "paired_delta_from_untouched": {
+            "count": 36,
+            "max": 0.07332915500000001,
+            "median": 0.0006897169999999994,
+            "min": -0.049985503,
+            "p05": -0.034451012499999996,
+            "p95": 0.025612298000000002
+          },
+          "raw": {
+            "count": 37,
+            "max": 0.47896332,
+            "median": 0.067738034,
+            "min": 0.008810572,
+            "p05": 0.0170118855,
+            "p95": 0.28480244799999993
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 37,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.09405782583720251,
+              "low": -6.938893903907228e-18
+            },
+            "threshold": 0.90134645
+          }
+        },
+        "spectral_edge_spread_hz": {
+          "auc_best_direction_vs_all_development_negatives": 0.5135135135135135,
+          "auc_higher_vs_all_development_negatives": 0.5135135135135135,
+          "paired_delta_from_untouched": {
+            "count": 36,
+            "max": 279.93164,
+            "median": 0.0,
+            "min": -183.03222999999997,
+            "p05": -130.54503849999998,
+            "p95": 102.2827135
+          },
+          "raw": {
+            "count": 37,
+            "max": 430.66406,
+            "median": 150.73242,
+            "min": 0.0,
+            "p05": 11.5283204,
+            "p95": 288.5449219999998
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 37,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.09405782583720251,
+              "low": -6.938893903907228e-18
+            },
+            "threshold": 430.66406
+          }
+        },
+        "spectral_hole_ratio": {
+          "auc_best_direction_vs_all_development_negatives": 0.510625,
+          "auc_higher_vs_all_development_negatives": 0.489375,
+          "paired_delta_from_untouched": {
+            "count": 40,
+            "max": 7.102166000000002e-05,
+            "median": -1.7344299999999969e-06,
+            "min": -0.0005668970999999998,
+            "p05": -2.8241577000000025e-05,
+            "p95": 2.2171123999999937e-05
+          },
+          "raw": {
+            "count": 40,
+            "max": 0.0011339035,
+            "median": 0.000455920765,
+            "min": 0.00033075022,
+            "p05": 0.000373613931,
+            "p95": 0.0007366370219999999
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 40,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.08762160119728664,
+              "low": 0.0
+            },
+            "threshold": 0.002062559
+          }
+        }
+      }
+    },
+    "mp3_128": {
+      "cases": 40,
+      "features": {
+        "band_rupture_score": {
+          "auc_best_direction_vs_all_development_negatives": 0.60125,
+          "auc_higher_vs_all_development_negatives": 0.60125,
+          "paired_delta_from_untouched": {
+            "count": 40,
+            "max": 0.29880549,
+            "median": 0.007480833999999999,
+            "min": -0.002471319999999999,
+            "p05": -0.0016773005999999964,
+            "p95": 0.14511292999999995
+          },
+          "raw": {
+            "count": 40,
+            "max": 0.5452992,
+            "median": 0.1052259975,
+            "min": 0.017073734,
+            "p05": 0.029371416150000003,
+            "p95": 0.3885557785
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 1,
+            "direction": "higher",
+            "measured": 40,
+            "rate": 0.025,
+            "rate_95_percent_ci": {
+              "high": 0.1288136896347409,
+              "low": 0.0044268315026814095
+            },
+            "threshold": 0.5421249
+          }
+        },
+        "isolated_hole_ratio": {
+          "auc_best_direction_vs_all_development_negatives": 0.58375,
+          "auc_higher_vs_all_development_negatives": 0.41625,
+          "paired_delta_from_untouched": {
+            "count": 40,
+            "max": 0.00015320309000000005,
+            "median": -2.4333789999999986e-05,
+            "min": -0.0006178951999999999,
+            "p05": -9.634717400000003e-05,
+            "p95": 4.060890599999993e-05
+          },
+          "raw": {
+            "count": 40,
+            "max": 0.0010823371,
+            "median": 0.00043368530500000003,
+            "min": 0.00034492175,
+            "p05": 0.000353075242,
+            "p95": 0.0007694829389999998
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 40,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.08762160119728664,
+              "low": 0.0
+            },
+            "threshold": 0.002062559
+          }
+        },
+        "median_active_bin_fraction": {
+          "auc_best_direction_vs_all_development_negatives": 0.5001562500000001,
+          "auc_higher_vs_all_development_negatives": 0.49984375,
+          "paired_delta_from_untouched": {
+            "count": 40,
+            "max": 0.01853659000000002,
+            "median": 0.0014634249999999904,
+            "min": -0.22829270000000002,
+            "p05": -0.12712194300000004,
+            "p95": 0.012682940000000031
+          },
+          "raw": {
+            "count": 40,
+            "max": 0.7004878,
+            "median": 0.28829269,
+            "min": 0.026341463,
+            "p05": 0.036878048000000004,
+            "p95": 0.645853642
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 40,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.08762160119728664,
+              "low": 0.0
+            },
+            "threshold": 0.9287805
+          }
+        },
+        "spectral_edge_drop_db": {
+          "auc_best_direction_vs_all_development_negatives": 0.801925212884117,
+          "auc_higher_vs_all_development_negatives": 0.801925212884117,
+          "paired_delta_from_untouched": {
+            "count": 36,
+            "max": 38.654603,
+            "median": 16.42510235,
+            "min": -6.313184,
+            "p05": 0.14130177499999963,
+            "p95": 34.582963225
+          },
+          "raw": {
+            "count": 37,
+            "max": 46.08814,
+            "median": 25.264217,
+            "min": 7.796105,
+            "p05": 9.213646,
+            "p95": 44.52876379999999
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 37,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.09405782583720251,
+              "low": -6.938893903907228e-18
+            },
+            "threshold": 72.57904
+          }
+        },
+        "spectral_edge_hz": {
+          "auc_best_direction_vs_all_development_negatives": 0.6592002961865976,
+          "auc_higher_vs_all_development_negatives": 0.6592002961865976,
+          "paired_delta_from_untouched": {
+            "count": 36,
+            "max": 3068.4810000000016,
+            "median": 495.2634999999991,
+            "min": -3294.579999999998,
+            "p05": -1512.7075000000004,
+            "p95": 2944.66525
+          },
+          "raw": {
+            "count": 37,
+            "max": 16838.965,
+            "median": 15848.4375,
+            "min": 12101.66,
+            "p05": 12308.3786,
+            "p95": 16774.365
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 37,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.09405782583720251,
+              "low": -6.938893903907228e-18
+            },
+            "threshold": 20133.545
+          }
+        },
+        "spectral_edge_persistence": {
+          "auc_best_direction_vs_all_development_negatives": 0.6640750339380477,
+          "auc_higher_vs_all_development_negatives": 0.6640750339380477,
+          "paired_delta_from_untouched": {
+            "count": 36,
+            "max": 0.659504834,
+            "median": 0.057532766500000006,
+            "min": -0.21232097,
+            "p05": -0.1914837875,
+            "p95": 0.47655517675000003
+          },
+          "raw": {
+            "count": 37,
+            "max": 0.6892144,
+            "median": 0.12477186,
+            "min": 0.024448218,
+            "p05": 0.0365440484,
+            "p95": 0.52957964
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 37,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.09405782583720251,
+              "low": -6.938893903907228e-18
+            },
+            "threshold": 0.90134645
+          }
+        },
+        "spectral_edge_spread_hz": {
+          "auc_best_direction_vs_all_development_negatives": 0.6604961125509071,
+          "auc_higher_vs_all_development_negatives": 0.6604961125509071,
+          "paired_delta_from_untouched": {
+            "count": 36,
+            "max": 193.79883,
+            "median": 43.06641000000002,
+            "min": -188.41552,
+            "p05": -154.769895,
+            "p95": 177.64892849999998
+          },
+          "raw": {
+            "count": 37,
+            "max": 322.99805,
+            "median": 215.33203,
+            "min": 21.533203,
+            "p05": 104.8828128,
+            "p95": 301.4648419999999
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 37,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.09405782583720251,
+              "low": -6.938893903907228e-18
+            },
+            "threshold": 430.66406
+          }
+        },
+        "spectral_hole_ratio": {
+          "auc_best_direction_vs_all_development_negatives": 0.5838541666666667,
+          "auc_higher_vs_all_development_negatives": 0.4161458333333333,
+          "paired_delta_from_untouched": {
+            "count": 40,
+            "max": 0.00015320309000000005,
+            "median": -2.4619414999999998e-05,
+            "min": -0.0006178727,
+            "p05": -9.626647100000003e-05,
+            "p95": 4.060890599999993e-05
+          },
+          "raw": {
+            "count": 40,
+            "max": 0.0010829279,
+            "median": 0.00043368530500000003,
+            "min": 0.00034492175,
+            "p05": 0.000353075242,
+            "p95": 0.0007779708469999998
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 40,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.08762160119728664,
+              "low": 0.0
+            },
+            "threshold": 0.002062559
+          }
+        }
+      }
+    },
+    "mp3_320": {
+      "cases": 40,
+      "features": {
+        "band_rupture_score": {
+          "auc_best_direction_vs_all_development_negatives": 0.5013541666666667,
+          "auc_higher_vs_all_development_negatives": 0.49864583333333334,
+          "paired_delta_from_untouched": {
+            "count": 40,
+            "max": 0.023860640000000016,
+            "median": 0.0003370869999999998,
+            "min": -0.025178210000000006,
+            "p05": -0.0008899210000000858,
+            "p95": 0.013894475499999982
+          },
+          "raw": {
+            "count": 40,
+            "max": 0.53927255,
+            "median": 0.089422585,
+            "min": 0.016782517,
+            "p05": 0.026464871400000003,
+            "p95": 0.32791564249999994
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 40,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.08762160119728664,
+              "low": 0.0
+            },
+            "threshold": 0.5421249
+          }
+        },
+        "isolated_hole_ratio": {
+          "auc_best_direction_vs_all_development_negatives": 0.5042708333333333,
+          "auc_higher_vs_all_development_negatives": 0.49572916666666667,
+          "paired_delta_from_untouched": {
+            "count": 40,
+            "max": 4.282950000000004e-05,
+            "median": 1.1426749999999695e-06,
+            "min": -5.3528020000000035e-05,
+            "p05": -3.4650343999999996e-05,
+            "p95": 3.4933166499999964e-05
+          },
+          "raw": {
+            "count": 40,
+            "max": 0.0016626441,
+            "median": 0.000457454835,
+            "min": 0.00031072722,
+            "p05": 0.000355594181,
+            "p95": 0.0007337088699999998
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 40,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.08762160119728664,
+              "low": 0.0
+            },
+            "threshold": 0.002062559
+          }
+        },
+        "median_active_bin_fraction": {
+          "auc_best_direction_vs_all_development_negatives": 0.5064583333333333,
+          "auc_higher_vs_all_development_negatives": 0.5064583333333333,
+          "paired_delta_from_untouched": {
+            "count": 40,
+            "max": 0.0078048600000000246,
+            "median": 0.0,
+            "min": -0.04292684999999996,
+            "p05": -0.008073195000000016,
+            "p95": 0.0019512009999999302
+          },
+          "raw": {
+            "count": 40,
+            "max": 0.88585365,
+            "median": 0.27609755,
+            "min": 0.026341463,
+            "p05": 0.036878048000000004,
+            "p95": 0.7322439099999998
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 40,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.08762160119728664,
+              "low": 0.0
+            },
+            "threshold": 0.9287805
+          }
+        },
+        "spectral_edge_drop_db": {
+          "auc_best_direction_vs_all_development_negatives": 0.6064180618975139,
+          "auc_higher_vs_all_development_negatives": 0.6064180618975139,
+          "paired_delta_from_untouched": {
+            "count": 36,
+            "max": 47.573088,
+            "median": 0.6530822000000001,
+            "min": -0.8131320000000004,
+            "p05": -0.47216215000000106,
+            "p95": 41.045805875
+          },
+          "raw": {
+            "count": 36,
+            "max": 56.18929,
+            "median": 12.4994415,
+            "min": 6.3234334,
+            "p05": 6.995380375,
+            "p95": 48.343402999999995
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 1,
+            "direction": "lower",
+            "measured": 36,
+            "rate": 0.027777777777777776,
+            "rate_95_percent_ci": {
+              "high": 0.14169718653273855,
+              "low": 0.004920407139810443
+            },
+            "threshold": 6.3588753
+          }
+        },
+        "spectral_edge_hz": {
+          "auc_best_direction_vs_all_development_negatives": 0.6470065956367326,
+          "auc_higher_vs_all_development_negatives": 0.6470065956367326,
+          "paired_delta_from_untouched": {
+            "count": 36,
+            "max": 7278.223,
+            "median": 312.231749999999,
+            "min": -10.768000000000029,
+            "p05": 0.0,
+            "p95": 5892.022250000001
+          },
+          "raw": {
+            "count": 36,
+            "max": 20305.81,
+            "median": 15627.722,
+            "min": 11412.598,
+            "p05": 11945.544750000001,
+            "p95": 20289.66025
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 8,
+            "direction": "higher",
+            "measured": 36,
+            "rate": 0.2222222222222222,
+            "rate_95_percent_ci": {
+              "high": 0.3808470294611818,
+              "low": 0.11716331975796462
+            },
+            "threshold": 20133.545
+          }
+        },
+        "spectral_edge_persistence": {
+          "auc_best_direction_vs_all_development_negatives": 0.5435692541856926,
+          "auc_higher_vs_all_development_negatives": 0.5435692541856926,
+          "paired_delta_from_untouched": {
+            "count": 36,
+            "max": 0.7212564340000001,
+            "median": 0.0013824885,
+            "min": -0.11898851700000002,
+            "p05": -0.09359683500000002,
+            "p95": 0.52063157075
+          },
+          "raw": {
+            "count": 36,
+            "max": 0.750966,
+            "median": 0.085698298,
+            "min": 0.010413277,
+            "p05": 0.016877274,
+            "p95": 0.5747307625
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 36,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.09641862859446367,
+              "low": 0.0
+            },
+            "threshold": 0.90134645
+          }
+        },
+        "spectral_edge_spread_hz": {
+          "auc_best_direction_vs_all_development_negatives": 0.5356418061897514,
+          "auc_higher_vs_all_development_negatives": 0.4643581938102486,
+          "paired_delta_from_untouched": {
+            "count": 36,
+            "max": 86.13281,
+            "median": 0.0,
+            "min": -193.79883,
+            "p05": -164.19067399999997,
+            "p95": 69.98290999999999
+          },
+          "raw": {
+            "count": 36,
+            "max": 344.53125,
+            "median": 139.96582,
+            "min": 21.533203,
+            "p05": 43.066406,
+            "p95": 274.5483425
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 36,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.09641862859446367,
+              "low": 0.0
+            },
+            "threshold": 430.66406
+          }
+        },
+        "spectral_hole_ratio": {
+          "auc_best_direction_vs_all_development_negatives": 0.505625,
+          "auc_higher_vs_all_development_negatives": 0.494375,
+          "paired_delta_from_untouched": {
+            "count": 40,
+            "max": 4.282950000000004e-05,
+            "median": 8.583749999999763e-07,
+            "min": -5.3528020000000035e-05,
+            "p05": -3.4650519999999984e-05,
+            "p95": 3.4935019000000083e-05
+          },
+          "raw": {
+            "count": 40,
+            "max": 0.0016632123,
+            "median": 0.00045771354,
+            "min": 0.00031072722,
+            "p05": 0.000355594181,
+            "p95": 0.0007341401099999998
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 40,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.08762160119728664,
+              "low": 0.0
+            },
+            "threshold": 0.002062559
+          }
+        }
+      }
+    },
+    "opus_160": {
+      "cases": 40,
+      "features": {
+        "band_rupture_score": {
+          "auc_best_direction_vs_all_development_negatives": 0.5277083333333333,
+          "auc_higher_vs_all_development_negatives": 0.47229166666666667,
+          "paired_delta_from_untouched": {
+            "count": 40,
+            "max": 0.016459980000000013,
+            "median": -0.0010034150000000075,
+            "min": -0.06256347999999999,
+            "p05": -0.029119474000000097,
+            "p95": 0.0059292823499999744
+          },
+          "raw": {
+            "count": 40,
+            "max": 0.5113897,
+            "median": 0.086058985,
+            "min": 0.017956892,
+            "p05": 0.02256420995,
+            "p95": 0.31746949049999995
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 40,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.08762160119728664,
+              "low": 0.0
+            },
+            "threshold": 0.5421249
+          }
+        },
+        "isolated_hole_ratio": {
+          "auc_best_direction_vs_all_development_negatives": 0.5239583333333333,
+          "auc_higher_vs_all_development_negatives": 0.47604166666666664,
+          "paired_delta_from_untouched": {
+            "count": 40,
+            "max": 0.00016671449999999994,
+            "median": -1.3794800000000351e-06,
+            "min": -0.0007852273699999999,
+            "p05": -0.00014814829349999998,
+            "p95": 0.00010547522300000006
+          },
+          "raw": {
+            "count": 40,
+            "max": 0.00091500493,
+            "median": 0.00044388909,
+            "min": 0.00030993673,
+            "p05": 0.0003563103895,
+            "p95": 0.0008052768669999997
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 40,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.08762160119728664,
+              "low": 0.0
+            },
+            "threshold": 0.002062559
+          }
+        },
+        "median_active_bin_fraction": {
+          "auc_best_direction_vs_all_development_negatives": 0.5201041666666666,
+          "auc_higher_vs_all_development_negatives": 0.47989583333333335,
+          "paired_delta_from_untouched": {
+            "count": 40,
+            "max": 0.031219510000000006,
+            "median": -0.016097564999999994,
+            "min": -0.11902440000000003,
+            "p05": -0.061512218000000014,
+            "p95": 0.0014878099999999922
+          },
+          "raw": {
+            "count": 40,
+            "max": 0.8097561,
+            "median": 0.25902439499999996,
+            "min": 0.026341463,
+            "p05": 0.035024389,
+            "p95": 0.6788293049999998
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 40,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.08762160119728664,
+              "low": 0.0
+            },
+            "threshold": 0.9287805
+          }
+        },
+        "spectral_edge_drop_db": {
+          "auc_best_direction_vs_all_development_negatives": 0.6127360236949279,
+          "auc_higher_vs_all_development_negatives": 0.6127360236949279,
+          "paired_delta_from_untouched": {
+            "count": 36,
+            "max": 22.5717103,
+            "median": 0.6293958499999999,
+            "min": -12.896911000000001,
+            "p05": -2.9467105,
+            "p95": 21.1051889
+          },
+          "raw": {
+            "count": 37,
+            "max": 29.421457,
+            "median": 10.119408,
+            "min": 7.1302094,
+            "p05": 7.45467,
+            "p95": 28.244464999999998
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 37,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.09405782583720251,
+              "low": -6.938893903907228e-18
+            },
+            "threshold": 72.57904
+          }
+        },
+        "spectral_edge_hz": {
+          "auc_best_direction_vs_all_development_negatives": 0.7044304578551154,
+          "auc_higher_vs_all_development_negatives": 0.7044304578551154,
+          "paired_delta_from_untouched": {
+            "count": 36,
+            "max": 7283.2029999999995,
+            "median": 1243.9454999999998,
+            "min": -12.158499999999549,
+            "p05": 0.0,
+            "p95": 5841.5955
+          },
+          "raw": {
+            "count": 37,
+            "max": 20273.438,
+            "median": 16054.6875,
+            "min": 12234.375,
+            "p05": 12529.6875,
+            "p95": 20250.0
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 8,
+            "direction": "higher",
+            "measured": 37,
+            "rate": 0.21621621621621623,
+            "rate_95_percent_ci": {
+              "high": 0.3719514839196916,
+              "low": 0.11386511993385592
+            },
+            "threshold": 20133.545
+          }
+        },
+        "spectral_edge_persistence": {
+          "auc_best_direction_vs_all_development_negatives": 0.5695421448846106,
+          "auc_higher_vs_all_development_negatives": 0.5695421448846106,
+          "paired_delta_from_untouched": {
+            "count": 36,
+            "max": 0.725582234,
+            "median": 0.017179679999999996,
+            "min": -0.12006555800000002,
+            "p05": -0.08709349875,
+            "p95": 0.5306554457499999
+          },
+          "raw": {
+            "count": 37,
+            "max": 0.7552918,
+            "median": 0.09689923,
+            "min": 0.008163265,
+            "p05": 0.0116644386,
+            "p95": 0.5694907179999998
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 37,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.09405782583720251,
+              "low": -6.938893903907228e-18
+            },
+            "threshold": 0.90134645
+          }
+        },
+        "spectral_edge_spread_hz": {
+          "auc_best_direction_vs_all_development_negatives": 0.5359126249537208,
+          "auc_higher_vs_all_development_negatives": 0.46408737504627917,
+          "paired_delta_from_untouched": {
+            "count": 36,
+            "max": 198.92578,
+            "median": -7.250975000000011,
+            "min": -254.26024999999998,
+            "p05": -168.60351500000002,
+            "p95": 67.163085
+          },
+          "raw": {
+            "count": 37,
+            "max": 328.125,
+            "median": 140.625,
+            "min": 0.0,
+            "p05": 23.4375,
+            "p95": 281.25
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 37,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.09405782583720251,
+              "low": -6.938893903907228e-18
+            },
+            "threshold": 430.66406
+          }
+        },
+        "spectral_hole_ratio": {
+          "auc_best_direction_vs_all_development_negatives": 0.5234375,
+          "auc_higher_vs_all_development_negatives": 0.4765625,
+          "paired_delta_from_untouched": {
+            "count": 40,
+            "max": 0.00016671449999999994,
+            "median": -1.8970900000000188e-06,
+            "min": -0.0007857956699999999,
+            "p05": -0.00014814829349999998,
+            "p95": 0.00010519646000000002
+          },
+          "raw": {
+            "count": 40,
+            "max": 0.00091500493,
+            "median": 0.000444216625,
+            "min": 0.00030993673,
+            "p05": 0.0003563103895,
+            "p95": 0.0008087093324999997
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 40,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.08762160119728664,
+              "low": 0.0
+            },
+            "threshold": 0.002062559
+          }
+        }
+      }
+    },
+    "opus_96": {
+      "cases": 40,
+      "features": {
+        "band_rupture_score": {
+          "auc_best_direction_vs_all_development_negatives": 0.5213541666666667,
+          "auc_higher_vs_all_development_negatives": 0.4786458333333333,
+          "paired_delta_from_untouched": {
+            "count": 40,
+            "max": 0.043028010000000005,
+            "median": -0.0006680049999999993,
+            "min": -0.10507454,
+            "p05": -0.030029973499999973,
+            "p95": 0.0234385954
+          },
+          "raw": {
+            "count": 40,
+            "max": 0.47162002,
+            "median": 0.0856226325,
+            "min": 0.01756573,
+            "p05": 0.0247523566,
+            "p95": 0.31006316149999996
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 40,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.08762160119728664,
+              "low": 0.0
+            },
+            "threshold": 0.5421249
+          }
+        },
+        "isolated_hole_ratio": {
+          "auc_best_direction_vs_all_development_negatives": 0.58125,
+          "auc_higher_vs_all_development_negatives": 0.41875,
+          "paired_delta_from_untouched": {
+            "count": 40,
+            "max": 8.965834999999996e-05,
+            "median": -1.7218449999999988e-05,
+            "min": -0.0008010444,
+            "p05": -0.00014638386349999995,
+            "p95": 1.6910537999999947e-05
+          },
+          "raw": {
+            "count": 40,
+            "max": 0.0008991879,
+            "median": 0.00043180880500000003,
+            "min": 0.00029715474,
+            "p05": 0.00033779263150000003,
+            "p95": 0.0007085083549999998
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 40,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.08762160119728664,
+              "low": 0.0
+            },
+            "threshold": 0.002062559
+          }
+        },
+        "median_active_bin_fraction": {
+          "auc_best_direction_vs_all_development_negatives": 0.5171875,
+          "auc_higher_vs_all_development_negatives": 0.4828125,
+          "paired_delta_from_untouched": {
+            "count": 40,
+            "max": 0.02829269000000001,
+            "median": -0.015121944999999984,
+            "min": -0.11024390000000006,
+            "p05": -0.056585369499999955,
+            "p95": 0.0020000005
+          },
+          "raw": {
+            "count": 40,
+            "max": 0.8185366,
+            "median": 0.26243903,
+            "min": 0.026341463,
+            "p05": 0.035024389,
+            "p95": 0.6890731719999998
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 40,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.08762160119728664,
+              "low": 0.0
+            },
+            "threshold": 0.9287805
+          }
+        },
+        "spectral_edge_drop_db": {
+          "auc_best_direction_vs_all_development_negatives": 0.6451574140831531,
+          "auc_higher_vs_all_development_negatives": 0.6451574140831531,
+          "paired_delta_from_untouched": {
+            "count": 36,
+            "max": 23.0311053,
+            "median": 1.281632,
+            "min": -11.608875999999999,
+            "p05": -9.600039750000002,
+            "p95": 21.45217045
+          },
+          "raw": {
+            "count": 38,
+            "max": 29.880852,
+            "median": 10.349759,
+            "min": 6.7865396,
+            "p05": 7.547827185,
+            "p95": 29.13776195
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 38,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.09180986822558396,
+              "low": 0.0
+            },
+            "threshold": 72.57904
+          }
+        },
+        "spectral_edge_hz": {
+          "auc_best_direction_vs_all_development_negatives": 0.6992309540975727,
+          "auc_higher_vs_all_development_negatives": 0.6992309540975727,
+          "paired_delta_from_untouched": {
+            "count": 36,
+            "max": 7259.765999999998,
+            "median": 1486.8897500000003,
+            "min": -1617.1875,
+            "p05": -462.5976249999994,
+            "p95": 5835.736000000001
+          },
+          "raw": {
+            "count": 38,
+            "max": 20273.438,
+            "median": 15597.65625,
+            "min": 12234.375,
+            "p05": 12774.609375,
+            "p95": 20253.5157
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 12,
+            "direction": "higher",
+            "measured": 38,
+            "rate": 0.3157894736842105,
+            "rate_95_percent_ci": {
+              "high": 0.4745575989060954,
+              "low": 0.1908460367559618
+            },
+            "threshold": 20133.545
+          }
+        },
+        "spectral_edge_persistence": {
+          "auc_best_direction_vs_all_development_negatives": 0.5559961547704879,
+          "auc_higher_vs_all_development_negatives": 0.5559961547704879,
+          "paired_delta_from_untouched": {
+            "count": 36,
+            "max": 0.7768722840000001,
+            "median": 0.010504993999999998,
+            "min": -0.24380171600000003,
+            "p05": -0.206029035,
+            "p95": 0.6061435472500001
+          },
+          "raw": {
+            "count": 38,
+            "max": 0.80658185,
+            "median": 0.08765004500000001,
+            "min": 0.003219575,
+            "p05": 0.01209955224,
+            "p95": 0.6157550699999998
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 2,
+            "direction": "lower",
+            "measured": 38,
+            "rate": 0.05263157894736842,
+            "rate_95_percent_ci": {
+              "high": 0.17285462131770377,
+              "low": 0.014554208147292413
+            },
+            "threshold": 0.0044444446
+          }
+        },
+        "spectral_edge_spread_hz": {
+          "auc_best_direction_vs_all_development_negatives": 0.5343667387647201,
+          "auc_higher_vs_all_development_negatives": 0.5343667387647201,
+          "paired_delta_from_untouched": {
+            "count": 36,
+            "max": 241.99219,
+            "median": 16.809084000000002,
+            "min": -209.61914000000002,
+            "p05": -197.72643749999997,
+            "p95": 177.062988
+          },
+          "raw": {
+            "count": 38,
+            "max": 375.0,
+            "median": 164.0625,
+            "min": 23.4375,
+            "p05": 54.19921875,
+            "p95": 288.28124999999994
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 38,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.09180986822558396,
+              "low": 0.0
+            },
+            "threshold": 430.66406
+          }
+        },
+        "spectral_hole_ratio": {
+          "auc_best_direction_vs_all_development_negatives": 0.5815625,
+          "auc_higher_vs_all_development_negatives": 0.4184375,
+          "paired_delta_from_untouched": {
+            "count": 40,
+            "max": 8.965834999999996e-05,
+            "median": -1.734535500000001e-05,
+            "min": -0.0008016127,
+            "p05": -0.00014638386349999995,
+            "p95": 1.841700999999997e-05
+          },
+          "raw": {
+            "count": 40,
+            "max": 0.0008991879,
+            "median": 0.00043215089,
+            "min": 0.00029715474,
+            "p05": 0.00033779263150000003,
+            "p95": 0.0007104160784999999
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 40,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.08762160119728664,
+              "low": 0.0
+            },
+            "threshold": 0.002062559
+          }
+        }
+      }
+    },
+    "vorbis_q3": {
+      "cases": 40,
+      "features": {
+        "band_rupture_score": {
+          "auc_best_direction_vs_all_development_negatives": 0.9139583333333333,
+          "auc_higher_vs_all_development_negatives": 0.9139583333333333,
+          "paired_delta_from_untouched": {
+            "count": 40,
+            "max": 0.514131742,
+            "median": 0.22126770499999998,
+            "min": 0.002627934999999998,
+            "p05": 0.027686164499999985,
+            "p95": 0.3249061544999997
+          },
+          "raw": {
+            "count": 40,
+            "max": 0.8110873,
+            "median": 0.30711156,
+            "min": 0.101273395,
+            "p05": 0.18905606,
+            "p95": 0.5150628529999999
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 2,
+            "direction": "higher",
+            "measured": 40,
+            "rate": 0.05,
+            "rate_95_percent_ci": {
+              "high": 0.16503877369140962,
+              "low": 0.013820667386148344
+            },
+            "threshold": 0.5421249
+          }
+        },
+        "isolated_hole_ratio": {
+          "auc_best_direction_vs_all_development_negatives": 0.6069791666666666,
+          "auc_higher_vs_all_development_negatives": 0.6069791666666666,
+          "paired_delta_from_untouched": {
+            "count": 40,
+            "max": 0.00013681527,
+            "median": 1.6261260000000017e-05,
+            "min": -0.0009941447,
+            "p05": -0.00010369362499999991,
+            "p95": 9.941145249999998e-05
+          },
+          "raw": {
+            "count": 40,
+            "max": 0.0007487573,
+            "median": 0.00047163783,
+            "min": 0.00040994555,
+            "p05": 0.00042466153949999996,
+            "p95": 0.0006400965719999998
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 40,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.08762160119728664,
+              "low": 0.0
+            },
+            "threshold": 0.002062559
+          }
+        },
+        "median_active_bin_fraction": {
+          "auc_best_direction_vs_all_development_negatives": 0.52234375,
+          "auc_higher_vs_all_development_negatives": 0.52234375,
+          "paired_delta_from_untouched": {
+            "count": 40,
+            "max": 0.06829268000000002,
+            "median": 0.01170732,
+            "min": -0.15707320000000002,
+            "p05": -0.05263416649999997,
+            "p95": 0.0489268415
+          },
+          "raw": {
+            "count": 40,
+            "max": 0.7717073,
+            "median": 0.325853665,
+            "min": 0.026341463,
+            "p05": 0.0378536581,
+            "p95": 0.6978536524999999
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 40,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.08762160119728664,
+              "low": 0.0
+            },
+            "threshold": 0.9287805
+          }
+        },
+        "spectral_edge_drop_db": {
+          "auc_best_direction_vs_all_development_negatives": 0.872022707639146,
+          "auc_higher_vs_all_development_negatives": 0.872022707639146,
+          "paired_delta_from_untouched": {
+            "count": 36,
+            "max": 60.009605,
+            "median": 37.852924,
+            "min": 0.9579179999999994,
+            "p05": 9.710388425000001,
+            "p95": 58.939380625000005
+          },
+          "raw": {
+            "count": 37,
+            "max": 67.71774,
+            "median": 51.472973,
+            "min": 10.231034,
+            "p05": 22.1094252,
+            "p95": 66.824648
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 37,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.09405782583720251,
+              "low": -6.938893903907228e-18
+            },
+            "threshold": 72.57904
+          }
+        },
+        "spectral_edge_hz": {
+          "auc_best_direction_vs_all_development_negatives": 0.5741700604714304,
+          "auc_higher_vs_all_development_negatives": 0.5741700604714304,
+          "paired_delta_from_untouched": {
+            "count": 36,
+            "max": 3671.4109999999982,
+            "median": 150.73250000000007,
+            "min": -5383.301000000001,
+            "p05": -3025.414999999999,
+            "p95": 2761.6332500000017
+          },
+          "raw": {
+            "count": 37,
+            "max": 17463.428,
+            "median": 14793.311,
+            "min": 11434.131,
+            "p05": 11993.9944,
+            "p95": 17424.6678
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 37,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.09405782583720251,
+              "low": -6.938893903907228e-18
+            },
+            "threshold": 20133.545
+          }
+        },
+        "spectral_edge_persistence": {
+          "auc_best_direction_vs_all_development_negatives": 0.6145871899296557,
+          "auc_higher_vs_all_development_negatives": 0.6145871899296557,
+          "paired_delta_from_untouched": {
+            "count": 36,
+            "max": 0.7811012340000001,
+            "median": 0.0316092125,
+            "min": -0.28569169299999997,
+            "p05": -0.071036525,
+            "p95": 0.61758073725
+          },
+          "raw": {
+            "count": 37,
+            "max": 0.8108108,
+            "median": 0.10384489,
+            "min": 0.013101767,
+            "p05": 0.0368780622,
+            "p95": 0.6637346719999997
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 37,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.09405782583720251,
+              "low": -6.938893903907228e-18
+            },
+            "threshold": 0.90134645
+          }
+        },
+        "spectral_edge_spread_hz": {
+          "auc_best_direction_vs_all_development_negatives": 0.524743922004196,
+          "auc_higher_vs_all_development_negatives": 0.47525607799580405,
+          "paired_delta_from_untouched": {
+            "count": 36,
+            "max": 215.33203000000003,
+            "median": -8.074949999999994,
+            "min": -215.33203000000003,
+            "p05": -193.79882549999996,
+            "p95": 146.694946
+          },
+          "raw": {
+            "count": 37,
+            "max": 333.76465,
+            "median": 134.58252,
+            "min": 43.066406,
+            "p05": 43.066406,
+            "p95": 305.7714819999999
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 37,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.09405782583720251,
+              "low": -6.938893903907228e-18
+            },
+            "threshold": 430.66406
+          }
+        },
+        "spectral_hole_ratio": {
+          "auc_best_direction_vs_all_development_negatives": 0.6255208333333333,
+          "auc_higher_vs_all_development_negatives": 0.6255208333333333,
+          "paired_delta_from_untouched": {
+            "count": 40,
+            "max": 0.00015210233000000002,
+            "median": 1.8892990000000037e-05,
+            "min": -0.0009881167999999999,
+            "p05": -0.00010019041749999997,
+            "p95": 0.0001108725334999999
+          },
+          "raw": {
+            "count": 40,
+            "max": 0.0007487573,
+            "median": 0.00047593765,
+            "min": 0.00041155305,
+            "p05": 0.0004247629005,
+            "p95": 0.0006582307214999998
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 40,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.08762160119728664,
+              "low": 0.0
+            },
+            "threshold": 0.002062559
+          }
+        }
+      }
+    },
+    "vorbis_q5": {
+      "cases": 40,
+      "features": {
+        "band_rupture_score": {
+          "auc_best_direction_vs_all_development_negatives": 0.8948958333333333,
+          "auc_higher_vs_all_development_negatives": 0.8948958333333333,
+          "paired_delta_from_untouched": {
+            "count": 40,
+            "max": 0.388779442,
+            "median": 0.23529598999999998,
+            "min": -0.002460840000000006,
+            "p05": 0.008485949750000008,
+            "p95": 0.3629058705
+          },
+          "raw": {
+            "count": 40,
+            "max": 0.90561855,
+            "median": 0.32789335,
+            "min": 0.06733934,
+            "p05": 0.10537875325,
+            "p95": 0.5079029525000001
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 1,
+            "direction": "higher",
+            "measured": 40,
+            "rate": 0.025,
+            "rate_95_percent_ci": {
+              "high": 0.1288136896347409,
+              "low": 0.0044268315026814095
+            },
+            "threshold": 0.5421249
+          }
+        },
+        "isolated_hole_ratio": {
+          "auc_best_direction_vs_all_development_negatives": 0.5020833333333333,
+          "auc_higher_vs_all_development_negatives": 0.4979166666666667,
+          "paired_delta_from_untouched": {
+            "count": 40,
+            "max": 0.00025265266,
+            "median": -9.096500000000058e-07,
+            "min": -0.00090824577,
+            "p05": -9.719067499999994e-05,
+            "p95": 0.00010071455600000007
+          },
+          "raw": {
+            "count": 40,
+            "max": 0.00082270976,
+            "median": 0.0004454181,
+            "min": 0.00037140155,
+            "p05": 0.0003878255985,
+            "p95": 0.0007470440534999999
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 40,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.08762160119728664,
+              "low": 0.0
+            },
+            "threshold": 0.002062559
+          }
+        },
+        "median_active_bin_fraction": {
+          "auc_best_direction_vs_all_development_negatives": 0.52921875,
+          "auc_higher_vs_all_development_negatives": 0.52921875,
+          "paired_delta_from_untouched": {
+            "count": 40,
+            "max": 0.051707329999999996,
+            "median": 0.013170735000000003,
+            "min": -0.15902439999999995,
+            "p05": -0.03297558949999992,
+            "p95": 0.04009757950000002
+          },
+          "raw": {
+            "count": 40,
+            "max": 0.7697561,
+            "median": 0.31073171,
+            "min": 0.026341463,
+            "p05": 0.036878048000000004,
+            "p95": 0.715609717
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 40,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.08762160119728664,
+              "low": 0.0
+            },
+            "threshold": 0.9287805
+          }
+        },
+        "spectral_edge_drop_db": {
+          "auc_best_direction_vs_all_development_negatives": 0.7953844255214119,
+          "auc_higher_vs_all_development_negatives": 0.7953844255214119,
+          "paired_delta_from_untouched": {
+            "count": 36,
+            "max": 63.9794033,
+            "median": 25.9789345,
+            "min": -2.696087000000002,
+            "p05": -0.9875210500000002,
+            "p95": 62.66963945
+          },
+          "raw": {
+            "count": 37,
+            "max": 70.82915,
+            "median": 42.134567,
+            "min": 7.090626,
+            "p05": 7.68503674,
+            "p95": 69.662342
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 37,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.09405782583720251,
+              "low": -6.938893903907228e-18
+            },
+            "threshold": 72.57904
+          }
+        },
+        "spectral_edge_hz": {
+          "auc_best_direction_vs_all_development_negatives": 0.7289892632358386,
+          "auc_higher_vs_all_development_negatives": 0.7289892632358386,
+          "paired_delta_from_untouched": {
+            "count": 36,
+            "max": 4414.306999999999,
+            "median": 1431.9579999999996,
+            "min": -2648.584999999999,
+            "p05": -263.78150000000187,
+            "p95": 3862.51825
+          },
+          "raw": {
+            "count": 37,
+            "max": 17484.96,
+            "median": 16149.902,
+            "min": 12144.727,
+            "p05": 12476.3376,
+            "p95": 17484.96
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 37,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.09405782583720251,
+              "low": -6.938893903907228e-18
+            },
+            "threshold": 20133.545
+          }
+        },
+        "spectral_edge_persistence": {
+          "auc_best_direction_vs_all_development_negatives": 0.6105146242132543,
+          "auc_higher_vs_all_development_negatives": 0.6105146242132543,
+          "paired_delta_from_untouched": {
+            "count": 36,
+            "max": 0.814938974,
+            "median": 0.0449386725,
+            "min": -0.241876308,
+            "p05": -0.102801572,
+            "p95": 0.67505807225
+          },
+          "raw": {
+            "count": 37,
+            "max": 0.84464854,
+            "median": 0.12687813,
+            "min": 0.011019284,
+            "p05": 0.0175250874,
+            "p95": 0.7188582839999994
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 37,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.09405782583720251,
+              "low": -6.938893903907228e-18
+            },
+            "threshold": 0.90134645
+          }
+        },
+        "spectral_edge_spread_hz": {
+          "auc_best_direction_vs_all_development_negatives": 0.5169690238183389,
+          "auc_higher_vs_all_development_negatives": 0.5169690238183389,
+          "paired_delta_from_untouched": {
+            "count": 36,
+            "max": 257.8125,
+            "median": 10.766602999999996,
+            "min": -285.31494,
+            "p05": -215.33203,
+            "p95": 181.68640449999998
+          },
+          "raw": {
+            "count": 37,
+            "max": 344.53125,
+            "median": 150.73242,
+            "min": 64.59961,
+            "p05": 64.59961,
+            "p95": 324.02343999999994
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 37,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.09405782583720251,
+              "low": -6.938893903907228e-18
+            },
+            "threshold": 430.66406
+          }
+        },
+        "spectral_hole_ratio": {
+          "auc_best_direction_vs_all_development_negatives": 0.5020833333333333,
+          "auc_higher_vs_all_development_negatives": 0.4979166666666667,
+          "paired_delta_from_untouched": {
+            "count": 40,
+            "max": 0.00025265266,
+            "median": -1.8140250000000017e-06,
+            "min": -0.0009082468999999999,
+            "p05": -9.656223499999992e-05,
+            "p95": 0.00010071455600000007
+          },
+          "raw": {
+            "count": 40,
+            "max": 0.00082270976,
+            "median": 0.000445772185,
+            "min": 0.0003720793,
+            "p05": 0.0003878255985,
+            "p95": 0.0007470724119999999
+          },
+          "zero_false_positive_single_feature": {
+            "detected": 0,
+            "direction": "higher",
+            "measured": 40,
+            "rate": 0.0,
+            "rate_95_percent_ci": {
+              "high": 0.08762160119728664,
+              "low": 0.0
+            },
+            "threshold": 0.002062559
+          }
+        }
+      }
+    }
+  },
+  "control_invariance": {
+    "dither_16_pcm": {
+      "band_rupture_score": {
+        "count": 40,
+        "max": 0.02252534000000006,
+        "median": 0.0,
+        "min": 0.0,
+        "p05": 0.0,
+        "p95": 4.641550000002055e-05
+      },
+      "isolated_hole_ratio": {
+        "count": 40,
+        "max": 7.1026700000000205e-06,
+        "median": 0.0,
+        "min": 0.0,
+        "p05": 0.0,
+        "p95": 2.986741499999971e-06
+      },
+      "median_active_bin_fraction": {
+        "count": 40,
+        "max": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "p05": 0.0,
+        "p95": 0.0
+      },
+      "spectral_edge_drop_db": {
+        "count": 36,
+        "max": 0.0061789999999994905,
+        "median": 0.0,
+        "min": 0.0,
+        "p05": 0.0,
+        "p95": 0.0021900250000008725
+      },
+      "spectral_edge_hz": {
+        "count": 36,
+        "max": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "p05": 0.0,
+        "p95": 0.0
+      },
+      "spectral_edge_persistence": {
+        "count": 36,
+        "max": 0.0012990999999999975,
+        "median": 0.0,
+        "min": 0.0,
+        "p05": 0.0,
+        "p95": 0.00040572625000000195
+      },
+      "spectral_edge_spread_hz": {
+        "count": 36,
+        "max": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "p05": 0.0,
+        "p95": 0.0
+      },
+      "spectral_hole_ratio": {
+        "count": 40,
+        "max": 7.1026700000000205e-06,
+        "median": 0.0,
+        "min": 0.0,
+        "p05": 0.0,
+        "p95": 2.986741499999971e-06
+      }
+    },
+    "gain_only_pcm": {
+      "band_rupture_score": {
+        "count": 40,
+        "max": 1.2620000000018727e-05,
+        "median": 1.0400000000077014e-07,
+        "min": 4.0000000048334705e-09,
+        "p05": 9.899999994962549e-09,
+        "p95": 5.33070000000856e-06
+      },
+      "isolated_hole_ratio": {
+        "count": 40,
+        "max": 1.108700000000012e-06,
+        "median": 9.64999999938758e-10,
+        "min": 0.0,
+        "p05": 0.0,
+        "p95": 6.044649999999917e-07
+      },
+      "median_active_bin_fraction": {
+        "count": 40,
+        "max": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "p05": 0.0,
+        "p95": 0.0
+      },
+      "spectral_edge_drop_db": {
+        "count": 36,
+        "max": 0.001120000000000232,
+        "median": 1.3950000000040319e-05,
+        "min": 0.0,
+        "p05": 1.8250000002328903e-06,
+        "p95": 0.0002084249999991794
+      },
+      "spectral_edge_hz": {
+        "count": 36,
+        "max": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "p05": 0.0,
+        "p95": 0.0
+      },
+      "spectral_edge_persistence": {
+        "count": 36,
+        "max": 1.575999999998967e-05,
+        "median": 0.0,
+        "min": 0.0,
+        "p05": 0.0,
+        "p95": 0.0
+      },
+      "spectral_edge_spread_hz": {
+        "count": 36,
+        "max": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "p05": 0.0,
+        "p95": 0.0
+      },
+      "spectral_hole_ratio": {
+        "count": 40,
+        "max": 1.108729999999892e-06,
+        "median": 9.149999999759177e-10,
+        "min": 0.0,
+        "p05": 0.0,
+        "p95": 6.044840000000188e-07
+      }
+    },
+    "lowpass_only_pcm": {
+      "band_rupture_score": {
+        "count": 40,
+        "max": 0.053874389999999994,
+        "median": 0.00013992199999999892,
+        "min": 3.880000000004713e-07,
+        "p05": 5.176999999995103e-06,
+        "p95": 0.009365881999999983
+      },
+      "isolated_hole_ratio": {
+        "count": 40,
+        "max": 5.9047200000000074e-05,
+        "median": 3.910565e-06,
+        "min": 5.038999999999868e-07,
+        "p05": 6.502840000000114e-07,
+        "p95": 2.1843548e-05
+      },
+      "median_active_bin_fraction": {
+        "count": 40,
+        "max": 0.12,
+        "median": 0.0014634149999999957,
+        "min": 0.0,
+        "p05": 0.0,
+        "p95": 0.08824387499999992
+      },
+      "spectral_edge_drop_db": {
+        "count": 35,
+        "max": 11.939713,
+        "median": 0.2303840000000008,
+        "min": 0.0013060999999998657,
+        "p05": 0.023206730000000245,
+        "p95": 6.167673099999999
+      },
+      "spectral_edge_hz": {
+        "count": 35,
+        "max": 4242.041000000001,
+        "median": 107.66599999999926,
+        "min": 0.0,
+        "p05": 0.0,
+        "p95": 2112.4066999999977
+      },
+      "spectral_edge_persistence": {
+        "count": 35,
+        "max": 0.42884798999999996,
+        "median": 0.010265585999999993,
+        "min": 0.0004609190000000006,
+        "p05": 0.0015419424999999945,
+        "p95": 0.08545752249999991
+      },
+      "spectral_edge_spread_hz": {
+        "count": 35,
+        "max": 242.24853,
+        "median": 21.533209999999997,
+        "min": 0.0,
+        "p05": 0.0,
+        "p95": 138.8891611999999
+      },
+      "spectral_hole_ratio": {
+        "count": 40,
+        "max": 5.907280000000013e-05,
+        "median": 3.887569999999998e-06,
+        "min": 5.038999999999868e-07,
+        "p05": 6.502840000000114e-07,
+        "p95": 2.1900724500000033e-05
+      }
+    },
+    "sharp_lowpass_only_pcm": {
+      "band_rupture_score": {
+        "count": 40,
+        "max": 0.18302118,
+        "median": 0.0017224500000000004,
+        "min": 4.7420000000006346e-05,
+        "p05": 0.00017131560000000127,
+        "p95": 0.16394666279999998
+      },
+      "isolated_hole_ratio": {
+        "count": 40,
+        "max": 0.0003513488999999999,
+        "median": 1.3983735000000036e-05,
+        "min": 3.2505999999999854e-07,
+        "p05": 2.080289999999987e-06,
+        "p95": 9.713535749999956e-05
+      },
+      "median_active_bin_fraction": {
+        "count": 40,
+        "max": 0.22829270000000002,
+        "median": 0.0009756100000000087,
+        "min": 0.0,
+        "p05": 0.0,
+        "p95": 0.10834147750000002
+      },
+      "spectral_edge_drop_db": {
+        "count": 35,
+        "max": 65.1452833,
+        "median": 59.87450199999999,
+        "min": 0.04586549999999967,
+        "p05": 0.18077399999999816,
+        "p95": 63.957531579999994
+      },
+      "spectral_edge_hz": {
+        "count": 35,
+        "max": 4242.041000000001,
+        "median": 1033.5930000000008,
+        "min": 0.0,
+        "p05": 15.073099999999616,
+        "p95": 3331.186699999995
+      },
+      "spectral_edge_persistence": {
+        "count": 35,
+        "max": 0.8696599540000001,
+        "median": 0.240763905,
+        "min": 0.0018918900000000072,
+        "p05": 0.0027827573,
+        "p95": 0.6952133866999997
+      },
+      "spectral_edge_spread_hz": {
+        "count": 35,
+        "max": 285.31494,
+        "median": 64.59961,
+        "min": 0.0,
+        "p05": 0.0,
+        "p95": 215.33203000000003
+      },
+      "spectral_hole_ratio": {
+        "count": 40,
+        "max": 0.00035078059999999996,
+        "median": 1.4278645000000026e-05,
+        "min": 3.2505999999999854e-07,
+        "p05": 2.225641499999998e-06,
+        "p95": 9.713535749999956e-05
+      }
+    },
+    "trim_only_pcm": {
+      "band_rupture_score": {
+        "count": 40,
+        "max": 0.00424933999999999,
+        "median": 0.0006574369999999968,
+        "min": 8.85899999999995e-06,
+        "p05": 2.310724999999639e-05,
+        "p95": 0.0022372599999999723
+      },
+      "isolated_hole_ratio": {
+        "count": 40,
+        "max": 0.00036232669999999986,
+        "median": 1.436243500000002e-05,
+        "min": 8.768399999999738e-07,
+        "p05": 1.8016135000000232e-06,
+        "p95": 6.663299449999986e-05
+      },
+      "median_active_bin_fraction": {
+        "count": 40,
+        "max": 0.007317039999999997,
+        "median": 0.0009756099999999948,
+        "min": 0.0,
+        "p05": 0.0,
+        "p95": 0.004926849500000062
+      },
+      "spectral_edge_drop_db": {
+        "count": 36,
+        "max": 4.8184439999999995,
+        "median": 0.12046484999999985,
+        "min": 0.0015305000000003233,
+        "p05": 0.005218724999999758,
+        "p95": 1.260357250000001
+      },
+      "spectral_edge_hz": {
+        "count": 36,
+        "max": 236.86499999999978,
+        "median": 5.383249999999862,
+        "min": 0.0,
+        "p05": 0.0,
+        "p95": 99.59074999999984
+      },
+      "spectral_edge_persistence": {
+        "count": 36,
+        "max": 0.04916725000000001,
+        "median": 0.002450093000000002,
+        "min": 0.0001512790000000007,
+        "p05": 0.00041499599999999994,
+        "p95": 0.018708826000000005
+      },
+      "spectral_edge_spread_hz": {
+        "count": 36,
+        "max": 258.39844,
+        "median": 16.149900999999996,
+        "min": 0.0,
+        "p05": 0.0,
+        "p95": 158.80737299999998
+      },
+      "spectral_hole_ratio": {
+        "count": 40,
+        "max": 0.0003617583999999999,
+        "median": 1.5025794999999994e-05,
+        "min": 8.768399999999738e-07,
+        "p05": 1.801678000000023e-06,
+        "p95": 6.663299449999986e-05
+      }
+    }
+  },
+  "counts": {
+    "controlled_positives": 320,
+    "development_negatives": 240,
+    "source_groups": 40
+  },
+  "disposition": {
+    "likely_lossy_derived_enabled": false,
+    "reason": "Thresholds are exploratory and selected on Tier B development audio; no independent Tier A held-out gate ran.",
+    "state": "development_only"
+  },
+  "exploratory_zero_false_positive_two_family_conjunctions": [
+    {
+      "detected": 4,
+      "detected_by_class": {
+        "aac_lc_128": 1,
+        "mp3_320": 1,
+        "vorbis_q3": 1,
+        "vorbis_q5": 1
+      },
+      "development_false_positives": 0,
+      "first_development_negative_p95": 0.47493714,
+      "first_family": "edge",
+      "first_field": "spectral_edge_persistence",
+      "first_threshold_exclusive": 0.4923356640000002,
+      "rate": 0.0125,
+      "second_development_negative_p95": 0.35378633,
+      "second_family": "rupture",
+      "second_field": "band_rupture_score",
+      "second_threshold_exclusive": 0.35660338025,
+      "total_positives": 320
+    },
+    {
+      "detected": 1,
+      "detected_by_class": {
+        "opus_160": 1
+      },
+      "development_false_positives": 0,
+      "first_development_negative_p95": 0.0007402092904999996,
+      "first_family": "holes",
+      "first_field": "spectral_hole_ratio",
+      "first_threshold_exclusive": 0.0008515229219999994,
+      "rate": 0.003125,
+      "second_development_negative_p95": 0.35378633,
+      "second_family": "rupture",
+      "second_field": "band_rupture_score",
+      "second_threshold_exclusive": 0.35660338025,
+      "total_positives": 320
+    },
+    {
+      "detected": 1,
+      "detected_by_class": {
+        "opus_160": 1
+      },
+      "development_false_positives": 0,
+      "first_development_negative_p95": 0.0007402092904999996,
+      "first_family": "holes",
+      "first_field": "isolated_hole_ratio",
+      "first_threshold_exclusive": 0.0008515229219999994,
+      "rate": 0.003125,
+      "second_development_negative_p95": 0.35378633,
+      "second_family": "rupture",
+      "second_field": "band_rupture_score",
+      "second_threshold_exclusive": 0.35660338025,
+      "total_positives": 320
+    },
+    {
+      "detected": 0,
+      "detected_by_class": {},
+      "development_false_positives": 0,
+      "first_development_negative_p95": 69.85673539999999,
+      "first_family": "edge",
+      "first_field": "spectral_edge_drop_db",
+      "first_threshold_exclusive": 69.8649751,
+      "rate": 0.0,
+      "second_development_negative_p95": 0.0007402092904999996,
+      "second_family": "holes",
+      "second_field": "spectral_hole_ratio",
+      "second_threshold_exclusive": 0.0007448825919999998,
+      "total_positives": 320
+    },
+    {
+      "detected": 0,
+      "detected_by_class": {},
+      "development_false_positives": 0,
+      "first_development_negative_p95": 69.85673539999999,
+      "first_family": "edge",
+      "first_field": "spectral_edge_drop_db",
+      "first_threshold_exclusive": 69.8649751,
+      "rate": 0.0,
+      "second_development_negative_p95": 0.0007402092904999996,
+      "second_family": "holes",
+      "second_field": "isolated_hole_ratio",
+      "second_threshold_exclusive": 0.0007448825919999998,
+      "total_positives": 320
+    },
+    {
+      "detected": 0,
+      "detected_by_class": {},
+      "development_false_positives": 0,
+      "first_development_negative_p95": 0.47493714,
+      "first_family": "edge",
+      "first_field": "spectral_edge_persistence",
+      "first_threshold_exclusive": 0.4923356640000002,
+      "rate": 0.0,
+      "second_development_negative_p95": 0.0007402092904999996,
+      "second_family": "holes",
+      "second_field": "spectral_hole_ratio",
+      "second_threshold_exclusive": 0.0007448825919999998,
+      "total_positives": 320
+    },
+    {
+      "detected": 0,
+      "detected_by_class": {},
+      "development_false_positives": 0,
+      "first_development_negative_p95": 0.47493714,
+      "first_family": "edge",
+      "first_field": "spectral_edge_persistence",
+      "first_threshold_exclusive": 0.4923356640000002,
+      "rate": 0.0,
+      "second_development_negative_p95": 0.0007402092904999996,
+      "second_family": "holes",
+      "second_field": "isolated_hole_ratio",
+      "second_threshold_exclusive": 0.0007448825919999998,
+      "total_positives": 320
+    },
+    {
+      "detected": 0,
+      "detected_by_class": {},
+      "development_false_positives": 0,
+      "first_development_negative_p95": 69.85673539999999,
+      "first_family": "edge",
+      "first_field": "spectral_edge_drop_db",
+      "first_threshold_exclusive": 69.8649751,
+      "rate": 0.0,
+      "second_development_negative_p95": 0.35378633,
+      "second_family": "rupture",
+      "second_field": "band_rupture_score",
+      "second_threshold_exclusive": 0.90561855,
+      "total_positives": 320
+    }
+  ],
+  "limitations": [
+    "Tier B trusted-commercial development sources, not Tier A confirmed pristine PCM masters.",
+    "Ninety-second analysis windows rather than the preserved full-track release manifest.",
+    "No independent held-out labels or release evaluation.",
+    "Runtime uses one repetition under bounded concurrency and is not eligible for the release overhead gate.",
+    "Thresholds were selected on the development rows and are descriptive, not a policy."
+  ],
+  "runtime": {
+    "component_runs": [
+      {
+        "corpus_id": "audio-integrity-dev-20260730-001-window-90s",
+        "runtime": {
+          "cases": 520,
+          "jobs": 4,
+          "overhead_median_percent": 0.5803978649271846,
+          "overhead_p95_percent": 10.924403777788466
+        }
+      },
+      {
+        "corpus_id": "audio-integrity-dev-20260730-001-sharp-lowpass",
+        "runtime": {
+          "cases": 40,
+          "jobs": 4,
+          "overhead_median_percent": -1.4896672808054345,
+          "overhead_p95_percent": 13.302026575649634
+        }
+      }
+    ],
+    "gate_evaluable": false
+  },
+  "schema_version": 1,
+  "source_candidate": {
+    "analysis_max_seconds": 90.0,
+    "corpus_id": "audio-integrity-dev-20260730-001-window-90s+audio-integrity-dev-20260730-001-sharp-lowpass",
+    "feature_version": 0,
+    "repetitions": 1,
+    "result_count": 560
+  }
+}

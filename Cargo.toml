@@ -1,0 +1,36 @@
+[package]
+name = "lossytrace"
+version = "0.1.0-alpha.1"
+authors = ["Ryan Voitiskis"]
+edition = "2021"
+license = "MIT OR Apache-2.0"
+description = "Experimental, evidence-only analysis of possible prior lossy audio compression"
+repository = "https://github.com/ryan-voitiskis/lossytrace"
+readme = "README.md"
+keywords = ["audio", "compression", "forensics", "dsp", "provenance"]
+categories = ["command-line-utilities", "multimedia::audio", "science"]
+exclude = [
+    ".github/**",
+    "benchmarks/**",
+    "docs/research/**",
+    "research/**",
+    "scripts/**",
+]
+
+[dependencies]
+clap = { version = "4.5", features = ["derive"] }
+rustdct = "0.7"
+rustfft = "6.4"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+symphonia = { version = "0.5", features = ["all"] }
+
+[dev-dependencies]
+assert_cmd = "2"
+hound = "3.5"
+tempfile = "3"
+
+[profile.release]
+lto = "thin"
+strip = true

@@ -1,0 +1,27 @@
+# Research status
+
+LossyTrace currently has a useful measurement and evaluation platform, but no
+release-safe lossy-source verdict.
+
+| Candidate | Outcome | Reusable result |
+| --- | --- | --- |
+| v28 | Rejected after external-transfer false positives | Conservative two-grid infrastructure |
+| v29 | Development-only after the earlier gate was consumed | Multi-candidate MP3 confirmation and performance harness |
+| v30 | Rejected | AAC phase and quantization diagnostics |
+| v31 | Rejected for no useful incremental recall | MP3 frame evidence machinery |
+| v32 | Rejected for zero supported DEMAND recall | Exact ISO Layer III hybrid-transform probe |
+| v33 | Rejected for weak music AAC recall and eight SQAM invariance mismatches | Low-band MP3 tail-flatness diagnostic |
+| v32 + v33 | Rejected post-hoc diagnostic | Evidence that the families are complementary, not a releasable policy |
+
+The v32+v33 diagnostic reached strong observed development recall and zero
+supported-negative alerts, but failed eight SQAM AAC invariance groups. Those
+cases are consumed evidence and cannot be used to tune a new candidate.
+
+The release-held-out labels remain unopened. A future positive verdict needs a
+materially new candidate, a freshly acquired independent transfer set, the
+sealed release gate, and a separately versioned policy. Until then:
+
+- evidence schema: `1`;
+- measurement feature version: `0`;
+- public verdict: disabled; and
+- Reklawdbox integration: prohibited.

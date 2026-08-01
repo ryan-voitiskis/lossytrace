@@ -1,0 +1,14 @@
+/target/
+**/target/
+/.tmp/
+/.venv/
+__pycache__/
+*.py[cod]
+*.log
+.DS_Store
+
+# Real audio, private manifests, generated candidates, and per-case output.
+/benchmarks/**/manifest.json
+/benchmarks/**/private/
+/benchmarks/**/candidate*.json
+*.partial/

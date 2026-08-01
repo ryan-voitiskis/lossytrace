@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "registry_id": "audio-integrity-public-tier-a-sources-20260730",
+  "reviewed_at": "2026-07-30",
+  "release_use_policy": "CC BY 4.0 permits commercial use with attribution; retain this registry and the provider metadata with every derived corpus. These few performer/session clusters are development hard-negative expansion only and are not the disjoint 150-partition release set.",
+  "sources": [
+    {
+      "source_id": "guitarset-mono-mic-2019",
+      "title": "GuitarSet",
+      "version": "Zenodo record 3371780",
+      "official_page_url": "https://guitarset.weebly.com/",
+      "provider_metadata_url": "https://zenodo.org/api/records/3371780",
+      "license": "CC BY 4.0",
+      "release_role": "development_hard_negative_expansion",
+      "ground_truth_basis": "The official dataset page documents 360 expressly recorded excerpts and identifies audio_mono-mic as the monophonic reference-microphone WAV recording.",
+      "partition_basis": "player identity parsed from the official excerpt naming convention",
+      "limitations": "Six guitarists playing related lead sheets; useful sparse/acoustic hard negatives but not representative of full-mix diversity.",
+      "artifact": {
+        "filename": "audio_mono-mic.zip",
+        "url": "https://zenodo.org/api/records/3371780/files/audio_mono-mic.zip/content",
+        "bytes": 656927981,
+        "provider_checksum": "md5:275966d6610ac34999b58426beb119c3"
+      }
+    },
+    {
+      "source_id": "vocalset-2018",
+      "title": "VocalSet: A Singing Voice Dataset",
+      "version": "Zenodo record 1193957",
+      "official_page_url": "https://zenodo.org/records/1193957",
+      "provider_metadata_url": "https://zenodo.org/api/records/1193957",
+      "license": "CC BY 4.0",
+      "release_role": "development_hard_negative_expansion",
+      "ground_truth_basis": "The provider describes 10.1 hours of monophonic recorded audio from 20 professional singers; the archive contains the released WAV corpus.",
+      "partition_basis": "singer identity",
+      "limitations": "A-cappella singing only; many files from each singer are correlated and must remain in one partition.",
+      "artifact": {
+        "filename": "VocalSet.zip",
+        "url": "https://zenodo.org/api/records/1193957/files/VocalSet.zip/content",
+        "bytes": 2077087366,
+        "provider_checksum": "md5:c44f60d34b8724b9a6f6d15e0a3158a9"
+      }
+    },
+    {
+      "source_id": "groove-midi-audio-1.0.0",
+      "title": "Groove MIDI Dataset",
+      "version": "1.0.0",
+      "official_page_url": "https://magenta.withgoogle.com/datasets/groove",
+      "provider_metadata_url": "https://magenta.withgoogle.com/datasets/groove",
+      "license": "CC BY 4.0",
+      "release_role": "development_hard_negative_expansion",
+      "ground_truth_basis": "Google documents aligned high-quality synthesized audio captured from a Roland TD-11 for 1,150 human drum performances and distributes paired WAV files.",
+      "partition_basis": "official drummer and recording-session fields in info.csv",
+      "limitations": "Electronic-drum-module output rather than acoustic full mixes; valuable percussive and sparse controls but not release evidence on its own.",
+      "artifact": {
+        "filename": "groove-v1.0.0.zip",
+        "url": "https://storage.googleapis.com/magentadata/datasets/groove/groove-v1.0.0.zip",
+        "bytes": 5111599714,
+        "provider_checksum": "sha256:21559feb2f1c96ca53988fd4d7060b1f2afe1d854fb2a8dcea5ff95cf3cce7e9"
+      }
+    },
+    {
+      "source_id": "choralebricks-audio-2025",
+      "title": "ChoraleBricks: A Modular Multitrack Dataset for Wind Music Research",
+      "version": "Zenodo record 15081741",
+      "official_page_url": "https://www.audiolabs-erlangen.de/resources/MIR/2025-ChoraleBricks",
+      "provider_metadata_url": "https://zenodo.org/api/records/15081741",
+      "license": "CC BY 4.0",
+      "release_role": "development_hard_negative_expansion",
+      "ground_truth_basis": "The provider describes two hours and ten minutes of isolated wind-instrument recordings plus reproducible ensemble combinations.",
+      "partition_basis": "recorded performer/instrument session; derived mixes inherit every contributing partition",
+      "limitations": "Only ten chorales, with strong dependence between modular combinations; use original isolated recordings as masters and never count permutations as independent.",
+      "artifact": {
+        "filename": "01_AudioAndAnnotations.zip",
+        "url": "https://zenodo.org/api/records/15081741/files/01_AudioAndAnnotations.zip/content",
+        "bytes": 1157900370,
+        "provider_checksum": "md5:76c791de833814dba192bedea2aba5b6"
+      }
+    }
+  ]
+}

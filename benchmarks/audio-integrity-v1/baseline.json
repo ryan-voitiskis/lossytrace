@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "corpus_id": "audio-integrity-v1-private",
+  "corpus_version": 1,
+  "feature_version": 0,
+  "gate_disposition": {
+    "state": "not_evaluated",
+    "likely_lossy_derived_enabled": false,
+    "reason": "No frozen Tier A held-out release evaluation has been run; the recorded Tier B development pilots are not release evidence."
+  },
+  "runtime": null,
+  "distributions_by_class": {},
+  "results": []
+}
