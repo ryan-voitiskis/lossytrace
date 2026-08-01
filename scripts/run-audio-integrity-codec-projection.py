@@ -19,6 +19,7 @@ from pathlib import Path
 
 SAFE_CASE_ID = re.compile(r"[A-Za-z0-9][A-Za-z0-9._-]*")
 HEX_SHA256 = re.compile(r"[0-9a-f]{64}")
+HEX_GIT_COMMIT = re.compile(r"[0-9a-f]{40}")
 EXPECTED_NEGATIVE_CASES = 1_734
 EXPECTED_POSITIVE_CASES = 527
 EXPECTED_TOTAL_CASES = EXPECTED_NEGATIVE_CASES + EXPECTED_POSITIVE_CASES
@@ -549,7 +550,7 @@ def timing_summary(rows: list[dict]) -> dict:
 
 def repository_state(repository: Path) -> tuple[str, str]:
     commit = command_output(["git", "-C", str(repository), "rev-parse", "HEAD"]).strip()
-    if not HEX_SHA256.fullmatch(commit):
+    if not HEX_GIT_COMMIT.fullmatch(commit):
         raise ValueError("repository HEAD is invalid")
     status = command_output(["git", "-C", str(repository), "status", "--porcelain"])
     if status:

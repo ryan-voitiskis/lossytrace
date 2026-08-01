@@ -91,6 +91,12 @@ class CodecProjectionRunnerTests(unittest.TestCase):
         changed = MODULE.commitment_for(case, "c" * 64, {"config_sha256": "b" * 64})
         self.assertNotEqual(first, changed)
 
+    def test_git_and_evidence_hashes_use_their_distinct_lengths(self):
+        self.assertTrue(MODULE.HEX_GIT_COMMIT.fullmatch("a" * 40))
+        self.assertFalse(MODULE.HEX_GIT_COMMIT.fullmatch("a" * 64))
+        self.assertTrue(MODULE.HEX_SHA256.fullmatch("b" * 64))
+        self.assertFalse(MODULE.HEX_SHA256.fullmatch("b" * 40))
+
     def test_supported_measurement_requires_bounded_scores(self):
         measurement = {
             "schema_version": 1,
