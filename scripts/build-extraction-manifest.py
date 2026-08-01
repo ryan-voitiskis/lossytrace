@@ -97,6 +97,7 @@ def source_mappings(source_root: Path) -> list[tuple[str, str, str]]:
         for pattern in ("*audio-integrity*.py", "audio_integrity*.py")
         for source in (source_root / "scripts").glob(pattern)
     }
+    script_names.add("evaluate-vamp-lossy-detector.py")
     for name in sorted(script_names):
         mappings.append(
             (

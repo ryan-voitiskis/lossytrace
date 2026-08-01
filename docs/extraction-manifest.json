@@ -491,6 +491,15 @@
       "source_sha256": "eebb1345d440ce8c254e611ddbb3ff64ec5bebd3e926c1090cf7d46ffbe9fe75"
     },
     {
+      "destination": "scripts/evaluate-vamp-lossy-detector.py",
+      "destination_sha256": "14d8c31024cab9546c2c88079abeb0a2541211446de951b7e563bea631744645",
+      "exact_copy": true,
+      "origin": "reklawdbox_worktree",
+      "relationship": "package, benchmark, environment, and temporary paths adapted",
+      "source": "scripts/evaluate-vamp-lossy-detector.py",
+      "source_sha256": "14d8c31024cab9546c2c88079abeb0a2541211446de951b7e563bea631744645"
+    },
+    {
       "destination": "scripts/fetch-audio-integrity-public-sources.py",
       "destination_sha256": "5c8077f3e3cdf4e35e8efe847d14d02730ea1f0c009d8498f6cce36fce68213a",
       "exact_copy": false,
