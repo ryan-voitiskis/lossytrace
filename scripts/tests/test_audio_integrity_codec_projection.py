@@ -136,6 +136,25 @@ class CodecProjectionRunnerTests(unittest.TestCase):
                 "case-a", measurement, self.config["algorithm"]
             )
 
+    def test_early_unsupported_measurement_has_no_block_count(self):
+        measurement = {
+            "schema_version": 1,
+            "state": "codec_projection_raw_case_v1",
+            "feature_version": 0,
+            "public_verdict_enabled": False,
+            "case_id": "case-a",
+            "algorithm": self.config["algorithm"],
+            "projection_performed": False,
+            "support": {
+                "supported": False,
+                "reason": "clipped",
+                "supported_measurement_block_count": None,
+            },
+            "scores": None,
+            "blocks": [],
+        }
+        MODULE.validate_measurement("case-a", measurement, self.config["algorithm"])
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -345,15 +345,18 @@ def validate_measurement(case_id: str, measurement: object, algorithm: str) -> d
             raise ValueError(f"{case_id}: block formula replay differs")
         if not 0.0 <= block["r2_residual_directional_recurrence"] <= 1.0:
             raise ValueError(f"{case_id}: block R2 is out of bounds")
-    if measurement["support"].get("supported_measurement_block_count") != len(
-        blocks
-    ):
+    stored_block_count = measurement["support"].get(
+        "supported_measurement_block_count"
+    )
+    if stored_block_count is not None and stored_block_count != len(blocks):
         raise ValueError(f"{case_id}: supported block count differs")
     if supported is True:
         if not isinstance(scores, dict):
             raise ValueError(f"{case_id}: supported measurement has no scores")
         if not blocks:
             raise ValueError(f"{case_id}: supported measurement has no blocks")
+        if stored_block_count != len(blocks):
+            raise ValueError(f"{case_id}: supported measurement block count is missing")
         for field in (
             "r1_cycle_residual_retention",
             "r2_residual_directional_recurrence",
