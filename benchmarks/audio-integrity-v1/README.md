@@ -14,6 +14,148 @@ holes, band ruptures, and opt-in transform-alignment research probes. It does
 not classify a file, change the Stratum cache schema, or enable a Library
 Health warning.
 
+## Retained observed baseline
+
+The retained corpus may be relocated without rewriting its historical seals.
+The verifier accepts an old `exact_cleanup_target` only when a schema-1
+same-filesystem relocation record maps the same relative path and the retained
+inventory hash in that record still verifies. An unrecorded path change fails
+closed.
+
+Verify the retained inventory and create a private, already-observed baseline
+without opening either holdout:
+
+```bash
+python3 scripts/verify-audio-integrity-retained-inventory.py \
+  --inventory <CORPUS_ROOT>/retained-corpora-inventory-20260731-005.json \
+  --relocation <CORPUS_ROOT>/relocation-20260801.json \
+  --output <PRIVATE_RUN_ROOT>/inventory-verification.json
+
+python3 scripts/compose-audio-integrity-baseline-manifest.py \
+  --corpus-root <CORPUS_ROOT> \
+  --output <PRIVATE_RUN_ROOT>/manifest.json
+
+python3 scripts/shard-audio-integrity-manifest.py \
+  --manifest <PRIVATE_RUN_ROOT>/manifest.json \
+  --output-directory <PRIVATE_RUN_ROOT>/shards \
+  --shard-count 32
+
+cargo build --release --example audio_integrity_benchmark
+caffeinate -is nice -n 15 \
+  python3 scripts/run-audio-integrity-shards.py \
+  --shard-directory <PRIVATE_RUN_ROOT>/shards \
+  --report-directory <PRIVATE_RUN_ROOT>/shard-reports \
+  --audio-root <CORPUS_ROOT> \
+  --jobs 1
+
+python3 scripts/combine-audio-integrity-measurement-shards.py \
+  --manifest <PRIVATE_RUN_ROOT>/manifest.json \
+  --shard-directory <PRIVATE_RUN_ROOT>/shards \
+  --report-directory <PRIVATE_RUN_ROOT>/shard-reports \
+  --output <PRIVATE_RUN_ROOT>/raw-report.json
+
+python3 scripts/analyze-audio-integrity-measurement-baseline.py \
+  --manifest <PRIVATE_RUN_ROOT>/manifest.json \
+  --report <PRIVATE_RUN_ROOT>/raw-report.json \
+  --output <PRIVATE_RUN_ROOT>/aggregate-report.json
+```
+
+Source groups are assigned by a stable SHA-256 rule, so each group remains in
+one shard and a long run can resume only from complete, validated reports. The
+shard driver explicitly disables the benchmark example's legacy full transform
+grid; that archived research probe is not part of the current feature and
+would distort throughput without changing `compression_trace`. The
+composer includes 5,280 cases whose labels or feature scores were previously
+observed. It excludes the 280-case codec-only SQAM transfer subset and the
+sealed release holdout. The schema-2 aggregate contains no paths or case-level
+rows and explicitly states that classification and calibration metrics do not
+exist for the verdict-free feature-version-0 baseline.
+
+## Preregistered exact-hybrid ablation
+
+The only retained detector direction is the exact MP3 hybrid-transform
+measurement described in
+`docs/research/exact-hybrid-ablation-preregistration-20260801.md`. Build its
+isolated research crate and run it only after the raw observed baseline is
+complete:
+
+```bash
+cargo test --manifest-path \
+  research/exact-transform/ablation-v1/Cargo.toml
+cargo build --release --manifest-path \
+  research/exact-transform/ablation-v1/Cargo.toml
+
+caffeinate -is nice -n 15 \
+  python3 scripts/run-audio-integrity-exact-hybrid-ablation.py \
+  --manifest <PRIVATE_RUN_ROOT>/manifest.json \
+  --baseline-report <PRIVATE_RUN_ROOT>/raw-report.json \
+  --corpus-root <CORPUS_ROOT> \
+  --runner research/exact-transform/ablation-v1/target/release/lossytrace-exact-hybrid-ablation \
+  --output <PRIVATE_RUN_ROOT>/exact-hybrid-raw.json \
+  --jobs 1
+
+python3 scripts/verify-audio-integrity-exact-hybrid-replay.py \
+  --archive <CORPUS_ROOT>/private/audio-integrity-exact-transform-research-20260731-001.tar.zst \
+  --ablation-report <PRIVATE_RUN_ROOT>/exact-hybrid-raw.json \
+  --output <PRIVATE_RUN_ROOT>/exact-hybrid-replay.json
+
+python3 scripts/analyze-audio-integrity-exact-hybrid-ablation.py \
+  --manifest <PRIVATE_RUN_ROOT>/manifest.json \
+  --baseline-report <PRIVATE_RUN_ROOT>/raw-report.json \
+  --ablation-report <PRIVATE_RUN_ROOT>/exact-hybrid-raw.json \
+  --replay-report <PRIVATE_RUN_ROOT>/exact-hybrid-replay.json \
+  --output <PRIVATE_RUN_ROOT>/exact-hybrid-evaluation.json
+```
+
+The runner selects all observed negatives and only the scoped MP3-128
+controlled positives. It checkpoints each case, binds audio to the earlier
+baseline hash, and keeps paths and case-level features outside Git. The replay
+verifier reads the archived v32 evidence directly from its checksum-bound
+Zstandard archive. The final evaluator emits a path-free leave-one-source-
+domain-out report; it does not open either holdout or create a probability.
+
+## Lossy-original/container equivalence
+
+Lossy originals and their decoded lossless wrappers are staged ephemerally so
+decoder/container behavior is measured rather than assumed:
+
+```bash
+python3 scripts/stage-audio-integrity-container-equivalence.py stage \
+  --manifest <PRIVATE_RUN_ROOT>/manifest.json \
+  --corpus-root <CORPUS_ROOT> \
+  --destination <PRIVATE_EQUIVALENCE_ROOT> \
+  --groups-per-domain 2
+
+python3 scripts/stage-audio-integrity-container-equivalence.py verify \
+  --root <PRIVATE_EQUIVALENCE_ROOT>
+
+LOSSYTRACE_RESEARCH_SKIP_TRANSFORM_GRID=1 \
+  python3 scripts/benchmark-audio-integrity.py \
+  --manifest <PRIVATE_EQUIVALENCE_ROOT>/manifest.json run \
+  --audio-root <PRIVATE_EQUIVALENCE_ROOT> \
+  --fingerprints <PRIVATE_EQUIVALENCE_ROOT>/fingerprints.json \
+  --binary target/release/examples/audio_integrity_benchmark \
+  --no-build \
+  --jobs 1 \
+  --output <PRIVATE_EQUIVALENCE_ROOT>/raw-report.json
+
+python3 scripts/analyze-audio-integrity-container-equivalence.py \
+  --manifest <PRIVATE_EQUIVALENCE_ROOT>/manifest.json \
+  --report <PRIVATE_EQUIVALENCE_ROOT>/raw-report.json \
+  --output <PRIVATE_EQUIVALENCE_ROOT>/aggregate-report.json
+```
+
+The deterministic selection takes two eligible PCM source groups per observed
+content domain and creates MP3, AAC, Opus, and explicitly named native-FFmpeg
+Vorbis intermediates plus FLAC, WAV, and AIFF wrappers. MP3, AAC, and Vorbis
+originals are also analyzed. The current Symphonia decoder has no Opus codec,
+so the Opus intermediate is checksum-committed and removed after wrapper
+generation; its wrappers are compared with one another and the limitation is
+explicit in the manifest. The current selection yields 210 analysis cases
+from 14 source groups. Generated audio, commands, fingerprints, and private
+source commitments remain outside Git and are removed after the path-free
+aggregate has been verified.
+
 ## Corpus setup
 
 Copy `manifest.example.json` to the ignored `manifest.json`, replace the example

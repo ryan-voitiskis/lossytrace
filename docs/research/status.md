@@ -12,6 +12,7 @@ release-safe lossy-source verdict.
 | v32 | Rejected for zero supported DEMAND recall | Exact ISO Layer III hybrid-transform probe |
 | v33 | Rejected for weak music AAC recall and eight SQAM invariance mismatches | Low-band MP3 tail-flatness diagnostic |
 | v32 + v33 | Rejected post-hoc diagnostic | Evidence that the families are complementary, not a releasable policy |
+| 2026-08-01 exact-hybrid A0–A4 | Rejected: every row had a source-domain false positive and only 14–23% supported MP3-128 recall | Reproducible exact replay and source-domain ablation harness |
 
 The v32+v33 diagnostic reached strong observed development recall and zero
 supported-negative alerts, but failed eight SQAM AAC invariance groups. Those
@@ -25,3 +26,8 @@ sealed release gate, and a separately versioned policy. Until then:
 - measurement feature version: `0`;
 - public verdict: disabled; and
 - Reklawdbox integration: prohibited.
+
+The latest frozen checkpoint also leaves the 280-case future codec-only subset
+sealed. See
+[`independent-validation-checkpoint-20260801.md`](independent-validation-checkpoint-20260801.md)
+for the methodology, path-free results, evidence hashes, and stop decision.
