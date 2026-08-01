@@ -67,6 +67,14 @@ The encode arguments after the input are fixed as
 44100 -ac 2 -c:a pcm_s16le -f s16le`. The runner adds only machine-local input
 and output endpoints plus `-nostdin -hide_banner -loglevel error -y`.
 
+**Pre-observed implementation clarification - 2026-08-02:** a deterministic
+synthetic-tone command smoke test, performed before opening any observed or
+archived codec-projection score, confirmed that FFmpeg's raw-PCM input also
+requires `-f s16le -ar 44100 -ac 2` before `-i`. Those input-demuxer arguments
+are fixed for both projection encodes. This clarification does not change the
+PCM boundary, encoder, formulas, support rules, thresholds, gates, or stop
+decision; the synthetic score is not evaluation evidence.
+
 Let `P(x)` be one encode/decode cycle with that configuration and a 16-bit PCM
 boundary. The oracle constructs `x1 = P(x0)` and `x2 = P(x1)`; it never uses a
 current MP3 bitstream or its side information.
