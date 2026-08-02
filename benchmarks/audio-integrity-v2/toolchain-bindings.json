@@ -1,0 +1,2827 @@
+{
+  "analysis_decoder_binding": {
+    "analysis_decoder_id": "canonical_lossless_pcm_decoder",
+    "command": [
+      "<TOOL:ffmpeg_8_1_2_1>",
+      "-hide_banner",
+      "-loglevel",
+      "error",
+      "-y",
+      "-fflags",
+      "+bitexact",
+      "-i",
+      "<INPUT>",
+      "-map",
+      "0:a:0",
+      "-c:a",
+      "pcm_s16le",
+      "-f",
+      "s16le",
+      "-fflags",
+      "+bitexact",
+      "<OUTPUT>"
+    ],
+    "implementation": "FFmpeg native audio decode to headerless signed-s16le",
+    "tool_id": "ffmpeg_8_1_2_1",
+    "wrapper_scope": [
+      "flac16",
+      "wav16",
+      "aiff16"
+    ]
+  },
+  "authorized_next_step": "Run two complete single-worker synthetic replays and commit only their path-free aggregate if byte-identical. Do not assign sources, generate benchmark cases, compute mechanism features, or open scores.",
+  "benchmark_audio_generated": false,
+  "complete_replay_observed": false,
+  "encoder_bandwidth_observation": {
+    "claim_boundary": "A coarse decoded spectral-retention observation, not an exact psychoacoustic filter cutoff and not provenance evidence.",
+    "decoder_id": "canonical_lossless_pcm_decoder",
+    "frequencies_hz_by_sample_rate": {
+      "44100": [
+        1000,
+        4000,
+        8000,
+        12000,
+        14000,
+        15000,
+        15500,
+        16000,
+        16500,
+        17000,
+        17500,
+        18000,
+        18500,
+        19000,
+        19500,
+        20000,
+        20500,
+        21000
+      ],
+      "48000": [
+        1000,
+        4000,
+        8000,
+        12000,
+        14000,
+        15000,
+        15500,
+        16000,
+        16500,
+        17000,
+        17500,
+        18000,
+        18500,
+        19000,
+        19500,
+        20000,
+        20500,
+        21000,
+        22000,
+        23000
+      ]
+    },
+    "leading_and_trailing_silence_milliseconds": 500,
+    "measurement_id": "segmented-tone-retained-band-edge-v1",
+    "measurement_window_milliseconds": [
+      150,
+      250
+    ],
+    "normalization_frequencies_hz": [
+      1000,
+      4000,
+      8000
+    ],
+    "retained_edge_rule": "Highest probed tone whose decoded RMS, normalized by the median 1/4/8 kHz RMS, is at least -6 dB.",
+    "retained_threshold_relative_db": -6.0,
+    "segment_milliseconds": 400,
+    "sine_peak_sample": 12000
+  },
+  "expanded_encoder_settings": [
+    {
+      "anchor": false,
+      "binding_tool_ids": [
+        "lame_cli_4_0"
+      ],
+      "bitrate_or_quality": "96k",
+      "channel_treatment_id": "mono",
+      "codec_family": "mp3",
+      "command": [
+        "<TOOL:lame_cli_4_0>",
+        "--silent",
+        "--cbr",
+        "-b",
+        "96",
+        "-m",
+        "m",
+        "<INPUT>",
+        "<OUTPUT>"
+      ],
+      "encoder_id": "mp3_lame_4_0",
+      "evidence_partition": "mechanism_development",
+      "expanded_setting_id": "dev-mp3-lame-cbr96-default--mono",
+      "expected_channel_count": 1,
+      "expected_codec_name": "mp3",
+      "expected_profile": null,
+      "expected_sample_rate_hz": 44100,
+      "frame_duration_ms": null,
+      "input_id": "synthetic-44100-mono",
+      "lineage_id": "lame",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "encoder_default"
+      },
+      "output_extension": ".mp3",
+      "rate_control": "cbr",
+      "template_id": "dev-mp3-lame-cbr96-default",
+      "tool_id": "lame_cli_4_0"
+    },
+    {
+      "anchor": false,
+      "binding_tool_ids": [
+        "lame_cli_4_0"
+      ],
+      "bitrate_or_quality": "96k",
+      "channel_treatment_id": "stereo",
+      "codec_family": "mp3",
+      "command": [
+        "<TOOL:lame_cli_4_0>",
+        "--silent",
+        "--cbr",
+        "-b",
+        "96",
+        "-m",
+        "j",
+        "<INPUT>",
+        "<OUTPUT>"
+      ],
+      "encoder_id": "mp3_lame_4_0",
+      "evidence_partition": "mechanism_development",
+      "expanded_setting_id": "dev-mp3-lame-cbr96-default--stereo",
+      "expected_channel_count": 2,
+      "expected_codec_name": "mp3",
+      "expected_profile": null,
+      "expected_sample_rate_hz": 44100,
+      "frame_duration_ms": null,
+      "input_id": "synthetic-44100-stereo",
+      "lineage_id": "lame",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "encoder_default"
+      },
+      "output_extension": ".mp3",
+      "rate_control": "cbr",
+      "template_id": "dev-mp3-lame-cbr96-default",
+      "tool_id": "lame_cli_4_0"
+    },
+    {
+      "anchor": true,
+      "binding_tool_ids": [
+        "lame_cli_4_0"
+      ],
+      "bitrate_or_quality": "128k",
+      "channel_treatment_id": "mono",
+      "codec_family": "mp3",
+      "command": [
+        "<TOOL:lame_cli_4_0>",
+        "--silent",
+        "--cbr",
+        "-b",
+        "128",
+        "-m",
+        "m",
+        "<INPUT>",
+        "<OUTPUT>"
+      ],
+      "encoder_id": "mp3_lame_4_0",
+      "evidence_partition": "mechanism_development",
+      "expanded_setting_id": "dev-mp3-lame-cbr128-default--mono",
+      "expected_channel_count": 1,
+      "expected_codec_name": "mp3",
+      "expected_profile": null,
+      "expected_sample_rate_hz": 44100,
+      "frame_duration_ms": null,
+      "input_id": "synthetic-44100-mono",
+      "lineage_id": "lame",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "encoder_default"
+      },
+      "output_extension": ".mp3",
+      "rate_control": "cbr",
+      "template_id": "dev-mp3-lame-cbr128-default",
+      "tool_id": "lame_cli_4_0"
+    },
+    {
+      "anchor": true,
+      "binding_tool_ids": [
+        "lame_cli_4_0"
+      ],
+      "bitrate_or_quality": "128k",
+      "channel_treatment_id": "stereo",
+      "codec_family": "mp3",
+      "command": [
+        "<TOOL:lame_cli_4_0>",
+        "--silent",
+        "--cbr",
+        "-b",
+        "128",
+        "-m",
+        "j",
+        "<INPUT>",
+        "<OUTPUT>"
+      ],
+      "encoder_id": "mp3_lame_4_0",
+      "evidence_partition": "mechanism_development",
+      "expanded_setting_id": "dev-mp3-lame-cbr128-default--stereo",
+      "expected_channel_count": 2,
+      "expected_codec_name": "mp3",
+      "expected_profile": null,
+      "expected_sample_rate_hz": 44100,
+      "frame_duration_ms": null,
+      "input_id": "synthetic-44100-stereo",
+      "lineage_id": "lame",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "encoder_default"
+      },
+      "output_extension": ".mp3",
+      "rate_control": "cbr",
+      "template_id": "dev-mp3-lame-cbr128-default",
+      "tool_id": "lame_cli_4_0"
+    },
+    {
+      "anchor": false,
+      "binding_tool_ids": [
+        "lame_cli_4_0"
+      ],
+      "bitrate_or_quality": "128k",
+      "channel_treatment_id": "mono",
+      "codec_family": "mp3",
+      "command": [
+        "<TOOL:lame_cli_4_0>",
+        "--silent",
+        "--cbr",
+        "-b",
+        "128",
+        "-m",
+        "m",
+        "--lowpass",
+        "16",
+        "<INPUT>",
+        "<OUTPUT>"
+      ],
+      "encoder_id": "mp3_lame_4_0",
+      "evidence_partition": "mechanism_development",
+      "expanded_setting_id": "dev-mp3-lame-cbr128-lowpass16k--mono",
+      "expected_channel_count": 1,
+      "expected_codec_name": "mp3",
+      "expected_profile": null,
+      "expected_sample_rate_hz": 44100,
+      "frame_duration_ms": null,
+      "input_id": "synthetic-44100-mono",
+      "lineage_id": "lame",
+      "nominal_encoder_lowpass": {
+        "hz": 16000,
+        "mode": "fixed"
+      },
+      "output_extension": ".mp3",
+      "rate_control": "cbr",
+      "template_id": "dev-mp3-lame-cbr128-lowpass16k",
+      "tool_id": "lame_cli_4_0"
+    },
+    {
+      "anchor": false,
+      "binding_tool_ids": [
+        "lame_cli_4_0"
+      ],
+      "bitrate_or_quality": "128k",
+      "channel_treatment_id": "stereo",
+      "codec_family": "mp3",
+      "command": [
+        "<TOOL:lame_cli_4_0>",
+        "--silent",
+        "--cbr",
+        "-b",
+        "128",
+        "-m",
+        "j",
+        "--lowpass",
+        "16",
+        "<INPUT>",
+        "<OUTPUT>"
+      ],
+      "encoder_id": "mp3_lame_4_0",
+      "evidence_partition": "mechanism_development",
+      "expanded_setting_id": "dev-mp3-lame-cbr128-lowpass16k--stereo",
+      "expected_channel_count": 2,
+      "expected_codec_name": "mp3",
+      "expected_profile": null,
+      "expected_sample_rate_hz": 44100,
+      "frame_duration_ms": null,
+      "input_id": "synthetic-44100-stereo",
+      "lineage_id": "lame",
+      "nominal_encoder_lowpass": {
+        "hz": 16000,
+        "mode": "fixed"
+      },
+      "output_extension": ".mp3",
+      "rate_control": "cbr",
+      "template_id": "dev-mp3-lame-cbr128-lowpass16k",
+      "tool_id": "lame_cli_4_0"
+    },
+    {
+      "anchor": false,
+      "binding_tool_ids": [
+        "lame_cli_4_0"
+      ],
+      "bitrate_or_quality": "V2",
+      "channel_treatment_id": "mono",
+      "codec_family": "mp3",
+      "command": [
+        "<TOOL:lame_cli_4_0>",
+        "--silent",
+        "-V",
+        "2",
+        "-m",
+        "m",
+        "<INPUT>",
+        "<OUTPUT>"
+      ],
+      "encoder_id": "mp3_lame_4_0",
+      "evidence_partition": "mechanism_development",
+      "expanded_setting_id": "dev-mp3-lame-vbr-v2-default--mono",
+      "expected_channel_count": 1,
+      "expected_codec_name": "mp3",
+      "expected_profile": null,
+      "expected_sample_rate_hz": 44100,
+      "frame_duration_ms": null,
+      "input_id": "synthetic-44100-mono",
+      "lineage_id": "lame",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "encoder_default"
+      },
+      "output_extension": ".mp3",
+      "rate_control": "vbr",
+      "template_id": "dev-mp3-lame-vbr-v2-default",
+      "tool_id": "lame_cli_4_0"
+    },
+    {
+      "anchor": false,
+      "binding_tool_ids": [
+        "lame_cli_4_0"
+      ],
+      "bitrate_or_quality": "V2",
+      "channel_treatment_id": "stereo",
+      "codec_family": "mp3",
+      "command": [
+        "<TOOL:lame_cli_4_0>",
+        "--silent",
+        "-V",
+        "2",
+        "-m",
+        "j",
+        "<INPUT>",
+        "<OUTPUT>"
+      ],
+      "encoder_id": "mp3_lame_4_0",
+      "evidence_partition": "mechanism_development",
+      "expanded_setting_id": "dev-mp3-lame-vbr-v2-default--stereo",
+      "expected_channel_count": 2,
+      "expected_codec_name": "mp3",
+      "expected_profile": null,
+      "expected_sample_rate_hz": 44100,
+      "frame_duration_ms": null,
+      "input_id": "synthetic-44100-stereo",
+      "lineage_id": "lame",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "encoder_default"
+      },
+      "output_extension": ".mp3",
+      "rate_control": "vbr",
+      "template_id": "dev-mp3-lame-vbr-v2-default",
+      "tool_id": "lame_cli_4_0"
+    },
+    {
+      "anchor": false,
+      "binding_tool_ids": [
+        "shineenc_3_1_1_ab5e352"
+      ],
+      "bitrate_or_quality": "128k",
+      "channel_treatment_id": "mono",
+      "codec_family": "mp3",
+      "command": [
+        "<TOOL:shineenc_3_1_1_ab5e352>",
+        "-q",
+        "-b",
+        "128",
+        "-m",
+        "<INPUT>",
+        "<OUTPUT>"
+      ],
+      "encoder_id": "mp3_shine_ab5e352",
+      "evidence_partition": "mechanism_development",
+      "expanded_setting_id": "dev-mp3-shine-cbr128-default--mono",
+      "expected_channel_count": 1,
+      "expected_codec_name": "mp3",
+      "expected_profile": null,
+      "expected_sample_rate_hz": 44100,
+      "frame_duration_ms": null,
+      "input_id": "synthetic-44100-mono",
+      "lineage_id": "shine",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "implementation_fixed_or_default"
+      },
+      "output_extension": ".mp3",
+      "rate_control": "cbr",
+      "template_id": "dev-mp3-shine-cbr128-default",
+      "tool_id": "shineenc_3_1_1_ab5e352"
+    },
+    {
+      "anchor": false,
+      "binding_tool_ids": [
+        "shineenc_3_1_1_ab5e352"
+      ],
+      "bitrate_or_quality": "128k",
+      "channel_treatment_id": "stereo",
+      "codec_family": "mp3",
+      "command": [
+        "<TOOL:shineenc_3_1_1_ab5e352>",
+        "-q",
+        "-b",
+        "128",
+        "<INPUT>",
+        "<OUTPUT>"
+      ],
+      "encoder_id": "mp3_shine_ab5e352",
+      "evidence_partition": "mechanism_development",
+      "expanded_setting_id": "dev-mp3-shine-cbr128-default--stereo",
+      "expected_channel_count": 2,
+      "expected_codec_name": "mp3",
+      "expected_profile": null,
+      "expected_sample_rate_hz": 44100,
+      "frame_duration_ms": null,
+      "input_id": "synthetic-44100-stereo",
+      "lineage_id": "shine",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "implementation_fixed_or_default"
+      },
+      "output_extension": ".mp3",
+      "rate_control": "cbr",
+      "template_id": "dev-mp3-shine-cbr128-default",
+      "tool_id": "shineenc_3_1_1_ab5e352"
+    },
+    {
+      "anchor": false,
+      "binding_tool_ids": [
+        "bladeenc_0_94_2_a2d06ec"
+      ],
+      "bitrate_or_quality": "96k",
+      "channel_treatment_id": "mono",
+      "codec_family": "mp3",
+      "command": [
+        "<TOOL:bladeenc_0_94_2_a2d06ec>",
+        "-quiet",
+        "-nocfg",
+        "<INPUT>",
+        "<OUTPUT>",
+        "-96",
+        "-mono"
+      ],
+      "encoder_id": "mp3_bladeenc_a2d06ec",
+      "evidence_partition": "encoder_transfer",
+      "expanded_setting_id": "transfer-mp3-bladeenc-cbr96-default--mono",
+      "expected_channel_count": 1,
+      "expected_codec_name": "mp3",
+      "expected_profile": null,
+      "expected_sample_rate_hz": 44100,
+      "frame_duration_ms": null,
+      "input_id": "synthetic-44100-mono",
+      "lineage_id": "bladeenc_iso_dist10",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "implementation_fixed_or_default"
+      },
+      "output_extension": ".mp3",
+      "rate_control": "cbr",
+      "template_id": "transfer-mp3-bladeenc-cbr96-default",
+      "tool_id": "bladeenc_0_94_2_a2d06ec"
+    },
+    {
+      "anchor": false,
+      "binding_tool_ids": [
+        "bladeenc_0_94_2_a2d06ec"
+      ],
+      "bitrate_or_quality": "96k",
+      "channel_treatment_id": "stereo",
+      "codec_family": "mp3",
+      "command": [
+        "<TOOL:bladeenc_0_94_2_a2d06ec>",
+        "-quiet",
+        "-nocfg",
+        "<INPUT>",
+        "<OUTPUT>",
+        "-96"
+      ],
+      "encoder_id": "mp3_bladeenc_a2d06ec",
+      "evidence_partition": "encoder_transfer",
+      "expanded_setting_id": "transfer-mp3-bladeenc-cbr96-default--stereo",
+      "expected_channel_count": 2,
+      "expected_codec_name": "mp3",
+      "expected_profile": null,
+      "expected_sample_rate_hz": 44100,
+      "frame_duration_ms": null,
+      "input_id": "synthetic-44100-stereo",
+      "lineage_id": "bladeenc_iso_dist10",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "implementation_fixed_or_default"
+      },
+      "output_extension": ".mp3",
+      "rate_control": "cbr",
+      "template_id": "transfer-mp3-bladeenc-cbr96-default",
+      "tool_id": "bladeenc_0_94_2_a2d06ec"
+    },
+    {
+      "anchor": true,
+      "binding_tool_ids": [
+        "bladeenc_0_94_2_a2d06ec"
+      ],
+      "bitrate_or_quality": "128k",
+      "channel_treatment_id": "mono",
+      "codec_family": "mp3",
+      "command": [
+        "<TOOL:bladeenc_0_94_2_a2d06ec>",
+        "-quiet",
+        "-nocfg",
+        "<INPUT>",
+        "<OUTPUT>",
+        "-128",
+        "-mono"
+      ],
+      "encoder_id": "mp3_bladeenc_a2d06ec",
+      "evidence_partition": "encoder_transfer",
+      "expanded_setting_id": "transfer-mp3-bladeenc-cbr128-default--mono",
+      "expected_channel_count": 1,
+      "expected_codec_name": "mp3",
+      "expected_profile": null,
+      "expected_sample_rate_hz": 44100,
+      "frame_duration_ms": null,
+      "input_id": "synthetic-44100-mono",
+      "lineage_id": "bladeenc_iso_dist10",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "implementation_fixed_or_default"
+      },
+      "output_extension": ".mp3",
+      "rate_control": "cbr",
+      "template_id": "transfer-mp3-bladeenc-cbr128-default",
+      "tool_id": "bladeenc_0_94_2_a2d06ec"
+    },
+    {
+      "anchor": true,
+      "binding_tool_ids": [
+        "bladeenc_0_94_2_a2d06ec"
+      ],
+      "bitrate_or_quality": "128k",
+      "channel_treatment_id": "stereo",
+      "codec_family": "mp3",
+      "command": [
+        "<TOOL:bladeenc_0_94_2_a2d06ec>",
+        "-quiet",
+        "-nocfg",
+        "<INPUT>",
+        "<OUTPUT>",
+        "-128"
+      ],
+      "encoder_id": "mp3_bladeenc_a2d06ec",
+      "evidence_partition": "encoder_transfer",
+      "expanded_setting_id": "transfer-mp3-bladeenc-cbr128-default--stereo",
+      "expected_channel_count": 2,
+      "expected_codec_name": "mp3",
+      "expected_profile": null,
+      "expected_sample_rate_hz": 44100,
+      "frame_duration_ms": null,
+      "input_id": "synthetic-44100-stereo",
+      "lineage_id": "bladeenc_iso_dist10",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "implementation_fixed_or_default"
+      },
+      "output_extension": ".mp3",
+      "rate_control": "cbr",
+      "template_id": "transfer-mp3-bladeenc-cbr128-default",
+      "tool_id": "bladeenc_0_94_2_a2d06ec"
+    },
+    {
+      "anchor": false,
+      "binding_tool_ids": [
+        "ffmpeg_8_1_2_1"
+      ],
+      "bitrate_or_quality": "96k",
+      "channel_treatment_id": "mono",
+      "codec_family": "aac_lc",
+      "command": [
+        "<TOOL:ffmpeg_8_1_2_1>",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-y",
+        "-fflags",
+        "+bitexact",
+        "-i",
+        "<INPUT>",
+        "-map",
+        "0:a:0",
+        "-ac:a",
+        "1",
+        "-ar:a",
+        "44100",
+        "-c:a",
+        "aac",
+        "-profile:a",
+        "aac_low",
+        "-b:a",
+        "96k",
+        "-flags:a",
+        "+bitexact",
+        "-fflags",
+        "+bitexact",
+        "<OUTPUT>"
+      ],
+      "encoder_id": "aac_ffmpeg_native_8_1_2",
+      "evidence_partition": "mechanism_development",
+      "expanded_setting_id": "dev-aac-ffmpeg-cbr96-default--mono",
+      "expected_channel_count": 1,
+      "expected_codec_name": "aac",
+      "expected_profile": "LC",
+      "expected_sample_rate_hz": 44100,
+      "frame_duration_ms": null,
+      "input_id": "synthetic-44100-mono",
+      "lineage_id": "ffmpeg_native_aac",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "encoder_default"
+      },
+      "output_extension": ".m4a",
+      "rate_control": "cbr",
+      "template_id": "dev-aac-ffmpeg-cbr96-default",
+      "tool_id": "ffmpeg_8_1_2_1"
+    },
+    {
+      "anchor": false,
+      "binding_tool_ids": [
+        "ffmpeg_8_1_2_1"
+      ],
+      "bitrate_or_quality": "96k",
+      "channel_treatment_id": "stereo",
+      "codec_family": "aac_lc",
+      "command": [
+        "<TOOL:ffmpeg_8_1_2_1>",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-y",
+        "-fflags",
+        "+bitexact",
+        "-i",
+        "<INPUT>",
+        "-map",
+        "0:a:0",
+        "-ac:a",
+        "2",
+        "-ar:a",
+        "44100",
+        "-c:a",
+        "aac",
+        "-profile:a",
+        "aac_low",
+        "-b:a",
+        "96k",
+        "-flags:a",
+        "+bitexact",
+        "-fflags",
+        "+bitexact",
+        "<OUTPUT>"
+      ],
+      "encoder_id": "aac_ffmpeg_native_8_1_2",
+      "evidence_partition": "mechanism_development",
+      "expanded_setting_id": "dev-aac-ffmpeg-cbr96-default--stereo",
+      "expected_channel_count": 2,
+      "expected_codec_name": "aac",
+      "expected_profile": "LC",
+      "expected_sample_rate_hz": 44100,
+      "frame_duration_ms": null,
+      "input_id": "synthetic-44100-stereo",
+      "lineage_id": "ffmpeg_native_aac",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "encoder_default"
+      },
+      "output_extension": ".m4a",
+      "rate_control": "cbr",
+      "template_id": "dev-aac-ffmpeg-cbr96-default",
+      "tool_id": "ffmpeg_8_1_2_1"
+    },
+    {
+      "anchor": true,
+      "binding_tool_ids": [
+        "ffmpeg_8_1_2_1"
+      ],
+      "bitrate_or_quality": "128k",
+      "channel_treatment_id": "mono",
+      "codec_family": "aac_lc",
+      "command": [
+        "<TOOL:ffmpeg_8_1_2_1>",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-y",
+        "-fflags",
+        "+bitexact",
+        "-i",
+        "<INPUT>",
+        "-map",
+        "0:a:0",
+        "-ac:a",
+        "1",
+        "-ar:a",
+        "44100",
+        "-c:a",
+        "aac",
+        "-profile:a",
+        "aac_low",
+        "-b:a",
+        "128k",
+        "-flags:a",
+        "+bitexact",
+        "-fflags",
+        "+bitexact",
+        "<OUTPUT>"
+      ],
+      "encoder_id": "aac_ffmpeg_native_8_1_2",
+      "evidence_partition": "mechanism_development",
+      "expanded_setting_id": "dev-aac-ffmpeg-cbr128-default--mono",
+      "expected_channel_count": 1,
+      "expected_codec_name": "aac",
+      "expected_profile": "LC",
+      "expected_sample_rate_hz": 44100,
+      "frame_duration_ms": null,
+      "input_id": "synthetic-44100-mono",
+      "lineage_id": "ffmpeg_native_aac",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "encoder_default"
+      },
+      "output_extension": ".m4a",
+      "rate_control": "cbr",
+      "template_id": "dev-aac-ffmpeg-cbr128-default",
+      "tool_id": "ffmpeg_8_1_2_1"
+    },
+    {
+      "anchor": true,
+      "binding_tool_ids": [
+        "ffmpeg_8_1_2_1"
+      ],
+      "bitrate_or_quality": "128k",
+      "channel_treatment_id": "stereo",
+      "codec_family": "aac_lc",
+      "command": [
+        "<TOOL:ffmpeg_8_1_2_1>",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-y",
+        "-fflags",
+        "+bitexact",
+        "-i",
+        "<INPUT>",
+        "-map",
+        "0:a:0",
+        "-ac:a",
+        "2",
+        "-ar:a",
+        "44100",
+        "-c:a",
+        "aac",
+        "-profile:a",
+        "aac_low",
+        "-b:a",
+        "128k",
+        "-flags:a",
+        "+bitexact",
+        "-fflags",
+        "+bitexact",
+        "<OUTPUT>"
+      ],
+      "encoder_id": "aac_ffmpeg_native_8_1_2",
+      "evidence_partition": "mechanism_development",
+      "expanded_setting_id": "dev-aac-ffmpeg-cbr128-default--stereo",
+      "expected_channel_count": 2,
+      "expected_codec_name": "aac",
+      "expected_profile": "LC",
+      "expected_sample_rate_hz": 44100,
+      "frame_duration_ms": null,
+      "input_id": "synthetic-44100-stereo",
+      "lineage_id": "ffmpeg_native_aac",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "encoder_default"
+      },
+      "output_extension": ".m4a",
+      "rate_control": "cbr",
+      "template_id": "dev-aac-ffmpeg-cbr128-default",
+      "tool_id": "ffmpeg_8_1_2_1"
+    },
+    {
+      "anchor": false,
+      "binding_tool_ids": [
+        "ffmpeg_8_1_2_1"
+      ],
+      "bitrate_or_quality": "128k",
+      "channel_treatment_id": "mono",
+      "codec_family": "aac_lc",
+      "command": [
+        "<TOOL:ffmpeg_8_1_2_1>",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-y",
+        "-fflags",
+        "+bitexact",
+        "-i",
+        "<INPUT>",
+        "-map",
+        "0:a:0",
+        "-ac:a",
+        "1",
+        "-ar:a",
+        "44100",
+        "-c:a",
+        "aac",
+        "-profile:a",
+        "aac_low",
+        "-b:a",
+        "128k",
+        "-cutoff",
+        "16000",
+        "-flags:a",
+        "+bitexact",
+        "-fflags",
+        "+bitexact",
+        "<OUTPUT>"
+      ],
+      "encoder_id": "aac_ffmpeg_native_8_1_2",
+      "evidence_partition": "mechanism_development",
+      "expanded_setting_id": "dev-aac-ffmpeg-cbr128-cutoff16k--mono",
+      "expected_channel_count": 1,
+      "expected_codec_name": "aac",
+      "expected_profile": "LC",
+      "expected_sample_rate_hz": 44100,
+      "frame_duration_ms": null,
+      "input_id": "synthetic-44100-mono",
+      "lineage_id": "ffmpeg_native_aac",
+      "nominal_encoder_lowpass": {
+        "hz": 16000,
+        "mode": "fixed"
+      },
+      "output_extension": ".m4a",
+      "rate_control": "cbr",
+      "template_id": "dev-aac-ffmpeg-cbr128-cutoff16k",
+      "tool_id": "ffmpeg_8_1_2_1"
+    },
+    {
+      "anchor": false,
+      "binding_tool_ids": [
+        "ffmpeg_8_1_2_1"
+      ],
+      "bitrate_or_quality": "128k",
+      "channel_treatment_id": "stereo",
+      "codec_family": "aac_lc",
+      "command": [
+        "<TOOL:ffmpeg_8_1_2_1>",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-y",
+        "-fflags",
+        "+bitexact",
+        "-i",
+        "<INPUT>",
+        "-map",
+        "0:a:0",
+        "-ac:a",
+        "2",
+        "-ar:a",
+        "44100",
+        "-c:a",
+        "aac",
+        "-profile:a",
+        "aac_low",
+        "-b:a",
+        "128k",
+        "-cutoff",
+        "16000",
+        "-flags:a",
+        "+bitexact",
+        "-fflags",
+        "+bitexact",
+        "<OUTPUT>"
+      ],
+      "encoder_id": "aac_ffmpeg_native_8_1_2",
+      "evidence_partition": "mechanism_development",
+      "expanded_setting_id": "dev-aac-ffmpeg-cbr128-cutoff16k--stereo",
+      "expected_channel_count": 2,
+      "expected_codec_name": "aac",
+      "expected_profile": "LC",
+      "expected_sample_rate_hz": 44100,
+      "frame_duration_ms": null,
+      "input_id": "synthetic-44100-stereo",
+      "lineage_id": "ffmpeg_native_aac",
+      "nominal_encoder_lowpass": {
+        "hz": 16000,
+        "mode": "fixed"
+      },
+      "output_extension": ".m4a",
+      "rate_control": "cbr",
+      "template_id": "dev-aac-ffmpeg-cbr128-cutoff16k",
+      "tool_id": "ffmpeg_8_1_2_1"
+    },
+    {
+      "anchor": false,
+      "binding_tool_ids": [
+        "ffmpeg_8_1_2_1",
+        "apple_afconvert_macos_26_6_25g72"
+      ],
+      "bitrate_or_quality": "128k",
+      "channel_treatment_id": "mono",
+      "codec_family": "aac_lc",
+      "command": [
+        "<TOOL:ffmpeg_8_1_2_1>",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-y",
+        "-fflags",
+        "+bitexact",
+        "-i",
+        "<INPUT>",
+        "-map",
+        "0:a:0",
+        "-ac:a",
+        "1",
+        "-ar:a",
+        "44100",
+        "-c:a",
+        "aac_at",
+        "-aac_at_mode",
+        "cbr",
+        "-b:a",
+        "128k",
+        "-flags:a",
+        "+bitexact",
+        "-fflags",
+        "+bitexact",
+        "<OUTPUT>"
+      ],
+      "encoder_id": "aac_apple_audiotoolbox_25g72",
+      "evidence_partition": "mechanism_development",
+      "expanded_setting_id": "dev-aac-apple-cbr128-default--mono",
+      "expected_channel_count": 1,
+      "expected_codec_name": "aac",
+      "expected_profile": "LC",
+      "expected_sample_rate_hz": 44100,
+      "frame_duration_ms": null,
+      "input_id": "synthetic-44100-mono",
+      "lineage_id": "apple_audiotoolbox_aac",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "encoder_default"
+      },
+      "output_extension": ".m4a",
+      "rate_control": "cbr",
+      "template_id": "dev-aac-apple-cbr128-default",
+      "tool_id": "ffmpeg_8_1_2_1"
+    },
+    {
+      "anchor": false,
+      "binding_tool_ids": [
+        "ffmpeg_8_1_2_1",
+        "apple_afconvert_macos_26_6_25g72"
+      ],
+      "bitrate_or_quality": "128k",
+      "channel_treatment_id": "stereo",
+      "codec_family": "aac_lc",
+      "command": [
+        "<TOOL:ffmpeg_8_1_2_1>",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-y",
+        "-fflags",
+        "+bitexact",
+        "-i",
+        "<INPUT>",
+        "-map",
+        "0:a:0",
+        "-ac:a",
+        "2",
+        "-ar:a",
+        "44100",
+        "-c:a",
+        "aac_at",
+        "-aac_at_mode",
+        "cbr",
+        "-b:a",
+        "128k",
+        "-flags:a",
+        "+bitexact",
+        "-fflags",
+        "+bitexact",
+        "<OUTPUT>"
+      ],
+      "encoder_id": "aac_apple_audiotoolbox_25g72",
+      "evidence_partition": "mechanism_development",
+      "expanded_setting_id": "dev-aac-apple-cbr128-default--stereo",
+      "expected_channel_count": 2,
+      "expected_codec_name": "aac",
+      "expected_profile": "LC",
+      "expected_sample_rate_hz": 44100,
+      "frame_duration_ms": null,
+      "input_id": "synthetic-44100-stereo",
+      "lineage_id": "apple_audiotoolbox_aac",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "encoder_default"
+      },
+      "output_extension": ".m4a",
+      "rate_control": "cbr",
+      "template_id": "dev-aac-apple-cbr128-default",
+      "tool_id": "ffmpeg_8_1_2_1"
+    },
+    {
+      "anchor": false,
+      "binding_tool_ids": [
+        "fdkaac_1_0_8_fdk_2_0_3"
+      ],
+      "bitrate_or_quality": "96k",
+      "channel_treatment_id": "mono",
+      "codec_family": "aac_lc",
+      "command": [
+        "<TOOL:fdkaac_1_0_8_fdk_2_0_3>",
+        "--silent",
+        "--no-timestamp",
+        "-p",
+        "2",
+        "-m",
+        "0",
+        "-b",
+        "96000",
+        "-o",
+        "<OUTPUT>",
+        "<INPUT>"
+      ],
+      "encoder_id": "aac_fdk_2_0_3",
+      "evidence_partition": "encoder_transfer",
+      "expanded_setting_id": "transfer-aac-fdk-cbr96-default--mono",
+      "expected_channel_count": 1,
+      "expected_codec_name": "aac",
+      "expected_profile": "LC",
+      "expected_sample_rate_hz": 44100,
+      "frame_duration_ms": null,
+      "input_id": "synthetic-44100-mono",
+      "lineage_id": "fraunhofer_fdk_aac",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "encoder_default"
+      },
+      "output_extension": ".m4a",
+      "rate_control": "cbr",
+      "template_id": "transfer-aac-fdk-cbr96-default",
+      "tool_id": "fdkaac_1_0_8_fdk_2_0_3"
+    },
+    {
+      "anchor": false,
+      "binding_tool_ids": [
+        "fdkaac_1_0_8_fdk_2_0_3"
+      ],
+      "bitrate_or_quality": "96k",
+      "channel_treatment_id": "stereo",
+      "codec_family": "aac_lc",
+      "command": [
+        "<TOOL:fdkaac_1_0_8_fdk_2_0_3>",
+        "--silent",
+        "--no-timestamp",
+        "-p",
+        "2",
+        "-m",
+        "0",
+        "-b",
+        "96000",
+        "-o",
+        "<OUTPUT>",
+        "<INPUT>"
+      ],
+      "encoder_id": "aac_fdk_2_0_3",
+      "evidence_partition": "encoder_transfer",
+      "expanded_setting_id": "transfer-aac-fdk-cbr96-default--stereo",
+      "expected_channel_count": 2,
+      "expected_codec_name": "aac",
+      "expected_profile": "LC",
+      "expected_sample_rate_hz": 44100,
+      "frame_duration_ms": null,
+      "input_id": "synthetic-44100-stereo",
+      "lineage_id": "fraunhofer_fdk_aac",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "encoder_default"
+      },
+      "output_extension": ".m4a",
+      "rate_control": "cbr",
+      "template_id": "transfer-aac-fdk-cbr96-default",
+      "tool_id": "fdkaac_1_0_8_fdk_2_0_3"
+    },
+    {
+      "anchor": true,
+      "binding_tool_ids": [
+        "fdkaac_1_0_8_fdk_2_0_3"
+      ],
+      "bitrate_or_quality": "128k",
+      "channel_treatment_id": "mono",
+      "codec_family": "aac_lc",
+      "command": [
+        "<TOOL:fdkaac_1_0_8_fdk_2_0_3>",
+        "--silent",
+        "--no-timestamp",
+        "-p",
+        "2",
+        "-m",
+        "0",
+        "-b",
+        "128000",
+        "-o",
+        "<OUTPUT>",
+        "<INPUT>"
+      ],
+      "encoder_id": "aac_fdk_2_0_3",
+      "evidence_partition": "encoder_transfer",
+      "expanded_setting_id": "transfer-aac-fdk-cbr128-default--mono",
+      "expected_channel_count": 1,
+      "expected_codec_name": "aac",
+      "expected_profile": "LC",
+      "expected_sample_rate_hz": 44100,
+      "frame_duration_ms": null,
+      "input_id": "synthetic-44100-mono",
+      "lineage_id": "fraunhofer_fdk_aac",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "encoder_default"
+      },
+      "output_extension": ".m4a",
+      "rate_control": "cbr",
+      "template_id": "transfer-aac-fdk-cbr128-default",
+      "tool_id": "fdkaac_1_0_8_fdk_2_0_3"
+    },
+    {
+      "anchor": true,
+      "binding_tool_ids": [
+        "fdkaac_1_0_8_fdk_2_0_3"
+      ],
+      "bitrate_or_quality": "128k",
+      "channel_treatment_id": "stereo",
+      "codec_family": "aac_lc",
+      "command": [
+        "<TOOL:fdkaac_1_0_8_fdk_2_0_3>",
+        "--silent",
+        "--no-timestamp",
+        "-p",
+        "2",
+        "-m",
+        "0",
+        "-b",
+        "128000",
+        "-o",
+        "<OUTPUT>",
+        "<INPUT>"
+      ],
+      "encoder_id": "aac_fdk_2_0_3",
+      "evidence_partition": "encoder_transfer",
+      "expanded_setting_id": "transfer-aac-fdk-cbr128-default--stereo",
+      "expected_channel_count": 2,
+      "expected_codec_name": "aac",
+      "expected_profile": "LC",
+      "expected_sample_rate_hz": 44100,
+      "frame_duration_ms": null,
+      "input_id": "synthetic-44100-stereo",
+      "lineage_id": "fraunhofer_fdk_aac",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "encoder_default"
+      },
+      "output_extension": ".m4a",
+      "rate_control": "cbr",
+      "template_id": "transfer-aac-fdk-cbr128-default",
+      "tool_id": "fdkaac_1_0_8_fdk_2_0_3"
+    },
+    {
+      "anchor": false,
+      "binding_tool_ids": [
+        "opusenc_0_2_2_libopus_1_6_1"
+      ],
+      "bitrate_or_quality": "64k",
+      "channel_treatment_id": "mono",
+      "codec_family": "opus",
+      "command": [
+        "<TOOL:opusenc_0_2_2_libopus_1_6_1>",
+        "--quiet",
+        "--serial",
+        "1953",
+        "--hard-cbr",
+        "--bitrate",
+        "64",
+        "--framesize",
+        "20",
+        "<INPUT>",
+        "<OUTPUT>"
+      ],
+      "encoder_id": "opus_libopus_1_6_1",
+      "evidence_partition": "mechanism_development",
+      "expanded_setting_id": "dev-opus-libopus-cbr64-20ms--mono",
+      "expected_channel_count": 1,
+      "expected_codec_name": "opus",
+      "expected_profile": null,
+      "expected_sample_rate_hz": 48000,
+      "frame_duration_ms": 20,
+      "input_id": "synthetic-48000-mono",
+      "lineage_id": "xiph_libopus",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "encoder_default"
+      },
+      "output_extension": ".opus",
+      "rate_control": "hard_cbr",
+      "template_id": "dev-opus-libopus-cbr64-20ms",
+      "tool_id": "opusenc_0_2_2_libopus_1_6_1"
+    },
+    {
+      "anchor": false,
+      "binding_tool_ids": [
+        "opusenc_0_2_2_libopus_1_6_1"
+      ],
+      "bitrate_or_quality": "64k",
+      "channel_treatment_id": "stereo",
+      "codec_family": "opus",
+      "command": [
+        "<TOOL:opusenc_0_2_2_libopus_1_6_1>",
+        "--quiet",
+        "--serial",
+        "1953",
+        "--hard-cbr",
+        "--bitrate",
+        "64",
+        "--framesize",
+        "20",
+        "<INPUT>",
+        "<OUTPUT>"
+      ],
+      "encoder_id": "opus_libopus_1_6_1",
+      "evidence_partition": "mechanism_development",
+      "expanded_setting_id": "dev-opus-libopus-cbr64-20ms--stereo",
+      "expected_channel_count": 2,
+      "expected_codec_name": "opus",
+      "expected_profile": null,
+      "expected_sample_rate_hz": 48000,
+      "frame_duration_ms": 20,
+      "input_id": "synthetic-48000-stereo",
+      "lineage_id": "xiph_libopus",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "encoder_default"
+      },
+      "output_extension": ".opus",
+      "rate_control": "hard_cbr",
+      "template_id": "dev-opus-libopus-cbr64-20ms",
+      "tool_id": "opusenc_0_2_2_libopus_1_6_1"
+    },
+    {
+      "anchor": true,
+      "binding_tool_ids": [
+        "opusenc_0_2_2_libopus_1_6_1"
+      ],
+      "bitrate_or_quality": "96k",
+      "channel_treatment_id": "mono",
+      "codec_family": "opus",
+      "command": [
+        "<TOOL:opusenc_0_2_2_libopus_1_6_1>",
+        "--quiet",
+        "--serial",
+        "1953",
+        "--hard-cbr",
+        "--bitrate",
+        "96",
+        "--framesize",
+        "20",
+        "<INPUT>",
+        "<OUTPUT>"
+      ],
+      "encoder_id": "opus_libopus_1_6_1",
+      "evidence_partition": "mechanism_development",
+      "expanded_setting_id": "dev-opus-libopus-cbr96-20ms--mono",
+      "expected_channel_count": 1,
+      "expected_codec_name": "opus",
+      "expected_profile": null,
+      "expected_sample_rate_hz": 48000,
+      "frame_duration_ms": 20,
+      "input_id": "synthetic-48000-mono",
+      "lineage_id": "xiph_libopus",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "encoder_default"
+      },
+      "output_extension": ".opus",
+      "rate_control": "hard_cbr",
+      "template_id": "dev-opus-libopus-cbr96-20ms",
+      "tool_id": "opusenc_0_2_2_libopus_1_6_1"
+    },
+    {
+      "anchor": true,
+      "binding_tool_ids": [
+        "opusenc_0_2_2_libopus_1_6_1"
+      ],
+      "bitrate_or_quality": "96k",
+      "channel_treatment_id": "stereo",
+      "codec_family": "opus",
+      "command": [
+        "<TOOL:opusenc_0_2_2_libopus_1_6_1>",
+        "--quiet",
+        "--serial",
+        "1953",
+        "--hard-cbr",
+        "--bitrate",
+        "96",
+        "--framesize",
+        "20",
+        "<INPUT>",
+        "<OUTPUT>"
+      ],
+      "encoder_id": "opus_libopus_1_6_1",
+      "evidence_partition": "mechanism_development",
+      "expanded_setting_id": "dev-opus-libopus-cbr96-20ms--stereo",
+      "expected_channel_count": 2,
+      "expected_codec_name": "opus",
+      "expected_profile": null,
+      "expected_sample_rate_hz": 48000,
+      "frame_duration_ms": 20,
+      "input_id": "synthetic-48000-stereo",
+      "lineage_id": "xiph_libopus",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "encoder_default"
+      },
+      "output_extension": ".opus",
+      "rate_control": "hard_cbr",
+      "template_id": "dev-opus-libopus-cbr96-20ms",
+      "tool_id": "opusenc_0_2_2_libopus_1_6_1"
+    },
+    {
+      "anchor": false,
+      "binding_tool_ids": [
+        "opusenc_0_2_2_libopus_1_6_1"
+      ],
+      "bitrate_or_quality": "128k",
+      "channel_treatment_id": "mono",
+      "codec_family": "opus",
+      "command": [
+        "<TOOL:opusenc_0_2_2_libopus_1_6_1>",
+        "--quiet",
+        "--serial",
+        "1953",
+        "--hard-cbr",
+        "--bitrate",
+        "128",
+        "--framesize",
+        "20",
+        "<INPUT>",
+        "<OUTPUT>"
+      ],
+      "encoder_id": "opus_libopus_1_6_1",
+      "evidence_partition": "mechanism_development",
+      "expanded_setting_id": "dev-opus-libopus-cbr128-20ms--mono",
+      "expected_channel_count": 1,
+      "expected_codec_name": "opus",
+      "expected_profile": null,
+      "expected_sample_rate_hz": 48000,
+      "frame_duration_ms": 20,
+      "input_id": "synthetic-48000-mono",
+      "lineage_id": "xiph_libopus",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "encoder_default"
+      },
+      "output_extension": ".opus",
+      "rate_control": "hard_cbr",
+      "template_id": "dev-opus-libopus-cbr128-20ms",
+      "tool_id": "opusenc_0_2_2_libopus_1_6_1"
+    },
+    {
+      "anchor": false,
+      "binding_tool_ids": [
+        "opusenc_0_2_2_libopus_1_6_1"
+      ],
+      "bitrate_or_quality": "128k",
+      "channel_treatment_id": "stereo",
+      "codec_family": "opus",
+      "command": [
+        "<TOOL:opusenc_0_2_2_libopus_1_6_1>",
+        "--quiet",
+        "--serial",
+        "1953",
+        "--hard-cbr",
+        "--bitrate",
+        "128",
+        "--framesize",
+        "20",
+        "<INPUT>",
+        "<OUTPUT>"
+      ],
+      "encoder_id": "opus_libopus_1_6_1",
+      "evidence_partition": "mechanism_development",
+      "expanded_setting_id": "dev-opus-libopus-cbr128-20ms--stereo",
+      "expected_channel_count": 2,
+      "expected_codec_name": "opus",
+      "expected_profile": null,
+      "expected_sample_rate_hz": 48000,
+      "frame_duration_ms": 20,
+      "input_id": "synthetic-48000-stereo",
+      "lineage_id": "xiph_libopus",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "encoder_default"
+      },
+      "output_extension": ".opus",
+      "rate_control": "hard_cbr",
+      "template_id": "dev-opus-libopus-cbr128-20ms",
+      "tool_id": "opusenc_0_2_2_libopus_1_6_1"
+    },
+    {
+      "anchor": false,
+      "binding_tool_ids": [
+        "opusenc_0_2_2_libopus_1_6_1"
+      ],
+      "bitrate_or_quality": "96k",
+      "channel_treatment_id": "mono",
+      "codec_family": "opus",
+      "command": [
+        "<TOOL:opusenc_0_2_2_libopus_1_6_1>",
+        "--quiet",
+        "--serial",
+        "1953",
+        "--hard-cbr",
+        "--bitrate",
+        "96",
+        "--framesize",
+        "10",
+        "<INPUT>",
+        "<OUTPUT>"
+      ],
+      "encoder_id": "opus_libopus_1_6_1",
+      "evidence_partition": "mechanism_development",
+      "expanded_setting_id": "dev-opus-libopus-cbr96-10ms--mono",
+      "expected_channel_count": 1,
+      "expected_codec_name": "opus",
+      "expected_profile": null,
+      "expected_sample_rate_hz": 48000,
+      "frame_duration_ms": 10,
+      "input_id": "synthetic-48000-mono",
+      "lineage_id": "xiph_libopus",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "encoder_default"
+      },
+      "output_extension": ".opus",
+      "rate_control": "hard_cbr",
+      "template_id": "dev-opus-libopus-cbr96-10ms",
+      "tool_id": "opusenc_0_2_2_libopus_1_6_1"
+    },
+    {
+      "anchor": false,
+      "binding_tool_ids": [
+        "opusenc_0_2_2_libopus_1_6_1"
+      ],
+      "bitrate_or_quality": "96k",
+      "channel_treatment_id": "stereo",
+      "codec_family": "opus",
+      "command": [
+        "<TOOL:opusenc_0_2_2_libopus_1_6_1>",
+        "--quiet",
+        "--serial",
+        "1953",
+        "--hard-cbr",
+        "--bitrate",
+        "96",
+        "--framesize",
+        "10",
+        "<INPUT>",
+        "<OUTPUT>"
+      ],
+      "encoder_id": "opus_libopus_1_6_1",
+      "evidence_partition": "mechanism_development",
+      "expanded_setting_id": "dev-opus-libopus-cbr96-10ms--stereo",
+      "expected_channel_count": 2,
+      "expected_codec_name": "opus",
+      "expected_profile": null,
+      "expected_sample_rate_hz": 48000,
+      "frame_duration_ms": 10,
+      "input_id": "synthetic-48000-stereo",
+      "lineage_id": "xiph_libopus",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "encoder_default"
+      },
+      "output_extension": ".opus",
+      "rate_control": "hard_cbr",
+      "template_id": "dev-opus-libopus-cbr96-10ms",
+      "tool_id": "opusenc_0_2_2_libopus_1_6_1"
+    },
+    {
+      "anchor": false,
+      "binding_tool_ids": [
+        "ffmpeg_8_1_2_1"
+      ],
+      "bitrate_or_quality": "64k",
+      "channel_treatment_id": "mono",
+      "codec_family": "opus",
+      "command": [
+        "<TOOL:ffmpeg_8_1_2_1>",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-y",
+        "-fflags",
+        "+bitexact",
+        "-i",
+        "<INPUT>",
+        "-map",
+        "0:a:0",
+        "-ac:a",
+        "1",
+        "-ar:a",
+        "48000",
+        "-strict",
+        "experimental",
+        "-c:a",
+        "opus",
+        "-b:a",
+        "64k",
+        "-flags:a",
+        "+bitexact",
+        "-fflags",
+        "+bitexact",
+        "-serial_offset",
+        "1953",
+        "<OUTPUT>"
+      ],
+      "encoder_id": "opus_ffmpeg_native_8_1_2",
+      "evidence_partition": "encoder_transfer",
+      "expanded_setting_id": "transfer-opus-ffmpeg-cbr64-default--mono",
+      "expected_channel_count": 1,
+      "expected_codec_name": "opus",
+      "expected_profile": null,
+      "expected_sample_rate_hz": 48000,
+      "frame_duration_ms": null,
+      "input_id": "synthetic-48000-mono",
+      "lineage_id": "ffmpeg_native_opus",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "implementation_fixed_or_default"
+      },
+      "output_extension": ".opus",
+      "rate_control": "cbr",
+      "template_id": "transfer-opus-ffmpeg-cbr64-default",
+      "tool_id": "ffmpeg_8_1_2_1"
+    },
+    {
+      "anchor": false,
+      "binding_tool_ids": [
+        "ffmpeg_8_1_2_1"
+      ],
+      "bitrate_or_quality": "64k",
+      "channel_treatment_id": "stereo",
+      "codec_family": "opus",
+      "command": [
+        "<TOOL:ffmpeg_8_1_2_1>",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-y",
+        "-fflags",
+        "+bitexact",
+        "-i",
+        "<INPUT>",
+        "-map",
+        "0:a:0",
+        "-ac:a",
+        "2",
+        "-ar:a",
+        "48000",
+        "-strict",
+        "experimental",
+        "-c:a",
+        "opus",
+        "-b:a",
+        "64k",
+        "-flags:a",
+        "+bitexact",
+        "-fflags",
+        "+bitexact",
+        "-serial_offset",
+        "1953",
+        "<OUTPUT>"
+      ],
+      "encoder_id": "opus_ffmpeg_native_8_1_2",
+      "evidence_partition": "encoder_transfer",
+      "expanded_setting_id": "transfer-opus-ffmpeg-cbr64-default--stereo",
+      "expected_channel_count": 2,
+      "expected_codec_name": "opus",
+      "expected_profile": null,
+      "expected_sample_rate_hz": 48000,
+      "frame_duration_ms": null,
+      "input_id": "synthetic-48000-stereo",
+      "lineage_id": "ffmpeg_native_opus",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "implementation_fixed_or_default"
+      },
+      "output_extension": ".opus",
+      "rate_control": "cbr",
+      "template_id": "transfer-opus-ffmpeg-cbr64-default",
+      "tool_id": "ffmpeg_8_1_2_1"
+    },
+    {
+      "anchor": true,
+      "binding_tool_ids": [
+        "ffmpeg_8_1_2_1"
+      ],
+      "bitrate_or_quality": "96k",
+      "channel_treatment_id": "mono",
+      "codec_family": "opus",
+      "command": [
+        "<TOOL:ffmpeg_8_1_2_1>",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-y",
+        "-fflags",
+        "+bitexact",
+        "-i",
+        "<INPUT>",
+        "-map",
+        "0:a:0",
+        "-ac:a",
+        "1",
+        "-ar:a",
+        "48000",
+        "-strict",
+        "experimental",
+        "-c:a",
+        "opus",
+        "-b:a",
+        "96k",
+        "-flags:a",
+        "+bitexact",
+        "-fflags",
+        "+bitexact",
+        "-serial_offset",
+        "1953",
+        "<OUTPUT>"
+      ],
+      "encoder_id": "opus_ffmpeg_native_8_1_2",
+      "evidence_partition": "encoder_transfer",
+      "expanded_setting_id": "transfer-opus-ffmpeg-cbr96-default--mono",
+      "expected_channel_count": 1,
+      "expected_codec_name": "opus",
+      "expected_profile": null,
+      "expected_sample_rate_hz": 48000,
+      "frame_duration_ms": null,
+      "input_id": "synthetic-48000-mono",
+      "lineage_id": "ffmpeg_native_opus",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "implementation_fixed_or_default"
+      },
+      "output_extension": ".opus",
+      "rate_control": "cbr",
+      "template_id": "transfer-opus-ffmpeg-cbr96-default",
+      "tool_id": "ffmpeg_8_1_2_1"
+    },
+    {
+      "anchor": true,
+      "binding_tool_ids": [
+        "ffmpeg_8_1_2_1"
+      ],
+      "bitrate_or_quality": "96k",
+      "channel_treatment_id": "stereo",
+      "codec_family": "opus",
+      "command": [
+        "<TOOL:ffmpeg_8_1_2_1>",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-y",
+        "-fflags",
+        "+bitexact",
+        "-i",
+        "<INPUT>",
+        "-map",
+        "0:a:0",
+        "-ac:a",
+        "2",
+        "-ar:a",
+        "48000",
+        "-strict",
+        "experimental",
+        "-c:a",
+        "opus",
+        "-b:a",
+        "96k",
+        "-flags:a",
+        "+bitexact",
+        "-fflags",
+        "+bitexact",
+        "-serial_offset",
+        "1953",
+        "<OUTPUT>"
+      ],
+      "encoder_id": "opus_ffmpeg_native_8_1_2",
+      "evidence_partition": "encoder_transfer",
+      "expanded_setting_id": "transfer-opus-ffmpeg-cbr96-default--stereo",
+      "expected_channel_count": 2,
+      "expected_codec_name": "opus",
+      "expected_profile": null,
+      "expected_sample_rate_hz": 48000,
+      "frame_duration_ms": null,
+      "input_id": "synthetic-48000-stereo",
+      "lineage_id": "ffmpeg_native_opus",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "implementation_fixed_or_default"
+      },
+      "output_extension": ".opus",
+      "rate_control": "cbr",
+      "template_id": "transfer-opus-ffmpeg-cbr96-default",
+      "tool_id": "ffmpeg_8_1_2_1"
+    },
+    {
+      "anchor": false,
+      "binding_tool_ids": [
+        "oggenc_1_4_3_libvorbis_1_3_7"
+      ],
+      "bitrate_or_quality": "q2",
+      "channel_treatment_id": "mono",
+      "codec_family": "vorbis",
+      "command": [
+        "<TOOL:oggenc_1_4_3_libvorbis_1_3_7>",
+        "-Q",
+        "--serial",
+        "1954",
+        "-q",
+        "2",
+        "-o",
+        "<OUTPUT>",
+        "<INPUT>"
+      ],
+      "encoder_id": "vorbis_libvorbis_1_3_7",
+      "evidence_partition": "mechanism_development",
+      "expanded_setting_id": "dev-vorbis-libvorbis-q2--mono",
+      "expected_channel_count": 1,
+      "expected_codec_name": "vorbis",
+      "expected_profile": null,
+      "expected_sample_rate_hz": 44100,
+      "frame_duration_ms": null,
+      "input_id": "synthetic-44100-mono",
+      "lineage_id": "xiph_libvorbis",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "encoder_default"
+      },
+      "output_extension": ".ogg",
+      "rate_control": "vbr_quality",
+      "template_id": "dev-vorbis-libvorbis-q2",
+      "tool_id": "oggenc_1_4_3_libvorbis_1_3_7"
+    },
+    {
+      "anchor": false,
+      "binding_tool_ids": [
+        "oggenc_1_4_3_libvorbis_1_3_7"
+      ],
+      "bitrate_or_quality": "q2",
+      "channel_treatment_id": "stereo",
+      "codec_family": "vorbis",
+      "command": [
+        "<TOOL:oggenc_1_4_3_libvorbis_1_3_7>",
+        "-Q",
+        "--serial",
+        "1954",
+        "-q",
+        "2",
+        "-o",
+        "<OUTPUT>",
+        "<INPUT>"
+      ],
+      "encoder_id": "vorbis_libvorbis_1_3_7",
+      "evidence_partition": "mechanism_development",
+      "expanded_setting_id": "dev-vorbis-libvorbis-q2--stereo",
+      "expected_channel_count": 2,
+      "expected_codec_name": "vorbis",
+      "expected_profile": null,
+      "expected_sample_rate_hz": 44100,
+      "frame_duration_ms": null,
+      "input_id": "synthetic-44100-stereo",
+      "lineage_id": "xiph_libvorbis",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "encoder_default"
+      },
+      "output_extension": ".ogg",
+      "rate_control": "vbr_quality",
+      "template_id": "dev-vorbis-libvorbis-q2",
+      "tool_id": "oggenc_1_4_3_libvorbis_1_3_7"
+    },
+    {
+      "anchor": true,
+      "binding_tool_ids": [
+        "oggenc_1_4_3_libvorbis_1_3_7"
+      ],
+      "bitrate_or_quality": "q4",
+      "channel_treatment_id": "mono",
+      "codec_family": "vorbis",
+      "command": [
+        "<TOOL:oggenc_1_4_3_libvorbis_1_3_7>",
+        "-Q",
+        "--serial",
+        "1954",
+        "-q",
+        "4",
+        "-o",
+        "<OUTPUT>",
+        "<INPUT>"
+      ],
+      "encoder_id": "vorbis_libvorbis_1_3_7",
+      "evidence_partition": "mechanism_development",
+      "expanded_setting_id": "dev-vorbis-libvorbis-q4--mono",
+      "expected_channel_count": 1,
+      "expected_codec_name": "vorbis",
+      "expected_profile": null,
+      "expected_sample_rate_hz": 44100,
+      "frame_duration_ms": null,
+      "input_id": "synthetic-44100-mono",
+      "lineage_id": "xiph_libvorbis",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "encoder_default"
+      },
+      "output_extension": ".ogg",
+      "rate_control": "vbr_quality",
+      "template_id": "dev-vorbis-libvorbis-q4",
+      "tool_id": "oggenc_1_4_3_libvorbis_1_3_7"
+    },
+    {
+      "anchor": true,
+      "binding_tool_ids": [
+        "oggenc_1_4_3_libvorbis_1_3_7"
+      ],
+      "bitrate_or_quality": "q4",
+      "channel_treatment_id": "stereo",
+      "codec_family": "vorbis",
+      "command": [
+        "<TOOL:oggenc_1_4_3_libvorbis_1_3_7>",
+        "-Q",
+        "--serial",
+        "1954",
+        "-q",
+        "4",
+        "-o",
+        "<OUTPUT>",
+        "<INPUT>"
+      ],
+      "encoder_id": "vorbis_libvorbis_1_3_7",
+      "evidence_partition": "mechanism_development",
+      "expanded_setting_id": "dev-vorbis-libvorbis-q4--stereo",
+      "expected_channel_count": 2,
+      "expected_codec_name": "vorbis",
+      "expected_profile": null,
+      "expected_sample_rate_hz": 44100,
+      "frame_duration_ms": null,
+      "input_id": "synthetic-44100-stereo",
+      "lineage_id": "xiph_libvorbis",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "encoder_default"
+      },
+      "output_extension": ".ogg",
+      "rate_control": "vbr_quality",
+      "template_id": "dev-vorbis-libvorbis-q4",
+      "tool_id": "oggenc_1_4_3_libvorbis_1_3_7"
+    },
+    {
+      "anchor": false,
+      "binding_tool_ids": [
+        "oggenc_1_4_3_libvorbis_1_3_7"
+      ],
+      "bitrate_or_quality": "q6",
+      "channel_treatment_id": "mono",
+      "codec_family": "vorbis",
+      "command": [
+        "<TOOL:oggenc_1_4_3_libvorbis_1_3_7>",
+        "-Q",
+        "--serial",
+        "1954",
+        "-q",
+        "6",
+        "-o",
+        "<OUTPUT>",
+        "<INPUT>"
+      ],
+      "encoder_id": "vorbis_libvorbis_1_3_7",
+      "evidence_partition": "mechanism_development",
+      "expanded_setting_id": "dev-vorbis-libvorbis-q6--mono",
+      "expected_channel_count": 1,
+      "expected_codec_name": "vorbis",
+      "expected_profile": null,
+      "expected_sample_rate_hz": 44100,
+      "frame_duration_ms": null,
+      "input_id": "synthetic-44100-mono",
+      "lineage_id": "xiph_libvorbis",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "encoder_default"
+      },
+      "output_extension": ".ogg",
+      "rate_control": "vbr_quality",
+      "template_id": "dev-vorbis-libvorbis-q6",
+      "tool_id": "oggenc_1_4_3_libvorbis_1_3_7"
+    },
+    {
+      "anchor": false,
+      "binding_tool_ids": [
+        "oggenc_1_4_3_libvorbis_1_3_7"
+      ],
+      "bitrate_or_quality": "q6",
+      "channel_treatment_id": "stereo",
+      "codec_family": "vorbis",
+      "command": [
+        "<TOOL:oggenc_1_4_3_libvorbis_1_3_7>",
+        "-Q",
+        "--serial",
+        "1954",
+        "-q",
+        "6",
+        "-o",
+        "<OUTPUT>",
+        "<INPUT>"
+      ],
+      "encoder_id": "vorbis_libvorbis_1_3_7",
+      "evidence_partition": "mechanism_development",
+      "expanded_setting_id": "dev-vorbis-libvorbis-q6--stereo",
+      "expected_channel_count": 2,
+      "expected_codec_name": "vorbis",
+      "expected_profile": null,
+      "expected_sample_rate_hz": 44100,
+      "frame_duration_ms": null,
+      "input_id": "synthetic-44100-stereo",
+      "lineage_id": "xiph_libvorbis",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "encoder_default"
+      },
+      "output_extension": ".ogg",
+      "rate_control": "vbr_quality",
+      "template_id": "dev-vorbis-libvorbis-q6",
+      "tool_id": "oggenc_1_4_3_libvorbis_1_3_7"
+    },
+    {
+      "anchor": false,
+      "binding_tool_ids": [
+        "ffmpeg_8_1_2_1"
+      ],
+      "bitrate_or_quality": "q2",
+      "channel_treatment_id": "mono",
+      "codec_family": "vorbis",
+      "command": [
+        "<TOOL:ffmpeg_8_1_2_1>",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-y",
+        "-fflags",
+        "+bitexact",
+        "-i",
+        "<INPUT>",
+        "-map",
+        "0:a:0",
+        "-ac:a",
+        "1",
+        "-ar:a",
+        "44100",
+        "-strict",
+        "experimental",
+        "-c:a",
+        "vorbis",
+        "-q:a",
+        "2",
+        "-flags:a",
+        "+bitexact",
+        "-fflags",
+        "+bitexact",
+        "-serial_offset",
+        "1954",
+        "<OUTPUT>"
+      ],
+      "encoder_id": "vorbis_ffmpeg_native_8_1_2",
+      "evidence_partition": "encoder_transfer",
+      "expanded_setting_id": "transfer-vorbis-ffmpeg-q2--mono",
+      "expected_channel_count": 1,
+      "expected_codec_name": "vorbis",
+      "expected_profile": null,
+      "expected_sample_rate_hz": 44100,
+      "frame_duration_ms": null,
+      "input_id": "synthetic-44100-mono",
+      "lineage_id": "ffmpeg_native_vorbis",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "implementation_fixed_or_default"
+      },
+      "output_extension": ".ogg",
+      "rate_control": "vbr_quality",
+      "template_id": "transfer-vorbis-ffmpeg-q2",
+      "tool_id": "ffmpeg_8_1_2_1"
+    },
+    {
+      "anchor": false,
+      "binding_tool_ids": [
+        "ffmpeg_8_1_2_1"
+      ],
+      "bitrate_or_quality": "q2",
+      "channel_treatment_id": "stereo",
+      "codec_family": "vorbis",
+      "command": [
+        "<TOOL:ffmpeg_8_1_2_1>",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-y",
+        "-fflags",
+        "+bitexact",
+        "-i",
+        "<INPUT>",
+        "-map",
+        "0:a:0",
+        "-ac:a",
+        "2",
+        "-ar:a",
+        "44100",
+        "-strict",
+        "experimental",
+        "-c:a",
+        "vorbis",
+        "-q:a",
+        "2",
+        "-flags:a",
+        "+bitexact",
+        "-fflags",
+        "+bitexact",
+        "-serial_offset",
+        "1954",
+        "<OUTPUT>"
+      ],
+      "encoder_id": "vorbis_ffmpeg_native_8_1_2",
+      "evidence_partition": "encoder_transfer",
+      "expanded_setting_id": "transfer-vorbis-ffmpeg-q2--stereo",
+      "expected_channel_count": 2,
+      "expected_codec_name": "vorbis",
+      "expected_profile": null,
+      "expected_sample_rate_hz": 44100,
+      "frame_duration_ms": null,
+      "input_id": "synthetic-44100-stereo",
+      "lineage_id": "ffmpeg_native_vorbis",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "implementation_fixed_or_default"
+      },
+      "output_extension": ".ogg",
+      "rate_control": "vbr_quality",
+      "template_id": "transfer-vorbis-ffmpeg-q2",
+      "tool_id": "ffmpeg_8_1_2_1"
+    },
+    {
+      "anchor": true,
+      "binding_tool_ids": [
+        "ffmpeg_8_1_2_1"
+      ],
+      "bitrate_or_quality": "q4",
+      "channel_treatment_id": "mono",
+      "codec_family": "vorbis",
+      "command": [
+        "<TOOL:ffmpeg_8_1_2_1>",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-y",
+        "-fflags",
+        "+bitexact",
+        "-i",
+        "<INPUT>",
+        "-map",
+        "0:a:0",
+        "-ac:a",
+        "1",
+        "-ar:a",
+        "44100",
+        "-strict",
+        "experimental",
+        "-c:a",
+        "vorbis",
+        "-q:a",
+        "4",
+        "-flags:a",
+        "+bitexact",
+        "-fflags",
+        "+bitexact",
+        "-serial_offset",
+        "1954",
+        "<OUTPUT>"
+      ],
+      "encoder_id": "vorbis_ffmpeg_native_8_1_2",
+      "evidence_partition": "encoder_transfer",
+      "expanded_setting_id": "transfer-vorbis-ffmpeg-q4--mono",
+      "expected_channel_count": 1,
+      "expected_codec_name": "vorbis",
+      "expected_profile": null,
+      "expected_sample_rate_hz": 44100,
+      "frame_duration_ms": null,
+      "input_id": "synthetic-44100-mono",
+      "lineage_id": "ffmpeg_native_vorbis",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "implementation_fixed_or_default"
+      },
+      "output_extension": ".ogg",
+      "rate_control": "vbr_quality",
+      "template_id": "transfer-vorbis-ffmpeg-q4",
+      "tool_id": "ffmpeg_8_1_2_1"
+    },
+    {
+      "anchor": true,
+      "binding_tool_ids": [
+        "ffmpeg_8_1_2_1"
+      ],
+      "bitrate_or_quality": "q4",
+      "channel_treatment_id": "stereo",
+      "codec_family": "vorbis",
+      "command": [
+        "<TOOL:ffmpeg_8_1_2_1>",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-y",
+        "-fflags",
+        "+bitexact",
+        "-i",
+        "<INPUT>",
+        "-map",
+        "0:a:0",
+        "-ac:a",
+        "2",
+        "-ar:a",
+        "44100",
+        "-strict",
+        "experimental",
+        "-c:a",
+        "vorbis",
+        "-q:a",
+        "4",
+        "-flags:a",
+        "+bitexact",
+        "-fflags",
+        "+bitexact",
+        "-serial_offset",
+        "1954",
+        "<OUTPUT>"
+      ],
+      "encoder_id": "vorbis_ffmpeg_native_8_1_2",
+      "evidence_partition": "encoder_transfer",
+      "expanded_setting_id": "transfer-vorbis-ffmpeg-q4--stereo",
+      "expected_channel_count": 2,
+      "expected_codec_name": "vorbis",
+      "expected_profile": null,
+      "expected_sample_rate_hz": 44100,
+      "frame_duration_ms": null,
+      "input_id": "synthetic-44100-stereo",
+      "lineage_id": "ffmpeg_native_vorbis",
+      "nominal_encoder_lowpass": {
+        "hz": null,
+        "mode": "implementation_fixed_or_default"
+      },
+      "output_extension": ".ogg",
+      "rate_control": "vbr_quality",
+      "template_id": "transfer-vorbis-ffmpeg-q4",
+      "tool_id": "ffmpeg_8_1_2_1"
+    }
+  ],
+  "factor_binding": {
+    "checkpoint_commit": "52470b2d0e279d002b8516a7d4f862c93133ac8b",
+    "factor_freeze_id": "lossytrace-v2-factor-levels-20260802-001",
+    "path": "benchmarks/audio-integrity-v2/factor-levels.json",
+    "sha256": "c64f74ee48cbf9d626cba00cb55b139ecc1e4d206daa2e0fc94ec0af45991fab"
+  },
+  "history_decoder_bindings": [
+    {
+      "codec_families": [
+        "mp3",
+        "aac_lc",
+        "opus",
+        "vorbis"
+      ],
+      "command": [
+        "<TOOL:ffmpeg_8_1_2_1>",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-y",
+        "-fflags",
+        "+bitexact",
+        "-i",
+        "<INPUT>",
+        "-map",
+        "0:a:0",
+        "-c:a",
+        "pcm_s16le",
+        "-fflags",
+        "+bitexact",
+        "<OUTPUT>"
+      ],
+      "history_decoder_id": "ffmpeg_native_audio_8_1_2",
+      "role": "primary_cross_codec_history_decoder",
+      "tool_id": "ffmpeg_8_1_2_1"
+    },
+    {
+      "codec_families": [
+        "mp3",
+        "aac_lc",
+        "opus",
+        "vorbis"
+      ],
+      "command": [
+        "<TOOL:apple_afconvert_macos_26_6_25g72>",
+        "<INPUT>",
+        "<OUTPUT>",
+        "-f",
+        "WAVE",
+        "-d",
+        "LEI16"
+      ],
+      "history_decoder_id": "apple_audiotoolbox_25g72",
+      "role": "cross_codec_decoder_challenge",
+      "tool_id": "apple_afconvert_macos_26_6_25g72"
+    },
+    {
+      "codec_families": [
+        "mp3"
+      ],
+      "command": [
+        "<TOOL:mpg123_1_33_6>",
+        "-q",
+        "-w",
+        "<OUTPUT>",
+        "<INPUT>"
+      ],
+      "history_decoder_id": "mpg123_1_33_6",
+      "role": "codec_specific_decoder_challenge",
+      "tool_id": "mpg123_1_33_6"
+    },
+    {
+      "codec_families": [
+        "opus"
+      ],
+      "command": [
+        "<TOOL:opusdec_0_2_2_libopus_1_6_1>",
+        "--quiet",
+        "<INPUT>",
+        "<OUTPUT>"
+      ],
+      "history_decoder_id": "opusdec_0_2_2_libopus_1_6_1",
+      "role": "codec_specific_decoder_challenge",
+      "tool_id": "opusdec_0_2_2_libopus_1_6_1"
+    },
+    {
+      "codec_families": [
+        "vorbis"
+      ],
+      "command": [
+        "<TOOL:oggdec_1_4_3_libvorbis_1_3_7>",
+        "-Q",
+        "-o",
+        "<OUTPUT>",
+        "<INPUT>"
+      ],
+      "history_decoder_id": "oggdec_1_4_3_libvorbis_1_3_7",
+      "role": "codec_specific_decoder_challenge",
+      "tool_id": "oggdec_1_4_3_libvorbis_1_3_7"
+    }
+  ],
+  "pcm_transform_bindings": [
+    {
+      "family": "identity",
+      "implementation": "byte-exact signed-s16le PCM identity",
+      "parameters": {},
+      "transform_id": "identity"
+    },
+    {
+      "family": "pcm_gain",
+      "implementation": "For each signed sample x, round x*1076291389/2^31 to nearest with ties to even, then saturate to signed 16-bit.",
+      "parameters": {
+        "coefficient_q31": 1076291389,
+        "nominal_decibels": -6
+      },
+      "transform_id": "gain-minus6db-q31"
+    },
+    {
+      "family": "pcm_trim",
+      "implementation": "Remove exactly sample_rate_hz*250/1000 leading frames; reject inputs below the frozen minimum.",
+      "parameters": {
+        "head_trim_milliseconds": 250,
+        "minimum_input_milliseconds": 500
+      },
+      "transform_id": "trim-head-250ms"
+    },
+    {
+      "family": "pcm_silence",
+      "implementation": "Prepend exactly sample_rate_hz*500/1000 zero-valued frames.",
+      "parameters": {
+        "leading_silence_milliseconds": 500,
+        "sample_value": 0
+      },
+      "transform_id": "prepend-digital-silence-500ms"
+    },
+    {
+      "family": "pcm_duration",
+      "implementation": "Retain exactly the first sample_rate_hz*3 frames; reject inputs below the frozen minimum.",
+      "parameters": {
+        "maximum_duration_milliseconds": 3000,
+        "minimum_input_milliseconds": 3000
+      },
+      "transform_id": "duration-prefix-3s"
+    },
+    {
+      "command": [
+        "<TOOL:ffmpeg_8_1_2_1>",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-y",
+        "-fflags",
+        "+bitexact",
+        "-i",
+        "<INPUT>",
+        "-map",
+        "0:a:0",
+        "-af",
+        "lowpass=f=16000:t=q:w=0.5097955791041592:p=2:a=tdii:r=f64:n=0,lowpass=f=16000:t=q:w=0.6013448869350453:p=2:a=tdii:r=f64:n=0,lowpass=f=16000:t=q:w=0.8999762231364156:p=2:a=tdii:r=f64:n=0,lowpass=f=16000:t=q:w=2.5629154477415064:p=2:a=tdii:r=f64:n=0",
+        "-c:a",
+        "pcm_s16le",
+        "-fflags",
+        "+bitexact",
+        "<OUTPUT>"
+      ],
+      "family": "pcm_lowpass",
+      "implementation": "FFmpeg f64 transposed-direct-form-II cascade of four two-pole lowpass sections forming an eighth-order Butterworth response, followed by deterministic s16 output.",
+      "parameters": {
+        "biquad_poles_per_section": 2,
+        "cutoff_hz": 16000,
+        "section_count": 4
+      },
+      "section_q_in_processing_order": [
+        "0.5097955791041592",
+        "0.6013448869350453",
+        "0.8999762231364156",
+        "2.5629154477415064"
+      ],
+      "transform_id": "lowpass-16k-cascade8"
+    },
+    {
+      "commands_by_target_sample_rate_hz": {
+        "44100": [
+          "<TOOL:ffmpeg_8_1_2_1>",
+          "-hide_banner",
+          "-loglevel",
+          "error",
+          "-y",
+          "-fflags",
+          "+bitexact",
+          "-i",
+          "<INPUT>",
+          "-map",
+          "0:a:0",
+          "-af",
+          "aresample=32000:osf=s32:resampler=swr:filter_size=64:phase_shift=10:linear_interp=0:exact_rational=1:cutoff=0.95:filter_type=kaiser:kaiser_beta=9:dither_method=none,aresample=44100:osf=s16:resampler=swr:filter_size=64:phase_shift=10:linear_interp=0:exact_rational=1:cutoff=0.95:filter_type=kaiser:kaiser_beta=9:dither_method=none",
+          "-c:a",
+          "pcm_s16le",
+          "-fflags",
+          "+bitexact",
+          "<OUTPUT>"
+        ],
+        "48000": [
+          "<TOOL:ffmpeg_8_1_2_1>",
+          "-hide_banner",
+          "-loglevel",
+          "error",
+          "-y",
+          "-fflags",
+          "+bitexact",
+          "-i",
+          "<INPUT>",
+          "-map",
+          "0:a:0",
+          "-af",
+          "aresample=32000:osf=s32:resampler=swr:filter_size=64:phase_shift=10:linear_interp=0:exact_rational=1:cutoff=0.95:filter_type=kaiser:kaiser_beta=9:dither_method=none,aresample=48000:osf=s16:resampler=swr:filter_size=64:phase_shift=10:linear_interp=0:exact_rational=1:cutoff=0.95:filter_type=kaiser:kaiser_beta=9:dither_method=none",
+          "-c:a",
+          "pcm_s16le",
+          "-fflags",
+          "+bitexact",
+          "<OUTPUT>"
+        ]
+      },
+      "family": "pcm_resample",
+      "implementation": "FFmpeg SWResampler 64-tap Kaiser sinc, exact-rational phases, no interpolation, cutoff 0.95, beta 9, and no dither.",
+      "parameters": {
+        "intermediate_sample_rate_hz": 32000,
+        "return_to_pair_target_rate": true
+      },
+      "transform_id": "resample-roundtrip-32k"
+    },
+    {
+      "family": "pcm_requantize_dither",
+      "implementation": "Read two unsigned 16-bit big-endian values a,b per sample from SHA-256 counter blocks keyed by UTF-8(seed_prefix || group_id || NUL || transform_id || NUL || uint64be(counter)). Add exact noise (a-b)*8/65535, round the result to the nearest multiple of 16 with ties to even, and saturate to signed 16-bit. This triangular noise has one 12-bit LSB peak-to-peak.",
+      "parameters": {
+        "dither": "TPDF at one 12-bit LSB peak-to-peak",
+        "effective_bits": 12,
+        "prng": "SHA-256 counter mode",
+        "seed_identity": "group_id and transform_id only; identical noise sequence for a matched H0/H1 pair",
+        "seed_prefix": "lossytrace-v2-tpdf-seed-20260802\u0000"
+      },
+      "transform_id": "requantize-12bit-tpdf"
+    },
+    {
+      "family": "pcm_channel_remix",
+      "implementation": "Mono duplicates exactly to two channels; stereo becomes mono by rounding (left+right)/2 to nearest with ties to even.",
+      "parameters": {
+        "mono_input": "duplicate to stereo",
+        "stereo_input": "arithmetic-mean mono"
+      },
+      "transform_id": "alternate-channel-topology"
+    },
+    {
+      "family": "lossless_container",
+      "implementation": "Encode the unchanged signed-s16le PCM into a different frozen lossless wrapper and require exact analysis-decoder PCM equality.",
+      "parameters": {
+        "decoded_pcm_must_be_exact": true
+      },
+      "transform_id": "lossless-wrapper-rewrite"
+    }
+  ],
+  "prior_toolchain_evidence_binding": {
+    "path": "research/toolchains/evidence/observed-20260802-001-aggregate.json",
+    "probe_id": "lossytrace-v2-toolchain-probe-20260802-001",
+    "sha256": "fb497f37ade1a6db5e3d87a0f957f6c2e72433c4091679f098ab6ce07b8b8c8d"
+  },
+  "probe_inputs": [
+    {
+      "channel_count": 1,
+      "frame_count": 132300,
+      "generator_id": "integer-lcg-multiband-pcm-v1",
+      "input_id": "synthetic-44100-mono",
+      "sample_rate_hz": 44100
+    },
+    {
+      "channel_count": 2,
+      "frame_count": 132300,
+      "generator_id": "integer-lcg-multiband-pcm-v1",
+      "input_id": "synthetic-44100-stereo",
+      "sample_rate_hz": 44100
+    },
+    {
+      "channel_count": 1,
+      "frame_count": 144000,
+      "generator_id": "integer-lcg-multiband-pcm-v1",
+      "input_id": "synthetic-48000-mono",
+      "sample_rate_hz": 48000
+    },
+    {
+      "channel_count": 2,
+      "frame_count": 144000,
+      "generator_id": "integer-lcg-multiband-pcm-v1",
+      "input_id": "synthetic-48000-stereo",
+      "sample_rate_hz": 48000
+    }
+  ],
+  "public_decoder_equivalence_boundary": {
+    "cargo_lock_path": "Cargo.lock",
+    "cargo_lock_sha256": "eb8c25b24e0fa1f4b69201c3f5a6b7cddd31692de72746c1c78b18413240ec0c",
+    "fresh_probe_deferred_reason": "No frozen public binary exists at this recipe checkpoint; bind and run one after the toolchain result commit and before scoring.",
+    "fresh_synthetic_equivalence_required_before_baseline_scoring": true,
+    "implementation": "LossyTrace feature-version-0 Symphonia 0.5 decoder",
+    "prior_observed_evidence": "The 2026-08-01 14-group, seven-domain container audit found exact feature equality across all 56 FLAC/WAV/AIFF triplets.",
+    "source_checkpoint_commit": "52470b2d0e279d002b8516a7d4f862c93133ac8b"
+  },
+  "public_state": {
+    "evidence_schema_version": 1,
+    "feature_version": 0,
+    "public_verdict_enabled": false
+  },
+  "replay_contract": {
+    "complete_replay_count": 2,
+    "decoder_runs_per_compatible_path_within_replay": 2,
+    "encoder_runs_per_setting_within_replay": 2,
+    "expected_expanded_setting_count": 48,
+    "expected_history_decoder_path_count": 132,
+    "expected_transform_input_path_count": 40,
+    "expected_wrapper_analysis_decode_path_count": 12,
+    "expected_wrapper_encode_path_count": 12,
+    "maximum_parallel_workers": 1,
+    "minimum_free_space_reserve_bytes": 16106127360,
+    "reports_must_be_byte_identical": true,
+    "transform_runs_per_input_within_replay": 2
+  },
+  "schema_version": 1,
+  "scores_opened": false,
+  "selection_authorized": false,
+  "source_groups_assigned": false,
+  "state": "exact_toolchain_recipe_frozen_before_expanded_setting_replay",
+  "stop_conditions": [
+    "A binary, linked component, factor file, or prior-evidence hash differs.",
+    "A frozen command cannot realize its nominal codec/profile/rate/channel level.",
+    "An encoded setting is not byte-deterministic across two executions.",
+    "A compatible decoder path is not PCM-deterministic across two executions.",
+    "A deterministic transform differs across two executions.",
+    "FLAC, WAV, and AIFF do not decode to the exact input signed-s16le PCM.",
+    "The two complete public reports differ byte-for-byte.",
+    "Projected or observed free space falls below the 15 GiB reserve."
+  ],
+  "tool_bindings": [
+    {
+      "binary_sha256": "1332dc2de372bade9a8a63da0d6cdfab9de97fcefbae707bcc0b0506e1203327",
+      "build_recipe": "Homebrew bottle ffmpeg 8.1.2_1 for arm64_tahoe",
+      "components": [
+        {
+          "component_id": "libavcodec_62_28_102",
+          "sha256": "a49174b86cdfe23efc9b3bb1cb4c7189097e18003d726b149cf3296669521853"
+        },
+        {
+          "component_id": "libmp3lame_4_0",
+          "sha256": "463453796b54698b8016af58ab86066ffbafe5229c10c500e4fe6b92d7a63934"
+        },
+        {
+          "component_id": "libopus_1_6_1",
+          "sha256": "98dcd3cc62c6cf913b789051536ab246c56cc163c74bd8b4968ac467ec74b68b"
+        }
+      ],
+      "implementation": "FFmpeg",
+      "license": "GPL-3.0-or-later",
+      "tool_id": "ffmpeg_8_1_2_1",
+      "version": "8.1.2_1; libavcodec 62.28.102; libavformat 62.12.102"
+    },
+    {
+      "binary_sha256": "4322275c1c2ac6ba15c695b288788bc1204e75211b3d5c030e5812c82a6dff73",
+      "build_recipe": "Homebrew bottle ffmpeg 8.1.2_1 for arm64_tahoe",
+      "components": [],
+      "implementation": "FFprobe",
+      "license": "GPL-3.0-or-later",
+      "tool_id": "ffprobe_8_1_2_1",
+      "version": "8.1.2_1"
+    },
+    {
+      "binary_sha256": "7b31d93213dbf9a0910b6d6d00177b59b90017af0cb28f1c16504be3e9aaf14f",
+      "components": [],
+      "implementation": "Apple AudioToolbox afconvert",
+      "license": "Apple system component; redistribution not planned",
+      "operating_system_binding": "macOS 26.6 build 25G72; codec resides in the dyld shared cache",
+      "tool_id": "apple_afconvert_macos_26_6_25g72",
+      "version": "2.0 on macOS 26.6 build 25G72"
+    },
+    {
+      "binary_sha256": "11095c200ebbef2b43adc795aee0ae1adcfc91a1467b70f524582327bc3f685a",
+      "build_recipe": "Homebrew bottle lame 4.0 for arm64_tahoe",
+      "components": [],
+      "implementation": "LAME",
+      "license": "LGPL-2.0-or-later",
+      "tool_id": "lame_cli_4_0",
+      "version": "4.0"
+    },
+    {
+      "binary_sha256": "da6ff87d47f5f73aef2c4b460e91f12c677ad2e9458e73fb5747108e7a7e705b",
+      "build_recipe": "Homebrew bottle mpg123 1.33.6 for arm64_tahoe",
+      "components": [
+        {
+          "component_id": "libmpg123_50_4_0",
+          "sha256": "7212b772d690c1ed13f11fb52679d77069f4d174f51aafffd1b8364f23aaf138"
+        }
+      ],
+      "implementation": "mpg123",
+      "license": "LGPL-2.1-only",
+      "tool_id": "mpg123_1_33_6",
+      "version": "1.33.6"
+    },
+    {
+      "binary_sha256": "78db870d08dd530fa6093896d9aeeb2877bb3d66445d418e6ccaa0367b1195d4",
+      "build_recipe": "./bootstrap; ./configure --prefix=<PRIVATE_PREFIX>; make -j1; make install; autoconf 2.73; automake 1.18.1; GNU libtool 2.6.2; Apple clang 21.0.0",
+      "components": [
+        {
+          "component_id": "libshine_3_1_1_ab5e352",
+          "sha256": "4fdb418c98cb41bf9c204ea1b4fb89ac1d0c329c126d4ee12c977ba4f2c2579a"
+        }
+      ],
+      "implementation": "toots/shine fixed-point MP3 encoder",
+      "license": "LGPL-2.0-only",
+      "license_sha256": "517c8bbea53e7257be86efaaba4c0b83effc386e4d84e0b6a33e025266ddb74e",
+      "source_revision": "ab5e3526b64af1a2eaa43aa6f441a7312e013519",
+      "source_tree_sha1": "8f557be3a4c1a99336c6492d68287984a3d1d1ec",
+      "tool_id": "shineenc_3_1_1_ab5e352",
+      "version": "3.1.1 at ab5e3526b64af1a2eaa43aa6f441a7312e013519"
+    },
+    {
+      "binary_sha256": "304c260fd00d9481954cc08076024c69c51546b0edd97de8896092f07f7ac8cb",
+      "build_recipe": "CC=clang CFLAGS=-O2,-Wno-error=implicit-int,-Wno-error=int-conversion,-Wno-deprecated-non-prototype ./configure --prefix=<PRIVATE_PREFIX>; make -j1; make install; Apple clang 21.0.0",
+      "components": [],
+      "implementation": "BladeEnc",
+      "license": "LGPL-2.1-only",
+      "license_sha256": "ede9298547948ae66509e61d6e2d41ff2a8b511578644fb7ec970239fbca07b4",
+      "source_revision": "a2d06ecd077e6031f3cafaaeadfa58f576cee7e2",
+      "source_tree_sha1": "c24aebb816bb5ad1c6e9f2a1e9bc6c4724f98d7b",
+      "tool_id": "bladeenc_0_94_2_a2d06ec",
+      "version": "0.94.2 mirror revision a2d06ecd077e6031f3cafaaeadfa58f576cee7e2"
+    },
+    {
+      "binary_sha256": "5313c0efe97925f4c399cefa3ae2e980581a7ede6cc1426e846b0746a42af9c5",
+      "build_recipe": "Homebrew bottles fdk-aac-encoder 1.0.8 and fdk-aac 2.0.3 for arm64_tahoe",
+      "components": [
+        {
+          "component_id": "libfdk_aac_2_0_3",
+          "sha256": "b5f1124f19098585d6d12edd92e6b038972250ae4a36bb5e231d079e704a41b4"
+        }
+      ],
+      "implementation": "nu774 fdkaac frontend with Fraunhofer FDK AAC",
+      "license": "Zlib/BSD/MIT frontend plus Fraunhofer FDK AAC custom licence; no patent grant",
+      "license_sha256": "95ec80da40b4af12ad4c4f3158c9cfb80f2479f3246e4260cb600827cc8c7836",
+      "tool_id": "fdkaac_1_0_8_fdk_2_0_3",
+      "version": "fdkaac 1.0.8; fdk-aac 2.0.3"
+    },
+    {
+      "binary_sha256": "920e29fd11a09fc047e979bd6113dbb5203756738cfd2823264c44d1a48f7566",
+      "build_recipe": "Homebrew bottle vorbis-tools 1.4.3 for arm64_tahoe",
+      "components": [
+        {
+          "component_id": "libvorbisenc_1_3_7",
+          "sha256": "aae189d5bbbabb0c1369ba62a88e93e7d9c76a40f6424295f6c60b6b9ca8dca2"
+        },
+        {
+          "component_id": "libvorbis_1_3_7",
+          "sha256": "38df2463cc776f5a4dd58331e0abb46dba0a143b65e345ece328ea61978dd795"
+        }
+      ],
+      "implementation": "Xiph.org oggenc with libvorbis reference encoder",
+      "license": "LGPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only; libvorbis BSD-3-Clause",
+      "tool_id": "oggenc_1_4_3_libvorbis_1_3_7",
+      "version": "vorbis-tools 1.4.3; libvorbis 1.3.7"
+    },
+    {
+      "binary_sha256": "c52e1ab868d761cf7ab1596139067ff6d42850e51ba4e03282cb8113e91d2e59",
+      "build_recipe": "Homebrew bottle vorbis-tools 1.4.3 for arm64_tahoe",
+      "components": [
+        {
+          "component_id": "libvorbisfile_1_3_7",
+          "sha256": "182caefbd3eec6f61e513900b5f9c4a796c83048aa0d1a882e30c232d248cb35"
+        },
+        {
+          "component_id": "libvorbis_1_3_7",
+          "sha256": "38df2463cc776f5a4dd58331e0abb46dba0a143b65e345ece328ea61978dd795"
+        }
+      ],
+      "implementation": "Xiph.org oggdec with libvorbisfile",
+      "license": "LGPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only; libvorbis BSD-3-Clause",
+      "tool_id": "oggdec_1_4_3_libvorbis_1_3_7",
+      "version": "vorbis-tools 1.4.3; libvorbis 1.3.7"
+    },
+    {
+      "binary_sha256": "41935fc050bb066108f9961ddbdc0b82709e445c77d0ea80a6744b75c135cfda",
+      "build_recipe": "Homebrew bottles opus-tools 0.2_2, libopus 1.6.1, and libopusenc 0.3 for arm64_tahoe",
+      "components": [
+        {
+          "component_id": "libopusenc_0_3",
+          "sha256": "610ddacc803f072d31e8b06d4ad6c078c0205f5c5c93371c7a457afd8048f455"
+        },
+        {
+          "component_id": "libopus_1_6_1",
+          "sha256": "98dcd3cc62c6cf913b789051536ab246c56cc163c74bd8b4968ac467ec74b68b"
+        }
+      ],
+      "implementation": "Xiph.org opusenc with libopus reference encoder",
+      "license": "BSD-2-Clause; libopus BSD-3-Clause",
+      "tool_id": "opusenc_0_2_2_libopus_1_6_1",
+      "version": "opus-tools 0.2_2; libopus 1.6.1; libopusenc 0.3"
+    },
+    {
+      "binary_sha256": "048f649db501cbdf5066fc7ef404b7f52298903dc8421011db21a8fa9dba32e7",
+      "build_recipe": "Homebrew bottles opus-tools 0.2_2, libopus 1.6.1, and opusfile 0.12_1 for arm64_tahoe",
+      "components": [
+        {
+          "component_id": "libopusfile_0_12_1",
+          "sha256": "860c35f38650001b3d8c1ab77691981b1b2d9b067086b17db3596d8dd6ce3f51"
+        },
+        {
+          "component_id": "libopus_1_6_1",
+          "sha256": "98dcd3cc62c6cf913b789051536ab246c56cc163c74bd8b4968ac467ec74b68b"
+        }
+      ],
+      "implementation": "Xiph.org opusdec with libopusfile and libopus",
+      "license": "BSD-2-Clause; libopus BSD-3-Clause",
+      "tool_id": "opusdec_0_2_2_libopus_1_6_1",
+      "version": "opus-tools 0.2_2; libopus 1.6.1; opusfile 0.12_1"
+    }
+  ],
+  "toolchain_freeze_id": "lossytrace-v2-toolchain-bindings-20260802-001",
+  "wrapper_bindings": [
+    {
+      "command": [
+        "<TOOL:ffmpeg_8_1_2_1>",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-y",
+        "-fflags",
+        "+bitexact",
+        "-i",
+        "<INPUT>",
+        "-map",
+        "0:a:0",
+        "-c:a",
+        "flac",
+        "-sample_fmt",
+        "s16",
+        "-fflags",
+        "+bitexact",
+        "<OUTPUT>"
+      ],
+      "container": "flac",
+      "tool_id": "ffmpeg_8_1_2_1",
+      "wrapper_id": "flac16"
+    },
+    {
+      "command": [
+        "<TOOL:ffmpeg_8_1_2_1>",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-y",
+        "-fflags",
+        "+bitexact",
+        "-i",
+        "<INPUT>",
+        "-map",
+        "0:a:0",
+        "-c:a",
+        "pcm_s16le",
+        "-fflags",
+        "+bitexact",
+        "<OUTPUT>"
+      ],
+      "container": "wav",
+      "tool_id": "ffmpeg_8_1_2_1",
+      "wrapper_id": "wav16"
+    },
+    {
+      "command": [
+        "<TOOL:ffmpeg_8_1_2_1>",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-y",
+        "-fflags",
+        "+bitexact",
+        "-i",
+        "<INPUT>",
+        "-map",
+        "0:a:0",
+        "-c:a",
+        "pcm_s16be",
+        "-fflags",
+        "+bitexact",
+        "<OUTPUT>"
+      ],
+      "container": "aiff",
+      "tool_id": "ffmpeg_8_1_2_1",
+      "wrapper_id": "aiff16"
+    }
+  ]
+}

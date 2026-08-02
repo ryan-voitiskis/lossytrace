@@ -48,6 +48,22 @@ class ToolchainProbeTest(unittest.TestCase):
             MODULE.public_command(template, "encoder"),
         )
 
+    def test_integer_probe_wave_supports_mono(self) -> None:
+        with tempfile.TemporaryDirectory() as name:
+            output = Path(name) / "mono.wav"
+            MODULE.generate_probe_wave(
+                output,
+                sample_rate_hz=48_000,
+                frame_count=1000,
+                channel_count=1,
+            )
+            info = MODULE.wave_pcm_info(output)
+            self.assertEqual(1, info["channel_count"])
+            self.assertEqual(
+                "003f31b9da65a60e25c63991fb9bbb39167e0e0f90e1309cbdc02787355c7959",
+                MODULE.sha256_file(output),
+            )
+
     def test_path_free_guard_rejects_a_private_path(self) -> None:
         with self.assertRaisesRegex(ValueError, "private path"):
             MODULE.assert_path_free(

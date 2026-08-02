@@ -82,8 +82,10 @@ def generate_probe_wave(
     path: Path, *, sample_rate_hz: int, frame_count: int, channel_count: int = 2
 ) -> None:
     """Write deterministic, integer-only PCM with broadband and sparse energy."""
-    if sample_rate_hz < 8000 or frame_count < 1 or channel_count != 2:
-        raise ValueError("probe WAV requires stereo, a valid rate, and positive frames")
+    if sample_rate_hz < 8000 or frame_count < 1 or channel_count not in (1, 2):
+        raise ValueError(
+            "probe WAV requires mono or stereo, a valid rate, and positive frames"
+        )
     states = [0x13579BDF, 0x2468ACE1]
     packed = bytearray()
     impulse_period = max(1, sample_rate_hz // 7)
@@ -560,11 +562,13 @@ def run_probe(config: dict[str, Any], work_root: Path) -> dict[str, Any]:
             input_id = row.get("input_id")
             sample_rate_hz = row.get("sample_rate_hz")
             frame_count = row.get("frame_count")
+            channel_count = row.get("channel_count", 2)
             if (
                 not isinstance(input_id, str)
                 or input_id in inputs
                 or not isinstance(sample_rate_hz, int)
                 or not isinstance(frame_count, int)
+                or channel_count not in (1, 2)
             ):
                 raise ValueError(f"invalid input row: {input_id!r}")
             path = work / f"{input_id}.wav"
@@ -572,6 +576,7 @@ def run_probe(config: dict[str, Any], work_root: Path) -> dict[str, Any]:
                 path,
                 sample_rate_hz=sample_rate_hz,
                 frame_count=frame_count,
+                channel_count=channel_count,
             )
             inputs[input_id] = path
             public_inputs.append(

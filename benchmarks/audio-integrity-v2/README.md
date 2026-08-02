@@ -18,7 +18,9 @@ Read these before constructing a manifest:
 - [`inventory.json`](inventory.json)
 - [`source-allocation-rules.json`](source-allocation-rules.json)
 - [`factor-levels.json`](factor-levels.json)
+- [`toolchain-bindings.json`](toolchain-bindings.json)
 - [`toolchain-probe-result-20260802.md`](../../docs/research/toolchain-probe-result-20260802.md)
+- [`toolchain-freeze-preregistration-20260802.md`](../../docs/research/toolchain-freeze-preregistration-20260802.md)
 - [`rwc-source-identity-audit-20260802.md`](../../docs/research/rwc-source-identity-audit-20260802.md)
 
 The pre-freeze source/tool inventory and its remaining gates are described
@@ -36,7 +38,10 @@ outputs contain exact member identities and stay outside Git; only the
 path-free aggregate is committed. The subsequent
 [`factor-level freeze`](../../docs/research/factor-level-freeze-20260802.md)
 fixes excerpt, codec-setting, decoder, channel, transform, wrapper, coverage,
-and storage levels without binding tools or assigning source groups to cells.
+and storage levels without assigning source groups to cells. The subsequent
+[`exact-toolchain preregistration`](../../docs/research/toolchain-freeze-preregistration-20260802.md)
+binds 48 expanded settings, 132 compatible history-decoder paths, transform
+algorithms, and wrapper commands before executing the new settings.
 
 ## Evidence partitions
 
@@ -106,6 +111,14 @@ python3 scripts/validate-audio-integrity-v2-factor-levels.py \
   --factors benchmarks/audio-integrity-v2/factor-levels.json
 ```
 
+Validate the exact path-free toolchain recipe independently:
+
+```bash
+python3 scripts/freeze-audio-integrity-v2-toolchains.py validate \
+  --factor benchmarks/audio-integrity-v2/factor-levels.json \
+  --manifest benchmarks/audio-integrity-v2/toolchain-bindings.json
+```
+
 Before opening a partition, use its freeze profile:
 
 ```bash
@@ -129,8 +142,9 @@ preregistration and persistent goal decide when a partition may be consumed.
 2. Preserve the completed encoder/decoder/source inventory without treating it
    as a freeze.
 3. Preserve the completed source-identity audits, external-transfer margin,
-   replayed source allocation, and factor-level freeze, then freeze tool
-   bindings and the fractional assignment as separate records.
+   replayed source allocation, factor-level freeze, and exact-toolchain
+   preregistration, then replay the toolchain and freeze the fractional
+   assignment as separate records.
 4. Generate paired mechanism-development cases with one low-priority worker,
    hashes, resumable recipes, and a free-space reserve.
 5. Freeze encoder-transfer and external-transfer identities before mechanism

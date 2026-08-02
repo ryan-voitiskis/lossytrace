@@ -92,6 +92,10 @@ The subsequent [`factor-level freeze`](factor-level-freeze-20260802.md) fixes
 a maximum 12-second identity-hashed excerpt, matched mono/stereo
 preconditioning, 16 development and 8 encoder-transfer setting templates, five
 history-decoder levels, nine PCM hard-negative transforms, and an ephemeral
-one-worker storage boundary. Tool bindings and fractional assignment remain
-separate freeze gates.
+one-worker storage boundary. The exact
+[`toolchain preregistration`](toolchain-freeze-preregistration-20260802.md)
+now expands those templates into 48 commands, binds 132 compatible decoder
+paths, defines coarse bandwidth observations and transform golden outputs, and
+keeps source allocation and scoring closed. Its two complete executions and
+the later fractional assignment remain separate gates.
 No successor mechanism score or retained holdout has been opened.
