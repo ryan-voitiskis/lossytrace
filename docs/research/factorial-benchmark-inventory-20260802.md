@@ -3,8 +3,9 @@
 **Status:** inventory only; no source allocation, encoder, version, setting, or
 identity is frozen
 
-**Actions so far:** local tools inspected, provider metadata reviewed, no
-benchmark audio generated, no score opened, and no candidate selected
+**Actions so far:** local tools inspected and synthetically probed, provider
+metadata reviewed, no benchmark audio generated, no score opened, and no
+candidate selected
 
 The machine-readable inventory is
 [`benchmarks/audio-integrity-v2/inventory.json`](../../benchmarks/audio-integrity-v2/inventory.json).
@@ -34,12 +35,17 @@ libvorbis versions.
 | --- | --- | --- | --- |
 | FFmpeg / libavcodec | 8.1.2_1 / 62.28.102 | CLI `1332dc...3327`; libavcodec `a49174...853` | native AAC, Opus, Vorbis; codec wrappers and native decoders |
 | LAME / libmp3lame | 4.0 | CLI `11095c...851`; library `463453...934` | development MP3 lineage |
-| Apple AudioToolbox | macOS 26.6 build 25G72; afconvert 2.0 | afconvert `7b31d9...14f`; OS build required | development AAC; proposed transfer MP3 |
-| libopus | 1.6.1 | library `98dcd3...68b` | development Opus lineage |
-| libvorbis | 1.3.7 | library `38df24...d795` | proposed development Vorbis lineage; frontend absent |
+| Apple AudioToolbox | macOS 26.6 build 25G72; afconvert 2.0 | afconvert `7b31d9...14f`; OS build required | development AAC and independent decoder; MP3 encode rejected |
+| Shine | 3.1.1 at `ab5e352` | CLI `78db87...95d4`; library `4fdb41...579a` | development MP3 lineage |
+| BladeEnc | 0.94.2 at mirror revision `a2d06ec` | CLI `304c26...c8cb` | proposed transfer MP3 lineage |
+| FDK AAC / fdkaac | 2.0.3 / 1.0.8 | CLI `5313c0...f9c5`; library `b5f112...41b4` | proposed transfer AAC lineage |
+| libopus / opus-tools | 1.6.1 / 0.2_2 | opusenc `41935f...fda`; library `98dcd3...68b` | development Opus lineage and independent decoder frontend |
+| libvorbis / vorbis-tools | 1.3.7 / 1.4.3 | oggenc `920e29...7566`; library `38df24...d795` | development Vorbis lineage and independent decoder frontend |
 | mpg123 | 1.33.6 | CLI `da6ff8...05b`; library `7212b7...138` | independent MP3 history decoder |
 
-Full SHA-256 values are retained in the JSON inventory. The FFmpeg build has
+Full SHA-256 values and source bindings are retained in the JSON inventory and
+the path-free
+[`synthetic probe result`](toolchain-probe-result-20260802.md). The FFmpeg build has
 native AAC, native experimental CELT-only Opus, native experimental Vorbis,
 libmp3lame, libopus, and Apple AAC support. It does not currently have
 libshine, libfdk-aac, or libvorbis encoder wrappers.
@@ -59,7 +65,7 @@ The smallest viable design is:
 
 | Codec | Mechanism development | Encoder transfer | Why it is disjoint |
 | --- | --- | --- | --- |
-| MP3 | LAME 4.0; Shine revision `ab5e352` | Apple AudioToolbox MP3 | three implementation lineages |
+| MP3 | LAME 4.0; Shine revision `ab5e352` | BladeEnc 0.94.2 revision `a2d06ec` | three implementation lineages |
 | AAC-LC | FFmpeg native; Apple AudioToolbox | Fraunhofer FDK AAC 2.0.3 | three implementation lineages |
 | Opus | libopus 1.6.1 | FFmpeg native Opus | reference versus native FFmpeg implementation |
 | Vorbis | libvorbis 1.3.7 | FFmpeg native Vorbis | reference versus native FFmpeg implementation |
@@ -71,16 +77,28 @@ experimental. They are useful precisely because a representation that claims
 codec-history mechanism should not silently depend on one production
 encoder's habitual cutoff. They must be reported as atypical lineages.
 
-Three pre-freeze checks remain:
+Those pre-freeze tool checks are now complete. Shine and BladeEnc were built
+from exact source revisions, and the Xiph and FDK frontends were bound to exact
+binary and library hashes. Two complete probe replays produced byte-identical
+path-free reports: all ten retained encoders emitted conformant,
+byte-deterministic bitstreams, and all 27 compatible decoder paths emitted
+deterministic PCM within path.
 
-1. Build and hash Shine, `oggenc`, and the FDK AAC frontend from pinned source
-   or packages while retaining their licences.
-2. Verify with deterministic synthetic probe inputs that `afconvert` actually
-   produces conformant MP3 on this OS build. Its format inventory advertises
-   MPEG Layer III, but a capability listing is not an executed binding.
-3. Round-trip one probe per encoder/decoder path and record bitstream and PCM
-   hashes. Probe results test plumbing only and may not influence source or
-   setting selection.
+The executed Apple MP3 check corrected the proposal. `afconvert` advertised
+MPEG Layer III in its format inventory but twice failed before producing a
+file. It remains a decoder and AAC encoder binding, not an MP3 encoder. The
+replacement is BladeEnc: a distinct, legacy ISO-derived implementation held
+for encoder transfer. Like Shine and FFmpeg's experimental encoders, it is an
+atypical challenge rather than a prevalence proxy. Its unmodified source also
+emits legacy compiler and format-security warnings, so it is private-only and
+may process only internally controlled WAV inputs.
+
+Exact decoded PCM was different across decoder implementations for all ten
+encoded probes; five also differed in decoded frame count. These are plumbing
+observations, not mechanism scores, but they make decoder identity and
+alignment mandatory crossed factors. Native FFmpeg Ogg output also required
+bitexact mode plus a fixed serial offset for byte reproducibility; those flags
+are part of the recipe rather than tunable settings.
 
 FDK requires special care. The primary Android source carries the
 [Fraunhofer FDK AAC licence](https://android.googlesource.com/platform/external/aac/),
@@ -170,9 +188,10 @@ inventory. No provider archive is treated as acquired or verified yet.
 ## Decision and next gate
 
 The tool and source proposal is feasible on paper and satisfies the v2 minima
-under its documented lower bounds. It is not frozen. The next checkpoint must
-be a metadata-only verification report plus deterministic encoder probes. Only
-then may a separate source-allocation and toolchain freeze be committed.
+under its documented lower bounds. The tool plumbing is now verified but is
+not frozen. The next checkpoint must verify exact source identities and add
+margin above the external-transfer minimum. Only then may a separate
+source-allocation, factor-level, and toolchain freeze be committed.
 
 No factor setting, fractional assignment, audio derivative, mechanism score,
 candidate, support rule, or public output is authorized by this inventory.

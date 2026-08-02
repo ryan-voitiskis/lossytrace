@@ -1,0 +1,1484 @@
+{
+  "benchmark_audio_generated": false,
+  "cross_decoder_summary": [
+    {
+      "decoder_count": 2,
+      "encoder_id": "aac_apple_audiotoolbox_25g72_lc_cbr128",
+      "exact_pcm_equivalent_across_decoders": false,
+      "frame_count_equivalent_across_decoders": false
+    },
+    {
+      "decoder_count": 2,
+      "encoder_id": "aac_fdk_2_0_3_lc_cbr128",
+      "exact_pcm_equivalent_across_decoders": false,
+      "frame_count_equivalent_across_decoders": false
+    },
+    {
+      "decoder_count": 2,
+      "encoder_id": "aac_ffmpeg_native_8_1_2_lc_cbr128",
+      "exact_pcm_equivalent_across_decoders": false,
+      "frame_count_equivalent_across_decoders": false
+    },
+    {
+      "decoder_count": 3,
+      "encoder_id": "mp3_bladeenc_a2d06ec_cbr128",
+      "exact_pcm_equivalent_across_decoders": false,
+      "frame_count_equivalent_across_decoders": true
+    },
+    {
+      "decoder_count": 3,
+      "encoder_id": "mp3_lame_4_0_cbr128",
+      "exact_pcm_equivalent_across_decoders": false,
+      "frame_count_equivalent_across_decoders": true
+    },
+    {
+      "decoder_count": 3,
+      "encoder_id": "mp3_shine_ab5e352_cbr128",
+      "exact_pcm_equivalent_across_decoders": false,
+      "frame_count_equivalent_across_decoders": false
+    },
+    {
+      "decoder_count": 3,
+      "encoder_id": "opus_ffmpeg_native_8_1_2_cbr96",
+      "exact_pcm_equivalent_across_decoders": false,
+      "frame_count_equivalent_across_decoders": true
+    },
+    {
+      "decoder_count": 3,
+      "encoder_id": "opus_libopus_1_6_1_cbr96",
+      "exact_pcm_equivalent_across_decoders": false,
+      "frame_count_equivalent_across_decoders": true
+    },
+    {
+      "decoder_count": 3,
+      "encoder_id": "vorbis_ffmpeg_native_8_1_2_q4",
+      "exact_pcm_equivalent_across_decoders": false,
+      "frame_count_equivalent_across_decoders": true
+    },
+    {
+      "decoder_count": 3,
+      "encoder_id": "vorbis_libvorbis_1_3_7_q4",
+      "exact_pcm_equivalent_across_decoders": false,
+      "frame_count_equivalent_across_decoders": false
+    }
+  ],
+  "decoders": [
+    {
+      "codec_family": "mp3",
+      "command": [
+        "<TOOL:ffmpeg_8_1_2_1>",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-y",
+        "-fflags",
+        "+bitexact",
+        "-i",
+        "<INPUT>",
+        "-map",
+        "0:a:0",
+        "-c:a",
+        "pcm_s16le",
+        "-fflags",
+        "+bitexact",
+        "<OUTPUT>"
+      ],
+      "command_sha256": "2ed11bb10c4a1ad1f5052457ab30af57bebb0dfe7e3ef7c9520cac3cdee36037",
+      "decoder_id": "ffmpeg_native_audio_8_1_2",
+      "encoder_id": "mp3_lame_4_0_cbr128",
+      "observed": {
+        "channel_count": 2,
+        "frame_count": 132300,
+        "pcm_sha256": "fa8dd3d6fed62608d29585276e898d23e0c21752b2c2620693d4759a6a48a737",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "ef677a9c6c33fc11a02d77ec5cd4ff26d59f6cf1b68f5e1d482ebc0e3aab553a"
+      },
+      "pcm_deterministic_across_two_runs": true,
+      "tool_id": "ffmpeg_8_1_2_1",
+      "wave_container_deterministic_across_two_runs": true
+    },
+    {
+      "codec_family": "mp3",
+      "command": [
+        "<TOOL:ffmpeg_8_1_2_1>",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-y",
+        "-fflags",
+        "+bitexact",
+        "-i",
+        "<INPUT>",
+        "-map",
+        "0:a:0",
+        "-c:a",
+        "pcm_s16le",
+        "-fflags",
+        "+bitexact",
+        "<OUTPUT>"
+      ],
+      "command_sha256": "2ed11bb10c4a1ad1f5052457ab30af57bebb0dfe7e3ef7c9520cac3cdee36037",
+      "decoder_id": "ffmpeg_native_audio_8_1_2",
+      "encoder_id": "mp3_shine_ab5e352_cbr128",
+      "observed": {
+        "channel_count": 2,
+        "frame_count": 132480,
+        "pcm_sha256": "d735260b79d172717d45cd7c42facf07606b262fd4f314aa53ed0d07892125a2",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "d0be6d1f13b18f2db7a25e8276ae30351bf6142414dbac819eacd7633042838b"
+      },
+      "pcm_deterministic_across_two_runs": true,
+      "tool_id": "ffmpeg_8_1_2_1",
+      "wave_container_deterministic_across_two_runs": true
+    },
+    {
+      "codec_family": "mp3",
+      "command": [
+        "<TOOL:ffmpeg_8_1_2_1>",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-y",
+        "-fflags",
+        "+bitexact",
+        "-i",
+        "<INPUT>",
+        "-map",
+        "0:a:0",
+        "-c:a",
+        "pcm_s16le",
+        "-fflags",
+        "+bitexact",
+        "<OUTPUT>"
+      ],
+      "command_sha256": "2ed11bb10c4a1ad1f5052457ab30af57bebb0dfe7e3ef7c9520cac3cdee36037",
+      "decoder_id": "ffmpeg_native_audio_8_1_2",
+      "encoder_id": "mp3_bladeenc_a2d06ec_cbr128",
+      "observed": {
+        "channel_count": 2,
+        "frame_count": 132480,
+        "pcm_sha256": "bd30491e2d7738ce3d2a59a488689f31336113f6e9dd7b518f6643e6899c4971",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "c834224ad75edf7e1f80de3983f43c9b0c26f8502c870c8f6999ac70f4df33c5"
+      },
+      "pcm_deterministic_across_two_runs": true,
+      "tool_id": "ffmpeg_8_1_2_1",
+      "wave_container_deterministic_across_two_runs": true
+    },
+    {
+      "codec_family": "aac_lc",
+      "command": [
+        "<TOOL:ffmpeg_8_1_2_1>",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-y",
+        "-fflags",
+        "+bitexact",
+        "-i",
+        "<INPUT>",
+        "-map",
+        "0:a:0",
+        "-c:a",
+        "pcm_s16le",
+        "-fflags",
+        "+bitexact",
+        "<OUTPUT>"
+      ],
+      "command_sha256": "2ed11bb10c4a1ad1f5052457ab30af57bebb0dfe7e3ef7c9520cac3cdee36037",
+      "decoder_id": "ffmpeg_native_audio_8_1_2",
+      "encoder_id": "aac_ffmpeg_native_8_1_2_lc_cbr128",
+      "observed": {
+        "channel_count": 2,
+        "frame_count": 133120,
+        "pcm_sha256": "3425222c8a0ac758939c27586fad7c28199eac001a9fd559689d155c5025caa2",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "b26d79f3b65e78f7ef02c9e57b94bbd75bbfb7687c993536e55fe2c346fa72c8"
+      },
+      "pcm_deterministic_across_two_runs": true,
+      "tool_id": "ffmpeg_8_1_2_1",
+      "wave_container_deterministic_across_two_runs": true
+    },
+    {
+      "codec_family": "aac_lc",
+      "command": [
+        "<TOOL:ffmpeg_8_1_2_1>",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-y",
+        "-fflags",
+        "+bitexact",
+        "-i",
+        "<INPUT>",
+        "-map",
+        "0:a:0",
+        "-c:a",
+        "pcm_s16le",
+        "-fflags",
+        "+bitexact",
+        "<OUTPUT>"
+      ],
+      "command_sha256": "2ed11bb10c4a1ad1f5052457ab30af57bebb0dfe7e3ef7c9520cac3cdee36037",
+      "decoder_id": "ffmpeg_native_audio_8_1_2",
+      "encoder_id": "aac_apple_audiotoolbox_25g72_lc_cbr128",
+      "observed": {
+        "channel_count": 2,
+        "frame_count": 134080,
+        "pcm_sha256": "0e3c731fa9653ab933d611a8fc9ca5ae80b3e32cf24d37ecbe2672b8bc8c2fe7",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "85b5d0c16610bed216fa399cc5d3795f16ed2f41583999ebdfbd5925557d2b82"
+      },
+      "pcm_deterministic_across_two_runs": true,
+      "tool_id": "ffmpeg_8_1_2_1",
+      "wave_container_deterministic_across_two_runs": true
+    },
+    {
+      "codec_family": "aac_lc",
+      "command": [
+        "<TOOL:ffmpeg_8_1_2_1>",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-y",
+        "-fflags",
+        "+bitexact",
+        "-i",
+        "<INPUT>",
+        "-map",
+        "0:a:0",
+        "-c:a",
+        "pcm_s16le",
+        "-fflags",
+        "+bitexact",
+        "<OUTPUT>"
+      ],
+      "command_sha256": "2ed11bb10c4a1ad1f5052457ab30af57bebb0dfe7e3ef7c9520cac3cdee36037",
+      "decoder_id": "ffmpeg_native_audio_8_1_2",
+      "encoder_id": "aac_fdk_2_0_3_lc_cbr128",
+      "observed": {
+        "channel_count": 2,
+        "frame_count": 133120,
+        "pcm_sha256": "9d6e862a704b7a1d5d490ffa24c8f67cfa3bf2fc7d252e94311e1d78b9dcd2b3",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "22ec36d040d17f604440e2dc9776751ca951af25281577ef0f9bb7934da03a3c"
+      },
+      "pcm_deterministic_across_two_runs": true,
+      "tool_id": "ffmpeg_8_1_2_1",
+      "wave_container_deterministic_across_two_runs": true
+    },
+    {
+      "codec_family": "opus",
+      "command": [
+        "<TOOL:ffmpeg_8_1_2_1>",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-y",
+        "-fflags",
+        "+bitexact",
+        "-i",
+        "<INPUT>",
+        "-map",
+        "0:a:0",
+        "-c:a",
+        "pcm_s16le",
+        "-fflags",
+        "+bitexact",
+        "<OUTPUT>"
+      ],
+      "command_sha256": "2ed11bb10c4a1ad1f5052457ab30af57bebb0dfe7e3ef7c9520cac3cdee36037",
+      "decoder_id": "ffmpeg_native_audio_8_1_2",
+      "encoder_id": "opus_libopus_1_6_1_cbr96",
+      "observed": {
+        "channel_count": 2,
+        "frame_count": 144000,
+        "pcm_sha256": "13c0c8cd59c704c003e748a3b026e310dc7bb643b408b52e118fb04b484c7634",
+        "sample_rate_hz": 48000,
+        "sample_width_bytes": 2,
+        "wave_sha256": "d2a44e8f183ef578d0648cf78cf34511c2b1f7c4163c701961fb215db37d00e2"
+      },
+      "pcm_deterministic_across_two_runs": true,
+      "tool_id": "ffmpeg_8_1_2_1",
+      "wave_container_deterministic_across_two_runs": true
+    },
+    {
+      "codec_family": "opus",
+      "command": [
+        "<TOOL:ffmpeg_8_1_2_1>",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-y",
+        "-fflags",
+        "+bitexact",
+        "-i",
+        "<INPUT>",
+        "-map",
+        "0:a:0",
+        "-c:a",
+        "pcm_s16le",
+        "-fflags",
+        "+bitexact",
+        "<OUTPUT>"
+      ],
+      "command_sha256": "2ed11bb10c4a1ad1f5052457ab30af57bebb0dfe7e3ef7c9520cac3cdee36037",
+      "decoder_id": "ffmpeg_native_audio_8_1_2",
+      "encoder_id": "opus_ffmpeg_native_8_1_2_cbr96",
+      "observed": {
+        "channel_count": 2,
+        "frame_count": 144000,
+        "pcm_sha256": "516c5a48c54224d5ecc7eb9202f3a02d81424e6a46b9703e40e945ac1d450ab7",
+        "sample_rate_hz": 48000,
+        "sample_width_bytes": 2,
+        "wave_sha256": "ac58cff887bc6b2ffb7cb49a4a6d5a1c3d8b7026a49f1d9a97ac0f3af8c97365"
+      },
+      "pcm_deterministic_across_two_runs": true,
+      "tool_id": "ffmpeg_8_1_2_1",
+      "wave_container_deterministic_across_two_runs": true
+    },
+    {
+      "codec_family": "vorbis",
+      "command": [
+        "<TOOL:ffmpeg_8_1_2_1>",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-y",
+        "-fflags",
+        "+bitexact",
+        "-i",
+        "<INPUT>",
+        "-map",
+        "0:a:0",
+        "-c:a",
+        "pcm_s16le",
+        "-fflags",
+        "+bitexact",
+        "<OUTPUT>"
+      ],
+      "command_sha256": "2ed11bb10c4a1ad1f5052457ab30af57bebb0dfe7e3ef7c9520cac3cdee36037",
+      "decoder_id": "ffmpeg_native_audio_8_1_2",
+      "encoder_id": "vorbis_libvorbis_1_3_7_q4",
+      "observed": {
+        "channel_count": 2,
+        "frame_count": 132300,
+        "pcm_sha256": "7ae3303003b24a7ac0edfad3a97303275fcb2fa4909977507a7a787ddfc153a6",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "d9c43244d477b333644ae48c613c599c747ce2b68ecd51335acc35c779d76151"
+      },
+      "pcm_deterministic_across_two_runs": true,
+      "tool_id": "ffmpeg_8_1_2_1",
+      "wave_container_deterministic_across_two_runs": true
+    },
+    {
+      "codec_family": "vorbis",
+      "command": [
+        "<TOOL:ffmpeg_8_1_2_1>",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-y",
+        "-fflags",
+        "+bitexact",
+        "-i",
+        "<INPUT>",
+        "-map",
+        "0:a:0",
+        "-c:a",
+        "pcm_s16le",
+        "-fflags",
+        "+bitexact",
+        "<OUTPUT>"
+      ],
+      "command_sha256": "2ed11bb10c4a1ad1f5052457ab30af57bebb0dfe7e3ef7c9520cac3cdee36037",
+      "decoder_id": "ffmpeg_native_audio_8_1_2",
+      "encoder_id": "vorbis_ffmpeg_native_8_1_2_q4",
+      "observed": {
+        "channel_count": 2,
+        "frame_count": 132352,
+        "pcm_sha256": "7d590e56b88cbe9efb258eb8e65a9f05cfd97db551be8a9a4a2761ce7dd6de6a",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "f1d5b53f3441653378d3dff65a601ddfaaea1a13826428fbe84ff640e6407c9f"
+      },
+      "pcm_deterministic_across_two_runs": true,
+      "tool_id": "ffmpeg_8_1_2_1",
+      "wave_container_deterministic_across_two_runs": true
+    },
+    {
+      "codec_family": "mp3",
+      "command": [
+        "<TOOL:apple_afconvert_macos_26_6_25g72>",
+        "<INPUT>",
+        "<OUTPUT>",
+        "-f",
+        "WAVE",
+        "-d",
+        "LEI16"
+      ],
+      "command_sha256": "12aad7cbce087c1bd92a1c3287255355e2022d74eb38b0859ab3c9ccb1813789",
+      "decoder_id": "apple_audiotoolbox_25g72",
+      "encoder_id": "mp3_lame_4_0_cbr128",
+      "observed": {
+        "channel_count": 2,
+        "frame_count": 132300,
+        "pcm_sha256": "04b68eb7768c91586935abad1cff29fa5dcb811c7a82731784f18d7668edc7a5",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "dd1c38810627f0fb3450ae3337ab2c7a34fd813998b1b45b4432245bb8f5753c"
+      },
+      "pcm_deterministic_across_two_runs": true,
+      "tool_id": "apple_afconvert_macos_26_6_25g72",
+      "wave_container_deterministic_across_two_runs": true
+    },
+    {
+      "codec_family": "mp3",
+      "command": [
+        "<TOOL:apple_afconvert_macos_26_6_25g72>",
+        "<INPUT>",
+        "<OUTPUT>",
+        "-f",
+        "WAVE",
+        "-d",
+        "LEI16"
+      ],
+      "command_sha256": "12aad7cbce087c1bd92a1c3287255355e2022d74eb38b0859ab3c9ccb1813789",
+      "decoder_id": "apple_audiotoolbox_25g72",
+      "encoder_id": "mp3_shine_ab5e352_cbr128",
+      "observed": {
+        "channel_count": 2,
+        "frame_count": 131328,
+        "pcm_sha256": "2aecaee4e768df47457326f051f119a69e376affd5ac8c12f2bae2b30a8c4377",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "53de5c4dd6a5df26f9c389cdba7932c804dc4525aad9b72b4d416134fbf15ba0"
+      },
+      "pcm_deterministic_across_two_runs": true,
+      "tool_id": "apple_afconvert_macos_26_6_25g72",
+      "wave_container_deterministic_across_two_runs": true
+    },
+    {
+      "codec_family": "mp3",
+      "command": [
+        "<TOOL:apple_afconvert_macos_26_6_25g72>",
+        "<INPUT>",
+        "<OUTPUT>",
+        "-f",
+        "WAVE",
+        "-d",
+        "LEI16"
+      ],
+      "command_sha256": "12aad7cbce087c1bd92a1c3287255355e2022d74eb38b0859ab3c9ccb1813789",
+      "decoder_id": "apple_audiotoolbox_25g72",
+      "encoder_id": "mp3_bladeenc_a2d06ec_cbr128",
+      "observed": {
+        "channel_count": 2,
+        "frame_count": 132480,
+        "pcm_sha256": "4ea719350e37daef85166d2f89b4934acb8909c3052ec57556047763b33fe2ee",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "6c521669e9653c1ab118af2759f1e6533df19c9a15e6cbcba0e07bce46d036ab"
+      },
+      "pcm_deterministic_across_two_runs": true,
+      "tool_id": "apple_afconvert_macos_26_6_25g72",
+      "wave_container_deterministic_across_two_runs": true
+    },
+    {
+      "codec_family": "aac_lc",
+      "command": [
+        "<TOOL:apple_afconvert_macos_26_6_25g72>",
+        "<INPUT>",
+        "<OUTPUT>",
+        "-f",
+        "WAVE",
+        "-d",
+        "LEI16"
+      ],
+      "command_sha256": "12aad7cbce087c1bd92a1c3287255355e2022d74eb38b0859ab3c9ccb1813789",
+      "decoder_id": "apple_audiotoolbox_25g72",
+      "encoder_id": "aac_ffmpeg_native_8_1_2_lc_cbr128",
+      "observed": {
+        "channel_count": 2,
+        "frame_count": 132300,
+        "pcm_sha256": "d3b1ea4e93f649cdc83ec676f4af39e044a686e1d16137ee618857b6d1bc07dc",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "118fe12d0c979ffed65857bd984d306ce6eac87c22f5e730b595591058d28ca4"
+      },
+      "pcm_deterministic_across_two_runs": true,
+      "tool_id": "apple_afconvert_macos_26_6_25g72",
+      "wave_container_deterministic_across_two_runs": true
+    },
+    {
+      "codec_family": "aac_lc",
+      "command": [
+        "<TOOL:apple_afconvert_macos_26_6_25g72>",
+        "<INPUT>",
+        "<OUTPUT>",
+        "-f",
+        "WAVE",
+        "-d",
+        "LEI16"
+      ],
+      "command_sha256": "12aad7cbce087c1bd92a1c3287255355e2022d74eb38b0859ab3c9ccb1813789",
+      "decoder_id": "apple_audiotoolbox_25g72",
+      "encoder_id": "aac_apple_audiotoolbox_25g72_lc_cbr128",
+      "observed": {
+        "channel_count": 2,
+        "frame_count": 133137,
+        "pcm_sha256": "a224c989871b56738581d3507f8bcf00fa15049405e406c4e5a0cb842462bb8d",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "1c43ed9a01992195d889d2ae90edf05d4ad0059fa125dc3755124b7868ee19b0"
+      },
+      "pcm_deterministic_across_two_runs": true,
+      "tool_id": "apple_afconvert_macos_26_6_25g72",
+      "wave_container_deterministic_across_two_runs": true
+    },
+    {
+      "codec_family": "aac_lc",
+      "command": [
+        "<TOOL:apple_afconvert_macos_26_6_25g72>",
+        "<INPUT>",
+        "<OUTPUT>",
+        "-f",
+        "WAVE",
+        "-d",
+        "LEI16"
+      ],
+      "command_sha256": "12aad7cbce087c1bd92a1c3287255355e2022d74eb38b0859ab3c9ccb1813789",
+      "decoder_id": "apple_audiotoolbox_25g72",
+      "encoder_id": "aac_fdk_2_0_3_lc_cbr128",
+      "observed": {
+        "channel_count": 2,
+        "frame_count": 132300,
+        "pcm_sha256": "328556be74c08c6e98f1d7785e625a68101418512116ecf1baaf7fe7b3125f33",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "8ae3f917b374b9065817d59cde45ebd11df47fa6be439027e121334588ac1397"
+      },
+      "pcm_deterministic_across_two_runs": true,
+      "tool_id": "apple_afconvert_macos_26_6_25g72",
+      "wave_container_deterministic_across_two_runs": true
+    },
+    {
+      "codec_family": "opus",
+      "command": [
+        "<TOOL:apple_afconvert_macos_26_6_25g72>",
+        "<INPUT>",
+        "<OUTPUT>",
+        "-f",
+        "WAVE",
+        "-d",
+        "LEI16"
+      ],
+      "command_sha256": "12aad7cbce087c1bd92a1c3287255355e2022d74eb38b0859ab3c9ccb1813789",
+      "decoder_id": "apple_audiotoolbox_25g72",
+      "encoder_id": "opus_libopus_1_6_1_cbr96",
+      "observed": {
+        "channel_count": 2,
+        "frame_count": 144000,
+        "pcm_sha256": "2f66a58aa316e7a65c2cf9d3f9fd2c4008b270d10963a94019b15950e91dbe3e",
+        "sample_rate_hz": 48000,
+        "sample_width_bytes": 2,
+        "wave_sha256": "4cfaeb37b591070a2422ca7533f0513469b52b634805cff9abe4fc1ab75e49c8"
+      },
+      "pcm_deterministic_across_two_runs": true,
+      "tool_id": "apple_afconvert_macos_26_6_25g72",
+      "wave_container_deterministic_across_two_runs": true
+    },
+    {
+      "codec_family": "opus",
+      "command": [
+        "<TOOL:apple_afconvert_macos_26_6_25g72>",
+        "<INPUT>",
+        "<OUTPUT>",
+        "-f",
+        "WAVE",
+        "-d",
+        "LEI16"
+      ],
+      "command_sha256": "12aad7cbce087c1bd92a1c3287255355e2022d74eb38b0859ab3c9ccb1813789",
+      "decoder_id": "apple_audiotoolbox_25g72",
+      "encoder_id": "opus_ffmpeg_native_8_1_2_cbr96",
+      "observed": {
+        "channel_count": 2,
+        "frame_count": 144000,
+        "pcm_sha256": "1bda1f3b985d5d644ab50b2a805f4832e1377bfe30e975385fb1144ac59481da",
+        "sample_rate_hz": 48000,
+        "sample_width_bytes": 2,
+        "wave_sha256": "2892ba5754f5bf9a45a1b872aee1944afc14c916bcd60fc06312f7e7618ecb09"
+      },
+      "pcm_deterministic_across_two_runs": true,
+      "tool_id": "apple_afconvert_macos_26_6_25g72",
+      "wave_container_deterministic_across_two_runs": true
+    },
+    {
+      "codec_family": "vorbis",
+      "command": [
+        "<TOOL:apple_afconvert_macos_26_6_25g72>",
+        "<INPUT>",
+        "<OUTPUT>",
+        "-f",
+        "WAVE",
+        "-d",
+        "LEI16"
+      ],
+      "command_sha256": "12aad7cbce087c1bd92a1c3287255355e2022d74eb38b0859ab3c9ccb1813789",
+      "decoder_id": "apple_audiotoolbox_25g72",
+      "encoder_id": "vorbis_libvorbis_1_3_7_q4",
+      "observed": {
+        "channel_count": 2,
+        "frame_count": 132224,
+        "pcm_sha256": "0a072842699a3a37cb954d8d1b9229b4ff28cdbadbbf4bf476ebb6197f68c501",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "0498a00bc1b0860afead65c3f81ad652e32e4f3ec91ddaefffc5b6a8b74bcd94"
+      },
+      "pcm_deterministic_across_two_runs": true,
+      "tool_id": "apple_afconvert_macos_26_6_25g72",
+      "wave_container_deterministic_across_two_runs": true
+    },
+    {
+      "codec_family": "vorbis",
+      "command": [
+        "<TOOL:apple_afconvert_macos_26_6_25g72>",
+        "<INPUT>",
+        "<OUTPUT>",
+        "-f",
+        "WAVE",
+        "-d",
+        "LEI16"
+      ],
+      "command_sha256": "12aad7cbce087c1bd92a1c3287255355e2022d74eb38b0859ab3c9ccb1813789",
+      "decoder_id": "apple_audiotoolbox_25g72",
+      "encoder_id": "vorbis_ffmpeg_native_8_1_2_q4",
+      "observed": {
+        "channel_count": 2,
+        "frame_count": 132352,
+        "pcm_sha256": "66ff6b8241e5fc1c092582ea2ed065237fa446cdb6bc8bcdc7a97be73f69c01d",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "e528cf2d78e4c822241e6c5765109c144153c4d2577dc8e1553951b862b2116f"
+      },
+      "pcm_deterministic_across_two_runs": true,
+      "tool_id": "apple_afconvert_macos_26_6_25g72",
+      "wave_container_deterministic_across_two_runs": true
+    },
+    {
+      "codec_family": "mp3",
+      "command": [
+        "<TOOL:mpg123_1_33_6>",
+        "-q",
+        "-w",
+        "<OUTPUT>",
+        "<INPUT>"
+      ],
+      "command_sha256": "8f71db7be94a947bed5f67c55a54217ccf8ee3c6347256abfe6644bf0eb71ba8",
+      "decoder_id": "mpg123_1_33_6",
+      "encoder_id": "mp3_lame_4_0_cbr128",
+      "observed": {
+        "channel_count": 2,
+        "frame_count": 132300,
+        "pcm_sha256": "9a0d4dd00b3dedaa58b85365dd0a6fb5ab5a1e10b0d1027f6ab25f5b4330a134",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "f4a7bcdace328c5fba4517537fd12af9407abb7c2c552c65340fc23f9a474cb1"
+      },
+      "pcm_deterministic_across_two_runs": true,
+      "tool_id": "mpg123_1_33_6",
+      "wave_container_deterministic_across_two_runs": true
+    },
+    {
+      "codec_family": "mp3",
+      "command": [
+        "<TOOL:mpg123_1_33_6>",
+        "-q",
+        "-w",
+        "<OUTPUT>",
+        "<INPUT>"
+      ],
+      "command_sha256": "8f71db7be94a947bed5f67c55a54217ccf8ee3c6347256abfe6644bf0eb71ba8",
+      "decoder_id": "mpg123_1_33_6",
+      "encoder_id": "mp3_shine_ab5e352_cbr128",
+      "observed": {
+        "channel_count": 2,
+        "frame_count": 131328,
+        "pcm_sha256": "96682b813e51271e8b60f3fa0d06a92e2b59539a2006249d538f273bfedf52de",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "71ec6dcf2d6898322268cab194962d4625f703b1f250c644b15f29adc57f2170"
+      },
+      "pcm_deterministic_across_two_runs": true,
+      "tool_id": "mpg123_1_33_6",
+      "wave_container_deterministic_across_two_runs": true
+    },
+    {
+      "codec_family": "mp3",
+      "command": [
+        "<TOOL:mpg123_1_33_6>",
+        "-q",
+        "-w",
+        "<OUTPUT>",
+        "<INPUT>"
+      ],
+      "command_sha256": "8f71db7be94a947bed5f67c55a54217ccf8ee3c6347256abfe6644bf0eb71ba8",
+      "decoder_id": "mpg123_1_33_6",
+      "encoder_id": "mp3_bladeenc_a2d06ec_cbr128",
+      "observed": {
+        "channel_count": 2,
+        "frame_count": 132480,
+        "pcm_sha256": "70130a5c5c6a980f23fe5b037cfd5d838b288b7446d991cf941709065bdf2483",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "fac41c0d2db0a82db16aaf88845fbedb99174e7defb4e91feb68e486a702ebdf"
+      },
+      "pcm_deterministic_across_two_runs": true,
+      "tool_id": "mpg123_1_33_6",
+      "wave_container_deterministic_across_two_runs": true
+    },
+    {
+      "codec_family": "opus",
+      "command": [
+        "<TOOL:opusdec_0_2_2_libopus_1_6_1>",
+        "--quiet",
+        "<INPUT>",
+        "<OUTPUT>"
+      ],
+      "command_sha256": "5f0d859dcda9968944a1bdb3170f2d62fb3060a916c6e8558322b86117831bc9",
+      "decoder_id": "opusdec_0_2_2_libopus_1_6_1",
+      "encoder_id": "opus_libopus_1_6_1_cbr96",
+      "observed": {
+        "channel_count": 2,
+        "frame_count": 144000,
+        "pcm_sha256": "1d73e4c1c927879aab9661ed64e75c9cd0a5e4b977f48eb05c53a88cfb7a5446",
+        "sample_rate_hz": 48000,
+        "sample_width_bytes": 2,
+        "wave_sha256": "fa71e4258464a7c5fb36da7cc847a4ad01a4c74336e9a4190f41c4f5efac07cd"
+      },
+      "pcm_deterministic_across_two_runs": true,
+      "tool_id": "opusdec_0_2_2_libopus_1_6_1",
+      "wave_container_deterministic_across_two_runs": true
+    },
+    {
+      "codec_family": "opus",
+      "command": [
+        "<TOOL:opusdec_0_2_2_libopus_1_6_1>",
+        "--quiet",
+        "<INPUT>",
+        "<OUTPUT>"
+      ],
+      "command_sha256": "5f0d859dcda9968944a1bdb3170f2d62fb3060a916c6e8558322b86117831bc9",
+      "decoder_id": "opusdec_0_2_2_libopus_1_6_1",
+      "encoder_id": "opus_ffmpeg_native_8_1_2_cbr96",
+      "observed": {
+        "channel_count": 2,
+        "frame_count": 144000,
+        "pcm_sha256": "c4931e01aff012127b080077cc9dd52c9e4962477d6bb096deb2018873bacae0",
+        "sample_rate_hz": 48000,
+        "sample_width_bytes": 2,
+        "wave_sha256": "a5e9e5a60ff8b5997e18278b9bdd4ac976e9694c1f499bce68f1fca37989d09a"
+      },
+      "pcm_deterministic_across_two_runs": true,
+      "tool_id": "opusdec_0_2_2_libopus_1_6_1",
+      "wave_container_deterministic_across_two_runs": true
+    },
+    {
+      "codec_family": "vorbis",
+      "command": [
+        "<TOOL:oggdec_1_4_3_libvorbis_1_3_7>",
+        "-Q",
+        "-o",
+        "<OUTPUT>",
+        "<INPUT>"
+      ],
+      "command_sha256": "57dbcf4c7add5b3b574598129ca19c2650b366fbdda456f0abf7df1ca708cbff",
+      "decoder_id": "oggdec_1_4_3_libvorbis_1_3_7",
+      "encoder_id": "vorbis_libvorbis_1_3_7_q4",
+      "observed": {
+        "channel_count": 2,
+        "frame_count": 132300,
+        "pcm_sha256": "e449de60c3fe7447d60a6a5eabeb01a414fd4247402f6dea84fb426981998d3b",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "5ddafd2e016f652087f2b27cd3f8a1d814bab966e07e93bf40718da30abd5c03"
+      },
+      "pcm_deterministic_across_two_runs": true,
+      "tool_id": "oggdec_1_4_3_libvorbis_1_3_7",
+      "wave_container_deterministic_across_two_runs": true
+    },
+    {
+      "codec_family": "vorbis",
+      "command": [
+        "<TOOL:oggdec_1_4_3_libvorbis_1_3_7>",
+        "-Q",
+        "-o",
+        "<OUTPUT>",
+        "<INPUT>"
+      ],
+      "command_sha256": "57dbcf4c7add5b3b574598129ca19c2650b366fbdda456f0abf7df1ca708cbff",
+      "decoder_id": "oggdec_1_4_3_libvorbis_1_3_7",
+      "encoder_id": "vorbis_ffmpeg_native_8_1_2_q4",
+      "observed": {
+        "channel_count": 2,
+        "frame_count": 132352,
+        "pcm_sha256": "9c6a3cf20ae792df2dc10dfa2ac77e210fb53c2fbb84bad9853e5448b0761a7a",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "a4e3c201e5e346d7aa3034c594efeb869f064264aefac4060c14035e9ff37be1"
+      },
+      "pcm_deterministic_across_two_runs": true,
+      "tool_id": "oggdec_1_4_3_libvorbis_1_3_7",
+      "wave_container_deterministic_across_two_runs": true
+    }
+  ],
+  "encoders": [
+    {
+      "binding_tool_ids": [
+        "lame_cli_4_0"
+      ],
+      "bitstream_sha256": "bb3139c513660d0088007b012dfbdddc18135bd8f64e007940dad4c7199498ad",
+      "byte_count": 48900,
+      "byte_deterministic_across_two_runs": true,
+      "codec_family": "mp3",
+      "command": [
+        "<TOOL:lame_cli_4_0>",
+        "--silent",
+        "-b",
+        "128",
+        "<INPUT>",
+        "<OUTPUT>"
+      ],
+      "command_sha256": "cf123b8a7852ef4500af5a67f92c6eb714d9e49cab668d3a5c5c0b23e3bed474",
+      "encoder_id": "mp3_lame_4_0_cbr128",
+      "input_id": "pcm_s16le_stereo_44100_3s",
+      "lineage_id": "lame",
+      "observed": {
+        "channel_count": 2,
+        "channel_layout": "stereo",
+        "codec_name": "mp3",
+        "format_name": "mp3",
+        "profile": null,
+        "sample_rate_hz": 44100,
+        "stream_bit_rate": 128000
+      },
+      "tool_id": "lame_cli_4_0"
+    },
+    {
+      "binding_tool_ids": [
+        "shineenc_3_1_1_ab5e352"
+      ],
+      "bitstream_sha256": "01762810bc6603100afe0d6816029e27ba9a0fbe30b15babb093da3739ec4f93",
+      "byte_count": 48064,
+      "byte_deterministic_across_two_runs": true,
+      "codec_family": "mp3",
+      "command": [
+        "<TOOL:shineenc_3_1_1_ab5e352>",
+        "-q",
+        "-b",
+        "128",
+        "<INPUT>",
+        "<OUTPUT>"
+      ],
+      "command_sha256": "ed05b51c80c377dd84f7cb7d1a13d516d7430312530b876e65f923f891299aee",
+      "encoder_id": "mp3_shine_ab5e352_cbr128",
+      "input_id": "pcm_s16le_stereo_44100_3s",
+      "lineage_id": "shine",
+      "observed": {
+        "channel_count": 2,
+        "channel_layout": "stereo",
+        "codec_name": "mp3",
+        "format_name": "mp3",
+        "profile": null,
+        "sample_rate_hz": 44100,
+        "stream_bit_rate": 128000
+      },
+      "tool_id": "shineenc_3_1_1_ab5e352"
+    },
+    {
+      "binding_tool_ids": [
+        "bladeenc_0_94_2_a2d06ec"
+      ],
+      "bitstream_sha256": "ec86a2c4f587e048c548e76ea159e444c65109150c56c9f3558dc651ca7c37f9",
+      "byte_count": 48066,
+      "byte_deterministic_across_two_runs": true,
+      "codec_family": "mp3",
+      "command": [
+        "<TOOL:bladeenc_0_94_2_a2d06ec>",
+        "-quiet",
+        "-nocfg",
+        "<INPUT>",
+        "<OUTPUT>",
+        "-128"
+      ],
+      "command_sha256": "0c3ff0c594764dfb276962ca7fd8a94c4095dc2d323cd333d4ab870fe2a58656",
+      "encoder_id": "mp3_bladeenc_a2d06ec_cbr128",
+      "input_id": "pcm_s16le_stereo_44100_3s",
+      "lineage_id": "bladeenc_iso_dist10",
+      "observed": {
+        "channel_count": 2,
+        "channel_layout": "stereo",
+        "codec_name": "mp3",
+        "format_name": "mp3",
+        "profile": null,
+        "sample_rate_hz": 44100,
+        "stream_bit_rate": 128000
+      },
+      "tool_id": "bladeenc_0_94_2_a2d06ec"
+    },
+    {
+      "binding_tool_ids": [
+        "ffmpeg_8_1_2_1"
+      ],
+      "bitstream_sha256": "4f9d142884ae1836b7ff5ad845fefdaed82764c686caae8dd842f137d2006655",
+      "byte_count": 49992,
+      "byte_deterministic_across_two_runs": true,
+      "codec_family": "aac_lc",
+      "command": [
+        "<TOOL:ffmpeg_8_1_2_1>",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-y",
+        "-fflags",
+        "+bitexact",
+        "-i",
+        "<INPUT>",
+        "-map",
+        "0:a:0",
+        "-c:a",
+        "aac",
+        "-profile:a",
+        "aac_low",
+        "-b:a",
+        "128k",
+        "-flags:a",
+        "+bitexact",
+        "-fflags",
+        "+bitexact",
+        "<OUTPUT>"
+      ],
+      "command_sha256": "2c0c538510603720642934af3ff3c132107cad34c45d48d5d641a3c009887bb6",
+      "encoder_id": "aac_ffmpeg_native_8_1_2_lc_cbr128",
+      "input_id": "pcm_s16le_stereo_44100_3s",
+      "lineage_id": "ffmpeg_native_aac",
+      "observed": {
+        "channel_count": 2,
+        "channel_layout": "stereo",
+        "codec_name": "aac",
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+        "profile": "LC",
+        "sample_rate_hz": 44100,
+        "stream_bit_rate": 128863
+      },
+      "tool_id": "ffmpeg_8_1_2_1"
+    },
+    {
+      "binding_tool_ids": [
+        "ffmpeg_8_1_2_1",
+        "apple_afconvert_macos_26_6_25g72"
+      ],
+      "bitstream_sha256": "9e642c23a9afb386a5c57a3c1eee1b70580f5992d0017d0e293d9e57b69cc58a",
+      "byte_count": 50594,
+      "byte_deterministic_across_two_runs": true,
+      "codec_family": "aac_lc",
+      "command": [
+        "<TOOL:ffmpeg_8_1_2_1>",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-y",
+        "-fflags",
+        "+bitexact",
+        "-i",
+        "<INPUT>",
+        "-map",
+        "0:a:0",
+        "-c:a",
+        "aac_at",
+        "-aac_at_mode",
+        "cbr",
+        "-b:a",
+        "128k",
+        "-fflags",
+        "+bitexact",
+        "<OUTPUT>"
+      ],
+      "command_sha256": "45ddbc9084690790d22e99bbabd97e7d79e211a21258448188c0d77b711bc3ee",
+      "encoder_id": "aac_apple_audiotoolbox_25g72_lc_cbr128",
+      "input_id": "pcm_s16le_stereo_44100_3s",
+      "lineage_id": "apple_audiotoolbox_aac",
+      "observed": {
+        "channel_count": 2,
+        "channel_layout": "stereo",
+        "codec_name": "aac",
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+        "profile": "LC",
+        "sample_rate_hz": 44100,
+        "stream_bit_rate": 128603
+      },
+      "tool_id": "ffmpeg_8_1_2_1"
+    },
+    {
+      "binding_tool_ids": [
+        "fdkaac_1_0_8_fdk_2_0_3"
+      ],
+      "bitstream_sha256": "e8843bf4a84c5a5a8e7c642d1dcdc02cf37cc35cb38558af5e5e770af9968475",
+      "byte_count": 50997,
+      "byte_deterministic_across_two_runs": true,
+      "codec_family": "aac_lc",
+      "command": [
+        "<TOOL:fdkaac_1_0_8_fdk_2_0_3>",
+        "--silent",
+        "--no-timestamp",
+        "-p",
+        "2",
+        "-b",
+        "128000",
+        "-o",
+        "<OUTPUT>",
+        "<INPUT>"
+      ],
+      "command_sha256": "29da656d33bd70099c78558895bfdb2a89587d9aaa0384fb1d185eca87936cdd",
+      "encoder_id": "aac_fdk_2_0_3_lc_cbr128",
+      "input_id": "pcm_s16le_stereo_44100_3s",
+      "lineage_id": "fraunhofer_fdk_aac",
+      "observed": {
+        "channel_count": 2,
+        "channel_layout": "stereo",
+        "codec_name": "aac",
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+        "profile": "LC",
+        "sample_rate_hz": 44100,
+        "stream_bit_rate": 129243
+      },
+      "tool_id": "fdkaac_1_0_8_fdk_2_0_3"
+    },
+    {
+      "binding_tool_ids": [
+        "opusenc_0_2_2_libopus_1_6_1"
+      ],
+      "bitstream_sha256": "ab2a945ea91781d9c820e8e19af5c2575e396c25f9c9ab1bd59d7d003eca3f19",
+      "byte_count": 37340,
+      "byte_deterministic_across_two_runs": true,
+      "codec_family": "opus",
+      "command": [
+        "<TOOL:opusenc_0_2_2_libopus_1_6_1>",
+        "--quiet",
+        "--serial",
+        "1953",
+        "--hard-cbr",
+        "--bitrate",
+        "96",
+        "--framesize",
+        "20",
+        "<INPUT>",
+        "<OUTPUT>"
+      ],
+      "command_sha256": "1884acaa824be1e3e3d20b3565f237f494898f37df1b1870c5300e49e39b1a01",
+      "encoder_id": "opus_libopus_1_6_1_cbr96",
+      "input_id": "pcm_s16le_stereo_48000_3s",
+      "lineage_id": "xiph_libopus",
+      "observed": {
+        "channel_count": 2,
+        "channel_layout": "stereo",
+        "codec_name": "opus",
+        "format_name": "ogg",
+        "profile": null,
+        "sample_rate_hz": 48000,
+        "stream_bit_rate": null
+      },
+      "tool_id": "opusenc_0_2_2_libopus_1_6_1"
+    },
+    {
+      "binding_tool_ids": [
+        "ffmpeg_8_1_2_1"
+      ],
+      "bitstream_sha256": "decd6aa9a7f8faa06381beffa0da5a5984914dceaff46477717751ddace7206b",
+      "byte_count": 36768,
+      "byte_deterministic_across_two_runs": true,
+      "codec_family": "opus",
+      "command": [
+        "<TOOL:ffmpeg_8_1_2_1>",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-y",
+        "-fflags",
+        "+bitexact",
+        "-i",
+        "<INPUT>",
+        "-map",
+        "0:a:0",
+        "-strict",
+        "experimental",
+        "-c:a",
+        "opus",
+        "-b:a",
+        "96k",
+        "-flags:a",
+        "+bitexact",
+        "-fflags",
+        "+bitexact",
+        "-serial_offset",
+        "1953",
+        "<OUTPUT>"
+      ],
+      "command_sha256": "f03635233cfcf7157a893a7be19f6e3fe62e7247bff89ea90720215cbb9c7383",
+      "encoder_id": "opus_ffmpeg_native_8_1_2_cbr96",
+      "input_id": "pcm_s16le_stereo_48000_3s",
+      "lineage_id": "ffmpeg_native_opus",
+      "observed": {
+        "channel_count": 2,
+        "channel_layout": "stereo",
+        "codec_name": "opus",
+        "format_name": "ogg",
+        "profile": null,
+        "sample_rate_hz": 48000,
+        "stream_bit_rate": null
+      },
+      "tool_id": "ffmpeg_8_1_2_1"
+    },
+    {
+      "binding_tool_ids": [
+        "oggenc_1_4_3_libvorbis_1_3_7"
+      ],
+      "bitstream_sha256": "fd23e51901f309efba804b0328dd1fda3d61946c7bcd87623ab496b3486da76f",
+      "byte_count": 58492,
+      "byte_deterministic_across_two_runs": true,
+      "codec_family": "vorbis",
+      "command": [
+        "<TOOL:oggenc_1_4_3_libvorbis_1_3_7>",
+        "-Q",
+        "--serial",
+        "1954",
+        "-q",
+        "4",
+        "-o",
+        "<OUTPUT>",
+        "<INPUT>"
+      ],
+      "command_sha256": "ab5748f68a90dee06e1b6643962e75a91d4a6738d8a533f129e1a3e5b9f024ca",
+      "encoder_id": "vorbis_libvorbis_1_3_7_q4",
+      "input_id": "pcm_s16le_stereo_44100_3s",
+      "lineage_id": "xiph_libvorbis",
+      "observed": {
+        "channel_count": 2,
+        "channel_layout": "stereo",
+        "codec_name": "vorbis",
+        "format_name": "ogg",
+        "profile": null,
+        "sample_rate_hz": 44100,
+        "stream_bit_rate": 128000
+      },
+      "tool_id": "oggenc_1_4_3_libvorbis_1_3_7"
+    },
+    {
+      "binding_tool_ids": [
+        "ffmpeg_8_1_2_1"
+      ],
+      "bitstream_sha256": "e8c18cf7666c51f8e463c6d678705d35224086d5d4c2e4555db1083238a5845e",
+      "byte_count": 112601,
+      "byte_deterministic_across_two_runs": true,
+      "codec_family": "vorbis",
+      "command": [
+        "<TOOL:ffmpeg_8_1_2_1>",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-y",
+        "-fflags",
+        "+bitexact",
+        "-i",
+        "<INPUT>",
+        "-map",
+        "0:a:0",
+        "-strict",
+        "experimental",
+        "-c:a",
+        "vorbis",
+        "-q:a",
+        "4",
+        "-flags:a",
+        "+bitexact",
+        "-fflags",
+        "+bitexact",
+        "-serial_offset",
+        "1954",
+        "<OUTPUT>"
+      ],
+      "command_sha256": "5d79a61c9b3b8a41293a2ffae0b061e7eb3fd33fc62fb32b761635cb70d42cee",
+      "encoder_id": "vorbis_ffmpeg_native_8_1_2_q4",
+      "input_id": "pcm_s16le_stereo_44100_3s",
+      "lineage_id": "ffmpeg_native_vorbis",
+      "observed": {
+        "channel_count": 2,
+        "channel_layout": "stereo",
+        "codec_name": "vorbis",
+        "format_name": "ogg",
+        "profile": null,
+        "sample_rate_hz": 44100,
+        "stream_bit_rate": null
+      },
+      "tool_id": "ffmpeg_8_1_2_1"
+    }
+  ],
+  "environment": {
+    "architecture": "arm64",
+    "build_parallelism": 1,
+    "compiler": "Apple clang 21.0.0 (clang-2100.1.1.101)",
+    "operating_system": "macOS 26.6",
+    "operating_system_build": "25G72"
+  },
+  "expected_capability_rejections": [
+    {
+      "command": [
+        "<TOOL:apple_afconvert_macos_26_6_25g72>",
+        "<INPUT>",
+        "<OUTPUT>",
+        "-f",
+        "MPG3",
+        "-d",
+        ".mp3",
+        "-b",
+        "128000",
+        "-s",
+        "0"
+      ],
+      "command_sha256": "d2203983a6f24b6929b2af9077a4173fd8e067073b2b8cfa80b1a569199fc883",
+      "input_id": "pcm_s16le_stereo_44100_3s",
+      "observed_outcome": "rejected_without_output",
+      "probe_id": "apple_afconvert_mp3_encode_unsupported_25g72",
+      "reproducible_across_two_runs": true,
+      "return_code": 1,
+      "sanitized_stderr_sha256": "fee3d11e070c4455e91fab1ed1cfc45d4dd7be037ef9b4667d96a299d983395f",
+      "tool_id": "apple_afconvert_macos_26_6_25g72"
+    }
+  ],
+  "inputs": [
+    {
+      "channel_count": 2,
+      "frame_count": 132300,
+      "generator_id": "integer-lcg-multiband-pcm-v1",
+      "input_id": "pcm_s16le_stereo_44100_3s",
+      "pcm_sha256": "90713140110b920bc4907e3caa342021e515bd3361b419b7f93f2317ec93291f",
+      "sample_rate_hz": 44100,
+      "sample_width_bytes": 2,
+      "wave_sha256": "f62ae14f7082b78f23b3658cc6b5cce6082e4864da3471ed759b5ccc653e75b9"
+    },
+    {
+      "channel_count": 2,
+      "frame_count": 144000,
+      "generator_id": "integer-lcg-multiband-pcm-v1",
+      "input_id": "pcm_s16le_stereo_48000_3s",
+      "pcm_sha256": "84876dd277c7cf603d7cf5b71c761fb75d73de66734d5fb9dccf26d0fc5986f3",
+      "sample_rate_hz": 48000,
+      "sample_width_bytes": 2,
+      "wave_sha256": "d2ab6b56bb625cf60a507835588fd39b28c5945a27250dce9a196b97e75da2d4"
+    }
+  ],
+  "paths_redacted": true,
+  "probe_id": "lossytrace-v2-toolchain-probe-20260802-001",
+  "schema_version": 1,
+  "scores_opened": false,
+  "selection_authorized": false,
+  "state": "synthetic_plumbing_evidence_only",
+  "summary": {
+    "all_required_decoder_pcm_outputs_deterministic": true,
+    "all_required_encoder_bitstreams_deterministic": true,
+    "cross_decoder_exact_pcm_disagreement_count": 10,
+    "decoder_path_probe_count": 27,
+    "encoder_probe_count": 10,
+    "expected_capability_rejection_count": 1
+  },
+  "synthetic_probe_audio_generated": true,
+  "tools": [
+    {
+      "binary_sha256": "1332dc2de372bade9a8a63da0d6cdfab9de97fcefbae707bcc0b0506e1203327",
+      "build_recipe": "Homebrew bottle ffmpeg 8.1.2_1 for arm64_tahoe",
+      "components": [
+        {
+          "component_id": "libavcodec_62_28_102",
+          "sha256": "a49174b86cdfe23efc9b3bb1cb4c7189097e18003d726b149cf3296669521853"
+        },
+        {
+          "component_id": "libmp3lame_4_0",
+          "sha256": "463453796b54698b8016af58ab86066ffbafe5229c10c500e4fe6b92d7a63934"
+        },
+        {
+          "component_id": "libopus_1_6_1",
+          "sha256": "98dcd3cc62c6cf913b789051536ab246c56cc163c74bd8b4968ac467ec74b68b"
+        }
+      ],
+      "implementation": "FFmpeg",
+      "license": "GPL-3.0-or-later",
+      "tool_id": "ffmpeg_8_1_2_1",
+      "version": "8.1.2_1; libavcodec 62.28.102; libavformat 62.12.102"
+    },
+    {
+      "binary_sha256": "4322275c1c2ac6ba15c695b288788bc1204e75211b3d5c030e5812c82a6dff73",
+      "build_recipe": "Homebrew bottle ffmpeg 8.1.2_1 for arm64_tahoe",
+      "components": [],
+      "implementation": "FFprobe",
+      "license": "GPL-3.0-or-later",
+      "tool_id": "ffprobe_8_1_2_1",
+      "version": "8.1.2_1"
+    },
+    {
+      "binary_sha256": "7b31d93213dbf9a0910b6d6d00177b59b90017af0cb28f1c16504be3e9aaf14f",
+      "components": [],
+      "implementation": "Apple AudioToolbox afconvert",
+      "license": "Apple system component; redistribution not planned",
+      "operating_system_binding": "macOS 26.6 build 25G72; codec resides in the dyld shared cache",
+      "tool_id": "apple_afconvert_macos_26_6_25g72",
+      "version": "2.0 on macOS 26.6 build 25G72"
+    },
+    {
+      "binary_sha256": "11095c200ebbef2b43adc795aee0ae1adcfc91a1467b70f524582327bc3f685a",
+      "build_recipe": "Homebrew bottle lame 4.0 for arm64_tahoe",
+      "components": [],
+      "implementation": "LAME",
+      "license": "LGPL-2.0-or-later",
+      "tool_id": "lame_cli_4_0",
+      "version": "4.0"
+    },
+    {
+      "binary_sha256": "da6ff87d47f5f73aef2c4b460e91f12c677ad2e9458e73fb5747108e7a7e705b",
+      "build_recipe": "Homebrew bottle mpg123 1.33.6 for arm64_tahoe",
+      "components": [
+        {
+          "component_id": "libmpg123_50_4_0",
+          "sha256": "7212b772d690c1ed13f11fb52679d77069f4d174f51aafffd1b8364f23aaf138"
+        }
+      ],
+      "implementation": "mpg123",
+      "license": "LGPL-2.1-only",
+      "tool_id": "mpg123_1_33_6",
+      "version": "1.33.6"
+    },
+    {
+      "binary_sha256": "78db870d08dd530fa6093896d9aeeb2877bb3d66445d418e6ccaa0367b1195d4",
+      "build_recipe": "./bootstrap; ./configure --prefix=<PRIVATE_PREFIX>; make -j1; make install; autoconf 2.73; automake 1.18.1; GNU libtool 2.6.2; Apple clang 21.0.0",
+      "components": [
+        {
+          "component_id": "libshine_3_1_1_ab5e352",
+          "sha256": "4fdb418c98cb41bf9c204ea1b4fb89ac1d0c329c126d4ee12c977ba4f2c2579a"
+        }
+      ],
+      "implementation": "toots/shine fixed-point MP3 encoder",
+      "license": "LGPL-2.0-only",
+      "license_sha256": "517c8bbea53e7257be86efaaba4c0b83effc386e4d84e0b6a33e025266ddb74e",
+      "source_revision": "ab5e3526b64af1a2eaa43aa6f441a7312e013519",
+      "source_tree_sha1": "8f557be3a4c1a99336c6492d68287984a3d1d1ec",
+      "tool_id": "shineenc_3_1_1_ab5e352",
+      "version": "3.1.1 at ab5e3526b64af1a2eaa43aa6f441a7312e013519"
+    },
+    {
+      "binary_sha256": "304c260fd00d9481954cc08076024c69c51546b0edd97de8896092f07f7ac8cb",
+      "build_recipe": "CC=clang CFLAGS=-O2,-Wno-error=implicit-int,-Wno-error=int-conversion,-Wno-deprecated-non-prototype ./configure --prefix=<PRIVATE_PREFIX>; make -j1; make install; Apple clang 21.0.0",
+      "components": [],
+      "implementation": "BladeEnc",
+      "license": "LGPL-2.1-only",
+      "license_sha256": "ede9298547948ae66509e61d6e2d41ff2a8b511578644fb7ec970239fbca07b4",
+      "source_revision": "a2d06ecd077e6031f3cafaaeadfa58f576cee7e2",
+      "source_tree_sha1": "c24aebb816bb5ad1c6e9f2a1e9bc6c4724f98d7b",
+      "tool_id": "bladeenc_0_94_2_a2d06ec",
+      "version": "0.94.2 mirror revision a2d06ecd077e6031f3cafaaeadfa58f576cee7e2"
+    },
+    {
+      "binary_sha256": "5313c0efe97925f4c399cefa3ae2e980581a7ede6cc1426e846b0746a42af9c5",
+      "build_recipe": "Homebrew bottles fdk-aac-encoder 1.0.8 and fdk-aac 2.0.3 for arm64_tahoe",
+      "components": [
+        {
+          "component_id": "libfdk_aac_2_0_3",
+          "sha256": "b5f1124f19098585d6d12edd92e6b038972250ae4a36bb5e231d079e704a41b4"
+        }
+      ],
+      "implementation": "nu774 fdkaac frontend with Fraunhofer FDK AAC",
+      "license": "Zlib/BSD/MIT frontend plus Fraunhofer FDK AAC custom licence; no patent grant",
+      "license_sha256": "95ec80da40b4af12ad4c4f3158c9cfb80f2479f3246e4260cb600827cc8c7836",
+      "tool_id": "fdkaac_1_0_8_fdk_2_0_3",
+      "version": "fdkaac 1.0.8; fdk-aac 2.0.3"
+    },
+    {
+      "binary_sha256": "920e29fd11a09fc047e979bd6113dbb5203756738cfd2823264c44d1a48f7566",
+      "build_recipe": "Homebrew bottle vorbis-tools 1.4.3 for arm64_tahoe",
+      "components": [
+        {
+          "component_id": "libvorbisenc_1_3_7",
+          "sha256": "aae189d5bbbabb0c1369ba62a88e93e7d9c76a40f6424295f6c60b6b9ca8dca2"
+        },
+        {
+          "component_id": "libvorbis_1_3_7",
+          "sha256": "38df2463cc776f5a4dd58331e0abb46dba0a143b65e345ece328ea61978dd795"
+        }
+      ],
+      "implementation": "Xiph.org oggenc with libvorbis reference encoder",
+      "license": "LGPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only; libvorbis BSD-3-Clause",
+      "tool_id": "oggenc_1_4_3_libvorbis_1_3_7",
+      "version": "vorbis-tools 1.4.3; libvorbis 1.3.7"
+    },
+    {
+      "binary_sha256": "c52e1ab868d761cf7ab1596139067ff6d42850e51ba4e03282cb8113e91d2e59",
+      "build_recipe": "Homebrew bottle vorbis-tools 1.4.3 for arm64_tahoe",
+      "components": [
+        {
+          "component_id": "libvorbisfile_1_3_7",
+          "sha256": "182caefbd3eec6f61e513900b5f9c4a796c83048aa0d1a882e30c232d248cb35"
+        },
+        {
+          "component_id": "libvorbis_1_3_7",
+          "sha256": "38df2463cc776f5a4dd58331e0abb46dba0a143b65e345ece328ea61978dd795"
+        }
+      ],
+      "implementation": "Xiph.org oggdec with libvorbisfile",
+      "license": "LGPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only; libvorbis BSD-3-Clause",
+      "tool_id": "oggdec_1_4_3_libvorbis_1_3_7",
+      "version": "vorbis-tools 1.4.3; libvorbis 1.3.7"
+    },
+    {
+      "binary_sha256": "41935fc050bb066108f9961ddbdc0b82709e445c77d0ea80a6744b75c135cfda",
+      "build_recipe": "Homebrew bottles opus-tools 0.2_2, libopus 1.6.1, and libopusenc 0.3 for arm64_tahoe",
+      "components": [
+        {
+          "component_id": "libopusenc_0_3",
+          "sha256": "610ddacc803f072d31e8b06d4ad6c078c0205f5c5c93371c7a457afd8048f455"
+        },
+        {
+          "component_id": "libopus_1_6_1",
+          "sha256": "98dcd3cc62c6cf913b789051536ab246c56cc163c74bd8b4968ac467ec74b68b"
+        }
+      ],
+      "implementation": "Xiph.org opusenc with libopus reference encoder",
+      "license": "BSD-2-Clause; libopus BSD-3-Clause",
+      "tool_id": "opusenc_0_2_2_libopus_1_6_1",
+      "version": "opus-tools 0.2_2; libopus 1.6.1; libopusenc 0.3"
+    },
+    {
+      "binary_sha256": "048f649db501cbdf5066fc7ef404b7f52298903dc8421011db21a8fa9dba32e7",
+      "build_recipe": "Homebrew bottles opus-tools 0.2_2, libopus 1.6.1, and opusfile 0.12_1 for arm64_tahoe",
+      "components": [
+        {
+          "component_id": "libopusfile_0_12_1",
+          "sha256": "860c35f38650001b3d8c1ab77691981b1b2d9b067086b17db3596d8dd6ce3f51"
+        },
+        {
+          "component_id": "libopus_1_6_1",
+          "sha256": "98dcd3cc62c6cf913b789051536ab246c56cc163c74bd8b4968ac467ec74b68b"
+        }
+      ],
+      "implementation": "Xiph.org opusdec with libopusfile and libopus",
+      "license": "BSD-2-Clause; libopus BSD-3-Clause",
+      "tool_id": "opusdec_0_2_2_libopus_1_6_1",
+      "version": "opus-tools 0.2_2; libopus 1.6.1; opusfile 0.12_1"
+    }
+  ]
+}

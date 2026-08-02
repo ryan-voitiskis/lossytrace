@@ -56,4 +56,8 @@ negative cases and 545/597 negative source groups alerted. See the
 The next milestone has inventoried implementation lineages and candidate
 source collections without generating audio or freezing a selection; see the
 [`factorial benchmark inventory`](factorial-benchmark-inventory-20260802.md).
+Its deterministic synthetic plumbing audit verified ten retained encoder
+bindings and 27 compatible decoder paths, rejected Apple MP3 encoding on the
+bound OS build, and substituted a pinned BladeEnc transfer lineage. See the
+[`toolchain probe result`](toolchain-probe-result-20260802.md).
 No successor mechanism score or retained holdout has been opened.

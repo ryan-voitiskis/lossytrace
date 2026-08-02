@@ -16,6 +16,7 @@ Read these before constructing a manifest:
 - [`factorial-contract.json`](factorial-contract.json)
 - [`manifest.example.json`](manifest.example.json)
 - [`inventory.json`](inventory.json)
+- [`toolchain-probe-result-20260802.md`](../../docs/research/toolchain-probe-result-20260802.md)
 
 The current source/tool inventory and its unresolved freeze gates are described
 in
@@ -105,8 +106,9 @@ preregistration and persistent goal decide when a partition may be consumed.
 1. Preserve the completed already-consumed v1 baseline failure atlas.
 2. Preserve the completed encoder/decoder/source inventory without treating it
    as a freeze.
-3. Verify metadata and probe tools, then freeze the v2 source collections,
-   factor levels, and fractional assignment.
+3. Verify exact source identities and external-transfer margin, then freeze the
+   v2 source collections, factor levels, tool bindings, and fractional
+   assignment.
 4. Generate paired mechanism-development cases with one low-priority worker,
    hashes, resumable recipes, and a free-space reserve.
 5. Freeze encoder-transfer and external-transfer identities before mechanism

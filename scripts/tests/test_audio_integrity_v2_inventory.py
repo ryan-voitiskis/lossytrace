@@ -22,13 +22,14 @@ class InventoryValidationTest(unittest.TestCase):
 
     def test_repository_inventory_is_valid(self) -> None:
         self.assertEqual([], MODULE.validate(self.inventory))
+        self.assertEqual([], MODULE.validate_toolchain_probe_file(self.inventory, ROOT))
 
     def test_wrapper_lineage_cannot_cross_transfer_boundary(self) -> None:
         inventory = copy.deepcopy(self.inventory)
         transfer = next(
             row
             for row in inventory["encoder_candidates"]
-            if row["encoder_id"] == "mp3_apple_audiotoolbox_25g72"
+            if row["encoder_id"] == "mp3_bladeenc_a2d06ec"
         )
         transfer["lineage_id"] = "lame"
         errors = MODULE.validate(inventory)

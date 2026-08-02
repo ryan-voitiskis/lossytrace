@@ -4,6 +4,7 @@
   "observed_at": "2026-08-02",
   "state": "inventory_only_not_frozen",
   "audio_generated": false,
+  "synthetic_probe_audio_generated": true,
   "scores_opened": false,
   "selection_authorized": false,
   "planned_source_archive_bytes": 22584668217,
@@ -48,10 +49,8 @@
       "version": "4.0",
       "license": "LGPL-2.0-or-later",
       "binary_sha256": "11095c200ebbef2b43adc795aee0ae1adcfc91a1467b70f524582327bc3f685a",
-      "linked_component_hashes": {
-        "libmp3lame_4_0": "463453796b54698b8016af58ab86066ffbafe5229c10c500e4fe6b92d7a63934"
-      },
-      "notes": "The CLI and FFmpeg libmp3lame wrapper are one encoder lineage."
+      "linked_component_hashes": {},
+      "notes": "The CLI embeds the encoder rather than dynamically linking libmp3lame on this build. It and FFmpeg's libmp3lame wrapper remain one encoder lineage."
     },
     {
       "tool_id": "apple_afconvert_macos_26_6_25g72",
@@ -60,7 +59,7 @@
       "license": "Apple system component; redistribution not planned",
       "binary_sha256": "7b31d93213dbf9a0910b6d6d00177b59b90017af0cb28f1c16504be3e9aaf14f",
       "linked_component_hashes": {},
-      "notes": "The codec implementation resides in the dyld shared cache and cannot be bound as a standalone framework file. Freeze must also bind the OS build and deterministic probe bitstreams."
+      "notes": "The codec implementation resides in the dyld shared cache and cannot be bound as a standalone framework file. The OS build and deterministic probe bitstreams are therefore part of the binding. MP3 encode probing failed; decoding and AAC encoding succeeded."
     },
     {
       "tool_id": "mpg123_1_33_6",
@@ -87,7 +86,87 @@
       "license": "BSD-3-Clause",
       "binary_sha256": "38df2463cc776f5a4dd58331e0abb46dba0a143b65e345ece328ea61978dd795",
       "linked_component_hashes": {},
-      "notes": "The library is installed, but no bound oggenc frontend is installed yet."
+      "notes": "The separately bound oggenc and oggdec frontends use this library lineage."
+    },
+    {
+      "tool_id": "shineenc_3_1_1_ab5e352",
+      "implementation": "toots/shine fixed-point MP3 encoder",
+      "version": "3.1.1 at ab5e3526b64af1a2eaa43aa6f441a7312e013519",
+      "license": "LGPL-2.0-only",
+      "binary_sha256": "78db870d08dd530fa6093896d9aeeb2877bb3d66445d418e6ccaa0367b1195d4",
+      "linked_component_hashes": {
+        "libshine_3_1_1_ab5e352": "4fdb418c98cb41bf9c204ea1b4fb89ac1d0c329c126d4ee12c977ba4f2c2579a"
+      },
+      "source_revision": "ab5e3526b64af1a2eaa43aa6f441a7312e013519",
+      "source_tree_sha1": "8f557be3a4c1a99336c6492d68287984a3d1d1ec",
+      "license_sha256": "517c8bbea53e7257be86efaaba4c0b83effc386e4d84e0b6a33e025266ddb74e"
+    },
+    {
+      "tool_id": "bladeenc_0_94_2_a2d06ec",
+      "implementation": "BladeEnc",
+      "version": "0.94.2 mirror revision a2d06ecd077e6031f3cafaaeadfa58f576cee7e2",
+      "license": "LGPL-2.1-only",
+      "binary_sha256": "304c260fd00d9481954cc08076024c69c51546b0edd97de8896092f07f7ac8cb",
+      "linked_component_hashes": {},
+      "source_revision": "a2d06ecd077e6031f3cafaaeadfa58f576cee7e2",
+      "source_tree_sha1": "c24aebb816bb5ad1c6e9f2a1e9bc6c4724f98d7b",
+      "license_sha256": "ede9298547948ae66509e61d6e2d41ff2a8b511578644fb7ec970239fbca07b4",
+      "notes": "Legacy ISO-derived encoder retained only as a private transfer challenge; never expose it to untrusted input or a public runtime path."
+    },
+    {
+      "tool_id": "fdkaac_1_0_8_fdk_2_0_3",
+      "implementation": "nu774 fdkaac frontend with Fraunhofer FDK AAC",
+      "version": "fdkaac 1.0.8; fdk-aac 2.0.3",
+      "license": "Zlib/BSD/MIT frontend plus Fraunhofer FDK AAC custom licence; no patent grant",
+      "binary_sha256": "5313c0efe97925f4c399cefa3ae2e980581a7ede6cc1426e846b0746a42af9c5",
+      "linked_component_hashes": {
+        "libfdk_aac_2_0_3": "b5f1124f19098585d6d12edd92e6b038972250ae4a36bb5e231d079e704a41b4"
+      },
+      "license_sha256": "95ec80da40b4af12ad4c4f3158c9cfb80f2479f3246e4260cb600827cc8c7836"
+    },
+    {
+      "tool_id": "oggenc_1_4_3_libvorbis_1_3_7",
+      "implementation": "Xiph.Org oggenc with libvorbis reference encoder",
+      "version": "vorbis-tools 1.4.3; libvorbis 1.3.7",
+      "license": "vorbis-tools mixed GPL/LGPL; libvorbis BSD-3-Clause",
+      "binary_sha256": "920e29fd11a09fc047e979bd6113dbb5203756738cfd2823264c44d1a48f7566",
+      "linked_component_hashes": {
+        "libvorbisenc_1_3_7": "aae189d5bbbabb0c1369ba62a88e93e7d9c76a40f6424295f6c60b6b9ca8dca2",
+        "libvorbis_1_3_7": "38df2463cc776f5a4dd58331e0abb46dba0a143b65e345ece328ea61978dd795"
+      }
+    },
+    {
+      "tool_id": "oggdec_1_4_3_libvorbis_1_3_7",
+      "implementation": "Xiph.Org oggdec with libvorbisfile",
+      "version": "vorbis-tools 1.4.3; libvorbis 1.3.7",
+      "license": "vorbis-tools mixed GPL/LGPL; libvorbis BSD-3-Clause",
+      "binary_sha256": "c52e1ab868d761cf7ab1596139067ff6d42850e51ba4e03282cb8113e91d2e59",
+      "linked_component_hashes": {
+        "libvorbisfile_1_3_7": "182caefbd3eec6f61e513900b5f9c4a796c83048aa0d1a882e30c232d248cb35",
+        "libvorbis_1_3_7": "38df2463cc776f5a4dd58331e0abb46dba0a143b65e345ece328ea61978dd795"
+      }
+    },
+    {
+      "tool_id": "opusenc_0_2_2_libopus_1_6_1",
+      "implementation": "Xiph.Org opusenc with libopus reference encoder",
+      "version": "opus-tools 0.2_2; libopus 1.6.1; libopusenc 0.3",
+      "license": "BSD-2-Clause; libopus BSD-3-Clause",
+      "binary_sha256": "41935fc050bb066108f9961ddbdc0b82709e445c77d0ea80a6744b75c135cfda",
+      "linked_component_hashes": {
+        "libopusenc_0_3": "610ddacc803f072d31e8b06d4ad6c078c0205f5c5c93371c7a457afd8048f455",
+        "libopus_1_6_1": "98dcd3cc62c6cf913b789051536ab246c56cc163c74bd8b4968ac467ec74b68b"
+      }
+    },
+    {
+      "tool_id": "opusdec_0_2_2_libopus_1_6_1",
+      "implementation": "Xiph.Org opusdec with libopusfile and libopus",
+      "version": "opus-tools 0.2_2; libopus 1.6.1; opusfile 0.12_1",
+      "license": "BSD-2-Clause; libopus BSD-3-Clause",
+      "binary_sha256": "048f649db501cbdf5066fc7ef404b7f52298903dc8421011db21a8fa9dba32e7",
+      "linked_component_hashes": {
+        "libopusfile_0_12_1": "860c35f38650001b3d8c1ab77691981b1b2d9b067086b17db3596d8dd6ce3f51",
+        "libopus_1_6_1": "98dcd3cc62c6cf913b789051536ab246c56cc163c74bd8b4968ac467ec74b68b"
+      }
     }
   ],
   "encoder_candidates": [
@@ -107,8 +186,8 @@
       "codec_family": "mp3",
       "lineage_id": "shine",
       "implementation": "toots/shine fixed-point encoder",
-      "version_or_revision": "ab5e3526b64af1a2eaa43aa6f441a7312e013519",
-      "availability": "acquisition_required",
+      "version_or_revision": "3.1.1 at ab5e3526b64af1a2eaa43aa6f441a7312e013519",
+      "availability": "installed_and_probe_verified",
       "recommended_partition": "mechanism_development",
       "capabilities": ["cbr", "mono", "stereo"],
       "license": "LGPL-2.0-only",
@@ -116,15 +195,17 @@
       "caveat": "Independent, old, simple, and not production-quality; its project states that it has no psychoacoustic model."
     },
     {
-      "encoder_id": "mp3_apple_audiotoolbox_25g72",
+      "encoder_id": "mp3_bladeenc_a2d06ec",
       "codec_family": "mp3",
-      "lineage_id": "apple_audiotoolbox_mp3",
-      "implementation": "Apple AudioToolbox through afconvert",
-      "version_or_revision": "macOS 26.6 build 25G72",
-      "availability": "installed_probe_required",
+      "lineage_id": "bladeenc_iso_dist10",
+      "implementation": "BladeEnc",
+      "version_or_revision": "0.94.2 mirror revision a2d06ecd077e6031f3cafaaeadfa58f576cee7e2",
+      "availability": "installed_and_probe_verified",
       "recommended_partition": "encoder_transfer",
-      "capabilities": ["mp3_container_and_data_format_advertised"],
-      "caveat": "Count as independent only after a frozen encode probe verifies output and binds the OS build."
+      "capabilities": ["cbr", "mono", "stereo"],
+      "license": "LGPL-2.1-only",
+      "source_url": "https://github.com/meyskens/bladeenc",
+      "caveat": "Legacy ISO-derived implementation with no VBR or gapless signaling. It is a lineage challenge, not a prevalence proxy, and remains private-only because the unmodified code emits legacy compiler and format-security warnings."
     },
     {
       "encoder_id": "aac_ffmpeg_native_8_1_2",
@@ -153,12 +234,12 @@
       "lineage_id": "fraunhofer_fdk_aac",
       "implementation": "Fraunhofer FDK AAC for Android",
       "version_or_revision": "2.0.3",
-      "availability": "acquisition_required",
+      "availability": "installed_and_probe_verified",
       "recommended_partition": "encoder_transfer",
       "capabilities": ["cbr", "vbr", "aac_lc"],
       "license": "Fraunhofer FDK AAC custom copyright licence; no patent grant",
-      "source_url": "https://android.googlesource.com/platform/external/aac/",
-      "caveat": "Internal research only; retain the complete licence and do not redistribute a binary without separate review."
+      "source_url": "https://sourceforge.net/projects/opencore-amr/files/fdk-aac/",
+      "caveat": "The installed opencore-amr release carries the complete Fraunhofer FDK AAC licence used by the Android source. Internal research only; do not redistribute a binary without separate review."
     },
     {
       "encoder_id": "opus_libopus_1_6_1",
@@ -187,7 +268,7 @@
       "lineage_id": "xiph_libvorbis",
       "implementation": "Xiph.Org libvorbis reference encoder",
       "version_or_revision": "1.3.7",
-      "availability": "frontend_acquisition_required",
+      "availability": "installed_and_probe_verified",
       "recommended_partition": "mechanism_development",
       "capabilities": ["vbr_quality", "managed_bitrate", "stereo_coupling"],
       "license": "BSD-3-Clause"
@@ -215,7 +296,7 @@
       "decoder_id": "apple_audiotoolbox_25g72",
       "codec_families": ["mp3", "aac_lc", "opus", "vorbis"],
       "lineage_id": "apple_audiotoolbox_decoders",
-      "availability": "installed_probe_required"
+      "availability": "installed_and_probe_verified"
     },
     {
       "decoder_id": "mpg123_1_33_6",
@@ -224,16 +305,16 @@
       "availability": "installed"
     },
     {
-      "decoder_id": "libopus_1_6_1",
+      "decoder_id": "opusdec_0_2_2_libopus_1_6_1",
       "codec_families": ["opus"],
       "lineage_id": "xiph_libopus",
       "availability": "installed"
     },
     {
-      "decoder_id": "libvorbis_1_3_7",
+      "decoder_id": "oggdec_1_4_3_libvorbis_1_3_7",
       "codec_families": ["vorbis"],
       "lineage_id": "xiph_libvorbis",
-      "availability": "frontend_acquisition_required"
+      "availability": "installed_and_probe_verified"
     }
   ],
   "source_candidates": [
@@ -416,5 +497,23 @@
       "source_ids": ["ravdess_audio_1_0_0", "satp_soundscapes_1_4", "rwc_music_v2_2026"]
     }
   },
-  "next_gate": "Verify source metadata and encoder probes, then replace this recommendation with separately committed partition and toolchain freeze records before acquiring or generating benchmark audio."
+  "toolchain_probe_evidence": {
+    "aggregate_path": "research/toolchains/evidence/observed-20260802-001-aggregate.json",
+    "aggregate_sha256": "fb497f37ade1a6db5e3d87a0f957f6c2e72433c4091679f098ab6ce07b8b8c8d",
+    "encoder_probe_count": 10,
+    "decoder_path_probe_count": 27,
+    "expected_capability_rejection_count": 1,
+    "complete_replays_byte_identical": true,
+    "cross_decoder_exact_pcm_disagreement_count": 10,
+    "notes": "Synthetic plumbing only. Apple MP3 encoding was rejected without output; all retained encoders and decoder paths were deterministic within path."
+  },
+  "rejected_encoder_capabilities": [
+    {
+      "capability_id": "apple_audiotoolbox_mp3_encode_macos_25g72",
+      "observed_outcome": "rejected_without_output",
+      "probe_id": "apple_afconvert_mp3_encode_unsupported_25g72",
+      "caveat": "Format listings advertised MPEG Layer III, but two deterministic executed probes failed before producing a file."
+    }
+  ],
+  "next_gate": "Verify exact source identities and add external-transfer margin, then replace this recommendation with separately committed source-allocation, factor-level, and toolchain freeze records before acquiring or generating benchmark audio."
 }

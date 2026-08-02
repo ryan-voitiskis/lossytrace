@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 from collections import defaultdict
@@ -39,6 +40,14 @@ def load_json(path: Path) -> dict[str, Any]:
     return value
 
 
+def sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as source:
+        for chunk in iter(lambda: source.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
 def unique_ids(rows: Any, field: str, label: str, errors: list[str]) -> dict[str, dict[str, Any]]:
     if not isinstance(rows, list):
         errors.append(f"{label} must be a list")
@@ -67,6 +76,8 @@ def validate(inventory: dict[str, Any]) -> list[str]:
     for field in ("audio_generated", "scores_opened", "selection_authorized"):
         if inventory.get(field) is not False:
             errors.append(f"{field} must be false")
+    if inventory.get("synthetic_probe_audio_generated") is not True:
+        errors.append("synthetic_probe_audio_generated must be true after toolchain probing")
 
     tools = unique_ids(inventory.get("installed_tools"), "tool_id", "installed_tools", errors)
     for tool_id, tool in tools.items():
@@ -187,6 +198,97 @@ def validate(inventory: dict[str, Any]) -> list[str]:
     for source_id, partitions in source_partitions.items():
         if len(partitions) != 1:
             errors.append(f"source {source_id} spans partitions")
+    evidence = inventory.get("toolchain_probe_evidence")
+    if not isinstance(evidence, dict):
+        errors.append("toolchain_probe_evidence must be an object")
+    else:
+        aggregate_path = evidence.get("aggregate_path")
+        if (
+            not isinstance(aggregate_path, str)
+            or not aggregate_path
+            or Path(aggregate_path).is_absolute()
+        ):
+            errors.append("toolchain probe aggregate_path must be repository-relative")
+        if not SHA256.fullmatch(str(evidence.get("aggregate_sha256", ""))):
+            errors.append("toolchain probe aggregate_sha256 is invalid")
+        for field in (
+            "encoder_probe_count",
+            "decoder_path_probe_count",
+            "expected_capability_rejection_count",
+        ):
+            value = evidence.get(field)
+            if not isinstance(value, int) or isinstance(value, bool) or value < 1:
+                errors.append(f"toolchain probe {field} must be a positive integer")
+        if evidence.get("complete_replays_byte_identical") is not True:
+            errors.append("toolchain probe replays must be byte-identical")
+    return errors
+
+
+def validate_toolchain_probe_file(
+    inventory: dict[str, Any], repository_root: Path
+) -> list[str]:
+    errors: list[str] = []
+    evidence = inventory.get("toolchain_probe_evidence")
+    if not isinstance(evidence, dict) or not isinstance(evidence.get("aggregate_path"), str):
+        return ["cannot validate missing toolchain probe evidence"]
+    repository_root = repository_root.resolve()
+    aggregate = (repository_root / evidence["aggregate_path"]).resolve()
+    if not aggregate.is_relative_to(repository_root) or not aggregate.is_file():
+        return ["toolchain probe aggregate is missing or outside the repository"]
+    if sha256_file(aggregate) != evidence.get("aggregate_sha256"):
+        errors.append("toolchain probe aggregate hash differs")
+        return errors
+    report = load_json(aggregate)
+    expected_state = {
+        "state": "synthetic_plumbing_evidence_only",
+        "benchmark_audio_generated": False,
+        "synthetic_probe_audio_generated": True,
+        "scores_opened": False,
+        "selection_authorized": False,
+        "paths_redacted": True,
+    }
+    for field, expected in expected_state.items():
+        if report.get(field) != expected:
+            errors.append(f"toolchain probe report {field} differs")
+    serialized = json.dumps(report, sort_keys=True)
+    for forbidden in ("/Users/", "Library/Application Support", "\\Users\\"):
+        if forbidden in serialized:
+            errors.append("toolchain probe report contains a private path")
+            break
+    summary = report.get("summary")
+    if not isinstance(summary, dict):
+        errors.append("toolchain probe report summary is missing")
+    else:
+        for field in (
+            "encoder_probe_count",
+            "decoder_path_probe_count",
+            "expected_capability_rejection_count",
+        ):
+            if summary.get(field) != evidence.get(field):
+                errors.append(f"toolchain probe report {field} differs from inventory")
+    candidate_pairs = {
+        (row.get("codec_family"), row.get("lineage_id"))
+        for row in inventory.get("encoder_candidates", [])
+        if isinstance(row, dict)
+    }
+    report_pairs = {
+        (row.get("codec_family"), row.get("lineage_id"))
+        for row in report.get("encoders", [])
+        if isinstance(row, dict)
+    }
+    if report_pairs != candidate_pairs:
+        errors.append("toolchain probe encoder lineages differ from inventory")
+    installed_hashes = {
+        row.get("tool_id"): row.get("binary_sha256")
+        for row in inventory.get("installed_tools", [])
+        if isinstance(row, dict)
+    }
+    for tool in report.get("tools", []):
+        if not isinstance(tool, dict):
+            errors.append("toolchain probe contains an invalid tool row")
+            continue
+        if installed_hashes.get(tool.get("tool_id")) != tool.get("binary_sha256"):
+            errors.append(f"toolchain probe tool binding differs: {tool.get('tool_id')}")
     return errors
 
 
@@ -194,7 +296,10 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--inventory", required=True, type=Path)
     args = parser.parse_args()
-    errors = validate(load_json(args.inventory))
+    inventory = load_json(args.inventory)
+    errors = validate(inventory)
+    repository_root = Path(__file__).resolve().parents[1]
+    errors.extend(validate_toolchain_probe_file(inventory, repository_root))
     if errors:
         print("inventory validation failed:")
         for error in errors:
