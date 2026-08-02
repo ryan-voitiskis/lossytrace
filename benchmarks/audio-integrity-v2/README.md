@@ -17,6 +17,7 @@ Read these before constructing a manifest:
 - [`manifest.example.json`](manifest.example.json)
 - [`inventory.json`](inventory.json)
 - [`source-allocation-rules.json`](source-allocation-rules.json)
+- [`factor-levels.json`](factor-levels.json)
 - [`toolchain-probe-result-20260802.md`](../../docs/research/toolchain-probe-result-20260802.md)
 - [`rwc-source-identity-audit-20260802.md`](../../docs/research/rwc-source-identity-audit-20260802.md)
 
@@ -32,7 +33,10 @@ The identity-only selection procedure was separately preregistered in
 [`source-allocation-preregistration-20260802.md`](../../docs/research/source-allocation-preregistration-20260802.md).
 Its two complete applications produced byte-identical private outputs. Those
 outputs contain exact member identities and stay outside Git; only the
-path-free aggregate is committed. Factor levels remain unfrozen.
+path-free aggregate is committed. The subsequent
+[`factor-level freeze`](../../docs/research/factor-level-freeze-20260802.md)
+fixes excerpt, codec-setting, decoder, channel, transform, wrapper, coverage,
+and storage levels without binding tools or assigning source groups to cells.
 
 ## Evidence partitions
 
@@ -94,6 +98,14 @@ python3 scripts/validate-audio-integrity-v2-inventory.py \
   --inventory benchmarks/audio-integrity-v2/inventory.json
 ```
 
+Validate the separately frozen factor levels and their source-allocation
+binding:
+
+```bash
+python3 scripts/validate-audio-integrity-v2-factor-levels.py \
+  --factors benchmarks/audio-integrity-v2/factor-levels.json
+```
+
 Before opening a partition, use its freeze profile:
 
 ```bash
@@ -116,9 +128,9 @@ preregistration and persistent goal decide when a partition may be consumed.
 1. Preserve the completed already-consumed v1 baseline failure atlas.
 2. Preserve the completed encoder/decoder/source inventory without treating it
    as a freeze.
-3. Preserve the completed source-identity audits, external-transfer margin, and
-   replayed source allocation, then freeze factor levels, tool bindings, and
-   the fractional assignment as separate records.
+3. Preserve the completed source-identity audits, external-transfer margin,
+   replayed source allocation, and factor-level freeze, then freeze tool
+   bindings and the fractional assignment as separate records.
 4. Generate paired mechanism-development cases with one low-priority worker,
    hashes, resumable recipes, and a free-space reserve.
 5. Freeze encoder-transfer and external-transfer identities before mechanism

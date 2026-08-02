@@ -91,9 +91,10 @@ may feed later construction, but it does not freeze codec settings, transforms,
 encoder or decoder binaries, or which fractional-factorial cells each group
 receives.
 
-The next checkpoint is therefore a factor-level freeze. It must define the
+The next checkpoint was the separately committed
+[`factor-level freeze`](factor-level-freeze-20260802.md), which defines the
 bounded reference excerpt rule, codec settings, PCM hard-negative transforms,
-analysis decoders, support factors, and partition-specific coverage without
-generating audio. Exact toolchain bindings and the fractional assignment then
-remain separate commits. No mechanism representation or score is authorized
-until all three gates are complete.
+analysis decoder boundary, support factors, and partition-specific coverage
+without generating audio. Exact toolchain bindings and the fractional
+assignment remain separate commits. No mechanism representation or score is
+authorized until both remaining gates are complete.

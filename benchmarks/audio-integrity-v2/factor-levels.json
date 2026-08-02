@@ -1,0 +1,626 @@
+{
+  "schema_version": 1,
+  "factor_freeze_id": "lossytrace-v2-factor-levels-20260802-001",
+  "state": "factor_levels_frozen_before_toolchain_and_assignment",
+  "contract_id": "lossytrace-audio-integrity-factorial-v2-20260802-001",
+  "source_allocation_checkpoint_commit": "7f73bbb0c04e5930a2539b0eac75f9d42daac64a",
+  "source_allocation_binding": {
+    "rules_path": "benchmarks/audio-integrity-v2/source-allocation-rules.json",
+    "rules_sha256": "f7bda6b5b133e83e558e4812bbe5a48f8dddd6659368f11ad4784420efb1590b",
+    "aggregate_path": "research/sources/evidence/source-allocation-observed-20260802.json",
+    "aggregate_sha256": "92558487864280bb1e7d37fe5474b1be3df49ed3a0b549cb382a8f17d06e20a7",
+    "private_allocation_sha256": "e4b7d2ab42253e00ce0e0b95c8049193f9b6178ecbb6212811fde96d58c088d4",
+    "selected_group_count": 793
+  },
+  "public_state": {
+    "evidence_schema_version": 1,
+    "feature_version": 0,
+    "public_verdict_enabled": false
+  },
+  "audio_generated": false,
+  "scores_opened": false,
+  "toolchain_bindings_frozen": false,
+  "fractional_assignment_frozen": false,
+  "existing_v1_holdouts_included": false,
+  "reference_excerpt": {
+    "excerpt_rule_id": "identity-hashed-native-window-max12s-v1",
+    "maximum_duration_seconds": 12,
+    "minimum_duration_seconds": null,
+    "short_source_policy": "retain the complete provider window without looping, padding, time stretching, silence trimming, or rejection",
+    "provider_window_priority": [
+      "bound provider start/end window when present",
+      "complete decoded member otherwise"
+    ],
+    "offset_ranking_prefix": "lossytrace-v2-reference-excerpt-offset-20260802\u0000",
+    "offset_algorithm": "For a provider window longer than 12 seconds, interpret the first eight bytes of SHA-256(UTF-8(offset_ranking_prefix) || UTF-8(group_id) || NUL || UTF-8(member_id)) as an unsigned big-endian integer and reduce modulo (available_native_frame_starts + 1). Crop exactly floor(12 * native_sample_rate_hz) frames from that native-frame start.",
+    "waveform_content_used_for_offset": false,
+    "duration_used_only_after_source_identity_freeze": true,
+    "duration_support_strata_seconds": [
+      {"stratum_id": "lt1", "minimum_inclusive": 0, "maximum_exclusive": 1},
+      {"stratum_id": "ge1_lt3", "minimum_inclusive": 1, "maximum_exclusive": 3},
+      {"stratum_id": "ge3_lt6", "minimum_inclusive": 3, "maximum_exclusive": 6},
+      {"stratum_id": "ge6_le12", "minimum_inclusive": 6, "maximum_inclusive": 12}
+    ]
+  },
+  "pair_preconditioning": {
+    "pairing_rule": "Every controlled-positive or transformed case has a PCM reference produced from the same selected source, excerpt window, sample rate, channel treatment, sample format, and pre-codec transform state.",
+    "order": [
+      "decode selected lossless source member",
+      "apply provider window",
+      "apply identity-hashed excerpt crop",
+      "apply target channel treatment",
+      "resample to codec target rate when required",
+      "convert deterministically to signed 16-bit little-endian PCM without dither",
+      "seal matched PCM reference",
+      "apply controlled history"
+    ],
+    "sample_format": "signed_s16le",
+    "quantization": "round to nearest with ties to even, then saturate to the signed 16-bit range; no dither",
+    "loudness_normalization": false,
+    "silence_removal": false,
+    "peak_normalization": false,
+    "channel_treatments": [
+      {
+        "channel_treatment_id": "mono",
+        "output_channels": 1,
+        "mono_input": "identity",
+        "stereo_input": "arithmetic mean of left and right with round-to-nearest ties-to-even",
+        "eligible_input_channel_counts": [1, 2]
+      },
+      {
+        "channel_treatment_id": "stereo",
+        "output_channels": 2,
+        "mono_input": "duplicate the mono sample exactly into left and right",
+        "stereo_input": "identity",
+        "eligible_input_channel_counts": [1, 2]
+      }
+    ],
+    "unsupported_input_channel_policy": "stop before generation if a selected source has fewer than one or more than two channels"
+  },
+  "codec_setting_template_expansion": {
+    "expanded_setting_id": "template_id + '--' + channel_treatment_id",
+    "expanded_channel_mode": "mono for channel_treatment_id mono; the template stereo_channel_mode for channel_treatment_id stereo",
+    "required_channel_treatments": ["mono", "stereo"],
+    "tool_commands_frozen_here": false,
+    "note": "Exact binary, linked library, command, encoder-observed cutoff, bitstream, and decoder-output bindings belong to the next toolchain freeze."
+  },
+  "codec_setting_templates": [
+    {
+      "template_id": "dev-mp3-lame-cbr96-default",
+      "evidence_partition": "mechanism_development",
+      "codec_family": "mp3",
+      "encoder_id": "mp3_lame_4_0",
+      "lineage_id": "lame",
+      "rate_control": "cbr",
+      "bitrate_or_quality": "96k",
+      "sample_rate_hz": 44100,
+      "stereo_channel_mode": "joint_stereo",
+      "encoder_lowpass": {"mode": "encoder_default", "hz": null}
+    },
+    {
+      "template_id": "dev-mp3-lame-cbr128-default",
+      "evidence_partition": "mechanism_development",
+      "codec_family": "mp3",
+      "encoder_id": "mp3_lame_4_0",
+      "lineage_id": "lame",
+      "rate_control": "cbr",
+      "bitrate_or_quality": "128k",
+      "sample_rate_hz": 44100,
+      "stereo_channel_mode": "joint_stereo",
+      "encoder_lowpass": {"mode": "encoder_default", "hz": null},
+      "anchor": true
+    },
+    {
+      "template_id": "dev-mp3-lame-cbr128-lowpass16k",
+      "evidence_partition": "mechanism_development",
+      "codec_family": "mp3",
+      "encoder_id": "mp3_lame_4_0",
+      "lineage_id": "lame",
+      "rate_control": "cbr",
+      "bitrate_or_quality": "128k",
+      "sample_rate_hz": 44100,
+      "stereo_channel_mode": "joint_stereo",
+      "encoder_lowpass": {"mode": "fixed", "hz": 16000}
+    },
+    {
+      "template_id": "dev-mp3-lame-vbr-v2-default",
+      "evidence_partition": "mechanism_development",
+      "codec_family": "mp3",
+      "encoder_id": "mp3_lame_4_0",
+      "lineage_id": "lame",
+      "rate_control": "vbr",
+      "bitrate_or_quality": "V2",
+      "sample_rate_hz": 44100,
+      "stereo_channel_mode": "joint_stereo",
+      "encoder_lowpass": {"mode": "encoder_default", "hz": null}
+    },
+    {
+      "template_id": "dev-mp3-shine-cbr128-default",
+      "evidence_partition": "mechanism_development",
+      "codec_family": "mp3",
+      "encoder_id": "mp3_shine_ab5e352",
+      "lineage_id": "shine",
+      "rate_control": "cbr",
+      "bitrate_or_quality": "128k",
+      "sample_rate_hz": 44100,
+      "stereo_channel_mode": "stereo",
+      "encoder_lowpass": {"mode": "implementation_fixed_or_default", "hz": null}
+    },
+    {
+      "template_id": "transfer-mp3-bladeenc-cbr96-default",
+      "evidence_partition": "encoder_transfer",
+      "codec_family": "mp3",
+      "encoder_id": "mp3_bladeenc_a2d06ec",
+      "lineage_id": "bladeenc_iso_dist10",
+      "rate_control": "cbr",
+      "bitrate_or_quality": "96k",
+      "sample_rate_hz": 44100,
+      "stereo_channel_mode": "stereo",
+      "encoder_lowpass": {"mode": "implementation_fixed_or_default", "hz": null}
+    },
+    {
+      "template_id": "transfer-mp3-bladeenc-cbr128-default",
+      "evidence_partition": "encoder_transfer",
+      "codec_family": "mp3",
+      "encoder_id": "mp3_bladeenc_a2d06ec",
+      "lineage_id": "bladeenc_iso_dist10",
+      "rate_control": "cbr",
+      "bitrate_or_quality": "128k",
+      "sample_rate_hz": 44100,
+      "stereo_channel_mode": "stereo",
+      "encoder_lowpass": {"mode": "implementation_fixed_or_default", "hz": null},
+      "anchor": true
+    },
+    {
+      "template_id": "dev-aac-ffmpeg-cbr96-default",
+      "evidence_partition": "mechanism_development",
+      "codec_family": "aac_lc",
+      "encoder_id": "aac_ffmpeg_native_8_1_2",
+      "lineage_id": "ffmpeg_native_aac",
+      "rate_control": "cbr",
+      "bitrate_or_quality": "96k",
+      "sample_rate_hz": 44100,
+      "stereo_channel_mode": "stereo",
+      "encoder_lowpass": {"mode": "encoder_default", "hz": null}
+    },
+    {
+      "template_id": "dev-aac-ffmpeg-cbr128-default",
+      "evidence_partition": "mechanism_development",
+      "codec_family": "aac_lc",
+      "encoder_id": "aac_ffmpeg_native_8_1_2",
+      "lineage_id": "ffmpeg_native_aac",
+      "rate_control": "cbr",
+      "bitrate_or_quality": "128k",
+      "sample_rate_hz": 44100,
+      "stereo_channel_mode": "stereo",
+      "encoder_lowpass": {"mode": "encoder_default", "hz": null},
+      "anchor": true
+    },
+    {
+      "template_id": "dev-aac-ffmpeg-cbr128-cutoff16k",
+      "evidence_partition": "mechanism_development",
+      "codec_family": "aac_lc",
+      "encoder_id": "aac_ffmpeg_native_8_1_2",
+      "lineage_id": "ffmpeg_native_aac",
+      "rate_control": "cbr",
+      "bitrate_or_quality": "128k",
+      "sample_rate_hz": 44100,
+      "stereo_channel_mode": "stereo",
+      "encoder_lowpass": {"mode": "fixed", "hz": 16000}
+    },
+    {
+      "template_id": "dev-aac-apple-cbr128-default",
+      "evidence_partition": "mechanism_development",
+      "codec_family": "aac_lc",
+      "encoder_id": "aac_apple_audiotoolbox_25g72",
+      "lineage_id": "apple_audiotoolbox_aac",
+      "rate_control": "cbr",
+      "bitrate_or_quality": "128k",
+      "sample_rate_hz": 44100,
+      "stereo_channel_mode": "stereo",
+      "encoder_lowpass": {"mode": "encoder_default", "hz": null}
+    },
+    {
+      "template_id": "transfer-aac-fdk-cbr96-default",
+      "evidence_partition": "encoder_transfer",
+      "codec_family": "aac_lc",
+      "encoder_id": "aac_fdk_2_0_3",
+      "lineage_id": "fraunhofer_fdk_aac",
+      "rate_control": "cbr",
+      "bitrate_or_quality": "96k",
+      "sample_rate_hz": 44100,
+      "stereo_channel_mode": "stereo",
+      "encoder_lowpass": {"mode": "encoder_default", "hz": null}
+    },
+    {
+      "template_id": "transfer-aac-fdk-cbr128-default",
+      "evidence_partition": "encoder_transfer",
+      "codec_family": "aac_lc",
+      "encoder_id": "aac_fdk_2_0_3",
+      "lineage_id": "fraunhofer_fdk_aac",
+      "rate_control": "cbr",
+      "bitrate_or_quality": "128k",
+      "sample_rate_hz": 44100,
+      "stereo_channel_mode": "stereo",
+      "encoder_lowpass": {"mode": "encoder_default", "hz": null},
+      "anchor": true
+    },
+    {
+      "template_id": "dev-opus-libopus-cbr64-20ms",
+      "evidence_partition": "mechanism_development",
+      "codec_family": "opus",
+      "encoder_id": "opus_libopus_1_6_1",
+      "lineage_id": "xiph_libopus",
+      "rate_control": "hard_cbr",
+      "bitrate_or_quality": "64k",
+      "sample_rate_hz": 48000,
+      "stereo_channel_mode": "stereo_coupled",
+      "encoder_lowpass": {"mode": "encoder_default", "hz": null},
+      "frame_duration_ms": 20
+    },
+    {
+      "template_id": "dev-opus-libopus-cbr96-20ms",
+      "evidence_partition": "mechanism_development",
+      "codec_family": "opus",
+      "encoder_id": "opus_libopus_1_6_1",
+      "lineage_id": "xiph_libopus",
+      "rate_control": "hard_cbr",
+      "bitrate_or_quality": "96k",
+      "sample_rate_hz": 48000,
+      "stereo_channel_mode": "stereo_coupled",
+      "encoder_lowpass": {"mode": "encoder_default", "hz": null},
+      "frame_duration_ms": 20,
+      "anchor": true
+    },
+    {
+      "template_id": "dev-opus-libopus-cbr128-20ms",
+      "evidence_partition": "mechanism_development",
+      "codec_family": "opus",
+      "encoder_id": "opus_libopus_1_6_1",
+      "lineage_id": "xiph_libopus",
+      "rate_control": "hard_cbr",
+      "bitrate_or_quality": "128k",
+      "sample_rate_hz": 48000,
+      "stereo_channel_mode": "stereo_coupled",
+      "encoder_lowpass": {"mode": "encoder_default", "hz": null},
+      "frame_duration_ms": 20
+    },
+    {
+      "template_id": "dev-opus-libopus-cbr96-10ms",
+      "evidence_partition": "mechanism_development",
+      "codec_family": "opus",
+      "encoder_id": "opus_libopus_1_6_1",
+      "lineage_id": "xiph_libopus",
+      "rate_control": "hard_cbr",
+      "bitrate_or_quality": "96k",
+      "sample_rate_hz": 48000,
+      "stereo_channel_mode": "stereo_coupled",
+      "encoder_lowpass": {"mode": "encoder_default", "hz": null},
+      "frame_duration_ms": 10
+    },
+    {
+      "template_id": "transfer-opus-ffmpeg-cbr64-default",
+      "evidence_partition": "encoder_transfer",
+      "codec_family": "opus",
+      "encoder_id": "opus_ffmpeg_native_8_1_2",
+      "lineage_id": "ffmpeg_native_opus",
+      "rate_control": "cbr",
+      "bitrate_or_quality": "64k",
+      "sample_rate_hz": 48000,
+      "stereo_channel_mode": "stereo_coupled",
+      "encoder_lowpass": {"mode": "implementation_fixed_or_default", "hz": null}
+    },
+    {
+      "template_id": "transfer-opus-ffmpeg-cbr96-default",
+      "evidence_partition": "encoder_transfer",
+      "codec_family": "opus",
+      "encoder_id": "opus_ffmpeg_native_8_1_2",
+      "lineage_id": "ffmpeg_native_opus",
+      "rate_control": "cbr",
+      "bitrate_or_quality": "96k",
+      "sample_rate_hz": 48000,
+      "stereo_channel_mode": "stereo_coupled",
+      "encoder_lowpass": {"mode": "implementation_fixed_or_default", "hz": null},
+      "anchor": true
+    },
+    {
+      "template_id": "dev-vorbis-libvorbis-q2",
+      "evidence_partition": "mechanism_development",
+      "codec_family": "vorbis",
+      "encoder_id": "vorbis_libvorbis_1_3_7",
+      "lineage_id": "xiph_libvorbis",
+      "rate_control": "vbr_quality",
+      "bitrate_or_quality": "q2",
+      "sample_rate_hz": 44100,
+      "stereo_channel_mode": "stereo_coupled",
+      "encoder_lowpass": {"mode": "encoder_default", "hz": null}
+    },
+    {
+      "template_id": "dev-vorbis-libvorbis-q4",
+      "evidence_partition": "mechanism_development",
+      "codec_family": "vorbis",
+      "encoder_id": "vorbis_libvorbis_1_3_7",
+      "lineage_id": "xiph_libvorbis",
+      "rate_control": "vbr_quality",
+      "bitrate_or_quality": "q4",
+      "sample_rate_hz": 44100,
+      "stereo_channel_mode": "stereo_coupled",
+      "encoder_lowpass": {"mode": "encoder_default", "hz": null},
+      "anchor": true
+    },
+    {
+      "template_id": "dev-vorbis-libvorbis-q6",
+      "evidence_partition": "mechanism_development",
+      "codec_family": "vorbis",
+      "encoder_id": "vorbis_libvorbis_1_3_7",
+      "lineage_id": "xiph_libvorbis",
+      "rate_control": "vbr_quality",
+      "bitrate_or_quality": "q6",
+      "sample_rate_hz": 44100,
+      "stereo_channel_mode": "stereo_coupled",
+      "encoder_lowpass": {"mode": "encoder_default", "hz": null}
+    },
+    {
+      "template_id": "transfer-vorbis-ffmpeg-q2",
+      "evidence_partition": "encoder_transfer",
+      "codec_family": "vorbis",
+      "encoder_id": "vorbis_ffmpeg_native_8_1_2",
+      "lineage_id": "ffmpeg_native_vorbis",
+      "rate_control": "vbr_quality",
+      "bitrate_or_quality": "q2",
+      "sample_rate_hz": 44100,
+      "stereo_channel_mode": "stereo_coupled",
+      "encoder_lowpass": {"mode": "implementation_fixed_or_default", "hz": null}
+    },
+    {
+      "template_id": "transfer-vorbis-ffmpeg-q4",
+      "evidence_partition": "encoder_transfer",
+      "codec_family": "vorbis",
+      "encoder_id": "vorbis_ffmpeg_native_8_1_2",
+      "lineage_id": "ffmpeg_native_vorbis",
+      "rate_control": "vbr_quality",
+      "bitrate_or_quality": "q4",
+      "sample_rate_hz": 44100,
+      "stereo_channel_mode": "stereo_coupled",
+      "encoder_lowpass": {"mode": "implementation_fixed_or_default", "hz": null},
+      "anchor": true
+    }
+  ],
+  "history_decoder_levels": [
+    {
+      "history_decoder_id": "ffmpeg_native_audio_8_1_2",
+      "codec_families": ["mp3", "aac_lc", "opus", "vorbis"],
+      "role": "primary_cross_codec_history_decoder"
+    },
+    {
+      "history_decoder_id": "apple_audiotoolbox_25g72",
+      "codec_families": ["mp3", "aac_lc", "opus", "vorbis"],
+      "role": "cross_codec_decoder_challenge"
+    },
+    {
+      "history_decoder_id": "mpg123_1_33_6",
+      "codec_families": ["mp3"],
+      "role": "codec_specific_decoder_challenge"
+    },
+    {
+      "history_decoder_id": "opusdec_0_2_2_libopus_1_6_1",
+      "codec_families": ["opus"],
+      "role": "codec_specific_decoder_challenge"
+    },
+    {
+      "history_decoder_id": "oggdec_1_4_3_libvorbis_1_3_7",
+      "codec_families": ["vorbis"],
+      "role": "codec_specific_decoder_challenge"
+    }
+  ],
+  "analysis_decoder_level": {
+    "analysis_decoder_id": "canonical_lossless_pcm_decoder",
+    "scope": "decode final FLAC, WAV, or AIFF wrapper to signed s16le for research analysis",
+    "exact_implementation_and_binary_deferred_to_toolchain_freeze": true,
+    "public_decoder_equivalence_required_before_baseline_scoring": true
+  },
+  "pcm_transform_levels": [
+    {
+      "transform_id": "identity",
+      "family": "identity",
+      "hard_negative_class": null,
+      "parameters": {},
+      "applicable_to_positive_pair": true
+    },
+    {
+      "transform_id": "gain-minus6db-q31",
+      "family": "pcm_gain",
+      "hard_negative_class": "gain_only_pcm",
+      "parameters": {"coefficient_q31": 1076291389, "nominal_decibels": -6},
+      "applicable_to_positive_pair": true
+    },
+    {
+      "transform_id": "trim-head-250ms",
+      "family": "pcm_trim",
+      "hard_negative_class": "trim_only_pcm",
+      "parameters": {"head_trim_milliseconds": 250, "minimum_input_milliseconds": 500},
+      "applicable_to_positive_pair": true
+    },
+    {
+      "transform_id": "prepend-digital-silence-500ms",
+      "family": "pcm_silence",
+      "hard_negative_class": "leading_silence_pcm",
+      "parameters": {"leading_silence_milliseconds": 500, "sample_value": 0},
+      "applicable_to_positive_pair": true
+    },
+    {
+      "transform_id": "duration-prefix-3s",
+      "family": "pcm_duration",
+      "hard_negative_class": "short_duration_pcm",
+      "parameters": {"maximum_duration_milliseconds": 3000, "minimum_input_milliseconds": 3000},
+      "applicable_to_positive_pair": true
+    },
+    {
+      "transform_id": "lowpass-16k-cascade8",
+      "family": "pcm_lowpass",
+      "hard_negative_class": "lowpass_only_pcm",
+      "parameters": {"cutoff_hz": 16000, "biquad_poles_per_section": 2, "section_count": 4},
+      "applicable_target_sample_rates_hz": [44100, 48000],
+      "applicable_to_positive_pair": true
+    },
+    {
+      "transform_id": "resample-roundtrip-32k",
+      "family": "pcm_resample",
+      "hard_negative_class": "resample_only_pcm",
+      "parameters": {"intermediate_sample_rate_hz": 32000, "return_to_pair_target_rate": true},
+      "applicable_target_sample_rates_hz": [44100, 48000],
+      "applicable_to_positive_pair": true
+    },
+    {
+      "transform_id": "requantize-12bit-tpdf",
+      "family": "pcm_requantize_dither",
+      "hard_negative_class": "dither_and_bitdepth_pcm",
+      "parameters": {
+        "effective_bits": 12,
+        "dither": "TPDF at one 12-bit LSB peak-to-peak",
+        "prng": "SHA-256 counter mode",
+        "seed_prefix": "lossytrace-v2-tpdf-seed-20260802\u0000",
+        "seed_identity": "group_id and transform_id only; identical noise sequence for a matched H0/H1 pair"
+      },
+      "applicable_to_positive_pair": true
+    },
+    {
+      "transform_id": "alternate-channel-topology",
+      "family": "pcm_channel_remix",
+      "hard_negative_class": "channel_remix_pcm",
+      "parameters": {"mono_input": "duplicate to stereo", "stereo_input": "arithmetic-mean mono"},
+      "applicable_to_positive_pair": true
+    },
+    {
+      "transform_id": "lossless-wrapper-rewrite",
+      "family": "lossless_container",
+      "hard_negative_class": "container_only_rewrite",
+      "parameters": {"decoded_pcm_must_be_exact": true},
+      "applicable_to_positive_pair": true
+    }
+  ],
+  "wrapper_levels": [
+    {
+      "wrapper_id": "flac16",
+      "container": "flac",
+      "current_codec": "pcm",
+      "role": "primary_retained_or_ephemeral_wrapper"
+    },
+    {
+      "wrapper_id": "wav16",
+      "container": "wav",
+      "current_codec": "pcm",
+      "role": "exact_pcm_invariance_subset"
+    },
+    {
+      "wrapper_id": "aiff16",
+      "container": "aiff",
+      "current_codec": "pcm",
+      "role": "exact_pcm_invariance_subset"
+    }
+  ],
+  "pair_and_interaction_rules": {
+    "one_nonidentity_pcm_transform_per_case": true,
+    "no_unpreregistered_transform_interactions": true,
+    "positive_robustness_is_matched": "For every H1(codec, transform) robustness case, generate or reference H0(transform) from the same pair preconditioning. Never compare a transformed positive only with an untransformed negative.",
+    "lossless_wrapper_invariance": "The FLAC, WAV, and AIFF rows in an invariance triplet must contain byte-identical decoded signed-s16le samples.",
+    "codec_bitstreams_are_intermediate": true,
+    "current_lossy_originals": "diagnostic_only and outside all accuracy or mechanism denominators"
+  },
+  "coverage_requirements_before_partition_opening": {
+    "mechanism_development": {
+      "reference_source_groups": 527,
+      "anchor_positive_source_groups_per_codec": 527,
+      "minimum_source_groups_per_nonanchor_setting_template": 120,
+      "minimum_source_domains_per_setting_template": 5,
+      "minimum_source_groups_per_nonidentity_pcm_transform": 40,
+      "minimum_positive_codec_families_per_nonidentity_pcm_transform": 4,
+      "minimum_source_groups_per_compatible_history_decoder": 40,
+      "minimum_setting_templates_per_history_decoder_per_compatible_codec": 2,
+      "minimum_source_groups_per_channel_treatment_per_codec": 60,
+      "minimum_source_groups_per_channel_treatment_per_setting_template": 30,
+      "all_setting_templates_required": true
+    },
+    "encoder_transfer": {
+      "reference_source_groups": 102,
+      "anchor_positive_source_groups_per_codec": 102,
+      "minimum_source_groups_per_nonanchor_setting_template": 60,
+      "minimum_source_domains_per_setting_template": 4,
+      "minimum_source_groups_per_nonidentity_pcm_transform": 20,
+      "minimum_positive_codec_families_per_nonidentity_pcm_transform": 4,
+      "minimum_source_groups_per_compatible_history_decoder": 30,
+      "minimum_setting_templates_per_history_decoder_per_compatible_codec": 2,
+      "minimum_source_groups_per_channel_treatment_per_codec": 30,
+      "minimum_source_groups_per_channel_treatment_per_setting_template": 15,
+      "all_setting_templates_required": true
+    },
+    "external_transfer": {
+      "reference_source_groups": 164,
+      "minimum_tier_a_negative_source_groups": 150,
+      "minimum_controlled_positive_source_groups": 100,
+      "minimum_source_groups_per_nonidentity_pcm_transform": 20,
+      "codec_scope_if_opened": ["mp3"],
+      "minimum_new_encoder_lineages": 1,
+      "exact_setting_and_lineage_deferred_until_frozen_survivor": true
+    }
+  },
+  "external_transfer_encoder_boundary": {
+    "state": "source_identities_sealed_encoder_not_selected",
+    "required_codec_family": "mp3",
+    "required_setting_scope": "one obvious 128 kbit/s setting plus any separately preregistered diagnostic setting",
+    "lineage_disjoint_from": ["lame", "shine", "bladeenc_iso_dist10"],
+    "selection_may_begin_only_after": "one mechanism representation, implementation, support policy, report code, and threshold-free direction test are frozen after passing development and encoder-transfer gates",
+    "authority_boundary": "If a properly licensed and reproducibly bindable new MP3 encoder lineage cannot be obtained within the existing research scope, stop and ask the user before substituting another codec or weakening lineage disjointness."
+  },
+  "support_and_reporting_factors": [
+    "source_collection_id",
+    "source_domain",
+    "provider_stratum",
+    "provenance_tier",
+    "native_sample_rate_hz",
+    "pair_target_sample_rate_hz",
+    "native_channel_count",
+    "channel_treatment_id",
+    "duration_support_stratum",
+    "active_audio_fraction",
+    "peak_level",
+    "clipped_sample_fraction",
+    "inherited_bandwidth_estimate",
+    "sparse_or_tonal_source_domain",
+    "codec_family",
+    "encoder_lineage",
+    "encoder_setting_template",
+    "encoder_observed_lowpass",
+    "history_decoder",
+    "analysis_decoder",
+    "pcm_transform",
+    "lossless_wrapper"
+  ],
+  "support_policy_boundary": {
+    "active_audio_fraction_and_signal_statistics_may_be_measured": true,
+    "may_influence_factor_assignment": false,
+    "may_remove_alerting_negatives": false,
+    "thresholds_frozen_here": false,
+    "note": "Representation-specific support thresholds are preregistered only after paired data and null analyses are frozen. All negative alerts remain in safety reporting even when a case is unsupported."
+  },
+  "construction_and_storage": {
+    "maximum_parallel_workers": 1,
+    "process_priority": "low",
+    "minimum_free_space_reserve_bytes": 16106127360,
+    "maximum_simultaneous_uncompressed_case_files": 2,
+    "source_archives_must_not_be_duplicated": true,
+    "case_generation": "checkpointed and resumable by recipe and output hash",
+    "derived_audio_retention": "Generated codec bitstreams and lossless derivatives may be deleted after their recipes, hashes, required measurements, and partition-opening state are sealed; they must be reproducible from the retained source archive and private allocation.",
+    "sealed_partition_rule": "Do not compute mechanism measurements while generating encoder-transfer or external-transfer cases before that partition is formally opened."
+  },
+  "stop_conditions": [
+    "A source-allocation binding or public verdict boundary differs.",
+    "A proposed toolchain cannot realize a frozen level deterministically; record a dated factor correction before generation rather than silently substituting a setting.",
+    "Development and encoder-transfer encoder lineages overlap.",
+    "A transformed positive lacks its matched transformed PCM reference.",
+    "A setting, decoder, channel treatment, transform, or source domain is confounded with expectation under the fractional assignment.",
+    "The projected or observed free space falls below the 15 GiB reserve.",
+    "Construction requires more than one worker, duplicate source archives, or opening a sealed partition early."
+  ],
+  "authorized_next_step": "Probe and freeze exact tools, commands, linked libraries, setting realizations, decoder alignment, filter and resampler behavior, and deterministic golden outputs. Do not assign source groups to cells or generate benchmark audio."
+}

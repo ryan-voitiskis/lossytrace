@@ -88,6 +88,10 @@ was then applied twice. The private candidate index and exact 793-member
 allocation were byte-identical, the VCTK 28-per-gender cap held, and RWC found
 a complete 85-family matching with 85 distinct normalized titles. See the
 path-free [`source-allocation result`](source-allocation-result-20260802.md).
-Factor levels, tool bindings, and fractional assignment remain separate freeze
-gates.
+The subsequent [`factor-level freeze`](factor-level-freeze-20260802.md) fixes
+a maximum 12-second identity-hashed excerpt, matched mono/stereo
+preconditioning, 16 development and 8 encoder-transfer setting templates, five
+history-decoder levels, nine PCM hard-negative transforms, and an ephemeral
+one-worker storage boundary. Tool bindings and fractional assignment remain
+separate freeze gates.
 No successor mechanism score or retained holdout has been opened.
