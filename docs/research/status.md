@@ -174,5 +174,8 @@ the ranking or assignment output. The
 [`recipe-004 result`](fractional-assignment-result-20260802-004.md) now records
 two byte-identical assignments: 793 groups, 12,885 cells, 6,356 positives, and
 6,529 references, with all quotas passing. A successor header-only feasibility
-audit must be frozen and pass twice before construction.
+audit is now frozen as
+[`construction-feasibility recipe 004`](construction-feasibility-correction-20260802-003.md).
+It binds both the exact private assignment and its public attestation and must
+pass twice before a separate construction recipe can be authorized.
 No successor mechanism score or retained holdout has been opened.

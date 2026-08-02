@@ -19,7 +19,7 @@ from typing import Any
 
 
 SCHEMA_VERSION = 1
-AUDIT_ID = "lossytrace-v2-construction-feasibility-20260802-003"
+AUDIT_ID = "lossytrace-v2-construction-feasibility-20260802-004"
 MINIMUM_FREE_RESERVE_BYTES = 15 * 1024**3
 MAXIMUM_EXCERPT_SECONDS = 12
 ARCHIVE_RELATIVE_PATHS = {
@@ -95,6 +95,7 @@ def validate_plan(
     source_allocation_path: Path,
     candidate_index_path: Path,
     assignment_path: Path,
+    assignment_result_path: Path,
     factor_path: Path,
     toolchain_path: Path,
     tool_paths_path: Path,
@@ -115,6 +116,11 @@ def validate_plan(
         (source_allocation_path, "private_source_allocation_sha256", "source allocation"),
         (candidate_index_path, "private_candidate_index_sha256", "candidate index"),
         (assignment_path, "private_fractional_assignment_sha256", "assignment"),
+        (
+            assignment_result_path,
+            "public_fractional_assignment_result_sha256",
+            "public assignment result",
+        ),
         (factor_path, "factor_levels_sha256", "factor levels"),
         (toolchain_path, "toolchain_manifest_sha256", "toolchain manifest"),
         (tool_paths_path, "private_tool_paths_sha256", "private tool paths"),
@@ -380,9 +386,12 @@ def audit(
         allocation.get("state") != "source_allocation_frozen_identity_only"
         or candidate_index.get("state") != "source_candidate_index_identity_only"
         or assignment.get("state")
-        != "fractional_assignment_frozen_identity_and_categorical_only"
+        != (
+            "fractional_assignment_frozen_identity_categorical_and_"
+            "transform_feasibility_only"
+        )
         or assignment.get("assignment_id")
-        != "lossytrace-v2-fractional-assignment-20260802-003"
+        != "lossytrace-v2-fractional-assignment-20260802-004"
     ):
         raise ValueError("private input state differs")
     selected = allocation.get("selected")
@@ -641,6 +650,7 @@ def parse_args() -> argparse.Namespace:
         "source-allocation",
         "candidate-index",
         "assignment",
+        "assignment-result",
         "factor",
         "toolchain",
         "tool-paths",
@@ -680,6 +690,7 @@ def main() -> int:
             "source_allocation",
             "candidate_index",
             "assignment",
+            "assignment_result",
             "factor",
             "toolchain",
             "tool_paths",
@@ -697,6 +708,7 @@ def main() -> int:
         paths["source-allocation"],
         paths["candidate-index"],
         paths["assignment"],
+        paths["assignment-result"],
         paths["factor"],
         paths["toolchain"],
         paths["tool-paths"],
@@ -707,11 +719,16 @@ def main() -> int:
     allocation = load_object(paths["source-allocation"])
     candidate_index = load_object(paths["candidate-index"])
     assignment = load_object(paths["assignment"])
+    assignment_result = load_object(paths["assignment-result"])
     if (
         allocation.get("candidate_index_sha256")
         != sha256_file(paths["candidate-index"])
         or assignment.get("source_allocation_sha256")
         != sha256_file(paths["source-allocation"])
+        or assignment_result.get("private_assignment_sha256")
+        != sha256_file(paths["assignment"])
+        or assignment_result.get("assignment_id")
+        != assignment.get("assignment_id")
     ):
         raise ValueError("private source or assignment cross-binding differs")
     toolchain = load_object(paths["toolchain"])

@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "audit_id": "lossytrace-v2-construction-feasibility-20260802-003",
+  "audit_id": "lossytrace-v2-construction-feasibility-20260802-004",
   "state": "construction_feasibility_frozen_before_header_audit",
-  "upstream_checkpoint_commit": "124f42bd9d92195be9ea7df7fa512425034f015a",
+  "upstream_checkpoint_commit": "f89ef287ad07e674a72129d1042ca8fa3739f5d0",
   "correction_history": [
     {
       "supersedes_audit_id": "lossytrace-v2-construction-feasibility-20260802-001",
@@ -20,6 +20,16 @@
       "waveform_samples_inspected_before_correction": false,
       "audio_generated_before_correction": false,
       "scores_opened_before_correction": false
+    },
+    {
+      "supersedes_audit_id": "lossytrace-v2-construction-feasibility-20260802-003",
+      "supersedes_result_sha256": "2791c0e5c64bffae89412418693295be7b0ddd4ce8ad18eb323106bbe09bd3b4",
+      "reason": "Recipe 003 correctly stopped on 11 source groups assigned below a frozen transform minimum. Fractional-assignment recipe 004 replaced only the infeasible transform slots using the bound header-derived Boolean eligibility relation; this audit binds and rechecks that new assignment without changing source or transform scope.",
+      "source_artifacts_hashed_before_correction": true,
+      "headers_inspected_before_correction": true,
+      "waveform_samples_inspected_before_correction": false,
+      "audio_generated_before_correction": false,
+      "scores_opened_before_correction": false
     }
   ],
   "audio_generated": false,
@@ -31,11 +41,12 @@
   "selection_authorized": false,
   "bindings": {
     "audit_generator_path": "scripts/audit-audio-integrity-v2-construction-feasibility.py",
-    "audit_generator_sha256": "2ed51649a7bccda1fcfbe51eebb27c86dc9aad52017b3befaaae25dfb3588cc9",
+    "audit_generator_sha256": "410ba33edcc8d322e3886bf122f3271824b302bb7f417e3363b73d2af5ce5700",
     "private_source_allocation_sha256": "e4b7d2ab42253e00ce0e0b95c8049193f9b6178ecbb6212811fde96d58c088d4",
     "private_candidate_index_sha256": "07a00a0f56570c0778e384c6a816a69be13fffe42596c1aad80d5a6a99357a07",
-    "private_fractional_assignment_sha256": "e33ae9f961fd48ec3857ac41ad9197b86fd0d38a5897dd5144bbf35683110582",
-    "public_fractional_assignment_result_sha256": "31573d8ee523d6572d89b884ca5cbb1d815596c37d47831a31cb51d130bebe90",
+    "private_fractional_assignment_sha256": "46039d6fc22a6764daf81684d109e43a9f96b97af7d85e99258b1efe0449c5bb",
+    "public_fractional_assignment_result_path": "research/sources/evidence/fractional-assignment-observed-20260802-004.json",
+    "public_fractional_assignment_result_sha256": "05fa5c09c90a2fd8404c8afa08f7515032c1f3633cc7bfcc17e58526f984a25d",
     "factor_levels_sha256": "4065553ef4fbe505ea0d79b149570bc1483396dbcc1de52597890e61f59481bd",
     "toolchain_manifest_sha256": "d2af2f0b78b184189806d724c294d7606f37d2763839e17c9289f7957da52070",
     "private_tool_paths_sha256": "1a564dc3958b4f678ae5ff89c04ac8797849127b784f2d4b2d7af88532df3fb5"
@@ -102,7 +113,7 @@
     "public_run_aggregates_must_be_byte_identical": true
   },
   "stop_conditions": [
-    "A bound source, allocation, assignment, factor, toolchain, tool path, or generator hash differs.",
+    "A bound source, allocation, private assignment, public assignment result, factor, toolchain, tool path, or generator hash differs.",
     "A selected source is absent, not single-stream lossless PCM, or has a native channel count outside one or two.",
     "A provider window is empty or lies outside the selected source.",
     "An assigned trim input is shorter than 500 ms or an assigned duration-prefix input is shorter than 3 s.",
@@ -111,5 +122,5 @@
     "The two complete private or public reports differ byte-for-byte.",
     "The work volume falls below the 15 GiB reserve."
   ],
-  "authorized_next_step": "Commit this plan and exact audit generator, then run two complete header-only audits. If any assigned cell is infeasible, stop construction and freeze a correction without using waveform content or scores."
+  "authorized_next_step": "Commit this corrected plan and exact audit generator, then run two complete header-only audits against fractional-assignment recipe 004. If any assigned cell is infeasible, stop construction and freeze another correction without using waveform content or scores. If both audits pass byte-for-byte, freeze the path-free result before authorizing a separate construction recipe."
 }

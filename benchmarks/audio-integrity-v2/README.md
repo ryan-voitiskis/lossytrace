@@ -48,6 +48,7 @@ Read these before constructing a manifest:
 - [`construction-feasibility-preregistration-20260802.md`](../../docs/research/construction-feasibility-preregistration-20260802.md)
 - [`construction-feasibility-correction-20260802-001.md`](../../docs/research/construction-feasibility-correction-20260802-001.md)
 - [`construction-feasibility-correction-20260802-002.md`](../../docs/research/construction-feasibility-correction-20260802-002.md)
+- [`construction-feasibility-correction-20260802-003.md`](../../docs/research/construction-feasibility-correction-20260802-003.md)
 - [`construction-feasibility-result-20260802-003.md`](../../docs/research/construction-feasibility-result-20260802-003.md)
 - [`construction-feasibility-observed-20260802-003.json`](../../research/sources/evidence/construction-feasibility-observed-20260802-003.json)
 - [`rwc-source-identity-audit-20260802.md`](../../docs/research/rwc-source-identity-audit-20260802.md)
@@ -130,8 +131,8 @@ finds 11 assigned groups below a frozen transform minimum. Construction stays
 stopped. Fractional-assignment recipe `004` is now frozen to apply those
 minimums only as per-transform eligibility predicates before the unchanged
 recipe-`003` ranking. Its two complete replays are byte-identical and freeze
-12,885 cells; construction still requires a separately frozen repeat of the
-header gate.
+12,885 cells. Construction-feasibility recipe `004` now binds that assignment
+and requires a separately replayed header gate before any construction recipe.
 
 ## Evidence partitions
 
