@@ -177,5 +177,9 @@ two byte-identical assignments: 793 groups, 12,885 cells, 6,356 positives, and
 audit is now frozen as
 [`construction-feasibility recipe 004`](construction-feasibility-correction-20260802-003.md).
 It binds both the exact private assignment and its public attestation and must
-pass twice before a separate construction recipe can be authorized.
+pass twice before a separate construction recipe can be authorized. Those
+[`two replays`](construction-feasibility-result-20260802-004.md) are now
+byte-identical across all 793 headers with zero unsupported transform or
+channel groups. The next gate is an exact, resumable, one-worker construction
+recipe; no audio is yet generated or authorized outside that recipe.
 No successor mechanism score or retained holdout has been opened.

@@ -51,6 +51,8 @@ Read these before constructing a manifest:
 - [`construction-feasibility-correction-20260802-003.md`](../../docs/research/construction-feasibility-correction-20260802-003.md)
 - [`construction-feasibility-result-20260802-003.md`](../../docs/research/construction-feasibility-result-20260802-003.md)
 - [`construction-feasibility-observed-20260802-003.json`](../../research/sources/evidence/construction-feasibility-observed-20260802-003.json)
+- [`construction-feasibility-result-20260802-004.md`](../../docs/research/construction-feasibility-result-20260802-004.md)
+- [`construction-feasibility-observed-20260802-004.json`](../../research/sources/evidence/construction-feasibility-observed-20260802-004.json)
 - [`rwc-source-identity-audit-20260802.md`](../../docs/research/rwc-source-identity-audit-20260802.md)
 
 The pre-freeze source/tool inventory and its remaining gates are described
@@ -132,7 +134,8 @@ stopped. Fractional-assignment recipe `004` is now frozen to apply those
 minimums only as per-transform eligibility predicates before the unchanged
 recipe-`003` ranking. Its two complete replays are byte-identical and freeze
 12,885 cells. Construction-feasibility recipe `004` now binds that assignment
-and requires a separately replayed header gate before any construction recipe.
+and has passed two byte-identical header replays with zero infeasible groups.
+Only a separately committed construction recipe may now generate audio.
 
 ## Evidence partitions
 
