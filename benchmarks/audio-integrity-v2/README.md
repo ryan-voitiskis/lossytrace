@@ -53,6 +53,8 @@ Read these before constructing a manifest:
 - [`construction-feasibility-observed-20260802-003.json`](../../research/sources/evidence/construction-feasibility-observed-20260802-003.json)
 - [`construction-feasibility-result-20260802-004.md`](../../docs/research/construction-feasibility-result-20260802-004.md)
 - [`construction-feasibility-observed-20260802-004.json`](../../research/sources/evidence/construction-feasibility-observed-20260802-004.json)
+- [`preconditioning-audit-plan.json`](preconditioning-audit-plan.json)
+- [`preconditioning-audit-preregistration-20260802.md`](../../docs/research/preconditioning-audit-preregistration-20260802.md)
 - [`rwc-source-identity-audit-20260802.md`](../../docs/research/rwc-source-identity-audit-20260802.md)
 
 The pre-freeze source/tool inventory and its remaining gates are described
@@ -136,6 +138,10 @@ recipe-`003` ranking. Its two complete replays are byte-identical and freeze
 12,885 cells. Construction-feasibility recipe `004` now binds that assignment
 and has passed two byte-identical header replays with zero infeasible groups.
 Only a separately committed construction recipe may now generate audio.
+Before that recipe, the exact crop/channel/resample/s16 boundary has a
+separately frozen six-case
+[`synthetic preconditioning audit`](../../docs/research/preconditioning-audit-preregistration-20260802.md).
+It cannot read benchmark audio and must pass two byte-identical replays.
 
 ## Evidence partitions
 

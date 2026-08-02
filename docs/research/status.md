@@ -182,4 +182,10 @@ pass twice before a separate construction recipe can be authorized. Those
 byte-identical across all 793 headers with zero unsupported transform or
 channel groups. The next gate is an exact, resumable, one-worker construction
 recipe; no audio is yet generated or authorized outside that recipe.
+Review of the construction boundary found that end-to-end source
+preconditioning had not yet been synthetically replayed across native s16,
+s24, and f32 PCM. A six-case, two-replay
+[`preconditioning audit`](preconditioning-audit-preregistration-20260802.md) is
+now frozen before execution. It cannot read benchmark source audio, features,
+scores, or labels.
 No successor mechanism score or retained holdout has been opened.

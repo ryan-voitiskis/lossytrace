@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "audit_id": "lossytrace-v2-preconditioning-audit-20260802-001",
+  "state": "preconditioning_audit_frozen_before_synthetic_replay",
+  "upstream_checkpoint_commit": "b87ad6d0359955c61faf5a9f4e58b71955cc37f8",
+  "toolchain_freeze_id": "lossytrace-v2-toolchain-bindings-20260802-004",
+  "benchmark_source_audio_read": false,
+  "benchmark_audio_generated": false,
+  "synthetic_audio_generated": false,
+  "features_computed": false,
+  "scores_opened": false,
+  "construction_authorized": false,
+  "bindings": {
+    "audit_generator_path": "scripts/audit-audio-integrity-v2-preconditioning.py",
+    "audit_generator_sha256": "faf0a780b064d525a801c94e07a5755ba5440cb2c8a5e01ce0d7f6126b88bb4b",
+    "preconditioning_module_path": "scripts/audio_integrity_v2_preconditioning.py",
+    "preconditioning_module_sha256": "1d634a6ca0f038514dbbd42f7d8c3a1bb8d2520f8cc5006a2a8b18453f9cac8b",
+    "toolchain_generator_path": "scripts/freeze-audio-integrity-v2-toolchains.py",
+    "toolchain_generator_sha256": "21fa31de0b0783f05d55dcd8e78b8d0c39c12c358d88dc641cf88ad0f64ee78e",
+    "factor_levels_sha256": "4065553ef4fbe505ea0d79b149570bc1483396dbcc1de52597890e61f59481bd",
+    "toolchain_manifest_sha256": "d2af2f0b78b184189806d724c294d7606f37d2763839e17c9289f7957da52070",
+    "toolchain_result_sha256": "29ddfe00bb419aedcbdee8de530785f5981de279f2bd190f4a337ebbe8c3cc23",
+    "public_decoder_result_sha256": "e18ebce9101a59321fe7fcf509222b78d2218476653a091396e596de72520683",
+    "construction_feasibility_result_sha256": "13014dd9c8f26d69217865a8f62badfd0427b4a8ad808ddbe4a02ce9b4986110",
+    "private_tool_paths_sha256": "1a564dc3958b4f678ae5ff89c04ac8797849127b784f2d4b2d7af88532df3fb5"
+  },
+  "preconditioning_recipe": {
+    "input_scope": "one lossless FLAC or pcm_* audio stream with one or two channels",
+    "order": [
+      "decode the selected stream to normalized IEEE-754 binary64 PCM",
+      "crop the exact provider and identity-hashed native-frame excerpt",
+      "apply the frozen channel treatment in binary64",
+      "when required, resample to the pair target rate",
+      "quantize each binary64 sample to signed s16le with exact ties-to-even rounding and saturation, without dither"
+    ],
+    "excerpt": {
+      "maximum_seconds": 12,
+      "offset_prefix": "lossytrace-v2-reference-excerpt-offset-20260802\u0000",
+      "offset_digest": "SHA-256",
+      "offset_word": "first eight digest bytes interpreted as unsigned big-endian",
+      "offset_modulus": "available_native_frame_starts + 1",
+      "short_source_policy": "retain the complete provider window"
+    },
+    "decode_and_filter": {
+      "tool_id": "ffmpeg_8_1_2_1",
+      "intermediate_sample_format": "pcm_f64le",
+      "crop_filter": "atrim with integer start_sample and end_sample followed by PTS reset",
+      "mono_from_stereo": "0.5 * left + 0.5 * right in binary64",
+      "stereo_from_mono": "exact duplicate",
+      "identity_channel_paths": "unchanged",
+      "resampler": "FFmpeg SWResampler, 64-tap Kaiser sinc, phase_shift 10, no interpolation, exact-rational phases, cutoff 0.95, beta 9, no dither, binary64 output",
+      "target_sample_rates_hz": [44100, 48000]
+    },
+    "quantization": {
+      "scale": 32768,
+      "rounding": "nearest integer with ties to even using the exact binary64 integer ratio",
+      "saturation_minimum": -32768,
+      "saturation_maximum": 32767,
+      "dither": false,
+      "output_sample_format": "signed_s16le"
+    }
+  },
+  "synthetic_cases": [
+    {
+      "fixture_id": "s16-mono-native-stereo",
+      "source_codec_name": "pcm_s16le",
+      "native_sample_rate_hz": 48000,
+      "native_channel_count": 1,
+      "native_frame_count": 192000,
+      "provider_start_frame": 0,
+      "provider_end_frame_exclusive": 192000,
+      "channel_treatment_id": "stereo",
+      "target_sample_rate_hz": 48000
+    },
+    {
+      "fixture_id": "s24-stereo-long-crop-resample-mono",
+      "source_codec_name": "pcm_s24le",
+      "native_sample_rate_hz": 44100,
+      "native_channel_count": 2,
+      "native_frame_count": 573300,
+      "provider_start_frame": 2205,
+      "provider_end_frame_exclusive": 571095,
+      "channel_treatment_id": "mono",
+      "target_sample_rate_hz": 48000
+    },
+    {
+      "fixture_id": "f32-stereo-window-resample-mono",
+      "source_codec_name": "pcm_f32le",
+      "native_sample_rate_hz": 48000,
+      "native_channel_count": 2,
+      "native_frame_count": 192000,
+      "provider_start_frame": 4800,
+      "provider_end_frame_exclusive": 187200,
+      "channel_treatment_id": "mono",
+      "target_sample_rate_hz": 44100
+    },
+    {
+      "fixture_id": "s24-mono-native-stereo",
+      "source_codec_name": "pcm_s24le",
+      "native_sample_rate_hz": 44100,
+      "native_channel_count": 1,
+      "native_frame_count": 176400,
+      "provider_start_frame": 0,
+      "provider_end_frame_exclusive": 176400,
+      "channel_treatment_id": "stereo",
+      "target_sample_rate_hz": 44100
+    },
+    {
+      "fixture_id": "f32-mono-native-mono",
+      "source_codec_name": "pcm_f32le",
+      "native_sample_rate_hz": 48000,
+      "native_channel_count": 1,
+      "native_frame_count": 192000,
+      "provider_start_frame": 0,
+      "provider_end_frame_exclusive": 192000,
+      "channel_treatment_id": "mono",
+      "target_sample_rate_hz": 48000
+    },
+    {
+      "fixture_id": "s16-stereo-resample-stereo",
+      "source_codec_name": "pcm_s16le",
+      "native_sample_rate_hz": 44100,
+      "native_channel_count": 2,
+      "native_frame_count": 176400,
+      "provider_start_frame": 0,
+      "provider_end_frame_exclusive": 176400,
+      "channel_treatment_id": "stereo",
+      "target_sample_rate_hz": 48000
+    }
+  ],
+  "coverage_requirements": {
+    "source_codec_names": ["pcm_s16le", "pcm_s24le", "pcm_f32le"],
+    "native_channel_counts": [1, 2],
+    "native_sample_rates_hz": [44100, 48000],
+    "target_sample_rates_hz": [44100, 48000],
+    "channel_treatment_ids": ["mono", "stereo"],
+    "long_identity_hashed_crop": true,
+    "bounded_provider_window": true,
+    "resample_and_native_rate_paths": true,
+    "two_executions_per_case_within_replay": true
+  },
+  "storage": {
+    "maximum_parallel_workers": 1,
+    "minimum_free_space_reserve_bytes": 16106127360,
+    "temporary_synthetic_audio_only": true,
+    "benchmark_corpus_duplicated": false
+  },
+  "reproducibility": {
+    "complete_replays_required": 2,
+    "run_reports_must_be_byte_identical": true,
+    "timing_fields_forbidden": true
+  },
+  "stop_conditions": [
+    "A bound module, tool, factor, toolchain result, decoder result, or feasibility result differs.",
+    "A synthetic source format, frame count, sample rate, or channel count differs from its declaration.",
+    "Two executions of one synthetic case differ in output WAV bytes or decoded PCM hash.",
+    "The two complete path-free replay reports differ byte-for-byte.",
+    "A private path enters public evidence.",
+    "Benchmark source audio, a feature, a score, or an unopened label would be read.",
+    "The work volume falls below the 15 GiB reserve."
+  ],
+  "authorized_next_step": "Commit this plan and both exact modules, run two complete synthetic replays, and commit only a path-free attestation if they are byte-identical. Do not read benchmark source audio or generate benchmark cases until a successor construction recipe binds the passing result."
+}
