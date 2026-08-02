@@ -43,7 +43,7 @@ class FractionalAssignmentTest(unittest.TestCase):
 
     def test_rules_are_preassignment_and_verdict_free(self) -> None:
         self.assertEqual(
-            "lossytrace-v2-fractional-assignment-20260802-002",
+            "lossytrace-v2-fractional-assignment-20260802-003",
             RULES["assignment_rules_id"],
         )
         self.assertEqual(
@@ -102,6 +102,16 @@ class FractionalAssignmentTest(unittest.TestCase):
         positive = next(cell for cell in cells if cell["expectation"] == "controlled_positive")
         reference = next(
             cell for cell in cells if cell["assignment_id"] == positive["matched_reference_assignment_id"]
+        )
+        source_reference = next(
+            cell
+            for cell in cells
+            if cell["assignment_id"] == positive["source_reference_assignment_id"]
+        )
+        self.assertEqual("identity", source_reference["transform_id"])
+        self.assertEqual(
+            source_reference["assignment_id"],
+            reference["source_reference_assignment_id"],
         )
         for field in (
             "group_id",

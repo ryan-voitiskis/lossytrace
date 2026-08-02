@@ -130,10 +130,12 @@ matched-reference identity. Its
 evidence. The separately frozen
 [`correction`](fractional-assignment-correction-20260802-001.md) makes sample
 rate a first-class exact-match factor. Corrected recipe `002` required two
-fresh private replays before construction. Those
-[`replays`](fractional-assignment-result-20260802-002.md) are byte-identical:
-793 groups map to 12,058 cells, all 6,356 positives have an exact
-sample-rate-aware reference, and all frozen coverage checks pass. One-worker,
-resumable case construction is now the next gate. No assigned audio was
-generated during either assignment recipe.
+fresh private replays before construction. Those recipe-`002`
+[`replays`](fractional-assignment-result-20260802-002.md) were byte-identical,
+but construction-lineage review found that generated cells did not explicitly
+name their identity recipe source. The separately frozen
+[`correction`](fractional-assignment-correction-20260802-002.md) distinguishes
+the shared identity source from a positive's matched transformed H0 and fixes
+the manifest validator's corresponding role conflation. Recipe `003` now
+requires two fresh private replays. No assigned audio was generated.
 No successor mechanism score or retained holdout has been opened.

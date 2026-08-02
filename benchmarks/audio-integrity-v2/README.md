@@ -34,6 +34,7 @@ Read these before constructing a manifest:
 - [`fractional-assignment-rules.json`](fractional-assignment-rules.json)
 - [`fractional-assignment-preregistration-20260802.md`](../../docs/research/fractional-assignment-preregistration-20260802.md)
 - [`fractional-assignment-correction-20260802-001.md`](../../docs/research/fractional-assignment-correction-20260802-001.md)
+- [`fractional-assignment-correction-20260802-002.md`](../../docs/research/fractional-assignment-correction-20260802-002.md)
 - [rejected recipe-001 result](../../docs/research/fractional-assignment-result-20260802.md)
 - [rejected recipe-001 aggregate](../../research/sources/evidence/fractional-assignment-observed-20260802.json)
 - [`fractional-assignment-result-20260802-002.md`](../../docs/research/fractional-assignment-result-20260802-002.md)
@@ -93,8 +94,12 @@ missing from its matched-reference identity. The separately frozen
 adds that factor before any assigned audio or score is opened. Recipe `001`
 must not enter a benchmark denominator. Corrected
 [`recipe-002 evidence`](../../docs/research/fractional-assignment-result-20260802-002.md)
-is byte-identical across two fresh replays and freezes 12,058 constructible
-cells with target sample rate in every pair identity.
+is byte-identical across two fresh replays and fixes target sample rate, but a
+second construction audit found that generated cells did not explicitly name
+their identity recipe source. The separately frozen
+[`lineage correction`](../../docs/research/fractional-assignment-correction-20260802-002.md)
+adds that relation before audio or scores; recipe `003` requires two fresh
+replays.
 
 ## Evidence partitions
 
@@ -197,8 +202,8 @@ preregistration and persistent goal decide when a partition may be consumed.
 3. Preserve the completed source-identity audits, external-transfer margin,
    replayed source allocation, factor-level freeze, and exact-toolchain
    preregistration, replayed toolchain, and public-decoder equivalence, then
-   preserve rejected recipe `001` and the separately replayed corrected recipe
-   `002` before construction.
+   preserve rejected recipes `001` and `002`, then replay recipe `003` before
+   construction.
 4. Generate paired mechanism-development cases with one low-priority worker,
    hashes, resumable recipes, and a free-space reserve.
 5. Freeze encoder-transfer and external-transfer identities before mechanism

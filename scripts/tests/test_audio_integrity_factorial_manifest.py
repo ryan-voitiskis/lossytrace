@@ -56,6 +56,37 @@ class FactorialManifestTests(unittest.TestCase):
             errors,
         )
 
+    def test_transformed_positive_uses_separate_base_and_matched_reference(self):
+        manifest = copy.deepcopy(self.manifest)
+        base = next(
+            value
+            for value in manifest["cases"]
+            if value["case_id"] == "fixture-development-mp3"
+        )
+        transformed = copy.deepcopy(base)
+        transformed.update(
+            {
+                "case_id": "fixture-development-mp3-resampled",
+                "relative_path": "generated/development-mp3-resampled.flac",
+                "audio_sha256": "f" * 64,
+                "post_transform_ids": ["resample-32k-44k1"],
+                "reference_case_id": "fixture-development-resample",
+                "recipe_id": "recipe-development-mp3-resampled",
+            }
+        )
+        manifest["cases"].append(transformed)
+        manifest["recipes"].append(
+            {
+                "recipe_id": "recipe-development-mp3-resampled",
+                "output_case_id": transformed["case_id"],
+                "source_case_id": "fixture-development-reference",
+                "command_sha256": "f" * 64,
+                "tool_ids": ["fixture-tool"],
+            }
+        )
+        errors, _ = self.validate(manifest)
+        self.assertEqual([], errors)
+
     def test_encoder_transfer_must_use_unseen_lineage(self):
         manifest = copy.deepcopy(self.manifest)
         encoder = next(

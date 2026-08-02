@@ -444,8 +444,16 @@ def validate(
             if reference is None:
                 errors.append(f"case {case_id} references unknown PCM reference")
             else:
-                if reference.get("history_class") != "pcm_reference":
-                    errors.append(f"case {case_id} reference is not pcm_reference")
+                allowed_reference_histories = (
+                    {"pcm_reference", "pcm_hard_negative"}
+                    if case.get("history_class") == "controlled_lossy_history"
+                    else {"pcm_reference"}
+                )
+                if (
+                    reference.get("history_class") not in allowed_reference_histories
+                    or reference.get("expectation") != "negative"
+                ):
+                    errors.append(f"case {case_id} reference is not an eligible negative")
                 for field in (
                     "source_group",
                     "partition_group",
@@ -456,6 +464,18 @@ def validate(
                         errors.append(
                             f"case {case_id} differs from reference on {field}"
                         )
+                if case.get("history_class") == "controlled_lossy_history":
+                    for field in (
+                        "sample_rate_hz",
+                        "channel_count",
+                        "current_container",
+                        "current_codec",
+                        "post_transform_ids",
+                    ):
+                        if case.get(field) != reference.get(field):
+                            errors.append(
+                                f"case {case_id} differs from matched reference on {field}"
+                            )
         recipe_id = case.get("recipe_id")
         if recipe_id is not None:
             recipe = recipes.get(recipe_id)
@@ -464,10 +484,30 @@ def validate(
             else:
                 if recipe.get("output_case_id") != case_id:
                     errors.append(f"case {case_id} recipe output differs")
-                if reference_id is not None and recipe.get(
-                    "source_case_id"
-                ) != reference_id:
-                    errors.append(f"case {case_id} recipe source differs")
+                source = cases.get(recipe.get("source_case_id"))
+                if source is None:
+                    errors.append(f"case {case_id} recipe source is absent")
+                else:
+                    if source.get("history_class") != "pcm_reference":
+                        errors.append(
+                            f"case {case_id} recipe source is not pcm_reference"
+                        )
+                    for field in (
+                        "source_group",
+                        "partition_group",
+                        "source_collection_id",
+                        "evidence_partition",
+                        "sample_rate_hz",
+                    ):
+                        if case.get(field) != source.get(field):
+                            errors.append(
+                                f"case {case_id} differs from recipe source on {field}"
+                            )
+                if (
+                    case.get("history_class") == "pcm_hard_negative"
+                    and recipe.get("source_case_id") != reference_id
+                ):
+                    errors.append(f"case {case_id} hard-negative recipe source differs")
 
     for recipe_id, recipe in recipes.items():
         if recipe.get("output_case_id") not in cases:

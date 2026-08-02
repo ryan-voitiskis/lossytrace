@@ -2,9 +2,9 @@
 
 Date: 2026-08-02
 
-State: corrected identity-only assignment replayed byte-identically; path-free
-aggregate frozen; no benchmark audio, waveform statistic, feature, score, or
-unopened label was inspected
+State: recipe `002` replayed byte-identically but was superseded before audio
+generation because generated-cell identity sources were not explicit; see
+[`correction 002`](fractional-assignment-correction-20260802-002.md)
 
 ## Bound inputs
 
@@ -59,12 +59,13 @@ across 44.1 and 48 kHz.
 
 ## Interpretation and authorization boundary
 
-The corrected assignment is deterministic, source-aware, waveform-blind, and
-constructible under the frozen preconditioning rules. It removes assignment
-and sample-rate aliasing as later explanations for a result. It is not
-evidence that any codec-history mechanism works.
+The assignment is deterministic, source-aware, waveform-blind, and free of
+the recipe-`001` sample-rate aliasing. A subsequent construction-lineage audit
+found that transformed H0 and H1 cells did not explicitly name their shared
+untransformed identity source. This result is retained as rejected evidence
+and must not enter a benchmark denominator.
 
-One-worker, resumable case construction is now authorized on storage that
-preserves the frozen 15 GiB reserve. Mechanism scoring, representation
-selection, encoder-transfer opening, and external positive materialization
-remain unauthorized until their later gates.
+No assigned audio had been generated and no score had been opened. Construction
+remains paused until recipe `003` passes two fresh byte-identical replays.
+Mechanism scoring, representation selection, encoder-transfer opening, and
+external positive materialization remain unauthorized.

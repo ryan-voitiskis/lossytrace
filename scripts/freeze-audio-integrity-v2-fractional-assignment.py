@@ -14,7 +14,7 @@ from typing import Any, Iterable
 
 
 SCHEMA_VERSION = 1
-RULES_ID = "lossytrace-v2-fractional-assignment-20260802-002"
+RULES_ID = "lossytrace-v2-fractional-assignment-20260802-003"
 RANKING_PREFIX = "lossytrace-v2-fractional-assignment-20260802\0"
 PARTITIONS = ("mechanism_development", "encoder_transfer", "external_transfer")
 OBSERVED_PARTITIONS = ("mechanism_development", "encoder_transfer")
@@ -280,6 +280,21 @@ class CellBuilder:
         if existing is not None:
             existing["_roles"].add(required_for_role)
             return existing["assignment_id"]
+        source_reference_id = None
+        if transform_id != "identity":
+            source_wrapper_id = (
+                "flac16"
+                if transform_id == "lossless-wrapper-rewrite"
+                else wrapper_id
+            )
+            source_reference_id = self.ensure_reference(
+                row,
+                channel,
+                target_sample_rate_hz,
+                "identity",
+                source_wrapper_id,
+                "transform_source",
+            )
         payload = {
             "group_id": row["group_id"],
             "evidence_partition": row["evidence_partition"],
@@ -293,6 +308,8 @@ class CellBuilder:
             "transform_id": transform_id,
             "wrapper_id": wrapper_id,
         }
+        if source_reference_id is not None:
+            payload["source_reference_assignment_id"] = source_reference_id
         cell = {**payload, "assignment_id": assignment_id(payload), "_roles": {required_for_role}}
         self.references[key] = cell
         return cell["assignment_id"]
@@ -316,6 +333,17 @@ class CellBuilder:
             wrapper_id,
             role,
         )
+        reference_key = (
+            row["group_id"],
+            channel,
+            target_sample_rate_hz,
+            transform_id,
+            wrapper_id,
+        )
+        matched_reference = self.references[reference_key]
+        source_reference_id = matched_reference.get(
+            "source_reference_assignment_id", reference_id
+        )
         payload = {
             "group_id": row["group_id"],
             "evidence_partition": row["evidence_partition"],
@@ -334,6 +362,7 @@ class CellBuilder:
             "transform_id": transform_id,
             "wrapper_id": wrapper_id,
             "matched_reference_assignment_id": reference_id,
+            "source_reference_assignment_id": source_reference_id,
         }
         identity = assignment_id(payload)
         if identity in self.positives:
@@ -698,6 +727,33 @@ def validate_assignment(
         row["expanded_setting_id"]: row
         for row in manifest["expanded_encoder_settings"]
     }
+
+    def source_reference_for(cell: dict[str, Any]) -> dict[str, Any]:
+        source_reference = by_id.get(cell.get("source_reference_assignment_id"))
+        if (
+            source_reference is None
+            or source_reference.get("history_class") != "pcm_reference"
+            or source_reference.get("expectation") != "negative"
+            or source_reference.get("transform_id") != "identity"
+        ):
+            raise ValueError("generated cell lacks an identity recipe source")
+        for field in (
+            "group_id",
+            "evidence_partition",
+            "channel_treatment_id",
+            "target_sample_rate_hz",
+        ):
+            if source_reference.get(field) != cell.get(field):
+                raise ValueError(f"generated cell recipe source differs on {field}")
+        expected_wrapper = (
+            "flac16"
+            if cell.get("transform_id") == "lossless-wrapper-rewrite"
+            else cell.get("wrapper_id")
+        )
+        if source_reference.get("wrapper_id") != expected_wrapper:
+            raise ValueError("generated cell recipe source wrapper differs")
+        return source_reference
+
     for cell in cells:
         group = group_by_id.get(cell.get("group_id"))
         if group is None or cell.get("evidence_partition") != group["evidence_partition"]:
@@ -723,20 +779,38 @@ def validate_assignment(
             ):
                 raise ValueError("positive target sample rate differs from setting")
             reference = by_id.get(cell.get("matched_reference_assignment_id"))
-            if reference is None or any(
-                reference.get(field) != cell.get(field)
-                for field in (
-                    "group_id",
-                    "evidence_partition",
-                    "channel_treatment_id",
-                    "target_sample_rate_hz",
-                    "transform_id",
-                    "wrapper_id",
+            if (
+                reference is None
+                or reference.get("expectation") != "negative"
+                or any(
+                    reference.get(field) != cell.get(field)
+                    for field in (
+                        "group_id",
+                        "evidence_partition",
+                        "channel_treatment_id",
+                        "target_sample_rate_hz",
+                        "transform_id",
+                        "wrapper_id",
+                    )
                 )
             ):
                 raise ValueError("positive lacks an exact matched reference")
+            if (
+                source_reference_for(cell).get("assignment_id")
+                != reference.get(
+                    "source_reference_assignment_id", reference.get("assignment_id")
+                )
+            ):
+                raise ValueError("positive and matched reference use different sources")
         elif cell.get("expectation") != "negative":
             raise ValueError("assignment expectation differs")
+        elif cell.get("history_class") == "pcm_hard_negative":
+            source_reference_for(cell)
+        elif (
+            cell.get("history_class") != "pcm_reference"
+            or "source_reference_assignment_id" in cell
+        ):
+            raise ValueError("identity reference lineage differs")
     if positive_cells(assignment, "external_transfer"):
         raise ValueError("external positive was assigned before encoder freeze")
 
