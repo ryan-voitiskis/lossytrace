@@ -5,6 +5,12 @@ Date: 2026-08-02
 State: factor levels frozen before toolchain binding and cell assignment; no
 benchmark audio, mechanism score, or unopened label inspected
 
+Superseded before benchmark construction: an executed toolchain probe showed
+that FFmpeg native Vorbis 8.1.2 cannot realize mono. The separately committed
+[`factor correction`](factor-level-correction-20260802-001.md) narrows only
+that encoder-transfer interaction and preserves this document as the original
+pre-observation `001` record.
+
 ## Purpose
 
 This checkpoint fixes what the v2 benchmark may vary without yet deciding

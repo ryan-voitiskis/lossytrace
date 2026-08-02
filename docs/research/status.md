@@ -100,5 +100,11 @@ keeps source allocation and scoring closed. Its first replay stopped because
 LAME CBR-96 stereo chose 32 kHz; the committed
 [`correction`](toolchain-factor-correction-20260802-001.md) explicitly binds
 all LAME settings to the frozen 44.1 kHz rate. Two complete corrected
-executions and the later fractional assignment remain separate gates.
+executions and the later fractional assignment remain separate gates. The
+next replay then found that FFmpeg native Vorbis supports only two encoded
+channels. The separately committed
+[`factor correction`](factor-level-correction-20260802-001.md) makes that
+transfer lineage stereo-only, narrows the claim explicitly, and leaves 46
+realizable expanded settings. A revised toolchain recipe must be frozen before
+execution resumes.
 No successor mechanism score or retained holdout has been opened.

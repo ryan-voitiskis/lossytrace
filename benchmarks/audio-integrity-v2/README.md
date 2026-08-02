@@ -18,6 +18,7 @@ Read these before constructing a manifest:
 - [`inventory.json`](inventory.json)
 - [`source-allocation-rules.json`](source-allocation-rules.json)
 - [`factor-levels.json`](factor-levels.json)
+- [`factor-level-correction-20260802-001.md`](../../docs/research/factor-level-correction-20260802-001.md)
 - [`toolchain-bindings.json`](toolchain-bindings.json)
 - [`toolchain-probe-result-20260802.md`](../../docs/research/toolchain-probe-result-20260802.md)
 - [`toolchain-freeze-preregistration-20260802.md`](../../docs/research/toolchain-freeze-preregistration-20260802.md)
@@ -46,6 +47,12 @@ algorithms, and wrapper commands before executing the new settings. Its first
 replay stopped when LAME CBR-96 stereo selected 32 kHz; the separately frozen
 [`correction`](../../docs/research/toolchain-factor-correction-20260802-001.md)
 binds 44.1 kHz explicitly without changing the scientific factor.
+The next replay exposed a native-FFmpeg Vorbis capability boundary. The
+separately committed
+[`factor correction`](../../docs/research/factor-level-correction-20260802-001.md)
+makes only those two transfer templates stereo-only and forbids a mono Vorbis
+encoder-transfer claim; it does not disguise dual-mono as mono or reuse the
+development lineage.
 
 ## Evidence partitions
 

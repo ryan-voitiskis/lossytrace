@@ -88,6 +88,32 @@ class FactorLevelTests(unittest.TestCase):
             any("premature tool/audio bindings" in error for error in errors), errors
         )
 
+    def test_unrecorded_channel_scope_exception_is_rejected(self) -> None:
+        broken = copy.deepcopy(FACTORS)
+        row = next(
+            item
+            for item in broken["codec_setting_templates"]
+            if item["template_id"] == "transfer-aac-fdk-cbr96-default"
+        )
+        row["applicable_channel_treatment_ids"] = ["stereo"]
+        errors = factor_levels.validate(
+            broken, CONTRACT, INVENTORY, REPOSITORY_ROOT
+        )
+        self.assertTrue(
+            any("unauthorized channel exception" in error for error in errors),
+            errors,
+        )
+
+    def test_vorbis_mono_transfer_exclusion_is_required(self) -> None:
+        broken = copy.deepcopy(FACTORS)
+        broken["coverage_requirements_before_partition_opening"][
+            "encoder_transfer"
+        ]["channel_transfer_claim_exclusions"] = []
+        errors = factor_levels.validate(
+            broken, CONTRACT, INVENTORY, REPOSITORY_ROOT
+        )
+        self.assertIn("encoder-transfer channel claim exclusion differs", errors)
+
 
 if __name__ == "__main__":
     unittest.main()

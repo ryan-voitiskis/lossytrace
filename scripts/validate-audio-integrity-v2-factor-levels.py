@@ -14,6 +14,11 @@ from typing import Any
 
 SHA256 = re.compile(r"^[0-9a-f]{64}$")
 PARTITIONS = {"mechanism_development", "encoder_transfer"}
+CHANNEL_TREATMENTS = {"mono", "stereo"}
+EXPECTED_STEREO_ONLY_TEMPLATES = {
+    "transfer-vorbis-ffmpeg-q2",
+    "transfer-vorbis-ffmpeg-q4",
+}
 
 
 def load_object(path: Path) -> dict[str, Any]:
@@ -101,7 +106,7 @@ def validate(
     errors: list[str] = []
     expected_state = {
         "schema_version": 1,
-        "state": "factor_levels_frozen_before_toolchain_and_assignment",
+        "state": "factor_levels_corrected_before_toolchain_replay_and_assignment",
         "contract_id": contract.get("contract_id"),
         "audio_generated": False,
         "scores_opened": False,
@@ -114,6 +119,19 @@ def validate(
             errors.append(f"factor freeze {field} differs")
     if factors.get("public_state") != contract.get("public_state"):
         errors.append("factor freeze public state differs from the factorial contract")
+    correction = factors.get("factor_correction")
+    if not isinstance(correction, dict) or (
+        factors.get("factor_freeze_id") != "lossytrace-v2-factor-levels-20260802-002"
+        or correction.get("correction_id")
+        != "lossytrace-v2-factor-correction-20260802-001"
+        or correction.get("prior_factor_freeze_id")
+        != "lossytrace-v2-factor-levels-20260802-001"
+        or correction.get("prior_factor_sha256")
+        != "c64f74ee48cbf9d626cba00cb55b139ecc1e4d206daa2e0fc94ec0af45991fab"
+        or correction.get("benchmark_audio_observed") is not False
+        or correction.get("scores_opened") is not False
+    ):
+        errors.append("factor correction boundary differs")
 
     source_binding = factors.get("source_allocation_binding")
     if not isinstance(source_binding, dict):
@@ -180,6 +198,8 @@ def validate(
     anchors: dict[str, collections.Counter[str]] = collections.defaultdict(
         collections.Counter
     )
+    expanded_counts: collections.Counter[str] = collections.Counter()
+    stereo_only_templates: set[str] = set()
     required_template_fields = {
         "template_id",
         "evidence_partition",
@@ -209,6 +229,29 @@ def validate(
             "sample_rate_hz", 0
         ) <= 0:
             errors.append(f"setting template {template_id} has invalid sample rate")
+        applicable_channels = template.get(
+            "applicable_channel_treatment_ids", sorted(CHANNEL_TREATMENTS)
+        )
+        if (
+            not isinstance(applicable_channels, list)
+            or not applicable_channels
+            or len(applicable_channels) != len(set(applicable_channels))
+            or not set(applicable_channels) <= CHANNEL_TREATMENTS
+        ):
+            errors.append(f"setting template {template_id} has invalid channel scope")
+            applicable_channels = []
+        elif set(applicable_channels) != CHANNEL_TREATMENTS:
+            if (
+                template_id not in EXPECTED_STEREO_ONLY_TEMPLATES
+                or applicable_channels != ["stereo"]
+                or template.get("capability_boundary")
+                != "FFmpeg native Vorbis 8.1.2 supports exactly two encoded channels."
+            ):
+                errors.append(
+                    f"setting template {template_id} has an unauthorized channel exception"
+                )
+            stereo_only_templates.add(template_id)
+        expanded_counts[partition] += len(applicable_channels)
         lowpass = template.get("encoder_lowpass")
         if not isinstance(lowpass, dict) or set(lowpass) != {"mode", "hz"}:
             errors.append(f"setting template {template_id} has invalid lowpass factor")
@@ -226,6 +269,23 @@ def validate(
             lineages[partition][codec].add(lineage)
             if template.get("anchor") is True:
                 anchors[partition][codec] += 1
+
+    if stereo_only_templates != EXPECTED_STEREO_ONLY_TEMPLATES:
+        errors.append("stereo-only template boundary differs")
+    declared_expansion = factors.get("codec_setting_template_expansion", {}).get(
+        "expanded_setting_counts"
+    )
+    expected_expansion = {
+        "mechanism_development": 32,
+        "encoder_transfer": 14,
+        "total": 46,
+    }
+    if (
+        expanded_counts["mechanism_development"] != 32
+        or expanded_counts["encoder_transfer"] != 14
+        or declared_expansion != expected_expansion
+    ):
+        errors.append("expanded setting counts differ from the corrected freeze")
 
     freeze_profiles = contract.get("freeze_profiles", {})
     for partition in sorted(PARTITIONS):
@@ -368,6 +428,19 @@ def validate(
                 errors.append(
                     f"{partition} per-template channel coverage is infeasible"
                 )
+            exclusions = row.get("channel_transfer_claim_exclusions", [])
+            if partition == "encoder_transfer":
+                if exclusions != [
+                    {
+                        "codec_family": "vorbis",
+                        "channel_treatment_id": "mono",
+                        "encoder_lineage": "ffmpeg_native_vorbis",
+                        "reason": "The independent transfer encoder supports exactly two encoded channels; no dual-mono bridge is substituted.",
+                    }
+                ]:
+                    errors.append("encoder-transfer channel claim exclusion differs")
+            elif exclusions:
+                errors.append(f"{partition} has an unauthorized channel exclusion")
         else:
             if row.get("minimum_tier_a_negative_source_groups", 0) < profile.get(
                 "minimum_tier_a_negative_partition_groups", 0

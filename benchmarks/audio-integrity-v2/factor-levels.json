@@ -1,8 +1,17 @@
 {
   "schema_version": 1,
-  "factor_freeze_id": "lossytrace-v2-factor-levels-20260802-001",
-  "state": "factor_levels_frozen_before_toolchain_and_assignment",
+  "factor_freeze_id": "lossytrace-v2-factor-levels-20260802-002",
+  "state": "factor_levels_corrected_before_toolchain_replay_and_assignment",
   "contract_id": "lossytrace-audio-integrity-factorial-v2-20260802-001",
+  "factor_correction": {
+    "correction_id": "lossytrace-v2-factor-correction-20260802-001",
+    "prior_factor_freeze_id": "lossytrace-v2-factor-levels-20260802-001",
+    "prior_factor_sha256": "c64f74ee48cbf9d626cba00cb55b139ecc1e4d206daa2e0fc94ec0af45991fab",
+    "observed_capability_boundary": "FFmpeg native Vorbis 8.1.2 rejects mono encoding and explicitly reports that it supports only two channels.",
+    "correction": "The two encoder-transfer FFmpeg-native Vorbis templates are stereo-only. No mono Vorbis encoder-transfer claim is permitted; development Vorbis remains crossed over mono and stereo.",
+    "benchmark_audio_observed": false,
+    "scores_opened": false
+  },
   "source_allocation_checkpoint_commit": "7f73bbb0c04e5930a2539b0eac75f9d42daac64a",
   "source_allocation_binding": {
     "rules_path": "benchmarks/audio-integrity-v2/source-allocation-rules.json",
@@ -81,6 +90,12 @@
     "expanded_setting_id": "template_id + '--' + channel_treatment_id",
     "expanded_channel_mode": "mono for channel_treatment_id mono; the template stereo_channel_mode for channel_treatment_id stereo",
     "required_channel_treatments": ["mono", "stereo"],
+    "template_channel_scope": "A template expands over applicable_channel_treatment_ids when present, otherwise over both required_channel_treatments.",
+    "expanded_setting_counts": {
+      "mechanism_development": 32,
+      "encoder_transfer": 14,
+      "total": 46
+    },
     "tool_commands_frozen_here": false,
     "note": "Exact binary, linked library, command, encoder-observed cutoff, bitstream, and decoder-output bindings belong to the next toolchain freeze."
   },
@@ -370,7 +385,9 @@
       "bitrate_or_quality": "q2",
       "sample_rate_hz": 44100,
       "stereo_channel_mode": "stereo_coupled",
-      "encoder_lowpass": {"mode": "implementation_fixed_or_default", "hz": null}
+      "encoder_lowpass": {"mode": "implementation_fixed_or_default", "hz": null},
+      "applicable_channel_treatment_ids": ["stereo"],
+      "capability_boundary": "FFmpeg native Vorbis 8.1.2 supports exactly two encoded channels."
     },
     {
       "template_id": "transfer-vorbis-ffmpeg-q4",
@@ -383,6 +400,8 @@
       "sample_rate_hz": 44100,
       "stereo_channel_mode": "stereo_coupled",
       "encoder_lowpass": {"mode": "implementation_fixed_or_default", "hz": null},
+      "applicable_channel_treatment_ids": ["stereo"],
+      "capability_boundary": "FFmpeg native Vorbis 8.1.2 supports exactly two encoded channels.",
       "anchor": true
     }
   ],
@@ -552,6 +571,15 @@
       "minimum_setting_templates_per_history_decoder_per_compatible_codec": 2,
       "minimum_source_groups_per_channel_treatment_per_codec": 30,
       "minimum_source_groups_per_channel_treatment_per_setting_template": 15,
+      "channel_transfer_claim_exclusions": [
+        {
+          "codec_family": "vorbis",
+          "channel_treatment_id": "mono",
+          "encoder_lineage": "ffmpeg_native_vorbis",
+          "reason": "The independent transfer encoder supports exactly two encoded channels; no dual-mono bridge is substituted."
+        }
+      ],
+      "channel_coverage_scope": "Per-channel requirements apply only where a template declares that channel applicable. The per-codec mono requirement excludes the declared Vorbis encoder-transfer capability boundary.",
       "all_setting_templates_required": true
     },
     "external_transfer": {
@@ -619,8 +647,9 @@
     "Development and encoder-transfer encoder lineages overlap.",
     "A transformed positive lacks its matched transformed PCM reference.",
     "A setting, decoder, channel treatment, transform, or source domain is confounded with expectation under the fractional assignment.",
+    "Any result is described as mono Vorbis encoder transfer despite the frozen exclusion.",
     "The projected or observed free space falls below the 15 GiB reserve.",
     "Construction requires more than one worker, duplicate source archives, or opening a sealed partition early."
   ],
-  "authorized_next_step": "Probe and freeze exact tools, commands, linked libraries, setting realizations, decoder alignment, filter and resampler behavior, and deterministic golden outputs. Do not assign source groups to cells or generate benchmark audio."
+  "authorized_next_step": "Bind a corrected exact toolchain recipe to this factor correction, then probe tools, commands, linked libraries, setting realizations, decoder alignment, filter and resampler behavior, and deterministic golden outputs. Do not assign source groups to cells or generate benchmark audio."
 }
