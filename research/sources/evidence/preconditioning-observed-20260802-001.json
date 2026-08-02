@@ -1,0 +1,157 @@
+{
+  "audit_id": "lossytrace-v2-preconditioning-audit-20260802-001",
+  "benchmark_audio_generated": false,
+  "benchmark_source_audio_read": false,
+  "cases": [
+    {
+      "channel_treatment_id": "stereo",
+      "excerpt_end_native_frame_exclusive": 192000,
+      "excerpt_start_native_frame": 0,
+      "fixture_id": "s16-mono-native-stereo",
+      "input_file_sha256": "79610bece9d3f24e96db7254804134f9898b69b63fa0188d2e7dcd02ef0871b5",
+      "native_channel_count": 1,
+      "native_sample_rate_hz": 48000,
+      "output_channel_count": 2,
+      "output_frame_count": 192000,
+      "output_sample_rate_hz": 48000,
+      "pcm_sha256": "3529c75ed0c76a51ec71f969126962200ffec9ccd06e625eadd8ec8faab86629",
+      "provider_frame_count": 192000,
+      "source_codec_name": "pcm_s16le",
+      "target_sample_rate_hz": 48000,
+      "wave_sha256": "c719ba9fc4f474a289202669984fc1a64c0d0cdc4f7110d491f4a1a2c9123f6d",
+      "within_run_replays_byte_identical": true
+    },
+    {
+      "channel_treatment_id": "mono",
+      "excerpt_end_native_frame_exclusive": 550411,
+      "excerpt_start_native_frame": 21211,
+      "fixture_id": "s24-stereo-long-crop-resample-mono",
+      "input_file_sha256": "95bf613e2df879a55a1a35ab89b7f179658305c2471afafa04ee2749f49e2707",
+      "native_channel_count": 2,
+      "native_sample_rate_hz": 44100,
+      "output_channel_count": 1,
+      "output_frame_count": 576000,
+      "output_sample_rate_hz": 48000,
+      "pcm_sha256": "96e3bd428c6eae8616813d8691e07da43717817f6c320590c36d6fdd6ad10232",
+      "provider_frame_count": 568890,
+      "source_codec_name": "pcm_s24le",
+      "target_sample_rate_hz": 48000,
+      "wave_sha256": "7ce4b026f99d3357f62f6ac7bff90ad00e9e4130d760b30aa2f10b2f94070fa5",
+      "within_run_replays_byte_identical": true
+    },
+    {
+      "channel_treatment_id": "mono",
+      "excerpt_end_native_frame_exclusive": 187200,
+      "excerpt_start_native_frame": 4800,
+      "fixture_id": "f32-stereo-window-resample-mono",
+      "input_file_sha256": "1cf73e4124cb202c7ab42a4f53afc155d56b3201a9d3ee0aacb9c1fccb047c62",
+      "native_channel_count": 2,
+      "native_sample_rate_hz": 48000,
+      "output_channel_count": 1,
+      "output_frame_count": 167580,
+      "output_sample_rate_hz": 44100,
+      "pcm_sha256": "e4840ce7092f1f08b1e547d2bc5e28f623d6f47242a03db8b52523e98bb2d3e2",
+      "provider_frame_count": 182400,
+      "source_codec_name": "pcm_f32le",
+      "target_sample_rate_hz": 44100,
+      "wave_sha256": "3cba41f5924d7e1a02c752b9430d207ef51071f8dadd094e0d42f26742f9d157",
+      "within_run_replays_byte_identical": true
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "excerpt_end_native_frame_exclusive": 176400,
+      "excerpt_start_native_frame": 0,
+      "fixture_id": "s24-mono-native-stereo",
+      "input_file_sha256": "b4eb7894f1debda09640619350e50816267df3caf0f7d496ce842988b25ec19e",
+      "native_channel_count": 1,
+      "native_sample_rate_hz": 44100,
+      "output_channel_count": 2,
+      "output_frame_count": 176400,
+      "output_sample_rate_hz": 44100,
+      "pcm_sha256": "b6c75cd532bfb796825f53a8229bf320f539615e46adf7edd1a1ad4c2835f76c",
+      "provider_frame_count": 176400,
+      "source_codec_name": "pcm_s24le",
+      "target_sample_rate_hz": 44100,
+      "wave_sha256": "21eb8fdc396724c8be182b9c6e826c368d69d71857353179852dcc09026a8ef0",
+      "within_run_replays_byte_identical": true
+    },
+    {
+      "channel_treatment_id": "mono",
+      "excerpt_end_native_frame_exclusive": 192000,
+      "excerpt_start_native_frame": 0,
+      "fixture_id": "f32-mono-native-mono",
+      "input_file_sha256": "6332a9e59933a25be5a39a707241fb9a60bf8dca09980a295f74d87e5333e95e",
+      "native_channel_count": 1,
+      "native_sample_rate_hz": 48000,
+      "output_channel_count": 1,
+      "output_frame_count": 192000,
+      "output_sample_rate_hz": 48000,
+      "pcm_sha256": "c6e0f6d0b9f1977f2615b0e3882217bcb475d14061d2a0137a0d37778c4a0c14",
+      "provider_frame_count": 192000,
+      "source_codec_name": "pcm_f32le",
+      "target_sample_rate_hz": 48000,
+      "wave_sha256": "79610bece9d3f24e96db7254804134f9898b69b63fa0188d2e7dcd02ef0871b5",
+      "within_run_replays_byte_identical": true
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "excerpt_end_native_frame_exclusive": 176400,
+      "excerpt_start_native_frame": 0,
+      "fixture_id": "s16-stereo-resample-stereo",
+      "input_file_sha256": "15da36f555f2b00de564c07d784e92a1ed260ec22b0d31bfaa1d60499057869d",
+      "native_channel_count": 2,
+      "native_sample_rate_hz": 44100,
+      "output_channel_count": 2,
+      "output_frame_count": 192000,
+      "output_sample_rate_hz": 48000,
+      "pcm_sha256": "cfca5f7751e60051b8230c10ca3a2ec7653c68fe7da53e45a53647b3e6229862",
+      "provider_frame_count": 176400,
+      "source_codec_name": "pcm_s16le",
+      "target_sample_rate_hz": 48000,
+      "wave_sha256": "88de28bde69919eb1e11a4eeae57ea714c2ce3e35bcb874bd3b9554faca8fa17",
+      "within_run_replays_byte_identical": true
+    }
+  ],
+  "construction_authorized": false,
+  "features_computed": false,
+  "paths_redacted": true,
+  "plan_sha256": "20e8675da9ef07bd2aa42a2b107bc348994d7b1cb2a1b60305737dfb38dd3113",
+  "preconditioning_module_sha256": "1d634a6ca0f038514dbbd42f7d8c3a1bb8d2520f8cc5006a2a8b18453f9cac8b",
+  "reproducibility": {
+    "complete_replays_observed": 2,
+    "complete_replays_required": 2,
+    "plan_sha256": "20e8675da9ef07bd2aa42a2b107bc348994d7b1cb2a1b60305737dfb38dd3113",
+    "run_report_sha256": "66e3c81189eaa9df25130644b58068b4e962a8fbfeca0e86e674c383e6dad5df",
+    "run_reports_byte_identical": true
+  },
+  "schema_version": 1,
+  "scores_opened": false,
+  "state": "preconditioning_synthetic_evidence",
+  "summary": {
+    "channel_treatment_ids": [
+      "mono",
+      "stereo"
+    ],
+    "native_channel_counts": [
+      1,
+      2
+    ],
+    "native_sample_rates_hz": [
+      44100,
+      48000
+    ],
+    "source_codec_names": [
+      "pcm_f32le",
+      "pcm_s16le",
+      "pcm_s24le"
+    ],
+    "synthetic_case_count": 6,
+    "target_sample_rates_hz": [
+      44100,
+      48000
+    ],
+    "within_run_replays_byte_identical": true
+  },
+  "synthetic_audio_generated": true,
+  "toolchain_freeze_id": "lossytrace-v2-toolchain-bindings-20260802-004"
+}

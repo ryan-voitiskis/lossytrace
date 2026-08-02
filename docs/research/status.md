@@ -186,6 +186,10 @@ Review of the construction boundary found that end-to-end source
 preconditioning had not yet been synthetically replayed across native s16,
 s24, and f32 PCM. A six-case, two-replay
 [`preconditioning audit`](preconditioning-audit-preregistration-20260802.md) is
-now frozen before execution. It cannot read benchmark source audio, features,
-scores, or labels.
+now complete. Its
+[`six synthetic cases`](preconditioning-audit-result-20260802.md) are
+byte-identical within and across two full replays for s16, s24, f32, mono,
+stereo, native-rate, resampled, bounded-window, and long hashed-crop paths. The
+next gate is an exact constructor and path-free disk/recipe preflight; no
+benchmark waveform has yet been read.
 No successor mechanism score or retained holdout has been opened.

@@ -55,6 +55,8 @@ Read these before constructing a manifest:
 - [`construction-feasibility-observed-20260802-004.json`](../../research/sources/evidence/construction-feasibility-observed-20260802-004.json)
 - [`preconditioning-audit-plan.json`](preconditioning-audit-plan.json)
 - [`preconditioning-audit-preregistration-20260802.md`](../../docs/research/preconditioning-audit-preregistration-20260802.md)
+- [`preconditioning-audit-result-20260802.md`](../../docs/research/preconditioning-audit-result-20260802.md)
+- [`preconditioning-observed-20260802-001.json`](../../research/sources/evidence/preconditioning-observed-20260802-001.json)
 - [`rwc-source-identity-audit-20260802.md`](../../docs/research/rwc-source-identity-audit-20260802.md)
 
 The pre-freeze source/tool inventory and its remaining gates are described
@@ -141,7 +143,9 @@ Only a separately committed construction recipe may now generate audio.
 Before that recipe, the exact crop/channel/resample/s16 boundary has a
 separately frozen six-case
 [`synthetic preconditioning audit`](../../docs/research/preconditioning-audit-preregistration-20260802.md).
-It cannot read benchmark audio and must pass two byte-identical replays.
+It passed two byte-identical replays across six native-format, channel, crop,
+and resample paths without reading benchmark audio. Its exact module may now
+be bound by a separately committed constructor.
 
 ## Evidence partitions
 
