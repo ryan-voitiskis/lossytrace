@@ -98,6 +98,11 @@ def safe_relative_path(value: str, label: str) -> str:
     return value
 
 
+def satp_coordinate_factor(value: str) -> str | None:
+    """Translate the provider's missing-coordinate slash to JSON null."""
+    return None if value == "/" else value
+
+
 def import_script(repository_root: Path, filename: str, module_name: str) -> types.ModuleType:
     path = repository_root / "scripts" / filename
     spec = importlib.util.spec_from_file_location(module_name, path)
@@ -740,8 +745,8 @@ def build_satp_candidates(
                     factors={
                         "recording_id": recording_id,
                         "location": str(row["location"]),
-                        "latitude": str(row["latitude"]),
-                        "longitude": str(row["longitude"]),
+                        "latitude": satp_coordinate_factor(str(row["latitude"])),
+                        "longitude": satp_coordinate_factor(str(row["longitude"])),
                         "recording_date": str(row["recording_date"]),
                     },
                 )

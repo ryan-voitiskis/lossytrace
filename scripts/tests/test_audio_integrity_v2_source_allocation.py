@@ -114,6 +114,12 @@ class SourceAllocationTests(unittest.TestCase):
             "bad\0group",
         )
 
+    def test_satp_missing_coordinate_is_not_serialized_as_a_path(self) -> None:
+        self.assertIsNone(source_allocation.satp_coordinate_factor("/"))
+        self.assertEqual(
+            source_allocation.satp_coordinate_factor("55.953251"), "55.953251"
+        )
+
     def test_vctk_cap_is_balanced_and_content_independent(self) -> None:
         rules = fixture_rules()
         candidates = []
