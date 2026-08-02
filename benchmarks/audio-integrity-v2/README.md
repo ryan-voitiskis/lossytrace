@@ -171,6 +171,12 @@ encoder, history decoder, transform, and wrapper. A successor plan may
 authorize only the 202-cell score-blind smoke set.
 That smoke-only authority is now frozen for two separate external roots. Full
 construction, features, scores, and external positives remain blocked.
+The two 202-cell
+[`smoke replays`](../../docs/research/constructor-smoke-result-20260802.md) are
+now byte-identical, including their sorted private manifests, final artifact
+hash sets, and canonical analysis-PCM hash sets. This passes the smoke gate;
+only a separately committed correction may bind that evidence and authorize
+the full build. No feature or score has been computed.
 
 ## Evidence partitions
 

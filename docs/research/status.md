@@ -221,4 +221,10 @@ exactly those 202 cells: 108 positives and 94 negatives selected without
 scores across all declared construction categories. The same code still
 rejects full scope, and the two smoke roots must yield byte-identical private
 manifests before authority can expand.
+Those two
+[`smoke replays`](constructor-smoke-result-20260802.md) are now byte-identical
+across all 202 retained artifacts, private checkpoints, and canonical
+analysis-PCM hashes. The smoke gate passes. Full construction still requires a
+separately committed authority correction that binds the public result and
+private-manifest hash; no feature or score has been computed.
 No successor mechanism score or retained holdout has been opened.

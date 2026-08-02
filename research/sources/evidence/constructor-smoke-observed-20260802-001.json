@@ -1,0 +1,1429 @@
+{
+  "assignment_sha256": "46039d6fc22a6764daf81684d109e43a9f96b97af7d85e99258b1efe0449c5bb",
+  "benchmark_audio_generated": true,
+  "cell_counts": [
+    {
+      "codec_family": "aac_lc",
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": "aac_lc",
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": "aac_lc",
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": "aac_lc",
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": "aac_lc",
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": "aac_lc",
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "transform_id": "identity",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": "aac_lc",
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "transform_id": "identity",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": "aac_lc",
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "transform_id": "lossless-wrapper-rewrite",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": "aac_lc",
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": "aac_lc",
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": "aac_lc",
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": "aac_lc",
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": "aac_lc",
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": "aac_lc",
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": "mp3",
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": "mp3",
+      "count": 2,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "transform_id": "identity",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": "mp3",
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "transform_id": "identity",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": "mp3",
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": "mp3",
+      "count": 2,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": "opus",
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": "opus",
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": "opus",
+      "count": 2,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "transform_id": "identity",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": "opus",
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "transform_id": "identity",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": "opus",
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": "opus",
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": "opus",
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": "opus",
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": "vorbis",
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": "vorbis",
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "transform_id": "identity",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": "vorbis",
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "transform_id": "identity",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": "vorbis",
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "transform_id": "lossless-wrapper-rewrite",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": "vorbis",
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": "vorbis",
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": "vorbis",
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": "vorbis",
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": "vorbis",
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "transform_id": "identity",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "transform_id": "identity",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "transform_id": "identity",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "transform_id": "lossless-wrapper-rewrite",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "transform_id": "lossless-wrapper-rewrite",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": null,
+      "count": 2,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "transform_id": "identity",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": null,
+      "count": 3,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "transform_id": "identity",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": null,
+      "count": 3,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "transform_id": "identity",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "transform_id": "lossless-wrapper-rewrite",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "transform_id": "lossless-wrapper-rewrite",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": "aac_lc",
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": "aac_lc",
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "identity",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": "aac_lc",
+      "count": 3,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "identity",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": "aac_lc",
+      "count": 3,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "identity",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": "aac_lc",
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "lossless-wrapper-rewrite",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": "aac_lc",
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": "aac_lc",
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": "aac_lc",
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": "aac_lc",
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": "mp3",
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": "mp3",
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": "mp3",
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": "mp3",
+      "count": 6,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "identity",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": "mp3",
+      "count": 4,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "identity",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": "mp3",
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "lossless-wrapper-rewrite",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": "mp3",
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": "mp3",
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": "mp3",
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": "mp3",
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": "mp3",
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": "mp3",
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": "mp3",
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": "mp3",
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": "opus",
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": "opus",
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": "opus",
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": "opus",
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": "opus",
+      "count": 3,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "identity",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": "opus",
+      "count": 4,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "identity",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": "opus",
+      "count": 2,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "identity",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": "opus",
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "lossless-wrapper-rewrite",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": "opus",
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": "opus",
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": "opus",
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": "opus",
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": "vorbis",
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": "vorbis",
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": "vorbis",
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": "vorbis",
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": "vorbis",
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": "vorbis",
+      "count": 3,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "identity",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": "vorbis",
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "identity",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": "vorbis",
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "identity",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": "vorbis",
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "lossless-wrapper-rewrite",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": "vorbis",
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": "vorbis",
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": "vorbis",
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": "vorbis",
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": "vorbis",
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "transform_id": "identity",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "transform_id": "identity",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": null,
+      "count": 3,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "transform_id": "identity",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "transform_id": "lossless-wrapper-rewrite",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "transform_id": "lossless-wrapper-rewrite",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "wav16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "flac16"
+    },
+    {
+      "codec_family": null,
+      "count": 1,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "wav16"
+    }
+  ],
+  "construction_id": "lossytrace-v2-construction-20260802-001",
+  "features_computed": false,
+  "generator_sha256": "801cbe1b5b6ac55350eb9b38483d1d7aa4af62c567b15f0ec67eb4a1015e60ac",
+  "partition_storage": [
+    {
+      "artifact_bytes": 32005172,
+      "cell_count": 68,
+      "evidence_partition": "encoder_transfer"
+    },
+    {
+      "artifact_bytes": 36095229,
+      "cell_count": 34,
+      "evidence_partition": "external_transfer"
+    },
+    {
+      "artifact_bytes": 123553832,
+      "cell_count": 100,
+      "evidence_partition": "mechanism_development"
+    }
+  ],
+  "paths_redacted": true,
+  "plan_sha256": "0c87f49f144630b769ef39aa47ac0e5c2a1207cd8769470b294cde50dcea5137",
+  "private_ids_included": false,
+  "private_manifest_sha256": "5a53608613789e7411e54e877acdbf33a2fb434645255c5fb3114163764e2bad",
+  "public_verdict_enabled": false,
+  "reproducibility": {
+    "complete_replays_observed": 2,
+    "complete_replays_required": 2,
+    "plan_sha256": "0c87f49f144630b769ef39aa47ac0e5c2a1207cd8769470b294cde50dcea5137",
+    "private_manifest_sha256": "5a53608613789e7411e54e877acdbf33a2fb434645255c5fb3114163764e2bad",
+    "private_manifests_byte_identical": true,
+    "run_report_sha256": "2ab09fa711a91151fb318018aea98f7045ef86deee563ff7ca676752cb679f80",
+    "run_reports_byte_identical": true
+  },
+  "schema_version": 1,
+  "scope": "smoke",
+  "scores_opened": false,
+  "state": "constructor_smoke_path_free_evidence",
+  "summary": {
+    "all_checkpoints_validated": true,
+    "analysis_pcm_sha256_set_digest": "9947381106d955d0e7ac6c53fce79371201896d258d45303789a48063c306676",
+    "artifact_bytes": 191654233,
+    "artifact_sha256_set_digest": "a42256d83574dfcc0749a1931347a677d40adf15daf27ef020925e5ba091afb3",
+    "cell_count": 202,
+    "controlled_positive_count": 108,
+    "negative_count": 94
+  }
+}
