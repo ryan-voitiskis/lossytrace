@@ -28,6 +28,8 @@ Read these before constructing a manifest:
 - [`toolchain-freeze-result-20260802.md`](../../docs/research/toolchain-freeze-result-20260802.md)
 - [`public-decoder-equivalence-plan.json`](public-decoder-equivalence-plan.json)
 - [`public-decoder-equivalence-preregistration-20260802.md`](../../docs/research/public-decoder-equivalence-preregistration-20260802.md)
+- [`public-decoder-binary-binding.json`](public-decoder-binary-binding.json)
+- [`public-decoder-binary-binding-20260802.md`](../../docs/research/public-decoder-binary-binding-20260802.md)
 - [`rwc-source-identity-audit-20260802.md`](../../docs/research/rwc-source-identity-audit-20260802.md)
 
 The pre-freeze source/tool inventory and its remaining gates are described
@@ -69,7 +71,9 @@ an algorithm. Its two fresh complete replays are byte-identical; see the
 All 46 settings and 126 decoder paths are deterministic within path. Fresh
 public-decoder wrapper equivalence is separately
 [`preregistered`](../../docs/research/public-decoder-equivalence-preregistration-20260802.md)
-and remains required before scoring.
+and its public binary is now separately
+[`hash-bound`](../../docs/research/public-decoder-binary-binding-20260802.md).
+Two equivalence replays remain required before scoring.
 
 ## Evidence partitions
 
