@@ -1,0 +1,96 @@
+{
+  "archive_binding": {
+    "bytes": 307235372,
+    "gzip_and_tar_stream_verified": true,
+    "local_sha256": "cafd6ef96834d98d3381522253f0c22c4d5cbca1b02c81dc13b8cf37fdcfcb0a",
+    "provider_checksum_verified": true,
+    "provider_md5": "62f9f8549134afb1b831aae08eb19a4b"
+  },
+  "benchmark_audio_generated": false,
+  "conservative_reference_boundary": {
+    "eligible_audio_file_count": 550,
+    "eligible_sensor_count": 15,
+    "future_selection_constraint": "At most one reference excerpt per sensor; preserve provider split, sensor, date, hour, and instance identifiers.",
+    "grouping_unit": "sensor identity across recording time",
+    "independence_limit": "Different sensors do not prove independent microphones, gain settings, collection software, or wider network operations; retain SONYC as one provider stratum.",
+    "rule": [
+      "canonical provider filename with a valid date and hour",
+      "sensor identity belongs to exactly one provider split",
+      "PCM digest occurs exactly once in the archive"
+    ]
+  },
+  "observed": {
+    "audio_file_count": 550,
+    "audio_files_per_sensor": {
+      "00": 1,
+      "01": 14,
+      "02": 4,
+      "04": 68,
+      "06": 2,
+      "08": 4,
+      "14": 71,
+      "17": 4,
+      "19": 20,
+      "20": 213,
+      "24": 99,
+      "27": 4,
+      "31": 20,
+      "37": 13,
+      "41": 13
+    },
+    "audio_files_per_sensor_maximum": 213,
+    "audio_files_per_sensor_minimum": 1,
+    "audio_uncompressed_member_bytes": 528024200,
+    "cross_sensor_duplicate_pcm_digest_group_count": 0,
+    "directory_member_count": 4,
+    "distinct_pcm_digest_count": 550,
+    "duplicate_pcm_digest_group_count": 0,
+    "duplicate_pcm_file_count_excess": 0,
+    "frame_count_maximum": 480000,
+    "frame_count_minimum": 480000,
+    "observation_keys_unique": true,
+    "readme_sha256": "9f0246137961cd6566669e63acac6aa3716e73a1b57e478bdb97f5e355ddabc3",
+    "recording_date_maximum": "2017-12-31",
+    "recording_date_minimum": "2017-01-02",
+    "regular_member_count": 551,
+    "riff_formats": [
+      {
+        "ancillary_chunk_count": 0,
+        "average_bytes_per_second": 96000,
+        "bits_per_sample": 16,
+        "block_align_bytes": 2,
+        "channel_count": 1,
+        "data_bytes": 960000,
+        "file_count": 550,
+        "format_chunk_bytes": 16,
+        "format_tag": 1,
+        "frame_count": 480000,
+        "sample_format": "signed_integer_pcm",
+        "sample_rate_hz": 48000
+      }
+    ],
+    "sensor_count": 15,
+    "sensor_sets_disjoint_across_provider_splits": true,
+    "split_audio_file_counts": {
+      "test": 110,
+      "train": 330,
+      "valid": 110
+    },
+    "split_sensor_counts": {
+      "test": 6,
+      "train": 4,
+      "valid": 5
+    },
+    "unexpected_regular_member_count": 0
+  },
+  "paths_redacted": true,
+  "reconciliation": {
+    "archive_readme_declared_clip_count": 441,
+    "observed_minus_readme_declared_clip_count": 109
+  },
+  "schema_version": 1,
+  "scores_opened": false,
+  "selection_authorized": false,
+  "source_id": "sonyc_backgrounds_1_0_0",
+  "state": "source_identity_evidence_only"
+}

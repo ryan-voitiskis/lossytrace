@@ -108,7 +108,7 @@ families without changing the external-transfer floor.
 
 RWC's metadata identity concern is resolved enough to proceed to bytes, not to
 freeze. The remaining source gate is to verify the RWC audio archives and the
-RAVDESS, SATP, VCTK, Speech Commands, TinySOL, and SONYC identities. Only after
+RAVDESS, SATP, VCTK, Speech Commands, and TinySOL identities. Only after
 those checks may source allocation, factor levels, and toolchain bindings be
 committed as separate frozen records.
 

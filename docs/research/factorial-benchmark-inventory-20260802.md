@@ -125,16 +125,19 @@ The compact proposal uses four previously unused provider collections:
 | clean VCTK subset | studio speech | 56 speakers | Edinburgh documents clean 48 kHz WAV from 56 VCTK speakers; CC BY 4.0 |
 | Google Speech Commands v0.02 | crowdsourced 16 kHz command speech | 100-speaker planning cap | [Google's release](https://research.google/blog/launching-the-speech-commands-dataset/) describes thousands of microphone contributors and one-second WAV; CC BY 4.0 |
 | TinySOL 6.0 | isolated acoustic instruments | 1 until session metadata is verified | [official record](https://zenodo.org/records/3685367), expressly recorded 44.1 kHz WAV, CC BY 4.0 |
-| SONYC-Backgrounds | urban sensor soundscapes | 1 until archive metadata is verified | [official record](https://zenodo.org/records/5129078), directly acquired sensor WAV, CC BY 4.0 |
+| SONYC-Backgrounds | urban sensor soundscapes | 15 sensor IDs observed in the bound archive | [official record](https://zenodo.org/records/5129078), directly acquired sensor WAV, CC BY 4.0 |
 
-The conservative total is 158 partition groups and four source domains, above
+The conservative total is 172 partition groups and four source domains, above
 the v2 encoder-transfer minimums of 100 and four. Speech Commands is capped at
 100 for planning even though the provider describes thousands of people; the
 archive must group every word and utterance by anonymous speaker. Its 16 kHz
 bandwidth is an explicit factor, not an excuse to exclude a failure. TinySOL
 rows marked `R` for digital pitch transposition cannot be references; they may
 be declared PCM-transform hard negatives after their parent relation is
-verified.
+verified. SONYC's
+[source-identity audit](sonyc-source-identity-audit-20260802.md) found 550
+canonical, distinct-PCM clips from 15 sensor IDs, with provider splits disjoint
+by sensor. The planning unit is the sensor, not the clip.
 
 ### External transfer
 
@@ -176,20 +179,21 @@ This margin is deliberately not treated as permission to weaken identity.
 The RWC metadata audit binds its known aliases and dependencies, while
 retaining RWC as one provider stratum because metadata cannot prove disjoint
 recording sessions or backing personnel. The audio member identities still
-require verification. Separately, the encoder-transfer audit must establish
-which SONYC sensors actually appear. SONYC cannot be inflated by assumption:
-the release draws from 2017, and a related primary analysis reports only 26
-sensors in that year's archive despite more than 50
-being deployed over the wider project. If the external total falls below 150,
+require verification. Separately, the encoder-transfer audit found 15—not the
+one-group placeholder or the 26 sensors seen in a related wider 2017
+analysis—inside the bound SONYC archive. Its README says 441 clips, but the
+archive contains 550 canonical WAVs; that mismatch is retained without
+inflating the 15 sensor groups. If the external total falls below 150,
 add an entirely new provider collection; do not weaken grouping.
 
 ## Storage and acquisition boundary
 
 All proposed source archives now total 23,237,282,258 bytes (21.64 GiB). After
-the 652,614,041-byte Lombard Grid acquisition, the data volume had about 45 GiB
-free. Retaining a 15 GiB reserve leaves roughly 9 GiB for compact references,
-derived cases, partials, and temporary intermediates after the remaining
-source acquisition. That is viable only if the stager:
+the 652,614,041-byte Lombard Grid and 307,235,372-byte SONYC acquisitions, the
+data volume still reported about 45 GiB free. Retaining a 15 GiB reserve leaves
+roughly 9 GiB for compact references, derived cases, partials, and temporary
+intermediates after the remaining source acquisition. That is viable only if
+the stager:
 
 - streams selected members without full archive expansion;
 - retains at most one bounded reference excerpt per source group;
@@ -199,10 +203,10 @@ source acquisition. That is viable only if the stager:
 - rechecks projected and actual free space before each archive and generation
   phase.
 
-A slow, resumable SONYC audit download was deliberately interrupted after a
-small partial because its exact archive count was not needed to complete this
-inventory. Lombard Grid is the sole source currently treated as acquired and
-identity-verified; no other provider archive is.
+The resumable SONYC audit download was completed, matched the provider's exact
+byte count and MD5, and was independently bound by SHA-256. Lombard Grid and
+SONYC are the two sources currently treated as acquired and identity-verified;
+no other provider audio archive is.
 
 ## Decision and next gate
 

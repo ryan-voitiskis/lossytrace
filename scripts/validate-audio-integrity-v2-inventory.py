@@ -425,17 +425,42 @@ def validate_source_identity_evidence_files(
                 errors.append(f"source identity report contains a private path: {source_id}")
                 break
         boundary = report.get("conservative_reference_boundary")
-        if not isinstance(boundary, dict) or boundary.get(
-            "eligible_talker_count"
-        ) != source.get("conservative_partition_groups"):
+        group_count_fields = (
+            "eligible_group_count",
+            "eligible_talker_count",
+            "eligible_sensor_count",
+            "eligible_actor_count",
+            "eligible_location_count",
+            "eligible_speaker_count",
+            "eligible_instrument_group_count",
+        )
+        boundary_group_counts = (
+            [boundary[field] for field in group_count_fields if field in boundary]
+            if isinstance(boundary, dict)
+            else []
+        )
+        if len(boundary_group_counts) != 1 or boundary_group_counts[0] != source.get(
+            "conservative_partition_groups"
+        ):
             errors.append(f"source identity group count differs: {source_id}")
         audio_binding = report.get("archive_bindings", {}).get("audio")
+        if not isinstance(audio_binding, dict):
+            audio_binding = report.get("archive_binding")
         artifact = source.get("artifact")
         if isinstance(audio_binding, dict) and isinstance(artifact, dict):
-            if audio_binding.get("bytes") != artifact.get("bytes") or audio_binding.get(
-                "sha256"
-            ) != artifact.get("local_sha256"):
+            binding_sha256 = audio_binding.get("sha256")
+            if binding_sha256 is None:
+                binding_sha256 = audio_binding.get("local_sha256")
+            if audio_binding.get("bytes") != artifact.get(
+                "bytes"
+            ) or binding_sha256 != artifact.get("local_sha256"):
                 errors.append(f"source identity audio binding differs: {source_id}")
+            provider_md5 = audio_binding.get("provider_md5")
+            if provider_md5 is not None and (
+                audio_binding.get("provider_checksum_verified") is not True
+                or f"md5:{provider_md5}" != artifact.get("provider_checksum")
+            ):
+                errors.append(f"source identity provider binding differs: {source_id}")
         metadata_binding = report.get("archive_bindings", {}).get("metadata")
         metadata_artifact = source.get("metadata_artifact")
         if isinstance(metadata_binding, dict) and isinstance(metadata_artifact, dict):

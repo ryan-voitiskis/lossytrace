@@ -93,6 +93,17 @@ class InventoryValidationTest(unittest.TestCase):
         errors = MODULE.validate_source_identity_evidence_files(inventory, ROOT)
         self.assertTrue(any("evidence hash differs" in error for error in errors))
 
+    def test_source_identity_provider_checksum_is_bound(self) -> None:
+        inventory = copy.deepcopy(self.inventory)
+        source = next(
+            row
+            for row in inventory["source_candidates"]
+            if row["source_id"] == "sonyc_backgrounds_1_0_0"
+        )
+        source["artifact"]["provider_checksum"] = "md5:" + "0" * 32
+        errors = MODULE.validate_source_identity_evidence_files(inventory, ROOT)
+        self.assertTrue(any("provider binding differs" in error for error in errors))
+
     def test_source_metadata_family_rules_hash_is_validated(self) -> None:
         inventory = copy.deepcopy(self.inventory)
         source = next(

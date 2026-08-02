@@ -516,18 +516,27 @@
       "title": "SONYC-Backgrounds urban acoustic-sensor recordings",
       "recommended_partition": "encoder_transfer",
       "source_domains": ["urban_sensor_soundscape"],
-      "conservative_partition_groups": 1,
+      "conservative_partition_groups": 15,
       "partition_basis": "sensor identity across recording time",
       "provenance_tier": "tier_a_confirmed_pcm",
-      "availability": "acquisition_required",
+      "availability": "acquired_and_identity_verified_not_allocated",
       "official_page_url": "https://zenodo.org/records/5129078",
+      "paper_url": "https://arxiv.org/abs/1805.00889",
       "license": "CC BY 4.0",
       "artifact": {
         "filename": "SONYC-Backgrounds.tar.gz",
+        "url": "https://zenodo.org/api/records/5129078/files/SONYC-Backgrounds.tar.gz/content",
         "bytes": 307235372,
-        "provider_checksum": "md5:62f9f8549134afb1b831aae08eb19a4b"
+        "provider_checksum": "md5:62f9f8549134afb1b831aae08eb19a4b",
+        "provider_checksum_verified": true,
+        "local_sha256": "cafd6ef96834d98d3381522253f0c22c4d5cbca1b02c81dc13b8cf37fdcfcb0a"
       },
-      "caveat": "The release is drawn from 2017, when a related primary analysis reports only 26 active sensors; one is the only safe pre-archive lower bound. The archive must establish the exact retained sensor count before freeze."
+      "source_identity_evidence": {
+        "aggregate_path": "research/sources/evidence/sonyc-backgrounds-1.0.0-observed-20260802.json",
+        "aggregate_sha256": "624f8ecd06b6f2d2fa78819cf8f0a0378a831bf47d88ccc860438bce0b1a2eae"
+      },
+      "recording_chain": "The primary SONYC system paper reports 10-second sensor snippets compressed with lossless FLAC before encrypted upload. The released archive contains only canonical 48 kHz, 16-bit mono PCM WAV members.",
+      "caveat": "The archive has 550 canonical, unique-PCM WAVs from 15 sensor IDs, although its README says 441 clips. Provider splits are sensor-disjoint, but clips per sensor range from 1 to 213. Use at most one reference excerpt per sensor and retain SONYC as one provider stratum."
     }
   ],
   "projected_partition_summary": {
@@ -537,7 +546,7 @@
       "source_ids": ["consumed_v1_non_holdout"]
     },
     "encoder_transfer": {
-      "conservative_partition_groups": 158,
+      "conservative_partition_groups": 172,
       "source_domain_count": 4,
       "source_ids": ["vctk_clean_56spk_2017", "speech_commands_v0_02", "tinysol_6_0", "sonyc_backgrounds_1_0_0"]
     },

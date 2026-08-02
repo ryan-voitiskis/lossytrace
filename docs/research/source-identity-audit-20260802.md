@@ -142,7 +142,7 @@ The subsequent
 count from 99 strings to 85 artist families while preserving 40 groups of total
 external-transfer margin. The next source gate is not more corpus shopping: it
 is to verify exact identities for RWC audio, RAVDESS, SATP, VCTK, Speech
-Commands, TinySOL, and SONYC, then separately freeze source allocation, factor
+Commands, and TinySOL, then separately freeze source allocation, factor
 levels, and toolchain bindings.
 
 No benchmark audio generation, candidate evaluation, or external-transfer
