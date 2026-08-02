@@ -210,4 +210,9 @@ and full paths, but both refuse to run until a committed successor plan binds
 the preceding evidence. Thirteen synthetic cases cover every encoder,
 history decoder, transform, and wrapper before any benchmark waveform may be
 decoded.
+Those
+[`constructor replays`](constructor-synthetic-result-20260802.md) are now
+byte-identical for all 13 cases, including codec bitstreams, each PCM stage,
+and final wrapper bytes. The next permitted authority change is limited to two
+separate 202-cell smoke roots; full construction remains stopped.
 No successor mechanism score or retained holdout has been opened.

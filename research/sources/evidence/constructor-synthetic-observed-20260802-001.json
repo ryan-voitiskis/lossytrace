@@ -1,0 +1,667 @@
+{
+  "benchmark_audio_generated": false,
+  "benchmark_source_audio_read": false,
+  "cases": [
+    {
+      "analysis_pcm": {
+        "channel_count": 1,
+        "frame_count": 176400,
+        "pcm_sha256": "580b9fb243ab7cb84a406f20cb4971d4e82e4a9117ed3df4a6a5d222af24d4f6",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2
+      },
+      "artifact_bytes": 319618,
+      "artifact_sha256": "68604e886be040d2c09d20b05a52e611fdaf5fb77ba3b983a66ca3f70feb8f3c",
+      "channel_count": 1,
+      "codec_bitstream_sha256": null,
+      "codec_family": null,
+      "encoder_id": null,
+      "expectation": "negative",
+      "fixture_id": "negative-identity-flac",
+      "history_decoder_id": null,
+      "history_pcm": {
+        "channel_count": 1,
+        "frame_count": 176400,
+        "pcm_sha256": "580b9fb243ab7cb84a406f20cb4971d4e82e4a9117ed3df4a6a5d222af24d4f6",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "714599ecfcfd8853fbbb8aea8c26c4b142e568c0bc2ae41e63a3cbab76ba98ce"
+      },
+      "sample_rate_hz": 44100,
+      "source_pcm": {
+        "channel_count": 1,
+        "frame_count": 176400,
+        "pcm_sha256": "580b9fb243ab7cb84a406f20cb4971d4e82e4a9117ed3df4a6a5d222af24d4f6",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "714599ecfcfd8853fbbb8aea8c26c4b142e568c0bc2ae41e63a3cbab76ba98ce"
+      },
+      "transform_id": "identity",
+      "transformed_pcm": {
+        "channel_count": 1,
+        "frame_count": 176400,
+        "pcm_sha256": "580b9fb243ab7cb84a406f20cb4971d4e82e4a9117ed3df4a6a5d222af24d4f6",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "714599ecfcfd8853fbbb8aea8c26c4b142e568c0bc2ae41e63a3cbab76ba98ce"
+      },
+      "within_run_replays_byte_identical": true,
+      "wrapper_id": "flac16"
+    },
+    {
+      "analysis_pcm": {
+        "channel_count": 2,
+        "frame_count": 192000,
+        "pcm_sha256": "ec8f1ffe1213d401194f4288940b41fecc2d69ae108e49435783768d625e53dd",
+        "sample_rate_hz": 48000,
+        "sample_width_bytes": 2
+      },
+      "artifact_bytes": 768044,
+      "artifact_sha256": "04e4512cc795381ce83fc3e8b5ac0c6e03bf13f2f370bc7d3015a4d326ddbd22",
+      "channel_count": 2,
+      "codec_bitstream_sha256": null,
+      "codec_family": null,
+      "encoder_id": null,
+      "expectation": "negative",
+      "fixture_id": "negative-lowpass-wav",
+      "history_decoder_id": null,
+      "history_pcm": {
+        "channel_count": 2,
+        "frame_count": 192000,
+        "pcm_sha256": "6798937105264fe95bc4166f6664c4f7853feca4cc12444951507c88dce5f12d",
+        "sample_rate_hz": 48000,
+        "sample_width_bytes": 2,
+        "wave_sha256": "fd2e47ac27bc66690897ebf04815d5a1a2aca256c2bfbe8ce96dff1587751d46"
+      },
+      "sample_rate_hz": 48000,
+      "source_pcm": {
+        "channel_count": 2,
+        "frame_count": 192000,
+        "pcm_sha256": "6798937105264fe95bc4166f6664c4f7853feca4cc12444951507c88dce5f12d",
+        "sample_rate_hz": 48000,
+        "sample_width_bytes": 2,
+        "wave_sha256": "fd2e47ac27bc66690897ebf04815d5a1a2aca256c2bfbe8ce96dff1587751d46"
+      },
+      "transform_id": "lowpass-16k-cascade8",
+      "transformed_pcm": {
+        "channel_count": 2,
+        "frame_count": 192000,
+        "pcm_sha256": "ec8f1ffe1213d401194f4288940b41fecc2d69ae108e49435783768d625e53dd",
+        "sample_rate_hz": 48000,
+        "sample_width_bytes": 2,
+        "wave_sha256": "04e4512cc795381ce83fc3e8b5ac0c6e03bf13f2f370bc7d3015a4d326ddbd22"
+      },
+      "within_run_replays_byte_identical": true,
+      "wrapper_id": "wav16"
+    },
+    {
+      "analysis_pcm": {
+        "channel_count": 1,
+        "frame_count": 176400,
+        "pcm_sha256": "54d22fd135c7e07e2759d6b1a789210b3359e6bedbe3c91f6b4dd6f4c44c5152",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2
+      },
+      "artifact_bytes": 352854,
+      "artifact_sha256": "79ed5a0c9849ca2a13bb2f9a8836595e241c6c15b743ba79d57010d6a8760e7a",
+      "channel_count": 2,
+      "codec_bitstream_sha256": null,
+      "codec_family": null,
+      "encoder_id": null,
+      "expectation": "negative",
+      "fixture_id": "negative-alternate-channel-aiff",
+      "history_decoder_id": null,
+      "history_pcm": {
+        "channel_count": 2,
+        "frame_count": 176400,
+        "pcm_sha256": "4fe35a677e4d5c8b6b763de231c613369d2a605c195a6d963661c170d08f4af5",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "daf1a7b06aebdc2a7208061f77d5b2e5de87c7acad1cfb5b8bc0e10153b4fc38"
+      },
+      "sample_rate_hz": 44100,
+      "source_pcm": {
+        "channel_count": 2,
+        "frame_count": 176400,
+        "pcm_sha256": "4fe35a677e4d5c8b6b763de231c613369d2a605c195a6d963661c170d08f4af5",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "daf1a7b06aebdc2a7208061f77d5b2e5de87c7acad1cfb5b8bc0e10153b4fc38"
+      },
+      "transform_id": "alternate-channel-topology",
+      "transformed_pcm": {
+        "channel_count": 1,
+        "frame_count": 176400,
+        "pcm_sha256": "54d22fd135c7e07e2759d6b1a789210b3359e6bedbe3c91f6b4dd6f4c44c5152",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "c0123f377aba54fb6758de2a9c698b961be798040945d7bb62ad93f476201c1f"
+      },
+      "within_run_replays_byte_identical": true,
+      "wrapper_id": "aiff16"
+    },
+    {
+      "analysis_pcm": {
+        "channel_count": 2,
+        "frame_count": 176400,
+        "pcm_sha256": "19b7fafdfc3e368b9b6a7778ea719011ee5306513b91f14426567638284117f6",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2
+      },
+      "artifact_bytes": 560006,
+      "artifact_sha256": "17752b4c6a7d6a891d7101a496143c27b251a92a0cb0114ead3bc13f9cf1bbcb",
+      "channel_count": 2,
+      "codec_bitstream_sha256": "0dfa39c68de567fd475b4f825d91b3092ff5d740ca4b34200a6b35a53ba463d3",
+      "codec_family": "mp3",
+      "encoder_id": "mp3_lame_4_0",
+      "expectation": "controlled_positive",
+      "fixture_id": "mp3-lame-resample-flac",
+      "history_decoder_id": "ffmpeg_native_audio_8_1_2",
+      "history_pcm": {
+        "channel_count": 2,
+        "frame_count": 176400,
+        "pcm_sha256": "859933996982f47bfddbf6d4bceb0549bbec5892850d0fb6d3736cf4ccfde321",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "5a7a36e4c5bba3168df1684eff4f6fcbae486e0a170ebdbda5942cb1906f957a"
+      },
+      "sample_rate_hz": 44100,
+      "source_pcm": {
+        "channel_count": 2,
+        "frame_count": 176400,
+        "pcm_sha256": "4fe35a677e4d5c8b6b763de231c613369d2a605c195a6d963661c170d08f4af5",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "daf1a7b06aebdc2a7208061f77d5b2e5de87c7acad1cfb5b8bc0e10153b4fc38"
+      },
+      "transform_id": "resample-roundtrip-32k",
+      "transformed_pcm": {
+        "channel_count": 2,
+        "frame_count": 176400,
+        "pcm_sha256": "19b7fafdfc3e368b9b6a7778ea719011ee5306513b91f14426567638284117f6",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "5b24ec92b1934dd2aabd56cd997fd73d1961706fb60809b7b605260ceb9fcc72"
+      },
+      "within_run_replays_byte_identical": true,
+      "wrapper_id": "flac16"
+    },
+    {
+      "analysis_pcm": {
+        "channel_count": 1,
+        "frame_count": 176256,
+        "pcm_sha256": "9d09bda6354bdfb10b182dabf9dfe450e5e71c75d4eff38bcfcee9ace14db734",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2
+      },
+      "artifact_bytes": 352556,
+      "artifact_sha256": "f09bc726e0392e3bc917f056025124c60345c5c64cb80db3eb953481a6a7f21a",
+      "channel_count": 1,
+      "codec_bitstream_sha256": "3ad25c887d9eaca47ea5d31713b9b9f7ef3ee520a551fec54958cd0009b9c85c",
+      "codec_family": "mp3",
+      "encoder_id": "mp3_shine_ab5e352",
+      "expectation": "controlled_positive",
+      "fixture_id": "mp3-shine-gain-wav",
+      "history_decoder_id": "mpg123_1_33_6",
+      "history_pcm": {
+        "channel_count": 1,
+        "frame_count": 176256,
+        "pcm_sha256": "1753f4f5b2c85ac621d27dd36829d387283d4a9688c8afed7c2d67314890bf7e",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "3eb1212d14a583a13126bcfe1099d340b3755355108354a8a844ea5cc6111afa"
+      },
+      "sample_rate_hz": 44100,
+      "source_pcm": {
+        "channel_count": 1,
+        "frame_count": 176400,
+        "pcm_sha256": "580b9fb243ab7cb84a406f20cb4971d4e82e4a9117ed3df4a6a5d222af24d4f6",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "714599ecfcfd8853fbbb8aea8c26c4b142e568c0bc2ae41e63a3cbab76ba98ce"
+      },
+      "transform_id": "gain-minus6db-q31",
+      "transformed_pcm": {
+        "channel_count": 1,
+        "frame_count": 176256,
+        "pcm_sha256": "9d09bda6354bdfb10b182dabf9dfe450e5e71c75d4eff38bcfcee9ace14db734",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "f09bc726e0392e3bc917f056025124c60345c5c64cb80db3eb953481a6a7f21a"
+      },
+      "within_run_replays_byte_identical": true,
+      "wrapper_id": "wav16"
+    },
+    {
+      "analysis_pcm": {
+        "channel_count": 2,
+        "frame_count": 177408,
+        "pcm_sha256": "514f987555424be41dc1c657106a56fba52055e6bac87e005d237d704e574b21",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2
+      },
+      "artifact_bytes": 709686,
+      "artifact_sha256": "c2f6f659bafd5d2508bb3084498a63207bb3b5dd07832b0d54f262a637d53e21",
+      "channel_count": 2,
+      "codec_bitstream_sha256": "36586150fa5fa01822aa1cee144530cf0dbc205061408ef88f6bb07f56ccdffa",
+      "codec_family": "mp3",
+      "encoder_id": "mp3_bladeenc_a2d06ec",
+      "expectation": "controlled_positive",
+      "fixture_id": "mp3-blade-wrapper-aiff",
+      "history_decoder_id": "apple_audiotoolbox_25g72",
+      "history_pcm": {
+        "channel_count": 2,
+        "frame_count": 177408,
+        "pcm_sha256": "514f987555424be41dc1c657106a56fba52055e6bac87e005d237d704e574b21",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "53d0d0db6a9b10b0a10504f742bd809d224bb902a039a1e92e5095aaf5d570a3"
+      },
+      "sample_rate_hz": 44100,
+      "source_pcm": {
+        "channel_count": 2,
+        "frame_count": 176400,
+        "pcm_sha256": "4fe35a677e4d5c8b6b763de231c613369d2a605c195a6d963661c170d08f4af5",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "daf1a7b06aebdc2a7208061f77d5b2e5de87c7acad1cfb5b8bc0e10153b4fc38"
+      },
+      "transform_id": "lossless-wrapper-rewrite",
+      "transformed_pcm": {
+        "channel_count": 2,
+        "frame_count": 177408,
+        "pcm_sha256": "514f987555424be41dc1c657106a56fba52055e6bac87e005d237d704e574b21",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "53d0d0db6a9b10b0a10504f742bd809d224bb902a039a1e92e5095aaf5d570a3"
+      },
+      "within_run_replays_byte_identical": true,
+      "wrapper_id": "aiff16"
+    },
+    {
+      "analysis_pcm": {
+        "channel_count": 1,
+        "frame_count": 166127,
+        "pcm_sha256": "c4e62a9e850970c76165cc7fff07804b66d569402f51acbb1cd070645d074a39",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2
+      },
+      "artifact_bytes": 296944,
+      "artifact_sha256": "1552ad4fb3244ee5d4f3e8bf937ccab6b54fc798a2469e717ca3475e189b900c",
+      "channel_count": 1,
+      "codec_bitstream_sha256": "bd6193c0d30e4bdbc165605ef511ba59befc874476ff0552da6a9f82fe3b3ee3",
+      "codec_family": "aac_lc",
+      "encoder_id": "aac_ffmpeg_native_8_1_2",
+      "expectation": "controlled_positive",
+      "fixture_id": "aac-ffmpeg-trim-flac",
+      "history_decoder_id": "ffmpeg_native_audio_8_1_2",
+      "history_pcm": {
+        "channel_count": 1,
+        "frame_count": 177152,
+        "pcm_sha256": "f2c706967dbc3b32bc19fae1c5d2d727b054c69108e99690e520b87affc8ab19",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "8c161d70513a3f05324ec8bc2484da67329ac2656e9934e663dd2dc1fc6d4cae"
+      },
+      "sample_rate_hz": 44100,
+      "source_pcm": {
+        "channel_count": 1,
+        "frame_count": 176400,
+        "pcm_sha256": "580b9fb243ab7cb84a406f20cb4971d4e82e4a9117ed3df4a6a5d222af24d4f6",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "714599ecfcfd8853fbbb8aea8c26c4b142e568c0bc2ae41e63a3cbab76ba98ce"
+      },
+      "transform_id": "trim-head-250ms",
+      "transformed_pcm": {
+        "channel_count": 1,
+        "frame_count": 166127,
+        "pcm_sha256": "c4e62a9e850970c76165cc7fff07804b66d569402f51acbb1cd070645d074a39",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "668d6642cd90e9d55fbca61e3c426262be43b3210716f13cd694a4de04a11a8d"
+      },
+      "within_run_replays_byte_identical": true,
+      "wrapper_id": "flac16"
+    },
+    {
+      "analysis_pcm": {
+        "channel_count": 2,
+        "frame_count": 199199,
+        "pcm_sha256": "de50ac8ebf3a6512327a7c6b496d997e7705500459c2c06ea4906e222ab4d1fc",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2
+      },
+      "artifact_bytes": 796840,
+      "artifact_sha256": "a7e8dffc80927319c2f7e214ba5c0c59ae3ff9ad49db1001749fa8a4323a169f",
+      "channel_count": 2,
+      "codec_bitstream_sha256": "094e5f96d05825a6f4a2b8818a15ba1238f99ed25529197915d2a710d9395e05",
+      "codec_family": "aac_lc",
+      "encoder_id": "aac_apple_audiotoolbox_25g72",
+      "expectation": "controlled_positive",
+      "fixture_id": "aac-apple-silence-wav",
+      "history_decoder_id": "apple_audiotoolbox_25g72",
+      "history_pcm": {
+        "channel_count": 2,
+        "frame_count": 177149,
+        "pcm_sha256": "8d0ee2cded669e5027cfb952971ea10e7380ada06d73fe0eec3fb6c77afd2601",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "76ce0abdc4eb4b9236aa71146846a46315c512701096f6a1da87a17f7a408139"
+      },
+      "sample_rate_hz": 44100,
+      "source_pcm": {
+        "channel_count": 2,
+        "frame_count": 176400,
+        "pcm_sha256": "4fe35a677e4d5c8b6b763de231c613369d2a605c195a6d963661c170d08f4af5",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "daf1a7b06aebdc2a7208061f77d5b2e5de87c7acad1cfb5b8bc0e10153b4fc38"
+      },
+      "transform_id": "prepend-digital-silence-500ms",
+      "transformed_pcm": {
+        "channel_count": 2,
+        "frame_count": 199199,
+        "pcm_sha256": "de50ac8ebf3a6512327a7c6b496d997e7705500459c2c06ea4906e222ab4d1fc",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "a7e8dffc80927319c2f7e214ba5c0c59ae3ff9ad49db1001749fa8a4323a169f"
+      },
+      "within_run_replays_byte_identical": true,
+      "wrapper_id": "wav16"
+    },
+    {
+      "analysis_pcm": {
+        "channel_count": 1,
+        "frame_count": 132300,
+        "pcm_sha256": "b56700170a81d53fea79fc02ecf00799eff0138c2bbe58eb4a9cbe5b401b9a59",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2
+      },
+      "artifact_bytes": 264654,
+      "artifact_sha256": "e41afcd7a8bb477579dd01b02e54b63f58baea7e64e918a9f54d47bdf3cec52c",
+      "channel_count": 1,
+      "codec_bitstream_sha256": "cd227ffe22631a55508e11942539c145ee461c18396379eb45084fe7570d9113",
+      "codec_family": "aac_lc",
+      "encoder_id": "aac_fdk_2_0_3",
+      "expectation": "controlled_positive",
+      "fixture_id": "aac-fdk-duration-aiff",
+      "history_decoder_id": "ffmpeg_native_audio_8_1_2",
+      "history_pcm": {
+        "channel_count": 1,
+        "frame_count": 177152,
+        "pcm_sha256": "336328e8241f10aa0732edabe3d3e316342d178ddff283aa858f5270032ec4e1",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "d737b69cdba97474b627b74976c82393aa851eaecdfeed2a1c3165f9a5f313c2"
+      },
+      "sample_rate_hz": 44100,
+      "source_pcm": {
+        "channel_count": 1,
+        "frame_count": 176400,
+        "pcm_sha256": "580b9fb243ab7cb84a406f20cb4971d4e82e4a9117ed3df4a6a5d222af24d4f6",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "714599ecfcfd8853fbbb8aea8c26c4b142e568c0bc2ae41e63a3cbab76ba98ce"
+      },
+      "transform_id": "duration-prefix-3s",
+      "transformed_pcm": {
+        "channel_count": 1,
+        "frame_count": 132300,
+        "pcm_sha256": "b56700170a81d53fea79fc02ecf00799eff0138c2bbe58eb4a9cbe5b401b9a59",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "c8def694b957dfcbd34ed6566b9816bc3ae93997fdee47879c137014c4689b53"
+      },
+      "within_run_replays_byte_identical": true,
+      "wrapper_id": "aiff16"
+    },
+    {
+      "analysis_pcm": {
+        "channel_count": 2,
+        "frame_count": 192000,
+        "pcm_sha256": "62304ab539d649ce301148e62b8b3d0df52e6bf20275fdb42fc86be775672c02",
+        "sample_rate_hz": 48000,
+        "sample_width_bytes": 2
+      },
+      "artifact_bytes": 462429,
+      "artifact_sha256": "309202cc1ea3d02b7a233d2c30bd54bd112650a33e1cac25d3b14c31f672e1e4",
+      "channel_count": 2,
+      "codec_bitstream_sha256": "a5ed50dcbe22bacf0e48c3aae4ced13f6609a57ba17eecdcf7ed4d6e86a338ea",
+      "codec_family": "opus",
+      "encoder_id": "opus_libopus_1_6_1",
+      "expectation": "controlled_positive",
+      "fixture_id": "opus-libopus-dither-flac",
+      "history_decoder_id": "opusdec_0_2_2_libopus_1_6_1",
+      "history_pcm": {
+        "channel_count": 2,
+        "frame_count": 192000,
+        "pcm_sha256": "6c1776c62071ae2377f3aea27b8db6bbb0b1b51074253ac61bf6a5ea311e4a14",
+        "sample_rate_hz": 48000,
+        "sample_width_bytes": 2,
+        "wave_sha256": "03c14e0b287f535ecfa9a73f53e6e98eb3f125be9422ff52f55c6bbbf6c787b3"
+      },
+      "sample_rate_hz": 48000,
+      "source_pcm": {
+        "channel_count": 2,
+        "frame_count": 192000,
+        "pcm_sha256": "6798937105264fe95bc4166f6664c4f7853feca4cc12444951507c88dce5f12d",
+        "sample_rate_hz": 48000,
+        "sample_width_bytes": 2,
+        "wave_sha256": "fd2e47ac27bc66690897ebf04815d5a1a2aca256c2bfbe8ce96dff1587751d46"
+      },
+      "transform_id": "requantize-12bit-tpdf",
+      "transformed_pcm": {
+        "channel_count": 2,
+        "frame_count": 192000,
+        "pcm_sha256": "62304ab539d649ce301148e62b8b3d0df52e6bf20275fdb42fc86be775672c02",
+        "sample_rate_hz": 48000,
+        "sample_width_bytes": 2,
+        "wave_sha256": "dd6a9aefec5068380225f7f3c6a946b8efb48238aaac48020da6bf238c46eb26"
+      },
+      "within_run_replays_byte_identical": true,
+      "wrapper_id": "flac16"
+    },
+    {
+      "analysis_pcm": {
+        "channel_count": 1,
+        "frame_count": 192000,
+        "pcm_sha256": "a8c44a977f247cf60b8f992f915c799ad735257caeb9f87b55b8ebe842095145",
+        "sample_rate_hz": 48000,
+        "sample_width_bytes": 2
+      },
+      "artifact_bytes": 384044,
+      "artifact_sha256": "6d55b38683dc1ba950005db5b17168b9a25a30985ea440b726003a91ec7351fc",
+      "channel_count": 1,
+      "codec_bitstream_sha256": "d4af59ad1651c5df72cf1290311cb4878faf60126131fb661ec07f07382a6339",
+      "codec_family": "opus",
+      "encoder_id": "opus_ffmpeg_native_8_1_2",
+      "expectation": "controlled_positive",
+      "fixture_id": "opus-ffmpeg-identity-wav",
+      "history_decoder_id": "apple_audiotoolbox_25g72",
+      "history_pcm": {
+        "channel_count": 1,
+        "frame_count": 192000,
+        "pcm_sha256": "a8c44a977f247cf60b8f992f915c799ad735257caeb9f87b55b8ebe842095145",
+        "sample_rate_hz": 48000,
+        "sample_width_bytes": 2,
+        "wave_sha256": "d144fb2aae9f9487ac6afa650ffcff73d69acdf3edad4a6c469d2d86fce91de1"
+      },
+      "sample_rate_hz": 48000,
+      "source_pcm": {
+        "channel_count": 1,
+        "frame_count": 192000,
+        "pcm_sha256": "e5e2924ff42e4ac845b2019c3316a7176f53b282121827575444cec388038966",
+        "sample_rate_hz": 48000,
+        "sample_width_bytes": 2,
+        "wave_sha256": "c248b0695c25e03770955c1354257e02ac86d18deb9675c499ce937c0e676362"
+      },
+      "transform_id": "identity",
+      "transformed_pcm": {
+        "channel_count": 1,
+        "frame_count": 192000,
+        "pcm_sha256": "a8c44a977f247cf60b8f992f915c799ad735257caeb9f87b55b8ebe842095145",
+        "sample_rate_hz": 48000,
+        "sample_width_bytes": 2,
+        "wave_sha256": "d144fb2aae9f9487ac6afa650ffcff73d69acdf3edad4a6c469d2d86fce91de1"
+      },
+      "within_run_replays_byte_identical": true,
+      "wrapper_id": "wav16"
+    },
+    {
+      "analysis_pcm": {
+        "channel_count": 2,
+        "frame_count": 176400,
+        "pcm_sha256": "355eba0e5b7d353ddebdb0def7ed7c28e3f4ad131dacd5b678cb5ee6403cfe55",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2
+      },
+      "artifact_bytes": 705654,
+      "artifact_sha256": "325bc3340d7e95a1b261e278c4a50082d9e560f3e7af89498c3d3e842418e9bd",
+      "channel_count": 2,
+      "codec_bitstream_sha256": "8829704df192fa9d7098963b1efae6d3fee694a3c58d226a8dd3faa8d882f4ab",
+      "codec_family": "vorbis",
+      "encoder_id": "vorbis_libvorbis_1_3_7",
+      "expectation": "controlled_positive",
+      "fixture_id": "vorbis-libvorbis-lowpass-aiff",
+      "history_decoder_id": "oggdec_1_4_3_libvorbis_1_3_7",
+      "history_pcm": {
+        "channel_count": 2,
+        "frame_count": 176400,
+        "pcm_sha256": "3b279949d025be30588c35f6e05a31ccc3199fa4b70f701f587c4962b8062d60",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "b94870eddcfa2a400589b35643619df5055967aea4a81e5b37bb1ce1280225cd"
+      },
+      "sample_rate_hz": 44100,
+      "source_pcm": {
+        "channel_count": 2,
+        "frame_count": 176400,
+        "pcm_sha256": "4fe35a677e4d5c8b6b763de231c613369d2a605c195a6d963661c170d08f4af5",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "daf1a7b06aebdc2a7208061f77d5b2e5de87c7acad1cfb5b8bc0e10153b4fc38"
+      },
+      "transform_id": "lowpass-16k-cascade8",
+      "transformed_pcm": {
+        "channel_count": 2,
+        "frame_count": 176400,
+        "pcm_sha256": "355eba0e5b7d353ddebdb0def7ed7c28e3f4ad131dacd5b678cb5ee6403cfe55",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "f53d260665fda579ca3c7b855fa6766154c1cf1f3ee499f043aa2815787f4383"
+      },
+      "within_run_replays_byte_identical": true,
+      "wrapper_id": "aiff16"
+    },
+    {
+      "analysis_pcm": {
+        "channel_count": 1,
+        "frame_count": 176448,
+        "pcm_sha256": "fdea4782d182a191a2edad1cab6d26a622f9cc2f1d0baf9654bf5bcf05764002",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2
+      },
+      "artifact_bytes": 292695,
+      "artifact_sha256": "c64ba2f69def9039c18af70e79f71ffb8485021e257a81cb7a04a5419993b0ac",
+      "channel_count": 2,
+      "codec_bitstream_sha256": "a8bbf5156d127fc2f55209723ebbf554273e3c0b254294cf8016ead398f0a99c",
+      "codec_family": "vorbis",
+      "encoder_id": "vorbis_ffmpeg_native_8_1_2",
+      "expectation": "controlled_positive",
+      "fixture_id": "vorbis-ffmpeg-alternate-flac",
+      "history_decoder_id": "ffmpeg_native_audio_8_1_2",
+      "history_pcm": {
+        "channel_count": 2,
+        "frame_count": 176448,
+        "pcm_sha256": "8ede1d8ae257a956fe4d2b00be6aada0285bca124e450382fa22fc4d4daea48a",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "442cc1736e28a3ff86ca569aaa31608511180f69ba1a3c1f28cfa1779a257f5d"
+      },
+      "sample_rate_hz": 44100,
+      "source_pcm": {
+        "channel_count": 2,
+        "frame_count": 176400,
+        "pcm_sha256": "4fe35a677e4d5c8b6b763de231c613369d2a605c195a6d963661c170d08f4af5",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "daf1a7b06aebdc2a7208061f77d5b2e5de87c7acad1cfb5b8bc0e10153b4fc38"
+      },
+      "transform_id": "alternate-channel-topology",
+      "transformed_pcm": {
+        "channel_count": 1,
+        "frame_count": 176448,
+        "pcm_sha256": "fdea4782d182a191a2edad1cab6d26a622f9cc2f1d0baf9654bf5bcf05764002",
+        "sample_rate_hz": 44100,
+        "sample_width_bytes": 2,
+        "wave_sha256": "8d943bbf36e46d5f87879ccae9354d9f71eab74c1d2dc0566463f6fc9d9e79ce"
+      },
+      "within_run_replays_byte_identical": true,
+      "wrapper_id": "flac16"
+    }
+  ],
+  "construction_id": "lossytrace-v2-construction-20260802-001",
+  "features_computed": false,
+  "generator_sha256": "801cbe1b5b6ac55350eb9b38483d1d7aa4af62c567b15f0ec67eb4a1015e60ac",
+  "paths_redacted": true,
+  "plan_sha256": "6f44e0f267332dea750d4a4f0239eca6ddc356a9e2f84a5a078b445c77202430",
+  "public_verdict_enabled": false,
+  "reproducibility": {
+    "complete_replays_observed": 2,
+    "complete_replays_required": 2,
+    "plan_sha256": "6f44e0f267332dea750d4a4f0239eca6ddc356a9e2f84a5a078b445c77202430",
+    "run_report_sha256": "2f5b2d9ef6898edb2d5a47f26b1e403fcaac2d24742ef7a06f377daf12dff2e2",
+    "run_reports_byte_identical": true
+  },
+  "schema_version": 1,
+  "scores_opened": false,
+  "state": "constructor_synthetic_evidence",
+  "summary": {
+    "codec_families": [
+      "aac_lc",
+      "mp3",
+      "opus",
+      "vorbis"
+    ],
+    "encoder_ids": [
+      "aac_apple_audiotoolbox_25g72",
+      "aac_fdk_2_0_3",
+      "aac_ffmpeg_native_8_1_2",
+      "mp3_bladeenc_a2d06ec",
+      "mp3_lame_4_0",
+      "mp3_shine_ab5e352",
+      "opus_ffmpeg_native_8_1_2",
+      "opus_libopus_1_6_1",
+      "vorbis_ffmpeg_native_8_1_2",
+      "vorbis_libvorbis_1_3_7"
+    ],
+    "history_decoder_ids": [
+      "apple_audiotoolbox_25g72",
+      "ffmpeg_native_audio_8_1_2",
+      "mpg123_1_33_6",
+      "oggdec_1_4_3_libvorbis_1_3_7",
+      "opusdec_0_2_2_libopus_1_6_1"
+    ],
+    "synthetic_case_count": 13,
+    "transform_ids": [
+      "alternate-channel-topology",
+      "duration-prefix-3s",
+      "gain-minus6db-q31",
+      "identity",
+      "lossless-wrapper-rewrite",
+      "lowpass-16k-cascade8",
+      "prepend-digital-silence-500ms",
+      "requantize-12bit-tpdf",
+      "resample-roundtrip-32k",
+      "trim-head-250ms"
+    ],
+    "within_run_replays_byte_identical": true,
+    "wrapper_ids": [
+      "aiff16",
+      "flac16",
+      "wav16"
+    ]
+  },
+  "synthetic_audio_generated": true
+}

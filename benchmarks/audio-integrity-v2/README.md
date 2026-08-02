@@ -63,6 +63,8 @@ Read these before constructing a manifest:
 - [`construction-preflight-observed-20260802-001.json`](../../research/sources/evidence/construction-preflight-observed-20260802-001.json)
 - [`construction-plan.json`](construction-plan.json)
 - [`construction-preregistration-20260802.md`](../../docs/research/construction-preregistration-20260802.md)
+- [`constructor-synthetic-result-20260802.md`](../../docs/research/constructor-synthetic-result-20260802.md)
+- [`constructor-synthetic-observed-20260802-001.json`](../../research/sources/evidence/constructor-synthetic-observed-20260802-001.json)
 - [`rwc-source-identity-audit-20260802.md`](../../docs/research/rwc-source-identity-audit-20260802.md)
 
 The pre-freeze source/tool inventory and its remaining gates are described
@@ -163,6 +165,9 @@ The exact
 is now frozen with synthetic-only authority. Its staged code must pass two
 13-case glue replays before any benchmark source is decoded; smoke and full
 construction remain separately gated.
+The two 13-case constructor reports are now byte-identical across every frozen
+encoder, history decoder, transform, and wrapper. A successor plan may
+authorize only the 202-cell score-blind smoke set.
 
 ## Evidence partitions
 
