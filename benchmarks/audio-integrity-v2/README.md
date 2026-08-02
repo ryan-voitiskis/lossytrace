@@ -41,6 +41,8 @@ Read these before constructing a manifest:
 - [rejected recipe-002 aggregate](../../research/sources/evidence/fractional-assignment-observed-20260802-002.json)
 - [`fractional-assignment-result-20260802-003.md`](../../docs/research/fractional-assignment-result-20260802-003.md)
 - [`fractional-assignment-observed-20260802-003.json`](../../research/sources/evidence/fractional-assignment-observed-20260802-003.json)
+- [`construction-feasibility-plan.json`](construction-feasibility-plan.json)
+- [`construction-feasibility-preregistration-20260802.md`](../../docs/research/construction-feasibility-preregistration-20260802.md)
 - [`rwc-source-identity-audit-20260802.md`](../../docs/research/rwc-source-identity-audit-20260802.md)
 
 The pre-freeze source/tool inventory and its remaining gates are described
@@ -104,6 +106,10 @@ adds that relation before audio or scores; recipe `003` requires two fresh
 replays. Those
 [`recipe-003 replays`](../../docs/research/fractional-assignment-result-20260802-003.md)
 are byte-identical and freeze 12,884 sample-rate-aware, lineage-complete cells.
+The next separately preregistered gate is a two-replay, header-only
+[`construction-feasibility audit`](../../docs/research/construction-feasibility-preregistration-20260802.md).
+It may expose duration and channel support but cannot inspect waveform samples,
+reassign a group, or open a score.
 
 ## Evidence partitions
 

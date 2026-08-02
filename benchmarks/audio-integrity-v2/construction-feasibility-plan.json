@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "audit_id": "lossytrace-v2-construction-feasibility-20260802-001",
+  "state": "construction_feasibility_frozen_before_header_audit",
+  "upstream_checkpoint_commit": "d310c0cb46517c37cac373f6d833ca89b9ffd028",
+  "audio_generated": false,
+  "waveform_content_inspected": false,
+  "headers_inspected": false,
+  "duration_inspected": false,
+  "features_computed": false,
+  "scores_opened": false,
+  "selection_authorized": false,
+  "bindings": {
+    "audit_generator_path": "scripts/audit-audio-integrity-v2-construction-feasibility.py",
+    "audit_generator_sha256": "92ee0a3d07562a4dc8e7332abc584bef07b6507e7f1fe7e92b65bf86390dadd1",
+    "private_source_allocation_sha256": "e4b7d2ab42253e00ce0e0b95c8049193f9b6178ecbb6212811fde96d58c088d4",
+    "private_candidate_index_sha256": "07a00a0f56570c0778e384c6a816a69be13fffe42596c1aad80d5a6a99357a07",
+    "private_fractional_assignment_sha256": "e33ae9f961fd48ec3857ac41ad9197b86fd0d38a5897dd5144bbf35683110582",
+    "public_fractional_assignment_result_sha256": "31573d8ee523d6572d89b884ca5cbb1d815596c37d47831a31cb51d130bebe90",
+    "factor_levels_sha256": "4065553ef4fbe505ea0d79b149570bc1483396dbcc1de52597890e61f59481bd",
+    "toolchain_manifest_sha256": "d2af2f0b78b184189806d724c294d7606f37d2763839e17c9289f7957da52070",
+    "private_tool_paths_sha256": "1a564dc3958b4f678ae5ff89c04ac8797849127b784f2d4b2d7af88532df3fb5"
+  },
+  "sources": {
+    "selected_group_count": 793,
+    "v1_manifest_relative_path": "research-runs/observed-baseline-20260801-001/manifest.json",
+    "verify_bound_archive_sha256": true,
+    "verify_bound_archive_size": true,
+    "source_payload_hashing": false,
+    "source_waveform_decoding": false,
+    "allowed_probe_fields": [
+      "codec_name",
+      "sample_rate",
+      "channels",
+      "duration_ts",
+      "time_base"
+    ],
+    "allowed_lossless_codec_names": [
+      "flac",
+      "pcm_s16be",
+      "pcm_s16le",
+      "pcm_s24be",
+      "pcm_s24le",
+      "pcm_s32be",
+      "pcm_s32le"
+    ]
+  },
+  "provider_window": {
+    "default": "complete selected member",
+    "bounded_source": "Use the already frozen audio_start_seconds and audio_end_seconds metadata when present.",
+    "start_frame": "ceiling(Decimal(audio_start_seconds) * native_sample_rate_hz)",
+    "end_frame_exclusive": "floor(Decimal(audio_end_seconds) * native_sample_rate_hz), clamped to native frame count",
+    "reason": "The integer window stays wholly inside the provider-declared half-open interval."
+  },
+  "excerpt_feasibility": {
+    "maximum_seconds": 12,
+    "short_source_policy": "Use the complete provider window without padding, looping, stretching, trimming, rejection, or reassignment.",
+    "duration_strata_seconds": [
+      {"stratum_id": "lt1", "minimum_inclusive": 0, "maximum_exclusive": 1},
+      {"stratum_id": "ge1_lt3", "minimum_inclusive": 1, "maximum_exclusive": 3},
+      {"stratum_id": "ge3_lt6", "minimum_inclusive": 3, "maximum_exclusive": 6},
+      {"stratum_id": "ge6_le12", "minimum_inclusive": 6, "maximum_inclusive": 12}
+    ],
+    "transform_minimum_input_milliseconds": {
+      "trim-head-250ms": 500,
+      "duration-prefix-3s": 3000
+    },
+    "other_transform_minimum_input_milliseconds": 0,
+    "native_channel_counts_supported": [1, 2]
+  },
+  "reporting": {
+    "private_report_contains_group_and_member_identity": true,
+    "public_report_contains_group_or_member_identity": false,
+    "public_counts_by_partition_domain_duration_stratum": true,
+    "public_counts_by_native_format": true,
+    "public_unsupported_transform_counts": true,
+    "public_verdict_enabled": false
+  },
+  "storage": {
+    "maximum_parallel_workers": 1,
+    "minimum_free_space_reserve_bytes": 16106127360,
+    "temporary_member_extraction_only": true,
+    "source_archives_duplicated": false
+  },
+  "reproducibility": {
+    "complete_replays_required": 2,
+    "private_reports_must_be_byte_identical": true,
+    "public_run_aggregates_must_be_byte_identical": true
+  },
+  "stop_conditions": [
+    "A bound source, allocation, assignment, factor, toolchain, tool path, or generator hash differs.",
+    "A selected source is absent, not single-stream lossless PCM, or has a native channel count outside one or two.",
+    "A provider window is empty or lies outside the selected source.",
+    "An assigned trim input is shorter than 500 ms or an assigned duration-prefix input is shorter than 3 s.",
+    "A feasibility failure would be hidden by pooled counts or repaired by silent reassignment.",
+    "Waveform samples, mechanism features, candidate scores, or unopened labels would be read.",
+    "The two complete private or public reports differ byte-for-byte.",
+    "The work volume falls below the 15 GiB reserve."
+  ],
+  "authorized_next_step": "Commit this plan and exact audit generator, then run two complete header-only audits. If any assigned cell is infeasible, stop construction and freeze a correction without using waveform content or scores."
+}
