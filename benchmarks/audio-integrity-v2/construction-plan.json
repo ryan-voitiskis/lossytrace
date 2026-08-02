@@ -1,0 +1,237 @@
+{
+  "schema_version": 1,
+  "construction_id": "lossytrace-v2-construction-20260802-001",
+  "state": "construction_recipe_frozen_before_synthetic_replay",
+  "authorized_scope": "synthetic_only",
+  "upstream_checkpoint_commit": "36a72b77f86b4274c3d5a9362a2f1503111b0540",
+  "benchmark_source_audio_read": false,
+  "benchmark_audio_generated": false,
+  "synthetic_audio_authorized": true,
+  "features_computed": false,
+  "scores_opened": false,
+  "public_verdict_enabled": false,
+  "bindings": {
+    "generator_path": "scripts/construct-audio-integrity-v2-benchmark.py",
+    "generator_sha256": "801cbe1b5b6ac55350eb9b38483d1d7aa4af62c567b15f0ec67eb4a1015e60ac",
+    "preconditioning_module_path": "scripts/audio_integrity_v2_preconditioning.py",
+    "preconditioning_module_sha256": "1d634a6ca0f038514dbbd42f7d8c3a1bb8d2520f8cc5006a2a8b18453f9cac8b",
+    "toolchain_generator_path": "scripts/freeze-audio-integrity-v2-toolchains.py",
+    "toolchain_generator_sha256": "21fa31de0b0783f05d55dcd8e78b8d0c39c12c358d88dc641cf88ad0f64ee78e",
+    "feasibility_generator_path": "scripts/audit-audio-integrity-v2-construction-feasibility.py",
+    "feasibility_generator_sha256": "410ba33edcc8d322e3886bf122f3271824b302bb7f417e3363b73d2af5ce5700",
+    "preflight_generator_path": "scripts/preflight-audio-integrity-v2-construction.py",
+    "preflight_generator_sha256": "ae60878cd7b998a407f04e9b170265e75122dbe009eaff7bf5948ad792490be6",
+    "factor_levels_sha256": "4065553ef4fbe505ea0d79b149570bc1483396dbcc1de52597890e61f59481bd",
+    "toolchain_manifest_sha256": "d2af2f0b78b184189806d724c294d7606f37d2763839e17c9289f7957da52070",
+    "toolchain_result_sha256": "29ddfe00bb419aedcbdee8de530785f5981de279f2bd190f4a337ebbe8c3cc23",
+    "public_decoder_result_sha256": "e18ebce9101a59321fe7fcf509222b78d2218476653a091396e596de72520683",
+    "preconditioning_result_sha256": "50883fbc74e897c7048b95148765651790cf8fb24b7335f29b7cd08fa6b93456",
+    "preflight_result_sha256": "53ad83236cf9975ac5394a429a4a2da3a479c9266380b55a606da506ce8e22d6",
+    "private_tool_paths_sha256": "1a564dc3958b4f678ae5ff89c04ac8797849127b784f2d4b2d7af88532df3fb5",
+    "private_source_allocation_sha256": "e4b7d2ab42253e00ce0e0b95c8049193f9b6178ecbb6212811fde96d58c088d4",
+    "private_candidate_index_sha256": "07a00a0f56570c0778e384c6a816a69be13fffe42596c1aad80d5a6a99357a07",
+    "private_fractional_assignment_sha256": "46039d6fc22a6764daf81684d109e43a9f96b97af7d85e99258b1efe0449c5bb",
+    "public_fractional_assignment_result_sha256": "05fa5c09c90a2fd8404c8afa08f7515032c1f3633cc7bfcc17e58526f984a25d",
+    "private_construction_feasibility_audit_sha256": "8d8b0f10fbad07b79770f5035e21e29fe30ecc63e4350e92a215630a1d8c3acf",
+    "public_construction_feasibility_result_sha256": "13014dd9c8f26d69217865a8f62badfd0427b4a8ad808ddbe4a02ce9b4986110"
+  },
+  "render_recipe": {
+    "base_pcm": "Use the exact frozen preconditioning module and seal each distinct group/channel/target-rate base temporarily as FLAC after canonical PCM equality validation.",
+    "negative": "Decode the temporary base FLAC to signed-s16 WAV, apply exactly the assigned PCM transform, encode the assigned lossless wrapper, and verify its canonical analysis-decoded PCM equals the transformed WAV.",
+    "controlled_positive": "Decode the temporary base FLAC to signed-s16 WAV, run the exact expanded encoder setting, hash the temporary codec bitstream, decode through the assigned history decoder, apply exactly the assigned PCM transform, encode the assigned lossless wrapper, and verify canonical analysis-decoded PCM equality.",
+    "transform_order": "Codec history precedes the assigned PCM transform for H1; the matched H0 applies the same transform directly to the shared preconditioned source.",
+    "lossless_wrapper_rewrite": "No sample transform; change only from the explicit FLAC identity recipe source to the assigned WAV or AIFF wrapper and require canonical PCM equality.",
+    "analysis_decoder": "Use the frozen headerless signed-s16le FFmpeg analysis decoder through a pipe; do not materialize a third uncompressed analysis file.",
+    "intermediate_retention": "Delete source WAV after positive encoding, codec bitstream after history decode, and superseded unwrapped PCM before wrapper generation. Persist only final wrappers and private checkpoints."
+  },
+  "synthetic_cases": [
+    {
+      "fixture_id": "negative-identity-flac",
+      "expanded_setting_id": null,
+      "history_decoder_id": null,
+      "transform_id": "identity",
+      "wrapper_id": "flac16",
+      "sample_rate_hz": 44100,
+      "channel_count": 1
+    },
+    {
+      "fixture_id": "negative-lowpass-wav",
+      "expanded_setting_id": null,
+      "history_decoder_id": null,
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "wav16",
+      "sample_rate_hz": 48000,
+      "channel_count": 2
+    },
+    {
+      "fixture_id": "negative-alternate-channel-aiff",
+      "expanded_setting_id": null,
+      "history_decoder_id": null,
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "aiff16",
+      "sample_rate_hz": 44100,
+      "channel_count": 2
+    },
+    {
+      "fixture_id": "mp3-lame-resample-flac",
+      "expanded_setting_id": "dev-mp3-lame-cbr128-default--stereo",
+      "history_decoder_id": "ffmpeg_native_audio_8_1_2",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "flac16",
+      "sample_rate_hz": 44100,
+      "channel_count": 2
+    },
+    {
+      "fixture_id": "mp3-shine-gain-wav",
+      "expanded_setting_id": "dev-mp3-shine-cbr128-default--mono",
+      "history_decoder_id": "mpg123_1_33_6",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "wav16",
+      "sample_rate_hz": 44100,
+      "channel_count": 1
+    },
+    {
+      "fixture_id": "mp3-blade-wrapper-aiff",
+      "expanded_setting_id": "transfer-mp3-bladeenc-cbr96-default--stereo",
+      "history_decoder_id": "apple_audiotoolbox_25g72",
+      "transform_id": "lossless-wrapper-rewrite",
+      "wrapper_id": "aiff16",
+      "sample_rate_hz": 44100,
+      "channel_count": 2
+    },
+    {
+      "fixture_id": "aac-ffmpeg-trim-flac",
+      "expanded_setting_id": "dev-aac-ffmpeg-cbr96-default--mono",
+      "history_decoder_id": "ffmpeg_native_audio_8_1_2",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "flac16",
+      "sample_rate_hz": 44100,
+      "channel_count": 1
+    },
+    {
+      "fixture_id": "aac-apple-silence-wav",
+      "expanded_setting_id": "dev-aac-apple-cbr128-default--stereo",
+      "history_decoder_id": "apple_audiotoolbox_25g72",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "wav16",
+      "sample_rate_hz": 44100,
+      "channel_count": 2
+    },
+    {
+      "fixture_id": "aac-fdk-duration-aiff",
+      "expanded_setting_id": "transfer-aac-fdk-cbr96-default--mono",
+      "history_decoder_id": "ffmpeg_native_audio_8_1_2",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "aiff16",
+      "sample_rate_hz": 44100,
+      "channel_count": 1
+    },
+    {
+      "fixture_id": "opus-libopus-dither-flac",
+      "expanded_setting_id": "dev-opus-libopus-cbr96-20ms--stereo",
+      "history_decoder_id": "opusdec_0_2_2_libopus_1_6_1",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "flac16",
+      "sample_rate_hz": 48000,
+      "channel_count": 2
+    },
+    {
+      "fixture_id": "opus-ffmpeg-identity-wav",
+      "expanded_setting_id": "transfer-opus-ffmpeg-cbr64-default--mono",
+      "history_decoder_id": "apple_audiotoolbox_25g72",
+      "transform_id": "identity",
+      "wrapper_id": "wav16",
+      "sample_rate_hz": 48000,
+      "channel_count": 1
+    },
+    {
+      "fixture_id": "vorbis-libvorbis-lowpass-aiff",
+      "expanded_setting_id": "dev-vorbis-libvorbis-q4--stereo",
+      "history_decoder_id": "oggdec_1_4_3_libvorbis_1_3_7",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "aiff16",
+      "sample_rate_hz": 44100,
+      "channel_count": 2
+    },
+    {
+      "fixture_id": "vorbis-ffmpeg-alternate-flac",
+      "expanded_setting_id": "transfer-vorbis-ffmpeg-q2--stereo",
+      "history_decoder_id": "ffmpeg_native_audio_8_1_2",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "flac16",
+      "sample_rate_hz": 44100,
+      "channel_count": 2
+    }
+  ],
+  "synthetic_coverage": {
+    "negative_and_controlled_positive_paths": true,
+    "all_encoder_implementations": [
+      "mp3_lame_4_0",
+      "mp3_shine_ab5e352",
+      "mp3_bladeenc_a2d06ec",
+      "aac_ffmpeg_native_8_1_2",
+      "aac_apple_audiotoolbox_25g72",
+      "aac_fdk_2_0_3",
+      "opus_libopus_1_6_1",
+      "opus_ffmpeg_native_8_1_2",
+      "vorbis_libvorbis_1_3_7",
+      "vorbis_ffmpeg_native_8_1_2"
+    ],
+    "all_history_decoders": [
+      "ffmpeg_native_audio_8_1_2",
+      "apple_audiotoolbox_25g72",
+      "mpg123_1_33_6",
+      "opusdec_0_2_2_libopus_1_6_1",
+      "oggdec_1_4_3_libvorbis_1_3_7"
+    ],
+    "all_transform_levels": true,
+    "all_wrapper_levels": true,
+    "two_renders_per_case_within_replay": true,
+    "complete_replays_required": 2
+  },
+  "smoke_selection": {
+    "ranking": "UTF-8 frozen cell recipe digest ascending",
+    "selection": "Take the minimum digest independently for every expanded setting; compatible decoder and codec; positive transform and codec; partition, transform, wrapper, and expectation; and native source codec, channel treatment, and target sample rate category. Deduplicate selected cells.",
+    "score_blind": true,
+    "expected_cell_count": 202,
+    "expected_controlled_positive_count": 108,
+    "expected_negative_count": 94,
+    "authorized": false
+  },
+  "checkpoint_contract": {
+    "artifact_layout": "cases/<first-two-digest-hex>/<complete-cell-recipe-digest>.<assigned-wrapper-extension>",
+    "checkpoint_layout": "checkpoints/<first-two-digest-hex>/<complete-cell-recipe-digest>.json",
+    "artifact_commit": "Validate wrapper and canonical analysis PCM, fsync the uniquely named same-filesystem temporary, atomically rename, then fsync the containing directory.",
+    "checkpoint_commit": "Atomically write and fsync a private sidecar only after the artifact commit.",
+    "resume": "Rehash the artifact, decode canonical PCM through the frozen analysis decoder, and validate every plan, assignment, recipe, size, and hash binding before skipping.",
+    "orphan_artifact": "An exact constructor-addressed artifact without its sidecar is derived incomplete output and is replaced from its frozen recipe.",
+    "private_manifest": "Sort complete sidecars by cell recipe digest and retain the manifest outside Git.",
+    "public_evidence": "Counts, byte totals, and set digests only; no cell, group, member, artifact, or path identity."
+  },
+  "storage": {
+    "maximum_parallel_workers": 1,
+    "process_priority": "nice +10 where permitted",
+    "minimum_free_space_reserve_bytes": 16106127360,
+    "maximum_simultaneous_derived_uncompressed_case_files": 2,
+    "source_archive_member_temporary_is_input_not_a_derived_case": true,
+    "codec_bitstream_retained": false,
+    "base_flac_retained_beyond_source_group": false,
+    "output_volume_outside_git": true
+  },
+  "staged_authority": {
+    "current": "Synthetic cases only.",
+    "after_synthetic_pass": "A committed correction may authorize two separate 202-cell smoke roots and must bind the path-free synthetic result.",
+    "after_smoke_pass": "A committed correction may authorize the full build and must bind byte-identical private smoke manifests and path-free smoke evidence.",
+    "feature_boundary": "Construction never authorizes feature computation, candidate scoring, partition opening, or external positive encoder selection."
+  },
+  "stop_conditions": [
+    "Any bound implementation, factor, toolchain, preconditioning, feasibility, preflight, or private tool hash differs.",
+    "A synthetic render differs between its two executions or the two complete reports differ byte-for-byte.",
+    "A wrapper differs from the exact transformed signed-s16 PCM under the canonical analysis decoder.",
+    "An unbound encoder, decoder, transform, wrapper, channel treatment, sample rate, or recipe order would be used.",
+    "Benchmark source audio would be read under the current synthetic-only authority.",
+    "A feature, score, unopened label, external positive encoder, public verdict, or private path would be opened or emitted.",
+    "The work or output volume falls below the 15 GiB reserve."
+  ],
+  "authorized_next_step": "Commit this exact constructor and plan, then run two complete 13-case synthetic replays and commit only their path-free attestation if byte-identical. Do not decode a benchmark source until a successor plan correction explicitly authorizes the frozen smoke subset."
+}

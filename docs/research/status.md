@@ -203,4 +203,11 @@ all 12,885 lineages pass, and the selected external volume covers the
 31,917,486,459-byte retained ceiling plus workspace and reserve. The next gate
 is the exact constructor, synthetic checks, and a separately committed audio-
 generation authorization.
+That exact
+[`constructor`](construction-preregistration-20260802.md) is now frozen with
+synthetic-only authority. The same checkpointed engine contains future smoke
+and full paths, but both refuse to run until a committed successor plan binds
+the preceding evidence. Thirteen synthetic cases cover every encoder,
+history decoder, transform, and wrapper before any benchmark waveform may be
+decoded.
 No successor mechanism score or retained holdout has been opened.
