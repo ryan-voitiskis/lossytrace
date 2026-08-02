@@ -244,13 +244,19 @@ def encoder_registries(
         row = expanded.get(setting_id)
         if row is None:
             raise ValueError(f"assigned encoder setting is absent: {setting_id}")
-        tool_ids = row.get("binding_tool_ids") or [row.get("tool_id")]
-        tool_ids = [value for value in tool_ids if isinstance(value, str)]
-        if len(tool_ids) != 1 or tool_ids[0] not in tools:
+        tool_id = row.get("tool_id")
+        binding_tool_ids = row.get("binding_tool_ids") or [tool_id]
+        if (
+            not isinstance(tool_id, str)
+            or tool_id not in tools
+            or not isinstance(binding_tool_ids, list)
+            or tool_id not in binding_tool_ids
+            or any(value not in tools for value in binding_tool_ids)
+        ):
             raise ValueError(f"encoder setting tool binding differs: {setting_id}")
         encoder_id = row["encoder_id"]
-        previous = encoder_tools.setdefault(encoder_id, tool_ids[0])
-        if previous != tool_ids[0]:
+        previous = encoder_tools.setdefault(encoder_id, tool_id)
+        if previous != tool_id:
             raise ValueError(f"encoder maps to multiple tools: {encoder_id}")
         lineage = row["lineage_id"]
         previous_lineage = encoder_lineages.setdefault(encoder_id, lineage)

@@ -2,7 +2,16 @@
   "schema_version": 1,
   "plan_id": "lossytrace-v2-analysis-manifest-20260802-001",
   "state": "analysis_manifest_materialization_frozen_before_replay",
-  "upstream_checkpoint_commit": "72c2df2684213215efa47803c96d1c3bc94b61bb",
+  "upstream_checkpoint_commit": "f2da4a77bc24cf3518da652f68c563ba37af6e6f",
+  "correction_history": [
+    {
+      "supersedes_generator_sha256": "d8632a047e63cfbb0d44cee04b00af97694f60fefcb5437d6cda9094ec5eae91",
+      "reason": "The first invocation stopped before artifact access because the compositor required exactly one binding_tool_id per encoder setting. Apple AudioToolbox settings correctly bind both the FFmpeg command binary and the Apple verification tool. The correction selects the declared command tool_id as the encoder binary while requiring every binding_tool_id to remain present and hash-bound.",
+      "artifact_bytes_read_before_correction": 0,
+      "features_computed_before_correction": false,
+      "scores_opened_before_correction": false
+    }
+  ],
   "features_computed": false,
   "scores_opened": false,
   "public_verdict_enabled": false,
@@ -19,7 +28,7 @@
   "complete_replays_required": 2,
   "bindings": {
     "generator_path": "scripts/compose-audio-integrity-v2-analysis-manifest.py",
-    "generator_sha256": "d8632a047e63cfbb0d44cee04b00af97694f60fefcb5437d6cda9094ec5eae91",
+    "generator_sha256": "189d74e26bea42d894487085149130f602fcfe804c52c42ba66eff05c584b2ca",
     "contract_path": "benchmarks/audio-integrity-v2/factorial-contract.json",
     "contract_sha256": "f965046179818842fcd8f7669f6092f23423d83a426142705393dc4b304252e4",
     "factor_levels_path": "benchmarks/audio-integrity-v2/factor-levels.json",
