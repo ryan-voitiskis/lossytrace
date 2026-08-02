@@ -197,6 +197,16 @@ validate the development and encoder-transfer population freezes without
 decoding a waveform for analysis or computing a score. Encoder-transfer
 features and scores remain sealed; external transfer remains negative-only.
 
+The next score-opening boundary is now frozen in the
+[`development-baseline preregistration`](../../docs/research/development-baseline-preregistration-20260802.md)
+and machine-readable
+[`plan`](development-baseline-plan.json). It authorizes only mechanism
+development and fixes the exact Cannam rule, descriptive feature-version-0
+measurements, naive and masked Koops-style CRNN replications, duplicate-PCM
+collapse, wrapper invariance, six complete source-domain folds, paired
+aggregation, and public path-free outputs. It does not authorize encoder or
+external transfer, threshold search, candidate promotion, or a verdict.
+
 ## Evidence partitions
 
 `mechanism_development` is paired, source-grouped discovery evidence. It may

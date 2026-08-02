@@ -240,4 +240,11 @@ against the structural, mechanism-development, and encoder-transfer profiles.
 No waveform was decoded for analysis, no score was opened, and encoder and
 external transfer remain sealed. The next authority change is limited to a
 separately frozen mechanism-development baseline and feature plan.
+That
+[`development-baseline plan`](development-baseline-preregistration-20260802.md)
+is now prepared with exact tool and implementation bindings. It limits the
+first analysis pass to the fixed Cannam rule and feature-version-0
+measurements, followed by matched naive/masked CRNN source-domain folds. Exact
+decoded-PCM duplicates are one analysis unit, every represented wrapper is an
+invariance check, and no baseline can be promoted by this stage.
 No successor mechanism score or retained holdout has been opened.
