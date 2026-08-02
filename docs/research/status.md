@@ -34,3 +34,7 @@ sealed. See
 for the latest methodology, path-free result, evidence hashes, and stop
 decision. The broader independent-validation checkpoint remains documented in
 [`independent-validation-checkpoint-20260801.md`](independent-validation-checkpoint-20260801.md).
+
+The comparative review of published detectors, the retained exact-revision
+Cannam evaluation, and the recommended successor research program are in
+[`lossy-detector-comparison-and-next-direction-20260802.md`](lossy-detector-comparison-and-next-direction-20260802.md).
