@@ -121,3 +121,6 @@ A successful replay freezes source allocation only. Factor levels, exact
 toolchain bindings, and the fractional assignment require separate committed
 freezes before any v2 benchmark audio is generated or any mechanism score is
 opened.
+
+The completed replay and path-free hashes are recorded in the
+[`source-allocation result`](source-allocation-result-20260802.md).

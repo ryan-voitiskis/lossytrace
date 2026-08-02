@@ -84,6 +84,10 @@ five provider archives, reconciled all 328 annotation IDs, found 328 distinct
 PCM payloads, and retained the conservative 85-family boundary. Source
 identity is complete. The identity-only
 [`source-allocation procedure`](source-allocation-preregistration-20260802.md)
-is now preregistered but not yet applied; source allocation, factors, tool
-bindings, and fractional assignment remain separate freeze gates.
+was then applied twice. The private candidate index and exact 793-member
+allocation were byte-identical, the VCTK 28-per-gender cap held, and RWC found
+a complete 85-family matching with 85 distinct normalized titles. See the
+path-free [`source-allocation result`](source-allocation-result-20260802.md).
+Factor levels, tool bindings, and fractional assignment remain separate freeze
+gates.
 No successor mechanism score or retained holdout has been opened.

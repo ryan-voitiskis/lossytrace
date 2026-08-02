@@ -84,6 +84,51 @@ def fixture_candidate(
 
 
 class SourceAllocationTests(unittest.TestCase):
+    def test_committed_public_allocation_evidence(self) -> None:
+        repository_root = SCRIPT.parents[1]
+        rules_path = (
+            repository_root
+            / "benchmarks/audio-integrity-v2/source-allocation-rules.json"
+        )
+        evidence_path = (
+            repository_root
+            / "research/sources/evidence/source-allocation-observed-20260802.json"
+        )
+        rules = source_allocation.load_object(rules_path)
+        evidence = source_allocation.load_object(evidence_path)
+        self.assertEqual(evidence["state"], source_allocation.PUBLIC_STATE)
+        self.assertEqual(evidence["rules_id"], rules["rules_id"])
+        self.assertEqual(
+            evidence["rules_sha256"], source_allocation.sha256_file(rules_path)
+        )
+        self.assertFalse(evidence["audio_generated"])
+        self.assertFalse(evidence["scores_opened"])
+        self.assertFalse(evidence["existing_v1_holdouts_included"])
+        self.assertTrue(evidence["paths_redacted"])
+        self.assertTrue(
+            evidence["reproducibility"]["complete_replays_byte_identical"]
+        )
+        self.assertEqual(
+            evidence["candidate_summary"]["candidate_count"],
+            rules["expected"]["candidate_count"],
+        )
+        self.assertEqual(
+            evidence["selected_summary"]["selected_counts_by_partition"],
+            rules["expected"]["partition_counts"],
+        )
+        self.assertEqual(
+            evidence["selected_summary"]["selected_counts_by_source"],
+            rules["expected"]["source_counts"],
+        )
+        source_allocation.recursively_reject_keys(
+            evidence,
+            set(rules["privacy"]["public_aggregate_forbidden_keys"]),
+            "committed evidence",
+        )
+        source_allocation.recursively_reject_absolute_paths(
+            evidence, "committed evidence"
+        )
+
     def test_bound_vctk_evidence_exposes_audio_archive_binding(self) -> None:
         repository_root = SCRIPT.parents[1]
         evidence = source_allocation.load_object(
