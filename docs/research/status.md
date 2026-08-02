@@ -14,6 +14,7 @@ release-safe lossy-source verdict.
 | v32 + v33 | Rejected post-hoc diagnostic | Evidence that the families are complementary, not a releasable policy |
 | 2026-08-01 exact-hybrid A0–A4 | Rejected: every row had a source-domain false positive and only 14–23% supported MP3-128 recall | Reproducible exact replay and source-domain ablation harness |
 | 2026-08-02 codec projection R1–R2 | Rejected: both rows had a source-domain false positive and zero supported MP3-128 recall | Deterministic two-cycle oracle, grouped analyzer, and path-free negative result |
+| 2026-08-02 Cannam fixed-rule CNN | Rejected: 99.44% P1 recall but 67.53% negative-case false positives and alerts in 545/597 negative source groups | Exact-revision replay, duration audit, and path-free cross-domain failure atlas |
 
 The v32+v33 diagnostic reached strong observed development recall and zero
 supported-negative alerts, but failed eight SQAM AAC invariance groups. Those
@@ -47,6 +48,9 @@ and the machine-validated
 [`factorial benchmark v2 contract`](../../benchmarks/audio-integrity-v2/README.md).
 The first baseline audit amendment records that the historical pilot used full
 tracks while the retained cases are 30-second excerpts; its comparison stopped
-before P1 and the corrected same-input replay was byte-identical. No successor
-mechanism score or retained holdout has been opened. See
-[`baseline-failure-atlas-amendment-20260802-001.md`](baseline-failure-atlas-amendment-20260802-001.md).
+before P1 and the corrected same-input replay was byte-identical. The completed
+5,280-case P1 replay then rejected the fixed Cannam rule because 1,171/1,734
+negative cases and 545/597 negative source groups alerted. See the
+[`amendment`](baseline-failure-atlas-amendment-20260802-001.md) and
+[`path-free result`](cannam-fixed-rule-failure-atlas-result-20260802.md).
+No successor mechanism score or retained holdout has been opened.

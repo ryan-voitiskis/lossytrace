@@ -88,7 +88,7 @@ preregistration and persistent goal decide when a partition may be consumed.
 
 ## Planned construction order
 
-1. Audit the already-consumed v1 population and baseline failure atlas.
+1. Preserve the completed already-consumed v1 baseline failure atlas.
 2. Inventory encoder/decoder implementations and licences without generating
    audio.
 3. Freeze the v2 source collections, factor levels, and fractional assignment.
