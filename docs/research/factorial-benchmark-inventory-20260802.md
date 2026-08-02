@@ -125,7 +125,7 @@ collections:
 
 | Collection | Domains | Conservative partition basis/count | Provider evidence |
 | --- | --- | ---: | --- |
-| clean VCTK subset | studio speech | 56 speakers | Edinburgh documents clean 48 kHz WAV from 56 VCTK speakers; CC BY 4.0 |
+| clean VCTK subset | studio speech | 56 speakers after a preregistered provider-ID cap | [Acquired audit](vctk-source-identity-audit-20260802.md) finds 58 released IDs behind the 56-speaker label and binds 23,075 distinct-PCM 48 kHz WAVs; CC BY 4.0 |
 | RAVDESS audio-only | acted speech and song | 24 actors | Complete acquired factorial grid grouped across speech/song by actor; CC BY-NC-SA 4.0 |
 | FSDD v1.0.10 | home-recorded bandwidth-limited digit speech | 6 speakers | Complete acquired 6-speaker × 10-digit × 50-repetition grid, with a bound PCM-domain release path; CC BY-SA 4.0 |
 | TinySOL 6.0 | isolated acoustic instruments | 1 common collection after archive/metadata audit | [official record](https://zenodo.org/records/3685367), expressly distributed 44.1 kHz WAV, CC BY 4.0 |
@@ -150,6 +150,14 @@ microphone, and per-file session identities are absent. SONYC's
 [source-identity audit](sonyc-source-identity-audit-20260802.md) found 550
 canonical, distinct-PCM clips from 15 sensor IDs, with provider splits disjoint
 by sensor. The planning unit is the sensor, not the clip.
+
+VCTK is likewise archive-observed rather than copied from its title. Its
+[source-identity audit](vctk-source-identity-audit-20260802.md) reconciles
+23,075 audio, log, and transcript keys across 58 provider speaker IDs with
+29 speakers per gender. The nominal 56-group contribution is preserved by an
+outcome-blind 28-per-gender SHA-256 ranking rule that remains unapplied until
+source freeze. Every PCM digest is distinct, and the files retain one common
+VCTK normalization and trimming lineage.
 
 ### External transfer
 
@@ -212,12 +220,13 @@ add an entirely new provider collection; do not weaken grouping.
 
 ## Storage and acquisition boundary
 
-All proposed source archives now total 20,824,778,941 bytes (19.39 GiB). After
-the Lombard Grid, SONYC, SATP, RAVDESS, TinySOL, and 16,419,872-byte FSDD
-acquisitions, the data volume reported 36.10 GiB free. The remaining VCTK and
-RWC source archives total 18,189,508,204 bytes (16.94 GiB). Retaining a 15 GiB
-reserve would therefore leave about 4.15 GiB for compact references, derived
-cases, partials, and temporary intermediates.
+All proposed source archives still total 20,824,778,941 bytes (19.39 GiB).
+VCTK's 4,770,619,279-byte archive is now acquired and verified. The remaining
+five RWC source archives total 13,418,888,925 bytes (12.50 GiB). After VCTK
+transport cleanup, the data volume reported 33,496,936,448 bytes (31.20 GiB)
+free. Acquiring all five RWC archives would leave 20,078,047,523 bytes
+(18.70 GiB), or 3,971,920,163 bytes (3.70 GiB) above the fixed 15 GiB reserve
+for compact references, derived cases, and temporary intermediates.
 That is viable only if the stager:
 
 - streams selected members without full archive expansion;
@@ -228,19 +237,19 @@ That is viable only if the stager:
 - rechecks projected and actual free space before each archive and generation
   phase.
 
-The resumable SONYC, SATP, RAVDESS, TinySOL, and FSDD audit downloads were
+The resumable SONYC, SATP, RAVDESS, TinySOL, FSDD, and VCTK audit downloads were
 completed, passed their archive-integrity checks, and were independently bound
 by SHA-256 and their available provider identities. Lombard Grid, SONYC, SATP,
-RAVDESS, TinySOL, and FSDD are the six sources currently treated as acquired
-and identity-verified. Speech Commands has only a private partial and is a
-rejected source, not an acquisition in this total.
+RAVDESS, TinySOL, FSDD, and VCTK are the seven sources currently treated as
+acquired and identity-verified. Speech Commands has only a private partial and
+is a rejected source, not an acquisition in this total.
 
 ## Decision and next gate
 
 The tool and source proposal satisfies the v2 minima under its documented lower
 bounds, although the corrected transfer margins are narrow. The tool plumbing
-is verified but not frozen. The next checkpoint must verify VCTK and every RWC
-audio member. Only then may separate
+is verified but not frozen. VCTK is now verified, so the next checkpoint must
+verify every RWC audio member. Only then may separate
 source-allocation, factor-level, and toolchain freezes be committed.
 
 No factor setting, fractional assignment, audio derivative, mechanism score,

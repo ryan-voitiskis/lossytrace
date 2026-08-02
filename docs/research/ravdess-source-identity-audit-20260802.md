@@ -145,9 +145,11 @@ kept its conservative common-collection count at one. Speech Commands was
 subsequently
 [rejected from Tier A](speech-commands-provenance-rejection-20260802.md), and
 the audited six-group FSDD corpus replaced its clean transfer role. The
-remaining source gate is VCTK and RWC audio identity verification. Only after
-those archives are bound may source allocation, factor levels, and toolchain
-versions be frozen separately.
+VCTK source was subsequently
+[identity-verified](vctk-source-identity-audit-20260802.md). The remaining
+source gate is RWC audio identity verification. Only after those archives are
+bound may source allocation, factor levels, and toolchain versions be frozen
+separately.
 
 No benchmark derivative, mechanism score, candidate decision, or external
 transfer score was opened by this audit.

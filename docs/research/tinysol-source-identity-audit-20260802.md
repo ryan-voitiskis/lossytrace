@@ -160,9 +160,11 @@ references, partials, and derived cases. The acquisition order must remain one
 low-priority worker with streaming audits and a fresh free-space projection
 before each source.
 
-The remaining source gate is VCTK and RWC audio identity verification. Only
-after those archives are bound may source allocation, factor levels, and
-toolchain versions be frozen separately. See the
+VCTK was subsequently
+[identity-verified](vctk-source-identity-audit-20260802.md). The remaining
+source gate is RWC audio identity verification. Only after those archives are
+bound may source allocation, factor levels, and toolchain versions be frozen
+separately. See the
 [source-partition correction](source-partition-correction-20260802.md).
 
 No benchmark derivative, mechanism score, candidate decision, or transfer

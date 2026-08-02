@@ -53,6 +53,12 @@ This is still a narrow operating margin. Continue resumable acquisition,
 archive-streaming audits, one low-priority worker, and a fresh free-space
 projection before every source.
 
+VCTK was subsequently acquired and identity-verified at its existing
+56-group planning contribution. Its released bytes contain 58 provider speaker
+IDs, so an unapplied content-independent 28-per-gender cap preserves the
+pre-correction denominator. The only source archives still outstanding are the
+five RWC members, totaling 13,418,888,925 bytes (12.50 GiB).
+
 ## Validator hardening
 
 The inventory validator now:
@@ -72,7 +78,8 @@ byte-for-byte.
 
 ## Next gate
 
-Acquire and verify VCTK and every RWC audio member. Only after those checks may
-source allocation, factor levels, and toolchain versions be frozen in separate
-commits. No benchmark derivative, mechanism score, candidate decision, or
-external-transfer evidence was opened by this correction.
+Acquire and verify every RWC audio member; VCTK is now verified. Only after the
+RWC checks may source allocation, factor levels, and toolchain versions be
+frozen in separate commits. No benchmark derivative, mechanism score,
+candidate decision, or external-transfer evidence was opened by this
+correction.

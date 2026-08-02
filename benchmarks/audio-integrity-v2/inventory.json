@@ -339,22 +339,60 @@
     },
     {
       "source_id": "vctk_clean_56spk_2017",
-      "title": "Clean speech 48 kHz waveforms from 56 VCTK speakers",
+      "title": "Nominal 56-speaker clean VCTK derivative with 58 provider speaker IDs observed",
       "recommended_partition": "encoder_transfer",
       "source_domains": ["studio_speech"],
       "conservative_partition_groups": 56,
       "partition_basis": "speaker identity",
       "provenance_tier": "tier_a_confirmed_pcm",
-      "availability": "acquisition_required",
+      "availability": "acquired_and_identity_verified_not_allocated",
       "official_page_url": "https://datashare.ed.ac.uk/items/6ed35425-bf14-4d2b-93a1-0a4984952757/full",
+      "paper_url": "https://doi.org/10.21437/SSW.2016-24",
       "license": "CC BY 4.0",
       "artifact": {
         "filename": "clean_trainset_56spk_wav.zip",
         "url": "https://datashare.ed.ac.uk/server/api/core/bitstreams/386ac199-5d34-402f-8112-2a123577dd57/content",
         "bytes": 4770619279,
-        "provider_checksum": "md5:c351cbc9db30e41686c988c19f0e1475"
+        "provider_checksum": "md5:c351cbc9db30e41686c988c19f0e1475",
+        "provider_checksum_verified": true,
+        "local_sha256": "c7a5580c1d96b52886ca7ca080cc1a21ae3ee1cb8eae4903af6d4bb796f90441",
+        "provider_identity": {
+          "bitstream_uuid": "386ac199-5d34-402f-8112-2a123577dd57",
+          "etag": "\"c351cbc9db30e41686c988c19f0e1475\"",
+          "last_modified": "Mon, 21 Aug 2017 10:33:40 GMT",
+          "method": "dspace_bitstream_uuid_bytes_md5_strong_etag_last_modified"
+        }
       },
-      "caveat": "Use clean speech only; never treat noisy derivatives as independent masters."
+      "metadata_artifact": {
+        "filename": "logfiles.zip",
+        "url": "https://datashare.ed.ac.uk/server/api/core/bitstreams/11185dc8-9cf1-405b-b858-35bd6a04aedd/content",
+        "bytes": 115932,
+        "provider_checksum": "md5:0d16f5b6afe12d64238d1e4a0e6ff6e8",
+        "provider_checksum_verified": true,
+        "local_sha256": "ab37c41f31bc2b6c204cc10c8e5bb8bde800307fdb49f277e366d986fefc9e39",
+        "provider_identity": {
+          "bitstream_uuid": "11185dc8-9cf1-405b-b858-35bd6a04aedd",
+          "method": "dspace_bitstream_uuid_bytes_md5"
+        }
+      },
+      "readme_artifact": {
+        "filename": "vctk-readme.txt",
+        "url": "https://datashare.ed.ac.uk/server/api/core/bitstreams/b12d100d-e130-4e24-a07b-cb8b57e632fb/content",
+        "bytes": 2790,
+        "provider_checksum": "md5:6d59a65471c0e9ff108a41f8eb15e6bc",
+        "provider_checksum_verified": true,
+        "local_sha256": "f33acbe652f50e3c4d3afe02665a2cf3b08cb34257bec41e06dd911cda3ae8db"
+      },
+      "source_group_rules": {
+        "path": "benchmarks/audio-integrity-v2/vctk-source-group-rules.json",
+        "sha256": "862fa45181cb5118a60f4dbc45e70e18feb0c6bfa17f9445ec8bcc7728544c81"
+      },
+      "source_identity_evidence": {
+        "aggregate_path": "research/sources/evidence/vctk-clean-56spk-2017-observed-20260802.json",
+        "aggregate_sha256": "6ccfb8b6b3d81750226be33aa41143f3773d0236ed8120982c8cf427a038cac3"
+      },
+      "recording_chain": "The bound VCTK v0.80 README reports DPA 4035 recording at 96 kHz/24-bit in a hemi-anechoic chamber, conversion to 16-bit, downsampling to 48 kHz, and manual endpointing. The primary SSW paper further reports normalization and trimming of leading and trailing silence longer than 200 ms before noisy derivation.",
+      "caveat": "The provider labels this a 56-speaker archive and the paper specifies 28 female plus 28 male speakers, but the acquired audio, log, and transcripts expose the same 58 speaker IDs with 29 per gender. Preserve the 56-group denominator through the preregistered content-independent 28-per-gender hash cap at source freeze; it is not applied here. Use clean speech only, retain all normalization and trimming factors, and never treat noisy derivatives or utterances as independent masters."
     },
     {
       "source_id": "ravdess_audio_1_0_0",

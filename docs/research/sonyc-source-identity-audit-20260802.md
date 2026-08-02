@@ -119,9 +119,10 @@ bound its two audio-only archives at 24 actor groups. TinySOL was subsequently
 The later
 [source-partition correction](source-partition-correction-20260802.md) rejected
 Speech Commands from Tier A, moved RAVDESS to encoder transfer, and added six
-audited FSDD speaker groups. The remaining source gate is VCTK and RWC audio.
-Only after both are bound may source allocation, factor levels, and toolchain
-versions be frozen in separate records.
+audited FSDD speaker groups. VCTK was subsequently
+[identity-verified](vctk-source-identity-audit-20260802.md). The remaining
+source gate is RWC audio. Only after it is bound may source allocation, factor
+levels, and toolchain versions be frozen in separate records.
 
 No benchmark derivative, mechanism score, candidate decision, or external
 transfer evidence was opened by this audit.

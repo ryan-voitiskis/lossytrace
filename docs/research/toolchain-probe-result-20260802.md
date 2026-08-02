@@ -118,6 +118,7 @@ TinySOL remained at that point; TinySOL was subsequently
 The subsequent
 [source-partition correction](source-partition-correction-20260802.md) rejected
 Speech Commands from Tier A, moved RAVDESS to encoder transfer, and added six
-audited FSDD groups. RWC audio and VCTK remain. The corrected margins are only
-14 external-transfer groups and two encoder-transfer groups; do not spend them
-by weakening grouping.
+audited FSDD groups. VCTK was subsequently
+[identity-verified](vctk-source-identity-audit-20260802.md), so only RWC audio
+remains. The corrected margins are only 14 external-transfer groups and two
+encoder-transfer groups; do not spend them by weakening grouping.

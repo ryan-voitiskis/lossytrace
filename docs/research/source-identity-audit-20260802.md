@@ -144,7 +144,8 @@ count from 99 strings to 85 artist families. The later SATP coordinate audit
 reduced its 27 recordings to 25 groups. The later correction rejected Speech
 Commands from Tier A and moved RAVDESS to encoder transfer; external transfer
 now has 164 groups, a 14-group margin. The next source gate is not more corpus
-shopping: it is to verify exact identities for RWC audio and VCTK.
+shopping: VCTK is now identity-verified, and the remaining gate is exact RWC
+audio identity.
 RAVDESS was subsequently
 [bound at 24 actor groups](ravdess-source-identity-audit-20260802.md), then
 moved to encoder transfer by the correction. TinySOL was
