@@ -7,6 +7,11 @@ State: corrected exact recipe frozen after factor correction commit
 replay, benchmark audio, source assignment, mechanism feature, score, or
 unopened label inspected
 
+Superseded after its first complete replay: recipe `003` double-counted
+lossless-wrapper rewriting in its expected ordinary-transform total. The
+commands and algorithms were unchanged in
+[`toolchain correction 003`](toolchain-factor-correction-20260802-003.md).
+
 ## Binding
 
 This record supersedes toolchain recipe `002` after the independently committed

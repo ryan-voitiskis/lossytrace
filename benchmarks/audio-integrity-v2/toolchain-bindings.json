@@ -2448,7 +2448,7 @@
     "encoder_runs_per_setting_within_replay": 2,
     "expected_expanded_setting_count": 46,
     "expected_history_decoder_path_count": 126,
-    "expected_transform_input_path_count": 40,
+    "expected_transform_input_path_count": 36,
     "expected_wrapper_analysis_decode_path_count": 12,
     "expected_wrapper_encode_path_count": 12,
     "maximum_parallel_workers": 1,
@@ -2652,7 +2652,7 @@
       "version": "opus-tools 0.2_2; libopus 1.6.1; opusfile 0.12_1"
     }
   ],
-  "toolchain_freeze_id": "lossytrace-v2-toolchain-bindings-20260802-003",
+  "toolchain_freeze_id": "lossytrace-v2-toolchain-bindings-20260802-004",
   "wrapper_bindings": [
     {
       "command": [

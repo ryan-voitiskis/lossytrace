@@ -123,6 +123,12 @@ class ToolchainFreezeTest(unittest.TestCase):
         self.assertFalse(self.manifest["scores_opened"])
         self.assertFalse(self.manifest["selection_authorized"])
 
+    def test_wrapper_rewrite_is_not_double_counted_as_an_ordinary_transform(self) -> None:
+        replay = self.manifest["replay_contract"]
+        self.assertEqual(36, replay["expected_transform_input_path_count"])
+        self.assertEqual(12, replay["expected_wrapper_encode_path_count"])
+        self.assertEqual(12, replay["expected_wrapper_analysis_decode_path_count"])
+
 
 if __name__ == "__main__":
     unittest.main()

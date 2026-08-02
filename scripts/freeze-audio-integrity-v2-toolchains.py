@@ -35,8 +35,8 @@ BASE_SPEC.loader.exec_module(BASE)
 
 
 SCHEMA_VERSION = 1
-FREEZE_ID = "lossytrace-v2-toolchain-bindings-20260802-003"
-PROBE_ID = "lossytrace-v2-factor-toolchain-probe-20260802-003"
+FREEZE_ID = "lossytrace-v2-toolchain-bindings-20260802-004"
+PROBE_ID = "lossytrace-v2-factor-toolchain-probe-20260802-004"
 EXPECTED_FACTOR_ID = "lossytrace-v2-factor-levels-20260802-002"
 EXPECTED_FACTOR_COMMIT = "cb2f75434c8918089ac8f861c087758c5d2260bd"
 EXPECTED_PRIOR_EVIDENCE_SHA256 = (
@@ -703,7 +703,7 @@ def build_manifest(
             "transform_runs_per_input_within_replay": 2,
             "expected_expanded_setting_count": 46,
             "expected_history_decoder_path_count": 126,
-            "expected_transform_input_path_count": 40,
+            "expected_transform_input_path_count": 36,
             "expected_wrapper_encode_path_count": 12,
             "expected_wrapper_analysis_decode_path_count": 12,
             "maximum_parallel_workers": 1,
@@ -806,6 +806,13 @@ def validate_manifest(manifest: dict[str, Any], factor: dict[str, Any]) -> None:
         raise ValueError("wrapper bindings differ")
     for row in wrappers:
         validate_public_command(row.get("command"), row["tool_id"])
+    replay = manifest.get("replay_contract", {})
+    if (
+        replay.get("expected_transform_input_path_count") != 36
+        or replay.get("expected_wrapper_encode_path_count") != 12
+        or replay.get("expected_wrapper_analysis_decode_path_count") != 12
+    ):
+        raise ValueError("transform or wrapper replay counts differ")
 
     decoder_path_count = sum(
         1
@@ -1322,6 +1329,10 @@ def run_probe(
             manifest, tool_paths, work
         )
         wrappers = run_wrapper_golden_probes(manifest, tool_paths, work)
+        if len(transform_inputs) != 4 or len(transforms) != 36:
+            raise ValueError("ordinary transform path count differs")
+        if len(wrappers) != 12:
+            raise ValueError("wrapper path count differs")
 
     report = {
         "schema_version": SCHEMA_VERSION,
