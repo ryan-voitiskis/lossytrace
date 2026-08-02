@@ -45,4 +45,8 @@ the
 [`baseline failure-atlas preregistration`](baseline-failure-atlas-preregistration-20260802.md),
 and the machine-validated
 [`factorial benchmark v2 contract`](../../benchmarks/audio-integrity-v2/README.md).
-No successor mechanism score or retained holdout has been opened.
+The first baseline audit amendment records that the historical pilot used full
+tracks while the retained cases are 30-second excerpts; its comparison stopped
+before P1 and the corrected same-input replay was byte-identical. No successor
+mechanism score or retained holdout has been opened. See
+[`baseline-failure-atlas-amendment-20260802-001.md`](baseline-failure-atlas-amendment-20260802-001.md).

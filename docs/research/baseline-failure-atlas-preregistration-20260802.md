@@ -9,6 +9,11 @@ candidate
 **Holdout state:** future SQAM codec-only scores unopened; release labels
 unopened; no new external-transfer evidence acquired
 
+**Amendment:**
+[`baseline-failure-atlas-amendment-20260802-001.md`](baseline-failure-atlas-amendment-20260802-001.md)
+supersedes only the retained-pilot environment-regression interpretation after
+the compact inputs proved to be 30-second excerpts rather than full tracks.
+
 ## Questions
 
 1. How does the exact published Cannam detector behave across all 5,280

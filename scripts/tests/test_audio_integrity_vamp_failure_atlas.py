@@ -105,6 +105,10 @@ class VampFailureAtlasTests(unittest.TestCase):
         self.assertEqual(p2["inventory"]["case_count"], 3)
         self.assertEqual(p2["inventory"]["controlled_positive_case_count"], 1)
         self.assertEqual(p2["case_level"]["recall"]["rate"], 1.0)
+        self.assertEqual(p1["window_count"]["median"], 10.0)
+        self.assertEqual(
+            p1["by_window_count_band"]["10_to_29_windows"]["case_count"], 4
+        )
 
     def test_class_slice_preserves_hard_negative_failure(self):
         report = self.analyze()

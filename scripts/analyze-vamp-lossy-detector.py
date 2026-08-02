@@ -140,6 +140,29 @@ def score_summary(rows: list[dict]) -> dict:
     }
 
 
+def window_count_band(window_count: int) -> str:
+    if window_count < 10:
+        return "lt_10_windows"
+    if window_count < 30:
+        return "10_to_29_windows"
+    if window_count < 60:
+        return "30_to_59_windows"
+    if window_count < 120:
+        return "60_to_119_windows"
+    return "ge_120_windows"
+
+
+def window_count_summary(rows: list[dict]) -> dict:
+    values = [row["window_count"] for row in rows]
+    return {
+        "count": len(values),
+        "minimum": min(values) if values else None,
+        "median": statistics.median(values) if values else None,
+        "p95": quantile([float(value) for value in values], 0.95),
+        "maximum": max(values) if values else None,
+    }
+
+
 def mp3_128_positive(row: dict) -> bool:
     class_name = row.get("class")
     return (
@@ -353,6 +376,8 @@ def population_summary(rows: list[dict]) -> dict:
             )
             for expectation in ("negative", "controlled_positive")
         },
+        "window_count": window_count_summary(rows),
+        "by_window_count_band": slices(rows, "window_count_band"),
         "by_source_domain": slices(rows, "source_domain"),
         "by_class": slices(rows, "class"),
         "calibration_diagnostic": calibration_diagnostic(rows),
@@ -457,6 +482,8 @@ def validate_and_join(
                 "class": case["class"],
                 "expectation": case["expectation"],
                 "provenance_tier": case["provenance_tier"],
+                "window_count": window_count,
+                "window_count_band": window_count_band(window_count),
                 "score": float(score),
                 "predicted": predicted,
             }

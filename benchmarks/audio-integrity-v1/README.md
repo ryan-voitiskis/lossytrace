@@ -80,9 +80,8 @@ Build revision `7a70bd8d15e68b0b1942a9d3deac6ad4d8293b8b` outside the repository
 bind the plugin and host binaries by hash, and run the complete already-consumed
 manifest with one low-priority worker:
 
-First select the 104 retained wrapper-equivalent case IDs from the historical
-112-case report, score them with the same runner, and require zero fixed-
-decision mismatches:
+First select the 104 retained case IDs from the historical 112-case report and
+score them with the same runner:
 
 ```bash
 python3 scripts/verify-vamp-lossy-detector-pilot-replay.py compose \
@@ -102,8 +101,12 @@ python3 scripts/verify-vamp-lossy-detector-pilot-replay.py compare \
 
 The selector fails unless the overlap is exactly 104 cases and the eight
 unretained cases are the historical private-source sharp-low-pass class. The
-comparison is an environment regression, not independent evidence and not an
-exact input-file replay.
+initial comparison stopped because the retained files are 30-second excerpts,
+not full-track wrapper equivalents. See
+[`baseline-failure-atlas-amendment-20260802-001.md`](../../docs/research/baseline-failure-atlas-amendment-20260802-001.md).
+The corrected environment gate replays the retained inputs from bound partials
+and requires byte-identical output. The historical comparison is retained as
+duration-sensitivity evidence, not independent evidence.
 
 Then run P1:
 
