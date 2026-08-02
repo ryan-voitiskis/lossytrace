@@ -170,6 +170,9 @@ That correction is now frozen as fractional-assignment recipe `004` in
 It derives eligibility for every group-transform pair from the already-bound
 header evidence, then applies the unchanged recipe-`003` purpose-separated
 ranking within eligible groups. Raw frame counts and sample rates cannot enter
-the ranking or assignment output. Two complete recipe-`004` replays are still
-required before construction.
+the ranking or assignment output. The
+[`recipe-004 result`](fractional-assignment-result-20260802-004.md) now records
+two byte-identical assignments: 793 groups, 12,885 cells, 6,356 positives, and
+6,529 references, with all quotas passing. A successor header-only feasibility
+audit must be frozen and pass twice before construction.
 No successor mechanism score or retained holdout has been opened.

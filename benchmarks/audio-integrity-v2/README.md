@@ -40,8 +40,10 @@ Read these before constructing a manifest:
 - [rejected recipe-001 aggregate](../../research/sources/evidence/fractional-assignment-observed-20260802.json)
 - [rejected recipe-002 result](../../docs/research/fractional-assignment-result-20260802-002.md)
 - [rejected recipe-002 aggregate](../../research/sources/evidence/fractional-assignment-observed-20260802-002.json)
-- [`fractional-assignment-result-20260802-003.md`](../../docs/research/fractional-assignment-result-20260802-003.md)
-- [`fractional-assignment-observed-20260802-003.json`](../../research/sources/evidence/fractional-assignment-observed-20260802-003.json)
+- [superseded-for-construction recipe-003 result](../../docs/research/fractional-assignment-result-20260802-003.md)
+- [superseded-for-construction recipe-003 aggregate](../../research/sources/evidence/fractional-assignment-observed-20260802-003.json)
+- [`fractional-assignment-result-20260802-004.md`](../../docs/research/fractional-assignment-result-20260802-004.md)
+- [`fractional-assignment-observed-20260802-004.json`](../../research/sources/evidence/fractional-assignment-observed-20260802-004.json)
 - [`construction-feasibility-plan.json`](construction-feasibility-plan.json)
 - [`construction-feasibility-preregistration-20260802.md`](../../docs/research/construction-feasibility-preregistration-20260802.md)
 - [`construction-feasibility-correction-20260802-001.md`](../../docs/research/construction-feasibility-correction-20260802-001.md)
@@ -110,7 +112,8 @@ their identity recipe source. The separately frozen
 adds that relation before audio or scores; recipe `003` requires two fresh
 replays. Those
 [`recipe-003 replays`](../../docs/research/fractional-assignment-result-20260802-003.md)
-are byte-identical and freeze 12,884 sample-rate-aware, lineage-complete cells.
+are byte-identical and freeze 12,884 sample-rate-aware, lineage-complete cells,
+but are superseded for construction by recipe `004` after the header audit.
 The next separately preregistered gate is a two-replay, header-only
 [`construction-feasibility audit`](../../docs/research/construction-feasibility-preregistration-20260802.md).
 It may expose duration and channel support but cannot inspect waveform samples,
@@ -126,7 +129,9 @@ two complete replays. Those replays are byte-identical, but the
 finds 11 assigned groups below a frozen transform minimum. Construction stays
 stopped. Fractional-assignment recipe `004` is now frozen to apply those
 minimums only as per-transform eligibility predicates before the unchanged
-recipe-`003` ranking; it must pass two complete replays before construction.
+recipe-`003` ranking. Its two complete replays are byte-identical and freeze
+12,885 cells; construction still requires a separately frozen repeat of the
+header gate.
 
 ## Evidence partitions
 
