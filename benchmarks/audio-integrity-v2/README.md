@@ -33,6 +33,8 @@ Read these before constructing a manifest:
 - [`public-decoder-equivalence-result-20260802.md`](../../docs/research/public-decoder-equivalence-result-20260802.md)
 - [`fractional-assignment-rules.json`](fractional-assignment-rules.json)
 - [`fractional-assignment-preregistration-20260802.md`](../../docs/research/fractional-assignment-preregistration-20260802.md)
+- [`fractional-assignment-result-20260802.md`](../../docs/research/fractional-assignment-result-20260802.md)
+- [`fractional-assignment-observed-20260802.json`](../../research/sources/evidence/fractional-assignment-observed-20260802.json)
 - [`rwc-source-identity-audit-20260802.md`](../../docs/research/rwc-source-identity-audit-20260802.md)
 
 The pre-freeze source/tool inventory and its remaining gates are described
@@ -80,10 +82,13 @@ The two required replays are byte-identical, and all 12 paths have exact public
 wrapper projections; see the
 [`public-decoder result`](../../docs/research/public-decoder-equivalence-result-20260802.md).
 This completes toolchain binding, not detector validation.
-The next source-blind
+The source-blind
 [`fractional-assignment rules`](../../docs/research/fractional-assignment-preregistration-20260802.md)
-are now frozen before private execution. They use only sealed identity and
-categorical source metadata; waveform properties and scores are forbidden.
+were frozen before private execution. The
+[`two-replay result`](../../docs/research/fractional-assignment-result-20260802.md)
+is byte-identical and covers all 793 source groups in 11,103 matched or
+negative cells. It used only sealed identity and categorical source metadata;
+waveform properties and scores remained forbidden.
 
 ## Evidence partitions
 
@@ -186,7 +191,7 @@ preregistration and persistent goal decide when a partition may be consumed.
 3. Preserve the completed source-identity audits, external-transfer margin,
    replayed source allocation, factor-level freeze, and exact-toolchain
    preregistration, replayed toolchain, and public-decoder equivalence, then
-   freeze the fractional assignment as a separate record.
+   preserve the separately frozen and replayed fractional assignment.
 4. Generate paired mechanism-development cases with one low-priority worker,
    hashes, resumable recipes, and a free-space reserve.
 5. Freeze encoder-transfer and external-transfer identities before mechanism
