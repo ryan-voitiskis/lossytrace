@@ -2,7 +2,7 @@
   "schema_version": 1,
   "plan_id": "lossytrace-v2-analysis-manifest-20260802-001",
   "state": "analysis_manifest_materialization_frozen_before_replay",
-  "upstream_checkpoint_commit": "b0b08d1f57b2ea700316a3123cff8b66391d0267",
+  "upstream_checkpoint_commit": "4548355d15d61347d6b378399d95c48c8e8e4fa2",
   "correction_history": [
     {
       "supersedes_generator_sha256": "d8632a047e63cfbb0d44cee04b00af97694f60fefcb5437d6cda9094ec5eae91",
@@ -16,6 +16,15 @@
       "reason": "The first invocation under correction 001 hashed two retained artifacts, then stopped because negative assignment cells inherit the global canonical analysis decoder and do not repeat analysis_decoder_id. The correction materializes the globally bound decoder for every case and rejects only an explicit conflicting per-cell value.",
       "artifact_count_rehashed_before_correction": 2,
       "artifact_bytes_rehashed_before_correction": 2210488,
+      "features_computed_before_correction": false,
+      "scores_opened_before_correction": false
+    },
+    {
+      "supersedes_generator_sha256": "e43564f514e52d3fbea9016f228035082e7cd8f006d4e06bb01d4c5cbab3f457",
+      "supersedes_manifest_validator_sha256": "eb9db33c5f886c1c5e87cd6ce2da27121caa04a89300879c5c0a45372e215889",
+      "reason": "The first invocation under correction 002 rehashed all retained artifacts, then stopped before writing output because the manifest validator omitted the frozen implementation_fixed_or_default lowpass level used by 12 settings. The correction admits that already-frozen factor value and hash-binds the validator itself.",
+      "artifact_count_rehashed_before_correction": 12885,
+      "artifact_bytes_rehashed_before_correction": 13679285412,
       "features_computed_before_correction": false,
       "scores_opened_before_correction": false
     }
@@ -36,7 +45,9 @@
   "complete_replays_required": 2,
   "bindings": {
     "generator_path": "scripts/compose-audio-integrity-v2-analysis-manifest.py",
-    "generator_sha256": "e43564f514e52d3fbea9016f228035082e7cd8f006d4e06bb01d4c5cbab3f457",
+    "generator_sha256": "8c3134f5a5abc3cd50be227c6828cf3edc6f395cda6effe91fdb85b47193963c",
+    "manifest_validator_path": "scripts/validate-audio-integrity-factorial-manifest.py",
+    "manifest_validator_sha256": "28b2d91814a8943057a089b0ff3b2ebe3ba170a96f463e8ff425a810006a50a3",
     "contract_path": "benchmarks/audio-integrity-v2/factorial-contract.json",
     "contract_sha256": "f965046179818842fcd8f7669f6092f23423d83a426142705393dc4b304252e4",
     "factor_levels_path": "benchmarks/audio-integrity-v2/factor-levels.json",

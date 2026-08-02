@@ -159,6 +159,7 @@ def validate_plan(plan: dict[str, Any], paths: dict[str, Path]) -> None:
     bindings = plan.get("bindings", {})
     for path_key, binding_key, label in (
         ("generator", "generator_sha256", "manifest generator"),
+        ("validator", "manifest_validator_sha256", "manifest validator"),
         ("contract", "contract_sha256", "factorial contract"),
         ("factor", "factor_levels_sha256", "factor levels"),
         ("toolchain", "toolchain_manifest_sha256", "toolchain manifest"),
@@ -620,6 +621,7 @@ def compose(paths: dict[str, Path]) -> tuple[dict[str, Any], dict[str, Any]]:
     validate_plan(plan, paths)
     inputs = {
         "analysis_manifest_plan_sha256": sha256_file(paths["plan"]),
+        "manifest_validator_sha256": sha256_file(paths["validator"]),
         "contract_sha256": sha256_file(paths["contract"]),
         "factor_levels_sha256": sha256_file(paths["factor"]),
         "toolchain_sha256": sha256_file(paths["toolchain"]),
@@ -823,6 +825,7 @@ def main() -> int:
         for name in names
     }
     paths["generator"] = Path(__file__).resolve()
+    paths["validator"] = VALIDATOR_PATH
     manifest, observations = compose(paths)
     validations = validate_materialized(
         load_object(paths["contract"]), manifest, manifest["inputs"]

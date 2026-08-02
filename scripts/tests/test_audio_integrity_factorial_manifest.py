@@ -120,6 +120,24 @@ class FactorialManifestTests(unittest.TestCase):
         errors, _ = self.validate(manifest)
         self.assertTrue(any("ineligible current codec" in error for error in errors))
 
+    def test_implementation_defined_lowpass_is_a_valid_frozen_factor(self):
+        manifest = copy.deepcopy(self.manifest)
+        manifest["encoder_settings"][0]["encoder_lowpass"] = {
+            "mode": "implementation_fixed_or_default",
+            "hz": None,
+        }
+        errors, _ = self.validate(manifest)
+        self.assertEqual([], errors)
+
+    def test_undeclared_lowpass_mode_is_rejected(self):
+        manifest = copy.deepcopy(self.manifest)
+        manifest["encoder_settings"][0]["encoder_lowpass"] = {
+            "mode": "implementation_magic",
+            "hz": None,
+        }
+        errors, _ = self.validate(manifest)
+        self.assertTrue(any("invalid lowpass" in error for error in errors), errors)
+
     def test_freeze_profile_enforces_sample_and_factor_coverage(self):
         errors, _ = self.validate(profile="mechanism_development_freeze")
         self.assertTrue(

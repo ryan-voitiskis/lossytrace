@@ -264,6 +264,7 @@ def validate(
             "disabled",
             "encoder_default",
             "fixed",
+            "implementation_fixed_or_default",
             "unknown",
         }:
             errors.append(f"encoder setting {setting_id} has invalid lowpass")

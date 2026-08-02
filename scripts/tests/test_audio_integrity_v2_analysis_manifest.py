@@ -25,7 +25,7 @@ class AudioIntegrityV2AnalysisManifestTest(unittest.TestCase):
         self.assertFalse(PLAN["scores_opened"])
         self.assertFalse(PLAN["public_verdict_enabled"])
         self.assertEqual(2, PLAN["complete_replays_required"])
-        self.assertEqual(2, len(PLAN["correction_history"]))
+        self.assertEqual(3, len(PLAN["correction_history"]))
         self.assertEqual(
             0, PLAN["correction_history"][0]["artifact_bytes_read_before_correction"]
         )
@@ -37,6 +37,16 @@ class AudioIntegrityV2AnalysisManifestTest(unittest.TestCase):
         )
         self.assertEqual(
             MODULE.sha256_file(SCRIPT), PLAN["bindings"]["generator_sha256"]
+        )
+        self.assertEqual(
+            MODULE.sha256_file(MODULE.VALIDATOR_PATH),
+            PLAN["bindings"]["manifest_validator_sha256"],
+        )
+        self.assertEqual(
+            12885,
+            PLAN["correction_history"][2][
+                "artifact_count_rehashed_before_correction"
+            ],
         )
 
     def test_private_identifiers_are_recipe_addressed(self) -> None:
