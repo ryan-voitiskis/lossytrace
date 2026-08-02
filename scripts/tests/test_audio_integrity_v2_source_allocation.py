@@ -84,6 +84,15 @@ def fixture_candidate(
 
 
 class SourceAllocationTests(unittest.TestCase):
+    def test_bound_vctk_evidence_exposes_audio_archive_binding(self) -> None:
+        repository_root = SCRIPT.parents[1]
+        evidence = source_allocation.load_object(
+            repository_root
+            / "research/sources/evidence/vctk-clean-56spk-2017-observed-20260802.json"
+        )
+        binding = evidence.get("archive_bindings", {}).get("audio", {})
+        self.assertRegex(str(binding.get("local_sha256")), r"^[0-9a-f]{64}$")
+
     def test_canonical_json_is_byte_stable(self) -> None:
         left = source_allocation.canonical_json_bytes({"b": 2, "a": 1})
         right = source_allocation.canonical_json_bytes({"a": 1, "b": 2})

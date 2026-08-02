@@ -371,9 +371,16 @@ def build_vctk_candidates(
     base = source_root / "vctk-clean-56spk-2017"
     audio_path = base / "clean_trainset_56spk_wav.zip"
     speaker_path = base / "vctk-speaker-info.txt"
+    archive_bindings = evidence.get("archive_bindings")
+    if not isinstance(archive_bindings, dict) or not isinstance(
+        archive_bindings.get("audio"), dict
+    ):
+        raise ValueError("VCTK audited audio binding is absent")
     artifacts = {
         "vctk_clean_audio": verify_artifact(
-            audio_path, evidence["archive_binding"]["local_sha256"], "vctk_clean_audio"
+            audio_path,
+            archive_bindings["audio"]["local_sha256"],
+            "vctk_clean_audio",
         ),
         "vctk_speaker_info": verify_artifact(
             speaker_path,
