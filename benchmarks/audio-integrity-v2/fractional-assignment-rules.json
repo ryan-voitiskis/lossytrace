@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "assignment_rules_id": "lossytrace-v2-fractional-assignment-20260802-001",
+  "state": "fractional_assignment_rules_frozen_before_private_assignment",
+  "upstream_checkpoint_commit": "9cc87b10dc5551a9d5da2dc844d5289a11106084",
+  "generator_binding": {
+    "path": "scripts/freeze-audio-integrity-v2-fractional-assignment.py",
+    "sha256": "80088fb1e2c503d16c3ea26c0a152f5a737e5ee808bb4a9ba5205539097ac1ca"
+  },
+  "source_allocation_binding": {
+    "private_source_allocation_sha256": "e4b7d2ab42253e00ce0e0b95c8049193f9b6178ecbb6212811fde96d58c088d4",
+    "selected_group_count": 793
+  },
+  "factor_binding": {
+    "path": "benchmarks/audio-integrity-v2/factor-levels.json",
+    "sha256": "4065553ef4fbe505ea0d79b149570bc1483396dbcc1de52597890e61f59481bd",
+    "factor_freeze_id": "lossytrace-v2-factor-levels-20260802-002"
+  },
+  "toolchain_binding": {
+    "manifest_path": "benchmarks/audio-integrity-v2/toolchain-bindings.json",
+    "manifest_sha256": "d2af2f0b78b184189806d724c294d7606f37d2763839e17c9289f7957da52070",
+    "toolchain_result_path": "research/toolchains/evidence/factorial-v2-toolchain-observed-20260802-001-aggregate.json",
+    "toolchain_result_sha256": "29ddfe00bb419aedcbdee8de530785f5981de279f2bd190f4a337ebbe8c3cc23",
+    "public_decoder_result_path": "research/toolchains/evidence/public-decoder-equivalence-observed-20260802-001-aggregate.json",
+    "public_decoder_result_sha256": "e18ebce9101a59321fe7fcf509222b78d2218476653a091396e596de72520683"
+  },
+  "public_state": {
+    "evidence_schema_version": 1,
+    "feature_version": 0,
+    "public_verdict_enabled": false
+  },
+  "audio_generated": false,
+  "waveform_content_inspected": false,
+  "signal_statistics_used": false,
+  "scores_opened": false,
+  "selection_authorized": false,
+  "fractional_assignment_generated": false,
+  "allowed_private_source_fields": [
+    "group_id",
+    "evidence_partition",
+    "source_collection_id",
+    "source_domain",
+    "provenance_tier"
+  ],
+  "forbidden_assignment_inputs": [
+    "locator",
+    "member_id",
+    "input_artifact_id",
+    "audio bytes",
+    "audio hashes",
+    "duration",
+    "active audio fraction",
+    "peak level",
+    "bandwidth estimate",
+    "clipping",
+    "codec output",
+    "mechanism feature",
+    "candidate score",
+    "unopened label"
+  ],
+  "deterministic_ranking": {
+    "hash": "SHA-256",
+    "prefix": "lossytrace-v2-fractional-assignment-20260802\u0000",
+    "serialization": "UTF-8(prefix || purpose || NUL || evidence_partition || NUL || source_domain || NUL || group_id)",
+    "tie_break": "UTF-8 group_id ascending",
+    "domain_balanced_selection": "Order domains by SHA-256(prefix || purpose || NUL || partition || NUL || domain), order groups within each domain by the group ranking, then take one from each nonempty domain in repeated rounds until the exact quota is reached.",
+    "categorical_cycle": "For a selected ordered group list, choose channel, compatible decoder, and wrapper by a purpose-separated hash offset followed by index modulo the eligible level count."
+  },
+  "partitions": {
+    "mechanism_development": {
+      "source_group_count": 527,
+      "anchor_positive_per_source_group_per_codec": true,
+      "nonanchor_source_groups_per_setting_template": 120,
+      "nonidentity_transform_source_groups": 40,
+      "nonidentity_transform_positive_codecs": ["mp3", "aac_lc", "opus", "vorbis"],
+      "external_positive_reserve": 0
+    },
+    "encoder_transfer": {
+      "source_group_count": 102,
+      "anchor_positive_per_source_group_per_codec": true,
+      "nonanchor_source_groups_per_setting_template": 60,
+      "nonidentity_transform_source_groups": 20,
+      "nonidentity_transform_positive_codecs": ["mp3", "aac_lc", "opus", "vorbis"],
+      "channel_claim_exclusions": [
+        {
+          "codec_family": "vorbis",
+          "channel_treatment_id": "mono",
+          "encoder_lineage": "ffmpeg_native_vorbis"
+        }
+      ],
+      "external_positive_reserve": 0
+    },
+    "external_transfer": {
+      "source_group_count": 164,
+      "anchor_positive_per_source_group_per_codec": false,
+      "nonanchor_source_groups_per_setting_template": 0,
+      "nonidentity_transform_source_groups": 20,
+      "nonidentity_transform_positive_codecs": [],
+      "external_positive_reserve": 100,
+      "external_encoder_setting_deferred": true,
+      "scores_remain_sealed": true
+    }
+  },
+  "cell_rules": {
+    "base_reference": "Every source group receives at least one identity PCM-reference cell. Development and encoder-transfer groups additionally receive every distinct reference cell required to match their assigned positives exactly on channel treatment, PCM transform, and wrapper.",
+    "anchor_positive": "Every development and encoder-transfer source group receives exactly one anchor positive per codec family. Channel, decoder, and wrapper use deterministic categorical cycles over levels applicable to that setting.",
+    "nonanchor_positive": "Each nonanchor template receives its exact partition quota via domain-balanced selection. Applicable channels are balanced by cycle; the FFmpeg-native Vorbis transfer templates remain stereo-only.",
+    "transform_negative": "Each nonidentity transform receives its exact per-partition source-group quota via a separate domain-balanced selection. External transfer receives these negative assignments while remaining sealed.",
+    "transform_positive": "For every selected nonidentity transform group in development and encoder transfer, assign one anchor positive per scoped codec and materialize or reference the exact matched transformed PCM negative.",
+    "history_decoder": "Choose only decoders compatible with the codec, cycling independently by setting and role. Every compatible decoder must cover at least two setting templates per codec and the frozen minimum source-group count.",
+    "wrapper": "Cycle FLAC, WAV, and AIFF independently of expectation. A matched H0/H1 pair always shares one wrapper. The lossless-wrapper-rewrite transform cycles only WAV and AIFF so it remains distinct from the primary FLAC representation.",
+    "one_transform": "Every cell has exactly one transform_id. Identity and each nonidentity level are mutually exclusive.",
+    "reference_reuse": "Reference cells with identical group, channel, transform, and wrapper factors are deduplicated and may match multiple positives.",
+    "external_reserve": "Select exactly 100 external groups by domain-balanced identity-only ranking and record future-positive channel and wrapper slots without codec, encoder, decoder, or score. No external positive case exists until a survivor and new encoder lineage are separately frozen."
+  },
+  "coverage_checks": {
+    "all_anchor_groups_per_codec": true,
+    "all_nonanchor_templates_at_exact_quota": true,
+    "minimum_setting_domains": {
+      "mechanism_development": 5,
+      "encoder_transfer": 4
+    },
+    "minimum_channel_groups_per_codec": {
+      "mechanism_development": 60,
+      "encoder_transfer": 30
+    },
+    "minimum_channel_groups_per_template": {
+      "mechanism_development": 30,
+      "encoder_transfer": 15
+    },
+    "minimum_groups_per_nonidentity_transform": {
+      "mechanism_development": 40,
+      "encoder_transfer": 20,
+      "external_transfer": 20
+    },
+    "minimum_groups_per_compatible_decoder": {
+      "mechanism_development": 40,
+      "encoder_transfer": 30
+    },
+    "minimum_templates_per_compatible_decoder_codec": 2,
+    "matched_reference_required_for_every_positive": true,
+    "all_wrappers_present_in_both_expectations": true,
+    "all_applicable_channels_present_in_both_expectations": true,
+    "forbid_private_ids_in_public_aggregate": true
+  },
+  "storage_and_execution": {
+    "maximum_parallel_workers": 1,
+    "minimum_free_space_reserve_bytes": 16106127360,
+    "private_assignment_outside_git": true,
+    "audio_generation_authorized": false
+  },
+  "stop_conditions": [
+    "An upstream source, factor, toolchain, or public-decoder binding differs.",
+    "A forbidden source field, waveform statistic, codec result, mechanism feature, score, or unopened label would influence assignment.",
+    "A coverage requirement cannot be met without changing a frozen factor or claim boundary.",
+    "A positive lacks an exact matched negative on source, channel, transform, and wrapper.",
+    "Vorbis mono encoder transfer appears despite the frozen exclusion.",
+    "The two complete private assignments or public aggregates differ byte-for-byte.",
+    "Audio generation or score opening would occur."
+  ],
+  "authorized_next_step": "Commit these rules and their validator, then apply them twice to the private source allocation. Commit only a path-free aggregate if both private assignments and aggregates are byte-identical."
+}

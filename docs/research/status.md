@@ -123,5 +123,9 @@ the two fresh
 [`equivalence replays`](public-decoder-equivalence-result-20260802.md) are now
 byte-identical, with exact public evidence across all 12 wrapper paths. The
 exact-toolchain gate is complete. Fractional assignment remains the next
-separate pre-construction gate.
+separate pre-construction gate. Its source-blind
+[`rules`](fractional-assignment-preregistration-20260802.md) are now committed
+before execution: all-source anchors, domain-balanced nonanchors, exact
+matched transform pairs, decoder/channel/wrapper cycles, and a sealed
+100-group external-positive reserve. Two private replays remain required.
 No successor mechanism score or retained holdout has been opened.
