@@ -1,11 +1,18 @@
 {
   "schema_version": 1,
-  "assignment_rules_id": "lossytrace-v2-fractional-assignment-20260802-001",
+  "assignment_rules_id": "lossytrace-v2-fractional-assignment-20260802-002",
   "state": "fractional_assignment_rules_frozen_before_private_assignment",
-  "upstream_checkpoint_commit": "9cc87b10dc5551a9d5da2dc844d5289a11106084",
+  "upstream_checkpoint_commit": "4a7b2a3bb63532706a0f08c9c56e827667966ae2",
+  "correction": {
+    "supersedes_assignment_rules_id": "lossytrace-v2-fractional-assignment-20260802-001",
+    "supersedes_result_sha256": "ee98c77aba75cad588deec8c64c85830591c3ed76773c5d04a6c6b9b96be577e",
+    "reason": "Recipe 001 omitted target_sample_rate_hz from cells and the matched-reference identity. A 44.1 kHz positive and a 48 kHz positive could therefore share a nominal reference even though their PCM preconditioning differs.",
+    "audio_generated_before_correction": false,
+    "scores_opened_before_correction": false
+  },
   "generator_binding": {
     "path": "scripts/freeze-audio-integrity-v2-fractional-assignment.py",
-    "sha256": "80088fb1e2c503d16c3ea26c0a152f5a737e5ee808bb4a9ba5205539097ac1ca"
+    "sha256": "5759206092b37b7ec7310ff7b7062089297b9e4bffdfad6bfd3e56705f13bbed"
   },
   "source_allocation_binding": {
     "private_source_allocation_sha256": "e4b7d2ab42253e00ce0e0b95c8049193f9b6178ecbb6212811fde96d58c088d4",
@@ -64,7 +71,7 @@
     "serialization": "UTF-8(prefix || purpose || NUL || evidence_partition || NUL || source_domain || NUL || group_id)",
     "tie_break": "UTF-8 group_id ascending",
     "domain_balanced_selection": "Order domains by SHA-256(prefix || purpose || NUL || partition || NUL || domain), order groups within each domain by the group ranking, then take one from each nonempty domain in repeated rounds until the exact quota is reached.",
-    "categorical_cycle": "For a selected ordered group list, choose channel, compatible decoder, and wrapper by a purpose-separated hash offset followed by index modulo the eligible level count."
+    "categorical_cycle": "For a selected ordered group list, choose channel, target sample rate where it is not fixed by an encoder setting, compatible decoder, and wrapper by a purpose-separated hash offset followed by index modulo the eligible level count."
   },
   "partitions": {
     "mechanism_development": {
@@ -102,16 +109,16 @@
     }
   },
   "cell_rules": {
-    "base_reference": "Every source group receives at least one identity PCM-reference cell. Development and encoder-transfer groups additionally receive every distinct reference cell required to match their assigned positives exactly on channel treatment, PCM transform, and wrapper.",
-    "anchor_positive": "Every development and encoder-transfer source group receives exactly one anchor positive per codec family. Channel, decoder, and wrapper use deterministic categorical cycles over levels applicable to that setting.",
+    "base_reference": "Every source group receives at least one identity PCM-reference cell. Development and encoder-transfer groups additionally receive every distinct reference cell required to match their assigned positives exactly on channel treatment, target sample rate, PCM transform, and wrapper.",
+    "anchor_positive": "Every development and encoder-transfer source group receives exactly one anchor positive per codec family. Target sample rate comes from the frozen encoder setting; channel, decoder, and wrapper use deterministic categorical cycles over levels applicable to that setting.",
     "nonanchor_positive": "Each nonanchor template receives its exact partition quota via domain-balanced selection. Applicable channels are balanced by cycle; the FFmpeg-native Vorbis transfer templates remain stereo-only.",
-    "transform_negative": "Each nonidentity transform receives its exact per-partition source-group quota via a separate domain-balanced selection. External transfer receives these negative assignments while remaining sealed.",
+    "transform_negative": "Each nonidentity transform receives its exact per-partition source-group quota via a separate domain-balanced selection. External transfer receives an exactly balanced 44.1/48 kHz split for these negative assignments while remaining sealed.",
     "transform_positive": "For every selected nonidentity transform group in development and encoder transfer, assign one anchor positive per scoped codec and materialize or reference the exact matched transformed PCM negative.",
     "history_decoder": "Choose only decoders compatible with the codec, cycling independently by setting and role. Every compatible decoder must cover at least two setting templates per codec and the frozen minimum source-group count.",
     "wrapper": "Cycle FLAC, WAV, and AIFF independently of expectation. A matched H0/H1 pair always shares one wrapper. The lossless-wrapper-rewrite transform cycles only WAV and AIFF so it remains distinct from the primary FLAC representation.",
     "one_transform": "Every cell has exactly one transform_id. Identity and each nonidentity level are mutually exclusive.",
-    "reference_reuse": "Reference cells with identical group, channel, transform, and wrapper factors are deduplicated and may match multiple positives.",
-    "external_reserve": "Select exactly 100 external groups by domain-balanced identity-only ranking and record future-positive channel and wrapper slots without codec, encoder, decoder, or score. No external positive case exists until a survivor and new encoder lineage are separately frozen."
+    "reference_reuse": "Reference cells with identical group, channel, target sample rate, transform, and wrapper factors are deduplicated and may match multiple positives.",
+    "external_reserve": "Select exactly 100 external groups by domain-balanced identity-only ranking and record future-positive channel, 44.1 kHz target sample rate, and wrapper slots without codec, encoder, decoder, or score. No external positive case exists until a survivor and new encoder lineage are separately frozen."
   },
   "coverage_checks": {
     "all_anchor_groups_per_codec": true,
@@ -138,7 +145,8 @@
       "encoder_transfer": 30
     },
     "minimum_templates_per_compatible_decoder_codec": 2,
-    "matched_reference_required_for_every_positive": true,
+    "matched_reference_required_for_every_positive_including_target_sample_rate": true,
+    "external_negative_target_sample_rates_hz": [44100, 48000],
     "all_wrappers_present_in_both_expectations": true,
     "all_applicable_channels_present_in_both_expectations": true,
     "forbid_private_ids_in_public_aggregate": true
@@ -153,7 +161,7 @@
     "An upstream source, factor, toolchain, or public-decoder binding differs.",
     "A forbidden source field, waveform statistic, codec result, mechanism feature, score, or unopened label would influence assignment.",
     "A coverage requirement cannot be met without changing a frozen factor or claim boundary.",
-    "A positive lacks an exact matched negative on source, channel, transform, and wrapper.",
+    "A positive lacks an exact matched negative on source, channel, target sample rate, transform, and wrapper.",
     "Vorbis mono encoder transfer appears despite the frozen exclusion.",
     "The two complete private assignments or public aggregates differ byte-for-byte.",
     "Audio generation or score opening would occur."

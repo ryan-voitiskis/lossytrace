@@ -2,9 +2,9 @@
 
 Date: 2026-08-02
 
-State: source-blind assignment rules frozen before private assignment; no
-audio, waveform statistic, codec output, mechanism feature, score, or unopened
-label inspected
+State: recipe `001` superseded before benchmark audio generation; retained as
+an audit record; see
+[`fractional-assignment correction 001`](fractional-assignment-correction-20260802-001.md)
 
 ## Purpose
 
@@ -14,18 +14,15 @@ public-decoder freezes and before case construction. The assignment may use
 only private group identity plus partition, source collection, source domain,
 and provenance tier.
 
-The machine-readable rules are
-[`fractional-assignment-rules.json`](../../benchmarks/audio-integrity-v2/fractional-assignment-rules.json).
-Their SHA-256 is
+The recipe-`001` machine-readable rules at preregistration commit `b33e828`
+had SHA-256
 `aec91fc4e31a080000769d8ea385a08d308014a939a3c1d4f69140fb11ca576f`.
 They bind upstream commit
 `9cc87b10dc5551a9d5da2dc844d5289a11106084`, the exact 793-group private
 source allocation, corrected factor freeze, recipe-`004` toolchain result, and
 public-decoder result.
 
-The generator and validator are
-[`freeze-audio-integrity-v2-fractional-assignment.py`](../../scripts/freeze-audio-integrity-v2-fractional-assignment.py).
-The rules bind its exact SHA-256,
+The recipe-`001` generator and validator at commit `b33e828` had SHA-256
 `80088fb1e2c503d16c3ea26c0a152f5a737e5ee808bb4a9ba5205539097ac1ca`,
 so a replay cannot silently substitute a different assignment implementation.
 Private source IDs and cell mappings stay outside Git. The public aggregate is
@@ -77,6 +74,7 @@ allocation. Both complete private assignments and both path-free run
 aggregates must compare byte-for-byte equal. Only then may an attested public
 aggregate be committed.
 
-Passing this gate authorizes deterministic case construction with one
-low-priority worker and the storage reserve. It does not authorize mechanism
-scoring or opening encoder/external transfer.
+Recipe `001` later passed this replay gate, but construction review found that
+target sample rate was absent from its cell and matched-reference identity.
+That result does not authorize construction. Recipe `002` and its correction
+record replace it without opening audio or scores.

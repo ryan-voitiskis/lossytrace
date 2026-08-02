@@ -122,12 +122,13 @@ a source-bound public build and exact 12-path comparison. The public
 the two fresh
 [`equivalence replays`](public-decoder-equivalence-result-20260802.md) are now
 byte-identical, with exact public evidence across all 12 wrapper paths. The
-exact-toolchain gate is complete. The source-blind fractional-assignment
-[`rules`](fractional-assignment-preregistration-20260802.md) were committed
-before private execution. The subsequent
-[`two-replay result`](fractional-assignment-result-20260802.md) is
-byte-identical: 793 groups map to 11,103 cells, all 6,356 positives have exact
-matched references, and all frozen coverage checks pass. The 100-group
-external-positive reserve still contains no codec, encoder, decoder, feature,
-or score. One-worker case construction is now the next gate.
+exact-toolchain gate is complete. Fractional-assignment recipe `001` was
+committed before execution and replayed byte-identically, but construction
+review then found that target sample rate was absent from its cells and
+matched-reference identity. Its
+[`result`](fractional-assignment-result-20260802.md) is retained as rejected
+evidence. The separately frozen
+[`correction`](fractional-assignment-correction-20260802-001.md) makes sample
+rate a first-class exact-match factor. Corrected recipe `002` now requires two
+fresh private replays before construction. No assigned audio was generated.
 No successor mechanism score or retained holdout has been opened.

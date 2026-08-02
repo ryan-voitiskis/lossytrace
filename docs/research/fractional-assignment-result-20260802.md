@@ -2,9 +2,9 @@
 
 Date: 2026-08-02
 
-State: two private identity-only assignment replays are byte-identical; the
-path-free aggregate is frozen; no audio, waveform statistic, feature, score,
-or unopened label was inspected
+State: recipe `001` replayed byte-identically but was superseded before audio
+generation because target sample rate was absent from its exact-match identity;
+see [`correction 001`](fractional-assignment-correction-20260802-001.md)
 
 ## Bound inputs
 
@@ -58,11 +58,14 @@ transfer remains explicitly stereo-only.
 
 ## Interpretation and authorization boundary
 
-The replay gate passed. This establishes a deterministic, source-aware but
-waveform-blind allocation and removes assignment drift as a later explanation
-for a result. It is not evidence that any codec-history representation works.
+The replay gate passed for determinism, but a subsequent construction audit
+found that 44.1 and 48 kHz positives could share one nominal reference. The
+claim that all 6,356 positives had exact matched PCM references is therefore
+invalid. This artifact is retained as rejected evidence, not as an input to a
+benchmark denominator.
 
-The next authorized operation is resumable one-worker construction of the
-assigned PCM cases while preserving the 15 GiB free-space reserve. Mechanism
-scoring, representation selection, encoder-transfer opening, and external
-positive materialization remain unauthorized until their later freezes.
+No assigned audio had been generated and no score had been opened when the
+defect was found. Construction is paused until corrected recipe `002` passes
+two fresh byte-identical replays. Mechanism scoring, representation selection,
+encoder-transfer opening, and external positive materialization remain
+unauthorized.

@@ -14,12 +14,13 @@ from typing import Any, Iterable
 
 
 SCHEMA_VERSION = 1
-RULES_ID = "lossytrace-v2-fractional-assignment-20260802-001"
+RULES_ID = "lossytrace-v2-fractional-assignment-20260802-002"
 RANKING_PREFIX = "lossytrace-v2-fractional-assignment-20260802\0"
 PARTITIONS = ("mechanism_development", "encoder_transfer", "external_transfer")
 OBSERVED_PARTITIONS = ("mechanism_development", "encoder_transfer")
 CODECS = ("mp3", "aac_lc", "opus", "vorbis")
 CHANNELS = ("mono", "stereo")
+SAMPLE_RATES_HZ = (44100, 48000)
 EXPECTED_GROUP_COUNTS = {
     "mechanism_development": 527,
     "encoder_transfer": 102,
@@ -230,7 +231,7 @@ def domain_balanced_select(
     return selected
 
 
-def cycle_levels(levels: list[str], purpose: str, count: int) -> list[str]:
+def cycle_levels(levels: list[Any], purpose: str, count: int) -> list[Any]:
     if not levels:
         raise ValueError("categorical cycle has no eligible levels")
     offset = int(hash_text("cycle-offset", purpose)[:16], 16) % len(levels)
@@ -256,18 +257,25 @@ def assignment_id(payload: dict[str, Any]) -> str:
 class CellBuilder:
     def __init__(self, group_by_id: dict[str, dict[str, str]]) -> None:
         self.group_by_id = group_by_id
-        self.references: dict[tuple[str, str, str, str], dict[str, Any]] = {}
+        self.references: dict[tuple[str, str, int, str, str], dict[str, Any]] = {}
         self.positives: dict[str, dict[str, Any]] = {}
 
     def ensure_reference(
         self,
         row: dict[str, str],
         channel: str,
+        target_sample_rate_hz: int,
         transform_id: str,
         wrapper_id: str,
         required_for_role: str,
     ) -> str:
-        key = (row["group_id"], channel, transform_id, wrapper_id)
+        key = (
+            row["group_id"],
+            channel,
+            target_sample_rate_hz,
+            transform_id,
+            wrapper_id,
+        )
         existing = self.references.get(key)
         if existing is not None:
             existing["_roles"].add(required_for_role)
@@ -281,6 +289,7 @@ class CellBuilder:
                 "pcm_reference" if transform_id == "identity" else "pcm_hard_negative"
             ),
             "channel_treatment_id": channel,
+            "target_sample_rate_hz": target_sample_rate_hz,
             "transform_id": transform_id,
             "wrapper_id": wrapper_id,
         }
@@ -298,8 +307,14 @@ class CellBuilder:
         role: str,
     ) -> None:
         channel = setting["channel_treatment_id"]
+        target_sample_rate_hz = setting["expected_sample_rate_hz"]
         reference_id = self.ensure_reference(
-            row, channel, transform_id, wrapper_id, role
+            row,
+            channel,
+            target_sample_rate_hz,
+            transform_id,
+            wrapper_id,
+            role,
         )
         payload = {
             "group_id": row["group_id"],
@@ -315,6 +330,7 @@ class CellBuilder:
             "history_decoder_id": decoder_id,
             "analysis_decoder_id": "canonical_lossless_pcm_decoder",
             "channel_treatment_id": channel,
+            "target_sample_rate_hz": target_sample_rate_hz,
             "transform_id": transform_id,
             "wrapper_id": wrapper_id,
             "matched_reference_assignment_id": reference_id,
@@ -398,9 +414,23 @@ def build_assignment(
             partition_groups, len(partition_groups), f"base-reference:{partition}"
         )
         channels = cycle_levels(list(CHANNELS), f"base-reference-channel:{partition}", len(ordered))
+        sample_rates = cycle_levels(
+            list(SAMPLE_RATES_HZ),
+            f"base-reference-sample-rate:{partition}",
+            len(ordered),
+        )
         wrappers = cycle_levels(wrapper_ids, f"base-reference-wrapper:{partition}", len(ordered))
-        for row, channel, wrapper_id in zip(ordered, channels, wrappers, strict=True):
-            builder.ensure_reference(row, channel, "identity", wrapper_id, "base_reference")
+        for row, channel, sample_rate, wrapper_id in zip(
+            ordered, channels, sample_rates, wrappers, strict=True
+        ):
+            builder.ensure_reference(
+                row,
+                channel,
+                sample_rate,
+                "identity",
+                wrapper_id,
+                "base_reference",
+            )
 
     for partition in OBSERVED_PARTITIONS:
         partition_groups = by_partition[partition]
@@ -500,18 +530,24 @@ def build_assignment(
                     f"transform-negative-channel:{partition}:{transform_id}",
                     len(selected),
                 )
+                sample_rates = cycle_levels(
+                    list(SAMPLE_RATES_HZ),
+                    f"transform-negative-sample-rate:{partition}:{transform_id}",
+                    len(selected),
+                )
                 wrappers = choose_wrappers(
                     wrapper_ids,
                     transform_id,
                     f"transform-negative-wrapper:{partition}:{transform_id}",
                     len(selected),
                 )
-                for row, channel, wrapper_id in zip(
-                    selected, channels, wrappers, strict=True
+                for row, channel, sample_rate, wrapper_id in zip(
+                    selected, channels, sample_rates, wrappers, strict=True
                 ):
                     builder.ensure_reference(
                         row,
                         channel,
+                        sample_rate,
                         transform_id,
                         wrapper_id,
                         "external_transform_negative",
@@ -573,6 +609,7 @@ def build_assignment(
             "evidence_partition": "external_transfer",
             "reservation_type": "future_controlled_mp3_positive",
             "channel_treatment_id": channel,
+            "target_sample_rate_hz": 44100,
             "wrapper_id": wrapper_id,
             "codec_family": None,
             "expanded_setting_id": None,
@@ -657,12 +694,18 @@ def validate_assignment(
     by_id = {row.get("assignment_id"): row for row in cells}
     if len(by_id) != len(cells) or None in by_id:
         raise ValueError("assignment cell identities differ")
+    settings = {
+        row["expanded_setting_id"]: row
+        for row in manifest["expanded_encoder_settings"]
+    }
     for cell in cells:
         group = group_by_id.get(cell.get("group_id"))
         if group is None or cell.get("evidence_partition") != group["evidence_partition"]:
             raise ValueError("assignment cell crosses a group partition")
         if cell.get("channel_treatment_id") not in CHANNELS:
             raise ValueError("assignment cell channel differs")
+        if cell.get("target_sample_rate_hz") not in SAMPLE_RATES_HZ:
+            raise ValueError("assignment cell target sample rate differs")
         if cell.get("transform_id") not in {
             row["transform_id"] for row in factor["pcm_transform_levels"]
         }:
@@ -672,6 +715,13 @@ def validate_assignment(
         }:
             raise ValueError("assignment cell wrapper differs")
         if cell.get("expectation") == "controlled_positive":
+            setting = settings.get(cell.get("expanded_setting_id"))
+            if (
+                setting is None
+                or cell.get("target_sample_rate_hz")
+                != setting.get("expected_sample_rate_hz")
+            ):
+                raise ValueError("positive target sample rate differs from setting")
             reference = by_id.get(cell.get("matched_reference_assignment_id"))
             if reference is None or any(
                 reference.get(field) != cell.get(field)
@@ -679,6 +729,7 @@ def validate_assignment(
                     "group_id",
                     "evidence_partition",
                     "channel_treatment_id",
+                    "target_sample_rate_hz",
                     "transform_id",
                     "wrapper_id",
                 )
@@ -689,7 +740,6 @@ def validate_assignment(
     if positive_cells(assignment, "external_transfer"):
         raise ValueError("external positive was assigned before encoder freeze")
 
-    settings = {row["expanded_setting_id"]: row for row in manifest["expanded_encoder_settings"]}
     for partition in OBSERVED_PARTITIONS:
         partition_group_ids = {
             row["group_id"] for row in groups if row["evidence_partition"] == partition
@@ -767,6 +817,18 @@ def validate_assignment(
             }
             if len(negatives) != TRANSFORM_QUOTAS[partition]:
                 raise ValueError(f"{partition}/{transform_id} negative coverage differs")
+            for sample_rate in SAMPLE_RATES_HZ:
+                rate_groups = {
+                    row["group_id"]
+                    for row in negative_cells(assignment, partition)
+                    if row["transform_id"] == transform_id
+                    and row["target_sample_rate_hz"] == sample_rate
+                }
+                if len(rate_groups) != TRANSFORM_QUOTAS[partition]:
+                    raise ValueError(
+                        f"{partition}/{transform_id}/{sample_rate} "
+                        "matched sample-rate coverage differs"
+                    )
             for codec in CODECS:
                 positive_groups = {
                     row["group_id"]
@@ -815,12 +877,26 @@ def validate_assignment(
         )
         if group_count != TRANSFORM_QUOTAS["external_transfer"]:
             raise ValueError(f"external/{transform_id} coverage differs")
+        for sample_rate in SAMPLE_RATES_HZ:
+            rate_group_count = len(
+                {
+                    row["group_id"]
+                    for row in external_negatives
+                    if row["transform_id"] == transform_id
+                    and row["target_sample_rate_hz"] == sample_rate
+                }
+            )
+            if rate_group_count != TRANSFORM_QUOTAS["external_transfer"] // 2:
+                raise ValueError(
+                    f"external/{transform_id}/{sample_rate} coverage differs"
+                )
     reserve = assignment.get("external_positive_reserve", [])
     if (
         len(reserve) != EXTERNAL_RESERVE_COUNT
         or len({row.get("group_id") for row in reserve}) != EXTERNAL_RESERVE_COUNT
         or any(
             row.get("evidence_partition") != "external_transfer"
+            or row.get("target_sample_rate_hz") != 44100
             or row.get("codec_family") is not None
             or row.get("expanded_setting_id") is not None
             or row.get("history_decoder_id") is not None
@@ -878,6 +954,7 @@ def public_aggregate(
             row["expectation"],
             row["history_class"],
             row["channel_treatment_id"],
+            row["target_sample_rate_hz"],
             row["transform_id"],
             row["wrapper_id"],
         )
@@ -1012,6 +1089,7 @@ def public_aggregate(
                 "expectation",
                 "history_class",
                 "channel_treatment_id",
+                "target_sample_rate_hz",
                 "transform_id",
                 "wrapper_id",
             ],

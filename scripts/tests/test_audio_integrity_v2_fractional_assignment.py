@@ -43,6 +43,10 @@ class FractionalAssignmentTest(unittest.TestCase):
 
     def test_rules_are_preassignment_and_verdict_free(self) -> None:
         self.assertEqual(
+            "lossytrace-v2-fractional-assignment-20260802-002",
+            RULES["assignment_rules_id"],
+        )
+        self.assertEqual(
             "fractional_assignment_rules_frozen_before_private_assignment",
             RULES["state"],
         )
@@ -84,6 +88,7 @@ class FractionalAssignmentTest(unittest.TestCase):
             "encoder_id": "encoder",
             "lineage_id": "lineage",
             "channel_treatment_id": "mono",
+            "expected_sample_rate_hz": 44100,
         }
         builder.add_positive(
             row,
@@ -101,6 +106,7 @@ class FractionalAssignmentTest(unittest.TestCase):
         for field in (
             "group_id",
             "channel_treatment_id",
+            "target_sample_rate_hz",
             "transform_id",
             "wrapper_id",
         ):
