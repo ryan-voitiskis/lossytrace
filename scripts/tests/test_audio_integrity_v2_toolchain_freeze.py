@@ -52,6 +52,13 @@ class ToolchainFreezeTest(unittest.TestCase):
         default = settings["dev-mp3-lame-cbr128-default--stereo"]["command"]
         self.assertEqual("16", explicit[explicit.index("--lowpass") + 1])
         self.assertNotIn("--lowpass", default)
+        self.assertTrue(
+            all(
+                row["command"][row["command"].index("--resample") + 1] == "44.1"
+                for row in settings.values()
+                if row["encoder_id"] == "mp3_lame_4_0"
+            )
+        )
 
     def test_native_ogg_commands_bind_serial_offsets(self) -> None:
         native = [

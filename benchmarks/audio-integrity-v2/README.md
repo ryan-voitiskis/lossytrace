@@ -21,6 +21,7 @@ Read these before constructing a manifest:
 - [`toolchain-bindings.json`](toolchain-bindings.json)
 - [`toolchain-probe-result-20260802.md`](../../docs/research/toolchain-probe-result-20260802.md)
 - [`toolchain-freeze-preregistration-20260802.md`](../../docs/research/toolchain-freeze-preregistration-20260802.md)
+- [`toolchain-factor-correction-20260802-001.md`](../../docs/research/toolchain-factor-correction-20260802-001.md)
 - [`rwc-source-identity-audit-20260802.md`](../../docs/research/rwc-source-identity-audit-20260802.md)
 
 The pre-freeze source/tool inventory and its remaining gates are described
@@ -41,7 +42,10 @@ fixes excerpt, codec-setting, decoder, channel, transform, wrapper, coverage,
 and storage levels without assigning source groups to cells. The subsequent
 [`exact-toolchain preregistration`](../../docs/research/toolchain-freeze-preregistration-20260802.md)
 binds 48 expanded settings, 132 compatible history-decoder paths, transform
-algorithms, and wrapper commands before executing the new settings.
+algorithms, and wrapper commands before executing the new settings. Its first
+replay stopped when LAME CBR-96 stereo selected 32 kHz; the separately frozen
+[`correction`](../../docs/research/toolchain-factor-correction-20260802-001.md)
+binds 44.1 kHz explicitly without changing the scientific factor.
 
 ## Evidence partitions
 

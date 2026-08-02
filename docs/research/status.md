@@ -96,6 +96,9 @@ one-worker storage boundary. The exact
 [`toolchain preregistration`](toolchain-freeze-preregistration-20260802.md)
 now expands those templates into 48 commands, binds 132 compatible decoder
 paths, defines coarse bandwidth observations and transform golden outputs, and
-keeps source allocation and scoring closed. Its two complete executions and
-the later fractional assignment remain separate gates.
+keeps source allocation and scoring closed. Its first replay stopped because
+LAME CBR-96 stereo chose 32 kHz; the committed
+[`correction`](toolchain-factor-correction-20260802-001.md) explicitly binds
+all LAME settings to the frozen 44.1 kHz rate. Two complete corrected
+executions and the later fractional assignment remain separate gates.
 No successor mechanism score or retained holdout has been opened.

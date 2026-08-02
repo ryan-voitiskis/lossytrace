@@ -6,6 +6,12 @@ State: exact path-free recipe frozen before expanded-setting execution; no
 benchmark audio, source-to-cell assignment, mechanism feature, score, or
 unopened label inspected
 
+Superseded before a complete replay: the first execution found that recipe
+`001` allowed LAME CBR-96 stereo to choose 32 kHz despite the frozen 44.1 kHz
+level. See the separately committed
+[`toolchain correction`](toolchain-factor-correction-20260802-001.md). The
+hashes and commands below preserve the pre-observation `001` record.
+
 ## Purpose and ordering
 
 This checkpoint turns the frozen scientific levels into executable recipes

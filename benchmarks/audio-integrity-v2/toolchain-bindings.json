@@ -112,6 +112,8 @@
         "96",
         "-m",
         "m",
+        "--resample",
+        "44.1",
         "<INPUT>",
         "<OUTPUT>"
       ],
@@ -150,6 +152,8 @@
         "96",
         "-m",
         "j",
+        "--resample",
+        "44.1",
         "<INPUT>",
         "<OUTPUT>"
       ],
@@ -188,6 +192,8 @@
         "128",
         "-m",
         "m",
+        "--resample",
+        "44.1",
         "<INPUT>",
         "<OUTPUT>"
       ],
@@ -226,6 +232,8 @@
         "128",
         "-m",
         "j",
+        "--resample",
+        "44.1",
         "<INPUT>",
         "<OUTPUT>"
       ],
@@ -264,6 +272,8 @@
         "128",
         "-m",
         "m",
+        "--resample",
+        "44.1",
         "--lowpass",
         "16",
         "<INPUT>",
@@ -304,6 +314,8 @@
         "128",
         "-m",
         "j",
+        "--resample",
+        "44.1",
         "--lowpass",
         "16",
         "<INPUT>",
@@ -343,6 +355,8 @@
         "2",
         "-m",
         "m",
+        "--resample",
+        "44.1",
         "<INPUT>",
         "<OUTPUT>"
       ],
@@ -380,6 +394,8 @@
         "2",
         "-m",
         "j",
+        "--resample",
+        "44.1",
         "<INPUT>",
         "<OUTPUT>"
       ],
@@ -2750,7 +2766,7 @@
       "version": "opus-tools 0.2_2; libopus 1.6.1; opusfile 0.12_1"
     }
   ],
-  "toolchain_freeze_id": "lossytrace-v2-toolchain-bindings-20260802-001",
+  "toolchain_freeze_id": "lossytrace-v2-toolchain-bindings-20260802-002",
   "wrapper_bindings": [
     {
       "command": [

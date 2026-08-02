@@ -35,8 +35,8 @@ BASE_SPEC.loader.exec_module(BASE)
 
 
 SCHEMA_VERSION = 1
-FREEZE_ID = "lossytrace-v2-toolchain-bindings-20260802-001"
-PROBE_ID = "lossytrace-v2-factor-toolchain-probe-20260802-001"
+FREEZE_ID = "lossytrace-v2-toolchain-bindings-20260802-002"
+PROBE_ID = "lossytrace-v2-factor-toolchain-probe-20260802-002"
 EXPECTED_FACTOR_ID = "lossytrace-v2-factor-levels-20260802-001"
 EXPECTED_FACTOR_COMMIT = "52470b2d0e279d002b8516a7d4f862c93133ac8b"
 EXPECTED_PRIOR_EVIDENCE_SHA256 = (
@@ -264,7 +264,18 @@ def encoder_command(template: dict[str, Any], channel_count: int) -> list[str]:
     if encoder_id == "mp3_lame_4_0":
         mode = "m" if channel_count == 1 else "j"
         if template["rate_control"] == "vbr":
-            return [tool, "--silent", "-V", "2", "-m", mode, INPUT_TOKEN, OUTPUT_TOKEN]
+            return [
+                tool,
+                "--silent",
+                "-V",
+                "2",
+                "-m",
+                mode,
+                "--resample",
+                "44.1",
+                INPUT_TOKEN,
+                OUTPUT_TOKEN,
+            ]
         command = [
             tool,
             "--silent",
@@ -273,6 +284,8 @@ def encoder_command(template: dict[str, Any], channel_count: int) -> list[str]:
             str(parse_rate(bitrate_or_quality)),
             "-m",
             mode,
+            "--resample",
+            "44.1",
         ]
         if template["encoder_lowpass"]["mode"] == "fixed":
             command.extend(["--lowpass", "16"])
