@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "plan_id": "lossytrace-v2-public-decoder-equivalence-20260802-001",
+  "state": "public_decoder_build_and_equivalence_frozen_before_execution",
+  "toolchain_result_binding": {
+    "path": "research/toolchains/evidence/factorial-v2-toolchain-observed-20260802-001-aggregate.json",
+    "sha256": "29ddfe00bb419aedcbdee8de530785f5981de279f2bd190f4a337ebbe8c3cc23"
+  },
+  "rust_source_binding": {
+    "checkpoint_commit": "397e288f79ff381711e915f9bea325c1f176e67f",
+    "src_tree_sha1": "8e7c07926bddf48c9af43d99d6a234e5dc82bbfe",
+    "cargo_toml_sha256": "9446599e393bfe87af377feba01d1a0cc3aaad91594e57a0d51aae18ae98d1d8",
+    "cargo_lock_sha256": "eb8c25b24e0fa1f4b69201c3f5a6b7cddd31692de72746c1c78b18413240ec0c",
+    "audio_rs_sha256": "202e95df26ab3284e722cc4c708b1366423d09d7c999dc74bddedf34a1e2ecaa",
+    "lib_rs_sha256": "26ddb6e998991c8859a306630c541afa21860a4290b2b1dc8b238b2cb00c6578",
+    "main_rs_sha256": "c1da3719f1897ce47e4a0c28b8585060a43268575d75e1fa6c6d9418e910cf54",
+    "compression_trace_rs_sha256": "91778aaf9e64ca588d0a6d987092c3453cb151e08eef26916b71016210b45e5e",
+    "stft_rs_sha256": "a9c8ef3cc9ca2bc2b211ec124228d18290d0e037608eff49f45c157a43806c35"
+  },
+  "build_binding": {
+    "rustc": "rustc 1.94.0 (4a4ef493e 2026-03-02)",
+    "cargo": "cargo 1.94.0 (85eff7c80 2026-01-15)",
+    "command": [
+      "cargo",
+      "build",
+      "--locked",
+      "--release",
+      "--jobs",
+      "1"
+    ],
+    "environment": {
+      "CARGO_INCREMENTAL": "0",
+      "LANG": "C",
+      "LC_ALL": "C",
+      "SOURCE_DATE_EPOCH": "0",
+      "TZ": "UTC"
+    },
+    "target_directory_policy": "Use a fresh temporary directory on a volume with sufficient free space; do not consume the benchmark reserve.",
+    "binary_relative_path": "release/lossytrace"
+  },
+  "binary_binding_frozen": false,
+  "probe_contract": {
+    "synthetic_input_generator": "integer-lcg-multiband-pcm-v1",
+    "sample_rates_hz": [44100, 48000],
+    "channel_counts": [1, 2],
+    "duration_seconds": 3,
+    "wrappers": ["flac16", "wav16", "aiff16"],
+    "public_decoder_runs_per_wrapper": 2,
+    "expected_wrapper_path_count": 12,
+    "expected_triplet_count": 4,
+    "exact_projection_fields": [
+      "schema_version",
+      "state",
+      "public_verdict_enabled",
+      "analyzed_sample_count",
+      "analyzed_duration_seconds",
+      "truncated_by_limit",
+      "source_facts.sample_rate_hz",
+      "source_facts.channel_count",
+      "source_facts.declared_bits_per_sample",
+      "compression_trace"
+    ],
+    "excluded_wrapper_specific_fields": [
+      "input_sha256",
+      "source_facts.codec_debug",
+      "source_facts.container_extension"
+    ],
+    "triplet_requirement": "The exact projected public report must be identical across FLAC, WAV, and AIFF for each rate/channel input.",
+    "analysis_decoder_requirement": "The frozen FFmpeg analysis decoder must again return signed-s16le bytes exactly equal to the input PCM for every wrapper."
+  },
+  "public_state": {
+    "evidence_schema_version": 1,
+    "feature_version": 0,
+    "public_verdict_enabled": false
+  },
+  "benchmark_audio_generated": false,
+  "source_groups_assigned": false,
+  "scores_opened": false,
+  "selection_authorized": false,
+  "maximum_parallel_workers": 1,
+  "minimum_free_space_reserve_bytes": 16106127360,
+  "stop_conditions": [
+    "A bound source, Cargo, toolchain-result, FFmpeg, or generated binary hash differs.",
+    "A public report changes between its two executions.",
+    "Projected public reports differ within a FLAC/WAV/AIFF triplet.",
+    "FFmpeg analysis-decoded PCM differs from the exact input PCM.",
+    "The local benchmark volume falls below the 15 GiB reserve.",
+    "Any allocated source, mechanism score, or unopened label would be read."
+  ],
+  "authorized_next_step": "Build the exact public binary without running wrapper equivalence, commit its binary and linked-library binding separately, then execute two complete equivalence replays."
+}

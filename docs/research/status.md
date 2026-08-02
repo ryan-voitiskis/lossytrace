@@ -114,6 +114,8 @@ settings, 126 decoder paths, 36 ordinary transform paths, and 12 wrapper paths
 were deterministic, while every cross-decoder comparison produced different
 exact PCM. See the
 [`exact-toolchain result`](toolchain-freeze-result-20260802.md). Fresh public
-decoder wrapper equivalence and the later fractional assignment remain
-separate gates.
+decoder wrapper equivalence is now separately
+[`preregistered`](public-decoder-equivalence-preregistration-20260802.md) with
+a source-bound public build and exact 12-path comparison. Its binary binding,
+two replays, and the later fractional assignment remain separate gates.
 No successor mechanism score or retained holdout has been opened.

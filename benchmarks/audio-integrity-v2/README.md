@@ -26,6 +26,8 @@ Read these before constructing a manifest:
 - [`toolchain-factor-correction-20260802-002.md`](../../docs/research/toolchain-factor-correction-20260802-002.md)
 - [`toolchain-factor-correction-20260802-003.md`](../../docs/research/toolchain-factor-correction-20260802-003.md)
 - [`toolchain-freeze-result-20260802.md`](../../docs/research/toolchain-freeze-result-20260802.md)
+- [`public-decoder-equivalence-plan.json`](public-decoder-equivalence-plan.json)
+- [`public-decoder-equivalence-preregistration-20260802.md`](../../docs/research/public-decoder-equivalence-preregistration-20260802.md)
 - [`rwc-source-identity-audit-20260802.md`](../../docs/research/rwc-source-identity-audit-20260802.md)
 
 The pre-freeze source/tool inventory and its remaining gates are described
@@ -65,7 +67,9 @@ separates 36 ordinary transform paths from 12 wrapper paths without changing
 an algorithm. Its two fresh complete replays are byte-identical; see the
 [`exact-toolchain result`](../../docs/research/toolchain-freeze-result-20260802.md).
 All 46 settings and 126 decoder paths are deterministic within path. Fresh
-public-decoder wrapper equivalence remains required before scoring.
+public-decoder wrapper equivalence is separately
+[`preregistered`](../../docs/research/public-decoder-equivalence-preregistration-20260802.md)
+and remains required before scoring.
 
 ## Evidence partitions
 
