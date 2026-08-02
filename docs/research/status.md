@@ -152,4 +152,9 @@ Its first invocation stopped before source inspection because the plan omitted
 the FFprobe tool ID. The separately frozen
 [`configuration correction`](construction-feasibility-correction-20260802-001.md)
 adds only that exact binding; recipe `002` still requires two complete replays.
+Recipe `002` subsequently stopped on a selected `pcm_f32le` source because its
+lossless whitelist enumerated only integer PCM. The separately frozen
+[`codec-scope correction`](construction-feasibility-correction-20260802-002.md)
+accepts `flac` or `pcm_*` while still rejecting compressed lossy codecs.
+Recipe `003` now requires two complete replays.
 No successor mechanism score or retained holdout has been opened.

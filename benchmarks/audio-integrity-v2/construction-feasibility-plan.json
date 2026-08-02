@@ -1,16 +1,27 @@
 {
   "schema_version": 1,
-  "audit_id": "lossytrace-v2-construction-feasibility-20260802-002",
+  "audit_id": "lossytrace-v2-construction-feasibility-20260802-003",
   "state": "construction_feasibility_frozen_before_header_audit",
-  "upstream_checkpoint_commit": "32c444d2ed3a54a184bf0ddeccb5de0bfc5c2687",
-  "correction": {
-    "supersedes_audit_id": "lossytrace-v2-construction-feasibility-20260802-001",
-    "reason": "Recipe 001 omitted the explicit ffprobe_tool_id required by the bound generator.",
-    "source_artifacts_hashed_before_correction": false,
-    "headers_inspected_before_correction": false,
-    "audio_generated_before_correction": false,
-    "scores_opened_before_correction": false
-  },
+  "upstream_checkpoint_commit": "124f42bd9d92195be9ea7df7fa512425034f015a",
+  "correction_history": [
+    {
+      "supersedes_audit_id": "lossytrace-v2-construction-feasibility-20260802-001",
+      "reason": "Recipe 001 omitted the explicit ffprobe_tool_id required by the bound generator.",
+      "source_artifacts_hashed_before_correction": false,
+      "headers_inspected_before_correction": false,
+      "audio_generated_before_correction": false,
+      "scores_opened_before_correction": false
+    },
+    {
+      "supersedes_audit_id": "lossytrace-v2-construction-feasibility-20260802-002",
+      "reason": "Recipe 002 enumerated integer PCM codec names and rejected a selected pcm_f32le source even though uncompressed floating-point PCM is inside the frozen PCM source scope.",
+      "source_artifacts_hashed_before_correction": true,
+      "headers_inspected_before_correction": true,
+      "waveform_samples_inspected_before_correction": false,
+      "audio_generated_before_correction": false,
+      "scores_opened_before_correction": false
+    }
+  ],
   "audio_generated": false,
   "waveform_content_inspected": false,
   "headers_inspected": false,
@@ -20,7 +31,7 @@
   "selection_authorized": false,
   "bindings": {
     "audit_generator_path": "scripts/audit-audio-integrity-v2-construction-feasibility.py",
-    "audit_generator_sha256": "b239f287b94cdcd2278045271859060764e34bb8a251ed295fbd62f07d440930",
+    "audit_generator_sha256": "2ed51649a7bccda1fcfbe51eebb27c86dc9aad52017b3befaaae25dfb3588cc9",
     "private_source_allocation_sha256": "e4b7d2ab42253e00ce0e0b95c8049193f9b6178ecbb6212811fde96d58c088d4",
     "private_candidate_index_sha256": "07a00a0f56570c0778e384c6a816a69be13fffe42596c1aad80d5a6a99357a07",
     "private_fractional_assignment_sha256": "e33ae9f961fd48ec3857ac41ad9197b86fd0d38a5897dd5144bbf35683110582",
@@ -46,15 +57,7 @@
       "duration_ts",
       "time_base"
     ],
-    "allowed_lossless_codec_names": [
-      "flac",
-      "pcm_s16be",
-      "pcm_s16le",
-      "pcm_s24be",
-      "pcm_s24le",
-      "pcm_s32be",
-      "pcm_s32le"
-    ]
+    "allowed_lossless_codec_name_rule": "codec_name equals flac or begins with pcm_; all compressed lossy codec names are rejected"
   },
   "provider_window": {
     "default": "complete selected member",

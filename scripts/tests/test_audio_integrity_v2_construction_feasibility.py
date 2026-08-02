@@ -27,7 +27,7 @@ PLAN = json.loads(
 class ConstructionFeasibilityTest(unittest.TestCase):
     def test_plan_is_pre_audit_and_binds_generator(self) -> None:
         self.assertEqual(
-            "lossytrace-v2-construction-feasibility-20260802-002",
+            "lossytrace-v2-construction-feasibility-20260802-003",
             PLAN["audit_id"],
         )
         self.assertEqual(
@@ -55,6 +55,12 @@ class ConstructionFeasibilityTest(unittest.TestCase):
         start, end = MODULE.provider_window(row, header)
         self.assertEqual(1, start)
         self.assertEqual(440999, end)
+
+    def test_lossless_codec_rule_includes_integer_and_float_pcm(self) -> None:
+        self.assertTrue(MODULE.lossless_codec_supported("flac"))
+        self.assertTrue(MODULE.lossless_codec_supported("pcm_s24le"))
+        self.assertTrue(MODULE.lossless_codec_supported("pcm_f32le"))
+        self.assertFalse(MODULE.lossless_codec_supported("mp3"))
 
     def test_excerpt_is_capped_at_exactly_twelve_native_seconds(self) -> None:
         header = {

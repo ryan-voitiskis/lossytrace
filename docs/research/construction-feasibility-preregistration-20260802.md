@@ -23,6 +23,11 @@ and generator SHA-256
 `92ee0a3d07562a4dc8e7332abc584bef07b6507e7f1fe7e92b65bf86390dadd1`.
 It stopped before source inspection because the plan omitted the explicit
 FFprobe tool ID. Recipe `002` corrects only that configuration binding.
+Recipe `002` then stopped on an uncompressed `pcm_f32le` source because its
+lossless-codec whitelist named only integer PCM. The separately committed
+[`codec-scope correction`](construction-feasibility-correction-20260802-002.md)
+accepts `flac` or any `pcm_*` codec while continuing to reject compressed lossy
+sources. Recipe `003` is the current audit.
 
 ## Allowed observations
 

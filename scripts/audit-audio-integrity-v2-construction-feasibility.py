@@ -19,18 +19,9 @@ from typing import Any
 
 
 SCHEMA_VERSION = 1
-AUDIT_ID = "lossytrace-v2-construction-feasibility-20260802-002"
+AUDIT_ID = "lossytrace-v2-construction-feasibility-20260802-003"
 MINIMUM_FREE_RESERVE_BYTES = 15 * 1024**3
 MAXIMUM_EXCERPT_SECONDS = 12
-ALLOWED_CODECS = {
-    "flac",
-    "pcm_s16be",
-    "pcm_s16le",
-    "pcm_s24be",
-    "pcm_s24le",
-    "pcm_s32be",
-    "pcm_s32le",
-}
 ARCHIVE_RELATIVE_PATHS = {
     "fsdd_audio": "fsdd-v1.0.10/free-spoken-digit-dataset-1.0.10.zip",
     "lombard_audio": "lombardgrid_audio.zip",
@@ -164,6 +155,10 @@ def process_environment() -> dict[str, str]:
     return environment
 
 
+def lossless_codec_supported(codec: Any) -> bool:
+    return isinstance(codec, str) and (codec == "flac" or codec.startswith("pcm_"))
+
+
 def probe_audio_header(ffprobe: Path, path: Path) -> dict[str, Any]:
     command = [
         str(ffprobe),
@@ -192,7 +187,7 @@ def probe_audio_header(ffprobe: Path, path: Path) -> dict[str, Any]:
         raise ValueError("source does not contain exactly one audio stream")
     stream = streams[0]
     codec = stream.get("codec_name")
-    if codec not in ALLOWED_CODECS:
+    if not lossless_codec_supported(codec):
         raise ValueError(f"source codec is not frozen lossless PCM: {codec!r}")
     sample_rate = int(stream["sample_rate"])
     channels = int(stream["channels"])
