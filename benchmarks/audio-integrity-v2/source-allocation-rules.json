@@ -1,0 +1,242 @@
+{
+  "schema_version": 1,
+  "rules_id": "lossytrace-v2-source-allocation-20260802-001",
+  "state": "source_allocation_rules_frozen_before_execution",
+  "contract_id": "lossytrace-audio-integrity-factorial-v2-20260802-001",
+  "source_identity_checkpoint_commit": "3049123bfd58de567f65633b2e2d423acf147747",
+  "audio_generated": false,
+  "scores_opened": false,
+  "existing_v1_holdouts_included": false,
+  "selection_uses_waveform_content": false,
+  "selection_uses_duration": false,
+  "selection_uses_measurements_or_labels": false,
+  "privacy": {
+    "candidate_index_committed": false,
+    "exact_allocation_committed": false,
+    "absolute_paths_permitted_in_private_outputs": false,
+    "public_aggregate_forbidden_keys": [
+      "audio_sha256",
+      "case_id",
+      "group_id",
+      "member_id",
+      "partition_group",
+      "relative_path",
+      "source_group"
+    ]
+  },
+  "input_bindings": {
+    "factorial_contract": {
+      "path": "benchmarks/audio-integrity-v2/factorial-contract.json",
+      "sha256": "f965046179818842fcd8f7669f6092f23423d83a426142705393dc4b304252e4"
+    },
+    "consumed_v1_non_holdout_manifest": {
+      "private_input_role": "observed-baseline-20260801-001 manifest",
+      "sha256": "e19b5b408fedf348fa9b6499d5cdd1b6b734d84b19b895d5b0a528f0c4423b7a"
+    },
+    "source_identity_records": [
+      {
+        "source_id": "vctk_clean_56spk_2017",
+        "rules_path": "benchmarks/audio-integrity-v2/vctk-source-group-rules.json",
+        "rules_sha256": "862fa45181cb5118a60f4dbc45e70e18feb0c6bfa17f9445ec8bcc7728544c81",
+        "evidence_path": "research/sources/evidence/vctk-clean-56spk-2017-observed-20260802.json",
+        "evidence_sha256": "6ccfb8b6b3d81750226be33aa41143f3773d0236ed8120982c8cf427a038cac3"
+      },
+      {
+        "source_id": "ravdess_audio_1_0_0",
+        "rules_path": "benchmarks/audio-integrity-v2/ravdess-source-group-rules.json",
+        "rules_sha256": "01c289969480f37c4758e79825867a280663ab63e4962f2aa5dcf67b039f7e42",
+        "evidence_path": "research/sources/evidence/ravdess-1.0.0-observed-20260802.json",
+        "evidence_sha256": "22e14a9d008677a38067ec5387d08a96e9799944014274307a4904359ac1f3d2"
+      },
+      {
+        "source_id": "fsdd_v1_0_10",
+        "rules_path": "benchmarks/audio-integrity-v2/fsdd-source-group-rules.json",
+        "rules_sha256": "8f7dce1cc369fffcc9f24b18b0fd8af9bf071d9198135698de33c931699d6677",
+        "evidence_path": "research/sources/evidence/fsdd-v1.0.10-observed-20260802.json",
+        "evidence_sha256": "80ce2326afac2baa85f55ab6828615632352fbbc02c4d0809cd30f73cc5f75ec"
+      },
+      {
+        "source_id": "tinysol_6_0",
+        "rules_path": "benchmarks/audio-integrity-v2/tinysol-source-group-rules.json",
+        "rules_sha256": "d1c6d3badcc8a057dffcb1713a4468fc9ba3cc2f76a62d8e72323d66d4cf85ae",
+        "evidence_path": "research/sources/evidence/tinysol-6.0-observed-20260802.json",
+        "evidence_sha256": "62d2c3d3b63c4b3ed47c3f23885067650b3e17bc5e1ec1ce7606e03e327f47a5"
+      },
+      {
+        "source_id": "sonyc_backgrounds_1_0_0",
+        "evidence_path": "research/sources/evidence/sonyc-backgrounds-1.0.0-observed-20260802.json",
+        "evidence_sha256": "624f8ecd06b6f2d2fa78819cf8f0a0378a831bf47d88ccc860438bce0b1a2eae"
+      },
+      {
+        "source_id": "satp_soundscapes_1_5",
+        "rules_path": "benchmarks/audio-integrity-v2/satp-source-group-rules.json",
+        "rules_sha256": "6dc5e17f24d8741ec3ffe00e66b13aacf443fa7a2f0a541fafe92af1d3d0fa05",
+        "evidence_path": "research/sources/evidence/satp-1.5-observed-20260802.json",
+        "evidence_sha256": "e0afaebb0f8333940f29c0ad95599d08fc65e8e68a3a87f57ef2d2581b2e01ca"
+      },
+      {
+        "source_id": "lombard_grid_2018",
+        "evidence_path": "research/sources/evidence/lombard-grid-2018-observed-20260802.json",
+        "evidence_sha256": "aa1adce9390a62b972db6b2b614295554cb71a36ebd1ed2965809a3ae08819f8"
+      },
+      {
+        "source_id": "rwc_music_v2_2026",
+        "rules_path": "benchmarks/audio-integrity-v2/rwc-audio-source-group-rules.json",
+        "rules_sha256": "251b1b37cbdd1d154c29793ce7e05e7bc96eea357c530b40a8964bfb013f5fc6",
+        "family_rules_path": "benchmarks/audio-integrity-v2/rwc-artist-family-rules.json",
+        "family_rules_sha256": "17d1932b9405b007cf59401c040b7358d654def594154220bedb510b6d4c022c",
+        "evidence_path": "research/sources/evidence/rwc-music-v2-2026-observed-20260802.json",
+        "evidence_sha256": "c7dfb3d68e440561802fcacc35584314da0514b5aa96269f37e3c38ab192a324"
+      }
+    ]
+  },
+  "identifier_derivation": {
+    "group_id_prefix": "lossytrace-v2-private-source-group-20260802\u0000",
+    "group_id_algorithm": "source_id + '-' + lowercase_hex_sha256(group_id_prefix || UTF-8(source_id) || NUL || UTF-8(raw_group_key))",
+    "raw_group_key_must_not_contain_nul": true
+  },
+  "member_selection": {
+    "ranking_algorithm": "sha256_ascending_domain_separated_identity",
+    "ranking_prefix": "lossytrace-v2-source-member-selection-20260802\u0000",
+    "ranking_input": "UTF-8(ranking_prefix) || UTF-8(source_id) || NUL || UTF-8(group_id) || NUL || UTF-8(member_id)",
+    "tie_break": "member_id ascending only on digest collision",
+    "selection_count_per_retained_group": 1
+  },
+  "source_rules": [
+    {
+      "source_id": "consumed_v1_non_holdout",
+      "evidence_partition": "mechanism_development",
+      "candidate_source": "bound private v1 manifest metadata only",
+      "excluded_source_domains": [
+        "sqam_consumed_transfer",
+        "public_tier_a_originals"
+      ],
+      "cross_check": "The 48 public_tier_a_originals source groups must equal the 48 public_tier_a_controlled source groups exactly; select the controlled PCM excerpt because it is the matched base of the already-consumed derivatives.",
+      "base_class_by_source_domain": {
+        "demand_maestro_consumed_transfer": "independent_pcm_reference_wav16",
+        "musdb18hq_consumed_transfer": "musdb_pcm_reference_wav16",
+        "nsynth_test_sparse": "public_nsynth_pcm_montage_16000_flac16",
+        "nsynth_train_sparse": "public_nsynth_pcm_montage_16000_flac16",
+        "private_full_mix_training": "untouched_lossless",
+        "public_tier_a_controlled": "public_pcm_excerpt_flac16"
+      },
+      "expected_candidate_count": 527,
+      "expected_retained_group_count": 527
+    },
+    {
+      "source_id": "vctk_clean_56spk_2017",
+      "evidence_partition": "encoder_transfer",
+      "eligibility": "Every canonical clean WAV member reconciled by the source-identity audit.",
+      "grouping": "provider speaker identifier",
+      "group_cap": {
+        "partition_factor": "provider gender",
+        "ranking_prefix": "lossytrace-v2-vctk-provider-count-cap-20260802\u0000",
+        "ranking_input": "UTF-8(ranking_prefix) || UTF-8(provider speaker identifier)",
+        "selected_per_gender": 28,
+        "tie_break": "provider speaker identifier ascending only on digest collision"
+      },
+      "expected_candidate_count": 23075,
+      "expected_pre_cap_group_count": 58,
+      "expected_retained_group_count": 56
+    },
+    {
+      "source_id": "ravdess_audio_1_0_0",
+      "evidence_partition": "encoder_transfer",
+      "eligibility": "Canonical seven-field audio members minus every member of the one audited repeated-PCM group.",
+      "grouping": "actor identifier across speech and song",
+      "excluded_member_ids": [
+        "Actor_07/03-01-03-01-02-01-07.wav",
+        "Actor_07/03-01-03-01-02-02-07.wav"
+      ],
+      "expected_candidate_count": 2450,
+      "expected_retained_group_count": 24
+    },
+    {
+      "source_id": "fsdd_v1_0_10",
+      "evidence_partition": "encoder_transfer",
+      "eligibility": "Every canonical digit-speaker-repetition WAV member reconciled by the source-identity audit.",
+      "grouping": "repository speaker identifier",
+      "expected_candidate_count": 3000,
+      "expected_retained_group_count": 6
+    },
+    {
+      "source_id": "tinysol_6_0",
+      "evidence_partition": "encoder_transfer",
+      "eligibility": "Metadata Needed digital retuning is FALSE and canonical filename MISC is N.",
+      "grouping": "one common conservative TinySOL collection partition",
+      "expected_candidate_count": 2273,
+      "expected_retained_group_count": 1
+    },
+    {
+      "source_id": "sonyc_backgrounds_1_0_0",
+      "evidence_partition": "encoder_transfer",
+      "eligibility": "Every canonical 2017 split/sensor/date/hour/instance WAV reconciled by the source-identity audit.",
+      "grouping": "sensor identifier across recording time",
+      "expected_candidate_count": 550,
+      "expected_retained_group_count": 15
+    },
+    {
+      "source_id": "satp_soundscapes_1_5",
+      "evidence_partition": "external_transfer",
+      "eligibility": "Every non-calibration archive recording reconciled to the bound README table.",
+      "grouping": "exact non-missing provider latitude/longitude pair; missing coordinates remain singleton",
+      "expected_candidate_count": 27,
+      "expected_retained_group_count": 25
+    },
+    {
+      "source_id": "lombard_grid_2018",
+      "evidence_partition": "external_transfer",
+      "eligibility": "Canonical filename with exactly one matching CORRECT provider metadata row.",
+      "grouping": "provider talker identifier across conditions and utterances",
+      "expected_candidate_count": 5268,
+      "expected_retained_group_count": 54
+    },
+    {
+      "source_id": "rwc_music_v2_2026",
+      "evidence_partition": "external_transfer",
+      "eligibility": "Every metadata-reconciled row after the 35 preregistered jazz-instrumentation exclusions.",
+      "grouping": "artist family under the separately bound family rules",
+      "work_title_constraint": {
+        "normalization": "NFKD ASCII, casefold, remove one trailing parenthesized arrangement label, retain lowercase alphanumeric tokens joined by one space",
+        "algorithm": "deterministic maximum bipartite matching from artist families to normalized work titles",
+        "family_order_prefix": "lossytrace-v2-rwc-family-order-20260802\u0000",
+        "family_order": "ascending SHA-256 of UTF-8(family_order_prefix) || UTF-8(group_id), then group_id ascending",
+        "title_adjacency_order": "for each family and normalized title retain the member with the lowest generic member-selection rank; visit those title edges by that rank, then normalized title ascending",
+        "augmenting_path_rule": "Process families in family_order. For each family, run a fresh depth-first augmenting search over title_adjacency_order; recursively reassign the current title owner by the same order. A title may be visited at most once per search.",
+        "completion_requirement": "All 85 artist families must be matched; otherwise stop without emitting an allocation."
+      },
+      "expected_candidate_count": 293,
+      "expected_retained_group_count": 85,
+      "expected_unique_selected_normalized_title_count": 85
+    }
+  ],
+  "expected": {
+    "candidate_count": 37463,
+    "selected_group_count": 793,
+    "selected_member_count": 793,
+    "partition_counts": {
+      "mechanism_development": 527,
+      "encoder_transfer": 102,
+      "external_transfer": 164
+    },
+    "source_counts": {
+      "consumed_v1_non_holdout": 527,
+      "vctk_clean_56spk_2017": 56,
+      "ravdess_audio_1_0_0": 24,
+      "fsdd_v1_0_10": 6,
+      "tinysol_6_0": 1,
+      "sonyc_backgrounds_1_0_0": 15,
+      "satp_soundscapes_1_5": 25,
+      "lombard_grid_2018": 54,
+      "rwc_music_v2_2026": 85
+    }
+  },
+  "stop_conditions": [
+    "Any bound input hash, source identity state, eligibility count, group count, or public/private flag differs.",
+    "A selected source group has zero or more than one selected member.",
+    "The RWC matching is incomplete or repeats a normalized work title.",
+    "Either transfer partition falls below its preregistered group floor.",
+    "Any candidate selection requires waveform samples, duration, audio measurements, mechanism outcomes, or unopened labels."
+  ],
+  "authorized_next_step": "Build the identity-only private candidate index, apply these rules exactly, emit a path-free aggregate, and verify byte-identical replay. No benchmark audio or mechanism score may be generated or opened."
+}

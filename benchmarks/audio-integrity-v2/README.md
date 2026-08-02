@@ -16,6 +16,7 @@ Read these before constructing a manifest:
 - [`factorial-contract.json`](factorial-contract.json)
 - [`manifest.example.json`](manifest.example.json)
 - [`inventory.json`](inventory.json)
+- [`source-allocation-rules.json`](source-allocation-rules.json)
 - [`toolchain-probe-result-20260802.md`](../../docs/research/toolchain-probe-result-20260802.md)
 - [`rwc-source-identity-audit-20260802.md`](../../docs/research/rwc-source-identity-audit-20260802.md)
 
@@ -24,6 +25,12 @@ in
 [`factorial-benchmark-inventory-20260802.md`](../../docs/research/factorial-benchmark-inventory-20260802.md).
 Every proposed new source identity is now audited, but the inventory is not a
 frozen selection and has generated no benchmark audio.
+
+The identity-only selection procedure is separately preregistered in
+[`source-allocation-preregistration-20260802.md`](../../docs/research/source-allocation-preregistration-20260802.md).
+It must be applied and replayed before factor levels are frozen. Its private
+outputs may contain exact member identities; only the path-free aggregate is
+eligible for Git.
 
 ## Evidence partitions
 

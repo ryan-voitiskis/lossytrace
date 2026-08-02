@@ -82,6 +82,8 @@ denominator through an unapplied, content-independent 28-per-gender cap. The
 subsequent [`RWC audio audit`](rwc-source-identity-audit-20260802.md) bound all
 five provider archives, reconciled all 328 annotation IDs, found 328 distinct
 PCM payloads, and retained the conservative 85-family boundary. Source
-identity is complete; source allocation, factors, tool bindings, and
-fractional assignment remain separate freeze gates.
+identity is complete. The identity-only
+[`source-allocation procedure`](source-allocation-preregistration-20260802.md)
+is now preregistered but not yet applied; source allocation, factors, tool
+bindings, and fractional assignment remain separate freeze gates.
 No successor mechanism score or retained holdout has been opened.
