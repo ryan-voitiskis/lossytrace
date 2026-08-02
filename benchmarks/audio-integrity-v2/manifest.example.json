@@ -1,0 +1,316 @@
+{
+  "schema_version": 2,
+  "contract_id": "lossytrace-audio-integrity-factorial-v2-20260802-001",
+  "benchmark_id": "replace-with-private-factorial-benchmark-id",
+  "feature_version": 0,
+  "public_verdict_enabled": false,
+  "scores_opened": false,
+  "existing_v1_holdouts_included": false,
+  "source_collections": [
+    {
+      "source_collection_id": "public-fixture-development",
+      "source_lineage_id": "public-fixture-development-lineage",
+      "evidence_partition": "mechanism_development",
+      "source_domain": "synthetic_music_fixture",
+      "provenance_tier": "synthetic",
+      "license": "CC0-1.0",
+      "provenance_record_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    {
+      "source_collection_id": "public-fixture-encoder-transfer",
+      "source_lineage_id": "public-fixture-encoder-transfer-lineage",
+      "evidence_partition": "encoder_transfer",
+      "source_domain": "synthetic_speech_fixture",
+      "provenance_tier": "synthetic",
+      "license": "CC0-1.0",
+      "provenance_record_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    }
+  ],
+  "tools": [
+    {
+      "tool_id": "fixture-tool",
+      "implementation": "fixture encoder harness",
+      "version": "1.0.0",
+      "binary_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "license": "CC0-1.0"
+    }
+  ],
+  "encoders": [
+    {
+      "encoder_id": "fixture-mp3-development",
+      "lineage_id": "fixture-mp3-lineage-a",
+      "implementation": "fixture mp3 encoder A",
+      "version": "1.0.0",
+      "binary_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+      "license": "CC0-1.0"
+    },
+    {
+      "encoder_id": "fixture-aac-development",
+      "lineage_id": "fixture-aac-lineage-a",
+      "implementation": "fixture aac encoder A",
+      "version": "1.0.0",
+      "binary_sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+      "license": "CC0-1.0"
+    },
+    {
+      "encoder_id": "fixture-mp3-transfer",
+      "lineage_id": "fixture-mp3-lineage-b",
+      "implementation": "fixture mp3 encoder B",
+      "version": "2.0.0",
+      "binary_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "license": "CC0-1.0"
+    }
+  ],
+  "encoder_settings": [
+    {
+      "setting_id": "mp3-a-cbr128",
+      "codec_family": "mp3",
+      "encoder_id": "fixture-mp3-development",
+      "rate_control": "cbr",
+      "bitrate_or_quality": "128k",
+      "sample_rate_hz": 44100,
+      "channel_mode": "joint_stereo",
+      "encoder_lowpass": {
+        "mode": "encoder_default",
+        "hz": null
+      }
+    },
+    {
+      "setting_id": "aac-a-vbr",
+      "codec_family": "aac_lc",
+      "encoder_id": "fixture-aac-development",
+      "rate_control": "vbr",
+      "bitrate_or_quality": "quality-3",
+      "sample_rate_hz": 44100,
+      "channel_mode": "stereo",
+      "encoder_lowpass": {
+        "mode": "encoder_default",
+        "hz": null
+      }
+    },
+    {
+      "setting_id": "mp3-b-vbr",
+      "codec_family": "mp3",
+      "encoder_id": "fixture-mp3-transfer",
+      "rate_control": "vbr",
+      "bitrate_or_quality": "quality-2",
+      "sample_rate_hz": 44100,
+      "channel_mode": "joint_stereo",
+      "encoder_lowpass": {
+        "mode": "fixed",
+        "hz": 18000
+      }
+    }
+  ],
+  "decoders": [
+    {
+      "decoder_id": "fixture-analysis-decoder",
+      "implementation": "fixture lossless container decoder",
+      "version": "1.0.0",
+      "binary_sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+      "license": "CC0-1.0"
+    },
+    {
+      "decoder_id": "fixture-lossy-decoder-a",
+      "implementation": "fixture lossy codec decoder A",
+      "version": "1.0.0",
+      "binary_sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+      "license": "CC0-1.0"
+    },
+    {
+      "decoder_id": "fixture-lossy-decoder-b",
+      "implementation": "fixture lossy codec decoder B",
+      "version": "2.0.0",
+      "binary_sha256": "3333333333333333333333333333333333333333333333333333333333333333",
+      "license": "CC0-1.0"
+    }
+  ],
+  "transforms": [
+    {
+      "transform_id": "resample-32k-44k1",
+      "family": "pcm_resample",
+      "parameters": {
+        "input_rate_hz": 32000,
+        "output_rate_hz": 44100
+      },
+      "tool_id": "fixture-tool"
+    }
+  ],
+  "recipes": [
+    {
+      "recipe_id": "recipe-development-resample",
+      "output_case_id": "fixture-development-resample",
+      "source_case_id": "fixture-development-reference",
+      "command_sha256": "4444444444444444444444444444444444444444444444444444444444444444",
+      "tool_ids": [
+        "fixture-tool"
+      ]
+    },
+    {
+      "recipe_id": "recipe-development-mp3",
+      "output_case_id": "fixture-development-mp3",
+      "source_case_id": "fixture-development-reference",
+      "command_sha256": "5555555555555555555555555555555555555555555555555555555555555555",
+      "tool_ids": [
+        "fixture-tool"
+      ]
+    },
+    {
+      "recipe_id": "recipe-development-aac",
+      "output_case_id": "fixture-development-aac",
+      "source_case_id": "fixture-development-reference",
+      "command_sha256": "6666666666666666666666666666666666666666666666666666666666666666",
+      "tool_ids": [
+        "fixture-tool"
+      ]
+    },
+    {
+      "recipe_id": "recipe-transfer-mp3",
+      "output_case_id": "fixture-transfer-mp3",
+      "source_case_id": "fixture-transfer-reference",
+      "command_sha256": "7777777777777777777777777777777777777777777777777777777777777777",
+      "tool_ids": [
+        "fixture-tool"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "fixture-development-reference",
+      "source_group": "fixture-development-source",
+      "partition_group": "fixture-development-partition",
+      "source_collection_id": "public-fixture-development",
+      "source_domain": "synthetic_music_fixture",
+      "evidence_partition": "mechanism_development",
+      "relative_path": "sources/development-reference.flac",
+      "audio_sha256": "8888888888888888888888888888888888888888888888888888888888888888",
+      "provenance_tier": "synthetic",
+      "expectation": "negative",
+      "history_class": "pcm_reference",
+      "assessment_eligibility": "eligible",
+      "current_container": "flac",
+      "current_codec": "pcm",
+      "sample_rate_hz": 44100,
+      "channel_count": 2,
+      "analysis_decoder_id": "fixture-analysis-decoder",
+      "post_transform_ids": []
+    },
+    {
+      "case_id": "fixture-development-resample",
+      "source_group": "fixture-development-source",
+      "partition_group": "fixture-development-partition",
+      "source_collection_id": "public-fixture-development",
+      "source_domain": "synthetic_music_fixture",
+      "evidence_partition": "mechanism_development",
+      "relative_path": "generated/development-resample.flac",
+      "audio_sha256": "9999999999999999999999999999999999999999999999999999999999999999",
+      "provenance_tier": "synthetic",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "hard_negative_class": "pcm_resample",
+      "assessment_eligibility": "eligible",
+      "current_container": "flac",
+      "current_codec": "pcm",
+      "sample_rate_hz": 44100,
+      "channel_count": 2,
+      "analysis_decoder_id": "fixture-analysis-decoder",
+      "post_transform_ids": [
+        "resample-32k-44k1"
+      ],
+      "reference_case_id": "fixture-development-reference",
+      "recipe_id": "recipe-development-resample"
+    },
+    {
+      "case_id": "fixture-development-mp3",
+      "source_group": "fixture-development-source",
+      "partition_group": "fixture-development-partition",
+      "source_collection_id": "public-fixture-development",
+      "source_domain": "synthetic_music_fixture",
+      "evidence_partition": "mechanism_development",
+      "relative_path": "generated/development-mp3.flac",
+      "audio_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab",
+      "provenance_tier": "synthetic",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "assessment_eligibility": "eligible",
+      "current_container": "flac",
+      "current_codec": "pcm",
+      "sample_rate_hz": 44100,
+      "channel_count": 2,
+      "analysis_decoder_id": "fixture-analysis-decoder",
+      "history_decoder_id": "fixture-lossy-decoder-a",
+      "post_transform_ids": [],
+      "reference_case_id": "fixture-development-reference",
+      "encoder_setting_id": "mp3-a-cbr128",
+      "recipe_id": "recipe-development-mp3"
+    },
+    {
+      "case_id": "fixture-development-aac",
+      "source_group": "fixture-development-source",
+      "partition_group": "fixture-development-partition",
+      "source_collection_id": "public-fixture-development",
+      "source_domain": "synthetic_music_fixture",
+      "evidence_partition": "mechanism_development",
+      "relative_path": "generated/development-aac.flac",
+      "audio_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbc",
+      "provenance_tier": "synthetic",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "assessment_eligibility": "eligible",
+      "current_container": "flac",
+      "current_codec": "pcm",
+      "sample_rate_hz": 44100,
+      "channel_count": 2,
+      "analysis_decoder_id": "fixture-analysis-decoder",
+      "history_decoder_id": "fixture-lossy-decoder-a",
+      "post_transform_ids": [],
+      "reference_case_id": "fixture-development-reference",
+      "encoder_setting_id": "aac-a-vbr",
+      "recipe_id": "recipe-development-aac"
+    },
+    {
+      "case_id": "fixture-transfer-reference",
+      "source_group": "fixture-transfer-source",
+      "partition_group": "fixture-transfer-partition",
+      "source_collection_id": "public-fixture-encoder-transfer",
+      "source_domain": "synthetic_speech_fixture",
+      "evidence_partition": "encoder_transfer",
+      "relative_path": "sources/transfer-reference.flac",
+      "audio_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccd",
+      "provenance_tier": "synthetic",
+      "expectation": "negative",
+      "history_class": "pcm_reference",
+      "assessment_eligibility": "eligible",
+      "current_container": "flac",
+      "current_codec": "pcm",
+      "sample_rate_hz": 44100,
+      "channel_count": 2,
+      "analysis_decoder_id": "fixture-analysis-decoder",
+      "post_transform_ids": []
+    },
+    {
+      "case_id": "fixture-transfer-mp3",
+      "source_group": "fixture-transfer-source",
+      "partition_group": "fixture-transfer-partition",
+      "source_collection_id": "public-fixture-encoder-transfer",
+      "source_domain": "synthetic_speech_fixture",
+      "evidence_partition": "encoder_transfer",
+      "relative_path": "generated/transfer-mp3.flac",
+      "audio_sha256": "ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddde",
+      "provenance_tier": "synthetic",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "assessment_eligibility": "eligible",
+      "current_container": "flac",
+      "current_codec": "pcm",
+      "sample_rate_hz": 44100,
+      "channel_count": 2,
+      "analysis_decoder_id": "fixture-analysis-decoder",
+      "history_decoder_id": "fixture-lossy-decoder-b",
+      "post_transform_ids": [],
+      "reference_case_id": "fixture-transfer-reference",
+      "encoder_setting_id": "mp3-b-vbr",
+      "recipe_id": "recipe-transfer-mp3"
+    }
+  ]
+}

@@ -1,0 +1,232 @@
+{
+  "schema_version": 1,
+  "contract_id": "lossytrace-audio-integrity-factorial-v2-20260802-001",
+  "task": "conditional_prior_lossy_history_from_decoded_pcm",
+  "identifiability_contract": "docs/research/decoded-pcm-identifiability-contract-20260802.md",
+  "public_state": {
+    "evidence_schema_version": 1,
+    "feature_version": 0,
+    "public_verdict_enabled": false
+  },
+  "allowed_evidence_partitions": [
+    "mechanism_development",
+    "encoder_transfer",
+    "external_transfer",
+    "synthetic_ci"
+  ],
+  "allowed_expectations": [
+    "negative",
+    "controlled_positive"
+  ],
+  "allowed_history_classes": [
+    "pcm_reference",
+    "pcm_hard_negative",
+    "controlled_lossy_history",
+    "lossy_original_diagnostic"
+  ],
+  "allowed_assessment_eligibility": [
+    "eligible",
+    "diagnostic_only"
+  ],
+  "allowed_provenance_tiers": [
+    "tier_a_confirmed_pcm",
+    "tier_b_trusted",
+    "tier_c_unknown",
+    "synthetic"
+  ],
+  "eligible_current_codecs": [
+    "pcm"
+  ],
+  "scoped_codec_families": [
+    "mp3",
+    "aac_lc",
+    "opus",
+    "vorbis"
+  ],
+  "required_case_fields": [
+    "case_id",
+    "source_group",
+    "partition_group",
+    "source_collection_id",
+    "source_domain",
+    "evidence_partition",
+    "relative_path",
+    "audio_sha256",
+    "provenance_tier",
+    "expectation",
+    "history_class",
+    "assessment_eligibility",
+    "current_container",
+    "current_codec",
+    "sample_rate_hz",
+    "channel_count",
+    "analysis_decoder_id",
+    "post_transform_ids"
+  ],
+  "split_rules": {
+    "source_group_single_partition": true,
+    "partition_group_single_partition": true,
+    "source_collection_single_partition": true,
+    "controlled_positive_requires_reference": true,
+    "reference_same_source_group": true,
+    "reference_same_partition": true,
+    "encoder_transfer_lineage_disjoint_from_development": true,
+    "external_encoder_lineage_disjoint_from_selection": true,
+    "external_source_collection_disjoint_from_selection": true,
+    "existing_v1_holdouts_permitted": false
+  },
+  "factor_requirements": {
+    "source_collection_fields": [
+      "source_collection_id",
+      "source_lineage_id",
+      "evidence_partition",
+      "source_domain",
+      "provenance_tier",
+      "license",
+      "provenance_record_sha256"
+    ],
+    "encoder_setting_fields": [
+      "setting_id",
+      "codec_family",
+      "encoder_id",
+      "rate_control",
+      "sample_rate_hz",
+      "channel_mode",
+      "encoder_lowpass"
+    ],
+    "encoder_fields": [
+      "encoder_id",
+      "lineage_id",
+      "implementation",
+      "version",
+      "binary_sha256",
+      "license"
+    ],
+    "decoder_fields": [
+      "decoder_id",
+      "implementation",
+      "version",
+      "binary_sha256",
+      "license"
+    ],
+    "transform_fields": [
+      "transform_id",
+      "family",
+      "parameters",
+      "tool_id"
+    ],
+    "recipe_fields": [
+      "recipe_id",
+      "output_case_id",
+      "source_case_id",
+      "command_sha256",
+      "tool_ids"
+    ],
+    "positive_case_fields": [
+      "reference_case_id",
+      "encoder_setting_id",
+      "history_decoder_id",
+      "recipe_id"
+    ],
+    "generated_negative_fields": [
+      "reference_case_id",
+      "recipe_id"
+    ],
+    "codec_setting_dimensions": [
+      "codec_family",
+      "encoder_lineage",
+      "encoder_version",
+      "rate_control",
+      "bitrate_or_quality",
+      "encoder_lowpass",
+      "channel_mode",
+      "sample_rate_hz",
+      "history_decoder",
+      "analysis_decoder",
+      "post_transform"
+    ]
+  },
+  "freeze_profiles": {
+    "mechanism_development_freeze": {
+      "partition": "mechanism_development",
+      "minimum_source_groups": 150,
+      "minimum_partition_groups": 150,
+      "minimum_source_domains": 5,
+      "minimum_negative_source_groups": 150,
+      "minimum_tier_a_negative_partition_groups": 50,
+      "minimum_controlled_positive_source_groups": 120,
+      "minimum_hard_negative_classes": 8,
+      "minimum_groups_per_hard_negative_class": 20,
+      "minimum_positive_groups_per_scoped_codec": 100,
+      "require_all_scoped_codecs": true,
+      "minimum_encoder_lineages": {
+        "aac_lc": 2,
+        "mp3": 2,
+        "opus": 1,
+        "vorbis": 1
+      },
+      "minimum_settings_per_scoped_codec": 3
+    },
+    "encoder_transfer_freeze": {
+      "partition": "encoder_transfer",
+      "minimum_source_groups": 100,
+      "minimum_partition_groups": 100,
+      "minimum_source_domains": 4,
+      "minimum_negative_source_groups": 100,
+      "minimum_tier_a_negative_partition_groups": 50,
+      "minimum_controlled_positive_source_groups": 80,
+      "minimum_hard_negative_classes": 6,
+      "minimum_groups_per_hard_negative_class": 15,
+      "minimum_positive_groups_per_scoped_codec": 60,
+      "require_all_scoped_codecs": true,
+      "minimum_encoder_lineages": {
+        "aac_lc": 1,
+        "mp3": 1,
+        "opus": 1,
+        "vorbis": 1
+      },
+      "minimum_settings_per_scoped_codec": 2
+    },
+    "external_transfer_freeze": {
+      "partition": "external_transfer",
+      "minimum_source_groups": 150,
+      "minimum_partition_groups": 150,
+      "minimum_source_domains": 3,
+      "minimum_negative_source_groups": 150,
+      "minimum_tier_a_negative_partition_groups": 150,
+      "minimum_controlled_positive_source_groups": 100,
+      "minimum_hard_negative_classes": 8,
+      "minimum_groups_per_hard_negative_class": 20,
+      "minimum_positive_groups_per_scoped_codec": 100,
+      "require_all_scoped_codecs": false,
+      "minimum_encoder_lineages": {},
+      "minimum_settings_per_scoped_codec": 1
+    }
+  },
+  "mechanism_discovery_gate": {
+    "minimum_correctly_directed_supported_pair_rate": 0.9,
+    "minimum_one_sided_95_wilson_lower": 0.85,
+    "minimum_supported_positive_group_coverage": 0.75,
+    "maximum_negative_source_group_alerts": 0,
+    "maximum_one_sided_95_wilson_negative_group_upper": 0.025,
+    "minimum_supported_recall": 0.9,
+    "minimum_one_sided_95_wilson_recall_lower": 0.85,
+    "grouped_permutation_required": true,
+    "effect_hierarchy_required": true,
+    "source_domain_reversal_permitted": false,
+    "support_filter_may_remove_alerting_negatives": false
+  },
+  "privacy": {
+    "private_manifest_committed": false,
+    "case_output_committed": false,
+    "audio_committed": false,
+    "path_free_aggregate_required": true,
+    "forbidden_aggregate_keys": [
+      "audio_sha256",
+      "case_id",
+      "partition_group",
+      "relative_path",
+      "source_group"
+    ]
+  }
+}

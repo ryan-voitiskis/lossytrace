@@ -71,6 +71,43 @@ sealed release holdout. The schema-2 aggregate contains no paths or case-level
 rows and explicitly states that classification and calibration metrics do not
 exist for the verdict-free feature-version-0 baseline.
 
+## Frozen external-detector failure atlas
+
+The exact Cannam published-weight CNN is replayed as a fixed baseline, not
+tuned or promoted. Its method and metrics are frozen in
+[`baseline-failure-atlas-preregistration-20260802.md`](../../docs/research/baseline-failure-atlas-preregistration-20260802.md).
+Build revision `7a70bd8d15e68b0b1942a9d3deac6ad4d8293b8b` outside the repository,
+bind the plugin and host binaries by hash, and run the complete already-consumed
+manifest with one low-priority worker:
+
+```bash
+caffeinate -is nice -n 15 \
+  python3 scripts/evaluate-vamp-lossy-detector.py \
+  --manifest <PRIVATE_BASELINE_ROOT>/manifest.json \
+  --expected-manifest-sha256 e19b5b408fedf348fa9b6499d5cdd1b6b734d84b19b895d5b0a528f0c4423b7a \
+  --audio-root <CORPUS_ROOT> \
+  --host <VAMP_SIMPLE_HOST> \
+  --vamp-path <EXACT_CANNAM_BUILD_DIRECTORY> \
+  --repository <EXACT_CANNAM_CHECKOUT> \
+  --plugin-sdk-repository <PINNED_VAMP_SDK_CHECKOUT> \
+  --plugin-binary <EXACT_CANNAM_PLUGIN_BINARY> \
+  --partial-directory <PRIVATE_CANNAM_RUN_ROOT>/partials \
+  --jobs 1 \
+  --output <PRIVATE_CANNAM_RUN_ROOT>/raw-report.json
+
+python3 scripts/analyze-vamp-lossy-detector.py \
+  --manifest <PRIVATE_BASELINE_ROOT>/manifest.json \
+  --report <PRIVATE_CANNAM_RUN_ROOT>/raw-report.json \
+  --preregistration docs/research/baseline-failure-atlas-preregistration-20260802.md \
+  --output <PRIVATE_CANNAM_RUN_ROOT>/aggregate-report.json
+```
+
+Partials are bound to the manifest, audio, revision, plugin, host, and fixed
+0.5-window/25%-file rule. Case IDs are hashed in partial filenames and are not
+printed to progress logs. The aggregate is path-free and reports both the
+general 5,280-case population and the task-matched 2,261-case MP3-128 view.
+Neither is independent validation.
+
 ## Preregistered exact-hybrid ablation
 
 The only retained detector direction is the exact MP3 hybrid-transform

@@ -38,3 +38,11 @@ decision. The broader independent-validation checkpoint remains documented in
 The comparative review of published detectors, the retained exact-revision
 Cannam evaluation, and the recommended successor research program are in
 [`lossy-detector-comparison-and-next-direction-20260802.md`](lossy-detector-comparison-and-next-direction-20260802.md).
+
+The approved successor program is now governed by the
+[`decoded-PCM identifiability contract`](decoded-pcm-identifiability-contract-20260802.md),
+the
+[`baseline failure-atlas preregistration`](baseline-failure-atlas-preregistration-20260802.md),
+and the machine-validated
+[`factorial benchmark v2 contract`](../../benchmarks/audio-integrity-v2/README.md).
+No successor mechanism score or retained holdout has been opened.
