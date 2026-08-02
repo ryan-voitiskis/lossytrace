@@ -80,6 +80,33 @@ Build revision `7a70bd8d15e68b0b1942a9d3deac6ad4d8293b8b` outside the repository
 bind the plugin and host binaries by hash, and run the complete already-consumed
 manifest with one low-priority worker:
 
+First select the 104 retained wrapper-equivalent case IDs from the historical
+112-case report, score them with the same runner, and require zero fixed-
+decision mismatches:
+
+```bash
+python3 scripts/verify-vamp-lossy-detector-pilot-replay.py compose \
+  --full-manifest <PRIVATE_BASELINE_ROOT>/manifest.json \
+  --historical-report <PRIVATE_CANNAM_RUN_ROOT>/historical-pilot-report.json \
+  --output <PRIVATE_CANNAM_RUN_ROOT>/pilot-manifest.json
+
+# Run evaluate-vamp-lossy-detector.py against pilot-manifest.json with the
+# exact tool arguments shown below, writing pilot-raw-report.json.
+
+python3 scripts/verify-vamp-lossy-detector-pilot-replay.py compare \
+  --manifest <PRIVATE_CANNAM_RUN_ROOT>/pilot-manifest.json \
+  --historical-report <PRIVATE_CANNAM_RUN_ROOT>/historical-pilot-report.json \
+  --replay-report <PRIVATE_CANNAM_RUN_ROOT>/pilot-raw-report.json \
+  --output <PRIVATE_CANNAM_RUN_ROOT>/pilot-replay-verification.json
+```
+
+The selector fails unless the overlap is exactly 104 cases and the eight
+unretained cases are the historical private-source sharp-low-pass class. The
+comparison is an environment regression, not independent evidence and not an
+exact input-file replay.
+
+Then run P1:
+
 ```bash
 caffeinate -is nice -n 15 \
   python3 scripts/evaluate-vamp-lossy-detector.py \
