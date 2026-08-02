@@ -61,7 +61,8 @@ bindings and 27 compatible decoder paths, rejected Apple MP3 encoding on the
 bound OS build, and substituted a pinned BladeEnc transfer lineage. See the
 [`toolchain probe result`](toolchain-probe-result-20260802.md).
 The source-identity gate has now bound Lombard Grid, SONYC, SATP, RAVDESS,
-TinySOL, FSDD, and VCTK to acquired archive bytes and path-free evidence. The
+TinySOL, FSDD, VCTK, and RWC to acquired archive bytes and path-free
+evidence. The
 [`RAVDESS audit`](ravdess-source-identity-audit-20260802.md) retained 24 actor
 groups while recording one same-actor repeated-PCM pair and six stereo
 outliers; neither was hidden by preprocessing. The
@@ -77,7 +78,10 @@ RAVDESS to encoder transfer and added six audited FSDD speaker groups, leaving
 102 encoder-transfer groups and 164 external-transfer groups. The
 [`VCTK audit`](vctk-source-identity-audit-20260802.md) found 58 released
 speaker IDs behind the nominal 56-speaker label and preserved the 56-group
-denominator through an unapplied, content-independent 28-per-gender cap. Only
-the five RWC audio archives remain before the separate source, factor, and
-tool freezes.
+denominator through an unapplied, content-independent 28-per-gender cap. The
+subsequent [`RWC audio audit`](rwc-source-identity-audit-20260802.md) bound all
+five provider archives, reconciled all 328 annotation IDs, found 328 distinct
+PCM payloads, and retained the conservative 85-family boundary. Source
+identity is complete; source allocation, factors, tool bindings, and
+fractional assignment remain separate freeze gates.
 No successor mechanism score or retained holdout has been opened.

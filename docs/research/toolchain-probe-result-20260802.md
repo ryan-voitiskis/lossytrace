@@ -119,6 +119,8 @@ The subsequent
 [source-partition correction](source-partition-correction-20260802.md) rejected
 Speech Commands from Tier A, moved RAVDESS to encoder transfer, and added six
 audited FSDD groups. VCTK was subsequently
-[identity-verified](vctk-source-identity-audit-20260802.md), so only RWC audio
-remains. The corrected margins are only 14 external-transfer groups and two
-encoder-transfer groups; do not spend them by weakening grouping.
+[identity-verified](vctk-source-identity-audit-20260802.md), followed by all
+five [RWC audio archives](rwc-source-identity-audit-20260802.md). The source
+identity gate is complete. The corrected margins are only 14
+external-transfer groups and two encoder-transfer groups; do not spend them by
+weakening grouping during the separate freezes.

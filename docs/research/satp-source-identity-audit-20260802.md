@@ -131,9 +131,10 @@ The later
 [source-partition correction](source-partition-correction-20260802.md) rejected
 Speech Commands from Tier A, moved RAVDESS to encoder transfer, and added six
 audited FSDD speaker groups. VCTK was subsequently
-[identity-verified](vctk-source-identity-audit-20260802.md). The remaining
-source gate is RWC audio. Only after it is bound may source allocation, factor
-levels, and toolchain versions be frozen separately.
+[identity-verified](vctk-source-identity-audit-20260802.md), followed by all
+five [RWC audio archives](rwc-source-identity-audit-20260802.md). Source
+identity is complete; source allocation, factor levels, toolchain versions,
+and fractional assignment remain separate freezes.
 
 No benchmark derivative, mechanism score, candidate decision, or external
 transfer evidence was opened by this audit.

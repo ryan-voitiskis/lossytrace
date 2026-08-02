@@ -4,10 +4,10 @@
 identity is frozen
 
 **Actions so far:** local tools inspected and synthetically probed, provider
-metadata reviewed, Lombard Grid, SONYC, SATP, RAVDESS, TinySOL, and FSDD source
-identities acquired and audited, and Speech Commands rejected after its mixed
-OGG/WAV release history was established; no benchmark audio generated, no
-score opened, and no candidate selected
+metadata reviewed, every retained new source collection acquired and audited,
+and Speech Commands rejected after its mixed OGG/WAV release history was
+established; no source allocated, no benchmark audio generated, no score
+opened, and no candidate selected
 
 The machine-readable inventory is
 [`benchmarks/audio-integrity-v2/inventory.json`](../../benchmarks/audio-integrity-v2/inventory.json).
@@ -206,11 +206,13 @@ the 24 actor groups. The later provenance correction moved those groups to
 encoder transfer; this is a partition change, not a change to the audit.
 
 The now-smaller margin is deliberately not treated as permission to weaken
-identity.
-The RWC metadata audit binds its known aliases and dependencies, while
-retaining RWC as one provider stratum because metadata cannot prove disjoint
-recording sessions or backing personnel. The audio member identities still
-require verification. Separately, the encoder-transfer audit found 15—not the
+identity. The completed
+[RWC audio audit](rwc-source-identity-audit-20260802.md) binds all five exact
+provider archives, reconciles all 328 annotation identities, and finds 328
+distinct PCM payloads. Its known aliases and repeated-arrangement exclusions
+still leave 85 artist families, while RWC remains one provider stratum because
+artist metadata cannot prove disjoint recording sessions or backing personnel.
+Separately, the encoder-transfer audit found 15—not the
 one-group placeholder or the 26 sensors seen in a related wider 2017
 analysis—inside the bound SONYC archive. Its README says 441 clips, but the
 archive contains 550 canonical WAVs; that mismatch is retained without
@@ -220,14 +222,14 @@ add an entirely new provider collection; do not weaken grouping.
 
 ## Storage and acquisition boundary
 
-All proposed source archives still total 20,824,778,941 bytes (19.39 GiB).
-VCTK's 4,770,619,279-byte archive is now acquired and verified. The remaining
-five RWC source archives total 13,418,888,925 bytes (12.50 GiB). After VCTK
-transport cleanup, the data volume reported 33,496,936,448 bytes (31.20 GiB)
-free. Acquiring all five RWC archives would leave 20,078,047,523 bytes
-(18.70 GiB), or 3,971,920,163 bytes (3.70 GiB) above the fixed 15 GiB reserve
-for compact references, derived cases, and temporary intermediates.
-That is viable only if the stager:
+All 20,824,778,941 planned source-archive bytes (19.39 GiB) are now acquired
+and identity-verified. The RWC contribution is 13,418,888,925 bytes (12.50
+GiB) across five compressed archives. After the final acquisition and cleanup
+of reproducible installer caches, the rejected incomplete Speech Commands
+download, and Rust build output, the data volume reported 16,762,748,928 bytes
+(15.61 GiB) free. That is only 656,621,568 bytes above the fixed 15 GiB reserve.
+
+The next construction phases remain viable only if the stager:
 
 - streams selected members without full archive expansion;
 - retains at most one bounded reference excerpt per source group;
@@ -237,20 +239,21 @@ That is viable only if the stager:
 - rechecks projected and actual free space before each archive and generation
   phase.
 
-The resumable SONYC, SATP, RAVDESS, TinySOL, FSDD, and VCTK audit downloads were
-completed, passed their archive-integrity checks, and were independently bound
-by SHA-256 and their available provider identities. Lombard Grid, SONYC, SATP,
-RAVDESS, TinySOL, FSDD, and VCTK are the seven sources currently treated as
-acquired and identity-verified. Speech Commands has only a private partial and
-is a rejected source, not an acquisition in this total.
+The resumable SONYC, SATP, RAVDESS, TinySOL, FSDD, VCTK, and RWC audit
+downloads were completed, passed their archive-integrity checks, and were
+independently bound by SHA-256 and their available provider identities.
+Lombard Grid and those seven collections are all treated as acquired and
+identity-verified. The rejected Speech Commands partial was removed after its
+provenance disposition; it is not an acquisition in this total.
 
 ## Decision and next gate
 
 The tool and source proposal satisfies the v2 minima under its documented lower
-bounds, although the corrected transfer margins are narrow. The tool plumbing
-is verified but not frozen. VCTK is now verified, so the next checkpoint must
-verify every RWC audio member. Only then may separate
-source-allocation, factor-level, and toolchain freezes be committed.
+bounds, although the corrected transfer margins are narrow. Every proposed
+new source identity is now verified, while tool plumbing is verified but not
+frozen. The next checkpoint is a separately committed source-allocation freeze,
+followed by distinct factor-level, toolchain, and fractional-assignment
+freezes.
 
 No factor setting, fractional assignment, audio derivative, mechanism score,
 candidate, support rule, or public output is authorized by this inventory.

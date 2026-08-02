@@ -22,10 +22,10 @@ exactly 150 to 204 groups. The resulting 54-group margin means that discovering
 RWC artist aliases no longer forces us to weaken the preregistered 150-group
 minimum.
 
-This is a source-inventory decision, not the external-transfer allocation. RWC
-artist families and recording relationships still require an explicit audit,
-and all remaining provider archives still require identity verification before
-the allocation can be frozen.
+This was a source-inventory decision, not the external-transfer allocation. At
+this checkpoint RWC artist families and remaining provider archives still
+required explicit audits. Those source-identity checks were subsequently
+completed without freezing an allocation.
 
 ## Why the provenance is suitable
 
@@ -143,15 +143,16 @@ The subsequent
 count from 99 strings to 85 artist families. The later SATP coordinate audit
 reduced its 27 recordings to 25 groups. The later correction rejected Speech
 Commands from Tier A and moved RAVDESS to encoder transfer; external transfer
-now has 164 groups, a 14-group margin. The next source gate is not more corpus
-shopping: VCTK is now identity-verified, and the remaining gate is exact RWC
-audio identity.
+now has 164 groups, a 14-group margin. The next source gate was not more corpus
+shopping: VCTK was subsequently identity-verified, followed by exact
+[RWC audio identity](rwc-source-identity-audit-20260802.md).
 RAVDESS was subsequently
 [bound at 24 actor groups](ravdess-source-identity-audit-20260802.md), then
 moved to encoder transfer by the correction. TinySOL was
 [bound as one common-collection group](tinysol-source-identity-audit-20260802.md),
-and FSDD was bound at six speakers. Only after the remaining checks may source
-allocation, factor levels, and toolchain bindings be frozen separately.
+and FSDD was bound at six speakers. Those checks are now complete; source
+allocation, factor levels, toolchain bindings, and fractional assignment remain
+separate freeze records.
 
 No benchmark audio generation, candidate evaluation, or external-transfer
 score opening is authorized by this audit.

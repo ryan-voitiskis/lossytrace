@@ -1,128 +1,176 @@
-# v2 source identity audit - RWC metadata - 2026-08-02
+# v2 source identity audit - RWC Music Database v2 - 2026-08-02
 
-**Status:** metadata identity rules audited; audio acquisition and source
-allocation remain unfrozen
+**Status:** all five audio archives acquired and identity-verified; source
+allocation and benchmark factors remain unfrozen
 
-**Actions:** exact annotation revision and metadata bytes bound, known
-repeated-composition rows excluded, artist-label overlaps reviewed, family
-merges declared, no RWC audio acquired, no benchmark derivative generated,
+**Actions:** exact Zenodo bytes and checksums bound, ZIP CRCs and member paths
+verified, all WAVs streamed without archive extraction, audio identities
+reconciled to pinned annotations, global PCM duplication checked, two complete
+non-timing replays compared byte-for-byte, no benchmark derivative generated,
 and no mechanism score opened
 
-The rules are
-[`benchmarks/audio-integrity-v2/rwc-artist-family-rules.json`](../../benchmarks/audio-integrity-v2/rwc-artist-family-rules.json),
-the path-free observed result is
-[`research/sources/evidence/rwc-metadata-observed-20260802.json`](../../research/sources/evidence/rwc-metadata-observed-20260802.json),
-and the replay is
-[`scripts/audit-audio-integrity-v2-rwc-metadata.py`](../../scripts/audit-audio-integrity-v2-rwc-metadata.py).
+The source rules are
+[`benchmarks/audio-integrity-v2/rwc-audio-source-group-rules.json`](../../benchmarks/audio-integrity-v2/rwc-audio-source-group-rules.json).
+They bind the earlier
+[`artist-family rules`](../../benchmarks/audio-integrity-v2/rwc-artist-family-rules.json)
+and
+[`metadata-only evidence`](../../research/sources/evidence/rwc-metadata-observed-20260802.json).
+The full path-free result is
+[`research/sources/evidence/rwc-music-v2-2026-observed-20260802.json`](../../research/sources/evidence/rwc-music-v2-2026-observed-20260802.json),
+replayed by
+[`scripts/audit-audio-integrity-v2-rwc.py`](../../scripts/audit-audio-integrity-v2-rwc.py).
 
 ## Decision
 
-Reduce RWC's planning contribution from 99 exact artist strings to 85
-conservative artist families. This is a 14-group reduction, not an audio
-finding. After the subsequent SATP exact-coordinate audit, external transfer
-projected to 188 groups across nine domains at that checkpoint. The later
-[source-partition correction](source-partition-correction-20260802.md) moved
-RAVDESS to encoder transfer, so the current external projection is 164 groups
-across seven domains—14 above the preregistered floor of 150.
+Retain the [RWC Music Database v2 release](https://zenodo.org/records/18656623)
+as a Tier A external-transfer candidate at the existing conservative boundary
+of 85 artist families. The acquired evidence changes RWC from a metadata-only
+proposal to an identity-verified PCM source:
 
-The family count is suitable for source allocation only after the five RWC
-audio archives pass their provider checksums and member identities reconcile
-to the pinned metadata. It is not permission to treat 85 families as 85
-independent recording studios or statistical replicates.
+- all 13,418,888,925 provider archive bytes are exact;
+- all 328 annotation `RWCID` values have exactly one canonical WAV member;
+- all 328 PCM payloads are distinct; and
+- the 35 known RWC-J instrumentation-variation rows remain excluded, leaving
+  293 future-selection-eligible files across 85 declared artist families.
 
-## Exact metadata binding
+This is still not source allocation. No artist family, work, member, excerpt,
+factor cell, or codec derivative has been selected.
 
-The official [RWC v2 release](https://zenodo.org/records/18656623) points to the
-separate
-[RWC annotations repository](https://github.com/rwc-music/rwc-annotations).
-This audit binds:
+## Provider and processing boundary
 
-- annotation revision `0a1a6c31dbe73a7f5d44f7caef8cd0999402a4c2`;
-- `metadata.csv` SHA-256
-  `eba3fe129f835db58a9c23dad554547201ab02ef3af90c10857ef5b50b8b99da`;
-- 328 unique `RWCID` rows across the five retained collections; and
-- 99 globally unique, nonempty exact artist labels before exclusions.
+The dataset record is version `v2`, DOI
+[`10.5281/zenodo.18656623`](https://doi.org/10.5281/zenodo.18656623), under
+CC BY-NC 4.0. The 2026
+[`RWC Revisited`](https://doi.org/10.5334/tismir.326) paper says the distributed
+files stem from the original master tracks used for CD production rather than
+consumer-ripped copies.
 
-No count comes from a mutable branch tip at replay time.
+That statement establishes a materially better path than CD ripping, but it
+does not establish untouched studio/session masters. The exact 442-byte
+provider changelog records only:
 
-## Why 35 jazz rows are ineligible
+- v2 separation into one ZIP per sub-collection; and
+- v1 folder and file renaming.
 
-The primary
-[RWC Jazz description](https://staff.aist.go.jp/m.goto/RWC-MDB/rwc-mdb-j.html)
-states that pieces 1–35 are five compositions intentionally repeated across
-seven instrumentations. They were designed as alternate arrangements, with
-duos, trios, and larger groups that may share named or unnamed players.
+Neither the paper, changelog, nor annotations proves independent studios,
+engineers, sessions, or disjoint backing personnel. The audit therefore calls
+the bytes confirmed PCM from a documented CD-production-master path and keeps
+RWC as one provider stratum.
 
-Counting their 15 displayed artist labels as independent source identities
-would conflate work, arrangement, ensemble, and performer dependence. The
-rules therefore exclude all 35 instrumentation-variation rows before family
-accounting. The 15 jazz style/fusion rows remain eligible, preserving the jazz
-domain without knowingly repeated works.
+## Exact artifact bindings
 
-After that exclusion:
+Every provider MD5 matched, every local SHA-256 was independently computed,
+and every complete ZIP passed CRC verification.
 
-| Quantity | Count |
-| --- | ---: |
-| eligible rows | 293 |
-| exact artist labels | 87 |
-| normalized work titles | 292 |
-| duplicated normalized title groups | 1 |
+| Artifact | Bytes | Provider MD5 | Local SHA-256 |
+| --- | ---: | --- | --- |
+| `RWC-C.zip` | 2,966,354,301 | `2ac9139c...67f8` | `9c3725ec...ba0d` |
+| `RWC-G.zip` | 3,933,055,195 | `e78cddfb...cceb` | `39ec9dae...2100` |
+| `RWC-J.zip` | 2,127,754,512 | `c5d7d989...0c37` | `6efeedf8...e2c` |
+| `RWC-P.zip` | 4,071,840,278 | `960a11a2...d4f0` | `2ecdad82...ad1` |
+| `RWC-R.zip` | 319,884,639 | `63e3b626...caa3` | `27e13df7...6d97` |
+| `changelog.txt` | 442 | `f4aa8361...c7ad` | `5ea511cf...a0c1` |
 
-The sole normalized-title duplication is `Silent Night`; the later allocation
-rule permits at most one of the two rows.
+The audio total is 13,418,888,925 bytes (12.50 GiB). Exact URLs, complete
+digests, central-directory digests, and verification flags are in the rules
+and aggregate. No audio or private filesystem path is committed.
 
-## Artist-family reconciliation
+## Member and annotation reconciliation
 
-An automated review queue flags every pair of eligible labels sharing a
-non-generic normalized name token. All 12 pairs were manually adjudicated and
-are bound in the rules:
+The pinned annotation revision is
+`0a1a6c31dbe73a7f5d44f7caef8cd0999402a4c2`; `metadata.csv` is 48,516 bytes
+with SHA-256
+`eba3fe129f835db58a9c23dad554547201ab02ef3af90c10857ef5b50b8b99da`.
 
-- merge `Kazuo Nishi` with `Nishi feat.T`; the latter row also credits Kazuo
-  Nishi as composer;
-- merge `Yuriko Furuichi` with `Yuriko Furuichi & Yoshiko Kikuchi`; and
-- keep ten same-given-name, same-surname, or generic Tokyo/orchestra overlaps
-  separate because the full named identities differ.
+| Collection | Canonical WAVs | Central-directory SHA-256 |
+| --- | ---: | --- |
+| C | 61 | `6418256d...5188b` |
+| G | 102 | `c735dad7...f9e` |
+| J | 50 | `cf26fa9b...cc1` |
+| P | 100 | `4c198ed6...5d1c` |
+| R | 15 | `4532e457...596b` |
 
-Those two merges reduce 87 eligible labels to 85 artist families. The replay
-fails if a future metadata revision changes the overlap queue without an
-explicit review, if a merge label disappears, or if a reviewed decision and
-the unioned family graph disagree.
+The provider's piece counts are not always file counts. The canonical member
+grammar must admit the documented suffix identities: 15 C members in the
+`C023A-E`, `C024A-C`, `C025A-D`, and `C035A-C` groups, plus `G058A-C`.
+Treating IDs as only three digits would silently discard 18 valid files.
 
-## Independence boundary
+Every archive contains exactly its named top-level directory and canonical
+`RWC-X/RWC_XNNN[SUFFIX].wav` members. There are no encrypted members, special
+members, unexpected regular files, duplicate paths, missing annotation IDs,
+or extra annotation IDs. WAV duration agrees with the metadata to a maximum
+error of `0.0000000040700` samples, far inside the fixed `0.000001`-sample
+tolerance.
 
-Artist metadata cannot establish disjoint recording sessions, engineers,
-studios, or backing personnel. The benchmark must therefore retain all of the
-following simultaneously:
+## PCM observations
 
-- at most one selected reference excerpt per artist family;
-- no repeated normalized work title;
-- collection, family, work, legacy disc, and track IDs in the manifest;
-- RWC as one provider-level stratum in uncertainty and transfer reporting; and
-- leave-provider/domain sensitivity so 85 nominal RWC families cannot dominate
-  a cross-domain conclusion.
+All 328 members have one homogeneous representation:
 
-This is deliberately stricter than treating songs as independent, but it does
-not claim person-level ground truth that the provider metadata does not expose.
-If the audio member audit reveals additional session or duplication links, the
-85 count must fall. After the later source-partition correction, external
-transfer has a 14-group margin and can absorb reductions only down to 71 RWC
-families without changing the floor.
+| Field | Observed |
+| --- | --- |
+| RIFF format | little-endian PCM, format tag 1 |
+| channels | 2 |
+| sample rate | 44,100 Hz |
+| sample width | 16 bits |
+| format chunk | 16 bytes |
+| ancillary chunks | none |
+| uncompressed member bytes | 14,859,214,204 |
+
+The shortest file is `RWC_C024C`, 2,216,972 frames (50.271474 seconds), and
+the longest is `RWC_C009`, 47,606,776 frames (1,079.518730 seconds). Exact PCM
+SHA-256 comparison found 328 distinct payloads and zero repeat groups, both
+within and across collections. No group reduction is therefore required for
+byte-identical audio.
+
+## Conservative reference boundary
+
+The earlier metadata audit found 99 exact artist labels. The fixed boundary:
+
+1. excludes RWC-J pieces 1-35 because they are five compositions repeated
+   across seven instrumentations;
+2. merges `Kazuo Nishi` with `Nishi feat.T`;
+3. merges `Yuriko Furuichi` with `Yuriko Furuichi & Yoshiko Kikuchi`;
+4. excludes every member of any exact repeated-PCM group; and
+5. groups the remaining rows by the declared artist family.
+
+The audio observation adds no repeated-PCM exclusion, so 293 files and 85
+families remain. Future selection must use a separately frozen,
+content-independent rule, choose at most one bounded excerpt per family, and
+never repeat a normalized work title. Collection, family, work, legacy disc,
+track, and provider identity remain private manifest factors.
+
+The 85 families are grouping units, not 85 independently verified recording
+chains. External reporting must retain provider/domain strata and
+leave-provider sensitivity so RWC cannot hide a reversal in SATP or Lombard
+Grid.
+
+## Reproduction and storage
+
+The auditor validates exact sizes, provider MD5s, local SHA-256s, safe ZIP
+members, CRCs, RIFF structure, PCM format, metadata duration, exact PCM
+duplicates, family exclusions, and all rule/evidence bindings. Six synthetic
+tests cover complete replay, suffix identities, duplicate-PCM exclusion,
+metadata mismatch, duration mismatch, and provider-checksum rejection.
+
+Two complete private replays were byte-identical. Each produced SHA-256
+`c7dfb3d68e440561802fcacc35584314da0514b5aa96269f37e3c38ab192a324`,
+which is also the committed aggregate digest. The bound source-rule digest is
+`251b1b37cbdd1d154c29793ce7e05e7bc96eea357c530b40a8964bfb013f5fc6`.
+
+After acquisition, reproducible installer caches, the rejected incomplete
+Speech Commands download, and Rust build output were cleaned. The data volume
+then reported 16,762,748,928 bytes (15.61 GiB) free, 656,621,568 bytes above
+the fixed 15 GiB reserve. The five archives remain compressed; they were never
+expanded to disk.
 
 ## Next gate
 
-RWC's metadata identity concern is resolved enough to proceed to bytes, not to
-freeze. The subsequent
-[RAVDESS source-identity audit](ravdess-source-identity-audit-20260802.md)
-bound its 24 actor groups. TinySOL was subsequently
-[bound as one common-collection group](tinysol-source-identity-audit-20260802.md).
-The later
-[source-partition correction](source-partition-correction-20260802.md) rejected
-Speech Commands from Tier A, moved RAVDESS to encoder transfer, and added six
-audited FSDD speaker groups. VCTK was subsequently
-[identity-verified](vctk-source-identity-audit-20260802.md) at its conservative
-56-group contribution. The remaining source gate is to verify the RWC audio
-archives. Only after those checks may source allocation, factor
-levels, and toolchain bindings be committed as separate frozen records.
+The proposed source collection identities are now fully audited. The next
+checkpoint is a separate source-allocation freeze that binds collection/group
+partitioning and content-independent member selection without exposing private
+identities. Factor levels, toolchain bindings, and fractional assignment must
+then be frozen in their own records before benchmark audio is generated.
 
-No RWC audio acquisition, excerpt selection, benchmark generation, candidate
-evaluation, or external-transfer score opening is authorized by this audit.
+No source selection, benchmark generation, candidate evaluation, public
+verdict, future SQAM opening, release-holdout opening, or external-transfer
+score opening is authorized by this audit.

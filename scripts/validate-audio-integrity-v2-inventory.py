@@ -286,34 +286,38 @@ def validate(inventory: dict[str, Any]) -> list[str]:
                     errors.append(
                         f"{label} lacks a provider checksum or valid acquired remote binding"
                     )
-        readme_artifact = source.get("readme_artifact")
-        if readme_artifact is not None:
-            label = f"source {source_id} readme_artifact"
-            if not isinstance(readme_artifact, dict):
+        for supporting_field in ("readme_artifact", "changelog_artifact"):
+            supporting_artifact = source.get(supporting_field)
+            if supporting_artifact is None:
+                continue
+            label = f"source {source_id} {supporting_field}"
+            if not isinstance(supporting_artifact, dict):
                 errors.append(f"{label} must be an object")
             else:
                 if (
-                    not isinstance(readme_artifact.get("filename"), str)
-                    or not readme_artifact["filename"]
+                    not isinstance(supporting_artifact.get("filename"), str)
+                    or not supporting_artifact["filename"]
                 ):
                     errors.append(f"{label} has invalid filename")
                 if (
-                    not isinstance(readme_artifact.get("url"), str)
-                    or not readme_artifact["url"].startswith("https://")
+                    not isinstance(supporting_artifact.get("url"), str)
+                    or not supporting_artifact["url"].startswith("https://")
                 ):
                     errors.append(f"{label} has invalid URL")
-                if not isinstance(readme_artifact.get("bytes"), int) or isinstance(
-                    readme_artifact.get("bytes"), bool
-                ) or readme_artifact["bytes"] < 1:
+                if not isinstance(
+                    supporting_artifact.get("bytes"), int
+                ) or isinstance(
+                    supporting_artifact.get("bytes"), bool
+                ) or supporting_artifact["bytes"] < 1:
                     errors.append(f"{label} has invalid byte count")
                 if not PROVIDER_CHECKSUM.fullmatch(
-                    str(readme_artifact.get("provider_checksum", ""))
+                    str(supporting_artifact.get("provider_checksum", ""))
                 ):
                     errors.append(f"{label} has invalid provider checksum")
-                if readme_artifact.get("provider_checksum_verified") is not True:
+                if supporting_artifact.get("provider_checksum_verified") is not True:
                     errors.append(f"{label} provider checksum is not verified")
                 if not SHA256.fullmatch(
-                    str(readme_artifact.get("local_sha256", ""))
+                    str(supporting_artifact.get("local_sha256", ""))
                 ):
                     errors.append(f"{label} has invalid local_sha256")
         source_evidence = source.get("source_identity_evidence")
@@ -663,21 +667,30 @@ def validate_source_identity_evidence_files(
                 errors.append(
                     f"source identity metadata provider identity differs: {source_id}"
                 )
-        readme_binding = report.get("readme_binding")
-        readme_artifact = source.get("readme_artifact")
-        if isinstance(readme_artifact, dict):
-            if not isinstance(readme_binding, dict):
-                errors.append(f"source identity README binding is missing: {source_id}")
-                readme_binding = {}
+        for artifact_field, binding_field, display_label in (
+            ("readme_artifact", "readme_binding", "README"),
+            ("changelog_artifact", "changelog_binding", "changelog"),
+        ):
+            supporting_artifact = source.get(artifact_field)
+            if not isinstance(supporting_artifact, dict):
+                continue
+            supporting_binding = report.get(binding_field)
+            if not isinstance(supporting_binding, dict):
+                errors.append(
+                    f"source identity {display_label} binding is missing: {source_id}"
+                )
+                supporting_binding = {}
             if (
-                readme_binding.get("bytes") != readme_artifact.get("bytes")
-                or readme_binding.get("local_sha256")
-                != readme_artifact.get("local_sha256")
-                or f"md5:{readme_binding.get('provider_md5')}"
-                != readme_artifact.get("provider_checksum")
-                or readme_binding.get("provider_checksum_verified") is not True
+                supporting_binding.get("bytes") != supporting_artifact.get("bytes")
+                or supporting_binding.get("local_sha256")
+                != supporting_artifact.get("local_sha256")
+                or f"md5:{supporting_binding.get('provider_md5')}"
+                != supporting_artifact.get("provider_checksum")
+                or supporting_binding.get("provider_checksum_verified") is not True
             ):
-                errors.append(f"source identity README binding differs: {source_id}")
+                errors.append(
+                    f"source identity {display_label} binding differs: {source_id}"
+                )
         source_group_rules = source.get("source_group_rules")
         if isinstance(source_group_rules, dict) and isinstance(
             source_group_rules.get("path"), str
@@ -707,6 +720,30 @@ def validate_source_identity_evidence_files(
                     "source_group_count"
                 ) != source.get("conservative_partition_groups"):
                     errors.append(f"source group rules count differs: {source_id}")
+        artist_family_rules = source.get("artist_family_rules")
+        if isinstance(artist_family_rules, dict):
+            report_family_binding = report.get("artist_family_rules_binding")
+            if not isinstance(
+                report_family_binding, dict
+            ) or report_family_binding.get("sha256") != artist_family_rules.get(
+                "sha256"
+            ):
+                errors.append(
+                    f"source identity artist-family binding differs: {source_id}"
+                )
+        metadata_evidence = source.get("metadata_identity_evidence")
+        if isinstance(metadata_evidence, dict):
+            report_metadata_binding = report.get(
+                "metadata_identity_evidence_binding"
+            )
+            if not isinstance(
+                report_metadata_binding, dict
+            ) or report_metadata_binding.get("sha256") != metadata_evidence.get(
+                "aggregate_sha256"
+            ):
+                errors.append(
+                    f"source identity metadata-evidence binding differs: {source_id}"
+                )
     return errors
 
 

@@ -170,7 +170,9 @@ path; 23,075 utterances do not establish 23,075 independent export lineages.
 No benchmark derivative, retained-speaker allocation, factor setting,
 mechanism score, candidate decision, or held-out label was opened by this
 audit. After this checkpoint, the only remaining pre-freeze source-identity
-gate is the five RWC audio archives. After redundant VCTK transport ranges were
-removed, 33,496,936,448 bytes (31.20 GiB) remained free. The 12.50 GiB RWC
-acquisition would leave about 3.70 GiB above the fixed 15 GiB reserve, so the
-one-source, resumable, streaming-audit boundary remains mandatory.
+gate was the five RWC audio archives. They were subsequently
+[identity-verified](rwc-source-identity-audit-20260802.md) without reducing the
+85-family boundary. Source identity is complete; source allocation and later
+freeze records remain unauthorized by this audit. The one-source, resumable,
+streaming-audit boundary remains mandatory because post-acquisition free space
+is only 0.61 GiB above the fixed 15 GiB reserve.

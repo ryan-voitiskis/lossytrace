@@ -1,0 +1,209 @@
+{
+  "archive_bindings": {
+    "RWC-C.zip": {
+      "bytes": 2966354301,
+      "central_directory_sha256": "6418256d5453aa1f87b9198aff22e689af15d8c9a10d1a4c01d0d19b98e5188b",
+      "filename": "RWC-C.zip",
+      "local_sha256": "9c3725ec5b95cf4b7117c5a680471516f1e593dc04ab15817ff88f818cebba0d",
+      "provider_checksum_verified": true,
+      "provider_md5": "2ac9139c4f03a65885ae0d0d299f67f8",
+      "url": "https://zenodo.org/api/records/18656623/files/RWC-C.zip/content",
+      "zip_crc_verified": true
+    },
+    "RWC-G.zip": {
+      "bytes": 3933055195,
+      "central_directory_sha256": "c735dad7d8306659e5ab34de92c581e13597bf1c21bba64c2f128d3bad5e1f9e",
+      "filename": "RWC-G.zip",
+      "local_sha256": "39ec9daee7bbd0f5d8ba7494a1f5192963b84f8de19db3beb861d0deb9902100",
+      "provider_checksum_verified": true,
+      "provider_md5": "e78cddfb6fa639bcb6a61ad873f3cceb",
+      "url": "https://zenodo.org/api/records/18656623/files/RWC-G.zip/content",
+      "zip_crc_verified": true
+    },
+    "RWC-J.zip": {
+      "bytes": 2127754512,
+      "central_directory_sha256": "cf26fa9bafd9ca03124ff0bb7490392ff0ce047fc45bea2cb6c1ff47e5dabcc1",
+      "filename": "RWC-J.zip",
+      "local_sha256": "6efeedf80ebaf3adb17a1306c669b11b97bf3389f7691658fd547e6e17ab3e2c",
+      "provider_checksum_verified": true,
+      "provider_md5": "c5d7d989e1afb8257ec50a3696d90c37",
+      "url": "https://zenodo.org/api/records/18656623/files/RWC-J.zip/content",
+      "zip_crc_verified": true
+    },
+    "RWC-P.zip": {
+      "bytes": 4071840278,
+      "central_directory_sha256": "4c198ed63ee6f369bd1606c86d1dc35fc0ddcb2872fd911e6e844f3de5955d1c",
+      "filename": "RWC-P.zip",
+      "local_sha256": "2ecdad824b4a0ac18734bedf07c893cbc20e04ff7de8c6a50416eeb0a19a0ad1",
+      "provider_checksum_verified": true,
+      "provider_md5": "960a11a2d7fb603ad0dae8428f53d4f0",
+      "url": "https://zenodo.org/api/records/18656623/files/RWC-P.zip/content",
+      "zip_crc_verified": true
+    },
+    "RWC-R.zip": {
+      "bytes": 319884639,
+      "central_directory_sha256": "4532e4576f42f02ec8468258f4696b4affe31815ef0e4ab3747417138cb8596b",
+      "filename": "RWC-R.zip",
+      "local_sha256": "27e13df7a7600a53ad75bef7e1e71b33464547a657b6306325d6f683634c6d97",
+      "provider_checksum_verified": true,
+      "provider_md5": "63e3b6263656a42c592ce1e90a88caa3",
+      "url": "https://zenodo.org/api/records/18656623/files/RWC-R.zip/content",
+      "zip_crc_verified": true
+    }
+  },
+  "artist_family_rules_binding": {
+    "sha256": "17d1932b9405b007cf59401c040b7358d654def594154220bedb510b6d4c022c"
+  },
+  "benchmark_audio_generated": false,
+  "changelog_binding": {
+    "bytes": 442,
+    "filename": "changelog.txt",
+    "local_sha256": "5ea511cf5dd035703ac6b2c50759030d3af8c580c143e9db4091ce7b9482a0c1",
+    "provider_checksum_verified": true,
+    "provider_md5": "f4aa8361dd48086e52fe1e70d2c2c7ad",
+    "url": "https://zenodo.org/api/records/18656623/files/changelog.txt/content"
+  },
+  "conservative_reference_boundary": {
+    "eligible_audio_file_count": 293,
+    "eligible_group_count": 85,
+    "future_selection_constraint": "At source freeze, select at most one bounded excerpt per artist family, never repeat a normalized work title, and preserve collection, family, work, legacy disc, track, and provider identity.",
+    "independence_limit": "Artist families do not establish independent recording sessions, engineers, studios, or disjoint backing personnel. Keep RWC as one provider stratum and do not treat its track count as independent.",
+    "known_instrumentation_variation_rows_excluded": 35,
+    "metadata_artist_family_count": 85,
+    "partition_grouping_unit": "artist family after declared merges",
+    "rule": [
+      "canonical RWC-X/RWC_XNNN[SUFFIX].wav member",
+      "exactly one matching RWCID in the bound annotation metadata",
+      "WAV duration agrees with metadata within the fixed sample tolerance",
+      "WAV matches the bound PCM format",
+      "known RWC-J instrumentation-variation rows 1-35 are excluded",
+      "every member of an exact repeated-PCM group is excluded"
+    ],
+    "source_grouping_unit": "artist family after declared merges"
+  },
+  "metadata_binding": {
+    "bytes": 48516,
+    "revision": "0a1a6c31dbe73a7f5d44f7caef8cd0999402a4c2",
+    "sha256": "eba3fe129f835db58a9c23dad554547201ab02ef3af90c10857ef5b50b8b99da"
+  },
+  "metadata_identity_evidence_binding": {
+    "sha256": "7c7491bbfa419ff18b4a87cb87895eda40e180ceafca4733dfb80956faf5439a"
+  },
+  "observed": {
+    "archive_central_directory_sha256": {
+      "RWC-C.zip": "6418256d5453aa1f87b9198aff22e689af15d8c9a10d1a4c01d0d19b98e5188b",
+      "RWC-G.zip": "c735dad7d8306659e5ab34de92c581e13597bf1c21bba64c2f128d3bad5e1f9e",
+      "RWC-J.zip": "cf26fa9bafd9ca03124ff0bb7490392ff0ce047fc45bea2cb6c1ff47e5dabcc1",
+      "RWC-P.zip": "4c198ed63ee6f369bd1606c86d1dc35fc0ddcb2872fd911e6e844f3de5955d1c",
+      "RWC-R.zip": "4532e4576f42f02ec8468258f4696b4affe31815ef0e4ab3747417138cb8596b"
+    },
+    "archive_directory_member_ids": {
+      "RWC-C.zip": [
+        "RWC-C"
+      ],
+      "RWC-G.zip": [
+        "RWC-G"
+      ],
+      "RWC-J.zip": [
+        "RWC-J"
+      ],
+      "RWC-P.zip": [
+        "RWC-P"
+      ],
+      "RWC-R.zip": [
+        "RWC-R"
+      ]
+    },
+    "audio_file_count": 328,
+    "collection_audio_file_counts": {
+      "C": 61,
+      "G": 102,
+      "J": 50,
+      "P": 100,
+      "R": 15
+    },
+    "collection_frame_count_ranges": {
+      "C": {
+        "maximum": 47606776,
+        "minimum": 2216972
+      },
+      "G": {
+        "maximum": 26815799,
+        "minimum": 2327769
+      },
+      "J": {
+        "maximum": 20249662,
+        "minimum": 6311283
+      },
+      "P": {
+        "maximum": 16110886,
+        "minimum": 5928857
+      },
+      "R": {
+        "maximum": 7790966,
+        "minimum": 4684045
+      }
+    },
+    "data_byte_range": {
+      "maximum": 190427104,
+      "minimum": 8867888
+    },
+    "distinct_pcm_digest_count": 328,
+    "duplicate_pcm_digest_group_count": 0,
+    "duplicate_pcm_file_count_excess": 0,
+    "duplicate_pcm_file_count_excluded": 0,
+    "duplicate_pcm_rwc_id_groups": [],
+    "encrypted_member_count": 0,
+    "frame_count_range": {
+      "maximum": 47606776,
+      "maximum_rwc_ids": [
+        "RWC_C009"
+      ],
+      "minimum": 2216972,
+      "minimum_rwc_ids": [
+        "RWC_C024C"
+      ]
+    },
+    "metadata_duration_error_samples": {
+      "maximum": "0.0000000040700",
+      "maximum_rwc_ids": [
+        "RWC_G051"
+      ],
+      "required_maximum": "0.000001"
+    },
+    "riff_formats": [
+      {
+        "ancillary_chunk_counts": {},
+        "average_bytes_per_second": 176400,
+        "bits_per_sample": 16,
+        "block_align_bytes": 4,
+        "channel_count": 2,
+        "file_count": 328,
+        "format_chunk_bytes": 16,
+        "format_tag": 1,
+        "sample_format": "signed_integer_pcm",
+        "sample_rate_hz": 44100
+      }
+    ],
+    "special_member_count": 0,
+    "uncompressed_audio_member_bytes": 14859214204
+  },
+  "paths_redacted": true,
+  "processing_chain": "The 2026 release paper states that the distributed files stem from the original master tracks used for CD production rather than consumer-ripped copies. The bound provider changelog records only collection-level ZIP separation in v2 and folder/file renaming in v1. The released files are therefore confirmed PCM from a documented CD-production-master path, but neither the paper, changelog, nor annotations establishes untouched studio/session masters, independent engineers or studios, or disjoint backing personnel.",
+  "provider_record": {
+    "dataset_doi": "10.5281/zenodo.18656623",
+    "dataset_page_url": "https://zenodo.org/records/18656623",
+    "dataset_version": "v2",
+    "license": "CC BY-NC 4.0",
+    "release_paper_doi": "10.5334/tismir.326",
+    "release_paper_url": "https://transactions.ismir.net/articles/10.5334/tismir.326"
+  },
+  "schema_version": 1,
+  "scores_opened": false,
+  "selection_authorized": false,
+  "source_group_rules_binding": {
+    "sha256": "251b1b37cbdd1d154c29793ce7e05e7bc96eea357c530b40a8964bfb013f5fc6"
+  },
+  "source_id": "rwc_music_v2_2026",
+  "state": "source_identity_evidence_only"
+}

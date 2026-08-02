@@ -601,7 +601,7 @@
       "conservative_partition_groups": 85,
       "partition_basis": "artist family across all subsets after excluding RWC-J instrumentation-variation rows 1-35 and applying declared cross-label merges",
       "provenance_tier": "tier_a_confirmed_pcm",
-      "availability": "metadata_identity_verified_audio_acquisition_required",
+      "availability": "acquired_and_identity_verified_not_allocated",
       "official_page_url": "https://zenodo.org/records/18656623",
       "license": "CC BY-NC 4.0",
       "metadata_revision": "0a1a6c31dbe73a7f5d44f7caef8cd0999402a4c2",
@@ -615,13 +615,65 @@
         "aggregate_sha256": "7c7491bbfa419ff18b4a87cb87895eda40e180ceafca4733dfb80956faf5439a"
       },
       "artifacts": [
-        {"filename": "RWC-C.zip", "bytes": 2966354301, "provider_checksum": "md5:2ac9139c4f03a65885ae0d0d299f67f8"},
-        {"filename": "RWC-G.zip", "bytes": 3933055195, "provider_checksum": "md5:e78cddfb6fa639bcb6a61ad873f3cceb"},
-        {"filename": "RWC-J.zip", "bytes": 2127754512, "provider_checksum": "md5:c5d7d989e1afb8257ec50a3696d90c37"},
-        {"filename": "RWC-P.zip", "bytes": 4071840278, "provider_checksum": "md5:960a11a2d7fb603ad0dae8428f53d4f0"},
-        {"filename": "RWC-R.zip", "bytes": 319884639, "provider_checksum": "md5:63e3b6263656a42c592ce1e90a88caa3"}
+        {
+          "filename": "RWC-C.zip",
+          "url": "https://zenodo.org/api/records/18656623/files/RWC-C.zip/content",
+          "bytes": 2966354301,
+          "provider_checksum": "md5:2ac9139c4f03a65885ae0d0d299f67f8",
+          "provider_checksum_verified": true,
+          "local_sha256": "9c3725ec5b95cf4b7117c5a680471516f1e593dc04ab15817ff88f818cebba0d"
+        },
+        {
+          "filename": "RWC-G.zip",
+          "url": "https://zenodo.org/api/records/18656623/files/RWC-G.zip/content",
+          "bytes": 3933055195,
+          "provider_checksum": "md5:e78cddfb6fa639bcb6a61ad873f3cceb",
+          "provider_checksum_verified": true,
+          "local_sha256": "39ec9daee7bbd0f5d8ba7494a1f5192963b84f8de19db3beb861d0deb9902100"
+        },
+        {
+          "filename": "RWC-J.zip",
+          "url": "https://zenodo.org/api/records/18656623/files/RWC-J.zip/content",
+          "bytes": 2127754512,
+          "provider_checksum": "md5:c5d7d989e1afb8257ec50a3696d90c37",
+          "provider_checksum_verified": true,
+          "local_sha256": "6efeedf80ebaf3adb17a1306c669b11b97bf3389f7691658fd547e6e17ab3e2c"
+        },
+        {
+          "filename": "RWC-P.zip",
+          "url": "https://zenodo.org/api/records/18656623/files/RWC-P.zip/content",
+          "bytes": 4071840278,
+          "provider_checksum": "md5:960a11a2d7fb603ad0dae8428f53d4f0",
+          "provider_checksum_verified": true,
+          "local_sha256": "2ecdad824b4a0ac18734bedf07c893cbc20e04ff7de8c6a50416eeb0a19a0ad1"
+        },
+        {
+          "filename": "RWC-R.zip",
+          "url": "https://zenodo.org/api/records/18656623/files/RWC-R.zip/content",
+          "bytes": 319884639,
+          "provider_checksum": "md5:63e3b6263656a42c592ce1e90a88caa3",
+          "provider_checksum_verified": true,
+          "local_sha256": "27e13df7a7600a53ad75bef7e1e71b33464547a657b6306325d6f683634c6d97"
+        }
       ],
-      "caveat": "The pinned metadata has 99 exact artist strings, not 99 defensible source groups. Excluding 35 known repeated-composition instrumentation variations leaves 87 labels; two declared identity merges leave 85 artist families. At most one excerpt per family may be selected, duplicate normalized work titles are forbidden, and RWC remains one provider stratum because metadata cannot prove disjoint sessions or backing personnel."
+      "changelog_artifact": {
+        "filename": "changelog.txt",
+        "url": "https://zenodo.org/api/records/18656623/files/changelog.txt/content",
+        "bytes": 442,
+        "provider_checksum": "md5:f4aa8361dd48086e52fe1e70d2c2c7ad",
+        "provider_checksum_verified": true,
+        "local_sha256": "5ea511cf5dd035703ac6b2c50759030d3af8c580c143e9db4091ce7b9482a0c1"
+      },
+      "source_group_rules": {
+        "path": "benchmarks/audio-integrity-v2/rwc-audio-source-group-rules.json",
+        "sha256": "251b1b37cbdd1d154c29793ce7e05e7bc96eea357c530b40a8964bfb013f5fc6"
+      },
+      "source_identity_evidence": {
+        "aggregate_path": "research/sources/evidence/rwc-music-v2-2026-observed-20260802.json",
+        "aggregate_sha256": "c7dfb3d68e440561802fcacc35584314da0514b5aa96269f37e3c38ab192a324"
+      },
+      "recording_chain": "The 2026 release paper says the distributed files stem from the original master tracks used for CD production rather than consumer-ripped copies. The bound changelog records only v2 collection-level ZIP separation and v1 folder/file renaming. The archives distribute confirmed PCM, but the evidence does not establish untouched studio/session masters or independent production chains.",
+      "caveat": "The five exact provider archives contain all 328 metadata RWCIDs as distinct stereo 44.1 kHz, 16-bit integer PCM payloads. Excluding 35 known repeated-composition instrumentation variations leaves 87 artist labels; two declared identity merges leave 85 artist families. At most one excerpt per family may be selected, duplicate normalized work titles are forbidden, and RWC remains one provider stratum because artist metadata cannot prove disjoint sessions, engineers, studios, or backing personnel."
     },
     {
       "source_id": "sonyc_backgrounds_1_0_0",
@@ -711,5 +763,5 @@
       "caveat": "Format listings advertised MPEG Layer III, but two deterministic executed probes failed before producing a file."
     }
   ],
-  "next_gate": "Acquire and verify the VCTK archive and every RWC audio member, then replace this recommendation with separately committed source-allocation, factor-level, and toolchain freeze records before generating benchmark audio."
+  "next_gate": "Commit source allocation, factor levels, toolchain bindings, and the fractional assignment as separate frozen records before generating benchmark audio."
 }

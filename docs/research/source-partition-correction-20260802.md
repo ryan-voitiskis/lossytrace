@@ -56,8 +56,11 @@ projection before every source.
 VCTK was subsequently acquired and identity-verified at its existing
 56-group planning contribution. Its released bytes contain 58 provider speaker
 IDs, so an unapplied content-independent 28-per-gender cap preserves the
-pre-correction denominator. The only source archives still outstanding are the
-five RWC members, totaling 13,418,888,925 bytes (12.50 GiB).
+pre-correction denominator. RWC was then acquired and
+[audio-audited](rwc-source-identity-audit-20260802.md): all five exact archives
+contain 328 distinct PCM payloads matching the 328 metadata IDs, so the
+correction's 85-family boundary remains intact. No planned source archive is
+outstanding.
 
 ## Validator hardening
 
@@ -78,8 +81,9 @@ byte-for-byte.
 
 ## Next gate
 
-Acquire and verify every RWC audio member; VCTK is now verified. Only after the
-RWC checks may source allocation, factor levels, and toolchain versions be
-frozen in separate commits. No benchmark derivative, mechanism score,
+The later VCTK and RWC audits completed the source-identity gate without
+changing the corrected partition counts. Source allocation, factor levels,
+toolchain versions, and fractional assignment must now be frozen in separate
+commits before generation. No benchmark derivative, mechanism score,
 candidate decision, or external-transfer evidence was opened by this
-correction.
+correction or those audits.

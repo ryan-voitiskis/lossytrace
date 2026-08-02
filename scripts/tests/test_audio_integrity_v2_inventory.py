@@ -103,6 +103,29 @@ class InventoryValidationTest(unittest.TestCase):
             any("metadata_artifact has invalid provider checksum" in error for error in errors)
         )
 
+    def test_changelog_provider_checksum_is_validated(self) -> None:
+        inventory = copy.deepcopy(self.inventory)
+        source = next(
+            row
+            for row in inventory["source_candidates"]
+            if row["source_id"] == "rwc_music_v2_2026"
+        )
+        source["changelog_artifact"] = {
+            "filename": "changelog.txt",
+            "url": "https://example.invalid/changelog.txt",
+            "bytes": 1,
+            "provider_checksum": "md5:not-a-digest",
+            "provider_checksum_verified": True,
+            "local_sha256": "0" * 64,
+        }
+        errors = MODULE.validate(inventory)
+        self.assertTrue(
+            any(
+                "changelog_artifact has invalid provider checksum" in error
+                for error in errors
+            )
+        )
+
     def test_acquired_remote_binding_requires_a_strong_etag(self) -> None:
         inventory = copy.deepcopy(self.inventory)
         source = next(
@@ -185,6 +208,45 @@ class InventoryValidationTest(unittest.TestCase):
         errors = MODULE.validate_source_identity_evidence_files(inventory, ROOT)
         self.assertTrue(
             any("source identity archive binding differs" in error for error in errors)
+        )
+
+    def test_source_identity_changelog_provider_checksum_is_bound(self) -> None:
+        inventory = copy.deepcopy(self.inventory)
+        source = next(
+            row
+            for row in inventory["source_candidates"]
+            if row["source_id"] == "rwc_music_v2_2026"
+        )
+        source["changelog_artifact"]["provider_checksum"] = "md5:" + "0" * 32
+        errors = MODULE.validate_source_identity_evidence_files(inventory, ROOT)
+        self.assertTrue(
+            any("source identity changelog binding differs" in error for error in errors)
+        )
+
+    def test_source_identity_artist_family_rules_are_bound(self) -> None:
+        inventory = copy.deepcopy(self.inventory)
+        source = next(
+            row
+            for row in inventory["source_candidates"]
+            if row["source_id"] == "rwc_music_v2_2026"
+        )
+        source["artist_family_rules"]["sha256"] = "0" * 64
+        errors = MODULE.validate_source_identity_evidence_files(inventory, ROOT)
+        self.assertTrue(
+            any("source identity artist-family binding differs" in error for error in errors)
+        )
+
+    def test_source_identity_metadata_evidence_is_bound(self) -> None:
+        inventory = copy.deepcopy(self.inventory)
+        source = next(
+            row
+            for row in inventory["source_candidates"]
+            if row["source_id"] == "rwc_music_v2_2026"
+        )
+        source["metadata_identity_evidence"]["aggregate_sha256"] = "0" * 64
+        errors = MODULE.validate_source_identity_evidence_files(inventory, ROOT)
+        self.assertTrue(
+            any("source identity metadata-evidence binding differs" in error for error in errors)
         )
 
     def test_source_identity_metadata_provider_checksum_is_bound(self) -> None:

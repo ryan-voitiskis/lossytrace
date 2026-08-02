@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "rules_id": "rwc-audio-source-group-rules-20260802-001",
+  "state": "source_identity_rules_not_allocation",
+  "source_id": "rwc_music_v2_2026",
+  "audio_generated": false,
+  "scores_opened": false,
+  "selection_authorized": false,
+  "provider_record": {
+    "dataset_doi": "10.5281/zenodo.18656623",
+    "dataset_page_url": "https://zenodo.org/records/18656623",
+    "dataset_version": "v2",
+    "license": "CC BY-NC 4.0",
+    "release_paper_doi": "10.5334/tismir.326",
+    "release_paper_url": "https://transactions.ismir.net/articles/10.5334/tismir.326"
+  },
+  "processing_chain": "The 2026 release paper states that the distributed files stem from the original master tracks used for CD production rather than consumer-ripped copies. The bound provider changelog records only collection-level ZIP separation in v2 and folder/file renaming in v1. The released files are therefore confirmed PCM from a documented CD-production-master path, but neither the paper, changelog, nor annotations establishes untouched studio/session masters, independent engineers or studios, or disjoint backing personnel.",
+  "artifacts": [
+    {
+      "filename": "RWC-C.zip",
+      "url": "https://zenodo.org/api/records/18656623/files/RWC-C.zip/content",
+      "bytes": 2966354301,
+      "provider_checksum": "md5:2ac9139c4f03a65885ae0d0d299f67f8",
+      "local_sha256": "9c3725ec5b95cf4b7117c5a680471516f1e593dc04ab15817ff88f818cebba0d"
+    },
+    {
+      "filename": "RWC-G.zip",
+      "url": "https://zenodo.org/api/records/18656623/files/RWC-G.zip/content",
+      "bytes": 3933055195,
+      "provider_checksum": "md5:e78cddfb6fa639bcb6a61ad873f3cceb",
+      "local_sha256": "39ec9daee7bbd0f5d8ba7494a1f5192963b84f8de19db3beb861d0deb9902100"
+    },
+    {
+      "filename": "RWC-J.zip",
+      "url": "https://zenodo.org/api/records/18656623/files/RWC-J.zip/content",
+      "bytes": 2127754512,
+      "provider_checksum": "md5:c5d7d989e1afb8257ec50a3696d90c37",
+      "local_sha256": "6efeedf80ebaf3adb17a1306c669b11b97bf3389f7691658fd547e6e17ab3e2c"
+    },
+    {
+      "filename": "RWC-P.zip",
+      "url": "https://zenodo.org/api/records/18656623/files/RWC-P.zip/content",
+      "bytes": 4071840278,
+      "provider_checksum": "md5:960a11a2d7fb603ad0dae8428f53d4f0",
+      "local_sha256": "2ecdad824b4a0ac18734bedf07c893cbc20e04ff7de8c6a50416eeb0a19a0ad1"
+    },
+    {
+      "filename": "RWC-R.zip",
+      "url": "https://zenodo.org/api/records/18656623/files/RWC-R.zip/content",
+      "bytes": 319884639,
+      "provider_checksum": "md5:63e3b6263656a42c592ce1e90a88caa3",
+      "local_sha256": "27e13df7a7600a53ad75bef7e1e71b33464547a657b6306325d6f683634c6d97"
+    }
+  ],
+  "changelog_artifact": {
+    "filename": "changelog.txt",
+    "url": "https://zenodo.org/api/records/18656623/files/changelog.txt/content",
+    "bytes": 442,
+    "provider_checksum": "md5:f4aa8361dd48086e52fe1e70d2c2c7ad",
+    "local_sha256": "5ea511cf5dd035703ac6b2c50759030d3af8c580c143e9db4091ce7b9482a0c1"
+  },
+  "metadata_binding": {
+    "filename": "metadata.csv",
+    "bytes": 48516,
+    "revision": "0a1a6c31dbe73a7f5d44f7caef8cd0999402a4c2",
+    "sha256": "eba3fe129f835db58a9c23dad554547201ab02ef3af90c10857ef5b50b8b99da"
+  },
+  "artist_family_rules_binding": {
+    "path": "benchmarks/audio-integrity-v2/rwc-artist-family-rules.json",
+    "sha256": "17d1932b9405b007cf59401c040b7358d654def594154220bedb510b6d4c022c"
+  },
+  "metadata_identity_evidence_binding": {
+    "path": "research/sources/evidence/rwc-metadata-observed-20260802.json",
+    "sha256": "7c7491bbfa419ff18b4a87cb87895eda40e180ceafca4733dfb80956faf5439a"
+  },
+  "grouping_basis": "Reconcile every canonical RWC-X/RWC_XNNN[SUFFIX].wav member to exactly one bound metadata RWCID. Exclude RWC-J pieces 1-35 before grouping, merge only the two declared cross-label artist identities, exclude every member of any exact repeated-PCM group, and treat the resulting artist family as both source and partition group while retaining RWC as one provider stratum.",
+  "future_selection_constraints": [
+    "At most one bounded reference excerpt may be selected per artist family.",
+    "No two selected RWC rows may have the same normalized work title.",
+    "Collection, artist family, work title, legacy disc, track, and provider identity must remain private manifest factors.",
+    "Selection must use a separately frozen content-independent rule and may not inspect waveform content or mechanism scores."
+  ],
+  "expected": {
+    "metadata_row_count": 328,
+    "collection_audio_file_counts": {
+      "C": 61,
+      "G": 102,
+      "J": 50,
+      "P": 100,
+      "R": 15
+    },
+    "audio_format": {
+      "format_tag": 1,
+      "sample_format": "signed_integer_pcm",
+      "channel_count": 2,
+      "sample_rate_hz": 44100,
+      "bits_per_sample": 16
+    },
+    "maximum_duration_error_samples": "0.000001",
+    "duplicate_pcm_digest_group_count": 0,
+    "duplicate_pcm_file_count_excess": 0,
+    "duplicate_pcm_file_count_excluded": 0,
+    "known_instrumentation_variation_row_count": 35,
+    "metadata_artist_family_count": 85,
+    "source_group_count": 85
+  }
+}

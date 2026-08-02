@@ -17,12 +17,13 @@ Read these before constructing a manifest:
 - [`manifest.example.json`](manifest.example.json)
 - [`inventory.json`](inventory.json)
 - [`toolchain-probe-result-20260802.md`](../../docs/research/toolchain-probe-result-20260802.md)
+- [`rwc-source-identity-audit-20260802.md`](../../docs/research/rwc-source-identity-audit-20260802.md)
 
-The current source/tool inventory and its unresolved freeze gates are described
+The current source/tool inventory and its remaining freeze gates are described
 in
 [`factorial-benchmark-inventory-20260802.md`](../../docs/research/factorial-benchmark-inventory-20260802.md).
-It is an inventory, not a frozen selection, and has generated no benchmark
-audio.
+Every proposed new source identity is now audited, but the inventory is not a
+frozen selection and has generated no benchmark audio.
 
 ## Evidence partitions
 
@@ -106,9 +107,9 @@ preregistration and persistent goal decide when a partition may be consumed.
 1. Preserve the completed already-consumed v1 baseline failure atlas.
 2. Preserve the completed encoder/decoder/source inventory without treating it
    as a freeze.
-3. Verify exact source identities and external-transfer margin, then freeze the
-   v2 source collections, factor levels, tool bindings, and fractional
-   assignment.
+3. Preserve the completed source-identity audits and external-transfer margin,
+   then freeze the v2 source collections, factor levels, tool bindings, and
+   fractional assignment as separate records.
 4. Generate paired mechanism-development cases with one low-priority worker,
    hashes, resumable recipes, and a free-space reserve.
 5. Freeze encoder-transfer and external-transfer identities before mechanism
