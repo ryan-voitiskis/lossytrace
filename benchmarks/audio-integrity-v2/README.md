@@ -207,6 +207,15 @@ collapse, wrapper invariance, six complete source-domain folds, paired
 aggregation, and public path-free outputs. It does not authorize encoder or
 external transfer, threshold search, candidate promotion, or a verdict.
 
+The fixed Cannam and feature-version-0 runs have now completed under that
+plan. See the
+[`path-free result`](../../docs/research/development-fixed-baseline-result-20260802.md)
+and committed [`baseline evidence`](../../research/baselines/v2/evidence).
+Both passed exact wrapper invariance. Cannam failed source-safe specificity
+and paired stability; every feature-version-0 measurement failed the frozen
+paired gate. The preregistered CRNN and retained explainable-control stages
+remain to be run before the failure atlas can close.
+
 ## Evidence partitions
 
 `mechanism_development` is paired, source-grouped discovery evidence. It may

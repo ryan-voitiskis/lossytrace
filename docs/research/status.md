@@ -242,9 +242,16 @@ external transfer remain sealed. The next authority change is limited to a
 separately frozen mechanism-development baseline and feature plan.
 That
 [`development-baseline plan`](development-baseline-preregistration-20260802.md)
-is now prepared with exact tool and implementation bindings. It limits the
+was prepared with exact tool and implementation bindings. It limits the
 first analysis pass to the fixed Cannam rule and feature-version-0
 measurements, followed by matched naive/masked CRNN source-domain folds. Exact
 decoded-PCM duplicates are one analysis unit, every represented wrapper is an
-invariance check, and no baseline can be promoted by this stage.
-No successor mechanism score or retained holdout has been opened.
+invariance check, and no baseline can be promoted by this stage. The fixed
+runs are now complete and documented in the
+[`development fixed-baseline result`](development-fixed-baseline-result-20260802.md).
+Cannam reached 91.82% recall but 64.05% negative false positives and only
+46.68% matched-reference positive direction. No feature-version-0 measurement
+met the 90% direction plus 85% one-sided lower-bound gate; the nearest,
+spectral-edge height, had incomplete support and reversed on NSynth train.
+The naive/masked CRNN folds and retained explainable controls remain pending.
+No retained transfer score has been opened.
