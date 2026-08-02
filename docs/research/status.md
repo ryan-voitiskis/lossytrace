@@ -157,4 +157,12 @@ lossless whitelist enumerated only integer PCM. The separately frozen
 [`codec-scope correction`](construction-feasibility-correction-20260802-002.md)
 accepts `flac` or `pcm_*` while still rejecting compressed lossy codecs.
 Recipe `003` now requires two complete replays.
+Those
+[`replays`](construction-feasibility-result-20260802-003.md) are byte-identical.
+All 793 source headers have supported lossless codecs and channel counts, but
+11 assigned groups violate the trim or 3-second-prefix minimum. Construction
+is not authorized. The next gate is a separately frozen assignment correction
+that may use duration only as the already-declared transform feasibility
+predicate; it may not replace a source, inspect waveform content, or use a
+score.
 No successor mechanism score or retained holdout has been opened.

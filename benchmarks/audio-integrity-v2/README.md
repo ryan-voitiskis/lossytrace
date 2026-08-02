@@ -45,6 +45,8 @@ Read these before constructing a manifest:
 - [`construction-feasibility-preregistration-20260802.md`](../../docs/research/construction-feasibility-preregistration-20260802.md)
 - [`construction-feasibility-correction-20260802-001.md`](../../docs/research/construction-feasibility-correction-20260802-001.md)
 - [`construction-feasibility-correction-20260802-002.md`](../../docs/research/construction-feasibility-correction-20260802-002.md)
+- [`construction-feasibility-result-20260802-003.md`](../../docs/research/construction-feasibility-result-20260802-003.md)
+- [`construction-feasibility-observed-20260802-003.json`](../../research/sources/evidence/construction-feasibility-observed-20260802-003.json)
 - [`rwc-source-identity-audit-20260802.md`](../../docs/research/rwc-source-identity-audit-20260802.md)
 
 The pre-freeze source/tool inventory and its remaining gates are described
@@ -118,7 +120,10 @@ changing the audit design.
 Recipe `002` then stopped on uncompressed floating-point PCM because its
 lossless whitelist was too narrow. The second correction accepts `flac` or
 `pcm_*` without admitting compressed lossy codecs; recipe `003` still requires
-two complete replays.
+two complete replays. Those replays are byte-identical, but the
+[`result`](../../docs/research/construction-feasibility-result-20260802-003.md)
+finds 11 assigned groups below a frozen transform minimum. Construction stays
+stopped pending an explicit feasibility-only assignment correction.
 
 ## Evidence partitions
 
