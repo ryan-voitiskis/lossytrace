@@ -34,8 +34,10 @@ Read these before constructing a manifest:
 - [`fractional-assignment-rules.json`](fractional-assignment-rules.json)
 - [`fractional-assignment-preregistration-20260802.md`](../../docs/research/fractional-assignment-preregistration-20260802.md)
 - [`fractional-assignment-correction-20260802-001.md`](../../docs/research/fractional-assignment-correction-20260802-001.md)
-- [`fractional-assignment-result-20260802.md`](../../docs/research/fractional-assignment-result-20260802.md)
-- [`fractional-assignment-observed-20260802.json`](../../research/sources/evidence/fractional-assignment-observed-20260802.json)
+- [rejected recipe-001 result](../../docs/research/fractional-assignment-result-20260802.md)
+- [rejected recipe-001 aggregate](../../research/sources/evidence/fractional-assignment-observed-20260802.json)
+- [`fractional-assignment-result-20260802-002.md`](../../docs/research/fractional-assignment-result-20260802-002.md)
+- [`fractional-assignment-observed-20260802-002.json`](../../research/sources/evidence/fractional-assignment-observed-20260802-002.json)
 - [`rwc-source-identity-audit-20260802.md`](../../docs/research/rwc-source-identity-audit-20260802.md)
 
 The pre-freeze source/tool inventory and its remaining gates are described
@@ -89,8 +91,10 @@ was byte-identical, but construction review found that target sample rate was
 missing from its matched-reference identity. The separately frozen
 [`correction`](../../docs/research/fractional-assignment-correction-20260802-001.md)
 adds that factor before any assigned audio or score is opened. Recipe `001`
-must not enter a benchmark denominator; recipe `002` requires two fresh
-replays.
+must not enter a benchmark denominator. Corrected
+[`recipe-002 evidence`](../../docs/research/fractional-assignment-result-20260802-002.md)
+is byte-identical across two fresh replays and freezes 12,058 constructible
+cells with target sample rate in every pair identity.
 
 ## Evidence partitions
 
@@ -193,7 +197,7 @@ preregistration and persistent goal decide when a partition may be consumed.
 3. Preserve the completed source-identity audits, external-transfer margin,
    replayed source allocation, factor-level freeze, and exact-toolchain
    preregistration, replayed toolchain, and public-decoder equivalence, then
-   preserve the rejected recipe-`001` assignment and replay corrected recipe
+   preserve rejected recipe `001` and the separately replayed corrected recipe
    `002` before construction.
 4. Generate paired mechanism-development cases with one low-priority worker,
    hashes, resumable recipes, and a free-space reserve.
