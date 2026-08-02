@@ -175,8 +175,10 @@ The two 202-cell
 [`smoke replays`](../../docs/research/constructor-smoke-result-20260802.md) are
 now byte-identical, including their sorted private manifests, final artifact
 hash sets, and canonical analysis-PCM hash sets. This passes the smoke gate;
-only a separately committed correction may bind that evidence and authorize
-the full build. No feature or score has been computed.
+the separately committed
+[`full-build correction`](../../docs/research/construction-correction-20260802-002.md)
+now binds that evidence and authorizes exactly the frozen 12,885-cell build.
+No feature or score has been computed or authorized.
 
 ## Evidence partitions
 

@@ -224,7 +224,8 @@ manifests before authority can expand.
 Those two
 [`smoke replays`](constructor-smoke-result-20260802.md) are now byte-identical
 across all 202 retained artifacts, private checkpoints, and canonical
-analysis-PCM hashes. The smoke gate passes. Full construction still requires a
-separately committed authority correction that binds the public result and
-private-manifest hash; no feature or score has been computed.
+analysis-PCM hashes. The smoke gate passes. The separately committed
+[`full-build correction`](construction-correction-20260802-002.md) binds the
+public result and private-manifest hash and now authorizes exactly the frozen
+12,885-cell one-worker build. Feature extraction and scoring remain blocked.
 No successor mechanism score or retained holdout has been opened.

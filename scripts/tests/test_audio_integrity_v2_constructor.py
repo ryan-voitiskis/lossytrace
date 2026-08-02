@@ -21,8 +21,8 @@ TOOLCHAIN = json.loads(TOOLCHAIN_PATH.read_text(encoding="utf-8"))
 
 
 class AudioIntegrityV2ConstructorTest(unittest.TestCase):
-    def test_plan_authorizes_only_frozen_smoke_and_binds_generator(self) -> None:
-        self.assertEqual("smoke", PLAN["authorized_scope"])
+    def test_plan_authorizes_frozen_full_build_and_binds_evidence(self) -> None:
+        self.assertEqual("full", PLAN["authorized_scope"])
         self.assertTrue(PLAN["benchmark_source_audio_read"])
         self.assertTrue(PLAN["benchmark_audio_generated"])
         self.assertTrue(PLAN["smoke_selection"]["authorized"])
@@ -32,6 +32,14 @@ class AudioIntegrityV2ConstructorTest(unittest.TestCase):
         self.assertFalse(PLAN["public_verdict_enabled"])
         self.assertEqual(
             MODULE.sha256_file(SCRIPT), PLAN["bindings"]["generator_sha256"]
+        )
+        self.assertEqual(
+            "5f8e48fa58366c5259eb4e854a869cf145841f20ff7238427bd9038d91ae5615",
+            PLAN["bindings"]["smoke_result_sha256"],
+        )
+        self.assertEqual(
+            "5a53608613789e7411e54e877acdbf33a2fb434645255c5fb3114163764e2bad",
+            PLAN["bindings"]["private_smoke_manifest_sha256"],
         )
 
     def test_synthetic_cases_cover_every_encoder_transform_wrapper_and_decoder(self) -> None:

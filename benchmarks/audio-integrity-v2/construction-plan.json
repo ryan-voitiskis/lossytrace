@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "construction_id": "lossytrace-v2-construction-20260802-001",
-  "state": "construction_recipe_frozen_before_smoke_replay",
-  "authorized_scope": "smoke",
-  "upstream_checkpoint_commit": "90b9dd82b14ac1845c9753b041112da8fa5eacc4",
+  "state": "construction_recipe_frozen_before_full_run",
+  "authorized_scope": "full",
+  "upstream_checkpoint_commit": "4d7c7ef4a6f1a4e8e8c5ca20b81bfedca37f64e1",
   "correction_history": [
     {
       "supersedes_state": "construction_recipe_frozen_before_synthetic_replay",
@@ -11,6 +11,16 @@
       "reason": "All 13 synthetic constructor cases and both complete reports are byte-identical across every frozen encoder implementation, history decoder, transform, and wrapper. Authority expands only to the already-declared 202-cell score-blind smoke set in two separate roots.",
       "benchmark_source_audio_read_before_correction": false,
       "benchmark_audio_generated_before_correction": false,
+      "features_computed_before_correction": false,
+      "scores_opened_before_correction": false
+    },
+    {
+      "supersedes_state": "construction_recipe_frozen_before_smoke_replay",
+      "smoke_result_sha256": "5f8e48fa58366c5259eb4e854a869cf145841f20ff7238427bd9038d91ae5615",
+      "private_smoke_manifest_sha256": "5a53608613789e7411e54e877acdbf33a2fb434645255c5fb3114163764e2bad",
+      "reason": "Both complete 202-cell smoke roots produced byte-identical sorted private manifests, path-free run reports, retained artifact hash sets, and canonical analysis-PCM hash sets. Authority expands only to the complete frozen 12,885-cell assignment under the unchanged constructor.",
+      "benchmark_source_audio_read_before_correction": true,
+      "benchmark_audio_generated_before_correction": true,
       "features_computed_before_correction": false,
       "scores_opened_before_correction": false
     }
@@ -39,6 +49,8 @@
     "preconditioning_result_sha256": "50883fbc74e897c7048b95148765651790cf8fb24b7335f29b7cd08fa6b93456",
     "preflight_result_sha256": "53ad83236cf9975ac5394a429a4a2da3a479c9266380b55a606da506ce8e22d6",
     "constructor_probe_result_sha256": "0ff79ee2a54c416bb486320c295eabdff96bfffcb391edc60c7a28ae718b8590",
+    "smoke_result_sha256": "5f8e48fa58366c5259eb4e854a869cf145841f20ff7238427bd9038d91ae5615",
+    "private_smoke_manifest_sha256": "5a53608613789e7411e54e877acdbf33a2fb434645255c5fb3114163764e2bad",
     "private_tool_paths_sha256": "1a564dc3958b4f678ae5ff89c04ac8797849127b784f2d4b2d7af88532df3fb5",
     "private_source_allocation_sha256": "e4b7d2ab42253e00ce0e0b95c8049193f9b6178ecbb6212811fde96d58c088d4",
     "private_candidate_index_sha256": "07a00a0f56570c0778e384c6a816a69be13fffe42596c1aad80d5a6a99357a07",
@@ -231,7 +243,7 @@
     "output_volume_outside_git": true
   },
   "staged_authority": {
-    "current": "Exactly the frozen 202-cell score-blind smoke set in two separate roots.",
+    "current": "The complete frozen 12,885-cell assignment in one checkpointed external root, with one worker and no feature or score access.",
     "after_synthetic_pass": "A committed correction may authorize two separate 202-cell smoke roots and must bind the path-free synthetic result.",
     "after_smoke_pass": "A committed correction may authorize the full build and must bind byte-identical private smoke manifests and path-free smoke evidence.",
     "feature_boundary": "Construction never authorizes feature computation, candidate scoring, partition opening, or external positive encoder selection."
@@ -241,9 +253,9 @@
     "A synthetic render differs between its two executions or the two complete reports differ byte-for-byte.",
     "A wrapper differs from the exact transformed signed-s16 PCM under the canonical analysis decoder.",
     "An unbound encoder, decoder, transform, wrapper, channel treatment, sample rate, or recipe order would be used.",
-    "A benchmark cell outside the frozen 202-cell smoke selection would be read or generated under the current authority.",
+    "A benchmark cell outside the complete frozen 12,885-cell assignment would be read or generated under the current authority.",
     "A feature, score, unopened label, external positive encoder, public verdict, or private path would be opened or emitted.",
     "The work or output volume falls below the 15 GiB reserve."
   ],
-  "authorized_next_step": "Commit this smoke-only correction, then render the exact 202-cell selection into two separate external roots. Revalidate every final wrapper and canonical PCM, require byte-identical private manifests and path-free reports, and commit only the path-free attestation. Do not construct any other benchmark cell or compute a feature or score."
+  "authorized_next_step": "Commit this full-construction correction, then render the complete frozen 12,885-cell assignment with one worker into the checkpointed external root. Revalidate every final wrapper and canonical PCM and commit only a path-free construction attestation. Do not compute a feature or score, instantiate an external positive, open a transfer partition, or enable a public verdict."
 }
