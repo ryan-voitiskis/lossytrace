@@ -35,10 +35,10 @@ BASE_SPEC.loader.exec_module(BASE)
 
 
 SCHEMA_VERSION = 1
-FREEZE_ID = "lossytrace-v2-toolchain-bindings-20260802-002"
-PROBE_ID = "lossytrace-v2-factor-toolchain-probe-20260802-002"
-EXPECTED_FACTOR_ID = "lossytrace-v2-factor-levels-20260802-001"
-EXPECTED_FACTOR_COMMIT = "52470b2d0e279d002b8516a7d4f862c93133ac8b"
+FREEZE_ID = "lossytrace-v2-toolchain-bindings-20260802-003"
+PROBE_ID = "lossytrace-v2-factor-toolchain-probe-20260802-003"
+EXPECTED_FACTOR_ID = "lossytrace-v2-factor-levels-20260802-002"
+EXPECTED_FACTOR_COMMIT = "cb2f75434c8918089ac8f861c087758c5d2260bd"
 EXPECTED_PRIOR_EVIDENCE_SHA256 = (
     "fb497f37ade1a6db5e3d87a0f957f6c2e72433c4091679f098ab6ce07b8b8c8d"
 )
@@ -549,7 +549,15 @@ def build_manifest(
     settings = []
     for template in factor["codec_setting_templates"]:
         codec = CODEC_DETAILS[template["codec_family"]]
+        applicable_channels = set(
+            template.get(
+                "applicable_channel_treatment_ids",
+                [channel_id for channel_id, _ in CHANNELS],
+            )
+        )
         for channel_id, channel_count in CHANNELS:
+            if channel_id not in applicable_channels:
+                continue
             setting_id = f"{template['template_id']}--{channel_id}"
             tool_id = ENCODER_TO_TOOL[template["encoder_id"]]
             binding_tool_ids = [tool_id]
@@ -693,8 +701,8 @@ def build_manifest(
             "encoder_runs_per_setting_within_replay": 2,
             "decoder_runs_per_compatible_path_within_replay": 2,
             "transform_runs_per_input_within_replay": 2,
-            "expected_expanded_setting_count": 48,
-            "expected_history_decoder_path_count": 132,
+            "expected_expanded_setting_count": 46,
+            "expected_history_decoder_path_count": 126,
             "expected_transform_input_path_count": 40,
             "expected_wrapper_encode_path_count": 12,
             "expected_wrapper_analysis_decode_path_count": 12,
@@ -754,13 +762,18 @@ def validate_manifest(manifest: dict[str, Any], factor: dict[str, Any]) -> None:
         raise ValueError("factor binding differs")
 
     settings = manifest.get("expanded_encoder_settings")
-    if not isinstance(settings, list) or len(settings) != 48:
-        raise ValueError("exactly 48 expanded settings are required")
+    if not isinstance(settings, list) or len(settings) != 46:
+        raise ValueError("exactly 46 corrected expanded settings are required")
     setting_ids = {row.get("expanded_setting_id") for row in settings}
     expected_ids = {
         f"{template['template_id']}--{channel_id}"
         for template in factor["codec_setting_templates"]
         for channel_id, _ in CHANNELS
+        if channel_id
+        in template.get(
+            "applicable_channel_treatment_ids",
+            [value for value, _ in CHANNELS],
+        )
     }
     if setting_ids != expected_ids:
         raise ValueError("expanded setting ids differ from the factor freeze")
@@ -800,8 +813,8 @@ def validate_manifest(manifest: dict[str, Any], factor: dict[str, Any]) -> None:
         for decoder in decoders
         if setting["codec_family"] in decoder["codec_families"]
     )
-    if decoder_path_count != 132:
-        raise ValueError(f"expected 132 decoder paths, found {decoder_path_count}")
+    if decoder_path_count != 126:
+        raise ValueError(f"expected 126 decoder paths, found {decoder_path_count}")
     serialized = json.dumps(manifest, sort_keys=True)
     if "/Users/" in serialized or "\\Users\\" in serialized:
         raise ValueError("manifest contains a private path")
@@ -1298,9 +1311,9 @@ def run_probe(
     with tempfile.TemporaryDirectory(prefix="lossytrace-v2-factor-freeze-", dir=work_root) as name:
         work = Path(name)
         plumbing = BASE.run_probe(base_config, work)
-        if plumbing["summary"]["encoder_probe_count"] != 48:
+        if plumbing["summary"]["encoder_probe_count"] != 46:
             raise ValueError("expanded encoder probe count differs")
-        if plumbing["summary"]["decoder_path_probe_count"] != 132:
+        if plumbing["summary"]["decoder_path_probe_count"] != 126:
             raise ValueError("history decoder path count differs")
         check_free_space(work_root)
         bandwidth = run_bandwidth_observations(manifest, tool_paths, work)

@@ -20,8 +20,8 @@ committed before those outcomes are observed. If a recipe cannot realize its
 declared level, the response is a dated factor correction—not a silent flag,
 encoder, rate-control, channel, or transform substitution.
 
-The machine-readable freeze is
-[`toolchain-bindings.json`](../../benchmarks/audio-integrity-v2/toolchain-bindings.json),
+The machine-readable freeze is preserved at
+[`toolchain-bindings.json` in commit `919e88c`](https://github.com/ryan-voitiskis/lossytrace/blob/919e88c/benchmarks/audio-integrity-v2/toolchain-bindings.json),
 SHA-256
 `9b860b719ba3434268e85dbd77994de6ce60deca5f07a4a6dd7d452ddc23323c`.
 It binds:
@@ -38,8 +38,8 @@ It binds:
 - exact algorithms or commands for every frozen PCM transform; and
 - deterministic FLAC, WAV, and AIFF wrapper commands.
 
-The implementation and validator are
-[`freeze-audio-integrity-v2-toolchains.py`](../../scripts/freeze-audio-integrity-v2-toolchains.py).
+The implementation and validator at this checkpoint are preserved in
+[`freeze-audio-integrity-v2-toolchains.py` at commit `919e88c`](https://github.com/ryan-voitiskis/lossytrace/blob/919e88c/scripts/freeze-audio-integrity-v2-toolchains.py).
 The older probe harness now accepts mono as well as stereo fixtures, while its
 existing stereo golden remains unchanged.
 

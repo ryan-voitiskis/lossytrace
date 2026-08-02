@@ -35,13 +35,13 @@ class ToolchainFreezeTest(unittest.TestCase):
 
     def test_manifest_expands_every_channel_setting_and_decoder_path(self) -> None:
         MODULE.validate_manifest(self.manifest, self.factor)
-        self.assertEqual(48, len(self.manifest["expanded_encoder_settings"]))
+        self.assertEqual(46, len(self.manifest["expanded_encoder_settings"]))
         decoder_paths = sum(
             setting["codec_family"] in decoder["codec_families"]
             for setting in self.manifest["expanded_encoder_settings"]
             for decoder in self.manifest["history_decoder_bindings"]
         )
-        self.assertEqual(132, decoder_paths)
+        self.assertEqual(126, decoder_paths)
 
     def test_explicit_lowpass_is_not_silently_applied_to_default_lame(self) -> None:
         settings = {
@@ -67,8 +67,19 @@ class ToolchainFreezeTest(unittest.TestCase):
             if row["encoder_id"]
             in {"opus_ffmpeg_native_8_1_2", "vorbis_ffmpeg_native_8_1_2"}
         ]
-        self.assertEqual(8, len(native))
+        self.assertEqual(6, len(native))
         self.assertTrue(all("-serial_offset" in row["command"] for row in native))
+
+    def test_native_vorbis_transfer_is_explicitly_stereo_only(self) -> None:
+        native_vorbis = [
+            row
+            for row in self.manifest["expanded_encoder_settings"]
+            if row["encoder_id"] == "vorbis_ffmpeg_native_8_1_2"
+        ]
+        self.assertEqual(2, len(native_vorbis))
+        self.assertTrue(
+            all(row["channel_treatment_id"] == "stereo" for row in native_vorbis)
+        )
 
     def test_round_ratio_uses_ties_to_even_for_both_signs(self) -> None:
         self.assertEqual(2, MODULE.round_ratio_ties_even(5, 2))

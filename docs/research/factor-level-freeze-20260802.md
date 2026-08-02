@@ -24,8 +24,8 @@ replayed 793-group source allocation at commit
 3. a later record must assign private source groups to cells without using
    waveform statistics or scores.
 
-The machine-readable freeze is
-[`factor-levels.json`](../../benchmarks/audio-integrity-v2/factor-levels.json),
+The machine-readable freeze is preserved at
+[`factor-levels.json` in commit `52470b2`](https://github.com/ryan-voitiskis/lossytrace/blob/52470b2/benchmarks/audio-integrity-v2/factor-levels.json),
 SHA-256
 `c64f74ee48cbf9d626cba00cb55b139ecc1e4d206daa2e0fc94ec0af45991fab`.
 It is checked by

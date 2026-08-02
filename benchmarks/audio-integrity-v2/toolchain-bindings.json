@@ -2023,63 +2023,6 @@
         "ffmpeg_8_1_2_1"
       ],
       "bitrate_or_quality": "q2",
-      "channel_treatment_id": "mono",
-      "codec_family": "vorbis",
-      "command": [
-        "<TOOL:ffmpeg_8_1_2_1>",
-        "-hide_banner",
-        "-loglevel",
-        "error",
-        "-y",
-        "-fflags",
-        "+bitexact",
-        "-i",
-        "<INPUT>",
-        "-map",
-        "0:a:0",
-        "-ac:a",
-        "1",
-        "-ar:a",
-        "44100",
-        "-strict",
-        "experimental",
-        "-c:a",
-        "vorbis",
-        "-q:a",
-        "2",
-        "-flags:a",
-        "+bitexact",
-        "-fflags",
-        "+bitexact",
-        "-serial_offset",
-        "1954",
-        "<OUTPUT>"
-      ],
-      "encoder_id": "vorbis_ffmpeg_native_8_1_2",
-      "evidence_partition": "encoder_transfer",
-      "expanded_setting_id": "transfer-vorbis-ffmpeg-q2--mono",
-      "expected_channel_count": 1,
-      "expected_codec_name": "vorbis",
-      "expected_profile": null,
-      "expected_sample_rate_hz": 44100,
-      "frame_duration_ms": null,
-      "input_id": "synthetic-44100-mono",
-      "lineage_id": "ffmpeg_native_vorbis",
-      "nominal_encoder_lowpass": {
-        "hz": null,
-        "mode": "implementation_fixed_or_default"
-      },
-      "output_extension": ".ogg",
-      "rate_control": "vbr_quality",
-      "template_id": "transfer-vorbis-ffmpeg-q2",
-      "tool_id": "ffmpeg_8_1_2_1"
-    },
-    {
-      "anchor": false,
-      "binding_tool_ids": [
-        "ffmpeg_8_1_2_1"
-      ],
-      "bitrate_or_quality": "q2",
       "channel_treatment_id": "stereo",
       "codec_family": "vorbis",
       "command": [
@@ -2129,63 +2072,6 @@
       "output_extension": ".ogg",
       "rate_control": "vbr_quality",
       "template_id": "transfer-vorbis-ffmpeg-q2",
-      "tool_id": "ffmpeg_8_1_2_1"
-    },
-    {
-      "anchor": true,
-      "binding_tool_ids": [
-        "ffmpeg_8_1_2_1"
-      ],
-      "bitrate_or_quality": "q4",
-      "channel_treatment_id": "mono",
-      "codec_family": "vorbis",
-      "command": [
-        "<TOOL:ffmpeg_8_1_2_1>",
-        "-hide_banner",
-        "-loglevel",
-        "error",
-        "-y",
-        "-fflags",
-        "+bitexact",
-        "-i",
-        "<INPUT>",
-        "-map",
-        "0:a:0",
-        "-ac:a",
-        "1",
-        "-ar:a",
-        "44100",
-        "-strict",
-        "experimental",
-        "-c:a",
-        "vorbis",
-        "-q:a",
-        "4",
-        "-flags:a",
-        "+bitexact",
-        "-fflags",
-        "+bitexact",
-        "-serial_offset",
-        "1954",
-        "<OUTPUT>"
-      ],
-      "encoder_id": "vorbis_ffmpeg_native_8_1_2",
-      "evidence_partition": "encoder_transfer",
-      "expanded_setting_id": "transfer-vorbis-ffmpeg-q4--mono",
-      "expected_channel_count": 1,
-      "expected_codec_name": "vorbis",
-      "expected_profile": null,
-      "expected_sample_rate_hz": 44100,
-      "frame_duration_ms": null,
-      "input_id": "synthetic-44100-mono",
-      "lineage_id": "ffmpeg_native_vorbis",
-      "nominal_encoder_lowpass": {
-        "hz": null,
-        "mode": "implementation_fixed_or_default"
-      },
-      "output_extension": ".ogg",
-      "rate_control": "vbr_quality",
-      "template_id": "transfer-vorbis-ffmpeg-q4",
       "tool_id": "ffmpeg_8_1_2_1"
     },
     {
@@ -2247,10 +2133,10 @@
     }
   ],
   "factor_binding": {
-    "checkpoint_commit": "52470b2d0e279d002b8516a7d4f862c93133ac8b",
-    "factor_freeze_id": "lossytrace-v2-factor-levels-20260802-001",
+    "checkpoint_commit": "cb2f75434c8918089ac8f861c087758c5d2260bd",
+    "factor_freeze_id": "lossytrace-v2-factor-levels-20260802-002",
     "path": "benchmarks/audio-integrity-v2/factor-levels.json",
-    "sha256": "c64f74ee48cbf9d626cba00cb55b139ecc1e4d206daa2e0fc94ec0af45991fab"
+    "sha256": "4065553ef4fbe505ea0d79b149570bc1483396dbcc1de52597890e61f59481bd"
   },
   "history_decoder_bindings": [
     {
@@ -2549,7 +2435,7 @@
     "fresh_synthetic_equivalence_required_before_baseline_scoring": true,
     "implementation": "LossyTrace feature-version-0 Symphonia 0.5 decoder",
     "prior_observed_evidence": "The 2026-08-01 14-group, seven-domain container audit found exact feature equality across all 56 FLAC/WAV/AIFF triplets.",
-    "source_checkpoint_commit": "52470b2d0e279d002b8516a7d4f862c93133ac8b"
+    "source_checkpoint_commit": "cb2f75434c8918089ac8f861c087758c5d2260bd"
   },
   "public_state": {
     "evidence_schema_version": 1,
@@ -2560,8 +2446,8 @@
     "complete_replay_count": 2,
     "decoder_runs_per_compatible_path_within_replay": 2,
     "encoder_runs_per_setting_within_replay": 2,
-    "expected_expanded_setting_count": 48,
-    "expected_history_decoder_path_count": 132,
+    "expected_expanded_setting_count": 46,
+    "expected_history_decoder_path_count": 126,
     "expected_transform_input_path_count": 40,
     "expected_wrapper_analysis_decode_path_count": 12,
     "expected_wrapper_encode_path_count": 12,
@@ -2766,7 +2652,7 @@
       "version": "opus-tools 0.2_2; libopus 1.6.1; opusfile 0.12_1"
     }
   ],
-  "toolchain_freeze_id": "lossytrace-v2-toolchain-bindings-20260802-002",
+  "toolchain_freeze_id": "lossytrace-v2-toolchain-bindings-20260802-003",
   "wrapper_bindings": [
     {
       "command": [

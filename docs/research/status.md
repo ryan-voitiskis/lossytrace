@@ -94,17 +94,17 @@ preconditioning, 16 development and 8 encoder-transfer setting templates, five
 history-decoder levels, nine PCM hard-negative transforms, and an ephemeral
 one-worker storage boundary. The exact
 [`toolchain preregistration`](toolchain-freeze-preregistration-20260802.md)
-now expands those templates into 48 commands, binds 132 compatible decoder
-paths, defines coarse bandwidth observations and transform golden outputs, and
-keeps source allocation and scoring closed. Its first replay stopped because
-LAME CBR-96 stereo chose 32 kHz; the committed
+originally expanded those templates into 48 commands and 132 compatible
+decoder paths while keeping source allocation and scoring closed. Its first
+replay stopped because LAME CBR-96 stereo chose 32 kHz; the committed
 [`correction`](toolchain-factor-correction-20260802-001.md) explicitly binds
-all LAME settings to the frozen 44.1 kHz rate. Two complete corrected
-executions and the later fractional assignment remain separate gates. The
-next replay then found that FFmpeg native Vorbis supports only two encoded
-channels. The separately committed
+all LAME settings to the frozen 44.1 kHz rate. The next replay found that
+FFmpeg native Vorbis supports only two encoded channels. The separately committed
 [`factor correction`](factor-level-correction-20260802-001.md) makes that
 transfer lineage stereo-only, narrows the claim explicitly, and leaves 46
-realizable expanded settings. A revised toolchain recipe must be frozen before
-execution resumes.
+realizable expanded settings. Corrected
+[`toolchain recipe 003`](toolchain-factor-correction-20260802-002.md) now binds
+those 46 settings, 126 decoder paths, coarse bandwidth observations, and
+transform/wrapper golden outputs. Its two complete executions and the later
+fractional assignment remain separate gates.
 No successor mechanism score or retained holdout has been opened.

@@ -6,6 +6,11 @@ State: correction frozen after a capability mismatch and before any complete
 expanded-setting replay; no benchmark audio, source assignment, mechanism
 feature, score, or unopened label inspected
 
+Superseded before a complete replay: recipe `002` subsequently exposed the
+native-FFmpeg Vorbis mono capability boundary. Recipe `003` is documented in
+[`toolchain correction 002`](toolchain-factor-correction-20260802-002.md);
+this record remains the binding history for the LAME correction.
+
 ## Observed stop
 
 Toolchain recipe `lossytrace-v2-toolchain-bindings-20260802-001` was committed
@@ -32,8 +37,8 @@ uniformly prevents sample-rate realization from depending on bitrate or
 channel mode.
 
 No other encoder, decoder, transform, wrapper, factor, or expectation changes.
-The corrected path-free manifest is
-[`toolchain-bindings.json`](../../benchmarks/audio-integrity-v2/toolchain-bindings.json),
+The corrected path-free manifest is preserved at
+[`toolchain-bindings.json` in commit `f981498`](https://github.com/ryan-voitiskis/lossytrace/blob/f981498/benchmarks/audio-integrity-v2/toolchain-bindings.json),
 SHA-256
 `da486f1874c802f22a67f629a60abb50989ebb0467d65ce1d1a98b07d5ea9838`.
 Its validator additionally requires every LAME setting to carry the explicit

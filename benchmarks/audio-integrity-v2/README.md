@@ -23,6 +23,7 @@ Read these before constructing a manifest:
 - [`toolchain-probe-result-20260802.md`](../../docs/research/toolchain-probe-result-20260802.md)
 - [`toolchain-freeze-preregistration-20260802.md`](../../docs/research/toolchain-freeze-preregistration-20260802.md)
 - [`toolchain-factor-correction-20260802-001.md`](../../docs/research/toolchain-factor-correction-20260802-001.md)
+- [`toolchain-factor-correction-20260802-002.md`](../../docs/research/toolchain-factor-correction-20260802-002.md)
 - [`rwc-source-identity-audit-20260802.md`](../../docs/research/rwc-source-identity-audit-20260802.md)
 
 The pre-freeze source/tool inventory and its remaining gates are described
@@ -52,7 +53,10 @@ separately committed
 [`factor correction`](../../docs/research/factor-level-correction-20260802-001.md)
 makes only those two transfer templates stereo-only and forbids a mono Vorbis
 encoder-transfer claim; it does not disguise dual-mono as mono or reuse the
-development lineage.
+development lineage. Corrected
+[`toolchain recipe 003`](../../docs/research/toolchain-factor-correction-20260802-002.md)
+therefore contains 46 settings and 126 compatible decoder paths, frozen before
+execution.
 
 ## Evidence partitions
 
