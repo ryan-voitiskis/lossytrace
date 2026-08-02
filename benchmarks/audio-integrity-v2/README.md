@@ -15,6 +15,13 @@ Read these before constructing a manifest:
 - [`baseline-failure-atlas-preregistration-20260802.md`](../../docs/research/baseline-failure-atlas-preregistration-20260802.md)
 - [`factorial-contract.json`](factorial-contract.json)
 - [`manifest.example.json`](manifest.example.json)
+- [`inventory.json`](inventory.json)
+
+The current source/tool inventory and its unresolved freeze gates are described
+in
+[`factorial-benchmark-inventory-20260802.md`](../../docs/research/factorial-benchmark-inventory-20260802.md).
+It is an inventory, not a frozen selection, and has generated no benchmark
+audio.
 
 ## Evidence partitions
 
@@ -69,6 +76,13 @@ python3 scripts/validate-audio-integrity-factorial-manifest.py \
   --profile structural
 ```
 
+Validate the public path-free source/tool inventory independently:
+
+```bash
+python3 scripts/validate-audio-integrity-v2-inventory.py \
+  --inventory benchmarks/audio-integrity-v2/inventory.json
+```
+
 Before opening a partition, use its freeze profile:
 
 ```bash
@@ -89,9 +103,10 @@ preregistration and persistent goal decide when a partition may be consumed.
 ## Planned construction order
 
 1. Preserve the completed already-consumed v1 baseline failure atlas.
-2. Inventory encoder/decoder implementations and licences without generating
-   audio.
-3. Freeze the v2 source collections, factor levels, and fractional assignment.
+2. Preserve the completed encoder/decoder/source inventory without treating it
+   as a freeze.
+3. Verify metadata and probe tools, then freeze the v2 source collections,
+   factor levels, and fractional assignment.
 4. Generate paired mechanism-development cases with one low-priority worker,
    hashes, resumable recipes, and a free-space reserve.
 5. Freeze encoder-transfer and external-transfer identities before mechanism

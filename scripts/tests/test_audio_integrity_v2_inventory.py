@@ -1,0 +1,73 @@
+from __future__ import annotations
+
+import copy
+import importlib.util
+import unittest
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[2]
+SCRIPT = ROOT / "scripts" / "validate-audio-integrity-v2-inventory.py"
+SPEC = importlib.util.spec_from_file_location("v2_inventory", SCRIPT)
+assert SPEC and SPEC.loader
+MODULE = importlib.util.module_from_spec(SPEC)
+SPEC.loader.exec_module(MODULE)
+
+
+class InventoryValidationTest(unittest.TestCase):
+    def setUp(self) -> None:
+        self.inventory = MODULE.load_json(
+            ROOT / "benchmarks" / "audio-integrity-v2" / "inventory.json"
+        )
+
+    def test_repository_inventory_is_valid(self) -> None:
+        self.assertEqual([], MODULE.validate(self.inventory))
+
+    def test_wrapper_lineage_cannot_cross_transfer_boundary(self) -> None:
+        inventory = copy.deepcopy(self.inventory)
+        transfer = next(
+            row
+            for row in inventory["encoder_candidates"]
+            if row["encoder_id"] == "mp3_apple_audiotoolbox_25g72"
+        )
+        transfer["lineage_id"] = "lame"
+        errors = MODULE.validate(inventory)
+        self.assertTrue(any("development/transfer lineages overlap" in error for error in errors))
+
+    def test_projected_counts_are_recomputed(self) -> None:
+        inventory = copy.deepcopy(self.inventory)
+        inventory["projected_partition_summary"]["external_transfer"][
+            "conservative_partition_groups"
+        ] = 999
+        errors = MODULE.validate(inventory)
+        self.assertIn("external_transfer projected partition count differs", errors)
+
+    def test_archive_byte_total_is_recomputed(self) -> None:
+        inventory = copy.deepcopy(self.inventory)
+        inventory["planned_source_archive_bytes"] += 1
+        self.assertIn(
+            "planned_source_archive_bytes differs from source artifacts",
+            MODULE.validate(inventory),
+        )
+
+    def test_provider_checksum_is_validated(self) -> None:
+        inventory = copy.deepcopy(self.inventory)
+        source = next(
+            row
+            for row in inventory["source_candidates"]
+            if row["source_id"] == "speech_commands_v0_02"
+        )
+        source["artifact"]["provider_checksum"] = "md5:not-a-digest"
+        errors = MODULE.validate(inventory)
+        self.assertTrue(any("invalid provider checksum" in error for error in errors))
+
+    def test_frozen_state_is_rejected(self) -> None:
+        inventory = copy.deepcopy(self.inventory)
+        inventory["state"] = "frozen"
+        self.assertIn(
+            "state must remain inventory_only_not_frozen", MODULE.validate(inventory)
+        )
+
+
+if __name__ == "__main__":
+    unittest.main()

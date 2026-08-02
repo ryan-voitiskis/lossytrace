@@ -53,4 +53,7 @@ before P1 and the corrected same-input replay was byte-identical. The completed
 negative cases and 545/597 negative source groups alerted. See the
 [`amendment`](baseline-failure-atlas-amendment-20260802-001.md) and
 [`path-free result`](cannam-fixed-rule-failure-atlas-result-20260802.md).
+The next milestone has inventoried implementation lineages and candidate
+source collections without generating audio or freezing a selection; see the
+[`factorial benchmark inventory`](factorial-benchmark-inventory-20260802.md).
 No successor mechanism score or retained holdout has been opened.
