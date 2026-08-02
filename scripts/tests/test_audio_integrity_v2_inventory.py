@@ -71,6 +71,19 @@ class InventoryValidationTest(unittest.TestCase):
         errors = MODULE.validate(inventory)
         self.assertTrue(any("invalid provider checksum" in error for error in errors))
 
+    def test_multi_artifact_filenames_must_be_unique(self) -> None:
+        inventory = copy.deepcopy(self.inventory)
+        source = next(
+            row
+            for row in inventory["source_candidates"]
+            if row["source_id"] == "ravdess_audio_1_0_0"
+        )
+        source["artifacts"][1]["filename"] = source["artifacts"][0]["filename"]
+        self.assertIn(
+            "source ravdess_audio_1_0_0 has duplicate artifact filenames",
+            MODULE.validate(inventory),
+        )
+
     def test_acquired_remote_binding_requires_a_strong_etag(self) -> None:
         inventory = copy.deepcopy(self.inventory)
         source = next(
@@ -103,6 +116,22 @@ class InventoryValidationTest(unittest.TestCase):
         source["artifact"]["provider_checksum"] = "md5:" + "0" * 32
         errors = MODULE.validate_source_identity_evidence_files(inventory, ROOT)
         self.assertTrue(any("provider binding differs" in error for error in errors))
+
+    def test_multi_artifact_source_identity_provider_checksum_is_bound(self) -> None:
+        inventory = copy.deepcopy(self.inventory)
+        source = next(
+            row
+            for row in inventory["source_candidates"]
+            if row["source_id"] == "ravdess_audio_1_0_0"
+        )
+        self.assertEqual(
+            "acquired_and_identity_verified_not_allocated", source["availability"]
+        )
+        source["artifacts"][0]["provider_checksum"] = "md5:" + "0" * 32
+        errors = MODULE.validate_source_identity_evidence_files(inventory, ROOT)
+        self.assertTrue(
+            any("source identity archive binding differs" in error for error in errors)
+        )
 
     def test_source_metadata_family_rules_hash_is_validated(self) -> None:
         inventory = copy.deepcopy(self.inventory)

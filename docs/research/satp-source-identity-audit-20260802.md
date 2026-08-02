@@ -120,7 +120,10 @@ SATP as one provider stratum; and include leave-provider/domain sensitivity.
 
 ## Next gate
 
-The remaining source gate is RAVDESS, VCTK, Speech Commands, TinySOL, and RWC
+The subsequent
+[RAVDESS source-identity audit](ravdess-source-identity-audit-20260802.md)
+bound its two audio-only archives without changing the 24-actor planning
+count. The remaining source gate is VCTK, Speech Commands, TinySOL, and RWC
 audio identity verification. Only after those archives are bound may source
 allocation, factor levels, and toolchain versions be frozen separately.
 

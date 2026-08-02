@@ -1,0 +1,187 @@
+{
+  "archive_bindings": {
+    "song": {
+      "bytes": 225505317,
+      "filename": "Audio_Song_Actors_01-24.zip",
+      "local_sha256": "89f3df66cc67ebb70c8af6f72f3f359bee497f6f763a9d863b6477619716d428",
+      "provider_checksum_verified": true,
+      "provider_md5": "5411230427d67a21e18aa4d466e6d1b9",
+      "zip_crc_verified": true
+    },
+    "speech": {
+      "bytes": 208468073,
+      "filename": "Audio_Speech_Actors_01-24.zip",
+      "local_sha256": "5d208e01632cc3e5242106fa2af3273e6dc5239fb8143131979ac74c4aa40657",
+      "provider_checksum_verified": true,
+      "provider_md5": "bc696df654c87fed845eb13823edef8a",
+      "zip_crc_verified": true
+    }
+  },
+  "benchmark_audio_generated": false,
+  "conservative_reference_boundary": {
+    "eligible_actor_count": 24,
+    "eligible_audio_file_count": 2450,
+    "future_selection_constraint": "At most one reference excerpt per actor across both channels; exclude every member of a repeated-PCM group; preserve every seven-field factor identifier and original channel count.",
+    "grouping_unit": "actor identity across speech and song",
+    "independence_limit": "Actors share the recording and export pipeline; retain RAVDESS as one provider stratum and run leave-provider/domain sensitivity.",
+    "rule": [
+      "canonical seven-field audio-only filename",
+      "directory actor equals filename actor",
+      "valid speech or song factorial cell with no duplicate key",
+      "PCM digest occurs exactly once across both archives"
+    ]
+  },
+  "observed": {
+    "actor_channel_profile_counts": {
+      "song+speech": 23,
+      "speech": 1
+    },
+    "actor_count": 24,
+    "cross_actor_duplicate_pcm_digest_group_count": 0,
+    "data_byte_ranges": {
+      "song": {
+        "maximum": 916116,
+        "minimum": 336336
+      },
+      "speech": {
+        "maximum": 839236,
+        "minimum": 281882
+      }
+    },
+    "directory_member_counts": {
+      "song": 24,
+      "speech": 24
+    },
+    "distinct_pcm_digest_count": 2451,
+    "duplicate_pcm_archive_member_groups": [
+      [
+        "Actor_07/03-01-03-01-02-01-07.wav",
+        "Actor_07/03-01-03-01-02-02-07.wav"
+      ]
+    ],
+    "duplicate_pcm_digest_group_count": 1,
+    "duplicate_pcm_file_count_excess": 1,
+    "factorial_grid_complete": true,
+    "factorial_keys_unique": true,
+    "frame_count_ranges": {
+      "song": {
+        "maximum": 305906,
+        "minimum": 168168
+      },
+      "speech": {
+        "maximum": 253053,
+        "minimum": 140941
+      }
+    },
+    "missing_song_actor_ids": [
+      "18"
+    ],
+    "non_mono_archive_member_ids": [
+      "Actor_01/03-01-02-01-01-02-01.wav",
+      "Actor_01/03-01-08-01-02-02-01.wav",
+      "Actor_05/03-01-02-01-02-02-05.wav",
+      "Actor_20/03-01-03-01-02-01-20.wav",
+      "Actor_20/03-01-06-01-01-02-20.wav",
+      "Actor_24/03-02-01-01-01-01-24.wav"
+    ],
+    "riff_formats": {
+      "song": [
+        {
+          "ancillary_chunk_counts": {
+            "FLLR": 1,
+            "LIST": 1,
+            "_PMX": 1,
+            "bext": 1
+          },
+          "average_bytes_per_second": 192000,
+          "bits_per_sample": 16,
+          "block_align_bytes": 4,
+          "channel_count": 2,
+          "file_count": 1,
+          "format_chunk_bytes": 16,
+          "format_tag": 1,
+          "sample_format": "signed_integer_pcm",
+          "sample_rate_hz": 48000
+        },
+        {
+          "ancillary_chunk_counts": {
+            "FLLR": 1,
+            "LIST": 1,
+            "_PMX": 1,
+            "bext": 1
+          },
+          "average_bytes_per_second": 96000,
+          "bits_per_sample": 16,
+          "block_align_bytes": 2,
+          "channel_count": 1,
+          "file_count": 1011,
+          "format_chunk_bytes": 16,
+          "format_tag": 1,
+          "sample_format": "signed_integer_pcm",
+          "sample_rate_hz": 48000
+        }
+      ],
+      "speech": [
+        {
+          "ancillary_chunk_counts": {
+            "FLLR": 1,
+            "LIST": 1,
+            "_PMX": 1,
+            "bext": 1
+          },
+          "average_bytes_per_second": 192000,
+          "bits_per_sample": 16,
+          "block_align_bytes": 4,
+          "channel_count": 2,
+          "file_count": 5,
+          "format_chunk_bytes": 16,
+          "format_tag": 1,
+          "sample_format": "signed_integer_pcm",
+          "sample_rate_hz": 48000
+        },
+        {
+          "ancillary_chunk_counts": {
+            "FLLR": 1,
+            "LIST": 1,
+            "_PMX": 1,
+            "bext": 1
+          },
+          "average_bytes_per_second": 96000,
+          "bits_per_sample": 16,
+          "block_align_bytes": 2,
+          "channel_count": 1,
+          "file_count": 1435,
+          "format_chunk_bytes": 16,
+          "format_tag": 1,
+          "sample_format": "signed_integer_pcm",
+          "sample_rate_hz": 48000
+        }
+      ]
+    },
+    "song_file_count": 1012,
+    "song_files_per_present_actor_maximum": 44,
+    "song_files_per_present_actor_minimum": 44,
+    "speech_file_count": 1440,
+    "speech_files_per_actor_maximum": 60,
+    "speech_files_per_actor_minimum": 60,
+    "total_audio_file_count": 2452,
+    "uncompressed_audio_member_bytes": {
+      "song": 491763598,
+      "speech": 590349330
+    },
+    "unexpected_regular_member_counts": {}
+  },
+  "paths_redacted": true,
+  "provider_record": {
+    "record_id": 1188976,
+    "record_version": "1.0.0"
+  },
+  "schema_version": 1,
+  "scores_opened": false,
+  "selection_authorized": false,
+  "source_group_rules_binding": {
+    "sha256": "01c289969480f37c4758e79825867a280663ab63e4962f2aa5dcf67b039f7e42"
+  },
+  "source_id": "ravdess_audio_1_0_0",
+  "state": "source_identity_evidence_only"
+}

@@ -158,6 +158,7 @@ def validate(inventory: dict[str, Any]) -> list[str]:
                 errors.append(f"source {source_id} artifacts must be a list")
             else:
                 artifacts.extend(source["artifacts"])
+        artifact_filenames: list[str] = []
         for artifact_index, artifact in enumerate(artifacts):
             label = f"source {source_id} artifact {artifact_index}"
             if not isinstance(artifact, dict):
@@ -165,6 +166,8 @@ def validate(inventory: dict[str, Any]) -> list[str]:
                 continue
             if not isinstance(artifact.get("filename"), str) or not artifact["filename"]:
                 errors.append(f"{label} has invalid filename")
+            else:
+                artifact_filenames.append(artifact["filename"])
             byte_count = artifact.get("bytes")
             if not isinstance(byte_count, int) or isinstance(byte_count, bool) or byte_count < 1:
                 errors.append(f"{label} has invalid byte count")
@@ -182,6 +185,8 @@ def validate(inventory: dict[str, Any]) -> list[str]:
                 str(artifact["local_sha256"])
             ):
                 errors.append(f"{label} has invalid local_sha256")
+        if len(artifact_filenames) != len(set(artifact_filenames)):
+            errors.append(f"source {source_id} has duplicate artifact filenames")
         metadata_artifact = source.get("metadata_artifact")
         if metadata_artifact is not None:
             label = f"source {source_id} metadata_artifact"
@@ -509,6 +514,43 @@ def validate_source_identity_evidence_files(
                 or f"md5:{provider_md5}" != artifact.get("provider_checksum")
             ):
                 errors.append(f"source identity provider binding differs: {source_id}")
+        artifacts = source.get("artifacts")
+        archive_bindings = report.get("archive_bindings")
+        if isinstance(artifacts, list):
+            acquired_artifacts = [
+                row
+                for row in artifacts
+                if isinstance(row, dict) and row.get("local_sha256") is not None
+            ]
+            binding_rows = (
+                [row for row in archive_bindings.values() if isinstance(row, dict)]
+                if isinstance(archive_bindings, dict)
+                else []
+            )
+            bindings_by_filename = {
+                row.get("filename"): row
+                for row in binding_rows
+                if isinstance(row.get("filename"), str)
+            }
+            for acquired_artifact in acquired_artifacts:
+                filename = acquired_artifact.get("filename")
+                binding = bindings_by_filename.get(filename)
+                if not isinstance(binding, dict):
+                    errors.append(
+                        f"source identity archive binding is missing: {source_id} {filename}"
+                    )
+                    continue
+                if (
+                    binding.get("bytes") != acquired_artifact.get("bytes")
+                    or binding.get("local_sha256")
+                    != acquired_artifact.get("local_sha256")
+                    or f"md5:{binding.get('provider_md5')}"
+                    != acquired_artifact.get("provider_checksum")
+                    or binding.get("provider_checksum_verified") is not True
+                ):
+                    errors.append(
+                        f"source identity archive binding differs: {source_id} {filename}"
+                    )
         metadata_binding = report.get("archive_bindings", {}).get("metadata")
         metadata_artifact = source.get("metadata_artifact")
         if isinstance(metadata_binding, dict) and isinstance(metadata_artifact, dict):

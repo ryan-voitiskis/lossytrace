@@ -142,9 +142,11 @@ The subsequent
 count from 99 strings to 85 artist families. The later SATP coordinate audit
 reduced its 27 recordings to 25 groups, preserving 38 groups of total
 external-transfer margin. The next source gate is not more corpus shopping: it
-is to verify exact identities for RWC audio, RAVDESS, VCTK, Speech
-Commands, and TinySOL, then separately freeze source allocation, factor
-levels, and toolchain bindings.
+is to verify exact identities for RWC audio, VCTK, Speech Commands, and
+TinySOL. RAVDESS was subsequently
+[bound at 24 actor groups](ravdess-source-identity-audit-20260802.md) without
+changing that external-transfer total. Only after the remaining checks may
+source allocation, factor levels, and toolchain bindings be frozen separately.
 
 No benchmark audio generation, candidate evaluation, or external-transfer
 score opening is authorized by this audit.

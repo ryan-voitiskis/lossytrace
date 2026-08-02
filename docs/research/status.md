@@ -60,4 +60,10 @@ Its deterministic synthetic plumbing audit verified ten retained encoder
 bindings and 27 compatible decoder paths, rejected Apple MP3 encoding on the
 bound OS build, and substituted a pinned BladeEnc transfer lineage. See the
 [`toolchain probe result`](toolchain-probe-result-20260802.md).
+The source-identity gate has now bound Lombard Grid, SONYC, SATP, and RAVDESS
+to acquired archive bytes and path-free evidence. The
+[`RAVDESS audit`](ravdess-source-identity-audit-20260802.md) retained 24 actor
+groups while recording one same-actor repeated-PCM pair and six stereo
+outliers; neither was hidden by preprocessing. VCTK, Speech Commands, TinySOL,
+and RWC audio remain before any source, factor, or tool freeze.
 No successor mechanism score or retained holdout has been opened.

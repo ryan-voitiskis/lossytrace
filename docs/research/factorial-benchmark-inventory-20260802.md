@@ -4,8 +4,9 @@
 identity is frozen
 
 **Actions so far:** local tools inspected and synthetically probed, provider
-metadata reviewed, Lombard Grid source identity acquired and audited, no
-benchmark audio generated, no score opened, and no candidate selected
+metadata reviewed, and Lombard Grid, SONYC, SATP, and RAVDESS source identities
+acquired and audited; no benchmark audio generated, no score opened, and no
+candidate selected
 
 The machine-readable inventory is
 [`benchmarks/audio-integrity-v2/inventory.json`](../../benchmarks/audio-integrity-v2/inventory.json).
@@ -179,6 +180,13 @@ SATP is likewise archive-observed: its
 27 reference IDs, excludes the calibration signal, and merges two pairs that
 share exact provider coordinates. The current record is v1.5 even though the
 bound README's dataset-count prose still says v1.2.
+RAVDESS is now archive-observed as well. Its
+[source-identity audit](ravdess-source-identity-audit-20260802.md) reconciles
+the complete 1,440-speech/1,012-song grid across 24 actors and preserves actor
+18's documented missing-song condition. It also excludes one same-actor
+two-file repeated-PCM group from future reference selection and records six
+stereo outliers rather than silently downmixing them. Neither anomaly changes
+the 24 actor groups.
 
 This margin is deliberately not treated as permission to weaken identity.
 The RWC metadata audit binds its known aliases and dependencies, while
@@ -194,10 +202,11 @@ add an entirely new provider collection; do not weaken grouping.
 ## Storage and acquisition boundary
 
 All proposed source archives now total 23,237,282,258 bytes (21.64 GiB). After
-the Lombard Grid, SONYC, and 198,110,877-byte SATP acquisitions, the data volume
-reported about 42 GiB free. Retaining a 15 GiB reserve leaves roughly 6 GiB for
-compact references, derived cases, partials, and temporary intermediates after
-the remaining source acquisition. That is viable only if the stager:
+the Lombard Grid, SONYC, SATP, and 433,973,390-byte RAVDESS acquisitions, the
+data volume reported about 39.8 GiB free. The remaining source archives total
+20.16 GiB. Retaining a 15 GiB reserve would therefore leave only about 4.6 GiB
+for compact references, derived cases, partials, and temporary intermediates.
+That is viable only if the stager:
 
 - streams selected members without full archive expansion;
 - retains at most one bounded reference excerpt per source group;
@@ -207,17 +216,18 @@ the remaining source acquisition. That is viable only if the stager:
 - rechecks projected and actual free space before each archive and generation
   phase.
 
-The resumable SONYC and SATP audit downloads were completed, matched their
-provider byte counts and MD5 values, and were independently bound by SHA-256.
-Lombard Grid, SONYC, and SATP are the three sources currently treated as
-acquired and identity-verified; no other provider audio archive is.
+The resumable SONYC, SATP, and RAVDESS audit downloads were completed, matched
+their provider byte counts and MD5 values, passed their archive-integrity
+checks, and were independently bound by SHA-256. Lombard Grid, SONYC, SATP,
+and RAVDESS are the four sources currently treated as acquired and
+identity-verified; no other provider audio archive is.
 
 ## Decision and next gate
 
 The tool and source proposal satisfies the v2 minima under its documented lower
 bounds, and the external-transfer proposal now has observed margin. The tool
-plumbing is verified but not frozen. The next checkpoint must verify every
-remaining archive identity, including RWC audio members. Only then may separate
+plumbing is verified but not frozen. The next checkpoint must verify VCTK,
+Speech Commands, TinySOL, and every RWC audio member. Only then may separate
 source-allocation, factor-level, and toolchain freezes be committed.
 
 No factor setting, fractional assignment, audio derivative, mechanism score,

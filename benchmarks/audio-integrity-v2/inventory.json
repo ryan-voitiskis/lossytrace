@@ -364,21 +364,38 @@
       "conservative_partition_groups": 24,
       "partition_basis": "actor identity across both speech and song",
       "provenance_tier": "tier_a_confirmed_pcm",
-      "availability": "acquisition_required",
+      "availability": "acquired_and_identity_verified_not_allocated",
       "official_page_url": "https://zenodo.org/records/1188976",
+      "paper_url": "https://doi.org/10.1371/journal.pone.0196391",
       "license": "CC BY-NC-SA 4.0",
       "artifacts": [
         {
           "filename": "Audio_Speech_Actors_01-24.zip",
+          "url": "https://zenodo.org/api/records/1188976/files/Audio_Speech_Actors_01-24.zip/content",
           "bytes": 208468073,
-          "provider_checksum": "md5:bc696df654c87fed845eb13823edef8a"
+          "provider_checksum": "md5:bc696df654c87fed845eb13823edef8a",
+          "provider_checksum_verified": true,
+          "local_sha256": "5d208e01632cc3e5242106fa2af3273e6dc5239fb8143131979ac74c4aa40657"
         },
         {
           "filename": "Audio_Song_Actors_01-24.zip",
+          "url": "https://zenodo.org/api/records/1188976/files/Audio_Song_Actors_01-24.zip/content",
           "bytes": 225505317,
-          "provider_checksum": "md5:5411230427d67a21e18aa4d466e6d1b9"
+          "provider_checksum": "md5:5411230427d67a21e18aa4d466e6d1b9",
+          "provider_checksum_verified": true,
+          "local_sha256": "89f3df66cc67ebb70c8af6f72f3f359bee497f6f763a9d863b6477619716d428"
         }
-      ]
+      ],
+      "source_group_rules": {
+        "path": "benchmarks/audio-integrity-v2/ravdess-source-group-rules.json",
+        "sha256": "01c289969480f37c4758e79825867a280663ab63e4962f2aa5dcf67b039f7e42"
+      },
+      "source_identity_evidence": {
+        "aggregate_path": "research/sources/evidence/ravdess-1.0.0-observed-20260802.json",
+        "aggregate_sha256": "22e14a9d008677a38067ec5387d08a96e9799944014274307a4904359ac1f3d2"
+      },
+      "recording_chain": "The primary paper reports that the audio-only channel was exported as lossless 48 kHz, 16-bit WAV. The two bound archives contain 2,452 signed-integer PCM WAVs with Pro Tools-related ancillary chunks: 2,446 mono and six stereo.",
+      "caveat": "The documented grid is complete, with actor 18 absent from song as reported by the provider. One same-actor speech repetition pair has identical PCM, leaving 2,450 selection-eligible files; six files are stereo outliers. Exclude both repeated-PCM members, preserve original channel count as a source factor, select at most one excerpt per actor across speech and song, and retain RAVDESS as one provider stratum."
     },
     {
       "source_id": "speech_commands_v0_02",

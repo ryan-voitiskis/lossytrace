@@ -110,5 +110,7 @@ A subsequent
 repeated arrangements and merged cross-label identities, reducing RWC from 99
 strings to 85 artist families; the later SATP coordinate audit reduced the
 external total to 188. That preserves a 38-group margin. Verify every remaining
-archive identity before the separate
-freeze; do not spend the margin by weakening grouping.
+archive identity before the separate freeze; the later
+[RAVDESS audit](ravdess-source-identity-audit-20260802.md) bound its two audio
+archives at the existing 24-actor count. RWC audio, VCTK, Speech Commands, and
+TinySOL remain; do not spend the margin by weakening grouping.
