@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "assignment_rules_id": "lossytrace-v2-fractional-assignment-20260802-003",
+  "assignment_rules_id": "lossytrace-v2-fractional-assignment-20260802-004",
   "state": "fractional_assignment_rules_frozen_before_private_assignment",
-  "upstream_checkpoint_commit": "cb4059366d104ad9836cbf55d55235ce88e411ce",
+  "upstream_checkpoint_commit": "13962052f8dee4493d4d825883bd9b695434ec8b",
   "correction_history": [
     {
       "supersedes_assignment_rules_id": "lossytrace-v2-fractional-assignment-20260802-001",
@@ -17,11 +17,18 @@
       "reason": "Recipe 002 recorded the matched transformed H0 for every H1 but omitted the untransformed identity source required to reproduce the H0 transform and the H1 codec-then-transform recipe without inferring lineage during construction.",
       "audio_generated_before_correction": false,
       "scores_opened_before_correction": false
+    },
+    {
+      "supersedes_assignment_rules_id": "lossytrace-v2-fractional-assignment-20260802-003",
+      "supersedes_result_sha256": "31573d8ee523d6572d89b884ca5cbb1d815596c37d47831a31cb51d130bebe90",
+      "reason": "The frozen header-only construction audit found 11 recipe-003 groups whose assigned trim or duration-prefix transform could not meet its predeclared minimum. Recipe 004 preserves every source, quota, purpose string, and ranking rule, but applies that minimum only as a per-group transform eligibility predicate before the already-frozen ranking.",
+      "audio_generated_before_correction": false,
+      "scores_opened_before_correction": false
     }
   ],
   "generator_binding": {
     "path": "scripts/freeze-audio-integrity-v2-fractional-assignment.py",
-    "sha256": "07242c92df17207ccad8e2f7cdf57f01fd4819b9a0d56e7ca2e2c0341a76782e"
+    "sha256": "2fe2252053f5ea1ec625c1c726673c3f12a8ee1e56df1beef67d6539ea292123"
   },
   "source_allocation_binding": {
     "private_source_allocation_sha256": "e4b7d2ab42253e00ce0e0b95c8049193f9b6178ecbb6212811fde96d58c088d4",
@@ -39,6 +46,24 @@
     "toolchain_result_sha256": "29ddfe00bb419aedcbdee8de530785f5981de279f2bd190f4a337ebbe8c3cc23",
     "public_decoder_result_path": "research/toolchains/evidence/public-decoder-equivalence-observed-20260802-001-aggregate.json",
     "public_decoder_result_sha256": "e18ebce9101a59321fe7fcf509222b78d2218476653a091396e596de72520683"
+  },
+  "construction_feasibility_binding": {
+    "audit_id": "lossytrace-v2-construction-feasibility-20260802-003",
+    "private_audit_sha256": "9a4bbfcaa3742b1d665e2738547fd1ffaf74b2a0c245ed063610e8414f271a6c",
+    "private_audit_state": "construction_feasibility_private_header_evidence",
+    "public_result_path": "research/sources/evidence/construction-feasibility-observed-20260802-003.json",
+    "public_result_sha256": "2791c0e5c64bffae89412418693295be7b0ddd4ce8ad18eb323106bbe09bd3b4",
+    "allowed_predicate_fields": [
+      "group_id",
+      "evidence_partition",
+      "source_domain",
+      "excerpt_frame_count",
+      "native_sample_rate_hz",
+      "native_channel_supported"
+    ],
+    "predicate_derivation": "For every group and nonidentity transform, read minimum_input_milliseconds from the frozen factor level, defaulting to zero, and admit the group exactly when excerpt_frame_count * 1000 >= native_sample_rate_hz * minimum_input_milliseconds. Reject any unsupported native channel count before ranking.",
+    "information_boundary": "Raw frame count and sample rate may be used only to derive this Boolean eligibility relation. They must not be serialized into the assignment or aggregate, influence source allocation, enter a ranking hash, choose a categorical level, or affect any cell without that transform.",
+    "prior_findings_reproduced": true
   },
   "public_state": {
     "evidence_schema_version": 1,
@@ -64,7 +89,7 @@
     "input_artifact_id",
     "audio bytes",
     "audio hashes",
-    "duration",
+    "duration, frame count, or sample rate as a ranking or categorical input",
     "active audio fraction",
     "peak level",
     "bandwidth estimate",
@@ -80,7 +105,8 @@
     "serialization": "UTF-8(prefix || purpose || NUL || evidence_partition || NUL || source_domain || NUL || group_id)",
     "tie_break": "UTF-8 group_id ascending",
     "domain_balanced_selection": "Order domains by SHA-256(prefix || purpose || NUL || partition || NUL || domain), order groups within each domain by the group ranking, then take one from each nonempty domain in repeated rounds until the exact quota is reached.",
-    "categorical_cycle": "For a selected ordered group list, choose channel, target sample rate where it is not fixed by an encoder setting, compatible decoder, and wrapper by a purpose-separated hash offset followed by index modulo the eligible level count."
+    "categorical_cycle": "For a selected ordered group list, choose channel, target sample rate where it is not fixed by an encoder setting, compatible decoder, and wrapper by a purpose-separated hash offset followed by index modulo the eligible level count.",
+    "transform_feasibility_filter": "For a nonidentity transform only, remove groups that fail its predeclared minimum-input predicate before applying the unchanged purpose-separated domain-balanced ranking. Identity, anchors, nonanchors, external reserve, and categorical cycles never receive duration-derived input."
   },
   "partitions": {
     "mechanism_development": {
@@ -121,8 +147,8 @@
     "base_reference": "Every source group receives at least one identity PCM-reference cell. Development and encoder-transfer groups additionally receive every distinct reference cell required to match their assigned positives exactly on channel treatment, target sample rate, PCM transform, and wrapper.",
     "anchor_positive": "Every development and encoder-transfer source group receives exactly one anchor positive per codec family. Target sample rate comes from the frozen encoder setting; channel, decoder, and wrapper use deterministic categorical cycles over levels applicable to that setting.",
     "nonanchor_positive": "Each nonanchor template receives its exact partition quota via domain-balanced selection. Applicable channels are balanced by cycle; the FFmpeg-native Vorbis transfer templates remain stereo-only.",
-    "transform_negative": "Each nonidentity transform receives its exact per-partition source-group quota via a separate domain-balanced selection and records the exact identity PCM recipe source. Container rewriting uses FLAC as its identity source; other transforms retain the assigned wrapper. External transfer receives an exactly balanced 44.1/48 kHz split while remaining sealed.",
-    "transform_positive": "For every selected nonidentity transform group in development and encoder transfer, assign one anchor positive per scoped codec and record both the exact matched transformed H0 and the untransformed identity source required for the codec-then-transform recipe.",
+    "transform_negative": "Each nonidentity transform receives its exact per-partition source-group quota by applying the unchanged domain-balanced selection within groups that meet only that transform's frozen minimum-input predicate, and records the exact identity PCM recipe source. Container rewriting uses FLAC as its identity source; other transforms retain the assigned wrapper. External transfer receives an exactly balanced 44.1/48 kHz split while remaining sealed.",
+    "transform_positive": "For every feasibility-filtered nonidentity transform group in development and encoder transfer, assign one anchor positive per scoped codec and record both the exact matched transformed H0 and the untransformed identity source required for the codec-then-transform recipe.",
     "history_decoder": "Choose only decoders compatible with the codec, cycling independently by setting and role. Every compatible decoder must cover at least two setting templates per codec and the frozen minimum source-group count.",
     "wrapper": "Cycle FLAC, WAV, and AIFF independently of expectation. A matched H0/H1 pair always shares one wrapper. The lossless-wrapper-rewrite transform cycles only WAV and AIFF so it remains distinct from the primary FLAC representation.",
     "one_transform": "Every cell has exactly one transform_id. Identity and each nonidentity level are mutually exclusive.",
@@ -157,6 +183,7 @@
     "matched_reference_required_for_every_positive_including_target_sample_rate": true,
     "identity_recipe_source_required_for_every_generated_cell": true,
     "positive_and_matched_negative_share_identity_recipe_source": true,
+    "no_selected_cell_uses_a_transform_ineligible_for_its_group": true,
     "external_negative_target_sample_rates_hz": [44100, 48000],
     "all_wrappers_present_in_both_expectations": true,
     "all_applicable_channels_present_in_both_expectations": true,
@@ -169,8 +196,9 @@
     "audio_generation_authorized": false
   },
   "stop_conditions": [
-    "An upstream source, factor, toolchain, or public-decoder binding differs.",
-    "A forbidden source field, waveform statistic, codec result, mechanism feature, score, or unopened label would influence assignment.",
+    "An upstream source, factor, toolchain, public-decoder, private feasibility-audit, or public feasibility-result binding differs.",
+    "A forbidden source field, raw header value beyond the Boolean transform-feasibility derivation, waveform statistic, codec result, mechanism feature, score, or unopened label would influence assignment.",
+    "A group selected for a nonidentity transform fails that transform's frozen minimum-input predicate.",
     "A coverage requirement cannot be met without changing a frozen factor or claim boundary.",
     "A positive lacks an exact matched negative on source, channel, target sample rate, transform, and wrapper.",
     "A generated cell lacks an explicit identity PCM recipe source, or a positive and its matched negative use different identity sources.",
@@ -178,5 +206,5 @@
     "The two complete private assignments or public aggregates differ byte-for-byte.",
     "Audio generation or score opening would occur."
   ],
-  "authorized_next_step": "Commit these rules and their validator, then apply them twice to the private source allocation. Commit only a path-free aggregate if both private assignments and aggregates are byte-identical."
+  "authorized_next_step": "Commit these corrected rules and their validator, then apply them twice to the same private source allocation and bound header audit. Commit only a path-free aggregate if both private assignments and aggregates are byte-identical."
 }

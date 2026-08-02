@@ -165,4 +165,11 @@ is not authorized. The next gate is a separately frozen assignment correction
 that may use duration only as the already-declared transform feasibility
 predicate; it may not replace a source, inspect waveform content, or use a
 score.
+That correction is now frozen as fractional-assignment recipe `004` in
+[`fractional-assignment-correction-20260802-003.md`](fractional-assignment-correction-20260802-003.md).
+It derives eligibility for every group-transform pair from the already-bound
+header evidence, then applies the unchanged recipe-`003` purpose-separated
+ranking within eligible groups. Raw frame counts and sample rates cannot enter
+the ranking or assignment output. Two complete recipe-`004` replays are still
+required before construction.
 No successor mechanism score or retained holdout has been opened.

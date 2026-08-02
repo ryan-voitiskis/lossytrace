@@ -43,7 +43,7 @@ class FractionalAssignmentTest(unittest.TestCase):
 
     def test_rules_are_preassignment_and_verdict_free(self) -> None:
         self.assertEqual(
-            "lossytrace-v2-fractional-assignment-20260802-003",
+            "lossytrace-v2-fractional-assignment-20260802-004",
             RULES["assignment_rules_id"],
         )
         self.assertEqual(
@@ -78,6 +78,34 @@ class FractionalAssignmentTest(unittest.TestCase):
         observed = MODULE.cycle_levels(["mono", "stereo"], "fixture", 120)
         self.assertEqual(60, observed.count("mono"))
         self.assertEqual(60, observed.count("stereo"))
+
+    def test_transform_minimum_is_only_an_eligibility_predicate(self) -> None:
+        transform = {
+            "transform_id": "trim-head-250ms",
+            "parameters": {"minimum_input_milliseconds": 500},
+        }
+        self.assertFalse(
+            MODULE.transform_supported_by_header(transform, 3999, 8000)
+        )
+        self.assertTrue(
+            MODULE.transform_supported_by_header(transform, 4000, 8000)
+        )
+
+    def test_filter_preserves_frozen_ranking_within_eligible_groups(self) -> None:
+        rows = [source("a", "one"), source("b", "one"), source("c", "two")]
+        unsupported = {
+            "a": frozenset(),
+            "b": frozenset({"duration-prefix-3s"}),
+            "c": frozenset(),
+        }
+        eligible = MODULE.eligible_transform_groups(
+            rows, "duration-prefix-3s", unsupported
+        )
+        self.assertEqual({"a", "c"}, {row["group_id"] for row in eligible})
+        self.assertEqual(
+            MODULE.domain_balanced_select(eligible, 2, "frozen-purpose"),
+            MODULE.domain_balanced_select(eligible, 2, "frozen-purpose"),
+        )
 
     def test_positive_cell_has_exact_matched_reference(self) -> None:
         row = source("group", "domain")

@@ -14,7 +14,7 @@ from typing import Any, Iterable
 
 
 SCHEMA_VERSION = 1
-RULES_ID = "lossytrace-v2-fractional-assignment-20260802-003"
+RULES_ID = "lossytrace-v2-fractional-assignment-20260802-004"
 RANKING_PREFIX = "lossytrace-v2-fractional-assignment-20260802\0"
 PARTITIONS = ("mechanism_development", "encoder_transfer", "external_transfer")
 OBSERVED_PARTITIONS = ("mechanism_development", "encoder_transfer")
@@ -47,6 +47,14 @@ ALLOWED_SOURCE_FIELDS = {
     "source_collection_id",
     "source_domain",
     "provenance_tier",
+}
+ALLOWED_FEASIBILITY_PREDICATE_FIELDS = {
+    "group_id",
+    "evidence_partition",
+    "source_domain",
+    "excerpt_frame_count",
+    "native_sample_rate_hz",
+    "native_channel_supported",
 }
 
 
@@ -89,6 +97,8 @@ def validate_rules(
     toolchain_manifest_path: Path,
     toolchain_result_path: Path,
     public_decoder_result_path: Path,
+    feasibility_audit_path: Path,
+    feasibility_result_path: Path,
 ) -> None:
     if (
         rules.get("schema_version") != SCHEMA_VERSION
@@ -128,12 +138,35 @@ def validate_rules(
             rules.get("toolchain_binding", {}).get("public_decoder_result_sha256"),
             "public decoder result",
         ),
+        (
+            feasibility_audit_path,
+            rules.get("construction_feasibility_binding", {}).get(
+                "private_audit_sha256"
+            ),
+            "construction feasibility private audit",
+        ),
+        (
+            feasibility_result_path,
+            rules.get("construction_feasibility_binding", {}).get(
+                "public_result_sha256"
+            ),
+            "construction feasibility public result",
+        ),
     )
     for path, expected, label in bindings:
         if not path.is_file() or sha256_file(path) != expected:
             raise ValueError(f"{label} binding differs")
     if set(rules.get("allowed_private_source_fields", [])) != ALLOWED_SOURCE_FIELDS:
         raise ValueError("allowed private source fields differ")
+    if (
+        set(
+            rules.get("construction_feasibility_binding", {}).get(
+                "allowed_predicate_fields", []
+            )
+        )
+        != ALLOWED_FEASIBILITY_PREDICATE_FIELDS
+    ):
+        raise ValueError("allowed feasibility predicate fields differ")
     if rules.get("deterministic_ranking", {}).get("prefix") != RANKING_PREFIX:
         raise ValueError("deterministic ranking prefix differs")
     generator = rules.get("generator_binding", {})
@@ -229,6 +262,120 @@ def domain_balanced_select(
             raise ValueError("domain-balanced selection exhausted candidates")
         offset += 1
     return selected
+
+
+def transform_supported_by_header(
+    transform: dict[str, Any], frame_count: int, sample_rate_hz: int
+) -> bool:
+    parameters = transform.get("parameters")
+    if not isinstance(parameters, dict):
+        raise ValueError("transform parameters differ")
+    minimum_input_milliseconds = parameters.get("minimum_input_milliseconds", 0)
+    if (
+        not isinstance(minimum_input_milliseconds, int)
+        or minimum_input_milliseconds < 0
+        or not isinstance(frame_count, int)
+        or frame_count < 1
+        or not isinstance(sample_rate_hz, int)
+        or sample_rate_hz < 1
+    ):
+        raise ValueError("transform feasibility predicate differs")
+    return frame_count * 1000 >= sample_rate_hz * minimum_input_milliseconds
+
+
+def transform_eligibility(
+    audit: dict[str, Any],
+    groups: list[dict[str, str]],
+    factor: dict[str, Any],
+) -> dict[str, frozenset[str]]:
+    if (
+        audit.get("schema_version") != SCHEMA_VERSION
+        or audit.get("state") != "construction_feasibility_private_header_evidence"
+        or audit.get("group_count") != sum(EXPECTED_GROUP_COUNTS.values())
+        or audit.get("headers_inspected") is not True
+        or audit.get("duration_inspected") is not True
+        or audit.get("audio_generated") is not False
+        or audit.get("waveform_content_inspected") is not False
+        or audit.get("features_computed") is not False
+        or audit.get("scores_opened") is not False
+        or audit.get("selection_authorized") is not False
+    ):
+        raise ValueError("construction feasibility audit state differs")
+    audit_rows = audit.get("groups")
+    if not isinstance(audit_rows, list) or len(audit_rows) != len(groups):
+        raise ValueError("construction feasibility audit groups differ")
+    group_by_id = {row["group_id"]: row for row in groups}
+    audit_by_id = {row.get("group_id"): row for row in audit_rows}
+    if len(audit_by_id) != len(audit_rows) or set(audit_by_id) != set(group_by_id):
+        raise ValueError("construction feasibility group identities differ")
+    transforms = factor.get("pcm_transform_levels")
+    if not isinstance(transforms, list):
+        raise ValueError("factor transform levels differ")
+    nonidentity = {
+        row.get("transform_id"): row
+        for row in transforms
+        if row.get("transform_id") != "identity"
+    }
+    if None in nonidentity or len(nonidentity) != len(transforms) - 1:
+        raise ValueError("factor transform identities differ")
+
+    unsupported_by_group: dict[str, frozenset[str]] = {}
+    for group_id, row in audit_by_id.items():
+        group = group_by_id[group_id]
+        predicate = {
+            field: row.get(field) for field in ALLOWED_FEASIBILITY_PREDICATE_FIELDS
+        }
+        if (
+            predicate["evidence_partition"] != group["evidence_partition"]
+            or predicate["source_domain"] != group["source_domain"]
+            or predicate["native_channel_supported"] is not True
+        ):
+            raise ValueError("construction feasibility identity or channel differs")
+        frame_count = predicate["excerpt_frame_count"]
+        sample_rate_hz = predicate["native_sample_rate_hz"]
+        unsupported = frozenset(
+            transform_id
+            for transform_id, transform in nonidentity.items()
+            if not transform_supported_by_header(
+                transform, frame_count, sample_rate_hz
+            )
+        )
+        assigned = row.get("assigned_nonidentity_transform_ids")
+        observed_unsupported = row.get("unsupported_transform_ids")
+        if (
+            not isinstance(assigned, list)
+            or not isinstance(observed_unsupported, list)
+            or set(observed_unsupported) != set(assigned) & unsupported
+        ):
+            raise ValueError("frozen feasibility finding does not reproduce")
+        unsupported_by_group[group_id] = unsupported
+    return unsupported_by_group
+
+
+def eligible_transform_groups(
+    rows: list[dict[str, str]],
+    transform_id: str,
+    unsupported_by_group: dict[str, frozenset[str]],
+) -> list[dict[str, str]]:
+    return [
+        row
+        for row in rows
+        if transform_id not in unsupported_by_group[row["group_id"]]
+    ]
+
+
+def transform_exclusion_counts(
+    groups: list[dict[str, str]],
+    unsupported_by_group: dict[str, frozenset[str]],
+) -> list[dict[str, Any]]:
+    counts = collections.Counter(
+        (row["evidence_partition"], row["source_domain"], transform_id)
+        for row in groups
+        for transform_id in unsupported_by_group[row["group_id"]]
+    )
+    return count_rows(
+        counts, ["evidence_partition", "source_domain", "transform_id"]
+    )
 
 
 def cycle_levels(levels: list[Any], purpose: str, count: int) -> list[Any]:
@@ -407,10 +554,13 @@ def build_assignment(
     allocation: dict[str, Any],
     factor: dict[str, Any],
     manifest: dict[str, Any],
+    feasibility_audit: dict[str, Any],
+    feasibility_audit_sha256: str,
     source_allocation_sha256: str,
     rules_sha256: str,
 ) -> dict[str, Any]:
     groups = source_rows(allocation)
+    unsupported_by_group = transform_eligibility(feasibility_audit, groups, factor)
     group_by_id = {row["group_id"]: row for row in groups}
     by_partition = {
         partition: [row for row in groups if row["evidence_partition"] == partition]
@@ -548,8 +698,11 @@ def build_assignment(
     for partition in PARTITIONS:
         partition_groups = by_partition[partition]
         for transform_id in nonidentity_transforms:
+            eligible_groups = eligible_transform_groups(
+                partition_groups, transform_id, unsupported_by_group
+            )
             selected = domain_balanced_select(
-                partition_groups,
+                eligible_groups,
                 TRANSFORM_QUOTAS[partition],
                 f"transform:{partition}:{transform_id}",
             )
@@ -654,9 +807,23 @@ def build_assignment(
     result = {
         "schema_version": SCHEMA_VERSION,
         "assignment_id": RULES_ID,
-        "state": "fractional_assignment_frozen_identity_and_categorical_only",
+        "state": (
+            "fractional_assignment_frozen_identity_categorical_and_"
+            "transform_feasibility_only"
+        ),
         "rules_sha256": rules_sha256,
         "source_allocation_sha256": source_allocation_sha256,
+        "construction_feasibility_binding": {
+            "state": "construction_feasibility_private_header_evidence",
+            "private_audit_sha256": feasibility_audit_sha256,
+            "predicate": (
+                "minimum input duration from the frozen factor is applied only "
+                "as a per-group per-transform eligibility predicate"
+            ),
+        },
+        "transform_eligibility_exclusion_counts": transform_exclusion_counts(
+            groups, unsupported_by_group
+        ),
         "factor_freeze_id": factor["factor_freeze_id"],
         "toolchain_freeze_id": manifest["toolchain_freeze_id"],
         "audio_generated": False,
@@ -671,7 +838,7 @@ def build_assignment(
             external_reserve, key=lambda row: row["group_id"]
         ),
     }
-    validate_assignment(result, factor, manifest)
+    validate_assignment(result, factor, manifest, unsupported_by_group)
     return result
 
 
@@ -694,13 +861,19 @@ def negative_cells(assignment: dict[str, Any], partition: str | None = None) -> 
 
 
 def validate_assignment(
-    assignment: dict[str, Any], factor: dict[str, Any], manifest: dict[str, Any]
+    assignment: dict[str, Any],
+    factor: dict[str, Any],
+    manifest: dict[str, Any],
+    unsupported_by_group: dict[str, frozenset[str]],
 ) -> None:
     if (
         assignment.get("schema_version") != SCHEMA_VERSION
         or assignment.get("assignment_id") != RULES_ID
         or assignment.get("state")
-        != "fractional_assignment_frozen_identity_and_categorical_only"
+        != (
+            "fractional_assignment_frozen_identity_categorical_and_"
+            "transform_feasibility_only"
+        )
         or assignment.get("audio_generated") is not False
         or assignment.get("waveform_content_inspected") is not False
         or assignment.get("signal_statistics_used") is not False
@@ -718,6 +891,12 @@ def validate_assignment(
         raise ValueError("private assignment partition groups differ")
     if any(set(row) != ALLOWED_SOURCE_FIELDS for row in groups):
         raise ValueError("private assignment contains a forbidden source field")
+    if set(unsupported_by_group) != set(group_by_id):
+        raise ValueError("transform eligibility identities differ")
+    if assignment.get("transform_eligibility_exclusion_counts") != (
+        transform_exclusion_counts(groups, unsupported_by_group)
+    ):
+        raise ValueError("transform eligibility exclusion counts differ")
 
     cells = assignment.get("cells", [])
     by_id = {row.get("assignment_id"): row for row in cells}
@@ -766,6 +945,8 @@ def validate_assignment(
             row["transform_id"] for row in factor["pcm_transform_levels"]
         }:
             raise ValueError("assignment cell transform differs")
+        if cell.get("transform_id") in unsupported_by_group[cell["group_id"]]:
+            raise ValueError("assignment cell uses an ineligible transform")
         if cell.get("wrapper_id") not in {
             row["wrapper_id"] for row in manifest["wrapper_bindings"]
         }:
@@ -1143,6 +1324,9 @@ def public_aggregate(
         },
         "source_allocation_sha256": assignment["source_allocation_sha256"],
         "private_assignment_sha256": assignment_sha256,
+        "construction_feasibility_binding": assignment[
+            "construction_feasibility_binding"
+        ],
         "factor_freeze_id": factor["factor_freeze_id"],
         "toolchain_freeze_id": manifest["toolchain_freeze_id"],
         "audio_generated": False,
@@ -1175,6 +1359,9 @@ def public_aggregate(
         "setting_coverage": setting_coverage,
         "transform_coverage": transform_coverage,
         "decoder_coverage": decoder_coverage,
+        "transform_eligibility_exclusion_counts": assignment[
+            "transform_eligibility_exclusion_counts"
+        ],
         "external_positive_reserve": {
             "group_count": len(assignment["external_positive_reserve"]),
             "encoder_selection_deferred": True,
@@ -1267,6 +1454,8 @@ def main() -> int:
     assign.add_argument("--toolchain-manifest", required=True, type=Path)
     assign.add_argument("--toolchain-result", required=True, type=Path)
     assign.add_argument("--public-decoder-result", required=True, type=Path)
+    assign.add_argument("--feasibility-audit", required=True, type=Path)
+    assign.add_argument("--feasibility-result", required=True, type=Path)
     assign.add_argument("--output-private", required=True, type=Path)
     assign.add_argument("--output-run-aggregate", required=True, type=Path)
     attest_parser = subparsers.add_parser("attest")
@@ -1291,6 +1480,8 @@ def main() -> int:
     manifest_path = args.toolchain_manifest.expanduser().resolve()
     toolchain_result_path = args.toolchain_result.expanduser().resolve()
     decoder_result_path = args.public_decoder_result.expanduser().resolve()
+    feasibility_audit_path = args.feasibility_audit.expanduser().resolve()
+    feasibility_result_path = args.feasibility_result.expanduser().resolve()
     rules = load_object(rules_path)
     if shutil.disk_usage(Path(__file__).resolve().parents[1]).free < MINIMUM_FREE_RESERVE_BYTES:
         raise ValueError("free space is below the frozen 15 GiB reserve")
@@ -1301,6 +1492,8 @@ def main() -> int:
         manifest_path,
         toolchain_result_path,
         decoder_result_path,
+        feasibility_audit_path,
+        feasibility_result_path,
     )
     factor = load_object(factor_path)
     manifest = load_object(manifest_path)
@@ -1309,6 +1502,8 @@ def main() -> int:
         load_object(source_path),
         factor,
         manifest,
+        load_object(feasibility_audit_path),
+        sha256_file(feasibility_audit_path),
         sha256_file(source_path),
         sha256_file(rules_path),
     )

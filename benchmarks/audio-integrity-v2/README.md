@@ -35,6 +35,7 @@ Read these before constructing a manifest:
 - [`fractional-assignment-preregistration-20260802.md`](../../docs/research/fractional-assignment-preregistration-20260802.md)
 - [`fractional-assignment-correction-20260802-001.md`](../../docs/research/fractional-assignment-correction-20260802-001.md)
 - [`fractional-assignment-correction-20260802-002.md`](../../docs/research/fractional-assignment-correction-20260802-002.md)
+- [`fractional-assignment-correction-20260802-003.md`](../../docs/research/fractional-assignment-correction-20260802-003.md)
 - [rejected recipe-001 result](../../docs/research/fractional-assignment-result-20260802.md)
 - [rejected recipe-001 aggregate](../../research/sources/evidence/fractional-assignment-observed-20260802.json)
 - [rejected recipe-002 result](../../docs/research/fractional-assignment-result-20260802-002.md)
@@ -123,7 +124,9 @@ lossless whitelist was too narrow. The second correction accepts `flac` or
 two complete replays. Those replays are byte-identical, but the
 [`result`](../../docs/research/construction-feasibility-result-20260802-003.md)
 finds 11 assigned groups below a frozen transform minimum. Construction stays
-stopped pending an explicit feasibility-only assignment correction.
+stopped. Fractional-assignment recipe `004` is now frozen to apply those
+minimums only as per-transform eligibility predicates before the unchanged
+recipe-`003` ranking; it must pass two complete replays before construction.
 
 ## Evidence partitions
 
