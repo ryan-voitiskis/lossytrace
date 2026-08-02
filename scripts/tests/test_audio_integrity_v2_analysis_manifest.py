@@ -25,9 +25,15 @@ class AudioIntegrityV2AnalysisManifestTest(unittest.TestCase):
         self.assertFalse(PLAN["scores_opened"])
         self.assertFalse(PLAN["public_verdict_enabled"])
         self.assertEqual(2, PLAN["complete_replays_required"])
-        self.assertEqual(1, len(PLAN["correction_history"]))
+        self.assertEqual(2, len(PLAN["correction_history"]))
         self.assertEqual(
             0, PLAN["correction_history"][0]["artifact_bytes_read_before_correction"]
+        )
+        self.assertEqual(
+            2,
+            PLAN["correction_history"][1][
+                "artifact_count_rehashed_before_correction"
+            ],
         )
         self.assertEqual(
             MODULE.sha256_file(SCRIPT), PLAN["bindings"]["generator_sha256"]

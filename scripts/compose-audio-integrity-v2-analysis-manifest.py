@@ -466,6 +466,11 @@ def build_manifest(
         factor, toolchain
     )
     wrapper_by_id = lookup_by(toolchain.get("wrapper_bindings", []), "wrapper_id")
+    analysis_decoder_id = toolchain.get("analysis_decoder_binding", {}).get(
+        "analysis_decoder_id"
+    )
+    if not isinstance(analysis_decoder_id, str):
+        raise ValueError("global analysis decoder binding is absent")
 
     materialized_cases = []
     recipes = []
@@ -519,11 +524,13 @@ def build_manifest(
             "sample_rate_hz": analysis_pcm["sample_rate_hz"],
             "channel_count": analysis_pcm["channel_count"],
             "frame_count": analysis_pcm["frame_count"],
-            "analysis_decoder_id": cell["analysis_decoder_id"],
+            "analysis_decoder_id": analysis_decoder_id,
             "post_transform_ids": [] if transform_id == "identity" else [transform_id],
             "channel_treatment_id": cell["channel_treatment_id"],
             "lossless_wrapper_id": cell["wrapper_id"],
         }
+        if cell.get("analysis_decoder_id", analysis_decoder_id) != analysis_decoder_id:
+            raise ValueError(f"cell analysis decoder differs: {assignment_id}")
         source_assignment_id = cell.get("source_reference_assignment_id")
         tool_ids = {CONSTRUCTOR_TOOL_ID, wrapper["tool_id"], tool_by_transform[transform_id]}
         if cell["history_class"] == "controlled_lossy_history":
