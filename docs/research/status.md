@@ -109,6 +109,11 @@ transform/wrapper golden outputs. Its first complete replay exposed an
 internal 40-versus-36 transform-path double count: wrapper rewriting already
 has a separate 12-path section. Corrected
 [`recipe 004`](toolchain-factor-correction-20260802-003.md) changes no command
-or algorithm and must now complete two fresh byte-identical executions. The
-later fractional assignment remains a separate gate.
+or algorithm. Its two fresh complete replays were byte-identical: all 46
+settings, 126 decoder paths, 36 ordinary transform paths, and 12 wrapper paths
+were deterministic, while every cross-decoder comparison produced different
+exact PCM. See the
+[`exact-toolchain result`](toolchain-freeze-result-20260802.md). Fresh public
+decoder wrapper equivalence and the later fractional assignment remain
+separate gates.
 No successor mechanism score or retained holdout has been opened.
