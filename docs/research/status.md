@@ -231,5 +231,13 @@ public result and private-manifest hash and now authorizes exactly the frozen
 [`full construction`](constructor-full-result-20260802.md) is now complete:
 6,356 controlled positives and 6,529 matched negatives have exact retained
 artifact and canonical analysis-PCM attestations. Feature extraction and
-scoring remain blocked behind a separately frozen plan.
+scoring remain blocked behind a separately frozen plan. The separately frozen
+[`analysis-manifest gate`](analysis-manifest-preregistration-20260802.md) has
+now also completed after three documented metadata-only corrections. Its two
+fresh full replays are byte-identical and the path-free
+[`result`](analysis-manifest-result-20260802.md) validates all 12,885 cases
+against the structural, mechanism-development, and encoder-transfer profiles.
+No waveform was decoded for analysis, no score was opened, and encoder and
+external transfer remain sealed. The next authority change is limited to a
+separately frozen mechanism-development baseline and feature plan.
 No successor mechanism score or retained holdout has been opened.

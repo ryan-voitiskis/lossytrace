@@ -185,6 +185,18 @@ valid private checkpoints and canonical analysis-PCM matches. No feature or
 score has been computed or authorized; analysis requires a separately frozen
 plan.
 
+The separately preregistered
+[`analysis-manifest compositor`](../../docs/research/analysis-manifest-preregistration-20260802.md)
+has now joined those checkpoints to the schema-2 factorial contract. After
+three retained metadata-only corrections, two fresh complete replays produced
+byte-identical private manifests and path-free reports. The
+[`analysis-manifest result`](../../docs/research/analysis-manifest-result-20260802.md)
+and
+[`public attestation`](../../research/sources/evidence/analysis-manifest-observed-20260802-001.json)
+validate the development and encoder-transfer population freezes without
+decoding a waveform for analysis or computing a score. Encoder-transfer
+features and scores remain sealed; external transfer remains negative-only.
+
 ## Evidence partitions
 
 `mechanism_development` is paired, source-grouped discovery evidence. It may
