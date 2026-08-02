@@ -23,6 +23,9 @@ class InventoryValidationTest(unittest.TestCase):
     def test_repository_inventory_is_valid(self) -> None:
         self.assertEqual([], MODULE.validate(self.inventory))
         self.assertEqual([], MODULE.validate_toolchain_probe_file(self.inventory, ROOT))
+        self.assertEqual(
+            [], MODULE.validate_source_identity_evidence_files(self.inventory, ROOT)
+        )
 
     def test_wrapper_lineage_cannot_cross_transfer_boundary(self) -> None:
         inventory = copy.deepcopy(self.inventory)
@@ -61,6 +64,28 @@ class InventoryValidationTest(unittest.TestCase):
         source["artifact"]["provider_checksum"] = "md5:not-a-digest"
         errors = MODULE.validate(inventory)
         self.assertTrue(any("invalid provider checksum" in error for error in errors))
+
+    def test_acquired_remote_binding_requires_a_strong_etag(self) -> None:
+        inventory = copy.deepcopy(self.inventory)
+        source = next(
+            row
+            for row in inventory["source_candidates"]
+            if row["source_id"] == "lombard_grid_2018"
+        )
+        source["artifact"]["provider_identity"]["etag"] = 'W/"weak"'
+        errors = MODULE.validate(inventory)
+        self.assertTrue(any("valid acquired remote binding" in error for error in errors))
+
+    def test_source_identity_evidence_hash_is_validated(self) -> None:
+        inventory = copy.deepcopy(self.inventory)
+        source = next(
+            row
+            for row in inventory["source_candidates"]
+            if row["source_id"] == "lombard_grid_2018"
+        )
+        source["source_identity_evidence"]["aggregate_sha256"] = "0" * 64
+        errors = MODULE.validate_source_identity_evidence_files(inventory, ROOT)
+        self.assertTrue(any("evidence hash differs" in error for error in errors))
 
     def test_frozen_state_is_rejected(self) -> None:
         inventory = copy.deepcopy(self.inventory)

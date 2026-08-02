@@ -4,8 +4,8 @@
 identity is frozen
 
 **Actions so far:** local tools inspected and synthetically probed, provider
-metadata reviewed, no benchmark audio generated, no score opened, and no
-candidate selected
+metadata reviewed, Lombard Grid source identity acquired and audited, no
+benchmark audio generated, no score opened, and no candidate selected
 
 The machine-readable inventory is
 [`benchmarks/audio-integrity-v2/inventory.json`](../../benchmarks/audio-integrity-v2/inventory.json).
@@ -146,32 +146,44 @@ The proposed fresh external set combines:
 - [RAVDESS audio-only](https://zenodo.org/records/1188976), with 24 actors
   crossing acted speech and song under CC BY-NC-SA 4.0; and
 - the [SATP soundscapes](https://zenodo.org/records/10159673), with 27
-  separately located 24-bit binaural WAV recordings under CC BY 4.0.
+  separately located 24-bit binaural WAV recordings under CC BY 4.0; and
+- the [Audio-Visual Lombard Grid Speech corpus](https://spandh.dcs.shef.ac.uk/avlombard/),
+  with 54 directly recorded talkers under CC BY 4.0.
 
 RWC's current annotation metadata has 328 piece rows but only 99 globally
 unique nonempty artist labels. The planning count is therefore 99, not 328.
 The 2026 RWC release paper states that these are the original master tracks
 used for CD production rather than consumer-ripped copies, and the original
 project states that the pieces were performed and recorded for the database.
-RAVDESS actor grouping contributes 24 and SATP recording/location grouping
-contributes 27. Together they project to exactly the minimum 150 independent
-partitions across eight domains.
+RAVDESS actor grouping contributes 24, SATP recording/location grouping
+contributes 27, and Lombard Grid talker grouping contributes 54. Together they
+project to 204 independent partitions across nine domains, 54 above the
+minimum.
 
-That zero-margin count is deliberately not frozen. Before any allocation is
-committed, RWC metadata must be reviewed for artist aliases, ensembles, shared
-sessions, and recording-chain relationships. Separately, the encoder-transfer
-audit must establish which SONYC sensors actually appear. SONYC cannot be
-inflated by assumption: the release draws from 2017, and a related primary
+The Lombard Grid contribution is archive-observed, not copied from its
+headline: the acquired audio has 5,390 WAVs, metadata has 5,340 rows, and a
+strict filename/metadata/status reconciliation leaves 5,268 eligible WAVs
+while preserving all 54 talkers. Its detailed
+[source identity audit](source-identity-audit-20260802.md) also records a mix
+of 16-bit integer and 32-bit float PCM that must be normalized explicitly.
+
+This margin is deliberately not treated as permission to ignore RWC identity.
+Before any allocation is committed, RWC metadata must still be reviewed for
+artist aliases, ensembles, and shared recording-chain relationships.
+Separately, the encoder-transfer audit must establish which SONYC sensors
+actually appear. SONYC cannot be inflated by assumption: the release draws
+from 2017, and a related primary
 analysis reports only 26 sensors in that year's archive despite more than 50
 being deployed over the wider project. If the external total falls below 150,
 add an entirely new provider collection; do not weaken grouping.
 
 ## Storage and acquisition boundary
 
-All proposed source archives total 22,584,668,217 bytes (21.03 GiB). The data
-volume had 48 GiB free at this audit. Retaining a 15 GiB reserve leaves roughly
-12 GiB for compact references, derived cases, partials, and temporary
-intermediates after source acquisition. That is viable only if the stager:
+All proposed source archives now total 23,237,282,258 bytes (21.64 GiB). After
+the 652,614,041-byte Lombard Grid acquisition, the data volume had about 45 GiB
+free. Retaining a 15 GiB reserve leaves roughly 9 GiB for compact references,
+derived cases, partials, and temporary intermediates after the remaining
+source acquisition. That is viable only if the stager:
 
 - streams selected members without full archive expansion;
 - retains at most one bounded reference excerpt per source group;
@@ -183,15 +195,17 @@ intermediates after source acquisition. That is viable only if the stager:
 
 A slow, resumable SONYC audit download was deliberately interrupted after a
 small partial because its exact archive count was not needed to complete this
-inventory. No provider archive is treated as acquired or verified yet.
+inventory. Lombard Grid is the sole source currently treated as acquired and
+identity-verified; no other provider archive is.
 
 ## Decision and next gate
 
-The tool and source proposal is feasible on paper and satisfies the v2 minima
-under its documented lower bounds. The tool plumbing is now verified but is
-not frozen. The next checkpoint must verify exact source identities and add
-margin above the external-transfer minimum. Only then may a separate
-source-allocation, factor-level, and toolchain freeze be committed.
+The tool and source proposal satisfies the v2 minima under its documented lower
+bounds, and the external-transfer proposal now has observed margin. The tool
+plumbing is verified but not frozen. The next checkpoint must audit RWC
+artist-family relationships and verify every remaining archive identity. Only
+then may separate source-allocation, factor-level, and toolchain freezes be
+committed.
 
 No factor setting, fractional assignment, audio derivative, mechanism score,
 candidate, support rule, or public output is authorized by this inventory.

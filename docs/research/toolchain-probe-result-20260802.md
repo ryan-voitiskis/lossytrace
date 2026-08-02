@@ -101,8 +101,11 @@ separate freeze, subject to the stated legacy and licence restrictions. The
 tool probe does not freeze rate-control levels beyond the synthetic commands,
 authorize benchmark construction, or support any provenance inference.
 
-The remaining pre-freeze blocker is source identity, not codec plumbing. The
-current external-transfer proposal has exactly 150 projected partition groups
-and therefore no margin for RWC artist aliases, ensembles, or shared recording
-sessions. Verify those identities and add a new independent Tier A PCM
-collection if needed; do not weaken grouping to preserve the count.
+The remaining pre-freeze blocker is source identity, not codec plumbing. A
+subsequent acquired
+[Lombard Grid audit](source-identity-audit-20260802.md) added 54 observed talker
+groups, moving external transfer from exactly 150 to 204 projected groups.
+That removes the zero-margin failure mode but does not validate RWC's 99 labels
+as 99 independent artist families. Audit those relationships and every other
+archive identity before the separate freeze; do not spend the new margin by
+weakening grouping.

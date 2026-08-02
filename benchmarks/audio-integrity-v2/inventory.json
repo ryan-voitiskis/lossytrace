@@ -7,7 +7,7 @@
   "synthetic_probe_audio_generated": true,
   "scores_opened": false,
   "selection_authorized": false,
-  "planned_source_archive_bytes": 22584668217,
+  "planned_source_archive_bytes": 23237282258,
   "minimum_free_space_reserve_bytes": 16106127360,
   "environment": {
     "architecture": "arm64",
@@ -435,6 +435,47 @@
       }
     },
     {
+      "source_id": "lombard_grid_2018",
+      "title": "Audio-Visual Lombard Grid Speech corpus",
+      "recommended_partition": "external_transfer",
+      "source_domains": ["laboratory_lombard_speech"],
+      "conservative_partition_groups": 54,
+      "partition_basis": "talker identity across condition, sentence, block, sample representation, and repeated recordings",
+      "provenance_tier": "tier_a_confirmed_pcm",
+      "availability": "acquired_and_identity_verified_not_allocated",
+      "official_page_url": "https://spandh.dcs.shef.ac.uk/avlombard/",
+      "paper_url": "https://doi.org/10.1121/1.5042758",
+      "license": "CC BY 4.0",
+      "artifact": {
+        "filename": "lombardgrid_audio.zip",
+        "url": "https://spandh.dcs.shef.ac.uk/avlombard/data/lombardgrid_audio.zip",
+        "bytes": 652614041,
+        "local_sha256": "e36707602fdbeaa2e2284acb29bba883261d5e86857f694ac40cbb56cdcc5e10",
+        "provider_identity": {
+          "method": "https_strong_etag_content_length_last_modified",
+          "etag": "\"26e61999-568649ce7ab80\"",
+          "last_modified": "Tue, 27 Mar 2018 13:10:22 GMT"
+        }
+      },
+      "metadata_artifact": {
+        "filename": "lombardgrid_json.zip",
+        "url": "https://spandh.dcs.shef.ac.uk/avlombard/data/lombardgrid_json.zip",
+        "bytes": 64938,
+        "local_sha256": "1de3299baaa6a13d8bcd458a688c94f2288a0ecca8b5a6817a055b393f5a98a6",
+        "provider_identity": {
+          "method": "https_strong_etag_content_length_last_modified",
+          "etag": "\"fdaa-56864bb4da700\"",
+          "last_modified": "Tue, 27 Mar 2018 13:18:52 GMT"
+        }
+      },
+      "source_identity_evidence": {
+        "aggregate_path": "research/sources/evidence/lombard-grid-2018-observed-20260802.json",
+        "aggregate_sha256": "5b46a5258900b1765acb0345a428d01431e0daff04f9257f5fdc00769ceb1d8f"
+      },
+      "recording_chain": "The primary paper reports a dedicated 48 kHz, 24-bit desk-microphone path digitized through a MOTU interface, distinct from the webcams' lossy audio, followed by FFmpeg extraction and 16 kHz downsampling.",
+      "caveat": "The provider headline says 5,400 utterances, but the acquired archive has 5,390 WAVs and its metadata has 5,340 rows. Only 5,268 canonical, uniquely matched CORRECT files are eligible. All 54 talkers remain represented. The archive mixes 250 16-bit integer WAVs and 5,140 32-bit float WAVs, so source representation must be normalized and retained as a declared factor."
+    },
+    {
       "source_id": "rwc_music_v2_2026",
       "title": "RWC Music Database 2026 v2 re-release",
       "recommended_partition": "external_transfer",
@@ -492,9 +533,9 @@
       "source_ids": ["vctk_clean_56spk_2017", "speech_commands_v0_02", "tinysol_6_0", "sonyc_backgrounds_1_0_0"]
     },
     "external_transfer": {
-      "conservative_partition_groups": 150,
-      "source_domain_count": 8,
-      "source_ids": ["ravdess_audio_1_0_0", "satp_soundscapes_1_4", "rwc_music_v2_2026"]
+      "conservative_partition_groups": 204,
+      "source_domain_count": 9,
+      "source_ids": ["ravdess_audio_1_0_0", "satp_soundscapes_1_4", "lombard_grid_2018", "rwc_music_v2_2026"]
     }
   },
   "toolchain_probe_evidence": {
@@ -515,5 +556,5 @@
       "caveat": "Format listings advertised MPEG Layer III, but two deterministic executed probes failed before producing a file."
     }
   ],
-  "next_gate": "Verify exact source identities and add external-transfer margin, then replace this recommendation with separately committed source-allocation, factor-level, and toolchain freeze records before acquiring or generating benchmark audio."
+  "next_gate": "Audit RWC artist-family and recording-session relationships plus every remaining source archive identity, then replace this recommendation with separately committed source-allocation, factor-level, and toolchain freeze records before generating benchmark audio."
 }

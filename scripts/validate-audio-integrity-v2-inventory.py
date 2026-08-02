@@ -14,6 +14,7 @@ from typing import Any
 
 SHA256 = re.compile(r"^[0-9a-f]{64}$")
 PROVIDER_CHECKSUM = re.compile(r"^(md5:[0-9a-f]{32}|sha256:[0-9a-f]{64})$")
+STRONG_ETAG = re.compile(r'^"[^"\r\n]+"$')
 PARTITIONS = {"mechanism_development", "encoder_transfer", "external_transfer"}
 CODECS = {"mp3", "aac_lc", "opus", "vorbis"}
 MIN_ENCODER_LINEAGES = {
@@ -65,6 +66,21 @@ def unique_ids(rows: Any, field: str, label: str, errors: list[str]) -> dict[str
         else:
             indexed[value] = row
     return indexed
+
+
+def has_valid_acquired_remote_binding(artifact: dict[str, Any]) -> bool:
+    provider_identity = artifact.get("provider_identity")
+    return (
+        isinstance(artifact.get("url"), str)
+        and artifact["url"].startswith("https://")
+        and SHA256.fullmatch(str(artifact.get("local_sha256", ""))) is not None
+        and isinstance(provider_identity, dict)
+        and provider_identity.get("method")
+        == "https_strong_etag_content_length_last_modified"
+        and STRONG_ETAG.fullmatch(str(provider_identity.get("etag", ""))) is not None
+        and isinstance(provider_identity.get("last_modified"), str)
+        and bool(provider_identity["last_modified"])
+    )
 
 
 def validate(inventory: dict[str, Any]) -> list[str]:
@@ -154,8 +170,52 @@ def validate(inventory: dict[str, Any]) -> list[str]:
                 errors.append(f"{label} has invalid byte count")
             else:
                 planned_source_archive_bytes += byte_count
-            if not PROVIDER_CHECKSUM.fullmatch(str(artifact.get("provider_checksum", ""))):
-                errors.append(f"{label} has invalid provider checksum")
+            provider_checksum = artifact.get("provider_checksum")
+            if provider_checksum is not None:
+                if not PROVIDER_CHECKSUM.fullmatch(str(provider_checksum)):
+                    errors.append(f"{label} has invalid provider checksum")
+            elif not has_valid_acquired_remote_binding(artifact):
+                errors.append(
+                    f"{label} lacks a provider checksum or valid acquired remote binding"
+                )
+            if artifact.get("local_sha256") is not None and not SHA256.fullmatch(
+                str(artifact["local_sha256"])
+            ):
+                errors.append(f"{label} has invalid local_sha256")
+        metadata_artifact = source.get("metadata_artifact")
+        if metadata_artifact is not None:
+            label = f"source {source_id} metadata_artifact"
+            if not isinstance(metadata_artifact, dict):
+                errors.append(f"{label} must be an object")
+            else:
+                if (
+                    not isinstance(metadata_artifact.get("filename"), str)
+                    or not metadata_artifact["filename"]
+                ):
+                    errors.append(f"{label} has invalid filename")
+                if not isinstance(metadata_artifact.get("bytes"), int) or isinstance(
+                    metadata_artifact.get("bytes"), bool
+                ) or metadata_artifact["bytes"] < 1:
+                    errors.append(f"{label} has invalid byte count")
+                if not SHA256.fullmatch(str(metadata_artifact.get("local_sha256", ""))):
+                    errors.append(f"{label} has invalid local_sha256")
+                if not has_valid_acquired_remote_binding(metadata_artifact):
+                    errors.append(f"{label} has invalid acquired remote binding")
+        source_evidence = source.get("source_identity_evidence")
+        if source_evidence is not None:
+            label = f"source {source_id} source_identity_evidence"
+            if not isinstance(source_evidence, dict):
+                errors.append(f"{label} must be an object")
+            else:
+                evidence_path = source_evidence.get("aggregate_path")
+                if (
+                    not isinstance(evidence_path, str)
+                    or not evidence_path
+                    or Path(evidence_path).is_absolute()
+                ):
+                    errors.append(f"{label} aggregate_path must be repository-relative")
+                if not SHA256.fullmatch(str(source_evidence.get("aggregate_sha256", ""))):
+                    errors.append(f"{label} aggregate_sha256 is invalid")
 
     if inventory.get("planned_source_archive_bytes") != planned_source_archive_bytes:
         errors.append("planned_source_archive_bytes differs from source artifacts")
@@ -292,6 +352,72 @@ def validate_toolchain_probe_file(
     return errors
 
 
+def validate_source_identity_evidence_files(
+    inventory: dict[str, Any], repository_root: Path
+) -> list[str]:
+    errors: list[str] = []
+    repository_root = repository_root.resolve()
+    for source in inventory.get("source_candidates", []):
+        if not isinstance(source, dict):
+            continue
+        evidence = source.get("source_identity_evidence")
+        if evidence is None:
+            continue
+        source_id = source.get("source_id")
+        if not isinstance(evidence, dict) or not isinstance(
+            evidence.get("aggregate_path"), str
+        ):
+            continue
+        aggregate = (repository_root / evidence["aggregate_path"]).resolve()
+        if not aggregate.is_relative_to(repository_root) or not aggregate.is_file():
+            errors.append(
+                f"source identity evidence is missing or outside repository: {source_id}"
+            )
+            continue
+        if sha256_file(aggregate) != evidence.get("aggregate_sha256"):
+            errors.append(f"source identity evidence hash differs: {source_id}")
+            continue
+        report = load_json(aggregate)
+        expected_state = {
+            "state": "source_identity_evidence_only",
+            "source_id": source_id,
+            "benchmark_audio_generated": False,
+            "scores_opened": False,
+            "selection_authorized": False,
+            "paths_redacted": True,
+        }
+        for field, expected in expected_state.items():
+            if report.get(field) != expected:
+                errors.append(f"source identity report {source_id} {field} differs")
+        serialized = json.dumps(report, sort_keys=True)
+        for forbidden in ("/Users/", "Library/Application Support", "\\Users\\"):
+            if forbidden in serialized:
+                errors.append(f"source identity report contains a private path: {source_id}")
+                break
+        boundary = report.get("conservative_reference_boundary")
+        if not isinstance(boundary, dict) or boundary.get(
+            "eligible_talker_count"
+        ) != source.get("conservative_partition_groups"):
+            errors.append(f"source identity group count differs: {source_id}")
+        audio_binding = report.get("archive_bindings", {}).get("audio")
+        artifact = source.get("artifact")
+        if isinstance(audio_binding, dict) and isinstance(artifact, dict):
+            if audio_binding.get("bytes") != artifact.get("bytes") or audio_binding.get(
+                "sha256"
+            ) != artifact.get("local_sha256"):
+                errors.append(f"source identity audio binding differs: {source_id}")
+        metadata_binding = report.get("archive_bindings", {}).get("metadata")
+        metadata_artifact = source.get("metadata_artifact")
+        if isinstance(metadata_binding, dict) and isinstance(metadata_artifact, dict):
+            if metadata_binding.get("bytes") != metadata_artifact.get(
+                "bytes"
+            ) or metadata_binding.get("sha256") != metadata_artifact.get(
+                "local_sha256"
+            ):
+                errors.append(f"source identity metadata binding differs: {source_id}")
+    return errors
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--inventory", required=True, type=Path)
@@ -300,6 +426,7 @@ def main() -> int:
     errors = validate(inventory)
     repository_root = Path(__file__).resolve().parents[1]
     errors.extend(validate_toolchain_probe_file(inventory, repository_root))
+    errors.extend(validate_source_identity_evidence_files(inventory, repository_root))
     if errors:
         print("inventory validation failed:")
         for error in errors:
