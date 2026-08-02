@@ -65,6 +65,7 @@ Read these before constructing a manifest:
 - [`construction-preregistration-20260802.md`](../../docs/research/construction-preregistration-20260802.md)
 - [`constructor-synthetic-result-20260802.md`](../../docs/research/constructor-synthetic-result-20260802.md)
 - [`constructor-synthetic-observed-20260802-001.json`](../../research/sources/evidence/constructor-synthetic-observed-20260802-001.json)
+- [`construction-correction-20260802-001.md`](../../docs/research/construction-correction-20260802-001.md)
 - [`rwc-source-identity-audit-20260802.md`](../../docs/research/rwc-source-identity-audit-20260802.md)
 
 The pre-freeze source/tool inventory and its remaining gates are described
@@ -168,6 +169,8 @@ construction remain separately gated.
 The two 13-case constructor reports are now byte-identical across every frozen
 encoder, history decoder, transform, and wrapper. A successor plan may
 authorize only the 202-cell score-blind smoke set.
+That smoke-only authority is now frozen for two separate external roots. Full
+construction, features, scores, and external positives remain blocked.
 
 ## Evidence partitions
 

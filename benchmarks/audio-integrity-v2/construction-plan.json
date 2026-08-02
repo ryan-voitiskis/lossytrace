@@ -1,11 +1,22 @@
 {
   "schema_version": 1,
   "construction_id": "lossytrace-v2-construction-20260802-001",
-  "state": "construction_recipe_frozen_before_synthetic_replay",
-  "authorized_scope": "synthetic_only",
-  "upstream_checkpoint_commit": "36a72b77f86b4274c3d5a9362a2f1503111b0540",
-  "benchmark_source_audio_read": false,
-  "benchmark_audio_generated": false,
+  "state": "construction_recipe_frozen_before_smoke_replay",
+  "authorized_scope": "smoke",
+  "upstream_checkpoint_commit": "90b9dd82b14ac1845c9753b041112da8fa5eacc4",
+  "correction_history": [
+    {
+      "supersedes_state": "construction_recipe_frozen_before_synthetic_replay",
+      "constructor_probe_result_sha256": "0ff79ee2a54c416bb486320c295eabdff96bfffcb391edc60c7a28ae718b8590",
+      "reason": "All 13 synthetic constructor cases and both complete reports are byte-identical across every frozen encoder implementation, history decoder, transform, and wrapper. Authority expands only to the already-declared 202-cell score-blind smoke set in two separate roots.",
+      "benchmark_source_audio_read_before_correction": false,
+      "benchmark_audio_generated_before_correction": false,
+      "features_computed_before_correction": false,
+      "scores_opened_before_correction": false
+    }
+  ],
+  "benchmark_source_audio_read": true,
+  "benchmark_audio_generated": true,
   "synthetic_audio_authorized": true,
   "features_computed": false,
   "scores_opened": false,
@@ -27,6 +38,7 @@
     "public_decoder_result_sha256": "e18ebce9101a59321fe7fcf509222b78d2218476653a091396e596de72520683",
     "preconditioning_result_sha256": "50883fbc74e897c7048b95148765651790cf8fb24b7335f29b7cd08fa6b93456",
     "preflight_result_sha256": "53ad83236cf9975ac5394a429a4a2da3a479c9266380b55a606da506ce8e22d6",
+    "constructor_probe_result_sha256": "0ff79ee2a54c416bb486320c295eabdff96bfffcb391edc60c7a28ae718b8590",
     "private_tool_paths_sha256": "1a564dc3958b4f678ae5ff89c04ac8797849127b784f2d4b2d7af88532df3fb5",
     "private_source_allocation_sha256": "e4b7d2ab42253e00ce0e0b95c8049193f9b6178ecbb6212811fde96d58c088d4",
     "private_candidate_index_sha256": "07a00a0f56570c0778e384c6a816a69be13fffe42596c1aad80d5a6a99357a07",
@@ -196,7 +208,7 @@
     "expected_cell_count": 202,
     "expected_controlled_positive_count": 108,
     "expected_negative_count": 94,
-    "authorized": false
+    "authorized": true
   },
   "checkpoint_contract": {
     "artifact_layout": "cases/<first-two-digest-hex>/<complete-cell-recipe-digest>.<assigned-wrapper-extension>",
@@ -219,7 +231,7 @@
     "output_volume_outside_git": true
   },
   "staged_authority": {
-    "current": "Synthetic cases only.",
+    "current": "Exactly the frozen 202-cell score-blind smoke set in two separate roots.",
     "after_synthetic_pass": "A committed correction may authorize two separate 202-cell smoke roots and must bind the path-free synthetic result.",
     "after_smoke_pass": "A committed correction may authorize the full build and must bind byte-identical private smoke manifests and path-free smoke evidence.",
     "feature_boundary": "Construction never authorizes feature computation, candidate scoring, partition opening, or external positive encoder selection."
@@ -229,9 +241,9 @@
     "A synthetic render differs between its two executions or the two complete reports differ byte-for-byte.",
     "A wrapper differs from the exact transformed signed-s16 PCM under the canonical analysis decoder.",
     "An unbound encoder, decoder, transform, wrapper, channel treatment, sample rate, or recipe order would be used.",
-    "Benchmark source audio would be read under the current synthetic-only authority.",
+    "A benchmark cell outside the frozen 202-cell smoke selection would be read or generated under the current authority.",
     "A feature, score, unopened label, external positive encoder, public verdict, or private path would be opened or emitted.",
     "The work or output volume falls below the 15 GiB reserve."
   ],
-  "authorized_next_step": "Commit this exact constructor and plan, then run two complete 13-case synthetic replays and commit only their path-free attestation if byte-identical. Do not decode a benchmark source until a successor plan correction explicitly authorizes the frozen smoke subset."
+  "authorized_next_step": "Commit this smoke-only correction, then render the exact 202-cell selection into two separate external roots. Revalidate every final wrapper and canonical PCM, require byte-identical private manifests and path-free reports, and commit only the path-free attestation. Do not construct any other benchmark cell or compute a feature or score."
 }

@@ -21,10 +21,12 @@ TOOLCHAIN = json.loads(TOOLCHAIN_PATH.read_text(encoding="utf-8"))
 
 
 class AudioIntegrityV2ConstructorTest(unittest.TestCase):
-    def test_plan_authorizes_synthetic_audio_only_and_binds_generator(self) -> None:
-        self.assertEqual("synthetic_only", PLAN["authorized_scope"])
-        self.assertFalse(PLAN["benchmark_source_audio_read"])
-        self.assertFalse(PLAN["benchmark_audio_generated"])
+    def test_plan_authorizes_only_frozen_smoke_and_binds_generator(self) -> None:
+        self.assertEqual("smoke", PLAN["authorized_scope"])
+        self.assertTrue(PLAN["benchmark_source_audio_read"])
+        self.assertTrue(PLAN["benchmark_audio_generated"])
+        self.assertTrue(PLAN["smoke_selection"]["authorized"])
+        self.assertEqual(202, PLAN["smoke_selection"]["expected_cell_count"])
         self.assertFalse(PLAN["features_computed"])
         self.assertFalse(PLAN["scores_opened"])
         self.assertFalse(PLAN["public_verdict_enabled"])

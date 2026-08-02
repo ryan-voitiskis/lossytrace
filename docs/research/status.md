@@ -215,4 +215,10 @@ Those
 byte-identical for all 13 cases, including codec bitstreams, each PCM stage,
 and final wrapper bytes. The next permitted authority change is limited to two
 separate 202-cell smoke roots; full construction remains stopped.
+The separately committed
+[`smoke correction`](construction-correction-20260802-001.md) now authorizes
+exactly those 202 cells: 108 positives and 94 negatives selected without
+scores across all declared construction categories. The same code still
+rejects full scope, and the two smoke roots must yield byte-identical private
+manifests before authority can expand.
 No successor mechanism score or retained holdout has been opened.
