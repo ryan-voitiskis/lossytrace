@@ -1,0 +1,111 @@
+{
+  "benchmark_audio_generated": false,
+  "benchmark_source_audio_read": false,
+  "cell_counts": [
+    {
+      "count": 1368,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive"
+    },
+    {
+      "count": 1370,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative"
+    },
+    {
+      "count": 494,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative"
+    },
+    {
+      "count": 4988,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive"
+    },
+    {
+      "count": 4665,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative"
+    }
+  ],
+  "checkpoint_contract": {
+    "addressing": "Use the first two hexadecimal characters and then the complete frozen cell recipe digest plus the assigned wrapper extension.",
+    "audio_commit": "Write to a unique same-filesystem temporary file, validate wrapper and canonical analysis-decoded PCM, fsync, then rename atomically.",
+    "checkpoint_commit": "Only after the audio rename, atomically write a private sidecar binding plan, assignment, cell recipe, artifact SHA-256, artifact bytes, canonical PCM SHA-256, sample rate, channels, and frame count.",
+    "features_and_scores": "Forbidden during construction and checkpoint validation.",
+    "final_private_manifest": "Sort validated sidecars by frozen cell recipe digest and bind the complete set by SHA-256 outside Git.",
+    "intermediates": "Codec bitstreams and unwrapped PCM are one-cell temporaries and are deleted after their hashes and final lineage are checkpointed.",
+    "public_evidence": "Emit counts and aggregate hashes only; exclude cell, source, member, artifact, and machine-path identities.",
+    "resume": "A cell is complete only when both artifact and sidecar exist and every binding, size, and hash revalidates. Ignore and remove constructor-owned incomplete temporary files."
+  },
+  "construction_authorized": false,
+  "features_computed": false,
+  "paths_redacted": true,
+  "plan_sha256": "a45ab064897e677d82818ff4ce4547c24aebc4ae4739e145de2b07166416c3c7",
+  "preflight_id": "lossytrace-v2-construction-preflight-20260802-001",
+  "private_ids_included": false,
+  "reproducibility": {
+    "complete_replays_observed": 2,
+    "complete_replays_required": 2,
+    "plan_sha256": "a45ab064897e677d82818ff4ce4547c24aebc4ae4739e145de2b07166416c3c7",
+    "run_report_sha256": "52e71265bea5c11701f4eb52578991b36bcb362e35f044908117d073613b10f1",
+    "run_reports_byte_identical": true
+  },
+  "schema_version": 1,
+  "scores_opened": false,
+  "state": "construction_path_free_preflight_evidence",
+  "storage_upper_bound": {
+    "by_partition": [
+      {
+        "evidence_partition": "mechanism_development",
+        "projected_retained_bytes": 26030512868
+      },
+      {
+        "evidence_partition": "encoder_transfer",
+        "projected_retained_bytes": 4676750930
+      },
+      {
+        "evidence_partition": "external_transfer",
+        "projected_retained_bytes": 1210222661
+      }
+    ],
+    "by_wrapper": [
+      {
+        "cell_count": 4331,
+        "extension": ".aiff",
+        "projected_retained_bytes": 10454721596,
+        "wrapper_id": "aiff16"
+      },
+      {
+        "cell_count": 4256,
+        "extension": ".flac",
+        "projected_retained_bytes": 10941998707,
+        "wrapper_id": "flac16"
+      },
+      {
+        "cell_count": 4298,
+        "extension": ".wav",
+        "projected_retained_bytes": 10520766156,
+        "wrapper_id": "wav16"
+      }
+    ],
+    "codec_decode_padding_upper_frames_per_positive": 4096,
+    "flac_worst_case_pcm_percent": 110,
+    "maximum_single_artifact_bytes": 3707162,
+    "minimum_free_space_reserve_bytes": 16106127360,
+    "minimum_required_free_bytes": 50171097467,
+    "per_artifact_container_allowance_bytes": 1048576,
+    "projected_retained_bytes": 31917486459,
+    "resample_tail_upper_frames_per_stage": 128,
+    "workspace_allowance_bytes": 2147483648
+  },
+  "summary": {
+    "all_lineage_checks_passed": true,
+    "cell_count": 12885,
+    "controlled_positive_count": 6356,
+    "external_reserved_group_count": 100,
+    "free_space_gate_passed": true,
+    "group_count": 793,
+    "negative_count": 6529
+  }
+}

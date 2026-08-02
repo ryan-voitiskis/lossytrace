@@ -59,6 +59,8 @@ Read these before constructing a manifest:
 - [`preconditioning-observed-20260802-001.json`](../../research/sources/evidence/preconditioning-observed-20260802-001.json)
 - [`construction-preflight-plan.json`](construction-preflight-plan.json)
 - [`construction-preflight-preregistration-20260802.md`](../../docs/research/construction-preflight-preregistration-20260802.md)
+- [`construction-preflight-result-20260802.md`](../../docs/research/construction-preflight-result-20260802.md)
+- [`construction-preflight-observed-20260802-001.json`](../../research/sources/evidence/construction-preflight-observed-20260802-001.json)
 - [`rwc-source-identity-audit-20260802.md`](../../docs/research/rwc-source-identity-audit-20260802.md)
 
 The pre-freeze source/tool inventory and its remaining gates are described
@@ -151,7 +153,9 @@ be bound by a separately committed constructor.
 The separately frozen
 [`construction preflight`](../../docs/research/construction-preflight-preregistration-20260802.md)
 now checks all private lineage and a conservative retained-size ceiling against
-the intended external volume without reading a waveform.
+the intended external volume without reading a waveform. Its two replays are
+byte-identical: all 12,885 lineages pass, and the 29.7 GiB retained ceiling plus
+workspace and reserve fits the selected volume.
 
 ## Evidence partitions
 

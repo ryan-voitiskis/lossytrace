@@ -197,5 +197,10 @@ That metadata-only
 is now frozen for two replays. It validates all 12,885 recipe lineages and
 requires the external output volume to cover a conservative retained-size
 ceiling, 2 GiB workspace, and the 15 GiB reserve without reporting ambient
-free bytes.
+free bytes. Its
+[`two replays`](construction-preflight-result-20260802.md) are byte-identical;
+all 12,885 lineages pass, and the selected external volume covers the
+31,917,486,459-byte retained ceiling plus workspace and reserve. The next gate
+is the exact constructor, synthetic checks, and a separately committed audio-
+generation authorization.
 No successor mechanism score or retained holdout has been opened.
