@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "preflight_id": "lossytrace-v2-construction-preflight-20260802-001",
+  "state": "construction_preflight_frozen_before_private_replay",
+  "upstream_checkpoint_commit": "10a25768cdd197071b11c95d1ae4226b005fae9a",
+  "benchmark_source_audio_read": false,
+  "benchmark_audio_generated": false,
+  "features_computed": false,
+  "scores_opened": false,
+  "construction_authorized": false,
+  "bindings": {
+    "generator_path": "scripts/preflight-audio-integrity-v2-construction.py",
+    "generator_sha256": "ae60878cd7b998a407f04e9b170265e75122dbe009eaff7bf5948ad792490be6",
+    "private_source_allocation_sha256": "e4b7d2ab42253e00ce0e0b95c8049193f9b6178ecbb6212811fde96d58c088d4",
+    "private_candidate_index_sha256": "07a00a0f56570c0778e384c6a816a69be13fffe42596c1aad80d5a6a99357a07",
+    "private_fractional_assignment_sha256": "46039d6fc22a6764daf81684d109e43a9f96b97af7d85e99258b1efe0449c5bb",
+    "public_fractional_assignment_result_sha256": "05fa5c09c90a2fd8404c8afa08f7515032c1f3633cc7bfcc17e58526f984a25d",
+    "private_construction_feasibility_audit_sha256": "8d8b0f10fbad07b79770f5035e21e29fe30ecc63e4350e92a215630a1d8c3acf",
+    "public_construction_feasibility_result_sha256": "13014dd9c8f26d69217865a8f62badfd0427b4a8ad808ddbe4a02ce9b4986110",
+    "preconditioning_result_sha256": "50883fbc74e897c7048b95148765651790cf8fb24b7335f29b7cd08fa6b93456",
+    "factor_levels_sha256": "4065553ef4fbe505ea0d79b149570bc1483396dbcc1de52597890e61f59481bd",
+    "toolchain_manifest_sha256": "d2af2f0b78b184189806d724c294d7606f37d2763839e17c9289f7957da52070",
+    "toolchain_result_sha256": "29ddfe00bb419aedcbdee8de530785f5981de279f2bd190f4a337ebbe8c3cc23",
+    "public_decoder_result_sha256": "e18ebce9101a59321fe7fcf509222b78d2218476653a091396e596de72520683",
+    "private_tool_paths_sha256": "1a564dc3958b4f678ae5ff89c04ac8797849127b784f2d4b2d7af88532df3fb5"
+  },
+  "private_input_expectations": {
+    "source_group_count": 793,
+    "cell_count": 12885,
+    "controlled_positive_count": 6356,
+    "negative_count": 6529,
+    "external_reserved_group_count": 100,
+    "all_assigned_transform_and_channel_feasibility_checks_passed": true,
+    "preconditioning_synthetic_replays_byte_identical": true,
+    "positive_exact_matched_reference_required": true,
+    "generated_cell_identity_recipe_source_required": true
+  },
+  "storage": {
+    "maximum_parallel_workers": 1,
+    "process_priority": "low",
+    "minimum_free_space_reserve_bytes": 16106127360,
+    "workspace_allowance_bytes": 2147483648,
+    "output_volume_must_be_outside_git": true,
+    "source_archives_must_not_be_duplicated": true,
+    "free_space_value_is_not_reported": "Only the deterministic pass/fail result enters evidence so replay bytes cannot drift with ambient disk use."
+  },
+  "storage_upper_bound": {
+    "preconditioning_resample_tail_upper_frames": 128,
+    "codec_decode_padding_upper_frames_per_positive": 4096,
+    "roundtrip_resample_tail_upper_frames": 256,
+    "flac_worst_case_percent_of_raw_pcm": 110,
+    "per_artifact_container_allowance_bytes": 1048576,
+    "formula": "For each cell, conservatively rescale the bound excerpt frame count, add codec padding for H1, apply the transform's frame/channel upper bound, multiply by signed-s16 bytes, apply wrapper overhead, then sum all cells. Required free bytes equal retained upper bound plus 2 GiB workspace plus 15 GiB reserve.",
+    "claim_boundary": "This is a conservative allocation ceiling, not a prediction of compressed size or runtime."
+  },
+  "checkpoint_contract": {
+    "addressing": "Use the first two hexadecimal characters and then the complete frozen cell recipe digest plus the assigned wrapper extension.",
+    "audio_commit": "Write to a unique same-filesystem temporary file, validate wrapper and canonical analysis-decoded PCM, fsync, then rename atomically.",
+    "checkpoint_commit": "Only after the audio rename, atomically write a private sidecar binding plan, assignment, cell recipe, artifact SHA-256, artifact bytes, canonical PCM SHA-256, sample rate, channels, and frame count.",
+    "resume": "A cell is complete only when both artifact and sidecar exist and every binding, size, and hash revalidates. Ignore and remove constructor-owned incomplete temporary files.",
+    "intermediates": "Codec bitstreams and unwrapped PCM are one-cell temporaries and are deleted after their hashes and final lineage are checkpointed.",
+    "final_private_manifest": "Sort validated sidecars by frozen cell recipe digest and bind the complete set by SHA-256 outside Git.",
+    "public_evidence": "Emit counts and aggregate hashes only; exclude cell, source, member, artifact, and machine-path identities.",
+    "features_and_scores": "Forbidden during construction and checkpoint validation."
+  },
+  "reproducibility": {
+    "complete_preflight_replays_required": 2,
+    "path_free_reports_must_be_byte_identical": true,
+    "timing_and_observed_free_bytes_forbidden": true
+  },
+  "stop_conditions": [
+    "A source allocation, candidate index, assignment, feasibility audit, preconditioning result, factor, toolchain, decoder, or private tool binding differs.",
+    "Any positive lacks its exact matched H0 or any generated cell lacks its identity PCM recipe source.",
+    "An assigned group has an unsupported transform or channel finding.",
+    "The conservative output upper bound plus 2 GiB workspace and 15 GiB reserve exceeds free space on the selected output volume.",
+    "A private cell, source, member, artifact, or machine-path identity enters the public report.",
+    "The two complete reports differ byte-for-byte.",
+    "A benchmark waveform, codec output, feature, score, or unopened label would be read."
+  ],
+  "authorized_next_step": "Commit this plan and exact preflight generator, run two complete private metadata-only preflights against the intended external output volume, and commit only a path-free attestation if byte-identical. Do not generate benchmark audio until a successor constructor and construction authorization bind that result."
+}

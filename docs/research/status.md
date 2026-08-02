@@ -192,4 +192,10 @@ byte-identical within and across two full replays for s16, s24, f32, mono,
 stereo, native-rate, resampled, bounded-window, and long hashed-crop paths. The
 next gate is an exact constructor and path-free disk/recipe preflight; no
 benchmark waveform has yet been read.
+That metadata-only
+[`construction preflight`](construction-preflight-preregistration-20260802.md)
+is now frozen for two replays. It validates all 12,885 recipe lineages and
+requires the external output volume to cover a conservative retained-size
+ceiling, 2 GiB workspace, and the 15 GiB reserve without reporting ambient
+free bytes.
 No successor mechanism score or retained holdout has been opened.
