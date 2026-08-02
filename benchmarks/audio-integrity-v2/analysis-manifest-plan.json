@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "plan_id": "lossytrace-v2-analysis-manifest-20260802-001",
+  "state": "analysis_manifest_materialization_frozen_before_replay",
+  "upstream_checkpoint_commit": "72c2df2684213215efa47803c96d1c3bc94b61bb",
+  "features_computed": false,
+  "scores_opened": false,
+  "public_verdict_enabled": false,
+  "authorized_partitions": [
+    "mechanism_development",
+    "encoder_transfer",
+    "external_transfer"
+  ],
+  "authorized_validation_profiles": [
+    "structural",
+    "mechanism_development_freeze",
+    "encoder_transfer_freeze"
+  ],
+  "complete_replays_required": 2,
+  "bindings": {
+    "generator_path": "scripts/compose-audio-integrity-v2-analysis-manifest.py",
+    "generator_sha256": "d8632a047e63cfbb0d44cee04b00af97694f60fefcb5437d6cda9094ec5eae91",
+    "contract_path": "benchmarks/audio-integrity-v2/factorial-contract.json",
+    "contract_sha256": "f965046179818842fcd8f7669f6092f23423d83a426142705393dc4b304252e4",
+    "factor_levels_path": "benchmarks/audio-integrity-v2/factor-levels.json",
+    "factor_levels_sha256": "4065553ef4fbe505ea0d79b149570bc1483396dbcc1de52597890e61f59481bd",
+    "toolchain_manifest_path": "benchmarks/audio-integrity-v2/toolchain-bindings.json",
+    "toolchain_manifest_sha256": "d2af2f0b78b184189806d724c294d7606f37d2763839e17c9289f7957da52070",
+    "inventory_path": "benchmarks/audio-integrity-v2/inventory.json",
+    "inventory_sha256": "f08ed9a176809cc916cf7bce8ebcd1f2aca5297830daf190ff972a49c58660de",
+    "private_source_allocation_sha256": "e4b7d2ab42253e00ce0e0b95c8049193f9b6178ecbb6212811fde96d58c088d4",
+    "private_fractional_assignment_sha256": "46039d6fc22a6764daf81684d109e43a9f96b97af7d85e99258b1efe0449c5bb",
+    "private_constructor_manifest_sha256": "0fe9bde6eed57a61d3c721d5bfd8cd36031b9981442c39dc502162aeeab3a1b1",
+    "public_constructor_result_path": "research/sources/evidence/constructor-full-observed-20260802-001.json",
+    "public_constructor_result_sha256": "45588d01d0bbc6afde2245034c297dc799ccc3fb66e52892b9b6f1d92c81d1fa"
+  },
+  "source_provenance": [
+    {
+      "source_collection_id": "audio-integrity-independent-controlled-v29-20260731-001",
+      "license": "Mixed research-source terms; see the bound retained-v1 manifest and source records",
+      "provenance_record_sha256": "e19b5b408fedf348fa9b6499d5cdd1b6b734d84b19b895d5b0a528f0c4423b7a"
+    },
+    {
+      "source_collection_id": "audio-integrity-musdb18hq-controlled-20260731-001",
+      "license": "Mixed research-source terms; see the bound retained-v1 manifest and source records",
+      "provenance_record_sha256": "e19b5b408fedf348fa9b6499d5cdd1b6b734d84b19b895d5b0a528f0c4423b7a"
+    },
+    {
+      "source_collection_id": "audio-integrity-nsynth-hard-negatives-v1",
+      "license": "Mixed research-source terms; see the bound retained-v1 manifest and source records",
+      "provenance_record_sha256": "e19b5b408fedf348fa9b6499d5cdd1b6b734d84b19b895d5b0a528f0c4423b7a"
+    },
+    {
+      "source_collection_id": "audio-integrity-nsynth-sparse-training-20260731-001",
+      "license": "Mixed research-source terms; see the bound retained-v1 manifest and source records",
+      "provenance_record_sha256": "e19b5b408fedf348fa9b6499d5cdd1b6b734d84b19b895d5b0a528f0c4423b7a"
+    },
+    {
+      "source_collection_id": "audio-integrity-private-compact-training-20260731-001",
+      "license": "Private research material; redistribution prohibited",
+      "provenance_record_sha256": "e19b5b408fedf348fa9b6499d5cdd1b6b734d84b19b895d5b0a528f0c4423b7a"
+    },
+    {
+      "source_collection_id": "audio-integrity-public-tier-a-controlled-transcodes-20260730-001",
+      "license": "Mixed public research-source terms; see the bound retained-v1 manifest and source records",
+      "provenance_record_sha256": "e19b5b408fedf348fa9b6499d5cdd1b6b734d84b19b895d5b0a528f0c4423b7a"
+    },
+    {
+      "source_collection_id": "fsdd-v1-0-10",
+      "license": "CC BY-SA 4.0",
+      "provenance_record_sha256": "80ce2326afac2baa85f55ab6828615632352fbbc02c4d0809cd30f73cc5f75ec"
+    },
+    {
+      "source_collection_id": "lombard-grid-2018",
+      "license": "CC BY 4.0",
+      "provenance_record_sha256": "aa1adce9390a62b972db6b2b614295554cb71a36ebd1ed2965809a3ae08819f8"
+    },
+    {
+      "source_collection_id": "ravdess-audio-song-1-0-0",
+      "license": "CC BY-NC-SA 4.0",
+      "provenance_record_sha256": "22e14a9d008677a38067ec5387d08a96e9799944014274307a4904359ac1f3d2"
+    },
+    {
+      "source_collection_id": "ravdess-audio-speech-1-0-0",
+      "license": "CC BY-NC-SA 4.0",
+      "provenance_record_sha256": "22e14a9d008677a38067ec5387d08a96e9799944014274307a4904359ac1f3d2"
+    },
+    {
+      "source_collection_id": "rwc-music-v2-c",
+      "license": "CC BY-NC 4.0",
+      "provenance_record_sha256": "c7dfb3d68e440561802fcacc35584314da0514b5aa96269f37e3c38ab192a324"
+    },
+    {
+      "source_collection_id": "rwc-music-v2-g",
+      "license": "CC BY-NC 4.0",
+      "provenance_record_sha256": "c7dfb3d68e440561802fcacc35584314da0514b5aa96269f37e3c38ab192a324"
+    },
+    {
+      "source_collection_id": "rwc-music-v2-j",
+      "license": "CC BY-NC 4.0",
+      "provenance_record_sha256": "c7dfb3d68e440561802fcacc35584314da0514b5aa96269f37e3c38ab192a324"
+    },
+    {
+      "source_collection_id": "rwc-music-v2-p",
+      "license": "CC BY-NC 4.0",
+      "provenance_record_sha256": "c7dfb3d68e440561802fcacc35584314da0514b5aa96269f37e3c38ab192a324"
+    },
+    {
+      "source_collection_id": "rwc-music-v2-r",
+      "license": "CC BY-NC 4.0",
+      "provenance_record_sha256": "c7dfb3d68e440561802fcacc35584314da0514b5aa96269f37e3c38ab192a324"
+    },
+    {
+      "source_collection_id": "satp-soundscapes-1-5",
+      "license": "CC BY 4.0",
+      "provenance_record_sha256": "e0afaebb0f8333940f29c0ad95599d08fc65e8e68a3a87f57ef2d2581b2e01ca"
+    },
+    {
+      "source_collection_id": "sonyc-backgrounds-1-0-0",
+      "license": "CC BY 4.0",
+      "provenance_record_sha256": "624f8ecd06b6f2d2fa78819cf8f0a0378a831bf47d88ccc860438bce0b1a2eae"
+    },
+    {
+      "source_collection_id": "tinysol-6-0",
+      "license": "CC BY 4.0",
+      "provenance_record_sha256": "62d2c3d3b63c4b3ed47c3f23885067650b3e17bc5e1ec1ce7606e03e327f47a5"
+    },
+    {
+      "source_collection_id": "vctk-clean-56spk-2017",
+      "license": "CC BY 4.0",
+      "provenance_record_sha256": "6ccfb8b6b3d81750226be33aa41143f3773d0236ed8120982c8cf427a038cac3"
+    }
+  ],
+  "partition_opening": {
+    "mechanism_development": "Manifest identities and labels may be materialized. Features and baseline scores require a separately frozen extraction plan.",
+    "encoder_transfer": "Manifest identities and labels may be materialized and its freeze profile validated, but features and scores remain sealed until any new representation and analysis are frozen.",
+    "external_transfer": "Negative-only manifest identities may be materialized for lineage validation. Positive construction, features, and scores remain sealed for a frozen survivor."
+  },
+  "privacy": {
+    "private_manifest_outside_git": true,
+    "absolute_paths_in_private_manifest": false,
+    "public_aggregate_path_free": true,
+    "audio_committed": false
+  },
+  "stop_conditions": [
+    "Any input, generator, constructor manifest, or public constructor evidence hash differs.",
+    "Any retained artifact differs from its private construction checkpoint in bytes, size, or recipe identity.",
+    "The structural, mechanism-development-freeze, or encoder-transfer-freeze profile fails.",
+    "An external positive, existing v1 holdout, feature, score, public verdict, private identity, or absolute path enters public output.",
+    "The two complete private manifests or path-free run reports differ byte-for-byte."
+  ],
+  "authorized_next_step": "Commit this generator and plan before execution. Materialize and independently rehash the complete private factorial manifest twice without decoding a waveform or computing a feature. Require byte-identical private manifests and path-free run reports, then commit only their path-free attestation."
+}
