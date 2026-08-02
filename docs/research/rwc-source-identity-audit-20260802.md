@@ -112,9 +112,10 @@ freeze. The subsequent
 [RAVDESS source-identity audit](ravdess-source-identity-audit-20260802.md)
 bound its 24 actor groups without changing the projected external-transfer
 count. The remaining source gate is to verify the RWC audio archives and the
-VCTK, Speech Commands, and TinySOL identities. Only after those checks may
-source allocation, factor levels, and toolchain bindings be committed as
-separate frozen records.
+VCTK and Speech Commands identities. TinySOL was subsequently
+[bound as one common-collection group](tinysol-source-identity-audit-20260802.md).
+Only after the remaining checks may source allocation, factor levels, and
+toolchain bindings be committed as separate frozen records.
 
 No RWC audio acquisition, excerpt selection, benchmark generation, candidate
 evaluation, or external-transfer score opening is authorized by this audit.

@@ -124,8 +124,10 @@ The subsequent
 [RAVDESS source-identity audit](ravdess-source-identity-audit-20260802.md)
 bound its two audio-only archives without changing the 24-actor planning
 count. The remaining source gate is VCTK, Speech Commands, TinySOL, and RWC
-audio identity verification. Only after those archives are bound may source
-allocation, factor levels, and toolchain versions be frozen separately.
+audio identity verification. TinySOL was subsequently
+[bound as one common-collection group](tinysol-source-identity-audit-20260802.md),
+leaving VCTK, Speech Commands, and RWC. Only after those archives are bound may
+source allocation, factor levels, and toolchain versions be frozen separately.
 
 No benchmark derivative, mechanism score, candidate decision, or external
 transfer evidence was opened by this audit.

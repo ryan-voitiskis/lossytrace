@@ -204,8 +204,14 @@ def validate(inventory: dict[str, Any]) -> list[str]:
                     errors.append(f"{label} has invalid byte count")
                 if not SHA256.fullmatch(str(metadata_artifact.get("local_sha256", ""))):
                     errors.append(f"{label} has invalid local_sha256")
-                if not has_valid_acquired_remote_binding(metadata_artifact):
-                    errors.append(f"{label} has invalid acquired remote binding")
+                provider_checksum = metadata_artifact.get("provider_checksum")
+                if provider_checksum is not None:
+                    if not PROVIDER_CHECKSUM.fullmatch(str(provider_checksum)):
+                        errors.append(f"{label} has invalid provider checksum")
+                elif not has_valid_acquired_remote_binding(metadata_artifact):
+                    errors.append(
+                        f"{label} lacks a provider checksum or valid acquired remote binding"
+                    )
         readme_artifact = source.get("readme_artifact")
         if readme_artifact is not None:
             label = f"source {source_id} readme_artifact"
@@ -554,12 +560,23 @@ def validate_source_identity_evidence_files(
         metadata_binding = report.get("archive_bindings", {}).get("metadata")
         metadata_artifact = source.get("metadata_artifact")
         if isinstance(metadata_binding, dict) and isinstance(metadata_artifact, dict):
-            if metadata_binding.get("bytes") != metadata_artifact.get(
-                "bytes"
-            ) or metadata_binding.get("sha256") != metadata_artifact.get(
-                "local_sha256"
+            binding_sha256 = metadata_binding.get("sha256")
+            if binding_sha256 is None:
+                binding_sha256 = metadata_binding.get("local_sha256")
+            if (
+                metadata_binding.get("bytes") != metadata_artifact.get("bytes")
+                or binding_sha256 != metadata_artifact.get("local_sha256")
             ):
                 errors.append(f"source identity metadata binding differs: {source_id}")
+            provider_md5 = metadata_binding.get("provider_md5")
+            if provider_md5 is not None and (
+                metadata_binding.get("provider_checksum_verified") is not True
+                or f"md5:{provider_md5}"
+                != metadata_artifact.get("provider_checksum")
+            ):
+                errors.append(
+                    f"source identity metadata provider binding differs: {source_id}"
+                )
         readme_binding = report.get("readme_binding")
         readme_artifact = source.get("readme_artifact")
         if isinstance(readme_artifact, dict):

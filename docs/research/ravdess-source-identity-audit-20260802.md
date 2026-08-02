@@ -137,9 +137,12 @@ partials, and derived cases. Streaming, one-worker operation, and a free-space
 check before every remaining archive are therefore mandatory rather than
 advisory.
 
-The remaining source gate is VCTK, Speech Commands, TinySOL, and RWC audio
-identity verification. Only after those archives are bound may source
-allocation, factor levels, and toolchain versions be frozen separately.
+The subsequent
+[TinySOL source-identity audit](tinysol-source-identity-audit-20260802.md)
+kept its conservative common-collection count at one. The remaining source
+gate is VCTK, Speech Commands, and RWC audio identity verification. Only after
+those archives are bound may source allocation, factor levels, and toolchain
+versions be frozen separately.
 
 No benchmark derivative, mechanism score, candidate decision, or external
 transfer score was opened by this audit.

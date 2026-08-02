@@ -422,17 +422,38 @@
       "recommended_partition": "encoder_transfer",
       "source_domains": ["isolated_acoustic_instrument"],
       "conservative_partition_groups": 1,
-      "partition_basis": "conservative common collection until performer and recording-session metadata are verified",
+      "partition_basis": "one conservative common-collection partition because neither the provider metadata nor the related primary paper identifies performer, physical-instrument, microphone, or per-file session identity",
       "provenance_tier": "tier_a_confirmed_pcm",
-      "availability": "acquisition_required",
+      "availability": "acquired_and_identity_verified_not_allocated",
       "official_page_url": "https://zenodo.org/records/3685367",
+      "paper_url": "https://arxiv.org/abs/2007.00763",
       "license": "CC BY 4.0",
       "artifact": {
         "filename": "TinySOL.tar.gz",
+        "url": "https://zenodo.org/api/records/3685367/files/TinySOL.tar.gz/content",
         "bytes": 1026917185,
-        "provider_checksum": "md5:36030a7fe389da86c3419e5ee48e3b7f"
+        "provider_checksum": "md5:36030a7fe389da86c3419e5ee48e3b7f",
+        "provider_checksum_verified": true,
+        "local_sha256": "a537e5de4f64edf0a56032369f66fc76adcb67db875e466f54cad2999e00364c"
       },
-      "caveat": "Exclude metadata rows marked as digitally pitch-transposed from PCM-reference selection; retain them only as declared PCM-transform negatives."
+      "metadata_artifact": {
+        "filename": "TinySOL_metadata.csv",
+        "url": "https://zenodo.org/api/records/3685367/files/TinySOL_metadata.csv/content",
+        "bytes": 317576,
+        "provider_checksum": "md5:a86c9bb115f69e61f2f25872e397fc4a",
+        "provider_checksum_verified": true,
+        "local_sha256": "925727f1036cb3d574856470be6b04af5c9961102902a23cc8eafc7907d040da"
+      },
+      "source_group_rules": {
+        "path": "benchmarks/audio-integrity-v2/tinysol-source-group-rules.json",
+        "sha256": "d1c6d3badcc8a057dffcb1713a4468fc9ba3cc2f76a62d8e72323d66d4cf85ae"
+      },
+      "source_identity_evidence": {
+        "aggregate_path": "research/sources/evidence/tinysol-6.0-observed-20260802.json",
+        "aggregate_sha256": "62d2c3d3b63c4b3ed47c3f23885067650b3e17bc5e1ec1ce7606e03e327f47a5"
+      },
+      "recording_chain": "The related primary OrchideaSOL paper says all three SOL derivatives were processed from original 48 kHz, 24-bit, six-channel SOL recordings through cleaning, trimming, 44.1 kHz resampling, proximity-channel extraction, and volume compensation, with per-note retuning or missing-pitch resampling where declared. The bound TinySOL archive distributes mono 44.1 kHz, 16-bit PCM WAVs.",
+      "caveat": "All 2,913 PCM payloads are distinct. The 2,273 N rows have no declared per-note retuning and may become paired encoder masters; 600 rows are tuning-only, 28 are resampled-only, and 12 are both. All 40 R rows resolve to 39 parent paths and must inherit that source lineage. Keep every row in one partition group, and do not treat N as untouched microphone audio. The archive also has a ./ prefix and six .DS_Store files; the metadata has 14 columns despite prose saying 13, three Instance ID 5 rows despite a stated 0-4 range, and an observed duration range of about 1.315-16.235 seconds rather than 2-10."
     },
     {
       "source_id": "satp_soundscapes_1_5",

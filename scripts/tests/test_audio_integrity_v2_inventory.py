@@ -84,6 +84,19 @@ class InventoryValidationTest(unittest.TestCase):
             MODULE.validate(inventory),
         )
 
+    def test_metadata_provider_checksum_is_validated(self) -> None:
+        inventory = copy.deepcopy(self.inventory)
+        source = next(
+            row
+            for row in inventory["source_candidates"]
+            if row["source_id"] == "tinysol_6_0"
+        )
+        source["metadata_artifact"]["provider_checksum"] = "md5:not-a-digest"
+        errors = MODULE.validate(inventory)
+        self.assertTrue(
+            any("metadata_artifact has invalid provider checksum" in error for error in errors)
+        )
+
     def test_acquired_remote_binding_requires_a_strong_etag(self) -> None:
         inventory = copy.deepcopy(self.inventory)
         source = next(
@@ -131,6 +144,19 @@ class InventoryValidationTest(unittest.TestCase):
         errors = MODULE.validate_source_identity_evidence_files(inventory, ROOT)
         self.assertTrue(
             any("source identity archive binding differs" in error for error in errors)
+        )
+
+    def test_source_identity_metadata_provider_checksum_is_bound(self) -> None:
+        inventory = copy.deepcopy(self.inventory)
+        source = next(
+            row
+            for row in inventory["source_candidates"]
+            if row["source_id"] == "tinysol_6_0"
+        )
+        source["metadata_artifact"]["provider_checksum"] = "md5:" + "0" * 32
+        errors = MODULE.validate_source_identity_evidence_files(inventory, ROOT)
+        self.assertTrue(
+            any("metadata provider binding differs" in error for error in errors)
         )
 
     def test_source_metadata_family_rules_hash_is_validated(self) -> None:

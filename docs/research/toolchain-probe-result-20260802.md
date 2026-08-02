@@ -113,4 +113,7 @@ external total to 188. That preserves a 38-group margin. Verify every remaining
 archive identity before the separate freeze; the later
 [RAVDESS audit](ravdess-source-identity-audit-20260802.md) bound its two audio
 archives at the existing 24-actor count. RWC audio, VCTK, Speech Commands, and
-TinySOL remain; do not spend the margin by weakening grouping.
+TinySOL remained at that point; TinySOL was subsequently
+[bound as one common-collection group](tinysol-source-identity-audit-20260802.md).
+RWC audio, VCTK, and Speech Commands remain; do not spend the margin by
+weakening grouping.
