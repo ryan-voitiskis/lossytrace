@@ -216,6 +216,36 @@ def validate(inventory: dict[str, Any]) -> list[str]:
                     errors.append(f"{label} aggregate_path must be repository-relative")
                 if not SHA256.fullmatch(str(source_evidence.get("aggregate_sha256", ""))):
                     errors.append(f"{label} aggregate_sha256 is invalid")
+        metadata_evidence = source.get("metadata_identity_evidence")
+        if metadata_evidence is not None:
+            label = f"source {source_id} metadata_identity_evidence"
+            if not isinstance(metadata_evidence, dict):
+                errors.append(f"{label} must be an object")
+            else:
+                evidence_path = metadata_evidence.get("aggregate_path")
+                if (
+                    not isinstance(evidence_path, str)
+                    or not evidence_path
+                    or Path(evidence_path).is_absolute()
+                ):
+                    errors.append(f"{label} aggregate_path must be repository-relative")
+                if not SHA256.fullmatch(str(metadata_evidence.get("aggregate_sha256", ""))):
+                    errors.append(f"{label} aggregate_sha256 is invalid")
+        artist_family_rules = source.get("artist_family_rules")
+        if artist_family_rules is not None:
+            label = f"source {source_id} artist_family_rules"
+            if not isinstance(artist_family_rules, dict):
+                errors.append(f"{label} must be an object")
+            else:
+                rules_path = artist_family_rules.get("path")
+                if (
+                    not isinstance(rules_path, str)
+                    or not rules_path
+                    or Path(rules_path).is_absolute()
+                ):
+                    errors.append(f"{label} path must be repository-relative")
+                if not SHA256.fullmatch(str(artist_family_rules.get("sha256", ""))):
+                    errors.append(f"{label} sha256 is invalid")
 
     if inventory.get("planned_source_archive_bytes") != planned_source_archive_bytes:
         errors.append("planned_source_archive_bytes differs from source artifacts")
@@ -418,6 +448,88 @@ def validate_source_identity_evidence_files(
     return errors
 
 
+def validate_source_metadata_identity_evidence_files(
+    inventory: dict[str, Any], repository_root: Path
+) -> list[str]:
+    errors: list[str] = []
+    repository_root = repository_root.resolve()
+    for source in inventory.get("source_candidates", []):
+        if not isinstance(source, dict):
+            continue
+        evidence = source.get("metadata_identity_evidence")
+        if evidence is None:
+            continue
+        source_id = source.get("source_id")
+        if not isinstance(evidence, dict) or not isinstance(
+            evidence.get("aggregate_path"), str
+        ):
+            continue
+        aggregate = (repository_root / evidence["aggregate_path"]).resolve()
+        if not aggregate.is_relative_to(repository_root) or not aggregate.is_file():
+            errors.append(
+                f"source metadata identity evidence is missing or outside repository: {source_id}"
+            )
+            continue
+        if sha256_file(aggregate) != evidence.get("aggregate_sha256"):
+            errors.append(f"source metadata identity evidence hash differs: {source_id}")
+            continue
+        report = load_json(aggregate)
+        expected_state = {
+            "state": "source_metadata_identity_evidence_only",
+            "source_id": source_id,
+            "audio_acquired": False,
+            "benchmark_audio_generated": False,
+            "scores_opened": False,
+            "selection_authorized": False,
+            "paths_redacted": True,
+        }
+        for field, expected in expected_state.items():
+            if report.get(field) != expected:
+                errors.append(f"source metadata report {source_id} {field} differs")
+        serialized = json.dumps(report, sort_keys=True)
+        for forbidden in ("/Users/", "Library/Application Support", "\\Users\\"):
+            if forbidden in serialized:
+                errors.append(f"source metadata report contains a private path: {source_id}")
+                break
+        boundary = report.get("conservative_group_boundary")
+        if not isinstance(boundary, dict) or boundary.get(
+            "eligible_group_count"
+        ) != source.get("conservative_partition_groups"):
+            errors.append(f"source metadata group count differs: {source_id}")
+        binding = report.get("metadata_binding")
+        if not isinstance(binding, dict) or binding.get("revision") != source.get(
+            "metadata_revision"
+        ) or binding.get("sha256") != source.get("metadata_sha256"):
+            errors.append(f"source metadata binding differs: {source_id}")
+
+        rules_binding = source.get("artist_family_rules")
+        if not isinstance(rules_binding, dict) or not isinstance(
+            rules_binding.get("path"), str
+        ):
+            errors.append(f"source metadata family rules are missing: {source_id}")
+            continue
+        rules_path = (repository_root / rules_binding["path"]).resolve()
+        if not rules_path.is_relative_to(repository_root) or not rules_path.is_file():
+            errors.append(f"source metadata family rules are outside repository: {source_id}")
+            continue
+        if sha256_file(rules_path) != rules_binding.get("sha256"):
+            errors.append(f"source metadata family rules hash differs: {source_id}")
+            continue
+        rules = load_json(rules_path)
+        for field, expected in {
+            "state": "source_identity_rules_not_allocation",
+            "source_id": source_id,
+            "metadata_revision": source.get("metadata_revision"),
+            "metadata_sha256": source.get("metadata_sha256"),
+            "audio_generated": False,
+            "scores_opened": False,
+            "selection_authorized": False,
+        }.items():
+            if rules.get(field) != expected:
+                errors.append(f"source metadata family rules {source_id} {field} differs")
+    return errors
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--inventory", required=True, type=Path)
@@ -427,6 +539,9 @@ def main() -> int:
     repository_root = Path(__file__).resolve().parents[1]
     errors.extend(validate_toolchain_probe_file(inventory, repository_root))
     errors.extend(validate_source_identity_evidence_files(inventory, repository_root))
+    errors.extend(
+        validate_source_metadata_identity_evidence_files(inventory, repository_root)
+    )
     if errors:
         print("inventory validation failed:")
         for error in errors:

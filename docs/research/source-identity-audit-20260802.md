@@ -137,14 +137,13 @@ Adding the 652,614,041-byte audio archive raises planned source archives to
 about 45 GiB free, so the 15 GiB reserve remains intact. The prior streaming,
 bounded-excerpt, one-worker rules remain mandatory.
 
-The next source gate is not more corpus shopping. It is to:
-
-1. turn the current RWC metadata concern into a reproducible artist-family
-   audit and reduce its group count if necessary;
-2. verify exact identities for RAVDESS, SATP, VCTK, Speech Commands, TinySOL,
-   and SONYC; and
-3. only then commit the source allocation, factor levels, and toolchain as
-   separate frozen records.
+The subsequent
+[RWC metadata audit](rwc-source-identity-audit-20260802.md) reduced its planning
+count from 99 strings to 85 artist families while preserving 40 groups of total
+external-transfer margin. The next source gate is not more corpus shopping: it
+is to verify exact identities for RWC audio, RAVDESS, SATP, VCTK, Speech
+Commands, TinySOL, and SONYC, then separately freeze source allocation, factor
+levels, and toolchain bindings.
 
 No benchmark audio generation, candidate evaluation, or external-transfer
 score opening is authorized by this audit.

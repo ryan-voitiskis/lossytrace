@@ -26,6 +26,12 @@ class InventoryValidationTest(unittest.TestCase):
         self.assertEqual(
             [], MODULE.validate_source_identity_evidence_files(self.inventory, ROOT)
         )
+        self.assertEqual(
+            [],
+            MODULE.validate_source_metadata_identity_evidence_files(
+                self.inventory, ROOT
+            ),
+        )
 
     def test_wrapper_lineage_cannot_cross_transfer_boundary(self) -> None:
         inventory = copy.deepcopy(self.inventory)
@@ -86,6 +92,19 @@ class InventoryValidationTest(unittest.TestCase):
         source["source_identity_evidence"]["aggregate_sha256"] = "0" * 64
         errors = MODULE.validate_source_identity_evidence_files(inventory, ROOT)
         self.assertTrue(any("evidence hash differs" in error for error in errors))
+
+    def test_source_metadata_family_rules_hash_is_validated(self) -> None:
+        inventory = copy.deepcopy(self.inventory)
+        source = next(
+            row
+            for row in inventory["source_candidates"]
+            if row["source_id"] == "rwc_music_v2_2026"
+        )
+        source["artist_family_rules"]["sha256"] = "0" * 64
+        errors = MODULE.validate_source_metadata_identity_evidence_files(
+            inventory, ROOT
+        )
+        self.assertTrue(any("family rules hash differs" in error for error in errors))
 
     def test_frozen_state_is_rejected(self) -> None:
         inventory = copy.deepcopy(self.inventory)

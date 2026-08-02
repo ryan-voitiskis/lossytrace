@@ -486,13 +486,22 @@
         "popular_music",
         "royalty_free_music"
       ],
-      "conservative_partition_groups": 99,
-      "partition_basis": "unique artist across all subsets; piece identity alone is insufficient",
+      "conservative_partition_groups": 85,
+      "partition_basis": "artist family across all subsets after excluding RWC-J instrumentation-variation rows 1-35 and applying declared cross-label merges",
       "provenance_tier": "tier_a_confirmed_pcm",
-      "availability": "acquisition_required",
+      "availability": "metadata_identity_verified_audio_acquisition_required",
       "official_page_url": "https://zenodo.org/records/18656623",
       "license": "CC BY-NC 4.0",
       "metadata_revision": "0a1a6c31dbe73a7f5d44f7caef8cd0999402a4c2",
+      "metadata_sha256": "eba3fe129f835db58a9c23dad554547201ab02ef3af90c10857ef5b50b8b99da",
+      "artist_family_rules": {
+        "path": "benchmarks/audio-integrity-v2/rwc-artist-family-rules.json",
+        "sha256": "17d1932b9405b007cf59401c040b7358d654def594154220bedb510b6d4c022c"
+      },
+      "metadata_identity_evidence": {
+        "aggregate_path": "research/sources/evidence/rwc-metadata-observed-20260802.json",
+        "aggregate_sha256": "7c7491bbfa419ff18b4a87cb87895eda40e180ceafca4733dfb80956faf5439a"
+      },
       "artifacts": [
         {"filename": "RWC-C.zip", "bytes": 2966354301, "provider_checksum": "md5:2ac9139c4f03a65885ae0d0d299f67f8"},
         {"filename": "RWC-G.zip", "bytes": 3933055195, "provider_checksum": "md5:e78cddfb6fa639bcb6a61ad873f3cceb"},
@@ -500,7 +509,7 @@
         {"filename": "RWC-P.zip", "bytes": 4071840278, "provider_checksum": "md5:960a11a2d7fb603ad0dae8428f53d4f0"},
         {"filename": "RWC-R.zip", "bytes": 319884639, "provider_checksum": "md5:63e3b6263656a42c592ce1e90a88caa3"}
       ],
-      "caveat": "The current annotation metadata has 99 globally unique nonempty artist labels across 328 piece rows. Seal artist-grouped identities before any mechanism score is inspected; do not count piece rows as independent partitions."
+      "caveat": "The pinned metadata has 99 exact artist strings, not 99 defensible source groups. Excluding 35 known repeated-composition instrumentation variations leaves 87 labels; two declared identity merges leave 85 artist families. At most one excerpt per family may be selected, duplicate normalized work titles are forbidden, and RWC remains one provider stratum because metadata cannot prove disjoint sessions or backing personnel."
     },
     {
       "source_id": "sonyc_backgrounds_1_0_0",
@@ -533,7 +542,7 @@
       "source_ids": ["vctk_clean_56spk_2017", "speech_commands_v0_02", "tinysol_6_0", "sonyc_backgrounds_1_0_0"]
     },
     "external_transfer": {
-      "conservative_partition_groups": 204,
+      "conservative_partition_groups": 190,
       "source_domain_count": 9,
       "source_ids": ["ravdess_audio_1_0_0", "satp_soundscapes_1_4", "lombard_grid_2018", "rwc_music_v2_2026"]
     }
@@ -556,5 +565,5 @@
       "caveat": "Format listings advertised MPEG Layer III, but two deterministic executed probes failed before producing a file."
     }
   ],
-  "next_gate": "Audit RWC artist-family and recording-session relationships plus every remaining source archive identity, then replace this recommendation with separately committed source-allocation, factor-level, and toolchain freeze records before generating benchmark audio."
+  "next_gate": "Acquire and verify every remaining source archive identity, including RWC audio members, then replace this recommendation with separately committed source-allocation, factor-level, and toolchain freeze records before generating benchmark audio."
 }

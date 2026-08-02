@@ -150,14 +150,19 @@ The proposed fresh external set combines:
 - the [Audio-Visual Lombard Grid Speech corpus](https://spandh.dcs.shef.ac.uk/avlombard/),
   with 54 directly recorded talkers under CC BY 4.0.
 
-RWC's current annotation metadata has 328 piece rows but only 99 globally
-unique nonempty artist labels. The planning count is therefore 99, not 328.
-The 2026 RWC release paper states that these are the original master tracks
-used for CD production rather than consumer-ripped copies, and the original
-project states that the pieces were performed and recorded for the database.
+RWC's pinned annotation metadata has 328 piece rows and 99 globally unique
+nonempty artist strings, but its
+[identity audit](rwc-source-identity-audit-20260802.md) does not mistake those
+strings for independent sources. It excludes 35 jazz rows that the provider
+identifies as five compositions repeated across seven instrumentations, then
+merges two cross-label identities. The planning count is therefore 85 artist
+families, not 99 strings or 328 rows. The 2026 RWC release paper states that
+these are the original master tracks used for CD production rather than
+consumer-ripped copies, and the original project states that the pieces were
+performed and recorded for the database.
 RAVDESS actor grouping contributes 24, SATP recording/location grouping
 contributes 27, and Lombard Grid talker grouping contributes 54. Together they
-project to 204 independent partitions across nine domains, 54 above the
+project to 190 independent partitions across nine domains, 40 above the
 minimum.
 
 The Lombard Grid contribution is archive-observed, not copied from its
@@ -167,13 +172,14 @@ while preserving all 54 talkers. Its detailed
 [source identity audit](source-identity-audit-20260802.md) also records a mix
 of 16-bit integer and 32-bit float PCM that must be normalized explicitly.
 
-This margin is deliberately not treated as permission to ignore RWC identity.
-Before any allocation is committed, RWC metadata must still be reviewed for
-artist aliases, ensembles, and shared recording-chain relationships.
-Separately, the encoder-transfer audit must establish which SONYC sensors
-actually appear. SONYC cannot be inflated by assumption: the release draws
-from 2017, and a related primary
-analysis reports only 26 sensors in that year's archive despite more than 50
+This margin is deliberately not treated as permission to weaken identity.
+The RWC metadata audit binds its known aliases and dependencies, while
+retaining RWC as one provider stratum because metadata cannot prove disjoint
+recording sessions or backing personnel. The audio member identities still
+require verification. Separately, the encoder-transfer audit must establish
+which SONYC sensors actually appear. SONYC cannot be inflated by assumption:
+the release draws from 2017, and a related primary analysis reports only 26
+sensors in that year's archive despite more than 50
 being deployed over the wider project. If the external total falls below 150,
 add an entirely new provider collection; do not weaken grouping.
 
@@ -202,10 +208,9 @@ identity-verified; no other provider archive is.
 
 The tool and source proposal satisfies the v2 minima under its documented lower
 bounds, and the external-transfer proposal now has observed margin. The tool
-plumbing is verified but not frozen. The next checkpoint must audit RWC
-artist-family relationships and verify every remaining archive identity. Only
-then may separate source-allocation, factor-level, and toolchain freezes be
-committed.
+plumbing is verified but not frozen. The next checkpoint must verify every
+remaining archive identity, including RWC audio members. Only then may separate
+source-allocation, factor-level, and toolchain freezes be committed.
 
 No factor setting, fractional assignment, audio derivative, mechanism score,
 candidate, support rule, or public output is authorized by this inventory.

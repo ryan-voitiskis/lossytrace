@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "rules_id": "rwc-artist-family-rules-20260802-001",
+  "state": "source_identity_rules_not_allocation",
+  "source_id": "rwc_music_v2_2026",
+  "metadata_revision": "0a1a6c31dbe73a7f5d44f7caef8cd0999402a4c2",
+  "metadata_sha256": "eba3fe129f835db58a9c23dad554547201ab02ef3af90c10857ef5b50b8b99da",
+  "audio_generated": false,
+  "scores_opened": false,
+  "selection_authorized": false,
+  "eligibility_exclusions": [
+    {
+      "rule_id": "exclude_jazz_instrumentation_variations",
+      "collection_id": "J",
+      "piece_number_minimum": 1,
+      "piece_number_maximum": 35,
+      "reason": "The provider identifies these as five compositions deliberately repeated across seven instrumentations. Exclude all 35 rather than treating rearrangements and partially overlapping ensembles as independent source groups."
+    }
+  ],
+  "family_merges": [
+    {
+      "family_id": "kazuo_nishi",
+      "artist_labels": ["Kazuo Nishi", "Nishi feat.T"],
+      "reason": "The Nishi feat.T row credits Kazuo Nishi as composer, and the labels share the distinctive Nishi identity."
+    },
+    {
+      "family_id": "yuriko_furuichi",
+      "artist_labels": ["Yuriko Furuichi", "Yuriko Furuichi & Yoshiko Kikuchi"],
+      "reason": "The solo and duo labels explicitly share Yuriko Furuichi."
+    }
+  ],
+  "reviewed_label_overlap_pairs": [
+    {
+      "artist_labels": ["Atsuko Watanabe", "Machi Watanabe"],
+      "decision": "separate",
+      "reason": "Different full personal names; shared surname alone is not an identity match."
+    },
+    {
+      "artist_labels": ["Atsuko Watanabe", "Sarasa Watanabe"],
+      "decision": "separate",
+      "reason": "Different full personal names; shared surname alone is not an identity match."
+    },
+    {
+      "artist_labels": ["Hiromi Asakawa", "Hiromi Tohyama"],
+      "decision": "separate",
+      "reason": "Different full personal names; shared given name alone is not an identity match."
+    },
+    {
+      "artist_labels": ["Hiromi Asakawa", "Hiromi Yoshii"],
+      "decision": "separate",
+      "reason": "Different full personal names; shared given name alone is not an identity match."
+    },
+    {
+      "artist_labels": ["Hiromi Tohyama", "Hiromi Yoshii"],
+      "decision": "separate",
+      "reason": "Different full personal names; shared given name alone is not an identity match."
+    },
+    {
+      "artist_labels": ["Katsuyuki Ozawa", "Tetsuya Ozawa Quartet"],
+      "decision": "separate",
+      "reason": "Different named principals; shared surname alone is not an identity match."
+    },
+    {
+      "artist_labels": ["Kazuo Nishi", "Nishi feat.T"],
+      "decision": "merge",
+      "reason": "Covered by family merge kazuo_nishi."
+    },
+    {
+      "artist_labels": ["Machi Watanabe", "Sarasa Watanabe"],
+      "decision": "separate",
+      "reason": "Different full personal names; shared surname alone is not an identity match."
+    },
+    {
+      "artist_labels": ["Makiko Hattori", "Makiko Saito"],
+      "decision": "separate",
+      "reason": "Different full personal names; shared given name alone is not an identity match."
+    },
+    {
+      "artist_labels": ["Tetsuya Kan", "Tetsuya Ozawa Quartet"],
+      "decision": "separate",
+      "reason": "Different full personal names; shared given name alone is not an identity match."
+    },
+    {
+      "artist_labels": ["Tokyo City Philharmonic Orchestra", "Tokyo Kosei Wind Orchestra"],
+      "decision": "separate",
+      "reason": "The provider gives distinct ensemble names; shared city and ensemble type are not identity."
+    },
+    {
+      "artist_labels": ["Yuriko Furuichi", "Yuriko Furuichi & Yoshiko Kikuchi"],
+      "decision": "merge",
+      "reason": "Covered by family merge yuriko_furuichi."
+    }
+  ],
+  "future_selection_constraints": [
+    "At most one reference excerpt per artist family.",
+    "Do not select two RWC rows with the same normalized work title.",
+    "Retain collection, artist family, work title, legacy disc, and track as grouping metadata.",
+    "Report RWC as one provider stratum; artist families do not prove independent recording sessions or disjoint backing personnel."
+  ],
+  "expected": {
+    "metadata_row_count": 328,
+    "global_exact_artist_label_count": 99,
+    "excluded_row_count": 35,
+    "eligible_row_count": 293,
+    "eligible_exact_artist_label_count": 87,
+    "artist_family_count": 85,
+    "reviewed_overlap_pair_count": 12
+  }
+}
