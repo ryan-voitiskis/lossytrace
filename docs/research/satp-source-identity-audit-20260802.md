@@ -12,10 +12,13 @@ unique PCM payloads and reconcile exactly to the bound README table. Two pairs
 share identical provider coordinates, so the defensible planning count is 25
 source groups rather than 27 files.
 
-This lowers the proposed external-transfer population from 190 to 188 groups
-across nine domains, retaining a 38-group margin above the preregistered floor
-of 150. SATP remains one provider stratum; the 25 coordinate groups are not
-treated as independent hardware or operator lineages.
+This lowered the proposed external-transfer population from 190 to 188 groups
+across nine domains at that checkpoint. The later
+[source-partition correction](source-partition-correction-20260802.md) moved
+RAVDESS to encoder transfer, so the current projection is 164 groups across
+seven domains, 14 above the preregistered floor of 150. SATP remains one
+provider stratum; the 25 coordinate groups are not treated as independent
+hardware or operator lineages.
 
 The path-free evidence is
 [`research/sources/evidence/satp-1.5-observed-20260802.json`](../../research/sources/evidence/satp-1.5-observed-20260802.json).
@@ -122,12 +125,14 @@ SATP as one provider stratum; and include leave-provider/domain sensitivity.
 
 The subsequent
 [RAVDESS source-identity audit](ravdess-source-identity-audit-20260802.md)
-bound its two audio-only archives without changing the 24-actor planning
-count. The remaining source gate is VCTK, Speech Commands, TinySOL, and RWC
-audio identity verification. TinySOL was subsequently
-[bound as one common-collection group](tinysol-source-identity-audit-20260802.md),
-leaving VCTK, Speech Commands, and RWC. Only after those archives are bound may
-source allocation, factor levels, and toolchain versions be frozen separately.
+bound its two audio-only archives at 24 actor groups. TinySOL was subsequently
+[bound as one common-collection group](tinysol-source-identity-audit-20260802.md).
+The later
+[source-partition correction](source-partition-correction-20260802.md) rejected
+Speech Commands from Tier A, moved RAVDESS to encoder transfer, and added six
+audited FSDD speaker groups. The remaining source gate is VCTK and RWC audio.
+Only after both are bound may source allocation, factor levels, and toolchain
+versions be frozen separately.
 
 No benchmark derivative, mechanism score, candidate decision, or external
 transfer evidence was opened by this audit.

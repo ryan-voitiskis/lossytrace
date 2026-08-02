@@ -32,6 +32,12 @@ class InventoryValidationTest(unittest.TestCase):
                 self.inventory, ROOT
             ),
         )
+        self.assertEqual(
+            [],
+            MODULE.validate_rejected_source_provenance_evidence_files(
+                self.inventory, ROOT
+            ),
+        )
 
     def test_wrapper_lineage_cannot_cross_transfer_boundary(self) -> None:
         inventory = copy.deepcopy(self.inventory)
@@ -65,7 +71,7 @@ class InventoryValidationTest(unittest.TestCase):
         source = next(
             row
             for row in inventory["source_candidates"]
-            if row["source_id"] == "speech_commands_v0_02"
+            if row["source_id"] == "sonyc_backgrounds_1_0_0"
         )
         source["artifact"]["provider_checksum"] = "md5:not-a-digest"
         errors = MODULE.validate(inventory)
@@ -108,6 +114,30 @@ class InventoryValidationTest(unittest.TestCase):
         errors = MODULE.validate(inventory)
         self.assertTrue(any("valid acquired remote binding" in error for error in errors))
 
+    def test_github_codeload_binding_requires_a_commit(self) -> None:
+        inventory = copy.deepcopy(self.inventory)
+        source = next(
+            row
+            for row in inventory["source_candidates"]
+            if row["source_id"] == "fsdd_v1_0_10"
+        )
+        source["artifact"]["provider_identity"]["commit_sha"] = "not-a-commit"
+        errors = MODULE.validate(inventory)
+        self.assertTrue(any("valid acquired remote binding" in error for error in errors))
+
+    def test_github_codeload_binding_url_must_match_tag(self) -> None:
+        inventory = copy.deepcopy(self.inventory)
+        source = next(
+            row
+            for row in inventory["source_candidates"]
+            if row["source_id"] == "fsdd_v1_0_10"
+        )
+        source["artifact"]["url"] = source["artifact"]["url"].replace(
+            "v1.0.10", "v1.0.9"
+        )
+        errors = MODULE.validate(inventory)
+        self.assertTrue(any("valid acquired remote binding" in error for error in errors))
+
     def test_source_identity_evidence_hash_is_validated(self) -> None:
         inventory = copy.deepcopy(self.inventory)
         source = next(
@@ -129,6 +159,17 @@ class InventoryValidationTest(unittest.TestCase):
         source["artifact"]["provider_checksum"] = "md5:" + "0" * 32
         errors = MODULE.validate_source_identity_evidence_files(inventory, ROOT)
         self.assertTrue(any("provider binding differs" in error for error in errors))
+
+    def test_source_identity_provider_identity_is_bound(self) -> None:
+        inventory = copy.deepcopy(self.inventory)
+        source = next(
+            row
+            for row in inventory["source_candidates"]
+            if row["source_id"] == "fsdd_v1_0_10"
+        )
+        source["artifact"]["provider_identity"]["tag"] = "v1.0.9"
+        errors = MODULE.validate_source_identity_evidence_files(inventory, ROOT)
+        self.assertTrue(any("provider identity differs" in error for error in errors))
 
     def test_multi_artifact_source_identity_provider_checksum_is_bound(self) -> None:
         inventory = copy.deepcopy(self.inventory)
@@ -182,6 +223,27 @@ class InventoryValidationTest(unittest.TestCase):
         source["source_group_rules"]["sha256"] = "0" * 64
         errors = MODULE.validate_source_identity_evidence_files(inventory, ROOT)
         self.assertTrue(any("source group rules hash differs" in error for error in errors))
+
+    def test_rejected_source_cannot_remain_allocated(self) -> None:
+        inventory = copy.deepcopy(self.inventory)
+        inventory["rejected_source_candidates"].append(
+            {
+                "source_id": inventory["source_candidates"][0]["source_id"],
+                "disposition": "rejected_from_tier_a_source_candidate",
+            }
+        )
+        errors = MODULE.validate(inventory)
+        self.assertTrue(any("remains a source candidate" in error for error in errors))
+
+    def test_rejected_source_evidence_hash_is_validated(self) -> None:
+        inventory = copy.deepcopy(self.inventory)
+        inventory["rejected_source_candidates"][0]["provider_provenance_evidence"][
+            "aggregate_sha256"
+        ] = "0" * 64
+        errors = MODULE.validate_rejected_source_provenance_evidence_files(
+            inventory, ROOT
+        )
+        self.assertTrue(any("evidence hash differs" in error for error in errors))
 
     def test_frozen_state_is_rejected(self) -> None:
         inventory = copy.deepcopy(self.inventory)

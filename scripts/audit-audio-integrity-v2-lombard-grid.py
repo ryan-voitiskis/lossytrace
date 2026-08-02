@@ -23,6 +23,18 @@ from typing import Any, BinaryIO
 
 REPORT_SCHEMA_VERSION = 1
 SOURCE_ID = "lombard_grid_2018"
+PROVIDER_IDENTITIES = {
+    "audio": {
+        "method": "https_strong_etag_content_length_last_modified",
+        "etag": '"26e61999-568649ce7ab80"',
+        "last_modified": "Tue, 27 Mar 2018 13:10:22 GMT",
+    },
+    "metadata": {
+        "method": "https_strong_etag_content_length_last_modified",
+        "etag": '"fdaa-56864bb4da700"',
+        "last_modified": "Tue, 27 Mar 2018 13:18:52 GMT",
+    },
+}
 CANONICAL_AUDIO_NAME = re.compile(
     r"^lombardgrid/audio/(s\d+)_(l|p)_([a-z0-9]{6})\.wav$"
 )
@@ -245,11 +257,13 @@ def audit(audio_path: Path, metadata_path: Path) -> dict[str, Any]:
                 "audio": {
                     "bytes": audio_path.stat().st_size,
                     "sha256": sha256_file(audio_path),
+                    "provider_identity": PROVIDER_IDENTITIES["audio"],
                     "zip_crc_verified": True,
                 },
                 "metadata": {
                     "bytes": metadata_path.stat().st_size,
                     "sha256": sha256_file(metadata_path),
+                    "provider_identity": PROVIDER_IDENTITIES["metadata"],
                     "zip_crc_verified": True,
                 },
             },

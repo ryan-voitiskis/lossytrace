@@ -20,8 +20,10 @@ and the replay is
 Reduce RWC's planning contribution from 99 exact artist strings to 85
 conservative artist families. This is a 14-group reduction, not an audio
 finding. After the subsequent SATP exact-coordinate audit, external transfer
-projects to 188 groups across nine domains—38 above the preregistered floor of
-150.
+projected to 188 groups across nine domains at that checkpoint. The later
+[source-partition correction](source-partition-correction-20260802.md) moved
+RAVDESS to encoder transfer, so the current external projection is 164 groups
+across seven domains—14 above the preregistered floor of 150.
 
 The family count is suitable for source allocation only after the five RWC
 audio archives pass their provider checksums and member identities reconcile
@@ -102,20 +104,23 @@ following simultaneously:
 This is deliberately stricter than treating songs as independent, but it does
 not claim person-level ground truth that the provider metadata does not expose.
 If the audio member audit reveals additional session or duplication links, the
-85 count must fall; the 38-group margin absorbs reductions down to 47 RWC
-families without changing the external-transfer floor.
+85 count must fall. After the later source-partition correction, external
+transfer has a 14-group margin and can absorb reductions only down to 71 RWC
+families without changing the floor.
 
 ## Next gate
 
 RWC's metadata identity concern is resolved enough to proceed to bytes, not to
 freeze. The subsequent
 [RAVDESS source-identity audit](ravdess-source-identity-audit-20260802.md)
-bound its 24 actor groups without changing the projected external-transfer
-count. The remaining source gate is to verify the RWC audio archives and the
-VCTK and Speech Commands identities. TinySOL was subsequently
+bound its 24 actor groups. TinySOL was subsequently
 [bound as one common-collection group](tinysol-source-identity-audit-20260802.md).
-Only after the remaining checks may source allocation, factor levels, and
-toolchain bindings be committed as separate frozen records.
+The later
+[source-partition correction](source-partition-correction-20260802.md) rejected
+Speech Commands from Tier A, moved RAVDESS to encoder transfer, and added six
+audited FSDD speaker groups. The remaining source gate is to verify the RWC
+audio archives and VCTK. Only after those checks may source allocation, factor
+levels, and toolchain bindings be committed as separate frozen records.
 
 No RWC audio acquisition, excerpt selection, benchmark generation, candidate
 evaluation, or external-transfer score opening is authorized by this audit.

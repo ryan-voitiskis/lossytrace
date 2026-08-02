@@ -1,0 +1,57 @@
+{
+  "assessment_role": {
+    "assessment_eligibility": "diagnostic_only",
+    "future_use": "Only as a separately preregistered unknown-history diagnostic; never as a negative reference, controlled-positive parent, or accuracy denominator.",
+    "history_class": "lossy_original_diagnostic",
+    "provenance_tier": "tier_c_unknown"
+  },
+  "benchmark_audio_generated": false,
+  "disposition": "rejected_from_tier_a_source_candidate",
+  "full_archive_acquired": false,
+  "observed_provider_artifact": {
+    "bytes": 2428923189,
+    "etag": "\"6b74f3901214cb2c2934e98196829835\"",
+    "filename": "speech_commands_v0.02.tar.gz",
+    "generation": "1523475715344020",
+    "last_modified": "Wed, 11 Apr 2018 19:41:55 GMT",
+    "provider_checksum": "md5:6b74f3901214cb2c2934e98196829835",
+    "url": "https://storage.googleapis.com/download.tensorflow.org/data/speech_commands_v0.02.tar.gz"
+  },
+  "partial_acquisition_observation": {
+    "complete_artifact_verified": false,
+    "private_resumable_partial_bytes_retained": 227831808,
+    "scientific_evidence": false
+  },
+  "paths_redacted": true,
+  "primary_paper_binding": {
+    "arxiv_id": "1804.03209",
+    "arxiv_version": "v1",
+    "main_tex_bytes": 34331,
+    "main_tex_sha256": "df5ffe756fad80f98e9685284a892bf5831ca920ed3f3f9b090c53a2d8025547",
+    "source_archive_bytes": 15170,
+    "source_archive_sha256": "4d9cab440aae302461c96a5000efd416a06915cd9b11414fa4369240ad240d0a",
+    "url": "https://arxiv.org/abs/1804.03209"
+  },
+  "provider_findings": {
+    "final_release_format": "one-second-or-shorter mono 16 kHz signed 16-bit integer PCM WAV",
+    "open_site_contribution_share": "majority",
+    "open_site_capture_format": "OGG-compressed audio returned by WebAudioAPI",
+    "open_site_release_conversion": "FFmpeg decoded OGG and resampled the result to 16 kHz PCM WAV",
+    "other_source_path": "varying-sample-rate WAV inputs resampled to 16 kHz with a similar FFmpeg command",
+    "release_speaker_count": 2618,
+    "release_utterance_count": 105829,
+    "speaker_identity": "stable hashed eight-hex-digit identifier derived from web-session or other-source speaker identifiers"
+  },
+  "rejection_basis": [
+    "The primary paper says the WebAudioAPI returned OGG-compressed audio and the server stored those OGG files.",
+    "The paper says the majority of the dataset came from that open-site path.",
+    "The release pipeline decoded the OGG files and resampled them to 16 kHz PCM WAV, so the current WAV wrapper does not establish no-lossy history.",
+    "Other inputs followed a different WAV-resampling path, but the documented release schema does not expose a per-file path field.",
+    "The pre-OGG PCM, exact OGG codec, encoder implementation, settings, and per-file capture path are not bound, so the files cannot form controlled positives either."
+  ],
+  "schema_version": 1,
+  "scores_opened": false,
+  "selection_authorized": false,
+  "source_id": "speech_commands_v0_02",
+  "state": "source_provenance_rejection_evidence_only"
+}

@@ -12,10 +12,12 @@ absent from song. The actor identifier is consistent between every member
 directory and seven-field filename, and all factorial keys are unique.
 
 Actor identity across speech and song remains the conservative grouping unit,
-so RAVDESS contributes 24 source groups. The proposed external-transfer
-population therefore remains 188 groups across nine domains, 38 above the
-preregistered floor of 150. RAVDESS remains one provider stratum; its actors
-are not treated as independent recording or export pipelines.
+so RAVDESS contributes 24 source groups. A subsequent
+[source-partition correction](source-partition-correction-20260802.md) moved
+those groups from external transfer to encoder transfer after Speech Commands
+was rejected on provenance grounds. The audit result and grouping did not
+change. RAVDESS remains one provider stratum; its actors are not treated as
+independent recording or export pipelines.
 
 The path-free evidence is
 [`research/sources/evidence/ravdess-1.0.0-observed-20260802.json`](../../research/sources/evidence/ravdess-1.0.0-observed-20260802.json).
@@ -129,18 +131,21 @@ manifest.
 
 ## Storage and next gate
 
-The two retained archives add 433,973,390 bytes without changing the planned
-source-archive total. After acquisition the data volume had about 39.8 GiB
-free. Acquiring the remaining 20.16 GiB of planned archives while preserving
-the 15 GiB reserve would leave only about 4.6 GiB for bounded references,
+The two retained archives add 433,973,390 bytes. After the later Speech
+Commands rejection and FSDD replacement, the remaining VCTK and RWC archives
+total 18,189,508,204 bytes (16.94 GiB). At the correction checkpoint,
+preserving the 15 GiB reserve left about 4.15 GiB for bounded references,
 partials, and derived cases. Streaming, one-worker operation, and a free-space
 check before every remaining archive are therefore mandatory rather than
 advisory.
 
 The subsequent
 [TinySOL source-identity audit](tinysol-source-identity-audit-20260802.md)
-kept its conservative common-collection count at one. The remaining source
-gate is VCTK, Speech Commands, and RWC audio identity verification. Only after
+kept its conservative common-collection count at one. Speech Commands was
+subsequently
+[rejected from Tier A](speech-commands-provenance-rejection-20260802.md), and
+the audited six-group FSDD corpus replaced its clean transfer role. The
+remaining source gate is VCTK and RWC audio identity verification. Only after
 those archives are bound may source allocation, factor levels, and toolchain
 versions be frozen separately.
 

@@ -4,9 +4,10 @@
 identity is frozen
 
 **Actions so far:** local tools inspected and synthetically probed, provider
-metadata reviewed, and Lombard Grid, SONYC, SATP, RAVDESS, and TinySOL source
-identities acquired and audited; no benchmark audio generated, no score
-opened, and no candidate selected
+metadata reviewed, Lombard Grid, SONYC, SATP, RAVDESS, TinySOL, and FSDD source
+identities acquired and audited, and Speech Commands rejected after its mixed
+OGG/WAV release history was established; no benchmark audio generated, no
+score opened, and no candidate selected
 
 The machine-readable inventory is
 [`benchmarks/audio-integrity-v2/inventory.json`](../../benchmarks/audio-integrity-v2/inventory.json).
@@ -119,21 +120,27 @@ validation.
 
 ### Encoder transfer
 
-The compact proposal uses four previously unused provider collections:
+The corrected compact proposal uses five previously unused provider
+collections:
 
 | Collection | Domains | Conservative partition basis/count | Provider evidence |
 | --- | --- | ---: | --- |
 | clean VCTK subset | studio speech | 56 speakers | Edinburgh documents clean 48 kHz WAV from 56 VCTK speakers; CC BY 4.0 |
-| Google Speech Commands v0.02 | crowdsourced 16 kHz command speech | 100-speaker planning cap | [Google's release](https://research.google/blog/launching-the-speech-commands-dataset/) describes thousands of microphone contributors and one-second WAV; CC BY 4.0 |
+| RAVDESS audio-only | acted speech and song | 24 actors | Complete acquired factorial grid grouped across speech/song by actor; CC BY-NC-SA 4.0 |
+| FSDD v1.0.10 | home-recorded bandwidth-limited digit speech | 6 speakers | Complete acquired 6-speaker × 10-digit × 50-repetition grid, with a bound PCM-domain release path; CC BY-SA 4.0 |
 | TinySOL 6.0 | isolated acoustic instruments | 1 common collection after archive/metadata audit | [official record](https://zenodo.org/records/3685367), expressly distributed 44.1 kHz WAV, CC BY 4.0 |
 | SONYC-Backgrounds | urban sensor soundscapes | 15 sensor IDs observed in the bound archive | [official record](https://zenodo.org/records/5129078), directly acquired sensor WAV, CC BY 4.0 |
 
-The conservative total is 172 partition groups and four source domains, above
-the v2 encoder-transfer minimums of 100 and four. Speech Commands is capped at
-100 for planning even though the provider describes thousands of people; the
-archive must group every word and utterance by anonymous speaker. Its 16 kHz
-bandwidth is an explicit factor, not an excuse to exclude a failure. TinySOL
-has now been
+The conservative total is 102 partition groups across six source domains,
+only two groups above the v2 encoder-transfer minimum of 100. The
+[source-partition correction](source-partition-correction-20260802.md) records
+why Speech Commands was removed rather than relabelled and why the already
+audited RAVDESS groups moved here. FSDD's
+[source-identity audit](fsdd-source-identity-audit-20260802.md) binds 3,000
+unique-PCM mono 8 kHz WAVs to six complete speaker grids and a repository
+processing path that records/exports WAV then performs PCM-domain
+split/trim/write operations. Its bandwidth is an explicit hard-negative
+factor, not codec evidence. TinySOL has now been
 [archive-audited](tinysol-source-identity-audit-20260802.md): 2,273 of 2,913
 unique-PCM WAVs have no declared per-note retuning and may become paired
 masters, while 640 are PCM-transform candidates. All 40 semitone-resampled
@@ -151,8 +158,6 @@ The proposed fresh external set combines:
 - the [RWC Music Database 2026 v2 re-release](https://zenodo.org/records/18656623),
   whose five WAV subsets cover classical, genre, jazz, popular, and
   royalty-free music under CC BY-NC 4.0; and
-- [RAVDESS audio-only](https://zenodo.org/records/1188976), with 24 actors
-  crossing acted speech and song under CC BY-NC-SA 4.0; and
 - the current [SATP v1.5 soundscapes](https://zenodo.org/records/18715282),
   with 27 24-bit binaural WAV recordings under CC BY 4.0; and
 - the [Audio-Visual Lombard Grid Speech corpus](https://spandh.dcs.shef.ac.uk/avlombard/),
@@ -168,10 +173,9 @@ families, not 99 strings or 328 rows. The 2026 RWC release paper states that
 these are the original master tracks used for CD production rather than
 consumer-ripped copies, and the original project states that the pieces were
 performed and recorded for the database.
-RAVDESS actor grouping contributes 24, SATP exact-coordinate grouping
-contributes 25, and Lombard Grid talker grouping contributes 54. Together they
-project to 188 independent partitions across nine domains, 38 above the
-minimum.
+SATP exact-coordinate grouping contributes 25 and Lombard Grid talker grouping
+contributes 54. Together with RWC's 85 planned artist families, they project
+to 164 independent partitions across seven domains, 14 above the minimum.
 
 The Lombard Grid contribution is archive-observed, not copied from its
 headline: the acquired audio has 5,390 WAVs, metadata has 5,340 rows, and a
@@ -184,15 +188,17 @@ SATP is likewise archive-observed: its
 27 reference IDs, excludes the calibration signal, and merges two pairs that
 share exact provider coordinates. The current record is v1.5 even though the
 bound README's dataset-count prose still says v1.2.
-RAVDESS is now archive-observed as well. Its
+RAVDESS is archive-observed as well. Its
 [source-identity audit](ravdess-source-identity-audit-20260802.md) reconciles
 the complete 1,440-speech/1,012-song grid across 24 actors and preserves actor
 18's documented missing-song condition. It also excludes one same-actor
 two-file repeated-PCM group from future reference selection and records six
 stereo outliers rather than silently downmixing them. Neither anomaly changes
-the 24 actor groups.
+the 24 actor groups. The later provenance correction moved those groups to
+encoder transfer; this is a partition change, not a change to the audit.
 
-This margin is deliberately not treated as permission to weaken identity.
+The now-smaller margin is deliberately not treated as permission to weaken
+identity.
 The RWC metadata audit binds its known aliases and dependencies, while
 retaining RWC as one provider stratum because metadata cannot prove disjoint
 recording sessions or backing personnel. The audio member identities still
@@ -200,17 +206,18 @@ require verification. Separately, the encoder-transfer audit found 15—not the
 one-group placeholder or the 26 sensors seen in a related wider 2017
 analysis—inside the bound SONYC archive. Its README says 441 clips, but the
 archive contains 550 canonical WAVs; that mismatch is retained without
-inflating the 15 sensor groups. If the external total falls below 150,
+inflating the 15 sensor groups. If either corrected transfer partition falls
+below its floor,
 add an entirely new provider collection; do not weaken grouping.
 
 ## Storage and acquisition boundary
 
-All proposed source archives now total 23,237,282,258 bytes (21.64 GiB). After
-the Lombard Grid, SONYC, SATP, RAVDESS, and 1,026,917,185-byte TinySOL
-acquisitions, the data volume reported about 37.79 GiB free. The remaining
-source archives total 19.20 GiB. Retaining a 15 GiB reserve would therefore
-leave only about 3.59 GiB
-for compact references, derived cases, partials, and temporary intermediates.
+All proposed source archives now total 20,824,778,941 bytes (19.39 GiB). After
+the Lombard Grid, SONYC, SATP, RAVDESS, TinySOL, and 16,419,872-byte FSDD
+acquisitions, the data volume reported 36.10 GiB free. The remaining VCTK and
+RWC source archives total 18,189,508,204 bytes (16.94 GiB). Retaining a 15 GiB
+reserve would therefore leave about 4.15 GiB for compact references, derived
+cases, partials, and temporary intermediates.
 That is viable only if the stager:
 
 - streams selected members without full archive expansion;
@@ -221,18 +228,19 @@ That is viable only if the stager:
 - rechecks projected and actual free space before each archive and generation
   phase.
 
-The resumable SONYC, SATP, RAVDESS, and TinySOL audit downloads were completed,
-matched their provider byte counts and MD5 values, passed their
-archive-integrity checks, and were independently bound by SHA-256. Lombard
-Grid, SONYC, SATP, RAVDESS, and TinySOL are the five sources currently treated
-as acquired and identity-verified; no other provider audio archive is.
+The resumable SONYC, SATP, RAVDESS, TinySOL, and FSDD audit downloads were
+completed, passed their archive-integrity checks, and were independently bound
+by SHA-256 and their available provider identities. Lombard Grid, SONYC, SATP,
+RAVDESS, TinySOL, and FSDD are the six sources currently treated as acquired
+and identity-verified. Speech Commands has only a private partial and is a
+rejected source, not an acquisition in this total.
 
 ## Decision and next gate
 
 The tool and source proposal satisfies the v2 minima under its documented lower
-bounds, and the external-transfer proposal now has observed margin. The tool
-plumbing is verified but not frozen. The next checkpoint must verify VCTK,
-Speech Commands, and every RWC audio member. Only then may separate
+bounds, although the corrected transfer margins are narrow. The tool plumbing
+is verified but not frozen. The next checkpoint must verify VCTK and every RWC
+audio member. Only then may separate
 source-allocation, factor-level, and toolchain freezes be committed.
 
 No factor setting, fractional assignment, audio derivative, mechanism score,

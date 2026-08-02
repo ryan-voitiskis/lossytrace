@@ -7,7 +7,7 @@
   "synthetic_probe_audio_generated": true,
   "scores_opened": false,
   "selection_authorized": false,
-  "planned_source_archive_bytes": 23237282258,
+  "planned_source_archive_bytes": 20824778941,
   "minimum_free_space_reserve_bytes": 16106127360,
   "environment": {
     "architecture": "arm64",
@@ -359,7 +359,7 @@
     {
       "source_id": "ravdess_audio_1_0_0",
       "title": "RAVDESS audio-only speech and song",
-      "recommended_partition": "external_transfer",
+      "recommended_partition": "encoder_transfer",
       "source_domains": ["acted_speech", "acted_song"],
       "conservative_partition_groups": 24,
       "partition_basis": "actor identity across both speech and song",
@@ -398,23 +398,38 @@
       "caveat": "The documented grid is complete, with actor 18 absent from song as reported by the provider. One same-actor speech repetition pair has identical PCM, leaving 2,450 selection-eligible files; six files are stereo outliers. Exclude both repeated-PCM members, preserve original channel count as a source factor, select at most one excerpt per actor across speech and song, and retain RAVDESS as one provider stratum."
     },
     {
-      "source_id": "speech_commands_v0_02",
-      "title": "Google Speech Commands v0.02",
+      "source_id": "fsdd_v1_0_10",
+      "title": "Free Spoken Digit Dataset v1.0.10",
       "recommended_partition": "encoder_transfer",
-      "source_domains": ["crowdsourced_bandwidth_limited_command_speech"],
-      "conservative_partition_groups": 100,
-      "partition_basis": "anonymous speaker identifier across every word and utterance",
+      "source_domains": ["home_recorded_bandwidth_limited_digit_speech"],
+      "conservative_partition_groups": 6,
+      "partition_basis": "repository speaker identifier across every digit and repetition",
       "provenance_tier": "tier_a_confirmed_pcm",
-      "availability": "acquisition_required",
-      "official_page_url": "https://research.google/blog/launching-the-speech-commands-dataset/",
-      "license": "CC BY 4.0",
+      "availability": "acquired_and_identity_verified_not_allocated",
+      "official_page_url": "https://github.com/Jakobovski/free-spoken-digit-dataset",
+      "license": "CC BY-SA 4.0",
       "artifact": {
-        "filename": "speech_commands_v0.02.tar.gz",
-        "url": "https://storage.googleapis.com/download.tensorflow.org/data/speech_commands_v0.02.tar.gz",
-        "bytes": 2428923189,
-        "provider_checksum": "md5:6b74f3901214cb2c2934e98196829835"
+        "filename": "free-spoken-digit-dataset-1.0.10.zip",
+        "url": "https://codeload.github.com/Jakobovski/free-spoken-digit-dataset/zip/refs/tags/v1.0.10",
+        "bytes": 16419872,
+        "local_sha256": "c680098f5d2355ba7cc4bd8b0ca9e0a24c00ebe3b4c552208889a4d28d4fbc2b",
+        "provider_identity": {
+          "method": "github_codeload_tag_commit_strong_etag",
+          "tag": "v1.0.10",
+          "commit_sha": "d6938f9bf1545aa66d8489fc9f1385a7abd64282",
+          "etag": "\"248f3f5caf01524ccd38bd74a1dac661854fd431de2abae9757c49b9fe1142f7\""
+        }
       },
-      "caveat": "The provider describes thousands of contributors; 100 is a deliberately capped planning count until archive filenames establish exact nonempty speaker groups. Treat 16 kHz bandwidth as an explicit factor, not a hidden source property."
+      "source_group_rules": {
+        "path": "benchmarks/audio-integrity-v2/fsdd-source-group-rules.json",
+        "sha256": "8f7dce1cc369fffcc9f24b18b0fd8af9bf071d9198135698de33c931699d6677"
+      },
+      "source_identity_evidence": {
+        "aggregate_path": "research/sources/evidence/fsdd-v1.0.10-observed-20260802.json",
+        "aggregate_sha256": "80ce2326afac2baa85f55ab6828615632352fbbc02c4d0809cd30f73cc5f75ec"
+      },
+      "recording_chain": "The bound repository instructs contributors to record in Audacity at an 8 kHz project rate, export one WAV, and use the included SciPy-based code to read, split, trim, and write PCM WAV clips. The archive has 3,000 unique PCM payloads, all mono 8 kHz signed 16-bit integer WAV with only format and data chunks.",
+      "caveat": "The six speaker identifiers each have the complete 10-digit by 50-repetition grid. Use at most one bounded reference excerpt per speaker and retain FSDD as one provider stratum. Microphone, room, recording date, Audacity version, and contributor-specific settings are not identified; 8 kHz bandwidth and PCM trimming are explicit hard-negative factors, not codec evidence."
     },
     {
       "source_id": "tinysol_6_0",
@@ -529,7 +544,7 @@
       },
       "source_identity_evidence": {
         "aggregate_path": "research/sources/evidence/lombard-grid-2018-observed-20260802.json",
-        "aggregate_sha256": "5b46a5258900b1765acb0345a428d01431e0daff04f9257f5fdc00769ceb1d8f"
+        "aggregate_sha256": "aa1adce9390a62b972db6b2b614295554cb71a36ebd1ed2965809a3ae08819f8"
       },
       "recording_chain": "The primary paper reports a dedicated 48 kHz, 24-bit desk-microphone path digitized through a MOTU interface, distinct from the webcams' lossy audio, followed by FFmpeg extraction and 16 kHz downsampling.",
       "caveat": "The provider headline says 5,400 utterances, but the acquired archive has 5,390 WAVs and its metadata has 5,340 rows. Only 5,268 canonical, uniquely matched CORRECT files are eligible. All 54 talkers remain represented. The archive mixes 250 16-bit integer WAVs and 5,140 32-bit float WAVs, so source representation must be normalized and retained as a declared factor."
@@ -598,6 +613,31 @@
       "caveat": "The archive has 550 canonical, unique-PCM WAVs from 15 sensor IDs, although its README says 441 clips. Provider splits are sensor-disjoint, but clips per sensor range from 1 to 213. Use at most one reference excerpt per sensor and retain SONYC as one provider stratum."
     }
   ],
+  "rejected_source_candidates": [
+    {
+      "source_id": "speech_commands_v0_02",
+      "title": "Google Speech Commands v0.02",
+      "former_recommended_partition": "encoder_transfer",
+      "former_proposed_provenance_tier": "tier_a_confirmed_pcm",
+      "disposition": "rejected_from_tier_a_source_candidate",
+      "official_page_url": "https://research.google/blog/launching-the-speech-commands-dataset/",
+      "paper_url": "https://arxiv.org/abs/1804.03209",
+      "license": "CC BY 4.0",
+      "provider_artifact": {
+        "filename": "speech_commands_v0.02.tar.gz",
+        "url": "https://storage.googleapis.com/download.tensorflow.org/data/speech_commands_v0.02.tar.gz",
+        "bytes": 2428923189,
+        "provider_checksum": "md5:6b74f3901214cb2c2934e98196829835",
+        "generation": "1523475715344020"
+      },
+      "provider_provenance_evidence": {
+        "aggregate_path": "research/sources/evidence/speech-commands-v0.02-provider-provenance-rejection-20260802.json",
+        "aggregate_sha256": "5f63bd1a6ababa8b954f5338bfe476109fe0b59bd3c3b61c6866ea28244bdfde"
+      },
+      "reason": "The primary paper says the WebAudioAPI contribution path stored OGG-compressed captures and then decoded and resampled them into the distributed 16 kHz PCM WAVs; it also says most data came from that path. Other inputs began as WAV, but no per-file origin field, pre-OGG PCM, exact OGG codec, encoder, or setting is bound. The corpus is neither Tier A negative evidence nor a controlled positive.",
+      "allowed_future_role": "separately preregistered tier_c_unknown diagnostic only; not allocated and not part of any accuracy denominator"
+    }
+  ],
   "projected_partition_summary": {
     "mechanism_development": {
       "conservative_partition_groups": 527,
@@ -605,14 +645,14 @@
       "source_ids": ["consumed_v1_non_holdout"]
     },
     "encoder_transfer": {
-      "conservative_partition_groups": 172,
-      "source_domain_count": 4,
-      "source_ids": ["vctk_clean_56spk_2017", "speech_commands_v0_02", "tinysol_6_0", "sonyc_backgrounds_1_0_0"]
+      "conservative_partition_groups": 102,
+      "source_domain_count": 6,
+      "source_ids": ["vctk_clean_56spk_2017", "ravdess_audio_1_0_0", "fsdd_v1_0_10", "tinysol_6_0", "sonyc_backgrounds_1_0_0"]
     },
     "external_transfer": {
-      "conservative_partition_groups": 188,
-      "source_domain_count": 9,
-      "source_ids": ["ravdess_audio_1_0_0", "satp_soundscapes_1_5", "lombard_grid_2018", "rwc_music_v2_2026"]
+      "conservative_partition_groups": 164,
+      "source_domain_count": 7,
+      "source_ids": ["satp_soundscapes_1_5", "lombard_grid_2018", "rwc_music_v2_2026"]
     }
   },
   "toolchain_probe_evidence": {
@@ -633,5 +673,5 @@
       "caveat": "Format listings advertised MPEG Layer III, but two deterministic executed probes failed before producing a file."
     }
   ],
-  "next_gate": "Acquire and verify every remaining source archive identity, including RWC audio members, then replace this recommendation with separately committed source-allocation, factor-level, and toolchain freeze records before generating benchmark audio."
+  "next_gate": "Acquire and verify the VCTK archive and every RWC audio member, then replace this recommendation with separately committed source-allocation, factor-level, and toolchain freeze records before generating benchmark audio."
 }

@@ -60,13 +60,20 @@ Its deterministic synthetic plumbing audit verified ten retained encoder
 bindings and 27 compatible decoder paths, rejected Apple MP3 encoding on the
 bound OS build, and substituted a pinned BladeEnc transfer lineage. See the
 [`toolchain probe result`](toolchain-probe-result-20260802.md).
-The source-identity gate has now bound Lombard Grid, SONYC, SATP, RAVDESS, and
-TinySOL to acquired archive bytes and path-free evidence. The
+The source-identity gate has now bound Lombard Grid, SONYC, SATP, RAVDESS,
+TinySOL, and FSDD to acquired archive bytes and path-free evidence. The
 [`RAVDESS audit`](ravdess-source-identity-audit-20260802.md) retained 24 actor
 groups while recording one same-actor repeated-PCM pair and six stereo
 outliers; neither was hidden by preprocessing. The
 [`TinySOL audit`](tinysol-source-identity-audit-20260802.md) retained one
 common-collection group, 2,273 non-retuned paired-master candidates, and 640
-declared PCM-transform rows. VCTK, Speech Commands, and RWC audio remain before
-any source, factor, or tool freeze.
+declared PCM-transform rows. A subsequent primary-paper audit found that most
+Speech Commands contributions passed through OGG before the released PCM
+WAVs. It was therefore
+[`rejected as a Tier A candidate`](speech-commands-provenance-rejection-20260802.md),
+not relabelled. The
+[`source-partition correction`](source-partition-correction-20260802.md) moved
+RAVDESS to encoder transfer and added six audited FSDD speaker groups, leaving
+102 encoder-transfer groups and 164 external-transfer groups. Only VCTK and
+RWC audio remain before the separate source, factor, and tool freezes.
 No successor mechanism score or retained holdout has been opened.

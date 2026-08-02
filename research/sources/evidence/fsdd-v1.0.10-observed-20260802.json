@@ -1,0 +1,289 @@
+{
+  "archive_binding": {
+    "bytes": 16419872,
+    "filename": "free-spoken-digit-dataset-1.0.10.zip",
+    "local_sha256": "c680098f5d2355ba7cc4bd8b0ca9e0a24c00ebe3b4c552208889a4d28d4fbc2b",
+    "provider_identity": {
+      "commit_sha": "d6938f9bf1545aa66d8489fc9f1385a7abd64282",
+      "etag": "\"248f3f5caf01524ccd38bd74a1dac661854fd431de2abae9757c49b9fe1142f7\"",
+      "method": "github_codeload_tag_commit_strong_etag",
+      "tag": "v1.0.10"
+    },
+    "zip_crc_verified": true
+  },
+  "benchmark_audio_generated": false,
+  "conservative_reference_boundary": {
+    "eligible_audio_file_count": 3000,
+    "eligible_group_count": 6,
+    "future_selection_constraint": "Use at most one bounded reference excerpt per speaker. Preserve digit and repetition index, retain 8 kHz bandwidth as an explicit factor, and do not infer microphone or Audacity settings that the repository does not identify.",
+    "independence_limit": "The repository identifies six speakers but not recording devices, Audacity versions, dates, rooms, or contributor-specific settings. Keep FSDD as one provider stratum and do not treat its 3,000 clips as independent source partitions.",
+    "partition_grouping_unit": "repository speaker identifier",
+    "rule": [
+      "archive member matches one complete digit-speaker-index cell",
+      "speaker identifier occurs in the bound repository metadata",
+      "WAV is mono 8 kHz signed 16-bit integer PCM",
+      "PCM digest occurs exactly once across the archive"
+    ],
+    "source_grouping_unit": "repository speaker identifier"
+  },
+  "observed": {
+    "archive_root_prefix": "free-spoken-digit-dataset-1.0.10/",
+    "audio_file_count": 3000,
+    "data_byte_range": {
+      "maximum": 36524,
+      "minimum": 2296
+    },
+    "digit_audio_file_counts": {
+      "0": 300,
+      "1": 300,
+      "2": 300,
+      "3": 300,
+      "4": 300,
+      "5": 300,
+      "6": 300,
+      "7": 300,
+      "8": 300,
+      "9": 300
+    },
+    "directory_member_count": 4,
+    "directory_member_ids": [
+      "",
+      "acquire_data",
+      "recordings",
+      "utils"
+    ],
+    "distinct_pcm_digest_count": 3000,
+    "duplicate_pcm_archive_member_groups": [],
+    "duplicate_pcm_digest_group_count": 0,
+    "duplicate_pcm_file_count_excess": 0,
+    "encrypted_member_count": 0,
+    "frame_count_range": {
+      "maximum": 18262,
+      "maximum_archive_member_ids": [
+        "recordings/9_theo_16.wav"
+      ],
+      "minimum": 1148,
+      "minimum_archive_member_ids": [
+        "recordings/6_yweweler_3.wav"
+      ]
+    },
+    "non_audio_regular_member_count": 12,
+    "non_audio_regular_members": [
+      {
+        "bytes": 26,
+        "path": ".gitignore",
+        "sha256": "de2033cb5f05f06b2551f36dc13efb1909f7a0864d60c4c5b854011ef0b2738b"
+      },
+      {
+        "bytes": 2632,
+        "path": "README.md",
+        "sha256": "27dad915cd21a9b1445e45d9d251180037b1454c7e5605567a871c35e698b985"
+      },
+      {
+        "bytes": 0,
+        "path": "__init__.py",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "bytes": 1981,
+        "path": "acquire_data/say_numbers_prompt.py",
+        "sha256": "e5311327d2bc96b658208c06c96aa599422a32d8d6a0677da238ac8188df1b08"
+      },
+      {
+        "bytes": 3237,
+        "path": "acquire_data/split_and_label_numbers.py",
+        "sha256": "ef3b2b229f32a9b9c8a38bc2c8841425502b2ecc320c4399e52161450b15e02e"
+      },
+      {
+        "bytes": 721,
+        "path": "metadata.py",
+        "sha256": "b7fcb538c27ec10ef94031de437b6b9da4724e8fdd2a1c6f25e7b3d76a067c76"
+      },
+      {
+        "bytes": 140,
+        "path": "pip_requirements.txt",
+        "sha256": "726ba224bb48c390b7a8ee999d7c65cdd7a7d413b9532e3e280ff4a43bd4e6dd"
+      },
+      {
+        "bytes": 0,
+        "path": "utils/__init__.py",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "bytes": 2169,
+        "path": "utils/fsdd.py",
+        "sha256": "17e2c124d6aa4b8a3c6fd49f7eaaecd7360026e08e05d3da6eab33ac5df0b720"
+      },
+      {
+        "bytes": 2496,
+        "path": "utils/spectogramer.py",
+        "sha256": "6ddea43fb541222f57b65e78ba0d17e074490c7fcb5318dfbed451352c8ce321"
+      },
+      {
+        "bytes": 628,
+        "path": "utils/train-test-split.py",
+        "sha256": "216f1920cb1b43465b6ea09982e10a154efe5d5a30018412ba29b7480a707ab3"
+      },
+      {
+        "bytes": 3869,
+        "path": "utils/trimmer.py",
+        "sha256": "48375b981c1a9be3b522c0dff5e00adc38dc004de73b56967745abca3f0193ce"
+      }
+    ],
+    "regular_file_count": 3012,
+    "repetition_index_audio_file_counts": {
+      "0": 60,
+      "1": 60,
+      "10": 60,
+      "11": 60,
+      "12": 60,
+      "13": 60,
+      "14": 60,
+      "15": 60,
+      "16": 60,
+      "17": 60,
+      "18": 60,
+      "19": 60,
+      "2": 60,
+      "20": 60,
+      "21": 60,
+      "22": 60,
+      "23": 60,
+      "24": 60,
+      "25": 60,
+      "26": 60,
+      "27": 60,
+      "28": 60,
+      "29": 60,
+      "3": 60,
+      "30": 60,
+      "31": 60,
+      "32": 60,
+      "33": 60,
+      "34": 60,
+      "35": 60,
+      "36": 60,
+      "37": 60,
+      "38": 60,
+      "39": 60,
+      "4": 60,
+      "40": 60,
+      "41": 60,
+      "42": 60,
+      "43": 60,
+      "44": 60,
+      "45": 60,
+      "46": 60,
+      "47": 60,
+      "48": 60,
+      "49": 60,
+      "5": 60,
+      "6": 60,
+      "7": 60,
+      "8": 60,
+      "9": 60
+    },
+    "riff_formats": [
+      {
+        "ancillary_chunk_counts": {},
+        "average_bytes_per_second": 16000,
+        "bits_per_sample": 16,
+        "block_align_bytes": 2,
+        "channel_count": 1,
+        "file_count": 3000,
+        "format_chunk_bytes": 16,
+        "format_tag": 1,
+        "sample_format": "signed_integer_pcm",
+        "sample_rate_hz": 8000
+      }
+    ],
+    "speaker_audio_file_counts": {
+      "george": 500,
+      "jackson": 500,
+      "lucas": 500,
+      "nicolas": 500,
+      "theo": 500,
+      "yweweler": 500
+    },
+    "speaker_count": 6,
+    "speaker_digit_cells_complete": true,
+    "speaker_frame_count_ranges": {
+      "george": {
+        "maximum": 7999,
+        "minimum": 1399
+      },
+      "jackson": {
+        "maximum": 7038,
+        "minimum": 2753
+      },
+      "lucas": {
+        "maximum": 10504,
+        "minimum": 1965
+      },
+      "nicolas": {
+        "maximum": 4594,
+        "minimum": 1149
+      },
+      "theo": {
+        "maximum": 18262,
+        "minimum": 1288
+      },
+      "yweweler": {
+        "maximum": 5470,
+        "minimum": 1148
+      }
+    },
+    "speaker_ids": [
+      "george",
+      "jackson",
+      "lucas",
+      "nicolas",
+      "theo",
+      "yweweler"
+    ],
+    "speaker_metadata_identities_match_audio": true,
+    "special_member_count": 0,
+    "uncompressed_audio_member_bytes": 21128848
+  },
+  "paths_redacted": true,
+  "processing_chain_bindings": [
+    {
+      "bytes": 2632,
+      "path": "README.md",
+      "sha256": "27dad915cd21a9b1445e45d9d251180037b1454c7e5605567a871c35e698b985"
+    },
+    {
+      "bytes": 1981,
+      "path": "acquire_data/say_numbers_prompt.py",
+      "sha256": "e5311327d2bc96b658208c06c96aa599422a32d8d6a0677da238ac8188df1b08"
+    },
+    {
+      "bytes": 3237,
+      "path": "acquire_data/split_and_label_numbers.py",
+      "sha256": "ef3b2b229f32a9b9c8a38bc2c8841425502b2ecc320c4399e52161450b15e02e"
+    },
+    {
+      "bytes": 721,
+      "path": "metadata.py",
+      "sha256": "b7fcb538c27ec10ef94031de437b6b9da4724e8fdd2a1c6f25e7b3d76a067c76"
+    },
+    {
+      "bytes": 3869,
+      "path": "utils/trimmer.py",
+      "sha256": "48375b981c1a9be3b522c0dff5e00adc38dc004de73b56967745abca3f0193ce"
+    }
+  ],
+  "provider_record": {
+    "commit_sha": "d6938f9bf1545aa66d8489fc9f1385a7abd64282",
+    "repository": "Jakobovski/free-spoken-digit-dataset",
+    "tag": "v1.0.10"
+  },
+  "schema_version": 1,
+  "scores_opened": false,
+  "selection_authorized": false,
+  "source_group_rules_binding": {
+    "sha256": "8f7dce1cc369fffcc9f24b18b0fd8af9bf071d9198135698de33c931699d6677"
+  },
+  "source_id": "fsdd_v1_0_10",
+  "state": "source_identity_evidence_only"
+}

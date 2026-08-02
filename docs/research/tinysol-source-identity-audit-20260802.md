@@ -21,7 +21,10 @@ TinySOL still contributes one conservative partition group, not 14 instrument
 groups or 2,913 recordings. Its metadata does not identify performers,
 physical instruments, microphones, or per-file sessions, and every row shares
 the related SOL recording and processing chain. The proposed encoder-transfer
-population therefore remains 172 groups across four domains, 72 above its
+population therefore remained 172 groups across four domains at that
+checkpoint. After the later
+[source-partition correction](source-partition-correction-20260802.md), the
+current projection is 102 groups across six domains, only two groups above its
 minimum of 100.
 
 The path-free evidence is
@@ -150,16 +153,17 @@ are inspected.
 
 ## Storage and next gate
 
-After retaining TinySOL, the data volume had about 37.79 GiB free. The
-remaining planned archives total about 19.20 GiB. Preserving the 15 GiB reserve
-would leave only about 3.59 GiB for bounded references, partials, and derived
-cases. The reserve still holds, but the acquisition order must remain one
+After the later Speech Commands rejection and FSDD replacement, the remaining
+VCTK and RWC archives total 18,189,508,204 bytes (16.94 GiB). At the correction
+checkpoint, preserving the 15 GiB reserve left about 4.15 GiB for bounded
+references, partials, and derived cases. The acquisition order must remain one
 low-priority worker with streaming audits and a fresh free-space projection
 before each source.
 
-The remaining source gate is VCTK, Speech Commands, and RWC audio identity
-verification. Only after those archives are bound may source allocation,
-factor levels, and toolchain versions be frozen separately.
+The remaining source gate is VCTK and RWC audio identity verification. Only
+after those archives are bound may source allocation, factor levels, and
+toolchain versions be frozen separately. See the
+[source-partition correction](source-partition-correction-20260802.md).
 
 No benchmark derivative, mechanism score, candidate decision, or transfer
 score was opened by this audit.

@@ -132,23 +132,25 @@ factor.
 
 ## Storage and next gate
 
-Adding the 652,614,041-byte audio archive raises planned source archives to
-23,237,282,258 bytes (21.64 GiB). After acquisition the data volume still had
-about 45 GiB free, so the 15 GiB reserve remains intact. The prior streaming,
-bounded-excerpt, one-worker rules remain mandatory.
+The 652,614,041-byte audio archive remains retained. A later
+[source-partition correction](source-partition-correction-20260802.md) removed
+Speech Commands and added FSDD, reducing total planned source archives to
+20,824,778,941 bytes (19.39 GiB). The prior streaming, bounded-excerpt,
+one-worker rules remain mandatory.
 
 The subsequent
 [RWC metadata audit](rwc-source-identity-audit-20260802.md) reduced its planning
 count from 99 strings to 85 artist families. The later SATP coordinate audit
-reduced its 27 recordings to 25 groups, preserving 38 groups of total
-external-transfer margin. The next source gate is not more corpus shopping: it
-is to verify exact identities for RWC audio, VCTK, and Speech Commands.
+reduced its 27 recordings to 25 groups. The later correction rejected Speech
+Commands from Tier A and moved RAVDESS to encoder transfer; external transfer
+now has 164 groups, a 14-group margin. The next source gate is not more corpus
+shopping: it is to verify exact identities for RWC audio and VCTK.
 RAVDESS was subsequently
-[bound at 24 actor groups](ravdess-source-identity-audit-20260802.md) without
-changing that external-transfer total, and TinySOL was
-[bound as one common-collection group](tinysol-source-identity-audit-20260802.md).
-Only after the remaining checks may source allocation, factor levels, and
-toolchain bindings be frozen separately.
+[bound at 24 actor groups](ravdess-source-identity-audit-20260802.md), then
+moved to encoder transfer by the correction. TinySOL was
+[bound as one common-collection group](tinysol-source-identity-audit-20260802.md),
+and FSDD was bound at six speakers. Only after the remaining checks may source
+allocation, factor levels, and toolchain bindings be frozen separately.
 
 No benchmark audio generation, candidate evaluation, or external-transfer
 score opening is authorized by this audit.

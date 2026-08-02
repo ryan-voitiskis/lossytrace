@@ -2,11 +2,21 @@
   "archive_bindings": {
     "audio": {
       "bytes": 652614041,
+      "provider_identity": {
+        "etag": "\"26e61999-568649ce7ab80\"",
+        "last_modified": "Tue, 27 Mar 2018 13:10:22 GMT",
+        "method": "https_strong_etag_content_length_last_modified"
+      },
       "sha256": "e36707602fdbeaa2e2284acb29bba883261d5e86857f694ac40cbb56cdcc5e10",
       "zip_crc_verified": true
     },
     "metadata": {
       "bytes": 64938,
+      "provider_identity": {
+        "etag": "\"fdaa-56864bb4da700\"",
+        "last_modified": "Tue, 27 Mar 2018 13:18:52 GMT",
+        "method": "https_strong_etag_content_length_last_modified"
+      },
       "sha256": "1de3299baaa6a13d8bcd458a688c94f2288a0ecca8b5a6817a055b393f5a98a6",
       "zip_crc_verified": true
     }

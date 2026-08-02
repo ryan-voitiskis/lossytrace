@@ -10,7 +10,10 @@ The retained SONYC-Backgrounds 1.0.0 archive supports 15 conservative sensor
 groups, not the one-group pre-acquisition placeholder. The archive contains
 550 canonical WAV members with 550 distinct PCM digests. Its train, validation,
 and test sensor sets are disjoint. This raises the proposed encoder-transfer
-population from 158 to 172 groups while preserving four source domains.
+population from 158 to 172 groups while preserving four source domains at that
+checkpoint. After the later
+[source-partition correction](source-partition-correction-20260802.md), the
+current encoder-transfer projection is 102 groups across six domains.
 
 The provider documentation is internally inconsistent: the archive README
 says that selection produced 441 background clips, while the bound archive
@@ -111,13 +114,14 @@ factorial-benchmark provenance caveat rather than resolved by assumption.
 
 The subsequent
 [RAVDESS source-identity audit](ravdess-source-identity-audit-20260802.md)
-bound its two audio-only archives without changing the 24-actor planning
-count. The remaining source gate is VCTK, Speech Commands, TinySOL, and RWC
-audio identity verification. TinySOL was subsequently
-[bound as one common-collection group](tinysol-source-identity-audit-20260802.md),
-leaving VCTK, Speech Commands, and RWC. Only after all remaining archives are
-bound may source allocation, factor levels, and toolchain versions be frozen
-in separate records.
+bound its two audio-only archives at 24 actor groups. TinySOL was subsequently
+[bound as one common-collection group](tinysol-source-identity-audit-20260802.md).
+The later
+[source-partition correction](source-partition-correction-20260802.md) rejected
+Speech Commands from Tier A, moved RAVDESS to encoder transfer, and added six
+audited FSDD speaker groups. The remaining source gate is VCTK and RWC audio.
+Only after both are bound may source allocation, factor levels, and toolchain
+versions be frozen in separate records.
 
 No benchmark derivative, mechanism score, candidate decision, or external
 transfer evidence was opened by this audit.

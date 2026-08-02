@@ -13,6 +13,7 @@ from typing import Any
 
 
 SHA256 = re.compile(r"^[0-9a-f]{64}$")
+GIT_COMMIT_SHA1 = re.compile(r"^[0-9a-f]{40}$")
 PROVIDER_CHECKSUM = re.compile(r"^(md5:[0-9a-f]{32}|sha256:[0-9a-f]{64})$")
 STRONG_ETAG = re.compile(r'^"[^"\r\n]+"$')
 PARTITIONS = {"mechanism_development", "encoder_transfer", "external_transfer"}
@@ -70,17 +71,34 @@ def unique_ids(rows: Any, field: str, label: str, errors: list[str]) -> dict[str
 
 def has_valid_acquired_remote_binding(artifact: dict[str, Any]) -> bool:
     provider_identity = artifact.get("provider_identity")
-    return (
+    common_valid = (
         isinstance(artifact.get("url"), str)
         and artifact["url"].startswith("https://")
         and SHA256.fullmatch(str(artifact.get("local_sha256", ""))) is not None
         and isinstance(provider_identity, dict)
-        and provider_identity.get("method")
-        == "https_strong_etag_content_length_last_modified"
         and STRONG_ETAG.fullmatch(str(provider_identity.get("etag", ""))) is not None
-        and isinstance(provider_identity.get("last_modified"), str)
-        and bool(provider_identity["last_modified"])
     )
+    if not common_valid:
+        return False
+    method = provider_identity.get("method")
+    if method == "https_strong_etag_content_length_last_modified":
+        return (
+            isinstance(provider_identity.get("last_modified"), str)
+            and bool(provider_identity["last_modified"])
+        )
+    if method == "github_codeload_tag_commit_strong_etag":
+        tag = provider_identity.get("tag")
+        return (
+            isinstance(tag, str)
+            and bool(tag)
+            and artifact["url"].startswith("https://codeload.github.com/")
+            and artifact["url"].endswith(f"/zip/refs/tags/{tag}")
+            and GIT_COMMIT_SHA1.fullmatch(
+                str(provider_identity.get("commit_sha", ""))
+            )
+            is not None
+        )
+    return False
 
 
 def validate(inventory: dict[str, Any]) -> list[str]:
@@ -136,6 +154,62 @@ def validate(inventory: dict[str, Any]) -> list[str]:
 
     unique_ids(inventory.get("decoder_candidates"), "decoder_id", "decoder_candidates", errors)
     sources = unique_ids(inventory.get("source_candidates"), "source_id", "source_candidates", errors)
+    rejected_sources = unique_ids(
+        inventory.get("rejected_source_candidates"),
+        "source_id",
+        "rejected_source_candidates",
+        errors,
+    )
+    for source_id, source in rejected_sources.items():
+        if source_id in sources:
+            errors.append(f"rejected source remains a source candidate: {source_id}")
+        if source.get("disposition") != "rejected_from_tier_a_source_candidate":
+            errors.append(f"rejected source {source_id} has invalid disposition")
+        if source.get("former_recommended_partition") not in PARTITIONS:
+            errors.append(f"rejected source {source_id} has invalid former partition")
+        if source.get("former_proposed_provenance_tier") != "tier_a_confirmed_pcm":
+            errors.append(
+                f"rejected source {source_id} has invalid former proposed provenance tier"
+            )
+        provider_artifact = source.get("provider_artifact")
+        if not isinstance(provider_artifact, dict):
+            errors.append(f"rejected source {source_id} provider_artifact must be an object")
+        else:
+            if (
+                not isinstance(provider_artifact.get("filename"), str)
+                or not provider_artifact["filename"]
+            ):
+                errors.append(f"rejected source {source_id} has invalid provider filename")
+            if (
+                not isinstance(provider_artifact.get("url"), str)
+                or not provider_artifact["url"].startswith("https://")
+            ):
+                errors.append(f"rejected source {source_id} has invalid provider URL")
+            if not isinstance(provider_artifact.get("bytes"), int) or isinstance(
+                provider_artifact.get("bytes"), bool
+            ) or provider_artifact["bytes"] < 1:
+                errors.append(f"rejected source {source_id} has invalid provider byte count")
+            if not PROVIDER_CHECKSUM.fullmatch(
+                str(provider_artifact.get("provider_checksum", ""))
+            ):
+                errors.append(f"rejected source {source_id} has invalid provider checksum")
+        rejection_evidence = source.get("provider_provenance_evidence")
+        if not isinstance(rejection_evidence, dict):
+            errors.append(f"rejected source {source_id} evidence must be an object")
+        else:
+            evidence_path = rejection_evidence.get("aggregate_path")
+            if (
+                not isinstance(evidence_path, str)
+                or not evidence_path
+                or Path(evidence_path).is_absolute()
+            ):
+                errors.append(
+                    f"rejected source {source_id} aggregate_path must be repository-relative"
+                )
+            if not SHA256.fullmatch(
+                str(rejection_evidence.get("aggregate_sha256", ""))
+            ):
+                errors.append(f"rejected source {source_id} aggregate_sha256 is invalid")
     allocated: dict[str, set[str]] = defaultdict(set)
     planned_source_archive_bytes = 0
     for source_id, source in sources.items():
@@ -520,6 +594,10 @@ def validate_source_identity_evidence_files(
                 or f"md5:{provider_md5}" != artifact.get("provider_checksum")
             ):
                 errors.append(f"source identity provider binding differs: {source_id}")
+            if artifact.get("provider_identity") is not None and audio_binding.get(
+                "provider_identity"
+            ) != artifact.get("provider_identity"):
+                errors.append(f"source identity provider identity differs: {source_id}")
         artifacts = source.get("artifacts")
         archive_bindings = report.get("archive_bindings")
         if isinstance(artifacts, list):
@@ -577,6 +655,14 @@ def validate_source_identity_evidence_files(
                 errors.append(
                     f"source identity metadata provider binding differs: {source_id}"
                 )
+            if metadata_artifact.get(
+                "provider_identity"
+            ) is not None and metadata_binding.get(
+                "provider_identity"
+            ) != metadata_artifact.get("provider_identity"):
+                errors.append(
+                    f"source identity metadata provider identity differs: {source_id}"
+                )
         readme_binding = report.get("readme_binding")
         readme_artifact = source.get("readme_artifact")
         if isinstance(readme_artifact, dict):
@@ -621,6 +707,78 @@ def validate_source_identity_evidence_files(
                     "source_group_count"
                 ) != source.get("conservative_partition_groups"):
                     errors.append(f"source group rules count differs: {source_id}")
+    return errors
+
+
+def validate_rejected_source_provenance_evidence_files(
+    inventory: dict[str, Any], repository_root: Path
+) -> list[str]:
+    errors: list[str] = []
+    repository_root = repository_root.resolve()
+    for source in inventory.get("rejected_source_candidates", []):
+        if not isinstance(source, dict):
+            continue
+        source_id = source.get("source_id")
+        evidence = source.get("provider_provenance_evidence")
+        if not isinstance(evidence, dict) or not isinstance(
+            evidence.get("aggregate_path"), str
+        ):
+            continue
+        aggregate = (repository_root / evidence["aggregate_path"]).resolve()
+        if not aggregate.is_relative_to(repository_root) or not aggregate.is_file():
+            errors.append(
+                f"rejected source provenance evidence is missing or outside repository: {source_id}"
+            )
+            continue
+        if sha256_file(aggregate) != evidence.get("aggregate_sha256"):
+            errors.append(f"rejected source provenance evidence hash differs: {source_id}")
+            continue
+        report = load_json(aggregate)
+        expected_state = {
+            "state": "source_provenance_rejection_evidence_only",
+            "source_id": source_id,
+            "disposition": "rejected_from_tier_a_source_candidate",
+            "benchmark_audio_generated": False,
+            "scores_opened": False,
+            "selection_authorized": False,
+            "paths_redacted": True,
+            "full_archive_acquired": False,
+        }
+        for field, expected in expected_state.items():
+            if report.get(field) != expected:
+                errors.append(f"rejected source report {source_id} {field} differs")
+        serialized = json.dumps(report, sort_keys=True)
+        for forbidden in ("/Users/", "Library/Application Support", "\\Users\\"):
+            if forbidden in serialized:
+                errors.append(
+                    f"rejected source report contains a private path: {source_id}"
+                )
+                break
+        provider_artifact = source.get("provider_artifact")
+        observed_artifact = report.get("observed_provider_artifact")
+        if isinstance(provider_artifact, dict):
+            if not isinstance(observed_artifact, dict) or any(
+                observed_artifact.get(field) != provider_artifact.get(field)
+                for field in (
+                    "filename",
+                    "url",
+                    "bytes",
+                    "provider_checksum",
+                    "generation",
+                )
+            ):
+                errors.append(f"rejected source provider binding differs: {source_id}")
+        assessment = report.get("assessment_role")
+        expected_assessment = {
+            "assessment_eligibility": "diagnostic_only",
+            "history_class": "lossy_original_diagnostic",
+            "provenance_tier": "tier_c_unknown",
+        }
+        if not isinstance(assessment, dict) or any(
+            assessment.get(field) != expected
+            for field, expected in expected_assessment.items()
+        ):
+            errors.append(f"rejected source assessment role differs: {source_id}")
     return errors
 
 
@@ -717,6 +875,11 @@ def main() -> int:
     errors.extend(validate_source_identity_evidence_files(inventory, repository_root))
     errors.extend(
         validate_source_metadata_identity_evidence_files(inventory, repository_root)
+    )
+    errors.extend(
+        validate_rejected_source_provenance_evidence_files(
+            inventory, repository_root
+        )
     )
     if errors:
         print("inventory validation failed:")
