@@ -116,9 +116,12 @@ exact PCM. See the
 [`exact-toolchain result`](toolchain-freeze-result-20260802.md). Fresh public
 decoder wrapper equivalence is now separately
 [`preregistered`](public-decoder-equivalence-preregistration-20260802.md) with
-a source-bound public build and exact 12-path comparison. Its binary binding,
-two replays, and the later fractional assignment remain separate gates. The
-public 0.1.0-alpha.1 binary is now
-[`hash-bound`](public-decoder-binary-binding-20260802.md) before execution;
-only the two equivalence replays remain at this decoder gate.
+a source-bound public build and exact 12-path comparison. The public
+0.1.0-alpha.1 binary was
+[`hash-bound`](public-decoder-binary-binding-20260802.md) before execution, and
+the two fresh
+[`equivalence replays`](public-decoder-equivalence-result-20260802.md) are now
+byte-identical, with exact public evidence across all 12 wrapper paths. The
+exact-toolchain gate is complete. Fractional assignment remains the next
+separate pre-construction gate.
 No successor mechanism score or retained holdout has been opened.
