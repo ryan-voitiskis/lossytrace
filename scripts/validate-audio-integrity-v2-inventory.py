@@ -201,6 +201,36 @@ def validate(inventory: dict[str, Any]) -> list[str]:
                     errors.append(f"{label} has invalid local_sha256")
                 if not has_valid_acquired_remote_binding(metadata_artifact):
                     errors.append(f"{label} has invalid acquired remote binding")
+        readme_artifact = source.get("readme_artifact")
+        if readme_artifact is not None:
+            label = f"source {source_id} readme_artifact"
+            if not isinstance(readme_artifact, dict):
+                errors.append(f"{label} must be an object")
+            else:
+                if (
+                    not isinstance(readme_artifact.get("filename"), str)
+                    or not readme_artifact["filename"]
+                ):
+                    errors.append(f"{label} has invalid filename")
+                if (
+                    not isinstance(readme_artifact.get("url"), str)
+                    or not readme_artifact["url"].startswith("https://")
+                ):
+                    errors.append(f"{label} has invalid URL")
+                if not isinstance(readme_artifact.get("bytes"), int) or isinstance(
+                    readme_artifact.get("bytes"), bool
+                ) or readme_artifact["bytes"] < 1:
+                    errors.append(f"{label} has invalid byte count")
+                if not PROVIDER_CHECKSUM.fullmatch(
+                    str(readme_artifact.get("provider_checksum", ""))
+                ):
+                    errors.append(f"{label} has invalid provider checksum")
+                if readme_artifact.get("provider_checksum_verified") is not True:
+                    errors.append(f"{label} provider checksum is not verified")
+                if not SHA256.fullmatch(
+                    str(readme_artifact.get("local_sha256", ""))
+                ):
+                    errors.append(f"{label} has invalid local_sha256")
         source_evidence = source.get("source_identity_evidence")
         if source_evidence is not None:
             label = f"source {source_id} source_identity_evidence"
@@ -245,6 +275,21 @@ def validate(inventory: dict[str, Any]) -> list[str]:
                 ):
                     errors.append(f"{label} path must be repository-relative")
                 if not SHA256.fullmatch(str(artist_family_rules.get("sha256", ""))):
+                    errors.append(f"{label} sha256 is invalid")
+        source_group_rules = source.get("source_group_rules")
+        if source_group_rules is not None:
+            label = f"source {source_id} source_group_rules"
+            if not isinstance(source_group_rules, dict):
+                errors.append(f"{label} must be an object")
+            else:
+                rules_path = source_group_rules.get("path")
+                if (
+                    not isinstance(rules_path, str)
+                    or not rules_path
+                    or Path(rules_path).is_absolute()
+                ):
+                    errors.append(f"{label} path must be repository-relative")
+                if not SHA256.fullmatch(str(source_group_rules.get("sha256", ""))):
                     errors.append(f"{label} sha256 is invalid")
 
     if inventory.get("planned_source_archive_bytes") != planned_source_archive_bytes:
@@ -447,7 +492,10 @@ def validate_source_identity_evidence_files(
         if not isinstance(audio_binding, dict):
             audio_binding = report.get("archive_binding")
         artifact = source.get("artifact")
-        if isinstance(audio_binding, dict) and isinstance(artifact, dict):
+        if isinstance(artifact, dict) and artifact.get("local_sha256") is not None:
+            if not isinstance(audio_binding, dict):
+                errors.append(f"source identity audio binding is missing: {source_id}")
+                audio_binding = {}
             binding_sha256 = audio_binding.get("sha256")
             if binding_sha256 is None:
                 binding_sha256 = audio_binding.get("local_sha256")
@@ -470,6 +518,50 @@ def validate_source_identity_evidence_files(
                 "local_sha256"
             ):
                 errors.append(f"source identity metadata binding differs: {source_id}")
+        readme_binding = report.get("readme_binding")
+        readme_artifact = source.get("readme_artifact")
+        if isinstance(readme_artifact, dict):
+            if not isinstance(readme_binding, dict):
+                errors.append(f"source identity README binding is missing: {source_id}")
+                readme_binding = {}
+            if (
+                readme_binding.get("bytes") != readme_artifact.get("bytes")
+                or readme_binding.get("local_sha256")
+                != readme_artifact.get("local_sha256")
+                or f"md5:{readme_binding.get('provider_md5')}"
+                != readme_artifact.get("provider_checksum")
+                or readme_binding.get("provider_checksum_verified") is not True
+            ):
+                errors.append(f"source identity README binding differs: {source_id}")
+        source_group_rules = source.get("source_group_rules")
+        if isinstance(source_group_rules, dict) and isinstance(
+            source_group_rules.get("path"), str
+        ):
+            rules_path = (repository_root / source_group_rules["path"]).resolve()
+            if not rules_path.is_relative_to(repository_root) or not rules_path.is_file():
+                errors.append(f"source group rules are outside repository: {source_id}")
+            elif sha256_file(rules_path) != source_group_rules.get("sha256"):
+                errors.append(f"source group rules hash differs: {source_id}")
+            else:
+                report_rules_binding = report.get("source_group_rules_binding")
+                if not isinstance(report_rules_binding, dict) or report_rules_binding.get(
+                    "sha256"
+                ) != source_group_rules.get("sha256"):
+                    errors.append(f"source identity rules binding differs: {source_id}")
+                rules = load_json(rules_path)
+                for field, expected in {
+                    "state": "source_identity_rules_not_allocation",
+                    "source_id": source_id,
+                    "audio_generated": False,
+                    "scores_opened": False,
+                    "selection_authorized": False,
+                }.items():
+                    if rules.get(field) != expected:
+                        errors.append(f"source group rules {source_id} {field} differs")
+                if rules.get("expected", {}).get(
+                    "source_group_count"
+                ) != source.get("conservative_partition_groups"):
+                    errors.append(f"source group rules count differs: {source_id}")
     return errors
 
 

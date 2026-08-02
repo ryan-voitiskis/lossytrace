@@ -139,9 +139,10 @@ bounded-excerpt, one-worker rules remain mandatory.
 
 The subsequent
 [RWC metadata audit](rwc-source-identity-audit-20260802.md) reduced its planning
-count from 99 strings to 85 artist families while preserving 40 groups of total
+count from 99 strings to 85 artist families. The later SATP coordinate audit
+reduced its 27 recordings to 25 groups, preserving 38 groups of total
 external-transfer margin. The next source gate is not more corpus shopping: it
-is to verify exact identities for RWC audio, RAVDESS, SATP, VCTK, Speech
+is to verify exact identities for RWC audio, RAVDESS, VCTK, Speech
 Commands, and TinySOL, then separately freeze source allocation, factor
 levels, and toolchain bindings.
 

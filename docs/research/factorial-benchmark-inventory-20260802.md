@@ -148,8 +148,8 @@ The proposed fresh external set combines:
   royalty-free music under CC BY-NC 4.0; and
 - [RAVDESS audio-only](https://zenodo.org/records/1188976), with 24 actors
   crossing acted speech and song under CC BY-NC-SA 4.0; and
-- the [SATP soundscapes](https://zenodo.org/records/10159673), with 27
-  separately located 24-bit binaural WAV recordings under CC BY 4.0; and
+- the current [SATP v1.5 soundscapes](https://zenodo.org/records/18715282),
+  with 27 24-bit binaural WAV recordings under CC BY 4.0; and
 - the [Audio-Visual Lombard Grid Speech corpus](https://spandh.dcs.shef.ac.uk/avlombard/),
   with 54 directly recorded talkers under CC BY 4.0.
 
@@ -163,9 +163,9 @@ families, not 99 strings or 328 rows. The 2026 RWC release paper states that
 these are the original master tracks used for CD production rather than
 consumer-ripped copies, and the original project states that the pieces were
 performed and recorded for the database.
-RAVDESS actor grouping contributes 24, SATP recording/location grouping
-contributes 27, and Lombard Grid talker grouping contributes 54. Together they
-project to 190 independent partitions across nine domains, 40 above the
+RAVDESS actor grouping contributes 24, SATP exact-coordinate grouping
+contributes 25, and Lombard Grid talker grouping contributes 54. Together they
+project to 188 independent partitions across nine domains, 38 above the
 minimum.
 
 The Lombard Grid contribution is archive-observed, not copied from its
@@ -174,6 +174,11 @@ strict filename/metadata/status reconciliation leaves 5,268 eligible WAVs
 while preserving all 54 talkers. Its detailed
 [source identity audit](source-identity-audit-20260802.md) also records a mix
 of 16-bit integer and 32-bit float PCM that must be normalized explicitly.
+SATP is likewise archive-observed: its
+[source-identity audit](satp-source-identity-audit-20260802.md) reconciles all
+27 reference IDs, excludes the calibration signal, and merges two pairs that
+share exact provider coordinates. The current record is v1.5 even though the
+bound README's dataset-count prose still says v1.2.
 
 This margin is deliberately not treated as permission to weaken identity.
 The RWC metadata audit binds its known aliases and dependencies, while
@@ -189,11 +194,10 @@ add an entirely new provider collection; do not weaken grouping.
 ## Storage and acquisition boundary
 
 All proposed source archives now total 23,237,282,258 bytes (21.64 GiB). After
-the 652,614,041-byte Lombard Grid and 307,235,372-byte SONYC acquisitions, the
-data volume still reported about 45 GiB free. Retaining a 15 GiB reserve leaves
-roughly 9 GiB for compact references, derived cases, partials, and temporary
-intermediates after the remaining source acquisition. That is viable only if
-the stager:
+the Lombard Grid, SONYC, and 198,110,877-byte SATP acquisitions, the data volume
+reported about 42 GiB free. Retaining a 15 GiB reserve leaves roughly 6 GiB for
+compact references, derived cases, partials, and temporary intermediates after
+the remaining source acquisition. That is viable only if the stager:
 
 - streams selected members without full archive expansion;
 - retains at most one bounded reference excerpt per source group;
@@ -203,10 +207,10 @@ the stager:
 - rechecks projected and actual free space before each archive and generation
   phase.
 
-The resumable SONYC audit download was completed, matched the provider's exact
-byte count and MD5, and was independently bound by SHA-256. Lombard Grid and
-SONYC are the two sources currently treated as acquired and identity-verified;
-no other provider audio archive is.
+The resumable SONYC and SATP audit downloads were completed, matched their
+provider byte counts and MD5 values, and were independently bound by SHA-256.
+Lombard Grid, SONYC, and SATP are the three sources currently treated as
+acquired and identity-verified; no other provider audio archive is.
 
 ## Decision and next gate
 

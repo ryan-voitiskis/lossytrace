@@ -108,6 +108,7 @@ groups, moving external transfer from exactly 150 to 204 projected groups.
 A subsequent
 [RWC metadata audit](rwc-source-identity-audit-20260802.md) then excluded known
 repeated arrangements and merged cross-label identities, reducing RWC from 99
-strings to 85 artist families and the external total to 190. That preserves a
-40-group margin. Verify every remaining archive identity before the separate
+strings to 85 artist families; the later SATP coordinate audit reduced the
+external total to 188. That preserves a 38-group margin. Verify every remaining
+archive identity before the separate
 freeze; do not spend the margin by weakening grouping.

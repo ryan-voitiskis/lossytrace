@@ -19,8 +19,9 @@ and the replay is
 
 Reduce RWC's planning contribution from 99 exact artist strings to 85
 conservative artist families. This is a 14-group reduction, not an audio
-finding. With Lombard Grid, RAVDESS, and SATP, external transfer now projects
-to 190 groups across nine domains—40 above the preregistered floor of 150.
+finding. After the subsequent SATP exact-coordinate audit, external transfer
+projects to 188 groups across nine domains—38 above the preregistered floor of
+150.
 
 The family count is suitable for source allocation only after the five RWC
 audio archives pass their provider checksums and member identities reconcile
@@ -101,14 +102,14 @@ following simultaneously:
 This is deliberately stricter than treating songs as independent, but it does
 not claim person-level ground truth that the provider metadata does not expose.
 If the audio member audit reveals additional session or duplication links, the
-85 count must fall; the 40-group margin absorbs reductions down to 45 RWC
+85 count must fall; the 38-group margin absorbs reductions down to 47 RWC
 families without changing the external-transfer floor.
 
 ## Next gate
 
 RWC's metadata identity concern is resolved enough to proceed to bytes, not to
 freeze. The remaining source gate is to verify the RWC audio archives and the
-RAVDESS, SATP, VCTK, Speech Commands, and TinySOL identities. Only after
+RAVDESS, VCTK, Speech Commands, and TinySOL identities. Only after
 those checks may source allocation, factor levels, and toolchain bindings be
 committed as separate frozen records.
 

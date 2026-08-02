@@ -418,21 +418,42 @@
       "caveat": "Exclude metadata rows marked as digitally pitch-transposed from PCM-reference selection; retain them only as declared PCM-transform negatives."
     },
     {
-      "source_id": "satp_soundscapes_1_4",
+      "source_id": "satp_soundscapes_1_5",
       "title": "Soundscape Attributes Translation Project recordings",
       "recommended_partition": "external_transfer",
       "source_domains": ["urban_binaural_soundscape"],
-      "conservative_partition_groups": 27,
-      "partition_basis": "recording and location identity",
+      "conservative_partition_groups": 25,
+      "partition_basis": "exact provider-reported coordinate group, with missing coordinates kept singleton",
       "provenance_tier": "tier_a_confirmed_pcm",
-      "availability": "acquisition_required",
-      "official_page_url": "https://zenodo.org/records/10159673",
+      "availability": "acquired_and_identity_verified_not_allocated",
+      "official_page_url": "https://zenodo.org/records/18715282",
       "license": "CC BY 4.0",
       "artifact": {
         "filename": "SATP WAV.zip",
+        "url": "https://zenodo.org/api/records/18715282/files/SATP%20WAV.zip/content",
         "bytes": 198110877,
-        "provider_checksum": "md5:1592b4ac667b2944ad3d412212dc669a"
-      }
+        "provider_checksum": "md5:1592b4ac667b2944ad3d412212dc669a",
+        "provider_checksum_verified": true,
+        "local_sha256": "7b1c85b4c734e971c5a088f6b23843930012b002213471087dafd8e1f6aa604f"
+      },
+      "readme_artifact": {
+        "filename": "README.md",
+        "url": "https://zenodo.org/api/records/18715282/files/README.md/content",
+        "bytes": 16608,
+        "provider_checksum": "md5:2c60286df75d1da4eb921d274e5a923e",
+        "provider_checksum_verified": true,
+        "local_sha256": "b7c0a1497d873be59c4135dfa24590e8e04c93b5b0a1bb03f2a3ba3f1f867fac"
+      },
+      "source_group_rules": {
+        "path": "benchmarks/audio-integrity-v2/satp-source-group-rules.json",
+        "sha256": "6dc5e17f24d8741ec3ffe00e66b13aacf443fa7a2f0a541fafe92af1d3d0fa05"
+      },
+      "source_identity_evidence": {
+        "aggregate_path": "research/sources/evidence/satp-1.5-observed-20260802.json",
+        "aggregate_sha256": "e0afaebb0f8333940f29c0ad95599d08fc65e8e68a3a87f57ef2d2581b2e01ca"
+      },
+      "recording_chain": "The current provider record reports a worn BHS II binaural microphone kit and SQobold device, with recordings exported from HDF to WAV in ArtemiS SUITE using the original dynamic range. The archive contains 27 stereo 48 kHz, 24-bit PCM recordings plus one 16-bit calibration signal.",
+      "caveat": "The current Zenodo record is v1.5, but its README prose still says v1.2. Two pairs of recordings share exact coordinates, reducing 27 recordings to 25 conservative source groups. Retain SATP as one provider stratum and select at most one excerpt per coordinate group."
     },
     {
       "source_id": "lombard_grid_2018",
@@ -551,9 +572,9 @@
       "source_ids": ["vctk_clean_56spk_2017", "speech_commands_v0_02", "tinysol_6_0", "sonyc_backgrounds_1_0_0"]
     },
     "external_transfer": {
-      "conservative_partition_groups": 190,
+      "conservative_partition_groups": 188,
       "source_domain_count": 9,
-      "source_ids": ["ravdess_audio_1_0_0", "satp_soundscapes_1_4", "lombard_grid_2018", "rwc_music_v2_2026"]
+      "source_ids": ["ravdess_audio_1_0_0", "satp_soundscapes_1_5", "lombard_grid_2018", "rwc_music_v2_2026"]
     }
   },
   "toolchain_probe_evidence": {

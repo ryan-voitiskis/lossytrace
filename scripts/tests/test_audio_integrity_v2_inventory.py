@@ -117,6 +117,17 @@ class InventoryValidationTest(unittest.TestCase):
         )
         self.assertTrue(any("family rules hash differs" in error for error in errors))
 
+    def test_source_group_rules_hash_is_validated(self) -> None:
+        inventory = copy.deepcopy(self.inventory)
+        source = next(
+            row
+            for row in inventory["source_candidates"]
+            if row["source_id"] == "satp_soundscapes_1_5"
+        )
+        source["source_group_rules"]["sha256"] = "0" * 64
+        errors = MODULE.validate_source_identity_evidence_files(inventory, ROOT)
+        self.assertTrue(any("source group rules hash differs" in error for error in errors))
+
     def test_frozen_state_is_rejected(self) -> None:
         inventory = copy.deepcopy(self.inventory)
         inventory["state"] = "frozen"

@@ -109,8 +109,8 @@ factorial-benchmark provenance caveat rather than resolved by assumption.
 
 ## Next gate
 
-The remaining source gate is RAVDESS, SATP, VCTK, Speech Commands, TinySOL, and
-RWC audio identity verification. Only after all remaining archives are bound
+The remaining source gate is RAVDESS, VCTK, Speech Commands, TinySOL, and RWC
+audio identity verification. Only after all remaining archives are bound
 may source allocation, factor levels, and toolchain versions be frozen in
 separate records.
 

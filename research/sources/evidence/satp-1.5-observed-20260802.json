@@ -1,0 +1,107 @@
+{
+  "archive_binding": {
+    "bytes": 198110877,
+    "local_sha256": "7b1c85b4c734e971c5a088f6b23843930012b002213471087dafd8e1f6aa604f",
+    "provider_checksum_verified": true,
+    "provider_md5": "1592b4ac667b2944ad3d412212dc669a",
+    "zip_crc_verified": true
+  },
+  "benchmark_audio_generated": false,
+  "conservative_reference_boundary": {
+    "eligible_group_count": 25,
+    "eligible_recording_count": 27,
+    "future_selection_constraint": "At most one reference excerpt per coordinate group; preserve recording ID, location label, coordinates, and date as factors.",
+    "grouping_unit": "exact provider-reported coordinate pair with missing coordinates kept singleton",
+    "independence_limit": "Coordinate groups do not prove independent operator sessions, hardware, export software, or collection days; retain SATP as one provider stratum and run leave-provider sensitivity.",
+    "rule": [
+      "archive reference ID occurs exactly once and is present in the bound README table",
+      "PCM digest occurs exactly once among the 27 recordings",
+      "recordings with the same exact non-missing provider coordinates share one source group"
+    ]
+  },
+  "observed": {
+    "audio_uncompressed_reference_member_bytes": 233292402,
+    "calibration_data_bytes_maximum": 11520000,
+    "calibration_data_bytes_minimum": 11520000,
+    "calibration_frame_count_maximum": 2880000,
+    "calibration_frame_count_minimum": 2880000,
+    "calibration_recording_count": 1,
+    "calibration_riff_formats": [
+      {
+        "ancillary_chunk_counts": {},
+        "average_bytes_per_second": 192000,
+        "bits_per_sample": 16,
+        "block_align_bytes": 4,
+        "channel_count": 2,
+        "container_format_tag": 1,
+        "file_count": 1,
+        "format_chunk_bytes": 16,
+        "logical_format_tag": 1,
+        "sample_format": "signed_integer_pcm",
+        "sample_rate_hz": 48000,
+        "valid_bits_per_sample": 16
+      }
+    ],
+    "directory_member_count": 0,
+    "distinct_reference_pcm_digest_count": 27,
+    "duplicate_exact_coordinate_group_count": 2,
+    "duplicate_reference_pcm_digest_group_count": 0,
+    "duplicate_reference_pcm_file_count_excess": 0,
+    "exact_coordinate_group_count": 25,
+    "readme_exact_location_label_count": 25,
+    "reference_data_bytes_maximum": 8651424,
+    "reference_data_bytes_minimum": 8639868,
+    "reference_frame_count_maximum": 1441904,
+    "reference_frame_count_minimum": 1439978,
+    "reference_recording_count": 27,
+    "reference_riff_formats": [
+      {
+        "ancillary_chunk_counts": {},
+        "average_bytes_per_second": 288000,
+        "bits_per_sample": 24,
+        "block_align_bytes": 6,
+        "channel_count": 2,
+        "container_format_tag": 1,
+        "file_count": 27,
+        "format_chunk_bytes": 16,
+        "logical_format_tag": 1,
+        "sample_format": "signed_integer_pcm",
+        "sample_rate_hz": 48000,
+        "valid_bits_per_sample": 24
+      }
+    ],
+    "regular_member_count": 28,
+    "source_group_size_counts": {
+      "1": 23,
+      "2": 2
+    },
+    "unexpected_regular_member_count": 0
+  },
+  "paths_redacted": true,
+  "provider_record": {
+    "record_id": 18715282,
+    "record_version": "v1.5"
+  },
+  "readme_binding": {
+    "bytes": 16608,
+    "local_sha256": "b7c0a1497d873be59c4135dfa24590e8e04c93b5b0a1bb03f2a3ba3f1f867fac",
+    "provider_checksum_verified": true,
+    "provider_md5": "2c60286df75d1da4eb921d274e5a923e"
+  },
+  "reconciliation": {
+    "archive_and_readme_reference_id_sets_equal": true,
+    "archive_calibration_id_differs_from_readme": true,
+    "readme_changelog_contains_record_version": true,
+    "readme_prose_dataset_version": "1.2",
+    "readme_prose_version_differs_from_record": true,
+    "record_version": "v1.5"
+  },
+  "schema_version": 1,
+  "scores_opened": false,
+  "selection_authorized": false,
+  "source_group_rules_binding": {
+    "sha256": "6dc5e17f24d8741ec3ffe00e66b13aacf443fa7a2f0a541fafe92af1d3d0fa05"
+  },
+  "source_id": "satp_soundscapes_1_5",
+  "state": "source_identity_evidence_only"
+}
