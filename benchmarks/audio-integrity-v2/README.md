@@ -43,6 +43,7 @@ Read these before constructing a manifest:
 - [`fractional-assignment-observed-20260802-003.json`](../../research/sources/evidence/fractional-assignment-observed-20260802-003.json)
 - [`construction-feasibility-plan.json`](construction-feasibility-plan.json)
 - [`construction-feasibility-preregistration-20260802.md`](../../docs/research/construction-feasibility-preregistration-20260802.md)
+- [`construction-feasibility-correction-20260802-001.md`](../../docs/research/construction-feasibility-correction-20260802-001.md)
 - [`rwc-source-identity-audit-20260802.md`](../../docs/research/rwc-source-identity-audit-20260802.md)
 
 The pre-freeze source/tool inventory and its remaining gates are described
@@ -110,6 +111,9 @@ The next separately preregistered gate is a two-replay, header-only
 [`construction-feasibility audit`](../../docs/research/construction-feasibility-preregistration-20260802.md).
 It may expose duration and channel support but cannot inspect waveform samples,
 reassign a group, or open a score.
+Recipe `001` stopped before source inspection because its plan omitted the
+FFprobe tool ID; the separately frozen correction adds that binding without
+changing the audit design.
 
 ## Evidence partitions
 

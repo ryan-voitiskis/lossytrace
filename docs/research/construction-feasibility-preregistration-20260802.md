@@ -2,8 +2,8 @@
 
 Date: 2026-08-02
 
-State: header-only audit frozen before duration inspection; no benchmark audio,
-waveform samples, feature, score, or unopened label inspected
+State: recipe `001` stopped before source inspection and was superseded; see
+[`construction-feasibility correction 001`](construction-feasibility-correction-20260802-001.md)
 
 ## Purpose
 
@@ -17,10 +17,12 @@ The machine-readable
 binds the lineage-complete private assignment, source allocation and candidate
 index, factor and toolchain manifests, private tool-path registry, and exact
 [`audit generator`](../../scripts/audit-audio-integrity-v2-construction-feasibility.py).
-The plan SHA-256 is
-`25836479805455f6381e9f171d612e89f599199401aa7b3da18d33167e84114b`;
-the generator SHA-256 is
+Recipe `001` had plan SHA-256
+`25836479805455f6381e9f171d612e89f599199401aa7b3da18d33167e84114b`
+and generator SHA-256
 `92ee0a3d07562a4dc8e7332abc584bef07b6507e7f1fe7e92b65bf86390dadd1`.
+It stopped before source inspection because the plan omitted the explicit
+FFprobe tool ID. Recipe `002` corrects only that configuration binding.
 
 ## Allowed observations
 

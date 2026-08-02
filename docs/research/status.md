@@ -148,4 +148,8 @@ Before audio generation, a separately frozen
 will replay exact source headers and transform minima twice. It cannot inspect
 waveform samples or alter the assignment; any unsupported group stops
 construction for an explicit correction.
+Its first invocation stopped before source inspection because the plan omitted
+the FFprobe tool ID. The separately frozen
+[`configuration correction`](construction-feasibility-correction-20260802-001.md)
+adds only that exact binding; recipe `002` still requires two complete replays.
 No successor mechanism score or retained holdout has been opened.

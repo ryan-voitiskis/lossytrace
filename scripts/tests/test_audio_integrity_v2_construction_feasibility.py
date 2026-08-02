@@ -27,6 +27,10 @@ PLAN = json.loads(
 class ConstructionFeasibilityTest(unittest.TestCase):
     def test_plan_is_pre_audit_and_binds_generator(self) -> None:
         self.assertEqual(
+            "lossytrace-v2-construction-feasibility-20260802-002",
+            PLAN["audit_id"],
+        )
+        self.assertEqual(
             "construction_feasibility_frozen_before_header_audit", PLAN["state"]
         )
         self.assertFalse(PLAN["audio_generated"])

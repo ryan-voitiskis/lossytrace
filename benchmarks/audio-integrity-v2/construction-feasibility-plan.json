@@ -1,8 +1,16 @@
 {
   "schema_version": 1,
-  "audit_id": "lossytrace-v2-construction-feasibility-20260802-001",
+  "audit_id": "lossytrace-v2-construction-feasibility-20260802-002",
   "state": "construction_feasibility_frozen_before_header_audit",
-  "upstream_checkpoint_commit": "d310c0cb46517c37cac373f6d833ca89b9ffd028",
+  "upstream_checkpoint_commit": "32c444d2ed3a54a184bf0ddeccb5de0bfc5c2687",
+  "correction": {
+    "supersedes_audit_id": "lossytrace-v2-construction-feasibility-20260802-001",
+    "reason": "Recipe 001 omitted the explicit ffprobe_tool_id required by the bound generator.",
+    "source_artifacts_hashed_before_correction": false,
+    "headers_inspected_before_correction": false,
+    "audio_generated_before_correction": false,
+    "scores_opened_before_correction": false
+  },
   "audio_generated": false,
   "waveform_content_inspected": false,
   "headers_inspected": false,
@@ -12,7 +20,7 @@
   "selection_authorized": false,
   "bindings": {
     "audit_generator_path": "scripts/audit-audio-integrity-v2-construction-feasibility.py",
-    "audit_generator_sha256": "92ee0a3d07562a4dc8e7332abc584bef07b6507e7f1fe7e92b65bf86390dadd1",
+    "audit_generator_sha256": "b239f287b94cdcd2278045271859060764e34bb8a251ed295fbd62f07d440930",
     "private_source_allocation_sha256": "e4b7d2ab42253e00ce0e0b95c8049193f9b6178ecbb6212811fde96d58c088d4",
     "private_candidate_index_sha256": "07a00a0f56570c0778e384c6a816a69be13fffe42596c1aad80d5a6a99357a07",
     "private_fractional_assignment_sha256": "e33ae9f961fd48ec3857ac41ad9197b86fd0d38a5897dd5144bbf35683110582",
@@ -20,6 +28,9 @@
     "factor_levels_sha256": "4065553ef4fbe505ea0d79b149570bc1483396dbcc1de52597890e61f59481bd",
     "toolchain_manifest_sha256": "d2af2f0b78b184189806d724c294d7606f37d2763839e17c9289f7957da52070",
     "private_tool_paths_sha256": "1a564dc3958b4f678ae5ff89c04ac8797849127b784f2d4b2d7af88532df3fb5"
+  },
+  "tools": {
+    "ffprobe_tool_id": "ffprobe_8_1_2_1"
   },
   "sources": {
     "selected_group_count": 793,

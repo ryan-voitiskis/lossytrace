@@ -19,7 +19,7 @@ from typing import Any
 
 
 SCHEMA_VERSION = 1
-AUDIT_ID = "lossytrace-v2-construction-feasibility-20260802-001"
+AUDIT_ID = "lossytrace-v2-construction-feasibility-20260802-002"
 MINIMUM_FREE_RESERVE_BYTES = 15 * 1024**3
 MAXIMUM_EXCERPT_SECONDS = 12
 ALLOWED_CODECS = {
