@@ -227,5 +227,9 @@ across all 202 retained artifacts, private checkpoints, and canonical
 analysis-PCM hashes. The smoke gate passes. The separately committed
 [`full-build correction`](construction-correction-20260802-002.md) binds the
 public result and private-manifest hash and now authorizes exactly the frozen
-12,885-cell one-worker build. Feature extraction and scoring remain blocked.
+12,885-cell one-worker build. That
+[`full construction`](constructor-full-result-20260802.md) is now complete:
+6,356 controlled positives and 6,529 matched negatives have exact retained
+artifact and canonical analysis-PCM attestations. Feature extraction and
+scoring remain blocked behind a separately frozen plan.
 No successor mechanism score or retained holdout has been opened.

@@ -178,7 +178,12 @@ hash sets, and canonical analysis-PCM hash sets. This passes the smoke gate;
 the separately committed
 [`full-build correction`](../../docs/research/construction-correction-20260802-002.md)
 now binds that evidence and authorizes exactly the frozen 12,885-cell build.
-No feature or score has been computed or authorized.
+The resulting
+[`full construction`](../../docs/research/constructor-full-result-20260802.md)
+is now complete and path-free attested: all 12,885 retained artifacts have
+valid private checkpoints and canonical analysis-PCM matches. No feature or
+score has been computed or authorized; analysis requires a separately frozen
+plan.
 
 ## Evidence partitions
 
