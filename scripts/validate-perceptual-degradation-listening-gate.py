@@ -104,6 +104,7 @@ def validate(gate: dict[str, Any], root: Path = ROOT) -> list[str]:
         "participant_information_draft_present",
         "power_report_frozen",
         "synthetic_dry_run_passed",
+        "private_lossless_delivery_dry_run_passed",
     }
     for key, value in completed.items():
         expected = key in allowed_complete
@@ -116,6 +117,7 @@ def validate(gate: dict[str, Any], root: Path = ROOT) -> list[str]:
         "licences_frozen",
         "player_implementation_frozen",
         "synthetic_dry_run_passed",
+        "private_lossless_delivery_dry_run_passed",
         "playback_qualification_frozen",
         "power_report_frozen",
         "privacy_operational_fields_resolved",

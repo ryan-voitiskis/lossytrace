@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "gate_id": "perceptual-degradation-listening-preparation-20260803-002",
+  "gate_id": "perceptual-degradation-listening-preparation-20260804-003",
   "state": "protocol_prepared_human_collection_unauthorized",
   "human_collection_authorized": false,
   "recruitment_authorized": false,
@@ -14,6 +14,7 @@
     "licences_frozen": false,
     "player_implementation_frozen": false,
     "synthetic_dry_run_passed": true,
+    "private_lossless_delivery_dry_run_passed": true,
     "playback_qualification_frozen": false,
     "power_report_frozen": true,
     "privacy_operational_fields_resolved": false,
@@ -121,6 +122,18 @@
     "synthetic_player_dry_run_evidence": {
       "path": "research/toolchains/evidence/perceptual-degradation-listening-player-dry-run-observed-20260803-003.json",
       "sha256": "8be5c9452f6c05be6d7a7e936294df7865c7bd43f076251dad22c3cff8c51e5a"
+    },
+    "private_lossless_delivery_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/private-lossless-delivery-plan.json",
+      "sha256": "9f2661f0a09d06e0a7cdccae20ef21db9c93b2951862dc88818aedd29d175d00"
+    },
+    "private_lossless_delivery_validator": {
+      "path": "scripts/validate-perceptual-degradation-lossless-delivery.py",
+      "sha256": "0b2c5c43087e0fd114283bcdd9a97449a999ab9648baa6f59253dd67aa03a973"
+    },
+    "private_lossless_delivery_evidence": {
+      "path": "research/toolchains/evidence/perceptual-degradation-lossless-delivery-dry-run-observed-20260804-001.json",
+      "sha256": "5456f8886b0debe7537cf95454c92b9d7735fa45727f5536faa6b84d202ef6b5"
     }
   },
   "unresolved_operational_fields": [
@@ -134,5 +147,5 @@
     "public minimum cell size and suppression policy",
     "qualified playback chain and calibration method"
   ],
-  "authorized_next_step": "Implement private lossless real-stimulus delivery and qualify an exact browser and audio delivery chain. Do not contact or collect from real listeners."
+  "authorized_next_step": "Qualify a score-blind source-and-licence manifest and the declared physical playback chain. An optional operator audibility check may replay only the generated qualification fixture and must not be treated as listening truth. Do not contact or collect from real listeners."
 }

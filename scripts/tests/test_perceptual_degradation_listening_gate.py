@@ -36,6 +36,9 @@ class ListeningGateTest(unittest.TestCase):
         self.assertFalse(GATE["human_collection_authorized"])
         self.assertFalse(GATE["recruitment_authorized"])
         self.assertFalse(GATE["response_storage_authorized"])
+        self.assertTrue(GATE["completed"]["private_lossless_delivery_dry_run_passed"])
+        self.assertFalse(GATE["completed"]["player_implementation_frozen"])
+        self.assertFalse(GATE["completed"]["playback_qualification_frozen"])
 
     def test_gate_rejects_real_listener_authorization(self) -> None:
         changed = copy.deepcopy(GATE)

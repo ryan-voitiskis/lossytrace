@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'none'; media-src 'none'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+    <title>LossyTrace lossless delivery qualification</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main>
+      <p class="eyebrow">LossyTrace research preparation</p>
+      <h1>Private lossless delivery qualification</h1>
+      <p class="lede">Opaque, hash-bound local PCM-WAV stimuli only. This page collects no identity, ratings, responses, or metric scores.</p>
+      <p class="boundary">Qualification plumbing only — not a listening study and not evidence of perceptual quality.</p>
+
+      <section>
+        <h2>Delivery state</h2>
+        <p id="session-status" class="diagnostic" role="status">Loading score-blind session binding…</p>
+        <button id="start-audio" type="button" disabled>Start exact-rate audio</button>
+        <p id="audio-status" class="diagnostic" role="status">Audio context has not started.</p>
+      </section>
+
+      <section>
+        <h2>Opaque stimuli</h2>
+        <div id="stimuli"></div>
+      </section>
+
+      <section>
+        <h2>Scope</h2>
+        <ul>
+          <li>PCM is parsed locally without <code>decodeAudioData</code>.</li>
+          <li>Bytes, format, channels, and sample rate are verified before playback.</li>
+          <li>A sample-rate mismatch is rejected rather than resampled.</li>
+          <li>DAC, transducer, operating-system output, level, room, and audibility remain unqualified.</li>
+        </ul>
+      </section>
+    </main>
+    <script src="lossless-wav.js"></script>
+    <script src="player.js"></script>
+  </body>
+</html>

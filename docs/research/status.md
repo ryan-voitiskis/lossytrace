@@ -280,3 +280,41 @@ reversal. The
 therefore closes this program as a conditional negative: no new representation
 is preregistered, no transfer score is opened, and the public library remains
 verdict-free at feature version 0.
+
+## Perceptual-degradation program - 2026-08-04
+
+The successor program targets audible, material degradation rather than codec
+history. Its frozen
+[`research contract`](perceptual-degradation-contract-20260803.md),
+[`literature review`](perceptual-degradation-literature-review-20260803.md),
+alignment/schema fixtures, listening protocol, allocator, power analysis, and
+synthetic player all preserve the public feature-version-0, verdict-free
+boundary. Retained waveforms, sealed labels, provider audio, human responses,
+and public metric execution remain unopened or unauthorized.
+
+ViSQOL Audio v3.3.3 has been built and replayed only on the four frozen
+synthetic cases in two independently bound environments. The different binary
+builds produced exactly zero numeric delta in MOS-LQO, similarity, all 32
+frequency-band similarities, and all 12 patch similarities. This establishes
+synthetic execution determinism, not perceptual validity or human calibration.
+The BS.1387-derived proxy remains blocked by its legal/conformance gate.
+
+The private
+[`lossless delivery layer`](perceptual-degradation-private-lossless-delivery-20260804.md)
+now accepts only bounded, hash-bound integer PCM-WAV outside the repository. A
+loopback-only server projects opaque IDs and PCM geometry without paths,
+recipes, roles, scores, identities, or responses. Chrome 150 successfully
+verified a deterministic ephemeral 48 kHz stereo fixture, exposed exactly
+192,000 PCM frames without requesting resampling, and exercised Play, Left,
+and Right with no console error or browser storage. The generated WAV, private
+map, and new browser snapshots were moved to Trash after observation.
+
+That result closes only the byte-to-Web-Audio delivery dry run. It is not an
+audibility result, a listening response, physical playback qualification, or a
+frozen listening player. The next gate is a score-blind source-and-licence
+manifest plus the declared physical playback chain. Actual study stimuli,
+licences, player switching/loop behavior, DAC/transducer/level/room evidence,
+privacy operations, responsible-human approval, recruitment, and response
+storage all remain incomplete. No no-reference estimator is eligible until
+fresh listening evidence calibrates and independently validates the
+full-reference oracle.
