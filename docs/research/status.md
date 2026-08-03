@@ -318,3 +318,19 @@ privacy operations, responsible-human approval, recruitment, and response
 storage all remain incomplete. No no-reference estimator is eligible until
 fresh listening evidence calibrates and independently validates the
 full-reference oracle.
+
+A second bounded ODAQ metadata audit retained the creator, title, source, and
+licence fields that the first score-blind audit had intentionally omitted. It
+made four Range requests totalling 151,153 bytes and again opened only the
+licence and disclaimer members: no WAV, score row, or archive payload was
+opened. The 16 selected development groups bind 128 WAV members and comprise
+15 CC BY sources plus one CC0 source. Nine sources have complete direct
+attribution fields. Seven Fraunhofer-derived mixes retain their raw `n/a`
+titles and descriptive source fields, but the audit also binds the two
+explicitly referenced preceding source rows for each mix: 14 dependency
+records covering Blender Studio/Foundation, Netflix, Nina Paley, and
+Freesound material under CC BY or CC0. All 16 development attribution notices
+are therefore ready without rewriting the provider metadata. The whole-study
+licence gate remains unfrozen: ODAQ is one-provider, simulated-artifact
+development evidence—not real codec, grouped-transfer, or final-validation
+evidence—and no audio acquisition is authorized.

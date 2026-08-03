@@ -1,8 +1,10 @@
 from __future__ import annotations
 
+import csv
 import importlib.util
 import io
 import json
+import sys
 import unittest
 import zipfile
 from pathlib import Path
@@ -10,6 +12,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 SCRIPT = ROOT / "scripts" / "audit-perceptual-degradation-odaq.py"
+ATTRIBUTION_SCRIPT = (
+    ROOT / "scripts" / "audit-perceptual-degradation-odaq-attribution.py"
+)
 AUDIT_PATH = (
     ROOT
     / "research"
@@ -27,6 +32,13 @@ SPEC = importlib.util.spec_from_file_location("odaq_audit", SCRIPT)
 assert SPEC and SPEC.loader
 MODULE = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(MODULE)
+ATTRIBUTION_SPEC = importlib.util.spec_from_file_location(
+    "odaq_attribution_audit", ATTRIBUTION_SCRIPT
+)
+assert ATTRIBUTION_SPEC and ATTRIBUTION_SPEC.loader
+ATTRIBUTION_MODULE = importlib.util.module_from_spec(ATTRIBUTION_SPEC)
+sys.modules[ATTRIBUTION_SPEC.name] = ATTRIBUTION_MODULE
+ATTRIBUTION_SPEC.loader.exec_module(ATTRIBUTION_MODULE)
 
 
 HEADER = (
@@ -127,6 +139,87 @@ class OdaqAuditTest(unittest.TestCase):
         )
         self.assertEqual(["TM_clean"], plan["selection"]["eligible_folder_ids"])
         self.assertEqual([], MODULE.validate_frozen_evidence(report, plan))
+
+    def test_attribution_audit_retains_required_cc_by_fields_only(self) -> None:
+        prior = MODULE.audit_archive(record(), io.BytesIO(archive_bytes()))
+        plan = MODULE.acquisition_plan(prior, "a" * 64)
+        report = ATTRIBUTION_MODULE.audit_archive(
+            record(), io.BytesIO(archive_bytes()), prior, plan
+        )
+        self.assertEqual([], ATTRIBUTION_MODULE.validate(report))
+        self.assertEqual(1, report["selection"]["source_count"])
+        self.assertEqual(1, report["selection"]["group_count"])
+        licence = report["licence_records"][0]
+        self.assertEqual("clean.wav", licence["title"])
+        self.assertEqual("Author", licence["creator"])
+        self.assertEqual("https://example.test/clean", licence["source_url"])
+        self.assertEqual(
+            "https://creativecommons.org/licenses/by/4.0/",
+            licence["licence_url"],
+        )
+        self.assertTrue(licence["attribution_fields_complete"])
+        self.assertTrue(licence["attribution_notice_ready"])
+        group = report["listening_groups"][0]
+        self.assertTrue(group["development_only"])
+        self.assertFalse(group["actual_codec_condition"])
+        self.assertFalse(group["final_validation_eligible"])
+        self.assertFalse(report["audio_acquisition_authorized"])
+        self.assertFalse(report["listening_score_access_authorized"])
+
+    def test_attribution_audit_rejects_codec_or_final_overclaim(self) -> None:
+        prior = MODULE.audit_archive(record(), io.BytesIO(archive_bytes()))
+        plan = MODULE.acquisition_plan(prior, "a" * 64)
+        report = ATTRIBUTION_MODULE.audit_archive(
+            record(), io.BytesIO(archive_bytes()), prior, plan
+        )
+        report["listening_groups"][0]["actual_codec_condition"] = True
+        report["listening_groups"][0]["final_validation_eligible"] = True
+        errors = ATTRIBUTION_MODULE.validate(report)
+        self.assertIn("ODAQ group must not be represented as actual codec audio", errors)
+        self.assertIn("ODAQ group must remain outside final validation", errors)
+
+    def test_attribution_placeholders_and_non_urls_are_incomplete(self) -> None:
+        reader = csv.DictReader(
+            io.StringIO(
+                HEADER
+                + "derived.wav;mix;n/a;Produced from the two rows above;Creator;"
+                + "https://creativecommons.org/licenses/by/4.0/;48 kHz;PCM;"
+                + "stereo;stereo PCM;10;test\n"
+            ),
+            delimiter=";",
+        )
+        attribution = ATTRIBUTION_MODULE.licence_record(next(reader))
+        self.assertFalse(attribution["attribution_fields_complete"])
+        self.assertFalse(attribution["attribution_notice_ready"])
+        self.assertEqual(
+            ["title", "source_url"], attribution["missing_attribution_fields"]
+        )
+
+    def test_attribution_resolves_explicit_preceding_source_dependencies(self) -> None:
+        payload = HEADER + "\n".join(
+            [
+                "foreground.wav;speech;foreground.wav;https://example.test/fg;FG Creator;https://creativecommons.org/licenses/by/4.0/;48 kHz;PCM;mono;stereo PCM;10;test",
+                "background.wav;music;background.wav;https://example.test/bg;BG Creator;https://creativecommons.org/publicdomain/zero/1.0/;48 kHz;PCM;stereo;stereo PCM;10;test",
+                "derived.wav;mix;n/a;Produced using material detailed in the two rows above;Mix Creator;https://creativecommons.org/licenses/by/4.0/;48 kHz;PCM;stereo;stereo PCM;10;test",
+            ]
+        )
+        rows = list(csv.DictReader(io.StringIO(payload), delimiter=";"))
+        primary, dependencies = ATTRIBUTION_MODULE.resolved_licence_records(
+            rows, ["derived"]
+        )
+        self.assertEqual(1, len(primary))
+        self.assertEqual(2, len(dependencies))
+        self.assertFalse(primary[0]["attribution_fields_complete"])
+        self.assertTrue(primary[0]["attribution_notice_ready"])
+        self.assertEqual("derived", primary[0]["attribution_notice_title"])
+        self.assertEqual(
+            "derived_mix_with_two_preceding_source_rows",
+            primary[0]["attribution_resolution"],
+        )
+        self.assertEqual(
+            {item["licence_record_id"] for item in dependencies},
+            set(primary[0]["attribution_dependency_licence_record_ids"]),
+        )
 
     def test_archive_binding_is_enforced(self) -> None:
         changed = json.loads(json.dumps(record()))

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "gate_id": "perceptual-degradation-listening-preparation-20260804-003",
+  "gate_id": "perceptual-degradation-listening-preparation-20260804-004",
   "state": "protocol_prepared_human_collection_unauthorized",
   "human_collection_authorized": false,
   "recruitment_authorized": false,
@@ -134,6 +134,14 @@
     "private_lossless_delivery_evidence": {
       "path": "research/toolchains/evidence/perceptual-degradation-lossless-delivery-dry-run-observed-20260804-001.json",
       "sha256": "5456f8886b0debe7537cf95454c92b9d7735fa45727f5536faa6b84d202ef6b5"
+    },
+    "odaq_attribution_audit_script": {
+      "path": "scripts/audit-perceptual-degradation-odaq-attribution.py",
+      "sha256": "565219615102f3035798b31e966f952f87c3da4aad798e690c27b4eb0976cdd9"
+    },
+    "odaq_attribution_audit_evidence": {
+      "path": "research/toolchains/evidence/perceptual-degradation-odaq-attribution-audit-20260804-001.json",
+      "sha256": "08da482eeab4ab51f0e2ed2f05684edac098b51fe81d1b78bec75181336dca61"
     }
   },
   "unresolved_operational_fields": [
@@ -147,5 +155,5 @@
     "public minimum cell size and suppression policy",
     "qualified playback chain and calibration method"
   ],
-  "authorized_next_step": "Qualify a score-blind source-and-licence manifest and the declared physical playback chain. An optional operator audibility check may replay only the generated qualification fixture and must not be treated as listening truth. Do not contact or collect from real listeners."
+  "authorized_next_step": "Qualify actual-codec, transparent-codec, production-control, hard-natural-negative and grouped-transfer sources before freezing a score-blind source-and-condition manifest. ODAQ attribution is frozen for its 16 development-only simulated-artifact groups, but audio acquisition remains unauthorized. Continue physical playback qualification without contacting or collecting from real listeners."
 }
