@@ -1,0 +1,181 @@
+name: ViSQOL synthetic replay second environment
+
+on:
+  push:
+    branches:
+      - codex/perceptual-degradation
+    paths:
+      - .github/workflows/visqol-synthetic-second-environment.yml
+      - benchmarks/perceptual-degradation-v1/visqol-synthetic-second-environment-plan.json
+      - research/toolchains/patches/visqol-v3.3.3-reproducible-workspace.patch
+      - scripts/perceptual_degradation_visqol_cross_environment.py
+      - scripts/perceptual_degradation_visqol_fixtures.py
+      - scripts/perceptual_degradation_visqol_replay.py
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-replay-and-compare:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    env:
+      PLAN: benchmarks/perceptual-degradation-v1/visqol-synthetic-second-environment-plan.json
+      CC: /usr/bin/gcc-13
+      CXX: /usr/bin/g++-13
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: 3.12.3
+
+      - name: Verify frozen second-environment plan and runner reserve
+        run: |
+          python3 scripts/validate-perceptual-degradation-visqol-second-environment-plan.py
+          test "$($CC -dumpfullversion)" = "13.3.0"
+          test "$($CXX -dumpfullversion)" = "13.3.0"
+          python3 - <<'PY'
+          import shutil
+          free = shutil.disk_usage(".").free
+          if free < 15 * 1024**3:
+              raise SystemExit("runner starts below the 15 GiB reserve")
+          print(f"runner_free_bytes={free}")
+          PY
+
+      - name: Install hash-bound Bazel
+        run: |
+          bazel_url=$(jq -r '.build_environment.bazel.download_url' "$PLAN")
+          bazel_sha256=$(jq -r '.build_environment.bazel.binary_sha256' "$PLAN")
+          curl --fail --location --proto '=https' --tlsv1.2 "$bazel_url" --output "${RUNNER_TEMP}/bazel"
+          echo "${bazel_sha256}  ${RUNNER_TEMP}/bazel" | sha256sum --check --strict
+          chmod 0755 "${RUNNER_TEMP}/bazel"
+          "${RUNNER_TEMP}/bazel" --version
+
+      - name: Install hash-bound NumPy bootstrap
+        run: |
+          python_version=$(python3 -c 'import platform; print(platform.python_version())')
+          expected_python_version=$(jq -r '.build_environment.python.version' "$PLAN")
+          test "$python_version" = "$expected_python_version"
+          numpy_url=$(jq -r '.build_environment.python.numpy_wheel.download_url' "$PLAN")
+          numpy_sha256=$(jq -r '.build_environment.python.numpy_wheel.sha256' "$PLAN")
+          numpy_version=$(jq -r '.build_environment.python.numpy_wheel.version' "$PLAN")
+          numpy_filename=$(jq -r '.build_environment.python.numpy_wheel.filename' "$PLAN")
+          numpy_wheel="${RUNNER_TEMP}/${numpy_filename}"
+          numpy_target="${RUNNER_TEMP}/visqol-python"
+          curl --fail --location --proto '=https' --tlsv1.2 "$numpy_url" --output "$numpy_wheel"
+          echo "${numpy_sha256}  ${numpy_wheel}" | sha256sum --check --strict
+          python3 -m pip install --disable-pip-version-check --no-deps --target "$numpy_target" "$numpy_wheel"
+          PYTHONPATH="$numpy_target" python3 -c 'import numpy, sys; expected = sys.argv[1]; assert numpy.__version__ == expected, (numpy.__version__, expected)' "$numpy_version"
+          echo "PYTHONPATH=${numpy_target}" >> "$GITHUB_ENV"
+
+      - name: Materialize exact sparse source and reproducibility patch
+        run: |
+          visqol_source="${RUNNER_TEMP}/visqol-source"
+          visqol_repository=$(jq -r '.visqol.repository' "$PLAN")
+          visqol_commit=$(jq -r '.visqol.git_commit' "$PLAN")
+          visqol_tree=$(jq -r '.visqol.git_tree' "$PLAN")
+          patch_path=$(jq -r '.visqol.workspace_patch_path' "$PLAN")
+          patch_sha256=$(jq -r '.visqol.workspace_patch_sha256' "$PLAN")
+          git init "$visqol_source"
+          git -C "$visqol_source" remote add origin "$visqol_repository"
+          git -C "$visqol_source" sparse-checkout init --no-cone
+          printf '/.bazelrc\n/BUILD\n/LICENSE\n/WORKSPACE\n/pybind11_fixdistutils.patch\n/model/\n/src/\n' > "${visqol_source}/.git/info/sparse-checkout"
+          git -C "$visqol_source" -c protocol.version=2 fetch --depth=1 origin "$visqol_commit"
+          git -C "$visqol_source" checkout --detach FETCH_HEAD
+          test "$(git -C "$visqol_source" rev-parse HEAD)" = "$visqol_commit"
+          test "$(git -C "$visqol_source" show -s --format=%T HEAD)" = "$visqol_tree"
+          echo "${patch_sha256}  ${patch_path}" | sha256sum --check --strict
+          git -C "$visqol_source" apply --check "${GITHUB_WORKSPACE}/${patch_path}"
+          git -C "$visqol_source" apply "${GITHUB_WORKSPACE}/${patch_path}"
+
+      - name: Build with at most six workers
+        run: |
+          visqol_source="${RUNNER_TEMP}/visqol-source"
+          visqol_bazel_root="${RUNNER_TEMP}/visqol-bazel-root"
+          visqol_artifact="${RUNNER_TEMP}/visqol-second-artifact"
+          mkdir -p "$visqol_artifact"
+          cd "$visqol_source"
+          "${RUNNER_TEMP}/bazel" \
+            --output_user_root="$visqol_bazel_root" \
+            build //:visqol \
+            --compilation_mode=opt \
+            --jobs=6 \
+            --local_cpu_resources=6 \
+            --local_ram_resources=6144 \
+            --experimental_repository_resolved_file="${visqol_artifact}/resolved-repositories.bzl"
+          cp bazel-bin/visqol "${visqol_artifact}/visqol"
+          cp model/libsvm_nu_svr_model.txt "${visqol_artifact}/libsvm_nu_svr_model.txt"
+          cp LICENSE "${visqol_artifact}/LICENSE"
+          chmod 0755 "${visqol_artifact}/visqol"
+
+      - name: Release disposable build storage and preserve reserve
+        if: always()
+        run: |
+          visqol_source="${RUNNER_TEMP}/visqol-source"
+          visqol_bazel_root="${RUNNER_TEMP}/visqol-bazel-root"
+          "${RUNNER_TEMP}/bazel" --output_user_root="$visqol_bazel_root" shutdown || true
+          rm -rf -- "$visqol_bazel_root" "$visqol_source" "${RUNNER_TEMP}/visqol-python"
+          numpy_filename=$(jq -r '.build_environment.python.numpy_wheel.filename' "$PLAN")
+          rm -f -- "${RUNNER_TEMP}/${numpy_filename}"
+          python3 - <<'PY'
+          import shutil
+          free = shutil.disk_usage(".").free
+          if free < 15 * 1024**3:
+              raise SystemExit("runner cleanup did not restore the 15 GiB reserve")
+          print(f"runner_free_bytes_after_cleanup={free}")
+          PY
+
+      - name: Replay synthetic fixtures twice
+        run: |
+          visqol_artifact="${RUNNER_TEMP}/visqol-second-artifact"
+          python3 scripts/perceptual_degradation_visqol_replay.py \
+            --visqol "${visqol_artifact}/visqol" \
+            --model "${visqol_artifact}/libsvm_nu_svr_model.txt" \
+            --plan "$PLAN" \
+            --output "${visqol_artifact}/synthetic-replay.json"
+
+      - name: Compare with first environment under frozen tolerance
+        run: |
+          visqol_artifact="${RUNNER_TEMP}/visqol-second-artifact"
+          first_replay=$(jq -r '.cross_environment_comparison.first_replay_path' "$PLAN")
+          python3 scripts/perceptual_degradation_visqol_cross_environment.py \
+            --first "$first_replay" \
+            --second "${visqol_artifact}/synthetic-replay.json" \
+            --plan "$PLAN" \
+            --output "${visqol_artifact}/cross-environment-comparison.json"
+
+      - name: Record path-free second build environment
+        run: |
+          visqol_artifact="${RUNNER_TEMP}/visqol-second-artifact"
+          compiler_version=$($CC --version | head -1)
+          compiler_cpp_version=$($CXX --version | head -1)
+          kernel_version=$(uname -srvmo)
+          bazel_version=$("${RUNNER_TEMP}/bazel" --version)
+          python_version=$(python3 --version)
+          numpy_version=$(jq -r '.build_environment.python.numpy_wheel.version' "$PLAN")
+          binary_sha256=$(sha256sum "${visqol_artifact}/visqol" | cut -d' ' -f1)
+          model_sha256=$(sha256sum "${visqol_artifact}/libsvm_nu_svr_model.txt" | cut -d' ' -f1)
+          jq -n \
+            --arg github_sha "$GITHUB_SHA" \
+            --arg runner_image "$ImageOS" \
+            --arg runner_image_version "$ImageVersion" \
+            --arg kernel "$kernel_version" \
+            --arg compiler "$compiler_version" \
+            --arg compiler_cpp "$compiler_cpp_version" \
+            --arg bazel "$bazel_version" \
+            --arg python "$python_version" \
+            --arg numpy "$numpy_version" \
+            --arg binary_sha256 "$binary_sha256" \
+            --arg model_sha256 "$model_sha256" \
+            '{schema_version: 1, state: "visqol_synthetic_second_build_observed", github_sha: $github_sha, runner_image: $runner_image, runner_image_version: $runner_image_version, kernel: $kernel, compiler: $compiler, compiler_cpp: $compiler_cpp, bazel: $bazel, python: $python, numpy: $numpy, compilation_mode: "opt", maximum_workers: 6, binary_sha256: $binary_sha256, model_sha256: $model_sha256, paths_included: false}' \
+            > "${visqol_artifact}/build-environment.json"
+
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: visqol-synthetic-second-${{ github.sha }}
+          path: ${{ runner.temp }}/visqol-second-artifact
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 1

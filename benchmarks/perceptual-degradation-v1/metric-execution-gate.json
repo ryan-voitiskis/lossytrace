@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "gate_id": "perceptual-degradation-v1-metric-execution-20260803-006",
+  "gate_id": "perceptual-degradation-v1-metric-execution-20260803-007",
   "state": "metric_execution_blocked_pending_cross_environment_and_legal_clearance",
   "public_verdict_enabled": false,
   "retained_audio_metric_execution_authorized": false,
@@ -15,7 +15,8 @@
     "score_free_alignment_topology_frozen": true,
     "score_free_decoder_resampler_replayed": true,
     "visqol_synthetic_replay_plan_frozen": true,
-    "visqol_single_environment_synthetic_replay_complete": true
+    "visqol_single_environment_synthetic_replay_complete": true,
+    "visqol_second_environment_plan_frozen_before_scores": true
   },
   "bindings": {
     "research_plan": {
@@ -69,7 +70,24 @@
     "visqol_observation_validator": {
       "path": "scripts/validate-perceptual-degradation-visqol-observation.py",
       "sha256": "dada2ae02bb579f2fcd49940217feb2c01fea16158850b59c25a09ef88ffbb57"
+    },
+    "visqol_second_environment_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/visqol-synthetic-second-environment-plan.json",
+      "sha256": "15f0fb4b20187a221e0f464cbde59b023d3be5a079583555ff5fabaebfd04048"
     }
+  },
+  "second_environment_execution": {
+    "metric_family": "visqol_audio_v3_3_3",
+    "environment_id": "ubuntu24-gcc13-python312-v1",
+    "synthetic_fixture_execution_authorized": true,
+    "public_or_retained_audio_execution_authorized": false,
+    "human_listening_score_access_authorized": false,
+    "provider_audio_download_authorized": false,
+    "ephemeral_remote_execution_only": true,
+    "maximum_workers": 6,
+    "minimum_local_free_disk_gib": 15,
+    "score_blind_before_execution": true,
+    "execution_complete": false
   },
   "metric_families": {
     "visqol_audio_v3_3_3": {
@@ -80,8 +98,9 @@
       "build_recipe_frozen": true,
       "binary_sha256": "7384c8d21725e6fa3921aea4e66ff9cb9481b57acef868304192df437a467319",
       "model_sha256": "1e8246ed33bf36dc5c859351f7110f2cd31f98661989715c0fcf974ec48d3e2e",
-      "synthetic_fixture_execution_authorized": false,
+      "synthetic_fixture_execution_authorized": true,
       "synthetic_replay_complete": true,
+      "second_environment_synthetic_replay_complete": false,
       "execution_authorized": false
     },
     "gstpeaq_proxy_v0_6_1": {
@@ -101,10 +120,10 @@
     }
   },
   "unmet_prerequisites": [
-    "Replay the same ViSQOL synthetic cases in an independently bound second environment before claiming cross-environment score determinism.",
+    "Execute the frozen ViSQOL synthetic cases in the independently bound second environment before claiming cross-environment score determinism.",
     "Obtain and commit a qualified legal record for use of the BS.1387-derived GstPEAQ proxy technology and its redistribution boundary.",
     "Freeze and replay the exact GstPEAQ proxy build only if the legal record permits execution.",
     "Keep retained audio and all sealed labels unopened until a later committed opening authorization."
   ],
-  "authorized_next_step": "Freeze an independently bound second ViSQOL environment before any further synthetic execution. Do not download ODAQ audio or execute a perceptual metric on public or retained audio."
+  "authorized_next_step": "Execute only the exact synthetic cases in the frozen Ubuntu 24.04 second-environment workflow. Do not download ODAQ audio or execute a perceptual metric on public, provider or retained audio."
 }

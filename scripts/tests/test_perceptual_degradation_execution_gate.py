@@ -36,7 +36,7 @@ class PerceptualDegradationExecutionGateTest(unittest.TestCase):
         self.assertTrue(
             GATE["completed_prerequisites"]["visqol_synthetic_replay_plan_frozen"]
         )
-        self.assertFalse(
+        self.assertTrue(
             GATE["metric_families"]["visqol_audio_v3_3_3"][
                 "synthetic_fixture_execution_authorized"
             ]
@@ -50,6 +50,17 @@ class PerceptualDegradationExecutionGateTest(unittest.TestCase):
             "7384c8d21725e6fa3921aea4e66ff9cb9481b57acef868304192df437a467319",
             GATE["metric_families"]["visqol_audio_v3_3_3"]["binary_sha256"],
         )
+        self.assertTrue(
+            GATE["second_environment_execution"][
+                "synthetic_fixture_execution_authorized"
+            ]
+        )
+        self.assertFalse(
+            GATE["second_environment_execution"][
+                "public_or_retained_audio_execution_authorized"
+            ]
+        )
+        self.assertFalse(GATE["second_environment_execution"]["execution_complete"])
 
     def test_gate_rejects_premature_metric_authorization(self) -> None:
         changed = copy.deepcopy(GATE)
@@ -78,6 +89,16 @@ class PerceptualDegradationExecutionGateTest(unittest.TestCase):
         ] = True
         self.assertIn(
             "gstpeaq_proxy_v0_6_1 synthetic fixture execution must remain unauthorized",
+            MODULE.validate(changed),
+        )
+
+    def test_gate_rejects_broadened_second_environment_execution(self) -> None:
+        changed = copy.deepcopy(GATE)
+        changed["second_environment_execution"][
+            "public_or_retained_audio_execution_authorized"
+        ] = True
+        self.assertIn(
+            "second_environment_execution.public_or_retained_audio_execution_authorized must remain false",
             MODULE.validate(changed),
         )
 

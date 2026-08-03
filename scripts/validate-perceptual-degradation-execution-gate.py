@@ -44,6 +44,8 @@ def validate(gate: dict[str, Any], root: Path = ROOT) -> list[str]:
         errors.append("ViSQOL synthetic replay plan must remain frozen")
     if completed.get("visqol_single_environment_synthetic_replay_complete") is not True:
         errors.append("ViSQOL single-environment synthetic replay must be complete")
+    if completed.get("visqol_second_environment_plan_frozen_before_scores") is not True:
+        errors.append("ViSQOL second-environment plan must be frozen before scores")
     for key, binding in gate.get("bindings", {}).items():
         path = root / binding.get("path", "")
         if not path.is_file():
@@ -64,10 +66,35 @@ def validate(gate: dict[str, Any], root: Path = ROOT) -> list[str]:
         errors.append("visqol_audio_v3_3_3.model_sha256 differs")
     if visqol.get("binary_sha256") != "7384c8d21725e6fa3921aea4e66ff9cb9481b57acef868304192df437a467319":
         errors.append("visqol_audio_v3_3_3.binary_sha256 differs")
-    if visqol.get("synthetic_fixture_execution_authorized") is not False:
-        errors.append("visqol_audio_v3_3_3 completed synthetic execution must be closed")
+    if visqol.get("synthetic_fixture_execution_authorized") is not True:
+        errors.append("visqol_audio_v3_3_3 exact second synthetic execution must be authorized")
     if visqol.get("synthetic_replay_complete") is not True:
         errors.append("visqol_audio_v3_3_3.synthetic_replay_complete must be true")
+    if visqol.get("second_environment_synthetic_replay_complete") is not False:
+        errors.append("visqol_audio_v3_3_3 second-environment replay must remain incomplete")
+    second = gate.get("second_environment_execution", {})
+    if second.get("metric_family") != "visqol_audio_v3_3_3":
+        errors.append("second environment must be limited to ViSQOL")
+    if second.get("environment_id") != "ubuntu24-gcc13-python312-v1":
+        errors.append("second environment identifier differs")
+    if second.get("synthetic_fixture_execution_authorized") is not True:
+        errors.append("second-environment synthetic fixture execution must be authorized")
+    for key in (
+        "public_or_retained_audio_execution_authorized",
+        "human_listening_score_access_authorized",
+        "provider_audio_download_authorized",
+        "execution_complete",
+    ):
+        if second.get(key) is not False:
+            errors.append(f"second_environment_execution.{key} must remain false")
+    if second.get("ephemeral_remote_execution_only") is not True:
+        errors.append("second-environment execution must remain ephemeral remote only")
+    if second.get("maximum_workers") != 6:
+        errors.append("second-environment worker ceiling must equal six")
+    if second.get("minimum_local_free_disk_gib") != 15:
+        errors.append("second-environment disk reserve must equal 15 GiB")
+    if second.get("score_blind_before_execution") is not True:
+        errors.append("second-environment execution must remain score-blind")
     proxy = families.get("gstpeaq_proxy_v0_6_1", {})
     if proxy.get("binary_sha256") is not None:
         errors.append("gstpeaq_proxy_v0_6_1.binary_sha256 must remain null")
