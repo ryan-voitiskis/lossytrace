@@ -381,3 +381,19 @@ binds the aggregate observation without assigning perceptual truth. These
 recipes are now eligible for future manifest construction, while actual audio
 acquisition and stimulus generation remain unauthorized pending source breadth,
 licence/attribution, excerpt, and physical-playback gates.
+
+The subsequent
+[`mastered-music and playback qualification`](perceptual-degradation-mastered-music-playback-qualification-20260804.md)
+uses current primary-source metadata without acquiring or previewing audio. RWC
+provides the strongest mastered reference, with five lossless professional
+subcollections but only one provider stratum. Fresh, composition-disjoint
+MAESTRO material can add a separate high-fidelity piano domain, and mshoxxDB
+can add a small mono electronic-production calibration stratum. MusicNet and
+MedleyDB remain deferred pending item-level provenance/licence or provider
+consent; FMA and MTG-Jamendo cannot become clean lossless references. The
+current output is only the built-in MacBook Pro speakers at 44.1 kHz, with no
+qualified transducer, ambient-noise class, system-effects state, or level
+calibration. The next gates therefore require responsible-human NC/SA delivery
+decisions and a declared physical playback chain. The earlier synthetic-sound
+audibility confirmation is not reused as either qualification or listening
+truth.

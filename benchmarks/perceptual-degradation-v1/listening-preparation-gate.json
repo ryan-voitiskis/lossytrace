@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "gate_id": "perceptual-degradation-listening-preparation-20260804-008",
+  "gate_id": "perceptual-degradation-listening-preparation-20260804-009",
   "state": "protocol_prepared_human_collection_unauthorized",
   "human_collection_authorized": false,
   "recruitment_authorized": false,
@@ -222,6 +222,22 @@
     "production_generation_synthetic_replay_tests": {
       "path": "scripts/tests/test_perceptual_degradation_production_generation_replay.py",
       "sha256": "38985a0be4acc9198b64c5bbcb8bf5e395f2103d3be351fd6ff764cac073f91a"
+    },
+    "mastered_music_playback_qualification_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/mastered-music-playback-qualification-plan.json",
+      "sha256": "b45d26b62803ddd0c341a984effb265138138e956644fa61e6c2e4fa5e21405b"
+    },
+    "mastered_music_playback_qualification_report": {
+      "path": "docs/research/perceptual-degradation-mastered-music-playback-qualification-20260804.md",
+      "sha256": "57408160b2600556f5e7f28610cff48d5a48162802b98ff57565595f1c98f873"
+    },
+    "mastered_music_playback_qualification_validator": {
+      "path": "scripts/validate-perceptual-degradation-mastered-music-playback-plan.py",
+      "sha256": "fcb9f6b46ab92c3a33087d22a7d23699b69fd1bb0d070c520325b7235d6df6d9"
+    },
+    "mastered_music_playback_qualification_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_mastered_music_playback_plan.py",
+      "sha256": "702444f9edf12c08d7ec86645ec1a0dd4f9f7795b9cc1163c15220066294745a"
     }
   },
   "unresolved_operational_fields": [
@@ -235,5 +251,5 @@
     "public minimum cell size and suppression policy",
     "qualified playback chain and calibration method"
   ],
-  "authorized_next_step": "Use the validated production and multi-generation recipes only as score-blind manifest candidates. Complete independently grouped mastered-music breadth, source attribution and legal-operational records before freezing a source-and-condition manifest. Continue physical playback qualification without contacting or collecting from real listeners. Actual audio acquisition, actual stimulus generation, metric execution and human collection remain unauthorized."
+  "authorized_next_step": "Obtain the responsible-human noncommercial and ShareAlike delivery decisions for the selected music sources and declare a stable physical playback chain with calibration method. Then freeze a metadata-only source allocation that excludes all consumed groups. Actual audio access, excerpt listening, stimulus generation, metric execution, participant contact and human collection remain unauthorized."
 }

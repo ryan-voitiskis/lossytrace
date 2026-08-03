@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "qualification_id": "perceptual-degradation-mastered-music-playback-20260804-001",
+  "state": "metadata_and_local_device_observed_audio_and_human_collection_unauthorized",
+  "purpose": "Qualify the remaining mastered-music, licence, excerpt and physical-playback gates without opening audio, assigning perceptual truth, contacting participants or authorizing stimulus generation.",
+  "bindings": {
+    "source_condition_qualification": {
+      "path": "benchmarks/perceptual-degradation-v1/source-condition-qualification-plan.json",
+      "sha256": "5ce20a4e10d743e8823810ec89e58d873ea2db47044151f065fa3358e16cf64b"
+    },
+    "production_generation_replay": {
+      "path": "research/toolchains/evidence/perceptual-degradation-production-generation-synthetic-replay-20260804-001.json",
+      "sha256": "1dec93a0334e6213ef4b952b4aea11018d5611755e88833e60c22030b25c54b8"
+    },
+    "private_lossless_delivery": {
+      "path": "benchmarks/perceptual-degradation-v1/private-lossless-delivery-plan.json",
+      "sha256": "9f2661f0a09d06e0a7cdccae20ef21db9c93b2951862dc88818aedd29d175d00"
+    },
+    "listening_protocol": {
+      "path": "docs/research/perceptual-degradation-listening-protocol-20260803.md",
+      "sha256": "7f918b7faa285cb4e2f142907e3d344f6cb11a7e43cfbfa83c82b9135158171b"
+    },
+    "research_contract": {
+      "path": "docs/research/perceptual-degradation-contract-20260803.md",
+      "sha256": "fdec79207fc0fdd2e9cb10aae9f93dd1a17b45e6e56c0c7df8f0e01a1f9fb505"
+    },
+    "rwc_audio_audit": {
+      "path": "research/sources/evidence/rwc-music-v2-2026-observed-20260802.json",
+      "sha256": "c7dfb3d68e440561802fcacc35584314da0514b5aa96269f37e3c38ab192a324"
+    },
+    "excerpt_preconditioning": {
+      "path": "scripts/audio_integrity_v2_preconditioning.py",
+      "sha256": "1d634a6ca0f038514dbbd42f7d8c3a1bb8d2520f8cc5006a2a8b18453f9cac8b"
+    }
+  },
+  "access_boundary": {
+    "retained_audio_access_authorized": false,
+    "provider_audio_acquisition_authorized": false,
+    "audio_preview_authorized": false,
+    "stimulus_generation_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "listener_response_collection_authorized": false,
+    "participant_contact_authorized": false,
+    "sealed_evidence_access_authorized": false
+  },
+  "current_primary_source_observations": [
+    {
+      "source_id": "rwc_music_v2_2026",
+      "primary_record": "https://zenodo.org/records/18656623",
+      "primary_method_record": "https://transactions.ismir.net/articles/10.5334/tismir.326",
+      "observed_on": "2026-08-04",
+      "format": "original master-quality stereo WAV, 44.1 kHz signed-16 PCM",
+      "scope": "328 tracks across popular, genre, jazz, classical and royalty-free subcollections",
+      "licence": "CC BY-NC 4.0",
+      "grouping": "85 eligible artist families after existing exclusions and identity merges",
+      "independence_limit": "one provider stratum; artist families do not prove disjoint sessions, engineers, studios or backing personnel",
+      "candidate_role": "mastered_music_calibration_and_transfer",
+      "operational_state": "retained_bytes_exist_but_access_forbidden_noncommercial_basis_unresolved"
+    },
+    {
+      "source_id": "maestro_v3_0_0",
+      "primary_record": "https://magenta.withgoogle.com/datasets/maestro",
+      "observed_on": "2026-08-04",
+      "format": "uncompressed stereo WAV, 44.1-48 kHz signed-16 PCM",
+      "scope": "1276 classical piano performances from ten competition years",
+      "licence": "CC BY-NC-SA 4.0",
+      "grouping": "co-locate the same composition across performances; exclude every previously consumed member and related composition",
+      "independence_limit": "high-fidelity acoustic-performance domain, not mastered multi-genre production",
+      "candidate_role": "independent_high_fidelity_music_calibration_or_transfer",
+      "operational_state": "metadata_only_noncommercial_share_alike_basis_unresolved"
+    },
+    {
+      "source_id": "mshoxxdb_v1_2",
+      "primary_record": "https://zenodo.org/records/19599752",
+      "observed_on": "2026-08-04",
+      "format": "44.1 kHz signed-16 FLAC mixtures and multitracks; mixtures are mono",
+      "scope": "18 full-length electronic pieces, 61 minutes, with documented mix processing",
+      "licence": "CC BY-NC-SA 4.0",
+      "grouping": "one artist/provider family; every related mixture, stem and version co-located",
+      "independence_limit": "one artist and mono mixtures; useful production-domain breadth but not stereo or artist transfer",
+      "candidate_role": "electronic_production_calibration_only",
+      "operational_state": "metadata_only_noncommercial_share_alike_basis_unresolved"
+    }
+  ],
+  "deferred_or_excluded_sources": [
+    {
+      "source_id": "musicnet_1_0",
+      "primary_record": "https://zenodo.org/records/5120004",
+      "disposition": "defer",
+      "reason": "330 PCM WAV recordings span three named origins, but the record has no dataset-level licence field; item provenance, exact licence and prior-lossy lineage require audit before use"
+    },
+    {
+      "source_id": "medleydb",
+      "primary_record": "https://medleydb.weebly.com/downloads.html",
+      "disposition": "defer",
+      "reason": "CC BY-NC-SA 4.0 audio requires access request and the provider asks for consent before republishing any part"
+    },
+    {
+      "source_id": "fma",
+      "primary_record": "https://github.com/mdeff/fma",
+      "disposition": "natural_hard_negative_only",
+      "reason": "distributed reference audio is MP3 encoded and per-track licences vary; it cannot be a clean lossless codec-generation reference"
+    },
+    {
+      "source_id": "mtg_jamendo",
+      "primary_record": "https://zenodo.org/records/3826813",
+      "disposition": "natural_hard_negative_only",
+      "reason": "the bound Zenodo release contains metadata while audio is obtained from Jamendo under per-track Creative Commons terms; clean lossless source lineage is not established"
+    },
+    {
+      "source_id": "musdb18hq_consumed_transfer",
+      "disposition": "consumed_development_only",
+      "reason": "prior LossyTrace transfer work consumed this provider and it cannot become fresh listening or final-validation evidence"
+    }
+  ],
+  "claim_boundary": {
+    "broad_commercial_music_claim_authorized": false,
+    "all_genre_music_claim_authorized": false,
+    "current_freezable_claim": "none_until_licence_and_independent_provider_gates_close",
+    "future_narrow_claim_candidate": "professional RWC mastered productions plus separately grouped high-fidelity piano and electronic-production calibration strata",
+    "rwc_track_count_treated_as_independent_provider_count": false,
+    "lossy_distributed_audio_used_as_lossless_reference": false
+  },
+  "excerpt_policy": {
+    "maximum_seconds": 12,
+    "identity_hashed_offset_required": true,
+    "same_source_and_related_versions_co_located": true,
+    "selection_before_metric_or_listener_outcomes": true,
+    "artifact_sensitive_manual_selection_authorized_now": false,
+    "private_member_manifest_required": true,
+    "public_source_paths_forbidden": true
+  },
+  "local_playback_observation": {
+    "observed_on": "2026-08-04",
+    "observation_method": "macOS system audio inventory and current-default-output query",
+    "default_output": "MacBook Pro Speakers",
+    "transport": "Built-in",
+    "output_channels": 2,
+    "current_sample_rate_hz": 44100,
+    "external_dac_or_amplifier_observed": false,
+    "headphones_observed": false,
+    "transducer_model_qualified": false,
+    "ambient_noise_class_qualified": false,
+    "level_calibration_method_qualified": false,
+    "system_effects_state_qualified": false,
+    "physical_playback_qualified": false,
+    "operator_synthetic_audibility_confirmation_reused_as_qualification": false
+  },
+  "human_decisions_required": [
+    "Responsible human confirms whether this company-associated study qualifies as noncommercial under each selected NC licence and approves the exact excerpt delivery model.",
+    "Responsible human resolves ShareAlike attribution, licence-link and downstream delivery obligations before selecting MAESTRO, mshoxxDB or MedleyDB.",
+    "Operator declares a stable headphone or calibrated loudspeaker chain, including DAC/amplifier, transducer model, quiet-room or ambient-noise class, system-effects state and conservative level-calibration method.",
+    "Operator performs the frozen channel and calibration checks without submitting degradation ratings or participant data."
+  ],
+  "decision": {
+    "production_and_generation_recipe_gate_closed": true,
+    "mastered_music_candidates_identified": true,
+    "independent_music_provider_gate_closed": false,
+    "licences_frozen": false,
+    "excerpt_policy_frozen": true,
+    "private_excerpt_manifest_frozen": false,
+    "physical_playback_qualified": false,
+    "source_and_condition_manifest_freezable": false,
+    "human_collection_authorized": false
+  },
+  "authorized_next_step": "Obtain the responsible-human licence decisions and a declared physical playback chain, then freeze a metadata-only source allocation that excludes every consumed group. Do not access audio, select excerpts by listening, generate stimuli, execute metrics, contact participants or collect responses."
+}
