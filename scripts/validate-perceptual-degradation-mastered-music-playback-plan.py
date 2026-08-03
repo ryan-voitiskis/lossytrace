@@ -116,10 +116,23 @@ def validate(plan: dict[str, Any], root: Path = ROOT) -> list[str]:
         errors.append("permissive fallback licence classes differ")
     if fallback.get("attribution_metadata_complete") is not True:
         errors.append("permissive fallback attribution metadata is incomplete")
+    if fallback.get("reference_member_metadata_frozen") is not True:
+        errors.append("permissive fallback reference metadata is not frozen")
+    if fallback.get("reference_member_metadata_sha256") != (
+        "1a39f50013a4274f60ca7c1771ebad22dcafda6950db87d2ffe4acdfb58ab0e7"
+    ):
+        errors.append("permissive fallback reference metadata hash differs")
+    if fallback.get("reference_member_metadata_replays_byte_identical") is not True:
+        errors.append("permissive fallback metadata replay differs")
+    if fallback.get("reference_total_compressed_bytes") != 46_721_638:
+        errors.append("permissive fallback compressed-byte total differs")
+    if fallback.get("reference_total_uncompressed_bytes") != 54_633_154:
+        errors.append("permissive fallback uncompressed-byte total differs")
     for field in (
         "noncommercial_decision_required",
         "share_alike_obligation_present",
         "actual_codec_condition_present",
+        "reference_audio_acquisition_authorized",
         "independent_provider_transfer_supported",
         "final_validation_supported",
     ):
@@ -172,6 +185,8 @@ def validate(plan: dict[str, Any], root: Path = ROOT) -> list[str]:
         errors.append("mastered music candidates are not identified")
     if decision.get("permissive_source_fallback_identified") is not True:
         errors.append("permissive source fallback is not identified")
+    if decision.get("permissive_reference_metadata_frozen") is not True:
+        errors.append("permissive reference metadata is not frozen")
     if decision.get("excerpt_policy_frozen") is not True:
         errors.append("excerpt policy is not frozen")
     for field in (

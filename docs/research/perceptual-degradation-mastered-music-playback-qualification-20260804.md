@@ -48,6 +48,13 @@ remains one provider stratum. Its published conditions simulate coding-like
 artifacts or source-separation/remix damage; they are not actual codec encodes,
 grouped transfer evidence, or final validation.
 
+The exact 16 clean-reference ZIP members are now separately
+[`metadata-frozen`](perceptual-degradation-odaq-reference-acquisition-freeze-20260804.md).
+Two fresh central-directory-only replays were byte-identical at SHA-256
+`1a39f50013a4274f60ca7c1771ebad22dcafda6950db87d2ffe4acdfb58ab0e7`.
+They bound 46,721,638 compressed bytes and 54,633,154 uncompressed bytes
+without opening any ZIP member. This is not acquisition authority.
+
 ## Playback result
 
 The current default output is the built-in MacBook Pro speakers, stereo at
@@ -67,6 +74,7 @@ ratings or participant data are needed for that check.
 Two human decisions remain: choose the narrower permissive one-provider path
 or the wider NC/SA source track, and declare/qualify the physical playback
 chain. The permissive path avoids an NC/SA determination but narrows the
-supportable source-breadth claim. Until a path is chosen, audio access, excerpt
+supportable source-breadth claim. Its exact reference-member metadata is ready,
+but audio remains closed. Until a path is chosen, audio access, excerpt
 listening, stimulus generation, metrics, participant contact, and human
 collection remain unauthorized.

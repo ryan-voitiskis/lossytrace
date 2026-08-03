@@ -411,3 +411,15 @@ processed conditions, metrics, and listening remain closed. A responsible
 human must still choose this narrower path or the wider NC/SA source track and
 declare a qualified playback chain; neither path supplies fresh final
 validation by itself.
+
+The successor
+[`ODAQ reference-acquisition metadata freeze`](perceptual-degradation-odaq-reference-acquisition-freeze-20260804.md)
+ran twice in fresh temporary directories and produced byte-identical plans at
+SHA-256 `1a39f50013a4274f60ca7c1771ebad22dcafda6950db87d2ffe4acdfb58ab0e7`.
+Each replay made three bounded Range requests totalling 85,617 bytes and opened
+only the ZIP central directory. Exactly 16 clean `reference.wav` members are
+bound by public identity, CRC32, sizes, ZIP method, family code, and licence
+records: 46,721,638 compressed bytes and 54,633,154 uncompressed bytes. No ZIP
+member payload, audio, processed condition, licence file, or score was opened;
+temporary plan copies were moved to recoverable Trash. The freeze is not an
+acquisition authorization and does not choose the narrow source track.

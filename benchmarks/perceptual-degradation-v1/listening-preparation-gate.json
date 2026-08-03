@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "gate_id": "perceptual-degradation-listening-preparation-20260804-010",
+  "gate_id": "perceptual-degradation-listening-preparation-20260804-011",
   "state": "protocol_prepared_human_collection_unauthorized",
   "human_collection_authorized": false,
   "recruitment_authorized": false,
@@ -225,19 +225,19 @@
     },
     "mastered_music_playback_qualification_plan": {
       "path": "benchmarks/perceptual-degradation-v1/mastered-music-playback-qualification-plan.json",
-      "sha256": "887047f8768deca250e021f78e9cc29b8beb1aadeb2687e28fd6cec31f525df3"
+      "sha256": "d4c6530affbd30c132ab2d94d33bbc6c1c10aba14cad57e793b91110a07c06b6"
     },
     "mastered_music_playback_qualification_report": {
       "path": "docs/research/perceptual-degradation-mastered-music-playback-qualification-20260804.md",
-      "sha256": "4804174dcd001bea0c57bb064bcb590e84d8323a2ca283e35e989774c8959cb0"
+      "sha256": "aab691459d77f61ec00405c63c5f65a1313bd00d895b17580f9734ac1eee33a2"
     },
     "mastered_music_playback_qualification_validator": {
       "path": "scripts/validate-perceptual-degradation-mastered-music-playback-plan.py",
-      "sha256": "753d582f65a2931abdb99b432dfa078e7cea97dd7dc391ef3c203c3e5e2cdabb"
+      "sha256": "aba57d7a7945c8a1b9a367db856f5bb646e18aecdcf8061cc147d8e8dfb79690"
     },
     "mastered_music_playback_qualification_tests": {
       "path": "scripts/tests/test_perceptual_degradation_mastered_music_playback_plan.py",
-      "sha256": "1f82485aa9de05ef3ae1d34a5dead2789fc844eded3c58b68526af1ffb6ece70"
+      "sha256": "b49ad17e271e646e0ad07c1223131d822e0a1fd0ad06523e056718331eede8c3"
     },
     "permissive_listening_source_fallback_plan": {
       "path": "benchmarks/perceptual-degradation-v1/permissive-listening-source-fallback-plan.json",
@@ -254,6 +254,22 @@
     "permissive_listening_source_fallback_tests": {
       "path": "scripts/tests/test_perceptual_degradation_permissive_source_fallback.py",
       "sha256": "6356117107bbbe8b6418fd19e5236fe533bfdfcc5347aeb4a3852480df03a110"
+    },
+    "odaq_reference_acquisition_freeze": {
+      "path": "benchmarks/perceptual-degradation-v1/odaq-reference-acquisition-freeze.json",
+      "sha256": "1a39f50013a4274f60ca7c1771ebad22dcafda6950db87d2ffe4acdfb58ab0e7"
+    },
+    "odaq_reference_acquisition_report": {
+      "path": "docs/research/perceptual-degradation-odaq-reference-acquisition-freeze-20260804.md",
+      "sha256": "547e50ad568d7f874dbc7b4ffba4dade1c7731f23acb2527b26dafcd0572233e"
+    },
+    "odaq_reference_acquisition_implementation": {
+      "path": "scripts/freeze-perceptual-degradation-odaq-reference-acquisition.py",
+      "sha256": "e53b5170711b2da5d27c0de1dc73e685522ff7fd699997d4b503f673503df9e8"
+    },
+    "odaq_reference_acquisition_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_odaq_reference_acquisition_freeze.py",
+      "sha256": "82985665c41a488a57251e4f55e5129b4a453294b72b626ca789256145975dca"
     }
   },
   "unresolved_operational_fields": [
@@ -267,5 +283,5 @@
     "public minimum cell size and suppression policy",
     "qualified playback chain and calibration method"
   ],
-  "authorized_next_step": "Obtain the responsible-human choice between the narrow CC BY/CC0-only ODAQ fallback and the wider NC/SA source track, and declare a stable physical playback chain with calibration method. Then freeze a metadata-only source allocation that excludes all consumed groups. Actual audio access, excerpt listening, stimulus generation, metric execution, participant contact and human collection remain unauthorized."
+  "authorized_next_step": "Obtain the responsible-human choice between the narrow CC BY/CC0-only ODAQ fallback and the wider NC/SA source track, and declare a stable physical playback chain with calibration method. Exact ODAQ reference metadata is frozen, but audio acquisition remains unauthorized. Actual audio access, excerpt listening, stimulus generation, metric execution, participant contact and human collection remain unauthorized."
 }
