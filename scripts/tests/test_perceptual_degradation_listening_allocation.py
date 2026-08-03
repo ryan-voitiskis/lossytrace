@@ -1,13 +1,26 @@
 from __future__ import annotations
 
 import copy
+import hashlib
 import importlib.util
+import json
 import unittest
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
 SCRIPT = ROOT / "scripts" / "perceptual_degradation_listening_allocation.py"
+SYNTHETIC_MANIFEST = (
+    ROOT
+    / "benchmarks"
+    / "perceptual-degradation-v1"
+    / "listening-stimulus-manifest.synthetic.json"
+)
+SYNTHETIC_ASSIGNMENT = (
+    ROOT / "research" / "listening-player" / "synthetic-assignment.js"
+)
+SYNTHETIC_PARTICIPANT_KEY = "synthetic-operator-000000"
+SYNTHETIC_ALLOCATION_SEED = "lossytrace-synthetic-player-allocation-v1"
 SPEC = importlib.util.spec_from_file_location("listening_allocation", SCRIPT)
 assert SPEC and SPEC.loader
 MODULE = importlib.util.module_from_spec(SPEC)
@@ -36,7 +49,12 @@ def stimulus(stimulus_id: str, role: str, active: float = 10) -> dict:
         "sample_rate_hz": 48000,
         "channel_count": 2,
         "channel_map": "L_R",
-        "private_audio_sha256": "a" * 64,
+        "delivery": {
+            "delivery_class": "generated_synthetic",
+            "recipe_id": "recipe-0001",
+            "recipe_id_sha256": hashlib.sha256(b"recipe-0001").hexdigest(),
+            "generator_source_sha256": "a" * 64,
+        },
         "licence_record_id": "licence-0001",
     }
 
@@ -97,6 +115,20 @@ class ListeningAllocationTest(unittest.TestCase):
         second = MODULE.allocate(manifest(), "participant-two", "seed-public", 1)
         self.assertNotEqual(first["assignment_id"], second["assignment_id"])
 
+    def test_committed_synthetic_assignment_exactly_replays_manifest(self) -> None:
+        value = json.loads(SYNTHETIC_MANIFEST.read_text(encoding="utf-8"))
+        self.assertEqual([], MODULE.validate_manifest(value))
+        expected = MODULE.serialize_assignment(
+            MODULE.allocate(
+                value,
+                SYNTHETIC_PARTICIPANT_KEY,
+                SYNTHETIC_ALLOCATION_SEED,
+                0,
+            ),
+            "javascript",
+        )
+        self.assertEqual(expected, SYNTHETIC_ASSIGNMENT.read_text(encoding="utf-8"))
+
     def test_balanced_incomplete_blocks_limit_exposure_range(self) -> None:
         value = manifest()
         subtle_template = value["trials"][0]
@@ -112,6 +144,19 @@ class ListeningAllocationTest(unittest.TestCase):
     def test_negative_allocation_index_is_rejected(self) -> None:
         with self.assertRaisesRegex(ValueError, "index must be non-negative"):
             MODULE.allocate(manifest(), "participant", "seed", -1)
+
+    def test_javascript_serialization_contains_only_assignment(self) -> None:
+        result = MODULE.allocate(manifest(), "participant", "seed", 0)
+        encoded = MODULE.serialize_assignment(result, "javascript")
+        self.assertTrue(encoded.startswith('"use strict";'))
+        self.assertIn("globalThis.LOSSYTRACE_ASSIGNMENT", encoded)
+        self.assertNotIn("participant\"", encoded)
+        self.assertNotIn("condition_class", encoded)
+
+    def test_unknown_serialization_format_is_rejected(self) -> None:
+        result = MODULE.allocate(manifest(), "participant", "seed", 0)
+        with self.assertRaisesRegex(ValueError, "unsupported"):
+            MODULE.serialize_assignment(result, "yaml")
 
     def test_subtle_trial_requires_one_hidden_reference_and_condition(self) -> None:
         changed = copy.deepcopy(manifest())
@@ -143,6 +188,46 @@ class ListeningAllocationTest(unittest.TestCase):
         self.assertIn(
             "condition-0001: codec class requires controlled intervention", errors
         )
+
+    def test_hidden_reference_must_bind_identical_delivery(self) -> None:
+        changed = copy.deepcopy(manifest())
+        changed["stimuli"][1]["delivery"]["recipe_id_sha256"] = "b" * 64
+        errors = MODULE.validate_manifest(changed)
+        self.assertIn(
+            "trial-subtle-0001: hidden reference delivery differs", errors
+        )
+        self.assertIn(
+            "trial-mushra-0001: hidden reference delivery differs", errors
+        )
+
+    def test_trial_stimulus_formats_include_active_duration(self) -> None:
+        changed = copy.deepcopy(manifest())
+        changed["stimuli"][2]["active_seconds"] = 9
+        self.assertIn(
+            "trial-subtle-0001: stimulus delivery formats differ",
+            MODULE.validate_manifest(changed),
+        )
+
+    def test_lossless_delivery_requires_hash_container_and_depth(self) -> None:
+        changed = copy.deepcopy(manifest())
+        changed["stimuli"][2]["delivery"] = {
+            "delivery_class": "lossless_audio_file",
+            "private_audio_sha256": "not-a-hash",
+            "container": "mp3",
+            "bit_depth": 12,
+        }
+        self.assertIn(
+            "condition-0001: lossless delivery binding differs",
+            MODULE.validate_manifest(changed),
+        )
+
+    def test_generated_delivery_binds_recipe_identifier_and_source(self) -> None:
+        changed = copy.deepcopy(manifest())
+        changed["stimuli"][2]["delivery"]["recipe_id_sha256"] = "b" * 64
+        changed["stimuli"][3]["delivery"]["generator_source_sha256"] = "short"
+        errors = MODULE.validate_manifest(changed)
+        self.assertIn("condition-0001: generated delivery binding differs", errors)
+        self.assertIn("anchorlow-0001: generated delivery binding differs", errors)
 
 
 if __name__ == "__main__":

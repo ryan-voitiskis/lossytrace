@@ -56,15 +56,19 @@
     },
     "stimulus_manifest_schema": {
       "path": "benchmarks/perceptual-degradation-v1/listening-stimulus-manifest.schema.json",
-      "sha256": "be12bf35311024f9544856053707e273f1a77793d8a5a507697e0e5cee11b4ff"
+      "sha256": "a9f94e6bc3789de2af78473df0c5f433029186dcb0aad18a709d9a0f237603a6"
+    },
+    "synthetic_stimulus_manifest": {
+      "path": "benchmarks/perceptual-degradation-v1/listening-stimulus-manifest.synthetic.json",
+      "sha256": "030b561ecc08dc4aeecb6be0c319a95780f6b56233c5507540e15eb3487c8adf"
     },
     "score_blind_allocator": {
       "path": "scripts/perceptual_degradation_listening_allocation.py",
-      "sha256": "0c92d1ef247bdaf22b11040844cf8fdaaf924ffeac481ba932799dc22b68f4e1"
+      "sha256": "2fbe6a0782e6f7652bf60924f27141c511402adea6d0bbb532c4b371edb7d2fc"
     },
     "score_blind_allocator_tests": {
       "path": "scripts/tests/test_perceptual_degradation_listening_allocation.py",
-      "sha256": "f83c7a3d60a6e29b2873684418346976c4a1ef1bbd6794ae9b140f0801a8c4d5"
+      "sha256": "601c9a9de376013f407514d960f22603edb5a6e68a02cfc51e745079014780ad"
     },
     "power_simulation": {
       "path": "scripts/perceptual_degradation_listening_power.py",
@@ -84,15 +88,19 @@
     },
     "synthetic_player_html": {
       "path": "research/listening-player/index.html",
-      "sha256": "f23e5f0b9574f0b6140dd09317daac08b4f40c58dc0fd4cd05dec9f33ba489de"
+      "sha256": "4d53807c14cbac0438b5319e40b6d49e9430d4a6b7b3b0992ae3767b2b89b350"
     },
     "synthetic_player_css": {
       "path": "research/listening-player/style.css",
       "sha256": "d37ff69c92fc8d986c3027395394d1eea0a3722d0ee108b4ba8c9c2ea9e00caf"
     },
+    "synthetic_player_assignment": {
+      "path": "research/listening-player/synthetic-assignment.js",
+      "sha256": "7ffb7bc701467ce8d6ab0b61b74272c1999755138b841bf5d1d807e1c6803ef6"
+    },
     "synthetic_player_javascript": {
       "path": "research/listening-player/player.js",
-      "sha256": "c0bfe0555362e87d2d45fc374e75bd4e1dab123d28be6fad372390261e230087"
+      "sha256": "fda73121463ce5b6d21a7b8f968062cdb75485edf96a6f7452317a3b7574121b"
     },
     "synthetic_player_icon": {
       "path": "research/listening-player/favicon.svg",
@@ -100,11 +108,15 @@
     },
     "synthetic_player_tests": {
       "path": "scripts/tests/test_perceptual_degradation_listening_player.py",
-      "sha256": "e6fa859420203ccdb681533b9981a0620ae1f4db839a0a48d29b0f32677371e6"
+      "sha256": "349187da820b0b55894858e9fd01823a56cd7fe258e68f75cccc347de37690f9"
     },
-    "synthetic_player_dry_run_evidence": {
+    "synthetic_player_v1_dry_run_evidence": {
       "path": "research/toolchains/evidence/perceptual-degradation-listening-player-dry-run-observed-20260803-001.json",
       "sha256": "7011b1ce890f7c490d9672a8f768c6ff8bb01a994df693f04bd2e2d8f9d1fce0"
+    },
+    "synthetic_player_dry_run_evidence": {
+      "path": "research/toolchains/evidence/perceptual-degradation-listening-player-dry-run-observed-20260803-002.json",
+      "sha256": "69b48a1c512b694bcdcc9e8ef4f4bcb01f12432ea1e573ba9b8a33f45b65fc58"
     }
   },
   "unresolved_operational_fields": [
@@ -118,5 +130,5 @@
     "public minimum cell size and suppression policy",
     "qualified playback chain and calibration method"
   ],
-  "authorized_next_step": "Make the player consume frozen assignment records and lossless stimulus bindings, then qualify an exact browser and audio delivery chain. Do not contact or collect from real listeners."
+  "authorized_next_step": "Implement private lossless real-stimulus delivery and qualify an exact browser and audio delivery chain. Do not contact or collect from real listeners."
 }

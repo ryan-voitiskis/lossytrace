@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "manifest_id": "manifest-synthetic-player-v1",
+  "state": "score_blind_preparation",
+  "human_collection_authorized": false,
+  "condition_recipes_visible_to_listener": false,
+  "stimuli": [
+    {
+      "stimulus_id": "stimulus-s0001",
+      "source_group_id": "source-synthetic-main",
+      "partition_group_id": "partition-synthetic-main",
+      "partition": "development",
+      "domain": "synthetic",
+      "role": "reference",
+      "condition_class": "reference",
+      "controlled_codec_intervention": false,
+      "duration_seconds": 8,
+      "active_seconds": 8,
+      "sample_rate_hz": 48000,
+      "channel_count": 2,
+      "channel_map": "L_R",
+      "delivery": {
+        "delivery_class": "generated_synthetic",
+        "recipe_id": "synthetic-reference-v1",
+        "recipe_id_sha256": "a99dc0e6d481c35f12a5eb13f79b8778270496a3177e4d1118ecd545005ab884",
+        "generator_source_sha256": "fda73121463ce5b6d21a7b8f968062cdb75485edf96a6f7452317a3b7574121b"
+      },
+      "licence_record_id": "licence-generated-v1"
+    },
+    {
+      "stimulus_id": "stimulus-s0002",
+      "source_group_id": "source-synthetic-main",
+      "partition_group_id": "partition-synthetic-main",
+      "partition": "development",
+      "domain": "synthetic",
+      "role": "hidden_reference",
+      "condition_class": "reference",
+      "controlled_codec_intervention": false,
+      "duration_seconds": 8,
+      "active_seconds": 8,
+      "sample_rate_hz": 48000,
+      "channel_count": 2,
+      "channel_map": "L_R",
+      "delivery": {
+        "delivery_class": "generated_synthetic",
+        "recipe_id": "synthetic-reference-v1",
+        "recipe_id_sha256": "a99dc0e6d481c35f12a5eb13f79b8778270496a3177e4d1118ecd545005ab884",
+        "generator_source_sha256": "fda73121463ce5b6d21a7b8f968062cdb75485edf96a6f7452317a3b7574121b"
+      },
+      "licence_record_id": "licence-generated-v1"
+    },
+    {
+      "stimulus_id": "stimulus-s0003",
+      "source_group_id": "source-synthetic-main",
+      "partition_group_id": "partition-synthetic-main",
+      "partition": "development",
+      "domain": "synthetic",
+      "role": "condition",
+      "condition_class": "simulated_artifact",
+      "controlled_codec_intervention": false,
+      "duration_seconds": 8,
+      "active_seconds": 8,
+      "sample_rate_hz": 48000,
+      "channel_count": 2,
+      "channel_map": "L_R",
+      "delivery": {
+        "delivery_class": "generated_synthetic",
+        "recipe_id": "synthetic-condition-v1",
+        "recipe_id_sha256": "7c62ff0da9d195c7fdd0d91382d071a3460bf05012f520d2b5756e958ab2bf6f",
+        "generator_source_sha256": "fda73121463ce5b6d21a7b8f968062cdb75485edf96a6f7452317a3b7574121b"
+      },
+      "licence_record_id": "licence-generated-v1"
+    },
+    {
+      "stimulus_id": "stimulus-s0004",
+      "source_group_id": "source-synthetic-main",
+      "partition_group_id": "partition-synthetic-main",
+      "partition": "development",
+      "domain": "synthetic",
+      "role": "anchor_low",
+      "condition_class": "anchor",
+      "controlled_codec_intervention": false,
+      "duration_seconds": 8,
+      "active_seconds": 8,
+      "sample_rate_hz": 48000,
+      "channel_count": 2,
+      "channel_map": "L_R",
+      "delivery": {
+        "delivery_class": "generated_synthetic",
+        "recipe_id": "synthetic-anchor-low-v1",
+        "recipe_id_sha256": "3ee733c6989c2a1e88524fd8bbfbdefcce0112777b3a006f870830090982b123",
+        "generator_source_sha256": "fda73121463ce5b6d21a7b8f968062cdb75485edf96a6f7452317a3b7574121b"
+      },
+      "licence_record_id": "licence-generated-v1"
+    },
+    {
+      "stimulus_id": "stimulus-s0005",
+      "source_group_id": "source-synthetic-main",
+      "partition_group_id": "partition-synthetic-main",
+      "partition": "development",
+      "domain": "synthetic",
+      "role": "anchor_mid",
+      "condition_class": "anchor",
+      "controlled_codec_intervention": false,
+      "duration_seconds": 8,
+      "active_seconds": 8,
+      "sample_rate_hz": 48000,
+      "channel_count": 2,
+      "channel_map": "L_R",
+      "delivery": {
+        "delivery_class": "generated_synthetic",
+        "recipe_id": "synthetic-anchor-mid-v1",
+        "recipe_id_sha256": "a727647a09a1b889ddc2160ed311010f137d1375c5d4b0a53ca6a9b5f34db04b",
+        "generator_source_sha256": "fda73121463ce5b6d21a7b8f968062cdb75485edf96a6f7452317a3b7574121b"
+      },
+      "licence_record_id": "licence-generated-v1"
+    }
+  ],
+  "trials": [
+    {
+      "trial_id": "trial-t0001",
+      "method": "subtle",
+      "partition": "development",
+      "visible_reference_id": "stimulus-s0001",
+      "candidate_ids": ["stimulus-s0002", "stimulus-s0003"]
+    },
+    {
+      "trial_id": "trial-t0002",
+      "method": "mushra",
+      "partition": "development",
+      "visible_reference_id": "stimulus-s0001",
+      "candidate_ids": ["stimulus-s0002", "stimulus-s0003", "stimulus-s0004", "stimulus-s0005"]
+    }
+  ]
+}

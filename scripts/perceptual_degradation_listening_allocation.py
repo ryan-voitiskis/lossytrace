@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 from pathlib import Path
 from typing import Any
 
@@ -13,6 +14,7 @@ from typing import Any
 MAX_SUBTLE_TRIALS = 15
 MAX_MUSHRA_TRIALS = 6
 MAX_MUSHRA_CANDIDATES = 11
+SHA256 = re.compile(r"^[0-9a-f]{64}$")
 
 
 def _digest(*parts: str) -> str:
@@ -62,6 +64,31 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
             errors.append(f"{stimulus_id}: controlled codec flag conflicts")
         if condition_class in {"controlled_codec", "transparent_codec"} and controlled is not True:
             errors.append(f"{stimulus_id}: codec class requires controlled intervention")
+        delivery = item.get("delivery", {})
+        delivery_class = delivery.get("delivery_class")
+        if delivery_class == "generated_synthetic":
+            recipe_id = delivery.get("recipe_id")
+            recipe_id_sha256 = delivery.get("recipe_id_sha256")
+            expected_recipe_id_sha256 = (
+                hashlib.sha256(recipe_id.encode()).hexdigest()
+                if isinstance(recipe_id, str) and recipe_id
+                else None
+            )
+            if (
+                recipe_id_sha256 != expected_recipe_id_sha256
+                or not isinstance(delivery.get("generator_source_sha256"), str)
+                or not SHA256.fullmatch(delivery["generator_source_sha256"])
+            ):
+                errors.append(f"{stimulus_id}: generated delivery binding differs")
+        elif delivery_class == "lossless_audio_file":
+            if (
+                not SHA256.fullmatch(delivery.get("private_audio_sha256", ""))
+                or delivery.get("container") not in {"wav", "flac"}
+                or delivery.get("bit_depth") not in {16, 24, 32}
+            ):
+                errors.append(f"{stimulus_id}: lossless delivery binding differs")
+        else:
+            errors.append(f"{stimulus_id}: delivery class differs")
 
     trials = manifest.get("trials", [])
     trial_ids = [item.get("trial_id") for item in trials]
@@ -83,9 +110,29 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
             errors.append(f"{trial_id}: stimuli cross partitions")
         if reference.get("role") != "reference":
             errors.append(f"{trial_id}: visible reference role differs")
+        if len(trial.get("candidate_ids", [])) != len(
+            set(trial.get("candidate_ids", []))
+        ):
+            errors.append(f"{trial_id}: candidate IDs must be unique")
         roles = [item["role"] for item in candidates]
         if roles.count("hidden_reference") != 1:
             errors.append(f"{trial_id}: exactly one hidden reference is required")
+        else:
+            hidden = candidates[roles.index("hidden_reference")]
+            if hidden.get("delivery") != reference.get("delivery"):
+                errors.append(f"{trial_id}: hidden reference delivery differs")
+        formats = {
+            (
+                item.get("duration_seconds"),
+                item.get("active_seconds"),
+                item.get("sample_rate_hz"),
+                item.get("channel_count"),
+                item.get("channel_map"),
+            )
+            for item in all_items
+        }
+        if len(formats) != 1:
+            errors.append(f"{trial_id}: stimulus delivery formats differ")
         method = trial.get("method")
         if method == "subtle":
             if len(candidates) != 2 or roles.count("condition") != 1:
@@ -215,12 +262,27 @@ def audit_balance(
     }
 
 
+def serialize_assignment(result: dict[str, Any], output_format: str) -> str:
+    encoded = json.dumps(result, indent=2, sort_keys=True)
+    if output_format == "json":
+        return encoded + "\n"
+    if output_format == "javascript":
+        return (
+            '"use strict";\n\n'
+            "globalThis.LOSSYTRACE_ASSIGNMENT = Object.freeze(\n"
+            + encoded
+            + "\n);\n"
+        )
+    raise ValueError(f"unsupported assignment output format: {output_format}")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--manifest", type=Path, required=True)
     parser.add_argument("--participant-key", required=True)
     parser.add_argument("--allocation-index", type=int, required=True)
     parser.add_argument("--allocation-seed", required=True)
+    parser.add_argument("--format", choices=("json", "javascript"), default="json")
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     manifest = json.loads(args.manifest.read_text(encoding="utf-8"))
@@ -233,9 +295,7 @@ def main() -> int:
     if args.output.exists() or args.output.is_symlink():
         raise SystemExit(f"refusing to replace output: {args.output}")
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(
-        json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8"
-    )
+    args.output.write_text(serialize_assignment(result, args.format), encoding="utf-8")
     print(json.dumps({"assignment_id": result["assignment_id"], "status": result["state"]}, sort_keys=True))
     return 0
 
