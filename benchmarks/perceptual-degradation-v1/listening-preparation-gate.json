@@ -13,7 +13,7 @@
     "source_and_condition_manifest_frozen": false,
     "licences_frozen": false,
     "player_implementation_frozen": false,
-    "synthetic_dry_run_passed": false,
+    "synthetic_dry_run_passed": true,
     "playback_qualification_frozen": false,
     "power_report_frozen": true,
     "privacy_operational_fields_resolved": false,
@@ -81,6 +81,30 @@
     "power_report": {
       "path": "docs/research/perceptual-degradation-listening-power-20260803.md",
       "sha256": "1fa7a0a00946d3af7caf47bb6624e271ca4e776ec9a9aa3b1d0bb7f331249189"
+    },
+    "synthetic_player_html": {
+      "path": "research/listening-player/index.html",
+      "sha256": "f23e5f0b9574f0b6140dd09317daac08b4f40c58dc0fd4cd05dec9f33ba489de"
+    },
+    "synthetic_player_css": {
+      "path": "research/listening-player/style.css",
+      "sha256": "d37ff69c92fc8d986c3027395394d1eea0a3722d0ee108b4ba8c9c2ea9e00caf"
+    },
+    "synthetic_player_javascript": {
+      "path": "research/listening-player/player.js",
+      "sha256": "c0bfe0555362e87d2d45fc374e75bd4e1dab123d28be6fad372390261e230087"
+    },
+    "synthetic_player_icon": {
+      "path": "research/listening-player/favicon.svg",
+      "sha256": "2da3789b595cd99d06a7141004bd5e18b9dc459cbd48345040a0389634b56f27"
+    },
+    "synthetic_player_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_listening_player.py",
+      "sha256": "e6fa859420203ccdb681533b9981a0620ae1f4db839a0a48d29b0f32677371e6"
+    },
+    "synthetic_player_dry_run_evidence": {
+      "path": "research/toolchains/evidence/perceptual-degradation-listening-player-dry-run-observed-20260803-001.json",
+      "sha256": "7011b1ce890f7c490d9672a8f768c6ff8bb01a994df693f04bd2e2d8f9d1fce0"
     }
   },
   "unresolved_operational_fields": [
@@ -94,5 +118,5 @@
     "public minimum cell size and suppression policy",
     "qualified playback chain and calibration method"
   ],
-  "authorized_next_step": "Use the balanced incomplete-block allocator to prepare a score-blind source and stimulus design, then implement a synthetic player dry run and playback qualification. Do not contact or collect from real listeners."
+  "authorized_next_step": "Make the player consume frozen assignment records and lossless stimulus bindings, then qualify an exact browser and audio delivery chain. Do not contact or collect from real listeners."
 }

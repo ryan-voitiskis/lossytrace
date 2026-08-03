@@ -42,6 +42,7 @@ def validate(gate: dict[str, Any], root: Path = ROOT) -> list[str]:
         "protocol_draft_present",
         "participant_information_draft_present",
         "power_report_frozen",
+        "synthetic_dry_run_passed",
     }
     for key, value in completed.items():
         expected = key in allowed_complete

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <title>LossyTrace synthetic listening dry run</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">LossyTrace research preparation</p>
+        <h1>Synthetic listening dry run</h1>
+        <p class="lede">Generated tones only. No microphone, external network, identity, audio file, metric score, or response storage.</p>
+        <div class="status-row">
+          <span class="badge" id="build-id">player-synthetic-v1</span>
+          <span class="badge safe" id="privacy-status">offline and ephemeral</span>
+        </div>
+      </header>
+
+      <section class="panel" id="qualification" aria-labelledby="qualification-title">
+        <p class="step">Step 1 of 3</p>
+        <h2 id="qualification-title">Playback qualification</h2>
+        <p>Use headphones at a comfortable level. Starting audio requests a fixed 48 kHz context and does not record anything.</p>
+        <button class="primary" id="start-audio" type="button">Start synthetic audio</button>
+        <p class="diagnostic" id="audio-diagnostic" role="status">Audio has not started.</p>
+        <div class="channel-actions" hidden id="channel-actions">
+          <button id="play-left" type="button">Play left check</button>
+          <button id="play-right" type="button">Play right check</button>
+        </div>
+        <fieldset disabled id="qualification-checks">
+          <legend>Confirm after both channel checks</legend>
+          <label><input type="checkbox" id="confirm-channels"> Left and right were distinct and correctly ordered.</label>
+          <label><input type="checkbox" id="confirm-level"> Level is comfortable and will not be increased.</label>
+          <label><input type="checkbox" id="confirm-effects"> Spatial audio, EQ, normalization, and communications processing are off.</label>
+        </fieldset>
+        <button class="primary" disabled id="begin-trials" type="button">Begin synthetic trials</button>
+      </section>
+
+      <section class="panel" hidden id="subtle" aria-labelledby="subtle-title">
+        <p class="step">Step 2 of 3</p>
+        <h2 id="subtle-title">Subtle comparison</h2>
+        <p>Compare A and B with the visible reference. First lock the candidate that differs more, then grade that difference.</p>
+        <div class="transport-grid" id="subtle-transports">
+          <button data-play="reference" type="button"><span>Visible reference</span><small>generated excerpt</small></button>
+          <button data-play="candidate-a" type="button"><span>Candidate A</span><small>concealed condition</small></button>
+          <button data-play="candidate-b" type="button"><span>Candidate B</span><small>concealed condition</small></button>
+        </div>
+        <fieldset disabled id="forced-choice">
+          <legend>Which candidate differs more from the visible reference?</legend>
+          <label><input type="radio" name="choice" value="A"> Candidate A</label>
+          <label><input type="radio" name="choice" value="B"> Candidate B</label>
+          <button id="lock-choice" disabled type="button">Lock forced choice</button>
+        </fieldset>
+        <fieldset disabled id="grade-field">
+          <legend>Subjective difference grade</legend>
+          <label for="sdg">0 imperceptible <span id="sdg-value">−2.0</span> −4 very annoying</label>
+          <input id="sdg" type="range" min="-4" max="0" step="0.1" value="-2">
+          <button class="primary" id="submit-subtle" type="button">Submit synthetic subtle trial</button>
+        </fieldset>
+      </section>
+
+      <section class="panel" hidden id="mushra" aria-labelledby="mushra-title">
+        <p class="step">Step 3 of 3</p>
+        <h2 id="mushra-title">Intermediate/severe comparison</h2>
+        <p>Rate basic audio quality. Candidate identity and construction remain hidden.</p>
+        <button data-mushra-play="reference" type="button">Play visible reference</button>
+        <div id="mushra-candidates" class="rating-list"></div>
+        <button class="primary" disabled id="submit-mushra" type="button">Submit synthetic quality trial</button>
+      </section>
+
+      <section class="panel result" hidden id="complete" aria-labelledby="complete-title">
+        <p class="step">Dry run complete</p>
+        <h2 id="complete-title">Protocol state passed</h2>
+        <p>The local state machine enforced qualification, concealed ordering, forced choice before grading, and complete quality ratings.</p>
+        <pre id="synthetic-record"></pre>
+        <p class="warning">This synthetic record stays in page memory and is not valid listener evidence.</p>
+      </section>
+    </main>
+    <script src="player.js"></script>
+  </body>
+</html>
