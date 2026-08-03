@@ -357,6 +357,12 @@ and stereo width plus eight two-generation codec paths. The codec paths cover
 same-setting repetition and a balanced cross-codec cycle across MP3, AAC-LC,
 Opus, and Vorbis using already-bound encoder and decoder commands. Recipe names
 and settings remain controlled-condition metadata, never impairment or
-transparency targets. Implementation, synthetic replay, actual stimuli, audio
-access, and all outcome access remain false; the next gate is 12 synthetic-only
-cases and two byte-identical path-free replays.
+transparency targets. The implementation and its execution authority are now
+hash-bound before observation. A pre-execution correction makes the 44.1/48 kHz
+transition explicit: decoded PCM is preconditioned with an exact dither-free
+bound FFmpeg resampler before the next encoder input, because not every frozen
+encoder command forces its declared input rate. No codec command, PCM
+transform, or synthetic replay has yet been observed under that authority. The
+next gate is two fresh byte-identical path-free reports covering the 12
+synthetic-only cases. Actual stimuli, audio access, metrics, listener evidence,
+and all perceptual truth remain unopened and unauthorized.

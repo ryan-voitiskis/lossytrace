@@ -74,6 +74,17 @@ class ProductionGenerationPlanTest(unittest.TestCase):
         )
         self.assertIn("premature recipe completion: synthetic_replay_complete", errors)
 
+    def test_intermediate_resampler_is_exact_and_dither_free(self) -> None:
+        value = plan()
+        resampler = value["codec_generation_execution"]["intermediate_resampler"]
+        resampler["filter_template"] = "aresample={target}"
+        resampler["dither_applied"] = True
+        errors = MODULE.validate(value)
+        self.assertIn("intermediate resampler filter differs", errors)
+        self.assertIn(
+            "intermediate resampler boundary differs: dither_applied", errors
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

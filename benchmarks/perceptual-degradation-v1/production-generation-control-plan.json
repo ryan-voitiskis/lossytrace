@@ -141,7 +141,15 @@
     "generation_count": 2,
     "intermediate_decode": "Use the exact analysis_decoder_binding command from the bound v2 toolchain after each encode.",
     "intermediate_pcm": "signed_s16le WAV at the next expanded setting's frozen sample rate and stereo channel treatment",
-    "sample_rate_transition": "Use the next expanded encoder command's bound target-rate conversion; record every intermediate PCM hash and rate.",
+    "sample_rate_transition": "When adjacent settings differ in sample rate, resample the decoded signed-s16le stereo PCM before wrapping the next WAV by using the bound FFmpeg tool and the exact deterministic filter below; record the native decoded PCM and next-generation input PCM hashes and rates.",
+    "intermediate_resampler": {
+      "tool_id": "ffmpeg_8_1_2_1",
+      "sample_format": "signed_s16le",
+      "channels": 2,
+      "filter_template": "aresample={target}:osf=s16:resampler=swr:filter_size=64:phase_shift=10:linear_interp=0:exact_rational=1:cutoff=0.95:filter_type=kaiser:kaiser_beta=9:dither_method=none",
+      "dither_applied": false,
+      "normalization_applied": false
+    },
     "checkpoint_each_generation": true,
     "delete_bitstreams_after_hash_bound_success": true,
     "actual_codec_or_encoder_is_quality_target": false,

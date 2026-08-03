@@ -1,7 +1,8 @@
 # Production and generation control preregistration - 2026-08-04
 
-**Status:** score-blind recipes frozen before implementation or audio access;
-synthetic replay and all actual stimulus generation remain unauthorized
+**Status:** score-blind recipes and implementation hash frozen before execution;
+synthetic replay is authorized only by the separately bound execution plan and
+has not been observed; all actual stimulus generation remains unauthorized
 
 ## Purpose
 
@@ -36,10 +37,13 @@ toolchain:
   Vorbis, and Vorbis to MP3.
 
 Each intermediate encode is decoded through the bound analysis decoder and
-checkpointed as signed-16 PCM before the next generation. Intermediate sample
-rate transitions use the next encoder setting's exact bound command. Every
-bitstream and PCM stage must be hash-recorded, while disposable bitstreams are
-removed only after successful binding.
+checkpointed as signed-16 PCM before the next generation. The frozen setting
+commands do not all force their declared input rate, so an adjacent 44.1/48 kHz
+transition is preconditioned with the bound FFmpeg binary and the plan's exact
+signed-16, dither-free `aresample` filter before wrapping the next WAV. Both the
+native decoded PCM and the next-generation input PCM are hash-recorded; this
+score-blind clarification was made before any synthetic execution. Disposable
+bitstreams are removed only after successful binding.
 
 Codec name, encoder, nominal bitrate, generation count, and recipe order remain
 controlled-condition metadata. They cannot become the impairment or
@@ -47,8 +51,9 @@ transparency target.
 
 ## Next gate
 
-The next authorized step is implementation plus exactly 12 synthetic-only
-cases: one for each production or generation recipe. The implementation hash
-must be frozen before two fresh replays, and the two path-free reports must be
-byte-identical. Retained and provider audio, perceptual metrics, listening
-scores, recruitment, and human collection remain prohibited.
+The implementation and exactly 12 synthetic-only cases—one for each production
+or generation recipe—are now hash-bound before observation. After commit, full
+validation, and exact-head CI, the next authorized step is two fresh replays;
+the two path-free reports must be byte-identical. Retained and provider audio,
+perceptual metrics, listening scores, recruitment, and human collection remain
+prohibited.

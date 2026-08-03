@@ -17,6 +17,11 @@ DEFAULT_PLAN = (
 )
 PRODUCTION_FAMILIES = {"clipping", "equalization", "limiting", "stereo_width"}
 CODECS = {"aac_lc", "mp3", "opus", "vorbis"}
+RESAMPLE_FILTER_TEMPLATE = (
+    "aresample={target}:osf=s16:resampler=swr:filter_size=64:phase_shift=10:"
+    "linear_interp=0:exact_rational=1:cutoff=0.95:filter_type=kaiser:"
+    "kaiser_beta=9:dither_method=none"
+)
 
 
 def sha256_file(path: Path) -> str:
@@ -133,6 +138,16 @@ def validate(plan: dict[str, Any], root: Path = ROOT) -> list[str]:
     ):
         if execution.get(field) is not False:
             errors.append(f"codec generation target boundary differs: {field}")
+    resampler = execution.get("intermediate_resampler", {})
+    if resampler.get("tool_id") != "ffmpeg_8_1_2_1":
+        errors.append("intermediate resampler tool differs")
+    if resampler.get("filter_template") != RESAMPLE_FILTER_TEMPLATE:
+        errors.append("intermediate resampler filter differs")
+    if resampler.get("sample_format") != "signed_s16le" or resampler.get("channels") != 2:
+        errors.append("intermediate resampler PCM geometry differs")
+    for field in ("dither_applied", "normalization_applied"):
+        if resampler.get(field) is not False:
+            errors.append(f"intermediate resampler boundary differs: {field}")
 
     replay = plan.get("replay_requirements", {})
     if replay.get("synthetic_cases_required") != 12:
