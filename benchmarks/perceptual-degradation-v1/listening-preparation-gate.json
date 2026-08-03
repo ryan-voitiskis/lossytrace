@@ -15,7 +15,7 @@
     "player_implementation_frozen": false,
     "synthetic_dry_run_passed": false,
     "playback_qualification_frozen": false,
-    "power_report_frozen": false,
+    "power_report_frozen": true,
     "privacy_operational_fields_resolved": false,
     "compensation_and_withdrawal_resolved": false,
     "analysis_hashes_frozen": false,
@@ -65,6 +65,22 @@
     "score_blind_allocator_tests": {
       "path": "scripts/tests/test_perceptual_degradation_listening_allocation.py",
       "sha256": "33fc4293237a65e270c72fbaa3e598d64db2e2d3cc9216855ac4e8ef5e50d541"
+    },
+    "power_simulation": {
+      "path": "scripts/perceptual_degradation_listening_power.py",
+      "sha256": "fcfc06b4e73a0976bd1d4094bf5df0a16b6663883c17fce8f49f7ca22bebf891"
+    },
+    "power_simulation_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_listening_power.py",
+      "sha256": "ff7aa66a0e16e08b7e02354ebbd3fee01ddcd14898b10094c119c0ba71d67732"
+    },
+    "power_simulation_evidence": {
+      "path": "research/toolchains/evidence/perceptual-degradation-listening-power-simulation-20260803-001.json",
+      "sha256": "7511937ba57c54cefa27208f5cba40272e827cbde5aa0f6dda2109ea888e5f5a"
+    },
+    "power_report": {
+      "path": "docs/research/perceptual-degradation-listening-power-20260803.md",
+      "sha256": "1fa7a0a00946d3af7caf47bb6624e271ca4e776ec9a9aa3b1d0bb7f331249189"
     }
   },
   "unresolved_operational_fields": [
@@ -78,5 +94,5 @@
     "public minimum cell size and suppression policy",
     "qualified playback chain and calibration method"
   ],
-  "authorized_next_step": "Prepare schemas, deterministic allocation, synthetic player dry run, playback qualification, and score-blind power analysis. Do not contact or collect from real listeners."
+  "authorized_next_step": "Revise the score-blind source and balanced allocation design in response to the power result, then prepare a synthetic player dry run and playback qualification. Do not contact or collect from real listeners."
 }

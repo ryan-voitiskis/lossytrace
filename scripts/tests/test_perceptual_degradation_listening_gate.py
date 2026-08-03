@@ -43,9 +43,10 @@ class ListeningGateTest(unittest.TestCase):
 
     def test_gate_rejects_premature_prerequisite_completion(self) -> None:
         changed = copy.deepcopy(GATE)
-        changed["completed"]["power_report_frozen"] = True
+        changed["completed"]["player_implementation_frozen"] = True
         self.assertIn(
-            "completed.power_report_frozen must be false", MODULE.validate(changed)
+            "completed.player_implementation_frozen must be false",
+            MODULE.validate(changed),
         )
 
     def test_gate_rejects_response_identity_or_small_cell_publication(self) -> None:

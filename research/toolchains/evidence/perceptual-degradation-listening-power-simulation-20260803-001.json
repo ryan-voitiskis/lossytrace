@@ -1,0 +1,463 @@
+{
+  "decision": {
+    "authorized_next_step": "Expand score-blind source and allocation design or preregister a scientifically justified aggregate transparent stratum; do not relax the equivalence interval after outcomes are opened.",
+    "candidate_equivalence_target_met": false,
+    "equivalence_power_target": 0.8,
+    "listener_count_frozen": false,
+    "main_collection_authorized": false,
+    "maximum_candidate_equivalence_power": 0.0,
+    "maximum_stress_equivalence_power": 0.84985,
+    "operationally_feasible_design_identified": false,
+    "reason": "The equivalence target is unattainable in all candidate designs. The feasibility-stress design is not an operational proposal because it requires 240 trained listeners, 120 source groups, and 3,600 judgments for each transparent aggregate stratum.",
+    "stress_equivalence_target_met": true
+  },
+  "design_results": [
+    {
+      "audibility": [
+        {
+          "audible_gate_power": 5e-05,
+          "chance_equivalence_power": 0.0,
+          "planning_standard_error": 0.06139651,
+          "truth_probability": 0.5
+        },
+        {
+          "audible_gate_power": 0.0419,
+          "chance_equivalence_power": 0.0,
+          "planning_standard_error": 0.05774799,
+          "truth_probability": 0.65
+        },
+        {
+          "audible_gate_power": 0.48995,
+          "chance_equivalence_power": 0.0,
+          "planning_standard_error": 0.05107487,
+          "truth_probability": 0.75
+        },
+        {
+          "audible_gate_power": 0.85975,
+          "chance_equivalence_power": 0.0,
+          "planning_standard_error": 0.04630335,
+          "truth_probability": 0.8
+        },
+        {
+          "audible_gate_power": 0.99445,
+          "chance_equivalence_power": 0.0,
+          "planning_standard_error": 0.04038857,
+          "truth_probability": 0.85
+        }
+      ],
+      "design_class": "candidate",
+      "design_id": "d24-s12-j4",
+      "judgements_per_listener": 4,
+      "listeners": 24,
+      "mushra_loss_severity": [
+        {
+          "material_severity_power": 0.0,
+          "planning_standard_error": 1.84842275,
+          "truth_mean_loss_points": 5.0
+        },
+        {
+          "material_severity_power": 0.01165,
+          "planning_standard_error": 1.84842275,
+          "truth_mean_loss_points": 10.0
+        },
+        {
+          "material_severity_power": 0.67665,
+          "planning_standard_error": 1.84842275,
+          "truth_mean_loss_points": 15.0
+        },
+        {
+          "material_severity_power": 0.99915,
+          "planning_standard_error": 1.84842275,
+          "truth_mean_loss_points": 20.0
+        }
+      ],
+      "sdg_severity": [
+        {
+          "material_severity_power": 0.0,
+          "planning_standard_error": 0.11273124,
+          "truth_mean_sdg": -0.75
+        },
+        {
+          "material_severity_power": 0.0118,
+          "planning_standard_error": 0.11273124,
+          "truth_mean_sdg": -1.0
+        },
+        {
+          "material_severity_power": 0.49545,
+          "planning_standard_error": 0.11273124,
+          "truth_mean_sdg": -1.25
+        },
+        {
+          "material_severity_power": 0.98475,
+          "planning_standard_error": 0.11273124,
+          "truth_mean_sdg": -1.5
+        }
+      ],
+      "sources": 12,
+      "total_judgements_per_aggregate_stratum": 96
+    },
+    {
+      "audibility": [
+        {
+          "audible_gate_power": 0.0,
+          "chance_equivalence_power": 0.0,
+          "planning_standard_error": 0.03512441,
+          "truth_probability": 0.5
+        },
+        {
+          "audible_gate_power": 0.00095,
+          "chance_equivalence_power": 0.0,
+          "planning_standard_error": 0.03278669,
+          "truth_probability": 0.65
+        },
+        {
+          "audible_gate_power": 0.49805,
+          "chance_equivalence_power": 0.0,
+          "planning_standard_error": 0.02856641,
+          "truth_probability": 0.75
+        },
+        {
+          "audible_gate_power": 0.9763,
+          "chance_equivalence_power": 0.0,
+          "planning_standard_error": 0.02559948,
+          "truth_probability": 0.8
+        },
+        {
+          "audible_gate_power": 1.0,
+          "chance_equivalence_power": 0.0,
+          "planning_standard_error": 0.02199061,
+          "truth_probability": 0.85
+        }
+      ],
+      "design_class": "candidate",
+      "design_id": "d48-s24-j8",
+      "judgements_per_listener": 8,
+      "listeners": 48,
+      "mushra_loss_severity": [
+        {
+          "material_severity_power": 0.0,
+          "planning_standard_error": 1.2416387,
+          "truth_mean_loss_points": 5.0
+        },
+        {
+          "material_severity_power": 0.0132,
+          "planning_standard_error": 1.2416387,
+          "truth_mean_loss_points": 10.0
+        },
+        {
+          "material_severity_power": 0.9623,
+          "planning_standard_error": 1.2416387,
+          "truth_mean_loss_points": 15.0
+        },
+        {
+          "material_severity_power": 1.0,
+          "planning_standard_error": 1.2416387,
+          "truth_mean_loss_points": 20.0
+        }
+      ],
+      "sdg_severity": [
+        {
+          "material_severity_power": 0.0,
+          "planning_standard_error": 0.07551904,
+          "truth_mean_sdg": -0.75
+        },
+        {
+          "material_severity_power": 0.0133,
+          "planning_standard_error": 0.07551904,
+          "truth_mean_sdg": -1.0
+        },
+        {
+          "material_severity_power": 0.85575,
+          "planning_standard_error": 0.07551904,
+          "truth_mean_sdg": -1.25
+        },
+        {
+          "material_severity_power": 1.0,
+          "planning_standard_error": 0.07551904,
+          "truth_mean_sdg": -1.5
+        }
+      ],
+      "sources": 24,
+      "total_judgements_per_aggregate_stratum": 384
+    },
+    {
+      "audibility": [
+        {
+          "audible_gate_power": 0.0,
+          "chance_equivalence_power": 0.0,
+          "planning_standard_error": 0.02603472,
+          "truth_probability": 0.5
+        },
+        {
+          "audible_gate_power": 0.0,
+          "chance_equivalence_power": 0.0,
+          "planning_standard_error": 0.02418656,
+          "truth_probability": 0.65
+        },
+        {
+          "audible_gate_power": 0.5004,
+          "chance_equivalence_power": 0.0,
+          "planning_standard_error": 0.02086911,
+          "truth_probability": 0.75
+        },
+        {
+          "audible_gate_power": 0.9965,
+          "chance_equivalence_power": 0.0,
+          "planning_standard_error": 0.01855522,
+          "truth_probability": 0.8
+        },
+        {
+          "audible_gate_power": 1.0,
+          "chance_equivalence_power": 0.0,
+          "planning_standard_error": 0.01576726,
+          "truth_probability": 0.85
+        }
+      ],
+      "design_class": "candidate",
+      "design_id": "d72-s36-j12",
+      "judgements_per_listener": 12,
+      "listeners": 72,
+      "mushra_loss_severity": [
+        {
+          "material_severity_power": 0.0,
+          "planning_standard_error": 0.9953596,
+          "truth_mean_loss_points": 5.0
+        },
+        {
+          "material_severity_power": 0.01295,
+          "planning_standard_error": 0.9953596,
+          "truth_mean_loss_points": 10.0
+        },
+        {
+          "material_severity_power": 0.99735,
+          "planning_standard_error": 0.9953596,
+          "truth_mean_loss_points": 15.0
+        },
+        {
+          "material_severity_power": 1.0,
+          "planning_standard_error": 0.9953596,
+          "truth_mean_loss_points": 20.0
+        }
+      ],
+      "sdg_severity": [
+        {
+          "material_severity_power": 0.0,
+          "planning_standard_error": 0.0604765,
+          "truth_mean_sdg": -0.75
+        },
+        {
+          "material_severity_power": 0.01315,
+          "planning_standard_error": 0.0604765,
+          "truth_mean_sdg": -1.0
+        },
+        {
+          "material_severity_power": 0.9709,
+          "planning_standard_error": 0.0604765,
+          "truth_mean_sdg": -1.25
+        },
+        {
+          "material_severity_power": 1.0,
+          "planning_standard_error": 0.0604765,
+          "truth_mean_sdg": -1.5
+        }
+      ],
+      "sources": 36,
+      "total_judgements_per_aggregate_stratum": 864
+    },
+    {
+      "audibility": [
+        {
+          "audible_gate_power": 0.0,
+          "chance_equivalence_power": 0.0,
+          "planning_standard_error": 0.02254673,
+          "truth_probability": 0.5
+        },
+        {
+          "audible_gate_power": 0.0,
+          "chance_equivalence_power": 0.0,
+          "planning_standard_error": 0.02094617,
+          "truth_probability": 0.65
+        },
+        {
+          "audible_gate_power": 0.50135,
+          "chance_equivalence_power": 0.0,
+          "planning_standard_error": 0.01807318,
+          "truth_probability": 0.75
+        },
+        {
+          "audible_gate_power": 0.9991,
+          "chance_equivalence_power": 0.0,
+          "planning_standard_error": 0.01606929,
+          "truth_probability": 0.8
+        },
+        {
+          "audible_gate_power": 1.0,
+          "chance_equivalence_power": 0.0,
+          "planning_standard_error": 0.01365485,
+          "truth_probability": 0.85
+        }
+      ],
+      "design_class": "candidate",
+      "design_id": "d96-s48-j12",
+      "judgements_per_listener": 12,
+      "listeners": 96,
+      "mushra_loss_severity": [
+        {
+          "material_severity_power": 0.0,
+          "planning_standard_error": 0.8620067,
+          "truth_mean_loss_points": 5.0
+        },
+        {
+          "material_severity_power": 0.01275,
+          "planning_standard_error": 0.8620067,
+          "truth_mean_loss_points": 10.0
+        },
+        {
+          "material_severity_power": 0.9998,
+          "planning_standard_error": 0.8620067,
+          "truth_mean_loss_points": 15.0
+        },
+        {
+          "material_severity_power": 1.0,
+          "planning_standard_error": 0.8620067,
+          "truth_mean_loss_points": 20.0
+        }
+      ],
+      "sdg_severity": [
+        {
+          "material_severity_power": 0.0,
+          "planning_standard_error": 0.05237419,
+          "truth_mean_sdg": -0.75
+        },
+        {
+          "material_severity_power": 0.01225,
+          "planning_standard_error": 0.05237419,
+          "truth_mean_sdg": -1.0
+        },
+        {
+          "material_severity_power": 0.9939,
+          "planning_standard_error": 0.05237419,
+          "truth_mean_sdg": -1.25
+        },
+        {
+          "material_severity_power": 1.0,
+          "planning_standard_error": 0.05237419,
+          "truth_mean_sdg": -1.5
+        }
+      ],
+      "sources": 48,
+      "total_judgements_per_aggregate_stratum": 1152
+    },
+    {
+      "audibility": [
+        {
+          "audible_gate_power": 0.0,
+          "chance_equivalence_power": 0.84985,
+          "planning_standard_error": 0.01363748,
+          "truth_probability": 0.5
+        },
+        {
+          "audible_gate_power": 0.0,
+          "chance_equivalence_power": 0.0,
+          "planning_standard_error": 0.01263718,
+          "truth_probability": 0.65
+        },
+        {
+          "audible_gate_power": 0.49695,
+          "chance_equivalence_power": 0.0,
+          "planning_standard_error": 0.01084597,
+          "truth_probability": 0.75
+        },
+        {
+          "audible_gate_power": 1.0,
+          "chance_equivalence_power": 0.0,
+          "planning_standard_error": 0.00960093,
+          "truth_probability": 0.8
+        },
+        {
+          "audible_gate_power": 1.0,
+          "chance_equivalence_power": 0.0,
+          "planning_standard_error": 0.00810727,
+          "truth_probability": 0.85
+        }
+      ],
+      "design_class": "feasibility_stress",
+      "design_id": "d240-s120-j15",
+      "judgements_per_listener": 15,
+      "listeners": 240,
+      "mushra_loss_severity": [
+        {
+          "material_severity_power": 0.0,
+          "planning_standard_error": 0.54108944,
+          "truth_mean_loss_points": 5.0
+        },
+        {
+          "material_severity_power": 0.01255,
+          "planning_standard_error": 0.54108944,
+          "truth_mean_loss_points": 10.0
+        },
+        {
+          "material_severity_power": 1.0,
+          "planning_standard_error": 0.54108944,
+          "truth_mean_loss_points": 15.0
+        },
+        {
+          "material_severity_power": 1.0,
+          "planning_standard_error": 0.54108944,
+          "truth_mean_loss_points": 20.0
+        }
+      ],
+      "sdg_severity": [
+        {
+          "material_severity_power": 0.0,
+          "planning_standard_error": 0.03286124,
+          "truth_mean_sdg": -0.75
+        },
+        {
+          "material_severity_power": 0.0105,
+          "planning_standard_error": 0.03286124,
+          "truth_mean_sdg": -1.0
+        },
+        {
+          "material_severity_power": 1.0,
+          "planning_standard_error": 0.03286124,
+          "truth_mean_sdg": -1.25
+        },
+        {
+          "material_severity_power": 1.0,
+          "planning_standard_error": 0.03286124,
+          "truth_mean_sdg": -1.5
+        }
+      ],
+      "sources": 120,
+      "total_judgements_per_aggregate_stratum": 3600
+    }
+  ],
+  "frozen_targets": {
+    "audibility_chance": 0.5,
+    "audibility_equivalence_interval": [
+      0.45,
+      0.55
+    ],
+    "audibility_point_gate": 0.75,
+    "mushra_loss_material_threshold": 10.0,
+    "sdg_material_threshold": -1.0
+  },
+  "multiplicity": {
+    "family_count": 4,
+    "familywise_alpha": 0.05,
+    "one_sided_normal_threshold": 2.2414027276
+  },
+  "observed_audio_scores_or_listener_responses_used": false,
+  "planning_model": {
+    "analysis_approximation": "known_design_variance_normal_interval_for_power_planning_only",
+    "audibility": "logit_scale_listener_and_source_random_intercepts_plus_binomial_residual",
+    "final_analysis_substitute": false,
+    "severity": "listener_and_source_random_intercepts_plus_continuous_residual"
+  },
+  "replicates_per_design_and_truth": 20000,
+  "report_id": "perceptual-degradation-listening-power-20260803-001",
+  "schema_version": 1,
+  "simulation_seed": "lossytrace-perceptual-listening-power-v1-20260803",
+  "state": "score_blind_design_simulation_no_listener_count_frozen"
+}
