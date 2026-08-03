@@ -67,13 +67,14 @@ class VisqolSyntheticPlanTest(unittest.TestCase):
             self.plan["authorization"]["public_or_retained_audio_execution"]
         )
         self.assertIsNone(self.plan["visqol"]["binary_sha256"])
-        self.assertEqual(3, len(self.plan["prior_attempts"]))
+        self.assertEqual(4, len(self.plan["prior_attempts"]))
         self.assertTrue(
             all(
-                not attempt["synthetic_scores_produced"]
+                not attempt["completed_evidence_record"]
                 for attempt in self.plan["prior_attempts"]
             )
         )
+        self.assertFalse(self.plan["prior_attempts"][-1]["synthetic_scores_parsed"])
 
     def test_fixture_generation_is_byte_identical_and_bound(self) -> None:
         with tempfile.TemporaryDirectory(prefix="lossytrace-visqol-test-a-") as a:
@@ -106,6 +107,7 @@ import sys
 args = sys.argv[1:]
 def value(flag):
     return args[args.index(flag) + 1]
+print("fake diagnostic for " + value("--reference_file"), file=sys.stderr)
 payload = {
     "moslqo": 4.25,
     "vnsim": 0.875,
@@ -134,10 +136,29 @@ with open(value("--output_debug"), "w", encoding="utf-8") as output:
             self.assertTrue(
                 all(item["numeric_replay_identical"] for item in report["results"])
             )
+            self.assertTrue(all(item["stderr_observed"] for item in report["results"]))
             self.assertNotIn(temp, json.dumps(report))
             self.assertFalse(report["synthetic_scores_are_human_truth"])
             self.assertFalse(report["threshold_selected"])
             self.assertFalse(report["public_verdict_enabled"])
+
+    def test_replay_rejects_nonzero_metric_exit_without_stderr_content(self) -> None:
+        with tempfile.TemporaryDirectory(prefix="lossytrace-visqol-fail-") as temp:
+            root = Path(temp)
+            binary = root / "visqol-fail"
+            binary.write_text(
+                "#!/bin/sh\nprintf 'sensitive diagnostic' >&2\nexit 7\n",
+                encoding="utf-8",
+            )
+            binary.chmod(0o755)
+            with self.assertRaisesRegex(ValueError, "ViSQOL failed with exit status 7"):
+                REPLAY._run_case(
+                    binary,
+                    root / "model",
+                    root / "reference.wav",
+                    root / "degraded.wav",
+                    root / "output.json",
+                )
 
     def test_workflow_is_pinned_bounded_and_branch_scoped(self) -> None:
         source = WORKFLOW.read_text(encoding="utf-8")

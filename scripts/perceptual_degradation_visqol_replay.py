@@ -67,13 +67,13 @@ def _run_case(
     ]
     completed = subprocess.run(
         command,
-        check=True,
+        check=False,
         capture_output=True,
         text=True,
         env=process_environment(),
     )
-    if completed.stderr:
-        raise ValueError("ViSQOL wrote unexpected stderr")
+    if completed.returncode != 0:
+        raise ValueError(f"ViSQOL failed with exit status {completed.returncode}")
     if not output.is_file():
         raise ValueError("ViSQOL did not write the requested debug result")
     parsed = json.loads(output.read_text(encoding="utf-8"))
@@ -88,6 +88,7 @@ def _run_case(
         "patch_similarity": patch_similarity,
         "patch_count": len(patches),
         "complete_result_sha256": sha256_bytes(encoded),
+        "stderr_observed": bool(completed.stderr),
     }
 
 

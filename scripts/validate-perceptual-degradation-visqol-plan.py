@@ -97,11 +97,13 @@ def validate(plan: dict[str, Any], root: Path = ROOT) -> list[str]:
         errors.append("ViSQOL build configuration must remain opt")
 
     attempts = plan.get("prior_attempts", [])
-    if len(attempts) != 3:
-        errors.append("exactly three score-free prior attempts must be recorded")
+    if len(attempts) != 4:
+        errors.append("exactly four incomplete prior attempts must be recorded")
     for attempt in attempts:
-        if attempt.get("synthetic_scores_produced") is not False:
-            errors.append("prior failed attempt must not claim synthetic scores")
+        if attempt.get("completed_evidence_record") is not False:
+            errors.append("prior attempt must not claim a completed evidence record")
+    if attempts and attempts[-1].get("synthetic_scores_parsed") is not False:
+        errors.append("diagnostic-rejected attempt must not claim parsed scores")
 
     generation = plan.get("fixture_generation", {})
     if generation.get("duration_seconds", 0) < 8:
