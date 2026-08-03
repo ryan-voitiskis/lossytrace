@@ -33,6 +33,14 @@ class PerceptualDegradationExecutionGateTest(unittest.TestCase):
                 "score_blind_public_development_manifest_frozen"
             ]
         )
+        self.assertTrue(
+            GATE["completed_prerequisites"]["visqol_synthetic_replay_plan_frozen"]
+        )
+        self.assertTrue(
+            GATE["metric_families"]["visqol_audio_v3_3_3"][
+                "synthetic_fixture_execution_authorized"
+            ]
+        )
 
     def test_gate_rejects_premature_metric_authorization(self) -> None:
         changed = copy.deepcopy(GATE)
@@ -51,6 +59,16 @@ class PerceptualDegradationExecutionGateTest(unittest.TestCase):
         ] = True
         self.assertIn(
             "gstpeaq_proxy_v0_6_1.itu_technology_consent_or_licence_cleared must remain false",
+            MODULE.validate(changed),
+        )
+
+    def test_gate_rejects_proxy_synthetic_execution(self) -> None:
+        changed = copy.deepcopy(GATE)
+        changed["metric_families"]["gstpeaq_proxy_v0_6_1"][
+            "synthetic_fixture_execution_authorized"
+        ] = True
+        self.assertIn(
+            "gstpeaq_proxy_v0_6_1 synthetic fixture execution must remain unauthorized",
             MODULE.validate(changed),
         )
 

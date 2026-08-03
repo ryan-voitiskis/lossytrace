@@ -13,7 +13,8 @@
     "primary_metric_families_limited_to_two": true,
     "score_blind_public_development_manifest_frozen": true,
     "score_free_alignment_topology_frozen": true,
-    "score_free_decoder_resampler_replayed": true
+    "score_free_decoder_resampler_replayed": true,
+    "visqol_synthetic_replay_plan_frozen": true
   },
   "bindings": {
     "research_plan": {
@@ -51,6 +52,10 @@
     "public_development_acquisition_plan": {
       "path": "benchmarks/perceptual-degradation-v1/public-development-acquisition-plan.json",
       "sha256": "5e5479633803367bdf1ebf242331f97dd24d7abd10ce46012ce11ea32cf27ae7"
+    },
+    "visqol_synthetic_replay_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/visqol-synthetic-replay-plan.json",
+      "sha256": "bd266f4805aa1cf00117075d5a582fb6be8ae1638185b8db3b342aa47877748a"
     }
   },
   "metric_families": {
@@ -59,9 +64,10 @@
       "git_commit": "c3aa2e498e0f7f14202643594335a0b9ee40bdd9",
       "license": "Apache-2.0",
       "source_binding_complete": true,
-      "build_recipe_frozen": false,
+      "build_recipe_frozen": true,
       "binary_sha256": null,
-      "model_sha256": null,
+      "model_sha256": "1e8246ed33bf36dc5c859351f7110f2cd31f98661989715c0fcf974ec48d3e2e",
+      "synthetic_fixture_execution_authorized": true,
       "synthetic_replay_complete": false,
       "execution_authorized": false
     },
@@ -76,15 +82,17 @@
       "redistribution_boundary_approved": false,
       "build_recipe_frozen": false,
       "binary_sha256": null,
+      "synthetic_fixture_execution_authorized": false,
       "synthetic_replay_complete": false,
       "execution_authorized": false
     }
   },
   "unmet_prerequisites": [
-    "Freeze and replay the exact ViSQOL v3.3.3 build and model files.",
+    "Execute the frozen ViSQOL v3.3.3 ephemeral build and synthetic replay, then bind the observed binary and repository resolution record.",
+    "Replay the same ViSQOL synthetic cases in an independently bound second environment before claiming cross-environment score determinism.",
     "Obtain and commit a qualified legal record for use of the BS.1387-derived GstPEAQ proxy technology and its redistribution boundary.",
     "Freeze and replay the exact GstPEAQ proxy build only if the legal record permits execution.",
     "Keep retained audio and all sealed labels unopened until a later committed opening authorization."
   ],
-  "authorized_next_step": "Build and replay ViSQOL on synthetic fixtures only and prepare the GstPEAQ legal question. Do not download ODAQ audio or execute a perceptual metric on public or retained audio."
+  "authorized_next_step": "Execute only the branch-scoped ephemeral ViSQOL workflow on the frozen synthetic fixtures. Do not download ODAQ audio or execute a perceptual metric on public or retained audio."
 }

@@ -1,0 +1,130 @@
+name: ViSQOL synthetic replay
+
+on:
+  push:
+    branches:
+      - codex/perceptual-degradation
+    paths:
+      - .github/workflows/visqol-synthetic.yml
+      - benchmarks/perceptual-degradation-v1/visqol-synthetic-replay-plan.json
+      - research/toolchains/patches/visqol-v3.3.3-reproducible-workspace.patch
+      - scripts/perceptual_degradation_visqol_fixtures.py
+      - scripts/perceptual_degradation_visqol_replay.py
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-replay:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 90
+    env:
+      PLAN: benchmarks/perceptual-degradation-v1/visqol-synthetic-replay-plan.json
+      VISQOL_SOURCE: ${{ runner.temp }}/visqol-source
+      VISQOL_BAZEL_ROOT: ${{ runner.temp }}/visqol-bazel-root
+      VISQOL_ARTIFACT: ${{ runner.temp }}/visqol-artifact
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+
+      - name: Verify frozen plan and runner reserve
+        run: |
+          python3 scripts/validate-perceptual-degradation-visqol-plan.py
+          python3 - <<'PY'
+          import shutil
+          free = shutil.disk_usage(".").free
+          if free < 15 * 1024**3:
+              raise SystemExit("runner starts below the 15 GiB reserve")
+          print(f"runner_free_bytes={free}")
+          PY
+
+      - name: Install hash-bound Bazel
+        run: |
+          bazel_url=$(jq -r '.build_environment.bazel.download_url' "$PLAN")
+          bazel_sha256=$(jq -r '.build_environment.bazel.binary_sha256' "$PLAN")
+          curl --fail --location --proto '=https' --tlsv1.2 "$bazel_url" --output "${RUNNER_TEMP}/bazel"
+          echo "${bazel_sha256}  ${RUNNER_TEMP}/bazel" | sha256sum --check --strict
+          chmod 0755 "${RUNNER_TEMP}/bazel"
+          "${RUNNER_TEMP}/bazel" --version
+
+      - name: Materialize exact sparse source and patch dead tags
+        run: |
+          visqol_repository=$(jq -r '.visqol.repository' "$PLAN")
+          visqol_commit=$(jq -r '.visqol.git_commit' "$PLAN")
+          visqol_tree=$(jq -r '.visqol.git_tree' "$PLAN")
+          patch_path=$(jq -r '.visqol.workspace_patch_path' "$PLAN")
+          patch_sha256=$(jq -r '.visqol.workspace_patch_sha256' "$PLAN")
+          git init "$VISQOL_SOURCE"
+          git -C "$VISQOL_SOURCE" remote add origin "$visqol_repository"
+          git -C "$VISQOL_SOURCE" sparse-checkout init --no-cone
+          printf '/.bazelrc\n/BUILD\n/LICENSE\n/WORKSPACE\n/pybind11_fixdistutils.patch\n/model/\n/src/\n' > "${VISQOL_SOURCE}/.git/info/sparse-checkout"
+          git -C "$VISQOL_SOURCE" -c protocol.version=2 fetch --depth=1 origin "$visqol_commit"
+          git -C "$VISQOL_SOURCE" checkout --detach FETCH_HEAD
+          test "$(git -C "$VISQOL_SOURCE" rev-parse HEAD)" = "$visqol_commit"
+          test "$(git -C "$VISQOL_SOURCE" show -s --format=%T HEAD)" = "$visqol_tree"
+          echo "${patch_sha256}  ${patch_path}" | sha256sum --check --strict
+          git -C "$VISQOL_SOURCE" apply --check "${GITHUB_WORKSPACE}/${patch_path}"
+          git -C "$VISQOL_SOURCE" apply "${GITHUB_WORKSPACE}/${patch_path}"
+
+      - name: Build with at most six workers
+        run: |
+          mkdir -p "$VISQOL_ARTIFACT"
+          cd "$VISQOL_SOURCE"
+          "${RUNNER_TEMP}/bazel" \
+            --output_user_root="$VISQOL_BAZEL_ROOT" \
+            build //:visqol \
+            --jobs=6 \
+            --local_cpu_resources=6 \
+            --local_ram_resources=6144 \
+            --experimental_repository_resolved_file="${VISQOL_ARTIFACT}/resolved-repositories.bzl"
+          cp bazel-bin/visqol "${VISQOL_ARTIFACT}/visqol"
+          cp model/libsvm_nu_svr_model.txt "${VISQOL_ARTIFACT}/libsvm_nu_svr_model.txt"
+          cp LICENSE "${VISQOL_ARTIFACT}/LICENSE"
+          chmod 0755 "${VISQOL_ARTIFACT}/visqol"
+
+      - name: Release disposable build storage and preserve reserve
+        run: |
+          "${RUNNER_TEMP}/bazel" --output_user_root="$VISQOL_BAZEL_ROOT" shutdown || true
+          rm -rf -- "$VISQOL_BAZEL_ROOT" "$VISQOL_SOURCE"
+          python3 - <<'PY'
+          import shutil
+          free = shutil.disk_usage(".").free
+          if free < 15 * 1024**3:
+              raise SystemExit("runner cleanup did not restore the 15 GiB reserve")
+          print(f"runner_free_bytes_after_cleanup={free}")
+          PY
+
+      - name: Replay synthetic fixtures twice
+        run: |
+          python3 scripts/perceptual_degradation_visqol_replay.py \
+            --visqol "${VISQOL_ARTIFACT}/visqol" \
+            --model "${VISQOL_ARTIFACT}/libsvm_nu_svr_model.txt" \
+            --plan "$PLAN" \
+            --output "${VISQOL_ARTIFACT}/synthetic-replay.json"
+
+      - name: Record path-free build environment
+        run: |
+          compiler_version=$(cc --version | head -1)
+          kernel_version=$(uname -srvmo)
+          bazel_version=$("${RUNNER_TEMP}/bazel" --version)
+          binary_sha256=$(sha256sum "${VISQOL_ARTIFACT}/visqol" | cut -d' ' -f1)
+          model_sha256=$(sha256sum "${VISQOL_ARTIFACT}/libsvm_nu_svr_model.txt" | cut -d' ' -f1)
+          jq -n \
+            --arg github_sha "$GITHUB_SHA" \
+            --arg runner_image "$ImageOS" \
+            --arg runner_image_version "$ImageVersion" \
+            --arg kernel "$kernel_version" \
+            --arg compiler "$compiler_version" \
+            --arg bazel "$bazel_version" \
+            --arg binary_sha256 "$binary_sha256" \
+            --arg model_sha256 "$model_sha256" \
+            '{schema_version: 1, state: "visqol_synthetic_build_observed", github_sha: $github_sha, runner_image: $runner_image, runner_image_version: $runner_image_version, kernel: $kernel, compiler: $compiler, bazel: $bazel, maximum_workers: 6, binary_sha256: $binary_sha256, model_sha256: $model_sha256, paths_included: false}' \
+            > "${VISQOL_ARTIFACT}/build-environment.json"
+
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: visqol-synthetic-${{ github.sha }}
+          path: ${{ runner.temp }}/visqol-artifact
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 1

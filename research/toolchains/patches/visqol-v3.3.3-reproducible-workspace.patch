@@ -1,0 +1,17 @@
+diff --git a/WORKSPACE b/WORKSPACE
+--- a/WORKSPACE
++++ b/WORKSPACE
+@@ -135,5 +135,5 @@
+ git_repository(
+     name = "com_google_googletest",
+     remote = "https://github.com/google/googletest.git",
+-    tag = "release-1.10.0",
++    commit = "703bd9caab50b139428cea1aaff9974ebee5742e",
+ )
+@@ -142,5 +142,5 @@
+ git_repository(
+     name = "com_google_absl",
+     remote = "https://github.com/abseil/abseil-cpp.git",
+-    tag = "20211102",
++    commit = "215105818dfde3174fe799600bb0f3cae233d0bf",
+ )

@@ -40,6 +40,8 @@ def validate(gate: dict[str, Any], root: Path = ROOT) -> list[str]:
     completed = gate.get("completed_prerequisites", {})
     if completed.get("score_blind_public_development_manifest_frozen") is not True:
         errors.append("score-blind public-development manifest must remain frozen")
+    if completed.get("visqol_synthetic_replay_plan_frozen") is not True:
+        errors.append("ViSQOL synthetic replay plan must remain frozen")
     for key, binding in gate.get("bindings", {}).items():
         path = root / binding.get("path", "")
         if not path.is_file():
@@ -55,7 +57,18 @@ def validate(gate: dict[str, Any], root: Path = ROOT) -> list[str]:
             errors.append(f"{family_id}.execution_authorized must remain false")
         if family.get("binary_sha256") is not None:
             errors.append(f"{family_id}.binary_sha256 must remain null until a new gate freeze")
+    visqol = families.get("visqol_audio_v3_3_3", {})
+    if visqol.get("build_recipe_frozen") is not True:
+        errors.append("visqol_audio_v3_3_3.build_recipe_frozen must be true")
+    if visqol.get("model_sha256") != "1e8246ed33bf36dc5c859351f7110f2cd31f98661989715c0fcf974ec48d3e2e":
+        errors.append("visqol_audio_v3_3_3.model_sha256 differs")
+    if visqol.get("synthetic_fixture_execution_authorized") is not True:
+        errors.append("visqol_audio_v3_3_3 synthetic fixture execution must be authorized")
+    if visqol.get("synthetic_replay_complete") is not False:
+        errors.append("visqol_audio_v3_3_3.synthetic_replay_complete must remain false")
     proxy = families.get("gstpeaq_proxy_v0_6_1", {})
+    if proxy.get("synthetic_fixture_execution_authorized") is not False:
+        errors.append("gstpeaq_proxy_v0_6_1 synthetic fixture execution must remain unauthorized")
     for key in (
         "upstream_conforms_to_itu_tolerance",
         "itu_technology_consent_or_licence_cleared",

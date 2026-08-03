@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "plan_id": "visqol-audio-v3-3-3-synthetic-replay-20260803-001",
+  "state": "visqol_synthetic_build_and_replay_frozen_before_scores",
+  "fixture_set_id": "visqol-synthetic-48k-stereo-v1",
+  "authorization": {
+    "synthetic_fixture_execution": true,
+    "public_or_retained_audio_execution": false,
+    "human_listening_score_access": false,
+    "retained_audio_access": false,
+    "provider_audio_download": false,
+    "no_reference_training": false,
+    "public_verdict": false
+  },
+  "visqol": {
+    "family_id": "visqol_audio_v3_3_3",
+    "repository": "https://github.com/google/visqol",
+    "version": "v3.3.3",
+    "git_commit": "c3aa2e498e0f7f14202643594335a0b9ee40bdd9",
+    "git_tree": "7a0c95a103c4ba40d6337f06f80848e571b00b3c",
+    "upstream_blob_bytes": 120367822,
+    "license": "Apache-2.0",
+    "workspace_patch_path": "research/toolchains/patches/visqol-v3.3.3-reproducible-workspace.patch",
+    "workspace_patch_sha256": "b580e0e939feaef9e2cc1f3943dd763b32b06cf2cd5e5ae7a3c2429fe124e680",
+    "workspace_patch_scope": "Replace the movable googletest tag and the now-missing Abseil tag with their resolved commits; no metric implementation source is changed.",
+    "audio_model_path": "model/libsvm_nu_svr_model.txt",
+    "audio_model_sha256": "1e8246ed33bf36dc5c859351f7110f2cd31f98661989715c0fcf974ec48d3e2e",
+    "binary_sha256": null,
+    "synthetic_replay_complete": false
+  },
+  "build_environment": {
+    "runner": "ubuntu-22.04",
+    "maximum_workers": 6,
+    "minimum_local_free_disk_gib": 15,
+    "persistent_local_build_authorized": false,
+    "ephemeral_remote_build_authorized": true,
+    "bazel": {
+      "version": "3.7.2",
+      "download_url": "https://github.com/bazelbuild/bazel/releases/download/3.7.2/bazel-3.7.2-linux-x86_64",
+      "binary_sha256": "70dc0bee198a4c3d332925a32d464d9036a831977501f66d4996854ad4e4fc0d"
+    },
+    "build_target": "//:visqol",
+    "build_configuration": "opt",
+    "repository_resolution_record_required": true,
+    "artifact_retention_days": 1
+  },
+  "fixture_generation": {
+    "sample_rate_hz": 48000,
+    "channel_count": 2,
+    "channel_map": "L_R",
+    "sample_width_bits": 16,
+    "duration_seconds": 8,
+    "frames": 384000,
+    "files": {
+      "synthetic-reference.wav": {
+        "bytes": 1536044,
+        "sha256": "cd15023c9fab9d2c34e696dd2e0f73db658897cf1e216ae41b2658339e15e49c"
+      },
+      "synthetic-bandwidth-loss.wav": {
+        "bytes": 1536044,
+        "sha256": "20532e4f1b03021169badc4a86659e73372e0fdd56d419e813c30900149d9c6b"
+      },
+      "synthetic-tonal-noise.wav": {
+        "bytes": 1536044,
+        "sha256": "51567950883c13db8faf3a06505f489e74c30abac9d4ae162e0327d706ba97bd"
+      },
+      "synthetic-transient-smear.wav": {
+        "bytes": 1536044,
+        "sha256": "3c16575c237953eb828277e44f62a74e9f48a8d9c46fbb6f41c20a728f352b03"
+      }
+    }
+  },
+  "synthetic_cases": [
+    {
+      "case_id": "synthetic-identity",
+      "reference_file": "synthetic-reference.wav",
+      "degraded_file": "synthetic-reference.wav",
+      "purpose": "exact identity and wrapper replay"
+    },
+    {
+      "case_id": "synthetic-bandwidth-loss",
+      "reference_file": "synthetic-reference.wav",
+      "degraded_file": "synthetic-bandwidth-loss.wav",
+      "purpose": "exercise high-band removal without defining perceptual truth"
+    },
+    {
+      "case_id": "synthetic-tonal-noise",
+      "reference_file": "synthetic-reference.wav",
+      "degraded_file": "synthetic-tonal-noise.wav",
+      "purpose": "exercise deterministic gated tonal addition without defining perceptual truth"
+    },
+    {
+      "case_id": "synthetic-transient-smear",
+      "reference_file": "synthetic-reference.wav",
+      "degraded_file": "synthetic-transient-smear.wav",
+      "purpose": "exercise deterministic transient redistribution without defining perceptual truth"
+    }
+  ],
+  "replay_contract": {
+    "complete_replays_per_case": 2,
+    "numeric_outputs_must_be_identical": true,
+    "paths_removed_before_evidence": true,
+    "timing_removed_before_evidence": true,
+    "synthetic_scores_are_human_truth": false,
+    "threshold_selection_authorized": false,
+    "cross_environment_replay_complete": false
+  },
+  "bindings": {
+    "fixture_generator": {
+      "path": "scripts/perceptual_degradation_visqol_fixtures.py",
+      "sha256": "a269bc1c5d51180048b56b3e0bb5a256b02f8137e1e658af502e20bd5a71796e"
+    },
+    "replay_wrapper": {
+      "path": "scripts/perceptual_degradation_visqol_replay.py",
+      "sha256": "48496c4f4b0d80ce0968ebcdbf6be0ab74f3f581fcd50a358c42039bd2241bf4"
+    },
+    "plan_validator": {
+      "path": "scripts/validate-perceptual-degradation-visqol-plan.py",
+      "sha256": "2727ac954d87737d958944811014136d2ef1e204ddd4559518fcfd1c1ea9de85"
+    },
+    "tests": {
+      "path": "scripts/tests/test_perceptual_degradation_visqol.py",
+      "sha256": "978ab712850e4a1fb41ad56e531ef261ae3588388d0c72931e916172f8b38c92"
+    },
+    "workspace_patch": {
+      "path": "research/toolchains/patches/visqol-v3.3.3-reproducible-workspace.patch",
+      "sha256": "b580e0e939feaef9e2cc1f3943dd763b32b06cf2cd5e5ae7a3c2429fe124e680"
+    },
+    "workflow": {
+      "path": ".github/workflows/visqol-synthetic.yml",
+      "sha256": "34ef3ffef668807fe9ed41a3c7b59786eaecbb61a88c7e9f058c6007edbcc631"
+    }
+  },
+  "unmet_prerequisites_after_this_freeze": [
+    "Execute the exact ephemeral workflow and bind the observed binary, model and repository resolution record.",
+    "Replay the same synthetic cases in an independently bound second environment before claiming cross-environment score determinism.",
+    "Keep public, provider and retained audio metric execution blocked until a later gate freeze."
+  ],
+  "authorized_next_step": "Commit and push this score-blind plan, then execute only the branch-scoped ephemeral synthetic workflow."
+}
