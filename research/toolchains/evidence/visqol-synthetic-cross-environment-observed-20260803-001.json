@@ -1,0 +1,83 @@
+{
+  "audibility_or_materiality_threshold_selected": false,
+  "comparison_complete": true,
+  "existing_280_case_future_subset_opened": false,
+  "first_environment": {
+    "binary_sha256": "7384c8d21725e6fa3921aea4e66ff9cb9481b57acef868304192df437a467319",
+    "environment_id": "ubuntu22-gcc11-python310-v1"
+  },
+  "fixture_set_id": "visqol-synthetic-48k-stereo-v1",
+  "frozen_absolute_tolerances": {
+    "band_similarity_absolute_tolerance": 1e-12,
+    "mos_lqo_absolute_tolerance": 1e-12,
+    "patch_similarity_absolute_tolerance": 1e-12,
+    "similarity_absolute_tolerance": 1e-12
+  },
+  "human_listening_scores_opened": false,
+  "metric_family": "visqol_audio_v3_3_3",
+  "paths_included": false,
+  "public_or_provider_audio_accessed": false,
+  "public_verdict_enabled": false,
+  "record_kind": "visqol_synthetic_cross_environment_comparison",
+  "results": [
+    {
+      "absolute_deltas": {
+        "band_similarity": 0.0,
+        "mos_lqo": 0.0,
+        "patch_similarity": 0.0,
+        "similarity": 0.0
+      },
+      "case_id": "synthetic-bandwidth-loss",
+      "comparison_pass": true,
+      "shape_identical": true,
+      "within_frozen_tolerance": true
+    },
+    {
+      "absolute_deltas": {
+        "band_similarity": 0,
+        "mos_lqo": 0.0,
+        "patch_similarity": 0,
+        "similarity": 0
+      },
+      "case_id": "synthetic-identity",
+      "comparison_pass": true,
+      "shape_identical": true,
+      "within_frozen_tolerance": true
+    },
+    {
+      "absolute_deltas": {
+        "band_similarity": 0.0,
+        "mos_lqo": 0.0,
+        "patch_similarity": 0.0,
+        "similarity": 0.0
+      },
+      "case_id": "synthetic-tonal-noise",
+      "comparison_pass": true,
+      "shape_identical": true,
+      "within_frozen_tolerance": true
+    },
+    {
+      "absolute_deltas": {
+        "band_similarity": 0.0,
+        "mos_lqo": 0.0,
+        "patch_similarity": 0.0,
+        "similarity": 0.0
+      },
+      "case_id": "synthetic-transient-smear",
+      "comparison_pass": true,
+      "shape_identical": true,
+      "within_frozen_tolerance": true
+    }
+  ],
+  "retained_audio_accessed": false,
+  "retained_metric_scores_opened": false,
+  "schema_version": 1,
+  "score_determinism_pass": true,
+  "sealed_labels_opened": false,
+  "second_environment": {
+    "binary_sha256": "6c7807891cb5cb267649f09fbc20eecc22a3b2f62e50698e38134b2e08d18d5f",
+    "environment_id": "ubuntu24-gcc13-python312-v1"
+  },
+  "state": "cross_environment_comparison_complete",
+  "synthetic_scores_are_human_truth": false
+}

@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "plan_id": "visqol-audio-v3-3-3-synthetic-second-environment-20260803-003",
-  "state": "visqol_synthetic_build_and_replay_frozen_before_scores",
+  "plan_id": "visqol-audio-v3-3-3-synthetic-second-environment-20260803-004",
+  "state": "visqol_synthetic_cross_environment_replay_observed",
   "fixture_set_id": "visqol-synthetic-48k-stereo-v1",
   "authorization": {
-    "synthetic_fixture_execution": true,
+    "synthetic_fixture_execution": false,
     "public_or_retained_audio_execution": false,
     "human_listening_score_access": false,
     "retained_audio_access": false,
@@ -25,8 +25,8 @@
     "workspace_patch_scope": "Replace the movable googletest tag and the now-missing Abseil tag with their resolved commits, and replace the removed Armadillo URL with a byte-identical SHA-256-bound MacPorts archive; no metric implementation source is changed.",
     "audio_model_path": "model/libsvm_nu_svr_model.txt",
     "audio_model_sha256": "1e8246ed33bf36dc5c859351f7110f2cd31f98661989715c0fcf974ec48d3e2e",
-    "binary_sha256": null,
-    "synthetic_replay_complete": false
+    "binary_sha256": "6c7807891cb5cb267649f09fbc20eecc22a3b2f62e50698e38134b2e08d18d5f",
+    "synthetic_replay_complete": true
   },
   "build_environment": {
     "environment_id": "ubuntu24-gcc13-python312-v1",
@@ -35,7 +35,8 @@
     "maximum_workers": 6,
     "minimum_local_free_disk_gib": 15,
     "persistent_local_build_authorized": false,
-    "ephemeral_remote_build_authorized": true,
+    "ephemeral_remote_build_authorized": false,
+    "second_environment_execution_complete": true,
     "compiler": {
       "cc": "/usr/bin/gcc-13",
       "cxx": "/usr/bin/g++-13",
@@ -102,6 +103,19 @@
       "completed_evidence_record": false
     }
   ],
+  "successful_observation": {
+    "github_run_id": 30826870568,
+    "github_head_sha": "1e960e95479fc5edca4e7dd7eb9da69714398ee6",
+    "binary_sha256": "6c7807891cb5cb267649f09fbc20eecc22a3b2f62e50698e38134b2e08d18d5f",
+    "complete_replays_per_case": 2,
+    "synthetic_case_count": 4,
+    "within_environment_numeric_replay_identical": true,
+    "cross_environment_score_determinism_pass": true,
+    "maximum_observed_absolute_delta": 0,
+    "synthetic_scores_are_human_truth": false,
+    "audibility_or_materiality_threshold_selected": false,
+    "public_verdict_enabled": false
+  },
   "fixture_generation": {
     "sample_rate_hz": 48000,
     "channel_count": 2,
@@ -174,7 +188,10 @@
     "array_shapes_must_match_exactly": true,
     "within_environment_numeric_replay_must_be_exact": true,
     "tolerance_is_audibility_or_materiality_threshold": false,
-    "comparison_failure_is_a_valid_negative_result": true
+    "comparison_failure_is_a_valid_negative_result": true,
+    "comparison_complete": true,
+    "score_determinism_pass": true,
+    "maximum_observed_absolute_delta": 0
   },
   "bindings": {
     "fixture_generator": {
@@ -191,11 +208,11 @@
     },
     "plan_validator": {
       "path": "scripts/validate-perceptual-degradation-visqol-second-environment-plan.py",
-      "sha256": "2a3875a7cc231188d55f5bebf59c1a306c2a744731292db60857b0067664b49a"
+      "sha256": "95467c2006e99f41e766696ad7e758c990420051ae3cd852f325074b3a1ed881"
     },
     "tests": {
       "path": "scripts/tests/test_perceptual_degradation_visqol_cross_environment.py",
-      "sha256": "42a12172361ad9dba1198ec8ae741c6609b33886c3b9244ebf1180f6adb25a9c"
+      "sha256": "4c133a3788d4e757da8170cbc35e1f99b7f7ecc26fb1ae03a815de6e4f7cf9fb"
     },
     "workspace_patch": {
       "path": "research/toolchains/patches/visqol-v3.3.3-reproducible-workspace.patch",
@@ -203,17 +220,27 @@
     },
     "workflow": {
       "path": ".github/workflows/visqol-synthetic-second-environment.yml",
-      "sha256": "97aa2b24252302c7d9de613ad2737945a5c4e689372c03f4a82141269bc36c07"
+      "sha256": "b3e65b234d52772f5bde1d642aba5d9eb034a2e15a84e6bd1d8cc1f9d0e2c73a"
     },
     "first_replay_observation": {
       "path": "research/toolchains/evidence/visqol-synthetic-replay-observed-20260803-001.json",
       "sha256": "d21c8d0879ce0a5f1efeac5c8e38105b9c017d0c0777bc48655fc0916befe175"
+    },
+    "second_build_observation": {
+      "path": "research/toolchains/evidence/visqol-synthetic-second-build-observed-20260803-001.json",
+      "sha256": "e25797f734b95d5ef396bdd37a93f3171fc6ef138155df35ef60de79900fe274"
+    },
+    "cross_environment_observation": {
+      "path": "research/toolchains/evidence/visqol-synthetic-cross-environment-observed-20260803-001.json",
+      "sha256": "63fdf3d6e4c85e42950d735f2a4bba2974bc23a464318708311a750177ae9c66"
+    },
+    "observation_validator": {
+      "path": "scripts/validate-perceptual-degradation-visqol-cross-environment-observation.py",
+      "sha256": "213ba5b8c63650a9c63b114263bb12a7e39b90b0c873992636f30b636b017ab1"
     }
   },
   "unmet_prerequisites_after_this_freeze": [
-    "Execute the exact score-blind synthetic replay in the independently bound second environment.",
-    "Bind the observed second binary, model, build environment, replay and cross-environment comparison before making a determinism claim.",
     "Keep public, provider and retained audio metric execution blocked until a later gate freeze."
   ],
-  "authorized_next_step": "Run only the exact synthetic fixtures in the bound Ubuntu 24.04 second-environment workflow. Do not access listening scores or execute a perceptual metric on public, provider or retained audio."
+  "authorized_next_step": "Close synthetic execution authorization and bind the observed second build and exact zero-delta comparison. Keep the completed second-environment workflow manual-only and do not execute a perceptual metric on public, provider or retained audio."
 }

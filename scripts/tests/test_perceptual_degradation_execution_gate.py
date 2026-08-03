@@ -36,7 +36,7 @@ class PerceptualDegradationExecutionGateTest(unittest.TestCase):
         self.assertTrue(
             GATE["completed_prerequisites"]["visqol_synthetic_replay_plan_frozen"]
         )
-        self.assertTrue(
+        self.assertFalse(
             GATE["metric_families"]["visqol_audio_v3_3_3"][
                 "synthetic_fixture_execution_authorized"
             ]
@@ -50,7 +50,7 @@ class PerceptualDegradationExecutionGateTest(unittest.TestCase):
             "7384c8d21725e6fa3921aea4e66ff9cb9481b57acef868304192df437a467319",
             GATE["metric_families"]["visqol_audio_v3_3_3"]["binary_sha256"],
         )
-        self.assertTrue(
+        self.assertFalse(
             GATE["second_environment_execution"][
                 "synthetic_fixture_execution_authorized"
             ]
@@ -60,7 +60,12 @@ class PerceptualDegradationExecutionGateTest(unittest.TestCase):
                 "public_or_retained_audio_execution_authorized"
             ]
         )
-        self.assertFalse(GATE["second_environment_execution"]["execution_complete"])
+        self.assertTrue(GATE["second_environment_execution"]["execution_complete"])
+        self.assertTrue(
+            GATE["completed_prerequisites"][
+                "visqol_cross_environment_score_determinism_observed"
+            ]
+        )
 
     def test_gate_rejects_premature_metric_authorization(self) -> None:
         changed = copy.deepcopy(GATE)

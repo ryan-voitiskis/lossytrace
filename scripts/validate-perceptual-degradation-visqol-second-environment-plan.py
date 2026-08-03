@@ -22,6 +22,7 @@ EXPECTED_PATCH_SHA256 = "d768dc5d312d874d308937454308b48c9ff172a7e648e6314cf2b51
 EXPECTED_BAZEL_SHA256 = "70dc0bee198a4c3d332925a32d464d9036a831977501f66d4996854ad4e4fc0d"
 EXPECTED_NUMPY_SHA256 = "675d61ffbfa78604709862923189bad94014bef562cc35cf61d3a07bba02a7ed"
 EXPECTED_FIRST_REPLAY_SHA256 = "d21c8d0879ce0a5f1efeac5c8e38105b9c017d0c0777bc48655fc0916befe175"
+EXPECTED_SECOND_BINARY_SHA256 = "6c7807891cb5cb267649f09fbc20eecc22a3b2f62e50698e38134b2e08d18d5f"
 EXPECTED_SETUP_PYTHON_COMMIT = "5fda3b95a4ea91299a34e894583c3862153e4b97"
 EXPECTED_CASES = {
     "synthetic-identity",
@@ -49,12 +50,12 @@ def validate(plan: dict[str, Any], root: Path = ROOT) -> list[str]:
     errors: list[str] = []
     if plan.get("schema_version") != 1:
         errors.append("schema_version must equal 1")
-    if plan.get("state") != "visqol_synthetic_build_and_replay_frozen_before_scores":
-        errors.append("second-environment plan must be frozen before scores")
+    if plan.get("state") != "visqol_synthetic_cross_environment_replay_observed":
+        errors.append("second-environment plan must record the observed replay")
 
     authorization = plan.get("authorization", {})
-    if authorization.get("synthetic_fixture_execution") is not True:
-        errors.append("only synthetic fixture execution must be authorized")
+    if authorization.get("synthetic_fixture_execution") is not False:
+        errors.append("completed second-environment synthetic execution must be closed")
     for key in (
         "public_or_retained_audio_execution",
         "human_listening_score_access",
@@ -75,10 +76,10 @@ def validate(plan: dict[str, Any], root: Path = ROOT) -> list[str]:
         errors.append("ViSQOL audio model hash differs")
     if visqol.get("workspace_patch_sha256") != EXPECTED_PATCH_SHA256:
         errors.append("ViSQOL workspace patch hash differs")
-    if visqol.get("binary_sha256") is not None:
-        errors.append("second-environment binary must remain unknown before build")
-    if visqol.get("synthetic_replay_complete") is not False:
-        errors.append("second-environment replay must remain incomplete before execution")
+    if visqol.get("binary_sha256") != EXPECTED_SECOND_BINARY_SHA256:
+        errors.append("second-environment observed binary differs")
+    if visqol.get("synthetic_replay_complete") is not True:
+        errors.append("second-environment replay must be complete")
 
     environment = plan.get("build_environment", {})
     if environment.get("runner") != "ubuntu-24.04":
@@ -91,8 +92,10 @@ def validate(plan: dict[str, Any], root: Path = ROOT) -> list[str]:
         errors.append("local free-disk reserve must equal 15 GiB")
     if environment.get("persistent_local_build_authorized") is not False:
         errors.append("persistent local build must remain unauthorized")
-    if environment.get("ephemeral_remote_build_authorized") is not True:
-        errors.append("exact ephemeral second-environment build must be authorized")
+    if environment.get("ephemeral_remote_build_authorized") is not False:
+        errors.append("completed ephemeral second-environment build must be closed")
+    if environment.get("second_environment_execution_complete") is not True:
+        errors.append("second-environment execution must be recorded complete")
     compiler = environment.get("compiler", {})
     if compiler.get("cc") != "/usr/bin/gcc-13" or compiler.get("cxx") != "/usr/bin/g++-13":
         errors.append("second compiler binding differs")
@@ -150,6 +153,31 @@ def validate(plan: dict[str, Any], root: Path = ROOT) -> list[str]:
         if attempt.get("completed_evidence_record") is not False:
             errors.append("prior attempt must not claim completed evidence")
 
+    observation = plan.get("successful_observation", {})
+    if observation.get("github_run_id") != 30826870568:
+        errors.append("successful second-environment run differs")
+    if observation.get("github_head_sha") != "1e960e95479fc5edca4e7dd7eb9da69714398ee6":
+        errors.append("successful second-environment head differs")
+    if observation.get("binary_sha256") != EXPECTED_SECOND_BINARY_SHA256:
+        errors.append("successful second-environment binary differs")
+    if observation.get("complete_replays_per_case") != 2:
+        errors.append("successful second-environment replay count differs")
+    if observation.get("synthetic_case_count") != 4:
+        errors.append("successful second-environment case count differs")
+    if observation.get("within_environment_numeric_replay_identical") is not True:
+        errors.append("successful within-environment replay must be exact")
+    if observation.get("cross_environment_score_determinism_pass") is not True:
+        errors.append("cross-environment score determinism must pass")
+    if observation.get("maximum_observed_absolute_delta") != 0:
+        errors.append("maximum observed absolute delta must equal zero")
+    for key in (
+        "synthetic_scores_are_human_truth",
+        "audibility_or_materiality_threshold_selected",
+        "public_verdict_enabled",
+    ):
+        if observation.get(key) is not False:
+            errors.append(f"successful observation boundary must remain false: {key}")
+
     generation = plan.get("fixture_generation", {})
     if generation.get("sample_rate_hz") != 48000 or generation.get("channel_count") != 2:
         errors.append("synthetic fixture audio format differs")
@@ -183,6 +211,12 @@ def validate(plan: dict[str, Any], root: Path = ROOT) -> list[str]:
         errors.append("within-environment numeric replay must remain exact")
     if comparison.get("tolerance_is_audibility_or_materiality_threshold") is not False:
         errors.append("numeric tolerance must not be a perceptual threshold")
+    if comparison.get("comparison_complete") is not True:
+        errors.append("cross-environment comparison must be complete")
+    if comparison.get("score_determinism_pass") is not True:
+        errors.append("cross-environment score determinism must pass")
+    if comparison.get("maximum_observed_absolute_delta") != 0:
+        errors.append("cross-environment maximum delta must equal zero")
 
     encoded = json.dumps(plan, sort_keys=True).lower()
     for forbidden in (
@@ -193,7 +227,7 @@ def validate(plan: dict[str, Any], root: Path = ROOT) -> list[str]:
         "listening_result",
     ):
         if forbidden in encoded:
-            errors.append(f"score-bearing field is forbidden before replay: {forbidden}")
+            errors.append(f"unregistered score-bearing field is forbidden: {forbidden}")
 
     for key, binding in plan.get("bindings", {}).items():
         relative = binding.get("path", "")
@@ -221,7 +255,7 @@ def main() -> int:
             {
                 "plan": str(plan_path.relative_to(ROOT)),
                 "plan_sha256": sha256_file(plan_path),
-                "status": "second_environment_frozen_before_scores",
+                "status": "cross_environment_synthetic_replay_observed",
             },
             sort_keys=True,
         )

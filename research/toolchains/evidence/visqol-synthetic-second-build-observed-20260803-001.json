@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "record_kind": "visqol_synthetic_second_build_observation",
+  "state": "visqol_synthetic_cross_environment_observed",
+  "execution_plan": {
+    "plan_id": "visqol-audio-v3-3-3-synthetic-second-environment-20260803-003",
+    "sha256": "52a8b899bd7b937d4d9ddab1dc347a1b5996cb49ba3fbfe81b4ac43d216505b3"
+  },
+  "github": {
+    "run_id": 30826870568,
+    "run_url": "https://github.com/ryan-voitiskis/lossytrace/actions/runs/30826870568",
+    "head_sha": "1e960e95479fc5edca4e7dd7eb9da69714398ee6",
+    "workflow_conclusion": "success"
+  },
+  "artifact": {
+    "id": 8861523671,
+    "name": "visqol-synthetic-second-1e960e95479fc5edca4e7dd7eb9da69714398ee6",
+    "size_bytes": 6534583,
+    "archive_sha256": "1afdcf9d01c33031ddead3f6ec856097280444e6e350634e78da5ee90e2a1f22",
+    "expires_at": "2026-08-04T15:28:19Z",
+    "retention_days": 1
+  },
+  "build_environment": {
+    "runner_image": "ubuntu24",
+    "runner_image_version": "20260720.247.2",
+    "kernel": "Linux 6.17.0-1020-azure #20~24.04.1-Ubuntu SMP Fri Jun 19 20:09:14 UTC 2026 x86_64 GNU/Linux",
+    "compiler": "gcc-13 (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "compiler_cpp": "g++-13 (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "bazel": "bazel 3.7.2",
+    "python": "Python 3.12.3",
+    "numpy": "1.26.4",
+    "compilation_mode": "opt",
+    "maximum_workers": 6,
+    "minimum_free_disk_gib_restored_after_build": 15,
+    "compatibility_header": "cstdint",
+    "flatbuffers_locale_independent": true
+  },
+  "files": {
+    "binary": {
+      "bytes": 6264312,
+      "sha256": "6c7807891cb5cb267649f09fbc20eecc22a3b2f62e50698e38134b2e08d18d5f",
+      "committed": false
+    },
+    "audio_model": {
+      "bytes": 138117,
+      "sha256": "1e8246ed33bf36dc5c859351f7110f2cd31f98661989715c0fcf974ec48d3e2e",
+      "committed": false
+    },
+    "license": {
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "committed": false
+    },
+    "build_environment": {
+      "artifact_bytes": 782,
+      "artifact_sha256": "458cb0b1c68a27fd3bab5027163f96da9f313a439d98085b6cfa812103970ea6",
+      "committed_projection_in_this_record": true
+    },
+    "synthetic_replay": {
+      "artifact_bytes": 7421,
+      "artifact_sha256": "5ab3210ec9f66e891e2343df22fd468f16ae1fdfe47bde4a86dd131b6b25affe",
+      "committed": false,
+      "first_replay_path": "research/toolchains/evidence/visqol-synthetic-replay-observed-20260803-001.json",
+      "first_replay_sha256": "d21c8d0879ce0a5f1efeac5c8e38105b9c017d0c0777bc48655fc0916befe175",
+      "semantic_json_equality_after_removing_binary_sha256": true,
+      "binary_removed_canonical_sha256": "868cfee018bf476fcecf14df68a5e9b32f25c94be4fc8b37a850f3e048ca437d"
+    },
+    "cross_environment_comparison": {
+      "artifact_bytes": 2525,
+      "artifact_sha256": "63fdf3d6e4c85e42950d735f2a4bba2974bc23a464318708311a750177ae9c66",
+      "committed_path": "research/toolchains/evidence/visqol-synthetic-cross-environment-observed-20260803-001.json",
+      "semantic_json_equality_verified": true
+    },
+    "raw_repository_resolution": {
+      "bytes": 109129,
+      "sha256": "186904be4d0b11f7f962f49115626aef7bed51cff5ec6f73fb407f5107299d2a",
+      "absolute_runner_paths_present": true,
+      "committed": false
+    }
+  },
+  "repository_resolution": {
+    "repository_count": 46,
+    "repository_names": [
+      "FP16",
+      "FXdiv",
+      "XNNPACK",
+      "arm_neon_2_x86_sse",
+      "armadillo_headers",
+      "bazel_skylib",
+      "bazel_tools",
+      "build_bazel_rules_android",
+      "clog",
+      "com_github_grpc_grpc",
+      "com_google_absl",
+      "com_google_protobuf",
+      "cpuinfo",
+      "eigen_archive",
+      "farmhash_archive",
+      "fft2d",
+      "flatbuffers",
+      "gemmlowp",
+      "io_bazel_rules_closure",
+      "llvm-raw",
+      "local_config_cc",
+      "local_config_cc_toolchains",
+      "local_config_cuda",
+      "local_config_git",
+      "local_config_platform",
+      "local_config_remote_execution",
+      "local_config_rocm",
+      "local_config_sh",
+      "local_config_tensorrt",
+      "local_execution_config_platform",
+      "local_execution_config_python",
+      "org_tensorflow",
+      "pffft_lib",
+      "platforms",
+      "pthreadpool",
+      "pybind11_bazel",
+      "rules_cc",
+      "rules_java",
+      "rules_pkg",
+      "rules_proto",
+      "rules_python",
+      "ruy",
+      "svm_lib",
+      "tf_runtime",
+      "tf_toolchains",
+      "zlib"
+    ],
+    "matches_first_environment_name_projection": true,
+    "raw_record_committed": false,
+    "reason_raw_record_not_committed": "The Bazel record contains ephemeral absolute runner paths; its exact SHA-256 and path-free repository-name projection are retained instead."
+  },
+  "synthetic_replay_summary": {
+    "complete_replays_per_case": 2,
+    "synthetic_case_count": 4,
+    "all_within_environment_numeric_replays_identical": true,
+    "semantic_json_equality_to_first_environment_after_binary_removal": true,
+    "cross_environment_score_determinism_pass": true,
+    "maximum_observed_absolute_delta": 0,
+    "case_result_sha256": {
+      "synthetic-bandwidth-loss": "5235853b831857b00552b57683966f8c145ab2907a2a722d76dbbf03f9007be5",
+      "synthetic-identity": "76063d555b6ad62b586ca2efc6e9a060629f6382af94985fef5f874f2c8247e6",
+      "synthetic-tonal-noise": "90e97ae454dea9b0d7104ac45f5b46fb5a4f262eac8ab087e1fe3636d6deef87",
+      "synthetic-transient-smear": "20d0c44d9b866e8a388bd84931931bd07cf68dc5b073b6eebe1efa63273b393c"
+    }
+  },
+  "boundaries": {
+    "synthetic_audio_only": true,
+    "audio_files_committed": false,
+    "binary_or_model_committed": false,
+    "public_or_provider_audio_accessed": false,
+    "retained_audio_accessed": false,
+    "sealed_labels_opened": false,
+    "existing_280_case_future_subset_opened": false,
+    "human_listening_scores_opened": false,
+    "synthetic_scores_are_human_truth": false,
+    "audibility_or_materiality_threshold_selected": false,
+    "cross_environment_replay_complete": true,
+    "public_verdict_enabled": false,
+    "paths_in_committed_evidence": false
+  }
+}

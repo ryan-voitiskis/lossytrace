@@ -25,8 +25,8 @@ def validate(gate: dict[str, Any], root: Path = ROOT) -> list[str]:
     errors: list[str] = []
     if gate.get("schema_version") != 1:
         errors.append("schema_version must equal 1")
-    if gate.get("state") != "metric_execution_blocked_pending_cross_environment_and_legal_clearance":
-        errors.append("metric gate must remain blocked pending cross-environment and legal gates")
+    if gate.get("state") != "metric_execution_blocked_pending_legal_and_listening_evidence":
+        errors.append("metric gate must remain blocked pending legal and listening evidence")
     for key in (
         "public_verdict_enabled",
         "retained_audio_metric_execution_authorized",
@@ -46,6 +46,10 @@ def validate(gate: dict[str, Any], root: Path = ROOT) -> list[str]:
         errors.append("ViSQOL single-environment synthetic replay must be complete")
     if completed.get("visqol_second_environment_plan_frozen_before_scores") is not True:
         errors.append("ViSQOL second-environment plan must be frozen before scores")
+    if completed.get("visqol_cross_environment_synthetic_replay_complete") is not True:
+        errors.append("ViSQOL cross-environment synthetic replay must be complete")
+    if completed.get("visqol_cross_environment_score_determinism_observed") is not True:
+        errors.append("ViSQOL cross-environment score determinism must be observed")
     for key, binding in gate.get("bindings", {}).items():
         path = root / binding.get("path", "")
         if not path.is_file():
@@ -66,24 +70,27 @@ def validate(gate: dict[str, Any], root: Path = ROOT) -> list[str]:
         errors.append("visqol_audio_v3_3_3.model_sha256 differs")
     if visqol.get("binary_sha256") != "7384c8d21725e6fa3921aea4e66ff9cb9481b57acef868304192df437a467319":
         errors.append("visqol_audio_v3_3_3.binary_sha256 differs")
-    if visqol.get("synthetic_fixture_execution_authorized") is not True:
-        errors.append("visqol_audio_v3_3_3 exact second synthetic execution must be authorized")
+    if visqol.get("synthetic_fixture_execution_authorized") is not False:
+        errors.append("visqol_audio_v3_3_3 completed synthetic execution must be closed")
     if visqol.get("synthetic_replay_complete") is not True:
         errors.append("visqol_audio_v3_3_3.synthetic_replay_complete must be true")
-    if visqol.get("second_environment_synthetic_replay_complete") is not False:
-        errors.append("visqol_audio_v3_3_3 second-environment replay must remain incomplete")
+    if visqol.get("second_environment_synthetic_replay_complete") is not True:
+        errors.append("visqol_audio_v3_3_3 second-environment replay must be complete")
+    if visqol.get("cross_environment_score_determinism_pass") is not True:
+        errors.append("visqol_audio_v3_3_3 cross-environment determinism must pass")
+    if visqol.get("maximum_observed_absolute_delta") != 0:
+        errors.append("visqol_audio_v3_3_3 maximum observed delta must equal zero")
     second = gate.get("second_environment_execution", {})
     if second.get("metric_family") != "visqol_audio_v3_3_3":
         errors.append("second environment must be limited to ViSQOL")
     if second.get("environment_id") != "ubuntu24-gcc13-python312-v1":
         errors.append("second environment identifier differs")
-    if second.get("synthetic_fixture_execution_authorized") is not True:
-        errors.append("second-environment synthetic fixture execution must be authorized")
+    if second.get("synthetic_fixture_execution_authorized") is not False:
+        errors.append("second-environment synthetic fixture execution must be closed")
     for key in (
         "public_or_retained_audio_execution_authorized",
         "human_listening_score_access_authorized",
         "provider_audio_download_authorized",
-        "execution_complete",
     ):
         if second.get(key) is not False:
             errors.append(f"second_environment_execution.{key} must remain false")
@@ -95,6 +102,8 @@ def validate(gate: dict[str, Any], root: Path = ROOT) -> list[str]:
         errors.append("second-environment disk reserve must equal 15 GiB")
     if second.get("score_blind_before_execution") is not True:
         errors.append("second-environment execution must remain score-blind")
+    if second.get("execution_complete") is not True:
+        errors.append("second-environment execution must be complete")
     proxy = families.get("gstpeaq_proxy_v0_6_1", {})
     if proxy.get("binary_sha256") is not None:
         errors.append("gstpeaq_proxy_v0_6_1.binary_sha256 must remain null")
