@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "plan_id": "visqol-audio-v3-3-3-synthetic-second-environment-20260803-002",
+  "plan_id": "visqol-audio-v3-3-3-synthetic-second-environment-20260803-003",
   "state": "visqol_synthetic_build_and_replay_frozen_before_scores",
   "fixture_set_id": "visqol-synthetic-48k-stereo-v1",
   "authorization": {
@@ -44,13 +44,15 @@
         "header": "cstdint",
         "target_cxxopt": [
           "-include",
-          "cstdint"
+          "cstdint",
+          "-DFLATBUFFERS_LOCALE_INDEPENDENT=1"
         ],
         "host_cxxopt": [
           "-include",
-          "cstdint"
+          "cstdint",
+          "-DFLATBUFFERS_LOCALE_INDEPENDENT=1"
         ],
-        "scope": "Force the standard fixed-width integer header into old pinned transitive dependencies that relied on GCC 11 transitive includes; no ViSQOL metric source or dependency source is changed."
+        "scope": "Force the standard fixed-width integer header into old pinned transitive dependencies that relied on GCC 11 transitive includes, and consistently enable FlatBuffers locale-independent parsing instead of allowing translation-unit feature-header order to vary; no ViSQOL metric source or dependency source is changed."
       }
     },
     "bazel": {
@@ -85,6 +87,16 @@
       "outcome": "failed_before_metric_execution",
       "failed_step": "build",
       "failure": "Pinned older Abseil and TensorFlow Lite dependency sources relied on transitive fixed-width integer declarations that GCC 13 no longer supplies; compilation requires an explicit standard cstdint compatibility include.",
+      "runner_cleanup_complete": true,
+      "synthetic_scores_produced": false,
+      "completed_evidence_record": false
+    },
+    {
+      "github_run_id": 30825960611,
+      "github_head_sha": "bb13857bafd711b4bd7fa26815662457f8f5e782",
+      "outcome": "failed_before_metric_execution",
+      "failed_step": "build",
+      "failure": "The cstdint include cleared the missing fixed-width integer declarations, but FlatBuffers 1.12 host objects auto-detected locale-independent parsing inconsistently from translation-unit feature-header order, leaving ClassicLocale unresolved at link time; the existing locale-independent mode must be explicitly enabled for every host and target C++ object.",
       "runner_cleanup_complete": true,
       "synthetic_scores_produced": false,
       "completed_evidence_record": false
@@ -179,11 +191,11 @@
     },
     "plan_validator": {
       "path": "scripts/validate-perceptual-degradation-visqol-second-environment-plan.py",
-      "sha256": "5c7dea6dea1ae8a92fd7a845e00bd6d00b40dd5edc2dafc465c5b3e1c7799268"
+      "sha256": "2a3875a7cc231188d55f5bebf59c1a306c2a744731292db60857b0067664b49a"
     },
     "tests": {
       "path": "scripts/tests/test_perceptual_degradation_visqol_cross_environment.py",
-      "sha256": "428cedc538644aebc64346f72b4a41915becfd851eac2fdd31ef1d9cb194ddfd"
+      "sha256": "42a12172361ad9dba1198ec8ae741c6609b33886c3b9244ebf1180f6adb25a9c"
     },
     "workspace_patch": {
       "path": "research/toolchains/patches/visqol-v3.3.3-reproducible-workspace.patch",
@@ -191,7 +203,7 @@
     },
     "workflow": {
       "path": ".github/workflows/visqol-synthetic-second-environment.yml",
-      "sha256": "7b9a9d7a2e5e1b50448b3ce0504ef8612f134490412cfbb9e967080201a402b8"
+      "sha256": "97aa2b24252302c7d9de613ad2737945a5c4e689372c03f4a82141269bc36c07"
     },
     "first_replay_observation": {
       "path": "research/toolchains/evidence/visqol-synthetic-replay-observed-20260803-001.json",

@@ -101,9 +101,14 @@ def validate(plan: dict[str, Any], root: Path = ROOT) -> list[str]:
     compatibility = compiler.get("compatibility_include", {})
     if compatibility.get("header") != "cstdint":
         errors.append("compiler compatibility header differs")
-    if compatibility.get("target_cxxopt") != ["-include", "cstdint"]:
+    expected_compatibility_options = [
+        "-include",
+        "cstdint",
+        "-DFLATBUFFERS_LOCALE_INDEPENDENT=1",
+    ]
+    if compatibility.get("target_cxxopt") != expected_compatibility_options:
         errors.append("target compiler compatibility options differ")
-    if compatibility.get("host_cxxopt") != ["-include", "cstdint"]:
+    if compatibility.get("host_cxxopt") != expected_compatibility_options:
         errors.append("host compiler compatibility options differ")
     if "no visqol metric source or dependency source is changed" not in compatibility.get("scope", "").lower():
         errors.append("compiler compatibility scope must exclude source changes")
@@ -133,8 +138,8 @@ def validate(plan: dict[str, Any], root: Path = ROOT) -> list[str]:
         errors.append("ViSQOL build target or configuration differs")
 
     attempts = plan.get("prior_attempts", [])
-    if len(attempts) != 1:
-        errors.append("exactly one incomplete second-environment attempt must be recorded")
+    if len(attempts) != 2:
+        errors.append("exactly two incomplete second-environment attempts must be recorded")
     for attempt in attempts:
         if attempt.get("outcome") != "failed_before_metric_execution":
             errors.append("prior attempt must have failed before metric execution")

@@ -63,15 +63,24 @@ class VisqolCrossEnvironmentTest(unittest.TestCase):
         )
         self.assertIsNone(self.plan["visqol"]["binary_sha256"])
         self.assertFalse(self.plan["visqol"]["synthetic_replay_complete"])
-        self.assertEqual(1, len(self.plan["prior_attempts"]))
-        self.assertFalse(self.plan["prior_attempts"][0]["synthetic_scores_produced"])
+        self.assertEqual(2, len(self.plan["prior_attempts"]))
+        self.assertTrue(
+            all(
+                not attempt["synthetic_scores_produced"]
+                for attempt in self.plan["prior_attempts"]
+            )
+        )
 
     def test_workflow_binds_nonsemantic_gcc13_compatibility_include(self) -> None:
         source = WORKFLOW.read_text(encoding="utf-8")
         self.assertIn("--cxxopt=-include", source)
         self.assertIn("--cxxopt=cstdint", source)
+        self.assertIn("--cxxopt=-DFLATBUFFERS_LOCALE_INDEPENDENT=1", source)
         self.assertIn("--host_cxxopt=-include", source)
         self.assertIn("--host_cxxopt=cstdint", source)
+        self.assertIn(
+            "--host_cxxopt=-DFLATBUFFERS_LOCALE_INDEPENDENT=1", source
+        )
 
     def test_plan_rejects_perceptual_threshold_or_retained_authorization(self) -> None:
         changed = copy.deepcopy(self.plan)

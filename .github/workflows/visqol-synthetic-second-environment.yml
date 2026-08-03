@@ -106,8 +106,10 @@ jobs:
             --local_ram_resources=6144 \
             --cxxopt=-include \
             --cxxopt=cstdint \
+            --cxxopt=-DFLATBUFFERS_LOCALE_INDEPENDENT=1 \
             --host_cxxopt=-include \
             --host_cxxopt=cstdint \
+            --host_cxxopt=-DFLATBUFFERS_LOCALE_INDEPENDENT=1 \
             --experimental_repository_resolved_file="${visqol_artifact}/resolved-repositories.bzl"
           cp bazel-bin/visqol "${visqol_artifact}/visqol"
           cp model/libsvm_nu_svr_model.txt "${visqol_artifact}/libsvm_nu_svr_model.txt"
