@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "freeze_id": "perceptual-degradation-v1-alignment-fixtures-20260803-001",
+  "state": "score_free_alignment_limits_frozen_before_retained_audio",
+  "features_computed": false,
+  "perceptual_metric_executed": false,
+  "retained_audio_accessed": false,
+  "scores_opened": false,
+  "sealed_labels_opened": false,
+  "public_verdict_enabled": false,
+  "research_plan": {
+    "path": "benchmarks/perceptual-degradation-v1/research-plan.json",
+    "sha256": "4474fcb066aa261062613bc1af96915c7463ffd922dbd3cad90aaef59d02c8a6"
+  },
+  "bindings": {
+    "implementation": {
+      "path": "scripts/perceptual_degradation_alignment.py",
+      "sha256": "0e036bc1a430e578523d61e68c7ab0dc659bace2f606710ab3d28b148439dccb"
+    },
+    "result_schema": {
+      "path": "benchmarks/perceptual-degradation-v1/alignment-result.schema.json",
+      "sha256": "4587746ef8c43ba1b3096ce57f9d172d9d226d6071d4dea89673f8e850410ff9"
+    },
+    "synthetic_fixture_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_alignment.py",
+      "sha256": "c6b85f0b1eccd318de1081991c8e766c602f99036eb202caf8e8cc9812118872"
+    }
+  },
+  "limits": {
+    "envelope_rate_hz": 200,
+    "maximum_correlation_samples": 16384,
+    "minimum_alignment_correlation": 0.2,
+    "minimum_ambiguity_margin": 0.01,
+    "maximum_gain_abs_db": 12.0,
+    "maximum_clock_drift_ppm": 100.0,
+    "maximum_nonlinear_drift_residual_samples": 1.5,
+    "maximum_edge_trim_seconds": 2.0,
+    "maximum_edge_trim_fraction": 0.1,
+    "maximum_delay_seconds_default": 2.0,
+    "minimum_active_seconds_default": 4.0
+  },
+  "synthetic_fixture_claims": [
+    "Identity input is deterministic and supported.",
+    "Integer delay, constant gain, and polarity are recovered together.",
+    "A quarter-sample interpolated delay is recovered within 0.05 sample.",
+    "Excessive edge trim is unsupported.",
+    "A periodic alignment with multiple equivalent peaks is unsupported.",
+    "Gain beyond 12 dB is unsupported.",
+    "Clock drift beyond 100 ppm is unsupported.",
+    "Silence and non-finite samples are unsupported."
+  ],
+  "scope_limit": "This freeze validates deterministic mono synthetic fixtures only. Stereo agreement, decoder binding, channel maps, resampling, structural edit detection, and retained-audio behavior remain unimplemented or unvalidated and must not be inferred.",
+  "authorized_next_step": "Commit this freeze, then add score-free stereo/channel-map handling, exact decoder and resampler bindings, and structural fixtures without executing a perceptual metric or reading retained audio."
+}
