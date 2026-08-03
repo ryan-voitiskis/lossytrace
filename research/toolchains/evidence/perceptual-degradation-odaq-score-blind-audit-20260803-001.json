@@ -1,0 +1,1065 @@
+{
+  "archive_inventory": {
+    "canonical_sha256": "e03b1d2b9fe25a8b3e991cc22f19e59bf9f3c22b6ba6dbcb7a63239dbc152ce8",
+    "member_count": 471,
+    "wav_member_count": 377
+  },
+  "audit_id": "odaq-score-blind-provider-audit-20260803-001",
+  "licence_policy": {
+    "cc_by_nc_excluded_from_planned_subset": true,
+    "conservative_redistributable_scope": [
+      "cc_by",
+      "cc0"
+    ],
+    "processed_audio_inherits_original_source_licence": true,
+    "unknown_licence_excluded": true
+  },
+  "listening_groups": [
+    {
+      "artifact_family": "DE",
+      "clean_reference_eligible": true,
+      "development_eligible": true,
+      "exclusion_reasons": [],
+      "folder_id": "DE_CosmosLandromat_remix1_LD6",
+      "license_class": "cc_by",
+      "source_id": "CosmosLandromat_remix1_LD6",
+      "wav_member_binding_sha256": "31a0a879cac10f0a78468248e7b94e72f34f69993fa1a9a00346048fc66c8760",
+      "wav_member_count": 8
+    },
+    {
+      "artifact_family": "DE",
+      "clean_reference_eligible": true,
+      "development_eligible": true,
+      "exclusion_reasons": [],
+      "folder_id": "DE_CosmosLandromat_remix3_LD3",
+      "license_class": "cc_by",
+      "source_id": "CosmosLandromat_remix3_LD3",
+      "wav_member_binding_sha256": "d48aef4b0c9495e9b2fb3be6c2f320c16c1f2af355482594a6c258bac18d2491",
+      "wav_member_count": 8
+    },
+    {
+      "artifact_family": "DE",
+      "clean_reference_eligible": true,
+      "development_eligible": true,
+      "exclusion_reasons": [],
+      "folder_id": "DE_ElephantsDream_LD0",
+      "license_class": "cc_by",
+      "source_id": "ElephantsDream_LD0",
+      "wav_member_binding_sha256": "fa7103fc76d4b8e03d764b642da6720c4326ee69e5bff3e24c282f39daa34468",
+      "wav_member_count": 8
+    },
+    {
+      "artifact_family": "DE",
+      "clean_reference_eligible": true,
+      "development_eligible": true,
+      "exclusion_reasons": [],
+      "folder_id": "DE_Meridian_remix1_LD3",
+      "license_class": "cc_by",
+      "source_id": "Meridian_remix1_LD3",
+      "wav_member_binding_sha256": "22661f7b277b288853279aeb1737d2cf2a52b222fc247aee0910249d4ca48b81",
+      "wav_member_count": 8
+    },
+    {
+      "artifact_family": "DE",
+      "clean_reference_eligible": true,
+      "development_eligible": true,
+      "exclusion_reasons": [],
+      "folder_id": "DE_Meridian_remix2_LD6",
+      "license_class": "cc_by",
+      "source_id": "Meridian_remix2_LD6",
+      "wav_member_binding_sha256": "005fde72eb84c3fb09fa075e89b04f2cd09daa1a0ba81efd0930efaa573b46fd",
+      "wav_member_count": 8
+    },
+    {
+      "artifact_family": "DE",
+      "clean_reference_eligible": true,
+      "development_eligible": true,
+      "exclusion_reasons": [],
+      "folder_id": "DE_SitaSings_remix1_LD0",
+      "license_class": "cc_by",
+      "source_id": "SitaSings_remix1_LD0",
+      "wav_member_binding_sha256": "0a399b1100691f77111787b5b11351be518b1f1ae77a96743d01300afd733758",
+      "wav_member_count": 8
+    },
+    {
+      "artifact_family": "DE",
+      "clean_reference_eligible": true,
+      "development_eligible": true,
+      "exclusion_reasons": [],
+      "folder_id": "DE_SitaSings_remix2_LD6",
+      "license_class": "cc_by",
+      "source_id": "SitaSings_remix2_LD6",
+      "wav_member_binding_sha256": "4528ca3d29c696a8e55f4b8d9835f9f1c2615bcb6e28fed864b874d0ac76765e",
+      "wav_member_count": 8
+    },
+    {
+      "artifact_family": "DE",
+      "clean_reference_eligible": false,
+      "development_eligible": false,
+      "exclusion_reasons": [
+        "licence_outside_cc_by_or_cc0_scope"
+      ],
+      "folder_id": "DE_female_speech_music_1_LD0",
+      "license_class": "cc_by_nc",
+      "source_id": "female_speech_music_1_LD0",
+      "wav_member_binding_sha256": "5d396af541a845b616ffe7d6694349df0b5f6c583a42406f9f7b60afd3c493b5",
+      "wav_member_count": 8
+    },
+    {
+      "artifact_family": "DE",
+      "clean_reference_eligible": false,
+      "development_eligible": false,
+      "exclusion_reasons": [
+        "licence_outside_cc_by_or_cc0_scope"
+      ],
+      "folder_id": "DE_female_speech_music_2_LD9",
+      "license_class": "cc_by_nc",
+      "source_id": "female_speech_music_2_LD9",
+      "wav_member_binding_sha256": "8aac801cabc5e2f5a11dbaf424efd857a53f251762e8e38c8727b5bc786fd0fa",
+      "wav_member_count": 8
+    },
+    {
+      "artifact_family": "DE",
+      "clean_reference_eligible": false,
+      "development_eligible": false,
+      "exclusion_reasons": [
+        "licence_outside_cc_by_or_cc0_scope"
+      ],
+      "folder_id": "DE_female_speech_music_3_LD3",
+      "license_class": "cc_by_nc",
+      "source_id": "female_speech_music_3_LD3",
+      "wav_member_binding_sha256": "d813a83a5d3f1fe9e58c99897fe83c1fff9be4693c3b3de4a91ab5c146c1001c",
+      "wav_member_count": 8
+    },
+    {
+      "artifact_family": "LP",
+      "clean_reference_eligible": true,
+      "development_eligible": true,
+      "exclusion_reasons": [],
+      "folder_id": "LP_11_guitar",
+      "license_class": "cc_by",
+      "source_id": "11_guitar",
+      "wav_member_binding_sha256": "1a9e203991719409ffd13225942aa26473f61d7fb2aec78717f78f840582b766",
+      "wav_member_count": 8
+    },
+    {
+      "artifact_family": "LP",
+      "clean_reference_eligible": true,
+      "development_eligible": true,
+      "exclusion_reasons": [],
+      "folder_id": "LP_23_jazz",
+      "license_class": "cc_by",
+      "source_id": "23_jazz",
+      "wav_member_binding_sha256": "2deb5518a82b42e30b0d6f4ff7fa1840336a3589e8d1c6decd0103f8b67537f0",
+      "wav_member_count": 8
+    },
+    {
+      "artifact_family": "LP",
+      "clean_reference_eligible": false,
+      "development_eligible": false,
+      "exclusion_reasons": [
+        "licence_outside_cc_by_or_cc0_scope"
+      ],
+      "folder_id": "LP_AmateurOnPurpose",
+      "license_class": "cc_by_nc",
+      "source_id": "AmateurOnPurpose",
+      "wav_member_binding_sha256": "6bd40606323d86fd93258b63594a92a8cfb3223b050798f238b52b6b701c8952",
+      "wav_member_count": 8
+    },
+    {
+      "artifact_family": "LP",
+      "clean_reference_eligible": false,
+      "development_eligible": false,
+      "exclusion_reasons": [
+        "licence_outside_cc_by_or_cc0_scope"
+      ],
+      "folder_id": "LP_CreatureFromTheBlackjackTable",
+      "license_class": "cc_by_nc",
+      "source_id": "CreatureFromTheBlackjackTable",
+      "wav_member_binding_sha256": "31eaebf9454914a3c2ea2769cab3ae271148722633a19c634652ddf8106bf86b",
+      "wav_member_count": 8
+    },
+    {
+      "artifact_family": "PE",
+      "clean_reference_eligible": true,
+      "development_eligible": true,
+      "exclusion_reasons": [],
+      "folder_id": "PE_27_castanets",
+      "license_class": "cc_by",
+      "source_id": "27_castanets",
+      "wav_member_binding_sha256": "40087873ecc6b9f3e64061cc08db3aee7e6ce8670832eaf7c1d55a741b7bc0db",
+      "wav_member_count": 8
+    },
+    {
+      "artifact_family": "PE",
+      "clean_reference_eligible": true,
+      "development_eligible": true,
+      "exclusion_reasons": [],
+      "folder_id": "PE_39_clapping",
+      "license_class": "cc0",
+      "source_id": "39_clapping",
+      "wav_member_binding_sha256": "e0a60193e49ca4f2720d7689e39eb7109ea60d3481c0b8158c002196e05e4417",
+      "wav_member_count": 8
+    },
+    {
+      "artifact_family": "PE",
+      "clean_reference_eligible": false,
+      "development_eligible": false,
+      "exclusion_reasons": [
+        "licence_outside_cc_by_or_cc0_scope"
+      ],
+      "folder_id": "PE_AmateurOnPurpose",
+      "license_class": "cc_by_nc",
+      "source_id": "AmateurOnPurpose",
+      "wav_member_binding_sha256": "a012f980787ca248e514c9ca58b553b1a278122c32fda12aa5718250d3920e41",
+      "wav_member_count": 8
+    },
+    {
+      "artifact_family": "PE",
+      "clean_reference_eligible": false,
+      "development_eligible": false,
+      "exclusion_reasons": [
+        "licence_outside_cc_by_or_cc0_scope"
+      ],
+      "folder_id": "PE_CreatureFromTheBlackjackTable",
+      "license_class": "cc_by_nc",
+      "source_id": "CreatureFromTheBlackjackTable",
+      "wav_member_binding_sha256": "5a574d767643fc2c285e53a709e49a2907e8f3ec588bf75f2088c68ee24be827",
+      "wav_member_count": 8
+    },
+    {
+      "artifact_family": "SH",
+      "clean_reference_eligible": true,
+      "development_eligible": true,
+      "exclusion_reasons": [],
+      "folder_id": "SH_04_choral",
+      "license_class": "cc_by",
+      "source_id": "04_choral",
+      "wav_member_binding_sha256": "d098c1f9fe8ac190bed8386145d72d8834a4e91ac550339a490de3f85f63aba1",
+      "wav_member_count": 8
+    },
+    {
+      "artifact_family": "SH",
+      "clean_reference_eligible": false,
+      "development_eligible": false,
+      "exclusion_reasons": [
+        "original_source_was_lossy_coded"
+      ],
+      "folder_id": "SH_13_glockenspiel",
+      "license_class": "cc0",
+      "source_id": "13_glockenspiel",
+      "wav_member_binding_sha256": "8f99a3e19c31de40d628d9d347699f25f546a1fb0ea8d5646fa9e85bdd23f99d",
+      "wav_member_count": 8
+    },
+    {
+      "artifact_family": "SH",
+      "clean_reference_eligible": false,
+      "development_eligible": false,
+      "exclusion_reasons": [
+        "licence_outside_cc_by_or_cc0_scope"
+      ],
+      "folder_id": "SH_AmateurOnPurpose",
+      "license_class": "cc_by_nc",
+      "source_id": "AmateurOnPurpose",
+      "wav_member_binding_sha256": "35f7323ff89824152cd474e5ddb6b10baeddff90bfb3eb719c911931851baacb",
+      "wav_member_count": 8
+    },
+    {
+      "artifact_family": "SH",
+      "clean_reference_eligible": false,
+      "development_eligible": false,
+      "exclusion_reasons": [
+        "licence_outside_cc_by_or_cc0_scope"
+      ],
+      "folder_id": "SH_CreatureFromTheBlackjackTable",
+      "license_class": "cc_by_nc",
+      "source_id": "CreatureFromTheBlackjackTable",
+      "wav_member_binding_sha256": "e6197ba923d7723488a3658fe827b6166fdcaba7e1b3ae00d51fcd92998ac47a",
+      "wav_member_count": 8
+    },
+    {
+      "artifact_family": "TM",
+      "clean_reference_eligible": true,
+      "development_eligible": true,
+      "exclusion_reasons": [],
+      "folder_id": "TM_01b_trumpet",
+      "license_class": "cc_by",
+      "source_id": "01b_trumpet",
+      "wav_member_binding_sha256": "44da178087025804b1cbe408dfa227a4569672d6a7efc61638020d481d8844f4",
+      "wav_member_count": 8
+    },
+    {
+      "artifact_family": "TM",
+      "clean_reference_eligible": true,
+      "development_eligible": true,
+      "exclusion_reasons": [],
+      "folder_id": "TM_02_violin",
+      "license_class": "cc_by",
+      "source_id": "02_violin",
+      "wav_member_binding_sha256": "eedeed9b17fc68e7c1aac4d527236e3a9076262743b454e8793c370a9235c1f5",
+      "wav_member_count": 8
+    },
+    {
+      "artifact_family": "TM",
+      "clean_reference_eligible": false,
+      "development_eligible": false,
+      "exclusion_reasons": [
+        "licence_outside_cc_by_or_cc0_scope"
+      ],
+      "folder_id": "TM_AmateurOnPurpose",
+      "license_class": "cc_by_nc",
+      "source_id": "AmateurOnPurpose",
+      "wav_member_binding_sha256": "0791abfbe3b944dacb69afdd27b3f3e149184358efd4c61a280711dbc988dce7",
+      "wav_member_count": 8
+    },
+    {
+      "artifact_family": "TM",
+      "clean_reference_eligible": false,
+      "development_eligible": false,
+      "exclusion_reasons": [
+        "licence_outside_cc_by_or_cc0_scope"
+      ],
+      "folder_id": "TM_CreatureFromTheBlackjackTable",
+      "license_class": "cc_by_nc",
+      "source_id": "CreatureFromTheBlackjackTable",
+      "wav_member_binding_sha256": "0255818f52741b584e9434cc45878f32edef8c7f95d2fff6d6d877e478435029",
+      "wav_member_count": 8
+    },
+    {
+      "artifact_family": "UN",
+      "clean_reference_eligible": true,
+      "development_eligible": true,
+      "exclusion_reasons": [],
+      "folder_id": "UN_20c_accordion",
+      "license_class": "cc_by",
+      "source_id": "20c_accordion",
+      "wav_member_binding_sha256": "8e0eb97f4034a979c7878372786676f9a9946d0819dd958c988eb907757a77e0",
+      "wav_member_count": 8
+    },
+    {
+      "artifact_family": "UN",
+      "clean_reference_eligible": true,
+      "development_eligible": true,
+      "exclusion_reasons": [],
+      "folder_id": "UN_21_violin",
+      "license_class": "cc_by",
+      "source_id": "21_violin",
+      "wav_member_binding_sha256": "468f5cc58488917494ef8c7886255516045c09f5d2e9eefdf9b05fb618745e24",
+      "wav_member_count": 8
+    },
+    {
+      "artifact_family": "UN",
+      "clean_reference_eligible": false,
+      "development_eligible": false,
+      "exclusion_reasons": [
+        "licence_outside_cc_by_or_cc0_scope"
+      ],
+      "folder_id": "UN_AmateurOnPurpose",
+      "license_class": "cc_by_nc",
+      "source_id": "AmateurOnPurpose",
+      "wav_member_binding_sha256": "9842c7eacb2007aa0ea21f771eea13d9521e449ef78fe46c1e70a206a5892e3d",
+      "wav_member_count": 8
+    },
+    {
+      "artifact_family": "UN",
+      "clean_reference_eligible": false,
+      "development_eligible": false,
+      "exclusion_reasons": [
+        "licence_outside_cc_by_or_cc0_scope"
+      ],
+      "folder_id": "UN_CreatureFromTheBlackjackTable",
+      "license_class": "cc_by_nc",
+      "source_id": "CreatureFromTheBlackjackTable",
+      "wav_member_binding_sha256": "4b834485b5e36fad01305fbf553d5ea03fd3043513d24d55111864e61dfac364",
+      "wav_member_count": 8
+    }
+  ],
+  "listening_scores_opened": false,
+  "metadata_bindings": {
+    "detailed_license_sha256": "b5092654bd141993f4209853c2378d67bac1bc67443ad2e5d5db19d653ec4608",
+    "license_disclaimer_sha256": "15ec5b9ef55238eb137c61de1f45e1408f064a4cfb4adfbbd625848e166bfdb0"
+  },
+  "metric_scores_opened": false,
+  "observed": {
+    "detailed_license_source_count": 47,
+    "eligible_listening_group_count": 16,
+    "eligible_source_count": 16,
+    "excluded_listening_group_count": 14,
+    "listening_group_count": 30,
+    "source_license_class_counts": {
+      "cc0": 5,
+      "cc_by": 33,
+      "cc_by_nc": 9
+    },
+    "source_original_coding_class_counts": {
+      "lossy": 1,
+      "uncoded_or_lossless": 46
+    }
+  },
+  "paths_redacted": true,
+  "provider": {
+    "archive_bytes": 1048071792,
+    "archive_checksum": "md5:9b4c1eba479ea698995798523eb80999",
+    "archive_key": "ODAQ.zip",
+    "doi": "10.5281/zenodo.10405774",
+    "publication_date": "2023-12-30",
+    "record_id": 10405774,
+    "title": "ODAQ: OPEN DATASET OF AUDIO QUALITY"
+  },
+  "purpose": "published_development_only_not_codec_or_final_evidence",
+  "range_access": {
+    "accept_ranges_verified": true,
+    "archive_payload_downloaded": false,
+    "block_bytes": 65536,
+    "cache_blocks": 4,
+    "maximum_response_bytes": 4194304,
+    "request_count": 4,
+    "response_bytes": 151153
+  },
+  "read_boundary": {
+    "audio_downloaded": false,
+    "audio_member_opened": false,
+    "opened_archive_members": [
+      "ODAQ/_license_disclaimer.txt",
+      "ODAQ/_detailed_license.csv"
+    ],
+    "score_member_opened": false,
+    "score_member_present": true
+  },
+  "schema_version": 1,
+  "selection_authorized": false,
+  "sources": [
+    {
+      "clean_reference_eligible": true,
+      "content": "solo trumpet",
+      "current_format": "stereo PCM 44.1 kHz / 16 bit",
+      "duration_seconds": 12.0,
+      "exclusion_reasons": [],
+      "license_class": "cc_by",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "original_coding": "AIFF",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "mono",
+      "source_id": "01b_trumpet"
+    },
+    {
+      "clean_reference_eligible": true,
+      "content": "solo violin",
+      "current_format": "stereo PCM 44.1 kHz / 16 bit",
+      "duration_seconds": 10.0,
+      "exclusion_reasons": [],
+      "license_class": "cc_by",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "original_coding": "PCM",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "stereo",
+      "source_id": "02_violin"
+    },
+    {
+      "clean_reference_eligible": true,
+      "content": "choral singing",
+      "current_format": "stereo PCM 44.1 kHz / 16 bit",
+      "duration_seconds": 10.0,
+      "exclusion_reasons": [],
+      "license_class": "cc_by",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "original_coding": "PCM",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "stereo",
+      "source_id": "04_choral"
+    },
+    {
+      "clean_reference_eligible": true,
+      "content": "solo acoustic guitar",
+      "current_format": "stereo PCM 44.1 kHz / 16 bit",
+      "duration_seconds": 10.0,
+      "exclusion_reasons": [],
+      "license_class": "cc_by",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "original_coding": "PCM",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "stereo",
+      "source_id": "11_guitar"
+    },
+    {
+      "clean_reference_eligible": false,
+      "content": "solo glockenspiel",
+      "current_format": "stereo PCM 44.1 kHz / 16 bit",
+      "duration_seconds": 10.0,
+      "exclusion_reasons": [
+        "original_source_was_lossy_coded"
+      ],
+      "license_class": "cc0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/",
+      "original_coding": "AAC LC 256 kbs",
+      "original_coding_class": "lossy",
+      "original_format": "stereo",
+      "source_id": "13_glockenspiel"
+    },
+    {
+      "clean_reference_eligible": true,
+      "content": "solo accordion",
+      "current_format": "stereo PCM 44.1 kHz / 16 bit",
+      "duration_seconds": 12.0,
+      "exclusion_reasons": [],
+      "license_class": "cc_by",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "original_coding": "PCM",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "stereo",
+      "source_id": "20c_accordion"
+    },
+    {
+      "clean_reference_eligible": true,
+      "content": "solo violin",
+      "current_format": "stereo PCM 44.1 kHz / 16 bit",
+      "duration_seconds": 10.0,
+      "exclusion_reasons": [],
+      "license_class": "cc_by",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "original_coding": "PCM",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "stereo",
+      "source_id": "21_violin"
+    },
+    {
+      "clean_reference_eligible": true,
+      "content": "modern jazz ensemble",
+      "current_format": "stereo PCM 44.1 kHz / 16 bit",
+      "duration_seconds": 10.0,
+      "exclusion_reasons": [],
+      "license_class": "cc_by",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "original_coding": "PCM",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "stereo",
+      "source_id": "23_jazz"
+    },
+    {
+      "clean_reference_eligible": true,
+      "content": "solo wooden claves",
+      "current_format": "stereo PCM 44.1 kHz / 16 bit",
+      "duration_seconds": 10.0,
+      "exclusion_reasons": [],
+      "license_class": "cc0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "original_coding": "PCM",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "stereo",
+      "source_id": "26_claves"
+    },
+    {
+      "clean_reference_eligible": true,
+      "content": "solo castanets",
+      "current_format": "stereo PCM 44.1 kHz / 16 bit",
+      "duration_seconds": 10.0,
+      "exclusion_reasons": [],
+      "license_class": "cc_by",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "original_coding": "PCM",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "stereo",
+      "source_id": "27_castanets"
+    },
+    {
+      "clean_reference_eligible": true,
+      "content": "clapping hands, single claps",
+      "current_format": "stereo PCM 44.1 kHz / 16 bit",
+      "duration_seconds": 8.0,
+      "exclusion_reasons": [],
+      "license_class": "cc0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "original_coding": "ALAC",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "mono",
+      "source_id": "39_clapping"
+    },
+    {
+      "clean_reference_eligible": false,
+      "content": "Corporate/Industrial music, light and playful",
+      "current_format": "stereo PCM 48kHz / 24bit",
+      "duration_seconds": 16.0,
+      "exclusion_reasons": [
+        "licence_outside_cc_by_or_cc0_scope"
+      ],
+      "license_class": "cc_by_nc",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "original_coding": "PCM",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "stereo",
+      "source_id": "AmateurOnPurpose"
+    },
+    {
+      "clean_reference_eligible": true,
+      "content": "outside ambience with seaside noises such as waves and seagulls",
+      "current_format": "stereo PCM 48kHz / 24bit",
+      "duration_seconds": 10.0,
+      "exclusion_reasons": [],
+      "license_class": "cc_by",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "original_coding": "PCM",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "selected tracks mixed to stereo",
+      "source_id": "CosmosLandromat_remix1_BG"
+    },
+    {
+      "clean_reference_eligible": true,
+      "content": "dialogue between two male voices",
+      "current_format": "stereo PCM 48kHz / 24bit",
+      "duration_seconds": 10.0,
+      "exclusion_reasons": [],
+      "license_class": "cc_by",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "original_coding": "PCM",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "mono",
+      "source_id": "CosmosLandromat_remix1_FG"
+    },
+    {
+      "clean_reference_eligible": true,
+      "content": "mix of the two files above with 6 LU integrated loudness difference (LD)",
+      "current_format": "stereo PCM 48kHz / 24bit",
+      "duration_seconds": 10.0,
+      "exclusion_reasons": [],
+      "license_class": "cc_by",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "original_coding": "PCM",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "stereo",
+      "source_id": "CosmosLandromat_remix1_LD6"
+    },
+    {
+      "clean_reference_eligible": true,
+      "content": "outside ambience with forest-like noises and various animal sounds",
+      "current_format": "stereo PCM 48kHz / 24bit",
+      "duration_seconds": 12.0,
+      "exclusion_reasons": [],
+      "license_class": "cc_by",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "original_coding": "PCM",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "selected tracks mixed to stereo",
+      "source_id": "CosmosLandromat_remix2_BG"
+    },
+    {
+      "clean_reference_eligible": true,
+      "content": "male speech acting continuing dialogue from CosmosLandromat_remix1_FG",
+      "current_format": "stereo PCM 48kHz / 24bit",
+      "duration_seconds": 12.0,
+      "exclusion_reasons": [],
+      "license_class": "cc_by",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "original_coding": "PCM",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "mono",
+      "source_id": "CosmosLandromat_remix2_FG"
+    },
+    {
+      "clean_reference_eligible": true,
+      "content": "mix of the two files above with 9 LU integrated loudness difference (LD)",
+      "current_format": "stereo PCM 48kHz / 24bit",
+      "duration_seconds": 12.0,
+      "exclusion_reasons": [],
+      "license_class": "cc_by",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "original_coding": "PCM",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "stereo",
+      "source_id": "CosmosLandromat_remix2_LD9"
+    },
+    {
+      "clean_reference_eligible": true,
+      "content": "dramatic music with slow synth",
+      "current_format": "stereo PCM 48kHz / 24bit",
+      "duration_seconds": 10.0,
+      "exclusion_reasons": [],
+      "license_class": "cc_by",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "original_coding": "PCM",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "selected tracks mixed to stereo",
+      "source_id": "CosmosLandromat_remix3_BG"
+    },
+    {
+      "clean_reference_eligible": true,
+      "content": "second male speech acting continuing dialogue from CosmosLandromat_remix1_FG",
+      "current_format": "stereo PCM 48kHz / 24bit",
+      "duration_seconds": 10.0,
+      "exclusion_reasons": [],
+      "license_class": "cc_by",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "original_coding": "PCM",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "mono",
+      "source_id": "CosmosLandromat_remix3_FG"
+    },
+    {
+      "clean_reference_eligible": true,
+      "content": "mix of the two files above with 3 LU integrated loudness difference (LD)",
+      "current_format": "stereo PCM 48kHz / 24bit",
+      "duration_seconds": 10.0,
+      "exclusion_reasons": [],
+      "license_class": "cc_by",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "original_coding": "PCM",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "stereo",
+      "source_id": "CosmosLandromat_remix3_LD3"
+    },
+    {
+      "clean_reference_eligible": false,
+      "content": "Downtempo music with flute, drumset, conga, swing, ride cymbal",
+      "current_format": "stereo PCM 48kHz / 24bit",
+      "duration_seconds": 16.0,
+      "exclusion_reasons": [
+        "licence_outside_cc_by_or_cc0_scope"
+      ],
+      "license_class": "cc_by_nc",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "original_coding": "PCM",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "stereo",
+      "source_id": "CreatureFromTheBlackjackTable"
+    },
+    {
+      "clean_reference_eligible": false,
+      "content": "R&B/Soul music with rhythmic guitar, laid back piano chords, claps, and drums",
+      "current_format": "stereo PCM 48kHz / 24bit",
+      "duration_seconds": 16.0,
+      "exclusion_reasons": [
+        "licence_outside_cc_by_or_cc0_scope"
+      ],
+      "license_class": "cc_by_nc",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "original_coding": "PCM",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "stereo",
+      "source_id": "Easy_Does_It"
+    },
+    {
+      "clean_reference_eligible": true,
+      "content": "music and FX - different percussive elements",
+      "current_format": "stereo PCM 48kHz / 24bit",
+      "duration_seconds": 12.0,
+      "exclusion_reasons": [],
+      "license_class": "cc_by",
+      "license_url": "https://creativecommons.org/licenses/by/2.5/      https://orange.blender.org/blog/creative-commons-license-2/",
+      "original_coding": "FLAC",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "stereo",
+      "source_id": "ElephantsDream_BG"
+    },
+    {
+      "clean_reference_eligible": true,
+      "content": "younger male speech acting",
+      "current_format": "stereo PCM 48kHz / 24bit",
+      "duration_seconds": 12.0,
+      "exclusion_reasons": [],
+      "license_class": "cc_by",
+      "license_url": "https://creativecommons.org/licenses/by/2.5/      https://orange.blender.org/blog/creative-commons-license-2/",
+      "original_coding": "FLAC",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "mono",
+      "source_id": "ElephantsDream_FG"
+    },
+    {
+      "clean_reference_eligible": true,
+      "content": "mix of the two files above with 0 LU integrated loudness difference (LD)",
+      "current_format": "stereo PCM 48kHz / 24bit",
+      "duration_seconds": 12.0,
+      "exclusion_reasons": [],
+      "license_class": "cc_by",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "original_coding": "PCM",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "stereo",
+      "source_id": "ElephantsDream_LD0"
+    },
+    {
+      "clean_reference_eligible": true,
+      "content": "spooky and slow synth music",
+      "current_format": "stereo PCM 48kHz / 24bit",
+      "duration_seconds": 10.0,
+      "exclusion_reasons": [],
+      "license_class": "cc_by",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "original_coding": "PCM",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "selected music tracks from ADM BWF mixed to stereo",
+      "source_id": "Meridian_remix1_BG"
+    },
+    {
+      "clean_reference_eligible": true,
+      "content": "dialogue between two male voices",
+      "current_format": "stereo PCM 48kHz / 24bit",
+      "duration_seconds": 10.0,
+      "exclusion_reasons": [],
+      "license_class": "cc_by",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "original_coding": "PCM",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "mono track from ADM BWF",
+      "source_id": "Meridian_remix1_FG"
+    },
+    {
+      "clean_reference_eligible": true,
+      "content": "mix of the two files above with 3 LU integrated loudness difference (LD)",
+      "current_format": "stereo PCM 48kHz / 24bit",
+      "duration_seconds": 10.0,
+      "exclusion_reasons": [],
+      "license_class": "cc_by",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "original_coding": "PCM",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "stereo",
+      "source_id": "Meridian_remix1_LD3"
+    },
+    {
+      "clean_reference_eligible": true,
+      "content": "slow dreamy music with trumpet + thunderstom FX",
+      "current_format": "stereo PCM 48kHz / 24bit",
+      "duration_seconds": 12.0,
+      "exclusion_reasons": [],
+      "license_class": "cc_by",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "original_coding": "PCM",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "selected music tracks from ADM BWF mixed to stereo",
+      "source_id": "Meridian_remix2_BG"
+    },
+    {
+      "clean_reference_eligible": true,
+      "content": "male speech acting continuing dialogue from Meridian_remix1_FG.wav",
+      "current_format": "stereo PCM 48kHz / 24bit",
+      "duration_seconds": 12.0,
+      "exclusion_reasons": [],
+      "license_class": "cc_by",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "original_coding": "PCM",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "mono track from ADM BWF",
+      "source_id": "Meridian_remix2_FG"
+    },
+    {
+      "clean_reference_eligible": true,
+      "content": "mix of the two files above with 6 LU integrated loudness difference (LD)",
+      "current_format": "stereo PCM 48kHz / 24bit",
+      "duration_seconds": 12.0,
+      "exclusion_reasons": [],
+      "license_class": "cc_by",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "original_coding": "PCM",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "stereo",
+      "source_id": "Meridian_remix2_LD6"
+    },
+    {
+      "clean_reference_eligible": true,
+      "content": "applause",
+      "current_format": "stereo PCM 48kHz / 24bit",
+      "duration_seconds": 8.0,
+      "exclusion_reasons": [],
+      "license_class": "cc_by",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "original_coding": "PCM",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "stereo",
+      "source_id": "SitaSings_remix1_BG"
+    },
+    {
+      "clean_reference_eligible": true,
+      "content": "male speech narrating - neutral",
+      "current_format": "stereo PCM 48kHz / 24bit",
+      "duration_seconds": 8.0,
+      "exclusion_reasons": [],
+      "license_class": "cc0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "original_coding": "FLAC",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "stereo",
+      "source_id": "SitaSings_remix1_FG"
+    },
+    {
+      "clean_reference_eligible": true,
+      "content": "mix of the two files above with 0 LU integrated loudness difference (LD)",
+      "current_format": "stereo PCM 48kHz / 24bit",
+      "duration_seconds": 8.0,
+      "exclusion_reasons": [],
+      "license_class": "cc_by",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "original_coding": "PCM",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "stereo",
+      "source_id": "SitaSings_remix1_LD0"
+    },
+    {
+      "clean_reference_eligible": true,
+      "content": "cafeteria babble noise",
+      "current_format": "stereo PCM 48kHz / 24bit",
+      "duration_seconds": 12.0,
+      "exclusion_reasons": [],
+      "license_class": "cc_by",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "original_coding": "PCM",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "stereo",
+      "source_id": "SitaSings_remix2_BG"
+    },
+    {
+      "clean_reference_eligible": true,
+      "content": "dialolgue between one female speech and two male speeches",
+      "current_format": "stereo PCM 48kHz / 24bit",
+      "duration_seconds": 12.0,
+      "exclusion_reasons": [],
+      "license_class": "cc0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "original_coding": "FLAC",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "stereo",
+      "source_id": "SitaSings_remix2_FG"
+    },
+    {
+      "clean_reference_eligible": true,
+      "content": "mix of the two files above with 6 LU integrated loudness difference (LD)",
+      "current_format": "stereo PCM 48kHz / 24bit",
+      "duration_seconds": 12.0,
+      "exclusion_reasons": [],
+      "license_class": "cc_by",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "original_coding": "PCM",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "stereo",
+      "source_id": "SitaSings_remix2_LD6"
+    },
+    {
+      "clean_reference_eligible": false,
+      "content": "music with percussive instruments, shakers, plucking double bass sound",
+      "current_format": "stereo PCM 48kHz / 24bit",
+      "duration_seconds": 13.0,
+      "exclusion_reasons": [
+        "licence_outside_cc_by_or_cc0_scope"
+      ],
+      "license_class": "cc_by_nc",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "original_coding": "PCM",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "stereo",
+      "source_id": "female_speech_music_1_BG"
+    },
+    {
+      "clean_reference_eligible": true,
+      "content": "female speech narrating - neutral",
+      "current_format": "stereo PCM 48kHz / 24bit",
+      "duration_seconds": 13.0,
+      "exclusion_reasons": [],
+      "license_class": "cc_by",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "original_coding": "PCM",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "mono",
+      "source_id": "female_speech_music_1_FG"
+    },
+    {
+      "clean_reference_eligible": false,
+      "content": "mix of the two files above with 0 LU integrated loudness difference (LD)",
+      "current_format": "stereo PCM 48kHz / 24bit",
+      "duration_seconds": 13.0,
+      "exclusion_reasons": [
+        "licence_outside_cc_by_or_cc0_scope"
+      ],
+      "license_class": "cc_by_nc",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "original_coding": "PCM",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "stereo",
+      "source_id": "female_speech_music_1_LD0"
+    },
+    {
+      "clean_reference_eligible": false,
+      "content": "music with brass instruments, dark, epic fantasy type of soundtrack",
+      "current_format": "stereo PCM 48kHz / 24bit",
+      "duration_seconds": 12.0,
+      "exclusion_reasons": [
+        "licence_outside_cc_by_or_cc0_scope"
+      ],
+      "license_class": "cc_by_nc",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "original_coding": "PCM",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "stereo",
+      "source_id": "female_speech_music_2_BG"
+    },
+    {
+      "clean_reference_eligible": true,
+      "content": "female speech narrating",
+      "current_format": "stereo PCM 48kHz / 24bit",
+      "duration_seconds": 12.0,
+      "exclusion_reasons": [],
+      "license_class": "cc_by",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "original_coding": "PCM",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "stereo",
+      "source_id": "female_speech_music_2_FG"
+    },
+    {
+      "clean_reference_eligible": false,
+      "content": "mix of the two files above with 9 LU integrated loudness difference (LD)",
+      "current_format": "stereo PCM 48kHz / 24bit",
+      "duration_seconds": 12.0,
+      "exclusion_reasons": [
+        "licence_outside_cc_by_or_cc0_scope"
+      ],
+      "license_class": "cc_by_nc",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "original_coding": "PCM",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "stereo",
+      "source_id": "female_speech_music_2_LD9"
+    },
+    {
+      "clean_reference_eligible": false,
+      "content": "music with string ensamble - mosso",
+      "current_format": "stereo PCM 48kHz / 24bit",
+      "duration_seconds": 13.0,
+      "exclusion_reasons": [
+        "licence_outside_cc_by_or_cc0_scope"
+      ],
+      "license_class": "cc_by_nc",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "original_coding": "PCM",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "stereo",
+      "source_id": "female_speech_music_3_BG"
+    },
+    {
+      "clean_reference_eligible": true,
+      "content": "female speech acting - sad",
+      "current_format": "stereo PCM 48kHz / 24bit",
+      "duration_seconds": 13.0,
+      "exclusion_reasons": [],
+      "license_class": "cc_by",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "original_coding": "PCM",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "mono",
+      "source_id": "female_speech_music_3_FG"
+    },
+    {
+      "clean_reference_eligible": false,
+      "content": "mix of the two files above with 3 LU integrated loudness difference (LD)",
+      "current_format": "stereo PCM 48kHz / 24bit",
+      "duration_seconds": 13.0,
+      "exclusion_reasons": [
+        "licence_outside_cc_by_or_cc0_scope"
+      ],
+      "license_class": "cc_by_nc",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "original_coding": "PCM",
+      "original_coding_class": "uncoded_or_lossless",
+      "original_format": "stereo",
+      "source_id": "female_speech_music_3_LD3"
+    }
+  ],
+  "state": "provider_metadata_audited_audio_and_scores_unopened"
+}

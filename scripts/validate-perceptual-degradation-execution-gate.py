@@ -37,6 +37,9 @@ def validate(gate: dict[str, Any], root: Path = ROOT) -> list[str]:
     ):
         if gate.get(key) is not False:
             errors.append(f"{key} must remain false")
+    completed = gate.get("completed_prerequisites", {})
+    if completed.get("score_blind_public_development_manifest_frozen") is not True:
+        errors.append("score-blind public-development manifest must remain frozen")
     for key, binding in gate.get("bindings", {}).items():
         path = root / binding.get("path", "")
         if not path.is_file():

@@ -28,6 +28,11 @@ class PerceptualDegradationExecutionGateTest(unittest.TestCase):
         self.assertFalse(GATE["perceptual_metric_execution_authorized"])
         self.assertFalse(GATE["retained_audio_metric_execution_authorized"])
         self.assertFalse(GATE["public_development_audio_metric_execution_authorized"])
+        self.assertTrue(
+            GATE["completed_prerequisites"][
+                "score_blind_public_development_manifest_frozen"
+            ]
+        )
 
     def test_gate_rejects_premature_metric_authorization(self) -> None:
         changed = copy.deepcopy(GATE)

@@ -11,6 +11,7 @@
   "completed_prerequisites": {
     "research_contract_frozen": true,
     "primary_metric_families_limited_to_two": true,
+    "score_blind_public_development_manifest_frozen": true,
     "score_free_alignment_topology_frozen": true,
     "score_free_decoder_resampler_replayed": true
   },
@@ -42,6 +43,14 @@
     "literature_and_implementation_review": {
       "path": "docs/research/perceptual-degradation-literature-review-20260803.md",
       "sha256": "2bba714035c42a40fe1395a2ba94cc57a5b3e324f54846bef74fad01e19ae8e4"
+    },
+    "odaq_score_blind_provider_audit": {
+      "path": "research/toolchains/evidence/perceptual-degradation-odaq-score-blind-audit-20260803-001.json",
+      "sha256": "c5b53a5c52f72198194fb81c39abd20a84bb3484f8618322a639225fa96f85d8"
+    },
+    "public_development_acquisition_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/public-development-acquisition-plan.json",
+      "sha256": "5e5479633803367bdf1ebf242331f97dd24d7abd10ce46012ce11ea32cf27ae7"
     }
   },
   "metric_families": {
@@ -75,8 +84,7 @@
     "Freeze and replay the exact ViSQOL v3.3.3 build and model files.",
     "Obtain and commit a qualified legal record for use of the BS.1387-derived GstPEAQ proxy technology and its redistribution boundary.",
     "Freeze and replay the exact GstPEAQ proxy build only if the legal record permits execution.",
-    "Commit a score-blind public-development acquisition manifest with source-by-source licences before downloading audio.",
     "Keep retained audio and all sealed labels unopened until a later committed opening authorization."
   ],
-  "authorized_next_step": "Build and replay ViSQOL on synthetic fixtures only; prepare the GstPEAQ legal question and public-development acquisition manifest. Do not execute a perceptual metric on public or retained audio."
+  "authorized_next_step": "Build and replay ViSQOL on synthetic fixtures only and prepare the GstPEAQ legal question. Do not download ODAQ audio or execute a perceptual metric on public or retained audio."
 }

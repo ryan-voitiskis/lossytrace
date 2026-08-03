@@ -1,0 +1,178 @@
+{
+  "access_boundary": {
+    "audio_download_authorized": false,
+    "existing_280_case_future_subset_opened": false,
+    "listening_score_access_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "retained_audio_access_authorized": false
+  },
+  "audit_binding": {
+    "path": "research/toolchains/evidence/perceptual-degradation-odaq-score-blind-audit-20260803-001.json",
+    "sha256": "c5b53a5c52f72198194fb81c39abd20a84bb3484f8618322a639225fa96f85d8"
+  },
+  "future_acquisition_requirements": [
+    "Commit a separate authorization after confirming at least 15 GiB free disk.",
+    "Stream only selected ZIP members and verify frozen CRC32 and size bindings.",
+    "Do not extract or read ODAQ_results.csv until a separate score-opening authorization is committed.",
+    "Do not run ViSQOL or the GstPEAQ proxy on acquired audio under this plan.",
+    "Keep provider audio, derived files, caches, and listening scores out of Git.",
+    "Treat ODAQ artifacts as simulated production artifacts, not actual codec encodes."
+  ],
+  "maximum_sustained_workers": 6,
+  "minimum_free_disk_gib": 15,
+  "paths_redacted": true,
+  "plan_id": "odaq-public-development-acquisition-20260803-001",
+  "provider_binding": {
+    "archive_bytes": 1048071792,
+    "archive_checksum": "md5:9b4c1eba479ea698995798523eb80999",
+    "archive_key": "ODAQ.zip",
+    "doi": "10.5281/zenodo.10405774",
+    "publication_date": "2023-12-30",
+    "record_id": 10405774,
+    "title": "ODAQ: OPEN DATASET OF AUDIO QUALITY"
+  },
+  "purpose": "protocol_and_oracle_development_only_not_codec_or_final_evidence",
+  "schema_version": 1,
+  "selection": {
+    "eligible_folder_ids": [
+      "DE_CosmosLandromat_remix1_LD6",
+      "DE_CosmosLandromat_remix3_LD3",
+      "DE_ElephantsDream_LD0",
+      "DE_Meridian_remix1_LD3",
+      "DE_Meridian_remix2_LD6",
+      "DE_SitaSings_remix1_LD0",
+      "DE_SitaSings_remix2_LD6",
+      "LP_11_guitar",
+      "LP_23_jazz",
+      "PE_27_castanets",
+      "PE_39_clapping",
+      "SH_04_choral",
+      "TM_01b_trumpet",
+      "TM_02_violin",
+      "UN_20c_accordion",
+      "UN_21_violin"
+    ],
+    "eligible_group_count": 16,
+    "eligible_source_count": 16,
+    "eligible_source_ids": [
+      "01b_trumpet",
+      "02_violin",
+      "04_choral",
+      "11_guitar",
+      "20c_accordion",
+      "21_violin",
+      "23_jazz",
+      "27_castanets",
+      "39_clapping",
+      "CosmosLandromat_remix1_LD6",
+      "CosmosLandromat_remix3_LD3",
+      "ElephantsDream_LD0",
+      "Meridian_remix1_LD3",
+      "Meridian_remix2_LD6",
+      "SitaSings_remix1_LD0",
+      "SitaSings_remix2_LD6"
+    ],
+    "excluded_groups": [
+      {
+        "folder_id": "DE_female_speech_music_1_LD0",
+        "reasons": [
+          "licence_outside_cc_by_or_cc0_scope"
+        ],
+        "source_id": "female_speech_music_1_LD0"
+      },
+      {
+        "folder_id": "DE_female_speech_music_2_LD9",
+        "reasons": [
+          "licence_outside_cc_by_or_cc0_scope"
+        ],
+        "source_id": "female_speech_music_2_LD9"
+      },
+      {
+        "folder_id": "DE_female_speech_music_3_LD3",
+        "reasons": [
+          "licence_outside_cc_by_or_cc0_scope"
+        ],
+        "source_id": "female_speech_music_3_LD3"
+      },
+      {
+        "folder_id": "LP_AmateurOnPurpose",
+        "reasons": [
+          "licence_outside_cc_by_or_cc0_scope"
+        ],
+        "source_id": "AmateurOnPurpose"
+      },
+      {
+        "folder_id": "LP_CreatureFromTheBlackjackTable",
+        "reasons": [
+          "licence_outside_cc_by_or_cc0_scope"
+        ],
+        "source_id": "CreatureFromTheBlackjackTable"
+      },
+      {
+        "folder_id": "PE_AmateurOnPurpose",
+        "reasons": [
+          "licence_outside_cc_by_or_cc0_scope"
+        ],
+        "source_id": "AmateurOnPurpose"
+      },
+      {
+        "folder_id": "PE_CreatureFromTheBlackjackTable",
+        "reasons": [
+          "licence_outside_cc_by_or_cc0_scope"
+        ],
+        "source_id": "CreatureFromTheBlackjackTable"
+      },
+      {
+        "folder_id": "SH_13_glockenspiel",
+        "reasons": [
+          "original_source_was_lossy_coded"
+        ],
+        "source_id": "13_glockenspiel"
+      },
+      {
+        "folder_id": "SH_AmateurOnPurpose",
+        "reasons": [
+          "licence_outside_cc_by_or_cc0_scope"
+        ],
+        "source_id": "AmateurOnPurpose"
+      },
+      {
+        "folder_id": "SH_CreatureFromTheBlackjackTable",
+        "reasons": [
+          "licence_outside_cc_by_or_cc0_scope"
+        ],
+        "source_id": "CreatureFromTheBlackjackTable"
+      },
+      {
+        "folder_id": "TM_AmateurOnPurpose",
+        "reasons": [
+          "licence_outside_cc_by_or_cc0_scope"
+        ],
+        "source_id": "AmateurOnPurpose"
+      },
+      {
+        "folder_id": "TM_CreatureFromTheBlackjackTable",
+        "reasons": [
+          "licence_outside_cc_by_or_cc0_scope"
+        ],
+        "source_id": "CreatureFromTheBlackjackTable"
+      },
+      {
+        "folder_id": "UN_AmateurOnPurpose",
+        "reasons": [
+          "licence_outside_cc_by_or_cc0_scope"
+        ],
+        "source_id": "AmateurOnPurpose"
+      },
+      {
+        "folder_id": "UN_CreatureFromTheBlackjackTable",
+        "reasons": [
+          "licence_outside_cc_by_or_cc0_scope"
+        ],
+        "source_id": "CreatureFromTheBlackjackTable"
+      }
+    ],
+    "policy": "all_listening_groups_with_cc_by_or_cc0_and_lossless_or_uncoded_origin"
+  },
+  "state": "metadata_frozen_audio_acquisition_not_authorized"
+}
