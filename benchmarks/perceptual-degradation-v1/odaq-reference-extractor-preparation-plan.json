@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "plan_id": "perceptual-degradation-odaq-reference-extractor-preparation-20260804-001",
+  "state": "synthetic_extractor_verified_live_provider_acquisition_unauthorized",
+  "purpose": "Prepare a bounded, atomic and resumable extractor for the exact frozen ODAQ reference members without selecting the permissive source track, requesting provider payloads or authorizing audio acquisition.",
+  "bindings": {
+    "reference_metadata_freeze": {
+      "path": "benchmarks/perceptual-degradation-v1/odaq-reference-acquisition-freeze.json",
+      "sha256": "1a39f50013a4274f60ca7c1771ebad22dcafda6950db87d2ffe4acdfb58ab0e7"
+    },
+    "private_lossless_delivery_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/private-lossless-delivery-plan.json",
+      "sha256": "9f2661f0a09d06e0a7cdccae20ef21db9c93b2951862dc88818aedd29d175d00"
+    },
+    "extractor": {
+      "path": "scripts/acquire-perceptual-degradation-odaq-references.py",
+      "sha256": "e953a671aba253ed129d7346e1e12d70526358bcbf21934f4a34f7a64099773d"
+    },
+    "extractor_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_odaq_reference_extractor.py",
+      "sha256": "c129bff159a6b26877d964ed493ddb1443a18075c968e30c9377b405c8a9bcba"
+    }
+  },
+  "access_boundary": {
+    "source_track_selected": false,
+    "provider_record_requested_during_synthetic_test": false,
+    "provider_audio_acquisition_authorized": false,
+    "provider_audio_member_opened": false,
+    "processed_condition_opened": false,
+    "listening_score_opened": false,
+    "perceptual_metric_executed": false,
+    "stimulus_generated": false,
+    "listener_response_collected": false,
+    "retained_audio_opened": false,
+    "sealed_evidence_opened": false
+  },
+  "implementation": {
+    "remote_block_bytes": 65536,
+    "remote_cache_blocks": 16,
+    "remote_cumulative_response_limit_bytes": 58720256,
+    "stream_chunk_bytes": 1048576,
+    "minimum_live_free_disk_gib": 15,
+    "maximum_sustained_workers": 1,
+    "exact_zip_binding_verified_before_member_open": true,
+    "reference_basename_only": true,
+    "opaque_output_names": true,
+    "atomic_partial_write_and_rename": true,
+    "per_member_sha256_and_crc32_verified": true,
+    "pcm_geometry_verified": true,
+    "journaled_resume_and_retained_reverification": true,
+    "resume_journal_paths_and_bindings_revalidated": true,
+    "private_output_outside_repository_required": true,
+    "full_archive_persistence_forbidden": true,
+    "authorization_checked_before_provider_request": true,
+    "exact_freeze_path_and_sha256_required": true,
+    "authorization_file_committed_and_clean_required": true,
+    "live_range_limit_is_less_than_provider_archive_bytes": true,
+    "live_range_limit_covers_frozen_compressed_bytes_plus_two_blocks_per_member": true
+  },
+  "authorization_contract": {
+    "required_successor_state": "reference_audio_acquisition_authorized",
+    "required_source_track": "permissive_odaq_cc_by_cc0",
+    "responsible_human_source_choice_required": true,
+    "physical_playback_declaration_required": true,
+    "exact_parent_freeze_sha256_required": true,
+    "exact_provider_and_reference_arrays_required": true,
+    "processed_condition_access_must_remain_false": true,
+    "listening_score_access_must_remain_false": true,
+    "stimulus_generation_must_remain_false": true,
+    "metric_execution_must_remain_false": true,
+    "listener_collection_must_remain_false": true
+  },
+  "testing": {
+    "synthetic_reference_extraction_passed": true,
+    "processed_and_score_members_ignored": true,
+    "binding_mismatch_failure_passed": true,
+    "disk_reserve_failure_passed": true,
+    "resume_reverification_failure_passed": true,
+    "tampered_journal_path_rejection_passed": true,
+    "repository_output_rejection_passed": true,
+    "unsafe_identifier_rejection_passed": true,
+    "live_refusal_before_provider_access_passed": true,
+    "range_budget_bound_test_passed": true,
+    "synthetic_fixture_audio_only": true,
+    "actual_provider_audio_used": false
+  },
+  "decision": {
+    "synthetic_extractor_ready": true,
+    "source_track_selected": false,
+    "live_authorization_present": false,
+    "provider_audio_acquired": false,
+    "processed_conditions_opened": false,
+    "listening_scores_opened": false,
+    "stimuli_generated": false,
+    "human_collection_authorized": false
+  },
+  "authorized_next_step": "Obtain the responsible-human source-track choice and physical playback declaration. Only a separately committed successor authorization may enable provider reference acquisition; the current CLI must fail before any provider request."
+}

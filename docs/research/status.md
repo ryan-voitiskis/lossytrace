@@ -423,3 +423,18 @@ records: 46,721,638 compressed bytes and 54,633,154 uncompressed bytes. No ZIP
 member payload, audio, processed condition, licence file, or score was opened;
 temporary plan copies were moved to recoverable Trash. The freeze is not an
 acquisition authorization and does not choose the narrow source track.
+
+The bounded
+[`ODAQ reference extractor`](perceptual-degradation-odaq-reference-extractor-preparation-20260804.md)
+is now verified only on generated PCM-WAV ZIP fixtures. It checks exact ZIP
+metadata before member access, streams to an opaque private partial file,
+verifies CRC32, SHA-256 and PCM geometry, atomically renames, journals progress,
+and reverifies retained files on resume. One-worker live transfer is capped at
+56 MiB of HTTP Range responses and preserves the 15 GiB reserve; the full
+archive cannot fit inside that network bound. Thirteen focused tests pass,
+including refusal before provider access for both the current unauthorized
+plan and a structurally valid but uncommitted authorization. The live command
+pins the exact canonical freeze path and SHA-256 and requires a separately
+committed, clean authorization successor. No responsible-human source
+choice or playback declaration is present, so no provider request or audio
+write is authorized.

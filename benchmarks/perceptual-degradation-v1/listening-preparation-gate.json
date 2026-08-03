@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "gate_id": "perceptual-degradation-listening-preparation-20260804-011",
+  "gate_id": "perceptual-degradation-listening-preparation-20260804-012",
   "state": "protocol_prepared_human_collection_unauthorized",
   "human_collection_authorized": false,
   "recruitment_authorized": false,
@@ -225,19 +225,19 @@
     },
     "mastered_music_playback_qualification_plan": {
       "path": "benchmarks/perceptual-degradation-v1/mastered-music-playback-qualification-plan.json",
-      "sha256": "d4c6530affbd30c132ab2d94d33bbc6c1c10aba14cad57e793b91110a07c06b6"
+      "sha256": "b928ec983e808b3df67e61d92ea65b8cfe13c43f69ae38cd0168119a03246b18"
     },
     "mastered_music_playback_qualification_report": {
       "path": "docs/research/perceptual-degradation-mastered-music-playback-qualification-20260804.md",
-      "sha256": "aab691459d77f61ec00405c63c5f65a1313bd00d895b17580f9734ac1eee33a2"
+      "sha256": "53f053484f5497e18d4714dc3aef085df5aedb66067206748f9727a130d24c85"
     },
     "mastered_music_playback_qualification_validator": {
       "path": "scripts/validate-perceptual-degradation-mastered-music-playback-plan.py",
-      "sha256": "aba57d7a7945c8a1b9a367db856f5bb646e18aecdcf8061cc147d8e8dfb79690"
+      "sha256": "3595e2057623430d9799dced4a273e195749ee0dd33db280d9659eb9588d1aac"
     },
     "mastered_music_playback_qualification_tests": {
       "path": "scripts/tests/test_perceptual_degradation_mastered_music_playback_plan.py",
-      "sha256": "b49ad17e271e646e0ad07c1223131d822e0a1fd0ad06523e056718331eede8c3"
+      "sha256": "b5cb71fa290a0cbf784d314ed6c698ace674c73d8b6ddf48978d0d5b5aa9fa2b"
     },
     "permissive_listening_source_fallback_plan": {
       "path": "benchmarks/perceptual-degradation-v1/permissive-listening-source-fallback-plan.json",
@@ -270,6 +270,22 @@
     "odaq_reference_acquisition_tests": {
       "path": "scripts/tests/test_perceptual_degradation_odaq_reference_acquisition_freeze.py",
       "sha256": "82985665c41a488a57251e4f55e5129b4a453294b72b626ca789256145975dca"
+    },
+    "odaq_reference_extractor_preparation": {
+      "path": "benchmarks/perceptual-degradation-v1/odaq-reference-extractor-preparation-plan.json",
+      "sha256": "cd30ba4d03372cd82b399fdc15ed7f2c718e19afafabe45408dbd270a2118b9c"
+    },
+    "odaq_reference_extractor_report": {
+      "path": "docs/research/perceptual-degradation-odaq-reference-extractor-preparation-20260804.md",
+      "sha256": "6e6a979a8ef9671b351bdee6f99d9444d389402f5c8d8a57069cbacda136e564"
+    },
+    "odaq_reference_extractor": {
+      "path": "scripts/acquire-perceptual-degradation-odaq-references.py",
+      "sha256": "e953a671aba253ed129d7346e1e12d70526358bcbf21934f4a34f7a64099773d"
+    },
+    "odaq_reference_extractor_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_odaq_reference_extractor.py",
+      "sha256": "c129bff159a6b26877d964ed493ddb1443a18075c968e30c9377b405c8a9bcba"
     }
   },
   "unresolved_operational_fields": [
@@ -283,5 +299,5 @@
     "public minimum cell size and suppression policy",
     "qualified playback chain and calibration method"
   ],
-  "authorized_next_step": "Obtain the responsible-human choice between the narrow CC BY/CC0-only ODAQ fallback and the wider NC/SA source track, and declare a stable physical playback chain with calibration method. Exact ODAQ reference metadata is frozen, but audio acquisition remains unauthorized. Actual audio access, excerpt listening, stimulus generation, metric execution, participant contact and human collection remain unauthorized."
+  "authorized_next_step": "Obtain the responsible-human choice between the narrow CC BY/CC0-only ODAQ fallback and the wider NC/SA source track, and declare a stable physical playback chain with calibration method. Exact ODAQ metadata and a synthetic-verified fail-closed extractor are ready, but live audio acquisition remains unauthorized. Actual audio access, excerpt listening, stimulus generation, metric execution, participant contact and human collection remain unauthorized."
 }

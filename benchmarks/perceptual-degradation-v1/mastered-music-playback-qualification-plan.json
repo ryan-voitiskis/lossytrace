@@ -51,6 +51,22 @@
     "odaq_reference_acquisition_tests": {
       "path": "scripts/tests/test_perceptual_degradation_odaq_reference_acquisition_freeze.py",
       "sha256": "82985665c41a488a57251e4f55e5129b4a453294b72b626ca789256145975dca"
+    },
+    "odaq_reference_extractor_preparation": {
+      "path": "benchmarks/perceptual-degradation-v1/odaq-reference-extractor-preparation-plan.json",
+      "sha256": "cd30ba4d03372cd82b399fdc15ed7f2c718e19afafabe45408dbd270a2118b9c"
+    },
+    "odaq_reference_extractor_report": {
+      "path": "docs/research/perceptual-degradation-odaq-reference-extractor-preparation-20260804.md",
+      "sha256": "6e6a979a8ef9671b351bdee6f99d9444d389402f5c8d8a57069cbacda136e564"
+    },
+    "odaq_reference_extractor": {
+      "path": "scripts/acquire-perceptual-degradation-odaq-references.py",
+      "sha256": "e953a671aba253ed129d7346e1e12d70526358bcbf21934f4a34f7a64099773d"
+    },
+    "odaq_reference_extractor_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_odaq_reference_extractor.py",
+      "sha256": "c129bff159a6b26877d964ed493ddb1443a18075c968e30c9377b405c8a9bcba"
     }
   },
   "access_boundary": {
@@ -161,6 +177,8 @@
     "reference_member_metadata_replays_byte_identical": true,
     "reference_total_compressed_bytes": 46721638,
     "reference_total_uncompressed_bytes": 54633154,
+    "synthetic_reference_extractor_ready": true,
+    "live_reference_extractor_authorization_present": false,
     "reference_audio_acquisition_authorized": false,
     "independent_provider_transfer_supported": false,
     "final_validation_supported": false,
@@ -202,6 +220,7 @@
     "mastered_music_candidates_identified": true,
     "permissive_source_fallback_identified": true,
     "permissive_reference_metadata_frozen": true,
+    "permissive_reference_extractor_synthetic_ready": true,
     "independent_music_provider_gate_closed": false,
     "licences_frozen": false,
     "excerpt_policy_frozen": true,
@@ -210,5 +229,5 @@
     "source_and_condition_manifest_freezable": false,
     "human_collection_authorized": false
   },
-  "authorized_next_step": "Obtain the responsible-human source-track choice and a declared physical playback chain. The narrow CC BY/CC0 fallback now has exact reference-member metadata but remains one-provider development evidence and is not authorized for acquisition. Do not access audio, select excerpts by listening, generate stimuli, execute metrics, contact participants or collect responses."
+  "authorized_next_step": "Obtain the responsible-human source-track choice and a declared physical playback chain. The narrow CC BY/CC0 fallback now has exact reference metadata and a synthetic-verified fail-closed extractor, but remains one-provider development evidence and is not authorized for live acquisition. Do not access audio, select excerpts by listening, generate stimuli, execute metrics, contact participants or collect responses."
 }

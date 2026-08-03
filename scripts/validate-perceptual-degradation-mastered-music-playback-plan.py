@@ -128,10 +128,13 @@ def validate(plan: dict[str, Any], root: Path = ROOT) -> list[str]:
         errors.append("permissive fallback compressed-byte total differs")
     if fallback.get("reference_total_uncompressed_bytes") != 54_633_154:
         errors.append("permissive fallback uncompressed-byte total differs")
+    if fallback.get("synthetic_reference_extractor_ready") is not True:
+        errors.append("permissive fallback synthetic extractor is not ready")
     for field in (
         "noncommercial_decision_required",
         "share_alike_obligation_present",
         "actual_codec_condition_present",
+        "live_reference_extractor_authorization_present",
         "reference_audio_acquisition_authorized",
         "independent_provider_transfer_supported",
         "final_validation_supported",
@@ -187,6 +190,8 @@ def validate(plan: dict[str, Any], root: Path = ROOT) -> list[str]:
         errors.append("permissive source fallback is not identified")
     if decision.get("permissive_reference_metadata_frozen") is not True:
         errors.append("permissive reference metadata is not frozen")
+    if decision.get("permissive_reference_extractor_synthetic_ready") is not True:
+        errors.append("permissive reference extractor is not synthetic-ready")
     if decision.get("excerpt_policy_frozen") is not True:
         errors.append("excerpt policy is not frozen")
     for field in (
