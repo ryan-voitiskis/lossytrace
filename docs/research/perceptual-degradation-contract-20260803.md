@@ -174,7 +174,7 @@ The planned evidence tiers are:
    schema tests only.
 2. **Published development listening evidence:** eligible ODAQ subsets and
    licence-audited public codec evidence; metric behavior and protocol design.
-3. **New human calibration:** actual codec encodes, transparent encodes,
+3. **New human calibration:** actual codec encodes, transparency-candidate encodes,
    anchors, codec-artifact isolates, matched PCM-only controls, and difficult
    production/natural negatives.
 4. **Grouped oracle transfer:** unseen sources and collections, at least one

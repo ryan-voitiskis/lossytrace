@@ -3,7 +3,14 @@
   "freeze_id": "perceptual-degradation-v1-topology-fixtures-20260803-001",
   "state": "score_free_topology_limits_frozen_before_retained_audio",
   "supersedes_scope_limit_only": "perceptual-degradation-v1-alignment-fixtures-20260803-001",
-  "correction_history": [],
+  "correction_history": [
+    {
+      "correction_id": "score-blind-transparency-candidate-terminology-20260804-001",
+      "scope": "update_upstream_freeze_binding_only",
+      "topology_limits_changed": false,
+      "scores_opened_before_correction": false
+    }
+  ],
   "features_computed": false,
   "perceptual_metric_executed": false,
   "retained_audio_accessed": false,
@@ -12,7 +19,7 @@
   "public_verdict_enabled": false,
   "upstream_mono_freeze": {
     "path": "benchmarks/perceptual-degradation-v1/alignment-fixture-freeze.json",
-    "sha256": "7557f2b2a82d0b7f13a51533859db289f23d14e9c8c3ab4f887e41fce608ebad"
+    "sha256": "5cd09e6b69cb0e49a55981467dccac0f6d13f2097d0b8ca6337cc758208eb301"
   },
   "bindings": {
     "implementation": {

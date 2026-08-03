@@ -2,6 +2,14 @@
   "schema_version": 1,
   "freeze_id": "perceptual-degradation-v1-alignment-fixtures-20260803-001",
   "state": "score_free_alignment_limits_frozen_before_retained_audio",
+  "correction_history": [
+    {
+      "correction_id": "score-blind-transparency-candidate-terminology-20260804-001",
+      "scope": "update_research_plan_binding_only",
+      "alignment_limits_changed": false,
+      "scores_opened_before_correction": false
+    }
+  ],
   "features_computed": false,
   "perceptual_metric_executed": false,
   "retained_audio_accessed": false,
@@ -10,7 +18,7 @@
   "public_verdict_enabled": false,
   "research_plan": {
     "path": "benchmarks/perceptual-degradation-v1/research-plan.json",
-    "sha256": "4474fcb066aa261062613bc1af96915c7463ffd922dbd3cad90aaef59d02c8a6"
+    "sha256": "e724a3e04fb41458d0568f542283ba33d71a54b1fdfd74b3901cc0dc1d10c352"
   },
   "bindings": {
     "implementation": {

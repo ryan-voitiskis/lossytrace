@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "gate_id": "perceptual-degradation-listening-preparation-20260804-004",
+  "gate_id": "perceptual-degradation-listening-preparation-20260804-005",
   "state": "protocol_prepared_human_collection_unauthorized",
   "human_collection_authorized": false,
   "recruitment_authorized": false,
@@ -45,11 +45,11 @@
   "bindings": {
     "research_contract": {
       "path": "docs/research/perceptual-degradation-contract-20260803.md",
-      "sha256": "f46c03bdd7f26e835c6d9a01277e8fade52d9af9ef050128cdcac35c53a7d69f"
+      "sha256": "fdec79207fc0fdd2e9cb10aae9f93dd1a17b45e6e56c0c7df8f0e01a1f9fb505"
     },
     "listening_protocol": {
       "path": "docs/research/perceptual-degradation-listening-protocol-20260803.md",
-      "sha256": "2e3975cdfba83debc802f1b5453aee312d13fff65caa9d17d2882aab5e66cc06"
+      "sha256": "7f918b7faa285cb4e2f142907e3d344f6cb11a7e43cfbfa83c82b9135158171b"
     },
     "listener_information": {
       "path": "docs/research/perceptual-degradation-listener-information-20260803.md",
@@ -58,6 +58,10 @@
     "stimulus_manifest_schema": {
       "path": "benchmarks/perceptual-degradation-v1/listening-stimulus-manifest.schema.json",
       "sha256": "a9f94e6bc3789de2af78473df0c5f433029186dcb0aad18a709d9a0f237603a6"
+    },
+    "stimulus_manifest_v2_schema": {
+      "path": "benchmarks/perceptual-degradation-v1/listening-stimulus-manifest-v2.schema.json",
+      "sha256": "789bd684dd561b413e174d5d63ed0605b4d46f342683768f9d933147d84ad96e"
     },
     "synthetic_stimulus_manifest": {
       "path": "benchmarks/perceptual-degradation-v1/listening-stimulus-manifest.synthetic.json",
@@ -70,6 +74,14 @@
     "score_blind_allocator_tests": {
       "path": "scripts/tests/test_perceptual_degradation_listening_allocation.py",
       "sha256": "601c9a9de376013f407514d960f22603edb5a6e68a02cfc51e745079014780ad"
+    },
+    "score_blind_allocator_v2": {
+      "path": "scripts/perceptual_degradation_listening_allocation_v2.py",
+      "sha256": "8895f8cc3900f776a62c15fb115b674820ba24cdee18772f48399f1d3ea6ea12"
+    },
+    "score_blind_allocator_v2_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_listening_allocation_v2.py",
+      "sha256": "e9d4827694db8625390697b61b3a641a2482de0a30af4e94422e6f75459c63c2"
     },
     "power_simulation": {
       "path": "scripts/perceptual_degradation_listening_power.py",
@@ -142,6 +154,22 @@
     "odaq_attribution_audit_evidence": {
       "path": "research/toolchains/evidence/perceptual-degradation-odaq-attribution-audit-20260804-001.json",
       "sha256": "08da482eeab4ab51f0e2ed2f05684edac098b51fe81d1b78bec75181336dca61"
+    },
+    "source_condition_qualification_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/source-condition-qualification-plan.json",
+      "sha256": "5ce20a4e10d743e8823810ec89e58d873ea2db47044151f065fa3358e16cf64b"
+    },
+    "source_condition_qualification_report": {
+      "path": "docs/research/perceptual-degradation-source-condition-qualification-20260804.md",
+      "sha256": "970f375e1558e8fa4c00a9975b2a5940bb3529265ae5fe2f59ee6c107f7d455e"
+    },
+    "source_condition_qualification_validator": {
+      "path": "scripts/validate-perceptual-degradation-source-condition-qualification.py",
+      "sha256": "6a782c383703beab8d20c280136f3d067b75cf84905f26927a111dc126a6ecf7"
+    },
+    "source_condition_qualification_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_source_condition_qualification.py",
+      "sha256": "7e5d21231d9e0ca27492a01e46fce9b74721df78e99a109c609394dd94b3125f"
     }
   },
   "unresolved_operational_fields": [
@@ -155,5 +183,5 @@
     "public minimum cell size and suppression policy",
     "qualified playback chain and calibration method"
   ],
-  "authorized_next_step": "Qualify actual-codec, transparent-codec, production-control, hard-natural-negative and grouped-transfer sources before freezing a score-blind source-and-condition manifest. ODAQ attribution is frozen for its 16 development-only simulated-artifact groups, but audio acquisition remains unauthorized. Continue physical playback qualification without contacting or collecting from real listeners."
+  "authorized_next_step": "Freeze the missing production, repeated-codec and cross-codec recipes and complete source attribution and legal-operational records before freezing a score-blind source-and-condition manifest. Continue physical playback qualification without contacting or collecting from real listeners. Audio acquisition, stimulus generation, metric execution and human collection remain unauthorized."
 }

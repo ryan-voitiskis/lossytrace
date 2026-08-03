@@ -334,3 +334,18 @@ are therefore ready without rewriting the provider metadata. The whole-study
 licence gate remains unfrozen: ODAQ is one-provider, simulated-artifact
 development evidence—not real codec, grouped-transfer, or final-validation
 evidence—and no audio acquisition is authorized.
+
+The subsequent
+[`source/condition qualification`](perceptual-degradation-source-condition-qualification-20260804.md)
+binds only the existing path-free source inventory, allocation aggregates,
+codec templates, toolchains, and ODAQ attribution evidence. It identifies
+actual-codec, transparency-candidate, natural-hard-negative, and grouped
+transfer candidates across four codec families without opening audio, scores,
+private identities, or sealed evidence. Its version-2 listening schema calls a
+nominal high-quality encode a `transparency_candidate`; codec settings cannot
+assign transparency before the frozen listening analysis, while the historical
+version-1 files remain byte-bound to their player observations. The listening
+manifest remains unfrozen because independently grouped mastered-music breadth,
+licence and attribution operations, six production/multi-generation recipe
+families, private excerpt selection, and fresh final-validation evidence are
+still missing.

@@ -2,6 +2,15 @@
   "schema_version": 1,
   "plan_id": "lossytrace-perceptual-degradation-v1-20260803-001",
   "state": "contract_frozen_before_metric_execution",
+  "correction_history": [
+    {
+      "correction_id": "score-blind-transparency-candidate-terminology-20260804-001",
+      "reason": "The listening manifest must not assign transparency from nominal codec settings before listening evidence.",
+      "scores_opened_before_correction": false,
+      "thresholds_changed": false,
+      "metric_families_changed": false
+    }
+  ],
   "objective": "Estimate material perceptual degradation under controlled lossy coding, not prior codec history.",
   "public_state": {
     "evidence_schema_version": 1,
@@ -166,7 +175,7 @@
   "bindings": {
     "contract": {
       "path": "docs/research/perceptual-degradation-contract-20260803.md",
-      "sha256": "f46c03bdd7f26e835c6d9a01277e8fade52d9af9ef050128cdcac35c53a7d69f"
+      "sha256": "fdec79207fc0fdd2e9cb10aae9f93dd1a17b45e6e56c0c7df8f0e01a1f9fb505"
     },
     "literature_review": {
       "path": "docs/research/perceptual-degradation-literature-review-20260803.md",
@@ -182,7 +191,7 @@
   ],
   "stop_conditions": [
     "A primary family legal or replay boundary is unresolved.",
-    "Alignment support requires excluding a named hard negative or transparent codec condition.",
+    "Alignment support requires excluding a named hard negative or transparency-candidate codec condition.",
     "The 15 GiB disk reserve or six-worker ceiling cannot be maintained.",
     "A sealed label or the existing 280-case future subset is opened.",
     "A threshold, support rule, model, or explanation changes after its validation score is observed.",

@@ -15,13 +15,16 @@ laboratory compliance with either Recommendation.
 The study asks whether trained listeners, under declared playback conditions,
 can hear a difference between a trusted clean reference and a controlled test
 condition, and whether any audible difference is materially degrading. A test
-condition may be an actual codec encode, a transparent encode, an artificial
-artifact, or a matched non-codec control. Its recipe is hidden during rating.
+condition may be an actual codec encode, an encode nominated for transparency
+testing, an artificial artifact, or a matched non-codec control. Its recipe is
+hidden during rating.
 
 The listening response is evidence about audibility and severity. It is never
-evidence that an unknown waveform has a particular codec history. Transparent
-lossy encodes remain non-degraded controls. ODAQ stimuli are development-only
-simulated artifacts, not codec examples or final validation evidence.
+evidence that an unknown waveform has a particular codec history. A nominated
+transparency candidate becomes a transparent, non-degraded control only when
+the frozen listening analysis supports that conclusion; bitrate or encoder
+settings alone cannot assign it. ODAQ stimuli are development-only simulated
+artifacts, not codec examples or final validation evidence.
 
 ## Participants
 
