@@ -1,0 +1,192 @@
+{
+  "schema_version": 1,
+  "plan_id": "lossytrace-perceptual-degradation-v1-20260803-001",
+  "state": "contract_frozen_before_metric_execution",
+  "objective": "Estimate material perceptual degradation under controlled lossy coding, not prior codec history.",
+  "public_state": {
+    "evidence_schema_version": 1,
+    "measurement_feature_version": 0,
+    "public_verdict_enabled": false,
+    "reklawdbox_in_scope": false
+  },
+  "score_access": {
+    "retained_waveform_metric_execution": false,
+    "retained_metric_scores_opened": false,
+    "sealed_labels_opened": false,
+    "existing_280_case_future_subset_opened": false,
+    "published_literature_scores_reviewed": true
+  },
+  "primary_metric_families": [
+    {
+      "family_id": "visqol_audio_v3_3_3",
+      "repository": "https://github.com/google/visqol",
+      "version": "v3.3.3",
+      "git_commit": "c3aa2e498e0f7f14202643594335a0b9ee40bdd9",
+      "license": "Apache-2.0",
+      "execution": "external_hash_bound_binary",
+      "legal_gate_required": false,
+      "selected_outputs": ["mos_lqo", "similarity", "patch_similarity"]
+    },
+    {
+      "family_id": "gstpeaq_proxy_v0_6_1",
+      "repository": "https://github.com/HSU-ANT/gstpeaq",
+      "version": "version-0.6.1",
+      "git_commit": "c6e8b23d3374dbc937ef9f7cfbdb3b3f4c864352",
+      "license": "GNU Library GPL v2",
+      "execution": "isolated_hash_bound_subprocess",
+      "legal_gate_required": true,
+      "conformance": "upstream_declares_output_outside_ITU_tolerance",
+      "public_name_forbidden": "peaq",
+      "selected_outputs": ["proxy_odg", "available_movs"]
+    }
+  ],
+  "metric_family_limit": 2,
+  "derived_family_rules": {
+    "peaq_movs_are_same_family": true,
+    "two_f_formula_authorized": false,
+    "alignment_diagnostics_are_perceptual_family": false
+  },
+  "alignment_limits": {
+    "decode_numeric_format": "planar_float64",
+    "supported_channel_counts": [1, 2],
+    "integer_delay_search_seconds": 2.0,
+    "fractional_delay_max_samples": 0.5,
+    "clock_drift_max_ppm": 100.0,
+    "constant_gain_max_abs_db": 12.0,
+    "edge_trim_max_seconds": 2.0,
+    "edge_trim_max_fraction": 0.1,
+    "minimum_active_seconds": {
+      "bs1116_style": 4.0,
+      "mushra_and_visqol": 8.0
+    },
+    "unsupported_structural_differences": [
+      "ambiguous_alignment_peak",
+      "time_varying_gain",
+      "nonlinear_drift",
+      "content_edit",
+      "missing_or_duplicated_region",
+      "unknown_or_conflicting_channel_map",
+      "channel_remix",
+      "unstable_polarity",
+      "excessive_trim"
+    ]
+  },
+  "human_truth": {
+    "audibility_chance_probability": 0.5,
+    "audibility_point_gate": 0.75,
+    "audibility_equivalence_interval": [0.45, 0.55],
+    "subtle_method": "BS.1116_style_with_pre_rating_forced_choice",
+    "intermediate_severe_method": "MUSHRA_style",
+    "material_sdg_reference": -1.0,
+    "material_mushra_loss_points": 10.0,
+    "categorical_states": [
+      "transparent",
+      "audible_nonmaterial",
+      "materially_degraded",
+      "indeterminate"
+    ],
+    "main_collection_authorized": false,
+    "power_analysis_required_before_authorization": true,
+    "privacy_materials_required_before_authorization": true
+  },
+  "evidence_tiers": [
+    "synthetic_structural_fixtures",
+    "published_development_listening_evidence",
+    "new_human_calibration",
+    "grouped_oracle_transfer",
+    "no_reference_development_if_eligible",
+    "fresh_final_validation"
+  ],
+  "grouping": {
+    "source_derivatives_co_located": true,
+    "partition_group_fields": [
+      "performer",
+      "recording_session",
+      "release",
+      "source_collection",
+      "production_chain"
+    ],
+    "required_holdout_axes": ["source", "domain", "codec", "encoder"]
+  },
+  "required_negative_classes": [
+    "transparent_lossy_encode",
+    "natural_bandwidth_limit",
+    "quiet",
+    "sparse",
+    "tonal",
+    "synthetic",
+    "noisy",
+    "clipped",
+    "gain",
+    "polarity",
+    "integer_delay",
+    "fractional_delay",
+    "resampling",
+    "bounded_clock_drift",
+    "leading_trailing_silence",
+    "equalization",
+    "limiting",
+    "stereo_width",
+    "dither",
+    "sample_rate_conversion"
+  ],
+  "full_reference_gates": {
+    "cross_environment_score_abs_tolerance": 1e-6,
+    "severity_spearman_lower_ci_overall": 0.75,
+    "severity_spearman_lower_ci_each_primary_domain": 0.55,
+    "audibility_brier_max": 0.15,
+    "audibility_ece_max": 0.1,
+    "audibility_auc_lower_ci": 0.75,
+    "transparent_material_rate_point_max": 0.05,
+    "transparent_material_rate_upper_ci_max": 0.1,
+    "material_sensitivity_lower_ci": 0.8,
+    "coverage_overall_min": 0.8,
+    "coverage_each_primary_domain_min": 0.6,
+    "bootstrap_replicates_min": 10000,
+    "required_added_value": {
+      "brier_absolute": 0.02,
+      "severity_correlation_absolute": 0.05
+    }
+  },
+  "no_reference": {
+    "eligible_before_full_reference_pass": false,
+    "metadata_features_forbidden": true,
+    "fresh_human_validation_required": true,
+    "max_severity_correlation_loss_vs_oracle": 0.1,
+    "max_brier_loss_vs_oracle": 0.03,
+    "each_holdout_axis_must_pass": true
+  },
+  "resources": {
+    "host_logical_cpus": 10,
+    "sustained_worker_limit": 6,
+    "minimum_free_disk_gib": 15,
+    "duplicate_corpus_forbidden": true,
+    "bounded_temporary_storage_required": true
+  },
+  "bindings": {
+    "contract": {
+      "path": "docs/research/perceptual-degradation-contract-20260803.md",
+      "sha256": "f46c03bdd7f26e835c6d9a01277e8fade52d9af9ef050128cdcac35c53a7d69f"
+    },
+    "literature_review": {
+      "path": "docs/research/perceptual-degradation-literature-review-20260803.md",
+      "sha256": "2bba714035c42a40fe1395a2ba94cc57a5b3e324f54846bef74fad01e19ae8e4"
+    }
+  },
+  "required_pre_metric_records": [
+    "contract_and_review_hash_binding",
+    "exact_metric_binary_hashes",
+    "gstpeaq_proxy_legal_and_redistribution_record",
+    "alignment_fixture_threshold_freeze",
+    "score_free_schema_replay"
+  ],
+  "stop_conditions": [
+    "A primary family legal or replay boundary is unresolved.",
+    "Alignment support requires excluding a named hard negative or transparent codec condition.",
+    "The 15 GiB disk reserve or six-worker ceiling cannot be maintained.",
+    "A sealed label or the existing 280-case future subset is opened.",
+    "A threshold, support rule, model, or explanation changes after its validation score is observed.",
+    "Any public verdict, private path, listener identity, audio, model, or cache enters Git."
+  ],
+  "authorized_next_step": "Commit this plan before implementing score-free alignment, schemas, bindings, legal gates, and synthetic fixtures. Perceptual metric execution remains unauthorized."
+}
