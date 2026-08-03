@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "plan_id": "visqol-audio-v3-3-3-synthetic-replay-20260803-003",
+  "plan_id": "visqol-audio-v3-3-3-synthetic-replay-20260803-004",
   "state": "visqol_synthetic_build_and_replay_frozen_before_scores",
   "fixture_set_id": "visqol-synthetic-48k-stereo-v1",
   "authorization": {
@@ -21,8 +21,8 @@
     "upstream_blob_bytes": 120367822,
     "license": "Apache-2.0",
     "workspace_patch_path": "research/toolchains/patches/visqol-v3.3.3-reproducible-workspace.patch",
-    "workspace_patch_sha256": "b580e0e939feaef9e2cc1f3943dd763b32b06cf2cd5e5ae7a3c2429fe124e680",
-    "workspace_patch_scope": "Replace the movable googletest tag and the now-missing Abseil tag with their resolved commits; no metric implementation source is changed.",
+    "workspace_patch_sha256": "d768dc5d312d874d308937454308b48c9ff172a7e648e6314cf2b51110e6a039",
+    "workspace_patch_scope": "Replace the movable googletest tag and the now-missing Abseil tag with their resolved commits, and replace the removed Armadillo URL with a byte-identical SHA-256-bound MacPorts archive; no metric implementation source is changed.",
     "audio_model_path": "model/libsvm_nu_svr_model.txt",
     "audio_model_sha256": "1e8246ed33bf36dc5c859351f7110f2cd31f98661989715c0fcf974ec48d3e2e",
     "binary_sha256": null,
@@ -70,6 +70,15 @@
       "outcome": "failed_before_metric_execution",
       "failed_step": "numpy_bootstrap",
       "failure": "The exact NumPy wheel verified by SHA-256, but pip rejected a local filename that omitted the wheel compatibility tags.",
+      "runner_cleanup_complete": true,
+      "synthetic_scores_produced": false
+    },
+    {
+      "github_run_id": 30821068945,
+      "github_head_sha": "bc39620d2cbe0251910ba181385eaea17fc36ccd",
+      "outcome": "failed_before_metric_execution",
+      "failed_step": "build_dependency_fetch",
+      "failure": "The pinned Armadillo archive had been removed from its upstream SourceForge URL; its byte-identical SHA-256-bound MacPorts distfile remains available.",
       "runner_cleanup_complete": true,
       "synthetic_scores_produced": false
     }
@@ -146,15 +155,15 @@
     },
     "plan_validator": {
       "path": "scripts/validate-perceptual-degradation-visqol-plan.py",
-      "sha256": "11b9ceeda181a3c86b26362f4276c9c323be99970a3784ec220c7adaed4eeeaa"
+      "sha256": "143c17c9a4ea666f38b694a1fe518ef6beb4ae044a275e702b16a8eedc403fec"
     },
     "tests": {
       "path": "scripts/tests/test_perceptual_degradation_visqol.py",
-      "sha256": "d7853eebc3212f1b66d5ce3055ae3b6b01c324356ce5306a376a37fe5b53b4d6"
+      "sha256": "964e89b83e83c4e195409cb1d3f2c86b3b6e7f6812174cbe591a39deca1c7302"
     },
     "workspace_patch": {
       "path": "research/toolchains/patches/visqol-v3.3.3-reproducible-workspace.patch",
-      "sha256": "b580e0e939feaef9e2cc1f3943dd763b32b06cf2cd5e5ae7a3c2429fe124e680"
+      "sha256": "d768dc5d312d874d308937454308b48c9ff172a7e648e6314cf2b51110e6a039"
     },
     "workflow": {
       "path": ".github/workflows/visqol-synthetic.yml",

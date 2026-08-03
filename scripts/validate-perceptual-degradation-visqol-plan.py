@@ -97,8 +97,8 @@ def validate(plan: dict[str, Any], root: Path = ROOT) -> list[str]:
         errors.append("ViSQOL build configuration must remain opt")
 
     attempts = plan.get("prior_attempts", [])
-    if len(attempts) != 2:
-        errors.append("exactly two score-free prior attempts must be recorded")
+    if len(attempts) != 3:
+        errors.append("exactly three score-free prior attempts must be recorded")
     for attempt in attempts:
         if attempt.get("synthetic_scores_produced") is not False:
             errors.append("prior failed attempt must not claim synthetic scores")

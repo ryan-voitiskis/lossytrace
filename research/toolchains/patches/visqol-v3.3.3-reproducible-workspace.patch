@@ -15,3 +15,9 @@ diff --git a/WORKSPACE b/WORKSPACE
 -    tag = "20211102",
 +    commit = "215105818dfde3174fe799600bb0f3cae233d0bf",
  )
+@@ -176,4 +176,4 @@
+     sha256 = "d856ea58c18998997bcae6689784d2d3eeb5daf1379d569fddc277fe046a996b",
+     strip_prefix = "armadillo-9.860.2",
+-    urls = ["http://sourceforge.net/projects/arma/files/armadillo-9.860.2.tar.xz"],
++    urls = ["https://distfiles.macports.org/armadillo/armadillo-9.860.2.tar.xz"],
+ )

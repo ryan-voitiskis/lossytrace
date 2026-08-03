@@ -67,7 +67,7 @@ class VisqolSyntheticPlanTest(unittest.TestCase):
             self.plan["authorization"]["public_or_retained_audio_execution"]
         )
         self.assertIsNone(self.plan["visqol"]["binary_sha256"])
-        self.assertEqual(2, len(self.plan["prior_attempts"]))
+        self.assertEqual(3, len(self.plan["prior_attempts"]))
         self.assertTrue(
             all(
                 not attempt["synthetic_scores_produced"]
@@ -158,6 +158,8 @@ with open(value("--output_debug"), "w", encoding="utf-8") as output:
         self.assertIn("215105818dfde3174fe799600bb0f3cae233d0bf", source)
         self.assertIn('-    tag = "20211102"', source)
         self.assertIn('+    commit = "215105818dfde3174fe799600bb0f3cae233d0bf"', source)
+        self.assertIn("https://distfiles.macports.org/armadillo/armadillo-9.860.2.tar.xz", source)
+        self.assertIn("d856ea58c18998997bcae6689784d2d3eeb5daf1379d569fddc277fe046a996b", source)
 
     def test_no_audio_or_model_file_is_tracked(self) -> None:
         tracked = subprocess.run(
