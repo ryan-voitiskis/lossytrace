@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "gate_id": "perceptual-degradation-listening-preparation-20260804-009",
+  "gate_id": "perceptual-degradation-listening-preparation-20260804-010",
   "state": "protocol_prepared_human_collection_unauthorized",
   "human_collection_authorized": false,
   "recruitment_authorized": false,
@@ -225,19 +225,35 @@
     },
     "mastered_music_playback_qualification_plan": {
       "path": "benchmarks/perceptual-degradation-v1/mastered-music-playback-qualification-plan.json",
-      "sha256": "b45d26b62803ddd0c341a984effb265138138e956644fa61e6c2e4fa5e21405b"
+      "sha256": "887047f8768deca250e021f78e9cc29b8beb1aadeb2687e28fd6cec31f525df3"
     },
     "mastered_music_playback_qualification_report": {
       "path": "docs/research/perceptual-degradation-mastered-music-playback-qualification-20260804.md",
-      "sha256": "57408160b2600556f5e7f28610cff48d5a48162802b98ff57565595f1c98f873"
+      "sha256": "4804174dcd001bea0c57bb064bcb590e84d8323a2ca283e35e989774c8959cb0"
     },
     "mastered_music_playback_qualification_validator": {
       "path": "scripts/validate-perceptual-degradation-mastered-music-playback-plan.py",
-      "sha256": "fcb9f6b46ab92c3a33087d22a7d23699b69fd1bb0d070c520325b7235d6df6d9"
+      "sha256": "753d582f65a2931abdb99b432dfa078e7cea97dd7dc391ef3c203c3e5e2cdabb"
     },
     "mastered_music_playback_qualification_tests": {
       "path": "scripts/tests/test_perceptual_degradation_mastered_music_playback_plan.py",
-      "sha256": "702444f9edf12c08d7ec86645ec1a0dd4f9f7795b9cc1163c15220066294745a"
+      "sha256": "1f82485aa9de05ef3ae1d34a5dead2789fc844eded3c58b68526af1ffb6ece70"
+    },
+    "permissive_listening_source_fallback_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/permissive-listening-source-fallback-plan.json",
+      "sha256": "e40b4642080765c0c7502123b39136f5adefa312d5351537ba486c56728b71f9"
+    },
+    "permissive_listening_source_fallback_report": {
+      "path": "docs/research/perceptual-degradation-permissive-listening-source-fallback-20260804.md",
+      "sha256": "2f12743a4384a30933f3702b58be012b6417f19ca463daf02ad36f2d85c7f29c"
+    },
+    "permissive_listening_source_fallback_validator": {
+      "path": "scripts/validate-perceptual-degradation-permissive-source-fallback.py",
+      "sha256": "c46990bc93982611107f6eb9dc3e20e08e42a309c6d4050aae057d34b0518bb3"
+    },
+    "permissive_listening_source_fallback_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_permissive_source_fallback.py",
+      "sha256": "6356117107bbbe8b6418fd19e5236fe533bfdfcc5347aeb4a3852480df03a110"
     }
   },
   "unresolved_operational_fields": [
@@ -251,5 +267,5 @@
     "public minimum cell size and suppression policy",
     "qualified playback chain and calibration method"
   ],
-  "authorized_next_step": "Obtain the responsible-human noncommercial and ShareAlike delivery decisions for the selected music sources and declare a stable physical playback chain with calibration method. Then freeze a metadata-only source allocation that excludes all consumed groups. Actual audio access, excerpt listening, stimulus generation, metric execution, participant contact and human collection remain unauthorized."
+  "authorized_next_step": "Obtain the responsible-human choice between the narrow CC BY/CC0-only ODAQ fallback and the wider NC/SA source track, and declare a stable physical playback chain with calibration method. Then freeze a metadata-only source allocation that excludes all consumed groups. Actual audio access, excerpt listening, stimulus generation, metric execution, participant contact and human collection remain unauthorized."
 }

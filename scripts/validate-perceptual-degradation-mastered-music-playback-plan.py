@@ -100,6 +100,36 @@ def validate(plan: dict[str, Any], root: Path = ROOT) -> list[str]:
     ):
         errors.append("music claim was prematurely frozen")
 
+    fallback = plan.get("permissive_source_fallback", {})
+    if fallback.get("source_id") != "odaq_cc_by_cc0_clean_references":
+        errors.append("permissive fallback source differs")
+    for field, expected in (
+        ("development_reference_count", 16),
+        ("music_reference_count", 9),
+        ("movie_like_soundtrack_reference_count", 7),
+        ("conservative_work_group_count", 13),
+        ("provider_stratum_count", 1),
+    ):
+        if fallback.get(field) != expected:
+            errors.append(f"permissive fallback count differs: {field}")
+    if set(fallback.get("licence_classes", [])) != {"cc_by", "cc0"}:
+        errors.append("permissive fallback licence classes differ")
+    if fallback.get("attribution_metadata_complete") is not True:
+        errors.append("permissive fallback attribution metadata is incomplete")
+    for field in (
+        "noncommercial_decision_required",
+        "share_alike_obligation_present",
+        "actual_codec_condition_present",
+        "independent_provider_transfer_supported",
+        "final_validation_supported",
+    ):
+        if fallback.get(field) is not False:
+            errors.append(f"permissive fallback boundary differs: {field}")
+    if fallback.get("operational_state") != (
+        "metadata_only_reference_acquisition_not_authorized"
+    ):
+        errors.append("permissive fallback was prematurely operationalized")
+
     excerpt = plan.get("excerpt_policy", {})
     if excerpt.get("maximum_seconds") != 12:
         errors.append("excerpt duration differs")
@@ -140,6 +170,8 @@ def validate(plan: dict[str, Any], root: Path = ROOT) -> list[str]:
         errors.append("completed recipe gate was lost")
     if decision.get("mastered_music_candidates_identified") is not True:
         errors.append("mastered music candidates are not identified")
+    if decision.get("permissive_source_fallback_identified") is not True:
+        errors.append("permissive source fallback is not identified")
     if decision.get("excerpt_policy_frozen") is not True:
         errors.append("excerpt policy is not frozen")
     for field in (

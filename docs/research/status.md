@@ -397,3 +397,17 @@ calibration. The next gates therefore require responsible-human NC/SA delivery
 decisions and a declared physical playback chain. The earlier synthetic-sound
 audibility confirmation is not reused as either qualification or listening
 truth.
+
+A metadata-only
+[`permissive listening-source fallback`](perceptual-degradation-permissive-listening-source-fallback-20260804.md)
+now binds the 16 CC BY/CC0 clean ODAQ references already covered by complete
+attribution records. The exact population contains nine music and seven
+movie-like soundtrack excerpts, co-located into 13 conservative upstream work
+groups. This path avoids a noncommercial or ShareAlike determination for
+development listening, but it remains one ODAQ provider stratum. ODAQ's
+published processed conditions remain simulated coding-like artifacts or
+source-separation/remix outputs, not actual codec labels. Audio, scores,
+processed conditions, metrics, and listening remain closed. A responsible
+human must still choose this narrower path or the wider NC/SA source track and
+declare a qualified playback chain; neither path supplies fresh final
+validation by itself.

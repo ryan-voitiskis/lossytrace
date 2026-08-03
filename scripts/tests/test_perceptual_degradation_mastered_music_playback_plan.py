@@ -68,6 +68,24 @@ class MasteredMusicPlaybackPlanTest(unittest.TestCase):
         )
         self.assertIn("playback boundary differs: physical_playback_qualified", errors)
 
+    def test_permissive_fallback_cannot_claim_independent_transfer(self) -> None:
+        value = plan()
+        fallback = value["permissive_source_fallback"]
+        fallback["provider_stratum_count"] = 16
+        fallback["independent_provider_transfer_supported"] = True
+        fallback["final_validation_supported"] = True
+        errors = MODULE.validate(value)
+        self.assertIn(
+            "permissive fallback count differs: provider_stratum_count", errors
+        )
+        self.assertIn(
+            "permissive fallback boundary differs: independent_provider_transfer_supported",
+            errors,
+        )
+        self.assertIn(
+            "permissive fallback boundary differs: final_validation_supported", errors
+        )
+
     def test_source_manifest_cannot_become_freezable_before_human_gates(self) -> None:
         value = plan()
         value["decision"]["licences_frozen"] = True

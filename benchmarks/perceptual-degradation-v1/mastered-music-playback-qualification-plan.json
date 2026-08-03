@@ -31,6 +31,10 @@
     "excerpt_preconditioning": {
       "path": "scripts/audio_integrity_v2_preconditioning.py",
       "sha256": "1d634a6ca0f038514dbbd42f7d8c3a1bb8d2520f8cc5006a2a8b18453f9cac8b"
+    },
+    "permissive_listening_source_fallback": {
+      "path": "benchmarks/perceptual-degradation-v1/permissive-listening-source-fallback-plan.json",
+      "sha256": "e40b4642080765c0c7502123b39136f5adefa312d5351537ba486c56728b71f9"
     }
   },
   "access_boundary": {
@@ -121,6 +125,25 @@
     "rwc_track_count_treated_as_independent_provider_count": false,
     "lossy_distributed_audio_used_as_lossless_reference": false
   },
+  "permissive_source_fallback": {
+    "source_id": "odaq_cc_by_cc0_clean_references",
+    "development_reference_count": 16,
+    "music_reference_count": 9,
+    "movie_like_soundtrack_reference_count": 7,
+    "conservative_work_group_count": 13,
+    "provider_stratum_count": 1,
+    "licence_classes": [
+      "cc_by",
+      "cc0"
+    ],
+    "attribution_metadata_complete": true,
+    "noncommercial_decision_required": false,
+    "share_alike_obligation_present": false,
+    "actual_codec_condition_present": false,
+    "independent_provider_transfer_supported": false,
+    "final_validation_supported": false,
+    "operational_state": "metadata_only_reference_acquisition_not_authorized"
+  },
   "excerpt_policy": {
     "maximum_seconds": 12,
     "identity_hashed_offset_required": true,
@@ -147,14 +170,15 @@
     "operator_synthetic_audibility_confirmation_reused_as_qualification": false
   },
   "human_decisions_required": [
-    "Responsible human confirms whether this company-associated study qualifies as noncommercial under each selected NC licence and approves the exact excerpt delivery model.",
-    "Responsible human resolves ShareAlike attribution, licence-link and downstream delivery obligations before selecting MAESTRO, mshoxxDB or MedleyDB.",
+    "Responsible human chooses either the narrower CC BY/CC0-only one-provider ODAQ fallback or the wider NC/SA source track; this choice determines the supportable source-breadth claim.",
+    "For the wider track, the responsible human confirms noncommercial status and ShareAlike delivery obligations; for the fallback, the responsible human accepts its one-provider development-only limit and the bound attribution notices.",
     "Operator declares a stable headphone or calibrated loudspeaker chain, including DAC/amplifier, transducer model, quiet-room or ambient-noise class, system-effects state and conservative level-calibration method.",
     "Operator performs the frozen channel and calibration checks without submitting degradation ratings or participant data."
   ],
   "decision": {
     "production_and_generation_recipe_gate_closed": true,
     "mastered_music_candidates_identified": true,
+    "permissive_source_fallback_identified": true,
     "independent_music_provider_gate_closed": false,
     "licences_frozen": false,
     "excerpt_policy_frozen": true,
@@ -163,5 +187,5 @@
     "source_and_condition_manifest_freezable": false,
     "human_collection_authorized": false
   },
-  "authorized_next_step": "Obtain the responsible-human licence decisions and a declared physical playback chain, then freeze a metadata-only source allocation that excludes every consumed group. Do not access audio, select excerpts by listening, generate stimuli, execute metrics, contact participants or collect responses."
+  "authorized_next_step": "Obtain the responsible-human source-track choice and a declared physical playback chain, then freeze a metadata-only source allocation that excludes every consumed group. The narrow CC BY/CC0 fallback avoids an NC/SA determination but remains one-provider development evidence. Do not access audio, select excerpts by listening, generate stimuli, execute metrics, contact participants or collect responses."
 }

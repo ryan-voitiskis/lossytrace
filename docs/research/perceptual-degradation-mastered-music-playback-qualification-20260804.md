@@ -38,6 +38,16 @@ This evidence supports only a future narrow claim around professional RWC
 productions with separate piano/electronic calibration strata. It does not
 support a broad commercial-music or all-genre claim.
 
+There is now a separately bound
+[`CC BY/CC0-only fallback`](perceptual-degradation-permissive-listening-source-fallback-20260804.md).
+It retains 16 previously audited clean ODAQ references: nine music excerpts and
+seven movie-like soundtrack excerpts, conservatively grouped into 13 upstream
+works. All attribution metadata is complete and no NC or SA source is present.
+This avoids a noncommercial determination for development listening, but ODAQ
+remains one provider stratum. Its published conditions simulate coding-like
+artifacts or source-separation/remix damage; they are not actual codec encodes,
+grouped transfer evidence, or final validation.
+
 ## Playback result
 
 The current default output is the built-in MacBook Pro speakers, stereo at
@@ -54,8 +64,9 @@ ratings or participant data are needed for that check.
 
 ## Next gate
 
-Two human decisions are now unavoidable: approve the exact noncommercial and
-ShareAlike delivery basis for the selected sources, and declare/qualify the
-physical playback chain. Until then, audio access, excerpt listening, stimulus
-generation, metrics, participant contact, and human collection remain
-unauthorized.
+Two human decisions remain: choose the narrower permissive one-provider path
+or the wider NC/SA source track, and declare/qualify the physical playback
+chain. The permissive path avoids an NC/SA determination but narrows the
+supportable source-breadth claim. Until a path is chosen, audio access, excerpt
+listening, stimulus generation, metrics, participant contact, and human
+collection remain unauthorized.
