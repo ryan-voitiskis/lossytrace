@@ -21,9 +21,6 @@ jobs:
     timeout-minutes: 90
     env:
       PLAN: benchmarks/perceptual-degradation-v1/visqol-synthetic-replay-plan.json
-      VISQOL_SOURCE: ${{ runner.temp }}/visqol-source
-      VISQOL_BAZEL_ROOT: ${{ runner.temp }}/visqol-bazel-root
-      VISQOL_ARTIFACT: ${{ runner.temp }}/visqol-artifact
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
 
@@ -49,43 +46,49 @@ jobs:
 
       - name: Materialize exact sparse source and patch dead tags
         run: |
+          visqol_source="${RUNNER_TEMP}/visqol-source"
           visqol_repository=$(jq -r '.visqol.repository' "$PLAN")
           visqol_commit=$(jq -r '.visqol.git_commit' "$PLAN")
           visqol_tree=$(jq -r '.visqol.git_tree' "$PLAN")
           patch_path=$(jq -r '.visqol.workspace_patch_path' "$PLAN")
           patch_sha256=$(jq -r '.visqol.workspace_patch_sha256' "$PLAN")
-          git init "$VISQOL_SOURCE"
-          git -C "$VISQOL_SOURCE" remote add origin "$visqol_repository"
-          git -C "$VISQOL_SOURCE" sparse-checkout init --no-cone
-          printf '/.bazelrc\n/BUILD\n/LICENSE\n/WORKSPACE\n/pybind11_fixdistutils.patch\n/model/\n/src/\n' > "${VISQOL_SOURCE}/.git/info/sparse-checkout"
-          git -C "$VISQOL_SOURCE" -c protocol.version=2 fetch --depth=1 origin "$visqol_commit"
-          git -C "$VISQOL_SOURCE" checkout --detach FETCH_HEAD
-          test "$(git -C "$VISQOL_SOURCE" rev-parse HEAD)" = "$visqol_commit"
-          test "$(git -C "$VISQOL_SOURCE" show -s --format=%T HEAD)" = "$visqol_tree"
+          git init "$visqol_source"
+          git -C "$visqol_source" remote add origin "$visqol_repository"
+          git -C "$visqol_source" sparse-checkout init --no-cone
+          printf '/.bazelrc\n/BUILD\n/LICENSE\n/WORKSPACE\n/pybind11_fixdistutils.patch\n/model/\n/src/\n' > "${visqol_source}/.git/info/sparse-checkout"
+          git -C "$visqol_source" -c protocol.version=2 fetch --depth=1 origin "$visqol_commit"
+          git -C "$visqol_source" checkout --detach FETCH_HEAD
+          test "$(git -C "$visqol_source" rev-parse HEAD)" = "$visqol_commit"
+          test "$(git -C "$visqol_source" show -s --format=%T HEAD)" = "$visqol_tree"
           echo "${patch_sha256}  ${patch_path}" | sha256sum --check --strict
-          git -C "$VISQOL_SOURCE" apply --check "${GITHUB_WORKSPACE}/${patch_path}"
-          git -C "$VISQOL_SOURCE" apply "${GITHUB_WORKSPACE}/${patch_path}"
+          git -C "$visqol_source" apply --check "${GITHUB_WORKSPACE}/${patch_path}"
+          git -C "$visqol_source" apply "${GITHUB_WORKSPACE}/${patch_path}"
 
       - name: Build with at most six workers
         run: |
-          mkdir -p "$VISQOL_ARTIFACT"
-          cd "$VISQOL_SOURCE"
+          visqol_source="${RUNNER_TEMP}/visqol-source"
+          visqol_bazel_root="${RUNNER_TEMP}/visqol-bazel-root"
+          visqol_artifact="${RUNNER_TEMP}/visqol-artifact"
+          mkdir -p "$visqol_artifact"
+          cd "$visqol_source"
           "${RUNNER_TEMP}/bazel" \
-            --output_user_root="$VISQOL_BAZEL_ROOT" \
+            --output_user_root="$visqol_bazel_root" \
             build //:visqol \
             --jobs=6 \
             --local_cpu_resources=6 \
             --local_ram_resources=6144 \
-            --experimental_repository_resolved_file="${VISQOL_ARTIFACT}/resolved-repositories.bzl"
-          cp bazel-bin/visqol "${VISQOL_ARTIFACT}/visqol"
-          cp model/libsvm_nu_svr_model.txt "${VISQOL_ARTIFACT}/libsvm_nu_svr_model.txt"
-          cp LICENSE "${VISQOL_ARTIFACT}/LICENSE"
-          chmod 0755 "${VISQOL_ARTIFACT}/visqol"
+            --experimental_repository_resolved_file="${visqol_artifact}/resolved-repositories.bzl"
+          cp bazel-bin/visqol "${visqol_artifact}/visqol"
+          cp model/libsvm_nu_svr_model.txt "${visqol_artifact}/libsvm_nu_svr_model.txt"
+          cp LICENSE "${visqol_artifact}/LICENSE"
+          chmod 0755 "${visqol_artifact}/visqol"
 
       - name: Release disposable build storage and preserve reserve
         run: |
-          "${RUNNER_TEMP}/bazel" --output_user_root="$VISQOL_BAZEL_ROOT" shutdown || true
-          rm -rf -- "$VISQOL_BAZEL_ROOT" "$VISQOL_SOURCE"
+          visqol_source="${RUNNER_TEMP}/visqol-source"
+          visqol_bazel_root="${RUNNER_TEMP}/visqol-bazel-root"
+          "${RUNNER_TEMP}/bazel" --output_user_root="$visqol_bazel_root" shutdown || true
+          rm -rf -- "$visqol_bazel_root" "$visqol_source"
           python3 - <<'PY'
           import shutil
           free = shutil.disk_usage(".").free
@@ -96,19 +99,21 @@ jobs:
 
       - name: Replay synthetic fixtures twice
         run: |
+          visqol_artifact="${RUNNER_TEMP}/visqol-artifact"
           python3 scripts/perceptual_degradation_visqol_replay.py \
-            --visqol "${VISQOL_ARTIFACT}/visqol" \
-            --model "${VISQOL_ARTIFACT}/libsvm_nu_svr_model.txt" \
+            --visqol "${visqol_artifact}/visqol" \
+            --model "${visqol_artifact}/libsvm_nu_svr_model.txt" \
             --plan "$PLAN" \
-            --output "${VISQOL_ARTIFACT}/synthetic-replay.json"
+            --output "${visqol_artifact}/synthetic-replay.json"
 
       - name: Record path-free build environment
         run: |
+          visqol_artifact="${RUNNER_TEMP}/visqol-artifact"
           compiler_version=$(cc --version | head -1)
           kernel_version=$(uname -srvmo)
           bazel_version=$("${RUNNER_TEMP}/bazel" --version)
-          binary_sha256=$(sha256sum "${VISQOL_ARTIFACT}/visqol" | cut -d' ' -f1)
-          model_sha256=$(sha256sum "${VISQOL_ARTIFACT}/libsvm_nu_svr_model.txt" | cut -d' ' -f1)
+          binary_sha256=$(sha256sum "${visqol_artifact}/visqol" | cut -d' ' -f1)
+          model_sha256=$(sha256sum "${visqol_artifact}/libsvm_nu_svr_model.txt" | cut -d' ' -f1)
           jq -n \
             --arg github_sha "$GITHUB_SHA" \
             --arg runner_image "$ImageOS" \
@@ -119,7 +124,7 @@ jobs:
             --arg binary_sha256 "$binary_sha256" \
             --arg model_sha256 "$model_sha256" \
             '{schema_version: 1, state: "visqol_synthetic_build_observed", github_sha: $github_sha, runner_image: $runner_image, runner_image_version: $runner_image_version, kernel: $kernel, compiler: $compiler, bazel: $bazel, maximum_workers: 6, binary_sha256: $binary_sha256, model_sha256: $model_sha256, paths_included: false}' \
-            > "${VISQOL_ARTIFACT}/build-environment.json"
+            > "${visqol_artifact}/build-environment.json"
 
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:

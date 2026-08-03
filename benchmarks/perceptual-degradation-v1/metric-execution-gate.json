@@ -55,7 +55,7 @@
     },
     "visqol_synthetic_replay_plan": {
       "path": "benchmarks/perceptual-degradation-v1/visqol-synthetic-replay-plan.json",
-      "sha256": "bd266f4805aa1cf00117075d5a582fb6be8ae1638185b8db3b342aa47877748a"
+      "sha256": "4a895ae8a2725448f9e9ef8be9b26fb33dedaaa24b91d069c6154f324cfc47ae"
     }
   },
   "metric_families": {

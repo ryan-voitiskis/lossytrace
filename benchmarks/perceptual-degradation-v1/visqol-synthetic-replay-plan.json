@@ -128,7 +128,7 @@
     },
     "workflow": {
       "path": ".github/workflows/visqol-synthetic.yml",
-      "sha256": "34ef3ffef668807fe9ed41a3c7b59786eaecbb61a88c7e9f058c6007edbcc631"
+      "sha256": "22d818710d92833a58ab522368ea30b69621dc39db2c723d965656637462404b"
     }
   },
   "unmet_prerequisites_after_this_freeze": [
