@@ -349,3 +349,14 @@ manifest remains unfrozen because independently grouped mastered-music breadth,
 licence and attribution operations, six production/multi-generation recipe
 families, private excerpt selection, and fresh final-validation evidence are
 still missing.
+
+The next score-blind
+[`production and generation control preregistration`](perceptual-degradation-production-generation-control-preregistration-20260804.md)
+freezes four exact signed-16 PCM recipes for clipping, equalization, limiting,
+and stereo width plus eight two-generation codec paths. The codec paths cover
+same-setting repetition and a balanced cross-codec cycle across MP3, AAC-LC,
+Opus, and Vorbis using already-bound encoder and decoder commands. Recipe names
+and settings remain controlled-condition metadata, never impairment or
+transparency targets. Implementation, synthetic replay, actual stimuli, audio
+access, and all outcome access remain false; the next gate is 12 synthetic-only
+cases and two byte-identical path-free replays.

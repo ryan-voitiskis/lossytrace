@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "gate_id": "perceptual-degradation-listening-preparation-20260804-005",
+  "gate_id": "perceptual-degradation-listening-preparation-20260804-006",
   "state": "protocol_prepared_human_collection_unauthorized",
   "human_collection_authorized": false,
   "recruitment_authorized": false,
@@ -170,6 +170,22 @@
     "source_condition_qualification_tests": {
       "path": "scripts/tests/test_perceptual_degradation_source_condition_qualification.py",
       "sha256": "7e5d21231d9e0ca27492a01e46fce9b74721df78e99a109c609394dd94b3125f"
+    },
+    "production_generation_control_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/production-generation-control-plan.json",
+      "sha256": "151b807922e205f21bf949c9a66e74654c958707836714bff3c177b63f04c8ec"
+    },
+    "production_generation_control_preregistration": {
+      "path": "docs/research/perceptual-degradation-production-generation-control-preregistration-20260804.md",
+      "sha256": "ab7753e9959ba0b60e0e301a402e442b657b64c7c2f16abdc5595fc8edec7a2a"
+    },
+    "production_generation_control_validator": {
+      "path": "scripts/validate-perceptual-degradation-production-generation-plan.py",
+      "sha256": "36c3a5b8178a327366513d7f71d6cd0209fae890184923eedc7aacee18fc716f"
+    },
+    "production_generation_control_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_production_generation_plan.py",
+      "sha256": "d64e41ceda061e897316586e909c39ac7456e90bf13eee423336c8647caa8cb6"
     }
   },
   "unresolved_operational_fields": [
@@ -183,5 +199,5 @@
     "public minimum cell size and suppression policy",
     "qualified playback chain and calibration method"
   ],
-  "authorized_next_step": "Freeze the missing production, repeated-codec and cross-codec recipes and complete source attribution and legal-operational records before freezing a score-blind source-and-condition manifest. Continue physical playback qualification without contacting or collecting from real listeners. Audio acquisition, stimulus generation, metric execution and human collection remain unauthorized."
+  "authorized_next_step": "Implement and synthetically replay the frozen production, repeated-codec and cross-codec recipes, and complete source attribution and legal-operational records before freezing a score-blind source-and-condition manifest. Continue physical playback qualification without contacting or collecting from real listeners. Actual audio acquisition, stimulus generation, metric execution and human collection remain unauthorized."
 }

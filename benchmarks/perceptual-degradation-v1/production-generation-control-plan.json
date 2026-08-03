@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "plan_id": "perceptual-degradation-production-generation-controls-20260804-001",
+  "state": "score_blind_recipes_frozen_before_implementation_or_audio",
+  "purpose": "Freeze deterministic non-codec production controls and two-generation codec paths without assigning audibility, severity, transparency, or material-degradation truth.",
+  "access_boundary": {
+    "retained_audio_access_authorized": false,
+    "provider_audio_access_authorized": false,
+    "stimulus_generation_authorized": false,
+    "synthetic_recipe_execution_observed": false,
+    "perceptual_metric_execution_authorized": false,
+    "listening_scores_opened": false,
+    "human_collection_authorized": false,
+    "sealed_evidence_opened": false
+  },
+  "bindings": {
+    "source_condition_qualification": {
+      "path": "benchmarks/perceptual-degradation-v1/source-condition-qualification-plan.json",
+      "sha256": "5ce20a4e10d743e8823810ec89e58d873ea2db47044151f065fa3358e16cf64b"
+    },
+    "v2_factor_levels": {
+      "path": "benchmarks/audio-integrity-v2/factor-levels.json",
+      "sha256": "4065553ef4fbe505ea0d79b149570bc1483396dbcc1de52597890e61f59481bd"
+    },
+    "v2_toolchain_bindings": {
+      "path": "benchmarks/audio-integrity-v2/toolchain-bindings.json",
+      "sha256": "d2af2f0b78b184189806d724c294d7606f37d2763839e17c9289f7957da52070"
+    },
+    "research_contract": {
+      "path": "docs/research/perceptual-degradation-contract-20260803.md",
+      "sha256": "fdec79207fc0fdd2e9cb10aae9f93dd1a17b45e6e56c0c7df8f0e01a1f9fb505"
+    }
+  },
+  "input_contract": {
+    "sample_format": "signed_s16le",
+    "supported_sample_rates_hz": [44100, 48000],
+    "supported_channel_counts": [1, 2],
+    "normalization_applied": false,
+    "condition_truth_state": "unresolved_until_frozen_listening_analysis",
+    "minimum_changed_frame_fraction": 0.001,
+    "unsupported_when_change_support_is_below_minimum": true
+  },
+  "production_control_recipes": [
+    {
+      "recipe_id": "production-hard-clip-minus6dbfs-v1",
+      "family": "clipping",
+      "channels": "independent",
+      "algorithm": "For every signed-16 sample x, output max(-16384, min(16384, x)). Preserve frame count, sample rate, and channel count.",
+      "integer_parameters": {
+        "negative_threshold": -16384,
+        "positive_threshold": 16384
+      },
+      "alignment_expectation": "exact_zero_delay_same_structure",
+      "perceptual_truth": "unresolved"
+    },
+    {
+      "recipe_id": "production-high-shelf-minus6db-nyquist-fir3-v1",
+      "family": "equalization",
+      "channels": "independent",
+      "algorithm": "For each channel and frame n, edge-extend x[n-1] and x[n+1], then output round_ties_even((x[n-1] + 6*x[n] + x[n+1]) / 8) saturated to signed-16. The symmetric FIR has unity DC gain and 0.5 Nyquist gain.",
+      "integer_parameters": {
+        "taps_numerator": [1, 6, 1],
+        "denominator": 8,
+        "edge_policy": "replicate_nearest_frame"
+      },
+      "alignment_expectation": "exact_zero_delay_same_structure",
+      "perceptual_truth": "unresolved"
+    },
+    {
+      "recipe_id": "production-block-limiter-minus6dbfs-5ms-v1",
+      "family": "limiting",
+      "channels": "linked",
+      "algorithm": "Partition into consecutive ceil(sample_rate_hz/200) frame blocks. For each block, find the maximum absolute sample across channels. Use gain min(1, 16384/peak), apply it to the entire block with exact integer-ratio round-to-nearest ties-to-even, and saturate to signed-16. The final partial block is processed identically.",
+      "integer_parameters": {
+        "threshold_absolute_sample": 16384,
+        "block_frames": "ceil(sample_rate_hz/200)",
+        "gain_linking": "maximum_absolute_sample_across_channels"
+      },
+      "claim_boundary": "deterministic block-lookahead production control, not an emulation of a named commercial limiter",
+      "alignment_expectation": "exact_zero_delay_same_structure",
+      "perceptual_truth": "unresolved"
+    },
+    {
+      "recipe_id": "production-stereo-width-half-mid-side-v1",
+      "family": "stereo_width",
+      "channels": "stereo_only",
+      "algorithm": "For each stereo frame (L,R), output L'=round_ties_even((3*L+R)/4) and R'=round_ties_even((L+3*R)/4), each saturated to signed-16. This preserves the mid signal and scales the side signal by 0.5.",
+      "integer_parameters": {
+        "left_numerator": [3, 1],
+        "right_numerator": [1, 3],
+        "denominator": 4,
+        "side_gain": 0.5
+      },
+      "alignment_expectation": "unsupported_channel_remix_for_full_reference_severity_but_retained_as_listening_and_abstention_control",
+      "perceptual_truth": "unresolved"
+    }
+  ],
+  "codec_generation_recipes": [
+    {
+      "recipe_id": "generation-repeat-mp3-lame-v2-v1",
+      "family": "repeated_same_codec",
+      "expanded_setting_ids": ["dev-mp3-lame-vbr-v2-default--stereo", "dev-mp3-lame-vbr-v2-default--stereo"]
+    },
+    {
+      "recipe_id": "generation-repeat-aac-ffmpeg-128-v1",
+      "family": "repeated_same_codec",
+      "expanded_setting_ids": ["dev-aac-ffmpeg-cbr128-default--stereo", "dev-aac-ffmpeg-cbr128-default--stereo"]
+    },
+    {
+      "recipe_id": "generation-repeat-opus-libopus-128-v1",
+      "family": "repeated_same_codec",
+      "expanded_setting_ids": ["dev-opus-libopus-cbr128-20ms--stereo", "dev-opus-libopus-cbr128-20ms--stereo"]
+    },
+    {
+      "recipe_id": "generation-repeat-vorbis-libvorbis-q6-v1",
+      "family": "repeated_same_codec",
+      "expanded_setting_ids": ["dev-vorbis-libvorbis-q6--stereo", "dev-vorbis-libvorbis-q6--stereo"]
+    },
+    {
+      "recipe_id": "generation-cross-mp3-v2-to-aac-128-v1",
+      "family": "cross_codec_generation",
+      "expanded_setting_ids": ["dev-mp3-lame-vbr-v2-default--stereo", "dev-aac-ffmpeg-cbr128-default--stereo"]
+    },
+    {
+      "recipe_id": "generation-cross-aac-128-to-opus-128-v1",
+      "family": "cross_codec_generation",
+      "expanded_setting_ids": ["dev-aac-ffmpeg-cbr128-default--stereo", "dev-opus-libopus-cbr128-20ms--stereo"]
+    },
+    {
+      "recipe_id": "generation-cross-opus-128-to-vorbis-q6-v1",
+      "family": "cross_codec_generation",
+      "expanded_setting_ids": ["dev-opus-libopus-cbr128-20ms--stereo", "dev-vorbis-libvorbis-q6--stereo"]
+    },
+    {
+      "recipe_id": "generation-cross-vorbis-q6-to-mp3-v2-v1",
+      "family": "cross_codec_generation",
+      "expanded_setting_ids": ["dev-vorbis-libvorbis-q6--stereo", "dev-mp3-lame-vbr-v2-default--stereo"]
+    }
+  ],
+  "codec_generation_execution": {
+    "generation_count": 2,
+    "intermediate_decode": "Use the exact analysis_decoder_binding command from the bound v2 toolchain after each encode.",
+    "intermediate_pcm": "signed_s16le WAV at the next expanded setting's frozen sample rate and stereo channel treatment",
+    "sample_rate_transition": "Use the next expanded encoder command's bound target-rate conversion; record every intermediate PCM hash and rate.",
+    "checkpoint_each_generation": true,
+    "delete_bitstreams_after_hash_bound_success": true,
+    "actual_codec_or_encoder_is_quality_target": false,
+    "nominal_setting_assigns_severity_or_transparency": false
+  },
+  "replay_requirements": {
+    "implementation_hash_frozen_before_observation": true,
+    "synthetic_cases_required": 12,
+    "two_fresh_replays_required": true,
+    "byte_identical_reports_required": true,
+    "actual_source_audio_forbidden_during_replay": true,
+    "path_free_aggregate_only": true
+  },
+  "decision": {
+    "recipes_frozen": true,
+    "implementation_present": false,
+    "synthetic_replay_complete": false,
+    "actual_stimuli_generated": false,
+    "production_controls_complete_for_manifest": false,
+    "multi_generation_controls_complete_for_manifest": false
+  },
+  "authorized_next_step": "Commit this score-blind recipe freeze, then implement the four exact PCM controls and an ephemeral two-generation executor with 12 synthetic-only cases and two fresh byte-identical reports. Do not access actual source audio, run perceptual metrics, open scores, or collect listeners."
+}
