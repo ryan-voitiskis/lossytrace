@@ -23,6 +23,13 @@ def _ordered(values: list[str], *seed_parts: str) -> list[str]:
     return sorted(values, key=lambda value: _digest(*seed_parts, value))
 
 
+def _rotated(values: list[str], offset: int) -> list[str]:
+    if not values:
+        return []
+    normalized = offset % len(values)
+    return values[normalized:] + values[:normalized]
+
+
 def validate_manifest(manifest: dict[str, Any]) -> list[str]:
     errors = []
     if manifest.get("schema_version") != 1:
@@ -98,23 +105,33 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
 
 
 def allocate(
-    manifest: dict[str, Any], participant_key: str, allocation_seed: str
+    manifest: dict[str, Any],
+    participant_key: str,
+    allocation_seed: str,
+    allocation_index: int = 0,
 ) -> dict[str, Any]:
     errors = validate_manifest(manifest)
     if errors:
         raise ValueError("; ".join(errors))
     if not participant_key or not allocation_seed:
         raise ValueError("participant key and allocation seed must be non-empty")
-    assignment_id = "assignment-" + _digest(allocation_seed, participant_key)[:24]
+    if allocation_index < 0:
+        raise ValueError("allocation index must be non-negative")
+    assignment_id = "assignment-" + _digest(
+        allocation_seed, participant_key, str(allocation_index)
+    )[:24]
     by_method: dict[str, list[dict[str, Any]]] = {"subtle": [], "mushra": []}
     for trial in manifest["trials"]:
-        candidates = _ordered(
+        candidate_base = _ordered(
             list(trial["candidate_ids"]),
             allocation_seed,
-            assignment_id,
             trial["trial_id"],
             "candidate-order",
         )
+        candidate_offset = allocation_index + int(
+            _digest(allocation_seed, trial["trial_id"], "position-phase")[:8], 16
+        )
+        candidates = _rotated(candidate_base, candidate_offset)
         by_method[trial["method"]].append(
             {
                 "trial_id": trial["trial_id"],
@@ -129,13 +146,13 @@ def allocate(
     limits = {"subtle": MAX_SUBTLE_TRIALS, "mushra": MAX_MUSHRA_TRIALS}
     blocks = []
     for method in ("subtle", "mushra"):
-        ordered_ids = _ordered(
+        base_ids = _ordered(
             [item["trial_id"] for item in by_method[method]],
             allocation_seed,
-            assignment_id,
             method,
             "trial-order",
-        )[: limits[method]]
+        )
+        ordered_ids = _rotated(base_ids, allocation_index)[: limits[method]]
         by_trial = {item["trial_id"]: item for item in by_method[method]}
         if ordered_ids:
             blocks.append(
@@ -149,6 +166,7 @@ def allocate(
         "state": "synthetic_or_unauthorized_assignment_only",
         "manifest_id": manifest["manifest_id"],
         "assignment_id": assignment_id,
+        "allocation_index": allocation_index,
         "participant_key_included": False,
         "condition_recipes_included": False,
         "metric_scores_included": False,
@@ -157,15 +175,61 @@ def allocate(
     }
 
 
+def audit_balance(
+    manifest: dict[str, Any], participant_count: int, allocation_seed: str
+) -> dict[str, Any]:
+    if participant_count <= 0:
+        raise ValueError("participant count must be positive")
+    trial_exposures: dict[str, int] = {}
+    position_counts: dict[str, dict[str, int]] = {}
+    for allocation_index in range(participant_count):
+        result = allocate(
+            manifest,
+            f"synthetic-participant-{allocation_index:06d}",
+            allocation_seed,
+            allocation_index,
+        )
+        for block in result["blocks"]:
+            for trial in block["trials"]:
+                trial_id = trial["trial_id"]
+                trial_exposures[trial_id] = trial_exposures.get(trial_id, 0) + 1
+                for positioned in trial["candidate_positions"]:
+                    stimulus_id = positioned["stimulus_id"]
+                    key = f"position_{positioned['position']}"
+                    counts = position_counts.setdefault(stimulus_id, {})
+                    counts[key] = counts.get(key, 0) + 1
+    exposure_values = list(trial_exposures.values())
+    return {
+        "schema_version": 1,
+        "state": "synthetic_balance_audit_no_responses",
+        "participant_count": participant_count,
+        "trial_exposure_min": min(exposure_values),
+        "trial_exposure_max": max(exposure_values),
+        "trial_exposure_range": max(exposure_values) - min(exposure_values),
+        "trial_exposures": dict(sorted(trial_exposures.items())),
+        "candidate_position_counts": {
+            key: dict(sorted(value.items()))
+            for key, value in sorted(position_counts.items())
+        },
+        "responses_included": False,
+    }
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--manifest", type=Path, required=True)
     parser.add_argument("--participant-key", required=True)
+    parser.add_argument("--allocation-index", type=int, required=True)
     parser.add_argument("--allocation-seed", required=True)
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     manifest = json.loads(args.manifest.read_text(encoding="utf-8"))
-    result = allocate(manifest, args.participant_key, args.allocation_seed)
+    result = allocate(
+        manifest,
+        args.participant_key,
+        args.allocation_seed,
+        args.allocation_index,
+    )
     if args.output.exists() or args.output.is_symlink():
         raise SystemExit(f"refusing to replace output: {args.output}")
     args.output.parent.mkdir(parents=True, exist_ok=True)

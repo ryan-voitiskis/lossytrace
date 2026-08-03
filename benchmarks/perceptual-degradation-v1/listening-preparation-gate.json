@@ -60,11 +60,11 @@
     },
     "score_blind_allocator": {
       "path": "scripts/perceptual_degradation_listening_allocation.py",
-      "sha256": "b161659adc46efc156602f689cb8c0ab5194db49de79a0934f0607644ae4526c"
+      "sha256": "0c92d1ef247bdaf22b11040844cf8fdaaf924ffeac481ba932799dc22b68f4e1"
     },
     "score_blind_allocator_tests": {
       "path": "scripts/tests/test_perceptual_degradation_listening_allocation.py",
-      "sha256": "33fc4293237a65e270c72fbaa3e598d64db2e2d3cc9216855ac4e8ef5e50d541"
+      "sha256": "f83c7a3d60a6e29b2873684418346976c4a1ef1bbd6794ae9b140f0801a8c4d5"
     },
     "power_simulation": {
       "path": "scripts/perceptual_degradation_listening_power.py",
@@ -94,5 +94,5 @@
     "public minimum cell size and suppression policy",
     "qualified playback chain and calibration method"
   ],
-  "authorized_next_step": "Revise the score-blind source and balanced allocation design in response to the power result, then prepare a synthetic player dry run and playback qualification. Do not contact or collect from real listeners."
+  "authorized_next_step": "Use the balanced incomplete-block allocator to prepare a score-blind source and stimulus design, then implement a synthetic player dry run and playback qualification. Do not contact or collect from real listeners."
 }

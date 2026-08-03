@@ -93,9 +93,25 @@ class ListeningAllocationTest(unittest.TestCase):
         self.assertEqual(2, len(first["blocks"]))
 
     def test_participants_receive_distinct_assignments(self) -> None:
-        first = MODULE.allocate(manifest(), "participant-one", "seed-public")
-        second = MODULE.allocate(manifest(), "participant-two", "seed-public")
+        first = MODULE.allocate(manifest(), "participant-one", "seed-public", 0)
+        second = MODULE.allocate(manifest(), "participant-two", "seed-public", 1)
         self.assertNotEqual(first["assignment_id"], second["assignment_id"])
+
+    def test_balanced_incomplete_blocks_limit_exposure_range(self) -> None:
+        value = manifest()
+        subtle_template = value["trials"][0]
+        value["trials"] = [
+            {**subtle_template, "trial_id": f"trial-subtle-{index:04d}"}
+            for index in range(20)
+        ]
+        balance = MODULE.audit_balance(value, 20, "seed-public")
+        self.assertEqual(0, balance["trial_exposure_range"])
+        self.assertEqual(15, balance["trial_exposure_min"])
+        self.assertFalse(balance["responses_included"])
+
+    def test_negative_allocation_index_is_rejected(self) -> None:
+        with self.assertRaisesRegex(ValueError, "index must be non-negative"):
+            MODULE.allocate(manifest(), "participant", "seed", -1)
 
     def test_subtle_trial_requires_one_hidden_reference_and_condition(self) -> None:
         changed = copy.deepcopy(manifest())
