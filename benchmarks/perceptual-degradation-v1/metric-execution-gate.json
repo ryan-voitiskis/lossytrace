@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "gate_id": "perceptual-degradation-v1-metric-execution-20260803-001",
+  "state": "metric_execution_blocked_pending_exact_binaries_and_legal_clearance",
+  "public_verdict_enabled": false,
+  "retained_audio_metric_execution_authorized": false,
+  "public_development_audio_metric_execution_authorized": false,
+  "perceptual_metric_execution_authorized": false,
+  "human_collection_authorized": false,
+  "no_reference_training_authorized": false,
+  "completed_prerequisites": {
+    "research_contract_frozen": true,
+    "primary_metric_families_limited_to_two": true,
+    "score_free_alignment_topology_frozen": true,
+    "score_free_decoder_resampler_replayed": true
+  },
+  "bindings": {
+    "research_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/research-plan.json",
+      "sha256": "4474fcb066aa261062613bc1af96915c7463ffd922dbd3cad90aaef59d02c8a6"
+    },
+    "alignment_topology_freeze": {
+      "path": "benchmarks/perceptual-degradation-v1/alignment-topology-freeze.json",
+      "sha256": "a1b05aa006383185c36c5e3ca46f054cb7ec6aa98e4be24b359eb9fa9074a1b6"
+    },
+    "inherited_toolchain": {
+      "path": "benchmarks/audio-integrity-v2/toolchain-bindings.json",
+      "sha256": "d2af2f0b78b184189806d724c294d7606f37d2763839e17c9289f7957da52070"
+    },
+    "audio_view_implementation": {
+      "path": "scripts/perceptual_degradation_toolchain.py",
+      "sha256": "521c19ddc448ce5fb92cda5251b06f6d855b3530f74fbd00ce32d736ef54782f"
+    },
+    "audio_view_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_toolchain.py",
+      "sha256": "92c92f4404675c8d98048f2f97b03bf98f6c0240576732b3af2cd4417f3b682e"
+    },
+    "audio_view_replay": {
+      "path": "research/toolchains/evidence/perceptual-degradation-audio-view-observed-20260803-001.json",
+      "sha256": "9219f697d3e50ff6f1149c1dbfd4cf868581b1ebdcabc6f8b666402b21a6d189"
+    },
+    "literature_and_implementation_review": {
+      "path": "docs/research/perceptual-degradation-literature-review-20260803.md",
+      "sha256": "2bba714035c42a40fe1395a2ba94cc57a5b3e324f54846bef74fad01e19ae8e4"
+    }
+  },
+  "metric_families": {
+    "visqol_audio_v3_3_3": {
+      "repository": "https://github.com/google/visqol",
+      "git_commit": "c3aa2e498e0f7f14202643594335a0b9ee40bdd9",
+      "license": "Apache-2.0",
+      "source_binding_complete": true,
+      "build_recipe_frozen": false,
+      "binary_sha256": null,
+      "model_sha256": null,
+      "synthetic_replay_complete": false,
+      "execution_authorized": false
+    },
+    "gstpeaq_proxy_v0_6_1": {
+      "repository": "https://github.com/HSU-ANT/gstpeaq",
+      "git_commit": "c6e8b23d3374dbc937ef9f7cfbdb3b3f4c864352",
+      "implementation_license": "GNU Library GPL v2",
+      "source_binding_complete": true,
+      "upstream_conforms_to_itu_tolerance": false,
+      "itu_technology_consent_or_licence_cleared": false,
+      "research_use_legal_record_present": false,
+      "redistribution_boundary_approved": false,
+      "build_recipe_frozen": false,
+      "binary_sha256": null,
+      "synthetic_replay_complete": false,
+      "execution_authorized": false
+    }
+  },
+  "unmet_prerequisites": [
+    "Freeze and replay the exact ViSQOL v3.3.3 build and model files.",
+    "Obtain and commit a qualified legal record for use of the BS.1387-derived GstPEAQ proxy technology and its redistribution boundary.",
+    "Freeze and replay the exact GstPEAQ proxy build only if the legal record permits execution.",
+    "Commit a score-blind public-development acquisition manifest with source-by-source licences before downloading audio.",
+    "Keep retained audio and all sealed labels unopened until a later committed opening authorization."
+  ],
+  "authorized_next_step": "Build and replay ViSQOL on synthetic fixtures only; prepare the GstPEAQ legal question and public-development acquisition manifest. Do not execute a perceptual metric on public or retained audio."
+}

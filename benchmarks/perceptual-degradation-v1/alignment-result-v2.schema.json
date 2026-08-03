@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ryan-voitiskis/lossytrace/benchmarks/perceptual-degradation-v1/alignment-result-v2.schema.json",
+  "title": "LossyTrace topology-aware score-free alignment result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "record_kind", "case_id", "status", "public_verdict_enabled", "input", "alignment", "support"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "record_kind": {"const": "perceptual_degradation_alignment_v2"},
+    "case_id": {"type": "string", "pattern": "^case-[0-9a-f]{64}$"},
+    "status": {"enum": ["supported", "unsupported"]},
+    "public_verdict_enabled": {"const": false},
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sample_rate_hz", "reference", "test"],
+      "properties": {
+        "sample_rate_hz": {"type": "integer", "minimum": 1},
+        "reference": {"$ref": "#/$defs/side"},
+        "test": {"$ref": "#/$defs/side"}
+      }
+    },
+    "alignment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["integer_delay_samples", "fractional_delay_samples", "clock_drift_ppm", "aligned_frames", "active_seconds", "minimum_correlation", "minimum_ambiguity_margin", "edge_trim_seconds", "channel_lag_spread_samples", "structural_residual_samples", "minimum_structural_window_correlation", "channels"],
+      "properties": {
+        "integer_delay_samples": {"type": "integer"},
+        "fractional_delay_samples": {"type": "number", "minimum": -0.5, "maximum": 0.5},
+        "clock_drift_ppm": {"type": "number"},
+        "aligned_frames": {"type": "integer", "minimum": 0},
+        "active_seconds": {"type": "number", "minimum": 0},
+        "minimum_correlation": {"type": "number", "minimum": -1, "maximum": 1},
+        "minimum_ambiguity_margin": {"type": "number", "minimum": 0},
+        "edge_trim_seconds": {"type": "number", "minimum": 0},
+        "channel_lag_spread_samples": {"type": "number", "minimum": 0},
+        "structural_residual_samples": {"type": "number", "minimum": 0},
+        "minimum_structural_window_correlation": {"type": "number", "minimum": -1, "maximum": 1},
+        "channels": {
+          "type": "array",
+          "maxItems": 2,
+          "items": {"$ref": "#/$defs/channel"}
+        }
+      }
+    },
+    "support": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reasons", "limits_id"],
+      "properties": {
+        "reasons": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "ambiguous_alignment_peak",
+              "insufficient_active_audio",
+              "low_alignment_correlation",
+              "clock_drift_exceeds_limit",
+              "nonlinear_drift",
+              "gain_exceeds_limit",
+              "excessive_trim",
+              "invalid_numeric_input",
+              "invalid_channel_shape",
+              "unsupported_channel_map",
+              "channel_topology_mismatch",
+              "channel_map_mismatch",
+              "channel_alignment_disagreement",
+              "structural_edit_suspected",
+              "low_structural_window_correlation"
+            ]
+          }
+        },
+        "limits_id": {"const": "perceptual-degradation-v1-topology-fixtures-20260803-001"}
+      }
+    }
+  },
+  "$defs": {
+    "side": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["channel_count", "channel_map", "frames"],
+      "properties": {
+        "channel_count": {"type": "integer", "minimum": 0, "maximum": 2},
+        "channel_map": {"type": "array", "maxItems": 2, "items": {"enum": ["M", "L", "R"]}},
+        "frames": {"type": "integer", "minimum": 0}
+      }
+    },
+    "channel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["channel", "integer_delay_samples", "fractional_delay_samples", "observed_gain_db", "polarity", "correlation"],
+      "properties": {
+        "channel": {"enum": ["M", "L", "R"]},
+        "integer_delay_samples": {"type": "integer"},
+        "fractional_delay_samples": {"type": "number", "minimum": -0.5, "maximum": 0.5},
+        "observed_gain_db": {"type": "number"},
+        "polarity": {"enum": ["preserved", "inverted"]},
+        "correlation": {"type": "number", "minimum": -1, "maximum": 1}
+      }
+    }
+  }
+}

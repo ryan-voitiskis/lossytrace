@@ -1,0 +1,90 @@
+{
+  "disk_reserve_gib_required": 15,
+  "fixture": {
+    "channel_count": 2,
+    "channel_map": [
+      "L",
+      "R"
+    ],
+    "container": "flac",
+    "frames": 88200,
+    "pcm_sha256": "c1d10cb878470c3ab8c10d8304408daf54f6daa266d6ea0ce6c6873f7f1f8db6",
+    "sample_rate_hz": 44100
+  },
+  "native_view": {
+    "byte_identical": true,
+    "channel_count": 2,
+    "command": [
+      "<TOOL:ffmpeg_8_1_2_1>",
+      "-hide_banner",
+      "-loglevel",
+      "error",
+      "-nostdin",
+      "-fflags",
+      "+bitexact",
+      "-i",
+      "<INPUT>",
+      "-map",
+      "0:a:0",
+      "-c:a",
+      "pcm_f64le",
+      "-f",
+      "f64le",
+      "-fflags",
+      "+bitexact",
+      "pipe:1"
+    ],
+    "complete_replays": 2,
+    "f64le_sha256": "7a6de9e55847442c251e4f8750ef446f0db33bd6de35831f12b1fb9485222d0c",
+    "frames": 88200,
+    "sample_rate_hz": 44100
+  },
+  "perceptual_metric_executed": false,
+  "public_verdict_enabled": false,
+  "record_kind": "perceptual_degradation_audio_view_probe",
+  "retained_audio_accessed": false,
+  "schema_version": 1,
+  "scores_opened": false,
+  "sealed_labels_opened": false,
+  "state": "score_free_decoder_and_resampler_replay_passed",
+  "tools": {
+    "ffmpeg_8_1_2_1": {
+      "binary_sha256": "1332dc2de372bade9a8a63da0d6cdfab9de97fcefbae707bcc0b0506e1203327",
+      "version_output_sha256": "8830e8e1fff6bf09c9a577b8ad96375df7fdb9e38b188c945f8572147e6a6550"
+    },
+    "ffprobe_8_1_2_1": {
+      "binary_sha256": "4322275c1c2ac6ba15c695b288788bc1204e75211b3d5c030e5812c82a6dff73",
+      "version_output_sha256": "02fc12664a1197a1371c24546b454aa6de28fecd0a7d52308f99184b371a5011"
+    }
+  },
+  "visqol_48k_view": {
+    "byte_identical": true,
+    "channel_count": 2,
+    "command": [
+      "<TOOL:ffmpeg_8_1_2_1>",
+      "-hide_banner",
+      "-loglevel",
+      "error",
+      "-nostdin",
+      "-fflags",
+      "+bitexact",
+      "-i",
+      "<INPUT>",
+      "-map",
+      "0:a:0",
+      "-af",
+      "aresample=48000:osf=dbl:resampler=swr:filter_size=64:phase_shift=10:linear_interp=0:exact_rational=1:cutoff=0.95:filter_type=kaiser:kaiser_beta=9:dither_method=none",
+      "-c:a",
+      "pcm_f64le",
+      "-f",
+      "f64le",
+      "-fflags",
+      "+bitexact",
+      "pipe:1"
+    ],
+    "complete_replays": 2,
+    "f64le_sha256": "632eb6f703c05d679b66e75404fc59026bfd742831382fbc191a259204d91f8e",
+    "frames": 96000,
+    "sample_rate_hz": 48000
+  }
+}

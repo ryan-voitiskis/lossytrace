@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "freeze_id": "perceptual-degradation-v1-topology-fixtures-20260803-001",
+  "state": "score_free_topology_limits_frozen_before_retained_audio",
+  "supersedes_scope_limit_only": "perceptual-degradation-v1-alignment-fixtures-20260803-001",
+  "correction_history": [],
+  "features_computed": false,
+  "perceptual_metric_executed": false,
+  "retained_audio_accessed": false,
+  "scores_opened": false,
+  "sealed_labels_opened": false,
+  "public_verdict_enabled": false,
+  "upstream_mono_freeze": {
+    "path": "benchmarks/perceptual-degradation-v1/alignment-fixture-freeze.json",
+    "sha256": "7557f2b2a82d0b7f13a51533859db289f23d14e9c8c3ab4f887e41fce608ebad"
+  },
+  "bindings": {
+    "implementation": {
+      "path": "scripts/perceptual_degradation_alignment_v2.py",
+      "sha256": "72fe01344a33ffbec3967f0c64ca7cf5a3e7c0f5ba64620800115a646500e61c"
+    },
+    "result_schema": {
+      "path": "benchmarks/perceptual-degradation-v1/alignment-result-v2.schema.json",
+      "sha256": "f776c77e391e7da4bf9b6d96675023f931c71b4e2360288d4219628463b759ab"
+    },
+    "synthetic_fixture_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_alignment_v2.py",
+      "sha256": "dd680c5a3b859ac08545572ab531e93552636c53401a27b2ea1f5bd46945167e"
+    }
+  },
+  "limits": {
+    "supported_channel_maps": [["M"], ["L", "R"]],
+    "maximum_channel_lag_disagreement_samples": 1.0,
+    "structural_window_count": 7,
+    "structural_search_seconds": 0.1,
+    "maximum_structural_residual_samples": 1.5
+  },
+  "synthetic_fixture_claims": [
+    "Mono and stereo topology are explicit and deterministic.",
+    "Stereo gain and polarity are reported independently by channel.",
+    "Channel-count mismatch, unsupported maps, and map disagreement abstain.",
+    "Per-channel delay disagreement above one sample abstains.",
+    "A midstream deletion produces nonlinear local lag and abstains as a suspected structural edit."
+  ],
+  "scope_limit": "This freeze proves only score-free synthetic topology behavior. It does not prove decoder behavior on retained material, perceptual alignment validity after lossy coding, or metric accuracy.",
+  "authorized_next_step": "Bind and replay the score-free decoder/resampler views, enforce metric-execution gates, and then audit a licence-eligible public development subset without opening retained or sealed evidence."
+}
