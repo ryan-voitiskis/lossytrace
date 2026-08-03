@@ -83,18 +83,25 @@ def validate(plan: dict[str, Any], root: Path = ROOT) -> list[str]:
         errors.append("NumPy bootstrap wheel hash differs")
     if numpy_wheel.get("bytes") != 15906004:
         errors.append("NumPy bootstrap wheel size differs")
-    if "cp310-cp310-manylinux_2_17_x86_64" not in numpy_wheel.get(
-        "download_url", ""
+    expected_numpy_filename = (
+        "numpy-1.21.6-cp310-cp310-manylinux_2_17_x86_64."
+        "manylinux2014_x86_64.whl"
+    )
+    if numpy_wheel.get("filename") != expected_numpy_filename:
+        errors.append("NumPy bootstrap wheel filename differs")
+    if not numpy_wheel.get("download_url", "").endswith(
+        f"/{expected_numpy_filename}"
     ):
         errors.append("NumPy bootstrap wheel ABI differs")
     if environment.get("build_configuration") != "opt":
         errors.append("ViSQOL build configuration must remain opt")
 
     attempts = plan.get("prior_attempts", [])
-    if len(attempts) != 1:
-        errors.append("exactly one score-free prior attempt must be recorded")
-    elif attempts[0].get("synthetic_scores_produced") is not False:
-        errors.append("prior failed attempt must not claim synthetic scores")
+    if len(attempts) != 2:
+        errors.append("exactly two score-free prior attempts must be recorded")
+    for attempt in attempts:
+        if attempt.get("synthetic_scores_produced") is not False:
+            errors.append("prior failed attempt must not claim synthetic scores")
 
     generation = plan.get("fixture_generation", {})
     if generation.get("duration_seconds", 0) < 8:

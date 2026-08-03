@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "plan_id": "visqol-audio-v3-3-3-synthetic-replay-20260803-002",
+  "plan_id": "visqol-audio-v3-3-3-synthetic-replay-20260803-003",
   "state": "visqol_synthetic_build_and_replay_frozen_before_scores",
   "fixture_set_id": "visqol-synthetic-48k-stereo-v1",
   "authorization": {
@@ -44,6 +44,7 @@
       "purpose": "TensorFlow workspace configuration import only; not a ViSQOL metric implementation dependency.",
       "numpy_wheel": {
         "version": "1.21.6",
+        "filename": "numpy-1.21.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "download_url": "https://files.pythonhosted.org/packages/6f/7b/036000a55680e6c7eb81502b0aa27ce0ed65d4d8805613909967d9f8baf6/numpy-1.21.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "sha256": "5f30427731561ce75d7048ac254dbe47a2ba576229250fb60f0fb74db96501a1",
         "bytes": 15906004
@@ -61,6 +62,15 @@
       "outcome": "failed_before_metric_execution",
       "failed_step": "build",
       "failure": "TensorFlow workspace configuration could not import NumPy from the Ubuntu runner Python environment.",
+      "synthetic_scores_produced": false
+    },
+    {
+      "github_run_id": 30820824832,
+      "github_head_sha": "244913241beaf7be33d1b6a1aaafa9c087869cfd",
+      "outcome": "failed_before_metric_execution",
+      "failed_step": "numpy_bootstrap",
+      "failure": "The exact NumPy wheel verified by SHA-256, but pip rejected a local filename that omitted the wheel compatibility tags.",
+      "runner_cleanup_complete": true,
       "synthetic_scores_produced": false
     }
   ],
@@ -136,11 +146,11 @@
     },
     "plan_validator": {
       "path": "scripts/validate-perceptual-degradation-visqol-plan.py",
-      "sha256": "2ed723835f1b0752829fc3f53435b1c36723e0414b13a177066ee87c8c057127"
+      "sha256": "11b9ceeda181a3c86b26362f4276c9c323be99970a3784ec220c7adaed4eeeaa"
     },
     "tests": {
       "path": "scripts/tests/test_perceptual_degradation_visqol.py",
-      "sha256": "950bb9b624976531b5ec4fe5219e1997e3e4a6c4ffc181f647102499af6ebcba"
+      "sha256": "d7853eebc3212f1b66d5ce3055ae3b6b01c324356ce5306a376a37fe5b53b4d6"
     },
     "workspace_patch": {
       "path": "research/toolchains/patches/visqol-v3.3.3-reproducible-workspace.patch",
@@ -148,7 +158,7 @@
     },
     "workflow": {
       "path": ".github/workflows/visqol-synthetic.yml",
-      "sha256": "f4e034ed20d810b1d38a46ac6acaccfaea2aa1230566935d1a5cbb5e86e2537b"
+      "sha256": "0662e61d3c90ca5dd347844eaa70b24641b98a151e45a21644ccf65ad96ef810"
     }
   },
   "unmet_prerequisites_after_this_freeze": [

@@ -52,7 +52,8 @@ jobs:
           numpy_url=$(jq -r '.build_environment.python.numpy_wheel.download_url' "$PLAN")
           numpy_sha256=$(jq -r '.build_environment.python.numpy_wheel.sha256' "$PLAN")
           numpy_version=$(jq -r '.build_environment.python.numpy_wheel.version' "$PLAN")
-          numpy_wheel="${RUNNER_TEMP}/numpy.whl"
+          numpy_filename=$(jq -r '.build_environment.python.numpy_wheel.filename' "$PLAN")
+          numpy_wheel="${RUNNER_TEMP}/${numpy_filename}"
           numpy_target="${RUNNER_TEMP}/visqol-python"
           curl --fail --location --proto '=https' --tlsv1.2 "$numpy_url" --output "$numpy_wheel"
           echo "${numpy_sha256}  ${numpy_wheel}" | sha256sum --check --strict
@@ -107,7 +108,8 @@ jobs:
           visqol_bazel_root="${RUNNER_TEMP}/visqol-bazel-root"
           "${RUNNER_TEMP}/bazel" --output_user_root="$visqol_bazel_root" shutdown || true
           rm -rf -- "$visqol_bazel_root" "$visqol_source" "${RUNNER_TEMP}/visqol-python"
-          rm -f -- "${RUNNER_TEMP}/numpy.whl"
+          numpy_filename=$(jq -r '.build_environment.python.numpy_wheel.filename' "$PLAN")
+          rm -f -- "${RUNNER_TEMP}/${numpy_filename}"
           python3 - <<'PY'
           import shutil
           free = shutil.disk_usage(".").free

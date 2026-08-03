@@ -67,7 +67,13 @@ class VisqolSyntheticPlanTest(unittest.TestCase):
             self.plan["authorization"]["public_or_retained_audio_execution"]
         )
         self.assertIsNone(self.plan["visqol"]["binary_sha256"])
-        self.assertFalse(self.plan["prior_attempts"][0]["synthetic_scores_produced"])
+        self.assertEqual(2, len(self.plan["prior_attempts"]))
+        self.assertTrue(
+            all(
+                not attempt["synthetic_scores_produced"]
+                for attempt in self.plan["prior_attempts"]
+            )
+        )
 
     def test_fixture_generation_is_byte_identical_and_bound(self) -> None:
         with tempfile.TemporaryDirectory(prefix="lossytrace-visqol-test-a-") as a:
