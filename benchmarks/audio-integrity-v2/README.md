@@ -207,14 +207,25 @@ collapse, wrapper invariance, six complete source-domain folds, paired
 aggregation, and public path-free outputs. It does not authorize encoder or
 external transfer, threshold search, candidate promotion, or a verdict.
 
-The fixed Cannam and feature-version-0 runs have now completed under that
-plan. See the
+The fixed Cannam and feature-version-0 runs and both CRNN conditions have now
+completed under that plan. See the
 [`path-free result`](../../docs/research/development-fixed-baseline-result-20260802.md)
-and committed [`baseline evidence`](../../research/baselines/v2/evidence).
-Both passed exact wrapper invariance. Cannam failed source-safe specificity
-and paired stability; every feature-version-0 measurement failed the frozen
-paired gate. The preregistered CRNN and retained explainable-control stages
-remain to be run before the failure atlas can close.
+and
+[`CRNN result`](../../docs/research/development-crnn-baseline-result-20260803.md),
+plus the committed [`baseline evidence`](../../research/baselines/v2/evidence).
+Every completed condition passed exact wrapper invariance. Cannam failed
+source-safe specificity and paired stability; every feature-version-0
+measurement failed the frozen paired gate; and both learned conditions made
+near-universal positive decisions.
+
+The final retained-baseline stage is frozen separately in the
+[`explainable-control adapter preregistration`](../../docs/research/explainable-control-v2-adapter-preregistration-20260803.md)
+and machine-readable
+[`adapter plan`](explainable-control-adapter-plan.json). It reruns A0-A4 and
+R1/R2 over 6,032 scoped development cells as support-aware raw paired controls
+only. It forbids v2 threshold fitting and classification metrics. Both private
+runs must finish and pass wrapper invariance before their path-free aggregate
+is interpreted.
 
 ## Evidence partitions
 

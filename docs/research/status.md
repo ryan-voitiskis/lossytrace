@@ -260,6 +260,9 @@ Naive reaches 98.30% recall only by producing 95.48% negative-case false
 positives and alerts in 518/527 negative source groups. Random high-frequency
 masking does not improve robustness: it labels every case positive, alerts in
 all 527 negative groups, and reaches only 59.20% paired positive direction
-with a 55.64% one-sided Wilson lower bound. The next frozen execution gate is
-the separately committed v2 adapter for retained A0-A4 and R1/R2 explainable
-controls. No retained transfer score has been opened.
+with a 55.64% one-sided Wilson lower bound. The
+[`v2 explainable-control adapter`](explainable-control-v2-adapter-preregistration-20260803.md)
+is now frozen before score opening. It will run retained A0-A4 and R1/R2 over
+6,032 development cells as support-aware raw paired controls, with no v2
+threshold fitting or classification claims. No retained transfer score has
+been opened.

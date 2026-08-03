@@ -26,5 +26,10 @@ rate and only 46.68% paired positive direction. No feature-version-0
 measurement passes the frozen paired gate. Naive CRNN alerts on 518/527
 negative source groups and reaches only 70.59% paired direction; the masked
 condition alerts on all 527 negative groups and falls to 59.20% paired
-direction. The retained explainable controls remain pending, and neither
+direction. The retained explainable controls are now frozen, but not yet
+scored, under the separate
+[`adapter preregistration`](../../../docs/research/explainable-control-v2-adapter-preregistration-20260803.md)
+and
+[`adapter plan`](../../../benchmarks/audio-integrity-v2/explainable-control-adapter-plan.json).
+They are raw paired controls with no v2 classification threshold. Neither
 transfer partition has been opened.
