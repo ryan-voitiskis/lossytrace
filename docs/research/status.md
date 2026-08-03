@@ -272,3 +272,11 @@ analyzer requires both complete reports. The
 [`protocol-stop report`](development-explainable-control-protocol-failure-20260803.md)
 records the failure without a post-score support or analysis change. No
 retained transfer score has been opened.
+
+The completed interpreted atlas has no representation meeting the frozen 90%
+paired-direction and 85% one-sided lower-bound gate without a source-domain
+reversal. The
+[`decoded-PCM identifiability result`](decoded-pcm-identifiability-result-20260803.md)
+therefore closes this program as a conditional negative: no new representation
+is preregistered, no transfer score is opened, and the public library remains
+verdict-free at feature version 0.

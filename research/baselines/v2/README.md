@@ -38,3 +38,10 @@ could not run. See the
 and path-free
 [`failure record`](evidence/explainable-controls-observed-20260803-001-protocol-failure.json).
 Neither transfer partition has been opened.
+
+The final gate decision and recommended next boundary are in the
+[`decoded-PCM identifiability result`](../../../docs/research/decoded-pcm-identifiability-result-20260803.md)
+and machine-readable
+[`decision record`](evidence/identifiability-decision-20260803.json). No
+completed interpreted representation passed the paired discovery gate, so no
+new representation or transfer opening is authorized.

@@ -39,6 +39,8 @@ does not include the input path.
 - `src/`: the verdict-free compression-trace measurements and CLI.
 - `benchmarks/audio-integrity-v1/`: reproducible benchmark contracts,
   manifests, fingerprints, and aggregate development reports.
+- `benchmarks/audio-integrity-v2/`: the source-grouped factorial challenge
+  benchmark, sealed evidence partitions, and frozen baseline plans.
 - `scripts/`: corpus staging, controlled lossy-to-lossless generation,
   evaluation, safety gates, and research tooling.
 - `research/exact-transform/`: source recovered from the final exact-transform
@@ -47,7 +49,8 @@ does not include the input path.
 
 The 33 research iterations were experiments, not 33 software releases. The
 latest candidates remain rejected. See
-[`docs/research/status.md`](docs/research/status.md).
+[`docs/research/status.md`](docs/research/status.md) and the
+[`decoded-PCM identifiability result`](docs/research/decoded-pcm-identifiability-result-20260803.md).
 
 ## Data policy
 

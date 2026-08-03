@@ -233,6 +233,12 @@ and path-free
 [`failure record`](../../research/baselines/v2/evidence/explainable-controls-observed-20260803-001-protocol-failure.json)
 preserve that boundary.
 
+The resulting
+[`identifiability decision`](../../docs/research/decoded-pcm-identifiability-result-20260803.md)
+closes the current program without a new representation or transfer opening.
+The challenge benchmark remains a reusable falsification and regression
+subsystem; it does not enable a public history verdict.
+
 ## Evidence partitions
 
 `mechanism_development` is paired, source-grouped discovery evidence. It may

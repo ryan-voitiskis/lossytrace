@@ -37,6 +37,14 @@ EXPLAINABLE_FAILURE_PATH = (
     / "evidence"
     / "explainable-controls-observed-20260803-001-protocol-failure.json"
 )
+IDENTIFIABILITY_DECISION_PATH = (
+    ROOT
+    / "research"
+    / "baselines"
+    / "v2"
+    / "evidence"
+    / "identifiability-decision-20260803.json"
+)
 
 
 class AudioIntegrityV2DevelopmentBaselineTest(unittest.TestCase):
@@ -228,6 +236,32 @@ class AudioIntegrityV2DevelopmentBaselineTest(unittest.TestCase):
         self.assertFalse(result["analysis"]["a0_through_a4_scores_interpreted"])
         self.assertFalse(result["analysis"]["r1_r2_scores_interpreted"])
         self.assertFalse(result["interpretation"]["baseline_or_candidate_can_be_promoted"])
+
+    def test_identifiability_decision_keeps_transfer_and_verdict_closed(self) -> None:
+        result = json.loads(
+            IDENTIFIABILITY_DECISION_PATH.read_text(encoding="utf-8")
+        )
+        common.assert_public_path_free(result)
+        self.assertEqual(
+            "mechanism_development_conditional_non_identifiability_result",
+            result["state"],
+        )
+        self.assertEqual(
+            "close_without_new_representation_or_transfer", result["decision"]
+        )
+        self.assertEqual(
+            0,
+            result["discovery_gate"][
+                "passing_completed_interpreted_representation_count"
+            ],
+        )
+        self.assertEqual([], result["new_representations_preregistered"])
+        self.assertFalse(result["transfer"]["encoder_transfer_scores_opened"])
+        self.assertFalse(result["transfer"]["external_transfer_scores_opened"])
+        self.assertFalse(result["transfer"]["frozen_survivor_available"])
+        self.assertFalse(result["public_verdict_enabled"])
+        self.assertFalse(result["interpretation"]["mathematical_non_identifiability_proved"])
+        self.assertTrue(result["interpretation"]["rigorous_negative_result"])
 
 
 if __name__ == "__main__":
