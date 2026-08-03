@@ -19,6 +19,7 @@ EXPECTED_COMMIT = "c3aa2e498e0f7f14202643594335a0b9ee40bdd9"
 EXPECTED_TREE = "7a0c95a103c4ba40d6337f06f80848e571b00b3c"
 EXPECTED_MODEL_SHA256 = "1e8246ed33bf36dc5c859351f7110f2cd31f98661989715c0fcf974ec48d3e2e"
 EXPECTED_BAZEL_SHA256 = "70dc0bee198a4c3d332925a32d464d9036a831977501f66d4996854ad4e4fc0d"
+EXPECTED_NUMPY_SHA256 = "5f30427731561ce75d7048ac254dbe47a2ba576229250fb60f0fb74db96501a1"
 
 
 def sha256_file(path: Path) -> str:
@@ -72,6 +73,28 @@ def validate(plan: dict[str, Any], root: Path = ROOT) -> list[str]:
         errors.append("Bazel version differs")
     if bazel.get("binary_sha256") != EXPECTED_BAZEL_SHA256:
         errors.append("Bazel binary hash differs")
+    python = environment.get("python", {})
+    if python.get("major_minor") != "3.10":
+        errors.append("Python major/minor differs")
+    numpy_wheel = python.get("numpy_wheel", {})
+    if numpy_wheel.get("version") != "1.21.6":
+        errors.append("NumPy bootstrap version differs")
+    if numpy_wheel.get("sha256") != EXPECTED_NUMPY_SHA256:
+        errors.append("NumPy bootstrap wheel hash differs")
+    if numpy_wheel.get("bytes") != 15906004:
+        errors.append("NumPy bootstrap wheel size differs")
+    if "cp310-cp310-manylinux_2_17_x86_64" not in numpy_wheel.get(
+        "download_url", ""
+    ):
+        errors.append("NumPy bootstrap wheel ABI differs")
+    if environment.get("build_configuration") != "opt":
+        errors.append("ViSQOL build configuration must remain opt")
+
+    attempts = plan.get("prior_attempts", [])
+    if len(attempts) != 1:
+        errors.append("exactly one score-free prior attempt must be recorded")
+    elif attempts[0].get("synthetic_scores_produced") is not False:
+        errors.append("prior failed attempt must not claim synthetic scores")
 
     generation = plan.get("fixture_generation", {})
     if generation.get("duration_seconds", 0) < 8:

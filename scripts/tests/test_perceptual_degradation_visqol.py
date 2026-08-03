@@ -67,6 +67,7 @@ class VisqolSyntheticPlanTest(unittest.TestCase):
             self.plan["authorization"]["public_or_retained_audio_execution"]
         )
         self.assertIsNone(self.plan["visqol"]["binary_sha256"])
+        self.assertFalse(self.plan["prior_attempts"][0]["synthetic_scores_produced"])
 
     def test_fixture_generation_is_byte_identical_and_bound(self) -> None:
         with tempfile.TemporaryDirectory(prefix="lossytrace-visqol-test-a-") as a:
@@ -138,7 +139,10 @@ with open(value("--output_debug"), "w", encoding="utf-8") as output:
         self.assertIn("ubuntu-22.04", source)
         self.assertIn("--jobs=6", source)
         self.assertIn("--local_cpu_resources=6", source)
+        self.assertIn("--compilation_mode=opt", source)
         self.assertIn("timeout-minutes: 90", source)
+        self.assertIn("Install hash-bound NumPy bootstrap", source)
+        self.assertIn("if: always()", source)
         self.assertIn("actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803", source)
         self.assertIn("actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02", source)
 

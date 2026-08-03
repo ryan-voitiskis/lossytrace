@@ -44,6 +44,22 @@ jobs:
           chmod 0755 "${RUNNER_TEMP}/bazel"
           "${RUNNER_TEMP}/bazel" --version
 
+      - name: Install hash-bound NumPy bootstrap
+        run: |
+          python_major_minor=$(python3 -c 'import sys; print(f"{sys.version_info.major}.{sys.version_info.minor}")')
+          expected_python_major_minor=$(jq -r '.build_environment.python.major_minor' "$PLAN")
+          test "$python_major_minor" = "$expected_python_major_minor"
+          numpy_url=$(jq -r '.build_environment.python.numpy_wheel.download_url' "$PLAN")
+          numpy_sha256=$(jq -r '.build_environment.python.numpy_wheel.sha256' "$PLAN")
+          numpy_version=$(jq -r '.build_environment.python.numpy_wheel.version' "$PLAN")
+          numpy_wheel="${RUNNER_TEMP}/numpy.whl"
+          numpy_target="${RUNNER_TEMP}/visqol-python"
+          curl --fail --location --proto '=https' --tlsv1.2 "$numpy_url" --output "$numpy_wheel"
+          echo "${numpy_sha256}  ${numpy_wheel}" | sha256sum --check --strict
+          python3 -m pip install --disable-pip-version-check --no-deps --target "$numpy_target" "$numpy_wheel"
+          PYTHONPATH="$numpy_target" python3 -c 'import numpy, sys; expected = sys.argv[1]; assert numpy.__version__ == expected, (numpy.__version__, expected)' "$numpy_version"
+          echo "PYTHONPATH=${numpy_target}" >> "$GITHUB_ENV"
+
       - name: Materialize exact sparse source and patch dead tags
         run: |
           visqol_source="${RUNNER_TEMP}/visqol-source"
@@ -74,6 +90,7 @@ jobs:
           "${RUNNER_TEMP}/bazel" \
             --output_user_root="$visqol_bazel_root" \
             build //:visqol \
+            --compilation_mode=opt \
             --jobs=6 \
             --local_cpu_resources=6 \
             --local_ram_resources=6144 \
@@ -84,11 +101,13 @@ jobs:
           chmod 0755 "${visqol_artifact}/visqol"
 
       - name: Release disposable build storage and preserve reserve
+        if: always()
         run: |
           visqol_source="${RUNNER_TEMP}/visqol-source"
           visqol_bazel_root="${RUNNER_TEMP}/visqol-bazel-root"
           "${RUNNER_TEMP}/bazel" --output_user_root="$visqol_bazel_root" shutdown || true
-          rm -rf -- "$visqol_bazel_root" "$visqol_source"
+          rm -rf -- "$visqol_bazel_root" "$visqol_source" "${RUNNER_TEMP}/visqol-python"
+          rm -f -- "${RUNNER_TEMP}/numpy.whl"
           python3 - <<'PY'
           import shutil
           free = shutil.disk_usage(".").free
@@ -112,6 +131,8 @@ jobs:
           compiler_version=$(cc --version | head -1)
           kernel_version=$(uname -srvmo)
           bazel_version=$("${RUNNER_TEMP}/bazel" --version)
+          python_version=$(python3 --version)
+          numpy_version=$(jq -r '.build_environment.python.numpy_wheel.version' "$PLAN")
           binary_sha256=$(sha256sum "${visqol_artifact}/visqol" | cut -d' ' -f1)
           model_sha256=$(sha256sum "${visqol_artifact}/libsvm_nu_svr_model.txt" | cut -d' ' -f1)
           jq -n \
@@ -121,9 +142,11 @@ jobs:
             --arg kernel "$kernel_version" \
             --arg compiler "$compiler_version" \
             --arg bazel "$bazel_version" \
+            --arg python "$python_version" \
+            --arg numpy "$numpy_version" \
             --arg binary_sha256 "$binary_sha256" \
             --arg model_sha256 "$model_sha256" \
-            '{schema_version: 1, state: "visqol_synthetic_build_observed", github_sha: $github_sha, runner_image: $runner_image, runner_image_version: $runner_image_version, kernel: $kernel, compiler: $compiler, bazel: $bazel, maximum_workers: 6, binary_sha256: $binary_sha256, model_sha256: $model_sha256, paths_included: false}' \
+            '{schema_version: 1, state: "visqol_synthetic_build_observed", github_sha: $github_sha, runner_image: $runner_image, runner_image_version: $runner_image_version, kernel: $kernel, compiler: $compiler, bazel: $bazel, python: $python, numpy: $numpy, compilation_mode: "opt", maximum_workers: 6, binary_sha256: $binary_sha256, model_sha256: $model_sha256, paths_included: false}' \
             > "${visqol_artifact}/build-environment.json"
 
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02

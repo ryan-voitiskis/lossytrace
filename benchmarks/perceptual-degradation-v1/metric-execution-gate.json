@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "gate_id": "perceptual-degradation-v1-metric-execution-20260803-001",
+  "gate_id": "perceptual-degradation-v1-metric-execution-20260803-002",
   "state": "metric_execution_blocked_pending_exact_binaries_and_legal_clearance",
   "public_verdict_enabled": false,
   "retained_audio_metric_execution_authorized": false,
@@ -55,7 +55,7 @@
     },
     "visqol_synthetic_replay_plan": {
       "path": "benchmarks/perceptual-degradation-v1/visqol-synthetic-replay-plan.json",
-      "sha256": "4a895ae8a2725448f9e9ef8be9b26fb33dedaaa24b91d069c6154f324cfc47ae"
+      "sha256": "2825ef32cf0f0a9a81565ed03e392a65cead7486031ffa29fa1e22b1e81ec70d"
     }
   },
   "metric_families": {
@@ -94,5 +94,5 @@
     "Freeze and replay the exact GstPEAQ proxy build only if the legal record permits execution.",
     "Keep retained audio and all sealed labels unopened until a later committed opening authorization."
   ],
-  "authorized_next_step": "Execute only the branch-scoped ephemeral ViSQOL workflow on the frozen synthetic fixtures. Do not download ODAQ audio or execute a perceptual metric on public or retained audio."
+  "authorized_next_step": "Retry only the branch-scoped ephemeral ViSQOL workflow with the newly hash-bound NumPy configuration bootstrap on the frozen synthetic fixtures. Do not download ODAQ audio or execute a perceptual metric on public or retained audio."
 }
