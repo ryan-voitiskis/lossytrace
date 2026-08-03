@@ -366,3 +366,18 @@ transform, or synthetic replay has yet been observed under that authority. The
 next gate is two fresh byte-identical path-free reports covering the 12
 synthetic-only cases. Actual stimuli, audio access, metrics, listener evidence,
 and all perceptual truth remain unopened and unauthorized.
+
+After commit `9b6d2ba613e89b418030b0fedf0f6a73f7137fb7` passed exact-head
+CI, the authorized synthetic replay ran exactly twice in fresh temporary
+directories. Both 12-case reports were byte-identical with SHA-256
+`099b5ac6eff9a705dfa4575a55ea827d56808890b92932f4379e187854178137`.
+All four production controls exceeded the frozen changed-frame support floor;
+all eight two-generation codec paths completed, and only the two declared
+44.1/48 kHz transitions resampled. Generated PCM and bitstreams were removed
+after checking; the full reports were moved to recoverable Trash and are not
+part of the research corpus. The retained
+[`path-free replay result`](perceptual-degradation-production-generation-synthetic-replay-20260804.md)
+binds the aggregate observation without assigning perceptual truth. These
+recipes are now eligible for future manifest construction, while actual audio
+acquisition and stimulus generation remain unauthorized pending source breadth,
+licence/attribution, excerpt, and physical-playback gates.

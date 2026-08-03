@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "evidence_id": "perceptual-degradation-production-generation-synthetic-replay-20260804-001",
+  "state": "two_fresh_byte_identical_synthetic_replays_passed_actual_audio_unopened",
+  "bindings": {
+    "implementation_commit": "9b6d2ba613e89b418030b0fedf0f6a73f7137fb7",
+    "exact_head_ci_run": "https://github.com/ryan-voitiskis/lossytrace/actions/runs/30835207894",
+    "recipe_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/production-generation-control-plan.json",
+      "sha256": "cea7450b3c91ad593cef2be6033d0f8b25c7391795d554f697aefd0f8a11760c"
+    },
+    "execution_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/production-generation-execution-plan.json",
+      "sha256": "a9e896ea59cfb11082dea714445f4a89fa6578ab2e7b85626c63f2326cda9830"
+    },
+    "implementation": {
+      "path": "scripts/perceptual_degradation_production_generation.py",
+      "sha256": "ae289da83795fc4223ef80f557919f9cb6002666f0636b47065c5fac4fb80039"
+    },
+    "toolchain": {
+      "path": "benchmarks/audio-integrity-v2/toolchain-bindings.json",
+      "sha256": "d2af2f0b78b184189806d724c294d7606f37d2763839e17c9289f7957da52070"
+    }
+  },
+  "replay_observation": {
+    "replay_count": 2,
+    "fresh_temporary_directories": true,
+    "report_sha256s": [
+      "099b5ac6eff9a705dfa4575a55ea827d56808890b92932f4379e187854178137",
+      "099b5ac6eff9a705dfa4575a55ea827d56808890b92932f4379e187854178137"
+    ],
+    "byte_identical_reports": true,
+    "full_reports_retained_in_research_corpus": false,
+    "reports_moved_to_recoverable_trash": true,
+    "generated_audio_or_bitstreams_retained": false,
+    "path_free_aggregate_retained": true,
+    "timing_retained": false,
+    "minimum_free_disk_gib_enforced": 15
+  },
+  "verified_tools": {
+    "ffmpeg_8_1_2_1": "1332dc2de372bade9a8a63da0d6cdfab9de97fcefbae707bcc0b0506e1203327",
+    "lame_cli_4_0": "11095c200ebbef2b43adc795aee0ae1adcfc91a1467b70f524582327bc3f685a",
+    "oggenc_1_4_3_libvorbis_1_3_7": "920e29fd11a09fc047e979bd6113dbb5203756738cfd2823264c44d1a48f7566",
+    "opusenc_0_2_2_libopus_1_6_1": "41935fc050bb066108f9961ddbdc0b82709e445c77d0ea80a6744b75c135cfda"
+  },
+  "production_cases": [
+    {
+      "recipe_id": "production-hard-clip-minus6dbfs-v1",
+      "changed_frame_count": 53330,
+      "changed_frame_fraction": 0.5555208333333334,
+      "support_passed": true
+    },
+    {
+      "recipe_id": "production-high-shelf-minus6db-nyquist-fir3-v1",
+      "changed_frame_count": 36925,
+      "changed_frame_fraction": 0.3846354166666667,
+      "support_passed": true
+    },
+    {
+      "recipe_id": "production-block-limiter-minus6dbfs-5ms-v1",
+      "changed_frame_count": 96000,
+      "changed_frame_fraction": 1.0,
+      "support_passed": true
+    },
+    {
+      "recipe_id": "production-stereo-width-half-mid-side-v1",
+      "changed_frame_count": 95990,
+      "changed_frame_fraction": 0.9998958333333333,
+      "support_passed": true
+    }
+  ],
+  "generation_cases": [
+    {
+      "recipe_id": "generation-repeat-mp3-lame-v2-v1",
+      "codec_families": ["mp3", "mp3"],
+      "stage_count": 2,
+      "intermediate_resampling_applied": false
+    },
+    {
+      "recipe_id": "generation-repeat-aac-ffmpeg-128-v1",
+      "codec_families": ["aac_lc", "aac_lc"],
+      "stage_count": 2,
+      "intermediate_resampling_applied": false
+    },
+    {
+      "recipe_id": "generation-repeat-opus-libopus-128-v1",
+      "codec_families": ["opus", "opus"],
+      "stage_count": 2,
+      "intermediate_resampling_applied": false
+    },
+    {
+      "recipe_id": "generation-repeat-vorbis-libvorbis-q6-v1",
+      "codec_families": ["vorbis", "vorbis"],
+      "stage_count": 2,
+      "intermediate_resampling_applied": false
+    },
+    {
+      "recipe_id": "generation-cross-mp3-v2-to-aac-128-v1",
+      "codec_families": ["mp3", "aac_lc"],
+      "stage_count": 2,
+      "intermediate_resampling_applied": false
+    },
+    {
+      "recipe_id": "generation-cross-aac-128-to-opus-128-v1",
+      "codec_families": ["aac_lc", "opus"],
+      "stage_count": 2,
+      "intermediate_resampling_applied": true
+    },
+    {
+      "recipe_id": "generation-cross-opus-128-to-vorbis-q6-v1",
+      "codec_families": ["opus", "vorbis"],
+      "stage_count": 2,
+      "intermediate_resampling_applied": true
+    },
+    {
+      "recipe_id": "generation-cross-vorbis-q6-to-mp3-v2-v1",
+      "codec_families": ["vorbis", "mp3"],
+      "stage_count": 2,
+      "intermediate_resampling_applied": false
+    }
+  ],
+  "summary": {
+    "synthetic_case_count": 12,
+    "production_case_count": 4,
+    "production_support_pass_count": 4,
+    "generation_case_count": 8,
+    "codec_family_count": 4,
+    "actual_audio_accessed": false,
+    "metric_score_opened": false,
+    "listener_response_collected": false,
+    "perceptual_truth_included": false,
+    "codec_quality_ranking_included": false
+  },
+  "decision": {
+    "synthetic_recipe_replay_complete": true,
+    "production_controls_complete_for_manifest_construction": true,
+    "multi_generation_controls_complete_for_manifest_construction": true,
+    "actual_stimuli_generated": false,
+    "condition_perceptual_truth_assigned": false,
+    "human_collection_authorized": false
+  }
+}

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "gate_id": "perceptual-degradation-listening-preparation-20260804-007",
+  "gate_id": "perceptual-degradation-listening-preparation-20260804-008",
   "state": "protocol_prepared_human_collection_unauthorized",
   "human_collection_authorized": false,
   "recruitment_authorized": false,
@@ -206,6 +206,22 @@
     "production_generation_execution_plan_tests": {
       "path": "scripts/tests/test_perceptual_degradation_production_generation_execution_plan.py",
       "sha256": "e304fc1429c381e7010aa62176aa45b6f7f74cd34a4e1c35a5cf9c468f3f6ecc"
+    },
+    "production_generation_synthetic_replay_evidence": {
+      "path": "research/toolchains/evidence/perceptual-degradation-production-generation-synthetic-replay-20260804-001.json",
+      "sha256": "1dec93a0334e6213ef4b952b4aea11018d5611755e88833e60c22030b25c54b8"
+    },
+    "production_generation_synthetic_replay_report": {
+      "path": "docs/research/perceptual-degradation-production-generation-synthetic-replay-20260804.md",
+      "sha256": "5bed0b2d7b89da6b0003889462c4de107d1e564a433130f460c89a917451cf04"
+    },
+    "production_generation_synthetic_replay_validator": {
+      "path": "scripts/validate-perceptual-degradation-production-generation-replay.py",
+      "sha256": "a6e1f15263aa63ba415059628b6368a9ac80254eb1857deb07bdc386d828bb25"
+    },
+    "production_generation_synthetic_replay_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_production_generation_replay.py",
+      "sha256": "38985a0be4acc9198b64c5bbcb8bf5e395f2103d3be351fd6ff764cac073f91a"
     }
   },
   "unresolved_operational_fields": [
@@ -219,5 +235,5 @@
     "public minimum cell size and suppression policy",
     "qualified playback chain and calibration method"
   ],
-  "authorized_next_step": "Commit and validate the hash-bound production/generation implementation and synthetic-only execution plan, pass exact-head CI, then run exactly two fresh byte-identical synthetic reports. Complete source attribution and legal-operational records before freezing a score-blind source-and-condition manifest. Continue physical playback qualification without contacting or collecting from real listeners. Actual audio acquisition, actual stimulus generation, metric execution and human collection remain unauthorized."
+  "authorized_next_step": "Use the validated production and multi-generation recipes only as score-blind manifest candidates. Complete independently grouped mastered-music breadth, source attribution and legal-operational records before freezing a source-and-condition manifest. Continue physical playback qualification without contacting or collecting from real listeners. Actual audio acquisition, actual stimulus generation, metric execution and human collection remain unauthorized."
 }
