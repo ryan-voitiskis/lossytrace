@@ -94,12 +94,19 @@ def validate(plan: dict[str, Any], root: Path = ROOT) -> list[str]:
     if environment.get("ephemeral_remote_build_authorized") is not True:
         errors.append("exact ephemeral second-environment build must be authorized")
     compiler = environment.get("compiler", {})
-    if compiler != {
-        "cc": "/usr/bin/gcc-13",
-        "cxx": "/usr/bin/g++-13",
-        "expected_full_version": "13.3.0",
-    }:
+    if compiler.get("cc") != "/usr/bin/gcc-13" or compiler.get("cxx") != "/usr/bin/g++-13":
         errors.append("second compiler binding differs")
+    if compiler.get("expected_full_version") != "13.3.0":
+        errors.append("second compiler version differs")
+    compatibility = compiler.get("compatibility_include", {})
+    if compatibility.get("header") != "cstdint":
+        errors.append("compiler compatibility header differs")
+    if compatibility.get("target_cxxopt") != ["-include", "cstdint"]:
+        errors.append("target compiler compatibility options differ")
+    if compatibility.get("host_cxxopt") != ["-include", "cstdint"]:
+        errors.append("host compiler compatibility options differ")
+    if "no visqol metric source or dependency source is changed" not in compatibility.get("scope", "").lower():
+        errors.append("compiler compatibility scope must exclude source changes")
     bazel = environment.get("bazel", {})
     if bazel.get("version") != "3.7.2" or bazel.get("binary_sha256") != EXPECTED_BAZEL_SHA256:
         errors.append("Bazel binding differs")
@@ -124,6 +131,19 @@ def validate(plan: dict[str, Any], root: Path = ROOT) -> list[str]:
         errors.append("NumPy bootstrap wheel ABI differs")
     if environment.get("build_target") != "//:visqol" or environment.get("build_configuration") != "opt":
         errors.append("ViSQOL build target or configuration differs")
+
+    attempts = plan.get("prior_attempts", [])
+    if len(attempts) != 1:
+        errors.append("exactly one incomplete second-environment attempt must be recorded")
+    for attempt in attempts:
+        if attempt.get("outcome") != "failed_before_metric_execution":
+            errors.append("prior attempt must have failed before metric execution")
+        if attempt.get("runner_cleanup_complete") is not True:
+            errors.append("prior attempt runner cleanup must be complete")
+        if attempt.get("synthetic_scores_produced") is not False:
+            errors.append("prior attempt must not claim synthetic scores")
+        if attempt.get("completed_evidence_record") is not False:
+            errors.append("prior attempt must not claim completed evidence")
 
     generation = plan.get("fixture_generation", {})
     if generation.get("sample_rate_hz") != 48000 or generation.get("channel_count") != 2:

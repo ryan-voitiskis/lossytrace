@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "gate_id": "perceptual-degradation-v1-metric-execution-20260803-007",
+  "gate_id": "perceptual-degradation-v1-metric-execution-20260803-008",
   "state": "metric_execution_blocked_pending_cross_environment_and_legal_clearance",
   "public_verdict_enabled": false,
   "retained_audio_metric_execution_authorized": false,
@@ -73,7 +73,7 @@
     },
     "visqol_second_environment_plan": {
       "path": "benchmarks/perceptual-degradation-v1/visqol-synthetic-second-environment-plan.json",
-      "sha256": "15f0fb4b20187a221e0f464cbde59b023d3be5a079583555ff5fabaebfd04048"
+      "sha256": "53f61c0e9a6fb9ff58ec46fa9d2ab70344221adf8748006378b70eb9c2bf8d49"
     }
   },
   "second_environment_execution": {

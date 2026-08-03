@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "plan_id": "visqol-audio-v3-3-3-synthetic-second-environment-20260803-001",
+  "plan_id": "visqol-audio-v3-3-3-synthetic-second-environment-20260803-002",
   "state": "visqol_synthetic_build_and_replay_frozen_before_scores",
   "fixture_set_id": "visqol-synthetic-48k-stereo-v1",
   "authorization": {
@@ -39,7 +39,19 @@
     "compiler": {
       "cc": "/usr/bin/gcc-13",
       "cxx": "/usr/bin/g++-13",
-      "expected_full_version": "13.3.0"
+      "expected_full_version": "13.3.0",
+      "compatibility_include": {
+        "header": "cstdint",
+        "target_cxxopt": [
+          "-include",
+          "cstdint"
+        ],
+        "host_cxxopt": [
+          "-include",
+          "cstdint"
+        ],
+        "scope": "Force the standard fixed-width integer header into old pinned transitive dependencies that relied on GCC 11 transitive includes; no ViSQOL metric source or dependency source is changed."
+      }
     },
     "bazel": {
       "version": "3.7.2",
@@ -66,6 +78,18 @@
     "repository_resolution_record_required": true,
     "artifact_retention_days": 1
   },
+  "prior_attempts": [
+    {
+      "github_run_id": 30824985649,
+      "github_head_sha": "e5414e8361e1f791fb1323b458cc93bd4bae406b",
+      "outcome": "failed_before_metric_execution",
+      "failed_step": "build",
+      "failure": "Pinned older Abseil and TensorFlow Lite dependency sources relied on transitive fixed-width integer declarations that GCC 13 no longer supplies; compilation requires an explicit standard cstdint compatibility include.",
+      "runner_cleanup_complete": true,
+      "synthetic_scores_produced": false,
+      "completed_evidence_record": false
+    }
+  ],
   "fixture_generation": {
     "sample_rate_hz": 48000,
     "channel_count": 2,
@@ -155,11 +179,11 @@
     },
     "plan_validator": {
       "path": "scripts/validate-perceptual-degradation-visqol-second-environment-plan.py",
-      "sha256": "82f126c9d5f402d1b9af2c1448eba210ddc84845fab4845dc40094323bb489f2"
+      "sha256": "5c7dea6dea1ae8a92fd7a845e00bd6d00b40dd5edc2dafc465c5b3e1c7799268"
     },
     "tests": {
       "path": "scripts/tests/test_perceptual_degradation_visqol_cross_environment.py",
-      "sha256": "e0d70e5307603e0cc2ea6784aae6f226f18cedec43fbc2f01c97b888f34a19d7"
+      "sha256": "428cedc538644aebc64346f72b4a41915becfd851eac2fdd31ef1d9cb194ddfd"
     },
     "workspace_patch": {
       "path": "research/toolchains/patches/visqol-v3.3.3-reproducible-workspace.patch",
@@ -167,7 +191,7 @@
     },
     "workflow": {
       "path": ".github/workflows/visqol-synthetic-second-environment.yml",
-      "sha256": "40a4ee53fffa119d1187d3b54160457d8e020a2344eb39d2320f507bc8264654"
+      "sha256": "7b9a9d7a2e5e1b50448b3ce0504ef8612f134490412cfbb9e967080201a402b8"
     },
     "first_replay_observation": {
       "path": "research/toolchains/evidence/visqol-synthetic-replay-observed-20260803-001.json",

@@ -23,6 +23,9 @@ FIRST_REPLAY = (
     / "evidence"
     / "visqol-synthetic-replay-observed-20260803-001.json"
 )
+WORKFLOW = (
+    ROOT / ".github" / "workflows" / "visqol-synthetic-second-environment.yml"
+)
 SPEC = importlib.util.spec_from_file_location("visqol_cross_environment", SCRIPT)
 assert SPEC and SPEC.loader
 MODULE = importlib.util.module_from_spec(SPEC)
@@ -60,6 +63,15 @@ class VisqolCrossEnvironmentTest(unittest.TestCase):
         )
         self.assertIsNone(self.plan["visqol"]["binary_sha256"])
         self.assertFalse(self.plan["visqol"]["synthetic_replay_complete"])
+        self.assertEqual(1, len(self.plan["prior_attempts"]))
+        self.assertFalse(self.plan["prior_attempts"][0]["synthetic_scores_produced"])
+
+    def test_workflow_binds_nonsemantic_gcc13_compatibility_include(self) -> None:
+        source = WORKFLOW.read_text(encoding="utf-8")
+        self.assertIn("--cxxopt=-include", source)
+        self.assertIn("--cxxopt=cstdint", source)
+        self.assertIn("--host_cxxopt=-include", source)
+        self.assertIn("--host_cxxopt=cstdint", source)
 
     def test_plan_rejects_perceptual_threshold_or_retained_authorization(self) -> None:
         changed = copy.deepcopy(self.plan)
