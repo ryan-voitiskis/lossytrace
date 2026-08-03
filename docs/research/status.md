@@ -15,6 +15,7 @@ release-safe lossy-source verdict.
 | 2026-08-01 exact-hybrid A0–A4 | Rejected: every row had a source-domain false positive and only 14–23% supported MP3-128 recall | Reproducible exact replay and source-domain ablation harness |
 | 2026-08-02 codec projection R1–R2 | Rejected: both rows had a source-domain false positive and zero supported MP3-128 recall | Deterministic two-cycle oracle, grouped analyzer, and path-free negative result |
 | 2026-08-02 Cannam fixed-rule CNN | Rejected: 99.44% P1 recall but 67.53% negative-case false positives and alerts in 545/597 negative source groups | Exact-revision replay, duration audit, and path-free cross-domain failure atlas |
+| 2026-08-03 naive/masked CRNN | Baseline failure: naive alerted on 518/527 negative groups; masking collapsed to 527/527 and only 59.20% paired direction | Deterministic six-domain folds, restart-safe checkpoints, and path-free learned-baseline failure atlas |
 
 The v32+v33 diagnostic reached strong observed development recall and zero
 supported-negative alerts, but failed eight SQAM AAC invariance groups. Those
@@ -253,5 +254,12 @@ Cannam reached 91.82% recall but 64.05% negative false positives and only
 46.68% matched-reference positive direction. No feature-version-0 measurement
 met the 90% direction plus 85% one-sided lower-bound gate; the nearest,
 spectral-edge height, had incomplete support and reversed on NSynth train.
-The naive/masked CRNN folds and retained explainable controls remain pending.
-No retained transfer score has been opened.
+The naive/masked CRNN folds are now complete and documented in the
+[`development CRNN baseline result`](development-crnn-baseline-result-20260803.md).
+Naive reaches 98.30% recall only by producing 95.48% negative-case false
+positives and alerts in 518/527 negative source groups. Random high-frequency
+masking does not improve robustness: it labels every case positive, alerts in
+all 527 negative groups, and reaches only 59.20% paired positive direction
+with a 55.64% one-sided Wilson lower bound. The next frozen execution gate is
+the separately committed v2 adapter for retained A0-A4 and R1/R2 explainable
+controls. No retained transfer score has been opened.

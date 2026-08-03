@@ -1,0 +1,3432 @@
+{
+  "conditions": {
+    "naive": {
+      "by_source_domain": {
+        "demand_maestro_consumed_transfer": {
+          "balanced_accuracy": 0.638782766400339,
+          "case_count": 1139,
+          "controlled_positive_count": 628,
+          "false_negative_count": 85,
+          "false_positive_count": 300,
+          "false_positive_rate": 0.5870841487279843,
+          "negative_count": 511,
+          "recall": 0.8646496815286624,
+          "recall_two_sided_95_percent_wilson": [
+            0.835666373513719,
+            0.8891990078350104
+          ],
+          "selected_population_accuracy": 0.6619841966637401,
+          "selected_population_precision": 0.6441281138790036,
+          "specificity": 0.41291585127201563,
+          "specificity_two_sided_95_percent_wilson": [
+            0.3710309639755908,
+            0.45610028492603183
+          ],
+          "true_negative_count": 211,
+          "true_positive_count": 543
+        },
+        "musdb18hq_consumed_transfer": {
+          "balanced_accuracy": 0.5,
+          "case_count": 2224,
+          "controlled_positive_count": 1080,
+          "false_negative_count": 0,
+          "false_positive_count": 1144,
+          "false_positive_rate": 1.0,
+          "negative_count": 1144,
+          "recall": 1.0,
+          "recall_two_sided_95_percent_wilson": [
+            0.9964557004260809,
+            1.0
+          ],
+          "selected_population_accuracy": 0.4856115107913669,
+          "selected_population_precision": 0.4856115107913669,
+          "specificity": 0.0,
+          "specificity_two_sided_95_percent_wilson": [
+            0.0,
+            0.0033466806684617277
+          ],
+          "true_negative_count": 0,
+          "true_positive_count": 1080
+        },
+        "nsynth_test_sparse": {
+          "balanced_accuracy": 0.5,
+          "case_count": 1316,
+          "controlled_positive_count": 692,
+          "false_negative_count": 0,
+          "false_positive_count": 624,
+          "false_positive_rate": 1.0,
+          "negative_count": 624,
+          "recall": 1.0,
+          "recall_two_sided_95_percent_wilson": [
+            0.9944794050828696,
+            1.0
+          ],
+          "selected_population_accuracy": 0.5258358662613982,
+          "selected_population_precision": 0.5258358662613982,
+          "specificity": 0.0,
+          "specificity_two_sided_95_percent_wilson": [
+            -4.310273850992495e-19,
+            0.006118517289236887
+          ],
+          "true_negative_count": 0,
+          "true_positive_count": 692
+        },
+        "nsynth_train_sparse": {
+          "balanced_accuracy": 0.5,
+          "case_count": 2537,
+          "controlled_positive_count": 1276,
+          "false_negative_count": 0,
+          "false_positive_count": 1261,
+          "false_positive_rate": 1.0,
+          "negative_count": 1261,
+          "recall": 1.0,
+          "recall_two_sided_95_percent_wilson": [
+            0.9969984885282324,
+            1.0000000000000002
+          ],
+          "selected_population_accuracy": 0.5029562475364604,
+          "selected_population_precision": 0.5029562475364604,
+          "specificity": 0.0,
+          "specificity_two_sided_95_percent_wilson": [
+            -2.161818669003693e-19,
+            0.0030371069780364443
+          ],
+          "true_negative_count": 0,
+          "true_positive_count": 1276
+        },
+        "private_full_mix_training": {
+          "balanced_accuracy": 0.5,
+          "case_count": 1194,
+          "controlled_positive_count": 636,
+          "false_negative_count": 0,
+          "false_positive_count": 558,
+          "false_positive_rate": 1.0,
+          "negative_count": 558,
+          "recall": 1.0,
+          "recall_two_sided_95_percent_wilson": [
+            0.9939962333360292,
+            1.0
+          ],
+          "selected_population_accuracy": 0.5326633165829145,
+          "selected_population_precision": 0.5326633165829145,
+          "specificity": 0.0,
+          "specificity_two_sided_95_percent_wilson": [
+            -4.3071567806104965e-19,
+            0.006837264784192593
+          ],
+          "true_negative_count": 0,
+          "true_positive_count": 636
+        },
+        "public_tier_a_controlled": {
+          "balanced_accuracy": 0.5,
+          "case_count": 1243,
+          "controlled_positive_count": 676,
+          "false_negative_count": 0,
+          "false_positive_count": 567,
+          "false_positive_rate": 1.0,
+          "negative_count": 567,
+          "recall": 1.0,
+          "recall_two_sided_95_percent_wilson": [
+            0.9943494784396381,
+            0.9999999999999998
+          ],
+          "selected_population_accuracy": 0.5438455349959774,
+          "selected_population_precision": 0.5438455349959774,
+          "specificity": 0.0,
+          "specificity_two_sided_95_percent_wilson": [
+            -4.307624278511814e-19,
+            0.006729467107435093
+          ],
+          "true_negative_count": 0,
+          "true_positive_count": 676
+        }
+      },
+      "condition": "naive",
+      "disposition": "paper_aligned_replication_baseline_only_not_a_candidate",
+      "factorial_case_level": {
+        "auc": 0.5226317223501462,
+        "balanced_accuracy": 0.5140947706435424,
+        "case_count": 9653,
+        "controlled_positive_count": 4988,
+        "false_negative_count": 85,
+        "false_positive_count": 4454,
+        "false_positive_rate": 0.9547695605573419,
+        "log_loss": 0.7248660793546049,
+        "negative_count": 4665,
+        "recall": 0.9829591018444266,
+        "recall_two_sided_95_percent_wilson": [
+          0.9789779488506752,
+          0.9861969349562789
+        ],
+        "selected_population_accuracy": 0.5297834869988605,
+        "selected_population_precision": 0.5239927327134766,
+        "specificity": 0.045230439442658095,
+        "specificity_two_sided_95_percent_wilson": [
+          0.03963203480655661,
+          0.05157720041306417
+        ],
+        "true_negative_count": 211,
+        "true_positive_count": 4903
+      },
+      "fixed_boundary": 0.5,
+      "negative_by_history_class": {
+        "alternate-channel-topology": {
+          "balanced_accuracy": null,
+          "case_count": 120,
+          "controlled_positive_count": 0,
+          "false_negative_count": 0,
+          "false_positive_count": 117,
+          "false_positive_rate": 0.975,
+          "negative_count": 120,
+          "recall": null,
+          "recall_two_sided_95_percent_wilson": null,
+          "selected_population_accuracy": 0.025,
+          "selected_population_precision": 0.0,
+          "specificity": 0.025,
+          "specificity_two_sided_95_percent_wilson": [
+            0.008538174769902231,
+            0.0709300333278661
+          ],
+          "true_negative_count": 3,
+          "true_positive_count": 0
+        },
+        "duration-prefix-3s": {
+          "balanced_accuracy": null,
+          "case_count": 120,
+          "controlled_positive_count": 0,
+          "false_negative_count": 0,
+          "false_positive_count": 112,
+          "false_positive_rate": 0.9333333333333333,
+          "negative_count": 120,
+          "recall": null,
+          "recall_two_sided_95_percent_wilson": null,
+          "selected_population_accuracy": 0.06666666666666667,
+          "selected_population_precision": 0.0,
+          "specificity": 0.06666666666666667,
+          "specificity_two_sided_95_percent_wilson": [
+            0.03416530686090633,
+            0.12605130403530337
+          ],
+          "true_negative_count": 8,
+          "true_positive_count": 0
+        },
+        "gain-minus6db-q31": {
+          "balanced_accuracy": null,
+          "case_count": 160,
+          "controlled_positive_count": 0,
+          "false_negative_count": 0,
+          "false_positive_count": 153,
+          "false_positive_rate": 0.95625,
+          "negative_count": 160,
+          "recall": null,
+          "recall_two_sided_95_percent_wilson": null,
+          "selected_population_accuracy": 0.04375,
+          "selected_population_precision": 0.0,
+          "specificity": 0.04375,
+          "specificity_two_sided_95_percent_wilson": [
+            0.02135161155153454,
+            0.08754304154246395
+          ],
+          "true_negative_count": 7,
+          "true_positive_count": 0
+        },
+        "lossless-wrapper-rewrite": {
+          "balanced_accuracy": null,
+          "case_count": 120,
+          "controlled_positive_count": 0,
+          "false_negative_count": 0,
+          "false_positive_count": 115,
+          "false_positive_rate": 0.9583333333333334,
+          "negative_count": 120,
+          "recall": null,
+          "recall_two_sided_95_percent_wilson": null,
+          "selected_population_accuracy": 0.041666666666666664,
+          "selected_population_precision": 0.0,
+          "specificity": 0.041666666666666664,
+          "specificity_two_sided_95_percent_wilson": [
+            0.017926716880109512,
+            0.09384085233703536
+          ],
+          "true_negative_count": 5,
+          "true_positive_count": 0
+        },
+        "lowpass-16k-cascade8": {
+          "balanced_accuracy": null,
+          "case_count": 160,
+          "controlled_positive_count": 0,
+          "false_negative_count": 0,
+          "false_positive_count": 160,
+          "false_positive_rate": 1.0,
+          "negative_count": 160,
+          "recall": null,
+          "recall_two_sided_95_percent_wilson": null,
+          "selected_population_accuracy": 0.0,
+          "selected_population_precision": 0.0,
+          "specificity": 0.0,
+          "specificity_two_sided_95_percent_wilson": [
+            0.0,
+            0.02344619517150519
+          ],
+          "true_negative_count": 0,
+          "true_positive_count": 0
+        },
+        "pcm_reference": {
+          "balanced_accuracy": null,
+          "case_count": 3385,
+          "controlled_positive_count": 0,
+          "false_negative_count": 0,
+          "false_positive_count": 3251,
+          "false_positive_rate": 0.9604135893648449,
+          "negative_count": 3385,
+          "recall": null,
+          "recall_two_sided_95_percent_wilson": null,
+          "selected_population_accuracy": 0.0395864106351551,
+          "selected_population_precision": 0.0,
+          "specificity": 0.0395864106351551,
+          "specificity_two_sided_95_percent_wilson": [
+            0.033522756365466415,
+            0.046693878766026015
+          ],
+          "true_negative_count": 134,
+          "true_positive_count": 0
+        },
+        "prepend-digital-silence-500ms": {
+          "balanced_accuracy": null,
+          "case_count": 160,
+          "controlled_positive_count": 0,
+          "false_negative_count": 0,
+          "false_positive_count": 146,
+          "false_positive_rate": 0.9125,
+          "negative_count": 160,
+          "recall": null,
+          "recall_two_sided_95_percent_wilson": null,
+          "selected_population_accuracy": 0.0875,
+          "selected_population_precision": 0.0,
+          "specificity": 0.0875,
+          "specificity_two_sided_95_percent_wilson": [
+            0.05283679339459573,
+            0.14150631762189606
+          ],
+          "true_negative_count": 14,
+          "true_positive_count": 0
+        },
+        "requantize-12bit-tpdf": {
+          "balanced_accuracy": null,
+          "case_count": 160,
+          "controlled_positive_count": 0,
+          "false_negative_count": 0,
+          "false_positive_count": 136,
+          "false_positive_rate": 0.85,
+          "negative_count": 160,
+          "recall": null,
+          "recall_two_sided_95_percent_wilson": null,
+          "selected_population_accuracy": 0.15,
+          "selected_population_precision": 0.0,
+          "specificity": 0.15,
+          "specificity_two_sided_95_percent_wilson": [
+            0.10291845645016233,
+            0.21349388016989132
+          ],
+          "true_negative_count": 24,
+          "true_positive_count": 0
+        },
+        "resample-roundtrip-32k": {
+          "balanced_accuracy": null,
+          "case_count": 120,
+          "controlled_positive_count": 0,
+          "false_negative_count": 0,
+          "false_positive_count": 120,
+          "false_positive_rate": 1.0,
+          "negative_count": 120,
+          "recall": null,
+          "recall_two_sided_95_percent_wilson": null,
+          "selected_population_accuracy": 0.0,
+          "selected_population_precision": 0.0,
+          "specificity": 0.0,
+          "specificity_two_sided_95_percent_wilson": [
+            0.0,
+            0.031019166418703486
+          ],
+          "true_negative_count": 0,
+          "true_positive_count": 0
+        },
+        "trim-head-250ms": {
+          "balanced_accuracy": null,
+          "case_count": 160,
+          "controlled_positive_count": 0,
+          "false_negative_count": 0,
+          "false_positive_count": 144,
+          "false_positive_rate": 0.9,
+          "negative_count": 160,
+          "recall": null,
+          "recall_two_sided_95_percent_wilson": null,
+          "selected_population_accuracy": 0.1,
+          "selected_population_precision": 0.0,
+          "specificity": 0.1,
+          "specificity_two_sided_95_percent_wilson": [
+            0.06249443583333063,
+            0.15626252030387355
+          ],
+          "true_negative_count": 16,
+          "true_positive_count": 0
+        }
+      },
+      "outer_fold_training": {
+        "demand_maestro_consumed_transfer": {
+          "best_epoch": 18,
+          "best_inner_validation": {
+            "auc": 0.7468294869421915,
+            "case_count": 1390,
+            "controlled_positive_count": 881,
+            "false_negative_count": 92,
+            "false_positive_count": 286,
+            "false_positive_rate_at_fixed_0_5": 0.5618860510805501,
+            "log_loss": 0.5486804807646031,
+            "negative_count": 509,
+            "recall_at_fixed_0_5": 0.8955732122587968,
+            "true_negative_count": 223,
+            "true_positive_count": 789
+          },
+          "checkpoint_sha256": "88deb843137d757a7cfe1bf7b9509ad38263d8ab16cdcd194d55f405bba4d071",
+          "epochs_completed": 23,
+          "outer_artifact_count": 1113,
+          "outer_unique_pcm_count": 904,
+          "parameter_count": 4820594,
+          "training_label_counts": {
+            "controlled_positive": 3455,
+            "negative": 1952
+          },
+          "training_unique_pcm_count": 5407,
+          "validation_label_counts": {
+            "controlled_positive": 881,
+            "negative": 509
+          },
+          "validation_unique_pcm_count": 1390
+        },
+        "musdb18hq_consumed_transfer": {
+          "best_epoch": 9,
+          "best_inner_validation": {
+            "auc": 0.5318801731679415,
+            "case_count": 1254,
+            "controlled_positive_count": 818,
+            "false_negative_count": 0,
+            "false_positive_count": 436,
+            "false_positive_rate_at_fixed_0_5": 1.0,
+            "log_loss": 0.6449582101520304,
+            "negative_count": 436,
+            "recall_at_fixed_0_5": 1.0,
+            "true_negative_count": 0,
+            "true_positive_count": 818
+          },
+          "checkpoint_sha256": "3750a7c3bfa9b96ed502a610466289a23fe2894166129870848eca25a7ef1f6e",
+          "epochs_completed": 14,
+          "outer_artifact_count": 2208,
+          "outer_unique_pcm_count": 1805,
+          "parameter_count": 4820594,
+          "training_label_counts": {
+            "controlled_positive": 3071,
+            "negative": 1571
+          },
+          "training_unique_pcm_count": 4642,
+          "validation_label_counts": {
+            "controlled_positive": 818,
+            "negative": 436
+          },
+          "validation_unique_pcm_count": 1254
+        },
+        "nsynth_test_sparse": {
+          "best_epoch": 1,
+          "best_inner_validation": {
+            "auc": 0.5432198598345891,
+            "case_count": 1411,
+            "controlled_positive_count": 909,
+            "false_negative_count": 0,
+            "false_positive_count": 502,
+            "false_positive_rate_at_fixed_0_5": 1.0,
+            "log_loss": 0.6487699711923005,
+            "negative_count": 502,
+            "recall_at_fixed_0_5": 1.0,
+            "true_negative_count": 0,
+            "true_positive_count": 909
+          },
+          "checkpoint_sha256": "0cbc4d0aa003ab6589b1b6604ffcc729b7bd4ac17d8127cbd6d4e2e53a166321",
+          "epochs_completed": 6,
+          "outer_artifact_count": 1290,
+          "outer_unique_pcm_count": 1021,
+          "parameter_count": 4820594,
+          "training_label_counts": {
+            "controlled_positive": 3373,
+            "negative": 1896
+          },
+          "training_unique_pcm_count": 5269,
+          "validation_label_counts": {
+            "controlled_positive": 909,
+            "negative": 502
+          },
+          "validation_unique_pcm_count": 1411
+        },
+        "nsynth_train_sparse": {
+          "best_epoch": 18,
+          "best_inner_validation": {
+            "auc": 0.7224762439075704,
+            "case_count": 1117,
+            "controlled_positive_count": 722,
+            "false_negative_count": 30,
+            "false_positive_count": 276,
+            "false_positive_rate_at_fixed_0_5": 0.6987341772151898,
+            "log_loss": 0.5707458069470219,
+            "negative_count": 395,
+            "recall_at_fixed_0_5": 0.9584487534626038,
+            "true_negative_count": 119,
+            "true_positive_count": 692
+          },
+          "checkpoint_sha256": "76f553007ab27ca71f230482be73a7cd5f36e891fe31f989f4290f39bb9b751b",
+          "epochs_completed": 23,
+          "outer_artifact_count": 2508,
+          "outer_unique_pcm_count": 2049,
+          "parameter_count": 4820594,
+          "training_label_counts": {
+            "controlled_positive": 2974,
+            "negative": 1561
+          },
+          "training_unique_pcm_count": 4535,
+          "validation_label_counts": {
+            "controlled_positive": 722,
+            "negative": 395
+          },
+          "validation_unique_pcm_count": 1117
+        },
+        "private_full_mix_training": {
+          "best_epoch": 6,
+          "best_inner_validation": {
+            "auc": 0.5506581653640478,
+            "case_count": 1379,
+            "controlled_positive_count": 884,
+            "false_negative_count": 0,
+            "false_positive_count": 495,
+            "false_positive_rate_at_fixed_0_5": 1.0,
+            "log_loss": 0.6504111675568508,
+            "negative_count": 495,
+            "recall_at_fixed_0_5": 1.0,
+            "true_negative_count": 0,
+            "true_positive_count": 884
+          },
+          "checkpoint_sha256": "3caf1ea18d69a50751140717cf69ca53c63c946f81199b83c48002ef528fefa6",
+          "epochs_completed": 11,
+          "outer_artifact_count": 1178,
+          "outer_unique_pcm_count": 941,
+          "parameter_count": 4820594,
+          "training_label_counts": {
+            "controlled_positive": 3444,
+            "negative": 1937
+          },
+          "training_unique_pcm_count": 5381,
+          "validation_label_counts": {
+            "controlled_positive": 884,
+            "negative": 495
+          },
+          "validation_unique_pcm_count": 1379
+        },
+        "public_tier_a_controlled": {
+          "best_epoch": 4,
+          "best_inner_validation": {
+            "auc": 0.5292024802894368,
+            "case_count": 1290,
+            "controlled_positive_count": 828,
+            "false_negative_count": 0,
+            "false_positive_count": 462,
+            "false_positive_rate_at_fixed_0_5": 1.0,
+            "log_loss": 0.6515227892351619,
+            "negative_count": 462,
+            "recall_at_fixed_0_5": 1.0,
+            "true_negative_count": 0,
+            "true_positive_count": 828
+          },
+          "checkpoint_sha256": "8f46ca10615d0ad7fc550cd56f47cf3e3965317cc9df67c1a3f89a308324d1cd",
+          "epochs_completed": 9,
+          "outer_artifact_count": 1216,
+          "outer_unique_pcm_count": 981,
+          "parameter_count": 4820594,
+          "training_label_counts": {
+            "controlled_positive": 3461,
+            "negative": 1969
+          },
+          "training_unique_pcm_count": 5430,
+          "validation_label_counts": {
+            "controlled_positive": 828,
+            "negative": 462
+          },
+          "validation_unique_pcm_count": 1290
+        }
+      },
+      "paired_positive_minus_matched_reference": {
+        "by_codec_family": {
+          "aac_lc": {
+            "group_median_delta": {
+              "count": 527,
+              "maximum": 0.3781285919249058,
+              "median": 2.0281835035884654e-05,
+              "minimum": -0.022625400261445494,
+              "p05": -0.0014588385820388573,
+              "p95": 0.004624638774178268
+            },
+            "negative_direction_source_group_count": 236,
+            "one_sided_95_percent_wilson_lower": 0.5163759083166009,
+            "positive_direction_rate": 0.5521821631878557,
+            "positive_direction_source_group_count": 291,
+            "source_group_count": 527,
+            "unique_pcm_pair_count": 1247,
+            "zero_direction_source_group_count": 0
+          },
+          "mp3": {
+            "group_median_delta": {
+              "count": 527,
+              "maximum": 0.7185062061656604,
+              "median": 0.0001492121002890645,
+              "minimum": -0.024329960346221924,
+              "p05": -0.0008187911185350893,
+              "p95": 0.026389382644133104
+            },
+            "negative_direction_source_group_count": 167,
+            "one_sided_95_percent_wilson_lower": 0.6489122161094087,
+            "positive_direction_rate": 0.683111954459203,
+            "positive_direction_source_group_count": 360,
+            "source_group_count": 527,
+            "unique_pcm_pair_count": 1353,
+            "zero_direction_source_group_count": 0
+          },
+          "opus": {
+            "group_median_delta": {
+              "count": 527,
+              "maximum": 0.8243780244480481,
+              "median": 5.516680804174001e-05,
+              "minimum": -0.08605334433642298,
+              "p05": -0.0032376262274654895,
+              "p95": 0.020029712373560098
+            },
+            "negative_direction_source_group_count": 209,
+            "one_sided_95_percent_wilson_lower": 0.5679221804226583,
+            "positive_direction_rate": 0.603415559772296,
+            "positive_direction_source_group_count": 318,
+            "source_group_count": 527,
+            "unique_pcm_pair_count": 1246,
+            "zero_direction_source_group_count": 0
+          },
+          "vorbis": {
+            "group_median_delta": {
+              "count": 527,
+              "maximum": 0.8007566583427517,
+              "median": 0.00032984722744333617,
+              "minimum": -0.014426553791219543,
+              "p05": -0.001601489023728786,
+              "p95": 0.01891834584149453
+            },
+            "negative_direction_source_group_count": 144,
+            "one_sided_95_percent_wilson_lower": 0.6937281401640489,
+            "positive_direction_rate": 0.7267552182163188,
+            "positive_direction_source_group_count": 383,
+            "source_group_count": 527,
+            "unique_pcm_pair_count": 1118,
+            "zero_direction_source_group_count": 0
+          }
+        },
+        "by_encoder_lineage": {
+          "apple_audiotoolbox_aac": {
+            "group_median_delta": {
+              "count": 120,
+              "maximum": 0.5405338474295356,
+              "median": 9.001114151696576e-05,
+              "minimum": -0.0009951916607943145,
+              "p05": -0.00014850903641092095,
+              "p95": 0.13321592381054698
+            },
+            "negative_direction_source_group_count": 32,
+            "one_sided_95_percent_wilson_lower": 0.6623228722171716,
+            "positive_direction_rate": 0.7333333333333333,
+            "positive_direction_source_group_count": 88,
+            "source_group_count": 120,
+            "unique_pcm_pair_count": 120,
+            "zero_direction_source_group_count": 0
+          },
+          "ffmpeg_native_aac": {
+            "group_median_delta": {
+              "count": 527,
+              "maximum": 0.5896696522831917,
+              "median": 1.1422417380613226e-05,
+              "minimum": -0.046021146530454804,
+              "p05": -0.00234723689881238,
+              "p95": 0.00394833087921142
+            },
+            "negative_direction_source_group_count": 250,
+            "one_sided_95_percent_wilson_lower": 0.48979868087273715,
+            "positive_direction_rate": 0.5256166982922201,
+            "positive_direction_source_group_count": 277,
+            "source_group_count": 527,
+            "unique_pcm_pair_count": 1127,
+            "zero_direction_source_group_count": 0
+          },
+          "lame": {
+            "group_median_delta": {
+              "count": 527,
+              "maximum": 0.7309698102826422,
+              "median": 0.0001413388685746475,
+              "minimum": -0.024329960346221924,
+              "p05": -0.0007723713463003379,
+              "p95": 0.02637976624748918
+            },
+            "negative_direction_source_group_count": 163,
+            "one_sided_95_percent_wilson_lower": 0.6566810076340827,
+            "positive_direction_rate": 0.6907020872865275,
+            "positive_direction_source_group_count": 364,
+            "source_group_count": 527,
+            "unique_pcm_pair_count": 1233,
+            "zero_direction_source_group_count": 0
+          },
+          "shine": {
+            "group_median_delta": {
+              "count": 120,
+              "maximum": 0.586336255886338,
+              "median": 0.00034098869020288136,
+              "minimum": -0.03591458174315365,
+              "p05": -0.003942239230329286,
+              "p95": 0.08129726042801662
+            },
+            "negative_direction_source_group_count": 49,
+            "one_sided_95_percent_wilson_lower": 0.516631257600782,
+            "positive_direction_rate": 0.5916666666666667,
+            "positive_direction_source_group_count": 71,
+            "source_group_count": 120,
+            "unique_pcm_pair_count": 120,
+            "zero_direction_source_group_count": 0
+          },
+          "xiph_libopus": {
+            "group_median_delta": {
+              "count": 527,
+              "maximum": 0.8243780244480481,
+              "median": 5.516680804174001e-05,
+              "minimum": -0.08605334433642298,
+              "p05": -0.0032376262274654895,
+              "p95": 0.020029712373560098
+            },
+            "negative_direction_source_group_count": 209,
+            "one_sided_95_percent_wilson_lower": 0.5679221804226583,
+            "positive_direction_rate": 0.603415559772296,
+            "positive_direction_source_group_count": 318,
+            "source_group_count": 527,
+            "unique_pcm_pair_count": 1246,
+            "zero_direction_source_group_count": 0
+          },
+          "xiph_libvorbis": {
+            "group_median_delta": {
+              "count": 527,
+              "maximum": 0.8007566583427517,
+              "median": 0.00032984722744333617,
+              "minimum": -0.014426553791219543,
+              "p05": -0.001601489023728786,
+              "p95": 0.01891834584149453
+            },
+            "negative_direction_source_group_count": 144,
+            "one_sided_95_percent_wilson_lower": 0.6937281401640489,
+            "positive_direction_rate": 0.7267552182163188,
+            "positive_direction_source_group_count": 383,
+            "source_group_count": 527,
+            "unique_pcm_pair_count": 1118,
+            "zero_direction_source_group_count": 0
+          }
+        },
+        "by_encoder_setting": {
+          "dev-aac-apple-cbr128-default--mono": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.5405338474295356,
+              "median": 0.00038134780797094425,
+              "minimum": -0.0009951916607943145,
+              "p05": -0.00018999630754648055,
+              "p95": 0.1727973128584295
+            },
+            "negative_direction_source_group_count": 12,
+            "one_sided_95_percent_wilson_lower": 0.7029665084347478,
+            "positive_direction_rate": 0.8,
+            "positive_direction_source_group_count": 48,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-aac-apple-cbr128-default--stereo": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.00868854197588842,
+              "median": 2.8393485329347712e-05,
+              "minimum": -0.0003334229642694142,
+              "p05": -0.00010072290897374935,
+              "p95": 0.000914114442738611
+            },
+            "negative_direction_source_group_count": 20,
+            "one_sided_95_percent_wilson_lower": 0.561292592786729,
+            "positive_direction_rate": 0.6666666666666666,
+            "positive_direction_source_group_count": 40,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-aac-ffmpeg-cbr128-cutoff16k--mono": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.03983771259134461,
+              "median": 6.885962052782801e-05,
+              "minimum": -0.00022804195230652358,
+              "p05": -6.68203288858804e-05,
+              "p95": 0.026031904058023015
+            },
+            "negative_direction_source_group_count": 13,
+            "one_sided_95_percent_wilson_lower": 0.6846652502436339,
+            "positive_direction_rate": 0.7833333333333333,
+            "positive_direction_source_group_count": 47,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-aac-ffmpeg-cbr128-cutoff16k--stereo": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.7808301787484775,
+              "median": 0.00019399415362963968,
+              "minimum": -0.008246795697645748,
+              "p05": -0.0005485044284300522,
+              "p95": 0.720076604729349
+            },
+            "negative_direction_source_group_count": 16,
+            "one_sided_95_percent_wilson_lower": 0.630859294492752,
+            "positive_direction_rate": 0.7333333333333333,
+            "positive_direction_source_group_count": 44,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-aac-ffmpeg-cbr128-default--mono": {
+            "group_median_delta": {
+              "count": 325,
+              "maximum": 0.013194940306923586,
+              "median": -4.901669242163287e-05,
+              "minimum": -0.07571939141912894,
+              "p05": -0.009311090599406857,
+              "p95": 0.0008682055906816366
+            },
+            "negative_direction_source_group_count": 202,
+            "one_sided_95_percent_wilson_lower": 0.3353848398314061,
+            "positive_direction_rate": 0.37846153846153846,
+            "positive_direction_source_group_count": 123,
+            "source_group_count": 325,
+            "unique_pcm_pair_count": 443,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-aac-ffmpeg-cbr128-default--stereo": {
+            "group_median_delta": {
+              "count": 341,
+              "maximum": 0.6680283952843059,
+              "median": 3.2143159346076366e-05,
+              "minimum": -0.20693934641101142,
+              "p05": -0.0016615986824035645,
+              "p95": 0.006794506853277094
+            },
+            "negative_direction_source_group_count": 143,
+            "one_sided_95_percent_wilson_lower": 0.5362252952370957,
+            "positive_direction_rate": 0.5806451612903226,
+            "positive_direction_source_group_count": 198,
+            "source_group_count": 341,
+            "unique_pcm_pair_count": 444,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-aac-ffmpeg-cbr96-default--mono": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.0037343610416760153,
+              "median": 5.933642387390137e-05,
+              "minimum": -0.00012723966078331816,
+              "p05": -2.2520260377345554e-05,
+              "p95": 0.003167286244305689
+            },
+            "negative_direction_source_group_count": 8,
+            "one_sided_95_percent_wilson_lower": 0.7784849945132597,
+            "positive_direction_rate": 0.8666666666666667,
+            "positive_direction_source_group_count": 52,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-aac-ffmpeg-cbr96-default--stereo": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.6347639723257584,
+              "median": 0.0013639710166237773,
+              "minimum": -0.025632950392636356,
+              "p05": -0.0012789902361956982,
+              "p95": 0.502184187620878
+            },
+            "negative_direction_source_group_count": 10,
+            "one_sided_95_percent_wilson_lower": 0.740214414319273,
+            "positive_direction_rate": 0.8333333333333334,
+            "positive_direction_source_group_count": 50,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-mp3-lame-cbr128-default--mono": {
+            "group_median_delta": {
+              "count": 323,
+              "maximum": 0.7684808292172172,
+              "median": 8.760799061169333e-05,
+              "minimum": -0.11902199008248071,
+              "p05": -0.0007782974026420142,
+              "p95": 0.0022240020470185896
+            },
+            "negative_direction_source_group_count": 102,
+            "one_sided_95_percent_wilson_lower": 0.6402876021835631,
+            "positive_direction_rate": 0.6842105263157895,
+            "positive_direction_source_group_count": 221,
+            "source_group_count": 323,
+            "unique_pcm_pair_count": 434,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-mp3-lame-cbr128-default--stereo": {
+            "group_median_delta": {
+              "count": 313,
+              "maximum": 0.7309698102826422,
+              "median": 0.00032802224159245164,
+              "minimum": -0.024329960346221924,
+              "p05": -0.0011130831458352473,
+              "p95": 0.10982812290841815
+            },
+            "negative_direction_source_group_count": 102,
+            "one_sided_95_percent_wilson_lower": 0.6292142149008798,
+            "positive_direction_rate": 0.6741214057507987,
+            "positive_direction_source_group_count": 211,
+            "source_group_count": 313,
+            "unique_pcm_pair_count": 439,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-mp3-lame-cbr128-lowpass16k--mono": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.6597866741093722,
+              "median": 1.582503318786621e-05,
+              "minimum": -0.028365454890511232,
+              "p05": -0.0012027130885556955,
+              "p95": 0.6050641621378334
+            },
+            "negative_direction_source_group_count": 29,
+            "one_sided_95_percent_wilson_lower": 0.41214374056342057,
+            "positive_direction_rate": 0.5166666666666667,
+            "positive_direction_source_group_count": 31,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-mp3-lame-cbr128-lowpass16k--stereo": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.08519081094048242,
+              "median": 0.00047285177490929975,
+              "minimum": -0.0006480704654346914,
+              "p05": -6.87038356608216e-05,
+              "p95": 0.026181232387369385
+            },
+            "negative_direction_source_group_count": 7,
+            "one_sided_95_percent_wilson_lower": 0.7980909188912355,
+            "positive_direction_rate": 0.8833333333333333,
+            "positive_direction_source_group_count": 53,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-mp3-lame-cbr96-default--mono": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.003165618939833248,
+              "median": 0.0002499900080941142,
+              "minimum": -0.0033568089658564393,
+              "p05": -0.0009112005883996631,
+              "p95": 0.0019690253517845014
+            },
+            "negative_direction_source_group_count": 10,
+            "one_sided_95_percent_wilson_lower": 0.740214414319273,
+            "positive_direction_rate": 0.8333333333333334,
+            "positive_direction_source_group_count": 50,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-mp3-lame-cbr96-default--stereo": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.6047740172256123,
+              "median": 0.0017709813334725322,
+              "minimum": -0.010168473828922608,
+              "p05": -0.00025745440613145204,
+              "p95": 0.5596856441010127
+            },
+            "negative_direction_source_group_count": 12,
+            "one_sided_95_percent_wilson_lower": 0.7029665084347478,
+            "positive_direction_rate": 0.8,
+            "positive_direction_source_group_count": 48,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-mp3-lame-vbr-v2-default--mono": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.7802470516074788,
+              "median": 0.0010348233309658839,
+              "minimum": -0.019623528827320436,
+              "p05": -0.00573502223600038,
+              "p95": 0.6452576993541284
+            },
+            "negative_direction_source_group_count": 18,
+            "one_sided_95_percent_wilson_lower": 0.5957919106719779,
+            "positive_direction_rate": 0.7,
+            "positive_direction_source_group_count": 42,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-mp3-lame-vbr-v2-default--stereo": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.006921556862917844,
+              "median": 0.0001099218021739512,
+              "minimum": -0.0007577321746132792,
+              "p05": -0.0004247204823927153,
+              "p95": 0.0019507072188637204
+            },
+            "negative_direction_source_group_count": 11,
+            "one_sided_95_percent_wilson_lower": 0.7214761176840103,
+            "positive_direction_rate": 0.8166666666666667,
+            "positive_direction_source_group_count": 49,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-mp3-shine-cbr128-default--mono": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.02474683902480379,
+              "median": -0.00011375194246115994,
+              "minimum": -0.020069108226082544,
+              "p05": -0.003942239230329286,
+              "p95": 0.00525535385717042
+            },
+            "negative_direction_source_group_count": 34,
+            "one_sided_95_percent_wilson_lower": 0.3332378968055629,
+            "positive_direction_rate": 0.43333333333333335,
+            "positive_direction_source_group_count": 26,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-mp3-shine-cbr128-default--stereo": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.586336255886338,
+              "median": 0.0008261970498344984,
+              "minimum": -0.03591458174315365,
+              "p05": -0.0041498239880258785,
+              "p95": 0.30685644117268623
+            },
+            "negative_direction_source_group_count": 15,
+            "one_sided_95_percent_wilson_lower": 0.6486242412686939,
+            "positive_direction_rate": 0.75,
+            "positive_direction_source_group_count": 45,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-opus-libopus-cbr128-20ms--mono": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.8145854446020994,
+              "median": 2.363595095544735e-05,
+              "minimum": -0.028374717994169796,
+              "p05": -0.0030630897391927146,
+              "p95": 0.7451695541766556
+            },
+            "negative_direction_source_group_count": 25,
+            "one_sided_95_percent_wilson_lower": 0.47726827278034983,
+            "positive_direction_rate": 0.5833333333333334,
+            "positive_direction_source_group_count": 35,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-opus-libopus-cbr128-20ms--stereo": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.056002784859050414,
+              "median": 8.8521025397581e-05,
+              "minimum": -0.006446323611519533,
+              "p05": -0.002811229499903567,
+              "p95": 0.006076453219760553
+            },
+            "negative_direction_source_group_count": 21,
+            "one_sided_95_percent_wilson_lower": 0.5442416079330474,
+            "positive_direction_rate": 0.65,
+            "positive_direction_source_group_count": 39,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-opus-libopus-cbr64-20ms--mono": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.8238118941133673,
+              "median": 4.234639081085456e-05,
+              "minimum": -0.10075864737684082,
+              "p05": -0.0005016684532165249,
+              "p95": 0.7788110261613671
+            },
+            "negative_direction_source_group_count": 24,
+            "one_sided_95_percent_wilson_lower": 0.4938332306939004,
+            "positive_direction_rate": 0.6,
+            "positive_direction_source_group_count": 36,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-opus-libopus-cbr64-20ms--stereo": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.05581313371658325,
+              "median": -8.173693310131736e-05,
+              "minimum": -0.04059746590527624,
+              "p05": -0.011161014437675464,
+              "p95": 0.023089979724450486
+            },
+            "negative_direction_source_group_count": 35,
+            "one_sided_95_percent_wilson_lower": 0.31779273921256157,
+            "positive_direction_rate": 0.4166666666666667,
+            "positive_direction_source_group_count": 25,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-opus-libopus-cbr96-10ms--mono": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.8249441547827288,
+              "median": 9.722059423272755e-05,
+              "minimum": -0.03614742918448022,
+              "p05": -0.002199862761931004,
+              "p95": 0.7912450794469226
+            },
+            "negative_direction_source_group_count": 21,
+            "one_sided_95_percent_wilson_lower": 0.5442416079330474,
+            "positive_direction_rate": 0.65,
+            "positive_direction_source_group_count": 39,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-opus-libopus-cbr96-10ms--stereo": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.007610722021623162,
+              "median": 0.00011280449953948724,
+              "minimum": -0.01074240424416284,
+              "p05": -0.003830408508127475,
+              "p95": 0.003122178803790699
+            },
+            "negative_direction_source_group_count": 27,
+            "one_sided_95_percent_wilson_lower": 0.44448170628503847,
+            "positive_direction_rate": 0.55,
+            "positive_direction_source_group_count": 33,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-opus-libopus-cbr96-20ms--mono": {
+            "group_median_delta": {
+              "count": 318,
+              "maximum": 0.8146628493612463,
+              "median": 3.27771360223994e-05,
+              "minimum": -0.08605334433642298,
+              "p05": -0.005068052966486316,
+              "p95": 0.04307816651734404
+            },
+            "negative_direction_source_group_count": 137,
+            "one_sided_95_percent_wilson_lower": 0.5231122826151069,
+            "positive_direction_rate": 0.5691823899371069,
+            "positive_direction_source_group_count": 181,
+            "source_group_count": 318,
+            "unique_pcm_pair_count": 444,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-opus-libopus-cbr96-20ms--stereo": {
+            "group_median_delta": {
+              "count": 341,
+              "maximum": 0.8152930721640588,
+              "median": 7.020072503521879e-05,
+              "minimum": -0.021908548745242062,
+              "p05": -0.002019226551055908,
+              "p95": 0.009198757735165652
+            },
+            "negative_direction_source_group_count": 122,
+            "one_sided_95_percent_wilson_lower": 0.5985657758143105,
+            "positive_direction_rate": 0.6422287390029325,
+            "positive_direction_source_group_count": 219,
+            "source_group_count": 341,
+            "unique_pcm_pair_count": 442,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-vorbis-libvorbis-q2--mono": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.030940978093580762,
+              "median": 0.0004845424131913467,
+              "minimum": -0.009046451611952389,
+              "p05": -0.003950591981411033,
+              "p95": 0.003962363140149571
+            },
+            "negative_direction_source_group_count": 17,
+            "one_sided_95_percent_wilson_lower": 0.6132512435080949,
+            "positive_direction_rate": 0.7166666666666667,
+            "positive_direction_source_group_count": 43,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-vorbis-libvorbis-q2--stereo": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.7813880619677631,
+              "median": 0.004103912277655164,
+              "minimum": -0.028767331080003233,
+              "p05": -0.0001670688390731478,
+              "p95": 0.7284552684561773
+            },
+            "negative_direction_source_group_count": 6,
+            "one_sided_95_percent_wilson_lower": 0.8180800458852591,
+            "positive_direction_rate": 0.9,
+            "positive_direction_source_group_count": 54,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-vorbis-libvorbis-q4--mono": {
+            "group_median_delta": {
+              "count": 341,
+              "maximum": 0.8176238428462634,
+              "median": 0.0002934174104169962,
+              "minimum": -0.014426553791219543,
+              "p05": -0.0025420243089848693,
+              "p95": 0.0880722843787887
+            },
+            "negative_direction_source_group_count": 112,
+            "one_sided_95_percent_wilson_lower": 0.6285135976701005,
+            "positive_direction_rate": 0.6715542521994134,
+            "positive_direction_source_group_count": 229,
+            "source_group_count": 341,
+            "unique_pcm_pair_count": 440,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-vorbis-libvorbis-q4--stereo": {
+            "group_median_delta": {
+              "count": 313,
+              "maximum": 0.8212251767516137,
+              "median": 0.0003803751685402812,
+              "minimum": -0.14855576374314045,
+              "p05": -0.0012804103981364663,
+              "p95": 0.01585380835966624
+            },
+            "negative_direction_source_group_count": 70,
+            "one_sided_95_percent_wilson_lower": 0.7353429132650771,
+            "positive_direction_rate": 0.7763578274760383,
+            "positive_direction_source_group_count": 243,
+            "source_group_count": 313,
+            "unique_pcm_pair_count": 438,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-vorbis-libvorbis-q6--mono": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.7430299859155308,
+              "median": 0.00037199800664727833,
+              "minimum": -0.002731364423578464,
+              "p05": -0.0017964682795784449,
+              "p95": 0.4799246516417372
+            },
+            "negative_direction_source_group_count": 20,
+            "one_sided_95_percent_wilson_lower": 0.561292592786729,
+            "positive_direction_rate": 0.6666666666666666,
+            "positive_direction_source_group_count": 40,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-vorbis-libvorbis-q6--stereo": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.003766640749844563,
+              "median": 6.535378369421085e-05,
+              "minimum": -0.0016793673688714206,
+              "p05": -0.0003129086711190554,
+              "p95": 0.002240051031112611
+            },
+            "negative_direction_source_group_count": 22,
+            "one_sided_95_percent_wilson_lower": 0.5273170667267085,
+            "positive_direction_rate": 0.6333333333333333,
+            "positive_direction_source_group_count": 38,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          }
+        },
+        "by_post_transform": {
+          "alternate-channel-topology": {
+            "group_median_delta": {
+              "count": 40,
+              "maximum": 0.750375854020769,
+              "median": 0.00013665448535568614,
+              "minimum": -0.017108069224791023,
+              "p05": -0.0008402828465808476,
+              "p95": 0.06328912702473714
+            },
+            "negative_direction_source_group_count": 14,
+            "one_sided_95_percent_wilson_lower": 0.5200676801867865,
+            "positive_direction_rate": 0.65,
+            "positive_direction_source_group_count": 26,
+            "source_group_count": 40,
+            "unique_pcm_pair_count": 159,
+            "zero_direction_source_group_count": 0
+          },
+          "duration-prefix-3s": {
+            "group_median_delta": {
+              "count": 40,
+              "maximum": 0.6600814796984196,
+              "median": 9.315460920333862e-05,
+              "minimum": -0.015861093997955322,
+              "p05": -0.004465175420045852,
+              "p95": 0.03605430424213406
+            },
+            "negative_direction_source_group_count": 10,
+            "one_sided_95_percent_wilson_lower": 0.6240270595401831,
+            "positive_direction_rate": 0.75,
+            "positive_direction_source_group_count": 30,
+            "source_group_count": 40,
+            "unique_pcm_pair_count": 160,
+            "zero_direction_source_group_count": 0
+          },
+          "gain-minus6db-q31": {
+            "group_median_delta": {
+              "count": 40,
+              "maximum": 0.7643577436154538,
+              "median": 5.5411999875881746e-05,
+              "minimum": -0.009097074243155423,
+              "p05": -0.000683928890661764,
+              "p95": 0.06652843366292384
+            },
+            "negative_direction_source_group_count": 14,
+            "one_sided_95_percent_wilson_lower": 0.5200676801867865,
+            "positive_direction_rate": 0.65,
+            "positive_direction_source_group_count": 26,
+            "source_group_count": 40,
+            "unique_pcm_pair_count": 160,
+            "zero_direction_source_group_count": 0
+          },
+          "identity": {
+            "group_median_delta": {
+              "count": 527,
+              "maximum": 0.7817927504127675,
+              "median": 0.00010758096521557015,
+              "minimum": -0.010320746085860533,
+              "p05": -0.0009683709252964023,
+              "p95": 0.02001600764014509
+            },
+            "negative_direction_source_group_count": 155,
+            "one_sided_95_percent_wilson_lower": 0.6722498844457996,
+            "positive_direction_rate": 0.7058823529411765,
+            "positive_direction_source_group_count": 372,
+            "source_group_count": 527,
+            "unique_pcm_pair_count": 3548,
+            "zero_direction_source_group_count": 0
+          },
+          "lossless-wrapper-rewrite": {
+            "group_median_delta": {
+              "count": 40,
+              "maximum": 0.3933490453795953,
+              "median": 7.450445131820804e-05,
+              "minimum": -0.00863845781846484,
+              "p05": -0.006388806009834507,
+              "p95": 0.025335134870626635
+            },
+            "negative_direction_source_group_count": 13,
+            "one_sided_95_percent_wilson_lower": 0.5455025003549715,
+            "positive_direction_rate": 0.675,
+            "positive_direction_source_group_count": 27,
+            "source_group_count": 40,
+            "unique_pcm_pair_count": 137,
+            "zero_direction_source_group_count": 0
+          },
+          "lowpass-16k-cascade8": {
+            "group_median_delta": {
+              "count": 40,
+              "maximum": 0.01097653670744464,
+              "median": 6.114894693548534e-05,
+              "minimum": -0.04524223235520458,
+              "p05": -0.0011079449545253455,
+              "p95": 0.0014675172757018648
+            },
+            "negative_direction_source_group_count": 13,
+            "one_sided_95_percent_wilson_lower": 0.5455025003549715,
+            "positive_direction_rate": 0.675,
+            "positive_direction_source_group_count": 27,
+            "source_group_count": 40,
+            "unique_pcm_pair_count": 160,
+            "zero_direction_source_group_count": 0
+          },
+          "prepend-digital-silence-500ms": {
+            "group_median_delta": {
+              "count": 40,
+              "maximum": 0.6627480577338826,
+              "median": 0.00010004639625546541,
+              "minimum": -0.009057053110816282,
+              "p05": -0.0006707320159131528,
+              "p95": 0.27623984309082655
+            },
+            "negative_direction_source_group_count": 13,
+            "one_sided_95_percent_wilson_lower": 0.5455025003549715,
+            "positive_direction_rate": 0.675,
+            "positive_direction_source_group_count": 27,
+            "source_group_count": 40,
+            "unique_pcm_pair_count": 160,
+            "zero_direction_source_group_count": 0
+          },
+          "requantize-12bit-tpdf": {
+            "group_median_delta": {
+              "count": 40,
+              "maximum": 0.33537763086232275,
+              "median": 0.00010591609911486666,
+              "minimum": -0.17774755507707593,
+              "p05": -0.007656676186756667,
+              "p95": 0.0030810720879922114
+            },
+            "negative_direction_source_group_count": 14,
+            "one_sided_95_percent_wilson_lower": 0.5200676801867865,
+            "positive_direction_rate": 0.65,
+            "positive_direction_source_group_count": 26,
+            "source_group_count": 40,
+            "unique_pcm_pair_count": 160,
+            "zero_direction_source_group_count": 0
+          },
+          "resample-roundtrip-32k": {
+            "group_median_delta": {
+              "count": 40,
+              "maximum": 0.013078749179840032,
+              "median": 2.6094642552459968e-05,
+              "minimum": -0.0044410418380390615,
+              "p05": -0.002868649769913073,
+              "p95": 0.001501211930405001
+            },
+            "negative_direction_source_group_count": 15,
+            "one_sided_95_percent_wilson_lower": 0.49496948465722773,
+            "positive_direction_rate": 0.625,
+            "positive_direction_source_group_count": 25,
+            "source_group_count": 40,
+            "unique_pcm_pair_count": 160,
+            "zero_direction_source_group_count": 0
+          },
+          "trim-head-250ms": {
+            "group_median_delta": {
+              "count": 40,
+              "maximum": 0.7793632432818414,
+              "median": 0.00011060833930970349,
+              "minimum": -0.0019069507718086354,
+              "p05": -0.0013132144510746013,
+              "p95": 0.6537452490627762
+            },
+            "negative_direction_source_group_count": 11,
+            "one_sided_95_percent_wilson_lower": 0.5974569691939018,
+            "positive_direction_rate": 0.725,
+            "positive_direction_source_group_count": 29,
+            "source_group_count": 40,
+            "unique_pcm_pair_count": 160,
+            "zero_direction_source_group_count": 0
+          }
+        },
+        "by_source_domain": {
+          "demand_maestro_consumed_transfer": {
+            "group_median_delta": {
+              "count": 36,
+              "maximum": 0.7808301787484775,
+              "median": 0.044630196961489565,
+              "minimum": -0.020748390392823723,
+              "p05": -0.0053298344666307534,
+              "p95": 0.7356416753916578
+            },
+            "negative_direction_source_group_count": 3,
+            "one_sided_95_percent_wilson_lower": 0.8088780761905122,
+            "positive_direction_rate": 0.9166666666666666,
+            "positive_direction_source_group_count": 33,
+            "source_group_count": 36,
+            "unique_pcm_pair_count": 628,
+            "zero_direction_source_group_count": 0
+          },
+          "musdb18hq_consumed_transfer": {
+            "group_median_delta": {
+              "count": 150,
+              "maximum": 0.004480730403553457,
+              "median": 0.00015554373914544728,
+              "minimum": -0.00011890313842083389,
+              "p05": -5.6937336921686345e-05,
+              "p95": 0.001172505183653387
+            },
+            "negative_direction_source_group_count": 20,
+            "one_sided_95_percent_wilson_lower": 0.8144587432815109,
+            "positive_direction_rate": 0.8666666666666667,
+            "positive_direction_source_group_count": 130,
+            "source_group_count": 150,
+            "unique_pcm_pair_count": 1075,
+            "zero_direction_source_group_count": 0
+          },
+          "nsynth_test_sparse": {
+            "group_median_delta": {
+              "count": 53,
+              "maximum": 0.0004921094937757609,
+              "median": 1.2305649844113198e-05,
+              "minimum": -0.00021187012845819142,
+              "p05": -5.443096160890892e-05,
+              "p95": 0.00023028417067092458
+            },
+            "negative_direction_source_group_count": 19,
+            "one_sided_95_percent_wilson_lower": 0.5287270307929713,
+            "positive_direction_rate": 0.6415094339622641,
+            "positive_direction_source_group_count": 34,
+            "source_group_count": 53,
+            "unique_pcm_pair_count": 682,
+            "zero_direction_source_group_count": 0
+          },
+          "nsynth_train_sparse": {
+            "group_median_delta": {
+              "count": 200,
+              "maximum": 0.006827332756736082,
+              "median": 2.1343881433627532e-05,
+              "minimum": -0.010320746085860533,
+              "p05": -0.0017401491376485942,
+              "p95": 0.0013011991977691301
+            },
+            "negative_direction_source_group_count": 97,
+            "one_sided_95_percent_wilson_lower": 0.4570604893769119,
+            "positive_direction_rate": 0.515,
+            "positive_direction_source_group_count": 103,
+            "source_group_count": 200,
+            "unique_pcm_pair_count": 1268,
+            "zero_direction_source_group_count": 0
+          },
+          "private_full_mix_training": {
+            "group_median_delta": {
+              "count": 40,
+              "maximum": 0.056002784859050414,
+              "median": 0.0006442733786322652,
+              "minimum": -0.00024134462529962208,
+              "p05": -2.9942122372653144e-05,
+              "p95": 0.014347475374286883
+            },
+            "negative_direction_source_group_count": 3,
+            "one_sided_95_percent_wilson_lower": 0.8265198212630996,
+            "positive_direction_rate": 0.925,
+            "positive_direction_source_group_count": 37,
+            "source_group_count": 40,
+            "unique_pcm_pair_count": 636,
+            "zero_direction_source_group_count": 0
+          },
+          "public_tier_a_controlled": {
+            "group_median_delta": {
+              "count": 48,
+              "maximum": 0.002288131280378858,
+              "median": 2.9089775952451102e-05,
+              "minimum": -0.0004119385372509665,
+              "p05": -4.983883012429635e-05,
+              "p95": 0.0013214832002465813
+            },
+            "negative_direction_source_group_count": 13,
+            "one_sided_95_percent_wilson_lower": 0.613561883789637,
+            "positive_direction_rate": 0.7291666666666666,
+            "positive_direction_source_group_count": 35,
+            "source_group_count": 48,
+            "unique_pcm_pair_count": 675,
+            "zero_direction_source_group_count": 0
+          }
+        },
+        "overall": {
+          "collapsed_factorial_alias_count": 24,
+          "eligible_factorial_pair_cell_count": 4988,
+          "group_median_delta": {
+            "count": 527,
+            "maximum": 0.7808301787484775,
+            "median": 9.454922242602137e-05,
+            "minimum": -0.020748390392823723,
+            "p05": -0.00099212825298306,
+            "p95": 0.013545668883757163
+          },
+          "negative_direction_source_group_count": 155,
+          "one_sided_95_percent_wilson_lower": 0.6722498844457996,
+          "positive_direction_rate": 0.7058823529411765,
+          "positive_direction_source_group_count": 372,
+          "source_group_count": 527,
+          "unique_pcm_pair_count": 4964,
+          "zero_direction_source_group_count": 0
+        }
+      },
+      "positive_by_codec_family": {
+        "aac_lc": {
+          "balanced_accuracy": null,
+          "case_count": 1247,
+          "controlled_positive_count": 1247,
+          "false_negative_count": 44,
+          "false_positive_count": 0,
+          "false_positive_rate": null,
+          "negative_count": 0,
+          "recall": 0.9647153167602245,
+          "recall_two_sided_95_percent_wilson": [
+            0.9529645597468831,
+            0.9736116996399113
+          ],
+          "selected_population_accuracy": 0.9647153167602245,
+          "selected_population_precision": 1.0,
+          "specificity": null,
+          "specificity_two_sided_95_percent_wilson": null,
+          "true_negative_count": 0,
+          "true_positive_count": 1203
+        },
+        "mp3": {
+          "balanced_accuracy": null,
+          "case_count": 1367,
+          "controlled_positive_count": 1367,
+          "false_negative_count": 14,
+          "false_positive_count": 0,
+          "false_positive_rate": null,
+          "negative_count": 0,
+          "recall": 0.9897585954645208,
+          "recall_two_sided_95_percent_wilson": [
+            0.9828826399380746,
+            0.9938896858361351
+          ],
+          "selected_population_accuracy": 0.9897585954645208,
+          "selected_population_precision": 1.0,
+          "specificity": null,
+          "specificity_two_sided_95_percent_wilson": null,
+          "true_negative_count": 0,
+          "true_positive_count": 1353
+        },
+        "opus": {
+          "balanced_accuracy": null,
+          "case_count": 1247,
+          "controlled_positive_count": 1247,
+          "false_negative_count": 15,
+          "false_positive_count": 0,
+          "false_positive_rate": null,
+          "negative_count": 0,
+          "recall": 0.9879711307137129,
+          "recall_two_sided_95_percent_wilson": [
+            0.9802481099869578,
+            0.9926969354606082
+          ],
+          "selected_population_accuracy": 0.9879711307137129,
+          "selected_population_precision": 1.0,
+          "specificity": null,
+          "specificity_two_sided_95_percent_wilson": null,
+          "true_negative_count": 0,
+          "true_positive_count": 1232
+        },
+        "vorbis": {
+          "balanced_accuracy": null,
+          "case_count": 1127,
+          "controlled_positive_count": 1127,
+          "false_negative_count": 12,
+          "false_positive_count": 0,
+          "false_positive_rate": null,
+          "negative_count": 0,
+          "recall": 0.9893522626441881,
+          "recall_two_sided_95_percent_wilson": [
+            0.9814811959369482,
+            0.9938986784004069
+          ],
+          "selected_population_accuracy": 0.9893522626441881,
+          "selected_population_precision": 1.0,
+          "specificity": null,
+          "specificity_two_sided_95_percent_wilson": null,
+          "true_negative_count": 0,
+          "true_positive_count": 1115
+        }
+      },
+      "source_group_level": {
+        "controlled_positive_source_group_count": 527,
+        "controlled_positive_source_group_detection_count": 526,
+        "controlled_positive_source_group_detection_rate": 0.9981024667931688,
+        "negative_source_group_alert_count": 518,
+        "negative_source_group_alert_rate": 0.9829222011385199,
+        "negative_source_group_count": 527
+      },
+      "thresholds_retuned": false,
+      "unique_analysis_pcm_level": {
+        "auc": 0.5074942582575545,
+        "balanced_accuracy": 0.511350668915571,
+        "case_count": 7701,
+        "controlled_positive_count": 4964,
+        "false_negative_count": 85,
+        "false_positive_count": 2628,
+        "false_positive_rate": 0.9601753744976251,
+        "log_loss": 0.6487862743677061,
+        "negative_count": 2737,
+        "recall": 0.9828767123287672,
+        "recall_two_sided_95_percent_wilson": [
+          0.9788765400836131,
+          0.9861301010780068
+        ],
+        "selected_population_accuracy": 0.64770808985846,
+        "selected_population_precision": 0.6499267350472892,
+        "specificity": 0.039824625502374866,
+        "specificity_two_sided_95_percent_wilson": [
+          0.03312045535289581,
+          0.047818724148623475
+        ],
+        "true_negative_count": 109,
+        "true_positive_count": 4879
+      }
+    },
+    "random_high_frequency_mask": {
+      "by_source_domain": {
+        "demand_maestro_consumed_transfer": {
+          "balanced_accuracy": 0.5,
+          "case_count": 1139,
+          "controlled_positive_count": 628,
+          "false_negative_count": 0,
+          "false_positive_count": 511,
+          "false_positive_rate": 1.0,
+          "negative_count": 511,
+          "recall": 1.0,
+          "recall_two_sided_95_percent_wilson": [
+            0.9939202172205286,
+            1.0
+          ],
+          "selected_population_accuracy": 0.5513608428446005,
+          "selected_population_precision": 0.5513608428446005,
+          "specificity": 0.0,
+          "specificity_two_sided_95_percent_wilson": [
+            0.0,
+            0.007461440322800432
+          ],
+          "true_negative_count": 0,
+          "true_positive_count": 628
+        },
+        "musdb18hq_consumed_transfer": {
+          "balanced_accuracy": 0.5,
+          "case_count": 2224,
+          "controlled_positive_count": 1080,
+          "false_negative_count": 0,
+          "false_positive_count": 1144,
+          "false_positive_rate": 1.0,
+          "negative_count": 1144,
+          "recall": 1.0,
+          "recall_two_sided_95_percent_wilson": [
+            0.9964557004260809,
+            1.0
+          ],
+          "selected_population_accuracy": 0.4856115107913669,
+          "selected_population_precision": 0.4856115107913669,
+          "specificity": 0.0,
+          "specificity_two_sided_95_percent_wilson": [
+            0.0,
+            0.0033466806684617277
+          ],
+          "true_negative_count": 0,
+          "true_positive_count": 1080
+        },
+        "nsynth_test_sparse": {
+          "balanced_accuracy": 0.5,
+          "case_count": 1316,
+          "controlled_positive_count": 692,
+          "false_negative_count": 0,
+          "false_positive_count": 624,
+          "false_positive_rate": 1.0,
+          "negative_count": 624,
+          "recall": 1.0,
+          "recall_two_sided_95_percent_wilson": [
+            0.9944794050828696,
+            1.0
+          ],
+          "selected_population_accuracy": 0.5258358662613982,
+          "selected_population_precision": 0.5258358662613982,
+          "specificity": 0.0,
+          "specificity_two_sided_95_percent_wilson": [
+            -4.310273850992495e-19,
+            0.006118517289236887
+          ],
+          "true_negative_count": 0,
+          "true_positive_count": 692
+        },
+        "nsynth_train_sparse": {
+          "balanced_accuracy": 0.5,
+          "case_count": 2537,
+          "controlled_positive_count": 1276,
+          "false_negative_count": 0,
+          "false_positive_count": 1261,
+          "false_positive_rate": 1.0,
+          "negative_count": 1261,
+          "recall": 1.0,
+          "recall_two_sided_95_percent_wilson": [
+            0.9969984885282324,
+            1.0000000000000002
+          ],
+          "selected_population_accuracy": 0.5029562475364604,
+          "selected_population_precision": 0.5029562475364604,
+          "specificity": 0.0,
+          "specificity_two_sided_95_percent_wilson": [
+            -2.161818669003693e-19,
+            0.0030371069780364443
+          ],
+          "true_negative_count": 0,
+          "true_positive_count": 1276
+        },
+        "private_full_mix_training": {
+          "balanced_accuracy": 0.5,
+          "case_count": 1194,
+          "controlled_positive_count": 636,
+          "false_negative_count": 0,
+          "false_positive_count": 558,
+          "false_positive_rate": 1.0,
+          "negative_count": 558,
+          "recall": 1.0,
+          "recall_two_sided_95_percent_wilson": [
+            0.9939962333360292,
+            1.0
+          ],
+          "selected_population_accuracy": 0.5326633165829145,
+          "selected_population_precision": 0.5326633165829145,
+          "specificity": 0.0,
+          "specificity_two_sided_95_percent_wilson": [
+            -4.3071567806104965e-19,
+            0.006837264784192593
+          ],
+          "true_negative_count": 0,
+          "true_positive_count": 636
+        },
+        "public_tier_a_controlled": {
+          "balanced_accuracy": 0.5,
+          "case_count": 1243,
+          "controlled_positive_count": 676,
+          "false_negative_count": 0,
+          "false_positive_count": 567,
+          "false_positive_rate": 1.0,
+          "negative_count": 567,
+          "recall": 1.0,
+          "recall_two_sided_95_percent_wilson": [
+            0.9943494784396381,
+            0.9999999999999998
+          ],
+          "selected_population_accuracy": 0.5438455349959774,
+          "selected_population_precision": 0.5438455349959774,
+          "specificity": 0.0,
+          "specificity_two_sided_95_percent_wilson": [
+            -4.307624278511814e-19,
+            0.006729467107435093
+          ],
+          "true_negative_count": 0,
+          "true_positive_count": 676
+        }
+      },
+      "condition": "random_high_frequency_mask",
+      "disposition": "paper_aligned_replication_baseline_only_not_a_candidate",
+      "factorial_case_level": {
+        "auc": 0.48028776029244036,
+        "balanced_accuracy": 0.5,
+        "case_count": 9653,
+        "controlled_positive_count": 4988,
+        "false_negative_count": 0,
+        "false_positive_count": 4665,
+        "false_positive_rate": 1.0,
+        "log_loss": 0.7400381099673244,
+        "negative_count": 4665,
+        "recall": 1.0,
+        "recall_two_sided_95_percent_wilson": [
+          0.9992304525589638,
+          1.0000000000000002
+        ],
+        "selected_population_accuracy": 0.5167305500880556,
+        "selected_population_precision": 0.5167305500880556,
+        "specificity": 0.0,
+        "specificity_two_sided_95_percent_wilson": [
+          0.0,
+          0.0008227863067478075
+        ],
+        "true_negative_count": 0,
+        "true_positive_count": 4988
+      },
+      "fixed_boundary": 0.5,
+      "negative_by_history_class": {
+        "alternate-channel-topology": {
+          "balanced_accuracy": null,
+          "case_count": 120,
+          "controlled_positive_count": 0,
+          "false_negative_count": 0,
+          "false_positive_count": 120,
+          "false_positive_rate": 1.0,
+          "negative_count": 120,
+          "recall": null,
+          "recall_two_sided_95_percent_wilson": null,
+          "selected_population_accuracy": 0.0,
+          "selected_population_precision": 0.0,
+          "specificity": 0.0,
+          "specificity_two_sided_95_percent_wilson": [
+            0.0,
+            0.031019166418703486
+          ],
+          "true_negative_count": 0,
+          "true_positive_count": 0
+        },
+        "duration-prefix-3s": {
+          "balanced_accuracy": null,
+          "case_count": 120,
+          "controlled_positive_count": 0,
+          "false_negative_count": 0,
+          "false_positive_count": 120,
+          "false_positive_rate": 1.0,
+          "negative_count": 120,
+          "recall": null,
+          "recall_two_sided_95_percent_wilson": null,
+          "selected_population_accuracy": 0.0,
+          "selected_population_precision": 0.0,
+          "specificity": 0.0,
+          "specificity_two_sided_95_percent_wilson": [
+            0.0,
+            0.031019166418703486
+          ],
+          "true_negative_count": 0,
+          "true_positive_count": 0
+        },
+        "gain-minus6db-q31": {
+          "balanced_accuracy": null,
+          "case_count": 160,
+          "controlled_positive_count": 0,
+          "false_negative_count": 0,
+          "false_positive_count": 160,
+          "false_positive_rate": 1.0,
+          "negative_count": 160,
+          "recall": null,
+          "recall_two_sided_95_percent_wilson": null,
+          "selected_population_accuracy": 0.0,
+          "selected_population_precision": 0.0,
+          "specificity": 0.0,
+          "specificity_two_sided_95_percent_wilson": [
+            0.0,
+            0.02344619517150519
+          ],
+          "true_negative_count": 0,
+          "true_positive_count": 0
+        },
+        "lossless-wrapper-rewrite": {
+          "balanced_accuracy": null,
+          "case_count": 120,
+          "controlled_positive_count": 0,
+          "false_negative_count": 0,
+          "false_positive_count": 120,
+          "false_positive_rate": 1.0,
+          "negative_count": 120,
+          "recall": null,
+          "recall_two_sided_95_percent_wilson": null,
+          "selected_population_accuracy": 0.0,
+          "selected_population_precision": 0.0,
+          "specificity": 0.0,
+          "specificity_two_sided_95_percent_wilson": [
+            0.0,
+            0.031019166418703486
+          ],
+          "true_negative_count": 0,
+          "true_positive_count": 0
+        },
+        "lowpass-16k-cascade8": {
+          "balanced_accuracy": null,
+          "case_count": 160,
+          "controlled_positive_count": 0,
+          "false_negative_count": 0,
+          "false_positive_count": 160,
+          "false_positive_rate": 1.0,
+          "negative_count": 160,
+          "recall": null,
+          "recall_two_sided_95_percent_wilson": null,
+          "selected_population_accuracy": 0.0,
+          "selected_population_precision": 0.0,
+          "specificity": 0.0,
+          "specificity_two_sided_95_percent_wilson": [
+            0.0,
+            0.02344619517150519
+          ],
+          "true_negative_count": 0,
+          "true_positive_count": 0
+        },
+        "pcm_reference": {
+          "balanced_accuracy": null,
+          "case_count": 3385,
+          "controlled_positive_count": 0,
+          "false_negative_count": 0,
+          "false_positive_count": 3385,
+          "false_positive_rate": 1.0,
+          "negative_count": 3385,
+          "recall": null,
+          "recall_two_sided_95_percent_wilson": null,
+          "selected_population_accuracy": 0.0,
+          "selected_population_precision": 0.0,
+          "specificity": 0.0,
+          "specificity_two_sided_95_percent_wilson": [
+            0.0,
+            0.0011335610908251048
+          ],
+          "true_negative_count": 0,
+          "true_positive_count": 0
+        },
+        "prepend-digital-silence-500ms": {
+          "balanced_accuracy": null,
+          "case_count": 160,
+          "controlled_positive_count": 0,
+          "false_negative_count": 0,
+          "false_positive_count": 160,
+          "false_positive_rate": 1.0,
+          "negative_count": 160,
+          "recall": null,
+          "recall_two_sided_95_percent_wilson": null,
+          "selected_population_accuracy": 0.0,
+          "selected_population_precision": 0.0,
+          "specificity": 0.0,
+          "specificity_two_sided_95_percent_wilson": [
+            0.0,
+            0.02344619517150519
+          ],
+          "true_negative_count": 0,
+          "true_positive_count": 0
+        },
+        "requantize-12bit-tpdf": {
+          "balanced_accuracy": null,
+          "case_count": 160,
+          "controlled_positive_count": 0,
+          "false_negative_count": 0,
+          "false_positive_count": 160,
+          "false_positive_rate": 1.0,
+          "negative_count": 160,
+          "recall": null,
+          "recall_two_sided_95_percent_wilson": null,
+          "selected_population_accuracy": 0.0,
+          "selected_population_precision": 0.0,
+          "specificity": 0.0,
+          "specificity_two_sided_95_percent_wilson": [
+            0.0,
+            0.02344619517150519
+          ],
+          "true_negative_count": 0,
+          "true_positive_count": 0
+        },
+        "resample-roundtrip-32k": {
+          "balanced_accuracy": null,
+          "case_count": 120,
+          "controlled_positive_count": 0,
+          "false_negative_count": 0,
+          "false_positive_count": 120,
+          "false_positive_rate": 1.0,
+          "negative_count": 120,
+          "recall": null,
+          "recall_two_sided_95_percent_wilson": null,
+          "selected_population_accuracy": 0.0,
+          "selected_population_precision": 0.0,
+          "specificity": 0.0,
+          "specificity_two_sided_95_percent_wilson": [
+            0.0,
+            0.031019166418703486
+          ],
+          "true_negative_count": 0,
+          "true_positive_count": 0
+        },
+        "trim-head-250ms": {
+          "balanced_accuracy": null,
+          "case_count": 160,
+          "controlled_positive_count": 0,
+          "false_negative_count": 0,
+          "false_positive_count": 160,
+          "false_positive_rate": 1.0,
+          "negative_count": 160,
+          "recall": null,
+          "recall_two_sided_95_percent_wilson": null,
+          "selected_population_accuracy": 0.0,
+          "selected_population_precision": 0.0,
+          "specificity": 0.0,
+          "specificity_two_sided_95_percent_wilson": [
+            0.0,
+            0.02344619517150519
+          ],
+          "true_negative_count": 0,
+          "true_positive_count": 0
+        }
+      },
+      "outer_fold_training": {
+        "demand_maestro_consumed_transfer": {
+          "best_epoch": 10,
+          "best_inner_validation": {
+            "auc": 0.5205707035004427,
+            "case_count": 1390,
+            "controlled_positive_count": 881,
+            "false_negative_count": 0,
+            "false_positive_count": 509,
+            "false_positive_rate_at_fixed_0_5": 1.0,
+            "log_loss": 0.6565608794751002,
+            "negative_count": 509,
+            "recall_at_fixed_0_5": 1.0,
+            "true_negative_count": 0,
+            "true_positive_count": 881
+          },
+          "checkpoint_sha256": "590e69d9bf64b4015123d1e88ffdb952f4072fa9f761c45aba1efe98c4ac7bf2",
+          "epochs_completed": 15,
+          "outer_artifact_count": 1113,
+          "outer_unique_pcm_count": 904,
+          "parameter_count": 4820594,
+          "training_label_counts": {
+            "controlled_positive": 3455,
+            "negative": 1952
+          },
+          "training_unique_pcm_count": 5407,
+          "validation_label_counts": {
+            "controlled_positive": 881,
+            "negative": 509
+          },
+          "validation_unique_pcm_count": 1390
+        },
+        "musdb18hq_consumed_transfer": {
+          "best_epoch": 2,
+          "best_inner_validation": {
+            "auc": 0.532025975191225,
+            "case_count": 1254,
+            "controlled_positive_count": 818,
+            "false_negative_count": 0,
+            "false_positive_count": 436,
+            "false_positive_rate_at_fixed_0_5": 1.0,
+            "log_loss": 0.6449459643690709,
+            "negative_count": 436,
+            "recall_at_fixed_0_5": 1.0,
+            "true_negative_count": 0,
+            "true_positive_count": 818
+          },
+          "checkpoint_sha256": "8a706d53141a08b2d40b55503afdb62191b255e5557b127af6d06cf9d3f768c2",
+          "epochs_completed": 7,
+          "outer_artifact_count": 2208,
+          "outer_unique_pcm_count": 1805,
+          "parameter_count": 4820594,
+          "training_label_counts": {
+            "controlled_positive": 3071,
+            "negative": 1571
+          },
+          "training_unique_pcm_count": 4642,
+          "validation_label_counts": {
+            "controlled_positive": 818,
+            "negative": 436
+          },
+          "validation_unique_pcm_count": 1254
+        },
+        "nsynth_test_sparse": {
+          "best_epoch": 3,
+          "best_inner_validation": {
+            "auc": 0.5275728768095933,
+            "case_count": 1411,
+            "controlled_positive_count": 909,
+            "false_negative_count": 0,
+            "false_positive_count": 502,
+            "false_positive_rate_at_fixed_0_5": 1.0,
+            "log_loss": 0.6503051782894269,
+            "negative_count": 502,
+            "recall_at_fixed_0_5": 1.0,
+            "true_negative_count": 0,
+            "true_positive_count": 909
+          },
+          "checkpoint_sha256": "78acf7bd965a8d1abd383d63dc4108bac243ae94fc550ab85ea98d997f7ec9e4",
+          "epochs_completed": 8,
+          "outer_artifact_count": 1290,
+          "outer_unique_pcm_count": 1021,
+          "parameter_count": 4820594,
+          "training_label_counts": {
+            "controlled_positive": 3373,
+            "negative": 1896
+          },
+          "training_unique_pcm_count": 5269,
+          "validation_label_counts": {
+            "controlled_positive": 909,
+            "negative": 502
+          },
+          "validation_unique_pcm_count": 1411
+        },
+        "nsynth_train_sparse": {
+          "best_epoch": 10,
+          "best_inner_validation": {
+            "auc": 0.5577053893895297,
+            "case_count": 1117,
+            "controlled_positive_count": 722,
+            "false_negative_count": 0,
+            "false_positive_count": 395,
+            "false_positive_rate_at_fixed_0_5": 1.0,
+            "log_loss": 0.6471776356637636,
+            "negative_count": 395,
+            "recall_at_fixed_0_5": 1.0,
+            "true_negative_count": 0,
+            "true_positive_count": 722
+          },
+          "checkpoint_sha256": "35824f4396c75f1182c3967f8119cc4fec97981035eec7c698f8cf28b5b59473",
+          "epochs_completed": 15,
+          "outer_artifact_count": 2508,
+          "outer_unique_pcm_count": 2049,
+          "parameter_count": 4820594,
+          "training_label_counts": {
+            "controlled_positive": 2974,
+            "negative": 1561
+          },
+          "training_unique_pcm_count": 4535,
+          "validation_label_counts": {
+            "controlled_positive": 722,
+            "negative": 395
+          },
+          "validation_unique_pcm_count": 1117
+        },
+        "private_full_mix_training": {
+          "best_epoch": 11,
+          "best_inner_validation": {
+            "auc": 0.5363773481420541,
+            "case_count": 1379,
+            "controlled_positive_count": 884,
+            "false_negative_count": 0,
+            "false_positive_count": 495,
+            "false_positive_rate_at_fixed_0_5": 1.0,
+            "log_loss": 0.6513181472446814,
+            "negative_count": 495,
+            "recall_at_fixed_0_5": 1.0,
+            "true_negative_count": 0,
+            "true_positive_count": 884
+          },
+          "checkpoint_sha256": "efa4a89a1d87c0c2860c196ca651e2691583e1b856a4e1c6f997050abae8ee1f",
+          "epochs_completed": 16,
+          "outer_artifact_count": 1178,
+          "outer_unique_pcm_count": 941,
+          "parameter_count": 4820594,
+          "training_label_counts": {
+            "controlled_positive": 3444,
+            "negative": 1937
+          },
+          "training_unique_pcm_count": 5381,
+          "validation_label_counts": {
+            "controlled_positive": 884,
+            "negative": 495
+          },
+          "validation_unique_pcm_count": 1379
+        },
+        "public_tier_a_controlled": {
+          "best_epoch": 6,
+          "best_inner_validation": {
+            "auc": 0.523941537528494,
+            "case_count": 1290,
+            "controlled_positive_count": 828,
+            "false_negative_count": 0,
+            "false_positive_count": 462,
+            "false_positive_rate_at_fixed_0_5": 1.0,
+            "log_loss": 0.6518491882528924,
+            "negative_count": 462,
+            "recall_at_fixed_0_5": 1.0,
+            "true_negative_count": 0,
+            "true_positive_count": 828
+          },
+          "checkpoint_sha256": "2381633d9817f4c55014d9b8dbc07797a5fbc43b30bb42686419449ee8d3aee3",
+          "epochs_completed": 11,
+          "outer_artifact_count": 1216,
+          "outer_unique_pcm_count": 981,
+          "parameter_count": 4820594,
+          "training_label_counts": {
+            "controlled_positive": 3461,
+            "negative": 1969
+          },
+          "training_unique_pcm_count": 5430,
+          "validation_label_counts": {
+            "controlled_positive": 828,
+            "negative": 462
+          },
+          "validation_unique_pcm_count": 1290
+        }
+      },
+      "paired_positive_minus_matched_reference": {
+        "by_codec_family": {
+          "aac_lc": {
+            "group_median_delta": {
+              "count": 527,
+              "maximum": 0.002972402355887638,
+              "median": -9.699301285470696e-07,
+              "minimum": -0.0051830465143377635,
+              "p05": -0.0008162092078816018,
+              "p95": 0.0004759154536507324
+            },
+            "negative_direction_source_group_count": 276,
+            "one_sided_95_percent_wilson_lower": 0.4407081426918809,
+            "positive_direction_rate": 0.476280834914611,
+            "positive_direction_source_group_count": 251,
+            "source_group_count": 527,
+            "unique_pcm_pair_count": 1247,
+            "zero_direction_source_group_count": 0
+          },
+          "mp3": {
+            "group_median_delta": {
+              "count": 527,
+              "maximum": 0.00599261305548926,
+              "median": 1.1026859283447266e-06,
+              "minimum": -0.00506669282913208,
+              "p05": -0.0006440081379629924,
+              "p95": 0.001010224223136896
+            },
+            "negative_direction_source_group_count": 262,
+            "one_sided_95_percent_wilson_lower": 0.4670984721739487,
+            "positive_direction_rate": 0.5028462998102466,
+            "positive_direction_source_group_count": 265,
+            "source_group_count": 527,
+            "unique_pcm_pair_count": 1353,
+            "zero_direction_source_group_count": 0
+          },
+          "opus": {
+            "group_median_delta": {
+              "count": 527,
+              "maximum": 0.003185656937685799,
+              "median": 6.946650418337974e-06,
+              "minimum": -0.01548412171277136,
+              "p05": -0.002429701929742595,
+              "p95": 0.000682971965182899
+            },
+            "negative_direction_source_group_count": 239,
+            "one_sided_95_percent_wilson_lower": 0.5106722506318292,
+            "positive_direction_rate": 0.5464895635673624,
+            "positive_direction_source_group_count": 288,
+            "source_group_count": 527,
+            "unique_pcm_pair_count": 1246,
+            "zero_direction_source_group_count": 0
+          },
+          "vorbis": {
+            "group_median_delta": {
+              "count": 527,
+              "maximum": 0.007469881664622924,
+              "median": 5.081025036890452e-05,
+              "minimum": -0.0035996978933161006,
+              "p05": -0.0005836302583867691,
+              "p95": 0.0016377145593816746
+            },
+            "negative_direction_source_group_count": 177,
+            "one_sided_95_percent_wilson_lower": 0.6295342673393111,
+            "positive_direction_rate": 0.6641366223908919,
+            "positive_direction_source_group_count": 350,
+            "source_group_count": 527,
+            "unique_pcm_pair_count": 1118,
+            "zero_direction_source_group_count": 0
+          }
+        },
+        "by_encoder_lineage": {
+          "apple_audiotoolbox_aac": {
+            "group_median_delta": {
+              "count": 120,
+              "maximum": 0.002244976433840584,
+              "median": 2.4871392683700755e-06,
+              "minimum": -0.001520021395249871,
+              "p05": -0.0006398352709683419,
+              "p95": 0.0006873038682071063
+            },
+            "negative_direction_source_group_count": 51,
+            "one_sided_95_percent_wilson_lower": 0.4999230479495283,
+            "positive_direction_rate": 0.575,
+            "positive_direction_source_group_count": 69,
+            "source_group_count": 120,
+            "unique_pcm_pair_count": 120,
+            "zero_direction_source_group_count": 0
+          },
+          "ffmpeg_native_aac": {
+            "group_median_delta": {
+              "count": 527,
+              "maximum": 0.0036998282779346914,
+              "median": -1.357360319698131e-06,
+              "minimum": -0.0051830465143377635,
+              "p05": -0.0008025657046924372,
+              "p95": 0.0005609433759342086
+            },
+            "negative_direction_source_group_count": 280,
+            "one_sided_95_percent_wilson_lower": 0.43318652090137205,
+            "positive_direction_rate": 0.4686907020872865,
+            "positive_direction_source_group_count": 247,
+            "source_group_count": 527,
+            "unique_pcm_pair_count": 1127,
+            "zero_direction_source_group_count": 0
+          },
+          "lame": {
+            "group_median_delta": {
+              "count": 527,
+              "maximum": 0.005691829052838382,
+              "median": -1.387162641974804e-06,
+              "minimum": -0.00506669282913208,
+              "p05": -0.0005960128524085895,
+              "p95": 0.0009830561551181004
+            },
+            "negative_direction_source_group_count": 266,
+            "one_sided_95_percent_wilson_lower": 0.4595481310772203,
+            "positive_direction_rate": 0.4952561669829222,
+            "positive_direction_source_group_count": 261,
+            "source_group_count": 527,
+            "unique_pcm_pair_count": 1233,
+            "zero_direction_source_group_count": 0
+          },
+          "shine": {
+            "group_median_delta": {
+              "count": 120,
+              "maximum": 0.007634718851609601,
+              "median": -2.6182423938425625e-05,
+              "minimum": -0.009570347179066019,
+              "p05": -0.0018102788654240586,
+              "p95": 0.001439844559539377
+            },
+            "negative_direction_source_group_count": 62,
+            "one_sided_95_percent_wilson_lower": 0.4094965155156843,
+            "positive_direction_rate": 0.48333333333333334,
+            "positive_direction_source_group_count": 58,
+            "source_group_count": 120,
+            "unique_pcm_pair_count": 120,
+            "zero_direction_source_group_count": 0
+          },
+          "xiph_libopus": {
+            "group_median_delta": {
+              "count": 527,
+              "maximum": 0.003185656937685799,
+              "median": 6.946650418337974e-06,
+              "minimum": -0.01548412171277136,
+              "p05": -0.002429701929742595,
+              "p95": 0.000682971965182899
+            },
+            "negative_direction_source_group_count": 239,
+            "one_sided_95_percent_wilson_lower": 0.5106722506318292,
+            "positive_direction_rate": 0.5464895635673624,
+            "positive_direction_source_group_count": 288,
+            "source_group_count": 527,
+            "unique_pcm_pair_count": 1246,
+            "zero_direction_source_group_count": 0
+          },
+          "xiph_libvorbis": {
+            "group_median_delta": {
+              "count": 527,
+              "maximum": 0.007469881664622924,
+              "median": 5.081025036890452e-05,
+              "minimum": -0.0035996978933161006,
+              "p05": -0.0005836302583867691,
+              "p95": 0.0016377145593816746
+            },
+            "negative_direction_source_group_count": 177,
+            "one_sided_95_percent_wilson_lower": 0.6295342673393111,
+            "positive_direction_rate": 0.6641366223908919,
+            "positive_direction_source_group_count": 350,
+            "source_group_count": 527,
+            "unique_pcm_pair_count": 1118,
+            "zero_direction_source_group_count": 0
+          }
+        },
+        "by_encoder_setting": {
+          "dev-aac-apple-cbr128-default--mono": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.0008322379805825175,
+              "median": 4.605813459901409e-06,
+              "minimum": -0.0010970885103398498,
+              "p05": -0.00037758377465336713,
+              "p95": 0.000337385860356448
+            },
+            "negative_direction_source_group_count": 24,
+            "one_sided_95_percent_wilson_lower": 0.4938332306939004,
+            "positive_direction_rate": 0.6,
+            "positive_direction_source_group_count": 36,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-aac-apple-cbr128-default--stereo": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.002244976433840584,
+              "median": 1.3627789237080634e-06,
+              "minimum": -0.001520021395249871,
+              "p05": -0.0006398352709683419,
+              "p95": 0.0008777274326845382
+            },
+            "negative_direction_source_group_count": 27,
+            "one_sided_95_percent_wilson_lower": 0.44448170628503847,
+            "positive_direction_rate": 0.55,
+            "positive_direction_source_group_count": 33,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-aac-ffmpeg-cbr128-cutoff16k--mono": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.006609689105640748,
+              "median": -6.502324878532306e-08,
+              "minimum": -0.00271595066243957,
+              "p05": -0.0014901340007781982,
+              "p95": 0.0017702584916895454
+            },
+            "negative_direction_source_group_count": 30,
+            "one_sided_95_percent_wilson_lower": 0.3961409626064367,
+            "positive_direction_rate": 0.5,
+            "positive_direction_source_group_count": 30,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-aac-ffmpeg-cbr128-cutoff16k--stereo": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.005046248435974121,
+              "median": -6.502324884638533e-07,
+              "minimum": -0.0037537054582076346,
+              "p05": -0.0011703819036483377,
+              "p95": 0.0014805574308742458
+            },
+            "negative_direction_source_group_count": 31,
+            "one_sided_95_percent_wilson_lower": 0.38024863384986296,
+            "positive_direction_rate": 0.48333333333333334,
+            "positive_direction_source_group_count": 29,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-aac-ffmpeg-cbr128-default--mono": {
+            "group_median_delta": {
+              "count": 325,
+              "maximum": 0.0009696862914345683,
+              "median": -3.668394955802512e-06,
+              "minimum": -0.0008482689207249816,
+              "p05": -0.0003691944209012421,
+              "p95": 0.0003765604712745896
+            },
+            "negative_direction_source_group_count": 182,
+            "one_sided_95_percent_wilson_lower": 0.39538961143787565,
+            "positive_direction_rate": 0.44,
+            "positive_direction_source_group_count": 143,
+            "source_group_count": 325,
+            "unique_pcm_pair_count": 443,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-aac-ffmpeg-cbr128-default--stereo": {
+            "group_median_delta": {
+              "count": 341,
+              "maximum": 0.0036998282779346914,
+              "median": 2.30290672997846e-06,
+              "minimum": -0.00559322834014897,
+              "p05": -0.0012967369773170256,
+              "p95": 0.0008731917901473318
+            },
+            "negative_direction_source_group_count": 167,
+            "one_sided_95_percent_wilson_lower": 0.46583113707163953,
+            "positive_direction_rate": 0.5102639296187683,
+            "positive_direction_source_group_count": 174,
+            "source_group_count": 341,
+            "unique_pcm_pair_count": 444,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-aac-ffmpeg-cbr96-default--mono": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.0022588155486367167,
+              "median": 2.078034661012751e-06,
+              "minimum": -0.001014801588925529,
+              "p05": -0.00028783597729423736,
+              "p95": 0.0005262280052358232
+            },
+            "negative_direction_source_group_count": 29,
+            "one_sided_95_percent_wilson_lower": 0.41214374056342057,
+            "positive_direction_rate": 0.5166666666666667,
+            "positive_direction_source_group_count": 31,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-aac-ffmpeg-cbr96-default--stereo": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.005110729824412963,
+              "median": 7.968328215862686e-05,
+              "minimum": -0.003433243794874752,
+              "p05": -0.00045562928373163995,
+              "p95": 0.002931292219595425
+            },
+            "negative_direction_source_group_count": 19,
+            "one_sided_95_percent_wilson_lower": 0.5784743385831995,
+            "positive_direction_rate": 0.6833333333333333,
+            "positive_direction_source_group_count": 41,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-mp3-lame-cbr128-default--mono": {
+            "group_median_delta": {
+              "count": 323,
+              "maximum": 0.002471121874722648,
+              "median": -9.146603670906472e-06,
+              "minimum": -0.004197478294372559,
+              "p05": -0.0004932436076077962,
+              "p95": 0.0006568916819312429
+            },
+            "negative_direction_source_group_count": 178,
+            "one_sided_95_percent_wilson_lower": 0.40400662580454655,
+            "positive_direction_rate": 0.44891640866873067,
+            "positive_direction_source_group_count": 145,
+            "source_group_count": 323,
+            "unique_pcm_pair_count": 434,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-mp3-lame-cbr128-default--stereo": {
+            "group_median_delta": {
+              "count": 313,
+              "maximum": 0.009800085425376914,
+              "median": 2.3272904482785073e-05,
+              "minimum": -0.005244628949598873,
+              "p05": -0.0006531682881441901,
+              "p95": 0.0016798425804484937
+            },
+            "negative_direction_source_group_count": 145,
+            "one_sided_95_percent_wilson_lower": 0.490263716292281,
+            "positive_direction_rate": 0.536741214057508,
+            "positive_direction_source_group_count": 168,
+            "source_group_count": 313,
+            "unique_pcm_pair_count": 439,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-mp3-lame-cbr128-lowpass16k--mono": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.004492553797635135,
+              "median": 4.536455327813771e-05,
+              "minimum": -0.0008624250238592479,
+              "p05": -0.000603143193504957,
+              "p95": 0.0016713174906643853
+            },
+            "negative_direction_source_group_count": 19,
+            "one_sided_95_percent_wilson_lower": 0.5784743385831995,
+            "positive_direction_rate": 0.6833333333333333,
+            "positive_direction_source_group_count": 41,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-mp3-lame-cbr128-lowpass16k--stereo": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.005725047805092531,
+              "median": 9.976733814587302e-05,
+              "minimum": -0.006711483001708984,
+              "p05": -0.0009793146090073422,
+              "p95": 0.0047904429110613425
+            },
+            "negative_direction_source_group_count": 22,
+            "one_sided_95_percent_wilson_lower": 0.5273170667267085,
+            "positive_direction_rate": 0.6333333333333333,
+            "positive_direction_source_group_count": 38,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-mp3-lame-cbr96-default--mono": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.0014408284967596385,
+              "median": 1.2755393981933594e-05,
+              "minimum": -0.0008788000453602285,
+              "p05": -0.00040278272195291566,
+              "p95": 0.0007594523104753385
+            },
+            "negative_direction_source_group_count": 27,
+            "one_sided_95_percent_wilson_lower": 0.44448170628503847,
+            "positive_direction_rate": 0.55,
+            "positive_direction_source_group_count": 33,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-mp3-lame-cbr96-default--stereo": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.00599261305548926,
+              "median": 0.00012120062654669139,
+              "minimum": -0.001159467480399412,
+              "p05": -0.0008260274475271612,
+              "p95": 0.0031093250621448635
+            },
+            "negative_direction_source_group_count": 17,
+            "one_sided_95_percent_wilson_lower": 0.6132512435080949,
+            "positive_direction_rate": 0.7166666666666667,
+            "positive_direction_source_group_count": 43,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-mp3-lame-vbr-v2-default--mono": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.006215984171087041,
+              "median": 7.429989901458489e-05,
+              "minimum": -0.0010648044672879609,
+              "p05": -0.0007612437009811013,
+              "p95": 0.002018754319711191
+            },
+            "negative_direction_source_group_count": 22,
+            "one_sided_95_percent_wilson_lower": 0.5273170667267085,
+            "positive_direction_rate": 0.6333333333333333,
+            "positive_direction_source_group_count": 38,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-mp3-lame-vbr-v2-default--stereo": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.0021980784156105937,
+              "median": -1.6147440130065416e-05,
+              "minimum": -0.004457457499070561,
+              "p05": -0.00046528333967378317,
+              "p95": 0.0002467832782051979
+            },
+            "negative_direction_source_group_count": 35,
+            "one_sided_95_percent_wilson_lower": 0.31779273921256157,
+            "positive_direction_rate": 0.4166666666666667,
+            "positive_direction_source_group_count": 25,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-mp3-shine-cbr128-default--mono": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.0014370826157655836,
+              "median": -0.00010369745167815303,
+              "minimum": -0.009570347179066019,
+              "p05": -0.0016681843725117995,
+              "p95": 0.0004669883034445819
+            },
+            "negative_direction_source_group_count": 39,
+            "one_sided_95_percent_wilson_lower": 0.25718564751102846,
+            "positive_direction_rate": 0.35,
+            "positive_direction_source_group_count": 21,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-mp3-shine-cbr128-default--stereo": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.007634718851609601,
+              "median": 0.0003777839920737214,
+              "minimum": -0.007309151237661182,
+              "p05": -0.002459670549089238,
+              "p95": 0.003316516849127742
+            },
+            "negative_direction_source_group_count": 23,
+            "one_sided_95_percent_wilson_lower": 0.5105153040436409,
+            "positive_direction_rate": 0.6166666666666667,
+            "positive_direction_source_group_count": 37,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-opus-libopus-cbr128-20ms--mono": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.002662192691456289,
+              "median": 2.519650892818248e-06,
+              "minimum": -0.01241545785557141,
+              "p05": -0.0009749087420376779,
+              "p95": 0.0006844049150292851
+            },
+            "negative_direction_source_group_count": 26,
+            "one_sided_95_percent_wilson_lower": 0.46081832365979347,
+            "positive_direction_rate": 0.5666666666666667,
+            "positive_direction_source_group_count": 34,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-opus-libopus-cbr128-20ms--stereo": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.0010605508630926463,
+              "median": -8.745626969786091e-06,
+              "minimum": -0.025584692304784662,
+              "p05": -0.0032916204495863997,
+              "p95": 0.0004319789734753443
+            },
+            "negative_direction_source_group_count": 33,
+            "one_sided_95_percent_wilson_lower": 0.34879638614436553,
+            "positive_direction_rate": 0.45,
+            "positive_direction_source_group_count": 27,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-opus-libopus-cbr64-20ms--mono": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.0029293190349232168,
+              "median": 1.1105429042534976e-05,
+              "minimum": -0.0012443119829351756,
+              "p05": -0.000541165200146787,
+              "p95": 0.0005766001614656952
+            },
+            "negative_direction_source_group_count": 23,
+            "one_sided_95_percent_wilson_lower": 0.5105153040436409,
+            "positive_direction_rate": 0.6166666666666667,
+            "positive_direction_source_group_count": 37,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-opus-libopus-cbr64-20ms--stereo": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.0010617104443636505,
+              "median": -3.928487951110338e-06,
+              "minimum": -0.019221506335518557,
+              "p05": -0.0035306575623425757,
+              "p95": 0.00045915842056276033
+            },
+            "negative_direction_source_group_count": 31,
+            "one_sided_95_percent_wilson_lower": 0.38024863384986296,
+            "positive_direction_rate": 0.48333333333333334,
+            "positive_direction_source_group_count": 29,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-opus-libopus-cbr96-10ms--mono": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.0038837086070667715,
+              "median": -5.4023482582987725e-06,
+              "minimum": -0.020029176365245482,
+              "p05": -0.0025297308510000777,
+              "p95": 0.0011855114590038735
+            },
+            "negative_direction_source_group_count": 32,
+            "one_sided_95_percent_wilson_lower": 0.3644669308556731,
+            "positive_direction_rate": 0.4666666666666667,
+            "positive_direction_source_group_count": 28,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-opus-libopus-cbr96-10ms--stereo": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.0011865496635437012,
+              "median": -5.1422552628799245e-06,
+              "minimum": -0.002965504472905889,
+              "p05": -0.0014530561187051315,
+              "p95": 0.0007363224571401533
+            },
+            "negative_direction_source_group_count": 30,
+            "one_sided_95_percent_wilson_lower": 0.3961409626064367,
+            "positive_direction_rate": 0.5,
+            "positive_direction_source_group_count": 30,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-opus-libopus-cbr96-20ms--mono": {
+            "group_median_delta": {
+              "count": 318,
+              "maximum": 0.003380715847015381,
+              "median": 1.1975114996010117e-06,
+              "minimum": -0.017213932492516237,
+              "p05": -0.001969562877308195,
+              "p95": 0.00043611899018285627
+            },
+            "negative_direction_source_group_count": 156,
+            "one_sided_95_percent_wilson_lower": 0.4634380247737107,
+            "positive_direction_rate": 0.5094339622641509,
+            "positive_direction_source_group_count": 162,
+            "source_group_count": 318,
+            "unique_pcm_pair_count": 444,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-opus-libopus-cbr96-20ms--stereo": {
+            "group_median_delta": {
+              "count": 341,
+              "maximum": 0.003185656937685799,
+              "median": 1.8481774763601244e-05,
+              "minimum": -0.014749104326421514,
+              "p05": -0.001473166725852293,
+              "p95": 0.0008530345830050079
+            },
+            "negative_direction_source_group_count": 139,
+            "one_sided_95_percent_wilson_lower": 0.5480445415771577,
+            "positive_direction_rate": 0.592375366568915,
+            "positive_direction_source_group_count": 202,
+            "source_group_count": 341,
+            "unique_pcm_pair_count": 442,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-vorbis-libvorbis-q2--mono": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.004955537752671657,
+              "median": 6.42185861421396e-06,
+              "minimum": -0.002124245058406471,
+              "p05": -0.0007703233848918633,
+              "p95": 0.0029363012313842352
+            },
+            "negative_direction_source_group_count": 29,
+            "one_sided_95_percent_wilson_lower": 0.41214374056342057,
+            "positive_direction_rate": 0.5166666666666667,
+            "positive_direction_source_group_count": 31,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-vorbis-libvorbis-q2--stereo": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.008329237049276128,
+              "median": 0.0001782829111272588,
+              "minimum": -0.002533441240137213,
+              "p05": -0.0017476141452789416,
+              "p95": 0.005548380342396838
+            },
+            "negative_direction_source_group_count": 18,
+            "one_sided_95_percent_wilson_lower": 0.5957919106719779,
+            "positive_direction_rate": 0.7,
+            "positive_direction_source_group_count": 42,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-vorbis-libvorbis-q4--mono": {
+            "group_median_delta": {
+              "count": 341,
+              "maximum": 0.004578541083769427,
+              "median": 3.7892298264896596e-05,
+              "minimum": -0.004196795550259647,
+              "p05": -0.000518567995591579,
+              "p95": 0.0010475462133233693
+            },
+            "negative_direction_source_group_count": 122,
+            "one_sided_95_percent_wilson_lower": 0.5985657758143105,
+            "positive_direction_rate": 0.6422287390029325,
+            "positive_direction_source_group_count": 219,
+            "source_group_count": 341,
+            "unique_pcm_pair_count": 440,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-vorbis-libvorbis-q4--stereo": {
+            "group_median_delta": {
+              "count": 313,
+              "maximum": 0.007469881664622924,
+              "median": 6.975233554840088e-05,
+              "minimum": -0.005334025079553828,
+              "p05": -0.0006143778020685663,
+              "p95": 0.002139015577056198
+            },
+            "negative_direction_source_group_count": 110,
+            "one_sided_95_percent_wilson_lower": 0.6030744855667135,
+            "positive_direction_rate": 0.6485623003194888,
+            "positive_direction_source_group_count": 203,
+            "source_group_count": 313,
+            "unique_pcm_pair_count": 438,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-vorbis-libvorbis-q6--mono": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.0036703564903952657,
+              "median": 6.830150430853221e-05,
+              "minimum": -0.0012600747021761505,
+              "p05": -0.00021439032121129407,
+              "p95": 0.0008572688427838425
+            },
+            "negative_direction_source_group_count": 14,
+            "one_sided_95_percent_wilson_lower": 0.6665557376524909,
+            "positive_direction_rate": 0.7666666666666667,
+            "positive_direction_source_group_count": 46,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          },
+          "dev-vorbis-libvorbis-q6--stereo": {
+            "group_median_delta": {
+              "count": 60,
+              "maximum": 0.005997467041015669,
+              "median": 4.8995018005371094e-05,
+              "minimum": -0.0010496432130987499,
+              "p05": -0.0005407625978643193,
+              "p95": 0.0015873403440822384
+            },
+            "negative_direction_source_group_count": 23,
+            "one_sided_95_percent_wilson_lower": 0.5105153040436409,
+            "positive_direction_rate": 0.6166666666666667,
+            "positive_direction_source_group_count": 37,
+            "source_group_count": 60,
+            "unique_pcm_pair_count": 60,
+            "zero_direction_source_group_count": 0
+          }
+        },
+        "by_post_transform": {
+          "alternate-channel-topology": {
+            "group_median_delta": {
+              "count": 40,
+              "maximum": 0.0033503743735226466,
+              "median": 2.3663043975802323e-05,
+              "minimum": -0.0009658607569607569,
+              "p05": -0.00013488517566165867,
+              "p95": 0.0005942780863154526
+            },
+            "negative_direction_source_group_count": 16,
+            "one_sided_95_percent_wilson_lower": 0.4701941555435975,
+            "positive_direction_rate": 0.6,
+            "positive_direction_source_group_count": 24,
+            "source_group_count": 40,
+            "unique_pcm_pair_count": 159,
+            "zero_direction_source_group_count": 0
+          },
+          "duration-prefix-3s": {
+            "group_median_delta": {
+              "count": 40,
+              "maximum": 0.0024045854806900024,
+              "median": -3.956258296966553e-06,
+              "minimum": -0.0005871355533599854,
+              "p05": -0.0004775464534759521,
+              "p95": 0.0008481703698635067
+            },
+            "negative_direction_source_group_count": 21,
+            "one_sided_95_percent_wilson_lower": 0.35088071456388525,
+            "positive_direction_rate": 0.475,
+            "positive_direction_source_group_count": 19,
+            "source_group_count": 40,
+            "unique_pcm_pair_count": 160,
+            "zero_direction_source_group_count": 0
+          },
+          "gain-minus6db-q31": {
+            "group_median_delta": {
+              "count": 40,
+              "maximum": 0.002445917237888673,
+              "median": 2.053786407818503e-05,
+              "minimum": -0.0008430833166295781,
+              "p05": -0.0004108487205072203,
+              "p95": 0.0007312521338462601
+            },
+            "negative_direction_source_group_count": 14,
+            "one_sided_95_percent_wilson_lower": 0.5200676801867865,
+            "positive_direction_rate": 0.65,
+            "positive_direction_source_group_count": 26,
+            "source_group_count": 40,
+            "unique_pcm_pair_count": 160,
+            "zero_direction_source_group_count": 0
+          },
+          "identity": {
+            "group_median_delta": {
+              "count": 527,
+              "maximum": 0.005046248435974121,
+              "median": 1.1156905781128934e-05,
+              "minimum": -0.004417506131258908,
+              "p05": -0.000397044962102755,
+              "p95": 0.0006636695428327787
+            },
+            "negative_direction_source_group_count": 212,
+            "one_sided_95_percent_wilson_lower": 0.562175552798327,
+            "positive_direction_rate": 0.5977229601518027,
+            "positive_direction_source_group_count": 315,
+            "source_group_count": 527,
+            "unique_pcm_pair_count": 3548,
+            "zero_direction_source_group_count": 0
+          },
+          "lossless-wrapper-rewrite": {
+            "group_median_delta": {
+              "count": 40,
+              "maximum": 0.0018842003562233312,
+              "median": -1.931461420923153e-05,
+              "minimum": -0.0008819130333986847,
+              "p05": -0.0004924543879248704,
+              "p95": 0.0006514048034494393
+            },
+            "negative_direction_source_group_count": 24,
+            "one_sided_95_percent_wilson_lower": 0.2828648452726892,
+            "positive_direction_rate": 0.4,
+            "positive_direction_source_group_count": 16,
+            "source_group_count": 40,
+            "unique_pcm_pair_count": 137,
+            "zero_direction_source_group_count": 0
+          },
+          "lowpass-16k-cascade8": {
+            "group_median_delta": {
+              "count": 40,
+              "maximum": 0.0007195662368427724,
+              "median": 0.00011397627266968025,
+              "minimum": -0.00246125730601221,
+              "p05": -0.00020560744133854556,
+              "p95": 0.000614214214411654
+            },
+            "negative_direction_source_group_count": 9,
+            "one_sided_95_percent_wilson_lower": 0.6510377124360489,
+            "positive_direction_rate": 0.775,
+            "positive_direction_source_group_count": 31,
+            "source_group_count": 40,
+            "unique_pcm_pair_count": 160,
+            "zero_direction_source_group_count": 0
+          },
+          "prepend-digital-silence-500ms": {
+            "group_median_delta": {
+              "count": 40,
+              "maximum": 0.0019475302912971282,
+              "median": 3.0806118791720793e-05,
+              "minimum": -0.0015979923985220967,
+              "p05": -0.0003100254318931433,
+              "p95": 0.0007488315755670695
+            },
+            "negative_direction_source_group_count": 12,
+            "one_sided_95_percent_wilson_lower": 0.5712915121456548,
+            "positive_direction_rate": 0.7,
+            "positive_direction_source_group_count": 28,
+            "source_group_count": 40,
+            "unique_pcm_pair_count": 160,
+            "zero_direction_source_group_count": 0
+          },
+          "requantize-12bit-tpdf": {
+            "group_median_delta": {
+              "count": 40,
+              "maximum": 0.001027090982957335,
+              "median": 5.893544717269772e-05,
+              "minimum": -0.0023559575731103566,
+              "p05": -0.00014579512856222887,
+              "p95": 0.0008385207165371385
+            },
+            "negative_direction_source_group_count": 12,
+            "one_sided_95_percent_wilson_lower": 0.5712915121456548,
+            "positive_direction_rate": 0.7,
+            "positive_direction_source_group_count": 28,
+            "source_group_count": 40,
+            "unique_pcm_pair_count": 160,
+            "zero_direction_source_group_count": 0
+          },
+          "resample-roundtrip-32k": {
+            "group_median_delta": {
+              "count": 40,
+              "maximum": 0.0009289465167305888,
+              "median": 7.425113157788488e-05,
+              "minimum": -0.00037647648291161406,
+              "p05": -0.0002075060118328559,
+              "p95": 0.00041333477605468217
+            },
+            "negative_direction_source_group_count": 15,
+            "one_sided_95_percent_wilson_lower": 0.49496948465722773,
+            "positive_direction_rate": 0.625,
+            "positive_direction_source_group_count": 25,
+            "source_group_count": 40,
+            "unique_pcm_pair_count": 160,
+            "zero_direction_source_group_count": 0
+          },
+          "trim-head-250ms": {
+            "group_median_delta": {
+              "count": 40,
+              "maximum": 0.002386605739593539,
+              "median": 9.477138518954042e-07,
+              "minimum": -0.0017429083585738803,
+              "p05": -0.0002588804066181199,
+              "p95": 0.0009298621118068428
+            },
+            "negative_direction_source_group_count": 20,
+            "one_sided_95_percent_wilson_lower": 0.3741494451288969,
+            "positive_direction_rate": 0.5,
+            "positive_direction_source_group_count": 20,
+            "source_group_count": 40,
+            "unique_pcm_pair_count": 160,
+            "zero_direction_source_group_count": 0
+          }
+        },
+        "by_source_domain": {
+          "demand_maestro_consumed_transfer": {
+            "group_median_delta": {
+              "count": 36,
+              "maximum": 0.0031623461029746114,
+              "median": 4.4599175453241546e-05,
+              "minimum": -0.0009144111113115194,
+              "p05": -0.0003195181488990506,
+              "p95": 0.0016070631417361148
+            },
+            "negative_direction_source_group_count": 15,
+            "one_sided_95_percent_wilson_lower": 0.4470334611979001,
+            "positive_direction_rate": 0.5833333333333334,
+            "positive_direction_source_group_count": 21,
+            "source_group_count": 36,
+            "unique_pcm_pair_count": 628,
+            "zero_direction_source_group_count": 0
+          },
+          "musdb18hq_consumed_transfer": {
+            "group_median_delta": {
+              "count": 150,
+              "maximum": 0.0011865496635437012,
+              "median": -1.6766109249749528e-05,
+              "minimum": -0.004417506131258908,
+              "p05": -0.0005882413414392107,
+              "p95": 0.0004544981501319124
+            },
+            "negative_direction_source_group_count": 79,
+            "one_sided_95_percent_wilson_lower": 0.40734549806072684,
+            "positive_direction_rate": 0.47333333333333333,
+            "positive_direction_source_group_count": 71,
+            "source_group_count": 150,
+            "unique_pcm_pair_count": 1075,
+            "zero_direction_source_group_count": 0
+          },
+          "nsynth_test_sparse": {
+            "group_median_delta": {
+              "count": 53,
+              "maximum": 0.00012018192898149982,
+              "median": 2.646988088383928e-06,
+              "minimum": -0.00039332671598951707,
+              "p05": -0.0001392960548401101,
+              "p95": 8.571798151191244e-05
+            },
+            "negative_direction_source_group_count": 22,
+            "one_sided_95_percent_wilson_lower": 0.47211250118458925,
+            "positive_direction_rate": 0.5849056603773585,
+            "positive_direction_source_group_count": 31,
+            "source_group_count": 53,
+            "unique_pcm_pair_count": 682,
+            "zero_direction_source_group_count": 0
+          },
+          "nsynth_train_sparse": {
+            "group_median_delta": {
+              "count": 200,
+              "maximum": 0.0009542270140214804,
+              "median": 1.2179667299411223e-05,
+              "minimum": -0.0013954801992936972,
+              "p05": -0.00016051259907808312,
+              "p95": 0.0003488846800543532
+            },
+            "negative_direction_source_group_count": 71,
+            "one_sided_95_percent_wilson_lower": 0.5877481935853094,
+            "positive_direction_rate": 0.645,
+            "positive_direction_source_group_count": 129,
+            "source_group_count": 200,
+            "unique_pcm_pair_count": 1268,
+            "zero_direction_source_group_count": 0
+          },
+          "private_full_mix_training": {
+            "group_median_delta": {
+              "count": 40,
+              "maximum": 0.003017626025459963,
+              "median": 0.00019147003238853544,
+              "minimum": -0.0010496432130987499,
+              "p05": -0.00019200241023840657,
+              "p95": 0.0009747285734523796
+            },
+            "negative_direction_source_group_count": 8,
+            "one_sided_95_percent_wilson_lower": 0.6785352852750637,
+            "positive_direction_rate": 0.8,
+            "positive_direction_source_group_count": 32,
+            "source_group_count": 40,
+            "unique_pcm_pair_count": 636,
+            "zero_direction_source_group_count": 0
+          },
+          "public_tier_a_controlled": {
+            "group_median_delta": {
+              "count": 48,
+              "maximum": 0.002358049154281616,
+              "median": 1.5480951829377476e-05,
+              "minimum": -0.0006109557368538243,
+              "p05": -0.00023799538612364333,
+              "p95": 0.0007393726300109453
+            },
+            "negative_direction_source_group_count": 20,
+            "one_sided_95_percent_wilson_lower": 0.46491879179534573,
+            "positive_direction_rate": 0.5833333333333334,
+            "positive_direction_source_group_count": 28,
+            "source_group_count": 48,
+            "unique_pcm_pair_count": 675,
+            "zero_direction_source_group_count": 0
+          }
+        },
+        "overall": {
+          "collapsed_factorial_alias_count": 24,
+          "eligible_factorial_pair_cell_count": 4988,
+          "group_median_delta": {
+            "count": 527,
+            "maximum": 0.0031623461029746114,
+            "median": 1.1156905781128934e-05,
+            "minimum": -0.004417506131258908,
+            "p05": -0.0003684496337716947,
+            "p95": 0.0006333519111980317
+          },
+          "negative_direction_source_group_count": 215,
+          "one_sided_95_percent_wilson_lower": 0.5564338093904445,
+          "positive_direction_rate": 0.5920303605313093,
+          "positive_direction_source_group_count": 312,
+          "source_group_count": 527,
+          "unique_pcm_pair_count": 4964,
+          "zero_direction_source_group_count": 0
+        }
+      },
+      "positive_by_codec_family": {
+        "aac_lc": {
+          "balanced_accuracy": null,
+          "case_count": 1247,
+          "controlled_positive_count": 1247,
+          "false_negative_count": 0,
+          "false_positive_count": 0,
+          "false_positive_rate": null,
+          "negative_count": 0,
+          "recall": 1.0,
+          "recall_two_sided_95_percent_wilson": [
+            0.9969289003065858,
+            1.0000000000000002
+          ],
+          "selected_population_accuracy": 1.0,
+          "selected_population_precision": 1.0,
+          "specificity": null,
+          "specificity_two_sided_95_percent_wilson": null,
+          "true_negative_count": 0,
+          "true_positive_count": 1247
+        },
+        "mp3": {
+          "balanced_accuracy": null,
+          "case_count": 1367,
+          "controlled_positive_count": 1367,
+          "false_negative_count": 0,
+          "false_positive_count": 0,
+          "false_positive_rate": null,
+          "negative_count": 0,
+          "recall": 1.0,
+          "recall_two_sided_95_percent_wilson": [
+            0.9971977366193762,
+            1.0
+          ],
+          "selected_population_accuracy": 1.0,
+          "selected_population_precision": 1.0,
+          "specificity": null,
+          "specificity_two_sided_95_percent_wilson": null,
+          "true_negative_count": 0,
+          "true_positive_count": 1367
+        },
+        "opus": {
+          "balanced_accuracy": null,
+          "case_count": 1247,
+          "controlled_positive_count": 1247,
+          "false_negative_count": 0,
+          "false_positive_count": 0,
+          "false_positive_rate": null,
+          "negative_count": 0,
+          "recall": 1.0,
+          "recall_two_sided_95_percent_wilson": [
+            0.9969289003065858,
+            1.0000000000000002
+          ],
+          "selected_population_accuracy": 1.0,
+          "selected_population_precision": 1.0,
+          "specificity": null,
+          "specificity_two_sided_95_percent_wilson": null,
+          "true_negative_count": 0,
+          "true_positive_count": 1247
+        },
+        "vorbis": {
+          "balanced_accuracy": null,
+          "case_count": 1127,
+          "controlled_positive_count": 1127,
+          "false_negative_count": 0,
+          "false_positive_count": 0,
+          "false_positive_rate": null,
+          "negative_count": 0,
+          "recall": 1.0,
+          "recall_two_sided_95_percent_wilson": [
+            0.9966030085024472,
+            1.0000000000000002
+          ],
+          "selected_population_accuracy": 1.0,
+          "selected_population_precision": 1.0,
+          "specificity": null,
+          "specificity_two_sided_95_percent_wilson": null,
+          "true_negative_count": 0,
+          "true_positive_count": 1127
+        }
+      },
+      "source_group_level": {
+        "controlled_positive_source_group_count": 527,
+        "controlled_positive_source_group_detection_count": 527,
+        "controlled_positive_source_group_detection_rate": 1.0,
+        "negative_source_group_alert_count": 527,
+        "negative_source_group_alert_rate": 1.0,
+        "negative_source_group_count": 527
+      },
+      "thresholds_retuned": false,
+      "unique_analysis_pcm_level": {
+        "auc": 0.46307631240142766,
+        "balanced_accuracy": 0.5,
+        "case_count": 7701,
+        "controlled_positive_count": 4964,
+        "false_negative_count": 0,
+        "false_positive_count": 2737,
+        "false_positive_rate": 1.0,
+        "log_loss": 0.6547595326534994,
+        "negative_count": 2737,
+        "recall": 1.0,
+        "recall_two_sided_95_percent_wilson": [
+          0.9992267348198334,
+          1.0
+        ],
+        "selected_population_accuracy": 0.6445916114790287,
+        "selected_population_precision": 0.6445916114790287,
+        "specificity": 0.0,
+        "specificity_two_sided_95_percent_wilson": [
+          0.0,
+          0.0014015618482168596
+        ],
+        "true_negative_count": 0,
+        "true_positive_count": 4964
+      }
+    }
+  },
+  "encoder_transfer_scores_opened": false,
+  "evidence_partition": "mechanism_development",
+  "external_transfer_scores_opened": false,
+  "feature_version": 0,
+  "independent_validation": false,
+  "inputs": {
+    "analyzer_sha256": "389684f9fbcf270182ce8a9ad76708487a4efcfe2461299e8bca1238e7f05868",
+    "masked_private_report_sha256": "d7a7d7c0d2180de623926da6d93200279cc477f44668616befc67576d46cb472",
+    "naive_private_report_sha256": "cd9f76ca170027af49defa336dcc5d7128dc0910c67f36b6208148608d03410d",
+    "plan_sha256": "9d483ec87365aa4253fa5997458f2fab604b27f029ce42ca20d917f79caa51b0",
+    "private_analysis_manifest_sha256": "0937dfec3f9d5d203ec3d8c1700a3ae947226999e72a379b226c4c825fab96f9"
+  },
+  "interpretation": {
+    "baseline_can_be_promoted": false,
+    "condition_comparison_is_not_independent_validation": true,
+    "conditional_development_evidence_only": true,
+    "softmax_is_not_calibrated_history_probability": true
+  },
+  "inventory": {
+    "factorial_case_count": 9653,
+    "outer_fold_count_per_condition": 6,
+    "source_domain_count": 6,
+    "source_group_count": 527,
+    "unique_analysis_pcm_count": 7701
+  },
+  "masked_minus_naive_unique_pcm_score": {
+    "count": 7701,
+    "maximum": 0.5023388743400574,
+    "median": 0.011941701173782349,
+    "minimum": -0.33464225313880225,
+    "p05": -0.05513009428977966,
+    "p95": 0.07895634174346933
+  },
+  "plan_id": "lossytrace-v2-development-baselines-20260802-001",
+  "public_verdict_enabled": false,
+  "reproduction_boundary": {
+    "evaluation_stricter_than_paper": "complete source-domain outer folds with grouped inner validation",
+    "exact_reproduction": false,
+    "reason": "The paper specifies the high-level architecture and mask but does not publish reference code, weights, convolution channels, spectrogram hop defaults, optimizer, or training schedule."
+  },
+  "schema_version": 1,
+  "state": "mechanism_development_crnn_path_free_evidence"
+}

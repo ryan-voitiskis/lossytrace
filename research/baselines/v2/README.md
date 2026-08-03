@@ -15,12 +15,16 @@ Koops-style CRNN replications, and retained rejected explainable controls.
 These are reference systems and failure probes, not candidates. Encoder and
 external transfer remain sealed, and no result enables a public verdict.
 
-The fixed Cannam and feature-version-0 runs are complete. Their path-free
-aggregates are in [`evidence`](evidence), and the joint interpretation and
-hash commitments are in the
-[`fixed-baseline result`](../../../docs/research/development-fixed-baseline-result-20260802.md).
+The fixed Cannam, feature-version-0, and naive/masked CRNN runs are complete.
+Their path-free aggregates are in [`evidence`](evidence). The fixed-system
+interpretation and hash commitments are in the
+[`fixed-baseline result`](../../../docs/research/development-fixed-baseline-result-20260802.md),
+and the learned comparison is in the
+[`CRNN result`](../../../docs/research/development-crnn-baseline-result-20260803.md).
 Cannam's 91.82% factorial-case recall coexists with a 64.05% false-positive
 rate and only 46.68% paired positive direction. No feature-version-0
-measurement passes the frozen paired gate. The naive/masked CRNN comparison
-and retained explainable controls remain pending; neither transfer partition
-has been opened.
+measurement passes the frozen paired gate. Naive CRNN alerts on 518/527
+negative source groups and reaches only 70.59% paired direction; the masked
+condition alerts on all 527 negative groups and falls to 59.20% paired
+direction. The retained explainable controls remain pending, and neither
+transfer partition has been opened.

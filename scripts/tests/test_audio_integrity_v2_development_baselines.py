@@ -21,6 +21,14 @@ PLAN_PATH = (
     ROOT / "benchmarks" / "audio-integrity-v2" / "development-baseline-plan.json"
 )
 PLAN = json.loads(PLAN_PATH.read_text(encoding="utf-8"))
+CRNN_EVIDENCE_PATH = (
+    ROOT
+    / "research"
+    / "baselines"
+    / "v2"
+    / "evidence"
+    / "crnn-observed-20260802-001-aggregate.json"
+)
 
 
 class AudioIntegrityV2DevelopmentBaselineTest(unittest.TestCase):
@@ -168,6 +176,28 @@ class AudioIntegrityV2DevelopmentBaselineTest(unittest.TestCase):
             common.assert_public_path_free({"case_id": "private"})
         with self.assertRaisesRegex(ValueError, "absolute path"):
             common.assert_public_path_free({"note": "/private/audio.wav"})
+
+    def test_crnn_evidence_is_path_free_and_non_promotable(self) -> None:
+        result = json.loads(CRNN_EVIDENCE_PATH.read_text(encoding="utf-8"))
+        common.assert_public_path_free(result)
+        self.assertEqual(
+            "mechanism_development_crnn_path_free_evidence", result["state"]
+        )
+        self.assertEqual(9_653, result["inventory"]["factorial_case_count"])
+        self.assertEqual(7_701, result["inventory"]["unique_analysis_pcm_count"])
+        self.assertFalse(result["encoder_transfer_scores_opened"])
+        self.assertFalse(result["external_transfer_scores_opened"])
+        self.assertFalse(result["public_verdict_enabled"])
+        self.assertFalse(result["interpretation"]["baseline_can_be_promoted"])
+
+        naive = result["conditions"]["naive"]
+        masked = result["conditions"]["random_high_frequency_mask"]
+        self.assertEqual(518, naive["source_group_level"]["negative_source_group_alert_count"])
+        self.assertEqual(527, masked["source_group_level"]["negative_source_group_alert_count"])
+        for condition in (naive, masked):
+            paired = condition["paired_positive_minus_matched_reference"]["overall"]
+            self.assertLess(paired["positive_direction_rate"], 0.90)
+            self.assertLess(paired["one_sided_95_percent_wilson_lower"], 0.85)
 
 
 if __name__ == "__main__":
