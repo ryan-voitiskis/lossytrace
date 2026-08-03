@@ -26,10 +26,15 @@ rate and only 46.68% paired positive direction. No feature-version-0
 measurement passes the frozen paired gate. Naive CRNN alerts on 518/527
 negative source groups and reaches only 70.59% paired direction; the masked
 condition alerts on all 527 negative groups and falls to 59.20% paired
-direction. The retained explainable controls are now frozen, but not yet
-scored, under the separate
+direction. The retained explainable controls were frozen under the separate
 [`adapter preregistration`](../../../docs/research/explainable-control-v2-adapter-preregistration-20260803.md)
 and
 [`adapter plan`](../../../benchmarks/audio-integrity-v2/explainable-control-adapter-plan.json).
-They are raw paired controls with no v2 classification threshold. Neither
-transfer partition has been opened.
+The stage then stopped because A0-A4 could not represent all fixed-duration
+inputs without a prohibited support change. R1/R2 completed and replayed
+byte-identically, but remain uninterpreted because the frozen combined analyzer
+could not run. See the
+[`protocol-stop report`](../../../docs/research/development-explainable-control-protocol-failure-20260803.md)
+and path-free
+[`failure record`](evidence/explainable-controls-observed-20260803-001-protocol-failure.json).
+Neither transfer partition has been opened.

@@ -1,0 +1,75 @@
+{
+  "adapter_id": "lossytrace-v2-explainable-control-adapter-20260803-001",
+  "analysis": {
+    "a0_through_a4_scores_interpreted": false,
+    "combined_path_free_aggregate_produced": false,
+    "r1_r2_scores_interpreted": false,
+    "thresholds_or_support_rules_changed": false
+  },
+  "controls": {
+    "codec_projection_r1_r2": {
+      "byte_identical_checkpoint_replay_passed": true,
+      "complete_private_report_produced": true,
+      "expected_pcm_wrapper_representative_count": 5895,
+      "exact_wrapper_invariance_passed": true,
+      "private_report_sha256": "05f0589a0081c566b20c53403cf18c9e3dae36bd4da37bf0c8ae34b749631a9b",
+      "reported_pcm_wrapper_representative_count": 5895,
+      "scores_interpreted": false
+    },
+    "exact_hybrid_a0_through_a4": {
+      "authoritative_checkpoint_count": 5735,
+      "authoritative_checkpoint_identity_set_sha256": "86d65db4ba754b81cbc5a3eb6b10c3870a1ae43b623f8a5eb027fd1c7af9a9ef",
+      "complete_private_report_produced": false,
+      "expected_pcm_wrapper_representative_count": 5895,
+      "missing_checkpoint_count": 160,
+      "missing_checkpoint_metadata": {
+        "by_expectation": {
+          "controlled_positive": 40,
+          "negative": 120
+        },
+        "by_source_domain": {
+          "demand_maestro_consumed_transfer": 28,
+          "musdb18hq_consumed_transfer": 24,
+          "nsynth_test_sparse": 28,
+          "nsynth_train_sparse": 24,
+          "private_full_mix_training": 28,
+          "public_tier_a_controlled": 28
+        },
+        "duration_seconds": {
+          "distinct_values": [
+            3.0
+          ],
+          "maximum": 3.0,
+          "minimum": 3.0
+        }
+      },
+      "scores_interpreted": false,
+      "surfaced_stop_error_category": "insufficient_pcm_for_exact_hybrid_analysis"
+    }
+  },
+  "encoder_transfer_scores_opened": false,
+  "evidence_partition": "mechanism_development",
+  "external_transfer_scores_opened": false,
+  "feature_version": 0,
+  "independent_validation": false,
+  "inputs": {
+    "adapter_analyzer_sha256": "10f4ef983b4695d168250fc418bfd6546a24c5983866aa017ea98baa2ee55bb0",
+    "adapter_plan_sha256": "f654ddcaaa7bf331536cdd9e86117fe45d836f921fef67efafedc9903a367c4a",
+    "adapter_runner_sha256": "1af955ccaf78a96a59bc79799f76a83e0ada60ecc1a314663cb414daa36e9a11",
+    "codec_projection_oracle_binary_sha256": "fb285afb0e9db3d077f5826467c986dabcdeb2e1e578c09bb2c907172606c5e6",
+    "exact_hybrid_oracle_binary_sha256": "d613498f05d9f885ac3d49b04b52f33b1c1e80a20cb49e7fe61b0cebdd8d253e",
+    "parent_development_baseline_plan_sha256": "9d483ec87365aa4253fa5997458f2fab604b27f029ce42ca20d917f79caa51b0",
+    "private_analysis_manifest_sha256": "0937dfec3f9d5d203ec3d8c1700a3ae947226999e72a379b226c4c825fab96f9",
+    "private_constructor_manifest_sha256": "0fe9bde6eed57a61d3c721d5bfd8cd36031b9981442c39dc502162aeeab3a1b1",
+    "private_feature_v0_report_sha256": "e578f321f3118da055de3835b026e72c1ca61b0ba868a3f89ef08e16463400d2"
+  },
+  "interpretation": {
+    "baseline_failure_atlas_complete": false,
+    "baseline_or_candidate_can_be_promoted": false,
+    "protocol_failure_is_not_a_measurement_result": true,
+    "retained_control_stage_stopped_without_score_interpretation": true
+  },
+  "public_verdict_enabled": false,
+  "schema_version": 1,
+  "state": "mechanism_development_explainable_control_protocol_failure_path_free_evidence"
+}

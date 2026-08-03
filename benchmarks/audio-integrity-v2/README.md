@@ -218,14 +218,20 @@ source-safe specificity and paired stability; every feature-version-0
 measurement failed the frozen paired gate; and both learned conditions made
 near-universal positive decisions.
 
-The final retained-baseline stage is frozen separately in the
+The final retained-baseline stage was frozen separately in the
 [`explainable-control adapter preregistration`](../../docs/research/explainable-control-v2-adapter-preregistration-20260803.md)
 and machine-readable
 [`adapter plan`](explainable-control-adapter-plan.json). It reruns A0-A4 and
 R1/R2 over 6,032 scoped development cells as support-aware raw paired controls
-only. It forbids v2 threshold fitting and classification metrics. Both private
-runs must finish and pass wrapper invariance before their path-free aggregate
-is interpreted.
+only. It forbids v2 threshold fitting and classification metrics. The stage
+stopped without score interpretation when A0-A4 could not complete 160 fixed
+three-second representatives under the committed support/error contract.
+R1/R2 completed and replayed byte-identically, but the combined analyzer was
+not changed after score opening. The
+[`protocol-stop report`](../../docs/research/development-explainable-control-protocol-failure-20260803.md)
+and path-free
+[`failure record`](../../research/baselines/v2/evidence/explainable-controls-observed-20260803-001-protocol-failure.json)
+preserve that boundary.
 
 ## Evidence partitions
 

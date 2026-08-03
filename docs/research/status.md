@@ -16,6 +16,7 @@ release-safe lossy-source verdict.
 | 2026-08-02 codec projection R1–R2 | Rejected: both rows had a source-domain false positive and zero supported MP3-128 recall | Deterministic two-cycle oracle, grouped analyzer, and path-free negative result |
 | 2026-08-02 Cannam fixed-rule CNN | Rejected: 99.44% P1 recall but 67.53% negative-case false positives and alerts in 545/597 negative source groups | Exact-revision replay, duration audit, and path-free cross-domain failure atlas |
 | 2026-08-03 naive/masked CRNN | Baseline failure: naive alerted on 518/527 negative groups; masking collapsed to 527/527 and only 59.20% paired direction | Deterministic six-domain folds, restart-safe checkpoints, and path-free learned-baseline failure atlas |
+| 2026-08-03 v2 retained controls | Protocol stop: A0-A4 could not complete the fixed-duration population; complete R1/R2 scores remain uninterpreted | Hash-bound stop record, 5,735 atomic exact checkpoints, and byte-identical 5,895-case projection replay |
 
 The v32+v33 diagnostic reached strong observed development recall and zero
 supported-negative alerts, but failed eight SQAM AAC invariance groups. Those
@@ -260,9 +261,14 @@ Naive reaches 98.30% recall only by producing 95.48% negative-case false
 positives and alerts in 518/527 negative source groups. Random high-frequency
 masking does not improve robustness: it labels every case positive, alerts in
 all 527 negative groups, and reaches only 59.20% paired positive direction
-with a 55.64% one-sided Wilson lower bound. The
+with a 55.64% one-sided Wilson lower bound. The frozen
 [`v2 explainable-control adapter`](explainable-control-v2-adapter-preregistration-20260803.md)
-is now frozen before score opening. It will run retained A0-A4 and R1/R2 over
-6,032 development cells as support-aware raw paired controls, with no v2
-threshold fitting or classification claims. No retained transfer score has
-been opened.
+then stopped under its own rules. A0-A4 produced only 5,735/5,895 authoritative
+checkpoints because the bound oracle treated every remaining three-second
+artifact as insufficient PCM before reaching the adapter's single authorized
+unsupported state. R1/R2 completed, passed wrapper invariance, and replayed
+byte-identically, but their scores remain uninterpreted because the frozen
+analyzer requires both complete reports. The
+[`protocol-stop report`](development-explainable-control-protocol-failure-20260803.md)
+records the failure without a post-score support or analysis change. No
+retained transfer score has been opened.

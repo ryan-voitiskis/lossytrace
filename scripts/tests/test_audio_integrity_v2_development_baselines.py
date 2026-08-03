@@ -29,6 +29,14 @@ CRNN_EVIDENCE_PATH = (
     / "evidence"
     / "crnn-observed-20260802-001-aggregate.json"
 )
+EXPLAINABLE_FAILURE_PATH = (
+    ROOT
+    / "research"
+    / "baselines"
+    / "v2"
+    / "evidence"
+    / "explainable-controls-observed-20260803-001-protocol-failure.json"
+)
 
 
 class AudioIntegrityV2DevelopmentBaselineTest(unittest.TestCase):
@@ -198,6 +206,28 @@ class AudioIntegrityV2DevelopmentBaselineTest(unittest.TestCase):
             paired = condition["paired_positive_minus_matched_reference"]["overall"]
             self.assertLess(paired["positive_direction_rate"], 0.90)
             self.assertLess(paired["one_sided_95_percent_wilson_lower"], 0.85)
+
+    def test_explainable_control_failure_is_path_free_and_uninterpreted(self) -> None:
+        result = json.loads(EXPLAINABLE_FAILURE_PATH.read_text(encoding="utf-8"))
+        common.assert_public_path_free(result)
+        self.assertEqual(
+            "mechanism_development_explainable_control_protocol_failure_path_free_evidence",
+            result["state"],
+        )
+        self.assertFalse(result["encoder_transfer_scores_opened"])
+        self.assertFalse(result["external_transfer_scores_opened"])
+        self.assertFalse(result["public_verdict_enabled"])
+        exact = result["controls"]["exact_hybrid_a0_through_a4"]
+        projection = result["controls"]["codec_projection_r1_r2"]
+        self.assertEqual(5_735, exact["authoritative_checkpoint_count"])
+        self.assertEqual(160, exact["missing_checkpoint_count"])
+        self.assertFalse(exact["complete_private_report_produced"])
+        self.assertTrue(projection["complete_private_report_produced"])
+        self.assertTrue(projection["byte_identical_checkpoint_replay_passed"])
+        self.assertTrue(projection["exact_wrapper_invariance_passed"])
+        self.assertFalse(result["analysis"]["a0_through_a4_scores_interpreted"])
+        self.assertFalse(result["analysis"]["r1_r2_scores_interpreted"])
+        self.assertFalse(result["interpretation"]["baseline_or_candidate_can_be_promoted"])
 
 
 if __name__ == "__main__":
