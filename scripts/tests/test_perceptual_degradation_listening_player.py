@@ -26,6 +26,13 @@ EVIDENCE_V2 = (
     / "evidence"
     / "perceptual-degradation-listening-player-dry-run-observed-20260803-002.json"
 )
+EVIDENCE_V3 = (
+    ROOT
+    / "research"
+    / "toolchains"
+    / "evidence"
+    / "perceptual-degradation-listening-player-dry-run-observed-20260803-003.json"
+)
 SYNTHETIC_MANIFEST = (
     ROOT
     / "benchmarks"
@@ -86,13 +93,16 @@ class ListeningPlayerTest(unittest.TestCase):
             "assignment_javascript_sha256": PLAYER / "synthetic-assignment.js",
             "player_javascript_sha256": PLAYER / "player.js",
             "favicon_svg_sha256": PLAYER / "favicon.svg",
-            "offline_test_sha256": Path(__file__),
             "stimulus_manifest_sha256": SYNTHETIC_MANIFEST,
             "stimulus_schema_sha256": STIMULUS_SCHEMA,
             "allocator_sha256": ALLOCATOR,
         }
         for key, path in expected.items():
             self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(), bindings[key])
+        self.assertEqual(
+            "349187da820b0b55894858e9fd01823a56cd7fe258e68f75cccc347de37690f9",
+            bindings["offline_test_sha256"],
+        )
         self.assertEqual(
             "assignment-4e73c040a36c3f7a0c0db1a0",
             evidence["assignment_provenance"]["assignment_id"],
@@ -110,6 +120,54 @@ class ListeningPlayerTest(unittest.TestCase):
         self.assertFalse(evidence["player_implementation_frozen"])
         self.assertFalse(evidence["playback_qualification_frozen"])
         self.assertFalse(evidence["human_collection_authorized"])
+
+    def test_v3_records_only_current_operator_audibility_check(self) -> None:
+        evidence = json.loads(EVIDENCE_V3.read_text(encoding="utf-8"))
+        bindings = evidence["source_bindings"]
+        expected = {
+            "index_html_sha256": PLAYER / "index.html",
+            "style_css_sha256": PLAYER / "style.css",
+            "assignment_javascript_sha256": PLAYER / "synthetic-assignment.js",
+            "player_javascript_sha256": PLAYER / "player.js",
+            "favicon_svg_sha256": PLAYER / "favicon.svg",
+            "offline_test_sha256": Path(__file__),
+            "stimulus_manifest_sha256": SYNTHETIC_MANIFEST,
+            "stimulus_schema_sha256": STIMULUS_SCHEMA,
+            "allocator_sha256": ALLOCATOR,
+        }
+        for key, path in expected.items():
+            self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(), bindings[key])
+        self.assertEqual(
+            "perceptual-degradation-listening-player-dry-run-20260803-002",
+            evidence["supersedes_evidence_id"],
+        )
+        self.assertEqual(
+            "direct_operator_statement_after_v2_control_playback",
+            evidence["operator_check"]["confirmation_source"],
+        )
+        self.assertTrue(
+            evidence["operator_check"][
+                "operator_confirmed_all_generated_sounds_audible"
+            ]
+        )
+        self.assertTrue(
+            evidence["observed_checks"]["operator_audibility_confirmation_collected"]
+        )
+        boundary = evidence["privacy_and_evidence_boundary"]
+        self.assertFalse(boundary["listener_response_collected"])
+        self.assertFalse(boundary["operator_confirmation_is_listening_truth"])
+        self.assertFalse(boundary["operator_confirmation_is_calibration_evidence"])
+        self.assertFalse(boundary["browser_automation_values_are_listening_truth"])
+        self.assertFalse(boundary["prior_v1_operator_confirmation_reused_for_v2"])
+        for key in (
+            "player_implementation_frozen",
+            "playback_qualification_frozen",
+            "human_collection_authorized",
+            "recruitment_authorized",
+            "response_storage_authorized",
+            "public_verdict_enabled",
+        ):
+            self.assertFalse(evidence[key])
 
     def test_player_has_no_external_resources(self) -> None:
         parser = LinkParser()

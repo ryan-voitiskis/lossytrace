@@ -21,6 +21,67 @@ def sha256_file(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def validate_operator_check(evidence: dict[str, Any]) -> list[str]:
+    errors = []
+    if evidence.get("schema_version") != 1:
+        errors.append("operator check schema_version must equal 1")
+    if evidence.get("state") != (
+        "synthetic_dry_run_and_operator_audibility_check_passed_not_listener_evidence"
+    ):
+        errors.append("operator check must remain explicitly non-evidentiary")
+    operator_check = evidence.get("operator_check", {})
+    if operator_check.get("confirmation_source") != (
+        "direct_operator_statement_after_v2_control_playback"
+    ):
+        errors.append("operator check confirmation source differs")
+    if operator_check.get("operator_confirmed_all_generated_sounds_audible") is not True:
+        errors.append("current generated sounds must have an explicit audibility check")
+    for key in (
+        "rating_requested",
+        "rating_collected",
+        "degradation_judgment_requested",
+        "degradation_judgment_collected",
+        "participant_identity_recorded",
+    ):
+        if operator_check.get(key) is not False:
+            errors.append(f"operator_check.{key} must remain false")
+    if (
+        evidence.get("observed_checks", {}).get(
+            "operator_audibility_confirmation_collected"
+        )
+        is not True
+    ):
+        errors.append("current operator audibility confirmation must remain recorded")
+    boundary = evidence.get("privacy_and_evidence_boundary", {})
+    for key in (
+        "participant_identity_collected",
+        "listener_response_collected",
+        "operator_confirmation_is_listening_truth",
+        "operator_confirmation_is_calibration_evidence",
+        "browser_automation_values_are_listening_truth",
+        "prior_v1_operator_confirmation_reused_for_v2",
+        "metric_score_opened",
+        "audio_score_opened",
+        "retained_audio_opened",
+        "screenshot_committed",
+        "browser_artifacts_committed",
+        "network_storage_used",
+    ):
+        if boundary.get(key) is not False:
+            errors.append(f"privacy_and_evidence_boundary.{key} must remain false")
+    for key in (
+        "player_implementation_frozen",
+        "playback_qualification_frozen",
+        "human_collection_authorized",
+        "recruitment_authorized",
+        "response_storage_authorized",
+        "public_verdict_enabled",
+    ):
+        if evidence.get(key) is not False:
+            errors.append(f"operator evidence {key} must remain false")
+    return errors
+
+
 def validate(gate: dict[str, Any], root: Path = ROOT) -> list[str]:
     errors = []
     if gate.get("schema_version") != 1:
@@ -102,6 +163,16 @@ def validate(gate: dict[str, Any], root: Path = ROOT) -> list[str]:
             errors.append(f"missing bound file {key}: {relative}")
         elif sha256_file(path) != binding.get("sha256"):
             errors.append(f"hash mismatch for bound file {key}: {relative}")
+    operator_binding = gate.get("bindings", {}).get("synthetic_player_dry_run_evidence")
+    if operator_binding:
+        operator_path = root / operator_binding.get("path", "")
+        if operator_path.is_file():
+            try:
+                operator_evidence = json.loads(operator_path.read_text(encoding="utf-8"))
+            except json.JSONDecodeError as error:
+                errors.append(f"invalid operator evidence JSON: {error}")
+            else:
+                errors.extend(validate_operator_check(operator_evidence))
     return errors
 
 

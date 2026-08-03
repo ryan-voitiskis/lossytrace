@@ -20,6 +20,14 @@ assert SPEC and SPEC.loader
 MODULE = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(MODULE)
 GATE = json.loads(GATE_PATH.read_text(encoding="utf-8"))
+OPERATOR_EVIDENCE_PATH = (
+    ROOT
+    / "research"
+    / "toolchains"
+    / "evidence"
+    / "perceptual-degradation-listening-player-dry-run-observed-20260803-003.json"
+)
+OPERATOR_EVIDENCE = json.loads(OPERATOR_EVIDENCE_PATH.read_text(encoding="utf-8"))
 
 
 class ListeningGateTest(unittest.TestCase):
@@ -60,6 +68,22 @@ class ListeningGateTest(unittest.TestCase):
         )
         self.assertIn(
             "privacy.public_small_cell_results_authorized must remain false", errors
+        )
+
+    def test_operator_check_is_audibility_only_and_not_listening_truth(self) -> None:
+        self.assertEqual([], MODULE.validate_operator_check(OPERATOR_EVIDENCE))
+        changed = copy.deepcopy(OPERATOR_EVIDENCE)
+        changed["privacy_and_evidence_boundary"][
+            "operator_confirmation_is_listening_truth"
+        ] = True
+        changed["playback_qualification_frozen"] = True
+        errors = MODULE.validate_operator_check(changed)
+        self.assertIn(
+            "privacy_and_evidence_boundary.operator_confirmation_is_listening_truth must remain false",
+            errors,
+        )
+        self.assertIn(
+            "operator evidence playback_qualification_frozen must remain false", errors
         )
 
 

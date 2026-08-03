@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "gate_id": "perceptual-degradation-listening-preparation-20260803-001",
+  "gate_id": "perceptual-degradation-listening-preparation-20260803-002",
   "state": "protocol_prepared_human_collection_unauthorized",
   "human_collection_authorized": false,
   "recruitment_authorized": false,
@@ -108,15 +108,19 @@
     },
     "synthetic_player_tests": {
       "path": "scripts/tests/test_perceptual_degradation_listening_player.py",
-      "sha256": "349187da820b0b55894858e9fd01823a56cd7fe258e68f75cccc347de37690f9"
+      "sha256": "f6c6d7ea29c58e7f5a3e472c2ea93a1d177fdedaecd7313915a0a32d4af2a228"
     },
     "synthetic_player_v1_dry_run_evidence": {
       "path": "research/toolchains/evidence/perceptual-degradation-listening-player-dry-run-observed-20260803-001.json",
       "sha256": "7011b1ce890f7c490d9672a8f768c6ff8bb01a994df693f04bd2e2d8f9d1fce0"
     },
-    "synthetic_player_dry_run_evidence": {
+    "synthetic_player_v2_dry_run_evidence": {
       "path": "research/toolchains/evidence/perceptual-degradation-listening-player-dry-run-observed-20260803-002.json",
       "sha256": "69b48a1c512b694bcdcc9e8ef4f4bcb01f12432ea1e573ba9b8a33f45b65fc58"
+    },
+    "synthetic_player_dry_run_evidence": {
+      "path": "research/toolchains/evidence/perceptual-degradation-listening-player-dry-run-observed-20260803-003.json",
+      "sha256": "8be5c9452f6c05be6d7a7e936294df7865c7bd43f076251dad22c3cff8c51e5a"
     }
   },
   "unresolved_operational_fields": [
