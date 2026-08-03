@@ -1,15 +1,6 @@
 name: ViSQOL synthetic replay
 
 on:
-  push:
-    branches:
-      - codex/perceptual-degradation
-    paths:
-      - .github/workflows/visqol-synthetic.yml
-      - benchmarks/perceptual-degradation-v1/visqol-synthetic-replay-plan.json
-      - research/toolchains/patches/visqol-v3.3.3-reproducible-workspace.patch
-      - scripts/perceptual_degradation_visqol_fixtures.py
-      - scripts/perceptual_degradation_visqol_replay.py
   workflow_dispatch:
 
 permissions:

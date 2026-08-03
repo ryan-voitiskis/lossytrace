@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "record_kind": "visqol_synthetic_build_observation",
+  "state": "visqol_synthetic_build_observed_single_environment",
+  "execution_plan": {
+    "plan_id": "visqol-audio-v3-3-3-synthetic-replay-20260803-005",
+    "sha256": "c029e9bb2617eee83eebf32d020087e2404090b38ffdf92dd6842c5599c7b698"
+  },
+  "github": {
+    "run_id": 30822439141,
+    "run_url": "https://github.com/ryan-voitiskis/lossytrace/actions/runs/30822439141",
+    "head_sha": "38d88f11e0c31c478ab0b20013f2f0bb6125b13d",
+    "workflow_conclusion": "success"
+  },
+  "artifact": {
+    "id": 8859665170,
+    "name": "visqol-synthetic-38d88f11e0c31c478ab0b20013f2f0bb6125b13d",
+    "size_bytes": 6364261,
+    "archive_sha256": "d11c983457c50a27da24ede952122d8fb8215bd1dc866ddb564e872a675cb606",
+    "expires_at": "2026-08-04T14:31:54Z",
+    "retention_days": 1
+  },
+  "build_environment": {
+    "runner_image": "ubuntu22",
+    "runner_image_version": "20260720.234.2",
+    "kernel": "Linux 6.8.0-1062-azure #69~22.04.1-Ubuntu SMP Mon Jun 29 19:32:04 UTC 2026 x86_64 GNU/Linux",
+    "compiler": "cc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0",
+    "bazel": "bazel 3.7.2",
+    "python": "Python 3.10.12",
+    "numpy": "1.21.6",
+    "compilation_mode": "opt",
+    "maximum_workers": 6,
+    "minimum_free_disk_gib_restored_after_build": 15
+  },
+  "files": {
+    "binary": {
+      "bytes": 6096752,
+      "sha256": "7384c8d21725e6fa3921aea4e66ff9cb9481b57acef868304192df437a467319",
+      "committed": false
+    },
+    "audio_model": {
+      "bytes": 138117,
+      "sha256": "1e8246ed33bf36dc5c859351f7110f2cd31f98661989715c0fcf974ec48d3e2e",
+      "committed": false
+    },
+    "license": {
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "committed": false
+    },
+    "synthetic_replay": {
+      "artifact_bytes": 7421,
+      "artifact_sha256": "e63e8829fb7e500bdcad2d5806dffdfa051231f55e314135767b76e9c9bff9bd",
+      "committed_path": "research/toolchains/evidence/visqol-synthetic-replay-observed-20260803-001.json",
+      "committed_bytes": 5949,
+      "committed_sha256": "d21c8d0879ce0a5f1efeac5c8e38105b9c017d0c0777bc48655fc0916befe175",
+      "semantic_json_equality_verified": true
+    },
+    "raw_repository_resolution": {
+      "bytes": 109129,
+      "sha256": "e0b7ed6b69fb914696bba52ffbe1abc62852dd6cb92f986ea66b5d52cbbabad5",
+      "absolute_runner_paths_present": true,
+      "committed": false
+    }
+  },
+  "repository_resolution": {
+    "repository_count": 46,
+    "repository_names": [
+      "FP16",
+      "FXdiv",
+      "XNNPACK",
+      "arm_neon_2_x86_sse",
+      "armadillo_headers",
+      "bazel_skylib",
+      "bazel_tools",
+      "build_bazel_rules_android",
+      "clog",
+      "com_github_grpc_grpc",
+      "com_google_absl",
+      "com_google_protobuf",
+      "cpuinfo",
+      "eigen_archive",
+      "farmhash_archive",
+      "fft2d",
+      "flatbuffers",
+      "gemmlowp",
+      "io_bazel_rules_closure",
+      "llvm-raw",
+      "local_config_cc",
+      "local_config_cc_toolchains",
+      "local_config_cuda",
+      "local_config_git",
+      "local_config_platform",
+      "local_config_remote_execution",
+      "local_config_rocm",
+      "local_config_sh",
+      "local_config_tensorrt",
+      "local_execution_config_platform",
+      "local_execution_config_python",
+      "org_tensorflow",
+      "pffft_lib",
+      "platforms",
+      "pthreadpool",
+      "pybind11_bazel",
+      "rules_cc",
+      "rules_java",
+      "rules_pkg",
+      "rules_proto",
+      "rules_python",
+      "ruy",
+      "svm_lib",
+      "tf_runtime",
+      "tf_toolchains",
+      "zlib"
+    ],
+    "raw_record_committed": false,
+    "reason_raw_record_not_committed": "The Bazel record contains ephemeral absolute runner paths; its exact SHA-256 and path-free repository-name projection are retained instead."
+  },
+  "boundaries": {
+    "synthetic_audio_only": true,
+    "audio_files_committed": false,
+    "binary_or_model_committed": false,
+    "public_or_provider_audio_accessed": false,
+    "retained_audio_accessed": false,
+    "sealed_labels_opened": false,
+    "existing_280_case_future_subset_opened": false,
+    "human_listening_scores_opened": false,
+    "threshold_selected": false,
+    "cross_environment_replay_complete": false,
+    "public_verdict_enabled": false,
+    "paths_in_committed_evidence": false
+  }
+}

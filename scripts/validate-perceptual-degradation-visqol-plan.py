@@ -20,6 +20,7 @@ EXPECTED_TREE = "7a0c95a103c4ba40d6337f06f80848e571b00b3c"
 EXPECTED_MODEL_SHA256 = "1e8246ed33bf36dc5c859351f7110f2cd31f98661989715c0fcf974ec48d3e2e"
 EXPECTED_BAZEL_SHA256 = "70dc0bee198a4c3d332925a32d464d9036a831977501f66d4996854ad4e4fc0d"
 EXPECTED_NUMPY_SHA256 = "5f30427731561ce75d7048ac254dbe47a2ba576229250fb60f0fb74db96501a1"
+EXPECTED_BINARY_SHA256 = "7384c8d21725e6fa3921aea4e66ff9cb9481b57acef868304192df437a467319"
 
 
 def sha256_file(path: Path) -> str:
@@ -34,12 +35,12 @@ def validate(plan: dict[str, Any], root: Path = ROOT) -> list[str]:
     errors: list[str] = []
     if plan.get("schema_version") != 1:
         errors.append("schema_version must equal 1")
-    if plan.get("state") != "visqol_synthetic_build_and_replay_frozen_before_scores":
-        errors.append("ViSQOL plan must remain frozen before synthetic scores")
+    if plan.get("state") != "visqol_synthetic_replay_observed_single_environment":
+        errors.append("ViSQOL plan must record one observed synthetic environment")
 
     authorization = plan.get("authorization", {})
-    if authorization.get("synthetic_fixture_execution") is not True:
-        errors.append("synthetic fixture execution must be explicitly authorized")
+    if authorization.get("synthetic_fixture_execution") is not False:
+        errors.append("completed first-environment synthetic execution must be closed")
     for key in (
         "public_or_retained_audio_execution",
         "human_listening_score_access",
@@ -58,8 +59,10 @@ def validate(plan: dict[str, Any], root: Path = ROOT) -> list[str]:
         errors.append("ViSQOL tree differs")
     if visqol.get("audio_model_sha256") != EXPECTED_MODEL_SHA256:
         errors.append("ViSQOL audio model hash differs")
-    if visqol.get("binary_sha256") is not None:
-        errors.append("ViSQOL binary hash must remain null before replay")
+    if visqol.get("binary_sha256") != EXPECTED_BINARY_SHA256:
+        errors.append("ViSQOL observed binary hash differs")
+    if visqol.get("synthetic_replay_complete") is not True:
+        errors.append("ViSQOL single-environment synthetic replay must be complete")
 
     environment = plan.get("build_environment", {})
     if environment.get("runner") != "ubuntu-22.04":
@@ -68,6 +71,10 @@ def validate(plan: dict[str, Any], root: Path = ROOT) -> list[str]:
         errors.append("build worker ceiling must equal six")
     if environment.get("minimum_local_free_disk_gib") != 15:
         errors.append("local free-disk reserve must equal 15 GiB")
+    if environment.get("ephemeral_remote_build_authorized") is not False:
+        errors.append("completed first-environment remote build authorization must be closed")
+    if environment.get("single_environment_execution_complete") is not True:
+        errors.append("single-environment execution must be recorded complete")
     bazel = environment.get("bazel", {})
     if bazel.get("version") != "3.7.2":
         errors.append("Bazel version differs")
@@ -104,6 +111,20 @@ def validate(plan: dict[str, Any], root: Path = ROOT) -> list[str]:
             errors.append("prior attempt must not claim a completed evidence record")
     if attempts and attempts[-1].get("synthetic_scores_parsed") is not False:
         errors.append("diagnostic-rejected attempt must not claim parsed scores")
+
+    observation = plan.get("successful_observation", {})
+    if observation.get("github_run_id") != 30822439141:
+        errors.append("successful observation run differs")
+    if observation.get("binary_sha256") != EXPECTED_BINARY_SHA256:
+        errors.append("successful observation binary differs")
+    if observation.get("complete_replays_per_case") != 2:
+        errors.append("successful observation replay count differs")
+    if observation.get("synthetic_scores_are_human_truth") is not False:
+        errors.append("synthetic observation must not be human truth")
+    if observation.get("threshold_selected") is not False:
+        errors.append("synthetic observation must not select a threshold")
+    if observation.get("cross_environment_replay_complete") is not False:
+        errors.append("cross-environment replay must remain incomplete")
 
     generation = plan.get("fixture_generation", {})
     if generation.get("duration_seconds", 0) < 8:
@@ -176,7 +197,7 @@ def main() -> int:
             {
                 "plan": str(plan_path.relative_to(ROOT)),
                 "plan_sha256": sha256_file(plan_path),
-                "status": "synthetic_only_execution_authorized",
+                "status": "single_environment_synthetic_replay_observed",
             },
             sort_keys=True,
         )

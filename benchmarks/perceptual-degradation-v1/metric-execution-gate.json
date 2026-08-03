@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "gate_id": "perceptual-degradation-v1-metric-execution-20260803-005",
-  "state": "metric_execution_blocked_pending_exact_binaries_and_legal_clearance",
+  "gate_id": "perceptual-degradation-v1-metric-execution-20260803-006",
+  "state": "metric_execution_blocked_pending_cross_environment_and_legal_clearance",
   "public_verdict_enabled": false,
   "retained_audio_metric_execution_authorized": false,
   "public_development_audio_metric_execution_authorized": false,
@@ -14,7 +14,8 @@
     "score_blind_public_development_manifest_frozen": true,
     "score_free_alignment_topology_frozen": true,
     "score_free_decoder_resampler_replayed": true,
-    "visqol_synthetic_replay_plan_frozen": true
+    "visqol_synthetic_replay_plan_frozen": true,
+    "visqol_single_environment_synthetic_replay_complete": true
   },
   "bindings": {
     "research_plan": {
@@ -55,7 +56,19 @@
     },
     "visqol_synthetic_replay_plan": {
       "path": "benchmarks/perceptual-degradation-v1/visqol-synthetic-replay-plan.json",
-      "sha256": "c029e9bb2617eee83eebf32d020087e2404090b38ffdf92dd6842c5599c7b698"
+      "sha256": "4932569542bec220b55c42224f2a6525172caa6416aa3a0b60ab2bbe91ad5cd6"
+    },
+    "visqol_build_observation": {
+      "path": "research/toolchains/evidence/visqol-synthetic-build-observed-20260803-001.json",
+      "sha256": "d2b858d192b145c6082ff253126a62b9504ed14dd98fc9668a1b8dd459691506"
+    },
+    "visqol_replay_observation": {
+      "path": "research/toolchains/evidence/visqol-synthetic-replay-observed-20260803-001.json",
+      "sha256": "d21c8d0879ce0a5f1efeac5c8e38105b9c017d0c0777bc48655fc0916befe175"
+    },
+    "visqol_observation_validator": {
+      "path": "scripts/validate-perceptual-degradation-visqol-observation.py",
+      "sha256": "dada2ae02bb579f2fcd49940217feb2c01fea16158850b59c25a09ef88ffbb57"
     }
   },
   "metric_families": {
@@ -65,10 +78,10 @@
       "license": "Apache-2.0",
       "source_binding_complete": true,
       "build_recipe_frozen": true,
-      "binary_sha256": null,
+      "binary_sha256": "7384c8d21725e6fa3921aea4e66ff9cb9481b57acef868304192df437a467319",
       "model_sha256": "1e8246ed33bf36dc5c859351f7110f2cd31f98661989715c0fcf974ec48d3e2e",
-      "synthetic_fixture_execution_authorized": true,
-      "synthetic_replay_complete": false,
+      "synthetic_fixture_execution_authorized": false,
+      "synthetic_replay_complete": true,
       "execution_authorized": false
     },
     "gstpeaq_proxy_v0_6_1": {
@@ -88,11 +101,10 @@
     }
   },
   "unmet_prerequisites": [
-    "Execute the frozen ViSQOL v3.3.3 ephemeral build and synthetic replay, then bind the observed binary and repository resolution record.",
     "Replay the same ViSQOL synthetic cases in an independently bound second environment before claiming cross-environment score determinism.",
     "Obtain and commit a qualified legal record for use of the BS.1387-derived GstPEAQ proxy technology and its redistribution boundary.",
     "Freeze and replay the exact GstPEAQ proxy build only if the legal record permits execution.",
     "Keep retained audio and all sealed labels unopened until a later committed opening authorization."
   ],
-  "authorized_next_step": "Retry only the branch-scoped ephemeral ViSQOL workflow with the newly hash-bound NumPy configuration bootstrap on the frozen synthetic fixtures. Do not download ODAQ audio or execute a perceptual metric on public or retained audio."
+  "authorized_next_step": "Freeze an independently bound second ViSQOL environment before any further synthetic execution. Do not download ODAQ audio or execute a perceptual metric on public or retained audio."
 }

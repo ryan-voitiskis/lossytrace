@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "plan_id": "visqol-audio-v3-3-3-synthetic-replay-20260803-005",
-  "state": "visqol_synthetic_build_and_replay_frozen_before_scores",
+  "plan_id": "visqol-audio-v3-3-3-synthetic-replay-20260803-006",
+  "state": "visqol_synthetic_replay_observed_single_environment",
   "fixture_set_id": "visqol-synthetic-48k-stereo-v1",
   "authorization": {
-    "synthetic_fixture_execution": true,
+    "synthetic_fixture_execution": false,
     "public_or_retained_audio_execution": false,
     "human_listening_score_access": false,
     "retained_audio_access": false,
@@ -25,15 +25,16 @@
     "workspace_patch_scope": "Replace the movable googletest tag and the now-missing Abseil tag with their resolved commits, and replace the removed Armadillo URL with a byte-identical SHA-256-bound MacPorts archive; no metric implementation source is changed.",
     "audio_model_path": "model/libsvm_nu_svr_model.txt",
     "audio_model_sha256": "1e8246ed33bf36dc5c859351f7110f2cd31f98661989715c0fcf974ec48d3e2e",
-    "binary_sha256": null,
-    "synthetic_replay_complete": false
+    "binary_sha256": "7384c8d21725e6fa3921aea4e66ff9cb9481b57acef868304192df437a467319",
+    "synthetic_replay_complete": true
   },
   "build_environment": {
     "runner": "ubuntu-22.04",
     "maximum_workers": 6,
     "minimum_local_free_disk_gib": 15,
     "persistent_local_build_authorized": false,
-    "ephemeral_remote_build_authorized": true,
+    "ephemeral_remote_build_authorized": false,
+    "single_environment_execution_complete": true,
     "bazel": {
       "version": "3.7.2",
       "download_url": "https://github.com/bazelbuild/bazel/releases/download/3.7.2/bazel-3.7.2-linux-x86_64",
@@ -99,6 +100,16 @@
       "completed_evidence_record": false
     }
   ],
+  "successful_observation": {
+    "github_run_id": 30822439141,
+    "github_head_sha": "38d88f11e0c31c478ab0b20013f2f0bb6125b13d",
+    "binary_sha256": "7384c8d21725e6fa3921aea4e66ff9cb9481b57acef868304192df437a467319",
+    "complete_replays_per_case": 2,
+    "synthetic_case_count": 4,
+    "synthetic_scores_are_human_truth": false,
+    "threshold_selected": false,
+    "cross_environment_replay_complete": false
+  },
   "fixture_generation": {
     "sample_rate_hz": 48000,
     "channel_count": 2,
@@ -171,11 +182,11 @@
     },
     "plan_validator": {
       "path": "scripts/validate-perceptual-degradation-visqol-plan.py",
-      "sha256": "20745e95768935fea3ef92bedec9d2105c732357793ea07a5e83c8372530b8af"
+      "sha256": "39d9719df54867a97eefd78ea971a7083a9585d1706e7cc1d4baafbbbff89bb2"
     },
     "tests": {
       "path": "scripts/tests/test_perceptual_degradation_visqol.py",
-      "sha256": "eb762c360fdfb04b6abb8f1900762a969b33ddcdba13f9e38bde065198bf3a1c"
+      "sha256": "9e9cd0374a355e83d7f542575de012e595b0d18893c40ffce309a643d8314dfe"
     },
     "workspace_patch": {
       "path": "research/toolchains/patches/visqol-v3.3.3-reproducible-workspace.patch",
@@ -183,13 +194,24 @@
     },
     "workflow": {
       "path": ".github/workflows/visqol-synthetic.yml",
-      "sha256": "0662e61d3c90ca5dd347844eaa70b24641b98a151e45a21644ccf65ad96ef810"
+      "sha256": "efd3253c8a0abfd284ebaa2255c724d3fb141bc4c84118963bb5842d0b82dccd"
+    },
+    "build_observation": {
+      "path": "research/toolchains/evidence/visqol-synthetic-build-observed-20260803-001.json",
+      "sha256": "d2b858d192b145c6082ff253126a62b9504ed14dd98fc9668a1b8dd459691506"
+    },
+    "replay_observation": {
+      "path": "research/toolchains/evidence/visqol-synthetic-replay-observed-20260803-001.json",
+      "sha256": "d21c8d0879ce0a5f1efeac5c8e38105b9c017d0c0777bc48655fc0916befe175"
+    },
+    "observation_validator": {
+      "path": "scripts/validate-perceptual-degradation-visqol-observation.py",
+      "sha256": "dada2ae02bb579f2fcd49940217feb2c01fea16158850b59c25a09ef88ffbb57"
     }
   },
   "unmet_prerequisites_after_this_freeze": [
-    "Execute the exact ephemeral workflow and bind the observed binary, model and repository resolution record.",
     "Replay the same synthetic cases in an independently bound second environment before claiming cross-environment score determinism.",
     "Keep public, provider and retained audio metric execution blocked until a later gate freeze."
   ],
-  "authorized_next_step": "Commit and push this score-blind plan, then execute only the branch-scoped ephemeral synthetic workflow."
+  "authorized_next_step": "Freeze an independently bound second environment before any further synthetic execution. Keep the completed first-environment workflow manual-only and do not run metrics on public, provider or retained audio."
 }

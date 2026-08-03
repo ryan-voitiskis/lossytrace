@@ -25,8 +25,8 @@ def validate(gate: dict[str, Any], root: Path = ROOT) -> list[str]:
     errors: list[str] = []
     if gate.get("schema_version") != 1:
         errors.append("schema_version must equal 1")
-    if gate.get("state") != "metric_execution_blocked_pending_exact_binaries_and_legal_clearance":
-        errors.append("metric gate must remain in its score-blind blocked state")
+    if gate.get("state") != "metric_execution_blocked_pending_cross_environment_and_legal_clearance":
+        errors.append("metric gate must remain blocked pending cross-environment and legal gates")
     for key in (
         "public_verdict_enabled",
         "retained_audio_metric_execution_authorized",
@@ -42,6 +42,8 @@ def validate(gate: dict[str, Any], root: Path = ROOT) -> list[str]:
         errors.append("score-blind public-development manifest must remain frozen")
     if completed.get("visqol_synthetic_replay_plan_frozen") is not True:
         errors.append("ViSQOL synthetic replay plan must remain frozen")
+    if completed.get("visqol_single_environment_synthetic_replay_complete") is not True:
+        errors.append("ViSQOL single-environment synthetic replay must be complete")
     for key, binding in gate.get("bindings", {}).items():
         path = root / binding.get("path", "")
         if not path.is_file():
@@ -55,18 +57,20 @@ def validate(gate: dict[str, Any], root: Path = ROOT) -> list[str]:
     for family_id, family in families.items():
         if family.get("execution_authorized") is not False:
             errors.append(f"{family_id}.execution_authorized must remain false")
-        if family.get("binary_sha256") is not None:
-            errors.append(f"{family_id}.binary_sha256 must remain null until a new gate freeze")
     visqol = families.get("visqol_audio_v3_3_3", {})
     if visqol.get("build_recipe_frozen") is not True:
         errors.append("visqol_audio_v3_3_3.build_recipe_frozen must be true")
     if visqol.get("model_sha256") != "1e8246ed33bf36dc5c859351f7110f2cd31f98661989715c0fcf974ec48d3e2e":
         errors.append("visqol_audio_v3_3_3.model_sha256 differs")
-    if visqol.get("synthetic_fixture_execution_authorized") is not True:
-        errors.append("visqol_audio_v3_3_3 synthetic fixture execution must be authorized")
-    if visqol.get("synthetic_replay_complete") is not False:
-        errors.append("visqol_audio_v3_3_3.synthetic_replay_complete must remain false")
+    if visqol.get("binary_sha256") != "7384c8d21725e6fa3921aea4e66ff9cb9481b57acef868304192df437a467319":
+        errors.append("visqol_audio_v3_3_3.binary_sha256 differs")
+    if visqol.get("synthetic_fixture_execution_authorized") is not False:
+        errors.append("visqol_audio_v3_3_3 completed synthetic execution must be closed")
+    if visqol.get("synthetic_replay_complete") is not True:
+        errors.append("visqol_audio_v3_3_3.synthetic_replay_complete must be true")
     proxy = families.get("gstpeaq_proxy_v0_6_1", {})
+    if proxy.get("binary_sha256") is not None:
+        errors.append("gstpeaq_proxy_v0_6_1.binary_sha256 must remain null")
     if proxy.get("synthetic_fixture_execution_authorized") is not False:
         errors.append("gstpeaq_proxy_v0_6_1 synthetic fixture execution must remain unauthorized")
     for key in (

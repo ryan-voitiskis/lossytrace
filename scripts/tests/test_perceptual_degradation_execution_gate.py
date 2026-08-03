@@ -36,10 +36,19 @@ class PerceptualDegradationExecutionGateTest(unittest.TestCase):
         self.assertTrue(
             GATE["completed_prerequisites"]["visqol_synthetic_replay_plan_frozen"]
         )
-        self.assertTrue(
+        self.assertFalse(
             GATE["metric_families"]["visqol_audio_v3_3_3"][
                 "synthetic_fixture_execution_authorized"
             ]
+        )
+        self.assertTrue(
+            GATE["metric_families"]["visqol_audio_v3_3_3"][
+                "synthetic_replay_complete"
+            ]
+        )
+        self.assertEqual(
+            "7384c8d21725e6fa3921aea4e66ff9cb9481b57acef868304192df437a467319",
+            GATE["metric_families"]["visqol_audio_v3_3_3"]["binary_sha256"],
         )
 
     def test_gate_rejects_premature_metric_authorization(self) -> None:
