@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "gate_id": "perceptual-degradation-listening-preparation-20260803-001",
+  "state": "protocol_prepared_human_collection_unauthorized",
+  "human_collection_authorized": false,
+  "recruitment_authorized": false,
+  "real_listener_software_authorized": false,
+  "participant_contact_authorized": false,
+  "response_storage_authorized": false,
+  "completed": {
+    "protocol_draft_present": true,
+    "participant_information_draft_present": true,
+    "source_and_condition_manifest_frozen": false,
+    "licences_frozen": false,
+    "player_implementation_frozen": false,
+    "synthetic_dry_run_passed": false,
+    "playback_qualification_frozen": false,
+    "power_report_frozen": false,
+    "privacy_operational_fields_resolved": false,
+    "compensation_and_withdrawal_resolved": false,
+    "analysis_hashes_frozen": false,
+    "responsible_human_approval_present": false
+  },
+  "methods": {
+    "subtle": "bs1116_style_with_pre_rating_forced_choice",
+    "intermediate_severe": "mushra_style",
+    "maximum_subtle_trials_per_session": 15,
+    "maximum_mushra_trials_per_session": 6,
+    "maximum_signals_per_mushra_trial": 12,
+    "target_session_minutes": [20, 30],
+    "feedback_during_scored_trials": false,
+    "condition_recipe_visible": false,
+    "metric_score_visible": false
+  },
+  "privacy": {
+    "participant_identity_in_response_data": false,
+    "raw_ip_address_recorded": false,
+    "precise_location_recorded": false,
+    "microphone_recorded": false,
+    "contact_and_payment_data_separate": true,
+    "public_individual_responses_authorized": false,
+    "public_small_cell_results_authorized": false
+  },
+  "bindings": {
+    "research_contract": {
+      "path": "docs/research/perceptual-degradation-contract-20260803.md",
+      "sha256": "f46c03bdd7f26e835c6d9a01277e8fade52d9af9ef050128cdcac35c53a7d69f"
+    },
+    "listening_protocol": {
+      "path": "docs/research/perceptual-degradation-listening-protocol-20260803.md",
+      "sha256": "2e3975cdfba83debc802f1b5453aee312d13fff65caa9d17d2882aab5e66cc06"
+    },
+    "listener_information": {
+      "path": "docs/research/perceptual-degradation-listener-information-20260803.md",
+      "sha256": "a3869ab30c919dee93949a246f5325be3b9827893a46508fc611b96e764f4f21"
+    },
+    "stimulus_manifest_schema": {
+      "path": "benchmarks/perceptual-degradation-v1/listening-stimulus-manifest.schema.json",
+      "sha256": "be12bf35311024f9544856053707e273f1a77793d8a5a507697e0e5cee11b4ff"
+    },
+    "score_blind_allocator": {
+      "path": "scripts/perceptual_degradation_listening_allocation.py",
+      "sha256": "b161659adc46efc156602f689cb8c0ab5194db49de79a0934f0607644ae4526c"
+    },
+    "score_blind_allocator_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_listening_allocation.py",
+      "sha256": "33fc4293237a65e270c72fbaa3e598d64db2e2d3cc9216855ac4e8ef5e50d541"
+    }
+  },
+  "unresolved_operational_fields": [
+    "responsible researcher and contact",
+    "governing organization and ethics/privacy basis",
+    "eligibility jurisdiction and minimum age",
+    "response storage region encryption access and incident process",
+    "retention and deletion periods",
+    "withdrawal contact procedure and de-identification cutoff",
+    "compensation amount currency partial-session rule and operator",
+    "public minimum cell size and suppression policy",
+    "qualified playback chain and calibration method"
+  ],
+  "authorized_next_step": "Prepare schemas, deterministic allocation, synthetic player dry run, playback qualification, and score-blind power analysis. Do not contact or collect from real listeners."
+}
