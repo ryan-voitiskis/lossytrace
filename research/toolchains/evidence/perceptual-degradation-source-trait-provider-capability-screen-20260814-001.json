@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "observation_id": "perceptual-degradation-source-trait-provider-capability-screen-20260814-001",
+  "state": "bounded_official_public_record_screen_complete_no_audio_member_or_trait_access",
+  "observed_on": "2026-08-14",
+  "purpose": "Test whether official provider-level public records expose a later audit route for the missing quiet and naturally clipped source-trait negatives without reading audio, inspecting or selecting exact members, or assigning trait truth.",
+  "bindings": {
+    "source_trait_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/source-trait-identifiability-plan.json",
+      "sha256": "c15991fbd7062c837db566bb734c5c1bf625fa2cbc5aa5a00983b64d82e28ba3"
+    },
+    "source_trait_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-source-trait-identifiability-20260814-001.json",
+      "sha256": "e77bb0bb453941bdf47d1d9062748b27bbae686d781fb7f17efc734e5e632e20"
+    },
+    "source_candidate_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/permissive-multiprovider-source-candidate-plan.json",
+      "sha256": "3699fe67c402bb38f4472dd63102212e2a05bd1b315e37d17f39dd4c08f38782"
+    },
+    "sonyc_source_identity_audit": {
+      "path": "docs/research/sonyc-source-identity-audit-20260802.md",
+      "sha256": "4aae15d4349cae737116906845a58b6114e9a50e4e432a1523589adda08c7db8"
+    }
+  },
+  "access_boundary": {
+    "committed_metadata_and_audits_read": true,
+    "official_public_dataset_records_read": true,
+    "official_public_system_paper_read": true,
+    "official_public_api_documentation_read": true,
+    "bounded_primary_source_web_search_performed": true,
+    "freesound_catalog_query_executed": false,
+    "public_exact_sound_record_read": false,
+    "provider_audio_accessed": false,
+    "retained_odaq_reference_accessed": false,
+    "exact_member_metadata_inspected": false,
+    "exact_member_selected": false,
+    "source_trait_assigned": false,
+    "stimulus_generated": false,
+    "perceptual_metric_executed": false,
+    "listener_response_or_score_accessed": false,
+    "sealed_evidence_opened": false,
+    "no_reference_training_performed": false,
+    "public_verdict_enabled": false
+  },
+  "screen_policy": {
+    "trait_ids": [
+      "quiet",
+      "clipped"
+    ],
+    "official_primary_record_required": true,
+    "allowed_licences": [
+      "CC BY 4.0",
+      "CC0 1.0"
+    ],
+    "provider_capability_is_exact_member_evidence": false,
+    "pcm_descriptor_is_provenance": false,
+    "uploader_tag_alone_is_capture_chain_provenance": false,
+    "lossless_container_alone_proves_original_coding_history": false,
+    "bounded_search_failure_proves_global_absence": false,
+    "exact_member_assignment_requires_separate_authorization": true
+  },
+  "provider_capability_observations": [
+    {
+      "provider_id": "sonyc_backgrounds_5129078",
+      "trait_id": "quiet",
+      "official_dataset_url": "https://zenodo.org/records/5129078",
+      "official_system_paper_url": "https://www.justinsalamon.com/uploads/4/3/9/4/4394963/bello_sonyc_cacm_2018.pdf",
+      "licence": "CC BY 4.0",
+      "public_record_observation": "The collection consists of 10-second WAV recordings from the SONYC acoustic sensor network. The bound source-identity audit records identical microphones and gain settings; the system paper documents calibrated MEMS sensor hardware, a 32-120 dBA dynamic range, random 10-second sampling and lossless FLAC upload.",
+      "descriptor_obligation_status": {
+        "absolute_pcm_level_measurement": "unobserved_audio_access_closed",
+        "nonzero_activity_support": "unobserved_audio_access_closed"
+      },
+      "provenance_obligation_status": {
+        "preserved_source_gain_record": "partially_supported_common_calibrated_capture_chain",
+        "no_attenuation_transform_substitution": "not_established_at_collection_level"
+      },
+      "candidate_status": "provisional_quiet_provider_capability_exact_member_audit_required",
+      "exact_member_candidate_identified": false
+    },
+    {
+      "provider_id": "freesound_api_v2",
+      "trait_id": "clipped",
+      "official_api_url": "https://freesound.org/docs/api/resources_apiv2.html",
+      "licence": "mixed_item_level_CC0_CC_BY_CC_BY_NC",
+      "public_record_observation": "The official API documentation exposes text search over names, tags, descriptions and original filenames; filters for file type and item-level licence; and original-format download after authentication. No catalog query or exact sound record was opened in this screen.",
+      "descriptor_obligation_status": {
+        "plateau_or_saturation_support_measurement": "unobserved_audio_access_closed"
+      },
+      "provenance_obligation_status": {
+        "source_or_capture_chain_clipping_record": "not_structured_uploader_narrative_may_exist",
+        "intentional_waveform_exclusion": "not_established_at_provider_level"
+      },
+      "candidate_status": "search_mechanism_only_no_naturally_clipped_candidate_identified",
+      "exact_member_candidate_identified": false
+    }
+  ],
+  "trait_disposition": {
+    "quiet": {
+      "provider_capability_identified": true,
+      "exact_member_candidate_identified": false,
+      "all_proof_obligations_satisfied": false,
+      "disposition": "SONYC is a provenance-bearing route for a separately authorized exact-member audit, but no member may be called naturally quiet until absolute level, activity and absence of post-capture attenuation are established."
+    },
+    "clipped": {
+      "provider_search_capability_identified": true,
+      "exact_member_candidate_identified": false,
+      "all_proof_obligations_satisfied": false,
+      "disposition": "Freesound can support a later rights- and format-filtered metadata search, but its provider schema does not itself establish capture-chain clipping or exclude intentional flat-top waveforms. No naturally clipped candidate was found."
+    }
+  },
+  "decision": {
+    "quiet_provider_capability_route_found": true,
+    "quiet_candidate_identified": false,
+    "naturally_clipped_candidate_identified": false,
+    "source_trait_manifest_frozen": false,
+    "source_successor_selected": false,
+    "metric_successor_selected": false,
+    "human_collection_authorized": false,
+    "no_reference_work_eligible": false,
+    "next_gate": "Obtain separate authorization for a bounded exact-member metadata audit. For quiet, inspect only SONYC member metadata and transformation provenance before any audio descriptor pass. For clipped, first search public item metadata for explicit capture-chain clipping, permissive item rights, original lossless upload and intentional-waveform exclusion; reject the route if those records cannot be established before audio access."
+  },
+  "claim_boundary": {
+    "provider_capability_proves_quiet_trait": false,
+    "api_search_capability_proves_clipped_trait": false,
+    "bounded_search_proves_no_global_candidate_exists": false,
+    "exact_member_or_trait_selected": false,
+    "quiet_or_clipped_scientific_coverage_complete": false,
+    "screen_authorizes_audio_or_exact_member_access": false,
+    "screen_is_full_objective_positive_result": false,
+    "public_cli_changed": false
+  }
+}

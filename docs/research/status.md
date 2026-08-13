@@ -868,3 +868,20 @@ resampler; integration after the held-out apply decision and retained-audio
 validation remain separately gated. No retained audio, perceptual metric,
 human truth, response, collection, no-reference work or public verdict was
 opened or authorized.
+
+A bounded score-blind
+[`source-trait provider-capability screen`](perceptual-degradation-source-trait-provider-capability-screen-20260814.md)
+now narrows the two missing natural/source-trait negative routes without
+reading audio or exact-member records. SONYC's CC BY 4.0 collection and primary
+system paper document a common calibrated capture chain, fixed gain context,
+32--120 dBA dynamic range and lossless FLAC upload, making it a plausible later
+route for a preserved-level quiet member. Absolute PCM level, activity and
+absence of post-capture attenuation remain unobserved, so no quiet candidate
+or trait is assigned. Freesound's official API exposes text, file-type and
+item-licence search plus original-format download, but its provider schema does
+not establish capture-chain clipping or exclude intentional flat-top
+waveforms; no catalogue query was executed and no naturally clipped candidate
+was found. The search is bounded and does not prove global absence. No exact
+member, source-trait manifest, source or metric successor, audio, human truth,
+response, collection, no-reference work or public verdict was selected,
+opened or authorized.
