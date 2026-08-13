@@ -1,0 +1,175 @@
+{
+  "schema_version": 1,
+  "observation_id": "perceptual-degradation-stable-music-provider-public-record-observation-20260814-001",
+  "state": "official_public_record_screen_complete_no_audio_or_member_access",
+  "observed_on": "2026-08-14",
+  "purpose": "Search stable or immutable CC BY 4.0 and CC0 public records for mastered-music replacements to the preservation-required Bandcamp candidates while retaining useful controlled-music candidates and rejecting rights or provenance failures.",
+  "access_boundary": {
+    "official_public_dataset_pages_read": true,
+    "official_public_papers_or_repository_metadata_read": true,
+    "small_structured_metadata_responses_read_ephemerally": true,
+    "raw_provider_metadata_persisted_in_research_storage": false,
+    "archive_downloaded": false,
+    "audio_member_accessed": false,
+    "archive_member_listing_accessed": false,
+    "exact_source_member_selected": false,
+    "retained_odaq_reference_accessed": false,
+    "processed_odaq_condition_accessed": false,
+    "perceptual_metric_executed": false,
+    "target_perceptual_degradation_score_accessed": false,
+    "listener_response_collected": false,
+    "sealed_evidence_opened": false,
+    "no_reference_training_performed": false,
+    "public_verdict_enabled": false
+  },
+  "screen_policy": {
+    "allowed_dataset_licences": [
+      "CC BY 4.0",
+      "CC0 1.0"
+    ],
+    "structured_cc_by_field_overrides_additional_noncommercial_or_conduct_restrictions": false,
+    "paper_licence_substitutes_for_audio_dataset_licence": false,
+    "stable_record_substitutes_for_lossless_origin_audit": false,
+    "professional_recording_substitutes_for_mastered_release": false,
+    "processed_controlled_performance_substitutes_for_mastered_multigenre_music": false,
+    "same_performer_work_session_or_derivative_may_cross_partitions": false,
+    "candidate_capacity_is_qualified_truth": false
+  },
+  "stable_controlled_music_candidates": [
+    {
+      "source_id": "vienna_4x22_v1",
+      "provider_id": "vienna_4x22",
+      "official_dataset_url": "https://datasets.mdw.ac.at/datasets/dataset/98ea25fa-2468-43ff-929b-3c926e163583",
+      "official_audio_distribution_url": "https://datasets.mdw.ac.at/datasets/distribution/106a4eba-4ebe-424f-a284-0ede77de7d68?view=full",
+      "doi": "10.21939/4X22",
+      "version": "1.0",
+      "licence": "CC BY 4.0",
+      "recording_provenance": "twenty-two professional pianists recorded four classical excerpts in a named studio on a Boesendorfer Imperial grand piano; stereo AKG CK91 ORTF microphones fed a Tascam DA-P1 digital audio tape recorder",
+      "public_performer_count": 22,
+      "public_work_count": 4,
+      "candidate_group_capacity": 22,
+      "grouping_key": "performer_across_all_four_works",
+      "grouping_limit": "all works by one performer remain one group; all groups share one piano, studio, microphone and recorder chain, and exact audio members and delivered encoding remain unaudited",
+      "public_audio_distribution": {
+        "key": "audio.zip",
+        "bytes": 1295130820,
+        "checksum_exposed_on_public_page": false,
+        "accrual_periodicity": "NEVER"
+      },
+      "capabilities": [
+        "music",
+        "controlled_performance_music"
+      ],
+      "music_role": "professional_stereo_classical_piano_performance_not_mastered_release",
+      "candidate_status": "stable_exact_member_metadata_audit_candidate"
+    },
+    {
+      "source_id": "raga_ornamentation_detection_17851882_v4",
+      "provider_id": "raga_ornamentation_detection",
+      "official_record_url": "https://zenodo.org/records/17851882",
+      "doi": "10.5281/zenodo.17851882",
+      "record_id": 17851882,
+      "concept_record_id": 13824626,
+      "version": "v4",
+      "published": "2025-12-08",
+      "licence": "CC BY 4.0",
+      "recording_provenance": "212 annotated recordings from two expert Indian classical vocalists, described as professionally recorded studio-quality teacher performances plus Prasar Bharati broadcast renditions",
+      "delivered_audio": "44100 Hz 16-bit mono PCM WAV, two to ten minutes per recording",
+      "public_recording_count": 212,
+      "public_performer_count": 2,
+      "candidate_group_capacity": 2,
+      "grouping_key": "expert_vocalist_across_all_recordings_and_sources",
+      "grouping_limit": "all recordings from one singer remain one group; studio and broadcast origin chains, accompaniment, session and derivative relationships require exact-member audit",
+      "immutable_files": [
+        {
+          "key": "DATA.zip",
+          "bytes": 2423991916,
+          "md5": "6fb3ff4e19bb38742f770b407258476b"
+        }
+      ],
+      "capabilities": [
+        "music",
+        "controlled_performance_music"
+      ],
+      "music_role": "professional_mono_vocal_performance_and_broadcast_candidate_not_mastered_release",
+      "candidate_status": "immutable_exact_member_metadata_audit_candidate"
+    }
+  ],
+  "screened_not_added": [
+    {
+      "source_id": "spheres_17347681",
+      "official_record_url": "https://zenodo.org/records/17347681",
+      "structured_licence": "CC BY-SA 4.0",
+      "disposition": "outside_narrow_licence_policy_despite_professional_orchestral_stereo_mix"
+    },
+    {
+      "source_id": "freidi_20285754",
+      "official_record_url": "https://zenodo.org/records/20285754",
+      "structured_licence": "CC BY-SA 4.0",
+      "disposition": "outside_narrow_licence_policy_despite_professional_artistic_stereo_mix"
+    },
+    {
+      "source_id": "kraisler_21082251_v1",
+      "official_record_url": "https://zenodo.org/records/21082251",
+      "structured_licence": "CC BY 4.0",
+      "public_description_additional_restrictions": [
+        "may not be used for commercial purposes",
+        "acts that defame performers are prohibited"
+      ],
+      "disposition": "rights_conflict_plain_cc_by_field_does_not_override_additional_restrictions"
+    },
+    {
+      "source_id": "moisesdb",
+      "official_repository_url": "https://github.com/moises-ai/moises-db",
+      "paper_record_url": "https://zenodo.org/records/10265363",
+      "audio_dataset_licence": "CC BY-NC-SA 4.0",
+      "paper_licence": "CC BY 4.0",
+      "disposition": "outside_narrow_licence_policy_paper_licence_does_not_license_audio"
+    },
+    {
+      "source_id": "hiaudio_happy_birthday_collection",
+      "official_paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13161328/",
+      "disposition": "mutable_platform_collection_and_single_public_domain_work_not_stable_mastered_multigenre_provider"
+    },
+    {
+      "source_id": "musan_slr17",
+      "official_record_url": "https://www.openslr.org/17/",
+      "licence": "CC BY 4.0",
+      "disposition": "compiled_music_sources_do_not_establish_clean_lossless_origin_or_mastered_release_chain_at_collection_level"
+    },
+    {
+      "source_id": "fma",
+      "official_record_url": "https://www.loc.gov/item/2018655052/",
+      "disposition": "delivered_audio_is_mp3_and_cannot_be_a_clean_lossless_reference"
+    }
+  ],
+  "aggregate_observation": {
+    "new_stable_controlled_music_candidate_provider_count": 2,
+    "new_stable_controlled_music_candidate_group_capacity": 24,
+    "new_stable_mastered_music_candidate_provider_count": 0,
+    "new_stable_mastered_music_candidate_group_capacity": 0,
+    "screened_not_added_provider_or_collection_count": 7,
+    "qualified_reference_group_count": 0,
+    "allocated_group_count": 0
+  },
+  "decision": {
+    "stable_mastered_music_replacement_found": false,
+    "stable_controlled_music_breadth_improved": true,
+    "mutable_bandcamp_dependency_removed": false,
+    "stable_only_three_domain_every_partition_established": false,
+    "stable_only_mastered_music_every_partition_established": false,
+    "source_successor_selected": false,
+    "metric_successor_selected": false,
+    "no_reference_work_eligible": false,
+    "next_responsible_human_decision": "Choose whether to authorize bounded exact-member metadata audit of the stable candidates and preservation-required records, narrow the mastered-music or primary-domain claim, or reject the current truth-source design."
+  },
+  "claim_boundary": {
+    "bounded_search_is_exhaustive_global_search": false,
+    "candidate_capacity_is_scientific_feasibility": false,
+    "controlled_music_proves_mastered_music_transfer": false,
+    "stable_record_proves_lossless_origin": false,
+    "screen_authorizes_audio_or_member_access": false,
+    "screen_is_full_objective_negative_result": false,
+    "public_cli_changed": false
+  }
+}

@@ -55,9 +55,10 @@ labelled arithmetic sensitivity, not the exact-member-audit candidate tier.
 ## Arithmetic sensitivity
 
 The predecessor pool had 11 providers and 1,930 metadata-level candidate
-groups. The new public-record ceiling produces 18 providers and 2,116 groups;
-using the conservative DataSTORRE floor produces 2,057. Qualified and
-allocated counts remain zero.
+groups. After the successor stable-music screen added Vienna 4x22 and ROD, the
+public-record ceiling produces 20 providers and 2,140 groups; using the
+conservative DataSTORRE floor produces 2,081. Qualified and allocated counts
+remain zero.
 
 | Sensitivity | Arithmetic result | Why it does not cross the scientific gate |
 | --- | --- | --- |
@@ -66,14 +67,16 @@ allocated counts remain zero.
 | eight mastered-music groups in every partition, all public records | feasible | three of four mastered providers are mutable single-release pages |
 | same, stable records only | infeasible | AlbumDB remains the only stable mastered provider |
 | two mastered providers in final validation, all public records | feasible | the second provider is provisional; no final allocation exists |
-| 120 groups in every partition at DataSTORRE's 67-recording ceiling | feasible | it assumes recording files are independently groupable |
-| 120 groups in every partition at the eight-group floor | infeasible | effective non-Slakh capacity is below the three remaining 120-group partitions |
+| 120 groups in every partition at DataSTORRE's 67-recording ceiling | feasible | it uses provisional providers and unaudited metadata capacity |
+| 120 groups in every partition at the eight-group floor | feasible after Vienna 4x22 and ROD supplement | it still uses provisional providers and selects no exact members |
+| 120 groups in every partition, stable records only at the 67-recording ceiling | infeasible | stable non-Slakh capacity remains below the three other 120-group partitions |
 
 This resolves an arithmetic question, not the source design. Every positive
 witness still assigns whole candidate providers without selecting exact
 members. The stable-only result does not yet support three primary domains in
-all partitions or mastered-music transfer, and the 120-group conclusion flips
-when one unresolved relationship assumption changes.
+all partitions, mastered-music transfer, or the 120-group sensitivity. The
+full public-record 120-group result no longer depends on the DataSTORRE ceiling
+alone, but it still depends on unpreserved provisional providers.
 
 ## Screened but not added
 

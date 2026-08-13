@@ -38,13 +38,14 @@ class BreadthRepairFeasibilityTest(unittest.TestCase):
         self.assertFalse(results["stable_record_mastered_music_every_partition"])
         self.assertTrue(results["public_record_final_two_mastered_music_providers"])
 
-    def test_reference_sensitivity_depends_on_recording_ceiling(self) -> None:
+    def test_reference_sensitivity_depends_on_provisional_records(self) -> None:
         results = {
             item["scenario_id"]: item["arithmetic_feasible"]
             for item in MODULE.build_report(plan())["scenario_results"]
         }
         self.assertTrue(results["public_record_reference_120_recording_ceiling"])
-        self.assertFalse(results["public_record_reference_120_conservative_relationship_floor"])
+        self.assertTrue(results["public_record_reference_120_conservative_relationship_floor"])
+        self.assertFalse(results["stable_record_reference_120_recording_ceiling"])
 
     def test_capacity_witness_never_splits_or_promotes_a_provider(self) -> None:
         for result in MODULE.build_report(plan())["scenario_results"]:
@@ -65,10 +66,20 @@ class BreadthRepairFeasibilityTest(unittest.TestCase):
         provider["available_group_capacity"] = 8
         self.assertIn("new provider binding differs: datastorre_acoustic_examples", MODULE.validate_plan(value))
         value = plan()
-        scenario = next(item for item in value["scenarios"] if item["scenario_id"].endswith("conservative_relationship_floor"))
-        scenario["capacity_overrides"]["datastorre_acoustic_examples"] = 67
+        scenario = next(item for item in value["scenarios"] if item["scenario_id"] == "stable_record_reference_120_recording_ceiling")
+        scenario["included_new_record_statuses"].append("preservation_required_provisional")
         with self.assertRaisesRegex(ValueError, "scenario result differs"):
             MODULE.build_report(value)
+
+    def test_stable_controlled_music_capacity_is_bound_without_mastered_promotion(self) -> None:
+        value = plan()
+        provider = next(item for item in value["new_providers"] if item["provider_id"] == "vienna_4x22")
+        provider["available_group_capacity"] = 23
+        self.assertIn("new provider binding differs: vienna_4x22", MODULE.validate_plan(value))
+        value = plan()
+        provider = next(item for item in value["new_providers"] if item["provider_id"] == "vienna_4x22")
+        provider["capabilities"] = ["music", "mastered_music"]
+        self.assertIn("new provider binding differs: vienna_4x22", MODULE.validate_plan(value))
 
     def test_audio_metric_score_training_and_successor_gates_remain_closed(self) -> None:
         value = plan()

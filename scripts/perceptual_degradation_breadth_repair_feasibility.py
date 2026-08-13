@@ -57,11 +57,14 @@ def validate_plan(plan: dict[str, Any], root: Path = ROOT) -> list[str]:
         errors.append("plan state differs")
     bound = _bindings(plan, root, errors)
     observation = bound.get("breadth_repair_observation", {})
+    stable_music_observation = bound.get("stable_music_observation", {})
     predecessor = bound.get("predecessor_plan", {})
     if observation.get("observation_id") != "perceptual-degradation-breadth-repair-public-metadata-observation-20260814-001":
         errors.append("observation identity differs")
     if predecessor.get("plan_id") != "perceptual-degradation-additional-permissive-provider-allocation-feasibility-20260814-001":
         errors.append("predecessor identity differs")
+    if stable_music_observation.get("observation_id") != "perceptual-degradation-stable-music-provider-public-record-observation-20260814-001":
+        errors.append("stable-music observation identity differs")
 
     access = observation.get("access_boundary", {})
     for key in (
@@ -95,7 +98,8 @@ def validate_plan(plan: dict[str, Any], root: Path = ROOT) -> list[str]:
 
     immutable = observation.get("immutable_or_stable_record_candidates", [])
     provisional = observation.get("preservation_required_provisional_candidates", [])
-    observed = {item.get("provider_id"): item for item in [*immutable, *provisional]}
+    stable_music = stable_music_observation.get("stable_controlled_music_candidates", [])
+    observed = {item.get("provider_id"): item for item in [*immutable, *provisional, *stable_music]}
     expected = {
         "english_children_speech": ("english_children_speech_200495", "immutable_or_stable", ["speech"], 11),
         "gesma": ("gesma_18315044", "immutable_or_stable", ["natural"], 18),
@@ -104,6 +108,8 @@ def validate_plan(plan: dict[str, Any], root: Path = ROOT) -> list[str]:
         "grumbles_pretty_bad_good": ("grumbles_a_pretty_bad_good_bandcamp", "preservation_required_provisional", ["music", "mastered_music"], 8),
         "stranger_self_imposed_exile": ("stranger_self_imposed_exile_bandcamp", "preservation_required_provisional", ["music", "mastered_music"], 20),
         "wangleline_honey": ("wangleline_honey_bandcamp", "preservation_required_provisional", ["music", "mastered_music"], 9),
+        "vienna_4x22": ("vienna_4x22_v1", "immutable_or_stable", ["music", "controlled_performance_music"], 22),
+        "raga_ornamentation_detection": ("raga_ornamentation_detection_17851882_v4", "immutable_or_stable", ["music", "controlled_performance_music"], 2),
     }
     new_providers = {item.get("provider_id"): item for item in plan.get("new_providers", [])}
     if set(observed) != set(expected) or set(new_providers) != set(expected):
@@ -133,6 +139,16 @@ def validate_plan(plan: dict[str, Any], root: Path = ROOT) -> list[str]:
         "allocated_group_count": 0,
     }:
         errors.append("observation aggregate differs")
+    if stable_music_observation.get("aggregate_observation") != {
+        "new_stable_controlled_music_candidate_provider_count": 2,
+        "new_stable_controlled_music_candidate_group_capacity": 24,
+        "new_stable_mastered_music_candidate_provider_count": 0,
+        "new_stable_mastered_music_candidate_group_capacity": 0,
+        "screened_not_added_provider_or_collection_count": 7,
+        "qualified_reference_group_count": 0,
+        "allocated_group_count": 0,
+    }:
+        errors.append("stable-music observation aggregate differs")
     for key, value in observation.get("observation_limits", {}).items():
         if value is not False:
             errors.append(f"observation limit must remain false: {key}")
@@ -419,6 +435,7 @@ def build_report(plan: dict[str, Any], plan_path: Path = PLAN_PATH, implementati
             "public_record_pool_clears_two_mastered_providers_in_final": by_id["public_record_final_two_mastered_music_providers"]["arithmetic_feasible"],
             "recording_ceiling_clears_reference_120_each_partition": by_id["public_record_reference_120_recording_ceiling"]["arithmetic_feasible"],
             "conservative_relationship_floor_clears_reference_120_each_partition": by_id["public_record_reference_120_conservative_relationship_floor"]["arithmetic_feasible"],
+            "stable_record_pool_clears_reference_120_each_partition": by_id["stable_record_reference_120_recording_ceiling"]["arithmetic_feasible"],
             "qualified_reference_group_count": 0,
             "allocated_group_count": 0,
             "source_successor_selected": False,

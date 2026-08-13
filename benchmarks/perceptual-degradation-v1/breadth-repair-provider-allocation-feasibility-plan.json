@@ -2,11 +2,15 @@
   "schema_version": 1,
   "plan_id": "perceptual-degradation-breadth-repair-provider-allocation-feasibility-20260814-001",
   "state": "score_blind_public_record_capacity_sensitivity_no_member_allocation",
-  "purpose": "Test whether additional permissive public records can repair speech, natural-sound, mastered-music and 120-group arithmetic shortages while separating stable candidates, mutable provisional records and relationship-sensitive capacity.",
+  "purpose": "Test whether additional permissive public records can repair speech, natural-sound, mastered-music and 120-group arithmetic shortages while separating stable candidates, mutable provisional records, controlled-music supplements and relationship-sensitive capacity.",
   "bindings": {
     "breadth_repair_observation": {
       "path": "research/toolchains/evidence/perceptual-degradation-breadth-repair-public-metadata-observation-20260814-001.json",
       "sha256": "dfb72abefb735b3bf826c2310fba81bd16abc867946cfc45124b84f0224afb57"
+    },
+    "stable_music_observation": {
+      "path": "research/toolchains/evidence/perceptual-degradation-stable-music-provider-public-record-observation-20260814-001.json",
+      "sha256": "e5c8eaaeec7062eb1fcede8f07387a0c7c1f56d400daaa0ed35ce3125229a131"
     },
     "predecessor_plan": {
       "path": "benchmarks/perceptual-degradation-v1/additional-permissive-provider-allocation-feasibility-plan.json",
@@ -101,6 +105,26 @@
         "mastered_music"
       ],
       "available_group_capacity": 9
+    },
+    {
+      "provider_id": "vienna_4x22",
+      "source_id": "vienna_4x22_v1",
+      "record_status": "immutable_or_stable",
+      "capabilities": [
+        "music",
+        "controlled_performance_music"
+      ],
+      "available_group_capacity": 22
+    },
+    {
+      "provider_id": "raga_ornamentation_detection",
+      "source_id": "raga_ornamentation_detection_17851882_v4",
+      "record_status": "immutable_or_stable",
+      "capabilities": [
+        "music",
+        "controlled_performance_music"
+      ],
+      "available_group_capacity": 2
     }
   ],
   "solver_policy": {
@@ -235,8 +259,21 @@
       "minimum_providers_each_partition": 0,
       "capability_minimums_by_partition": {},
       "capability_provider_minimums_by_partition": {},
+      "expected_arithmetic_feasible": true,
+      "reason_not_eligible": "the repaired count still depends on preservation-required ICSI and Bandcamp records plus unaudited controlled-music capacities and selects no exact members"
+    },
+    {
+      "scenario_id": "stable_record_reference_120_recording_ceiling",
+      "included_new_record_statuses": [
+        "immutable_or_stable"
+      ],
+      "capacity_overrides": {},
+      "minimum_groups_each_partition": 120,
+      "minimum_providers_each_partition": 0,
+      "capability_minimums_by_partition": {},
+      "capability_provider_minimums_by_partition": {},
       "expected_arithmetic_feasible": false,
-      "reason_not_eligible": "the conservative relationship floor leaves less than 360 non-Slakh capacity for the other three provider-pure partitions"
+      "reason_not_eligible": "even at DataSTORRE's recording ceiling the stable-only non-Slakh capacity cannot fill the other three 120-group partitions"
     }
   ],
   "decision_boundary": {
@@ -260,6 +297,7 @@
     "bandcamp_lossless_delivery_proves_lossless_artist_origin": false,
     "single_release_provider_proves_mastered_multigenre_transfer": false,
     "recording_ceiling_clears_reference_sensitivity": false,
+    "controlled_music_capacity_proves_mastered_music_transfer": false,
     "candidate_screen_authorizes_audio_access": false,
     "candidate_screen_is_full_objective_negative_result": false,
     "public_cli_changed": false

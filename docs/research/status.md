@@ -602,8 +602,23 @@ natural-sound capacity; ICSI adds the fourth speech provider only
 provisionally; and three CC BY Bandcamp releases add mastered-release capacity
 only as mutable, origin-unaudited records. The full public-record ceiling can
 arithmetically place music, speech and natural sound in every partition and
-mastered music in every partition, but the stable-only pool cannot. The
-120-group sensitivity also flips from feasible at DataSTORRE's 67-recording
-ceiling to infeasible at an eight-group relationship floor. Qualified and
-allocated counts remain zero. No source or metric successor was selected, no
-audio or member was opened, and no scientific gate or public verdict changed.
+mastered music in every partition, but the stable-only pool cannot. At this
+checkpoint the 120-group sensitivity flipped from feasible at DataSTORRE's
+67-recording ceiling to infeasible at an eight-group relationship floor.
+Qualified and allocated counts remained zero. No source or metric successor
+was selected, no audio or member was opened, and no scientific gate or public
+verdict changed.
+
+A bounded successor
+[`stable music-provider screen`](perceptual-degradation-stable-music-provider-screen-20260814.md)
+adds Vienna 4x22 and ROD as stable CC BY controlled-performance candidates:
+two providers and 24 metadata-level groups. Neither is mastered-release
+evidence. Spheres and FreiDi remain outside the narrow path under CC BY-SA;
+KRAISLER has additional restrictions conflicting with its plain CC BY field;
+and MoisesDB's audio is CC BY-NC-SA even though its paper is CC BY. No stable
+mastered-release replacement was found. The 24 added groups do repair the
+full public-record 120-group arithmetic even at DataSTORRE's conservative
+floor, but only with the unpreserved ICSI and Bandcamp records. Stable records
+alone still fail 120 groups, three-domain coverage and mastered-music coverage
+in every partition. Qualified and allocated counts remain zero, and no audio,
+successor, metric, scientific gate or public verdict changed.
