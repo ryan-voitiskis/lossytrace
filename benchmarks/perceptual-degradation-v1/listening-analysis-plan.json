@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "plan_id": "perceptual-degradation-listening-analysis-20260813-001",
+  "state": "score_blind_analysis_frozen_synthetic_execution_only",
+  "authorization": {
+    "human_collection_authorized": false,
+    "observed_response_analysis_authorized": false,
+    "retained_odaq_reference_read_authorized": false,
+    "synthetic_fixture_execution_only": true
+  },
+  "input_boundary": {
+    "schema": "listening-response-envelope.schema.json",
+    "participant_ids": "opaque_sha256_derived_tokens_only",
+    "condition_ids": "opaque_only",
+    "forbidden": [
+      "filename",
+      "path",
+      "codec_or_encoder_label",
+      "metric_score",
+      "identity",
+      "ip_address",
+      "precise_location",
+      "free_text"
+    ],
+    "duplicate_idempotency_key": "reject",
+    "incomplete_response": "reject_or_prespecified_session_exclusion_never_impute"
+  },
+  "exclusions": {
+    "primary": "all_prespecified_technical_training_completeness_hidden_reference_and_anchor_checks_pass",
+    "sensitivity": "technically_valid_sessions_including_hidden_reference_or_anchor_quality_flags",
+    "condition_outcomes_inspected_when_applying": false,
+    "threshold_repair_after_outcomes": false
+  },
+  "hierarchical_models": {
+    "audibility": {
+      "family": "bernoulli_logit",
+      "effects": "global_intercept_plus_crossed_listener_and_source_random_intercepts",
+      "listener_sd": 0.45,
+      "source_sd": 0.35,
+      "fit": "deterministic_penalized_irls_with_conjugate_gradient_normal_equations",
+      "interval": "multiplicity_adjusted_wald_interval_from_penalized_hessian_fixed_intercept"
+    },
+    "sdg": {
+      "family": "gaussian",
+      "effects": "global_intercept_plus_crossed_listener_and_source_random_intercepts",
+      "listener_sd": 0.25,
+      "source_sd": 0.30,
+      "residual_sd": 0.50,
+      "interval": "multiplicity_adjusted_wald_interval_from_penalized_hessian_fixed_intercept"
+    },
+    "mushra_loss": {
+      "definition": "hidden_reference_score_minus_condition_score_within_response",
+      "family": "gaussian",
+      "effects": "global_intercept_plus_crossed_listener_and_source_random_intercepts",
+      "listener_sd": 4.0,
+      "source_sd": 5.0,
+      "residual_sd": 8.0,
+      "interval": "multiplicity_adjusted_wald_interval_from_penalized_hessian_fixed_intercept"
+    },
+    "variance_components": "frozen_from_score_blind_power_model_not_reestimated_from_outcomes",
+    "raw_means_are_ground_truth": false,
+    "maximum_iterations": 100,
+    "convergence_tolerance": 1e-10
+  },
+  "decision_rules": {
+    "multiplicity_adjusted_one_sided_z": 2.2414027276,
+    "minimum_listeners": 24,
+    "minimum_source_groups": 12,
+    "minimum_responses": 96,
+    "audible": "lower_probability_gt_0.5_and_point_ge_0.75",
+    "not_demonstrably_audible": "interval_strictly_inside_0.45_to_0.55",
+    "subtle_material": "sdg_upper_lt_minus_1",
+    "mushra_material": "loss_lower_gt_10",
+    "bridge_material": "both_subtle_and_mushra_material_rules_pass",
+    "bridge_disagreement": "indeterminate",
+    "materially_degraded": "audible_and_material_severity",
+    "transparent": "not_demonstrably_audible_and_no_material_severity_signal",
+    "all_other": "indeterminate"
+  },
+  "bridge_mapping": {
+    "fit_partition": "development_only",
+    "inputs": "hierarchical_group_estimates_only",
+    "method": "bounded_isotonic_pava_piecewise_at_material_boundary",
+    "sdg_transform": "severity=clip(-25*sdg,0,100)",
+    "preserved_reference_points": [
+      {"sdg": 0, "mushra_loss": 0, "severity": 0},
+      {"sdg": -1, "mushra_loss": 10, "severity": 25},
+      {"mushra_loss": 100, "severity": 100}
+    ],
+    "transfer_or_validation_updates_mapping": false
+  },
+  "report_boundary": {
+    "path_free_aggregate_only": true,
+    "synthetic_scientific_gate_evaluated": false,
+    "synthetic_oracle_truth_eligible": false,
+    "synthetic_collection_eligible": false,
+    "public_verdict_enabled": false
+  }
+}
