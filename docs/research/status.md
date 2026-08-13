@@ -752,3 +752,24 @@ members. These are analytic sensitivities, not an empirical missingness model
 or listening evidence. No reserve, workload, listener count, missingness or
 exclusion policy, operational design, recruitment, collection, source member,
 metric, no-reference training or public verdict is selected or authorized.
+
+A synthetic
+[`allocation-journal candidate audit`](perceptual-degradation-listening-allocation-journal-audit-20260814.md)
+now closes the narrow technical gap between v3's contiguous-index assumption
+and a single-database reservation mechanism. Sixteen multi-connection trials
+issued 9,216 calls across 32 streams: exactly 3,072 unique reservations and
+6,144 idempotent retries produced contiguous `0..95` indices in every stream.
+Four logical fault points across 96 requests recovered exactly once, including
+commit-before-reply loss; immutable stream/reservation triggers blocked all
+updates and deletes; three forced tamper cases were detected; and a 192-index
+v3 integration retained exposure, block-position and candidate-position ranges
+no greater than one at every prefix. The candidate uses SQLite WAL,
+`synchronous=FULL`, `BEGIN IMMEDIATE`, immutable SHA-256-bound stream
+configuration and an insert-only event hash chain. This is synthetic evidence
+for one database under threaded multi-connection contention, not proof of
+real eligibility, process-kill or power-loss durability, multi-host deployment,
+privacy/backup ownership, response atomicity, missingness or exclusion policy.
+No operational policy, response store, listener count, recruitment, collection,
+source member, metric, no-reference training or public verdict is selected or
+authorized, and no audio, identity, response, outcome, score or sealed evidence
+was accessed.

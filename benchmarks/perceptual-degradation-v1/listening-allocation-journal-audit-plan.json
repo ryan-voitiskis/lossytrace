@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "plan_id": "perceptual-degradation-listening-allocation-journal-audit-20260814-001",
+  "state": "synthetic_allocation_journal_candidate_audit_no_operational_selection",
+  "purpose": "Prove that a single SQLite database candidate can reserve contiguous v3 allocation indices exactly once under multi-connection retries and logical crash/restart faults without storing identity, audio, responses or outcomes and without selecting an operational collection policy.",
+  "bindings": {
+    "listening_preparation_gate": {
+      "path": "benchmarks/perceptual-degradation-v1/listening-preparation-gate.json",
+      "sha256": "02a2b2f35aa1e26f2e7fe927fb0e0f8b8b5816b075eee5d481a4b786324080f0"
+    },
+    "listening_protocol": {
+      "path": "docs/research/perceptual-degradation-listening-protocol-20260803.md",
+      "sha256": "7f918b7faa285cb4e2f142907e3d344f6cb11a7e43cfbfa83c82b9135158171b"
+    },
+    "response_envelope_schema": {
+      "path": "benchmarks/perceptual-degradation-v1/listening-response-envelope.schema.json",
+      "sha256": "8a7097a469bd437404b6c48c7bd10311578d110b82fa34c60d528e97b76e2b92"
+    },
+    "allocator_v3": {
+      "path": "scripts/perceptual_degradation_listening_allocation_v3.py",
+      "sha256": "66e9a787b1e154b80bdeff0350ece2b6264029664b3381b01a7c8e5da1ac6814"
+    },
+    "allocator_v3_audit_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/listening-allocation-v3-symbolic-audit-plan.json",
+      "sha256": "b1ec748c90175b64e979542fe7f2647703053a65fc66408cf8796120a58bf931"
+    },
+    "allocator_v3_audit_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-listening-allocation-v3-symbolic-audit-20260814-001.json",
+      "sha256": "9aa04f07e063aa4e7629db96e7b2b13234e0a26394044d628a462055dad39504"
+    },
+    "resource_frontier_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/listening-operational-resource-frontier-plan.json",
+      "sha256": "85f77980faa25eabb3c8112a8fcdda4a8286e2d12e759863777a0847d5bc1af3"
+    },
+    "symbolic_manifest_builder": {
+      "path": "scripts/perceptual_degradation_listening_resource_frontier.py",
+      "sha256": "5bef0ffba4c37387dd2a4f976fb8b5e7fcc0c6e5344855450491705b62a313c9"
+    },
+    "missingness_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/listening-missingness-stress-plan.json",
+      "sha256": "054fb4e91dde0eeed11bd72fe2e9c32ca8f13663dade977a527442f1bedeb344"
+    },
+    "missingness_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-listening-missingness-stress-20260814-001.json",
+      "sha256": "bdbb4a821e5a6b19b161c70e1b2dda240d2fb3c698fc04b3dc4649000680629c"
+    },
+    "retained_design_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/listening-retained-design-robustness-plan.json",
+      "sha256": "e0b34cdc349ba6e83b86384d58bcc7e2511db5974b7182ecd22a48c2714b75fb"
+    },
+    "retained_design_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-listening-retained-design-robustness-20260814-001.json",
+      "sha256": "f0a43c462d582330d751ff98e925ba59eba3737c0492aff8f18778451cecb30a"
+    }
+  },
+  "authorization": {
+    "synthetic_journal_audit_authorized": true,
+    "real_listener_software_authorized": false,
+    "participant_contact_authorized": false,
+    "identity_storage_authorized": false,
+    "response_storage_authorized": false,
+    "human_collection_authorized": false,
+    "recruitment_authorized": false,
+    "retained_audio_read_authorized": false,
+    "new_audio_acquisition_authorized": false,
+    "stimulus_generation_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "sealed_evidence_access_authorized": false,
+    "no_reference_training_authorized": false,
+    "public_verdict_enabled": false
+  },
+  "candidate_contract": {
+    "database": "sqlite_single_database_file",
+    "journal_mode": "WAL",
+    "synchronous_mode": "FULL",
+    "reservation_transaction": "BEGIN_IMMEDIATE",
+    "stream_configuration": "immutable_and_sha256_bound",
+    "reservation_rows": "insert_only_with_update_and_delete_triggers",
+    "allocation_index": "zero_based_contiguous_per_stream_derived_inside_transaction",
+    "request_id": "opaque_sha256_unique_per_stream",
+    "request_binding": "opaque_sha256_no_identity_or_outcome",
+    "eligibility_attestation": "opaque_sha256_synthetic_only_semantics_unfrozen",
+    "event_chain": "sha256_over_canonical_row_and_previous_event_sha256",
+    "idempotent_retry": "same_request_id_binding_and_attestation_returns_same_index",
+    "conflicting_retry": "same_request_id_with_changed_binding_or_attestation_rejected",
+    "participant_key_stored": false,
+    "identity_stored": false,
+    "response_stored": false,
+    "outcome_stored": false,
+    "timestamp_stored": false
+  },
+  "audit_workload": {
+    "concurrency_trials": 16,
+    "streams_per_trial": 2,
+    "unique_requests_per_stream": 96,
+    "calls_per_request": 3,
+    "maximum_workers": 24,
+    "restart_requests_per_fault": 24,
+    "logical_fault_points": [
+      "before_begin",
+      "after_begin_before_insert",
+      "after_insert_before_commit",
+      "after_commit_before_reply"
+    ],
+    "immutability_probes": ["reservation_update", "reservation_delete", "stream_update", "stream_delete"],
+    "tamper_detection_probes": ["event_hash_change", "request_binding_change", "middle_row_delete"],
+    "v3_integration_prefix": 192,
+    "v3_trial_limits": {"subtle": 8, "mushra": 6}
+  },
+  "claim_boundary": {
+    "synthetic_attestation_defines_real_eligibility": false,
+    "single_database_audit_proves_multi_host_deployment": false,
+    "logical_fault_injection_proves_power_loss_durability": false,
+    "sqlite_full_proves_filesystem_or_hardware_durability": false,
+    "threaded_connections_prove_distributed_linearizability": false,
+    "allocation_reservation_proves_response_atomicity": false,
+    "contiguous_issued_indices_prove_retained_response_balance": false,
+    "candidate_audit_selects_operational_policy": false,
+    "candidate_audit_authorizes_collection": false,
+    "full_objective_complete": false,
+    "public_cli_changed": false
+  },
+  "authorized_next_step": "Use this audit only to decide whether the single-database journal candidate is technically credible enough for a separately frozen operational policy. Any such policy must still define real pre-reservation eligibility, privacy ownership, deployment and backup boundaries, response atomicity, monitoring, exclusions, missingness, recovery and explicit collection authority."
+}
