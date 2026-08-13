@@ -1,0 +1,249 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lossytrace.dev/schemas/odaq-reference-delivery-authorization-v1.json",
+  "title": "LossyTrace ODAQ clean-reference delivery authorization",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "authorization_id",
+    "authorized_on",
+    "state",
+    "responsible_human_authorization_present",
+    "bindings",
+    "authorization_scope",
+    "execution_constraints",
+    "claim_boundary",
+    "canonical_decision"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "authorization_id": {
+      "type": "string",
+      "pattern": "^perceptual-degradation-odaq-reference-delivery-authorization-[0-9]{8}-[0-9]{3}$"
+    },
+    "authorized_on": {
+      "type": "string",
+      "format": "date"
+    },
+    "state": {
+      "const": "responsible_human_authorized_exact_clean_reference_projection_only"
+    },
+    "responsible_human_authorization_present": {
+      "const": true
+    },
+    "bindings": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "acquisition_result",
+        "delivery_preparation",
+        "playback_qualification_result",
+        "attribution_audit",
+        "projection_implementation",
+        "authorization_schema",
+        "delivery_execution_plan"
+      ],
+      "properties": {
+        "acquisition_result": {
+          "$ref": "#/$defs/binding"
+        },
+        "delivery_preparation": {
+          "$ref": "#/$defs/binding"
+        },
+        "playback_qualification_result": {
+          "$ref": "#/$defs/binding"
+        },
+        "attribution_audit": {
+          "$ref": "#/$defs/binding"
+        },
+        "projection_implementation": {
+          "$ref": "#/$defs/binding"
+        },
+        "authorization_schema": {
+          "$ref": "#/$defs/binding"
+        },
+        "delivery_execution_plan": {
+          "$ref": "#/$defs/binding"
+        }
+      }
+    },
+    "authorization_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "retained_reference_count",
+        "retained_inventory_sha256",
+        "retained_reference_access_authorized",
+        "retained_reference_projection_authorized",
+        "private_delivery_copy_creation_authorized",
+        "two_fresh_private_replays_authorized",
+        "attribution_attachment_authorized",
+        "provider_processed_condition_access_authorized",
+        "provider_listening_score_access_authorized",
+        "perceptual_metric_execution_authorized",
+        "degradation_rating_collection_authorized",
+        "listener_response_collection_authorized",
+        "sealed_evidence_access_authorized",
+        "public_verdict_authorized"
+      ],
+      "properties": {
+        "retained_reference_count": {
+          "const": 16
+        },
+        "retained_inventory_sha256": {
+          "const": "d7f244da55b510b639300d55271b1ebd5fb9f7454b258bec30588bf18eefde2f"
+        },
+        "retained_reference_access_authorized": {
+          "const": true
+        },
+        "retained_reference_projection_authorized": {
+          "const": true
+        },
+        "private_delivery_copy_creation_authorized": {
+          "const": true
+        },
+        "two_fresh_private_replays_authorized": {
+          "const": true
+        },
+        "attribution_attachment_authorized": {
+          "const": true
+        },
+        "provider_processed_condition_access_authorized": {
+          "const": false
+        },
+        "provider_listening_score_access_authorized": {
+          "const": false
+        },
+        "perceptual_metric_execution_authorized": {
+          "const": false
+        },
+        "degradation_rating_collection_authorized": {
+          "const": false
+        },
+        "listener_response_collection_authorized": {
+          "const": false
+        },
+        "sealed_evidence_access_authorized": {
+          "const": false
+        },
+        "public_verdict_authorized": {
+          "const": false
+        }
+      }
+    },
+    "execution_constraints": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "maximum_workers",
+        "minimum_free_disk_gib",
+        "private_paths_outside_repository",
+        "source_inventory_reverified_before_projection",
+        "atomic_partial_then_rename",
+        "journaled_resume",
+        "two_fresh_output_roots",
+        "replay_inventories_byte_identical",
+        "per_reference_attribution_record_ids_attached_out_of_band",
+        "public_report_paths_redacted",
+        "public_report_per_reference_hashes_redacted"
+      ],
+      "properties": {
+        "maximum_workers": {
+          "const": 1
+        },
+        "minimum_free_disk_gib": {
+          "const": 15
+        },
+        "private_paths_outside_repository": {
+          "const": true
+        },
+        "source_inventory_reverified_before_projection": {
+          "const": true
+        },
+        "atomic_partial_then_rename": {
+          "const": true
+        },
+        "journaled_resume": {
+          "const": true
+        },
+        "two_fresh_output_roots": {
+          "const": true
+        },
+        "replay_inventories_byte_identical": {
+          "const": true
+        },
+        "per_reference_attribution_record_ids_attached_out_of_band": {
+          "const": true
+        },
+        "public_report_paths_redacted": {
+          "const": true
+        },
+        "public_report_per_reference_hashes_redacted": {
+          "const": true
+        }
+      }
+    },
+    "claim_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "development_only",
+        "one_provider_stratum",
+        "projection_is_stimulus_generation",
+        "projection_is_perceptual_truth",
+        "projection_is_metric_execution",
+        "independent_transfer_supported",
+        "final_validation_supported"
+      ],
+      "properties": {
+        "development_only": {
+          "const": true
+        },
+        "one_provider_stratum": {
+          "const": true
+        },
+        "projection_is_stimulus_generation": {
+          "const": false
+        },
+        "projection_is_perceptual_truth": {
+          "const": false
+        },
+        "projection_is_metric_execution": {
+          "const": false
+        },
+        "independent_transfer_supported": {
+          "const": false
+        },
+        "final_validation_supported": {
+          "const": false
+        }
+      }
+    },
+    "canonical_decision": {
+      "const": "Authorize reading only the 16 retained ODAQ clean references and projecting them into deterministic canonical integer-PCM private delivery copies under the frozen preparation and execution plans, including two byte-identical private replays and attribution attachment. Do not authorize ODAQ processed conditions, scores, metrics, degradation ratings, listener collection, sealed evidence, or public verdicts."
+    }
+  },
+  "$defs": {
+    "binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    }
+  }
+}
