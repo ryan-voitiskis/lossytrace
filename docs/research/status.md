@@ -817,3 +817,20 @@ and bounded-drift plus paired leading/trailing-silence plumbing is incomplete.
 No exact source trait, condition, human truth, scientific coverage, listening
 design, recruitment, collection, metric, score, no-reference work or public
 verdict was selected, opened or authorized.
+
+A deterministic score-blind
+[`negative-control technical repair`](perceptual-degradation-negative-control-technical-repair-20260814.md)
+now closes four named synthetic plumbing gaps. An isolated signed-16 TPDF
+candidate adds only `-1`, `0` or `+1` LSB without changing bit depth; an exact
+FFmpeg 9.0-bound 48 -> 32 -> 48 kHz roundtrip preserves final geometry while
+changing PCM; a train/held-out drift decision recovers and applies `+75` and
+`-60` ppm corrections while leaving zero drift untouched; and paired exact-zero
+edge fixtures support 0.4 + 0.6 seconds of silence while preserving an
+`excessive_trim` abstention at 1.2 + 1.2 seconds. Two fresh temporary replays
+were byte-identical. The new FFmpeg SHA-256 is bound explicitly because the
+historical 8.1.2_1 binary has been replaced locally by 9.0; the historical tool
+binding was not silently reused. The synthetic drift interpolator is not the
+frozen oracle resampler, no production resampler is selected, and no retained
+audio correction or perceptual effect is validated. No actual audio, source,
+condition, metric, score, human response, collection, no-reference work or
+public verdict was selected, opened or authorized.

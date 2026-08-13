@@ -1,0 +1,200 @@
+{
+  "authority": {
+    "actual_source_audio_access_authorized": false,
+    "human_collection_authorized": false,
+    "listening_condition_selection_authorized": false,
+    "no_reference_training_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "provider_audio_access_authorized": false,
+    "public_verdict_enabled": false,
+    "recruitment_authorized": false,
+    "response_or_outcome_access_authorized": false,
+    "retained_audio_access_authorized": false,
+    "sealed_evidence_access_authorized": false,
+    "synthetic_numeric_fixture_execution_authorized": true,
+    "synthetic_pcm_fixture_execution_authorized": true
+  },
+  "bounded_clock_drift_cases": [
+    {
+      "actual_drift_ppm": 75,
+      "apply_correction": true,
+      "fixture_interpolator_is_frozen_oracle_resampler": false,
+      "held_out_mean_correlation_after": 0.9970237819613998,
+      "held_out_mean_correlation_before": 0.8351943233078754,
+      "held_out_mean_correlation_improvement": 0.1618294586535245,
+      "perceptual_truth_included": false,
+      "production_resampler_executed": false,
+      "selected_correction_ppm": 75,
+      "selection_margin": 0.0005009488041523014,
+      "selection_mean_correlation": 0.9972640330764542,
+      "selection_used_held_out_windows": false
+    },
+    {
+      "actual_drift_ppm": -60,
+      "apply_correction": true,
+      "fixture_interpolator_is_frozen_oracle_resampler": false,
+      "held_out_mean_correlation_after": 0.9974435517342041,
+      "held_out_mean_correlation_before": 0.8892395586282431,
+      "held_out_mean_correlation_improvement": 0.10820399310596096,
+      "perceptual_truth_included": false,
+      "production_resampler_executed": false,
+      "selected_correction_ppm": -60,
+      "selection_margin": 0.0005480932443989728,
+      "selection_mean_correlation": 0.9977106387993218,
+      "selection_used_held_out_windows": false
+    },
+    {
+      "actual_drift_ppm": 0,
+      "apply_correction": false,
+      "fixture_interpolator_is_frozen_oracle_resampler": false,
+      "held_out_mean_correlation_after": 1.0,
+      "held_out_mean_correlation_before": 1.0,
+      "held_out_mean_correlation_improvement": 0.0,
+      "perceptual_truth_included": false,
+      "production_resampler_executed": false,
+      "selected_correction_ppm": 0,
+      "selection_margin": 0.0005730016430269824,
+      "selection_mean_correlation": 1.0,
+      "selection_used_held_out_windows": false
+    }
+  ],
+  "claim_boundary": {
+    "drift_fixture_proves_retained_audio_correction": false,
+    "edge_silence_fixture_proves_perceptual_transparency": false,
+    "ffmpeg_successor_is_selected_oracle_resampler": false,
+    "fixture_drift_interpolator_is_production_resampler": false,
+    "full_objective_complete": false,
+    "public_cli_changed": false,
+    "sample_rate_conversion_replay_is_perceptual_truth": false,
+    "synthetic_dither_candidate_is_human_dither_truth": false,
+    "technical_repair_authorizes_collection": false,
+    "technical_repair_completes_negative_scientific_coverage": false,
+    "technical_repair_selects_listening_conditions": false
+  },
+  "decision": {
+    "bounded_drift_synthetic_decision_fixture_ready": true,
+    "human_collection_authorized": false,
+    "human_truth_present": false,
+    "isolated_dither_technical_candidate_ready": true,
+    "negative_class_scientific_coverage_complete": false,
+    "next_responsible_human_decision": "Decide whether these four repaired technical candidates and the corrected resource envelope justify exact condition and source-trait selection. A production drift resampler still requires separate binding and retained-audio validation; every perceptual and collection gate remains closed.",
+    "no_reference_work_eligible": false,
+    "paired_edge_silence_synthetic_fixture_ready": true,
+    "perceptual_condition_selected": false,
+    "production_oracle_resampler_selected": false,
+    "public_verdict_enabled": false,
+    "retained_audio_correction_validated": false,
+    "sample_rate_conversion_technical_candidate_ready": true
+  },
+  "implementation_sha256": "06cc4dc73b62859921ab6a8215584018a5320d8d9dac5d13382304a15acc87e6",
+  "isolated_dither_case": {
+    "bit_depth_change": false,
+    "changed_sample_count": 95943,
+    "changed_sample_fraction": 0.499703125,
+    "channel_count": 2,
+    "class_id": "dither",
+    "frame_count": 96000,
+    "frame_shape_preserved": true,
+    "input_pcm_sha256": "e7522f02dbb4626b7a1d74e9c98b1e0bfd81345d3fdf8f7b7f1b5d4b857ddff4",
+    "noise_histogram": {
+      "-1": 48081,
+      "0": 96057,
+      "1": 47862
+    },
+    "noise_maximum_lsb": 1,
+    "noise_minimum_lsb": -1,
+    "output_pcm_sha256": "fd32bbb2d1dbb06257df0a7840d2d4f06ab1a3066648ff0763d0416ea10d964c",
+    "perceptual_truth_included": false,
+    "recipe_id": "production-isolated-s16-tpdf-1lsb-v1",
+    "sample_rate_hz": 48000
+  },
+  "paired_edge_silence_cases": [
+    {
+      "alignment_reason_codes": [],
+      "alignment_status": "supported",
+      "case_id": "supported-paired-edges",
+      "estimated_fractional_delay_samples": -2.0676814074249705e-06,
+      "estimated_integer_delay_samples": 800,
+      "expected_total_edge_silence_seconds": 1.0,
+      "leading_edge_exact_zero": true,
+      "leading_silence_seconds": 0.4,
+      "perceptual_truth_included": false,
+      "reported_total_edge_trim_seconds": 1.0,
+      "trailing_edge_exact_zero": true,
+      "trailing_silence_seconds": 0.6
+    },
+    {
+      "alignment_reason_codes": [
+        "excessive_trim"
+      ],
+      "alignment_status": "unsupported",
+      "case_id": "over-limit-paired-edges",
+      "estimated_fractional_delay_samples": -2.067681180051295e-06,
+      "estimated_integer_delay_samples": 2400,
+      "expected_total_edge_silence_seconds": 2.4,
+      "leading_edge_exact_zero": true,
+      "leading_silence_seconds": 1.2,
+      "perceptual_truth_included": false,
+      "reported_total_edge_trim_seconds": 2.4,
+      "trailing_edge_exact_zero": true,
+      "trailing_silence_seconds": 1.2
+    }
+  ],
+  "plan_sha256": "9ef1af1232d894a7cb64c825a39434398bb71abce45edf7170b59d875af374f5",
+  "replay_observation": {
+    "byte_identical": true,
+    "fresh_temporary_replay_count": 2,
+    "paths_included": false,
+    "payload_sha256s": [
+      "a23b329047dec2bb39115254c82128edf455ef57e85abb81447e0e6584babb8b",
+      "a23b329047dec2bb39115254c82128edf455ef57e85abb81447e0e6584babb8b"
+    ],
+    "timing_included": false
+  },
+  "report_id": "perceptual-degradation-negative-control-technical-repair-20260814-001",
+  "resources": {
+    "generated_audio_retained": false,
+    "maximum_workers_used": 1,
+    "minimum_free_disk_gib_enforced": 15
+  },
+  "sample_rate_conversion_case": {
+    "channel_count": 2,
+    "class_id": "sample_rate_conversion",
+    "dither_applied": false,
+    "historical_ffmpeg_binding_reused": false,
+    "input_frame_count": 96000,
+    "input_output_differ": true,
+    "input_pcm_sha256": "b17732fcaa49d4177d3ac4a9c3734676e3536c80c36000a15c138f70a8951dc3",
+    "intermediate_frame_count": 64000,
+    "intermediate_pcm_sha256": "f161f46f215976c8de00aade3739ee90dffbdc7a2774918b67d9a5789fa919b1",
+    "intermediate_sample_rate_hz": 32000,
+    "normalization_applied": false,
+    "output_frame_count": 96000,
+    "output_geometry_preserved": true,
+    "output_pcm_sha256": "75f0f84eb0f17baeee64ad6d2dc310b129a2d34fb7d88c4c68840585cb243db3",
+    "output_sample_rate_hz": 48000,
+    "perceptual_truth_included": false,
+    "recipe_id": "production-src-roundtrip-48k-32k-48k-swr9-v1",
+    "source_sample_rate_hz": 48000,
+    "tool_binary_sha256": "d1dffe4871ee17878b18e3f305f650265c5b06cbab8007df5bc4dccca71a672f",
+    "tool_id": "ffmpeg_9_0_local_successor_20260814",
+    "tool_version_line": "ffmpeg version 9.0 Copyright (c) 2000-2026 the FFmpeg developers",
+    "tool_version_output_sha256": "3f11e77b3572cbc0e0d85d27eb014d1ecde2d11b05ccb36c18296e0db08869ba"
+  },
+  "schema_version": 1,
+  "state": "score_blind_synthetic_technical_repair_replayed",
+  "summary": {
+    "actual_audio_accessed": false,
+    "bounded_drift_cross_validation_replayed": true,
+    "condition_selected": false,
+    "historical_ffmpeg_binding_reused": false,
+    "isolated_dither_candidate_replayed": true,
+    "listener_response_collected": false,
+    "paired_leading_trailing_silence_replayed": true,
+    "perceptual_metric_executed": false,
+    "perceptual_truth_included": false,
+    "public_verdict_enabled": false,
+    "sample_rate_conversion_candidate_replayed": true,
+    "technical_candidate_count": 4
+  }
+}
