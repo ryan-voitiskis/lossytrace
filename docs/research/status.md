@@ -593,3 +593,17 @@ would require a new committed plan and schema, controlled human calibration,
 explicit stereo and domain abstention, and preserved grouped negatives before
 any retained or human metric outcome is opened. The current two-family gate,
 source authority, no-reference gate, and public verdict remain closed.
+
+A further collection-level
+[`breadth-repair provider screen`](perceptual-degradation-breadth-repair-provider-screen-20260814.md)
+now separates immutable or stable candidates from preservation-required public
+records. English children speech, GESMA and DataSTORRE add stable speech and
+natural-sound capacity; ICSI adds the fourth speech provider only
+provisionally; and three CC BY Bandcamp releases add mastered-release capacity
+only as mutable, origin-unaudited records. The full public-record ceiling can
+arithmetically place music, speech and natural sound in every partition and
+mastered music in every partition, but the stable-only pool cannot. The
+120-group sensitivity also flips from feasible at DataSTORRE's 67-recording
+ceiling to infeasible at an eight-group relationship floor. Qualified and
+allocated counts remain zero. No source or metric successor was selected, no
+audio or member was opened, and no scientific gate or public verdict changed.

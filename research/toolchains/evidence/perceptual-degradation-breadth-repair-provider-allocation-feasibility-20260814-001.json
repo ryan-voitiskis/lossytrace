@@ -1,0 +1,584 @@
+{
+  "audio_accessed": false,
+  "claim_boundary": {
+    "arithmetic_feasibility_is_scientific_feasibility": false,
+    "bandcamp_lossless_delivery_proves_lossless_artist_origin": false,
+    "candidate_screen_authorizes_audio_access": false,
+    "candidate_screen_is_full_objective_negative_result": false,
+    "capacity_witness_selects_exact_members": false,
+    "mutable_page_is_immutable_rights_evidence": false,
+    "public_cli_changed": false,
+    "public_record_count_is_independent_truth": false,
+    "recording_ceiling_clears_reference_sensitivity": false,
+    "single_release_provider_proves_mastered_multigenre_transfer": false
+  },
+  "decision": {
+    "allocated_group_count": 0,
+    "conservative_relationship_floor_clears_reference_120_each_partition": false,
+    "metric_successor_selected": false,
+    "next_responsible_human_decision": "Choose whether to authorize bounded preservation and exact-member metadata audit of the identified records, narrow the primary-domain claim, or reject the current truth-source design; this does not authorize audio access.",
+    "no_reference_work_eligible": false,
+    "public_record_pool_clears_mastered_music_every_partition": true,
+    "public_record_pool_clears_three_domains_every_partition": true,
+    "public_record_pool_clears_two_mastered_providers_in_final": true,
+    "qualified_reference_group_count": 0,
+    "recording_ceiling_clears_reference_120_each_partition": true,
+    "source_successor_selected": false,
+    "stable_record_pool_clears_mastered_music_every_partition": false,
+    "stable_record_pool_clears_three_domains_every_partition": false
+  },
+  "exact_members_selected": false,
+  "human_collection_authorized": false,
+  "implementation_sha256": "a50ae5d12d551e352555900904cfcf2517292aa49fed96abcb272c394defe25f",
+  "metrics_executed": false,
+  "plan_id": "perceptual-degradation-breadth-repair-provider-allocation-feasibility-20260814-001",
+  "plan_sha256": "10617b0072998d78cbc7a180dd0ac7cd60a1f470b6dd198b5dc16a19c0fbc723",
+  "public_verdict_enabled": false,
+  "report_id": "perceptual-degradation-breadth-repair-provider-allocation-feasibility-20260814-001",
+  "scenario_results": [
+    {
+      "arithmetic_feasible": true,
+      "available_capacity_by_partition": {
+        "calibration": 101,
+        "development": 106,
+        "final_validation": 78,
+        "transfer": 87
+      },
+      "capacity_overrides": {},
+      "capacity_witness": [
+        {
+          "available_group_capacity": 67,
+          "capabilities": [
+            "natural"
+          ],
+          "partition": "development",
+          "provider_id": "datastorre_acoustic_examples",
+          "record_status": "immutable_or_stable"
+        },
+        {
+          "available_group_capacity": 56,
+          "capabilities": [
+            "speech"
+          ],
+          "partition": "calibration",
+          "provider_id": "vctk_clean",
+          "record_status": "predecessor_bound_candidate"
+        },
+        {
+          "available_group_capacity": 54,
+          "capabilities": [
+            "speech"
+          ],
+          "partition": "transfer",
+          "provider_id": "lombard_grid",
+          "record_status": "predecessor_bound_candidate"
+        },
+        {
+          "available_group_capacity": 53,
+          "capabilities": [
+            "speech"
+          ],
+          "partition": "final_validation",
+          "provider_id": "icsi_meeting",
+          "record_status": "preservation_required_provisional"
+        },
+        {
+          "available_group_capacity": 28,
+          "capabilities": [
+            "music",
+            "controlled_performance_music"
+          ],
+          "partition": "development",
+          "provider_id": "urmp",
+          "record_status": "predecessor_bound_candidate"
+        },
+        {
+          "available_group_capacity": 25,
+          "capabilities": [
+            "natural"
+          ],
+          "partition": "calibration",
+          "provider_id": "satp",
+          "record_status": "predecessor_bound_candidate"
+        },
+        {
+          "available_group_capacity": 20,
+          "capabilities": [
+            "music",
+            "mastered_music"
+          ],
+          "partition": "calibration",
+          "provider_id": "stranger_self_imposed_exile",
+          "record_status": "preservation_required_provisional"
+        },
+        {
+          "available_group_capacity": 18,
+          "capabilities": [
+            "natural"
+          ],
+          "partition": "transfer",
+          "provider_id": "gesma",
+          "record_status": "immutable_or_stable"
+        },
+        {
+          "available_group_capacity": 15,
+          "capabilities": [
+            "music",
+            "controlled_performance_music"
+          ],
+          "partition": "transfer",
+          "provider_id": "good_sounds",
+          "record_status": "predecessor_bound_candidate"
+        },
+        {
+          "available_group_capacity": 15,
+          "capabilities": [
+            "natural"
+          ],
+          "partition": "final_validation",
+          "provider_id": "sonyc_backgrounds",
+          "record_status": "predecessor_bound_candidate"
+        },
+        {
+          "available_group_capacity": 11,
+          "capabilities": [
+            "speech"
+          ],
+          "partition": "development",
+          "provider_id": "english_children_speech",
+          "record_status": "immutable_or_stable"
+        },
+        {
+          "available_group_capacity": 10,
+          "capabilities": [
+            "music",
+            "mastered_music"
+          ],
+          "partition": "final_validation",
+          "provider_id": "albumdb",
+          "record_status": "predecessor_bound_candidate"
+        }
+      ],
+      "eligible_available_group_capacity": 2116,
+      "eligible_provider_count": 18,
+      "exact_member_selection_frozen": false,
+      "expected_arithmetic_feasible": true,
+      "included_new_record_statuses": [
+        "immutable_or_stable",
+        "preservation_required_provisional"
+      ],
+      "reason_not_eligible": "the fourth speech provider is an unpreserved mutable public record and no exact members or relationships are audited",
+      "result_matches_frozen_expectation": true,
+      "scenario_id": "public_record_three_domains_every_partition",
+      "scientifically_eligible": false
+    },
+    {
+      "arithmetic_feasible": false,
+      "available_capacity_by_partition": {
+        "calibration": 0,
+        "development": 0,
+        "final_validation": 0,
+        "transfer": 0
+      },
+      "capacity_overrides": {},
+      "capacity_witness": [],
+      "eligible_available_group_capacity": 2026,
+      "eligible_provider_count": 14,
+      "exact_member_selection_frozen": false,
+      "expected_arithmetic_feasible": false,
+      "included_new_record_statuses": [
+        "immutable_or_stable"
+      ],
+      "reason_not_eligible": "excluding preservation-required ICSI leaves only three speech providers for four provider-pure partitions",
+      "result_matches_frozen_expectation": true,
+      "scenario_id": "stable_record_three_domains_every_partition",
+      "scientifically_eligible": false
+    },
+    {
+      "arithmetic_feasible": true,
+      "available_capacity_by_partition": {
+        "calibration": 66,
+        "development": 74,
+        "final_validation": 1718,
+        "transfer": 76
+      },
+      "capacity_overrides": {},
+      "capacity_witness": [
+        {
+          "available_group_capacity": 20,
+          "capabilities": [
+            "music",
+            "mastered_music"
+          ],
+          "partition": "development",
+          "provider_id": "stranger_self_imposed_exile",
+          "record_status": "preservation_required_provisional"
+        },
+        {
+          "available_group_capacity": 10,
+          "capabilities": [
+            "music",
+            "mastered_music"
+          ],
+          "partition": "calibration",
+          "provider_id": "albumdb",
+          "record_status": "predecessor_bound_candidate"
+        },
+        {
+          "available_group_capacity": 9,
+          "capabilities": [
+            "music",
+            "mastered_music"
+          ],
+          "partition": "transfer",
+          "provider_id": "wangleline_honey",
+          "record_status": "preservation_required_provisional"
+        },
+        {
+          "available_group_capacity": 8,
+          "capabilities": [
+            "music",
+            "mastered_music"
+          ],
+          "partition": "final_validation",
+          "provider_id": "grumbles_pretty_bad_good",
+          "record_status": "preservation_required_provisional"
+        },
+        {
+          "available_group_capacity": 1710,
+          "capabilities": [
+            "synthetic"
+          ],
+          "partition": "final_validation",
+          "provider_id": "slakh",
+          "record_status": "predecessor_bound_candidate"
+        },
+        {
+          "available_group_capacity": 67,
+          "capabilities": [
+            "natural"
+          ],
+          "partition": "transfer",
+          "provider_id": "datastorre_acoustic_examples",
+          "record_status": "immutable_or_stable"
+        },
+        {
+          "available_group_capacity": 56,
+          "capabilities": [
+            "speech"
+          ],
+          "partition": "calibration",
+          "provider_id": "vctk_clean",
+          "record_status": "predecessor_bound_candidate"
+        },
+        {
+          "available_group_capacity": 54,
+          "capabilities": [
+            "speech"
+          ],
+          "partition": "development",
+          "provider_id": "lombard_grid",
+          "record_status": "predecessor_bound_candidate"
+        }
+      ],
+      "eligible_available_group_capacity": 2116,
+      "eligible_provider_count": 18,
+      "exact_member_selection_frozen": false,
+      "expected_arithmetic_feasible": true,
+      "included_new_record_statuses": [
+        "immutable_or_stable",
+        "preservation_required_provisional"
+      ],
+      "reason_not_eligible": "three of four mastered-release providers are mutable Bandcamp pages and all four are single-release production strata without exact origin audit",
+      "result_matches_frozen_expectation": true,
+      "scenario_id": "public_record_mastered_music_every_partition",
+      "scientifically_eligible": false
+    },
+    {
+      "arithmetic_feasible": false,
+      "available_capacity_by_partition": {
+        "calibration": 0,
+        "development": 0,
+        "final_validation": 0,
+        "transfer": 0
+      },
+      "capacity_overrides": {},
+      "capacity_witness": [],
+      "eligible_available_group_capacity": 2026,
+      "eligible_provider_count": 14,
+      "exact_member_selection_frozen": false,
+      "expected_arithmetic_feasible": false,
+      "included_new_record_statuses": [
+        "immutable_or_stable"
+      ],
+      "reason_not_eligible": "AlbumDB remains the only stable mastered-music candidate",
+      "result_matches_frozen_expectation": true,
+      "scenario_id": "stable_record_mastered_music_every_partition",
+      "scientifically_eligible": false
+    },
+    {
+      "arithmetic_feasible": true,
+      "available_capacity_by_partition": {
+        "calibration": 1710,
+        "development": 73,
+        "final_validation": 84,
+        "transfer": 67
+      },
+      "capacity_overrides": {},
+      "capacity_witness": [
+        {
+          "available_group_capacity": 20,
+          "capabilities": [
+            "music",
+            "mastered_music"
+          ],
+          "partition": "final_validation",
+          "provider_id": "stranger_self_imposed_exile",
+          "record_status": "preservation_required_provisional"
+        },
+        {
+          "available_group_capacity": 10,
+          "capabilities": [
+            "music",
+            "mastered_music"
+          ],
+          "partition": "final_validation",
+          "provider_id": "albumdb",
+          "record_status": "predecessor_bound_candidate"
+        },
+        {
+          "available_group_capacity": 9,
+          "capabilities": [
+            "music",
+            "mastered_music"
+          ],
+          "partition": "development",
+          "provider_id": "wangleline_honey",
+          "record_status": "preservation_required_provisional"
+        },
+        {
+          "available_group_capacity": 8,
+          "capabilities": [
+            "music",
+            "mastered_music"
+          ],
+          "partition": "development",
+          "provider_id": "grumbles_pretty_bad_good",
+          "record_status": "preservation_required_provisional"
+        },
+        {
+          "available_group_capacity": 1710,
+          "capabilities": [
+            "synthetic"
+          ],
+          "partition": "calibration",
+          "provider_id": "slakh",
+          "record_status": "predecessor_bound_candidate"
+        },
+        {
+          "available_group_capacity": 67,
+          "capabilities": [
+            "natural"
+          ],
+          "partition": "transfer",
+          "provider_id": "datastorre_acoustic_examples",
+          "record_status": "immutable_or_stable"
+        },
+        {
+          "available_group_capacity": 56,
+          "capabilities": [
+            "speech"
+          ],
+          "partition": "development",
+          "provider_id": "vctk_clean",
+          "record_status": "predecessor_bound_candidate"
+        },
+        {
+          "available_group_capacity": 54,
+          "capabilities": [
+            "speech"
+          ],
+          "partition": "final_validation",
+          "provider_id": "lombard_grid",
+          "record_status": "predecessor_bound_candidate"
+        }
+      ],
+      "eligible_available_group_capacity": 2116,
+      "eligible_provider_count": 18,
+      "exact_member_selection_frozen": false,
+      "expected_arithmetic_feasible": true,
+      "included_new_record_statuses": [
+        "immutable_or_stable",
+        "preservation_required_provisional"
+      ],
+      "reason_not_eligible": "the second mastered provider is preservation-required and a capacity witness is not a final-validation allocation",
+      "result_matches_frozen_expectation": true,
+      "scenario_id": "public_record_final_two_mastered_music_providers",
+      "scientifically_eligible": false
+    },
+    {
+      "arithmetic_feasible": true,
+      "available_capacity_by_partition": {
+        "calibration": 120,
+        "development": 1710,
+        "final_validation": 121,
+        "transfer": 121
+      },
+      "capacity_overrides": {},
+      "capacity_witness": [
+        {
+          "available_group_capacity": 1710,
+          "capabilities": [
+            "synthetic"
+          ],
+          "partition": "development",
+          "provider_id": "slakh",
+          "record_status": "predecessor_bound_candidate"
+        },
+        {
+          "available_group_capacity": 67,
+          "capabilities": [
+            "natural"
+          ],
+          "partition": "calibration",
+          "provider_id": "datastorre_acoustic_examples",
+          "record_status": "immutable_or_stable"
+        },
+        {
+          "available_group_capacity": 56,
+          "capabilities": [
+            "speech"
+          ],
+          "partition": "transfer",
+          "provider_id": "vctk_clean",
+          "record_status": "predecessor_bound_candidate"
+        },
+        {
+          "available_group_capacity": 54,
+          "capabilities": [
+            "speech"
+          ],
+          "partition": "transfer",
+          "provider_id": "lombard_grid",
+          "record_status": "predecessor_bound_candidate"
+        },
+        {
+          "available_group_capacity": 53,
+          "capabilities": [
+            "speech"
+          ],
+          "partition": "calibration",
+          "provider_id": "icsi_meeting",
+          "record_status": "preservation_required_provisional"
+        },
+        {
+          "available_group_capacity": 28,
+          "capabilities": [
+            "music",
+            "controlled_performance_music"
+          ],
+          "partition": "final_validation",
+          "provider_id": "urmp",
+          "record_status": "predecessor_bound_candidate"
+        },
+        {
+          "available_group_capacity": 25,
+          "capabilities": [
+            "natural"
+          ],
+          "partition": "final_validation",
+          "provider_id": "satp",
+          "record_status": "predecessor_bound_candidate"
+        },
+        {
+          "available_group_capacity": 20,
+          "capabilities": [
+            "music",
+            "mastered_music"
+          ],
+          "partition": "final_validation",
+          "provider_id": "stranger_self_imposed_exile",
+          "record_status": "preservation_required_provisional"
+        },
+        {
+          "available_group_capacity": 18,
+          "capabilities": [
+            "natural"
+          ],
+          "partition": "final_validation",
+          "provider_id": "gesma",
+          "record_status": "immutable_or_stable"
+        },
+        {
+          "available_group_capacity": 15,
+          "capabilities": [
+            "music",
+            "controlled_performance_music"
+          ],
+          "partition": "final_validation",
+          "provider_id": "good_sounds",
+          "record_status": "predecessor_bound_candidate"
+        },
+        {
+          "available_group_capacity": 15,
+          "capabilities": [
+            "natural"
+          ],
+          "partition": "final_validation",
+          "provider_id": "sonyc_backgrounds",
+          "record_status": "predecessor_bound_candidate"
+        },
+        {
+          "available_group_capacity": 11,
+          "capabilities": [
+            "speech"
+          ],
+          "partition": "transfer",
+          "provider_id": "english_children_speech",
+          "record_status": "immutable_or_stable"
+        }
+      ],
+      "eligible_available_group_capacity": 2116,
+      "eligible_provider_count": 18,
+      "exact_member_selection_frozen": false,
+      "expected_arithmetic_feasible": true,
+      "included_new_record_statuses": [
+        "immutable_or_stable",
+        "preservation_required_provisional"
+      ],
+      "reason_not_eligible": "feasibility depends on treating all 67 DataSTORRE recording files as separate groups before relationship collapse",
+      "result_matches_frozen_expectation": true,
+      "scenario_id": "public_record_reference_120_recording_ceiling",
+      "scientifically_eligible": false
+    },
+    {
+      "arithmetic_feasible": false,
+      "available_capacity_by_partition": {
+        "calibration": 0,
+        "development": 0,
+        "final_validation": 0,
+        "transfer": 0
+      },
+      "capacity_overrides": {
+        "datastorre_acoustic_examples": 8
+      },
+      "capacity_witness": [],
+      "eligible_available_group_capacity": 2057,
+      "eligible_provider_count": 18,
+      "exact_member_selection_frozen": false,
+      "expected_arithmetic_feasible": false,
+      "included_new_record_statuses": [
+        "immutable_or_stable",
+        "preservation_required_provisional"
+      ],
+      "reason_not_eligible": "the conservative relationship floor leaves less than 360 non-Slakh capacity for the other three provider-pure partitions",
+      "result_matches_frozen_expectation": true,
+      "scenario_id": "public_record_reference_120_conservative_relationship_floor",
+      "scientifically_eligible": false
+    }
+  ],
+  "schema_version": 1,
+  "sealed_evidence_opened": false,
+  "state": "score_blind_breadth_repair_capacity_sensitivity_complete_no_member_allocation",
+  "target_perceptual_degradation_scores_opened": false
+}
