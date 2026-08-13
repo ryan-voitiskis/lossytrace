@@ -513,3 +513,15 @@ history, relationship deduplication, domain balance, whole-provider holdouts,
 and resource feasibility are not frozen. MusicNet and permissive-item FSD50K
 remain provenance-pending; NSynth and ODAQ remain development-only. No new
 audio was acquired or opened, and the narrow ODAQ authorization is unchanged.
+
+The deterministic
+[`provider-allocation sensitivity`](perceptual-degradation-permissive-provider-allocation-feasibility-20260814.md)
+now shows why the 1,867-group headline is insufficient. Count-only packing can
+fill four 39-group partitions, but the witness is completely confounded by
+provider and domain. Seven eligible providers cannot supply even two providers
+per partition, and the eligible real-music candidates contain only seven
+groups after Slakh remains correctly classified as synthetic. MusicNet alone
+does not repair a provider-pure final music/speech/natural sensitivity. Adding
+both MusicNet and FSD50K makes one arithmetic sensitivity feasible, but remains
+scientifically ineligible because their original coding histories and exact
+member status are unresolved. No member or operational allocation is frozen.
