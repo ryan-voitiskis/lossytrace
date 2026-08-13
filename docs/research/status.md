@@ -536,3 +536,15 @@ unproven. In particular, deterministic score-free oracle and statistical
 replays are synthetic plumbing, no human calibration or perceptual metric
 execution exists, grouped transfer is untested, and no-reference work remains
 ineligible. No final recommendation is frozen.
+
+A current primary-source
+[`GstPEAQ proxy disposition`](perceptual-degradation-gstpeaq-proxy-disposition-20260814.md)
+now closes the ambiguity without executing the metric. The 2023 in-force
+BS.1387-2 text still requires prior owner consent by licence; the ITU database
+returns eight policy-2.2 declarations but warns that it is not authoritative
+or complete. GstPEAQ's LGPL-2.0 software copyright terms do not supply that
+separate consent, and upstream declares results outside ITU tolerance. Public
+records therefore cannot clear internal research execution or redistribution.
+The frozen two-family candidate's declared stop condition is triggered. No
+successor is silently selected, and this candidate-level stop is not promoted
+to a full-objective negative result.

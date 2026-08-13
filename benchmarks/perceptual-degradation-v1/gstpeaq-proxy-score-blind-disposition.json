@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "disposition_id": "perceptual-degradation-gstpeaq-proxy-score-blind-disposition-20260814-001",
+  "state": "public_record_insufficient_for_execution_current_two_family_candidate_stopped",
+  "purpose": "Resolve the frozen GstPEAQ proxy public-record gate without executing the metric, opening scores, claiming legal advice, or silently replacing a preregistered primary family.",
+  "bindings": {
+    "research_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/research-plan.json",
+      "sha256": "e724a3e04fb41458d0568f542283ba33d71a54b1fdfd74b3901cc0dc1d10c352"
+    },
+    "research_contract": {
+      "path": "docs/research/perceptual-degradation-contract-20260803.md",
+      "sha256": "fdec79207fc0fdd2e9cb10aae9f93dd1a17b45e6e56c0c7df8f0e01a1f9fb505"
+    },
+    "metric_execution_gate": {
+      "path": "benchmarks/perceptual-degradation-v1/metric-execution-gate.json",
+      "sha256": "404f4b15dfd1c32586306c9776d293b7d556489c10b4dd216e6fc543bd9e40af"
+    },
+    "public_legal_observation": {
+      "path": "research/toolchains/evidence/perceptual-degradation-gstpeaq-public-legal-observation-20260814-001.json",
+      "sha256": "f845456807186ec1e0b850618cc2476a0462d650cd65de2e54ef4f051a5c3fff"
+    },
+    "objective_completion_audit": {
+      "path": "research/toolchains/evidence/perceptual-degradation-objective-completion-audit-20260814-001.json",
+      "sha256": "b678fd9be29317e265882a27a1b8b25077acd902b4e7ccb03256265b9047beba"
+    }
+  },
+  "access_boundary": {
+    "public_primary_sources_read": true,
+    "legal_advice_obtained": false,
+    "licence_negotiation_authorized": false,
+    "rights_holder_contact_authorized": false,
+    "gstpeaq_download_authorized": false,
+    "gstpeaq_build_authorized": false,
+    "gstpeaq_execution_authorized": false,
+    "audio_access_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "metric_score_access_authorized": false,
+    "listening_score_access_authorized": false,
+    "human_collection_authorized": false,
+    "sealed_evidence_access_authorized": false,
+    "no_reference_training_authorized": false,
+    "public_verdict_enabled": false
+  },
+  "findings": {
+    "software_copyright_licence_identified": true,
+    "software_copyright_licence": "GNU Library General Public License version 2",
+    "software_copyright_licence_is_separate_from_itu_technology_consent": true,
+    "upstream_declares_nonconformance_to_itu_tolerance": true,
+    "in_force_recommendation_requires_prior_owner_consent_by_licence": true,
+    "itu_database_returns_eight_policy_2_2_declarations": true,
+    "policy_2_2_is_automatic_permission": false,
+    "lossytrace_has_evidence_of_negotiated_licence": false,
+    "itu_database_can_authoritatively_resolve_current_validity_and_scope": false,
+    "public_sources_clear_internal_research_execution": false,
+    "public_sources_clear_binary_redistribution": false,
+    "australian_experimental_use_clearly_applies_to_metric_as_research_tool": false,
+    "fact_specific_legal_review_complete": false
+  },
+  "frozen_disposition": {
+    "gstpeaq_proxy_legal_gate_passed": false,
+    "gstpeaq_proxy_conformance_gate_passed": false,
+    "gstpeaq_proxy_execution_eligible": false,
+    "gstpeaq_proxy_redistribution_eligible": false,
+    "current_two_primary_family_candidate_may_advance": false,
+    "current_two_primary_family_candidate_stop_condition_triggered": true,
+    "stop_condition": "The legal/conformance boundary for the proxy is unresolved.",
+    "proxy_failure_is_full_objective_negative_result": false,
+    "full_reference_oracle_rejected_by_human_evidence": false,
+    "no_reference_work_eligible": false,
+    "final_recommendation_frozen": false
+  },
+  "successor_options": [
+    {
+      "option_id": "qualified_legal_clearance",
+      "description": "Obtain fact-specific qualified legal advice and any required rights-holder consent for the exact internal research and redistribution boundaries.",
+      "requires_responsible_human_authority": true,
+      "may_reopen_current_candidate": true,
+      "changes_primary_metric_family": false,
+      "execution_authorized_by_this_disposition": false
+    },
+    {
+      "option_id": "preregister_simpler_full_reference_successor",
+      "description": "Retire the GstPEAQ proxy from a new score-blind successor and preregister a simpler ViSQOL-only full-reference candidate with revised added-value and artifact-profile limits before human or retained metric outcomes are opened.",
+      "requires_responsible_human_authority": true,
+      "may_reopen_current_candidate": false,
+      "changes_primary_metric_family": true,
+      "execution_authorized_by_this_disposition": false
+    },
+    {
+      "option_id": "reject_current_full_reference_candidate",
+      "description": "Reject the current two-family candidate without replacing it; this is a candidate-level stop, not yet a final answer to whether any perceptual estimator is viable.",
+      "requires_responsible_human_authority": true,
+      "may_reopen_current_candidate": false,
+      "changes_primary_metric_family": false,
+      "execution_authorized_by_this_disposition": false
+    }
+  ],
+  "decision": {
+    "selected_successor_option": null,
+    "current_metric_gate_remains_closed": true,
+    "silent_family_replacement_forbidden": true,
+    "post_hoc_replacement_after_outcomes_forbidden": true,
+    "score_blind_successor_amendment_available": true,
+    "rights_holder_contact_or_legal_spend_authorized": false,
+    "next_responsible_human_decision": "Choose whether to seek qualified legal clearance, preregister a ViSQOL-only successor, or reject the current two-family candidate. This decision is independent of the still-pending source-domain breadth choice."
+  },
+  "claim_boundary": {
+    "this_is_legal_advice": false,
+    "old_declaration_means_expired_patent": false,
+    "granted_database_status_means_current_enforceability": false,
+    "lgpl_permission_means_patent_permission": false,
+    "research_label_guarantees_exemption": false,
+    "proxy_nonconformance_invalidates_all_outputs": false,
+    "stopped_candidate_is_rigorous_full_objective_negative": false,
+    "public_cli_changed": false
+  }
+}
