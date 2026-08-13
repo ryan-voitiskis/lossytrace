@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "plan_id": "perceptual-degradation-listening-missingness-stress-20260814-001",
+  "state": "score_blind_synthetic_missingness_stress_no_operational_policy",
+  "purpose": "Determine which v3 issued-schedule balance guarantees survive score-blind session and trial missingness patterns at the four raw listener-count frontiers without reading outcomes, selecting exclusions, changing power targets or authorizing collection.",
+  "bindings": {
+    "allocator_v3": {
+      "path": "scripts/perceptual_degradation_listening_allocation_v3.py",
+      "sha256": "66e9a787b1e154b80bdeff0350ece2b6264029664b3381b01a7c8e5da1ac6814"
+    },
+    "allocator_v3_audit_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/listening-allocation-v3-symbolic-audit-plan.json",
+      "sha256": "b1ec748c90175b64e979542fe7f2647703053a65fc66408cf8796120a58bf931"
+    },
+    "allocator_v3_audit_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-listening-allocation-v3-symbolic-audit-20260814-001.json",
+      "sha256": "9aa04f07e063aa4e7629db96e7b2b13234e0a26394044d628a462055dad39504"
+    },
+    "feasibility_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/listening-feasibility-frontier-plan.json",
+      "sha256": "02f3976e485f167469a4c8a0fe7d04a8fb8f55185b6169136c6e8d37e63daf36"
+    },
+    "feasibility_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-listening-feasibility-frontier-20260813-001.json",
+      "sha256": "c680fb161f3fca350109c321ee867c727eae6841eba7a6c96ce3278c0657a006"
+    },
+    "symbolic_manifest_builder": {
+      "path": "scripts/perceptual_degradation_listening_resource_frontier.py",
+      "sha256": "5bef0ffba4c37387dd2a4f976fb8b5e7fcc0c6e5344855450491705b62a313c9"
+    },
+    "resource_frontier_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/listening-operational-resource-frontier-plan.json",
+      "sha256": "85f77980faa25eabb3c8112a8fcdda4a8286e2d12e759863777a0847d5bc1af3"
+    }
+  },
+  "authorization": {
+    "synthetic_symbolic_missingness_replay_authorized": true,
+    "observed_response_access_authorized": false,
+    "listener_identity_access_authorized": false,
+    "exact_member_selection_authorized": false,
+    "new_audio_acquisition_authorized": false,
+    "retained_reference_read_authorized": false,
+    "stimulus_generation_authorized": false,
+    "human_collection_authorized": false,
+    "recruitment_authorized": false,
+    "participant_contact_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "sealed_evidence_access_authorized": false,
+    "no_reference_training_authorized": false,
+    "public_verdict_enabled": false
+  },
+  "stress_contract": {
+    "usable_trial_rate": 0.90,
+    "mcar_replicates": 256,
+    "minimum_judgments_per_source": 8,
+    "source_correlated_missing_group_count": 12,
+    "outcome_values_generated": false,
+    "outcome_values_read": false,
+    "completion_masks_use_only_seed_assignment_trial_source_and_position": true,
+    "mcar_is_assumption_not_verified_mechanism": true,
+    "power_recalculation_required_for_structured_missingness": true,
+    "missing_response_imputation_selected": false,
+    "inverse_probability_weighting_selected": false,
+    "replacement_assignment_selected": false,
+    "exclusion_policy_selected": false
+  },
+  "scenarios": [
+    {
+      "scenario_id": "complete-issued-prefix",
+      "kind": "complete",
+      "purpose": "Reconfirm the v3 issued-schedule invariant."
+    },
+    {
+      "scenario_id": "contiguous-session-prefix-90",
+      "kind": "contiguous_session_prefix",
+      "retention_rate": 0.90,
+      "purpose": "Retain the first floor(90%) eligible assignments to isolate count loss from non-contiguous missingness."
+    },
+    {
+      "scenario_id": "hash-mcar-session-90",
+      "kind": "hash_mcar_session",
+      "retention_rate": 0.90,
+      "replicates": 256,
+      "purpose": "Stress whole-session missingness independent of issued content under a deterministic hash model."
+    },
+    {
+      "scenario_id": "hash-mcar-trial-90",
+      "kind": "hash_mcar_trial",
+      "retention_rate": 0.90,
+      "replicates": 256,
+      "purpose": "Stress independent trial missingness under a deterministic hash model."
+    },
+    {
+      "scenario_id": "exposure-phase-every-tenth",
+      "kind": "exposure_phase",
+      "modulus": 10,
+      "excluded_remainder": 0,
+      "purpose": "Show that score-blind technical loss correlated with issued exposure phase can bias retained candidate positions."
+    },
+    {
+      "scenario_id": "source-correlated-10-percent",
+      "kind": "source_correlated",
+      "excluded_source_group_count": 12,
+      "purpose": "Show that a scalar usable-rate assumption does not preserve source coverage when failures cluster by source."
+    }
+  ],
+  "frontier_options": [
+    {"option_id": "sources120-subtle3-mushra3", "subtle_trial_limit": 3, "mushra_trial_limit": 3, "eligible_prefix": 765},
+    {"option_id": "sources120-subtle5-mushra5", "subtle_trial_limit": 5, "mushra_trial_limit": 5, "eligible_prefix": 496},
+    {"option_id": "sources120-subtle8-mushra6", "subtle_trial_limit": 8, "mushra_trial_limit": 6, "eligible_prefix": 345},
+    {"option_id": "sources120-subtle15-mushra6", "subtle_trial_limit": 15, "mushra_trial_limit": 6, "eligible_prefix": 227}
+  ],
+  "claim_boundary": {
+    "synthetic_mask_is_empirical_missingness": false,
+    "mcar_replay_proves_mcar_in_collection": false,
+    "issued_schedule_balance_proves_retained_balance": false,
+    "minimum_judgment_count_proves_power": false,
+    "structured_stress_selects_a_correction": false,
+    "stress_audit_freezes_exclusions": false,
+    "stress_audit_authorizes_collection": false,
+    "stress_audit_is_listening_evidence": false,
+    "full_objective_complete": false,
+    "public_cli_changed": false
+  },
+  "authorized_next_step": "Use this audit to decide whether an operational successor should freeze score-blind support monitoring, exclusion and missingness handling. Do not infer an empirical missingness mechanism, repair imbalanced outcomes by inspecting effects, or authorize collection."
+}

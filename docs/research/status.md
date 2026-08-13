@@ -709,9 +709,26 @@ including the raw power minimums; a non-120, five-candidate test also passes.
 Cycle rounding is therefore no longer needed solely for schedule balance,
 returning the protocol-cap sensitivity to 352 enrolled slots per aggregate
 stratum, device class and partition, or 1,408 across four partitions.
-Post-assignment
-missingness and exclusion balance, append-only concurrent allocation state,
+Post-assignment missingness and exclusion balance, append-only concurrent
+allocation state,
 restart recovery, session timing and the total number of condition strata
 remain unresolved. No allocator policy, listener count or study design is
 selected, and no audio, response, recruitment, collection, metric, score,
 source member, no-reference training or public verdict was opened.
+
+A deterministic score-blind
+[`missingness stress`](perceptual-degradation-listening-missingness-stress-20260814.md)
+now separates v3 issued-schedule balance from retained-response support. All
+complete and contiguous 90% prefixes preserve the v3 range-at-most-one
+invariants, but none of 2,048 whole-session or trial-level MCAR replicates does.
+The first three workload options retain the eight-judgment source floor in all
+MCAR replays; at the 15 + 6 minimum it survives only 200/256 session-loss and
+40/256 trial-loss replays. A score-blind exposure-phase mask creates candidate-
+position ranges up to three, while source-correlated 10% loss leaves 108 of 120
+source groups and twelve groups with zero judgments. This does not prove MCAR
+bias or automatically reject an unequal hierarchical design; it proves that a
+scalar 90% usable-rate assumption cannot establish retained balance, source
+support or power. No imputation, weighting, replacement assignment, exclusion
+rule, allocator policy, listener count or study design is selected, and no
+audio, response, identity, recruitment, collection, metric, score, source
+member, no-reference training or public verdict was opened.
