@@ -901,3 +901,20 @@ treated as drift integration. Two fresh report generations were byte-identical.
 No audio, exact member, source or metric successor, correction integration,
 human truth, score, metric, collection, no-reference training, final
 recommendation or public verdict was opened, selected or authorized.
+
+A deterministic score-blind
+[`listening privacy-readiness audit`](perceptual-degradation-listening-privacy-readiness-20260814.md)
+now distinguishes the minimized response surface from operational privacy
+readiness. The current closed-world schema has 39 field names and no direct
+identity, contact, payment, raw-IP, precise-location, microphone-recording or
+device-serial field; the local qualification player also has no network,
+cookie, persistence or microphone API. Its participant code repeats across
+sessions and responses, however, so the data are pseudonymous rather than
+de-identified as the historical schema title claims. Consent versioning and
+the time-bounded withdrawal link must live in separate successor records, and
+ten operational fields covering responsibility, jurisdiction, storage,
+access, incident response, retention, deletion, withdrawal, compensation,
+publication thresholds and version hashes remain unset. Two fresh report
+generations were byte-identical. No operational value, participant contact,
+recruitment, consent, response storage, collection, response, no-reference work
+or public verdict was selected, opened or authorized.
