@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "plan_id": "perceptual-degradation-objective-completion-audit-20260814-003",
+  "state": "score_blind_completion_audit_refreshed_for_source_traits_and_drift_no_new_authority",
+  "purpose": "Reconcile the full objective against the latest frozen source-trait and oracle drift-resampler evidence without treating provider capability as an exact member, synthetic resampler selection as integration, or preparation as perceptual evidence.",
+  "bindings": {
+    "predecessor_audit_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/objective-completion-audit-plan-20260814-002.json",
+      "sha256": "abb04f4a903f63eaa4958922d36a74bcdf8d8e3bb509f9255792240b1321d121"
+    },
+    "predecessor_audit_implementation": {
+      "path": "scripts/perceptual_degradation_objective_completion_audit_v2.py",
+      "sha256": "7ec67b10eb6f6adda706b34e19d70254cba2796fe16ae86c7dcc03f965563b81"
+    },
+    "predecessor_audit_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-objective-completion-audit-20260814-002.json",
+      "sha256": "26d7315768f091a32ddc9a866608ec4c4b8f73bc8a1f764efd733c4131eb7eb4"
+    },
+    "oracle_drift_resampler_freeze": {
+      "path": "benchmarks/perceptual-degradation-v1/oracle-drift-resampler-freeze.json",
+      "sha256": "d96f489a4a11da659d156a0d7135b1501a4b603c8f763caae2071db32d6ca87d"
+    },
+    "oracle_drift_resampler_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-oracle-drift-resampler-20260814-001.json",
+      "sha256": "1a05d4acbe100ae749bbfb7ea5f139f165a4c084ae3f5c73f9e0cbe8039ec6fa"
+    },
+    "source_trait_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/source-trait-identifiability-plan.json",
+      "sha256": "c15991fbd7062c837db566bb734c5c1bf625fa2cbc5aa5a00983b64d82e28ba3"
+    },
+    "source_trait_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-source-trait-identifiability-20260814-001.json",
+      "sha256": "e77bb0bb453941bdf47d1d9062748b27bbae686d781fb7f17efc734e5e632e20"
+    },
+    "source_trait_provider_screen": {
+      "path": "research/toolchains/evidence/perceptual-degradation-source-trait-provider-capability-screen-20260814-001.json",
+      "sha256": "12eb521d0976f4e087ef9cb7a80c22c6112ea73b844e3f59a64fd2da5bfbc6b3"
+    }
+  },
+  "authorization": {
+    "bound_metadata_and_source_read_authorized": true,
+    "synthetic_audit_execution_authorized": true,
+    "immutable_record_preservation_authorized": false,
+    "exact_member_metadata_audit_authorized": false,
+    "exact_member_selection_authorized": false,
+    "source_trait_assignment_authorized": false,
+    "provider_catalog_query_authorized": false,
+    "new_audio_acquisition_authorized": false,
+    "retained_odaq_reference_read_authorized": false,
+    "retained_reference_projection_authorized": false,
+    "drift_resampler_integration_authorized": false,
+    "stimulus_generation_authorized": false,
+    "processed_condition_access_authorized": false,
+    "listening_score_access_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "human_collection_authorized": false,
+    "recruitment_authorized": false,
+    "sealed_evidence_access_authorized": false,
+    "no_reference_training_authorized": false,
+    "public_verdict_enabled": false
+  },
+  "requirement_ids": [
+    "estimand_is_degradation_not_history",
+    "declared_playback_chain_qualified",
+    "truth_bearing_source_manifest_feasible_and_frozen",
+    "controlled_human_calibration_collected",
+    "perceptual_metric_execution_and_legal_gate_passed",
+    "deterministic_human_calibrated_full_reference_oracle_passed",
+    "transparent_lossy_treated_as_non_degraded",
+    "difficult_natural_and_production_negatives_preserved_in_evaluation",
+    "grouped_source_domain_codec_encoder_transfer_passed",
+    "no_reference_estimator_trained_and_independently_validated",
+    "severity_audibility_artifact_support_uncertainty_abstention_reported",
+    "public_cli_remains_verdict_free",
+    "rigorous_negative_is_accepted_success",
+    "final_research_recommendation_frozen"
+  ],
+  "completion_policy": {
+    "all_requirement_ids_must_be_present": true,
+    "all_completion_required_requirements_must_be_satisfied": true,
+    "provider_capability_counts_as_exact_trait_candidate": false,
+    "missing_natural_trait_candidate_counts_as_negative_coverage": false,
+    "frozen_resampler_counts_as_oracle_integration": false,
+    "legacy_metric_rate_conversion_counts_as_drift_integration": false,
+    "preparation_or_synthetic_replay_counts_as_scientific_completion": false,
+    "green_tests_count_as_perceptual_evidence": false,
+    "missing_or_indirect_evidence_counts_as_satisfied": false,
+    "current_recommendation": null,
+    "allowed_final_recommendations": [
+      "reject_perceptual_estimation",
+      "retain_full_reference_only",
+      "continue_no_reference_research",
+      "freeze_blind_final_validation"
+    ]
+  },
+  "claim_boundary": {
+    "audit_authorizes_next_gate": false,
+    "audit_is_listening_evidence": false,
+    "audit_is_metric_evidence": false,
+    "audit_is_full_reference_validation": false,
+    "audit_is_no_reference_validation": false,
+    "audit_completes_objective": false,
+    "audit_changes_public_cli": false
+  }
+}

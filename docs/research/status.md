@@ -885,3 +885,19 @@ was found. The search is bounded and does not prove global absence. No exact
 member, source-trait manifest, source or metric successor, audio, human truth,
 response, collection, no-reference work or public verdict was selected,
 opened or authorized.
+
+A deterministic score-blind
+[`objective completion-audit source-trait and drift refresh`](perceptual-degradation-objective-completion-audit-source-trait-drift-refresh-20260814.md)
+now reconciles those later checkpoints against all fourteen requirements. The
+completion count remains four satisfied and ten unproven. Provider-pure source
+arithmetic is feasible, but the seven-trait proof contract has only five
+candidate records: quiet has a provider-level route rather than an exact
+candidate, naturally clipped still has no candidate, and exact selection and
+allocation remain unfrozen. The bounded-drift resampler passed all nine
+synthetic gates and is the selected technical algorithm, but it is not
+integrated after a held-out apply decision or validated on retained development
+pairs. The historical fixed 44.1-to-48 kHz metric-rate view is explicitly not
+treated as drift integration. Two fresh report generations were byte-identical.
+No audio, exact member, source or metric successor, correction integration,
+human truth, score, metric, collection, no-reference training, final
+recommendation or public verdict was opened, selected or authorized.
