@@ -793,3 +793,27 @@ isolates and hard negatives remain incomplete. No condition, option, partition,
 device policy, listener count, source member, recruitment, collection, audio,
 metric, score, no-reference training or public verdict was selected, opened or
 authorized.
+
+A deterministic score-blind
+[`negative/control topology audit`](perceptual-degradation-negative-control-topology-20260814.md)
+now accounts for all twenty required negative classes exactly once while
+separating transparent truth, source traits, alignment nuisances and
+human-truth production controls. It corrects the earlier condition-breadth
+composition: the 22- and 28-strata sensitivities omitted the contract's dither
+and sample-rate-conversion classes and therefore were not claim-complete. At
+90% retention across four partitions and one declared device class, sixteen
+codec recipes plus the five required production families require an arithmetic
+minimum of 35,500 dedicated or 21,904 optimistically packed enrolled session
+slots. Retaining production clipping and the two generation families raises
+that to 40,572 or 25,028; retaining all eight generation recipes raises it to
+50,716 or 31,284. If all seven alignment nuisances require distinct human-truth
+conditions, the family/recipe sensitivities rise as high as 62,548 dedicated or
+38,584 optimistically packed slots. These are session slots, not people, and
+the packing remains unproven. Eighteen classes have a candidate record or
+technical representation, but quiet and naturally clipped references have no
+explicit candidates; sparse and tonal share one candidate; dither is confounded
+with 12-bit requantization; sample-rate conversion lacks a perceptual replay;
+and bounded-drift plus paired leading/trailing-silence plumbing is incomplete.
+No exact source trait, condition, human truth, scientific coverage, listening
+design, recruitment, collection, metric, score, no-reference work or public
+verdict was selected, opened or authorized.

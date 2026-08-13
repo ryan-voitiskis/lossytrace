@@ -1,0 +1,256 @@
+{
+  "schema_version": 1,
+  "plan_id": "perceptual-degradation-negative-control-topology-20260814-001",
+  "state": "score_blind_negative_control_topology_sensitivity_no_selection",
+  "purpose": "Partition all twenty frozen negative classes by scientific role, audit score-blind candidate coverage, prohibit invalid substitution and quantify condition-strata sensitivities without selecting sources, conditions, metrics or a listening design.",
+  "bindings": {
+    "research_contract": {
+      "path": "docs/research/perceptual-degradation-contract-20260803.md",
+      "sha256": "fdec79207fc0fdd2e9cb10aae9f93dd1a17b45e6e56c0c7df8f0e01a1f9fb505"
+    },
+    "research_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/research-plan.json",
+      "sha256": "e724a3e04fb41458d0568f542283ba33d71a54b1fdfd74b3901cc0dc1d10c352"
+    },
+    "source_condition_qualification": {
+      "path": "benchmarks/perceptual-degradation-v1/source-condition-qualification-plan.json",
+      "sha256": "5ce20a4e10d743e8823810ec89e58d873ea2db47044151f065fa3358e16cf64b"
+    },
+    "additional_provider_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/additional-permissive-provider-allocation-feasibility-plan.json",
+      "sha256": "2dda089c7bb0533e6bee276a5aac95fa201693bb177d7fc349aba78b1f328350"
+    },
+    "factor_levels": {
+      "path": "benchmarks/audio-integrity-v2/factor-levels.json",
+      "sha256": "4065553ef4fbe505ea0d79b149570bc1483396dbcc1de52597890e61f59481bd"
+    },
+    "alignment_fixture_freeze": {
+      "path": "benchmarks/perceptual-degradation-v1/alignment-fixture-freeze.json",
+      "sha256": "5cd09e6b69cb0e49a55981467dccac0f6d13f2097d0b8ca6337cc758208eb301"
+    },
+    "alignment_topology_freeze": {
+      "path": "benchmarks/perceptual-degradation-v1/alignment-topology-freeze.json",
+      "sha256": "b3508568fb1375f833fd4ba5b0203bdeb6dba1197fb95b054576e79c9deeda45"
+    },
+    "audio_view_observation": {
+      "path": "research/toolchains/evidence/perceptual-degradation-audio-view-observed-20260803-001.json",
+      "sha256": "9219f697d3e50ff6f1149c1dbfd4cf868581b1ebdcabc6f8b666402b21a6d189"
+    },
+    "production_generation_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/production-generation-control-plan.json",
+      "sha256": "cea7450b3c91ad593cef2be6033d0f8b25c7391795d554f697aefd0f8a11760c"
+    },
+    "production_generation_replay": {
+      "path": "research/toolchains/evidence/perceptual-degradation-production-generation-synthetic-replay-20260804-001.json",
+      "sha256": "1dec93a0334e6213ef4b952b4aea11018d5611755e88833e60c22030b25c54b8"
+    },
+    "condition_workload_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/listening-condition-strata-workload-plan.json",
+      "sha256": "3aae42c300f6e8e749df8f7687bb7e6d1c359e71073ecf7e15bf5052cd8fbdd3"
+    },
+    "condition_workload_implementation": {
+      "path": "scripts/perceptual_degradation_listening_condition_strata_workload.py",
+      "sha256": "a590a187700f497170027ba77add95ff190bb3b3bec37ce81fd918f43cefdb2f"
+    },
+    "condition_workload_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-listening-condition-strata-workload-20260814-001.json",
+      "sha256": "b1f90914967f9b76c75d4f082f85c63fa392642a7e60285e049bdea99b3661c9"
+    }
+  },
+  "authorization": {
+    "score_blind_metadata_arithmetic_authorized": true,
+    "source_member_selection_authorized": false,
+    "condition_selection_authorized": false,
+    "retained_audio_read_authorized": false,
+    "provider_audio_acquisition_authorized": false,
+    "stimulus_generation_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "human_collection_authorized": false,
+    "recruitment_authorized": false,
+    "response_or_outcome_access_authorized": false,
+    "sealed_evidence_access_authorized": false,
+    "no_reference_training_authorized": false,
+    "public_verdict_enabled": false
+  },
+  "negative_class_topology": {
+    "transparent_truth_axis": [
+      {
+        "class_id": "transparent_lossy_encode",
+        "candidate_evidence": "sixteen_codec_recipe_grid",
+        "readiness": "codec_candidates_present_human_transparency_truth_absent"
+      }
+    ],
+    "source_trait_axis": [
+      {
+        "class_id": "natural_bandwidth_limit",
+        "candidate_ids": ["fsdd_v1_0_10"],
+        "readiness": "candidate_record_present_exact_members_and_natural_trait_unfrozen"
+      },
+      {
+        "class_id": "quiet",
+        "candidate_ids": [],
+        "readiness": "no_explicit_candidate_record"
+      },
+      {
+        "class_id": "sparse",
+        "candidate_ids": ["tinysol_6_0"],
+        "readiness": "joint_sparse_tonal_candidate_only_exact_members_unfrozen"
+      },
+      {
+        "class_id": "tonal",
+        "candidate_ids": ["tinysol_6_0"],
+        "readiness": "joint_sparse_tonal_candidate_only_exact_members_unfrozen"
+      },
+      {
+        "class_id": "synthetic",
+        "candidate_ids": ["slakh2100_redux"],
+        "readiness": "provider_capability_record_present_exact_members_unfrozen"
+      },
+      {
+        "class_id": "noisy",
+        "candidate_ids": ["sonyc_backgrounds_1_0_0"],
+        "readiness": "candidate_record_present_exact_members_and_noisy_trait_unfrozen"
+      },
+      {
+        "class_id": "clipped",
+        "candidate_ids": [],
+        "readiness": "no_explicit_naturally_clipped_reference_candidate"
+      }
+    ],
+    "alignment_nuisance_axis": [
+      {
+        "class_id": "gain",
+        "candidate_ids": ["gain-minus6db-q31"],
+        "readiness": "combined_synthetic_gain_polarity_delay_fixture_only"
+      },
+      {
+        "class_id": "polarity",
+        "candidate_ids": ["alignment-fixture-gain-polarity"],
+        "readiness": "combined_synthetic_gain_polarity_delay_fixture_only"
+      },
+      {
+        "class_id": "integer_delay",
+        "candidate_ids": ["alignment-fixture-integer-delay"],
+        "readiness": "combined_synthetic_gain_polarity_delay_fixture_only"
+      },
+      {
+        "class_id": "fractional_delay",
+        "candidate_ids": ["alignment-fixture-quarter-sample-delay"],
+        "readiness": "synthetic_estimation_fixture_present"
+      },
+      {
+        "class_id": "resampling",
+        "candidate_ids": ["resample-roundtrip-32k", "visqol-48k-audio-view"],
+        "readiness": "deterministic_transform_and_audio_view_present_no_aligned_pair_correction_replay"
+      },
+      {
+        "class_id": "bounded_clock_drift",
+        "candidate_ids": ["alignment-fixture-clock-drift-limit"],
+        "readiness": "limit_and_over_limit_fixture_only_no_bounded_correction_replay"
+      },
+      {
+        "class_id": "leading_trailing_silence",
+        "candidate_ids": ["prepend-digital-silence-500ms", "alignment-edge-trim-limit"],
+        "readiness": "leading_only_transform_and_edge_limit_no_paired_leading_trailing_fixture"
+      }
+    ],
+    "human_truth_production_axis": [
+      {
+        "class_id": "equalization",
+        "candidate_ids": ["production-high-shelf-minus6db-nyquist-fir3-v1"],
+        "readiness": "synthetic_recipe_replayed_human_truth_absent"
+      },
+      {
+        "class_id": "limiting",
+        "candidate_ids": ["production-block-limiter-minus6dbfs-5ms-v1"],
+        "readiness": "synthetic_recipe_replayed_human_truth_absent"
+      },
+      {
+        "class_id": "stereo_width",
+        "candidate_ids": ["production-stereo-width-half-mid-side-v1"],
+        "readiness": "synthetic_recipe_replayed_oracle_alignment_expected_to_abstain_human_truth_absent"
+      },
+      {
+        "class_id": "dither",
+        "candidate_ids": ["requantize-12bit-tpdf"],
+        "readiness": "combined_dither_and_bitdepth_candidate_not_isolated_dither_or_perceptual_replay"
+      },
+      {
+        "class_id": "sample_rate_conversion",
+        "candidate_ids": ["resample-roundtrip-32k"],
+        "readiness": "candidate_transform_present_no_perceptual_recipe_replay_or_human_truth"
+      }
+    ]
+  },
+  "non_substitution_rules": [
+    "A generated low-pass transform does not satisfy the natural_bandwidth_limit source-trait class.",
+    "The production hard-clipping recipe does not satisfy the clipped-reference source-trait class.",
+    "Generated synthetic fixtures do not satisfy the synthetic-source trait class.",
+    "A combined sparse-and-tonal candidate does not establish independent sparse and tonal contrasts.",
+    "Dither combined with a 12-bit requantization does not establish an isolated dither contrast.",
+    "A deterministic resampler used for alignment or metric views does not establish human truth for a sample-rate-conversion production condition.",
+    "Alignment nuisance normalization does not establish perceptual transparency; if a nuisance is treated as an audible intervention it requires a separately counted listening condition.",
+    "One condition may count once in the workload even if it carries multiple labels, but its outcomes cannot identify label-specific effects without independent contrasts.",
+    "A source trait must be represented by exact grouped members in every partition supporting a corresponding transfer or subgroup claim; pooled capacity cannot substitute.",
+    "A transparent lossy condition may overlap an actual codec recipe only after frozen human analysis assigns transparency; nominal codec settings cannot assign it."
+  ],
+  "additional_condition_inventory": {
+    "production_clipping": {
+      "family_count": 1,
+      "recipe_count": 1,
+      "required_negative_class_substitute": false
+    },
+    "codec_generation_controls": {
+      "family_count": 2,
+      "recipe_count": 8,
+      "families": ["repeated_same_codec", "cross_codec_generation"]
+    }
+  },
+  "condition_breadth_scenarios": [
+    {
+      "scenario_id": "codec-plus-required-production-families",
+      "strata_count": 21,
+      "scope": "sixteen codec recipes plus one representative for each of five frozen human-truth production negative classes"
+    },
+    {
+      "scenario_id": "codec-plus-required-and-extra-families",
+      "strata_count": 24,
+      "scope": "required-production scenario plus non-substituting production clipping and two codec-generation control families"
+    },
+    {
+      "scenario_id": "codec-plus-required-and-extra-recipes",
+      "strata_count": 30,
+      "scope": "sixteen codec recipes, five required production classes, one clipping recipe and all eight codec-generation recipes"
+    },
+    {
+      "scenario_id": "required-families-plus-alignment-human-truth",
+      "strata_count": 28,
+      "scope": "twenty-one-stratum required-production sensitivity plus seven alignment nuisance classes if each requires a distinct human-truth condition"
+    },
+    {
+      "scenario_id": "extra-families-plus-alignment-human-truth",
+      "strata_count": 31,
+      "scope": "twenty-four-stratum family sensitivity plus seven alignment nuisance human-truth conditions"
+    },
+    {
+      "scenario_id": "extra-recipes-plus-alignment-human-truth",
+      "strata_count": 37,
+      "scope": "thirty-stratum recipe sensitivity plus seven alignment nuisance human-truth conditions"
+    }
+  ],
+  "claim_boundary": {
+    "topology_selects_sources": false,
+    "topology_selects_conditions": false,
+    "candidate_record_proves_exact_member_trait": false,
+    "technical_recipe_proves_perceptual_truth": false,
+    "source_traits_are_additive_condition_strata": false,
+    "alignment_nuisances_are_automatically_free_of_listening_cost": false,
+    "workload_sensitivity_is_unique_people": false,
+    "workload_sensitivity_proves_session_timing": false,
+    "workload_sensitivity_authorizes_collection": false,
+    "negative_class_requirement_satisfied": false,
+    "full_objective_complete": false,
+    "public_cli_changed": false
+  },
+  "authorized_next_step": "Use this score-blind topology to decide whether to freeze exact source-trait candidates and isolated dither, sample-rate-conversion, bounded-drift and leading/trailing-silence controls. Do not treat the arithmetic as source or condition selection, perceptual truth, session feasibility or collection authority."
+}
