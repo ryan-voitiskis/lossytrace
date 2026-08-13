@@ -622,3 +622,17 @@ floor, but only with the unpreserved ICSI and Bandcamp records. Stable records
 alone still fail 120 groups, three-domain coverage and mastered-music coverage
 in every partition. Qualified and allocated counts remain zero, and no audio,
 successor, metric, scientific gate or public verdict changed.
+
+A bounded
+[`stable speech-provider screen`](perceptual-degradation-stable-speech-provider-screen-20260814.md)
+adds VibraVox as a content-addressed CC BY 4.0 direct-speech candidate: 188
+participant-level groups using only the clean dry headset-microphone field.
+Body-conduction channels and noisy or speechless subsets remain excluded. The
+stable pool now has 17 providers and 2,238 candidate groups at DataSTORRE's
+recording ceiling, or 2,179 at its conservative floor. Stable-only arithmetic
+can now place music, speech and natural sound in every provider-pure partition
+and can fill four 120-group partitions even at the conservative floor, without
+depending on mutable ICSI or Bandcamp records. Stable mastered-music coverage
+still fails because AlbumDB remains the only stable mastered-release candidate.
+Qualified and allocated counts remain zero. No repository data object, Parquet
+content, audio, successor, metric, scientific gate or public verdict changed.

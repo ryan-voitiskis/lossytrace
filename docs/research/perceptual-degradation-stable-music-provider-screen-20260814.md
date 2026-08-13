@@ -69,6 +69,12 @@ providers and 2,050 groups at the ceiling, but only 340 non-Slakh groups, so it
 still cannot fill the three other 120-group partitions. Stable-only
 three-domain and mastered-music sensitivities also remain infeasible.
 
+That was the state at this music-screen checkpoint. The later
+[`stable speech-provider screen`](perceptual-degradation-stable-speech-provider-screen-20260814.md)
+adds VibraVox and supersedes the count and three-domain conclusions: stable-only
+120-group and three-domain arithmetic then become feasible, while the
+mastered-music failure remains.
+
 ## Boundary and next decision
 
 No source or metric successor is selected. The screen does not authorize

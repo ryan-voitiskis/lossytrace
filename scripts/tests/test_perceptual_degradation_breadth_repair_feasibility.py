@@ -27,25 +27,26 @@ class BreadthRepairFeasibilityTest(unittest.TestCase):
     def test_report_is_deterministic(self) -> None:
         self.assertEqual(MODULE.build_report(plan()), MODULE.build_report(plan()))
 
-    def test_public_record_and_stable_record_results_remain_distinct(self) -> None:
+    def test_stable_speech_repairs_domains_but_not_mastered_music(self) -> None:
         results = {
             item["scenario_id"]: item["arithmetic_feasible"]
             for item in MODULE.build_report(plan())["scenario_results"]
         }
         self.assertTrue(results["public_record_three_domains_every_partition"])
-        self.assertFalse(results["stable_record_three_domains_every_partition"])
+        self.assertTrue(results["stable_record_three_domains_every_partition"])
         self.assertTrue(results["public_record_mastered_music_every_partition"])
         self.assertFalse(results["stable_record_mastered_music_every_partition"])
         self.assertTrue(results["public_record_final_two_mastered_music_providers"])
 
-    def test_reference_sensitivity_depends_on_provisional_records(self) -> None:
+    def test_reference_sensitivity_no_longer_depends_on_provisional_records(self) -> None:
         results = {
             item["scenario_id"]: item["arithmetic_feasible"]
             for item in MODULE.build_report(plan())["scenario_results"]
         }
         self.assertTrue(results["public_record_reference_120_recording_ceiling"])
         self.assertTrue(results["public_record_reference_120_conservative_relationship_floor"])
-        self.assertFalse(results["stable_record_reference_120_recording_ceiling"])
+        self.assertTrue(results["stable_record_reference_120_recording_ceiling"])
+        self.assertTrue(results["stable_record_reference_120_conservative_relationship_floor"])
 
     def test_capacity_witness_never_splits_or_promotes_a_provider(self) -> None:
         for result in MODULE.build_report(plan())["scenario_results"]:
@@ -68,8 +69,10 @@ class BreadthRepairFeasibilityTest(unittest.TestCase):
         value = plan()
         scenario = next(item for item in value["scenarios"] if item["scenario_id"] == "stable_record_reference_120_recording_ceiling")
         scenario["included_new_record_statuses"].append("preservation_required_provisional")
-        with self.assertRaisesRegex(ValueError, "scenario result differs"):
-            MODULE.build_report(value)
+        self.assertIn(
+            "scenario status scope differs: stable_record_reference_120_recording_ceiling",
+            MODULE.validate_plan(value),
+        )
 
     def test_stable_controlled_music_capacity_is_bound_without_mastered_promotion(self) -> None:
         value = plan()
@@ -80,6 +83,16 @@ class BreadthRepairFeasibilityTest(unittest.TestCase):
         provider = next(item for item in value["new_providers"] if item["provider_id"] == "vienna_4x22")
         provider["capabilities"] = ["music", "mastered_music"]
         self.assertIn("new provider binding differs: vienna_4x22", MODULE.validate_plan(value))
+
+    def test_stable_speech_capacity_is_bound_without_icsi_promotion(self) -> None:
+        value = plan()
+        provider = next(item for item in value["new_providers"] if item["provider_id"] == "vibravox")
+        provider["available_group_capacity"] = 189
+        self.assertIn("new provider binding differs: vibravox", MODULE.validate_plan(value))
+        value = plan()
+        provider = next(item for item in value["new_providers"] if item["provider_id"] == "icsi_meeting")
+        provider["record_status"] = "immutable_or_stable"
+        self.assertIn("new provider binding differs: icsi_meeting", MODULE.validate_plan(value))
 
     def test_audio_metric_score_training_and_successor_gates_remain_closed(self) -> None:
         value = plan()

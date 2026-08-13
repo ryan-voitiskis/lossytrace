@@ -2,7 +2,7 @@
   "schema_version": 1,
   "plan_id": "perceptual-degradation-breadth-repair-provider-allocation-feasibility-20260814-001",
   "state": "score_blind_public_record_capacity_sensitivity_no_member_allocation",
-  "purpose": "Test whether additional permissive public records can repair speech, natural-sound, mastered-music and 120-group arithmetic shortages while separating stable candidates, mutable provisional records, controlled-music supplements and relationship-sensitive capacity.",
+  "purpose": "Test whether additional permissive public records can repair speech, natural-sound, mastered-music and 120-group arithmetic shortages while separating stable candidates, mutable provisional records, controlled-music and stable-speech supplements, and relationship-sensitive capacity.",
   "bindings": {
     "breadth_repair_observation": {
       "path": "research/toolchains/evidence/perceptual-degradation-breadth-repair-public-metadata-observation-20260814-001.json",
@@ -11,6 +11,10 @@
     "stable_music_observation": {
       "path": "research/toolchains/evidence/perceptual-degradation-stable-music-provider-public-record-observation-20260814-001.json",
       "sha256": "e5c8eaaeec7062eb1fcede8f07387a0c7c1f56d400daaa0ed35ce3125229a131"
+    },
+    "stable_speech_observation": {
+      "path": "research/toolchains/evidence/perceptual-degradation-stable-speech-provider-public-record-observation-20260814-001.json",
+      "sha256": "41605bbcf34e496bcadd92ad13b12836d829e4e55bf51d01d2aaa967b17d77d7"
     },
     "predecessor_plan": {
       "path": "benchmarks/perceptual-degradation-v1/additional-permissive-provider-allocation-feasibility-plan.json",
@@ -125,6 +129,15 @@
         "controlled_performance_music"
       ],
       "available_group_capacity": 2
+    },
+    {
+      "provider_id": "vibravox",
+      "source_id": "vibravox_hf_2727_revision_7990b7d",
+      "record_status": "immutable_or_stable",
+      "capabilities": [
+        "speech"
+      ],
+      "available_group_capacity": 188
     }
   ],
   "solver_policy": {
@@ -157,7 +170,7 @@
       },
       "capability_provider_minimums_by_partition": {},
       "expected_arithmetic_feasible": true,
-      "reason_not_eligible": "the fourth speech provider is an unpreserved mutable public record and no exact members or relationships are audited"
+      "reason_not_eligible": "the stable VibraVox capacity is public-record arithmetic only and no exact members or relationships are audited"
     },
     {
       "scenario_id": "stable_record_three_domains_every_partition",
@@ -174,8 +187,8 @@
         "final_validation": {"music": 8, "speech": 8, "natural": 8}
       },
       "capability_provider_minimums_by_partition": {},
-      "expected_arithmetic_feasible": false,
-      "reason_not_eligible": "excluding preservation-required ICSI leaves only three speech providers for four provider-pure partitions"
+      "expected_arithmetic_feasible": true,
+      "reason_not_eligible": "the fourth stable speech provider is a content-addressed metadata candidate, not a preserved and exact-member-audited allocation"
     },
     {
       "scenario_id": "public_record_mastered_music_every_partition",
@@ -244,7 +257,7 @@
       "capability_minimums_by_partition": {},
       "capability_provider_minimums_by_partition": {},
       "expected_arithmetic_feasible": true,
-      "reason_not_eligible": "feasibility depends on treating all 67 DataSTORRE recording files as separate groups before relationship collapse"
+      "reason_not_eligible": "feasibility uses DataSTORRE's 67-recording ceiling plus unaudited stable candidate capacities and selects no exact members"
     },
     {
       "scenario_id": "public_record_reference_120_conservative_relationship_floor",
@@ -260,7 +273,7 @@
       "capability_minimums_by_partition": {},
       "capability_provider_minimums_by_partition": {},
       "expected_arithmetic_feasible": true,
-      "reason_not_eligible": "the repaired count still depends on preservation-required ICSI and Bandcamp records plus unaudited controlled-music capacities and selects no exact members"
+      "reason_not_eligible": "the repaired count uses unaudited public-record capacities and selects no exact members; provisional records are included but are no longer necessary for count feasibility"
     },
     {
       "scenario_id": "stable_record_reference_120_recording_ceiling",
@@ -272,8 +285,23 @@
       "minimum_providers_each_partition": 0,
       "capability_minimums_by_partition": {},
       "capability_provider_minimums_by_partition": {},
-      "expected_arithmetic_feasible": false,
-      "reason_not_eligible": "even at DataSTORRE's recording ceiling the stable-only non-Slakh capacity cannot fill the other three 120-group partitions"
+      "expected_arithmetic_feasible": true,
+      "reason_not_eligible": "the stable-only count uses public-record capacity ceilings without exact-member or relationship audit"
+    },
+    {
+      "scenario_id": "stable_record_reference_120_conservative_relationship_floor",
+      "included_new_record_statuses": [
+        "immutable_or_stable"
+      ],
+      "capacity_overrides": {
+        "datastorre_acoustic_examples": 8
+      },
+      "minimum_groups_each_partition": 120,
+      "minimum_providers_each_partition": 0,
+      "capability_minimums_by_partition": {},
+      "capability_provider_minimums_by_partition": {},
+      "expected_arithmetic_feasible": true,
+      "reason_not_eligible": "the stable-only count remains public-record arithmetic with unaudited participant, performer, recording and derivative relationships"
     }
   ],
   "decision_boundary": {

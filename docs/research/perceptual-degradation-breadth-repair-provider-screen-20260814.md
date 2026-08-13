@@ -55,28 +55,30 @@ labelled arithmetic sensitivity, not the exact-member-audit candidate tier.
 ## Arithmetic sensitivity
 
 The predecessor pool had 11 providers and 1,930 metadata-level candidate
-groups. After the successor stable-music screen added Vienna 4x22 and ROD, the
-public-record ceiling produces 20 providers and 2,140 groups; using the
-conservative DataSTORRE floor produces 2,081. Qualified and allocated counts
-remain zero.
+groups. After the successor stable-music screen added Vienna 4x22 and ROD and
+the stable-speech screen added VibraVox, the public-record ceiling produces 21
+providers and 2,328 groups; using the conservative DataSTORRE floor produces
+2,269. The stable-only pool has 17 providers and 2,238 groups at the ceiling,
+or 2,179 at the floor. Qualified and allocated counts remain zero.
 
 | Sensitivity | Arithmetic result | Why it does not cross the scientific gate |
 | --- | --- | --- |
-| music, speech and natural sound in every partition, all public records | feasible | the fourth speech provider is unpreserved ICSI |
-| same, stable records only | infeasible | only three speech providers remain |
+| music, speech and natural sound in every partition, all public records | feasible | public-record capacities and relationships remain unaudited |
+| same, stable records only | feasible after VibraVox supplement | the fourth provider is content-addressed but no exact member is audited |
 | eight mastered-music groups in every partition, all public records | feasible | three of four mastered providers are mutable single-release pages |
 | same, stable records only | infeasible | AlbumDB remains the only stable mastered provider |
 | two mastered providers in final validation, all public records | feasible | the second provider is provisional; no final allocation exists |
-| 120 groups in every partition at DataSTORRE's 67-recording ceiling | feasible | it uses provisional providers and unaudited metadata capacity |
-| 120 groups in every partition at the eight-group floor | feasible after Vienna 4x22 and ROD supplement | it still uses provisional providers and selects no exact members |
-| 120 groups in every partition, stable records only at the 67-recording ceiling | infeasible | stable non-Slakh capacity remains below the three other 120-group partitions |
+| 120 groups in every partition at DataSTORRE's 67-recording ceiling | feasible | it uses unaudited metadata capacity and selects no exact members |
+| 120 groups in every partition at the eight-group floor | feasible | public-record capacities and relationships remain unaudited |
+| 120 groups in every partition, stable records only at the 67-recording ceiling | feasible after VibraVox supplement | stable-record capacity is not exact-member truth |
+| 120 groups in every partition, stable records only at the eight-group floor | feasible after VibraVox supplement | participant, performer, recording and derivative relationships remain unaudited |
 
 This resolves an arithmetic question, not the source design. Every positive
 witness still assigns whole candidate providers without selecting exact
-members. The stable-only result does not yet support three primary domains in
-all partitions, mastered-music transfer, or the 120-group sensitivity. The
-full public-record 120-group result no longer depends on the DataSTORRE ceiling
-alone, but it still depends on unpreserved provisional providers.
+members. Stable-only arithmetic now supports three primary domains in all
+partitions and both 120-group sensitivities, without needing ICSI or Bandcamp.
+It still does not support mastered-music transfer, scientific eligibility, or
+any exact-member allocation.
 
 ## Screened but not added
 
@@ -98,7 +100,7 @@ member access, execute a perceptual metric, collect listening evidence, open
 sealed evidence, permit no-reference training, or change the public CLI.
 
 The next source-side decision is whether to authorize bounded preservation and
-exact-member metadata audit of these records, narrow the primary-domain claim,
+exact-member metadata audit of these records, narrow the mastered-music claim,
 or reject the current truth-source design. Metric-successor selection remains
 a separate responsible-human decision.
 

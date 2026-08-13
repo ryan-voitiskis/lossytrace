@@ -58,6 +58,7 @@ def validate_plan(plan: dict[str, Any], root: Path = ROOT) -> list[str]:
     bound = _bindings(plan, root, errors)
     observation = bound.get("breadth_repair_observation", {})
     stable_music_observation = bound.get("stable_music_observation", {})
+    stable_speech_observation = bound.get("stable_speech_observation", {})
     predecessor = bound.get("predecessor_plan", {})
     if observation.get("observation_id") != "perceptual-degradation-breadth-repair-public-metadata-observation-20260814-001":
         errors.append("observation identity differs")
@@ -65,6 +66,8 @@ def validate_plan(plan: dict[str, Any], root: Path = ROOT) -> list[str]:
         errors.append("predecessor identity differs")
     if stable_music_observation.get("observation_id") != "perceptual-degradation-stable-music-provider-public-record-observation-20260814-001":
         errors.append("stable-music observation identity differs")
+    if stable_speech_observation.get("observation_id") != "perceptual-degradation-stable-speech-provider-public-record-observation-20260814-001":
+        errors.append("stable-speech observation identity differs")
 
     access = observation.get("access_boundary", {})
     for key in (
@@ -99,7 +102,8 @@ def validate_plan(plan: dict[str, Any], root: Path = ROOT) -> list[str]:
     immutable = observation.get("immutable_or_stable_record_candidates", [])
     provisional = observation.get("preservation_required_provisional_candidates", [])
     stable_music = stable_music_observation.get("stable_controlled_music_candidates", [])
-    observed = {item.get("provider_id"): item for item in [*immutable, *provisional, *stable_music]}
+    stable_speech = stable_speech_observation.get("stable_speech_candidates", [])
+    observed = {item.get("provider_id"): item for item in [*immutable, *provisional, *stable_music, *stable_speech]}
     expected = {
         "english_children_speech": ("english_children_speech_200495", "immutable_or_stable", ["speech"], 11),
         "gesma": ("gesma_18315044", "immutable_or_stable", ["natural"], 18),
@@ -110,6 +114,7 @@ def validate_plan(plan: dict[str, Any], root: Path = ROOT) -> list[str]:
         "wangleline_honey": ("wangleline_honey_bandcamp", "preservation_required_provisional", ["music", "mastered_music"], 9),
         "vienna_4x22": ("vienna_4x22_v1", "immutable_or_stable", ["music", "controlled_performance_music"], 22),
         "raga_ornamentation_detection": ("raga_ornamentation_detection_17851882_v4", "immutable_or_stable", ["music", "controlled_performance_music"], 2),
+        "vibravox": ("vibravox_hf_2727_revision_7990b7d", "immutable_or_stable", ["speech"], 188),
     }
     new_providers = {item.get("provider_id"): item for item in plan.get("new_providers", [])}
     if set(observed) != set(expected) or set(new_providers) != set(expected):
@@ -149,6 +154,13 @@ def validate_plan(plan: dict[str, Any], root: Path = ROOT) -> list[str]:
         "allocated_group_count": 0,
     }:
         errors.append("stable-music observation aggregate differs")
+    if stable_speech_observation.get("aggregate_observation") != {
+        "new_stable_speech_candidate_provider_count": 1,
+        "new_stable_speech_candidate_group_capacity": 188,
+        "qualified_reference_group_count": 0,
+        "allocated_group_count": 0,
+    }:
+        errors.append("stable-speech observation aggregate differs")
     for key, value in observation.get("observation_limits", {}).items():
         if value is not False:
             errors.append(f"observation limit must remain false: {key}")
@@ -211,6 +223,13 @@ def validate_plan(plan: dict[str, Any], root: Path = ROOT) -> list[str]:
         included = scenario.get("included_new_record_statuses")
         if not isinstance(included, list) or not included or not set(included) <= statuses:
             errors.append(f"scenario record-status filter differs: {scenario_id}")
+        expected_included = (
+            ["immutable_or_stable"]
+            if isinstance(scenario_id, str) and scenario_id.startswith("stable_record_")
+            else ["immutable_or_stable", "preservation_required_provisional"]
+        )
+        if included != expected_included:
+            errors.append(f"scenario status scope differs: {scenario_id}")
         for provider_id, capacity in scenario.get("capacity_overrides", {}).items():
             if provider_id not in known_providers or not isinstance(capacity, int) or capacity <= 0:
                 errors.append(f"scenario capacity override differs: {scenario_id}")
@@ -436,12 +455,13 @@ def build_report(plan: dict[str, Any], plan_path: Path = PLAN_PATH, implementati
             "recording_ceiling_clears_reference_120_each_partition": by_id["public_record_reference_120_recording_ceiling"]["arithmetic_feasible"],
             "conservative_relationship_floor_clears_reference_120_each_partition": by_id["public_record_reference_120_conservative_relationship_floor"]["arithmetic_feasible"],
             "stable_record_pool_clears_reference_120_each_partition": by_id["stable_record_reference_120_recording_ceiling"]["arithmetic_feasible"],
+            "stable_record_pool_at_conservative_relationship_floor_clears_reference_120_each_partition": by_id["stable_record_reference_120_conservative_relationship_floor"]["arithmetic_feasible"],
             "qualified_reference_group_count": 0,
             "allocated_group_count": 0,
             "source_successor_selected": False,
             "metric_successor_selected": False,
             "no_reference_work_eligible": False,
-            "next_responsible_human_decision": "Choose whether to authorize bounded preservation and exact-member metadata audit of the identified records, narrow the primary-domain claim, or reject the current truth-source design; this does not authorize audio access.",
+            "next_responsible_human_decision": "Choose whether to authorize bounded preservation and exact-member metadata audit of the identified records, narrow the mastered-music claim, or reject the current truth-source design; this does not authorize repository data-object or audio access.",
         },
         "claim_boundary": plan["claim_boundary"],
     }

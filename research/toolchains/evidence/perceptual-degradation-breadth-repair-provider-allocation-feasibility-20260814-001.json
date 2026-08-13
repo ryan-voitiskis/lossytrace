@@ -17,7 +17,7 @@
     "allocated_group_count": 0,
     "conservative_relationship_floor_clears_reference_120_each_partition": true,
     "metric_successor_selected": false,
-    "next_responsible_human_decision": "Choose whether to authorize bounded preservation and exact-member metadata audit of the identified records, narrow the primary-domain claim, or reject the current truth-source design; this does not authorize audio access.",
+    "next_responsible_human_decision": "Choose whether to authorize bounded preservation and exact-member metadata audit of the identified records, narrow the mastered-music claim, or reject the current truth-source design; this does not authorize repository data-object or audio access.",
     "no_reference_work_eligible": false,
     "public_record_pool_clears_mastered_music_every_partition": true,
     "public_record_pool_clears_three_domains_every_partition": true,
@@ -25,35 +25,45 @@
     "qualified_reference_group_count": 0,
     "recording_ceiling_clears_reference_120_each_partition": true,
     "source_successor_selected": false,
+    "stable_record_pool_at_conservative_relationship_floor_clears_reference_120_each_partition": true,
     "stable_record_pool_clears_mastered_music_every_partition": false,
-    "stable_record_pool_clears_reference_120_each_partition": false,
-    "stable_record_pool_clears_three_domains_every_partition": false
+    "stable_record_pool_clears_reference_120_each_partition": true,
+    "stable_record_pool_clears_three_domains_every_partition": true
   },
   "exact_members_selected": false,
   "human_collection_authorized": false,
-  "implementation_sha256": "41595eb2181e6f55b2d41acdc84affe401d1ea5b1f5c2017db480d7e32aace46",
+  "implementation_sha256": "058a14f8f42e628a8851768d49221490256ccfc088a5e85852fc3ecd7494b276",
   "metrics_executed": false,
   "plan_id": "perceptual-degradation-breadth-repair-provider-allocation-feasibility-20260814-001",
-  "plan_sha256": "a1a2c863ed5894fd6e8a1ccaaed2835f9ad57be8b6188680a12fd9c35929a8e9",
+  "plan_sha256": "c585bdad92013da0e7590ac415efb7b517f35851cd1223892359fb4729424308",
   "public_verdict_enabled": false,
   "report_id": "perceptual-degradation-breadth-repair-provider-allocation-feasibility-20260814-001",
   "scenario_results": [
     {
       "arithmetic_feasible": true,
       "available_capacity_by_partition": {
-        "calibration": 103,
-        "development": 106,
-        "final_validation": 83,
-        "transfer": 92
+        "calibration": 142,
+        "development": 241,
+        "final_validation": 84,
+        "transfer": 94
       },
       "capacity_overrides": {},
       "capacity_witness": [
+        {
+          "available_group_capacity": 188,
+          "capabilities": [
+            "speech"
+          ],
+          "partition": "development",
+          "provider_id": "vibravox",
+          "record_status": "immutable_or_stable"
+        },
         {
           "available_group_capacity": 67,
           "capabilities": [
             "natural"
           ],
-          "partition": "development",
+          "partition": "calibration",
           "provider_id": "datastorre_acoustic_examples",
           "record_status": "immutable_or_stable"
         },
@@ -62,7 +72,7 @@
           "capabilities": [
             "speech"
           ],
-          "partition": "calibration",
+          "partition": "transfer",
           "provider_id": "vctk_clean",
           "record_status": "predecessor_bound_candidate"
         },
@@ -71,7 +81,7 @@
           "capabilities": [
             "speech"
           ],
-          "partition": "transfer",
+          "partition": "final_validation",
           "provider_id": "lombard_grid",
           "record_status": "predecessor_bound_candidate"
         },
@@ -80,7 +90,7 @@
           "capabilities": [
             "speech"
           ],
-          "partition": "final_validation",
+          "partition": "calibration",
           "provider_id": "icsi_meeting",
           "record_status": "preservation_required_provisional"
         },
@@ -99,7 +109,7 @@
           "capabilities": [
             "natural"
           ],
-          "partition": "calibration",
+          "partition": "development",
           "provider_id": "satp",
           "record_status": "predecessor_bound_candidate"
         },
@@ -150,48 +160,152 @@
           "partition": "final_validation",
           "provider_id": "sonyc_backgrounds",
           "record_status": "predecessor_bound_candidate"
-        },
-        {
-          "available_group_capacity": 11,
-          "capabilities": [
-            "speech"
-          ],
-          "partition": "development",
-          "provider_id": "english_children_speech",
-          "record_status": "immutable_or_stable"
         }
       ],
-      "eligible_available_group_capacity": 2140,
-      "eligible_provider_count": 20,
+      "eligible_available_group_capacity": 2328,
+      "eligible_provider_count": 21,
       "exact_member_selection_frozen": false,
       "expected_arithmetic_feasible": true,
       "included_new_record_statuses": [
         "immutable_or_stable",
         "preservation_required_provisional"
       ],
-      "reason_not_eligible": "the fourth speech provider is an unpreserved mutable public record and no exact members or relationships are audited",
+      "reason_not_eligible": "the stable VibraVox capacity is public-record arithmetic only and no exact members or relationships are audited",
       "result_matches_frozen_expectation": true,
       "scenario_id": "public_record_three_domains_every_partition",
       "scientifically_eligible": false
     },
     {
-      "arithmetic_feasible": false,
+      "arithmetic_feasible": true,
       "available_capacity_by_partition": {
-        "calibration": 0,
-        "development": 0,
-        "final_validation": 0,
-        "transfer": 0
+        "calibration": 100,
+        "development": 241,
+        "final_validation": 79,
+        "transfer": 89
       },
       "capacity_overrides": {},
-      "capacity_witness": [],
-      "eligible_available_group_capacity": 2050,
-      "eligible_provider_count": 16,
+      "capacity_witness": [
+        {
+          "available_group_capacity": 188,
+          "capabilities": [
+            "speech"
+          ],
+          "partition": "development",
+          "provider_id": "vibravox",
+          "record_status": "immutable_or_stable"
+        },
+        {
+          "available_group_capacity": 67,
+          "capabilities": [
+            "natural"
+          ],
+          "partition": "calibration",
+          "provider_id": "datastorre_acoustic_examples",
+          "record_status": "immutable_or_stable"
+        },
+        {
+          "available_group_capacity": 56,
+          "capabilities": [
+            "speech"
+          ],
+          "partition": "transfer",
+          "provider_id": "vctk_clean",
+          "record_status": "predecessor_bound_candidate"
+        },
+        {
+          "available_group_capacity": 54,
+          "capabilities": [
+            "speech"
+          ],
+          "partition": "final_validation",
+          "provider_id": "lombard_grid",
+          "record_status": "predecessor_bound_candidate"
+        },
+        {
+          "available_group_capacity": 28,
+          "capabilities": [
+            "music",
+            "controlled_performance_music"
+          ],
+          "partition": "development",
+          "provider_id": "urmp",
+          "record_status": "predecessor_bound_candidate"
+        },
+        {
+          "available_group_capacity": 25,
+          "capabilities": [
+            "natural"
+          ],
+          "partition": "development",
+          "provider_id": "satp",
+          "record_status": "predecessor_bound_candidate"
+        },
+        {
+          "available_group_capacity": 22,
+          "capabilities": [
+            "music",
+            "controlled_performance_music"
+          ],
+          "partition": "calibration",
+          "provider_id": "vienna_4x22",
+          "record_status": "immutable_or_stable"
+        },
+        {
+          "available_group_capacity": 18,
+          "capabilities": [
+            "natural"
+          ],
+          "partition": "transfer",
+          "provider_id": "gesma",
+          "record_status": "immutable_or_stable"
+        },
+        {
+          "available_group_capacity": 15,
+          "capabilities": [
+            "music",
+            "controlled_performance_music"
+          ],
+          "partition": "transfer",
+          "provider_id": "good_sounds",
+          "record_status": "predecessor_bound_candidate"
+        },
+        {
+          "available_group_capacity": 15,
+          "capabilities": [
+            "natural"
+          ],
+          "partition": "final_validation",
+          "provider_id": "sonyc_backgrounds",
+          "record_status": "predecessor_bound_candidate"
+        },
+        {
+          "available_group_capacity": 11,
+          "capabilities": [
+            "speech"
+          ],
+          "partition": "calibration",
+          "provider_id": "english_children_speech",
+          "record_status": "immutable_or_stable"
+        },
+        {
+          "available_group_capacity": 10,
+          "capabilities": [
+            "music",
+            "mastered_music"
+          ],
+          "partition": "final_validation",
+          "provider_id": "albumdb",
+          "record_status": "predecessor_bound_candidate"
+        }
+      ],
+      "eligible_available_group_capacity": 2238,
+      "eligible_provider_count": 17,
       "exact_member_selection_frozen": false,
-      "expected_arithmetic_feasible": false,
+      "expected_arithmetic_feasible": true,
       "included_new_record_statuses": [
         "immutable_or_stable"
       ],
-      "reason_not_eligible": "excluding preservation-required ICSI leaves only three speech providers for four provider-pure partitions",
+      "reason_not_eligible": "the fourth stable speech provider is a content-addressed metadata candidate, not a preserved and exact-member-audited allocation",
       "result_matches_frozen_expectation": true,
       "scenario_id": "stable_record_three_domains_every_partition",
       "scientifically_eligible": false
@@ -199,10 +313,10 @@
     {
       "arithmetic_feasible": true,
       "available_capacity_by_partition": {
-        "calibration": 66,
-        "development": 74,
+        "calibration": 77,
+        "development": 76,
         "final_validation": 1718,
-        "transfer": 76
+        "transfer": 197
       },
       "capacity_overrides": {},
       "capacity_witness": [
@@ -256,11 +370,20 @@
           "record_status": "predecessor_bound_candidate"
         },
         {
+          "available_group_capacity": 188,
+          "capabilities": [
+            "speech"
+          ],
+          "partition": "transfer",
+          "provider_id": "vibravox",
+          "record_status": "immutable_or_stable"
+        },
+        {
           "available_group_capacity": 67,
           "capabilities": [
             "natural"
           ],
-          "partition": "transfer",
+          "partition": "calibration",
           "provider_id": "datastorre_acoustic_examples",
           "record_status": "immutable_or_stable"
         },
@@ -269,22 +392,13 @@
           "capabilities": [
             "speech"
           ],
-          "partition": "calibration",
-          "provider_id": "vctk_clean",
-          "record_status": "predecessor_bound_candidate"
-        },
-        {
-          "available_group_capacity": 54,
-          "capabilities": [
-            "speech"
-          ],
           "partition": "development",
-          "provider_id": "lombard_grid",
+          "provider_id": "vctk_clean",
           "record_status": "predecessor_bound_candidate"
         }
       ],
-      "eligible_available_group_capacity": 2140,
-      "eligible_provider_count": 20,
+      "eligible_available_group_capacity": 2328,
+      "eligible_provider_count": 21,
       "exact_member_selection_frozen": false,
       "expected_arithmetic_feasible": true,
       "included_new_record_statuses": [
@@ -306,8 +420,8 @@
       },
       "capacity_overrides": {},
       "capacity_witness": [],
-      "eligible_available_group_capacity": 2050,
-      "eligible_provider_count": 16,
+      "eligible_available_group_capacity": 2238,
+      "eligible_provider_count": 17,
       "exact_member_selection_frozen": false,
       "expected_arithmetic_feasible": false,
       "included_new_record_statuses": [
@@ -322,9 +436,9 @@
       "arithmetic_feasible": true,
       "available_capacity_by_partition": {
         "calibration": 1710,
-        "development": 73,
-        "final_validation": 84,
-        "transfer": 67
+        "development": 84,
+        "final_validation": 86,
+        "transfer": 188
       },
       "capacity_overrides": {},
       "capacity_witness": [
@@ -378,11 +492,20 @@
           "record_status": "predecessor_bound_candidate"
         },
         {
+          "available_group_capacity": 188,
+          "capabilities": [
+            "speech"
+          ],
+          "partition": "transfer",
+          "provider_id": "vibravox",
+          "record_status": "immutable_or_stable"
+        },
+        {
           "available_group_capacity": 67,
           "capabilities": [
             "natural"
           ],
-          "partition": "transfer",
+          "partition": "development",
           "provider_id": "datastorre_acoustic_examples",
           "record_status": "immutable_or_stable"
         },
@@ -391,22 +514,13 @@
           "capabilities": [
             "speech"
           ],
-          "partition": "development",
-          "provider_id": "vctk_clean",
-          "record_status": "predecessor_bound_candidate"
-        },
-        {
-          "available_group_capacity": 54,
-          "capabilities": [
-            "speech"
-          ],
           "partition": "final_validation",
-          "provider_id": "lombard_grid",
+          "provider_id": "vctk_clean",
           "record_status": "predecessor_bound_candidate"
         }
       ],
-      "eligible_available_group_capacity": 2140,
-      "eligible_provider_count": 20,
+      "eligible_available_group_capacity": 2328,
+      "eligible_provider_count": 21,
       "exact_member_selection_frozen": false,
       "expected_arithmetic_feasible": true,
       "included_new_record_statuses": [
@@ -421,10 +535,10 @@
     {
       "arithmetic_feasible": true,
       "available_capacity_by_partition": {
-        "calibration": 120,
+        "calibration": 188,
         "development": 1710,
-        "final_validation": 128,
-        "transfer": 125
+        "final_validation": 138,
+        "transfer": 120
       },
       "capacity_overrides": {},
       "capacity_witness": [
@@ -438,11 +552,20 @@
           "record_status": "predecessor_bound_candidate"
         },
         {
+          "available_group_capacity": 188,
+          "capabilities": [
+            "speech"
+          ],
+          "partition": "calibration",
+          "provider_id": "vibravox",
+          "record_status": "immutable_or_stable"
+        },
+        {
           "available_group_capacity": 67,
           "capabilities": [
             "natural"
           ],
-          "partition": "calibration",
+          "partition": "transfer",
           "provider_id": "datastorre_acoustic_examples",
           "record_status": "immutable_or_stable"
         },
@@ -451,7 +574,7 @@
           "capabilities": [
             "speech"
           ],
-          "partition": "transfer",
+          "partition": "final_validation",
           "provider_id": "vctk_clean",
           "record_status": "predecessor_bound_candidate"
         },
@@ -460,7 +583,7 @@
           "capabilities": [
             "speech"
           ],
-          "partition": "transfer",
+          "partition": "final_validation",
           "provider_id": "lombard_grid",
           "record_status": "predecessor_bound_candidate"
         },
@@ -469,7 +592,7 @@
           "capabilities": [
             "speech"
           ],
-          "partition": "calibration",
+          "partition": "transfer",
           "provider_id": "icsi_meeting",
           "record_status": "preservation_required_provisional"
         },
@@ -482,74 +605,17 @@
           "partition": "final_validation",
           "provider_id": "urmp",
           "record_status": "predecessor_bound_candidate"
-        },
-        {
-          "available_group_capacity": 25,
-          "capabilities": [
-            "natural"
-          ],
-          "partition": "final_validation",
-          "provider_id": "satp",
-          "record_status": "predecessor_bound_candidate"
-        },
-        {
-          "available_group_capacity": 22,
-          "capabilities": [
-            "music",
-            "controlled_performance_music"
-          ],
-          "partition": "final_validation",
-          "provider_id": "vienna_4x22",
-          "record_status": "immutable_or_stable"
-        },
-        {
-          "available_group_capacity": 20,
-          "capabilities": [
-            "music",
-            "mastered_music"
-          ],
-          "partition": "final_validation",
-          "provider_id": "stranger_self_imposed_exile",
-          "record_status": "preservation_required_provisional"
-        },
-        {
-          "available_group_capacity": 18,
-          "capabilities": [
-            "natural"
-          ],
-          "partition": "final_validation",
-          "provider_id": "gesma",
-          "record_status": "immutable_or_stable"
-        },
-        {
-          "available_group_capacity": 15,
-          "capabilities": [
-            "music",
-            "controlled_performance_music"
-          ],
-          "partition": "transfer",
-          "provider_id": "good_sounds",
-          "record_status": "predecessor_bound_candidate"
-        },
-        {
-          "available_group_capacity": 15,
-          "capabilities": [
-            "natural"
-          ],
-          "partition": "final_validation",
-          "provider_id": "sonyc_backgrounds",
-          "record_status": "predecessor_bound_candidate"
         }
       ],
-      "eligible_available_group_capacity": 2140,
-      "eligible_provider_count": 20,
+      "eligible_available_group_capacity": 2328,
+      "eligible_provider_count": 21,
       "exact_member_selection_frozen": false,
       "expected_arithmetic_feasible": true,
       "included_new_record_statuses": [
         "immutable_or_stable",
         "preservation_required_provisional"
       ],
-      "reason_not_eligible": "feasibility depends on treating all 67 DataSTORRE recording files as separate groups before relationship collapse",
+      "reason_not_eligible": "feasibility uses DataSTORRE's 67-recording ceiling plus unaudited stable candidate capacities and selects no exact members",
       "result_matches_frozen_expectation": true,
       "scenario_id": "public_record_reference_120_recording_ceiling",
       "scientifically_eligible": false
@@ -557,10 +623,10 @@
     {
       "arithmetic_feasible": true,
       "available_capacity_by_partition": {
-        "calibration": 120,
+        "calibration": 188,
         "development": 1710,
-        "final_validation": 123,
-        "transfer": 125
+        "final_validation": 128,
+        "transfer": 130
       },
       "capacity_overrides": {
         "datastorre_acoustic_examples": 8
@@ -576,11 +642,20 @@
           "record_status": "predecessor_bound_candidate"
         },
         {
-          "available_group_capacity": 56,
+          "available_group_capacity": 188,
           "capabilities": [
             "speech"
           ],
           "partition": "calibration",
+          "provider_id": "vibravox",
+          "record_status": "immutable_or_stable"
+        },
+        {
+          "available_group_capacity": 56,
+          "capabilities": [
+            "speech"
+          ],
+          "partition": "transfer",
           "provider_id": "vctk_clean",
           "record_status": "predecessor_bound_candidate"
         },
@@ -589,7 +664,7 @@
           "capabilities": [
             "speech"
           ],
-          "partition": "calibration",
+          "partition": "transfer",
           "provider_id": "lombard_grid",
           "record_status": "predecessor_bound_candidate"
         },
@@ -598,9 +673,117 @@
           "capabilities": [
             "speech"
           ],
-          "partition": "transfer",
+          "partition": "final_validation",
           "provider_id": "icsi_meeting",
           "record_status": "preservation_required_provisional"
+        },
+        {
+          "available_group_capacity": 28,
+          "capabilities": [
+            "music",
+            "controlled_performance_music"
+          ],
+          "partition": "final_validation",
+          "provider_id": "urmp",
+          "record_status": "predecessor_bound_candidate"
+        },
+        {
+          "available_group_capacity": 25,
+          "capabilities": [
+            "natural"
+          ],
+          "partition": "final_validation",
+          "provider_id": "satp",
+          "record_status": "predecessor_bound_candidate"
+        },
+        {
+          "available_group_capacity": 22,
+          "capabilities": [
+            "music",
+            "controlled_performance_music"
+          ],
+          "partition": "final_validation",
+          "provider_id": "vienna_4x22",
+          "record_status": "immutable_or_stable"
+        },
+        {
+          "available_group_capacity": 20,
+          "capabilities": [
+            "music",
+            "mastered_music"
+          ],
+          "partition": "transfer",
+          "provider_id": "stranger_self_imposed_exile",
+          "record_status": "preservation_required_provisional"
+        }
+      ],
+      "eligible_available_group_capacity": 2269,
+      "eligible_provider_count": 21,
+      "exact_member_selection_frozen": false,
+      "expected_arithmetic_feasible": true,
+      "included_new_record_statuses": [
+        "immutable_or_stable",
+        "preservation_required_provisional"
+      ],
+      "reason_not_eligible": "the repaired count uses unaudited public-record capacities and selects no exact members; provisional records are included but are no longer necessary for count feasibility",
+      "result_matches_frozen_expectation": true,
+      "scenario_id": "public_record_reference_120_conservative_relationship_floor",
+      "scientifically_eligible": false
+    },
+    {
+      "arithmetic_feasible": true,
+      "available_capacity_by_partition": {
+        "calibration": 188,
+        "development": 1710,
+        "final_validation": 132,
+        "transfer": 120
+      },
+      "capacity_overrides": {},
+      "capacity_witness": [
+        {
+          "available_group_capacity": 1710,
+          "capabilities": [
+            "synthetic"
+          ],
+          "partition": "development",
+          "provider_id": "slakh",
+          "record_status": "predecessor_bound_candidate"
+        },
+        {
+          "available_group_capacity": 188,
+          "capabilities": [
+            "speech"
+          ],
+          "partition": "calibration",
+          "provider_id": "vibravox",
+          "record_status": "immutable_or_stable"
+        },
+        {
+          "available_group_capacity": 67,
+          "capabilities": [
+            "natural"
+          ],
+          "partition": "transfer",
+          "provider_id": "datastorre_acoustic_examples",
+          "record_status": "immutable_or_stable"
+        },
+        {
+          "available_group_capacity": 56,
+          "capabilities": [
+            "speech"
+          ],
+          "partition": "final_validation",
+          "provider_id": "vctk_clean",
+          "record_status": "predecessor_bound_candidate"
+        },
+        {
+          "available_group_capacity": 54,
+          "capabilities": [
+            "speech"
+          ],
+          "partition": "final_validation",
+          "provider_id": "lombard_grid",
+          "record_status": "predecessor_bound_candidate"
         },
         {
           "available_group_capacity": 28,
@@ -630,16 +813,96 @@
           "partition": "final_validation",
           "provider_id": "vienna_4x22",
           "record_status": "immutable_or_stable"
+        }
+      ],
+      "eligible_available_group_capacity": 2238,
+      "eligible_provider_count": 17,
+      "exact_member_selection_frozen": false,
+      "expected_arithmetic_feasible": true,
+      "included_new_record_statuses": [
+        "immutable_or_stable"
+      ],
+      "reason_not_eligible": "the stable-only count uses public-record capacity ceilings without exact-member or relationship audit",
+      "result_matches_frozen_expectation": true,
+      "scenario_id": "stable_record_reference_120_recording_ceiling",
+      "scientifically_eligible": false
+    },
+    {
+      "arithmetic_feasible": true,
+      "available_capacity_by_partition": {
+        "calibration": 188,
+        "development": 1710,
+        "final_validation": 123,
+        "transfer": 121
+      },
+      "capacity_overrides": {
+        "datastorre_acoustic_examples": 8
+      },
+      "capacity_witness": [
+        {
+          "available_group_capacity": 1710,
+          "capabilities": [
+            "synthetic"
+          ],
+          "partition": "development",
+          "provider_id": "slakh",
+          "record_status": "predecessor_bound_candidate"
         },
         {
-          "available_group_capacity": 20,
+          "available_group_capacity": 188,
+          "capabilities": [
+            "speech"
+          ],
+          "partition": "calibration",
+          "provider_id": "vibravox",
+          "record_status": "immutable_or_stable"
+        },
+        {
+          "available_group_capacity": 56,
+          "capabilities": [
+            "speech"
+          ],
+          "partition": "transfer",
+          "provider_id": "vctk_clean",
+          "record_status": "predecessor_bound_candidate"
+        },
+        {
+          "available_group_capacity": 54,
+          "capabilities": [
+            "speech"
+          ],
+          "partition": "transfer",
+          "provider_id": "lombard_grid",
+          "record_status": "predecessor_bound_candidate"
+        },
+        {
+          "available_group_capacity": 28,
           "capabilities": [
             "music",
-            "mastered_music"
+            "controlled_performance_music"
           ],
           "partition": "final_validation",
-          "provider_id": "stranger_self_imposed_exile",
-          "record_status": "preservation_required_provisional"
+          "provider_id": "urmp",
+          "record_status": "predecessor_bound_candidate"
+        },
+        {
+          "available_group_capacity": 25,
+          "capabilities": [
+            "natural"
+          ],
+          "partition": "final_validation",
+          "provider_id": "satp",
+          "record_status": "predecessor_bound_candidate"
+        },
+        {
+          "available_group_capacity": 22,
+          "capabilities": [
+            "music",
+            "controlled_performance_music"
+          ],
+          "partition": "final_validation",
+          "provider_id": "vienna_4x22",
+          "record_status": "immutable_or_stable"
         },
         {
           "available_group_capacity": 18,
@@ -677,100 +940,18 @@
           "partition": "transfer",
           "provider_id": "english_children_speech",
           "record_status": "immutable_or_stable"
-        },
-        {
-          "available_group_capacity": 10,
-          "capabilities": [
-            "music",
-            "mastered_music"
-          ],
-          "partition": "calibration",
-          "provider_id": "albumdb",
-          "record_status": "predecessor_bound_candidate"
-        },
-        {
-          "available_group_capacity": 10,
-          "capabilities": [
-            "music",
-            "controlled_performance_music"
-          ],
-          "partition": "final_validation",
-          "provider_id": "choralebricks",
-          "record_status": "predecessor_bound_candidate"
-        },
-        {
-          "available_group_capacity": 9,
-          "capabilities": [
-            "music",
-            "mastered_music"
-          ],
-          "partition": "final_validation",
-          "provider_id": "wangleline_honey",
-          "record_status": "preservation_required_provisional"
-        },
-        {
-          "available_group_capacity": 8,
-          "capabilities": [
-            "natural"
-          ],
-          "partition": "final_validation",
-          "provider_id": "datastorre_acoustic_examples",
-          "record_status": "immutable_or_stable"
-        },
-        {
-          "available_group_capacity": 8,
-          "capabilities": [
-            "music",
-            "mastered_music"
-          ],
-          "partition": "transfer",
-          "provider_id": "grumbles_pretty_bad_good",
-          "record_status": "preservation_required_provisional"
-        },
-        {
-          "available_group_capacity": 6,
-          "capabilities": [
-            "music",
-            "controlled_performance_music"
-          ],
-          "partition": "final_validation",
-          "provider_id": "guitarset",
-          "record_status": "predecessor_bound_candidate"
         }
       ],
-      "eligible_available_group_capacity": 2081,
-      "eligible_provider_count": 20,
+      "eligible_available_group_capacity": 2179,
+      "eligible_provider_count": 17,
       "exact_member_selection_frozen": false,
       "expected_arithmetic_feasible": true,
       "included_new_record_statuses": [
-        "immutable_or_stable",
-        "preservation_required_provisional"
-      ],
-      "reason_not_eligible": "the repaired count still depends on preservation-required ICSI and Bandcamp records plus unaudited controlled-music capacities and selects no exact members",
-      "result_matches_frozen_expectation": true,
-      "scenario_id": "public_record_reference_120_conservative_relationship_floor",
-      "scientifically_eligible": false
-    },
-    {
-      "arithmetic_feasible": false,
-      "available_capacity_by_partition": {
-        "calibration": 0,
-        "development": 0,
-        "final_validation": 0,
-        "transfer": 0
-      },
-      "capacity_overrides": {},
-      "capacity_witness": [],
-      "eligible_available_group_capacity": 2050,
-      "eligible_provider_count": 16,
-      "exact_member_selection_frozen": false,
-      "expected_arithmetic_feasible": false,
-      "included_new_record_statuses": [
         "immutable_or_stable"
       ],
-      "reason_not_eligible": "even at DataSTORRE's recording ceiling the stable-only non-Slakh capacity cannot fill the other three 120-group partitions",
+      "reason_not_eligible": "the stable-only count remains public-record arithmetic with unaudited participant, performer, recording and derivative relationships",
       "result_matches_frozen_expectation": true,
-      "scenario_id": "stable_record_reference_120_recording_ceiling",
+      "scenario_id": "stable_record_reference_120_conservative_relationship_floor",
       "scientifically_eligible": false
     }
   ],
