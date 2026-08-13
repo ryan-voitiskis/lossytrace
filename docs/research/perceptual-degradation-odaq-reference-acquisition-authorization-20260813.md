@@ -42,6 +42,15 @@ continues to reject float WAV. Any listening stimulus therefore requires a
 separately frozen deterministic conversion to integer PCM; no browser or
 platform decoder may convert it implicitly.
 
+After seven references were journaled, the next member was observed as
+WAVE_FORMAT_EXTENSIBLE with the canonical 24-bit integer PCM subtype. The
+acquisition parser may record that container and its channel mask explicitly;
+the version-1 browser remains unchanged. To permit safe resume across these
+implementation-only corrections, the acquisition journal identity is frozen
+to SHA-256 `a328198da9bf4e2c6061db69c4fd961884360074a90b432f53b0ebf739cbf5d3`,
+the exact authorization under which the successful journal began. Provider,
+reference inventory, and every access boundary remain unchanged.
+
 ## Remaining boundary
 
 This authorization enables only bounded reference acquisition. It does not

@@ -77,6 +77,37 @@ def float_wav(seed: int) -> bytes:
     return b"RIFF" + struct.pack("<I", len(body)) + body
 
 
+def extensible_pcm_wav(seed: int) -> bytes:
+    frame_count = 256
+    channels = 2
+    sample_rate = 48_000
+    block_align = channels * 3
+    samples = bytearray()
+    for index in range(frame_count):
+        sample = ((index * (seed + 1)) % 2**22) - 2**21
+        encoded = int(sample).to_bytes(3, "little", signed=True)
+        samples.extend(encoded + encoded)
+
+    def chunk(chunk_id: bytes, payload: bytes) -> bytes:
+        padding = b"\0" if len(payload) & 1 else b""
+        return chunk_id + struct.pack("<I", len(payload)) + payload + padding
+
+    fmt = struct.pack(
+        "<HHIIHHHHI",
+        0xFFFE,
+        channels,
+        sample_rate,
+        sample_rate * block_align,
+        block_align,
+        24,
+        22,
+        24,
+        0,
+    ) + MODULE.PCM_SUBFORMAT_GUID
+    body = b"WAVE" + chunk(b"fmt ", fmt) + chunk(b"data", bytes(samples))
+    return b"RIFF" + struct.pack("<I", len(body)) + body
+
+
 def fixture() -> tuple[dict, bytes]:
     groups = [
         ("LP_fixture-a", "fixture-a"),
@@ -288,6 +319,56 @@ class OdaqReferenceExtractorTest(unittest.TestCase):
                 "sample_encoding": "ieee_float_pcm",
             },
             state["completed"][0]["pcm_geometry"],
+        )
+
+    def test_extensible_integer_reference_geometry_is_explicit(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            path = Path(temporary) / "extensible.wav"
+            path.write_bytes(extensible_pcm_wav(3))
+            self.assertEqual(
+                {
+                    "sample_rate_hz": 48_000,
+                    "channel_count": 2,
+                    "bit_depth": 24,
+                    "frame_count": 256,
+                    "sample_encoding": "signed_integer_pcm",
+                    "container_encoding": "wave_format_extensible",
+                    "channel_mask": 0,
+                },
+                MODULE.wav_facts(path),
+            )
+
+    def test_acquisition_identity_can_pin_a_started_journal(self) -> None:
+        freeze = json.loads(FREEZE.read_text(encoding="utf-8"))
+        authorization = {
+            "schema_version": 1,
+            "state": "reference_audio_acquisition_authorized",
+            "parent_freeze_sha256": MODULE.sha256_file(FREEZE),
+            "source_track": "permissive_odaq_cc_by_cc0",
+            "responsible_human_source_choice_present": True,
+            "physical_playback_declaration_present": True,
+            "reference_audio_acquisition_authorized": True,
+            "processed_condition_access_authorized": False,
+            "listening_score_access_authorized": False,
+            "stimulus_generation_authorized": False,
+            "perceptual_metric_execution_authorized": False,
+            "listener_response_collection_authorized": False,
+            "acquisition_identity_sha256": "2" * 64,
+            "provider": freeze["provider"],
+            "references": freeze["references"],
+        }
+        self.assertEqual(
+            [],
+            MODULE.validate_live_authorization(
+                authorization, freeze, MODULE.sha256_file(FREEZE)
+            ),
+        )
+        authorization["acquisition_identity_sha256"] = "invalid"
+        self.assertIn(
+            "acquisition identity SHA-256 is invalid",
+            MODULE.validate_live_authorization(
+                authorization, freeze, MODULE.sha256_file(FREEZE)
+            ),
         )
 
     def test_zip_binding_mismatch_stops_before_member_write(self) -> None:

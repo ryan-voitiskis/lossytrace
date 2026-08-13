@@ -49,6 +49,10 @@ def validate(authorization: dict[str, Any], freeze: dict[str, Any]) -> list[str]
         errors.append("authorization identity differs")
     if authorization.get("authorized_on") != "2026-08-13":
         errors.append("authorization date differs")
+    if authorization.get("acquisition_identity_sha256") != (
+        "a328198da9bf4e2c6061db69c4fd961884360074a90b432f53b0ebf739cbf5d3"
+    ):
+        errors.append("acquisition identity differs")
 
     bindings = authorization.get("bindings", {})
     expected_binding_ids = {

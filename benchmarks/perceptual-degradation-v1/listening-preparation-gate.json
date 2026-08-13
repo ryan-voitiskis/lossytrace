@@ -225,7 +225,7 @@
     },
     "mastered_music_playback_qualification_plan": {
       "path": "benchmarks/perceptual-degradation-v1/mastered-music-playback-qualification-plan.json",
-      "sha256": "08f5b093cc8e249893848ba29e81cfcd9298e24a870e1b59155d7158fb82e9d5"
+      "sha256": "e59c80fad02cd23d9223baa988090301d3b42d63a0e8ac1a8edf5c0bed1cfd2b"
     },
     "mastered_music_playback_qualification_report": {
       "path": "docs/research/perceptual-degradation-mastered-music-playback-qualification-20260804.md",
@@ -273,7 +273,7 @@
     },
     "odaq_reference_extractor_preparation": {
       "path": "benchmarks/perceptual-degradation-v1/odaq-reference-extractor-preparation-plan.json",
-      "sha256": "640c95f8c5edb0a975a4ca0fbb44403df9971fbcabf05f3b01c4a45342dd868d"
+      "sha256": "7d8ebd27dc1dfcb958e37a1eb3d8532a5a1249c455d597797da7ec4f9eedecd1"
     },
     "odaq_reference_extractor_report": {
       "path": "docs/research/perceptual-degradation-odaq-reference-extractor-preparation-20260804.md",
@@ -281,11 +281,11 @@
     },
     "odaq_reference_extractor": {
       "path": "scripts/acquire-perceptual-degradation-odaq-references.py",
-      "sha256": "714f983a98841f45f955882b72c082aeceae5f427ba82e816909d0c1a44be05c"
+      "sha256": "9b288b22061646111ff523ba4021e04d810514f0cc64f6614d6f311e9dc7f34c"
     },
     "odaq_reference_extractor_tests": {
       "path": "scripts/tests/test_perceptual_degradation_odaq_reference_extractor.py",
-      "sha256": "5b6cbbb2112370db023a1727284e03e514dd5ebaf79c5101d5cc9b8671dd50c7"
+      "sha256": "afdce181094cbb1254795862f645fc18316c5af75063a731fd02b4c057254082"
     }
   },
   "unresolved_operational_fields": [

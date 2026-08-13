@@ -47,6 +47,8 @@ READ_BYTES = 1024 * 1024
 LIVE_MAXIMUM_RANGE_BYTES = 56 * 1024 * 1024
 LIVE_BLOCK_BYTES = 64 * 1024
 LIVE_CACHE_BLOCKS = 16
+PCM_SUBFORMAT_GUID = bytes.fromhex("0100000000001000800000aa00389b71")
+FLOAT_SUBFORMAT_GUID = bytes.fromhex("0300000000001000800000aa00389b71")
 REFERENCE_FREEZE_SHA256 = (
     "1a39f50013a4274f60ca7c1771ebad22dcafda6950db87d2ffe4acdfb58ab0e7"
 )
@@ -268,6 +270,11 @@ def validate_live_authorization(
         errors.append("physical playback declaration is absent")
     if authorization.get("reference_audio_acquisition_authorized") is not True:
         errors.append("reference audio acquisition flag is false")
+    acquisition_identity = authorization.get("acquisition_identity_sha256")
+    if acquisition_identity is not None and not SHA256.fullmatch(
+        str(acquisition_identity)
+    ):
+        errors.append("acquisition identity SHA-256 is invalid")
     for key in (
         "processed_condition_access_authorized",
         "listening_score_access_authorized",
@@ -378,7 +385,7 @@ def wav_facts(path: Path) -> dict[str, int | str]:
         if riff_bytes + 8 != file_bytes:
             raise ValueError("extracted RIFF byte length differs")
 
-        format_fields: tuple[int, int, int, int, int, int] | None = None
+        format_payload: bytes | None = None
         data_bytes: int | None = None
         fact_frames: int | None = None
         while source.tell() < file_bytes:
@@ -393,11 +400,12 @@ def wav_facts(path: Path) -> dict[str, int | str]:
             if padded_end > file_bytes:
                 raise ValueError("extracted WAV chunk exceeds RIFF length")
             if chunk_id == b"fmt ":
-                if format_fields is not None or chunk_bytes not in {16, 18}:
+                if format_payload is not None or chunk_bytes not in {16, 18, 40}:
                     raise ValueError("extracted WAV format chunk differs")
-                payload = source.read(chunk_bytes)
-                format_fields = struct.unpack_from("<HHIIHH", payload)
-                if chunk_bytes == 18 and struct.unpack_from("<H", payload, 16)[0] != 0:
+                format_payload = source.read(chunk_bytes)
+                if chunk_bytes == 18 and struct.unpack_from(
+                    "<H", format_payload, 16
+                )[0] != 0:
                     raise ValueError("extracted WAV format extension is unsupported")
             elif chunk_id == b"fact":
                 if fact_frames is not None or chunk_bytes != 4:
@@ -409,9 +417,31 @@ def wav_facts(path: Path) -> dict[str, int | str]:
                 data_bytes = chunk_bytes
             source.seek(padded_end)
 
-    if format_fields is None or data_bytes is None:
+    if format_payload is None or data_bytes is None:
         raise ValueError("extracted WAV is missing format or data")
-    format_tag, channels, sample_rate, byte_rate, block_align, bits = format_fields
+    format_tag, channels, sample_rate, byte_rate, block_align, bits = (
+        struct.unpack_from("<HHIIHH", format_payload)
+    )
+    extensible_facts: dict[str, int | str] = {}
+    if format_tag == 0xFFFE:
+        if len(format_payload) != 40:
+            raise ValueError("extracted extensible WAV format chunk differs")
+        extension_bytes, valid_bits, channel_mask = struct.unpack_from(
+            "<HHI", format_payload, 16
+        )
+        if extension_bytes != 22 or valid_bits != bits:
+            raise ValueError("extracted extensible WAV fields differ")
+        subtype_guid = format_payload[24:40]
+        if subtype_guid == PCM_SUBFORMAT_GUID:
+            format_tag = 1
+        elif subtype_guid == FLOAT_SUBFORMAT_GUID:
+            format_tag = 3
+        else:
+            raise ValueError("extracted extensible WAV subtype is unsupported")
+        extensible_facts = {
+            "container_encoding": "wave_format_extensible",
+            "channel_mask": channel_mask,
+        }
     if format_tag == 1 and bits in {16, 24, 32}:
         sample_encoding = "signed_integer_pcm"
     elif format_tag == 3 and bits == 32:
@@ -437,6 +467,7 @@ def wav_facts(path: Path) -> dict[str, int | str]:
         "bit_depth": bits,
         "frame_count": frames,
         "sample_encoding": sample_encoding,
+        **extensible_facts,
     }
 
 
@@ -688,9 +719,12 @@ def command_acquire(args: argparse.Namespace) -> int:
         cache_blocks=LIVE_CACHE_BLOCKS,
         maximum_response_bytes=LIVE_MAXIMUM_RANGE_BYTES,
     )
+    acquisition_identity = authorization.get(
+        "acquisition_identity_sha256", sha256_file(authorization_path)
+    )
     state = extract_references(
         plan=authorization,
-        plan_sha256=sha256_file(authorization_path),
+        plan_sha256=acquisition_identity,
         source=remote,
         output_root=output_root,
         minimum_free_bytes=minimum_free_bytes,
