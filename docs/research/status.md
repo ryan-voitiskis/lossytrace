@@ -680,3 +680,18 @@ bundle. The binaries were not retained and their hashes differ despite
 zero-delta synthetic scores. ViSQOL-only therefore remains preregisterable but
 unselected, execution-closed and redistribution-unready. No repository archive,
 test audio, model, binary, metric, score or retained audio was opened.
+
+A deterministic score-blind
+[`listening operational resource frontier`](perceptual-degradation-listening-operational-resource-frontier-20260814.md)
+now replays the actual v2 allocator against 120 symbolic source groups. The raw
+power minimum at the protocol caps is 227 eligible or 352 enrolled session
+slots per aggregate stratum, device class and partition—1,408 enrolled slots
+across four partitions. Rounding to complete 120-slot trial-exposure cycles
+raises that sensitivity to 240 eligible, 372 enrolled and 1,488 across four
+partitions. Cycle rounding equalizes trial exposure but does not repair the
+allocator's repeated candidate-position imbalance: no modelled option passes
+the frozen balance audit, and missingness balance remains unproven. No option,
+listener count, allocation policy or operational design is selected. The next
+score-blind prerequisite is an allocator successor; no audio, response,
+recruitment, collection, metric, score, source member, no-reference training or
+public verdict was opened.

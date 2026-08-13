@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "plan_id": "perceptual-degradation-listening-operational-resource-frontier-20260814-001",
+  "state": "score_blind_operational_resource_frontier_no_design_or_collection_authority",
+  "purpose": "Replay the existing incomplete-block allocator at the now-arithmetically-feasible 120-source design, expose any finite-prefix imbalance, and calculate a cycle-rounded sensitivity without selecting source members, freezing a listener count, recruiting anyone, generating audio or collecting responses.",
+  "bindings": {
+    "feasibility_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/listening-feasibility-frontier-plan.json",
+      "sha256": "02f3976e485f167469a4c8a0fe7d04a8fb8f55185b6169136c6e8d37e63daf36"
+    },
+    "feasibility_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-listening-feasibility-frontier-20260813-001.json",
+      "sha256": "c680fb161f3fca350109c321ee867c727eae6841eba7a6c96ce3278c0657a006"
+    },
+    "allocator_v2": {
+      "path": "scripts/perceptual_degradation_listening_allocation_v2.py",
+      "sha256": "8895f8cc3900f776a62c15fb115b674820ba24cdee18772f48399f1d3ea6ea12"
+    },
+    "allocator_v1": {
+      "path": "scripts/perceptual_degradation_listening_allocation.py",
+      "sha256": "2fbe6a0782e6f7652bf60924f27141c511402adea6d0bbb532c4b371edb7d2fc"
+    },
+    "manifest_v2_schema": {
+      "path": "benchmarks/perceptual-degradation-v1/listening-stimulus-manifest-v2.schema.json",
+      "sha256": "789bd684dd561b413e174d5d63ed0605b4d46f342683768f9d933147d84ad96e"
+    },
+    "listening_protocol": {
+      "path": "docs/research/perceptual-degradation-listening-protocol-20260803.md",
+      "sha256": "7f918b7faa285cb4e2f142907e3d344f6cb11a7e43cfbfa83c82b9135158171b"
+    },
+    "breadth_repair_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-breadth-repair-provider-allocation-feasibility-20260814-001.json",
+      "sha256": "f21f9ed0887d98948c3f71cf1a487fb4786dcc55588fa0c6e711bbd97d7de2bf"
+    }
+  },
+  "authorization": {
+    "synthetic_symbolic_allocation_replay_authorized": true,
+    "exact_member_selection_authorized": false,
+    "new_audio_acquisition_authorized": false,
+    "retained_odaq_reference_read_authorized": false,
+    "retained_reference_projection_authorized": false,
+    "stimulus_generation_authorized": false,
+    "test_audio_access_authorized": false,
+    "listening_score_access_authorized": false,
+    "human_collection_authorized": false,
+    "recruitment_authorized": false,
+    "participant_contact_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "sealed_evidence_access_authorized": false,
+    "no_reference_training_authorized": false,
+    "public_verdict_enabled": false
+  },
+  "design_grid": {
+    "independent_source_groups_per_partition": 120,
+    "truth_bearing_partitions": [
+      "development",
+      "calibration",
+      "transfer",
+      "final_validation"
+    ],
+    "source_groups_may_cross_partitions": false,
+    "device_class_count": 1,
+    "transparent_trials_per_eligible_listener": [
+      3,
+      5,
+      8,
+      15
+    ],
+    "maximum_mushra_trials_per_eligible_listener": 6,
+    "aggregate_condition_stratum_count_frozen": false,
+    "listener_identity_reuse_across_partitions_frozen": false,
+    "allocation_index_assigned_after_eligibility_frozen": false,
+    "selected_design_option": null,
+    "listener_count_frozen": false,
+    "session_timing_qualified": false
+  },
+  "symbolic_fixture": {
+    "manifest_id": "manifest-listening-resource-frontier-symbolic-120-v1",
+    "partition": "development",
+    "domain": "synthetic",
+    "allocation_seed": "lossytrace-listening-resource-frontier-20260814-v1",
+    "source_group_prefix": "symbolic-source",
+    "contains_audio": false,
+    "contains_real_member_identity": false,
+    "contains_condition_recipe": false,
+    "is_study_stimulus_manifest": false
+  },
+  "balance_audit": {
+    "complete_trial_exposure_cycle_eligible_listener_slots": 120,
+    "maximum_trial_exposure_range": 0,
+    "maximum_candidate_position_range": 1,
+    "trial_exposure_cycle_rounded_sensitivity_is_selected_policy": false,
+    "post_eligibility_allocation_indexing_is_selected_policy": false,
+    "missingness_balance_is_proven": false
+  },
+  "claim_boundary": {
+    "arithmetic_capacity_is_qualified_source_manifest": false,
+    "symbolic_fixture_is_study_stimulus_manifest": false,
+    "allocation_balance_is_power_validation": false,
+    "planning_listener_slots_are_unique_people": false,
+    "planning_listener_slots_are_frozen_recruitment_target": false,
+    "protocol_trial_caps_prove_20_to_30_minute_session": false,
+    "one_aggregate_stratum_proves_codec_or_encoder_specific_transparency": false,
+    "resource_frontier_authorizes_collection": false,
+    "resource_frontier_is_listening_evidence": false,
+    "full_objective_complete": false,
+    "public_cli_changed": false
+  },
+  "authorized_next_step": "Use the score-blind resource and allocation-balance frontier when deciding whether the source breadth and recruitment scale are acceptable. Do not freeze a listener count, allocation policy or operational design until exact source members, condition strata, session timing, privacy, compensation, recruitment feasibility and post-exclusion balance handling are separately resolved."
+}
