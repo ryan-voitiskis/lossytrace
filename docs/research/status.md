@@ -652,3 +652,17 @@ repair. Production, generation, mastering, rights-origin, file-integrity and
 relationship audits remain incomplete; qualified and allocated counts remain
 zero. No archive, audio, successor, metric, scientific gate or public verdict
 changed.
+
+A refreshed evidence-bound
+[`objective completion audit`](perceptual-degradation-objective-completion-audit-refresh-20260814.md)
+now reconciles the full contract with the repaired stable-source arithmetic and
+the ViSQOL-only successor disposition. Source breadth is no longer
+arithmetically blocked: every currently modelled stable provider-pure scenario
+passes, including the conservative 120-group and mastered-music constraints.
+That capacity is not promoted to a truth-bearing manifest; exact members,
+provenance, relationships, selection and allocation remain unfrozen, with zero
+qualified or allocated groups. ViSQOL-only remains technically preregisterable
+but unselected and without an execution gate. The objective therefore remains
+at four of fourteen satisfied requirements. No audio, score, metric, human
+response, sealed evidence or no-reference training was opened, and the public
+CLI remains verdict-free.
