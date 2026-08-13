@@ -75,15 +75,22 @@ adds VibraVox and supersedes the count and three-domain conclusions: stable-only
 120-group and three-domain arithmetic then become feasible, while the
 mastered-music failure remains.
 
+The later
+[`stable mastered-music provider screen`](perceptual-degradation-stable-mastered-music-provider-screen-20260814.md)
+adds three immutable artist-release candidates and supersedes that final
+mastered-music conclusion at the arithmetic level only.
+
 ## Boundary and next decision
 
 No source or metric successor is selected. The screen does not authorize
 preservation, exact-member inspection, audio acquisition, audio-member access,
 retained ODAQ access or projection, stimulus generation, metric execution,
 scores, listener collection, sealed evidence, no-reference training, or a
-public verdict. The responsible-human source decision remains: authorize a
-bounded preservation and exact-member metadata audit, narrow the mastered-
-music or primary-domain claim, or reject the current truth-source design.
+public verdict. At this checkpoint the responsible-human source decision still
+included narrowing the mastered-music or primary-domain claim. The later
+stable speech and stable mastered-music screens repair those arithmetic gaps;
+the current source-side decision is now to authorize bounded preservation and
+exact-member metadata audit, or reject the current truth-source design.
 
 Machine-readable artifacts:
 

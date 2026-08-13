@@ -59,6 +59,7 @@ def validate_plan(plan: dict[str, Any], root: Path = ROOT) -> list[str]:
     observation = bound.get("breadth_repair_observation", {})
     stable_music_observation = bound.get("stable_music_observation", {})
     stable_speech_observation = bound.get("stable_speech_observation", {})
+    stable_mastered_music_observation = bound.get("stable_mastered_music_observation", {})
     predecessor = bound.get("predecessor_plan", {})
     if observation.get("observation_id") != "perceptual-degradation-breadth-repair-public-metadata-observation-20260814-001":
         errors.append("observation identity differs")
@@ -68,6 +69,8 @@ def validate_plan(plan: dict[str, Any], root: Path = ROOT) -> list[str]:
         errors.append("stable-music observation identity differs")
     if stable_speech_observation.get("observation_id") != "perceptual-degradation-stable-speech-provider-public-record-observation-20260814-001":
         errors.append("stable-speech observation identity differs")
+    if stable_mastered_music_observation.get("observation_id") != "perceptual-degradation-stable-mastered-music-provider-public-record-observation-20260814-001":
+        errors.append("stable-mastered-music observation identity differs")
 
     access = observation.get("access_boundary", {})
     for key in (
@@ -103,7 +106,11 @@ def validate_plan(plan: dict[str, Any], root: Path = ROOT) -> list[str]:
     provisional = observation.get("preservation_required_provisional_candidates", [])
     stable_music = stable_music_observation.get("stable_controlled_music_candidates", [])
     stable_speech = stable_speech_observation.get("stable_speech_candidates", [])
-    observed = {item.get("provider_id"): item for item in [*immutable, *provisional, *stable_music, *stable_speech]}
+    stable_mastered_music = stable_mastered_music_observation.get("stable_mastered_music_candidates", [])
+    observed = {
+        item.get("provider_id"): item
+        for item in [*immutable, *provisional, *stable_music, *stable_speech, *stable_mastered_music]
+    }
     expected = {
         "english_children_speech": ("english_children_speech_200495", "immutable_or_stable", ["speech"], 11),
         "gesma": ("gesma_18315044", "immutable_or_stable", ["natural"], 18),
@@ -115,6 +122,9 @@ def validate_plan(plan: dict[str, Any], root: Path = ROOT) -> list[str]:
         "vienna_4x22": ("vienna_4x22_v1", "immutable_or_stable", ["music", "controlled_performance_music"], 22),
         "raga_ornamentation_detection": ("raga_ornamentation_detection_17851882_v4", "immutable_or_stable", ["music", "controlled_performance_music"], 2),
         "vibravox": ("vibravox_hf_2727_revision_7990b7d", "immutable_or_stable", ["speech"], 188),
+        "solar_flux_zenodo": ("solar_flux_albums_one_two_zenodo", "immutable_or_stable", ["music", "mastered_music"], 16),
+        "lotte_lehmann_farewell_recital": ("lotte_lehmann_santa_barbara_14226540", "immutable_or_stable", ["music", "mastered_music"], 19),
+        "remnant_tamil_worship": ("remnant_tamil_worship_albums_1_2_hd", "immutable_or_stable", ["music", "mastered_music"], 12),
     }
     new_providers = {item.get("provider_id"): item for item in plan.get("new_providers", [])}
     if set(observed) != set(expected) or set(new_providers) != set(expected):
@@ -161,6 +171,14 @@ def validate_plan(plan: dict[str, Any], root: Path = ROOT) -> list[str]:
         "allocated_group_count": 0,
     }:
         errors.append("stable-speech observation aggregate differs")
+    if stable_mastered_music_observation.get("aggregate_observation") != {
+        "new_stable_mastered_music_candidate_provider_count": 3,
+        "new_stable_mastered_music_candidate_group_capacity": 47,
+        "screened_not_added_provider_or_collection_count": 4,
+        "qualified_reference_group_count": 0,
+        "allocated_group_count": 0,
+    }:
+        errors.append("stable-mastered-music observation aggregate differs")
     for key, value in observation.get("observation_limits", {}).items():
         if value is not False:
             errors.append(f"observation limit must remain false: {key}")
@@ -461,7 +479,7 @@ def build_report(plan: dict[str, Any], plan_path: Path = PLAN_PATH, implementati
             "source_successor_selected": False,
             "metric_successor_selected": False,
             "no_reference_work_eligible": False,
-            "next_responsible_human_decision": "Choose whether to authorize bounded preservation and exact-member metadata audit of the identified records, narrow the mastered-music claim, or reject the current truth-source design; this does not authorize repository data-object or audio access.",
+            "next_responsible_human_decision": "Choose whether to authorize bounded preservation and exact-member metadata audit of the identified stable records, or reject the current truth-source design; this does not authorize archive, repository data-object or audio access.",
         },
         "claim_boundary": plan["claim_boundary"],
     }

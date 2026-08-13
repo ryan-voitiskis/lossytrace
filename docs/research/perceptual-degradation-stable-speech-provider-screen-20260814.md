@@ -56,6 +56,12 @@ mastered-music candidate, so stable-only mastered-release coverage still
 cannot span four provider-pure partitions. Public-record arithmetic can do so
 only with the three mutable Bandcamp release records.
 
+That was the state at this speech-screen checkpoint. The later
+[`stable mastered-music provider screen`](perceptual-degradation-stable-mastered-music-provider-screen-20260814.md)
+adds Solar Flux, the Lotte Lehmann historical album and Remnant Tamil Worship,
+making stable-only mastered-release arithmetic feasible while leaving all
+scientific and exact-member gates closed.
+
 ## Boundary and next decision
 
 The repository commit makes VibraVox a stable exact-member metadata-audit
@@ -69,8 +75,7 @@ acquisition, audio-member access, retained ODAQ access or projection, stimulus
 generation, metric execution, scores, listener collection, sealed evidence,
 no-reference training, or a public verdict. The responsible-human source
 decision remains: authorize the bounded preservation and exact-member metadata
-audit, narrow the mastered-music claim, or reject the current truth-source
-design.
+audit, or reject the current truth-source design.
 
 Machine-readable artifacts:
 

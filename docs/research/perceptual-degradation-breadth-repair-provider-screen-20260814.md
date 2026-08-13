@@ -55,19 +55,19 @@ labelled arithmetic sensitivity, not the exact-member-audit candidate tier.
 ## Arithmetic sensitivity
 
 The predecessor pool had 11 providers and 1,930 metadata-level candidate
-groups. After the successor stable-music screen added Vienna 4x22 and ROD and
-the stable-speech screen added VibraVox, the public-record ceiling produces 21
-providers and 2,328 groups; using the conservative DataSTORRE floor produces
-2,269. The stable-only pool has 17 providers and 2,238 groups at the ceiling,
-or 2,179 at the floor. Qualified and allocated counts remain zero.
+groups. After the stable-music, stable-speech and stable-mastered-music
+successor screens, the public-record ceiling produces 24 providers and 2,375
+groups; using the conservative DataSTORRE floor produces 2,316. The stable-only
+pool has 20 providers and 2,285 groups at the ceiling, or 2,226 at the floor.
+Qualified and allocated counts remain zero.
 
 | Sensitivity | Arithmetic result | Why it does not cross the scientific gate |
 | --- | --- | --- |
 | music, speech and natural sound in every partition, all public records | feasible | public-record capacities and relationships remain unaudited |
 | same, stable records only | feasible after VibraVox supplement | the fourth provider is content-addressed but no exact member is audited |
-| eight mastered-music groups in every partition, all public records | feasible | three of four mastered providers are mutable single-release pages |
-| same, stable records only | infeasible | AlbumDB remains the only stable mastered provider |
-| two mastered providers in final validation, all public records | feasible | the second provider is provisional; no final allocation exists |
+| eight mastered-music groups in every partition, all public records | feasible | release, production, origin and relationship facts remain unaudited |
+| same, stable records only | feasible after stable mastered-music supplement | artist-labelled records do not prove mastering, never-lossy origin or independence |
+| two mastered providers in final validation, all public records | feasible | a provider-capacity witness is not an exact-member final allocation |
 | 120 groups in every partition at DataSTORRE's 67-recording ceiling | feasible | it uses unaudited metadata capacity and selects no exact members |
 | 120 groups in every partition at the eight-group floor | feasible | public-record capacities and relationships remain unaudited |
 | 120 groups in every partition, stable records only at the 67-recording ceiling | feasible after VibraVox supplement | stable-record capacity is not exact-member truth |
@@ -75,10 +75,10 @@ or 2,179 at the floor. Qualified and allocated counts remain zero.
 
 This resolves an arithmetic question, not the source design. Every positive
 witness still assigns whole candidate providers without selecting exact
-members. Stable-only arithmetic now supports three primary domains in all
-partitions and both 120-group sensitivities, without needing ICSI or Bandcamp.
-It still does not support mastered-music transfer, scientific eligibility, or
-any exact-member allocation.
+members. Stable-only arithmetic now supports three primary domains,
+mastered-music coverage and both 120-group sensitivities without needing ICSI
+or Bandcamp. It still does not establish scientific eligibility, production or
+origin chains, or any exact-member allocation.
 
 ## Screened but not added
 
@@ -100,9 +100,9 @@ member access, execute a perceptual metric, collect listening evidence, open
 sealed evidence, permit no-reference training, or change the public CLI.
 
 The next source-side decision is whether to authorize bounded preservation and
-exact-member metadata audit of these records, narrow the mastered-music claim,
-or reject the current truth-source design. Metric-successor selection remains
-a separate responsible-human decision.
+exact-member metadata audit of these stable records, or reject the current
+truth-source design. Metric-successor selection remains a separate
+responsible-human decision.
 
 Machine-readable artifacts:
 

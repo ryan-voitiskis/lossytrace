@@ -27,7 +27,7 @@ class BreadthRepairFeasibilityTest(unittest.TestCase):
     def test_report_is_deterministic(self) -> None:
         self.assertEqual(MODULE.build_report(plan()), MODULE.build_report(plan()))
 
-    def test_stable_speech_repairs_domains_but_not_mastered_music(self) -> None:
+    def test_stable_supplements_repair_domains_and_mastered_music(self) -> None:
         results = {
             item["scenario_id"]: item["arithmetic_feasible"]
             for item in MODULE.build_report(plan())["scenario_results"]
@@ -35,7 +35,7 @@ class BreadthRepairFeasibilityTest(unittest.TestCase):
         self.assertTrue(results["public_record_three_domains_every_partition"])
         self.assertTrue(results["stable_record_three_domains_every_partition"])
         self.assertTrue(results["public_record_mastered_music_every_partition"])
-        self.assertFalse(results["stable_record_mastered_music_every_partition"])
+        self.assertTrue(results["stable_record_mastered_music_every_partition"])
         self.assertTrue(results["public_record_final_two_mastered_music_providers"])
 
     def test_reference_sensitivity_no_longer_depends_on_provisional_records(self) -> None:
@@ -93,6 +93,12 @@ class BreadthRepairFeasibilityTest(unittest.TestCase):
         provider = next(item for item in value["new_providers"] if item["provider_id"] == "icsi_meeting")
         provider["record_status"] = "immutable_or_stable"
         self.assertIn("new provider binding differs: icsi_meeting", MODULE.validate_plan(value))
+
+    def test_stable_mastered_music_capacity_cannot_be_inflated(self) -> None:
+        value = plan()
+        provider = next(item for item in value["new_providers"] if item["provider_id"] == "remnant_tamil_worship")
+        provider["available_group_capacity"] = 115
+        self.assertIn("new provider binding differs: remnant_tamil_worship", MODULE.validate_plan(value))
 
     def test_audio_metric_score_training_and_successor_gates_remain_closed(self) -> None:
         value = plan()

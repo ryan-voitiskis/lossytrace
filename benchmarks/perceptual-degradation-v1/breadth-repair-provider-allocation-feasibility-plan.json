@@ -2,7 +2,7 @@
   "schema_version": 1,
   "plan_id": "perceptual-degradation-breadth-repair-provider-allocation-feasibility-20260814-001",
   "state": "score_blind_public_record_capacity_sensitivity_no_member_allocation",
-  "purpose": "Test whether additional permissive public records can repair speech, natural-sound, mastered-music and 120-group arithmetic shortages while separating stable candidates, mutable provisional records, controlled-music and stable-speech supplements, and relationship-sensitive capacity.",
+  "purpose": "Test whether additional permissive public records can repair speech, natural-sound, mastered-music and 120-group arithmetic shortages while separating stable candidates, mutable provisional records, controlled-music, stable-speech and stable-mastered-music supplements, and relationship-sensitive capacity.",
   "bindings": {
     "breadth_repair_observation": {
       "path": "research/toolchains/evidence/perceptual-degradation-breadth-repair-public-metadata-observation-20260814-001.json",
@@ -15,6 +15,10 @@
     "stable_speech_observation": {
       "path": "research/toolchains/evidence/perceptual-degradation-stable-speech-provider-public-record-observation-20260814-001.json",
       "sha256": "41605bbcf34e496bcadd92ad13b12836d829e4e55bf51d01d2aaa967b17d77d7"
+    },
+    "stable_mastered_music_observation": {
+      "path": "research/toolchains/evidence/perceptual-degradation-stable-mastered-music-provider-public-record-observation-20260814-001.json",
+      "sha256": "630ce8c6b4b2bde2517fea0f4dfc638ccb102ece19fe0cdfa6c8c9453753fdd2"
     },
     "predecessor_plan": {
       "path": "benchmarks/perceptual-degradation-v1/additional-permissive-provider-allocation-feasibility-plan.json",
@@ -138,6 +142,36 @@
         "speech"
       ],
       "available_group_capacity": 188
+    },
+    {
+      "provider_id": "solar_flux_zenodo",
+      "source_id": "solar_flux_albums_one_two_zenodo",
+      "record_status": "immutable_or_stable",
+      "capabilities": [
+        "music",
+        "mastered_music"
+      ],
+      "available_group_capacity": 16
+    },
+    {
+      "provider_id": "lotte_lehmann_farewell_recital",
+      "source_id": "lotte_lehmann_santa_barbara_14226540",
+      "record_status": "immutable_or_stable",
+      "capabilities": [
+        "music",
+        "mastered_music"
+      ],
+      "available_group_capacity": 19
+    },
+    {
+      "provider_id": "remnant_tamil_worship",
+      "source_id": "remnant_tamil_worship_albums_1_2_hd",
+      "record_status": "immutable_or_stable",
+      "capabilities": [
+        "music",
+        "mastered_music"
+      ],
+      "available_group_capacity": 12
     }
   ],
   "solver_policy": {
@@ -207,7 +241,7 @@
       },
       "capability_provider_minimums_by_partition": {},
       "expected_arithmetic_feasible": true,
-      "reason_not_eligible": "three of four mastered-release providers are mutable Bandcamp pages and all four are single-release production strata without exact origin audit"
+      "reason_not_eligible": "stable and provisional release candidates are public-record arithmetic only; production, mastering, origin and cross-release relationships remain unaudited"
     },
     {
       "scenario_id": "stable_record_mastered_music_every_partition",
@@ -224,8 +258,8 @@
         "final_validation": {"mastered_music": 8}
       },
       "capability_provider_minimums_by_partition": {},
-      "expected_arithmetic_feasible": false,
-      "reason_not_eligible": "AlbumDB remains the only stable mastered-music candidate"
+      "expected_arithmetic_feasible": true,
+      "reason_not_eligible": "the four stable release candidates clear arithmetic only; none of the new records has exact production, origin, member or relationship audit"
     },
     {
       "scenario_id": "public_record_final_two_mastered_music_providers",
@@ -243,7 +277,7 @@
         "final_validation": {"mastered_music": 2}
       },
       "expected_arithmetic_feasible": true,
-      "reason_not_eligible": "the second mastered provider is preservation-required and a capacity witness is not a final-validation allocation"
+      "reason_not_eligible": "multiple stable providers are now available arithmetically, but a capacity witness is not an exact-member final-validation allocation"
     },
     {
       "scenario_id": "public_record_reference_120_recording_ceiling",
@@ -326,6 +360,8 @@
     "single_release_provider_proves_mastered_multigenre_transfer": false,
     "recording_ceiling_clears_reference_sensitivity": false,
     "controlled_music_capacity_proves_mastered_music_transfer": false,
+    "artist_labelled_release_proves_mastering_or_never_lossy_origin": false,
+    "top_level_wav_name_proves_pcm_integrity": false,
     "candidate_screen_authorizes_audio_access": false,
     "candidate_screen_is_full_objective_negative_result": false,
     "public_cli_changed": false

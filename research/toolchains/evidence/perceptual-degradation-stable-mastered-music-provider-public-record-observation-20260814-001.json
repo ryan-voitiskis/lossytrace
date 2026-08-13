@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "observation_id": "perceptual-degradation-stable-mastered-music-provider-public-record-observation-20260814-001",
+  "state": "official_public_record_screen_complete_no_audio_or_member_access",
+  "observed_on": "2026-08-14",
+  "purpose": "Test whether immutable Zenodo CC BY 4.0 or CC0 artist-release records can remove the mastered-music arithmetic dependence on mutable Bandcamp pages without opening archives, audio or exact source members.",
+  "access_boundary": {
+    "official_public_record_pages_read": true,
+    "official_public_structured_metadata_read_ephemerally": true,
+    "top_level_file_names_sizes_and_checksums_read_ephemerally": true,
+    "raw_provider_metadata_persisted_in_research_storage": false,
+    "archive_downloaded": false,
+    "archive_member_listing_accessed": false,
+    "audio_member_accessed": false,
+    "waveform_or_container_inspected": false,
+    "exact_source_member_selected": false,
+    "exact_member_relationship_audit_performed": false,
+    "retained_odaq_reference_accessed": false,
+    "processed_odaq_condition_accessed": false,
+    "perceptual_metric_executed": false,
+    "target_perceptual_degradation_score_accessed": false,
+    "listener_response_collected": false,
+    "sealed_evidence_opened": false,
+    "no_reference_training_performed": false,
+    "public_verdict_enabled": false
+  },
+  "screen_policy": {
+    "allowed_dataset_licences": [
+      "CC BY 4.0",
+      "CC0 1.0"
+    ],
+    "immutable_doi_record_required": true,
+    "creator_or_rights_holder_release_relationship_required": true,
+    "lossless_top_level_wav_or_public_lossless_archive_required": true,
+    "public_album_or_release_role_required": true,
+    "same_creator_catalog_may_cross_partitions": false,
+    "same_composition_language_version_render_or_derivative_may_cross_partitions": false,
+    "record_file_count_substitutes_for_relationship_audit": false,
+    "artist_release_label_proves_mastering_or_origin_chain": false,
+    "candidate_capacity_is_qualified_truth": false
+  },
+  "stable_mastered_music_candidates": [
+    {
+      "source_id": "solar_flux_albums_one_two_zenodo",
+      "provider_id": "solar_flux_zenodo",
+      "creator": "Adrian Ashmore",
+      "licence": "CC BY 4.0",
+      "record_distributions": [
+        {
+          "record_id": 21454470,
+          "concept_record_id": 21454469,
+          "doi": "10.5281/zenodo.21454470",
+          "title": "Album One Solar Flux",
+          "published": "2026-07-20",
+          "top_level_file_count": 8,
+          "top_level_wav_count": 8,
+          "total_bytes": 354494816,
+          "md5_exposed_per_file": true
+        },
+        {
+          "record_id": 21454972,
+          "concept_record_id": 21454971,
+          "doi": "10.5281/zenodo.21454972",
+          "title": "Album Two Solar Flux",
+          "published": "2026-07-20",
+          "top_level_file_count": 8,
+          "top_level_wav_count": 8,
+          "total_bytes": 364210016,
+          "md5_exposed_per_file": true
+        }
+      ],
+      "candidate_group_capacity": 16,
+      "grouping_key": "named_track_across_both_albums_and_creator_catalog",
+      "grouping_limit": "all alternate, duplicate, derivative or shared-composition relationships collapse; exact audio format, production, synthesis, performance, session and cross-album relationships remain unaudited",
+      "public_release_role": "two creator-labelled albums with sixteen separately checksummed WAV track objects",
+      "production_provenance_limit": "the public records do not document performers, instruments, synthesis or generation method, recording chain, mix, mastering or artist-depositor relationship beyond the creator field",
+      "capabilities": [
+        "music",
+        "mastered_music"
+      ],
+      "music_role": "artist_labelled_two_album_wav_release_candidate_mastering_and_origin_unaudited",
+      "candidate_status": "immutable_exact_member_metadata_audit_candidate"
+    },
+    {
+      "source_id": "lotte_lehmann_santa_barbara_14226540",
+      "provider_id": "lotte_lehmann_farewell_recital",
+      "official_record_url": "https://zenodo.org/records/14226540",
+      "record_id": 14226540,
+      "concept_record_id": 14226539,
+      "doi": "10.5281/zenodo.14226540",
+      "title": "Lotte Lehmann: Santa Barbara Farewell Recital with Gwendolyn Koldofsky (Audio Recording from 1951)",
+      "published": "2024-11-26",
+      "licence": "CC BY 4.0",
+      "creator_and_rights_context": "Lotte Lehmann and Gwendolyn Koldofsky are listed as rights holders; institutional collectors and curators are named",
+      "release_provenance": "one 1951 Santa Barbara farewell recital first publicly released in 1977 as a limited historical album, later recovered from a USC collection and digitized by a University of North Texas sound preservationist",
+      "public_description_wav_count": 21,
+      "observed_top_level_file_count": 19,
+      "observed_top_level_wav_count": 19,
+      "observed_total_bytes": 565304036,
+      "md5_exposed_per_file": true,
+      "candidate_group_capacity": 19,
+      "grouping_key": "named_composition_performance_within_one_recital_and_historical_album",
+      "grouping_limit": "all tracks share one recital, performers and historical release chain; the public 21-file description versus 19 exposed WAV objects must be reconciled before any exact member is eligible",
+      "capabilities": [
+        "music",
+        "mastered_music"
+      ],
+      "music_role": "historical_released_album_digitization_candidate_single_session_and_origin_unaudited",
+      "candidate_status": "immutable_exact_member_metadata_audit_candidate"
+    },
+    {
+      "source_id": "remnant_tamil_worship_albums_1_2_hd",
+      "provider_id": "remnant_tamil_worship",
+      "creator": "Tamil Intercessor Remnant / KJC-DNN",
+      "licence": "CC BY 4.0",
+      "record_distributions": [
+        {
+          "record_id": 20969062,
+          "concept_record_id": 20969061,
+          "doi": "10.5281/zenodo.20969062",
+          "title": "Album 1 - Multi Language Edition (Hindi, Arabic, Kannada, Malayalam, Telugu) - HD",
+          "published": "2026-06-27",
+          "public_composition_count": 6,
+          "top_level_file_count": 67,
+          "top_level_wav_count": 55,
+          "total_bytes": 2352378693,
+          "md5_exposed_per_file": true
+        },
+        {
+          "record_id": 21020982,
+          "concept_record_id": 21020981,
+          "doi": "10.5281/zenodo.21020982",
+          "title": "Album 2 - The Oil of Gladness (Multilingual Christian Worship) - Spanish, French, German, Chinese, Japanese",
+          "published": "2026-06-29",
+          "public_composition_count": 6,
+          "top_level_file_count": 74,
+          "top_level_wav_count": 60,
+          "total_bytes": 3178615913,
+          "md5_exposed_per_file": true
+        }
+      ],
+      "candidate_group_capacity": 12,
+      "grouping_key": "composition_across_all_languages_versions_renders_instrumentals_and_creator_catalog",
+      "grouping_limit": "each of the twelve publicly named compositions is one ceiling group; language translations, vocal versions, instrumentals and other renders never create additional groups, and cross-album relationships remain unaudited",
+      "public_release_role": "two creator-labelled multilingual worship albums with high-quality WAV distributions",
+      "production_provenance_limit": "the public records do not document performers, synthesis or generation methods, recording chain, mixing, mastering or whether every WAV descends from an independent lossless origin",
+      "capabilities": [
+        "music",
+        "mastered_music"
+      ],
+      "music_role": "artist_labelled_multilingual_worship_album_wav_candidate_production_and_generation_chain_unaudited",
+      "candidate_status": "immutable_exact_member_metadata_audit_candidate"
+    }
+  ],
+  "screened_not_added": [
+    {
+      "source_id": "wayze_21896670",
+      "official_record_url": "https://zenodo.org/records/21896670",
+      "licence": "CC BY 4.0",
+      "public_distribution": "one checksummed ZIP described as a 2016 experimental album",
+      "disposition": "public record does not expose a track count and archive-member listing was not authorized or opened, so an eight-group capacity cannot be established"
+    },
+    {
+      "source_id": "daniel_william_lawrence_five_albums",
+      "licence": "CC0 1.0",
+      "public_distribution": "five immutable album records, each delivered as one continuous WAV",
+      "candidate_group_capacity_ceiling": 5,
+      "disposition": "creator-wide album grouping yields fewer than the eight groups required for one provider-pure partition"
+    },
+    {
+      "source_id": "solar_flux_album_three_21455104",
+      "official_record_url": "https://zenodo.org/records/21455104",
+      "licence": "CC BY 4.0",
+      "disposition": "the third album is distributed only as MP3 and is excluded from clean lossless-reference capacity"
+    },
+    {
+      "source_id": "tin_men_and_the_telephone_zenodo_catalog",
+      "licence": "CC BY 4.0",
+      "public_distribution": "two separately exposed WAV works plus MP3 and video album objects",
+      "candidate_group_capacity_ceiling": 2,
+      "disposition": "fewer than eight clean lossless groups are publicly established"
+    }
+  ],
+  "aggregate_observation": {
+    "new_stable_mastered_music_candidate_provider_count": 3,
+    "new_stable_mastered_music_candidate_group_capacity": 47,
+    "screened_not_added_provider_or_collection_count": 4,
+    "qualified_reference_group_count": 0,
+    "allocated_group_count": 0
+  },
+  "decision": {
+    "stable_mastered_music_replacement_found": true,
+    "stable_only_mastered_music_every_partition_established": true,
+    "mutable_bandcamp_dependency_removed_for_arithmetic": true,
+    "production_origin_and_mastering_chain_complete": false,
+    "exact_member_relationship_audit_complete": false,
+    "source_successor_selected": false,
+    "metric_successor_selected": false,
+    "no_reference_work_eligible": false,
+    "next_responsible_human_decision": "Choose whether to authorize bounded preservation and exact-member metadata audit of the stable records, or reject the current truth-source design; this screen does not authorize archive, member or audio access."
+  },
+  "claim_boundary": {
+    "candidate_capacity_is_scientific_feasibility": false,
+    "structured_cc_by_proves_recording_or_mastering_rights_chain": false,
+    "artist_labelled_album_proves_never_lossy_origin": false,
+    "top_level_wav_name_proves_pcm_integrity": false,
+    "track_or_composition_count_proves_independence": false,
+    "stable_mastered_arithmetic_selects_a_source_successor": false,
+    "screen_authorizes_archive_member_or_audio_access": false,
+    "screen_is_full_objective_positive_result": false,
+    "public_cli_changed": false
+  }
+}

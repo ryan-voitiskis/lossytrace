@@ -2,6 +2,7 @@
   "audio_accessed": false,
   "claim_boundary": {
     "arithmetic_feasibility_is_scientific_feasibility": false,
+    "artist_labelled_release_proves_mastering_or_never_lossy_origin": false,
     "bandcamp_lossless_delivery_proves_lossless_artist_origin": false,
     "candidate_screen_authorizes_audio_access": false,
     "candidate_screen_is_full_objective_negative_result": false,
@@ -11,13 +12,14 @@
     "public_cli_changed": false,
     "public_record_count_is_independent_truth": false,
     "recording_ceiling_clears_reference_sensitivity": false,
-    "single_release_provider_proves_mastered_multigenre_transfer": false
+    "single_release_provider_proves_mastered_multigenre_transfer": false,
+    "top_level_wav_name_proves_pcm_integrity": false
   },
   "decision": {
     "allocated_group_count": 0,
     "conservative_relationship_floor_clears_reference_120_each_partition": true,
     "metric_successor_selected": false,
-    "next_responsible_human_decision": "Choose whether to authorize bounded preservation and exact-member metadata audit of the identified records, narrow the mastered-music claim, or reject the current truth-source design; this does not authorize repository data-object or audio access.",
+    "next_responsible_human_decision": "Choose whether to authorize bounded preservation and exact-member metadata audit of the identified stable records, or reject the current truth-source design; this does not authorize archive, repository data-object or audio access.",
     "no_reference_work_eligible": false,
     "public_record_pool_clears_mastered_music_every_partition": true,
     "public_record_pool_clears_three_domains_every_partition": true,
@@ -26,16 +28,16 @@
     "recording_ceiling_clears_reference_120_each_partition": true,
     "source_successor_selected": false,
     "stable_record_pool_at_conservative_relationship_floor_clears_reference_120_each_partition": true,
-    "stable_record_pool_clears_mastered_music_every_partition": false,
+    "stable_record_pool_clears_mastered_music_every_partition": true,
     "stable_record_pool_clears_reference_120_each_partition": true,
     "stable_record_pool_clears_three_domains_every_partition": true
   },
   "exact_members_selected": false,
   "human_collection_authorized": false,
-  "implementation_sha256": "058a14f8f42e628a8851768d49221490256ccfc088a5e85852fc3ecd7494b276",
+  "implementation_sha256": "553b2e2f6d34991fa14262d41aff4277b4f55b7240a7889e00a7da0b4a867abf",
   "metrics_executed": false,
   "plan_id": "perceptual-degradation-breadth-repair-provider-allocation-feasibility-20260814-001",
-  "plan_sha256": "c585bdad92013da0e7590ac415efb7b517f35851cd1223892359fb4729424308",
+  "plan_sha256": "223359ea0fd080af8b4a40fa1fb7d3a079c59ddd1e8ceac793c7c66950a3e00a",
   "public_verdict_enabled": false,
   "report_id": "perceptual-degradation-breadth-repair-provider-allocation-feasibility-20260814-001",
   "scenario_results": [
@@ -43,8 +45,8 @@
       "arithmetic_feasible": true,
       "available_capacity_by_partition": {
         "calibration": 142,
-        "development": 241,
-        "final_validation": 84,
+        "development": 272,
+        "final_validation": 88,
         "transfer": 94
       },
       "capacity_overrides": {},
@@ -134,6 +136,16 @@
           "record_status": "preservation_required_provisional"
         },
         {
+          "available_group_capacity": 19,
+          "capabilities": [
+            "music",
+            "mastered_music"
+          ],
+          "partition": "final_validation",
+          "provider_id": "lotte_lehmann_farewell_recital",
+          "record_status": "immutable_or_stable"
+        },
+        {
           "available_group_capacity": 18,
           "capabilities": [
             "natural"
@@ -143,12 +155,22 @@
           "record_status": "immutable_or_stable"
         },
         {
+          "available_group_capacity": 16,
+          "capabilities": [
+            "music",
+            "mastered_music"
+          ],
+          "partition": "development",
+          "provider_id": "solar_flux_zenodo",
+          "record_status": "immutable_or_stable"
+        },
+        {
           "available_group_capacity": 15,
           "capabilities": [
             "music",
             "controlled_performance_music"
           ],
-          "partition": "final_validation",
+          "partition": "development",
           "provider_id": "good_sounds",
           "record_status": "predecessor_bound_candidate"
         },
@@ -162,8 +184,8 @@
           "record_status": "predecessor_bound_candidate"
         }
       ],
-      "eligible_available_group_capacity": 2328,
-      "eligible_provider_count": 21,
+      "eligible_available_group_capacity": 2375,
+      "eligible_provider_count": 24,
       "exact_member_selection_frozen": false,
       "expected_arithmetic_feasible": true,
       "included_new_record_statuses": [
@@ -179,9 +201,9 @@
       "arithmetic_feasible": true,
       "available_capacity_by_partition": {
         "calibration": 100,
-        "development": 241,
-        "final_validation": 79,
-        "transfer": 89
+        "development": 268,
+        "final_validation": 85,
+        "transfer": 93
       },
       "capacity_overrides": {},
       "capacity_witness": [
@@ -251,6 +273,16 @@
           "record_status": "immutable_or_stable"
         },
         {
+          "available_group_capacity": 19,
+          "capabilities": [
+            "music",
+            "mastered_music"
+          ],
+          "partition": "transfer",
+          "provider_id": "lotte_lehmann_farewell_recital",
+          "record_status": "immutable_or_stable"
+        },
+        {
           "available_group_capacity": 18,
           "capabilities": [
             "natural"
@@ -260,12 +292,22 @@
           "record_status": "immutable_or_stable"
         },
         {
+          "available_group_capacity": 16,
+          "capabilities": [
+            "music",
+            "mastered_music"
+          ],
+          "partition": "final_validation",
+          "provider_id": "solar_flux_zenodo",
+          "record_status": "immutable_or_stable"
+        },
+        {
           "available_group_capacity": 15,
           "capabilities": [
             "music",
             "controlled_performance_music"
           ],
-          "partition": "transfer",
+          "partition": "development",
           "provider_id": "good_sounds",
           "record_status": "predecessor_bound_candidate"
         },
@@ -279,6 +321,16 @@
           "record_status": "predecessor_bound_candidate"
         },
         {
+          "available_group_capacity": 12,
+          "capabilities": [
+            "music",
+            "mastered_music"
+          ],
+          "partition": "development",
+          "provider_id": "remnant_tamil_worship",
+          "record_status": "immutable_or_stable"
+        },
+        {
           "available_group_capacity": 11,
           "capabilities": [
             "speech"
@@ -286,20 +338,10 @@
           "partition": "calibration",
           "provider_id": "english_children_speech",
           "record_status": "immutable_or_stable"
-        },
-        {
-          "available_group_capacity": 10,
-          "capabilities": [
-            "music",
-            "mastered_music"
-          ],
-          "partition": "final_validation",
-          "provider_id": "albumdb",
-          "record_status": "predecessor_bound_candidate"
         }
       ],
-      "eligible_available_group_capacity": 2238,
-      "eligible_provider_count": 17,
+      "eligible_available_group_capacity": 2285,
+      "eligible_provider_count": 20,
       "exact_member_selection_frozen": false,
       "expected_arithmetic_feasible": true,
       "included_new_record_statuses": [
@@ -313,10 +355,10 @@
     {
       "arithmetic_feasible": true,
       "available_capacity_by_partition": {
-        "calibration": 77,
-        "development": 76,
-        "final_validation": 1718,
-        "transfer": 197
+        "calibration": 94,
+        "development": 39,
+        "final_validation": 1722,
+        "transfer": 204
       },
       "capacity_overrides": {},
       "capacity_witness": [
@@ -331,12 +373,42 @@
           "record_status": "preservation_required_provisional"
         },
         {
-          "available_group_capacity": 10,
+          "available_group_capacity": 19,
           "capabilities": [
             "music",
             "mastered_music"
           ],
           "partition": "calibration",
+          "provider_id": "lotte_lehmann_farewell_recital",
+          "record_status": "immutable_or_stable"
+        },
+        {
+          "available_group_capacity": 16,
+          "capabilities": [
+            "music",
+            "mastered_music"
+          ],
+          "partition": "transfer",
+          "provider_id": "solar_flux_zenodo",
+          "record_status": "immutable_or_stable"
+        },
+        {
+          "available_group_capacity": 12,
+          "capabilities": [
+            "music",
+            "mastered_music"
+          ],
+          "partition": "final_validation",
+          "provider_id": "remnant_tamil_worship",
+          "record_status": "immutable_or_stable"
+        },
+        {
+          "available_group_capacity": 10,
+          "capabilities": [
+            "music",
+            "mastered_music"
+          ],
+          "partition": "development",
           "provider_id": "albumdb",
           "record_status": "predecessor_bound_candidate"
         },
@@ -346,7 +418,7 @@
             "music",
             "mastered_music"
           ],
-          "partition": "transfer",
+          "partition": "development",
           "provider_id": "wangleline_honey",
           "record_status": "preservation_required_provisional"
         },
@@ -356,9 +428,100 @@
             "music",
             "mastered_music"
           ],
-          "partition": "final_validation",
+          "partition": "calibration",
           "provider_id": "grumbles_pretty_bad_good",
           "record_status": "preservation_required_provisional"
+        },
+        {
+          "available_group_capacity": 1710,
+          "capabilities": [
+            "synthetic"
+          ],
+          "partition": "final_validation",
+          "provider_id": "slakh",
+          "record_status": "predecessor_bound_candidate"
+        },
+        {
+          "available_group_capacity": 188,
+          "capabilities": [
+            "speech"
+          ],
+          "partition": "transfer",
+          "provider_id": "vibravox",
+          "record_status": "immutable_or_stable"
+        },
+        {
+          "available_group_capacity": 67,
+          "capabilities": [
+            "natural"
+          ],
+          "partition": "calibration",
+          "provider_id": "datastorre_acoustic_examples",
+          "record_status": "immutable_or_stable"
+        }
+      ],
+      "eligible_available_group_capacity": 2375,
+      "eligible_provider_count": 24,
+      "exact_member_selection_frozen": false,
+      "expected_arithmetic_feasible": true,
+      "included_new_record_statuses": [
+        "immutable_or_stable",
+        "preservation_required_provisional"
+      ],
+      "reason_not_eligible": "stable and provisional release candidates are public-record arithmetic only; production, mastering, origin and cross-release relationships remain unaudited",
+      "result_matches_frozen_expectation": true,
+      "scenario_id": "public_record_mastered_music_every_partition",
+      "scientifically_eligible": false
+    },
+    {
+      "arithmetic_feasible": true,
+      "available_capacity_by_partition": {
+        "calibration": 83,
+        "development": 75,
+        "final_validation": 1720,
+        "transfer": 200
+      },
+      "capacity_overrides": {},
+      "capacity_witness": [
+        {
+          "available_group_capacity": 19,
+          "capabilities": [
+            "music",
+            "mastered_music"
+          ],
+          "partition": "development",
+          "provider_id": "lotte_lehmann_farewell_recital",
+          "record_status": "immutable_or_stable"
+        },
+        {
+          "available_group_capacity": 16,
+          "capabilities": [
+            "music",
+            "mastered_music"
+          ],
+          "partition": "calibration",
+          "provider_id": "solar_flux_zenodo",
+          "record_status": "immutable_or_stable"
+        },
+        {
+          "available_group_capacity": 12,
+          "capabilities": [
+            "music",
+            "mastered_music"
+          ],
+          "partition": "transfer",
+          "provider_id": "remnant_tamil_worship",
+          "record_status": "immutable_or_stable"
+        },
+        {
+          "available_group_capacity": 10,
+          "capabilities": [
+            "music",
+            "mastered_music"
+          ],
+          "partition": "final_validation",
+          "provider_id": "albumdb",
+          "record_status": "predecessor_bound_candidate"
         },
         {
           "available_group_capacity": 1710,
@@ -397,37 +560,14 @@
           "record_status": "predecessor_bound_candidate"
         }
       ],
-      "eligible_available_group_capacity": 2328,
-      "eligible_provider_count": 21,
+      "eligible_available_group_capacity": 2285,
+      "eligible_provider_count": 20,
       "exact_member_selection_frozen": false,
       "expected_arithmetic_feasible": true,
       "included_new_record_statuses": [
-        "immutable_or_stable",
-        "preservation_required_provisional"
-      ],
-      "reason_not_eligible": "three of four mastered-release providers are mutable Bandcamp pages and all four are single-release production strata without exact origin audit",
-      "result_matches_frozen_expectation": true,
-      "scenario_id": "public_record_mastered_music_every_partition",
-      "scientifically_eligible": false
-    },
-    {
-      "arithmetic_feasible": false,
-      "available_capacity_by_partition": {
-        "calibration": 0,
-        "development": 0,
-        "final_validation": 0,
-        "transfer": 0
-      },
-      "capacity_overrides": {},
-      "capacity_witness": [],
-      "eligible_available_group_capacity": 2238,
-      "eligible_provider_count": 17,
-      "exact_member_selection_frozen": false,
-      "expected_arithmetic_feasible": false,
-      "included_new_record_statuses": [
         "immutable_or_stable"
       ],
-      "reason_not_eligible": "AlbumDB remains the only stable mastered-music candidate",
+      "reason_not_eligible": "the four stable release candidates clear arithmetic only; none of the new records has exact production, origin, member or relationship audit",
       "result_matches_frozen_expectation": true,
       "scenario_id": "stable_record_mastered_music_every_partition",
       "scientifically_eligible": false
@@ -435,10 +575,10 @@
     {
       "arithmetic_feasible": true,
       "available_capacity_by_partition": {
-        "calibration": 1710,
-        "development": 84,
-        "final_validation": 86,
-        "transfer": 188
+        "calibration": 205,
+        "development": 105,
+        "final_validation": 39,
+        "transfer": 1710
       },
       "capacity_overrides": {},
       "capacity_witness": [
@@ -453,12 +593,42 @@
           "record_status": "preservation_required_provisional"
         },
         {
-          "available_group_capacity": 10,
+          "available_group_capacity": 19,
           "capabilities": [
             "music",
             "mastered_music"
           ],
           "partition": "final_validation",
+          "provider_id": "lotte_lehmann_farewell_recital",
+          "record_status": "immutable_or_stable"
+        },
+        {
+          "available_group_capacity": 16,
+          "capabilities": [
+            "music",
+            "mastered_music"
+          ],
+          "partition": "development",
+          "provider_id": "solar_flux_zenodo",
+          "record_status": "immutable_or_stable"
+        },
+        {
+          "available_group_capacity": 12,
+          "capabilities": [
+            "music",
+            "mastered_music"
+          ],
+          "partition": "development",
+          "provider_id": "remnant_tamil_worship",
+          "record_status": "immutable_or_stable"
+        },
+        {
+          "available_group_capacity": 10,
+          "capabilities": [
+            "music",
+            "mastered_music"
+          ],
+          "partition": "development",
           "provider_id": "albumdb",
           "record_status": "predecessor_bound_candidate"
         },
@@ -468,7 +638,7 @@
             "music",
             "mastered_music"
           ],
-          "partition": "development",
+          "partition": "calibration",
           "provider_id": "wangleline_honey",
           "record_status": "preservation_required_provisional"
         },
@@ -478,7 +648,7 @@
             "music",
             "mastered_music"
           ],
-          "partition": "development",
+          "partition": "calibration",
           "provider_id": "grumbles_pretty_bad_good",
           "record_status": "preservation_required_provisional"
         },
@@ -487,7 +657,7 @@
           "capabilities": [
             "synthetic"
           ],
-          "partition": "calibration",
+          "partition": "transfer",
           "provider_id": "slakh",
           "record_status": "predecessor_bound_candidate"
         },
@@ -496,7 +666,7 @@
           "capabilities": [
             "speech"
           ],
-          "partition": "transfer",
+          "partition": "calibration",
           "provider_id": "vibravox",
           "record_status": "immutable_or_stable"
         },
@@ -508,26 +678,17 @@
           "partition": "development",
           "provider_id": "datastorre_acoustic_examples",
           "record_status": "immutable_or_stable"
-        },
-        {
-          "available_group_capacity": 56,
-          "capabilities": [
-            "speech"
-          ],
-          "partition": "final_validation",
-          "provider_id": "vctk_clean",
-          "record_status": "predecessor_bound_candidate"
         }
       ],
-      "eligible_available_group_capacity": 2328,
-      "eligible_provider_count": 21,
+      "eligible_available_group_capacity": 2375,
+      "eligible_provider_count": 24,
       "exact_member_selection_frozen": false,
       "expected_arithmetic_feasible": true,
       "included_new_record_statuses": [
         "immutable_or_stable",
         "preservation_required_provisional"
       ],
-      "reason_not_eligible": "the second mastered provider is preservation-required and a capacity witness is not a final-validation allocation",
+      "reason_not_eligible": "multiple stable providers are now available arithmetically, but a capacity witness is not an exact-member final-validation allocation",
       "result_matches_frozen_expectation": true,
       "scenario_id": "public_record_final_two_mastered_music_providers",
       "scientifically_eligible": false
@@ -607,8 +768,8 @@
           "record_status": "predecessor_bound_candidate"
         }
       ],
-      "eligible_available_group_capacity": 2328,
-      "eligible_provider_count": 21,
+      "eligible_available_group_capacity": 2375,
+      "eligible_provider_count": 24,
       "exact_member_selection_frozen": false,
       "expected_arithmetic_feasible": true,
       "included_new_record_statuses": [
@@ -717,8 +878,8 @@
           "record_status": "preservation_required_provisional"
         }
       ],
-      "eligible_available_group_capacity": 2269,
-      "eligible_provider_count": 21,
+      "eligible_available_group_capacity": 2316,
+      "eligible_provider_count": 24,
       "exact_member_selection_frozen": false,
       "expected_arithmetic_feasible": true,
       "included_new_record_statuses": [
@@ -815,8 +976,8 @@
           "record_status": "immutable_or_stable"
         }
       ],
-      "eligible_available_group_capacity": 2238,
-      "eligible_provider_count": 17,
+      "eligible_available_group_capacity": 2285,
+      "eligible_provider_count": 20,
       "exact_member_selection_frozen": false,
       "expected_arithmetic_feasible": true,
       "included_new_record_statuses": [
@@ -832,8 +993,8 @@
       "available_capacity_by_partition": {
         "calibration": 188,
         "development": 1710,
-        "final_validation": 123,
-        "transfer": 121
+        "final_validation": 127,
+        "transfer": 126
       },
       "capacity_overrides": {
         "datastorre_acoustic_examples": 8
@@ -905,12 +1066,32 @@
           "record_status": "immutable_or_stable"
         },
         {
+          "available_group_capacity": 19,
+          "capabilities": [
+            "music",
+            "mastered_music"
+          ],
+          "partition": "final_validation",
+          "provider_id": "lotte_lehmann_farewell_recital",
+          "record_status": "immutable_or_stable"
+        },
+        {
           "available_group_capacity": 18,
           "capabilities": [
             "natural"
           ],
           "partition": "final_validation",
           "provider_id": "gesma",
+          "record_status": "immutable_or_stable"
+        },
+        {
+          "available_group_capacity": 16,
+          "capabilities": [
+            "music",
+            "mastered_music"
+          ],
+          "partition": "transfer",
+          "provider_id": "solar_flux_zenodo",
           "record_status": "immutable_or_stable"
         },
         {
@@ -922,28 +1103,10 @@
           "partition": "final_validation",
           "provider_id": "good_sounds",
           "record_status": "predecessor_bound_candidate"
-        },
-        {
-          "available_group_capacity": 15,
-          "capabilities": [
-            "natural"
-          ],
-          "partition": "final_validation",
-          "provider_id": "sonyc_backgrounds",
-          "record_status": "predecessor_bound_candidate"
-        },
-        {
-          "available_group_capacity": 11,
-          "capabilities": [
-            "speech"
-          ],
-          "partition": "transfer",
-          "provider_id": "english_children_speech",
-          "record_status": "immutable_or_stable"
         }
       ],
-      "eligible_available_group_capacity": 2179,
-      "eligible_provider_count": 17,
+      "eligible_available_group_capacity": 2226,
+      "eligible_provider_count": 20,
       "exact_member_selection_frozen": false,
       "expected_arithmetic_feasible": true,
       "included_new_record_statuses": [

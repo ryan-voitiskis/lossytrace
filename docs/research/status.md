@@ -636,3 +636,19 @@ depending on mutable ICSI or Bandcamp records. Stable mastered-music coverage
 still fails because AlbumDB remains the only stable mastered-release candidate.
 Qualified and allocated counts remain zero. No repository data object, Parquet
 content, audio, successor, metric, scientific gate or public verdict changed.
+
+A bounded
+[`stable mastered-music provider screen`](perceptual-degradation-stable-mastered-music-provider-screen-20260814.md)
+adds three immutable CC BY 4.0 release candidates: 16 Solar Flux WAV tracks,
+19 exposed WAV performances from the historically released Lotte Lehmann
+farewell-recital album, and 12 Remnant Tamil Worship composition groups after
+collapsing 115 language, version and render WAV objects. Together with AlbumDB,
+the stable pool can now place at least eight mastered-music groups in every
+provider-pure partition. The pool rises to 20 providers and 2,285 candidate
+groups at DataSTORRE's recording ceiling, or 2,226 at its conservative floor;
+the broader public pool reaches 24 providers and 2,375 or 2,316 groups. ICSI
+and Bandcamp are no longer needed for any currently modelled arithmetic
+repair. Production, generation, mastering, rights-origin, file-integrity and
+relationship audits remain incomplete; qualified and allocated counts remain
+zero. No archive, audio, successor, metric, scientific gate or public verdict
+changed.
