@@ -1,0 +1,340 @@
+{
+  "schema_version": 1,
+  "authorization_id": "perceptual-degradation-odaq-reference-acquisition-20260813-001",
+  "state": "reference_audio_acquisition_authorized",
+  "authorized_on": "2026-08-13",
+  "parent_freeze_sha256": "1a39f50013a4274f60ca7c1771ebad22dcafda6950db87d2ffe4acdfb58ab0e7",
+  "bindings": {
+    "reference_metadata_freeze": {
+      "path": "benchmarks/perceptual-degradation-v1/odaq-reference-acquisition-freeze.json",
+      "sha256": "1a39f50013a4274f60ca7c1771ebad22dcafda6950db87d2ffe4acdfb58ab0e7"
+    },
+    "bounded_extractor": {
+      "path": "scripts/acquire-perceptual-degradation-odaq-references.py",
+      "sha256": "e953a671aba253ed129d7346e1e12d70526358bcbf21934f4a34f7a64099773d"
+    },
+    "authorization_validator": {
+      "path": "scripts/validate-perceptual-degradation-odaq-reference-authorization.py",
+      "sha256": "335e51b38a585f09d28ddd49012ef8903849a6b4de3fef28cf672cf721b8a4dd"
+    },
+    "authorization_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_odaq_reference_authorization.py",
+      "sha256": "0e1cc556c3d100594278e45d57506f6ab2f0f0eba22868dc633dc491203b4517"
+    },
+    "authorization_report": {
+      "path": "docs/research/perceptual-degradation-odaq-reference-acquisition-authorization-20260813.md",
+      "sha256": "c977445eaafc3a12add74533742095761935a602a311b3d02f50c4ede695d072"
+    }
+  },
+  "source_track": "permissive_odaq_cc_by_cc0",
+  "responsible_human_source_choice_present": true,
+  "physical_playback_declaration_present": true,
+  "reference_audio_acquisition_authorized": true,
+  "processed_condition_access_authorized": false,
+  "listening_score_access_authorized": false,
+  "stimulus_generation_authorized": false,
+  "perceptual_metric_execution_authorized": false,
+  "listener_response_collection_authorized": false,
+  "authorization_scope": {
+    "reference_member_basename": "reference.wav",
+    "reference_count": 16,
+    "total_compressed_bytes": 46721638,
+    "total_uncompressed_bytes": 54633154,
+    "full_archive_persistence_authorized": false,
+    "provider_processed_condition_access_authorized": false,
+    "provider_listening_score_access_authorized": false
+  },
+  "source_decision": {
+    "one_provider_development_only_limit_accepted": true,
+    "bound_attribution_requirements_accepted": true,
+    "noncommercial_or_sharealike_source_authorized": false,
+    "broad_music_transfer_claim_authorized": false,
+    "final_validation_claim_authorized": false
+  },
+  "playback_declaration": {
+    "state": "declared_observation_pending",
+    "source_device_class": "macos_computer",
+    "operating_system_observed": "macOS 26.6.1 (25G76)",
+    "interface": {
+      "manufacturer": "RME",
+      "model": "ADI-2 Pro FS",
+      "transport": "USB",
+      "channel_count_observed": 2,
+      "current_sample_rate_hz_observed": 96000
+    },
+    "transducer": {
+      "manufacturer": "Adam Audio",
+      "model": "T7V",
+      "class": "active_loudspeaker_pair"
+    },
+    "environment": {
+      "class": "treated_domestic_living_room",
+      "treatment": [
+        "bass traps",
+        "soft sofa",
+        "carpets",
+        "rugs",
+        "curtains"
+      ],
+      "quiet_session_observation_present": false,
+      "fixed_listening_position_observation_present": false
+    },
+    "effects": {
+      "spatial_audio": false,
+      "equalization": false,
+      "loudness_normalization": false,
+      "crossfade": false,
+      "communications_ducking": false,
+      "headphone_accommodations": false,
+      "other_audio_effects": false
+    },
+    "calibration": {
+      "method": "supplied_band_limited_signal_at_comfortable_conservative_level",
+      "level_fixed_during_testing": true,
+      "level_increase_during_testing_authorized": false,
+      "listener_may_lower_level_or_stop": true,
+      "observed": false
+    },
+    "physical_playback_qualified": false
+  },
+  "claim_boundary": {
+    "provider_references_are_actual_codec_conditions": false,
+    "one_provider_proves_independent_transfer": false,
+    "acquisition_authorizes_stimulus_generation": false,
+    "acquisition_authorizes_listening_scores": false,
+    "acquisition_authorizes_listener_collection": false
+  },
+  "provider": {
+    "archive_bytes": 1048071792,
+    "archive_checksum": "md5:9b4c1eba479ea698995798523eb80999",
+    "archive_key": "ODAQ.zip",
+    "doi": "10.5281/zenodo.10405774",
+    "publication_date": "2023-12-30",
+    "record_id": 10405774,
+    "title": "ODAQ: OPEN DATASET OF AUDIO QUALITY"
+  },
+  "references": [
+    {
+      "artifact_family_code": "DE",
+      "compressed_bytes": 3177753,
+      "compression_method": 8,
+      "crc32": "10ffa39b",
+      "folder_id": "DE_CosmosLandromat_remix1_LD6",
+      "licence_record_ids": [
+        "licence-odaq-fabaea0ec4c9d275bfbb",
+        "licence-odaq-19afb4fb14069069fb07",
+        "licence-odaq-f5780b76894ba3f60030"
+      ],
+      "member_basename": "reference.wav",
+      "source_id": "CosmosLandromat_remix1_LD6",
+      "uncompressed_bytes": 3840058
+    },
+    {
+      "artifact_family_code": "DE",
+      "compressed_bytes": 3170214,
+      "compression_method": 8,
+      "crc32": "4f16d01c",
+      "folder_id": "DE_CosmosLandromat_remix3_LD3",
+      "licence_record_ids": [
+        "licence-odaq-2809a3aa2c51b5880ede",
+        "licence-odaq-99dab3bbd72e1f53d898",
+        "licence-odaq-d79bb76d528279655371"
+      ],
+      "member_basename": "reference.wav",
+      "source_id": "CosmosLandromat_remix3_LD3",
+      "uncompressed_bytes": 3840058
+    },
+    {
+      "artifact_family_code": "DE",
+      "compressed_bytes": 3604817,
+      "compression_method": 8,
+      "crc32": "78900deb",
+      "folder_id": "DE_ElephantsDream_LD0",
+      "licence_record_ids": [
+        "licence-odaq-8fc14e6c4f564d6940a5",
+        "licence-odaq-377cf05dfcb0739c597d",
+        "licence-odaq-c6551311e635fad6b66e"
+      ],
+      "member_basename": "reference.wav",
+      "source_id": "ElephantsDream_LD0",
+      "uncompressed_bytes": 4608058
+    },
+    {
+      "artifact_family_code": "DE",
+      "compressed_bytes": 3103982,
+      "compression_method": 8,
+      "crc32": "d6d8b38f",
+      "folder_id": "DE_Meridian_remix1_LD3",
+      "licence_record_ids": [
+        "licence-odaq-e4cc6cb857ef71448c90",
+        "licence-odaq-4d2154994e218f0f53cf",
+        "licence-odaq-7b4fce3b944bfc701069"
+      ],
+      "member_basename": "reference.wav",
+      "source_id": "Meridian_remix1_LD3",
+      "uncompressed_bytes": 3840058
+    },
+    {
+      "artifact_family_code": "DE",
+      "compressed_bytes": 3810321,
+      "compression_method": 8,
+      "crc32": "88bd37b9",
+      "folder_id": "DE_Meridian_remix2_LD6",
+      "licence_record_ids": [
+        "licence-odaq-55380220501f32e9605f",
+        "licence-odaq-9bd967ab3a8c4b092198",
+        "licence-odaq-558530486aa9f41cbea7"
+      ],
+      "member_basename": "reference.wav",
+      "source_id": "Meridian_remix2_LD6",
+      "uncompressed_bytes": 4608058
+    },
+    {
+      "artifact_family_code": "DE",
+      "compressed_bytes": 2544974,
+      "compression_method": 8,
+      "crc32": "748013ff",
+      "folder_id": "DE_SitaSings_remix1_LD0",
+      "licence_record_ids": [
+        "licence-odaq-756658cce0a812f48362",
+        "licence-odaq-c7ffc06e3ae94bd286d4",
+        "licence-odaq-0f569d2bf33ac6be3b56"
+      ],
+      "member_basename": "reference.wav",
+      "source_id": "SitaSings_remix1_LD0",
+      "uncompressed_bytes": 3072058
+    },
+    {
+      "artifact_family_code": "DE",
+      "compressed_bytes": 3807772,
+      "compression_method": 8,
+      "crc32": "23c6828e",
+      "folder_id": "DE_SitaSings_remix2_LD6",
+      "licence_record_ids": [
+        "licence-odaq-234dc00cab8a3bd8dea4",
+        "licence-odaq-2077985ba90f5aade8a9",
+        "licence-odaq-1241066a57fbb00c3171"
+      ],
+      "member_basename": "reference.wav",
+      "source_id": "SitaSings_remix2_LD6",
+      "uncompressed_bytes": 4608058
+    },
+    {
+      "artifact_family_code": "LP",
+      "compressed_bytes": 2723086,
+      "compression_method": 8,
+      "crc32": "2b193a88",
+      "folder_id": "LP_11_guitar",
+      "licence_record_ids": [
+        "licence-odaq-83681cc71a25f2642f54"
+      ],
+      "member_basename": "reference.wav",
+      "source_id": "11_guitar",
+      "uncompressed_bytes": 2880234
+    },
+    {
+      "artifact_family_code": "LP",
+      "compressed_bytes": 2700341,
+      "compression_method": 8,
+      "crc32": "db60e176",
+      "folder_id": "LP_23_jazz",
+      "licence_record_ids": [
+        "licence-odaq-74c63391443e21506c47"
+      ],
+      "member_basename": "reference.wav",
+      "source_id": "23_jazz",
+      "uncompressed_bytes": 2880234
+    },
+    {
+      "artifact_family_code": "PE",
+      "compressed_bytes": 2366414,
+      "compression_method": 8,
+      "crc32": "f5aecf66",
+      "folder_id": "PE_27_castanets",
+      "licence_record_ids": [
+        "licence-odaq-dfc710106bdbb67ac227"
+      ],
+      "member_basename": "reference.wav",
+      "source_id": "27_castanets",
+      "uncompressed_bytes": 2882658
+    },
+    {
+      "artifact_family_code": "PE",
+      "compressed_bytes": 1656821,
+      "compression_method": 8,
+      "crc32": "9d1666b2",
+      "folder_id": "PE_39_clapping",
+      "licence_record_ids": [
+        "licence-odaq-c685d1df377e220436e2"
+      ],
+      "member_basename": "reference.wav",
+      "source_id": "39_clapping",
+      "uncompressed_bytes": 2164440
+    },
+    {
+      "artifact_family_code": "SH",
+      "compressed_bytes": 2692959,
+      "compression_method": 8,
+      "crc32": "478aae10",
+      "folder_id": "SH_04_choral",
+      "licence_record_ids": [
+        "licence-odaq-d5bf34e292529c29d38f"
+      ],
+      "member_basename": "reference.wav",
+      "source_id": "04_choral",
+      "uncompressed_bytes": 2880198
+    },
+    {
+      "artifact_family_code": "TM",
+      "compressed_bytes": 2821975,
+      "compression_method": 8,
+      "crc32": "c5ab9721",
+      "folder_id": "TM_01b_trumpet",
+      "licence_record_ids": [
+        "licence-odaq-341f756b76039065a490"
+      ],
+      "member_basename": "reference.wav",
+      "source_id": "01b_trumpet",
+      "uncompressed_bytes": 3312234
+    },
+    {
+      "artifact_family_code": "TM",
+      "compressed_bytes": 2654171,
+      "compression_method": 8,
+      "crc32": "2bddddaa",
+      "folder_id": "TM_02_violin",
+      "licence_record_ids": [
+        "licence-odaq-e0e922db4ded29f0db4e"
+      ],
+      "member_basename": "reference.wav",
+      "source_id": "02_violin",
+      "uncompressed_bytes": 2880234
+    },
+    {
+      "artifact_family_code": "UN",
+      "compressed_bytes": 3230986,
+      "compression_method": 8,
+      "crc32": "70f69a77",
+      "folder_id": "UN_20c_accordion",
+      "licence_record_ids": [
+        "licence-odaq-6875a9da1db9f6a7ca36"
+      ],
+      "member_basename": "reference.wav",
+      "source_id": "20c_accordion",
+      "uncompressed_bytes": 3456282
+    },
+    {
+      "artifact_family_code": "UN",
+      "compressed_bytes": 2655052,
+      "compression_method": 8,
+      "crc32": "04dbb8ce",
+      "folder_id": "UN_21_violin",
+      "licence_record_ids": [
+        "licence-odaq-751d67623edf76c1573d"
+      ],
+      "member_basename": "reference.wav",
+      "source_id": "21_violin",
+      "uncompressed_bytes": 2880234
+    }
+  ]
+}

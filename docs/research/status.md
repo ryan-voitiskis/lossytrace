@@ -438,3 +438,15 @@ pins the exact canonical freeze path and SHA-256 and requires a separately
 committed, clean authorization successor. No responsible-human source
 choice or playback declaration is present, so no provider request or audio
 write is authorized.
+
+On 2026-08-13 the responsible human selected the narrow ODAQ CC BY/CC0
+development path, accepted its one-provider and attribution limits, and
+authorized acquisition only of the 16 exactly frozen clean `reference.wav`
+members. The separately committed
+[`acquisition authorization`](perceptual-degradation-odaq-reference-acquisition-authorization-20260813.md)
+records the declared RME ADI-2 Pro FS to Adam Audio T7V playback chain and
+treated domestic living room. Live inventory observed the RME as the current
+default two-channel USB output at 96 kHz; exact session-rate agreement, quiet
+conditions, fixed listening position, channel checks, and conservative level
+calibration remain unqualified. Processed ODAQ conditions, published scores,
+stimulus generation, metrics, and listener collection remain unauthorized.
