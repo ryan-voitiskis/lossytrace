@@ -450,3 +450,18 @@ default two-channel USB output at 96 kHz; exact session-rate agreement, quiet
 conditions, fixed listening position, channel checks, and conservative level
 calibration remain unqualified. Processed ODAQ conditions, published scores,
 stimulus generation, metrics, and listener collection remain unauthorized.
+
+The bounded clean-reference acquisition is now complete and recorded in a
+path-free
+[`result`](perceptual-degradation-odaq-reference-acquisition-result-20260813.md).
+All 16 exact members independently passed byte-length, SHA-256, CRC-32,
+authorization-membership, inventory-digest, and FFmpeg geometry checks. The
+private corpus totals 54,633,154 bytes: seven 48 kHz stereo 32-bit float
+RIFF/WAVE files and nine 48 kHz stereo 24-bit integer
+WAVE_FORMAT_EXTENSIBLE files. No partial remains in the retained root. The
+full archive was not persisted, and processed conditions, published scores,
+metrics, stimulus generation, sealed evidence, and listener responses remain
+closed. Because the private browser delivery layer accepts integer PCM only,
+the next repository gate is a separately frozen score-blind conversion and
+delivery preparation plan; this result does not authorize conversion or
+listening.
