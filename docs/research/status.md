@@ -495,3 +495,21 @@ conditions matched the declaration, the conservative level was held fixed,
 and no discomfort occurred. This remains plumbing qualification only—not SPL
 calibration, a degradation rating, or perceptual validation. Retained-reference
 conversion and playback remain separately unauthorized.
+
+The subsequent score-blind listening-feasibility frontier found that the 16
+ODAQ source groups have asymptotic equivalence power only `0.0353439413` under
+the frozen source-variance model. The first source count above the `0.80`
+target is 39 per truth-bearing partition, requiring at least 156 unique groups
+across development, calibration, transfer, and final validation. Additional
+listeners cannot repair the 16-source floor, so ODAQ remains development
+plumbing and cannot assign transparent-lossy truth or independent transfer.
+
+A metadata-only
+[`permissive multi-provider candidate screen`](perceptual-degradation-permissive-multiprovider-source-candidates-20260813.md)
+now finds 1,867 conservative groups across seven CC BY exact-member-audit
+candidates. This clears only a raw-capacity screen. Qualified and allocated
+group counts remain zero: exact member rights and attribution, original coding
+history, relationship deduplication, domain balance, whole-provider holdouts,
+and resource feasibility are not frozen. MusicNet and permissive-item FSD50K
+remain provenance-pending; NSynth and ODAQ remain development-only. No new
+audio was acquired or opened, and the narrow ODAQ authorization is unchanged.
