@@ -5,6 +5,7 @@ import copy
 import importlib.util
 import io
 import json
+import struct
 import tempfile
 import unittest
 import wave
@@ -44,6 +45,36 @@ def pcm_wav(seed: int) -> bytes:
             frames.extend(int(sample).to_bytes(2, "little", signed=True) * 2)
         output.writeframes(bytes(frames))
     return value.getvalue()
+
+
+def float_wav(seed: int) -> bytes:
+    frame_count = 256
+    channels = 2
+    sample_rate = 48_000
+    block_align = channels * 4
+    samples = bytearray()
+    for index in range(frame_count):
+        sample = (((index * (seed + 1)) % 2000) - 1000) / 2000
+        samples.extend(struct.pack("<ff", sample, -sample))
+
+    def chunk(chunk_id: bytes, payload: bytes) -> bytes:
+        padding = b"\0" if len(payload) & 1 else b""
+        return chunk_id + struct.pack("<I", len(payload)) + payload + padding
+
+    fmt = struct.pack(
+        "<HHIIHHH",
+        3,
+        channels,
+        sample_rate,
+        sample_rate * block_align,
+        block_align,
+        32,
+        0,
+    )
+    body = b"WAVE" + chunk(b"fmt ", fmt)
+    body += chunk(b"fact", struct.pack("<I", frame_count))
+    body += chunk(b"data", bytes(samples))
+    return b"RIFF" + struct.pack("<I", len(body)) + body
 
 
 def fixture() -> tuple[dict, bytes]:
@@ -220,6 +251,44 @@ class OdaqReferenceExtractorTest(unittest.TestCase):
                 disk_free=lambda _: 10**9,
             )
             self.assertEqual(state, replay)
+
+    def test_ieee_float_reference_geometry_is_explicit(self) -> None:
+        folder_id = "LP_float-fixture"
+        encoded = io.BytesIO()
+        with zipfile.ZipFile(encoded, "w", zipfile.ZIP_DEFLATED) as archive:
+            archive.writestr(MODULE.member_name(folder_id), float_wav(2))
+        source = encoded.getvalue()
+        with zipfile.ZipFile(io.BytesIO(source)) as archive:
+            info = archive.getinfo(MODULE.member_name(folder_id))
+            plan = {
+                "references": [
+                    {
+                        "folder_id": folder_id,
+                        "source_id": "float-fixture",
+                        **MODULE.zip_binding(info),
+                        "licence_record_ids": ["licence-float-fixture"],
+                    }
+                ]
+            }
+        with tempfile.TemporaryDirectory() as temporary:
+            state = MODULE.extract_references(
+                plan=plan,
+                plan_sha256="1" * 64,
+                source=io.BytesIO(source),
+                output_root=Path(temporary) / "private",
+                minimum_free_bytes=0,
+                disk_free=lambda _: 10**9,
+            )
+        self.assertEqual(
+            {
+                "sample_rate_hz": 48_000,
+                "channel_count": 2,
+                "bit_depth": 32,
+                "frame_count": 256,
+                "sample_encoding": "ieee_float_pcm",
+            },
+            state["completed"][0]["pcm_geometry"],
+        )
 
     def test_zip_binding_mismatch_stops_before_member_write(self) -> None:
         plan, encoded = fixture()

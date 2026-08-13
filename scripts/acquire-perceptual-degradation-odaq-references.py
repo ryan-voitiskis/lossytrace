@@ -10,10 +10,10 @@ import json
 import os
 import re
 import shutil
+import struct
 import subprocess
 import sys
 import tempfile
-import wave
 import zipfile
 import zlib
 from pathlib import Path
@@ -368,30 +368,75 @@ def validate_preparation_plan(
     return errors
 
 
-def wav_facts(path: Path) -> dict[str, int]:
-    try:
-        with wave.open(str(path), "rb") as source:
-            channels = source.getnchannels()
-            sample_width = source.getsampwidth()
-            sample_rate = source.getframerate()
-            frames = source.getnframes()
-            compression = source.getcomptype()
-    except (EOFError, wave.Error) as error:
-        raise ValueError("extracted member is not supported PCM WAV") from error
-    bits = sample_width * 8
+def wav_facts(path: Path) -> dict[str, int | str]:
+    file_bytes = path.stat().st_size
+    with path.open("rb") as source:
+        header = source.read(12)
+        if len(header) != 12 or header[:4] != b"RIFF" or header[8:] != b"WAVE":
+            raise ValueError("extracted member is not a RIFF/WAVE file")
+        riff_bytes = struct.unpack_from("<I", header, 4)[0]
+        if riff_bytes + 8 != file_bytes:
+            raise ValueError("extracted RIFF byte length differs")
+
+        format_fields: tuple[int, int, int, int, int, int] | None = None
+        data_bytes: int | None = None
+        fact_frames: int | None = None
+        while source.tell() < file_bytes:
+            chunk_header = source.read(8)
+            if len(chunk_header) != 8:
+                raise ValueError("extracted WAV chunk header is truncated")
+            chunk_id = chunk_header[:4]
+            chunk_bytes = struct.unpack_from("<I", chunk_header, 4)[0]
+            chunk_start = source.tell()
+            chunk_end = chunk_start + chunk_bytes
+            padded_end = chunk_end + (chunk_bytes & 1)
+            if padded_end > file_bytes:
+                raise ValueError("extracted WAV chunk exceeds RIFF length")
+            if chunk_id == b"fmt ":
+                if format_fields is not None or chunk_bytes not in {16, 18}:
+                    raise ValueError("extracted WAV format chunk differs")
+                payload = source.read(chunk_bytes)
+                format_fields = struct.unpack_from("<HHIIHH", payload)
+                if chunk_bytes == 18 and struct.unpack_from("<H", payload, 16)[0] != 0:
+                    raise ValueError("extracted WAV format extension is unsupported")
+            elif chunk_id == b"fact":
+                if fact_frames is not None or chunk_bytes != 4:
+                    raise ValueError("extracted WAV fact chunk differs")
+                fact_frames = struct.unpack("<I", source.read(4))[0]
+            elif chunk_id == b"data":
+                if data_bytes is not None:
+                    raise ValueError("extracted WAV has multiple data chunks")
+                data_bytes = chunk_bytes
+            source.seek(padded_end)
+
+    if format_fields is None or data_bytes is None:
+        raise ValueError("extracted WAV is missing format or data")
+    format_tag, channels, sample_rate, byte_rate, block_align, bits = format_fields
+    if format_tag == 1 and bits in {16, 24, 32}:
+        sample_encoding = "signed_integer_pcm"
+    elif format_tag == 3 and bits == 32:
+        sample_encoding = "ieee_float_pcm"
+    else:
+        raise ValueError("extracted WAV sample encoding is unsupported")
+    expected_block_align = channels * (bits // 8)
     if (
-        compression != "NONE"
-        or channels not in {1, 2}
+        channels not in {1, 2}
         or sample_rate not in {44_100, 48_000}
-        or bits not in {16, 24, 32}
-        or frames <= 0
+        or block_align != expected_block_align
+        or byte_rate != sample_rate * block_align
+        or data_bytes == 0
+        or data_bytes % block_align != 0
     ):
-        raise ValueError("extracted PCM WAV geometry is unsupported")
+        raise ValueError("extracted WAV geometry is unsupported")
+    frames = data_bytes // block_align
+    if sample_encoding == "ieee_float_pcm" and fact_frames != frames:
+        raise ValueError("extracted float WAV fact count differs")
     return {
         "sample_rate_hz": sample_rate,
         "channel_count": channels,
         "bit_depth": bits,
         "frame_count": frames,
+        "sample_encoding": sample_encoding,
     }
 
 

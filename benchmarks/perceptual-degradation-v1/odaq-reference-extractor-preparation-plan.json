@@ -14,11 +14,11 @@
     },
     "extractor": {
       "path": "scripts/acquire-perceptual-degradation-odaq-references.py",
-      "sha256": "e953a671aba253ed129d7346e1e12d70526358bcbf21934f4a34f7a64099773d"
+      "sha256": "714f983a98841f45f955882b72c082aeceae5f427ba82e816909d0c1a44be05c"
     },
     "extractor_tests": {
       "path": "scripts/tests/test_perceptual_degradation_odaq_reference_extractor.py",
-      "sha256": "c129bff159a6b26877d964ed493ddb1443a18075c968e30c9377b405c8a9bcba"
+      "sha256": "5b6cbbb2112370db023a1727284e03e514dd5ebaf79c5101d5cc9b8671dd50c7"
     }
   },
   "access_boundary": {

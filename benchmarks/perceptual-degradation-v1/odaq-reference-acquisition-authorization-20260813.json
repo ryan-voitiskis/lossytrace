@@ -11,7 +11,7 @@
     },
     "bounded_extractor": {
       "path": "scripts/acquire-perceptual-degradation-odaq-references.py",
-      "sha256": "e953a671aba253ed129d7346e1e12d70526358bcbf21934f4a34f7a64099773d"
+      "sha256": "714f983a98841f45f955882b72c082aeceae5f427ba82e816909d0c1a44be05c"
     },
     "authorization_validator": {
       "path": "scripts/validate-perceptual-degradation-odaq-reference-authorization.py",
@@ -23,7 +23,7 @@
     },
     "authorization_report": {
       "path": "docs/research/perceptual-degradation-odaq-reference-acquisition-authorization-20260813.md",
-      "sha256": "c977445eaafc3a12add74533742095761935a602a311b3d02f50c4ede695d072"
+      "sha256": "ee9f0918b9d82e091c37ccfe2cb2c5e75c67970ce8d7a2e688005fc824a6c623"
     }
   },
   "source_track": "permissive_odaq_cc_by_cc0",

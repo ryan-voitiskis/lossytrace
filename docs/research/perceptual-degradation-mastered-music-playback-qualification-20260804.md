@@ -58,7 +58,8 @@ without opening any ZIP member. This is not acquisition authority.
 A bounded
 [`reference extractor`](perceptual-degradation-odaq-reference-extractor-preparation-20260804.md)
 is now synthetic-verified for exact binding checks, opaque atomic output,
-hash/CRC/PCM validation, disk reserve, and journaled resume. Its live command
+hash/CRC and integer/float RIFF geometry validation, disk reserve, and
+journaled resume. Its live command
 pins the exact canonical freeze path and SHA-256, then fails before provider
 access unless a separately committed and clean authorization binds the human
 source choice and playback declaration. No such authorization exists.

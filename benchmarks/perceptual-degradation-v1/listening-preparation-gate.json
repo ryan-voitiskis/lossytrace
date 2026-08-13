@@ -225,11 +225,11 @@
     },
     "mastered_music_playback_qualification_plan": {
       "path": "benchmarks/perceptual-degradation-v1/mastered-music-playback-qualification-plan.json",
-      "sha256": "b928ec983e808b3df67e61d92ea65b8cfe13c43f69ae38cd0168119a03246b18"
+      "sha256": "08f5b093cc8e249893848ba29e81cfcd9298e24a870e1b59155d7158fb82e9d5"
     },
     "mastered_music_playback_qualification_report": {
       "path": "docs/research/perceptual-degradation-mastered-music-playback-qualification-20260804.md",
-      "sha256": "53f053484f5497e18d4714dc3aef085df5aedb66067206748f9727a130d24c85"
+      "sha256": "a05af7a6e72fa8b1734014d39c59f6cf6253c475d541e79d6418640d3573e455"
     },
     "mastered_music_playback_qualification_validator": {
       "path": "scripts/validate-perceptual-degradation-mastered-music-playback-plan.py",
@@ -273,19 +273,19 @@
     },
     "odaq_reference_extractor_preparation": {
       "path": "benchmarks/perceptual-degradation-v1/odaq-reference-extractor-preparation-plan.json",
-      "sha256": "cd30ba4d03372cd82b399fdc15ed7f2c718e19afafabe45408dbd270a2118b9c"
+      "sha256": "640c95f8c5edb0a975a4ca0fbb44403df9971fbcabf05f3b01c4a45342dd868d"
     },
     "odaq_reference_extractor_report": {
       "path": "docs/research/perceptual-degradation-odaq-reference-extractor-preparation-20260804.md",
-      "sha256": "6e6a979a8ef9671b351bdee6f99d9444d389402f5c8d8a57069cbacda136e564"
+      "sha256": "7fdee87870de4df61b7e7102acaffbbd752ac1246874aae3fb620f43f6dda124"
     },
     "odaq_reference_extractor": {
       "path": "scripts/acquire-perceptual-degradation-odaq-references.py",
-      "sha256": "e953a671aba253ed129d7346e1e12d70526358bcbf21934f4a34f7a64099773d"
+      "sha256": "714f983a98841f45f955882b72c082aeceae5f427ba82e816909d0c1a44be05c"
     },
     "odaq_reference_extractor_tests": {
       "path": "scripts/tests/test_perceptual_degradation_odaq_reference_extractor.py",
-      "sha256": "c129bff159a6b26877d964ed493ddb1443a18075c968e30c9377b405c8a9bcba"
+      "sha256": "5b6cbbb2112370db023a1727284e03e514dd5ebaf79c5101d5cc9b8671dd50c7"
     }
   },
   "unresolved_operational_fields": [

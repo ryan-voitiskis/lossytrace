@@ -12,8 +12,9 @@ now implements the exact frozen-member delivery boundary without enabling it.
 Before a member is opened it checks the derived `reference.wav` name, CRC32,
 compressed size, uncompressed size, and ZIP compression method against the
 committed freeze. It streams the member through a private partial file, verifies
-the final CRC32 and SHA-256, parses the PCM-WAV geometry, flushes and syncs the
-file, then atomically renames it to an opaque identifier.
+the final CRC32 and SHA-256, parses the integer-PCM or IEEE-float RIFF/WAVE
+geometry without decoding samples, flushes and syncs the file, then atomically
+renames it to an opaque identifier.
 
 The private acquisition journal supports restart and verifies every retained
 file's size, hash, and PCM geometry before skipping completed work. Output must

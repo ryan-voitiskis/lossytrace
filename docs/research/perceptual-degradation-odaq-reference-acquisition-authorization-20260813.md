@@ -34,6 +34,14 @@ agreement between the stimulus rate, AudioContext rate, and declared CoreAudio
 rate. Quiet-session conditions, fixed listening position, channel correctness,
 and comfortable conservative calibration remain to be observed.
 
+The first bounded acquisition attempt stopped after the exact size and CRC
+check because the first authorized reference uses 32-bit IEEE-float WAV rather
+than integer PCM. Acquisition may preserve and explicitly inventory that
+lossless source representation, but the version-1 browser delivery boundary
+continues to reject float WAV. Any listening stimulus therefore requires a
+separately frozen deterministic conversion to integer PCM; no browser or
+platform decoder may convert it implicitly.
+
 ## Remaining boundary
 
 This authorization enables only bounded reference acquisition. It does not
