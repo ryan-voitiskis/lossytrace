@@ -850,3 +850,21 @@ provenance, preserves TinySOL's sparse/tonal confound, and leaves the missing
 quiet and naturally clipped candidates explicit. No exact member, source
 trait, condition, perceptual truth, metric, response, collection,
 no-reference work or public verdict was selected, opened or authorized.
+
+A deterministic score-blind
+[`oracle drift-resampler freeze`](perceptual-degradation-oracle-drift-resampler-20260814.md)
+now closes the technical resampling choice left open by the bounded-drift
+decision fixture. The selected candidate uses a hash-bound 128-tap,
+2,048-phase, signed-Q30 Kaiser-sinc table, a shared stereo position grid,
+mandatory 64-frame edge discard and a bit-exact zero-drift bypass. All nine
+predeclared gates passed across `+75`, `-60`, `+100`, `-100` and zero ppm:
+worst channel correlation was 0.9999999906, gain error stayed below 0.000031
+dB, sample error stayed below 0.000164, passband ripple was 0.000267 dB,
+stopband magnitude from 0.99 Nyquist was at most -60.11 dB, and zero-channel
+leakage was exactly zero. The drifted observations came from an independent
+analytic source-time generator rather than the candidate resampler. Two fresh
+temporary replays were byte-identical. This selects only the frozen technical
+resampler; integration after the held-out apply decision and retained-audio
+validation remain separately gated. No retained audio, perceptual metric,
+human truth, response, collection, no-reference work or public verdict was
+opened or authorized.

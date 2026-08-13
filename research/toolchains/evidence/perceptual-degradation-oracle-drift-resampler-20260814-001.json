@@ -1,0 +1,291 @@
+{
+  "all_predeclared_gates_pass": true,
+  "authority": {
+    "human_collection_authorized": false,
+    "listening_condition_selection_authorized": false,
+    "no_reference_training_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "provider_audio_access_authorized": false,
+    "public_verdict_enabled": false,
+    "response_or_outcome_access_authorized": false,
+    "retained_audio_access_authorized": false,
+    "sealed_evidence_access_authorized": false,
+    "source_member_selection_authorized": false,
+    "synthetic_numeric_fixture_execution_authorized": true,
+    "synthetic_pcm_fixture_execution_authorized": true
+  },
+  "candidate": {
+    "algorithm": "fixed_phase_quantized_kaiser_windowed_sinc",
+    "channel_processing": "independent_with_shared_position_grid",
+    "coefficient_quantization": "signed_q30_sum_exactly_one",
+    "coefficient_table_sha256": "dbe4442199b56cd56880f1f45c09889721519dd7a165a4de76117b5e219dab82",
+    "dither_applied": false,
+    "kaiser_beta": 9.0,
+    "mandatory_discard_frames_each_edge_when_applied": 64,
+    "maximum_abs_correction_ppm": 100,
+    "normalization_applied": false,
+    "normalized_cutoff_relative_to_nyquist": 0.95,
+    "numeric_input": "planar_binary64",
+    "numeric_output": "planar_binary64",
+    "out_of_range_policy": "zero_extension",
+    "perceptual_metric": false,
+    "phase_count": 2048,
+    "phase_selection": "nearest_phase_half_up_with_carry",
+    "resampler_id": "oracle-bounded-drift-kaiser-sinc128-q30-v1",
+    "source_position_mapping": "output_frame_times_one_plus_correction_ppm_per_million",
+    "tap_count": 128,
+    "tap_offset_maximum": 64,
+    "tap_offset_minimum": -63,
+    "zero_drift_policy": "bit_exact_identity_bypass"
+  },
+  "claim_boundary": {
+    "full_objective_complete": false,
+    "full_reference_oracle_validated": false,
+    "no_reference_work_eligible": false,
+    "public_cli_changed": false,
+    "resampler_selection_authorizes_human_collection": false,
+    "resampler_selection_authorizes_metric_execution": false,
+    "resampler_selection_authorizes_retained_audio_access": false,
+    "resampler_selection_proves_negative_class_truth": false,
+    "synthetic_replay_is_perceptual_validation": false,
+    "synthetic_replay_is_retained_audio_validation": false
+  },
+  "coefficient_table": {
+    "all_phase_sums_equal_q30_one": true,
+    "phase_count": 2048,
+    "sha256": "dbe4442199b56cd56880f1f45c09889721519dd7a165a4de76117b5e219dab82",
+    "tap_count": 128
+  },
+  "decision": {
+    "bounded_drift_correction_technical_path_ready": true,
+    "candidate_selected_as_frozen_oracle_resampler": true,
+    "full_reference_oracle_validated": false,
+    "human_collection_authorized": false,
+    "human_or_perceptual_validity_present": false,
+    "next_gate": "Under separate authority, integrate this exact resampler after the held-out drift decision and validate correction on retained development pairs before any perceptual metric execution.",
+    "no_reference_work_eligible": false,
+    "public_verdict_enabled": false,
+    "retained_audio_correction_executed": false,
+    "retained_audio_correction_validated": false
+  },
+  "freeze_id": "perceptual-degradation-oracle-drift-resampler-20260814-001",
+  "freeze_sha256": "3ae5217a4906d32b300f3f4a47b482a2977c33d8b8627622f0f5438d64f991a2",
+  "frequency_response": {
+    "maximum_dc_coefficient_sum_error": 0.0,
+    "passband_frequency_count": 181,
+    "passband_maximum_db": 0.00026739857559099166,
+    "passband_minimum_db": -0.00025877810430631216,
+    "passband_ripple_abs_db": 0.00026739857559099166,
+    "phase_count_evaluated": 128,
+    "stopband_frequency_count": 3,
+    "stopband_maximum_db": -60.11043891598926
+  },
+  "gate_audit": {
+    "coefficient_table_hash": true,
+    "core_absolute_error": true,
+    "core_correlation": true,
+    "core_gain": true,
+    "dc_coefficient_sum": true,
+    "passband_ripple": true,
+    "stereo_zero_channel_leakage": true,
+    "stopband_magnitude": true,
+    "zero_drift_bit_exact": true
+  },
+  "golden_vector": {
+    "correction_ppm": 75,
+    "frame_count": 4096,
+    "input_f64le_sha256": "5c53623af0cf5e5821762b099ef1e49d6e2917597e910a0acbfce21e7a4ef4d0",
+    "output_f64le_sha256": "de3136b0b6ca9dcd100f6adadc6c126d42c8a628daf9949dfcafcb5ce1c76305"
+  },
+  "implementation_sha256": "7c048ad912039c6aad4e52a5e1e3f19a3989862ff8ab2b81c6ad5f15308c06b8",
+  "replay_observation": {
+    "byte_identical": true,
+    "fresh_temporary_replay_count": 2,
+    "paths_included": false,
+    "payload_sha256s": [
+      "a360f30bc5ccd56d7fb0c052b6babb1c3d9203f4e9ffb1b75b6e04f8c22e78b3",
+      "a360f30bc5ccd56d7fb0c052b6babb1c3d9203f4e9ffb1b75b6e04f8c22e78b3"
+    ],
+    "timing_included": false
+  },
+  "report_id": "perceptual-degradation-oracle-drift-resampler-20260814-001",
+  "resources": {
+    "generated_audio_retained": false,
+    "maximum_workers_used": 1,
+    "minimum_free_disk_gib_preserved": 15
+  },
+  "schema_version": 1,
+  "state": "score_blind_oracle_drift_resampler_replayed",
+  "stereo_isolation": {
+    "input_channel_count": 2,
+    "maximum_zero_channel_leakage": 0.0,
+    "nonzero_channel_output_sha256": "c1c2934156cf2085263438324b3648a26c74bdde6070b7daca30cc43bfd89d24",
+    "output_channel_count": 2,
+    "shared_position_grid": true,
+    "zero_channel_output_sha256": "c35020473aed1b4642cd726cad727b63fff2824ad68cedd7ffb73c7cbd890479"
+  },
+  "summary": {
+    "actual_audio_accessed": false,
+    "all_predeclared_gates_pass": true,
+    "listener_response_collected": false,
+    "perceptual_metric_executed": false,
+    "perceptual_truth_included": false,
+    "predeclared_gate_count": 9,
+    "predeclared_gate_pass_count": 9,
+    "public_verdict_enabled": false,
+    "retained_audio_accessed": false,
+    "time_domain_case_count": 5
+  },
+  "time_domain_cases": [
+    {
+      "channel_metrics": [
+        {
+          "channel_index": 0,
+          "core_correlation": 0.9999999933986683,
+          "core_frame_count": 95872,
+          "core_gain_error_db": -1.8055649495280606e-05,
+          "core_maximum_absolute_error": 0.00014392656341261079
+        },
+        {
+          "channel_index": 1,
+          "core_correlation": 0.9999999906045902,
+          "core_frame_count": 95872,
+          "core_gain_error_db": -3.036335016138293e-05,
+          "core_maximum_absolute_error": 0.00016287672465766304
+        }
+      ],
+      "correction_applied": true,
+      "correction_ppm": 75,
+      "identity_bypass_used": false,
+      "identity_output_bit_exact": null,
+      "input_f64le_sha256": "28cd6ea047a35e33fdec5abf2e6d5d805beb00fe3713014dc13f5762459f15cc",
+      "mandatory_discard_frames_each_edge": 64,
+      "observed_frame_count": 96007,
+      "output_f64le_sha256": "f6f6d8039b0a36c9ef8428c4e401c48875263e8f98ce67e22df7b0031db0a745",
+      "output_frame_count": 96000,
+      "perceptual_truth_included": false,
+      "reference_frame_count": 96000,
+      "retained_audio_accessed": false
+    },
+    {
+      "channel_metrics": [
+        {
+          "channel_index": 0,
+          "core_correlation": 0.9999999933971567,
+          "core_frame_count": 95872,
+          "core_gain_error_db": -1.8868319945388965e-05,
+          "core_maximum_absolute_error": 0.00014603575029328852
+        },
+        {
+          "channel_index": 1,
+          "core_correlation": 0.999999990606297,
+          "core_frame_count": 95872,
+          "core_gain_error_db": -3.098134442132006e-05,
+          "core_maximum_absolute_error": 0.000161018154954784
+        }
+      ],
+      "correction_applied": true,
+      "correction_ppm": -60,
+      "identity_bypass_used": false,
+      "identity_output_bit_exact": null,
+      "input_f64le_sha256": "2175cfacd2b0e0b980ae3c1b228a2f489600881072a5e45bc498827668bc1785",
+      "mandatory_discard_frames_each_edge": 64,
+      "observed_frame_count": 95994,
+      "output_f64le_sha256": "0cc498ef3a6ed48ef0ae6752eb8430681ad094f19c8f6866f93fe66088d34843",
+      "output_frame_count": 96000,
+      "perceptual_truth_included": false,
+      "reference_frame_count": 96000,
+      "retained_audio_accessed": false
+    },
+    {
+      "channel_metrics": [
+        {
+          "channel_index": 0,
+          "core_correlation": 0.9999999933990319,
+          "core_frame_count": 95872,
+          "core_gain_error_db": -1.8391206677737615e-05,
+          "core_maximum_absolute_error": 0.00014240748800513348
+        },
+        {
+          "channel_index": 1,
+          "core_correlation": 0.9999999906094001,
+          "core_frame_count": 95872,
+          "core_gain_error_db": -3.0847277191965e-05,
+          "core_maximum_absolute_error": 0.00016305308481301406
+        }
+      ],
+      "correction_applied": true,
+      "correction_ppm": 100,
+      "identity_bypass_used": false,
+      "identity_output_bit_exact": null,
+      "input_f64le_sha256": "a54b3585f7c4da664b210a2f06e8d26d01a78142dea836f82cb26e94ec52c70a",
+      "mandatory_discard_frames_each_edge": 64,
+      "observed_frame_count": 96009,
+      "output_f64le_sha256": "b6137b9bd99e06b3950fbcbff1d7f30cef78be1187d054b7f9e7bcc892803b87",
+      "output_frame_count": 96000,
+      "perceptual_truth_included": false,
+      "reference_frame_count": 96000,
+      "retained_audio_accessed": false
+    },
+    {
+      "channel_metrics": [
+        {
+          "channel_index": 0,
+          "core_correlation": 0.9999999933963485,
+          "core_frame_count": 95872,
+          "core_gain_error_db": -1.875650741166296e-05,
+          "core_maximum_absolute_error": 0.00014215379237240977
+        },
+        {
+          "channel_index": 1,
+          "core_correlation": 0.9999999906052256,
+          "core_frame_count": 95872,
+          "core_gain_error_db": -3.074312519502728e-05,
+          "core_maximum_absolute_error": 0.0001623833164113575
+        }
+      ],
+      "correction_applied": true,
+      "correction_ppm": -100,
+      "identity_bypass_used": false,
+      "identity_output_bit_exact": null,
+      "input_f64le_sha256": "691dd22e19eeba98494da7533402227ab4832d591469c7d263bca32eb76619f8",
+      "mandatory_discard_frames_each_edge": 64,
+      "observed_frame_count": 95990,
+      "output_f64le_sha256": "1923568a5eed17448cbcb81ebac913cd13d0d68639f25663834d2a495377209b",
+      "output_frame_count": 96000,
+      "perceptual_truth_included": false,
+      "reference_frame_count": 96000,
+      "retained_audio_accessed": false
+    },
+    {
+      "channel_metrics": [
+        {
+          "channel_index": 0,
+          "core_correlation": 1.0,
+          "core_frame_count": 96000,
+          "core_gain_error_db": 0.0,
+          "core_maximum_absolute_error": 0.0
+        },
+        {
+          "channel_index": 1,
+          "core_correlation": 1.0,
+          "core_frame_count": 96000,
+          "core_gain_error_db": 0.0,
+          "core_maximum_absolute_error": 0.0
+        }
+      ],
+      "correction_applied": false,
+      "correction_ppm": 0,
+      "identity_bypass_used": true,
+      "identity_output_bit_exact": true,
+      "input_f64le_sha256": "6e38b70402191e792cf3fd144a2e49a42ba4122015c74d4205d9cb9b21137b10",
+      "mandatory_discard_frames_each_edge": 0,
+      "observed_frame_count": 96000,
+      "output_f64le_sha256": "6e38b70402191e792cf3fd144a2e49a42ba4122015c74d4205d9cb9b21137b10",
+      "output_frame_count": 96000,
+      "perceptual_truth_included": false,
+      "reference_frame_count": 96000,
+      "retained_audio_accessed": false
+    }
+  ]
+}
