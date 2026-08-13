@@ -1,0 +1,431 @@
+{
+  "audio_accessed": false,
+  "claim_boundary": {
+    "arithmetic_feasibility_is_scientific_feasibility": false,
+    "available_group_capacity_is_independent_truth": false,
+    "candidate_screen_authorizes_audio_access": false,
+    "candidate_screen_is_full_objective_negative_result": false,
+    "capacity_witness_selects_exact_members": false,
+    "controlled_performance_music_proves_mastered_music_transfer": false,
+    "current_candidate_pool_supports_mastered_music_in_every_partition": false,
+    "current_candidate_pool_supports_three_domains_in_every_partition": false,
+    "one_album_proves_multigenre_transfer": false,
+    "provider_slot_count_proves_provider_transfer": false,
+    "public_cli_changed": false
+  },
+  "decision": {
+    "allocated_group_count": 0,
+    "exact_member_manifest_frozen": false,
+    "expanded_pool_clears_count_only_39_each_partition": true,
+    "expanded_pool_clears_final_three_domain_capacity": true,
+    "expanded_pool_clears_mastered_music_every_partition": false,
+    "expanded_pool_clears_music_minimum_every_partition": true,
+    "expanded_pool_clears_reference_sensitivity_120_each_partition": false,
+    "expanded_pool_clears_three_domains_every_partition": false,
+    "expanded_pool_clears_two_mastered_music_providers_in_final": false,
+    "expanded_pool_clears_two_providers_39_each_partition": true,
+    "metric_successor_selected": false,
+    "next_responsible_human_decision": "Choose whether to authorize an exact-member metadata audit of the expanded candidates, narrow the primary-domain claim, or reject the current truth-source design; this does not authorize audio access.",
+    "no_reference_work_eligible": false,
+    "primary_domains_frozen": false,
+    "provider_allocation_frozen": false,
+    "qualified_reference_group_count": 0,
+    "source_successor_selected": false
+  },
+  "exact_members_selected": false,
+  "human_collection_authorized": false,
+  "implementation_sha256": "317d486ff946c9d2a8aa009456c47145f780aaecac212f69c9e574010180dd19",
+  "metrics_executed": false,
+  "plan_id": "perceptual-degradation-additional-permissive-provider-allocation-feasibility-20260814-001",
+  "plan_sha256": "2dda089c7bb0533e6bee276a5aac95fa201693bb177d7fc349aba78b1f328350",
+  "public_verdict_enabled": false,
+  "report_id": "perceptual-degradation-additional-permissive-provider-allocation-feasibility-20260814-001",
+  "scenario_results": [
+    {
+      "arithmetic_feasible": true,
+      "available_capacity_by_partition": {
+        "calibration": 1710,
+        "development": 54,
+        "final_validation": 56,
+        "transfer": 43
+      },
+      "capacity_witness": [
+        {
+          "available_group_capacity": 54,
+          "capabilities": [
+            "speech"
+          ],
+          "partition": "development",
+          "provider_id": "lombard_grid"
+        },
+        {
+          "available_group_capacity": 1710,
+          "capabilities": [
+            "synthetic"
+          ],
+          "partition": "calibration",
+          "provider_id": "slakh"
+        },
+        {
+          "available_group_capacity": 15,
+          "capabilities": [
+            "natural"
+          ],
+          "partition": "transfer",
+          "provider_id": "sonyc_backgrounds"
+        },
+        {
+          "available_group_capacity": 28,
+          "capabilities": [
+            "music",
+            "controlled_performance_music"
+          ],
+          "partition": "transfer",
+          "provider_id": "urmp"
+        },
+        {
+          "available_group_capacity": 56,
+          "capabilities": [
+            "speech"
+          ],
+          "partition": "final_validation",
+          "provider_id": "vctk_clean"
+        }
+      ],
+      "eligible_available_group_capacity": 1930,
+      "eligible_provider_count": 11,
+      "exact_member_selection_frozen": false,
+      "expected_arithmetic_feasible": true,
+      "reason_not_eligible": "count-only packing remains confounded and selects no exact members",
+      "result_matches_frozen_expectation": true,
+      "scenario_id": "expanded_count_only_39_each_partition",
+      "scientifically_eligible": false
+    },
+    {
+      "arithmetic_feasible": true,
+      "available_capacity_by_partition": {
+        "calibration": 1735,
+        "development": 60,
+        "final_validation": 57,
+        "transfer": 43
+      },
+      "capacity_witness": [
+        {
+          "available_group_capacity": 6,
+          "capabilities": [
+            "music",
+            "controlled_performance_music"
+          ],
+          "partition": "development",
+          "provider_id": "guitarset"
+        },
+        {
+          "available_group_capacity": 54,
+          "capabilities": [
+            "speech"
+          ],
+          "partition": "development",
+          "provider_id": "lombard_grid"
+        },
+        {
+          "available_group_capacity": 25,
+          "capabilities": [
+            "natural"
+          ],
+          "partition": "calibration",
+          "provider_id": "satp"
+        },
+        {
+          "available_group_capacity": 1710,
+          "capabilities": [
+            "synthetic"
+          ],
+          "partition": "calibration",
+          "provider_id": "slakh"
+        },
+        {
+          "available_group_capacity": 15,
+          "capabilities": [
+            "natural"
+          ],
+          "partition": "transfer",
+          "provider_id": "sonyc_backgrounds"
+        },
+        {
+          "available_group_capacity": 1,
+          "capabilities": [
+            "music",
+            "controlled_performance_music"
+          ],
+          "partition": "final_validation",
+          "provider_id": "tinysol"
+        },
+        {
+          "available_group_capacity": 28,
+          "capabilities": [
+            "music",
+            "controlled_performance_music"
+          ],
+          "partition": "transfer",
+          "provider_id": "urmp"
+        },
+        {
+          "available_group_capacity": 56,
+          "capabilities": [
+            "speech"
+          ],
+          "partition": "final_validation",
+          "provider_id": "vctk_clean"
+        }
+      ],
+      "eligible_available_group_capacity": 1930,
+      "eligible_provider_count": 11,
+      "exact_member_selection_frozen": false,
+      "expected_arithmetic_feasible": true,
+      "reason_not_eligible": "provider-slot arithmetic does not establish exact members, independence or a scientific provider-holdout design",
+      "result_matches_frozen_expectation": true,
+      "scenario_id": "expanded_two_providers_39_each_partition",
+      "scientifically_eligible": false
+    },
+    {
+      "arithmetic_feasible": true,
+      "available_capacity_by_partition": {
+        "calibration": 54,
+        "development": 40,
+        "final_validation": 99,
+        "transfer": 1710
+      },
+      "capacity_witness": [
+        {
+          "available_group_capacity": 15,
+          "capabilities": [
+            "music",
+            "controlled_performance_music"
+          ],
+          "partition": "development",
+          "provider_id": "good_sounds"
+        },
+        {
+          "available_group_capacity": 54,
+          "capabilities": [
+            "speech"
+          ],
+          "partition": "calibration",
+          "provider_id": "lombard_grid"
+        },
+        {
+          "available_group_capacity": 25,
+          "capabilities": [
+            "natural"
+          ],
+          "partition": "development",
+          "provider_id": "satp"
+        },
+        {
+          "available_group_capacity": 1710,
+          "capabilities": [
+            "synthetic"
+          ],
+          "partition": "transfer",
+          "provider_id": "slakh"
+        },
+        {
+          "available_group_capacity": 15,
+          "capabilities": [
+            "natural"
+          ],
+          "partition": "final_validation",
+          "provider_id": "sonyc_backgrounds"
+        },
+        {
+          "available_group_capacity": 28,
+          "capabilities": [
+            "music",
+            "controlled_performance_music"
+          ],
+          "partition": "final_validation",
+          "provider_id": "urmp"
+        },
+        {
+          "available_group_capacity": 56,
+          "capabilities": [
+            "speech"
+          ],
+          "partition": "final_validation",
+          "provider_id": "vctk_clean"
+        }
+      ],
+      "eligible_available_group_capacity": 1930,
+      "eligible_provider_count": 11,
+      "exact_member_selection_frozen": false,
+      "expected_arithmetic_feasible": true,
+      "reason_not_eligible": "a final-partition capacity witness does not freeze domains, exact members or independent source relationships",
+      "result_matches_frozen_expectation": true,
+      "scenario_id": "expanded_final_three_domain_minimum",
+      "scientifically_eligible": false
+    },
+    {
+      "arithmetic_feasible": true,
+      "available_capacity_by_partition": {
+        "calibration": 66,
+        "development": 1720,
+        "final_validation": 43,
+        "transfer": 40
+      },
+      "capacity_witness": [
+        {
+          "available_group_capacity": 10,
+          "capabilities": [
+            "music",
+            "mastered_music"
+          ],
+          "partition": "development",
+          "provider_id": "albumdb"
+        },
+        {
+          "available_group_capacity": 10,
+          "capabilities": [
+            "music",
+            "controlled_performance_music"
+          ],
+          "partition": "calibration",
+          "provider_id": "choralebricks"
+        },
+        {
+          "available_group_capacity": 15,
+          "capabilities": [
+            "music",
+            "controlled_performance_music"
+          ],
+          "partition": "transfer",
+          "provider_id": "good_sounds"
+        },
+        {
+          "available_group_capacity": 25,
+          "capabilities": [
+            "natural"
+          ],
+          "partition": "transfer",
+          "provider_id": "satp"
+        },
+        {
+          "available_group_capacity": 1710,
+          "capabilities": [
+            "synthetic"
+          ],
+          "partition": "development",
+          "provider_id": "slakh"
+        },
+        {
+          "available_group_capacity": 15,
+          "capabilities": [
+            "natural"
+          ],
+          "partition": "final_validation",
+          "provider_id": "sonyc_backgrounds"
+        },
+        {
+          "available_group_capacity": 28,
+          "capabilities": [
+            "music",
+            "controlled_performance_music"
+          ],
+          "partition": "final_validation",
+          "provider_id": "urmp"
+        },
+        {
+          "available_group_capacity": 56,
+          "capabilities": [
+            "speech"
+          ],
+          "partition": "calibration",
+          "provider_id": "vctk_clean"
+        }
+      ],
+      "eligible_available_group_capacity": 1930,
+      "eligible_provider_count": 11,
+      "exact_member_selection_frozen": false,
+      "expected_arithmetic_feasible": true,
+      "reason_not_eligible": "music capacity is dominated by narrow controlled and single-album sources and has no exact-member audit",
+      "result_matches_frozen_expectation": true,
+      "scenario_id": "expanded_music_minimum_every_partition",
+      "scientifically_eligible": false
+    },
+    {
+      "arithmetic_feasible": false,
+      "available_capacity_by_partition": {
+        "calibration": 0,
+        "development": 0,
+        "final_validation": 0,
+        "transfer": 0
+      },
+      "capacity_witness": [],
+      "eligible_available_group_capacity": 1930,
+      "eligible_provider_count": 11,
+      "exact_member_selection_frozen": false,
+      "expected_arithmetic_feasible": false,
+      "reason_not_eligible": "only two speech and two natural providers exist, so whole-provider separation cannot cover those domains in four partitions",
+      "result_matches_frozen_expectation": true,
+      "scenario_id": "expanded_three_domains_every_partition",
+      "scientifically_eligible": false
+    },
+    {
+      "arithmetic_feasible": false,
+      "available_capacity_by_partition": {
+        "calibration": 0,
+        "development": 0,
+        "final_validation": 0,
+        "transfer": 0
+      },
+      "capacity_witness": [],
+      "eligible_available_group_capacity": 1930,
+      "eligible_provider_count": 11,
+      "exact_member_selection_frozen": false,
+      "expected_arithmetic_feasible": false,
+      "reason_not_eligible": "AlbumDB is the only mastered-music provider and represents one album and narrow genre family",
+      "result_matches_frozen_expectation": true,
+      "scenario_id": "expanded_mastered_music_minimum_every_partition",
+      "scientifically_eligible": false
+    },
+    {
+      "arithmetic_feasible": false,
+      "available_capacity_by_partition": {
+        "calibration": 0,
+        "development": 0,
+        "final_validation": 0,
+        "transfer": 0
+      },
+      "capacity_witness": [],
+      "eligible_available_group_capacity": 1930,
+      "eligible_provider_count": 11,
+      "exact_member_selection_frozen": false,
+      "expected_arithmetic_feasible": false,
+      "reason_not_eligible": "only one candidate provider has mastered-music capability",
+      "result_matches_frozen_expectation": true,
+      "scenario_id": "expanded_final_two_mastered_music_providers",
+      "scientifically_eligible": false
+    },
+    {
+      "arithmetic_feasible": false,
+      "available_capacity_by_partition": {
+        "calibration": 0,
+        "development": 0,
+        "final_validation": 0,
+        "transfer": 0
+      },
+      "capacity_witness": [],
+      "eligible_available_group_capacity": 1930,
+      "eligible_provider_count": 11,
+      "exact_member_selection_frozen": false,
+      "expected_arithmetic_feasible": false,
+      "reason_not_eligible": "after one partition receives Slakh, the remaining provider-pure capacity cannot fill three 120-group partitions",
+      "result_matches_frozen_expectation": true,
+      "scenario_id": "expanded_reference_sensitivity_120_each_partition",
+      "scientifically_eligible": false
+    }
+  ],
+  "schema_version": 1,
+  "sealed_evidence_opened": false,
+  "state": "score_blind_additional_provider_capacity_sensitivity_complete_no_member_allocation",
+  "target_perceptual_degradation_scores_opened": false
+}

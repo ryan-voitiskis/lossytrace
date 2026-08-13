@@ -563,3 +563,17 @@ additional qualified providers, a narrower primary-domain claim, or rejection
 of the current truth-source design still requires responsible-human choice.
 No audio, member selection, metric, score, collection, sealed evidence,
 no-reference training, or public verdict was authorized.
+
+A successor-neutral
+[`additional permissive-provider screen`](perceptual-degradation-additional-permissive-provider-screen-20260814.md)
+now binds four purpose-recorded music candidates at exact public versions:
+AlbumDB, ChoraleBricks, the current Good-sounds Dataverse re-release, and URMP.
+They add 63 conservative metadata-level groups, bringing the audit-candidate
+pool to 11 providers and 1,930 groups. Whole-provider arithmetic can now fill
+four 39-group partitions, two provider slots per partition, a final
+music/speech/natural minimum, and eight music groups per partition. Scientific
+eligibility remains false: qualified and allocated counts are zero, only two
+speech and two natural providers exist, AlbumDB is the only mastered-music
+provider and represents one album, three-domain breadth in every partition is
+infeasible, and the 120-group sensitivity is infeasible. No source or metric
+successor was selected and no audio authority was broadened.
