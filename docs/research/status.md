@@ -577,3 +577,19 @@ speech and two natural providers exist, AlbumDB is the only mastered-music
 provider and represents one album, three-domain breadth in every partition is
 infeasible, and the 120-group sensitivity is infeasible. No source or metric
 successor was selected and no audio authority was broadened.
+
+A current official-record
+[`ViSQOL-only successor-readiness disposition`](perceptual-degradation-visqol-only-successor-readiness-20260814.md)
+now establishes that a simpler score-blind full-reference successor can be
+preregistered responsibly, but does not select it or authorize execution. The
+frozen v3.3.3 model already has zero-delta synthetic replay across two distinct
+build environments. That is technical readiness only: official guidance says
+audio mode downmixes to mono, single scores require treatment aggregation,
+domain-specific training needs subjective scores, and behavior can be poor
+below the 24 kbps training floor or outside codec/VoIP degradations. Raw
+MOS-LQO and similarity outputs therefore remain supporting features, not
+audibility, materiality, severity, or artifact truth. A selected successor
+would require a new committed plan and schema, controlled human calibration,
+explicit stereo and domain abstention, and preserved grouped negatives before
+any retained or human metric outcome is opened. The current two-family gate,
+source authority, no-reference gate, and public verdict remain closed.
