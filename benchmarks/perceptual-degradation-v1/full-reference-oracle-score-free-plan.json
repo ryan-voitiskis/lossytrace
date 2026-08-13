@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "plan_id": "full-reference-oracle-score-free-plan-20260813-001",
+  "state": "score_free_schema_replay_complete_metric_and_human_gates_closed",
+  "purpose": "Close the preregistered score-free full-reference oracle schema replay with deterministic synthetic structural records while keeping real audio, perceptual metrics, human truth, no-reference training and public verdicts unavailable.",
+  "bindings": {
+    "research_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/research-plan.json",
+      "sha256": "e724a3e04fb41458d0568f542283ba33d71a54b1fdfd74b3901cc0dc1d10c352"
+    },
+    "metric_execution_gate": {
+      "path": "benchmarks/perceptual-degradation-v1/metric-execution-gate.json",
+      "sha256": "404f4b15dfd1c32586306c9776d293b7d556489c10b4dd216e6fc543bd9e40af"
+    },
+    "alignment_topology_freeze": {
+      "path": "benchmarks/perceptual-degradation-v1/alignment-topology-freeze.json",
+      "sha256": "b3508568fb1375f833fd4ba5b0203bdeb6dba1197fb95b054576e79c9deeda45"
+    },
+    "oracle_schema": {
+      "path": "benchmarks/perceptual-degradation-v1/full-reference-oracle-score-free.schema.json",
+      "sha256": "986c58245f414af4eb8887aaf98b59f13707ab81faf1c588b0de4b058987a31c"
+    },
+    "oracle_implementation": {
+      "path": "scripts/perceptual_degradation_oracle.py",
+      "sha256": "caed779df79cf1bacdd69bed5846622f26f60377488c4bdbb8ddb2fcd73d05cc"
+    },
+    "oracle_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_oracle.py",
+      "sha256": "94baf5684db38b769c7e5db595b8040ea5d217597281a59cabb372e949777c04"
+    },
+    "score_free_replay": {
+      "path": "research/toolchains/evidence/perceptual-degradation-oracle-score-free-replay-20260813-001.json",
+      "sha256": "1bb110a6683b0c078245097de65f4243646f60f9e46d942cd8a3a96610b43560"
+    },
+    "score_free_report": {
+      "path": "docs/research/perceptual-degradation-full-reference-oracle-score-free-replay-20260813.md",
+      "sha256": "dfb6268d1bb44101f8cec4422b66bedb5c97f0e8049e8e98c460ce00e91cb9bf"
+    }
+  },
+  "completed_prerequisite": {
+    "research_plan_required_record": "score_free_schema_replay",
+    "score_free_schema_replay_complete": true,
+    "synthetic_replay_byte_identical": true,
+    "supported_alignment_distinguished_from_execution_block": true,
+    "alignment_failure_distinguished_from_metric_execution": true
+  },
+  "replay": {
+    "record_count": 2,
+    "record_inventory_sha256": "9777677b10ef6f0024855796f4e940e24149b04ad05ef8d95cb56e3a85414636",
+    "execution_blocked_count": 1,
+    "unsupported_alignment_count": 1,
+    "estimated_count": 0,
+    "path_free": true
+  },
+  "score_free_output_boundary": {
+    "categorical_state": "indeterminate",
+    "impairment_severity_available": false,
+    "audibility_probability_available": false,
+    "artifact_profile_values_available": false,
+    "support_claim_available": false,
+    "uncertainty_quantified": false,
+    "source_group_bootstrap_replicates": 0
+  },
+  "access_boundary": {
+    "synthetic_numeric_fixture_execution_authorized": true,
+    "retained_audio_access_authorized": false,
+    "public_or_provider_audio_access_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "human_score_access_authorized": false,
+    "human_collection_authorized": false,
+    "no_reference_training_authorized": false,
+    "sealed_evidence_access_authorized": false,
+    "public_verdict_authorized": false
+  },
+  "claim_boundary": {
+    "schema_replay_is_oracle_validation": false,
+    "schema_replay_is_listening_evidence": false,
+    "schema_replay_is_metric_evidence": false,
+    "schema_replay_supports_perceptual_estimation": false,
+    "full_reference_gate_passed": false,
+    "no_reference_work_eligible": false,
+    "public_cli_changed": false,
+    "public_verdict_enabled": false
+  },
+  "unmet_prerequisites": [
+    "Responsible-human authorization for retained ODAQ clean-reference projection is absent.",
+    "Controlled listening stimuli and valid human calibration evidence are absent.",
+    "Perceptual metric execution remains unauthorized.",
+    "The GstPEAQ proxy legal and conformance boundary remains unresolved.",
+    "Grouped oracle transfer and every no-reference eligibility gate remain untested."
+  ],
+  "authorized_next_step": "Preserve this score-free envelope. Complete only separately authorized clean-reference delivery and listening preparation; do not execute either perceptual metric, inspect human scores, train a no-reference estimator, or enable a public verdict."
+}
