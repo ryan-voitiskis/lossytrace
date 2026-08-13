@@ -34,7 +34,7 @@
     },
     "resampler_implementation": {
       "path": "scripts/perceptual_degradation_oracle_drift_resampler.py",
-      "sha256": "7c048ad912039c6aad4e52a5e1e3f19a3989862ff8ab2b81c6ad5f15308c06b8"
+      "sha256": "541f8e200d95ccd7c447fec32e0de1aa411c5793b7641c7d0aa32ba5e52055ea"
     }
   },
   "authorization": {

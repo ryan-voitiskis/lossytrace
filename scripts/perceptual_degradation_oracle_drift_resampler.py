@@ -566,8 +566,11 @@ def golden_vector(
     frames = plan["synthetic_replay"]["golden_vector_frame_count"]
     candidate = plan["candidate"]
     values = [
-        math.sin(2 * math.pi * 0.071 * frame + 0.13)
-        + 0.31 * math.sin(2 * math.pi * 0.337 * frame + 0.41)
+        (
+            (frame * 7919 + (frame // 17) * 104729) % 60001
+            - 30000
+        )
+        / 32768.0
         for frame in range(frames)
     ]
     output = resample_channel(

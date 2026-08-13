@@ -69,7 +69,7 @@
     "retained_audio_correction_validated": false
   },
   "freeze_id": "perceptual-degradation-oracle-drift-resampler-20260814-001",
-  "freeze_sha256": "3ae5217a4906d32b300f3f4a47b482a2977c33d8b8627622f0f5438d64f991a2",
+  "freeze_sha256": "d96f489a4a11da659d156a0d7135b1501a4b603c8f763caae2071db32d6ca87d",
   "frequency_response": {
     "maximum_dc_coefficient_sum_error": 0.0,
     "passband_frequency_count": 181,
@@ -94,17 +94,17 @@
   "golden_vector": {
     "correction_ppm": 75,
     "frame_count": 4096,
-    "input_f64le_sha256": "5c53623af0cf5e5821762b099ef1e49d6e2917597e910a0acbfce21e7a4ef4d0",
-    "output_f64le_sha256": "de3136b0b6ca9dcd100f6adadc6c126d42c8a628daf9949dfcafcb5ce1c76305"
+    "input_f64le_sha256": "3e74352d6977f0b8766367b063032734096d5b9e3f42740b31e116e5329437dc",
+    "output_f64le_sha256": "63e6ac431e128e5b5c3a1f68bd9d0df9ebb0d22ec9054c74afb71ad73e2dd23f"
   },
-  "implementation_sha256": "7c048ad912039c6aad4e52a5e1e3f19a3989862ff8ab2b81c6ad5f15308c06b8",
+  "implementation_sha256": "541f8e200d95ccd7c447fec32e0de1aa411c5793b7641c7d0aa32ba5e52055ea",
   "replay_observation": {
     "byte_identical": true,
     "fresh_temporary_replay_count": 2,
     "paths_included": false,
     "payload_sha256s": [
-      "a360f30bc5ccd56d7fb0c052b6babb1c3d9203f4e9ffb1b75b6e04f8c22e78b3",
-      "a360f30bc5ccd56d7fb0c052b6babb1c3d9203f4e9ffb1b75b6e04f8c22e78b3"
+      "a57b1844f42f695d6d82f3a4a0b1aad87a43fb4d8f57fb2ee33edcf97a9955c3",
+      "a57b1844f42f695d6d82f3a4a0b1aad87a43fb4d8f57fb2ee33edcf97a9955c3"
     ],
     "timing_included": false
   },

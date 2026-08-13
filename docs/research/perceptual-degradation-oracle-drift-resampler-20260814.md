@@ -81,11 +81,11 @@ an all-zero channel.
 ## Determinism and boundary
 
 Two complete fresh temporary replays were byte-identical at payload SHA-256
-`a360f30bc5ccd56d7fb0c052b6babb1c3d9203f4e9ffb1b75b6e04f8c22e78b3`.
-The report also freezes a compact golden-vector input/output pair so another
-execution environment can detect coefficient or numeric drift without
-replaying the full workload. No generated audio was retained, and the evidence
-contains no path or timing.
+`a57b1844f42f695d6d82f3a4a0b1aad87a43fb4d8f57fb2ee33edcf97a9955c3`.
+The report also freezes a compact, integer-derived dyadic golden-vector
+input/output pair so another execution environment can detect coefficient or
+numeric drift without replaying the full workload. No generated audio was
+retained, and the evidence contains no path or timing.
 
 This result selects only the technical resampler. The held-out apply decision
 must still be integrated with this exact implementation, then exercised on
