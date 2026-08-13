@@ -732,3 +732,23 @@ support or power. No imputation, weighting, replacement assignment, exclusion
 rule, allocator policy, listener count or study design is selected, and no
 audio, response, identity, recruitment, collection, metric, score, source
 member, no-reference training or public verdict was opened.
+
+A deterministic score-blind
+[`retained-design robustness frontier`](perceptual-degradation-listening-retained-design-robustness-20260814.md)
+now separates finite reserve capacity from structured source support. Across
+30,720 MCAR retained designs, every workload has a bounded issued-reserve
+option that passes the frozen planning-power, eight-judgment source-support and
+candidate-position-connectivity gates in at least 244 of 256 replays. At the
+existing 90% retention sensitivity, the 3 + 3, 5 + 5 and 8 + 6 options require
+10% reserve, while the compact 15 + 6 option requires 20%; at 85% retention,
+the joint session/trial sensitivities rise to 20%, 20%, 20% and 40%. The latter
+corresponds to 493 planning enrolled slots per aggregate condition stratum,
+device class and partition, or 1,972 across four partitions. Complete-source
+loss is not repaired by reserve: removing 6, 12 or 24 symbolic groups gives the
+missing groups zero support and removes their planned position contrasts, even
+when added judgments on the retained groups raise aggregate power above 0.80.
+Provider/domain/partition breadth remains unevaluated without exact frozen
+members. These are analytic sensitivities, not an empirical missingness model
+or listening evidence. No reserve, workload, listener count, missingness or
+exclusion policy, operational design, recruitment, collection, source member,
+metric, no-reference training or public verdict is selected or authorized.
