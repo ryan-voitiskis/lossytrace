@@ -695,3 +695,23 @@ listener count, allocation policy or operational design is selected. The next
 score-blind prerequisite is an allocator successor; no audio, response,
 recruitment, collection, metric, score, source member, no-reference training or
 public verdict was opened.
+
+A deterministic score-blind
+[`v3 allocation successor audit`](perceptual-degradation-listening-allocation-v3-symbolic-audit-20260814.md)
+now repairs the v2 scheduling defect without selecting an operational policy.
+The new construction treats each method as a seeded infinite trial-slot
+sequence, rotates trial order by complete exposure cycle, and rotates candidates
+by each trial's exposure ordinal. This proves trial-exposure, within-block
+trial-position and candidate-position ranges no greater than one at every
+contiguous post-eligibility prefix for the divisible grid. All 2,040
+option-prefix cases through the four former cycle-rounded boundaries pass,
+including the raw power minimums; a non-120, five-candidate test also passes.
+Cycle rounding is therefore no longer needed solely for schedule balance,
+returning the protocol-cap sensitivity to 352 enrolled slots per aggregate
+stratum, device class and partition, or 1,408 across four partitions.
+Post-assignment
+missingness and exclusion balance, append-only concurrent allocation state,
+restart recovery, session timing and the total number of condition strata
+remain unresolved. No allocator policy, listener count or study design is
+selected, and no audio, response, recruitment, collection, metric, score,
+source member, no-reference training or public verdict was opened.

@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "plan_id": "perceptual-degradation-listening-allocation-v3-symbolic-audit-20260814-001",
+  "state": "score_blind_symbolic_allocator_successor_audit_no_operational_selection",
+  "purpose": "Prove deterministic contiguous-prefix trial-exposure, within-block trial-position and candidate-position balance for the v3 allocator successor on the existing 120-group symbolic frontier without selecting a listener count, allocation policy, source member, stimulus, study design or collection path.",
+  "bindings": {
+    "allocator_v1": {
+      "path": "scripts/perceptual_degradation_listening_allocation.py",
+      "sha256": "2fbe6a0782e6f7652bf60924f27141c511402adea6d0bbb532c4b371edb7d2fc"
+    },
+    "allocator_v2": {
+      "path": "scripts/perceptual_degradation_listening_allocation_v2.py",
+      "sha256": "8895f8cc3900f776a62c15fb115b674820ba24cdee18772f48399f1d3ea6ea12"
+    },
+    "allocator_v3": {
+      "path": "scripts/perceptual_degradation_listening_allocation_v3.py",
+      "sha256": "66e9a787b1e154b80bdeff0350ece2b6264029664b3381b01a7c8e5da1ac6814"
+    },
+    "manifest_v2_schema": {
+      "path": "benchmarks/perceptual-degradation-v1/listening-stimulus-manifest-v2.schema.json",
+      "sha256": "789bd684dd561b413e174d5d63ed0605b4d46f342683768f9d933147d84ad96e"
+    },
+    "resource_frontier_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/listening-operational-resource-frontier-plan.json",
+      "sha256": "85f77980faa25eabb3c8112a8fcdda4a8286e2d12e759863777a0847d5bc1af3"
+    },
+    "resource_frontier_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-listening-operational-resource-frontier-20260814-001.json",
+      "sha256": "23ce05f582477e454a9124b33c29350155f9f43dc9fd2a239cea994d41c88041"
+    },
+    "symbolic_manifest_builder": {
+      "path": "scripts/perceptual_degradation_listening_resource_frontier.py",
+      "sha256": "5bef0ffba4c37387dd2a4f976fb8b5e7fcc0c6e5344855450491705b62a313c9"
+    },
+    "listening_protocol": {
+      "path": "docs/research/perceptual-degradation-listening-protocol-20260803.md",
+      "sha256": "7f918b7faa285cb4e2f142907e3d344f6cb11a7e43cfbfa83c82b9135158171b"
+    }
+  },
+  "authorization": {
+    "synthetic_symbolic_allocation_replay_authorized": true,
+    "exact_member_selection_authorized": false,
+    "new_audio_acquisition_authorized": false,
+    "retained_odaq_reference_read_authorized": false,
+    "retained_reference_projection_authorized": false,
+    "stimulus_generation_authorized": false,
+    "test_audio_access_authorized": false,
+    "listening_score_access_authorized": false,
+    "human_collection_authorized": false,
+    "recruitment_authorized": false,
+    "participant_contact_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "sealed_evidence_access_authorized": false,
+    "no_reference_training_authorized": false,
+    "public_verdict_enabled": false
+  },
+  "policy_contract": {
+    "allocation_policy_id": "prefix-balanced-score-blind-v3",
+    "manifest_schema_version": 2,
+    "assignment_schema_version": 3,
+    "trial_order_seeded_and_score_blind": true,
+    "candidate_order_seeded_and_score_blind": true,
+    "candidate_rotation_uses_per_trial_exposure_ordinal": true,
+    "trial_block_order_rotates_by_exposure_cycle": true,
+    "trial_count_divisible_by_trial_limit_required": true,
+    "contiguous_post_eligibility_allocation_indices_required": true,
+    "maximum_trial_exposure_range_at_every_contiguous_prefix": 1,
+    "maximum_trial_block_position_range_at_every_contiguous_prefix": 1,
+    "maximum_candidate_position_range_at_every_contiguous_prefix": 1,
+    "missingness_or_post_assignment_exclusion_balance_proven": false,
+    "operational_policy_selected": false
+  },
+  "audit_grid": [
+    {
+      "option_id": "sources120-subtle3-mushra3",
+      "subtle_trial_limit": 3,
+      "mushra_trial_limit": 3,
+      "raw_minimum_eligible_prefix": 765,
+      "cycle_rounded_eligible_prefix": 840
+    },
+    {
+      "option_id": "sources120-subtle5-mushra5",
+      "subtle_trial_limit": 5,
+      "mushra_trial_limit": 5,
+      "raw_minimum_eligible_prefix": 496,
+      "cycle_rounded_eligible_prefix": 600
+    },
+    {
+      "option_id": "sources120-subtle8-mushra6",
+      "subtle_trial_limit": 8,
+      "mushra_trial_limit": 6,
+      "raw_minimum_eligible_prefix": 345,
+      "cycle_rounded_eligible_prefix": 360
+    },
+    {
+      "option_id": "sources120-subtle15-mushra6",
+      "subtle_trial_limit": 15,
+      "mushra_trial_limit": 6,
+      "raw_minimum_eligible_prefix": 227,
+      "cycle_rounded_eligible_prefix": 240
+    }
+  ],
+  "claim_boundary": {
+    "symbolic_balance_is_listening_evidence": false,
+    "symbolic_balance_is_power_validation": false,
+    "symbolic_balance_selects_an_operational_policy": false,
+    "prefix_balance_proves_missingness_balance": false,
+    "prefix_balance_proves_condition_stratum_sequence_balance": false,
+    "prefix_balance_proves_cross_method_source_separation": false,
+    "prefix_balance_authorizes_collection": false,
+    "prefix_balance_freezes_listener_count": false,
+    "prefix_balance_freezes_study_design": false,
+    "full_objective_complete": false,
+    "public_cli_changed": false
+  },
+  "authorized_next_step": "Use the symbolic v3 audit only to decide whether candidate-position scheduling is technically repairable. Operational adoption requires a separately frozen policy for post-eligibility indexing, missingness, exclusions, restart recovery, concurrency and append-only allocation state; no collection follows from this audit."
+}
