@@ -465,3 +465,14 @@ closed. Because the private browser delivery layer accepts integer PCM only,
 the next repository gate is a separately frozen score-blind conversion and
 delivery preparation plan; this result does not authorize conversion or
 listening.
+
+That score-blind
+[`delivery preparation`](perceptual-degradation-odaq-reference-delivery-preparation-20260813.md)
+is now frozen and synthetic-only. It canonicalizes extensible 24-bit PCM
+without changing sample bytes and maps float32 to signed int32 with
+nearest/ties-to-even rounding, no dither, gain, normalization, resampling or
+channel transform, and fail-closed non-finite or out-of-range handling. Two
+synthetic replays were byte-identical. The tool intentionally has no
+live-corpus command: retained-audio access, conversion, stimulus generation,
+physical playback qualification, and listening remain unauthorized pending a
+separately committed successor.
