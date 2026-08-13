@@ -71,6 +71,13 @@ enough to keep an internal-research candidate available; it is not legal
 advice, does not complete dependency/SBOM or redistribution review, and does
 not authorize execution.
 
+The subsequent bounded
+[`dependency and SBOM disposition`](perceptual-degradation-visqol-dependency-sbom-disposition-20260814.md)
+finds permissive terms for every declared direct production dependency, but
+keeps the full gate closed because the historical builds do not retain a
+versioned production-only transitive closure, binary linkage record, complete
+notice bundle or binary-bound SBOM.
+
 No metric successor or source successor is selected. The current two-family
 gate remains closed. Retained ODAQ access, any new source acquisition, metric
 execution, scores, listener collection, sealed evidence, no-reference work,

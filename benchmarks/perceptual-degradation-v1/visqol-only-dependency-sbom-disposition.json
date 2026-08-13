@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "disposition_id": "perceptual-degradation-visqol-only-dependency-sbom-disposition-20260814-001",
+  "state": "direct_license_screen_passed_complete_binary_sbom_and_redistribution_review_blocked",
+  "purpose": "Determine whether the existing pinned ViSQOL-only technical evidence completes dependency redistribution and binary SBOM review without selecting the successor, rebuilding software, executing a metric or opening audio or scores.",
+  "bindings": {
+    "successor_readiness_disposition": {
+      "path": "benchmarks/perceptual-degradation-v1/visqol-only-successor-readiness-disposition.json",
+      "sha256": "8d5ecbde78c8900a7580cbbc94f7fb20d5978616bc0ecb7754fe0d72854752ae"
+    },
+    "direct_dependency_license_observation": {
+      "path": "research/toolchains/evidence/perceptual-degradation-visqol-direct-dependency-license-observation-20260814-001.json",
+      "sha256": "543818276b0f31ab6e7e705e96642a202cc5577096baef31956bd7df4f500c20"
+    },
+    "first_environment_build_observation": {
+      "path": "research/toolchains/evidence/visqol-synthetic-build-observed-20260803-001.json",
+      "sha256": "d2b858d192b145c6082ff253126a62b9504ed14dd98fc9668a1b8dd459691506"
+    },
+    "second_environment_build_observation": {
+      "path": "research/toolchains/evidence/visqol-synthetic-second-build-observed-20260803-001.json",
+      "sha256": "e25797f734b95d5ef396bdd37a93f3171fc6ef138155df35ef60de79900fe274"
+    },
+    "cross_environment_observation": {
+      "path": "research/toolchains/evidence/visqol-synthetic-cross-environment-observed-20260803-001.json",
+      "sha256": "63fdf3d6e4c85e42950d735f2a4bba2974bc23a464318708311a750177ae9c66"
+    },
+    "reproducible_workspace_patch": {
+      "path": "research/toolchains/patches/visqol-v3.3.3-reproducible-workspace.patch",
+      "sha256": "d768dc5d312d874d308937454308b48c9ff172a7e648e6314cf2b51110e6a039"
+    }
+  },
+  "observed_existing_build_evidence": {
+    "repository_name_projection_count": 46,
+    "repository_name_projections_match_across_environments": true,
+    "raw_repository_resolution_retained": false,
+    "raw_repository_resolution_reason": "The historical records deliberately omitted raw Bazel resolution output because it contained ephemeral absolute paths.",
+    "exact_transitive_versions_bound_for_all_46_names": false,
+    "production_only_dependency_subset_proved": false,
+    "binary_retained": false,
+    "model_retained": false,
+    "binary_linkage_record_retained": false,
+    "first_binary_sha256": "7384c8d21725e6fa3921aea4e66ff9cb9481b57acef868304192df437a467319",
+    "second_binary_sha256": "6c7807891cb5cb267649f09fbc20eecc22a3b2f62e50698e38134b2e08d18d5f",
+    "binary_hashes_identical": false,
+    "synthetic_scores_identical": true,
+    "complete_binary_sbom_retained": false,
+    "redistribution_notice_bundle_retained": false
+  },
+  "readiness": {
+    "direct_declared_license_screen_complete": true,
+    "direct_declared_license_conflict_observed": false,
+    "complete_transitive_dependency_closure_available": false,
+    "complete_binary_sbom_available": false,
+    "redistribution_notice_bundle_available": false,
+    "dependency_redistribution_and_sbom_review_complete": false,
+    "binary_redistribution_ready": false,
+    "internal_research_candidate_preregisterable": true,
+    "metric_successor_selected": false,
+    "metric_execution_ready": false,
+    "scientific_readiness": false,
+    "no_reference_work_eligible": false,
+    "public_verdict_enabled": false
+  },
+  "required_future_packaging_evidence": [
+    "A separately authorized, clean, ephemeral rebuild of the exact patched v3.3.3 source and model.",
+    "Path-sanitized Bazel query and action-graph records identifying the production-only transitive source closure with exact versions and hashes.",
+    "A retained binary linkage record distinguishing static, dynamic, tool-only and test-only components.",
+    "A CycloneDX SBOM bound to the exact binary, model, compiler, build configuration and patched source tree.",
+    "A complete license and notice bundle for every distributed binary and data-asset component.",
+    "A separate review of model-asset attribution and any non-copyright redistribution constraints."
+  ],
+  "decision": {
+    "successor_option_selected": null,
+    "direct_license_screen_changes_successor_recommendation": false,
+    "successor_remains_preregisterable": true,
+    "successor_can_be_distributed_from_current_evidence": false,
+    "successor_can_be_executed_from_current_evidence": false,
+    "new_build_authorized_by_this_disposition": false,
+    "next_responsible_human_decision": "The ViSQOL-only successor remains available for score-blind selection, but selection does not authorize a rebuild or execution. If selected, separately authorize a clean ephemeral packaging-evidence build before any redistribution decision."
+  },
+  "access_boundary": {
+    "public_text_metadata_read": true,
+    "software_source_archive_license_member_read": true,
+    "repository_archive_read": false,
+    "test_audio_read": false,
+    "model_bytes_read": false,
+    "binary_read": false,
+    "software_built": false,
+    "perceptual_metric_executed": false,
+    "public_or_provider_audio_accessed": false,
+    "retained_audio_accessed": false,
+    "scores_opened": false,
+    "sealed_evidence_opened": false,
+    "human_collection_performed": false,
+    "no_reference_training_performed": false,
+    "public_verdict_enabled": false
+  },
+  "claim_boundary": {
+    "this_is_legal_advice": false,
+    "direct_license_screen_is_complete_transitive_review": false,
+    "repository_name_projection_is_an_sbom": false,
+    "identical_repository_names_prove_identical_binaries": false,
+    "identical_synthetic_scores_prove_packaging_equivalence": false,
+    "top_level_apache_license_proves_all_transitive_terms": false,
+    "metric_successor_selected": false,
+    "metric_execution_authorized": false,
+    "binary_redistribution_authorized": false,
+    "scientific_gate_passed": false,
+    "full_objective_complete": false,
+    "public_cli_changed": false
+  }
+}

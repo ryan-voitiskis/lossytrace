@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "observation_id": "perceptual-degradation-visqol-direct-dependency-license-observation-20260814-001",
+  "state": "pinned_direct_production_dependency_license_records_observed_transitive_closure_unavailable",
+  "observed_on": "2026-08-14",
+  "purpose": "Record the pinned ViSQOL production target's direct external dependency and license records without rebuilding software, executing a metric, accessing audio or claiming a complete binary dependency closure.",
+  "upstream": {
+    "repository": "https://github.com/google/visqol",
+    "release": "v3.3.3",
+    "git_commit": "c3aa2e498e0f7f14202643594335a0b9ee40bdd9",
+    "git_tree": "7a0c95a103c4ba40d6337f06f80848e571b00b3c",
+    "production_target": "//:visqol"
+  },
+  "observed_text_records": {
+    "visqol_workspace": {
+      "url": "https://raw.githubusercontent.com/google/visqol/c3aa2e498e0f7f14202643594335a0b9ee40bdd9/WORKSPACE",
+      "sha256": "49c8b12dd2c8094e85b22de92b8fce0d7eea0af392625ca3b6ffee44fe4df14c"
+    },
+    "visqol_build": {
+      "url": "https://raw.githubusercontent.com/google/visqol/c3aa2e498e0f7f14202643594335a0b9ee40bdd9/BUILD",
+      "sha256": "1804cdd00c8bc3b2a363e79a978e02c36a9d869dff2c46d02d7c802de54ba99e"
+    },
+    "visqol_license": {
+      "url": "https://raw.githubusercontent.com/google/visqol/c3aa2e498e0f7f14202643594335a0b9ee40bdd9/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    "abseil_license": {
+      "url": "https://raw.githubusercontent.com/abseil/abseil-cpp/215105818dfde3174fe799600bb0f3cae233d0bf/LICENSE",
+      "sha256": "c79a7fea0e3cac04cd43f20e7b648e5a0ff8fa5344e644b0ee09ca1162b62747"
+    },
+    "protobuf_license": {
+      "url": "https://raw.githubusercontent.com/protocolbuffers/protobuf/v3.19.1/LICENSE",
+      "sha256": "6e5e117324afd944dcf67f36cf329843bc1a92229a8cd9bb573d7a83130fea7d"
+    },
+    "tensorflow_license": {
+      "url": "https://raw.githubusercontent.com/tensorflow/tensorflow/3f878cff5b698b82eea85db2b60d65a2e320850e/LICENSE",
+      "sha256": "71c6915d04265772a0339bed47276942c678b45cc01534210ebe6984fd1aec65"
+    },
+    "libsvm_copyright": {
+      "url": "https://raw.githubusercontent.com/cjlin1/libsvm/v324/COPYRIGHT",
+      "sha256": "157091ef0b3f1213e9746e6c64b5cb0ec80d44252c9298821669ad70902cc200"
+    },
+    "pffft_source_license_header": {
+      "url": "https://bitbucket.org/jpommier/pffft/raw/7c3b5a7dc510a0f513b9c5b6dc5b56f7aeeda422/pffft.c",
+      "sha256": "27e3fe08e8b0b2fb0a39cf0dbd8362c66e56a1b2cfddf31b072a7722c83d3a04"
+    },
+    "armadillo_archive": {
+      "url": "https://distfiles.macports.org/armadillo/armadillo-9.860.2.tar.xz",
+      "sha256": "d856ea58c18998997bcae6689784d2d3eeb5daf1379d569fddc277fe046a996b"
+    },
+    "armadillo_license_member": {
+      "archive_member": "armadillo-9.860.2/LICENSE.txt",
+      "sha256": "3ddf9be5c28fe27dad143a5dc76eea25222ad1dd68934a047064e56ed2fa40c5"
+    },
+    "armadillo_notice_member": {
+      "archive_member": "armadillo-9.860.2/NOTICE.txt",
+      "sha256": "5c68df355fb8c866b7c165553eefd716cf029376ddcf117c44f5fb95a501bb69"
+    }
+  },
+  "declared_production_components": [
+    {
+      "component_id": "visqol",
+      "relationship": "application",
+      "version_or_commit": "c3aa2e498e0f7f14202643594335a0b9ee40bdd9",
+      "license_expression": "Apache-2.0",
+      "license_record_observed": true
+    },
+    {
+      "component_id": "abseil-cpp",
+      "relationship": "direct_external_dependency",
+      "version_or_commit": "215105818dfde3174fe799600bb0f3cae233d0bf",
+      "license_expression": "Apache-2.0",
+      "license_record_observed": true
+    },
+    {
+      "component_id": "protobuf",
+      "relationship": "direct_external_dependency",
+      "version_or_commit": "v3.19.1",
+      "license_expression": "BSD-3-Clause",
+      "license_record_observed": true
+    },
+    {
+      "component_id": "tensorflow-lite",
+      "relationship": "direct_external_dependency_with_transitive_closure",
+      "version_or_commit": "3f878cff5b698b82eea85db2b60d65a2e320850e",
+      "license_expression": "Apache-2.0",
+      "license_record_observed": true
+    },
+    {
+      "component_id": "armadillo-headers",
+      "relationship": "direct_external_dependency",
+      "version_or_commit": "9.860.2",
+      "license_expression": "Apache-2.0",
+      "license_record_observed": true
+    },
+    {
+      "component_id": "pffft",
+      "relationship": "direct_external_dependency",
+      "version_or_commit": "7c3b5a7dc510a0f513b9c5b6dc5b56f7aeeda422",
+      "license_expression": "LicenseRef-UCAR-PFFFT-Permissive",
+      "license_record_observed": true
+    },
+    {
+      "component_id": "libsvm",
+      "relationship": "direct_external_dependency",
+      "version_or_commit": "v324",
+      "license_expression": "BSD-3-Clause",
+      "license_record_observed": true
+    },
+    {
+      "component_id": "visqol-audio-model",
+      "relationship": "runtime_data_asset",
+      "version_or_commit": "sha256:1e8246ed33bf36dc5c859351f7110f2cd31f98661989715c0fcf974ec48d3e2e",
+      "license_expression": "Apache-2.0-top-level-repository-record-only",
+      "license_record_observed": true,
+      "separate_asset_notice_observed": false
+    }
+  ],
+  "screen_result": {
+    "production_component_count": 8,
+    "direct_software_license_record_count": 7,
+    "direct_software_license_records_observed": true,
+    "direct_software_copyright_licenses_permit_redistribution_subject_to_conditions": true,
+    "model_separate_asset_notice_observed": false,
+    "complete_transitive_dependency_closure_observed": false,
+    "exact_binary_linkage_observed": false,
+    "complete_binary_sbom_generated": false,
+    "redistribution_notice_bundle_generated": false,
+    "binary_redistribution_ready": false
+  },
+  "limitations": [
+    "The BUILD target declares the direct production graph but does not prove the final statically or dynamically linked closure.",
+    "TensorFlow Lite imports a transitive dependency graph whose exact production subset is not recoverable from repository names alone.",
+    "A top-level Apache-2.0 repository record was observed for the model asset; no separate asset notice was observed in this bounded screen.",
+    "This is a copyright-license metadata screen, not legal advice or a patent, trademark, export-control or security review."
+  ],
+  "access_boundary": {
+    "public_text_metadata_read": true,
+    "software_source_archive_license_member_read": true,
+    "repository_archive_read": false,
+    "test_audio_read": false,
+    "model_bytes_read": false,
+    "binary_read": false,
+    "software_built": false,
+    "perceptual_metric_executed": false,
+    "public_or_provider_audio_accessed": false,
+    "retained_audio_accessed": false,
+    "scores_opened": false,
+    "sealed_evidence_opened": false,
+    "no_reference_training_performed": false,
+    "public_verdict_enabled": false
+  }
+}

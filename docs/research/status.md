@@ -666,3 +666,17 @@ but unselected and without an execution gate. The objective therefore remains
 at four of fourteen satisfied requirements. No audio, score, metric, human
 response, sealed evidence or no-reference training was opened, and the public
 CLI remains verdict-free.
+
+A bounded
+[`ViSQOL dependency and SBOM disposition`](perceptual-degradation-visqol-dependency-sbom-disposition-20260814.md)
+now screens the pinned production target without selecting or rebuilding it.
+ViSQOL, Abseil, TensorFlow Lite and Armadillo expose Apache-2.0 records;
+protobuf and LIBSVM expose BSD-3-Clause records; and PFFFT carries permissive
+UCAR/NCAR redistribution terms. The direct license screen passes, but the
+complete gate remains closed: the two historical builds retained only a
+46-name Bazel repository projection, not an exact production-only transitive
+closure, linkage inventory, binary-bound CycloneDX SBOM or complete notice
+bundle. The binaries were not retained and their hashes differ despite
+zero-delta synthetic scores. ViSQOL-only therefore remains preregisterable but
+unselected, execution-closed and redistribution-unready. No repository archive,
+test audio, model, binary, metric, score or retained audio was opened.
