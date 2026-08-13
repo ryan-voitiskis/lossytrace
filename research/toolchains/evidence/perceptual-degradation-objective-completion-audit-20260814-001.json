@@ -1,0 +1,205 @@
+{
+  "audio_accessed": false,
+  "evidence_checks": {
+    "odaq_clean_references_acquired": true,
+    "odaq_transparent_truth_supported": false,
+    "provider_allocation_frozen": false,
+    "scientific_gate_evaluated": false,
+    "score_free_schema_replay_complete": true
+  },
+  "implementation_sha256": "4094321065c464028352fd75b462a909b00fbbae730152875a33026f61d5032f",
+  "metrics_executed": false,
+  "no_reference_training_performed": false,
+  "plan_id": "perceptual-degradation-objective-completion-audit-20260814-001",
+  "plan_sha256": "b4943e7d5404f61797c664999d5e9e2da408acd2751cc2505eaa3fecfa08f43d",
+  "public_verdict_enabled": false,
+  "report_id": "perceptual-degradation-objective-completion-audit-20260814-001",
+  "requirements": [
+    {
+      "completion_required": true,
+      "evidence": [
+        "research_plan.objective",
+        "research_contract.objective_boundary"
+      ],
+      "next_gate": null,
+      "reason": "The estimand and decoded-PCM causal limit are frozen before outcome access.",
+      "requirement_id": "estimand_is_degradation_not_history",
+      "satisfied": true,
+      "state": "satisfied_contract_boundary"
+    },
+    {
+      "completion_required": true,
+      "evidence": [
+        "playback_qualification_result.qualified_chain"
+      ],
+      "next_gate": null,
+      "reason": "The declared RME/Adam 48 kHz chain passed delivery, channel and comfort qualification without collecting a rating.",
+      "requirement_id": "declared_playback_chain_qualified",
+      "satisfied": true,
+      "state": "satisfied_prerequisite"
+    },
+    {
+      "completion_required": true,
+      "evidence": [
+        "source_candidate_plan.decision",
+        "provider_allocation_report.decision",
+        "listening_feasibility_report.decision"
+      ],
+      "next_gate": "Qualify additional providers or narrow the primary-domain claim, then freeze an exact grouped manifest.",
+      "reason": "Raw group capacity exists, but provider/domain allocation, original coding history and exact members are not frozen.",
+      "requirement_id": "truth_bearing_source_manifest_feasible_and_frozen",
+      "satisfied": false,
+      "state": "incomplete"
+    },
+    {
+      "completion_required": true,
+      "evidence": [
+        "research_plan.human_truth",
+        "playback_qualification_result.access_boundary"
+      ],
+      "next_gate": "Complete source, stimulus, privacy, power and allocation gates before requesting collection authority.",
+      "reason": "No degradation rating or listener response has been collected.",
+      "requirement_id": "controlled_human_calibration_collected",
+      "satisfied": false,
+      "state": "not_authorized"
+    },
+    {
+      "completion_required": true,
+      "evidence": [
+        "metric_execution_gate.metric_families.gstpeaq_proxy_v0_6_1"
+      ],
+      "next_gate": "Resolve the declared proxy legal/conformance boundary or commit a score-blind contract amendment.",
+      "reason": "ViSQOL synthetic replay is prepared, but the GstPEAQ proxy legal record, build and execution authority remain absent.",
+      "requirement_id": "perceptual_metric_execution_and_legal_gate_passed",
+      "satisfied": false,
+      "state": "blocked_by_legal_and_execution_gate"
+    },
+    {
+      "completion_required": true,
+      "evidence": [
+        "score_free_oracle_plan.claim_boundary",
+        "full_reference_evaluation_plan.synthetic_replay"
+      ],
+      "next_gate": "Run authorized metrics against valid human-calibration and grouped-transfer evidence.",
+      "reason": "Schemas and grouped statistics replay deterministically, but no human-calibrated scientific gate has been evaluated.",
+      "requirement_id": "deterministic_human_calibrated_full_reference_oracle_passed",
+      "satisfied": false,
+      "state": "synthetic_plumbing_only"
+    },
+    {
+      "completion_required": true,
+      "evidence": [
+        "research_plan.human_truth",
+        "full_reference_evaluation_plan.numeric_gates"
+      ],
+      "next_gate": "Collect and pass the frozen equivalence and transparent-safety gates.",
+      "reason": "The transparent-safety rule is frozen, but no adequately powered human-transparent lossy truth exists.",
+      "requirement_id": "transparent_lossy_treated_as_non_degraded",
+      "satisfied": false,
+      "state": "policy_frozen_truth_absent"
+    },
+    {
+      "completion_required": true,
+      "evidence": [
+        "research_plan.required_negative_classes"
+      ],
+      "next_gate": "Freeze exact negative members and retain them through grouped human and oracle evaluation.",
+      "reason": "20 negative classes are required by plan, but have not entered scientific evaluation.",
+      "requirement_id": "difficult_natural_and_production_negatives_preserved_in_evaluation",
+      "satisfied": false,
+      "state": "specified_not_evaluated"
+    },
+    {
+      "completion_required": true,
+      "evidence": [
+        "research_plan.grouping.required_holdout_axes",
+        "provider_allocation_report.decision"
+      ],
+      "next_gate": "Pass fresh grouped full-reference transfer on every frozen axis.",
+      "reason": "The four holdout axes are frozen, but provider allocation and grouped transfer are untested.",
+      "requirement_id": "grouped_source_domain_codec_encoder_transfer_passed",
+      "satisfied": false,
+      "state": "not_evaluated"
+    },
+    {
+      "completion_required": true,
+      "evidence": [
+        "research_plan.no_reference",
+        "full_reference_evaluation_plan.claim_boundary"
+      ],
+      "next_gate": "Only after the full-reference pass, freeze, train and validate the estimator on every held-out axis.",
+      "reason": "No-reference work correctly remains ineligible until the full-reference oracle passes.",
+      "requirement_id": "no_reference_estimator_trained_and_independently_validated",
+      "satisfied": false,
+      "state": "not_started_by_design"
+    },
+    {
+      "completion_required": true,
+      "evidence": [
+        "score_free_oracle_schema",
+        "score_free_oracle_plan.score_free_output_boundary"
+      ],
+      "next_gate": "Populate only after valid metric and human calibration; retain explicit abstention otherwise.",
+      "reason": "The abstaining envelope exists, but severity, audibility, artifact and uncertainty values are unavailable without evidence.",
+      "requirement_id": "severity_audibility_artifact_support_uncertainty_abstention_reported",
+      "satisfied": false,
+      "state": "schema_ready_values_unavailable"
+    },
+    {
+      "completion_required": true,
+      "evidence": [
+        "research_plan.public_state",
+        "src.lib",
+        "tests.cli"
+      ],
+      "next_gate": null,
+      "reason": "The public report remains feature version 0 experimental measurements with public verdicts disabled.",
+      "requirement_id": "public_cli_remains_verdict_free",
+      "satisfied": true,
+      "state": "satisfied_current_boundary"
+    },
+    {
+      "completion_required": true,
+      "evidence": [
+        "research_contract.stop_rules_and_successful_negative_outcomes"
+      ],
+      "next_gate": null,
+      "reason": "The contract accepts rejection or full-reference-only disposition as successful scientific outcomes.",
+      "requirement_id": "rigorous_negative_is_accepted_success",
+      "satisfied": true,
+      "state": "satisfied_success_criterion"
+    },
+    {
+      "completion_required": true,
+      "evidence": [
+        "objective_completion_audit_plan.completion_policy.current_recommendation"
+      ],
+      "next_gate": "Choose exactly one frozen final recommendation only after the evidence path terminates.",
+      "reason": "No final recommendation is justified before the human and full-reference gates resolve.",
+      "requirement_id": "final_research_recommendation_frozen",
+      "satisfied": false,
+      "state": "absent"
+    }
+  ],
+  "schema_version": 1,
+  "scores_opened": false,
+  "sealed_evidence_opened": false,
+  "state": "objective_incomplete_score_blind_completion_audit_complete",
+  "summary": {
+    "blocking_sequence": [
+      "truth_bearing_source_manifest_feasible_and_frozen",
+      "controlled_human_calibration_collected",
+      "perceptual_metric_execution_and_legal_gate_passed",
+      "deterministic_human_calibrated_full_reference_oracle_passed",
+      "grouped_source_domain_codec_encoder_transfer_passed",
+      "no_reference_estimator_trained_and_independently_validated",
+      "final_research_recommendation_frozen"
+    ],
+    "final_recommendation": null,
+    "nearest_authority_dependent_decision": "Broaden metadata-only provider qualification or explicitly narrow the primary-domain claim; do not select members or acquire audio yet.",
+    "objective_complete": false,
+    "requirement_count": 14,
+    "satisfied_count": 4,
+    "unsatisfied_count": 10
+  }
+}

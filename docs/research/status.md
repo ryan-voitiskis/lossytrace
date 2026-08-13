@@ -525,3 +525,14 @@ does not repair a provider-pure final music/speech/natural sensitivity. Adding
 both MusicNet and FSD50K makes one arithmetic sensitivity feasible, but remains
 scientifically ineligible because their original coding histories and exact
 member status are unresolved. No member or operational allocation is frozen.
+
+An evidence-bound
+[`objective completion audit`](perceptual-degradation-objective-completion-audit-20260814.md)
+now evaluates the entire research contract rather than the latest preparation
+checkpoint. Four of fourteen requirements are satisfied: the
+degradation-not-history estimand, declared playback prerequisite, verdict-free
+public CLI, and acceptance of a rigorous negative outcome. Ten remain
+unproven. In particular, deterministic score-free oracle and statistical
+replays are synthetic plumbing, no human calibration or perceptual metric
+execution exists, grouped transfer is untested, and no-reference work remains
+ineligible. No final recommendation is frozen.

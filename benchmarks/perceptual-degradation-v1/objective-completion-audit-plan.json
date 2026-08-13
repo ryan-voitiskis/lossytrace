@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "plan_id": "perceptual-degradation-objective-completion-audit-20260814-001",
+  "state": "score_blind_completion_audit_frozen_no_new_execution_authority",
+  "purpose": "Audit the full perceptual-degradation objective against current bound evidence without treating preparation, synthetic replay or green tests as scientific completion.",
+  "bindings": {
+    "research_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/research-plan.json",
+      "sha256": "e724a3e04fb41458d0568f542283ba33d71a54b1fdfd74b3901cc0dc1d10c352"
+    },
+    "research_contract": {
+      "path": "docs/research/perceptual-degradation-contract-20260803.md",
+      "sha256": "fdec79207fc0fdd2e9cb10aae9f93dd1a17b45e6e56c0c7df8f0e01a1f9fb505"
+    },
+    "metric_execution_gate": {
+      "path": "benchmarks/perceptual-degradation-v1/metric-execution-gate.json",
+      "sha256": "404f4b15dfd1c32586306c9776d293b7d556489c10b4dd216e6fc543bd9e40af"
+    },
+    "score_free_oracle_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/full-reference-oracle-score-free-plan.json",
+      "sha256": "f6462ecb94f3be1dc5670ad19d6f201abefaf175cfa6c482f095b98bb542de3a"
+    },
+    "full_reference_evaluation_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/full-reference-evaluation-plan.json",
+      "sha256": "517d4bb3f1e504593007bdd85b773e2532de6bf993e173eac3b551bf99d19b0b"
+    },
+    "playback_qualification_result": {
+      "path": "benchmarks/perceptual-degradation-v1/playback-qualification-result-20260813.json",
+      "sha256": "7fa8a786091b4d96f9f78705a4c12dfd6cd1511c7631424d432aa3c49e698a5e"
+    },
+    "listening_feasibility_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-listening-feasibility-frontier-20260813-001.json",
+      "sha256": "c680fb161f3fca350109c321ee867c727eae6841eba7a6c96ce3278c0657a006"
+    },
+    "provider_allocation_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-permissive-provider-allocation-feasibility-20260814-001.json",
+      "sha256": "cb81d0016ab8ad4916ffdb5ad82203225d0d090af7554e50d86c575047d166d7"
+    },
+    "source_candidate_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/permissive-multiprovider-source-candidate-plan.json",
+      "sha256": "3699fe67c402bb38f4472dd63102212e2a05bd1b315e37d17f39dd4c08f38782"
+    },
+    "odaq_acquisition_result": {
+      "path": "benchmarks/perceptual-degradation-v1/odaq-reference-acquisition-result-20260813.json",
+      "sha256": "b768900901cdcfc88ca4d5918a331961ee01eccd6a6d5d5becf31ddfaa15df4e"
+    },
+    "public_library": {
+      "path": "src/lib.rs",
+      "sha256": "26ddb6e998991c8859a306630c541afa21860a4290b2b1dc8b238b2cb00c6578"
+    },
+    "public_cli": {
+      "path": "src/main.rs",
+      "sha256": "c1da3719f1897ce47e4a0c28b8585060a43268575d75e1fa6c6d9418e910cf54"
+    },
+    "public_cli_test": {
+      "path": "tests/cli.rs",
+      "sha256": "9cf8cb01b942886ff0e268fb83ed86f6b0331c71594eedaa361cf40d5cdd5645"
+    }
+  },
+  "authorization": {
+    "bound_metadata_and_source_read_authorized": true,
+    "synthetic_audit_execution_authorized": true,
+    "exact_member_selection_authorized": false,
+    "new_audio_acquisition_authorized": false,
+    "retained_odaq_reference_read_authorized": false,
+    "retained_reference_projection_authorized": false,
+    "stimulus_generation_authorized": false,
+    "processed_condition_access_authorized": false,
+    "listening_score_access_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "human_collection_authorized": false,
+    "recruitment_authorized": false,
+    "sealed_evidence_access_authorized": false,
+    "no_reference_training_authorized": false,
+    "public_verdict_enabled": false
+  },
+  "requirement_ids": [
+    "estimand_is_degradation_not_history",
+    "declared_playback_chain_qualified",
+    "truth_bearing_source_manifest_feasible_and_frozen",
+    "controlled_human_calibration_collected",
+    "perceptual_metric_execution_and_legal_gate_passed",
+    "deterministic_human_calibrated_full_reference_oracle_passed",
+    "transparent_lossy_treated_as_non_degraded",
+    "difficult_natural_and_production_negatives_preserved_in_evaluation",
+    "grouped_source_domain_codec_encoder_transfer_passed",
+    "no_reference_estimator_trained_and_independently_validated",
+    "severity_audibility_artifact_support_uncertainty_abstention_reported",
+    "public_cli_remains_verdict_free",
+    "rigorous_negative_is_accepted_success",
+    "final_research_recommendation_frozen"
+  ],
+  "completion_policy": {
+    "all_requirement_ids_must_be_present": true,
+    "all_completion_required_requirements_must_be_satisfied": true,
+    "preparation_or_synthetic_replay_counts_as_scientific_completion": false,
+    "green_tests_count_as_perceptual_evidence": false,
+    "missing_or_indirect_evidence_counts_as_satisfied": false,
+    "current_recommendation": null,
+    "allowed_final_recommendations": [
+      "reject_perceptual_estimation",
+      "retain_full_reference_only",
+      "continue_no_reference_research",
+      "freeze_blind_final_validation"
+    ]
+  },
+  "claim_boundary": {
+    "audit_authorizes_next_gate": false,
+    "audit_is_listening_evidence": false,
+    "audit_is_metric_evidence": false,
+    "audit_is_full_reference_validation": false,
+    "audit_is_no_reference_validation": false,
+    "audit_completes_objective": false,
+    "audit_changes_public_cli": false
+  }
+}
