@@ -773,3 +773,23 @@ No operational policy, response store, listener count, recruitment, collection,
 source member, metric, no-reference training or public verdict is selected or
 authorized, and no audio, identity, response, outcome, score or sealed evidence
 was accessed.
+
+A deterministic score-blind
+[`condition-strata workload sensitivity`](perceptual-degradation-listening-condition-strata-workload-20260814.md)
+now quantifies how condition-specific claims multiply the retained-design
+resource frontier. The frozen technical inventory supports an arithmetic
+candidate grid of four codecs, two encoders per codec and two matched
+within-family quality levels per encoder: sixteen codec recipes, plus either
+six existing control families or twelve individual control recipes. At 90%
+retention across four partitions and one declared device class, the arithmetic
+minimum across unselected workload options is 27,048 enrolled session slots for
+dedicated execution of the codec grid, 37,192 with control families and 47,332
+with all control recipes. Optimistic multi-condition MUSHRA packing reduces
+those figures to 16,688, 22,944 and 29,204, but no allocator, player, timing,
+fatigue, covariance, reuse or retained-balance evidence supports that packing.
+Session slots are not unique people. The recipes and controls remain technical
+metadata, not selected listening conditions or perceptual truth; artifact
+isolates and hard negatives remain incomplete. No condition, option, partition,
+device policy, listener count, source member, recruitment, collection, audio,
+metric, score, no-reference training or public verdict was selected, opened or
+authorized.
