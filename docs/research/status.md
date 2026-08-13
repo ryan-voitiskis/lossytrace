@@ -485,3 +485,13 @@ integer-PCM delivery parser. The RME remains last observed at 96 kHz, so the
 responsible human must still set and observe an exact 48 kHz session, verify
 left/right routing, quiet fixed-position conditions, effects-off state and a
 comfortable fixed level. No retained reference or rating is involved.
+
+The responsible-human
+[`playback qualification result`](perceptual-degradation-playback-qualification-result-20260813.md)
+now closes that physical-chain gate for the declared RME ADI-2 Pro FS and Adam
+Audio T7V setup. The browser and macOS both reported exact 48 kHz, fixture
+hashes and frame counts verified, left/right routing passed, session
+conditions matched the declaration, the conservative level was held fixed,
+and no discomfort occurred. This remains plumbing qualification only—not SPL
+calibration, a degradation rating, or perceptual validation. Retained-reference
+conversion and playback remain separately unauthorized.
