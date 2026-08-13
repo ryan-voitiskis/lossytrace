@@ -476,3 +476,12 @@ synthetic replays were byte-identical. The tool intentionally has no
 live-corpus command: retained-audio access, conversion, stimulus generation,
 physical playback qualification, and listening remain unauthorized pending a
 separately committed successor.
+
+Physical playback is now separately
+[`prepared`](perceptual-degradation-playback-qualification-preparation-20260813.md)
+with deterministic synthetic 48 kHz channel and conservative-level fixtures.
+Two generated replays were byte-identical and pass the existing private
+integer-PCM delivery parser. The RME remains last observed at 96 kHz, so the
+responsible human must still set and observe an exact 48 kHz session, verify
+left/right routing, quiet fixed-position conditions, effects-off state and a
+comfortable fixed level. No retained reference or rating is involved.
