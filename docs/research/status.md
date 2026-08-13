@@ -834,3 +834,19 @@ frozen oracle resampler, no production resampler is selected, and no retained
 audio correction or perceptual effect is validated. No actual audio, source,
 condition, metric, score, human response, collection, no-reference work or
 public verdict was selected, opened or authorized.
+
+A deterministic score-blind
+[`source-trait identifiability contract`](perceptual-degradation-source-trait-identifiability-20260814.md)
+now freezes proof obligations for all seven required natural/source-trait
+negative classes without reading or selecting audio. Four constructive
+witnesses pair distinct latent histories with byte-identical PCM: natural
+bandwidth versus generated low-pass, preserved quiet level versus later
+attenuation, synthetic versus captured noise, and source clipping versus an
+intentional flat-top waveform. Three further fixtures show that sparse and
+tonal can overlap while independent sparse-non-tonal and tonal-non-sparse
+contrasts are structurally possible. Two fresh temporary replays were
+byte-identical. The result forbids PCM descriptors from substituting for
+provenance, preserves TinySOL's sparse/tonal confound, and leaves the missing
+quiet and naturally clipped candidates explicit. No exact member, source
+trait, condition, perceptual truth, metric, response, collection,
+no-reference work or public verdict was selected, opened or authorized.

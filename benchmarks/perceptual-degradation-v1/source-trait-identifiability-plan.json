@@ -1,0 +1,235 @@
+{
+  "schema_version": 1,
+  "plan_id": "perceptual-degradation-source-trait-identifiability-20260814-001",
+  "state": "score_blind_source_trait_identifiability_contract_frozen_before_replay",
+  "purpose": "Freeze proof obligations and deterministic counterexamples for the seven required source-trait negatives without reading audio, selecting exact members, assigning perceptual truth or treating PCM descriptors as provenance.",
+  "bindings": {
+    "research_contract": {
+      "path": "docs/research/perceptual-degradation-contract-20260803.md",
+      "sha256": "fdec79207fc0fdd2e9cb10aae9f93dd1a17b45e6e56c0c7df8f0e01a1f9fb505"
+    },
+    "research_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/research-plan.json",
+      "sha256": "e724a3e04fb41458d0568f542283ba33d71a54b1fdfd74b3901cc0dc1d10c352"
+    },
+    "source_condition_qualification": {
+      "path": "benchmarks/perceptual-degradation-v1/source-condition-qualification-plan.json",
+      "sha256": "5ce20a4e10d743e8823810ec89e58d873ea2db47044151f065fa3358e16cf64b"
+    },
+    "source_candidate_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/permissive-multiprovider-source-candidate-plan.json",
+      "sha256": "3699fe67c402bb38f4472dd63102212e2a05bd1b315e37d17f39dd4c08f38782"
+    },
+    "odaq_acquisition_result": {
+      "path": "benchmarks/perceptual-degradation-v1/odaq-reference-acquisition-result-20260813.json",
+      "sha256": "b768900901cdcfc88ca4d5918a331961ee01eccd6a6d5d5becf31ddfaa15df4e"
+    },
+    "negative_control_topology_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/negative-control-topology-plan.json",
+      "sha256": "edde1a07fc308c0938f9842046ae21c2640da26ac79924acfaa8c96465c37ea4"
+    },
+    "negative_control_topology_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-negative-control-topology-20260814-001.json",
+      "sha256": "b52b24723144c592887bff03f861ea85fa919736fbc86c25fe45e2c2c4730b09"
+    },
+    "negative_control_technical_repair_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/negative-control-technical-repair-plan.json",
+      "sha256": "9ef1af1232d894a7cb64c825a39434398bb71abce45edf7170b59d875af374f5"
+    },
+    "negative_control_technical_repair_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-negative-control-technical-repair-20260814-001.json",
+      "sha256": "937e1ba8079b6603f4af70e66404522215e953ae77075e5f4cfaa97ecfea38e0"
+    }
+  },
+  "authorization": {
+    "committed_metadata_read_authorized": true,
+    "synthetic_numeric_fixture_execution_authorized": true,
+    "actual_source_audio_access_authorized": false,
+    "retained_odaq_reference_read_authorized": false,
+    "provider_audio_access_authorized": false,
+    "exact_member_selection_authorized": false,
+    "source_trait_assignment_authorized": false,
+    "stimulus_generation_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "human_collection_authorized": false,
+    "response_or_outcome_access_authorized": false,
+    "sealed_evidence_access_authorized": false,
+    "no_reference_training_authorized": false,
+    "public_verdict_enabled": false
+  },
+  "resources": {
+    "minimum_free_disk_gib": 15,
+    "maximum_workers": 1,
+    "fresh_temporary_directories": true,
+    "replay_count": 2,
+    "byte_identical_reports_required": true,
+    "retain_generated_audio": false
+  },
+  "qualification_policy": {
+    "required_trait_ids": [
+      "natural_bandwidth_limit",
+      "quiet",
+      "sparse",
+      "tonal",
+      "synthetic",
+      "noisy",
+      "clipped"
+    ],
+    "common_proof_obligations": [
+      "exact_member_identity",
+      "source_and_derivative_group_identity",
+      "clean_reference_eligibility",
+      "original_coding_and_processing_provenance",
+      "licence_and_attribution_record",
+      "partition_support_before_claim"
+    ],
+    "pcm_descriptor_is_provenance": false,
+    "generated_transform_can_substitute_for_natural_trait": false,
+    "shared_candidate_can_establish_independent_trait_contrasts": false,
+    "nominal_metadata_can_assign_perceptual_truth": false,
+    "trait_members_may_be_selected_from_metric_or_listener_outcomes": false,
+    "exact_member_assignment_requires_separate_authorization": true
+  },
+  "trait_proof_obligations": {
+    "natural_bandwidth_limit": {
+      "descriptor_evidence": ["bandwidth_support_measurement"],
+      "provenance_evidence": ["capture_or_source_bandwidth_record", "no_generated_lowpass_substitution"],
+      "independent_contrast": "generated_lowpass_or_codec_cutoff_must_not_define_the_natural_class"
+    },
+    "quiet": {
+      "descriptor_evidence": ["absolute_pcm_level_measurement", "nonzero_activity_support"],
+      "provenance_evidence": ["preserved_source_gain_record", "no_attenuation_transform_substitution"],
+      "independent_contrast": "quiet_source_level_must_be_separate_from_gain_control"
+    },
+    "sparse": {
+      "descriptor_evidence": ["time_occupancy_measurement"],
+      "provenance_evidence": ["clean_reference_record"],
+      "independent_contrast": "at_least_one_sparse_non_tonal_member_required"
+    },
+    "tonal": {
+      "descriptor_evidence": ["spectral_concentration_measurement"],
+      "provenance_evidence": ["clean_reference_record"],
+      "independent_contrast": "at_least_one_tonal_non_sparse_member_required"
+    },
+    "synthetic": {
+      "descriptor_evidence": [],
+      "provenance_evidence": ["documented_signal_generation_or_synthesis_origin"],
+      "independent_contrast": "waveform_similarity_to_acoustic_or_noise_sources_cannot_assign_origin"
+    },
+    "noisy": {
+      "descriptor_evidence": ["spectral_temporal_noise_support_measurement"],
+      "provenance_evidence": ["capture_or_scene_noise_record"],
+      "independent_contrast": "low_level_or_synthetic_noise_alone_cannot_define_the_natural_noisy_class"
+    },
+    "clipped": {
+      "descriptor_evidence": ["plateau_or_saturation_support_measurement"],
+      "provenance_evidence": ["source_or_capture_chain_clipping_record", "intentional_waveform_exclusion"],
+      "independent_contrast": "generated_hard_clipping_control_cannot_substitute_for_naturally_clipped_reference"
+    }
+  },
+  "non_identifiability_witnesses": [
+    {
+      "witness_id": "natural-bandwidth-versus-generated-lowpass",
+      "fixture_id": "bandlimited-multitone-s16-v1",
+      "latent_histories": ["capture_chain_natural_bandwidth_limit", "full_band_source_then_generated_lowpass"],
+      "expected_pcm_relation": "byte_identical",
+      "conclusion": "pcm_alone_cannot_assign_natural_origin"
+    },
+    {
+      "witness_id": "quiet-source-versus-attenuated-source",
+      "fixture_id": "quiet-tone-s16-v1",
+      "latent_histories": ["preserved_low_level_source", "ordinary_level_source_then_gain_attenuation"],
+      "expected_pcm_relation": "byte_identical",
+      "conclusion": "pcm_alone_cannot_assign_preserved_gain_history"
+    },
+    {
+      "witness_id": "synthetic-noise-versus-recorded-noise",
+      "fixture_id": "deterministic-noise-s16-v1",
+      "latent_histories": ["documented_synthetic_generation", "captured_noise_rendered_to_same_pcm"],
+      "expected_pcm_relation": "byte_identical",
+      "conclusion": "pcm_alone_cannot_assign_synthetic_origin"
+    },
+    {
+      "witness_id": "source-clipping-versus-intentional-flat-top",
+      "fixture_id": "flat-top-wave-s16-v1",
+      "latent_histories": ["source_or_capture_chain_clipping", "intentional_flat_top_waveform_generation"],
+      "expected_pcm_relation": "byte_identical",
+      "conclusion": "pcm_plateaus_alone_cannot_assign_clipping_history"
+    }
+  ],
+  "overlap_and_contrast_fixtures": {
+    "sample_rate_hz": 8000,
+    "duration_seconds": 4,
+    "block_frames": 3200,
+    "tone_hz": 500,
+    "fixtures": [
+      {
+        "fixture_id": "sparse-tonal-overlap",
+        "construction": "500_hz_tone_in_two_of_ten_equal_blocks",
+        "expected_active_block_count": 2,
+        "expected_tone_projection_share_minimum": 0.99,
+        "proves_trait_truth": false
+      },
+      {
+        "fixture_id": "sparse-nontonal-contrast",
+        "construction": "deterministic_noise_in_two_of_ten_equal_blocks",
+        "expected_active_block_count": 2,
+        "expected_tone_projection_share_maximum": 0.05,
+        "proves_trait_truth": false
+      },
+      {
+        "fixture_id": "tonal-nonsparse-contrast",
+        "construction": "continuous_500_hz_tone_in_ten_of_ten_equal_blocks",
+        "expected_active_block_count": 10,
+        "expected_tone_projection_share_minimum": 0.99,
+        "proves_trait_truth": false
+      }
+    ]
+  },
+  "candidate_record_expectations": {
+    "natural_bandwidth_limit": {
+      "candidate_ids": ["fsdd_v1_0_10"],
+      "readiness": "candidate_record_present_exact_members_and_natural_trait_unfrozen"
+    },
+    "quiet": {
+      "candidate_ids": [],
+      "readiness": "no_explicit_candidate_record"
+    },
+    "sparse": {
+      "candidate_ids": ["tinysol_6_0"],
+      "readiness": "joint_sparse_tonal_candidate_only_exact_members_unfrozen"
+    },
+    "tonal": {
+      "candidate_ids": ["tinysol_6_0"],
+      "readiness": "joint_sparse_tonal_candidate_only_exact_members_unfrozen"
+    },
+    "synthetic": {
+      "candidate_ids": ["slakh2100_redux"],
+      "readiness": "provider_capability_record_present_exact_members_unfrozen"
+    },
+    "noisy": {
+      "candidate_ids": ["sonyc_backgrounds_1_0_0"],
+      "readiness": "candidate_record_present_exact_members_and_noisy_trait_unfrozen"
+    },
+    "clipped": {
+      "candidate_ids": [],
+      "readiness": "no_explicit_naturally_clipped_reference_candidate"
+    }
+  },
+  "claim_boundary": {
+    "synthetic_witnesses_are_source_members": false,
+    "pcm_descriptors_establish_provenance": false,
+    "candidate_records_establish_exact_member_traits": false,
+    "shared_sparse_tonal_candidate_establishes_independent_contrasts": false,
+    "quiet_candidate_identified": false,
+    "naturally_clipped_candidate_identified": false,
+    "source_trait_members_selected": false,
+    "source_trait_scientific_coverage_complete": false,
+    "human_truth_present": false,
+    "collection_authorized": false,
+    "no_reference_work_eligible": false,
+    "full_objective_complete": false,
+    "public_cli_changed": false
+  },
+  "authorized_next_step": "Replay the synthetic non-identifiability and overlap witnesses twice, preserve path-free evidence, and use the proof obligations for a later separately authorized exact-member metadata and provenance audit. Do not read retained audio or assign source traits."
+}
