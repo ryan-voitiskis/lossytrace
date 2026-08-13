@@ -548,3 +548,18 @@ records therefore cannot clear internal research execution or redistribution.
 The frozen two-family candidate's declared stop condition is triggered. No
 successor is silently selected, and this candidate-level stop is not promoted
 to a full-objective negative result.
+
+The two provenance-pending source candidates are now separately resolved in a
+[`public-record disposition`](perceptual-degradation-pending-source-provenance-disposition-20260814.md).
+MusicNet's delivered PCM WAV and source metadata do not establish a complete
+recording encoding chain, while FSD50K's released uploader/licence metadata and
+downmixed PCM delivery do not expose original upload container or codec.
+Neither is promoted to truth-bearing clean-reference status, because using
+decoded-PCM codec-history inference to certify clean truth would be circular.
+This does not assert that either dataset is lossy or prohibit a separately
+frozen provenance-unknown stress/abstention role. The only arithmetically
+feasible pending-provider sensitivity is therefore scientifically closed;
+additional qualified providers, a narrower primary-domain claim, or rejection
+of the current truth-source design still requires responsible-human choice.
+No audio, member selection, metric, score, collection, sealed evidence,
+no-reference training, or public verdict was authorized.

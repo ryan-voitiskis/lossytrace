@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "disposition_id": "perceptual-degradation-pending-source-provenance-disposition-20260814-001",
+  "state": "musicnet_and_fsd50k_rejected_for_truth_bearing_clean_reference_public_record_insufficient",
+  "purpose": "Resolve the two provenance-pending aggregate-capacity candidates without audio access, member selection, codec-history inference, or promotion of an unknown-origin source to clean perceptual truth.",
+  "bindings": {
+    "public_provenance_observation": {
+      "path": "research/toolchains/evidence/perceptual-degradation-pending-source-public-provenance-observation-20260814-001.json",
+      "sha256": "bc3bbd378fc9ce6b2fe6954186217622969b2f6f1209a1d407997420501beadd"
+    },
+    "candidate_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/permissive-multiprovider-source-candidate-plan.json",
+      "sha256": "3699fe67c402bb38f4472dd63102212e2a05bd1b315e37d17f39dd4c08f38782"
+    },
+    "provider_allocation_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/permissive-provider-allocation-feasibility-plan.json",
+      "sha256": "02969f38ae6ad69b221b8285f16769d726c8dc3e3896d5647f0f20a662d3e1a2"
+    },
+    "provider_allocation_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-permissive-provider-allocation-feasibility-20260814-001.json",
+      "sha256": "cb81d0016ab8ad4916ffdb5ad82203225d0d090af7554e50d86c575047d166d7"
+    },
+    "source_condition_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/source-condition-qualification-plan.json",
+      "sha256": "5ce20a4e10d743e8823810ec89e58d873ea2db47044151f065fa3358e16cf64b"
+    },
+    "objective_completion_audit": {
+      "path": "research/toolchains/evidence/perceptual-degradation-objective-completion-audit-20260814-001.json",
+      "sha256": "b678fd9be29317e265882a27a1b8b25077acd902b4e7ccb03256265b9047beba"
+    }
+  },
+  "access_boundary": {
+    "official_public_metadata_read": true,
+    "new_audio_acquisition_authorized": false,
+    "audio_member_access_authorized": false,
+    "exact_member_selection_authorized": false,
+    "retained_odaq_reference_read_authorized": false,
+    "retained_reference_projection_authorized": false,
+    "processed_condition_access_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "metric_score_access_authorized": false,
+    "listening_score_access_authorized": false,
+    "human_collection_authorized": false,
+    "recruitment_authorized": false,
+    "sealed_evidence_access_authorized": false,
+    "no_reference_training_authorized": false,
+    "public_verdict_enabled": false
+  },
+  "qualification_rule": {
+    "role": "truth_bearing_clean_reference",
+    "requires_item_level_permission_and_attribution": true,
+    "requires_non_circular_original_coding_history_evidence": true,
+    "decoded_pcm_codec_history_inference_is_admissible_provenance": false,
+    "pcm_or_lossless_delivery_container_alone_is_sufficient": false,
+    "unknown_origin_may_be_assigned_clean_negative_truth": false,
+    "reason": "The experiment estimates perceptual degradation rather than codec history, so using the candidate estimator or container appearance to certify clean references would make the truth label circular."
+  },
+  "candidate_dispositions": [
+    {
+      "source_id": "musicnet_5120004",
+      "prior_role_status": "pending_upstream_coding_history_audit",
+      "truth_bearing_clean_reference_eligible": false,
+      "disposition": "rejected_for_truth_bearing_clean_reference_public_record_does_not_establish_complete_recording_to_pcm_chain",
+      "actual_prior_lossy_coding_asserted": false,
+      "all_future_use_rejected": false,
+      "possible_future_role": "provenance_unknown_stress_or_abstention_only_after_separate_freeze"
+    },
+    {
+      "source_id": "fsd50k_4060432_allowed_items",
+      "prior_role_status": "negative_only_or_pending_clip_level_origin_audit",
+      "truth_bearing_clean_reference_eligible": false,
+      "disposition": "rejected_for_truth_bearing_clean_reference_released_metadata_does_not_establish_capture_to_pcm_chain",
+      "actual_prior_lossy_coding_asserted": false,
+      "all_future_use_rejected": false,
+      "possible_future_role": "licence_filtered_provenance_unknown_stress_or_abstention_only_after_separate_freeze"
+    }
+  ],
+  "allocation_consequence": {
+    "pending_provider_count_promoted_to_truth_reference": 0,
+    "pending_group_capacity_promoted_to_truth_reference": 0,
+    "musicnet_repairs_final_music_domain": false,
+    "fsd50k_repairs_natural_domain_truth": false,
+    "add_all_pending_arithmetic_witness_scientifically_eligible": false,
+    "existing_exact_member_audit_candidate_provider_count": 7,
+    "existing_exact_member_audit_candidate_real_music_group_capacity": 7,
+    "four_partition_truth_manifest_feasible_and_frozen": false,
+    "additional_provider_or_claim_narrowing_decision_required": true
+  },
+  "successor_options": [
+    {
+      "option_id": "qualify_additional_permissive_providers",
+      "description": "Identify other providers with item-level rights, non-circular original coding provenance, independent groups, and enough domain breadth for four leakage-safe partitions.",
+      "requires_responsible_human_authority": true,
+      "audio_access_authorized_by_this_disposition": false
+    },
+    {
+      "option_id": "narrow_primary_domain_claim",
+      "description": "Preregister a narrower primary-domain estimand whose source population can be supported by qualified providers; ODAQ remains development-only and cannot itself establish truth or transfer.",
+      "requires_responsible_human_authority": true,
+      "audio_access_authorized_by_this_disposition": false
+    },
+    {
+      "option_id": "reject_current_truth_source_design",
+      "description": "Reject the current source design without claiming that the full perceptual-estimation objective has been scientifically tested.",
+      "requires_responsible_human_authority": true,
+      "audio_access_authorized_by_this_disposition": false
+    }
+  ],
+  "decision": {
+    "selected_successor_option": null,
+    "source_manifest_remains_unfrozen": true,
+    "retained_odaq_authorization_unchanged": true,
+    "metric_successor_selection_unchanged": true,
+    "no_reference_work_remains_ineligible": true,
+    "final_recommendation_frozen": false,
+    "next_responsible_human_decision": "Choose whether to qualify additional permissive providers, narrow the primary-domain claim, or reject the current truth-source design. This is independent of the GstPEAQ successor decision."
+  },
+  "claim_boundary": {
+    "musicnet_is_asserted_to_contain_lossy_audio": false,
+    "fsd50k_is_asserted_to_contain_lossy_audio": false,
+    "creative_commons_permission_is_asserted_insufficient_for_reuse": false,
+    "pcm_delivery_is_asserted_to_damage_audio": false,
+    "unknown_origin_is_promoted_to_clean_truth": false,
+    "candidate_rejection_is_full_objective_negative_result": false,
+    "source_manifest_is_complete": false,
+    "human_calibrated_oracle_is_complete": false,
+    "public_cli_changed": false
+  }
+}
