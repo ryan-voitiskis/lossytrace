@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "plan_id": "perceptual-degradation-listening-feasibility-frontier-20260813-001",
+  "state": "score_blind_feasibility_frontier_no_operational_design_frozen",
+  "purpose": "Determine whether the 16-source one-provider development path or larger grouped source designs can attain the frozen audibility-equivalence target after attrition and missingness, without opening audio, metric scores, or listener outcomes.",
+  "authorization": {
+    "retained_odaq_reference_read_authorized": false,
+    "retained_reference_projection_authorized": false,
+    "processed_condition_access_authorized": false,
+    "listening_score_access_authorized": false,
+    "human_collection_authorized": false,
+    "recruitment_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "sealed_evidence_access_authorized": false,
+    "no_reference_training_authorized": false,
+    "public_verdict_enabled": false,
+    "score_blind_analytic_planning_only": true
+  },
+  "bindings": {
+    "research_contract": {
+      "path": "docs/research/perceptual-degradation-contract-20260803.md",
+      "sha256": "fdec79207fc0fdd2e9cb10aae9f93dd1a17b45e6e56c0c7df8f0e01a1f9fb505"
+    },
+    "original_power_implementation": {
+      "path": "scripts/perceptual_degradation_listening_power.py",
+      "sha256": "fcfc06b4e73a0976bd1d4094bf5df0a16b6663883c17fce8f49f7ca22bebf891"
+    },
+    "original_power_evidence": {
+      "path": "research/toolchains/evidence/perceptual-degradation-listening-power-simulation-20260803-001.json",
+      "sha256": "7511937ba57c54cefa27208f5cba40272e827cbde5aa0f6dda2109ea888e5f5a"
+    },
+    "listening_analysis_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/listening-analysis-plan.json",
+      "sha256": "3317a2b039de860a4ec3b152ea83406b5bc8793e825b81918a140e60b8e16fdc"
+    },
+    "listening_analysis_implementation": {
+      "path": "scripts/perceptual_degradation_listening_analysis.py",
+      "sha256": "215d5c2b49fe4d630c1edd355e576c6fac296958465eb9a30dd88d684df30fff"
+    },
+    "score_blind_allocator_v2": {
+      "path": "scripts/perceptual_degradation_listening_allocation_v2.py",
+      "sha256": "8895f8cc3900f776a62c15fb115b674820ba24cdee18772f48399f1d3ea6ea12"
+    },
+    "odaq_acquisition_result": {
+      "path": "benchmarks/perceptual-degradation-v1/odaq-reference-acquisition-result-20260813.json",
+      "sha256": "b768900901cdcfc88ca4d5918a331961ee01eccd6a6d5d5becf31ddfaa15df4e"
+    },
+    "playback_qualification_result": {
+      "path": "benchmarks/perceptual-degradation-v1/playback-qualification-result-20260813.json",
+      "sha256": "7fa8a786091b4d96f9f78705a4c12dfd6cd1511c7631424d432aa3c49e698a5e"
+    }
+  },
+  "frozen_decision_targets": {
+    "familywise_alpha": 0.05,
+    "multiplicity_families": 4,
+    "target_power": 0.80,
+    "audibility_chance": 0.50,
+    "audibility_point_gate": 0.75,
+    "audibility_equivalence_interval": [0.45, 0.55],
+    "planning_audible_truth": 0.80,
+    "sdg_material_threshold": -1.0,
+    "planning_sdg_truth": -1.25,
+    "mushra_loss_material_threshold": 10.0,
+    "planning_mushra_loss_truth": 15.0,
+    "planning_unified_severity_threshold": 25.0,
+    "planning_unified_severity_truth": 37.5
+  },
+  "variance_components": {
+    "audibility": {
+      "listener_logit_sd": 0.45,
+      "source_logit_sd": 0.35
+    },
+    "sdg": {
+      "listener_sd": 0.25,
+      "source_sd": 0.30,
+      "residual_sd": 0.50
+    },
+    "mushra_loss": {
+      "listener_sd": 4.0,
+      "source_sd": 5.0,
+      "residual_sd": 8.0
+    },
+    "state": "carried_forward_from_score_blind_power_model_not_estimated_from_outcomes"
+  },
+  "score_blind_stress_assumptions": {
+    "enrollment_dropout_rate": 0.15,
+    "training_failure_rate": 0.20,
+    "technical_or_quality_exclusion_rate": 0.05,
+    "eligible_listener_retention_rate": 0.646,
+    "usable_trial_rate_after_missingness": 0.90,
+    "bridge_mapping_standard_error_points": [0.0, 2.5, 5.0],
+    "status": "planning_sensitivities_not_empirical_estimates_and_not_collection_thresholds"
+  },
+  "frontier_grid": {
+    "independent_source_groups_per_partition": [16, 24, 38, 39, 48, 64, 80, 96, 120, 160],
+    "transparent_trials_per_eligible_listener": [3, 5, 8, 15],
+    "maximum_eligible_listener_search": 1000000,
+    "maximum_subtle_trials_per_session": 15,
+    "maximum_mushra_trials_per_session": 6,
+    "minimum_effective_judgments_per_source": 8,
+    "grouped_partition_counts": [1, 3, 4],
+    "device_class_counts": [1, 2]
+  },
+  "device_class_policy": {
+    "method": "prespecified_separate_estimands_and_reports",
+    "pooled_cross_device_generalization": false,
+    "single_declared_chain_supports_other_device_classes": false,
+    "reason": "A device interaction variance cannot be learned score-blind; separate strata avoid hiding a device-specific reversal and make the workload multiplication explicit."
+  },
+  "bridge_uncertainty_policy": {
+    "method": "conservative_maximum_of_sdg_and_mushra_mapped_standard_errors_plus_mapping_uncertainty_in_quadrature",
+    "sdg_local_scale_points_per_grade": 25.0,
+    "mushra_local_scale_points_per_loss_point": 2.5,
+    "primary_material_decision_still_requires_both_direct_method_gates": true,
+    "mapping_uncertainty_is_sensitivity_only": true
+  },
+  "scope_and_claims": {
+    "odaq_clean_reference_count": 16,
+    "odaq_provider_count": 1,
+    "odaq_partition_role": "development_only",
+    "one_provider_proves_independent_transfer": false,
+    "source_groups_may_cross_partitions": false,
+    "source_groups_may_be_counted_twice": false,
+    "analysis_is_final_hierarchical_model": false,
+    "listener_count_frozen": false,
+    "operational_design_frozen": false,
+    "collection_authorized": false
+  }
+}
