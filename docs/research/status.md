@@ -942,3 +942,27 @@ real drift estimation, retained development-pair behavior, perceptual metrics
 and human calibration remain absent. Source-trait, metric-successor and
 retained-validation decisions remain separately authority-gated; no source or
 condition was selected and the public CLI remains verdict-free.
+
+A deterministic score-blind
+[`oracle drift-estimator integration`](perceptual-degradation-oracle-drift-estimator-integration-20260814.md)
+now closes the synthetic path from PCM-based estimation through the held-out
+apply decision, exact frozen resampler, alignment v2 and score-free oracle. All
+seven frozen drift values were selected using training windows only. Disjoint
+held-out windows permitted correction for `+75`, `-60`, `+100` and `-100 ppm`;
+every applied channel reached at least 0.999 correlation and improved by at
+least 0.1. The `+20` and `-20 ppm` cases stayed below the benefit threshold and
+remained bit-exact passthroughs; zero drift used the bit-exact identity bypass.
+All thirteen gates passed and two fresh temporary payloads were byte-identical.
+No actual, retained or provider audio, perceptual metric, human truth, response,
+collection, no-reference work or public verdict was opened or authorized.
+
+A deterministic
+[`objective completion-audit drift-estimator refresh`](perceptual-degradation-objective-completion-audit-drift-estimator-refresh-20260814.md)
+records the end-to-end synthetic estimator and correction result without
+scientific promotion. The completion count remains four satisfied and ten
+unproven. The full-reference requirement is now
+`synthetic_estimator_apply_correction_pipeline_passed_retained_and_scientific_validation_closed`:
+retained development-pair behavior, real-audio estimation, perceptual metrics
+and human calibration remain absent. Source-trait, metric-successor and
+retained-validation decisions remain separately authority-gated, and the
+public CLI remains verdict-free.
