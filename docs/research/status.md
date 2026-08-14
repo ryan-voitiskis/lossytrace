@@ -966,3 +966,27 @@ retained development-pair behavior, real-audio estimation, perceptual metrics
 and human calibration remain absent. Source-trait, metric-successor and
 retained-validation decisions remain separately authority-gated, and the
 public CLI remains verdict-free.
+
+A score-blind
+[`ODAQ retained-reference drift-validation readiness`](perceptual-degradation-odaq-retained-drift-validation-readiness-20260814.md)
+checkpoint now freezes the next real-content technical protocol without
+opening retained audio or implementing a live runner. The future design covers
+112 cases across the exact 16 acquired clean references, uses five fixed
+training and five disjoint held-out windows, abstains on insufficient
+reference-energy support, and predeclares estimator accuracy, correction
+benefit, bit-exact bypass, two-replay determinism and public-redaction gates.
+All nine metadata-only readiness gates pass. A narrow successor-authorization
+schema permits only temporary in-memory canonical projection and controlled
+clock-drift validation; ODAQ processed conditions and scores, actual codec
+generation, metrics, playback, ratings, responses, no-reference work and
+public verdicts remain closed.
+
+A deterministic
+[`objective completion-audit retained-drift readiness refresh`](perceptual-degradation-objective-completion-audit-retained-drift-readiness-refresh-20260814.md)
+records that protocol readiness without treating it as authorization or
+validation. The completion count remains four satisfied and ten unproven. The
+full-reference requirement is now
+`retained_drift_validation_protocol_frozen_authorization_and_execution_pending`.
+No retained reference was read or projected, no live runner was implemented,
+and no real-content, perceptual or human validation occurred. The public CLI
+remains verdict-free.

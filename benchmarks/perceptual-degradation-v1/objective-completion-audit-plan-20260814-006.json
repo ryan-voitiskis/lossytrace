@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "plan_id": "perceptual-degradation-objective-completion-audit-20260814-006",
+  "state": "score_blind_completion_audit_refreshed_for_retained_drift_validation_readiness_no_scientific_promotion",
+  "purpose": "Reconcile the full objective against the frozen metadata-only retained-reference drift-validation protocol while refusing to treat readiness as authorization, retained-audio execution, real-content validation, perceptual evidence or a full-reference oracle pass.",
+  "bindings": {
+    "predecessor_audit_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/objective-completion-audit-plan-20260814-005.json",
+      "sha256": "160cdd87d1f30a50a3697c28af02cba3d61d7b9bf4661f432cae9e8c1a9257fb"
+    },
+    "predecessor_audit_implementation": {
+      "path": "scripts/perceptual_degradation_objective_completion_audit_v5.py",
+      "sha256": "8217853be8285074139be8881217a62900fb8f2dfc7d4084fe7603886c08f5f3"
+    },
+    "predecessor_audit_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-objective-completion-audit-20260814-005.json",
+      "sha256": "e41a6342972ba8f0b44b2540e704c866f32c8c2cd61e06bf9dc06545976dfec6"
+    },
+    "retained_drift_readiness_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/odaq-retained-drift-validation-execution-plan.json",
+      "sha256": "c91f27e5a448bfe387b913f5240cb0d6f86f3a0e5e79cfaecf7f74d94497e48b"
+    },
+    "retained_drift_readiness_implementation": {
+      "path": "scripts/perceptual_degradation_odaq_retained_drift_validation_readiness.py",
+      "sha256": "a061e91fb6747770aa1ede1a73124fb5892b729082f2c8e20660c2666bf72c8b"
+    },
+    "retained_drift_readiness_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-odaq-retained-drift-validation-readiness-20260814-001.json",
+      "sha256": "0dd7af1f64eaeda41287fba319ec13423443f7bedc7c33917fd7bba1483f2da2"
+    }
+  },
+  "authorization": {
+    "bound_metadata_and_source_read_authorized": true,
+    "synthetic_audit_execution_authorized": true,
+    "retained_drift_validation_protocol_readiness_authorized": true,
+    "retained_audio_access_authorized": false,
+    "retained_drift_correction_authorized": false,
+    "real_audio_drift_estimation_validation_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "human_response_access_authorized": false,
+    "human_collection_authorized": false,
+    "sealed_evidence_access_authorized": false,
+    "no_reference_training_authorized": false,
+    "public_verdict_enabled": false
+  },
+  "requirement_ids": [
+    "estimand_is_degradation_not_history",
+    "declared_playback_chain_qualified",
+    "truth_bearing_source_manifest_feasible_and_frozen",
+    "controlled_human_calibration_collected",
+    "perceptual_metric_execution_and_legal_gate_passed",
+    "deterministic_human_calibrated_full_reference_oracle_passed",
+    "transparent_lossy_treated_as_non_degraded",
+    "difficult_natural_and_production_negatives_preserved_in_evaluation",
+    "grouped_source_domain_codec_encoder_transfer_passed",
+    "no_reference_estimator_trained_and_independently_validated",
+    "severity_audibility_artifact_support_uncertainty_abstention_reported",
+    "public_cli_remains_verdict_free",
+    "rigorous_negative_is_accepted_success",
+    "final_research_recommendation_frozen"
+  ],
+  "completion_policy": {
+    "all_requirement_ids_must_be_present": true,
+    "all_completion_required_requirements_must_be_satisfied": true,
+    "retained_validation_protocol_readiness_counts_as_authorization": false,
+    "retained_validation_protocol_readiness_counts_as_retained_validation": false,
+    "retained_validation_protocol_readiness_counts_as_perceptual_validation": false,
+    "retained_validation_protocol_readiness_counts_as_full_reference_oracle_pass": false,
+    "technical_alignment_support_counts_as_human_calibration": false,
+    "preparation_or_synthetic_replay_counts_as_scientific_completion": false,
+    "green_tests_count_as_perceptual_evidence": false,
+    "missing_or_indirect_evidence_counts_as_satisfied": false,
+    "current_recommendation": null,
+    "allowed_final_recommendations": [
+      "reject_perceptual_estimation",
+      "retain_full_reference_only",
+      "continue_no_reference_research",
+      "freeze_blind_final_validation"
+    ]
+  },
+  "claim_boundary": {
+    "audit_authorizes_next_gate": false,
+    "audit_is_listening_evidence": false,
+    "audit_is_metric_evidence": false,
+    "audit_is_retained_audio_validation": false,
+    "audit_is_full_reference_validation": false,
+    "audit_is_no_reference_validation": false,
+    "audit_completes_objective": false,
+    "audit_changes_public_cli": false
+  }
+}

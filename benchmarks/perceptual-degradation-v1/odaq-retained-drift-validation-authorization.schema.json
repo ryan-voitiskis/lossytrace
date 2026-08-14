@@ -1,0 +1,175 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lossytrace.dev/schemas/odaq-retained-drift-validation-authorization-v1.json",
+  "title": "LossyTrace ODAQ clean-reference drift-validation authorization",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "authorization_id",
+    "authorized_on",
+    "state",
+    "responsible_human_authorization_present",
+    "bindings",
+    "authorization_scope",
+    "execution_constraints",
+    "claim_boundary",
+    "canonical_decision"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "authorization_id": {
+      "type": "string",
+      "pattern": "^perceptual-degradation-odaq-retained-drift-validation-authorization-[0-9]{8}-[0-9]{3}$"
+    },
+    "authorized_on": {"type": "string", "format": "date"},
+    "state": {
+      "const": "responsible_human_authorized_exact_odaq_clean_reference_drift_validation_only"
+    },
+    "responsible_human_authorization_present": {"const": true},
+    "bindings": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "validation_execution_plan",
+        "acquisition_result",
+        "delivery_preparation",
+        "projection_implementation",
+        "synthetic_estimator_plan",
+        "synthetic_estimator_implementation",
+        "synthetic_estimator_report",
+        "authorization_schema"
+      ],
+      "properties": {
+        "validation_execution_plan": {"$ref": "#/$defs/binding"},
+        "acquisition_result": {"$ref": "#/$defs/binding"},
+        "delivery_preparation": {"$ref": "#/$defs/binding"},
+        "projection_implementation": {"$ref": "#/$defs/binding"},
+        "synthetic_estimator_plan": {"$ref": "#/$defs/binding"},
+        "synthetic_estimator_implementation": {"$ref": "#/$defs/binding"},
+        "synthetic_estimator_report": {"$ref": "#/$defs/binding"},
+        "authorization_schema": {"$ref": "#/$defs/binding"}
+      }
+    },
+    "authorization_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "retained_reference_count",
+        "retained_inventory_sha256",
+        "retained_reference_access_authorized",
+        "canonical_pcm_projection_in_memory_authorized",
+        "controlled_synthetic_clock_drift_generation_authorized",
+        "temporary_corrected_pcm_in_memory_authorized",
+        "retained_derived_audio_authorized",
+        "provider_processed_condition_access_authorized",
+        "provider_listening_score_access_authorized",
+        "actual_codec_generation_authorized",
+        "perceptual_metric_execution_authorized",
+        "human_playback_authorized",
+        "degradation_rating_collection_authorized",
+        "listener_response_collection_authorized",
+        "sealed_evidence_access_authorized",
+        "no_reference_training_authorized",
+        "public_verdict_authorized"
+      ],
+      "properties": {
+        "retained_reference_count": {"const": 16},
+        "retained_inventory_sha256": {
+          "const": "d7f244da55b510b639300d55271b1ebd5fb9f7454b258bec30588bf18eefde2f"
+        },
+        "retained_reference_access_authorized": {"const": true},
+        "canonical_pcm_projection_in_memory_authorized": {"const": true},
+        "controlled_synthetic_clock_drift_generation_authorized": {"const": true},
+        "temporary_corrected_pcm_in_memory_authorized": {"const": true},
+        "retained_derived_audio_authorized": {"const": false},
+        "provider_processed_condition_access_authorized": {"const": false},
+        "provider_listening_score_access_authorized": {"const": false},
+        "actual_codec_generation_authorized": {"const": false},
+        "perceptual_metric_execution_authorized": {"const": false},
+        "human_playback_authorized": {"const": false},
+        "degradation_rating_collection_authorized": {"const": false},
+        "listener_response_collection_authorized": {"const": false},
+        "sealed_evidence_access_authorized": {"const": false},
+        "no_reference_training_authorized": {"const": false},
+        "public_verdict_authorized": {"const": false}
+      }
+    },
+    "execution_constraints": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "maximum_workers",
+        "minimum_free_disk_gib",
+        "exact_acquired_inventory_only",
+        "source_inventory_reverified_before_read",
+        "analysis_segment_policy",
+        "derived_pcm_lifetime",
+        "fresh_replay_count",
+        "replay_reports_byte_identical",
+        "public_paths_redacted",
+        "public_per_reference_hashes_redacted",
+        "private_journal_outside_repository",
+        "stop_before_read_on_authorization_failure",
+        "stop_on_unexpected_input_geometry",
+        "stop_on_float_domain_violation"
+      ],
+      "properties": {
+        "maximum_workers": {"const": 1},
+        "minimum_free_disk_gib": {"const": 15},
+        "exact_acquired_inventory_only": {"const": true},
+        "source_inventory_reverified_before_read": {"const": true},
+        "analysis_segment_policy": {"const": "first_288000_pcm_frames"},
+        "derived_pcm_lifetime": {"const": "temporary_in_memory_only"},
+        "fresh_replay_count": {"const": 2},
+        "replay_reports_byte_identical": {"const": true},
+        "public_paths_redacted": {"const": true},
+        "public_per_reference_hashes_redacted": {"const": true},
+        "private_journal_outside_repository": {"const": true},
+        "stop_before_read_on_authorization_failure": {"const": true},
+        "stop_on_unexpected_input_geometry": {"const": true},
+        "stop_on_float_domain_violation": {"const": true}
+      }
+    },
+    "claim_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "development_only",
+        "one_provider_stratum",
+        "synthetic_drift_is_actual_codec_degradation",
+        "retained_reference_validation_is_perceptual_truth",
+        "technical_correlation_is_a_perceptual_metric",
+        "independent_transfer_supported",
+        "full_reference_oracle_validated",
+        "no_reference_work_eligible",
+        "final_validation_supported"
+      ],
+      "properties": {
+        "development_only": {"const": true},
+        "one_provider_stratum": {"const": true},
+        "synthetic_drift_is_actual_codec_degradation": {"const": false},
+        "retained_reference_validation_is_perceptual_truth": {"const": false},
+        "technical_correlation_is_a_perceptual_metric": {"const": false},
+        "independent_transfer_supported": {"const": false},
+        "full_reference_oracle_validated": {"const": false},
+        "no_reference_work_eligible": {"const": false},
+        "final_validation_supported": {"const": false}
+      }
+    },
+    "canonical_decision": {
+      "const": "Authorize reading only the exact 16 retained ODAQ clean references, projecting their existing PCM representation into memory under the frozen canonical rule, generating only the frozen controlled clock-drift cases, and running the frozen technical estimator, held-out apply rule, exact resampler, alignment, and score-free oracle twice. Derived PCM must remain temporary and in memory. Do not authorize ODAQ processed conditions or scores, actual codec generation, perceptual metrics, playback, ratings, listener collection, sealed evidence, no-reference training, final-validation claims, or public verdicts."
+    }
+  },
+  "$defs": {
+    "binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}

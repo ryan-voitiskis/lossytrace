@@ -1,0 +1,186 @@
+{
+  "schema_version": 1,
+  "plan_id": "perceptual-degradation-odaq-retained-drift-validation-20260814-001",
+  "state": "score_blind_retained_reference_drift_validation_protocol_frozen_authorization_pending",
+  "purpose": "Predeclare a real-content technical validation of the frozen drift estimator and correction path on the exact 16 acquired ODAQ clean references while leaving every retained read, PCM projection, synthetic drift generation, live runner and execution action pending a separate responsible-human authorization.",
+  "bindings": {
+    "research_contract": {
+      "path": "docs/research/perceptual-degradation-contract-20260803.md",
+      "sha256": "fdec79207fc0fdd2e9cb10aae9f93dd1a17b45e6e56c0c7df8f0e01a1f9fb505"
+    },
+    "acquisition_result": {
+      "path": "benchmarks/perceptual-degradation-v1/odaq-reference-acquisition-result-20260813.json",
+      "sha256": "b768900901cdcfc88ca4d5918a331961ee01eccd6a6d5d5becf31ddfaa15df4e"
+    },
+    "delivery_preparation": {
+      "path": "benchmarks/perceptual-degradation-v1/odaq-reference-delivery-preparation-plan.json",
+      "sha256": "32355418257aef49aa0532f5b65d1762df7beb41d044d271b99e9b6848598af2"
+    },
+    "delivery_execution_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/odaq-reference-delivery-execution-plan.json",
+      "sha256": "7f6518a0456d599f8fb82f71d6846459aae7bd346a8d1be2ed35dea67b893728"
+    },
+    "projection_implementation": {
+      "path": "scripts/prepare-perceptual-degradation-odaq-delivery.py",
+      "sha256": "d1ec92f29e5a4155e25bb7c46a31af4fdeef2766b6f6670529e8f18848cade7b"
+    },
+    "attribution_audit": {
+      "path": "research/toolchains/evidence/perceptual-degradation-odaq-attribution-audit-20260804-001.json",
+      "sha256": "08da482eeab4ab51f0e2ed2f05684edac098b51fe81d1b78bec75181336dca61"
+    },
+    "playback_qualification_result": {
+      "path": "benchmarks/perceptual-degradation-v1/playback-qualification-result-20260813.json",
+      "sha256": "7fa8a786091b4d96f9f78705a4c12dfd6cd1511c7631424d432aa3c49e698a5e"
+    },
+    "synthetic_estimator_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/oracle-drift-estimator-integration-plan.json",
+      "sha256": "d3c35d0c2e82b4424657183e14709a3b40ac91b085ea2618d9b9b3bcb9eb3a81"
+    },
+    "synthetic_estimator_implementation": {
+      "path": "scripts/perceptual_degradation_oracle_drift_estimator_integration.py",
+      "sha256": "c3479334525a814e25bcc0ee2d5f569d4be07253d927f1e86788881df03bf3bc"
+    },
+    "synthetic_estimator_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-oracle-drift-estimator-integration-20260814-001.json",
+      "sha256": "3d352e0112e39639b6d3162d5237e0c99f718220c5d527ed93c4b0a75bda5da4"
+    },
+    "authorization_schema": {
+      "path": "benchmarks/perceptual-degradation-v1/odaq-retained-drift-validation-authorization.schema.json",
+      "sha256": "1eae94fc6274e623a266b8784c7c8642166ee583c28c8a08f0d1469862b82698"
+    },
+    "readiness_implementation": {
+      "path": "scripts/perceptual_degradation_odaq_retained_drift_validation_readiness.py",
+      "sha256": "a061e91fb6747770aa1ede1a73124fb5892b729082f2c8e20660c2666bf72c8b"
+    },
+    "readiness_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_odaq_retained_drift_validation_readiness.py",
+      "sha256": "6bb38d06f791bdd8e9eabac7c7d7f42a457dabd96471469848223a731f0e450d"
+    }
+  },
+  "qualified_evidence": {
+    "retained_reference_count": 16,
+    "retained_audio_bytes": 54633154,
+    "retained_inventory_sha256": "d7f244da55b510b639300d55271b1ebd5fb9f7454b258bec30588bf18eefde2f",
+    "source_sample_rate_hz": 48000,
+    "source_channel_count": 2,
+    "minimum_source_frame_count": 360701,
+    "maximum_source_frame_count": 576008,
+    "float32_reference_count": 7,
+    "extensible_s24_reference_count": 9,
+    "attribution_notice_ready_source_count": 16,
+    "physical_playback_chain_qualified": true,
+    "perceptual_truth_collected": false,
+    "synthetic_estimator_case_count": 7,
+    "synthetic_estimator_gate_pass_count": 13
+  },
+  "authorization_gate": {
+    "responsible_human_authorization_present": false,
+    "committed_successor_authorization_path": null,
+    "retained_reference_read_authorized": false,
+    "canonical_pcm_projection_authorized": false,
+    "controlled_synthetic_drift_generation_authorized": false,
+    "live_runner_implementation_authorized": false,
+    "live_execution_authorized": false
+  },
+  "validation_protocol": {
+    "protocol_id": "odaq-clean-reference-controlled-drift-v1",
+    "reference_count": 16,
+    "source_sample_rate_hz": 48000,
+    "source_channel_count": 2,
+    "analysis_segment_policy": "first_288000_pcm_frames",
+    "analysis_frame_count": 288000,
+    "analysis_duration_seconds": 6,
+    "actual_drift_ppm_cases": [75, -60, 0, 20, -20, 100, -100],
+    "candidate_drift_ppm_minimum": -100,
+    "candidate_drift_ppm_maximum": 100,
+    "candidate_drift_ppm_step": 5,
+    "window_frame_count": 24000,
+    "window_start_frames": [24000, 48000, 72000, 96000, 120000, 144000, 168000, 192000, 216000, 240000],
+    "training_window_positions": [0, 2, 4, 6, 8],
+    "held_out_window_positions": [1, 3, 5, 7, 9],
+    "reference_energy_mask_only": true,
+    "minimum_channel_window_rms": 0.000001,
+    "minimum_eligible_training_windows_per_channel": 3,
+    "minimum_eligible_held_out_windows_per_channel": 3,
+    "insufficient_energy_action": "abstain_insufficient_signal_support",
+    "selection_metric": "mean_cosine_correlation_across_eligible_channels_and_training_windows",
+    "selection_tie_break": "higher_score_then_lower_abs_ppm_then_lower_signed_ppm",
+    "selection_uses_held_out_windows": false,
+    "proxy_interpolator": "binary64_linear_interpolation",
+    "proxy_interpolator_is_frozen_resampler": false,
+    "minimum_selection_margin": 0.0001,
+    "minimum_held_out_correlation_after_correction": 0.99,
+    "minimum_held_out_correlation_improvement_to_apply": 0.05,
+    "correction_resampler": "oracle-bounded-drift-kaiser-sinc128-q30-v1",
+    "mandatory_discard_frames_each_edge_when_applied": 64,
+    "zero_drift_policy": "bit_exact_identity_bypass",
+    "nonzero_no_apply_policy": "bit_exact_observed_passthrough",
+    "post_decision_alignment": "perceptual_degradation_alignment_v2",
+    "post_decision_oracle": "perceptual_degradation_full_reference_oracle_score_free_v1"
+  },
+  "predeclared_future_gates": {
+    "exact_source_inventory_reverified": true,
+    "all_16_sources_attempted": true,
+    "all_7_drift_cases_attempted_per_source": true,
+    "minimum_supported_sources_per_nonzero_drift_case": 12,
+    "maximum_supported_estimation_absolute_error_ppm": 5,
+    "minimum_correct_estimate_rate_across_supported_nonzero_cases": 0.95,
+    "zero_drift_false_apply_count": 0,
+    "applied_case_minimum_post_correction_core_correlation_each_channel": 0.999,
+    "applied_case_minimum_core_correlation_improvement_each_channel": 0.01,
+    "every_applied_case_must_meet_frozen_held_out_rule": true,
+    "every_nonapplied_output_must_be_bit_exact": true,
+    "every_abstention_must_have_predeclared_reason": true,
+    "score_free_oracle_must_remain_execution_blocked": true,
+    "derived_audio_must_not_be_retained": true,
+    "fresh_replay_count": 2,
+    "fresh_replay_reports_must_be_byte_identical": true,
+    "public_report_must_exclude_paths_per_reference_hashes_and_audio": true
+  },
+  "execution_constraints": {
+    "maximum_workers": 1,
+    "minimum_free_disk_gib": 15,
+    "exact_acquired_inventory_only": true,
+    "source_inventory_reverified_before_read": true,
+    "canonical_projection": "perceptual-degradation-odaq-reference-delivery-preparation-20260813-001",
+    "derived_pcm_lifetime": "temporary_in_memory_only",
+    "private_journal_outside_repository": true,
+    "public_paths_redacted": true,
+    "public_per_reference_hashes_redacted": true,
+    "stop_before_read_on_authorization_failure": true,
+    "stop_on_unexpected_input_geometry": true,
+    "stop_on_float_domain_violation": true
+  },
+  "access_boundary": {
+    "committed_metadata_and_source_read_authorized": true,
+    "synthetic_authorization_fixture_validation_authorized": true,
+    "retained_reference_access_authorized": false,
+    "canonical_pcm_projection_authorized": false,
+    "controlled_synthetic_clock_drift_generation_authorized": false,
+    "provider_processed_condition_access_authorized": false,
+    "provider_listening_score_access_authorized": false,
+    "actual_codec_generation_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "human_playback_authorized": false,
+    "degradation_rating_collection_authorized": false,
+    "listener_response_collection_authorized": false,
+    "sealed_evidence_access_authorized": false,
+    "no_reference_training_authorized": false,
+    "public_verdict_authorized": false
+  },
+  "claim_boundary": {
+    "development_only": true,
+    "one_provider_stratum": true,
+    "protocol_readiness_is_retained_validation": false,
+    "synthetic_drift_is_actual_codec_degradation": false,
+    "retained_reference_validation_is_perceptual_truth": false,
+    "technical_correlation_is_a_perceptual_metric": false,
+    "independent_transfer_supported": false,
+    "full_reference_oracle_validated": false,
+    "no_reference_work_eligible": false,
+    "final_validation_supported": false,
+    "public_verdict_enabled": false
+  },
+  "canonical_authorization_decision": "Authorize reading only the exact 16 retained ODAQ clean references, projecting their existing PCM representation into memory under the frozen canonical rule, generating only the frozen controlled clock-drift cases, and running the frozen technical estimator, held-out apply rule, exact resampler, alignment, and score-free oracle twice. Derived PCM must remain temporary and in memory. Do not authorize ODAQ processed conditions or scores, actual codec generation, perceptual metrics, playback, ratings, listener collection, sealed evidence, no-reference training, final-validation claims, or public verdicts.",
+  "authorized_next_step": "Obtain and commit a responsible-human successor authorization matching the frozen schema. Until then, do not implement a live retained-audio runner and do not read, project, drift, correct, or otherwise process any retained ODAQ reference."
+}
