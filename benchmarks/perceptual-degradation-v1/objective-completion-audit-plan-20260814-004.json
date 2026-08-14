@@ -18,15 +18,15 @@
     },
     "drift_integration_plan": {
       "path": "benchmarks/perceptual-degradation-v1/oracle-drift-integration-plan.json",
-      "sha256": "c637420beb457535e0429ad7bc5a540df40071baf12205f42f07b46461475330"
+      "sha256": "3fc4595e9d7e65201aca6d305e29bd627ae49ab46a570bd03fc2e4935053d8bf"
     },
     "drift_integration_implementation": {
       "path": "scripts/perceptual_degradation_oracle_drift_integration.py",
-      "sha256": "cb265e47f5f0cd775883651f56b83db4219cb9cc5dfbe982563076f995948722"
+      "sha256": "86435d0775bbd142b452e350bb0ff9010405bb3366d91e2bd34e11d34f3d2668"
     },
     "drift_integration_report": {
       "path": "research/toolchains/evidence/perceptual-degradation-oracle-drift-integration-20260814-001.json",
-      "sha256": "a70bbd9059f460c9f1e1a6d0b1d25bf953e6aa634e0ed8575a15d6edeae82dfa"
+      "sha256": "494e09bd8d728573bdb285889affb8aca4e2d068b134b7b88f96172505de9289"
     }
   },
   "authorization": {

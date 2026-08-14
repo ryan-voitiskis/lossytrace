@@ -42,7 +42,7 @@ class ObjectiveCompletionAuditV4Test(unittest.TestCase):
             summary["oracle_drift_resampler_integrated_on_retained_audio"]
         )
         self.assertEqual(3, summary["oracle_drift_synthetic_case_count"])
-        self.assertEqual(11, summary["oracle_drift_synthetic_gate_pass_count"])
+        self.assertEqual(12, summary["oracle_drift_synthetic_gate_pass_count"])
         self.assertFalse(summary["oracle_drift_retained_validation_complete"])
         checks = self.report["evidence_checks"]
         self.assertTrue(checks["oracle_drift_held_out_apply_decision_bound"])

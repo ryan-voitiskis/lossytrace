@@ -17,13 +17,16 @@ The integration binds three previously separate artifacts:
 - the topology-aware alignment plus score-free full-reference oracle envelope.
 
 The observation generator remains the independent binary64 linear-interpolation
-fixture. It is not the frozen correction resampler. Corrected PCM exists only
-in memory, applied cases discard 64 frames at each edge, and zero drift uses
-the bit-exact identity bypass.
+fixture. It is not the frozen correction resampler. The synthetic source is
+rounded to signed Q20 before drift generation so its PCM hashes do not inherit
+platform `libm` differences; reported floating-point diagnostics are rounded
+to 12 decimal places. Corrected PCM exists only in memory, applied cases
+discard 64 frames at each edge, and zero drift uses the bit-exact identity
+bypass.
 
 ## Synthetic result
 
-All eleven predeclared integration gates passed across three cases. The two
+All twelve predeclared integration gates passed across three cases. The two
 applied cases produced:
 
 | Drift | Minimum correlation before | Minimum correlation after | Minimum improvement |
@@ -52,11 +55,11 @@ integrated correction and drift-estimation behavior on retained development
 pairs before any perceptual metric execution.
 
 The report binds plan SHA-256
-`c637420beb457535e0429ad7bc5a540df40071baf12205f42f07b46461475330`
+`3fc4595e9d7e65201aca6d305e29bd627ae49ab46a570bd03fc2e4935053d8bf`
 and implementation SHA-256
-`cb265e47f5f0cd775883651f56b83db4219cb9cc5dfbe982563076f995948722`.
+`86435d0775bbd142b452e350bb0ff9010405bb3366d91e2bd34e11d34f3d2668`.
 The committed report SHA-256 is
-`a70bbd9059f460c9f1e1a6d0b1d25bf953e6aa634e0ed8575a15d6edeae82dfa`.
+`494e09bd8d728573bdb285889affb8aca4e2d068b134b7b88f96172505de9289`.
 
 Machine-readable artifacts:
 

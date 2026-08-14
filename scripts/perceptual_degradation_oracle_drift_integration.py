@@ -75,6 +75,34 @@ EXPECTED_INTEGRATION = {
     "apply_requires_bound_held_out_improvement_gate": True,
     "observation_generator": "bound_binary64_linear_interpolation_fixture",
     "observation_generator_is_frozen_resampler": False,
+    "reference_fixture_sample_quantization": "signed_q20_round_half_to_even",
+    "reported_float_quantization_decimal_places": 12,
+    "expected_case_hashes": {
+        "+75": {
+            "input_f64le_sha256": (
+                "fd6096fb9cd90b49ee73c78677925037c07e9d4d65454cb329e9b4a50ac1312a"
+            ),
+            "output_f64le_sha256": (
+                "a3f236ab1574829ddfb5961883199d1c4fc03d721f7a1f020b260f6c5ee16269"
+            ),
+        },
+        "-60": {
+            "input_f64le_sha256": (
+                "917e5279e265c56ddccd2cda5ea0847189b52f977e1bfc06358f6d981ccaffb0"
+            ),
+            "output_f64le_sha256": (
+                "788bd8d9be36a60800f36108537758353f72ccd5796106f2b23671704e3e25bd"
+            ),
+        },
+        "+0": {
+            "input_f64le_sha256": (
+                "8e584bfb581d3d7fd445c3b5f839c4cc0e9d6a60a0270c3240f94aa600ed6e42"
+            ),
+            "output_f64le_sha256": (
+                "8e584bfb581d3d7fd445c3b5f839c4cc0e9d6a60a0270c3240f94aa600ed6e42"
+            ),
+        },
+    },
     "correction_implementation": "oracle-bounded-drift-kaiser-sinc128-q30-v1",
     "coefficient_table_sha256": (
         "dbe4442199b56cd56880f1f45c09889721519dd7a165a4de76117b5e219dab82"
@@ -184,9 +212,17 @@ def _decision_rows(plan: dict[str, Any]) -> list[dict[str, Any]]:
 
 
 def _reference_channels(sample_rate: int, seconds: int) -> list[list[float]]:
-    left = technical.synthetic_alignment_fixture(sample_rate, seconds)
+    scale = 1 << 20
+
+    def quantize(value: float) -> float:
+        return round(value * scale) / scale
+
+    left = [
+        quantize(value)
+        for value in technical.synthetic_alignment_fixture(sample_rate, seconds)
+    ]
     right = [
-        0.83 * value + 0.09 * ((index % 257) / 256.0 - 0.5)
+        quantize(0.83 * value + 0.09 * ((index % 257) / 256.0 - 0.5))
         for index, value in enumerate(left)
     ]
     return [left, right]
@@ -212,6 +248,11 @@ def _correlation(left: Sequence[float], right: Sequence[float]) -> float:
     if left_energy <= 0.0 or right_energy <= 0.0:
         raise ValueError("correlation energy differs")
     return dot / math.sqrt(left_energy * right_energy)
+
+
+def _reported_float(plan: dict[str, Any], value: float) -> float:
+    places = plan["integration"]["reported_float_quantization_decimal_places"]
+    return round(float(value), places)
 
 
 def integrate_case(
@@ -260,15 +301,19 @@ def integrate_case(
     for channel_index, (expected, before, after) in enumerate(
         zip(reference_core, observed_core, corrected_core, strict=True)
     ):
-        before_correlation = _correlation(expected, before)
-        after_correlation = _correlation(expected, after)
+        before_correlation = _reported_float(
+            plan, _correlation(expected, before)
+        )
+        after_correlation = _reported_float(plan, _correlation(expected, after))
         correlations.append(
             {
                 "channel_index": channel_index,
                 "core_frame_count": len(expected),
                 "correlation_before": before_correlation,
                 "correlation_after": after_correlation,
-                "correlation_improvement": after_correlation - before_correlation,
+                "correlation_improvement": _reported_float(
+                    plan, after_correlation - before_correlation
+                ),
             }
         )
 
@@ -303,14 +348,18 @@ def integrate_case(
         "post_correction_alignment": {
             "status": aligned["status"],
             "reasons": aligned["support"]["reasons"],
-            "clock_drift_ppm": aligned["alignment"]["clock_drift_ppm"],
-            "minimum_correlation": aligned["alignment"]["minimum_correlation"],
-            "minimum_structural_window_correlation": aligned["alignment"][
-                "minimum_structural_window_correlation"
-            ],
+            "clock_drift_ppm": _reported_float(
+                plan, aligned["alignment"]["clock_drift_ppm"]
+            ),
+            "minimum_correlation": _reported_float(
+                plan, aligned["alignment"]["minimum_correlation"]
+            ),
+            "minimum_structural_window_correlation": _reported_float(
+                plan,
+                aligned["alignment"]["minimum_structural_window_correlation"],
+            ),
         },
         "score_free_oracle": {
-            "record_sha256": sha256_bytes(oracle.canonical_bytes(score_free)),
             "result_state": score_free["result_state"],
             "metric_execution_states": metric_states,
             "impairment_severity": score_free["outcomes"]["impairment_severity"],
@@ -368,6 +417,16 @@ def build_payload(plan: dict[str, Any]) -> dict[str, Any]:
         ),
         "output_geometry": all(
             case["output_frame_count"] == case["reference_frame_count"]
+            for case in cases
+        ),
+        "exact_case_hashes": all(
+            {
+                "input_f64le_sha256": case["input_f64le_sha256"],
+                "output_f64le_sha256": case["output_f64le_sha256"],
+            }
+            == plan["integration"]["expected_case_hashes"][
+                f"{case['actual_drift_ppm']:+d}"
+            ]
             for case in cases
         ),
         "post_correction_core_correlation": all(
@@ -553,7 +612,7 @@ def validate_report(report: dict[str, Any]) -> list[str]:
                 if case.get(key) is not False:
                     errors.append(f"case boundary differs: {ppm}:{key}")
     gates = report.get("gate_audit")
-    if not isinstance(gates, dict) or len(gates) != 11 or not all(gates.values()):
+    if not isinstance(gates, dict) or len(gates) != 12 or not all(gates.values()):
         errors.append("predeclared gates did not all pass")
     if report.get("all_predeclared_gates_pass") is not True:
         errors.append("all-gates decision differs")

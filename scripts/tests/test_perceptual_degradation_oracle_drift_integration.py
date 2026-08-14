@@ -40,6 +40,27 @@ class OracleDriftIntegrationTest(unittest.TestCase):
             self.plan["integration"]["coefficient_table_sha256"],
             self.report["coefficient_table_sha256"],
         )
+        for case in cases:
+            self.assertEqual(
+                self.plan["integration"]["expected_case_hashes"][
+                    f"{case['actual_drift_ppm']:+d}"
+                ],
+                {
+                    "input_f64le_sha256": case["input_f64le_sha256"],
+                    "output_f64le_sha256": case["output_f64le_sha256"],
+                },
+            )
+
+    def test_reference_fixture_is_exactly_q20(self) -> None:
+        channels = MODULE._reference_channels(2000, 1)
+        scale = 1 << 20
+        self.assertTrue(
+            all(
+                value * scale == round(value * scale)
+                for channel in channels
+                for value in channel
+            )
+        )
 
     def test_applied_cases_improve_and_support_post_correction_alignment(self) -> None:
         for case in self.report["cases"][:2]:

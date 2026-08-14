@@ -8,7 +8,7 @@ plumbing gap without satisfying the human-calibrated full-reference oracle:
 
 - the held-out apply decision is bound;
 - the exact frozen resampler is integrated on three synthetic stereo cases;
-- all eleven synthetic integration gates pass; and
+- all twelve synthetic integration gates pass; and
 - the score-free oracle boundary remains closed.
 
 Retained development-pair correction, real-audio drift estimation, perceptual
@@ -47,11 +47,11 @@ evidence or no-reference training was accessed or executed. The public CLI was
 not changed.
 
 The audit binds plan SHA-256
-`e3c5aefe1facde1287f502e3a59f1f53b2492471210b364b3b17991c82b8a8dc`
+`a742d698411a666ce5db81380a2a7a7efa543aaaba9ff0a7295d7bdd03a66a89`
 and implementation SHA-256
 `8d4329ed95b13eb750cf2a409d8874a09dcdd34e95891041c72225b36d75b0fa`.
 The committed report SHA-256 is
-`02bcc350271b7ebbfffdb7b43d6e20b6ee7be7e92b56ee62ed76b4cad57efc90`.
+`f53c229f76fac41fd629cd419605fa163d05f252b0b90bf683311ac2f07d5b16`.
 
 Machine-readable artifacts:
 

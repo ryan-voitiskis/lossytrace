@@ -23,31 +23,31 @@
         {
           "channel_index": 0,
           "core_frame_count": 23872,
-          "correlation_after": 0.9991583903259001,
-          "correlation_before": 0.8416357353275514,
-          "correlation_improvement": 0.15752265499834872
+          "correlation_after": 0.999158390212,
+          "correlation_before": 0.84163572905,
+          "correlation_improvement": 0.157522661162
         },
         {
           "channel_index": 1,
           "core_frame_count": 23872,
-          "correlation_after": 0.999155400833387,
-          "correlation_before": 0.8433988313017361,
-          "correlation_improvement": 0.15575656953165096
+          "correlation_after": 0.999155400682,
+          "correlation_before": 0.843398822823,
+          "correlation_improvement": 0.155756577859
         }
       ],
       "human_response_accessed": false,
       "identity_output_bit_exact": null,
-      "input_f64le_sha256": "a47e41a4ab9dd5de39bd166a6f8bd995bf25eaba96353b2aa8e6f3002a82d2d5",
+      "input_f64le_sha256": "fd6096fb9cd90b49ee73c78677925037c07e9d4d65454cb329e9b4a50ac1312a",
       "mandatory_discard_frames_each_edge": 64,
       "observed_frame_count": 24001,
-      "output_f64le_sha256": "5232c1459a539a1faab7c0b5199d4cfa655d79cbd41589d5e5d9324342b9084a",
+      "output_f64le_sha256": "a3f236ab1574829ddfb5961883199d1c4fc03d721f7a1f020b260f6c5ee16269",
       "output_frame_count": 24000,
       "perceptual_metric_executed": false,
       "perceptual_truth_included": false,
       "post_correction_alignment": {
         "clock_drift_ppm": 0.0,
-        "minimum_correlation": 0.999155400833387,
-        "minimum_structural_window_correlation": 0.9987294347683927,
+        "minimum_correlation": 0.999155400682,
+        "minimum_structural_window_correlation": 0.998729434581,
         "reasons": [],
         "status": "supported"
       },
@@ -61,7 +61,6 @@
           "not_authorized",
           "not_authorized"
         ],
-        "record_sha256": "862983080617110a68696802ae33244cebe8fd66a08d430806f81a5874ead44c",
         "result_state": "execution_blocked",
         "support": {
           "abstention_reasons": [
@@ -82,31 +81,31 @@
         {
           "channel_index": 0,
           "core_frame_count": 23872,
-          "correlation_after": 0.9992348078154396,
-          "correlation_before": 0.8934059367266096,
-          "correlation_improvement": 0.10582887108882999
+          "correlation_after": 0.999234807755,
+          "correlation_before": 0.893405931973,
+          "correlation_improvement": 0.105828875782
         },
         {
           "channel_index": 1,
           "core_frame_count": 23872,
-          "correlation_after": 0.9992306330896864,
-          "correlation_before": 0.8945897067480799,
-          "correlation_improvement": 0.10464092634160649
+          "correlation_after": 0.999230633053,
+          "correlation_before": 0.894589700291,
+          "correlation_improvement": 0.104640932762
         }
       ],
       "human_response_accessed": false,
       "identity_output_bit_exact": null,
-      "input_f64le_sha256": "d683cefc8b2004ca7912241e8af472ef2fade953c65e9cc2bab78b165656968f",
+      "input_f64le_sha256": "917e5279e265c56ddccd2cda5ea0847189b52f977e1bfc06358f6d981ccaffb0",
       "mandatory_discard_frames_each_edge": 64,
       "observed_frame_count": 23998,
-      "output_f64le_sha256": "130dc9d9b8fd48a466a886c12d22bb87424efa8780580b87d16f88aa3f834f07",
+      "output_f64le_sha256": "788bd8d9be36a60800f36108537758353f72ccd5796106f2b23671704e3e25bd",
       "output_frame_count": 24000,
       "perceptual_metric_executed": false,
       "perceptual_truth_included": false,
       "post_correction_alignment": {
         "clock_drift_ppm": 0.0,
-        "minimum_correlation": 0.9992306330896853,
-        "minimum_structural_window_correlation": 0.9987330401395937,
+        "minimum_correlation": 0.999230633053,
+        "minimum_structural_window_correlation": 0.998733039766,
         "reasons": [],
         "status": "supported"
       },
@@ -120,7 +119,6 @@
           "not_authorized",
           "not_authorized"
         ],
-        "record_sha256": "8784b7722846737347f45113c96ca2eb4f1475a420e1d72c2b0318428ab7b01d",
         "result_state": "execution_blocked",
         "support": {
           "abstention_reasons": [
@@ -155,10 +153,10 @@
       ],
       "human_response_accessed": false,
       "identity_output_bit_exact": true,
-      "input_f64le_sha256": "6339789a5d5cb2302bbbf17d089ac6618cc6f314f09c7bce10f12d75fd4ee23d",
+      "input_f64le_sha256": "8e584bfb581d3d7fd445c3b5f839c4cc0e9d6a60a0270c3240f94aa600ed6e42",
       "mandatory_discard_frames_each_edge": 0,
       "observed_frame_count": 24000,
-      "output_f64le_sha256": "6339789a5d5cb2302bbbf17d089ac6618cc6f314f09c7bce10f12d75fd4ee23d",
+      "output_f64le_sha256": "8e584bfb581d3d7fd445c3b5f839c4cc0e9d6a60a0270c3240f94aa600ed6e42",
       "output_frame_count": 24000,
       "perceptual_metric_executed": false,
       "perceptual_truth_included": false,
@@ -179,7 +177,6 @@
           "not_authorized",
           "not_authorized"
         ],
-        "record_sha256": "aa874d8b46e510ec309896db10faab1fd2d6c352d0e083bfc2466e10eceecb6a",
         "result_state": "execution_blocked",
         "support": {
           "abstention_reasons": [
@@ -227,6 +224,7 @@
     "applied_case_correlation_improvement": true,
     "apply_decision_projection": true,
     "case_inventory": true,
+    "exact_case_hashes": true,
     "mandatory_edge_discard": true,
     "metric_and_human_boundaries": true,
     "output_geometry": true,
@@ -236,16 +234,16 @@
     "score_free_oracle_closed": true,
     "zero_drift_identity": true
   },
-  "implementation_sha256": "cb265e47f5f0cd775883651f56b83db4219cb9cc5dfbe982563076f995948722",
+  "implementation_sha256": "86435d0775bbd142b452e350bb0ff9010405bb3366d91e2bd34e11d34f3d2668",
   "plan_id": "perceptual-degradation-oracle-drift-integration-20260814-001",
-  "plan_sha256": "c637420beb457535e0429ad7bc5a540df40071baf12205f42f07b46461475330",
+  "plan_sha256": "3fc4595e9d7e65201aca6d305e29bd627ae49ab46a570bd03fc2e4935053d8bf",
   "replay_observation": {
     "byte_identical": true,
     "fresh_temporary_replay_count": 2,
     "paths_included": false,
     "payload_sha256s": [
-      "88b7585bf031ca9ab2f1049e26e841360ee102d33ee51cded65f323669f769bf",
-      "88b7585bf031ca9ab2f1049e26e841360ee102d33ee51cded65f323669f769bf"
+      "98e97e279e5ff9df66720601c36352921a19ed93dabf73d08adbb3bd97a80992",
+      "98e97e279e5ff9df66720601c36352921a19ed93dabf73d08adbb3bd97a80992"
     ],
     "timing_included": false
   },
@@ -268,7 +266,7 @@
     "public_verdict_enabled": false,
     "retained_audio_accessed": false,
     "synthetic_case_count": 3,
-    "technical_integration_gate_count": 11,
-    "technical_integration_gate_pass_count": 11
+    "technical_integration_gate_count": 12,
+    "technical_integration_gate_pass_count": 12
   }
 }

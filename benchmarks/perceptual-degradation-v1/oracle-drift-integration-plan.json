@@ -75,6 +75,22 @@
     "apply_requires_bound_held_out_improvement_gate": true,
     "observation_generator": "bound_binary64_linear_interpolation_fixture",
     "observation_generator_is_frozen_resampler": false,
+    "reference_fixture_sample_quantization": "signed_q20_round_half_to_even",
+    "reported_float_quantization_decimal_places": 12,
+    "expected_case_hashes": {
+      "+75": {
+        "input_f64le_sha256": "fd6096fb9cd90b49ee73c78677925037c07e9d4d65454cb329e9b4a50ac1312a",
+        "output_f64le_sha256": "a3f236ab1574829ddfb5961883199d1c4fc03d721f7a1f020b260f6c5ee16269"
+      },
+      "-60": {
+        "input_f64le_sha256": "917e5279e265c56ddccd2cda5ea0847189b52f977e1bfc06358f6d981ccaffb0",
+        "output_f64le_sha256": "788bd8d9be36a60800f36108537758353f72ccd5796106f2b23671704e3e25bd"
+      },
+      "+0": {
+        "input_f64le_sha256": "8e584bfb581d3d7fd445c3b5f839c4cc0e9d6a60a0270c3240f94aa600ed6e42",
+        "output_f64le_sha256": "8e584bfb581d3d7fd445c3b5f839c4cc0e9d6a60a0270c3240f94aa600ed6e42"
+      }
+    },
     "correction_implementation": "oracle-bounded-drift-kaiser-sinc128-q30-v1",
     "coefficient_table_sha256": "dbe4442199b56cd56880f1f45c09889721519dd7a165a4de76117b5e219dab82",
     "output_frame_count": "reference_frame_count",

@@ -922,7 +922,7 @@ or public verdict was selected, opened or authorized.
 The deterministic score-blind
 [`oracle drift integration`](perceptual-degradation-oracle-drift-integration-20260814.md)
 now binds the frozen held-out apply decisions to the exact frozen resampler and
-the score-free oracle envelope on three synthetic stereo cases. All eleven
+the score-free oracle envelope on three synthetic stereo cases. All twelve
 integration gates passed. The `+75` and `-60 ppm` cases improved every channel
 by at least 0.1046 correlation and ended with supported post-correction
 alignment; zero drift remained bit-exact. Applied cores discard the required

@@ -37,7 +37,7 @@
   "metrics_executed": false,
   "no_reference_training_performed": false,
   "plan_id": "perceptual-degradation-objective-completion-audit-20260814-004",
-  "plan_sha256": "e3c5aefe1facde1287f502e3a59f1f53b2492471210b364b3b17991c82b8a8dc",
+  "plan_sha256": "a742d698411a666ce5db81380a2a7a7efa543aaaba9ff0a7295d7bdd03a66a89",
   "public_verdict_enabled": false,
   "report_id": "perceptual-degradation-objective-completion-audit-20260814-004",
   "requirements": [
@@ -241,7 +241,7 @@
     "oracle_drift_resampler_selected": true,
     "oracle_drift_retained_validation_complete": false,
     "oracle_drift_synthetic_case_count": 3,
-    "oracle_drift_synthetic_gate_pass_count": 11,
+    "oracle_drift_synthetic_gate_pass_count": 12,
     "oracle_drift_synthetic_integration_passed": true,
     "quiet_candidate_identified": false,
     "quiet_provider_capability_route_found": true,
