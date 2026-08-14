@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "authorization_id": "perceptual-degradation-odaq-reference-delivery-authorization-20260814-001",
+  "authorized_on": "2026-08-14",
+  "state": "responsible_human_authorized_exact_clean_reference_projection_only",
+  "responsible_human_authorization_present": true,
+  "bindings": {
+    "acquisition_result": {
+      "path": "benchmarks/perceptual-degradation-v1/odaq-reference-acquisition-result-20260813.json",
+      "sha256": "b768900901cdcfc88ca4d5918a331961ee01eccd6a6d5d5becf31ddfaa15df4e"
+    },
+    "delivery_preparation": {
+      "path": "benchmarks/perceptual-degradation-v1/odaq-reference-delivery-preparation-plan.json",
+      "sha256": "32355418257aef49aa0532f5b65d1762df7beb41d044d271b99e9b6848598af2"
+    },
+    "playback_qualification_result": {
+      "path": "benchmarks/perceptual-degradation-v1/playback-qualification-result-20260813.json",
+      "sha256": "7fa8a786091b4d96f9f78705a4c12dfd6cd1511c7631424d432aa3c49e698a5e"
+    },
+    "attribution_audit": {
+      "path": "research/toolchains/evidence/perceptual-degradation-odaq-attribution-audit-20260804-001.json",
+      "sha256": "08da482eeab4ab51f0e2ed2f05684edac098b51fe81d1b78bec75181336dca61"
+    },
+    "projection_implementation": {
+      "path": "scripts/prepare-perceptual-degradation-odaq-delivery.py",
+      "sha256": "d1ec92f29e5a4155e25bb7c46a31af4fdeef2766b6f6670529e8f18848cade7b"
+    },
+    "authorization_schema": {
+      "path": "benchmarks/perceptual-degradation-v1/odaq-reference-delivery-authorization.schema.json",
+      "sha256": "622a820bbeb345cf0df8d12687275bd4b325263f8c71f9e60af662dae0f9f989"
+    },
+    "delivery_execution_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/odaq-reference-delivery-execution-plan.json",
+      "sha256": "7f6518a0456d599f8fb82f71d6846459aae7bd346a8d1be2ed35dea67b893728"
+    }
+  },
+  "authorization_scope": {
+    "retained_reference_count": 16,
+    "retained_inventory_sha256": "d7f244da55b510b639300d55271b1ebd5fb9f7454b258bec30588bf18eefde2f",
+    "retained_reference_access_authorized": true,
+    "retained_reference_projection_authorized": true,
+    "private_delivery_copy_creation_authorized": true,
+    "two_fresh_private_replays_authorized": true,
+    "attribution_attachment_authorized": true,
+    "provider_processed_condition_access_authorized": false,
+    "provider_listening_score_access_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "degradation_rating_collection_authorized": false,
+    "listener_response_collection_authorized": false,
+    "sealed_evidence_access_authorized": false,
+    "public_verdict_authorized": false
+  },
+  "execution_constraints": {
+    "maximum_workers": 1,
+    "minimum_free_disk_gib": 15,
+    "private_paths_outside_repository": true,
+    "source_inventory_reverified_before_projection": true,
+    "atomic_partial_then_rename": true,
+    "journaled_resume": true,
+    "two_fresh_output_roots": true,
+    "replay_inventories_byte_identical": true,
+    "per_reference_attribution_record_ids_attached_out_of_band": true,
+    "public_report_paths_redacted": true,
+    "public_report_per_reference_hashes_redacted": true
+  },
+  "claim_boundary": {
+    "development_only": true,
+    "one_provider_stratum": true,
+    "projection_is_stimulus_generation": false,
+    "projection_is_perceptual_truth": false,
+    "projection_is_metric_execution": false,
+    "independent_transfer_supported": false,
+    "final_validation_supported": false
+  },
+  "canonical_decision": "Authorize reading only the 16 retained ODAQ clean references and projecting them into deterministic canonical integer-PCM private delivery copies under the frozen preparation and execution plans, including two byte-identical private replays and attribution attachment. Do not authorize ODAQ processed conditions, scores, metrics, degradation ratings, listener collection, sealed evidence, or public verdicts."
+}
