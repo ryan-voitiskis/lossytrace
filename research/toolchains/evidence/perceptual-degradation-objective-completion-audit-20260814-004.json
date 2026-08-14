@@ -1,0 +1,257 @@
+{
+  "audio_accessed": false,
+  "evidence_checks": {
+    "allocated_group_count": 0,
+    "exact_member_selection_authorized": false,
+    "legacy_metric_rate_conversion_is_drift_integration": false,
+    "metric_successor_selected": false,
+    "naturally_clipped_exact_candidate_identified": false,
+    "new_successor_metric_gate_exists": false,
+    "odaq_clean_references_acquired": true,
+    "odaq_transparent_truth_supported": false,
+    "oracle_drift_exact_resampler_integrated_on_synthetic_pcm": true,
+    "oracle_drift_held_out_apply_decision_bound": true,
+    "oracle_drift_real_audio_estimation_validated": false,
+    "oracle_drift_resampler_all_synthetic_gates_pass": true,
+    "oracle_drift_resampler_integrated": false,
+    "oracle_drift_resampler_integration_authorized": false,
+    "oracle_drift_resampler_selected": true,
+    "oracle_drift_retained_audio_access_authorized": false,
+    "oracle_drift_retained_validation_complete": false,
+    "oracle_drift_score_free_envelope_preserved": true,
+    "oracle_drift_synthetic_integration_authorized": true,
+    "oracle_drift_synthetic_integration_is_full_reference_validation": false,
+    "qualified_reference_group_count": 0,
+    "quiet_exact_candidate_identified": false,
+    "quiet_provider_capability_route_found": true,
+    "required_source_trait_count": 7,
+    "scientific_gate_evaluated": false,
+    "score_free_schema_replay_complete": true,
+    "source_successor_selected": false,
+    "source_trait_candidate_record_count": 5,
+    "source_trait_manifest_frozen": false,
+    "stable_provider_arithmetic_feasible": true,
+    "visqol_only_successor_preregisterable": true
+  },
+  "implementation_sha256": "8d4329ed95b13eb750cf2a409d8874a09dcdd34e95891041c72225b36d75b0fa",
+  "metrics_executed": false,
+  "no_reference_training_performed": false,
+  "plan_id": "perceptual-degradation-objective-completion-audit-20260814-004",
+  "plan_sha256": "e3c5aefe1facde1287f502e3a59f1f53b2492471210b364b3b17991c82b8a8dc",
+  "public_verdict_enabled": false,
+  "report_id": "perceptual-degradation-objective-completion-audit-20260814-004",
+  "requirements": [
+    {
+      "completion_required": true,
+      "evidence": [
+        "research_plan.objective",
+        "research_contract.objective_boundary"
+      ],
+      "next_gate": null,
+      "reason": "The estimand and decoded-PCM causal limit are frozen before outcome access.",
+      "requirement_id": "estimand_is_degradation_not_history",
+      "satisfied": true,
+      "state": "satisfied_contract_boundary"
+    },
+    {
+      "completion_required": true,
+      "evidence": [
+        "playback_qualification_result.qualified_chain"
+      ],
+      "next_gate": null,
+      "reason": "The declared RME/Adam 48 kHz chain passed delivery, channel and comfort qualification without collecting a rating.",
+      "requirement_id": "declared_playback_chain_qualified",
+      "satisfied": true,
+      "state": "satisfied_prerequisite"
+    },
+    {
+      "completion_required": true,
+      "evidence": [
+        "predecessor_audit.requirements.truth_bearing_source_manifest",
+        "source_trait_report.summary",
+        "source_trait_provider_screen.trait_disposition"
+      ],
+      "next_gate": "Obtain separate authorization for a bounded exact-member metadata audit. For quiet, inspect only SONYC member metadata and transformation provenance before any audio descriptor pass. For clipped, first search public item metadata for explicit capture-chain clipping, permissive item rights, original lossless upload and intentional-waveform exclusion; reject the route if those records cannot be established before audio access.",
+      "reason": "Provider-pure source arithmetic is feasible, but the seven-trait proof contract has only five candidate records. Quiet has a provider-level audit route but no exact candidate, naturally clipped has no candidate, and exact members, provenance, relationships, selection and allocation remain unfrozen.",
+      "requirement_id": "truth_bearing_source_manifest_feasible_and_frozen",
+      "satisfied": false,
+      "state": "arithmetic_feasible_trait_candidates_incomplete_exact_manifest_unfrozen"
+    },
+    {
+      "completion_required": true,
+      "evidence": [
+        "research_plan.human_truth",
+        "playback_qualification_result.access_boundary"
+      ],
+      "next_gate": "Complete source, stimulus, privacy, power and allocation gates before requesting collection authority.",
+      "reason": "No degradation rating or listener response has been collected.",
+      "requirement_id": "controlled_human_calibration_collected",
+      "satisfied": false,
+      "state": "not_authorized"
+    },
+    {
+      "completion_required": true,
+      "evidence": [
+        "predecessor_audit.requirements.perceptual_metric_gate",
+        "metric_successor_disposition.decision",
+        "metric_successor_disposition.readiness"
+      ],
+      "next_gate": "Choose whether to authorize a score-blind ViSQOL-only successor amendment or reject the available metric path; this does not authorize execution.",
+      "reason": "The stopped two-family gate remains closed; a ViSQOL-only successor is technically preregisterable, but is unselected, scientifically unready and has no execution gate.",
+      "requirement_id": "perceptual_metric_execution_and_legal_gate_passed",
+      "satisfied": false,
+      "state": "successor_preregisterable_unselected_execution_closed"
+    },
+    {
+      "completion_required": true,
+      "evidence": [
+        "predecessor_audit.requirements.full_reference_oracle",
+        "drift_integration_report.gate_audit",
+        "drift_integration_report.decision"
+      ],
+      "next_gate": "Under separate authority, validate the exact integrated correction and real drift-estimation behavior on retained development pairs before any perceptual metric execution.",
+      "reason": "The held-out apply decisions now drive the exact frozen resampler through the score-free oracle on three synthetic stereo cases. All eleven integration gates passed and zero drift stayed bit-exact. This does not validate real drift estimation, retained development pairs, perceptual metrics or human calibration, so the scientific full-reference requirement remains unsatisfied.",
+      "requirement_id": "deterministic_human_calibrated_full_reference_oracle_passed",
+      "satisfied": false,
+      "state": "synthetic_drift_integration_passed_retained_and_scientific_validation_closed"
+    },
+    {
+      "completion_required": true,
+      "evidence": [
+        "research_plan.human_truth",
+        "full_reference_evaluation_plan.numeric_gates"
+      ],
+      "next_gate": "Collect and pass the frozen equivalence and transparent-safety gates.",
+      "reason": "The transparent-safety rule is frozen, but no adequately powered human-transparent lossy truth exists.",
+      "requirement_id": "transparent_lossy_treated_as_non_degraded",
+      "satisfied": false,
+      "state": "policy_frozen_truth_absent"
+    },
+    {
+      "completion_required": true,
+      "evidence": [
+        "predecessor_audit.requirements.difficult_negatives",
+        "source_trait_plan.trait_proof_obligations",
+        "source_trait_report.decision"
+      ],
+      "next_gate": "Obtain separate authority for an exact-member metadata and provenance audit, then require independent quiet, clipped, sparse and tonal candidates before any source-trait manifest can be frozen.",
+      "reason": "All twenty negative classes remain required and the seven natural source-trait proof obligations are frozen. Quiet and naturally clipped candidates are still absent, sparse and tonal require independent contrasts, and no negative class has entered scientific evaluation.",
+      "requirement_id": "difficult_natural_and_production_negatives_preserved_in_evaluation",
+      "satisfied": false,
+      "state": "proof_contract_ready_candidate_coverage_incomplete_not_evaluated"
+    },
+    {
+      "completion_required": true,
+      "evidence": [
+        "predecessor_audit.requirements.grouped_transfer",
+        "breadth_repair_report.decision"
+      ],
+      "next_gate": "Pass fresh grouped full-reference transfer on every frozen axis.",
+      "reason": "All four holdout axes and feasible source-capacity witnesses exist, but exact allocation and grouped transfer are untested.",
+      "requirement_id": "grouped_source_domain_codec_encoder_transfer_passed",
+      "satisfied": false,
+      "state": "not_evaluated"
+    },
+    {
+      "completion_required": true,
+      "evidence": [
+        "research_plan.no_reference",
+        "full_reference_evaluation_plan.claim_boundary"
+      ],
+      "next_gate": "Only after the full-reference pass, freeze, train and validate the estimator on every held-out axis.",
+      "reason": "No-reference work correctly remains ineligible until the full-reference oracle passes.",
+      "requirement_id": "no_reference_estimator_trained_and_independently_validated",
+      "satisfied": false,
+      "state": "not_started_by_design"
+    },
+    {
+      "completion_required": true,
+      "evidence": [
+        "score_free_oracle_schema",
+        "score_free_oracle_plan.score_free_output_boundary"
+      ],
+      "next_gate": "Populate only after valid metric and human calibration; retain explicit abstention otherwise.",
+      "reason": "The abstaining envelope exists, but severity, audibility, artifact and uncertainty values are unavailable without evidence.",
+      "requirement_id": "severity_audibility_artifact_support_uncertainty_abstention_reported",
+      "satisfied": false,
+      "state": "schema_ready_values_unavailable"
+    },
+    {
+      "completion_required": true,
+      "evidence": [
+        "research_plan.public_state",
+        "src.lib",
+        "tests.cli"
+      ],
+      "next_gate": null,
+      "reason": "The public report remains feature version 0 experimental measurements with public verdicts disabled.",
+      "requirement_id": "public_cli_remains_verdict_free",
+      "satisfied": true,
+      "state": "satisfied_current_boundary"
+    },
+    {
+      "completion_required": true,
+      "evidence": [
+        "research_contract.stop_rules_and_successful_negative_outcomes"
+      ],
+      "next_gate": null,
+      "reason": "The contract accepts rejection or full-reference-only disposition as successful scientific outcomes.",
+      "requirement_id": "rigorous_negative_is_accepted_success",
+      "satisfied": true,
+      "state": "satisfied_success_criterion"
+    },
+    {
+      "completion_required": true,
+      "evidence": [
+        "objective_completion_audit_plan.completion_policy.current_recommendation"
+      ],
+      "next_gate": "Choose exactly one frozen final recommendation only after the evidence path terminates.",
+      "reason": "No final recommendation is justified before the human and full-reference gates resolve.",
+      "requirement_id": "final_research_recommendation_frozen",
+      "satisfied": false,
+      "state": "absent"
+    }
+  ],
+  "schema_version": 1,
+  "scores_opened": false,
+  "sealed_evidence_opened": false,
+  "state": "objective_incomplete_synthetic_drift_integration_reconciled_without_scientific_promotion",
+  "summary": {
+    "blocking_sequence": [
+      "truth_bearing_source_manifest_feasible_and_frozen",
+      "controlled_human_calibration_collected",
+      "perceptual_metric_execution_and_legal_gate_passed",
+      "deterministic_human_calibrated_full_reference_oracle_passed",
+      "grouped_source_domain_codec_encoder_transfer_passed",
+      "no_reference_estimator_trained_and_independently_validated",
+      "final_research_recommendation_frozen"
+    ],
+    "final_recommendation": null,
+    "metric_successor_preregisterable": true,
+    "metric_successor_selected": false,
+    "naturally_clipped_candidate_identified": false,
+    "nearest_authority_dependent_decisions": [
+      "Obtain separate authorization for a bounded exact-member metadata audit. For quiet, inspect only SONYC member metadata and transformation provenance before any audio descriptor pass. For clipped, first search public item metadata for explicit capture-chain clipping, permissive item rights, original lossless upload and intentional-waveform exclusion; reject the route if those records cannot be established before audio access.",
+      "Choose whether to authorize a score-blind ViSQOL-only successor amendment or reject the available metric path; this does not authorize execution.",
+      "Under separate authority, validate the exact integrated correction and real drift-estimation behavior on retained development pairs before any perceptual metric execution."
+    ],
+    "objective_complete": false,
+    "oracle_drift_resampler_integrated_on_retained_audio": false,
+    "oracle_drift_resampler_integrated_on_synthetic_pcm": true,
+    "oracle_drift_resampler_selected": true,
+    "oracle_drift_retained_validation_complete": false,
+    "oracle_drift_synthetic_case_count": 3,
+    "oracle_drift_synthetic_gate_pass_count": 11,
+    "oracle_drift_synthetic_integration_passed": true,
+    "quiet_candidate_identified": false,
+    "quiet_provider_capability_route_found": true,
+    "required_source_trait_count": 7,
+    "requirement_count": 14,
+    "satisfied_count": 4,
+    "source_arithmetic_feasible": true,
+    "source_manifest_frozen": false,
+    "source_trait_candidate_record_count": 5,
+    "source_trait_manifest_frozen": false,
+    "unsatisfied_count": 10
+  }
+}

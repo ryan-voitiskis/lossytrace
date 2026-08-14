@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "plan_id": "perceptual-degradation-oracle-drift-integration-20260814-001",
+  "state": "score_blind_synthetic_oracle_drift_integration_frozen",
+  "purpose": "Integrate the exact frozen bounded-clock-drift resampler after the already-frozen held-out apply decision on synthetic PCM only, then pass corrected cores through the score-free oracle envelope without accessing retained audio or executing a perceptual metric.",
+  "bindings": {
+    "research_contract": {
+      "path": "docs/research/perceptual-degradation-contract-20260803.md",
+      "sha256": "fdec79207fc0fdd2e9cb10aae9f93dd1a17b45e6e56c0c7df8f0e01a1f9fb505"
+    },
+    "technical_repair_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/negative-control-technical-repair-plan.json",
+      "sha256": "9ef1af1232d894a7cb64c825a39434398bb71abce45edf7170b59d875af374f5"
+    },
+    "technical_repair_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-negative-control-technical-repair-20260814-001.json",
+      "sha256": "937e1ba8079b6603f4af70e66404522215e953ae77075e5f4cfaa97ecfea38e0"
+    },
+    "resampler_freeze": {
+      "path": "benchmarks/perceptual-degradation-v1/oracle-drift-resampler-freeze.json",
+      "sha256": "d96f489a4a11da659d156a0d7135b1501a4b603c8f763caae2071db32d6ca87d"
+    },
+    "resampler_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-oracle-drift-resampler-20260814-001.json",
+      "sha256": "1a05d4acbe100ae749bbfb7ea5f139f165a4c084ae3f5c73f9e0cbe8039ec6fa"
+    },
+    "resampler_implementation": {
+      "path": "scripts/perceptual_degradation_oracle_drift_resampler.py",
+      "sha256": "541f8e200d95ccd7c447fec32e0de1aa411c5793b7641c7d0aa32ba5e52055ea"
+    },
+    "alignment_implementation": {
+      "path": "scripts/perceptual_degradation_alignment_v2.py",
+      "sha256": "72fe01344a33ffbec3967f0c64ca7cf5a3e7c0f5ba64620800115a646500e61c"
+    },
+    "score_free_oracle_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/full-reference-oracle-score-free-plan.json",
+      "sha256": "f6462ecb94f3be1dc5670ad19d6f201abefaf175cfa6c482f095b98bb542de3a"
+    },
+    "score_free_oracle_implementation": {
+      "path": "scripts/perceptual_degradation_oracle.py",
+      "sha256": "caed779df79cf1bacdd69bed5846622f26f60377488c4bdbb8ddb2fcd73d05cc"
+    },
+    "score_free_oracle_replay": {
+      "path": "research/toolchains/evidence/perceptual-degradation-oracle-score-free-replay-20260813-001.json",
+      "sha256": "1bb110a6683b0c078245097de65f4243646f60f9e46d942cd8a3a96610b43560"
+    }
+  },
+  "authorization": {
+    "committed_metadata_and_source_read_authorized": true,
+    "synthetic_numeric_fixture_execution_authorized": true,
+    "synthetic_pcm_fixture_execution_authorized": true,
+    "frozen_resampler_synthetic_execution_authorized": true,
+    "retained_audio_access_authorized": false,
+    "provider_audio_access_authorized": false,
+    "source_or_condition_selection_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "human_response_access_authorized": false,
+    "human_collection_authorized": false,
+    "sealed_evidence_access_authorized": false,
+    "no_reference_training_authorized": false,
+    "public_verdict_enabled": false
+  },
+  "resources": {
+    "minimum_free_disk_gib": 15,
+    "maximum_workers": 1,
+    "fresh_temporary_directories": true,
+    "replay_count": 2,
+    "byte_identical_reports_required": true,
+    "retain_generated_audio": false
+  },
+  "integration": {
+    "decision_source": "bound_technical_repair_report_bounded_clock_drift_cases",
+    "decision_cases_ppm": [75, -60, 0],
+    "decision_selection_uses_held_out_windows": false,
+    "apply_requires_bound_held_out_improvement_gate": true,
+    "observation_generator": "bound_binary64_linear_interpolation_fixture",
+    "observation_generator_is_frozen_resampler": false,
+    "correction_implementation": "oracle-bounded-drift-kaiser-sinc128-q30-v1",
+    "coefficient_table_sha256": "dbe4442199b56cd56880f1f45c09889721519dd7a165a4de76117b5e219dab82",
+    "output_frame_count": "reference_frame_count",
+    "mandatory_discard_frames_each_edge_when_applied": 64,
+    "zero_drift_policy": "bit_exact_identity_bypass",
+    "post_correction_alignment": "perceptual_degradation_alignment_v2",
+    "post_correction_oracle_envelope": "perceptual_degradation_full_reference_oracle_score_free_v1",
+    "corrected_pcm_lifetime": "temporary_in_memory_only",
+    "metric_execution": false
+  },
+  "predeclared_gates": {
+    "expected_case_count": 3,
+    "expected_applied_case_count": 2,
+    "minimum_post_correction_core_correlation_each_channel": 0.999,
+    "minimum_applied_case_core_correlation_improvement_each_channel": 0.1,
+    "maximum_abs_post_correction_alignment_drift_ppm": 1.0,
+    "post_correction_alignment_must_be_supported": true,
+    "zero_drift_output_must_be_bit_exact": true,
+    "score_free_oracle_must_remain_execution_blocked": true,
+    "perceptual_metric_must_not_execute": true,
+    "fresh_replays_must_be_byte_identical": true
+  },
+  "claim_boundary": {
+    "synthetic_integration_is_retained_audio_validation": false,
+    "synthetic_integration_is_perceptual_validation": false,
+    "synthetic_integration_validates_drift_estimation_on_real_audio": false,
+    "technical_alignment_support_is_human_calibration": false,
+    "technical_alignment_support_is_full_reference_oracle_validation": false,
+    "integration_authorizes_metric_execution": false,
+    "integration_authorizes_human_collection": false,
+    "integration_proves_negative_class_truth": false,
+    "integration_selects_a_source_or_condition": false,
+    "no_reference_work_eligible": false,
+    "full_objective_complete": false,
+    "public_cli_changed": false
+  },
+  "authorized_next_step": "Replay this exact synthetic integration twice and preserve a fail-closed path-free report. Retained development-pair validation, real drift estimation, perceptual metrics, human truth, collection and no-reference training remain separately gated."
+}

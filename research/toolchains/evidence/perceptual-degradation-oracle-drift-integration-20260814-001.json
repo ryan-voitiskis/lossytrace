@@ -1,0 +1,274 @@
+{
+  "all_predeclared_gates_pass": true,
+  "authority": {
+    "committed_metadata_and_source_read_authorized": true,
+    "frozen_resampler_synthetic_execution_authorized": true,
+    "human_collection_authorized": false,
+    "human_response_access_authorized": false,
+    "no_reference_training_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "provider_audio_access_authorized": false,
+    "public_verdict_enabled": false,
+    "retained_audio_access_authorized": false,
+    "sealed_evidence_access_authorized": false,
+    "source_or_condition_selection_authorized": false,
+    "synthetic_numeric_fixture_execution_authorized": true,
+    "synthetic_pcm_fixture_execution_authorized": true
+  },
+  "cases": [
+    {
+      "actual_drift_ppm": 75,
+      "apply_correction": true,
+      "channel_core_metrics": [
+        {
+          "channel_index": 0,
+          "core_frame_count": 23872,
+          "correlation_after": 0.9991583903259001,
+          "correlation_before": 0.8416357353275514,
+          "correlation_improvement": 0.15752265499834872
+        },
+        {
+          "channel_index": 1,
+          "core_frame_count": 23872,
+          "correlation_after": 0.999155400833387,
+          "correlation_before": 0.8433988313017361,
+          "correlation_improvement": 0.15575656953165096
+        }
+      ],
+      "human_response_accessed": false,
+      "identity_output_bit_exact": null,
+      "input_f64le_sha256": "a47e41a4ab9dd5de39bd166a6f8bd995bf25eaba96353b2aa8e6f3002a82d2d5",
+      "mandatory_discard_frames_each_edge": 64,
+      "observed_frame_count": 24001,
+      "output_f64le_sha256": "5232c1459a539a1faab7c0b5199d4cfa655d79cbd41589d5e5d9324342b9084a",
+      "output_frame_count": 24000,
+      "perceptual_metric_executed": false,
+      "perceptual_truth_included": false,
+      "post_correction_alignment": {
+        "clock_drift_ppm": 0.0,
+        "minimum_correlation": 0.999155400833387,
+        "minimum_structural_window_correlation": 0.9987294347683927,
+        "reasons": [],
+        "status": "supported"
+      },
+      "public_verdict_enabled": false,
+      "reference_frame_count": 24000,
+      "retained_audio_accessed": false,
+      "score_free_oracle": {
+        "audibility_probability": null,
+        "impairment_severity": null,
+        "metric_execution_states": [
+          "not_authorized",
+          "not_authorized"
+        ],
+        "record_sha256": "862983080617110a68696802ae33244cebe8fd66a08d430806f81a5874ead44c",
+        "result_state": "execution_blocked",
+        "support": {
+          "abstention_reasons": [
+            "human_calibration_unavailable",
+            "perceptual_metric_execution_not_authorized"
+          ],
+          "alignment_reason_codes": [],
+          "supported": false
+        }
+      },
+      "selected_correction_ppm": 75,
+      "selection_used_held_out_windows": false
+    },
+    {
+      "actual_drift_ppm": -60,
+      "apply_correction": true,
+      "channel_core_metrics": [
+        {
+          "channel_index": 0,
+          "core_frame_count": 23872,
+          "correlation_after": 0.9992348078154396,
+          "correlation_before": 0.8934059367266096,
+          "correlation_improvement": 0.10582887108882999
+        },
+        {
+          "channel_index": 1,
+          "core_frame_count": 23872,
+          "correlation_after": 0.9992306330896864,
+          "correlation_before": 0.8945897067480799,
+          "correlation_improvement": 0.10464092634160649
+        }
+      ],
+      "human_response_accessed": false,
+      "identity_output_bit_exact": null,
+      "input_f64le_sha256": "d683cefc8b2004ca7912241e8af472ef2fade953c65e9cc2bab78b165656968f",
+      "mandatory_discard_frames_each_edge": 64,
+      "observed_frame_count": 23998,
+      "output_f64le_sha256": "130dc9d9b8fd48a466a886c12d22bb87424efa8780580b87d16f88aa3f834f07",
+      "output_frame_count": 24000,
+      "perceptual_metric_executed": false,
+      "perceptual_truth_included": false,
+      "post_correction_alignment": {
+        "clock_drift_ppm": 0.0,
+        "minimum_correlation": 0.9992306330896853,
+        "minimum_structural_window_correlation": 0.9987330401395937,
+        "reasons": [],
+        "status": "supported"
+      },
+      "public_verdict_enabled": false,
+      "reference_frame_count": 24000,
+      "retained_audio_accessed": false,
+      "score_free_oracle": {
+        "audibility_probability": null,
+        "impairment_severity": null,
+        "metric_execution_states": [
+          "not_authorized",
+          "not_authorized"
+        ],
+        "record_sha256": "8784b7722846737347f45113c96ca2eb4f1475a420e1d72c2b0318428ab7b01d",
+        "result_state": "execution_blocked",
+        "support": {
+          "abstention_reasons": [
+            "human_calibration_unavailable",
+            "perceptual_metric_execution_not_authorized"
+          ],
+          "alignment_reason_codes": [],
+          "supported": false
+        }
+      },
+      "selected_correction_ppm": -60,
+      "selection_used_held_out_windows": false
+    },
+    {
+      "actual_drift_ppm": 0,
+      "apply_correction": false,
+      "channel_core_metrics": [
+        {
+          "channel_index": 0,
+          "core_frame_count": 24000,
+          "correlation_after": 1.0,
+          "correlation_before": 1.0,
+          "correlation_improvement": 0.0
+        },
+        {
+          "channel_index": 1,
+          "core_frame_count": 24000,
+          "correlation_after": 1.0,
+          "correlation_before": 1.0,
+          "correlation_improvement": 0.0
+        }
+      ],
+      "human_response_accessed": false,
+      "identity_output_bit_exact": true,
+      "input_f64le_sha256": "6339789a5d5cb2302bbbf17d089ac6618cc6f314f09c7bce10f12d75fd4ee23d",
+      "mandatory_discard_frames_each_edge": 0,
+      "observed_frame_count": 24000,
+      "output_f64le_sha256": "6339789a5d5cb2302bbbf17d089ac6618cc6f314f09c7bce10f12d75fd4ee23d",
+      "output_frame_count": 24000,
+      "perceptual_metric_executed": false,
+      "perceptual_truth_included": false,
+      "post_correction_alignment": {
+        "clock_drift_ppm": 0.0,
+        "minimum_correlation": 1.0,
+        "minimum_structural_window_correlation": 1.0,
+        "reasons": [],
+        "status": "supported"
+      },
+      "public_verdict_enabled": false,
+      "reference_frame_count": 24000,
+      "retained_audio_accessed": false,
+      "score_free_oracle": {
+        "audibility_probability": null,
+        "impairment_severity": null,
+        "metric_execution_states": [
+          "not_authorized",
+          "not_authorized"
+        ],
+        "record_sha256": "aa874d8b46e510ec309896db10faab1fd2d6c352d0e083bfc2466e10eceecb6a",
+        "result_state": "execution_blocked",
+        "support": {
+          "abstention_reasons": [
+            "human_calibration_unavailable",
+            "perceptual_metric_execution_not_authorized"
+          ],
+          "alignment_reason_codes": [],
+          "supported": false
+        }
+      },
+      "selected_correction_ppm": 0,
+      "selection_used_held_out_windows": false
+    }
+  ],
+  "claim_boundary": {
+    "full_objective_complete": false,
+    "integration_authorizes_human_collection": false,
+    "integration_authorizes_metric_execution": false,
+    "integration_proves_negative_class_truth": false,
+    "integration_selects_a_source_or_condition": false,
+    "no_reference_work_eligible": false,
+    "public_cli_changed": false,
+    "synthetic_integration_is_perceptual_validation": false,
+    "synthetic_integration_is_retained_audio_validation": false,
+    "synthetic_integration_validates_drift_estimation_on_real_audio": false,
+    "technical_alignment_support_is_full_reference_oracle_validation": false,
+    "technical_alignment_support_is_human_calibration": false
+  },
+  "coefficient_table_sha256": "dbe4442199b56cd56880f1f45c09889721519dd7a165a4de76117b5e219dab82",
+  "decision": {
+    "exact_frozen_resampler_integrated_on_synthetic_pcm": true,
+    "full_reference_oracle_validated": false,
+    "held_out_apply_decision_bound": true,
+    "human_collection_authorized": false,
+    "human_or_perceptual_validity_present": false,
+    "next_gate": "Under separate authority, validate the exact integrated correction and real drift-estimation behavior on retained development pairs before any perceptual metric execution.",
+    "no_reference_work_eligible": false,
+    "public_verdict_enabled": false,
+    "real_audio_drift_estimation_validated": false,
+    "retained_audio_correction_executed": false,
+    "retained_audio_correction_validated": false,
+    "score_free_oracle_envelope_preserved": true
+  },
+  "gate_audit": {
+    "applied_case_correlation_improvement": true,
+    "apply_decision_projection": true,
+    "case_inventory": true,
+    "mandatory_edge_discard": true,
+    "metric_and_human_boundaries": true,
+    "output_geometry": true,
+    "post_correction_alignment_drift": true,
+    "post_correction_alignment_supported": true,
+    "post_correction_core_correlation": true,
+    "score_free_oracle_closed": true,
+    "zero_drift_identity": true
+  },
+  "implementation_sha256": "cb265e47f5f0cd775883651f56b83db4219cb9cc5dfbe982563076f995948722",
+  "plan_id": "perceptual-degradation-oracle-drift-integration-20260814-001",
+  "plan_sha256": "c637420beb457535e0429ad7bc5a540df40071baf12205f42f07b46461475330",
+  "replay_observation": {
+    "byte_identical": true,
+    "fresh_temporary_replay_count": 2,
+    "paths_included": false,
+    "payload_sha256s": [
+      "88b7585bf031ca9ab2f1049e26e841360ee102d33ee51cded65f323669f769bf",
+      "88b7585bf031ca9ab2f1049e26e841360ee102d33ee51cded65f323669f769bf"
+    ],
+    "timing_included": false
+  },
+  "report_id": "perceptual-degradation-oracle-drift-integration-20260814-001",
+  "resources": {
+    "generated_audio_retained": false,
+    "maximum_workers_used": 1,
+    "minimum_free_disk_gib_preserved": 15
+  },
+  "schema_version": 1,
+  "state": "score_blind_synthetic_oracle_drift_integration_replayed",
+  "summary": {
+    "actual_audio_accessed": false,
+    "applied_correction_case_count": 2,
+    "human_collection_performed": false,
+    "human_response_accessed": false,
+    "no_reference_training_performed": false,
+    "perceptual_metric_executed": false,
+    "perceptual_truth_included": false,
+    "public_verdict_enabled": false,
+    "retained_audio_accessed": false,
+    "synthetic_case_count": 3,
+    "technical_integration_gate_count": 11,
+    "technical_integration_gate_pass_count": 11
+  }
+}

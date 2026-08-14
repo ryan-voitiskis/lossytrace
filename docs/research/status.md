@@ -918,3 +918,27 @@ publication thresholds and version hashes remain unset. Two fresh report
 generations were byte-identical. No operational value, participant contact,
 recruitment, consent, response storage, collection, response, no-reference work
 or public verdict was selected, opened or authorized.
+
+The deterministic score-blind
+[`oracle drift integration`](perceptual-degradation-oracle-drift-integration-20260814.md)
+now binds the frozen held-out apply decisions to the exact frozen resampler and
+the score-free oracle envelope on three synthetic stereo cases. All eleven
+integration gates passed. The `+75` and `-60 ppm` cases improved every channel
+by at least 0.1046 correlation and ended with supported post-correction
+alignment; zero drift remained bit-exact. Applied cores discard the required
+64 frames at each edge. Two fresh temporary payloads were byte-identical. The
+oracle records remain execution-blocked with null severity and audibility, and
+both metric families remain not authorized. No actual, retained or provider
+audio, real-audio drift validation, perceptual metric, human truth, response,
+collection, no-reference work or public verdict was opened or authorized.
+
+A deterministic
+[`objective completion-audit drift-integration refresh`](perceptual-degradation-objective-completion-audit-drift-integration-refresh-20260814.md)
+records that synthetic correction plumbing is now integrated while refusing
+to promote it to retained-audio or scientific validation. The completion count
+remains four satisfied and ten unproven. The full-reference requirement is now
+`synthetic_drift_integration_passed_retained_and_scientific_validation_closed`:
+real drift estimation, retained development-pair behavior, perceptual metrics
+and human calibration remain absent. Source-trait, metric-successor and
+retained-validation decisions remain separately authority-gated; no source or
+condition was selected and the public CLI remains verdict-free.
