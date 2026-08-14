@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "result_id": "perceptual-degradation-odaq-reference-delivery-result-20260814-001",
+  "state": "private_canonical_integer_pcm_delivery_complete_two_replays_verified",
+  "observed_on": "2026-08-14",
+  "purpose": "Record path-free completion evidence for the authorized deterministic projection of exactly 16 retained ODAQ clean references into two private canonical integer-PCM delivery replays with attribution attached out of band.",
+  "bindings": {
+    "authorization": {
+      "path": "benchmarks/perceptual-degradation-v1/odaq-reference-delivery-authorization-20260814.json",
+      "sha256": "ea5b1bfc23f8b3af7dbecf2f2860a077242e3908a80c39106835b9fb257a3562"
+    },
+    "execution_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/odaq-reference-delivery-execution-plan.json",
+      "sha256": "7f6518a0456d599f8fb82f71d6846459aae7bd346a8d1be2ed35dea67b893728"
+    },
+    "projection_implementation": {
+      "path": "scripts/prepare-perceptual-degradation-odaq-delivery.py",
+      "sha256": "d1ec92f29e5a4155e25bb7c46a31af4fdeef2766b6f6670529e8f18848cade7b"
+    },
+    "private_runner": {
+      "path": "scripts/run-perceptual-degradation-odaq-delivery.py",
+      "sha256": "10937571c0517d78f8e2f5e8d7e178060b658d9e7904ae137528bff64b1c5ba1"
+    },
+    "private_runner_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_odaq_delivery_runner.py",
+      "sha256": "f8bbb3f6707889957d230798d517e36fb65c12dd9d9d2c130767587eada89023"
+    },
+    "attribution_audit": {
+      "path": "research/toolchains/evidence/perceptual-degradation-odaq-attribution-audit-20260804-001.json",
+      "sha256": "08da482eeab4ab51f0e2ed2f05684edac098b51fe81d1b78bec75181336dca61"
+    },
+    "playback_qualification": {
+      "path": "benchmarks/perceptual-degradation-v1/playback-qualification-result-20260813.json",
+      "sha256": "7fa8a786091b4d96f9f78705a4c12dfd6cd1511c7631424d432aa3c49e698a5e"
+    }
+  },
+  "execution": {
+    "exact_head_commit": "3357ac726a20e0e21150e14e48f92a6267a189f0",
+    "exact_head_ci_url": "https://github.com/ryan-voitiskis/lossytrace/actions/runs/31764324379",
+    "exact_head_ci_passed": true,
+    "local_test_count": 868,
+    "local_test_skip_count": 12,
+    "maximum_workers": 1,
+    "minimum_free_disk_gib_preserved": 15,
+    "free_disk_kib_after_execution": 82809120,
+    "private_output_roots": 2,
+    "private_outputs_retained": true,
+    "private_paths_published": false,
+    "per_reference_hashes_published": false
+  },
+  "input_inventory": {
+    "reference_count": 16,
+    "retained_audio_bytes": 54633154,
+    "inventory_sha256": "d7f244da55b510b639300d55271b1ebd5fb9f7454b258bec30588bf18eefde2f",
+    "sample_rate_hz": 48000,
+    "channel_count": 2,
+    "float32_reference_count": 7,
+    "extensible_s24_reference_count": 9,
+    "source_inventory_reverified_before_projection": true,
+    "unexpected_source_file_count": 0,
+    "source_partial_file_count": 0
+  },
+  "delivery_inventory": {
+    "reference_count_per_replay": 16,
+    "output_audio_bytes_per_replay": 54631346,
+    "output_inventory_sha256": "66e20ac42ae618eb54a09fa91423f339fdca84be3aa3d7a779b220b57faf2abe",
+    "replay_trees_byte_identical": true,
+    "replay_inventories_byte_identical": true,
+    "sample_rate_hz": 48000,
+    "channel_count": 2,
+    "minimum_frame_count": 360701,
+    "maximum_frame_count": 576008,
+    "signed_integer_24_bit_reference_count": 9,
+    "signed_integer_32_bit_reference_count": 7,
+    "float32_to_signed_int32_reference_count": 7,
+    "container_only_canonicalization_reference_count": 9,
+    "ffprobe_verified_file_count": 32,
+    "unexpected_output_file_count": 0,
+    "output_partial_file_count": 0
+  },
+  "attribution": {
+    "attachment_sha256": "9bf06ed7f7acc8979a5d58fca4f78e6dca31379da25d844b9f46da94eb0295a2",
+    "attachments_byte_identical": true,
+    "mapping_count_per_replay": 16,
+    "attached_licence_record_count_per_replay": 30,
+    "attached_out_of_band": true,
+    "audio_metadata_rewritten": false
+  },
+  "access_boundary": {
+    "retained_clean_reference_audio_read": true,
+    "retained_clean_reference_audio_projected": true,
+    "odaq_processed_condition_opened": false,
+    "odaq_listening_score_opened": false,
+    "perceptual_metric_executed": false,
+    "degradation_rating_collected": false,
+    "listener_response_collected": false,
+    "sealed_evidence_opened": false,
+    "public_verdict_emitted": false
+  },
+  "claim_boundary": {
+    "development_only": true,
+    "one_provider_stratum": true,
+    "delivery_projection_is_stimulus_generation": false,
+    "delivery_projection_is_perceptual_truth": false,
+    "delivery_projection_is_metric_evidence": false,
+    "delivery_projection_is_listening_evidence": false,
+    "independent_transfer_supported": false,
+    "full_reference_oracle_validated": false,
+    "final_validation_supported": false
+  },
+  "next_gate": "A separately committed responsible-human authorization is still required before the frozen retained-drift validation protocol may read these delivery copies, apply controlled drift corrections, execute its live runner, or claim real-content full-reference validation."
+}
