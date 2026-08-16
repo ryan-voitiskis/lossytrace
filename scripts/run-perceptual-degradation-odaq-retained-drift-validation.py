@@ -131,6 +131,36 @@ def require_committed_authorization(
     return authorization, plan, sha256_file(authorization_path)
 
 
+def require_exact_runner_head(runner_head: str, runner_ci_url: str) -> None:
+    if (
+        len(runner_head) != 40
+        or any(character not in "0123456789abcdef" for character in runner_head)
+    ):
+        raise ValueError("runner head commit differs")
+    ci_prefix = "https://github.com/ryan-voitiskis/lossytrace/actions/runs/"
+    if not runner_ci_url.startswith(ci_prefix) or not runner_ci_url.removeprefix(
+        ci_prefix
+    ).isdigit():
+        raise ValueError("runner exact-head CI URL differs")
+    completed = subprocess.run(
+        ["git", "rev-parse", "HEAD"],
+        cwd=ROOT,
+        capture_output=True,
+        check=True,
+        text=True,
+    )
+    if completed.stdout.strip() != runner_head:
+        raise ValueError("runner head commit differs")
+    status = subprocess.run(
+        ["git", "status", "--porcelain"],
+        cwd=ROOT,
+        capture_output=True,
+        check=True,
+    )
+    if status.stdout:
+        raise ValueError("runner worktree must be clean before retained reads")
+
+
 def load_numpy() -> Any:
     try:
         import numpy  # type: ignore[import-not-found]
@@ -727,6 +757,8 @@ def replay_journal(
     authorization: dict[str, Any],
     authorization_sha256: str,
     protocol: dict[str, Any],
+    runner_head: str,
+    runner_ci_url: str,
 ) -> dict[str, Any]:
     return {
         "schema_version": 1,
@@ -735,6 +767,8 @@ def replay_journal(
         "authorization_id": authorization["authorization_id"],
         "authorization_sha256": authorization_sha256,
         "authorization_head_commit": AUTHORIZATION_HEAD,
+        "runner_head_commit": runner_head,
+        "runner_exact_head_ci_url": runner_ci_url,
         "input_inventory_sha256": authorization["authorization_scope"][
             "retained_inventory_sha256"
         ],
@@ -754,12 +788,16 @@ def require_recovery_binding(
     authorization: dict[str, Any],
     authorization_sha256: str,
     protocol: dict[str, Any],
+    runner_head: str,
+    runner_ci_url: str,
 ) -> list[dict[str, Any]]:
     expected = {
         "protocol_id": protocol["protocol_id"],
         "authorization_id": authorization["authorization_id"],
         "authorization_sha256": authorization_sha256,
         "authorization_head_commit": AUTHORIZATION_HEAD,
+        "runner_head_commit": runner_head,
+        "runner_exact_head_ci_url": runner_ci_url,
         "input_inventory_sha256": authorization["authorization_scope"][
             "retained_inventory_sha256"
         ],
@@ -813,6 +851,8 @@ def build_replay(
     authorization: dict[str, Any],
     authorization_sha256: str,
     attribution_sha256: str,
+    runner_head: str,
+    runner_ci_url: str,
     np: Any,
     existing_cases: Sequence[dict[str, Any]] = (),
     checkpoint: Callable[[Sequence[dict[str, Any]]], None] | None = None,
@@ -873,6 +913,8 @@ def build_replay(
         "authorization_sha256": authorization_sha256,
         "authorization_head_commit": AUTHORIZATION_HEAD,
         "authorization_exact_head_ci_url": AUTHORIZATION_CI_URL,
+        "runner_head_commit": runner_head,
+        "runner_exact_head_ci_url": runner_ci_url,
         "attribution_attachment_sha256": attribution_sha256,
         "input_inventory_sha256": authorization["authorization_scope"]["retained_inventory_sha256"],
         "reference_count": len(records),
@@ -909,6 +951,8 @@ def execute(
     *,
     source_root: Path,
     replay_roots: list[Path],
+    runner_head: str,
+    runner_ci_url: str,
     authorization_path: Path = AUTHORIZATION,
     resume: bool = False,
 ) -> dict[str, Any]:
@@ -923,6 +967,7 @@ def execute(
     authorization, plan, authorization_sha256 = require_committed_authorization(
         authorization_path
     )
+    require_exact_runner_head(runner_head, runner_ci_url)
     if shutil.disk_usage(source_root).free < MINIMUM_FREE_BYTES:
         raise ValueError("free disk is below the 15 GiB reserve")
     np = load_numpy()
@@ -956,6 +1001,8 @@ def execute(
                 authorization=authorization,
                 authorization_sha256=authorization_sha256,
                 protocol=plan["validation_protocol"],
+                runner_head=runner_head,
+                runner_ci_url=runner_ci_url,
             )
             require_case_prefix(replay["cases"], records, plan["validation_protocol"])
             payload = canonical_bytes(replay)
@@ -977,6 +1024,8 @@ def execute(
                     authorization=authorization,
                     authorization_sha256=authorization_sha256,
                     protocol=plan["validation_protocol"],
+                    runner_head=runner_head,
+                    runner_ci_url=runner_ci_url,
                 )
                 require_case_prefix(
                     existing_cases, records, plan["validation_protocol"]
@@ -990,6 +1039,8 @@ def execute(
                         authorization=authorization,
                         authorization_sha256=authorization_sha256,
                         protocol=plan["validation_protocol"],
+                        runner_head=runner_head,
+                        runner_ci_url=runner_ci_url,
                     ),
                 )
 
@@ -1001,6 +1052,8 @@ def execute(
                 authorization=authorization,
                 authorization_sha256=authorization_sha256,
                 attribution_sha256=attribution_sha256,
+                runner_head=runner_head,
+                runner_ci_url=runner_ci_url,
                 np=np,
                 existing_cases=existing_cases,
                 checkpoint=checkpoint,
@@ -1060,11 +1113,15 @@ def main() -> int:
     parser.add_argument("--source-root", type=Path, required=True)
     parser.add_argument("--replay-root", type=Path, action="append", required=True)
     parser.add_argument("--authorization", type=Path, default=AUTHORIZATION)
+    parser.add_argument("--runner-head", required=True)
+    parser.add_argument("--runner-ci-url", required=True)
     parser.add_argument("--resume", action="store_true")
     args = parser.parse_args()
     result = execute(
         source_root=args.source_root,
         replay_roots=args.replay_root,
+        runner_head=args.runner_head,
+        runner_ci_url=args.runner_ci_url,
         authorization_path=args.authorization,
         resume=args.resume,
     )

@@ -6,6 +6,8 @@ import struct
 import sys
 import unittest
 from pathlib import Path
+from types import SimpleNamespace
+from unittest import mock
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -107,6 +109,29 @@ def synthetic_gate_case(source: str, ppm: int) -> dict:
 
 
 class OdaqRetainedDriftValidationRunnerTest(unittest.TestCase):
+    def test_exact_runner_head_requires_matching_clean_checkout(self) -> None:
+        head = "a" * 40
+        url = "https://github.com/ryan-voitiskis/lossytrace/actions/runs/123"
+        with mock.patch.object(
+            MODULE.subprocess,
+            "run",
+            side_effect=[
+                SimpleNamespace(stdout=f"{head}\n"),
+                SimpleNamespace(stdout=b""),
+            ],
+        ):
+            MODULE.require_exact_runner_head(head, url)
+        with mock.patch.object(
+            MODULE.subprocess,
+            "run",
+            side_effect=[
+                SimpleNamespace(stdout=f"{head}\n"),
+                SimpleNamespace(stdout=b" M file"),
+            ],
+        ):
+            with self.assertRaisesRegex(ValueError, "worktree must be clean"):
+                MODULE.require_exact_runner_head(head, url)
+
     def test_committed_authorization_is_exact_and_narrow(self) -> None:
         authorization, plan, digest = MODULE.require_committed_authorization()
         self.assertEqual(64, len(digest))
