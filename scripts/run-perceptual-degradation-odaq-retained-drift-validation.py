@@ -98,6 +98,12 @@ def inside_repository(path: Path) -> bool:
         return False
 
 
+def ensure_replay_root(path: Path, *, resume: bool) -> None:
+    if path.is_symlink():
+        raise ValueError("private replay root must not be a symlink")
+    path.mkdir(parents=True, mode=0o700, exist_ok=resume)
+
+
 def atomic_json(path: Path, value: Any) -> None:
     partial = path.with_name(f"{path.name}.partial")
     with partial.open("wb") as output:
@@ -132,16 +138,7 @@ def require_committed_authorization(
 
 
 def require_exact_runner_head(runner_head: str, runner_ci_url: str) -> None:
-    if (
-        len(runner_head) != 40
-        or any(character not in "0123456789abcdef" for character in runner_head)
-    ):
-        raise ValueError("runner head commit differs")
-    ci_prefix = "https://github.com/ryan-voitiskis/lossytrace/actions/runs/"
-    if not runner_ci_url.startswith(ci_prefix) or not runner_ci_url.removeprefix(
-        ci_prefix
-    ).isdigit():
-        raise ValueError("runner exact-head CI URL differs")
+    require_runner_binding(runner_head, runner_ci_url)
     completed = subprocess.run(
         ["git", "rev-parse", "HEAD"],
         cwd=ROOT,
@@ -159,6 +156,19 @@ def require_exact_runner_head(runner_head: str, runner_ci_url: str) -> None:
     )
     if status.stdout:
         raise ValueError("runner worktree must be clean before retained reads")
+
+
+def require_runner_binding(runner_head: str, runner_ci_url: str) -> None:
+    if (
+        len(runner_head) != 40
+        or any(character not in "0123456789abcdef" for character in runner_head)
+    ):
+        raise ValueError("runner head commit differs")
+    ci_prefix = "https://github.com/ryan-voitiskis/lossytrace/actions/runs/"
+    if not runner_ci_url.startswith(ci_prefix) or not runner_ci_url.removeprefix(
+        ci_prefix
+    ).isdigit():
+        raise ValueError("runner exact-head CI URL differs")
 
 
 def load_numpy() -> Any:
@@ -790,20 +800,26 @@ def require_recovery_binding(
     protocol: dict[str, Any],
     runner_head: str,
     runner_ci_url: str,
+    accepted_runner_bindings: Sequence[tuple[str, str]] = (),
 ) -> list[dict[str, Any]]:
     expected = {
         "protocol_id": protocol["protocol_id"],
         "authorization_id": authorization["authorization_id"],
         "authorization_sha256": authorization_sha256,
         "authorization_head_commit": AUTHORIZATION_HEAD,
-        "runner_head_commit": runner_head,
-        "runner_exact_head_ci_url": runner_ci_url,
         "input_inventory_sha256": authorization["authorization_scope"][
             "retained_inventory_sha256"
         ],
     }
     if any(value.get(key) != expected_value for key, expected_value in expected.items()):
         raise ValueError("private recovery binding differs")
+    runner_binding = (
+        value.get("runner_head_commit"),
+        value.get("runner_exact_head_ci_url"),
+    )
+    accepted = {(runner_head, runner_ci_url), *accepted_runner_bindings}
+    if runner_binding not in accepted:
+        raise ValueError("private recovery runner binding differs")
     cases = value.get("cases")
     if not isinstance(cases, list):
         raise ValueError("private recovery cases differ")
@@ -853,6 +869,7 @@ def build_replay(
     attribution_sha256: str,
     runner_head: str,
     runner_ci_url: str,
+    runner_provenance_chain: Sequence[dict[str, str]],
     np: Any,
     existing_cases: Sequence[dict[str, Any]] = (),
     checkpoint: Callable[[Sequence[dict[str, Any]]], None] | None = None,
@@ -915,6 +932,7 @@ def build_replay(
         "authorization_exact_head_ci_url": AUTHORIZATION_CI_URL,
         "runner_head_commit": runner_head,
         "runner_exact_head_ci_url": runner_ci_url,
+        "runner_provenance_chain": list(runner_provenance_chain),
         "attribution_attachment_sha256": attribution_sha256,
         "input_inventory_sha256": authorization["authorization_scope"]["retained_inventory_sha256"],
         "reference_count": len(records),
@@ -953,6 +971,8 @@ def execute(
     replay_roots: list[Path],
     runner_head: str,
     runner_ci_url: str,
+    recovery_runner_head: str | None = None,
+    recovery_runner_ci_url: str | None = None,
     authorization_path: Path = AUTHORIZATION,
     resume: bool = False,
 ) -> dict[str, Any]:
@@ -968,6 +988,24 @@ def execute(
         authorization_path
     )
     require_exact_runner_head(runner_head, runner_ci_url)
+    if (recovery_runner_head is None) != (recovery_runner_ci_url is None):
+        raise ValueError("recovery runner binding must be supplied as a pair")
+    accepted_recovery_bindings: list[tuple[str, str]] = []
+    runner_provenance_chain = [
+        {"head_commit": runner_head, "exact_head_ci_url": runner_ci_url}
+    ]
+    if recovery_runner_head is not None and recovery_runner_ci_url is not None:
+        require_runner_binding(recovery_runner_head, recovery_runner_ci_url)
+        accepted_recovery_bindings.append(
+            (recovery_runner_head, recovery_runner_ci_url)
+        )
+        runner_provenance_chain.insert(
+            0,
+            {
+                "head_commit": recovery_runner_head,
+                "exact_head_ci_url": recovery_runner_ci_url,
+            },
+        )
     if shutil.disk_usage(source_root).free < MINIMUM_FREE_BYTES:
         raise ValueError("free disk is below the 15 GiB reserve")
     np = load_numpy()
@@ -975,7 +1013,7 @@ def execute(
     payloads: list[bytes] = []
     attribution_payloads: list[bytes] = []
     for replay_root in replay_roots:
-        replay_root.mkdir(parents=True, mode=0o700)
+        ensure_replay_root(replay_root, resume=resume)
         records = DELIVERY.validate_source_inventory(
             source_root, DELIVERY.expected_source_inventory(), audit
         )
@@ -1003,6 +1041,7 @@ def execute(
                 protocol=plan["validation_protocol"],
                 runner_head=runner_head,
                 runner_ci_url=runner_ci_url,
+                accepted_runner_bindings=accepted_recovery_bindings,
             )
             require_case_prefix(replay["cases"], records, plan["validation_protocol"])
             payload = canonical_bytes(replay)
@@ -1026,6 +1065,7 @@ def execute(
                     protocol=plan["validation_protocol"],
                     runner_head=runner_head,
                     runner_ci_url=runner_ci_url,
+                    accepted_runner_bindings=accepted_recovery_bindings,
                 )
                 require_case_prefix(
                     existing_cases, records, plan["validation_protocol"]
@@ -1054,6 +1094,7 @@ def execute(
                 attribution_sha256=attribution_sha256,
                 runner_head=runner_head,
                 runner_ci_url=runner_ci_url,
+                runner_provenance_chain=runner_provenance_chain,
                 np=np,
                 existing_cases=existing_cases,
                 checkpoint=checkpoint,
@@ -1115,6 +1156,8 @@ def main() -> int:
     parser.add_argument("--authorization", type=Path, default=AUTHORIZATION)
     parser.add_argument("--runner-head", required=True)
     parser.add_argument("--runner-ci-url", required=True)
+    parser.add_argument("--recovery-runner-head")
+    parser.add_argument("--recovery-runner-ci-url")
     parser.add_argument("--resume", action="store_true")
     args = parser.parse_args()
     result = execute(
@@ -1122,6 +1165,8 @@ def main() -> int:
         replay_roots=args.replay_root,
         runner_head=args.runner_head,
         runner_ci_url=args.runner_ci_url,
+        recovery_runner_head=args.recovery_runner_head,
+        recovery_runner_ci_url=args.recovery_runner_ci_url,
         authorization_path=args.authorization,
         resume=args.resume,
     )

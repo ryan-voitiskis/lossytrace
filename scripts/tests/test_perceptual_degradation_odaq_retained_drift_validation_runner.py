@@ -4,6 +4,7 @@ import importlib.util
 import math
 import struct
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 from types import SimpleNamespace
@@ -109,6 +110,56 @@ def synthetic_gate_case(source: str, ppm: int) -> dict:
 
 
 class OdaqRetainedDriftValidationRunnerTest(unittest.TestCase):
+    def test_resume_accepts_an_existing_private_replay_root(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary) / "replay"
+            root.mkdir()
+            (root / "journal.json").write_text("{}", encoding="utf-8")
+            MODULE.ensure_replay_root(root, resume=True)
+            self.assertTrue((root / "journal.json").is_file())
+            with self.assertRaises(FileExistsError):
+                MODULE.ensure_replay_root(root, resume=False)
+
+    def test_recovery_predecessor_binding_must_be_explicit(self) -> None:
+        authorization = {
+            "authorization_id": "authorization",
+            "authorization_scope": {"retained_inventory_sha256": "inventory"},
+        }
+        protocol = {"protocol_id": "protocol"}
+        predecessor = ("a" * 40, "https://github.com/example/actions/runs/1")
+        current = ("b" * 40, "https://github.com/example/actions/runs/2")
+        journal = {
+            "protocol_id": "protocol",
+            "authorization_id": "authorization",
+            "authorization_sha256": "authorization-sha",
+            "authorization_head_commit": MODULE.AUTHORIZATION_HEAD,
+            "runner_head_commit": predecessor[0],
+            "runner_exact_head_ci_url": predecessor[1],
+            "input_inventory_sha256": "inventory",
+            "cases": [],
+        }
+        with self.assertRaisesRegex(ValueError, "runner binding differs"):
+            MODULE.require_recovery_binding(
+                journal,
+                authorization=authorization,
+                authorization_sha256="authorization-sha",
+                protocol=protocol,
+                runner_head=current[0],
+                runner_ci_url=current[1],
+            )
+        self.assertEqual(
+            [],
+            MODULE.require_recovery_binding(
+                journal,
+                authorization=authorization,
+                authorization_sha256="authorization-sha",
+                protocol=protocol,
+                runner_head=current[0],
+                runner_ci_url=current[1],
+                accepted_runner_bindings=[predecessor],
+            ),
+        )
+
     def test_exact_runner_head_requires_matching_clean_checkout(self) -> None:
         head = "a" * 40
         url = "https://github.com/ryan-voitiskis/lossytrace/actions/runs/123"
