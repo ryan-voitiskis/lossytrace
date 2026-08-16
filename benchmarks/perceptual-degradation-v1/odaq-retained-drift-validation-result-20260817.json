@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "result_id": "perceptual-degradation-odaq-retained-drift-validation-result-20260817-001",
+  "state": "private_odaq_retained_drift_validation_complete_reproducible_technical_negative",
+  "observed_on": "2026-08-17",
+  "purpose": "Record a path-free, aggregate-only result for two byte-identical private executions of the frozen retained ODAQ clean-reference controlled-drift protocol without publishing audio, per-reference hashes, perceptual claims, or a verdict.",
+  "bindings": {
+    "authorization": {
+      "path": "benchmarks/perceptual-degradation-v1/odaq-retained-drift-validation-authorization-20260816.json",
+      "sha256": "0d9212a749e25ae8f9ae8fc7267d3e5611e7ee984602ed317d20e102101ace99"
+    },
+    "execution_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/odaq-retained-drift-validation-execution-plan.json",
+      "sha256": "c91f27e5a448bfe387b913f5240cb0d6f86f3a0e5e79cfaecf7f74d94497e48b"
+    },
+    "private_runner": {
+      "path": "scripts/run-perceptual-degradation-odaq-retained-drift-validation.py",
+      "sha256": "6aeb676984dd8934a4ee8f8723f733f94f814565908f72f26388faeb57954d8d"
+    },
+    "private_runner_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_odaq_retained_drift_validation_runner.py",
+      "sha256": "e983a2649892102a93045d2c7b85311cd26b5f5a0156df193d1c4a02f14ffd79"
+    }
+  },
+  "execution": {
+    "authorization_exact_head_commit": "5eb9e31a9fa12bad1e90a8c4d924765db8e91932",
+    "authorization_exact_head_ci_url": "https://github.com/ryan-voitiskis/lossytrace/actions/runs/31919169130",
+    "runner_provenance_chain": [
+      {
+        "head_commit": "366ddb53254fa2ebfef56927c32a08a934685a1c",
+        "exact_head_ci_url": "https://github.com/ryan-voitiskis/lossytrace/actions/runs/31921149257"
+      },
+      {
+        "head_commit": "6effd2f972b384774def82ffb54455e271e5649a",
+        "exact_head_ci_url": "https://github.com/ryan-voitiskis/lossytrace/actions/runs/31929976827"
+      }
+    ],
+    "fresh_replay_count": 2,
+    "replay_reports_byte_identical": true,
+    "replay_report_sha256": "b74cc0502b650055f4abfef79625b0e5db62b5ddfad474357d2a33c443dcd602",
+    "attribution_attachments_byte_identical": true,
+    "maximum_workers": 1,
+    "minimum_free_disk_gib_preserved": 15,
+    "derived_pcm_lifetime": "temporary_in_memory_only",
+    "private_outputs_retained_outside_repository": true,
+    "private_paths_published": false,
+    "per_reference_hashes_published": false,
+    "audio_published": false
+  },
+  "aggregate_observations_per_replay": {
+    "reference_count": 16,
+    "attempted_case_count": 112,
+    "supported_case_count": 112,
+    "abstained_case_count": 0,
+    "supported_nonzero_case_count": 96,
+    "correct_supported_nonzero_case_count": 96,
+    "correct_supported_nonzero_estimate_rate": 1.0,
+    "maximum_supported_estimation_absolute_error_ppm": 0,
+    "minimum_supported_source_count_per_nonzero_drift_case": 16,
+    "applied_correction_case_count": 93,
+    "nonapplied_case_count": 19,
+    "zero_drift_false_apply_count": 0,
+    "minimum_applied_post_correction_core_correlation": 0.998464803418,
+    "applied_case_count_below_post_correction_correlation_threshold": 6,
+    "applied_channel_count_below_post_correction_correlation_threshold": 12,
+    "minimum_applied_core_correlation_improvement": 0.034206658269,
+    "applied_held_out_rule_violation_count": 0,
+    "nonapplied_non_bit_exact_count": 0,
+    "supported_alignment_case_count": 105,
+    "unsupported_alignment_case_count": 7,
+    "score_free_oracle_execution_blocked_case_count": 105,
+    "score_free_oracle_unsupported_alignment_case_count": 7,
+    "retained_derived_pcm_case_count": 0,
+    "prohibited_surface_violation_case_count": 0
+  },
+  "predeclared_gate_audit": {
+    "exact_source_inventory_reverified": true,
+    "all_16_sources_attempted": true,
+    "all_7_drift_cases_attempted_per_source": true,
+    "minimum_supported_sources_per_nonzero_drift_case": true,
+    "maximum_supported_estimation_absolute_error_ppm": true,
+    "minimum_correct_estimate_rate_across_supported_nonzero_cases": true,
+    "zero_drift_false_apply_count": true,
+    "applied_case_minimum_post_correction_core_correlation_each_channel": false,
+    "applied_case_minimum_core_correlation_improvement_each_channel": true,
+    "every_applied_case_must_meet_frozen_held_out_rule": true,
+    "every_nonapplied_output_must_be_bit_exact": true,
+    "every_abstention_must_have_predeclared_reason": true,
+    "score_free_oracle_must_remain_execution_blocked": true,
+    "derived_audio_must_not_be_retained": true,
+    "fresh_replay_count": true,
+    "fresh_replay_reports_must_be_byte_identical": true,
+    "public_report_must_exclude_paths_per_reference_hashes_and_audio": true
+  },
+  "gate_summary": {
+    "predeclared_gate_count": 17,
+    "predeclared_gate_pass_count": 16,
+    "all_predeclared_gates_pass": false,
+    "failed_gate_ids": [
+      "applied_case_minimum_post_correction_core_correlation_each_channel"
+    ]
+  },
+  "access_boundary": {
+    "retained_clean_reference_audio_read": true,
+    "canonical_pcm_projected_in_memory": true,
+    "controlled_synthetic_clock_drift_generated": true,
+    "odaq_processed_condition_opened": false,
+    "odaq_listening_score_opened": false,
+    "actual_codec_generated": false,
+    "perceptual_metric_executed": false,
+    "human_playback_performed": false,
+    "degradation_rating_collected": false,
+    "listener_response_collected": false,
+    "sealed_evidence_opened": false,
+    "no_reference_training_performed": false,
+    "public_verdict_emitted": false
+  },
+  "claim_boundary": {
+    "development_only": true,
+    "one_provider_stratum": true,
+    "controlled_clock_drift_is_actual_codec_degradation": false,
+    "technical_correlation_is_a_perceptual_metric": false,
+    "retained_reference_validation_is_perceptual_truth": false,
+    "failed_gate_is_a_public_verdict": false,
+    "independent_transfer_supported": false,
+    "full_reference_oracle_validated": false,
+    "no_reference_work_eligible": false,
+    "final_validation_supported": false
+  },
+  "next_gate": "Freeze this reproducible technical negative without threshold adjustment or scientific promotion. Any actual-codec, perceptual-metric, human-calibration, no-reference, final-validation, or verdict-bearing successor remains separately authorized."
+}
