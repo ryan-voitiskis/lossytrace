@@ -1,0 +1,177 @@
+{
+  "schema_version": 1,
+  "report_id": "perceptual-degradation-source-trait-quiet-alternative-metadata-audit-20260817-001",
+  "state": "bounded_metadata_only_alternative_quiet_provider_audit_complete_one_exact_candidate_identified",
+  "observed_on": "2026-08-17",
+  "plan_id": "perceptual-degradation-source-trait-quiet-alternative-metadata-audit-20260817-001",
+  "plan_sha256": "07b09e5e5b27c2e2f9aba51b99a8c9d1a59c61bc094df3baabc25a3517ec23f4",
+  "access_boundary": {
+    "committed_metadata_and_path_free_audits_read": true,
+    "official_provider_records_read": true,
+    "public_exact_member_records_read": true,
+    "licence_and_attribution_metadata_read": true,
+    "provenance_and_transformation_metadata_read": true,
+    "relationship_metadata_read": true,
+    "technical_container_metadata_read": true,
+    "audio_samples_read": false,
+    "audio_descriptors_computed_or_read": false,
+    "audio_downloaded": false,
+    "provider_scores_or_processed_conditions_accessed": false,
+    "codec_generated": false,
+    "perceptual_metric_executed": false,
+    "playback_performed": false,
+    "listener_response_collected": false,
+    "sealed_evidence_opened": false,
+    "no_reference_training_performed": false,
+    "frozen_retained_drift_result_altered": false,
+    "public_verdict_enabled": false
+  },
+  "public_record_sources": [
+    {
+      "source_id": "freesound_exact_quiet_member",
+      "url": "https://freesound.org/people/danner/sounds/426894/",
+      "role": "exact_member_rights_quiet_scene_capture_gain_transformation_and_container_metadata"
+    },
+    {
+      "source_id": "freesound_related_quiet_member",
+      "url": "https://freesound.org/people/danner/sounds/427932/",
+      "role": "relationship_and_non_independence_boundary"
+    },
+    {
+      "source_id": "freesound_api_v2_resources",
+      "url": "https://freesound.org/docs/api/resources_apiv2.html",
+      "role": "provider_definition_of_original_file_type_and_original_quality_download"
+    },
+    {
+      "source_id": "freesound_original_download_faq",
+      "url": "https://freesound.org/help/faq/",
+      "role": "provider_statement_that_downloads_preserve_the_original_uploaded_file_without_transcoding_or_editing"
+    },
+    {
+      "source_id": "cc0_1_0_deed",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "role": "permissive_rights_record"
+    }
+  ],
+  "bounded_route_screen": [
+    {
+      "exact_member_id": "freesound_sound_348829",
+      "disposition": "rejected_before_audio_access",
+      "reason": "The public record identifies a quiet scene, CC0 rights, WAV delivery and a Zoom H6 capture module, but it does not record capture gain or exclude post-capture gain changes."
+    },
+    {
+      "exact_member_id": "freesound_sound_761024",
+      "disposition": "rejected_before_audio_access",
+      "reason": "The public record identifies a very quiet room, CC0 rights, WAV delivery and a Zoom H4n, but it does not record capture gain or transformation history."
+    },
+    {
+      "exact_member_id": "freesound_sound_171740",
+      "disposition": "rejected_before_audio_access",
+      "reason": "The public record identifies a quiet room, CC BY 4.0 rights, WAV delivery, a microphone-recorder chain and no processing, but it does not record the capture gain needed by the frozen preserved-gain obligation."
+    },
+    {
+      "exact_member_id": "freesound_sound_846064",
+      "disposition": "rejected_before_audio_access",
+      "reason": "The public record explicitly documents gain adjustment and normalization after capture."
+    },
+    {
+      "exact_member_id": "freesound_sound_857163",
+      "disposition": "rejected_before_audio_access",
+      "reason": "The public record explicitly documents normalization after capture."
+    }
+  ],
+  "quiet_audit": {
+    "provider_id": "freesound",
+    "exact_member_id": "freesound_sound_426894",
+    "licence": "CC0 1.0",
+    "public_container_metadata": {
+      "original_upload_type": "wav",
+      "original_upload_is_lossless": true,
+      "sample_rate_hz": 96000,
+      "bit_depth": 24,
+      "channel_count": 2,
+      "duration_seconds": 345.521,
+      "displayed_file_size": "189.8 MB"
+    },
+    "quiet_scene_and_capture_record": {
+      "physical_scene_recorded": true,
+      "scene_description": "distant_quiet_consistent_city_ambience",
+      "scene_activity_documented": true,
+      "recorder_model": "Tascam DR100mk2",
+      "microphone_configuration": "built_in_cardioids_58mm_90_degrees",
+      "capture_gain_setting": "M9",
+      "capture_high_pass_hz": 80,
+      "capture_location_type": "five_storey_building_rooftop",
+      "capture_period": "april_evening",
+      "post_capture_processing_applied": false,
+      "post_capture_attenuation_or_normalization_documented": false,
+      "provider_original_file_download_is_byte_preserving": true
+    },
+    "pre_audio_obligations": {
+      "exact_member_identity": "satisfied",
+      "permissive_item_rights": "satisfied",
+      "original_lossless_upload_or_distribution_provenance": "satisfied",
+      "quiet_scene_provenance": "satisfied_by_uploader_capture_description",
+      "capture_chain_and_gain_record": "satisfied",
+      "no_post_capture_attenuation_or_normalization": "satisfied_by_no_processing_record",
+      "source_and_derivative_group_boundary": "satisfied_conservatively_by_uploader_location_and_recording_period_family",
+      "attribution_record": "available_optional_under_cc0"
+    },
+    "descriptor_obligations": {
+      "absolute_pcm_level_measurement": "closed_not_computed",
+      "nonzero_activity_support": "closed_not_computed"
+    },
+    "relationship_boundary": {
+      "related_exact_member_id": "freesound_sound_427932",
+      "related_member_is_independent_contrast": false,
+      "grouping_rule": "group_same_uploader_and_berlin_elevated_city_ambience_recording_family_conservatively"
+    },
+    "attribution_record": {
+      "required": false,
+      "recommended_text": "Sound 426894 by danner on Freesound.org, CC0 1.0",
+      "source_url": "https://freesound.org/people/danner/sounds/426894/"
+    },
+    "exact_member_candidate_identified": true,
+    "trait_assigned": false,
+    "member_acquired": false,
+    "candidate_status": "exact_metadata_candidate_identified_descriptor_confirmation_acquisition_and_allocation_closed"
+  },
+  "summary": {
+    "required_source_trait_count": 7,
+    "explicit_candidate_record_count_before_audit": 6,
+    "explicit_candidate_record_count_after_audit": 7,
+    "quiet_exact_metadata_candidate_identified": true,
+    "naturally_clipped_exact_metadata_candidate_retained": true,
+    "independent_sparse_and_tonal_contrasts_still_missing": true,
+    "source_trait_assigned": false,
+    "source_member_acquired": false,
+    "audio_accessed": false,
+    "audio_descriptor_computed": false,
+    "source_trait_manifest_frozen": false,
+    "public_verdict_enabled": false
+  },
+  "decision": {
+    "alternative_quiet_metadata_route_accepted": true,
+    "quiet_exact_metadata_candidate_identified": true,
+    "quiet_trait_truth_established": false,
+    "quiet_descriptor_confirmation_authorized": false,
+    "source_trait_manifest_frozen": false,
+    "human_collection_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "no_reference_work_eligible": false,
+    "public_verdict_enabled": false,
+    "next_gate": "Separately authorize exact-member acquisition and the frozen absolute-level and nonzero-activity descriptor confirmation before assigning quiet-trait truth. Naturally clipped plateau or saturation confirmation, independent sparse and tonal exact-member contrasts, relationship audit and partition allocation remain separate unfrozen gates."
+  },
+  "claim_boundary": {
+    "uploader_quiet_description_proves_absolute_pcm_level": false,
+    "metadata_candidate_proves_quiet_pcm_trait": false,
+    "seven_candidate_records_prove_independent_trait_contrasts": false,
+    "quiet_or_clipped_scientific_coverage_complete": false,
+    "source_trait_manifest_frozen": false,
+    "perceptual_truth_present": false,
+    "validation_claim_available": false,
+    "full_objective_complete": false,
+    "public_cli_changed": false,
+    "public_verdict_enabled": false
+  }
+}
