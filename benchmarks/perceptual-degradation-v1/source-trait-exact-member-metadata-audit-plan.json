@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "plan_id": "perceptual-degradation-source-trait-exact-member-metadata-audit-20260817-001",
+  "state": "bounded_metadata_only_exact_member_audit_authorized_before_audio_access",
+  "purpose": "Audit exact-member public metadata for the missing quiet and naturally clipped source-trait candidates without reading audio samples, computing audio descriptors, or assigning trait truth.",
+  "bindings": {
+    "research_contract": {
+      "path": "docs/research/perceptual-degradation-contract-20260803.md",
+      "sha256": "fdec79207fc0fdd2e9cb10aae9f93dd1a17b45e6e56c0c7df8f0e01a1f9fb505"
+    },
+    "source_trait_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/source-trait-identifiability-plan.json",
+      "sha256": "c15991fbd7062c837db566bb734c5c1bf625fa2cbc5aa5a00983b64d82e28ba3"
+    },
+    "source_trait_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-source-trait-identifiability-20260814-001.json",
+      "sha256": "e77bb0bb453941bdf47d1d9062748b27bbae686d781fb7f17efc734e5e632e20"
+    },
+    "provider_capability_screen": {
+      "path": "research/toolchains/evidence/perceptual-degradation-source-trait-provider-capability-screen-20260814-001.json",
+      "sha256": "12eb521d0976f4e087ef9cb7a80c22c6112ea73b844e3f59a64fd2da5bfbc6b3"
+    },
+    "sonyc_source_identity_audit": {
+      "path": "docs/research/sonyc-source-identity-audit-20260802.md",
+      "sha256": "4aae15d4349cae737116906845a58b6114e9a50e4e432a1523589adda08c7db8"
+    },
+    "sonyc_path_free_observation": {
+      "path": "research/sources/evidence/sonyc-backgrounds-1.0.0-observed-20260802.json",
+      "sha256": "624f8ecd06b6f2d2fa78819cf8f0a0378a831bf47d88ccc860438bce0b1a2eae"
+    }
+  },
+  "authorization": {
+    "public_and_provider_metadata_read_authorized": true,
+    "licensing_and_attribution_metadata_read_authorized": true,
+    "provenance_and_transformation_metadata_read_authorized": true,
+    "relationship_metadata_read_authorized": true,
+    "technical_container_metadata_read_authorized": true,
+    "exact_member_metadata_inspection_authorized": true,
+    "audio_sample_access_authorized": false,
+    "audio_descriptor_computation_authorized": false,
+    "provider_score_or_processed_condition_access_authorized": false,
+    "codec_generation_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "playback_authorized": false,
+    "human_collection_authorized": false,
+    "sealed_evidence_access_authorized": false,
+    "no_reference_training_authorized": false,
+    "frozen_retained_drift_result_mutation_authorized": false,
+    "validation_claim_or_public_verdict_authorized": false
+  },
+  "resources": {
+    "minimum_free_disk_gib": 15,
+    "maximum_workers": 1,
+    "new_audio_download_bytes": 0,
+    "retained_generated_audio": false
+  },
+  "audit_policy": {
+    "trait_ids": [
+      "quiet",
+      "clipped"
+    ],
+    "quiet_provider_scope": [
+      "sonyc_backgrounds_5129078"
+    ],
+    "clipped_search_provider_scope": [
+      "freesound_public_item_records"
+    ],
+    "allowed_licences": [
+      "CC BY 4.0",
+      "CC0 1.0"
+    ],
+    "pre_audio_candidate_requirements": [
+      "exact_member_identity",
+      "permissive_item_rights",
+      "original_lossless_upload_or_distribution_provenance",
+      "capture_chain_evidence",
+      "transformation_history",
+      "intentional_waveform_exclusion_for_clipping",
+      "source_and_derivative_group_boundary",
+      "attribution_record"
+    ],
+    "reject_route_when_pre_audio_requirement_unestablished": true,
+    "provider_background_label_can_substitute_for_quiet_level": false,
+    "uploader_clipped_tag_can_substitute_for_capture_chain_record": false,
+    "lossless_container_alone_can_substitute_for_origin_provenance": false,
+    "exact_metadata_candidate_can_substitute_for_descriptor_confirmation": false,
+    "metadata_candidate_can_substitute_for_trait_truth": false,
+    "candidate_can_be_allocated_without_separate_freeze": false
+  },
+  "publication_boundary": {
+    "private_filesystem_paths_allowed": false,
+    "audio_or_audio_hashes_allowed": false,
+    "per_reference_audio_hashes_allowed": false,
+    "provider_scores_or_processed_conditions_allowed": false,
+    "sensitive_person_metadata_allowed": false,
+    "perceptual_claims_allowed": false,
+    "validation_claims_allowed": false,
+    "verdicts_allowed": false,
+    "public_urls_and_non_sensitive_metadata_allowed": true
+  },
+  "claim_boundary": {
+    "quiet_trait_assigned": false,
+    "clipped_trait_assigned": false,
+    "source_trait_manifest_frozen": false,
+    "source_member_acquired": false,
+    "audio_descriptor_observed": false,
+    "scientific_coverage_complete": false,
+    "full_objective_complete": false,
+    "public_cli_changed": false,
+    "public_verdict_enabled": false
+  }
+}
