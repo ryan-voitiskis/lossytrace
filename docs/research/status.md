@@ -990,3 +990,25 @@ full-reference requirement is now
 No retained reference was read or projected, no live runner was implemented,
 and no real-content, perceptual or human validation occurred. The public CLI
 remains verdict-free.
+
+The bounded
+[`exact-member source-trait confirmation`](perceptual-degradation-source-trait-exact-member-confirmation-20260818.md)
+acquired only the two metadata-qualified CC0 provider originals and replayed
+the frozen score-free integer-PCM descriptors twice with byte-identical private
+reports. The quiet member measured `-51.622035 dBFS` RMS with nonzero activity
+across all 346 one-second blocks. The naturally clipped candidate produced 66
+exact-rail samples, seven repeated high-level plateau runs and 66 near-flat
+high-level windows. No derived PCM was retained. An independent audit confirms
+the public projection is exact, path-free and hash-redacted. The observations
+do not assign source traits, establish perceptual truth, freeze a source
+manifest or enable a verdict.
+
+A deterministic
+[`objective completion-audit exact-member refresh`](perceptual-degradation-objective-completion-audit-exact-member-confirmation-refresh-20260818.md)
+reconciles that result without scientific promotion. Completion remains four
+of fourteen. Quiet and clipped descriptor obligations are observed, but no
+quiet classification or trait assignment was authorized, sparse and tonal
+remain non-independent, and relationships and partition allocation remain
+unfrozen. The retained ODAQ 16-of-17-gate technical negative is unchanged; no
+codec, perceptual metric, listener response, sealed evidence, no-reference
+training, final-validation claim or public verdict was opened or produced.
