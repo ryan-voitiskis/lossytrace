@@ -1,0 +1,182 @@
+{
+  "authorization": {
+    "codec_generation_authorized": false,
+    "derived_pcm_retention_authorized": false,
+    "frozen_integer_pcm_descriptor_execution_authorized": true,
+    "human_collection_authorized": false,
+    "no_reference_training_authorized": false,
+    "original_audio_sample_read_authorized": true,
+    "other_source_member_access_authorized": false,
+    "path_free_score_free_publication_authorized": true,
+    "perceptual_metric_execution_authorized": false,
+    "playback_authorized": false,
+    "private_original_retention_authorized": true,
+    "provider_processed_condition_or_score_access_authorized": false,
+    "sealed_evidence_access_authorized": false,
+    "source_manifest_allocation_authorized": false,
+    "source_trait_assignment_authorized": false,
+    "two_exact_provider_originals_acquisition_authorized": true,
+    "validation_claim_or_public_verdict_authorized": false
+  },
+  "bindings": {
+    "quiet_metadata_audit_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/source-trait-quiet-alternative-metadata-audit-plan.json",
+      "sha256": "07b09e5e5b27c2e2f9aba51b99a8c9d1a59c61bc094df3baabc25a3517ec23f4"
+    },
+    "quiet_metadata_audit_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-source-trait-quiet-alternative-metadata-audit-20260817-001.json",
+      "sha256": "500648f0ebfc40ca06c542624d0b9fe95f66efdb784180725804f9203cb6de98"
+    },
+    "research_contract": {
+      "path": "docs/research/perceptual-degradation-contract-20260803.md",
+      "sha256": "fdec79207fc0fdd2e9cb10aae9f93dd1a17b45e6e56c0c7df8f0e01a1f9fb505"
+    },
+    "runner": {
+      "path": "scripts/perceptual_degradation_source_trait_exact_member_confirmation.py",
+      "sha256": "79fd2668b3c23ad48fe159d03f55bb99ebaaf2c3fc92b847e3aaa1c2bfb39351"
+    },
+    "source_trait_identifiability_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/source-trait-identifiability-plan.json",
+      "sha256": "c15991fbd7062c837db566bb734c5c1bf625fa2cbc5aa5a00983b64d82e28ba3"
+    },
+    "source_trait_metadata_audit_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/source-trait-exact-member-metadata-audit-plan.json",
+      "sha256": "f8b12f6da67b790284aee19aecbfa17581f8f9758e55a5d0cdfeeccb25ab66cc"
+    },
+    "source_trait_metadata_audit_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-source-trait-exact-member-metadata-audit-20260817-001.json",
+      "sha256": "b0f048dcaf73fc2885596cdcff1ce06051f00c41bc3bb5116cb9b7f34377184e"
+    }
+  },
+  "claim_boundary": {
+    "descriptor_observation_is_perceptual_truth": false,
+    "full_objective_complete": false,
+    "metadata_plus_pcm_descriptor_assigns_source_trait": false,
+    "public_cli_changed": false,
+    "public_verdict_enabled": false,
+    "source_trait_manifest_frozen": false,
+    "validation_claim_available": false
+  },
+  "descriptor_contract": {
+    "classification_threshold_frozen": false,
+    "clipped": {
+      "high_magnitude_minimum_ratio": {
+        "denominator": 100,
+        "numerator": 95
+      },
+      "minimum_identical_plateau_frames": 3,
+      "near_flat_maximum_range_lsb": 8388,
+      "near_flat_window_frames": 3,
+      "near_rail_minimum_ratio": {
+        "denominator": 100,
+        "numerator": 99
+      },
+      "reported_exact_measurements": [
+        "exact_rail_sample_count",
+        "near_rail_sample_count",
+        "identical_high_magnitude_plateau_run_count",
+        "identical_high_magnitude_plateau_sample_count",
+        "maximum_identical_high_magnitude_plateau_frames",
+        "near_flat_high_magnitude_window_count"
+      ],
+      "support_event_predicate": "exact_rail_sample_count_gt_zero_or_identical_high_magnitude_plateau_run_count_gt_zero_or_near_flat_high_magnitude_window_count_gt_zero"
+    },
+    "decode": {
+      "command_shape": "ffmpeg_error_only_no_stdin_single_audio_stream_pcm_s32le_stdout",
+      "derived_pcm_destination": "stdout_memory_only",
+      "s24_recovery": "require_low_8_bits_zero_then_arithmetic_shift_right_8"
+    },
+    "integer_pcm_bit_depth": 24,
+    "quiet": {
+      "block_duration_frames": "sample_rate_hz",
+      "classification_threshold_applied": false,
+      "reported_exact_measurements": [
+        "frame_count",
+        "sample_count",
+        "peak_abs_code",
+        "sum_squares",
+        "nonzero_sample_count",
+        "nonzero_frame_count",
+        "one_second_block_count",
+        "active_one_second_block_count",
+        "per_channel_peak_and_sum_squares"
+      ],
+      "reported_display_measurements": [
+        "peak_dbfs_six_decimal_places",
+        "rms_dbfs_six_decimal_places"
+      ],
+      "support_event_predicate": "nonzero_frame_count_gt_zero"
+    }
+  },
+  "members": [
+    {
+      "expected_original": {
+        "bit_depth": 24,
+        "byte_length_maximum": 220200960,
+        "byte_length_minimum": 188743680,
+        "channel_count": 2,
+        "codec_name": "pcm_s24le",
+        "duration_seconds_maximum": 345.7,
+        "duration_seconds_minimum": 345.4,
+        "extension": "wav",
+        "format_name": "wav",
+        "sample_rate_hz": 96000
+      },
+      "licence": "CC0 1.0",
+      "member_id": "freesound_sound_426894",
+      "provider_download_rule": "authenticated_original_download_only",
+      "provider_original_only": true,
+      "recommended_attribution": "Sound 426894 by danner on Freesound.org, CC0 1.0",
+      "source_url": "https://freesound.org/people/danner/sounds/426894/",
+      "trait_id": "quiet"
+    },
+    {
+      "expected_original": {
+        "bit_depth": 24,
+        "byte_length_maximum": 57671680,
+        "byte_length_minimum": 41943040,
+        "channel_count": 1,
+        "codec_name": "flac",
+        "duration_seconds_maximum": 183.8,
+        "duration_seconds_minimum": 183.5,
+        "extension": "flac",
+        "format_name": "flac",
+        "sample_rate_hz": 192000
+      },
+      "licence": "CC0 1.0",
+      "member_id": "freesound_sound_610933",
+      "provider_download_rule": "authenticated_original_download_only",
+      "provider_original_only": true,
+      "recommended_attribution": "Sound 610933 by unfa on Freesound.org, CC0 1.0",
+      "source_url": "https://freesound.org/people/unfa/sounds/610933/",
+      "trait_id": "clipped"
+    }
+  ],
+  "plan_id": "perceptual-degradation-source-trait-exact-member-confirmation-20260818-001",
+  "publication_boundary": {
+    "path_free_aggregate_descriptor_observations_allowed": true,
+    "per_reference_encoded_or_pcm_hashes_allowed": false,
+    "perceptual_claims_allowed": false,
+    "private_paths_allowed": false,
+    "provider_original_bytes_allowed": false,
+    "trait_assignments_allowed": false,
+    "validation_claims_or_verdicts_allowed": false
+  },
+  "purpose": "Acquire only the two metadata-qualified Freesound provider originals and execute deterministic score-free integer-PCM descriptor measurements twice without retaining decoded PCM, assigning source traits, allocating a manifest or issuing perceptual claims.",
+  "resources": {
+    "maximum_workers": 1,
+    "minimum_free_disk_gib": 15,
+    "private_replay_count": 2,
+    "private_replays_must_be_byte_identical": true,
+    "retain_decoded_or_derived_pcm": false,
+    "retain_provider_originals_privately": true
+  },
+  "schema_version": 1,
+  "state": "two_exact_provider_originals_and_score_free_integer_pcm_descriptors_frozen_before_audio_access",
+  "toolchain": {
+    "ffmpeg_sha256": "d1dffe4871ee17878b18e3f305f650265c5b06cbab8007df5bc4dccca71a672f",
+    "ffmpeg_version": "ffmpeg version 9.0 Copyright (c) 2000-2026 the FFmpeg developers",
+    "ffprobe_sha256": "e07d420c7a2db7cc463711d5a92da22004236284527b659cc673f5f7a877046a",
+    "ffprobe_version": "ffprobe version 9.0 Copyright (c) 2007-2026 the FFmpeg developers"
+  }
+}
