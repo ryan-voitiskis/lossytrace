@@ -1062,3 +1062,14 @@ TinySOL oboe rows chose the ordinary mezzo-forte D-sharp-4 member for the tonal
 non-sparse contrast. The private TinySOL metadata replay reproduced the
 selection. Both remain candidates pending two frozen descriptor replays; no
 trait, source manifest, partition, perceptual truth or verdict was assigned.
+
+The bounded
+[`sparse/tonal exact-member confirmation plan`](perceptual-degradation-source-trait-sparse-tonal-exact-member-confirmation-plan-20260818.md)
+now freezes the only permitted audio-access successor before either selected
+member is opened. The future one-worker runner accepts only the exact Freesound
+856645 original and exact selected TinySOL oboe archive member, measures every
+channel twice under the already-frozen descriptor, retains no derived PCM, and
+publishes no private path or encoded/PCM hash. Abstention or class mismatch is
+predeclared as a negative result without threshold changes, substitution, trait
+assignment or manifest allocation. The runner has so far been exercised only on
+synthetic integer-PCM fixtures; no candidate audio has been opened.
