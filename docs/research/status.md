@@ -1012,3 +1012,25 @@ remain non-independent, and relationships and partition allocation remain
 unfrozen. The retained ODAQ 16-of-17-gate technical negative is unchanged; no
 codec, perceptual metric, listener response, sealed evidence, no-reference
 training, final-validation claim or public verdict was opened or produced.
+
+A deterministic metadata-only
+[`source-trait adjudication and relationship audit`](perceptual-degradation-source-trait-adjudication-relationship-20260818.md)
+now closes the next policy gate without reading another audio sample. The
+observed quiet descriptor cannot receive a numeric cutoff selected after the
+value was seen. The naturally clipped candidate has pre-access provenance and
+a predeclared technical support event, making it ready only for a separately
+authorized assignment gate; partition support remains absent. TinySOL exposes
+2,273 eligible exact-member candidates inside one conservative partition
+group, but metadata alone establishes neither a sparse non-tonal member nor a
+tonal non-sparse member. Sparse and tonal descriptor rules, thresholds,
+non-overlap constraints and bounded member selection must be frozen before any
+candidate audio is read. No exact member was selected, trait assigned, manifest
+frozen or partition allocated.
+
+The deterministic
+[`objective completion-audit adjudication and relationship refresh`](perceptual-degradation-objective-completion-audit-adjudication-relationship-refresh-20260818.md)
+reconciles that policy checkpoint. Completion remains four of fourteen. The
+retained ODAQ technical negative is unchanged, the public CLI remains
+verdict-free, and no new audio, codec, perceptual metric, listener response,
+sealed evidence, no-reference training or validation claim was opened or
+produced.
