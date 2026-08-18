@@ -1034,3 +1034,21 @@ retained ODAQ technical negative is unchanged, the public CLI remains
 verdict-free, and no new audio, codec, perceptual metric, listener response,
 sealed evidence, no-reference training or validation claim was opened or
 produced.
+
+A score-blind
+[`sparse/tonal descriptor freeze`](perceptual-degradation-source-trait-sparse-tonal-descriptor-20260818.md)
+now preregisters conservative time-occupancy, spectral-concentration,
+abstention and non-overlap rules before candidate access. The existing
+sparse-tonal overlap, sparse non-tonal and tonal non-sparse synthetic fixtures
+all pass their structural gates. These synthetic cases are not source evidence:
+no exact member was selected or read and no trait was assigned. TinySOL may
+supply the tonal non-sparse side, but its pitched-note metadata does not
+establish a sparse non-tonal contrast; that provider route remains the next
+metadata-only source gate.
+
+The deterministic
+[`objective completion-audit sparse/tonal refresh`](perceptual-degradation-objective-completion-audit-sparse-tonal-descriptor-refresh-20260818.md)
+reconciles the descriptor freeze without scientific promotion. Completion
+remains four of fourteen, the retained ODAQ technical negative is unchanged,
+and manifest allocation, human truth, metrics, no-reference work and public
+verdicts remain closed.

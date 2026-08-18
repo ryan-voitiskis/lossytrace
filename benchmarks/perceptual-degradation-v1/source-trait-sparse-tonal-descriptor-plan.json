@@ -1,0 +1,91 @@
+{
+  "authorization": {
+    "actual_or_retained_audio_access_authorized": false,
+    "bound_committed_evidence_read_authorized": true,
+    "exact_member_selection_authorized": false,
+    "human_collection_authorized": false,
+    "no_reference_training_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "provider_processed_condition_or_score_access_authorized": false,
+    "public_verdict_enabled": false,
+    "sealed_evidence_access_authorized": false,
+    "source_manifest_allocation_authorized": false,
+    "source_trait_assignment_authorized": false,
+    "synthetic_fixture_execution_authorized": true
+  },
+  "bindings": {
+    "adjudication_relationship_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-source-trait-adjudication-relationship-20260818-001.json",
+      "sha256": "47749055fcb456153a272cd82d844d14af8760de926700a389311f7b8ca813c5"
+    },
+    "identifiability_implementation": {
+      "path": "scripts/perceptual_degradation_source_trait_identifiability.py",
+      "sha256": "dc1144c7502497ffb0b883db709784e880cb4abaf8a5c678d34c9593dbf79cf2"
+    },
+    "identifiability_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/source-trait-identifiability-plan.json",
+      "sha256": "c15991fbd7062c837db566bb734c5c1bf625fa2cbc5aa5a00983b64d82e28ba3"
+    },
+    "identifiability_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-source-trait-identifiability-20260814-001.json",
+      "sha256": "e77bb0bb453941bdf47d1d9062748b27bbae686d781fb7f17efc734e5e632e20"
+    }
+  },
+  "claim_boundary": {
+    "descriptor_class_is_perceptual_truth": false,
+    "exact_member_selected": false,
+    "full_objective_complete": false,
+    "public_cli_changed": false,
+    "public_verdict_enabled": false,
+    "source_trait_assigned": false,
+    "source_trait_manifest_frozen": false,
+    "synthetic_fixture_is_source_evidence": false
+  },
+  "descriptor_contract": {
+    "channel_policy": "measure_each_channel_and_require_all_supported_channels_to_agree",
+    "classification_states": [
+      "sparse",
+      "non_sparse",
+      "tonal",
+      "non_tonal",
+      "overlap",
+      "abstain"
+    ],
+    "minimum_supported_spectral_frame_count": 3,
+    "non_overlap_rules": {
+      "sparse_non_tonal": "sparse_and_non_tonal_and_not_tonal",
+      "tonal_non_sparse": "tonal_and_non_sparse_and_not_sparse"
+    },
+    "spectral_concentration": {
+      "active_frame_power_ratio_to_maximum": "0.001000000",
+      "fft_frames": 1024,
+      "flatness_power_floor_ratio": "0.000000000001",
+      "hop_frames": 512,
+      "non_tonal_maximum_top_8_bin_power_share": "0.200000000",
+      "non_tonal_minimum_median_spectral_flatness": "0.500000000",
+      "tonal_maximum_median_spectral_flatness": "0.100000000",
+      "tonal_minimum_top_8_bin_power_share": "0.600000000",
+      "window": "periodic_hann",
+      "zero_and_nyquist_bins_excluded": true
+    },
+    "time_occupancy": {
+      "active_block_power_ratio_to_maximum": "0.001000000",
+      "equal_duration_block_count": 10,
+      "non_sparse_minimum_active_block_count": 8,
+      "sparse_maximum_active_block_count": 2
+    },
+    "uncertainty_policy": "values_between_sparse_non_sparse_or_tonal_non_tonal_bounds_abstain",
+    "zero_support_policy": "abstain"
+  },
+  "plan_id": "perceptual-degradation-source-trait-sparse-tonal-descriptor-20260818-001",
+  "purpose": "Freeze conservative time-occupancy, spectral-concentration, abstention and non-overlap rules before any sparse or tonal candidate member is selected or read, then replay only the already-declared synthetic fixtures.",
+  "resources": {
+    "fresh_temporary_directories": true,
+    "maximum_workers": 1,
+    "minimum_free_disk_gib": 15,
+    "replay_count": 2,
+    "retain_generated_audio": false
+  },
+  "schema_version": 1,
+  "state": "score_blind_sparse_tonal_descriptor_and_non_overlap_rules_frozen_before_candidate_access"
+}
