@@ -1052,3 +1052,13 @@ reconciles the descriptor freeze without scientific promotion. Completion
 remains four of fourteen, the retained ODAQ technical negative is unchanged,
 and manifest allocation, human truth, metrics, no-reference work and public
 verdicts remain closed.
+
+A bounded metadata-only
+[`sparse/tonal exact-member selection`](perceptual-degradation-source-trait-sparse-tonal-exact-member-selection-20260818.md)
+now nominates two exact candidates without reading audio. Freesound 856645 is
+a CC0 direct-to-REAPER, unprocessed studio finger snap for the sparse non-tonal
+contrast. A deterministic fixed-seed selection over eleven eligible natural
+TinySOL oboe rows chose the ordinary mezzo-forte D-sharp-4 member for the tonal
+non-sparse contrast. The private TinySOL metadata replay reproduced the
+selection. Both remain candidates pending two frozen descriptor replays; no
+trait, source manifest, partition, perceptual truth or verdict was assigned.

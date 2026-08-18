@@ -1,0 +1,76 @@
+{
+  "authorization": {
+    "actual_or_retained_audio_access_authorized": false,
+    "exact_member_metadata_selection_authorized": true,
+    "human_collection_authorized": false,
+    "no_reference_training_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "provider_processed_condition_or_score_access_authorized": false,
+    "public_and_provider_metadata_read_authorized": true,
+    "public_verdict_enabled": false,
+    "sealed_evidence_access_authorized": false,
+    "source_manifest_allocation_authorized": false,
+    "source_trait_assignment_authorized": false
+  },
+  "bindings": {
+    "descriptor_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-source-trait-sparse-tonal-descriptor-20260818-001.json",
+      "sha256": "dd98911defc3dcdc3233db3a67e253295bfa0e874cc132d4880c342a72078936"
+    },
+    "tinysol_path_free_observation": {
+      "path": "research/sources/evidence/tinysol-6.0-observed-20260802.json",
+      "sha256": "62d2c3d3b63c4b3ed47c3f23885067650b3e17bc5e1ec1ce7606e03e327f47a5"
+    }
+  },
+  "claim_boundary": {
+    "candidate_metadata_is_descriptor_confirmation": false,
+    "candidate_metadata_is_trait_truth": false,
+    "full_objective_complete": false,
+    "public_cli_changed": false,
+    "public_verdict_enabled": false,
+    "source_trait_manifest_frozen": false
+  },
+  "freesound_candidate": {
+    "attribution": "Sound 856645 by BeaconStudio on Freesound.org, CC0 1.0",
+    "bit_depth": 24,
+    "channel_count": 2,
+    "duration_seconds": "0.265",
+    "exact_member_id": "freesound_sound_856645",
+    "licence": "CC0 1.0",
+    "original_upload_type": "wav",
+    "provider_record_url": "https://freesound.org/people/BeaconStudio/sounds/856645/",
+    "provenance": "studio_finger_snap_single_dynamic_microphone_direct_to_reaper",
+    "sample_rate_hz": 44100,
+    "transformation_history": "no_processing_done",
+    "use": "sparse_non_tonal_candidate"
+  },
+  "plan_id": "perceptual-degradation-source-trait-sparse-tonal-exact-member-selection-20260818-001",
+  "purpose": "Select one exact sparse non-tonal metadata candidate and one exact tonal non-sparse metadata candidate without reading audio, using permissive rights, lossless original provenance, transformation records and a deterministic TinySOL rule frozen before descriptor access.",
+  "resources": {
+    "maximum_workers": 1,
+    "minimum_free_disk_gib": 15,
+    "new_audio_download_bytes": 0
+  },
+  "schema_version": 1,
+  "state": "metadata_only_sparse_tonal_exact_member_selection_frozen_before_audio_access",
+  "tinysol_selection": {
+    "candidate_filter": {
+      "dynamics": "mf",
+      "instance_id": "0",
+      "instrument_abbreviation": "Ob",
+      "needed_digital_retuning": "FALSE",
+      "pitch_id_inclusive_maximum": 72,
+      "pitch_id_inclusive_minimum": 60,
+      "resampled_member_excluded": true,
+      "technique_abbreviation": "ord"
+    },
+    "candidate_row_count": 11,
+    "licence": "CC BY 4.0",
+    "rank_rule": "lexicographically_minimum_sha256_of_seed_then_exact_metadata_path",
+    "rank_seed": "lossytrace-sparse-tonal-selection-20260818-001",
+    "selected_exact_member_id": "tinysol_6_0__ob_ord_dsharp4_mf_n_n",
+    "selected_metadata_path": "Winds/Oboe/ordinario/Ob-ord-D#4-mf-N-N.wav",
+    "selected_rank_sha256": "3646d942fda6b77ef020eee282d90023e6a5050506bff36f46d2ed79f9a98397",
+    "use": "tonal_non_sparse_candidate"
+  }
+}
