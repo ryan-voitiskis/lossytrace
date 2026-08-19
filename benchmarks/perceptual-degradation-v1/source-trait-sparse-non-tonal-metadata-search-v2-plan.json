@@ -1,0 +1,143 @@
+{
+  "authorization": {
+    "browser_authentication_state_verification_authorized": true,
+    "exact_member_metadata_nomination_authorized": true,
+    "human_collection_authorized": false,
+    "metadata_only_network_research_authorized": true,
+    "no_reference_training_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "provider_processed_condition_or_score_access_authorized": false,
+    "public_and_provider_metadata_read_authorized": true,
+    "public_verdict_enabled": false,
+    "sealed_evidence_access_authorized": false,
+    "source_manifest_allocation_authorized": false,
+    "source_trait_assignment_authorized": false
+  },
+  "bindings": {
+    "current_objective_audit": {
+      "path": "research/toolchains/evidence/perceptual-degradation-objective-completion-audit-20260819-015.json",
+      "sha256": "ab0a0fb85dfa7588ab7f8990822199ee27edd92b2c8d29798e832633def7693a"
+    },
+    "descriptor_implementation": {
+      "path": "scripts/perceptual_degradation_source_trait_sparse_tonal_descriptor.py",
+      "sha256": "90adfa2dec5ad3bd09bdb66094c964fbddd0779765dda54a72fc8b72de557299"
+    },
+    "descriptor_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/source-trait-sparse-tonal-descriptor-plan.json",
+      "sha256": "8b8649fe65ba151f906a544ff08271f2563224e54610156770edcc731f23bdbf"
+    },
+    "failed_exact_member_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-source-trait-sparse-tonal-exact-member-confirmation-20260818-001.json",
+      "sha256": "4299d28d135531ac0d6535052e3cc17f800ea453e33029d2c81350eeb0496fc0"
+    },
+    "predecessor_metadata_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/source-trait-sparse-non-tonal-successor-metadata-audit-plan.json",
+      "sha256": "15948b5f9b49ec79e56be99bad2df6f4d0a5b7f3d18e73190accd66695d848a7"
+    },
+    "predecessor_metadata_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-source-trait-sparse-non-tonal-successor-metadata-audit-20260819-001.json",
+      "sha256": "fb9ac27c77bf1bb58ab88dfde843fdb925688eaa9fdd1fdcf054738ec24a0fbe"
+    },
+    "research_contract": {
+      "path": "docs/research/perceptual-degradation-contract-20260803.md",
+      "sha256": "fdec79207fc0fdd2e9cb10aae9f93dd1a17b45e6e56c0c7df8f0e01a1f9fb505"
+    }
+  },
+  "candidate_eligibility": {
+    "all_channel_capture_chain_must_be_explicit": true,
+    "allowed_licences": [
+      "CC0 1.0",
+      "CC BY 4.0"
+    ],
+    "allowed_transformations": [
+      "none",
+      "declared_trim_only"
+    ],
+    "descriptor_class": "sparse_non_tonal_contrast",
+    "disallowed_transformations": [
+      "denoise",
+      "dynamics",
+      "fade",
+      "normalization",
+      "pitch_change",
+      "rendered_or_synthesized_sound_design",
+      "reverb"
+    ],
+    "exact_transformation_history_must_be_explicit": true,
+    "excluded_exact_member_ids": [
+      "freesound_sound_856645",
+      "freesound_sound_866967",
+      "freesound_sound_273338",
+      "freesound_sound_710084",
+      "freesound_sound_73385",
+      "freesound_sound_728514"
+    ],
+    "minimum_duration_seconds": "2.000",
+    "natural_waveform_intent_must_be_explicit": true,
+    "original_lossless_provider_wav_lineage_must_be_explicit": true,
+    "single_natural_transient_must_be_supported_by_metadata": true
+  },
+  "claim_boundary": {
+    "candidate_metadata_is_descriptor_confirmation": false,
+    "candidate_metadata_is_perceptual_truth": false,
+    "candidate_metadata_is_source_trait_truth": false,
+    "full_objective_complete": false,
+    "public_cli_changed": false,
+    "public_verdict_enabled": false,
+    "source_trait_manifest_frozen": false
+  },
+  "media_boundary": {
+    "audio_download_authorized": false,
+    "audio_element_or_preview_access_authorized": false,
+    "candidate_detail_page_browser_render_authorized": false,
+    "descriptor_execution_authorized": false,
+    "maximum_text_response_bytes": 2097152,
+    "permitted_primary_record_content_types": [
+      "text/html",
+      "application/json"
+    ],
+    "playback_authorized": false,
+    "waveform_or_spectrogram_asset_access_authorized": false
+  },
+  "plan_id": "perceptual-degradation-source-trait-sparse-non-tonal-metadata-search-v2-20260819-001",
+  "purpose": "Freeze a bounded primary-record metadata search for one exact sparse non-tonal successor without opening candidate audio, previews, waveform assets or descriptor evidence.",
+  "resources": {
+    "fresh_temporary_directories": true,
+    "maximum_workers": 1,
+    "minimum_free_disk_gib": 15,
+    "retain_network_response_bodies": false
+  },
+  "result_policy": {
+    "bounded_negative_is_valid": true,
+    "eligible_member_requires_new_committed_audio_checkpoint": true,
+    "first_fully_eligible_exact_member_is_nominated": true,
+    "member_substitution_after_audio_observation_allowed": false,
+    "metadata_nomination_is_trait_assignment": false,
+    "search_stops_after_first_fully_eligible_exact_member": true,
+    "threshold_change_allowed": false
+  },
+  "schema_version": 1,
+  "search_protocol": {
+    "discovery_query_count_maximum": 8,
+    "discovery_snippets_are_evidence": false,
+    "exact_primary_record_count_maximum": 20,
+    "primary_record_hosts": [
+      "freesound.org",
+      "zenodo.org"
+    ],
+    "query_order": [
+      "site:freesound.org/people/ sounds \"no processing\" \"Sound Devices\" clap impact",
+      "site:freesound.org/people/ sounds unprocessed \"Zoom H\" knock impact",
+      "site:freesound.org/people/ sounds unprocessed \"Sound Devices\" clap impact",
+      "site:freesound.org/people/ sounds \"no processing\" Tascam pop knock",
+      "site:freesound.org/people/ sounds raw \"Sony PCM\" clap impact",
+      "site:freesound.org/people/ sounds unprocessed recorder single transient wav",
+      "site:zenodo.org \"CC BY 4.0\" WAV microphone \"isolated sound\" acquisition",
+      "site:zenodo.org CC0 WAV recorder raw impact dataset"
+    ],
+    "result_order_policy": "inspect_primary_record_urls_in_discovery_result_order_and_stop_at_the_first_fully_eligible_member",
+    "search_engine_use": "discovery_only",
+    "text_only_fetch_policy": "retrieve_only_primary_record_html_or_json_without_loading_referenced_media_assets"
+  },
+  "state": "bounded_metadata_only_sparse_non_tonal_successor_search_frozen_before_query_execution"
+}

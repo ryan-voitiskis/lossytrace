@@ -1102,6 +1102,16 @@ designed-impact intent prevented eligibility. No preview, download, descriptor,
 replacement, trait assignment or manifest allocation occurred. The next gate
 remains an exact-member metadata search under the same frozen prerequisites.
 
+A separately frozen
+[`sparse non-tonal metadata search v2`](perceptual-degradation-source-trait-sparse-non-tonal-metadata-search-v2-plan-20260819.md)
+now bounds that next gate before new discovery. It permits eight declared
+discovery queries and at most twenty primary Freesound or Zenodo exact-record
+inspections, stops at the first fully eligible member, excludes all six
+consumed exact members, and treats discovery snippets as non-evidence. Only
+text or JSON metadata may be retrieved; candidate audio, preview players,
+waveform assets, downloads and descriptor execution remain closed. No new
+candidate has yet been inspected or nominated under this checkpoint.
+
 The deterministic
 [`objective completion-audit sparse-successor metadata refresh`](perceptual-degradation-objective-completion-audit-sparse-successor-metadata-refresh-20260819.md)
 records those rejections without treating them as source evidence. Completion
