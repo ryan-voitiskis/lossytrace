@@ -1167,3 +1167,14 @@ relationships and manifest allocation remain missing. The retained ODAQ
 technical negative is unchanged, and codecs, perceptual metrics, listening,
 sealed evidence, no-reference work and the public verdict remain closed. The
 next source gate is a separately frozen metadata-only successor search.
+
+The separately bounded
+[`sparse non-tonal metadata search v3`](perceptual-degradation-source-trait-sparse-non-tonal-metadata-search-v3-plan-20260819.md)
+is now frozen before query execution. It excludes all fifteen exact Freesound
+members consumed by earlier checkpoints and preserves both failed sparse
+candidates. Eight declared discovery queries and at most twenty exact primary
+records may be inspected as text or JSON only. The unchanged descriptor and all
+audio, preview, waveform, download, playback, trait-assignment, manifest and
+public-verdict surfaces remain closed. The narrower metadata proxy requires one
+broadband natural transient with recording context in a five-to-sixty-second
+provider-original WAV; it is not descriptor or perceptual evidence.
