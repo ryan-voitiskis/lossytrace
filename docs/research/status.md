@@ -1092,3 +1092,19 @@ negative is unchanged. The next bounded source gate is a new metadata-only
 sparse non-tonal successor checkpoint. Codec generation, perceptual metrics,
 listening responses, sealed evidence, no-reference work, validation claims and
 public verdicts remain closed.
+
+A new metadata-only
+[`sparse non-tonal successor audit`](perceptual-degradation-source-trait-sparse-non-tonal-successor-metadata-audit-20260819.md)
+examined five exact CC0 Freesound records after the snap abstention. All were
+rejected before audio access: disclosed normalization/fades, an uncertain
+per-channel capture chain, absent or ambiguous transformation history, or
+designed-impact intent prevented eligibility. No preview, download, descriptor,
+replacement, trait assignment or manifest allocation occurred. The next gate
+remains an exact-member metadata search under the same frozen prerequisites.
+
+The deterministic
+[`objective completion-audit sparse-successor metadata refresh`](perceptual-degradation-objective-completion-audit-sparse-successor-metadata-refresh-20260819.md)
+records those rejections without treating them as source evidence. Completion
+remains four of fourteen, the independent sparse/tonal pair remains missing,
+and the retained ODAQ technical negative is unchanged. The public CLI remains
+verdict-free.
