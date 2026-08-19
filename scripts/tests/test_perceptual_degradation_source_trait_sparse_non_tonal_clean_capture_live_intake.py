@@ -96,7 +96,7 @@ class CleanCaptureLiveIntakeTest(unittest.TestCase):
                 MODULE.load_private_live_manifest(synthetic, self.plan)
 
     def test_repository_manifest_and_output_paths_fail_closed(self) -> None:
-        with tempfile.TemporaryDirectory(dir=ROOT / "target") as directory:
+        with tempfile.TemporaryDirectory(dir=ROOT) as directory:
             manifest = Path(directory) / "manifest.json"
             manifest.write_bytes(self.manifest_bytes)
             with self.assertRaisesRegex(ValueError, "outside the repository"):
