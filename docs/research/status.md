@@ -1224,3 +1224,14 @@ technical negative is unchanged, and codecs, perceptual metrics, listening,
 sealed evidence, no-reference work and the public verdict remain closed. The
 next source gate is a separately frozen metadata-only v4 search for a cleanly
 isolated broadband one-shot with explicit quiet context and provenance.
+
+That
+[`sparse non-tonal metadata search v4`](perceptual-degradation-source-trait-sparse-non-tonal-metadata-search-v4-plan-20260819.md)
+is now frozen before query execution. It excludes all twenty-six exact members
+consumed by earlier checkpoints and permits eight declared discovery queries
+and at most twenty distinct primary Freesound records. The unchanged descriptor
+is not executed. The narrower metadata proxy requires one ten-to-sixty-second
+provider-original lossless broadband physical one-shot with explicit quiet
+context before and after the event, exact capture provenance, permissive rights
+and no processing beyond a declared trim. All audio, preview, waveform,
+playback, trait-assignment, manifest and public-verdict surfaces remain closed.
