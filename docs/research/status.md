@@ -1203,3 +1203,24 @@ keeps completion at four of fourteen. The new candidate is unmeasured, the
 independent sparse/tonal pair remains missing, source traits and relationships
 remain unassigned, no manifest is allocated, the retained ODAQ technical
 negative is unchanged and the public CLI remains verdict-free.
+
+The frozen
+[`sparse non-tonal exact-member confirmation v3`](perceptual-degradation-source-trait-sparse-non-tonal-exact-member-confirmation-v3-20260819.md)
+acquired only the exact Freesound 476736 provider-original WAV through the
+official authenticated route. Its stereo 48 kHz signed 24-bit integer-PCM
+container matched the precommitted boundary and two private descriptor reports
+were byte-identical, but the candidate abstained under the unchanged sparse
+non-tonal descriptor. No playback occurred, no derived PCM was retained, the
+candidate was not replaced and no threshold changed. An independent audit
+confirmed the exact path-, measurement- and audio-hash-redacted public result.
+
+The deterministic
+[`objective completion-audit sparse-successor confirmation v3 refresh`](perceptual-degradation-objective-completion-audit-sparse-successor-confirmation-v3-refresh-20260819.md)
+preserves that rigorous negative without promotion. Completion remains four of
+fourteen. Three exact sparse non-tonal candidates have now failed the frozen
+descriptor, so the independent sparse/tonal pair, source-trait assignments,
+relationships and manifest allocation remain missing. The retained ODAQ
+technical negative is unchanged, and codecs, perceptual metrics, listening,
+sealed evidence, no-reference work and the public verdict remain closed. The
+next source gate is a separately frozen metadata-only v4 search for a cleanly
+isolated broadband one-shot with explicit quiet context and provenance.

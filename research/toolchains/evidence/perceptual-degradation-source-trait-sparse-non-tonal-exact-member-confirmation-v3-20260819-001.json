@@ -1,0 +1,43 @@
+{
+  "claim_boundary": {
+    "descriptor_class_is_perceptual_truth": false,
+    "full_objective_complete": false,
+    "metadata_eligibility_is_descriptor_evidence": false,
+    "public_cli_changed": false,
+    "public_verdict_enabled": false,
+    "source_trait_assigned": false,
+    "source_trait_manifest_frozen": false,
+    "technical_descriptor_confirmation_is_listening_evidence": false
+  },
+  "decision": {
+    "candidate_replacement_performed": false,
+    "descriptor_confirmation_complete": true,
+    "descriptor_confirmation_passed": false,
+    "source_manifest_allocated": false,
+    "source_trait_assignment_complete": false,
+    "terminal_outcome": "abstained",
+    "thresholds_changed_after_observation": false
+  },
+  "execution": {
+    "decoded_or_derived_pcm_retained": false,
+    "exact_member_count": 1,
+    "maximum_workers": 1,
+    "minimum_free_disk_gib_preserved": 15,
+    "private_replay_count": 2,
+    "private_reports_byte_identical": true
+  },
+  "implementation_sha256": "4d212c0d6e382c3d560b9814b07840b3742258e3d35899f66ec4638c3a938692",
+  "nominated_exact_member_id": "freesound_sound_476736",
+  "plan_id": "perceptual-degradation-source-trait-sparse-non-tonal-exact-member-confirmation-v3-20260819-001",
+  "plan_sha256": "2bcf1e53e55947e26540134b0fc6bbb02add58d8323ca4dc6678d2f3ecae83f8",
+  "publication_boundary": {
+    "audio_exposed": false,
+    "channel_measurements_exposed": false,
+    "encoded_or_pcm_hashes_exposed": false,
+    "private_paths_exposed": false,
+    "provider_scores_or_processed_conditions_exposed": false
+  },
+  "report_id": "perceptual-degradation-source-trait-sparse-non-tonal-exact-member-confirmation-v3-20260819-001",
+  "schema_version": 1,
+  "state": "one_exact_sparse_non_tonal_successor_v3_score_free_descriptor_replays_complete"
+}

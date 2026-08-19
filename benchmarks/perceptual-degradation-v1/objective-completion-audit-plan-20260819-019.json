@@ -1,0 +1,67 @@
+{
+  "authorization": {
+    "bound_committed_evidence_read_authorized": true,
+    "exact_member_confirmation_reconciliation_authorized": true,
+    "further_audio_sample_access_authorized": false,
+    "human_collection_authorized": false,
+    "no_reference_training_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "public_verdict_enabled": false,
+    "source_manifest_allocation_authorized": false,
+    "source_trait_assignment_authorized": false,
+    "synthetic_audit_execution_authorized": true
+  },
+  "bindings": {
+    "confirmation_audit": {
+      "path": "research/toolchains/evidence/perceptual-degradation-source-trait-sparse-non-tonal-exact-member-confirmation-v3-audit-20260819-001.json",
+      "sha256": "fd611cc7857e2d63e4191c98a22b41b41174acfb6ccfa3ea0f42c4527e870a0b"
+    },
+    "confirmation_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/source-trait-sparse-non-tonal-exact-member-confirmation-v3-plan.json",
+      "sha256": "2bcf1e53e55947e26540134b0fc6bbb02add58d8323ca4dc6678d2f3ecae83f8"
+    },
+    "confirmation_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-source-trait-sparse-non-tonal-exact-member-confirmation-v3-20260819-001.json",
+      "sha256": "4b1d4e4592bb8b0c65c90c1bc1aa93661c6e92fd12f99adad344b5d56af5c254"
+    },
+    "confirmation_runner": {
+      "path": "scripts/perceptual_degradation_source_trait_sparse_non_tonal_exact_member_confirmation_v3.py",
+      "sha256": "4d212c0d6e382c3d560b9814b07840b3742258e3d35899f66ec4638c3a938692"
+    },
+    "confirmation_validator": {
+      "path": "scripts/validate_perceptual_degradation_source_trait_sparse_non_tonal_exact_member_confirmation_v3.py",
+      "sha256": "a77ab9083117a9bc840247baa4ad3eb6bece4488408ef60dcd483b07766bb44c"
+    },
+    "predecessor_audit_implementation": {
+      "path": "scripts/perceptual_degradation_objective_completion_audit_v18.py",
+      "sha256": "7398344950a7c08b632f9a2e8980fcad1f029344dcb68ffeaacb286c5cf40edb"
+    },
+    "predecessor_audit_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/objective-completion-audit-plan-20260819-018.json",
+      "sha256": "64741e4f9bc319448316ffff8a57f25f0c37ff6feb84e7288a574e2e0ad32080"
+    },
+    "predecessor_audit_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-objective-completion-audit-20260819-018.json",
+      "sha256": "e09859d129bbcba477a051ed1ea7a395bdbe269a0f1bc6899567ad86f7eeb505"
+    }
+  },
+  "claim_boundary": {
+    "descriptor_class_is_perceptual_truth": false,
+    "full_objective_complete": false,
+    "one_failed_candidate_may_be_reclassified": false,
+    "public_cli_changed": false,
+    "public_verdict_enabled": false,
+    "source_trait_assigned": false,
+    "source_trait_manifest_frozen": false
+  },
+  "completion_policy": {
+    "all_requirements_must_be_satisfied": true,
+    "failed_exact_member_must_be_preserved": true,
+    "source_trait_manifest_requires_assignments_relationships_and_allocation": true,
+    "technical_descriptor_confirmation_is_not_perceptual_truth": true
+  },
+  "plan_id": "perceptual-degradation-objective-completion-audit-20260819-019",
+  "purpose": "Reconcile the score-blind sparse non-tonal exact-member v3 abstention and its independently audited redacted projection without changing thresholds, substituting the candidate, assigning a trait, allocating a manifest or promoting technical evidence to perceptual truth.",
+  "schema_version": 1,
+  "state": "score_blind_completion_audit_refresh_after_sparse_non_tonal_exact_member_v3_abstention"
+}
