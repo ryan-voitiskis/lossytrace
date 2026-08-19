@@ -1254,3 +1254,13 @@ independent pair, assignments, relationships and manifest remain missing. The
 next meaningful source decision is a separately authorized controlled-source
 route or an objective-level rigorous negative; this checkpoint authorizes
 neither, and the public CLI remains verdict-free.
+
+A precise
+[`sparse non-tonal clean-capture acquisition specification`](perceptual-degradation-source-trait-sparse-non-tonal-clean-capture-acquisition-spec-20260819.md)
+is now frozen for that materially different route. It requires one safe
+balloon-pop or wooden-clapper event in a 15-30-second original 24-bit WAV, five
+seconds of quiet context on both sides, complete per-channel capture logging,
+permissive rights, exact identity and no processing. Metadata acceptance is
+fail-closed and must precede a separately committed exact-member checkpoint.
+The specification authorizes no outreach, payment, collection, preview,
+download, audio access, trait assignment, manifest allocation or verdict.

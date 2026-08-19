@@ -1,0 +1,135 @@
+{
+  "authorization": {
+    "audio_access_authorized": false,
+    "collection_authorized": false,
+    "external_communication_authorized": false,
+    "metadata_first_acceptance_design_authorized": true,
+    "payment_or_purchase_authorized": false,
+    "public_verdict_enabled": false,
+    "source_manifest_allocation_authorized": false,
+    "source_trait_assignment_authorized": false,
+    "specification_authoring_authorized": true
+  },
+  "bindings": {
+    "current_objective_audit": {
+      "path": "research/toolchains/evidence/perceptual-degradation-objective-completion-audit-20260819-020.json",
+      "sha256": "4f678d950df185def677cb533f8e04ac6831ad337ca515e7870b8357d8e64177"
+    },
+    "descriptor_implementation": {
+      "path": "scripts/perceptual_degradation_source_trait_sparse_tonal_descriptor.py",
+      "sha256": "90adfa2dec5ad3bd09bdb66094c964fbddd0779765dda54a72fc8b72de557299"
+    },
+    "descriptor_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/source-trait-sparse-tonal-descriptor-plan.json",
+      "sha256": "8b8649fe65ba151f906a544ff08271f2563224e54610156770edcc731f23bdbf"
+    },
+    "metadata_v4_negative": {
+      "path": "research/toolchains/evidence/perceptual-degradation-source-trait-sparse-non-tonal-metadata-search-v4-20260819-001.json",
+      "sha256": "8692e22eab97ebf13f3522808828d77ae9b31497b2c8bed0f3b2a1935cdd50e1"
+    },
+    "research_contract": {
+      "path": "docs/research/perceptual-degradation-contract-20260803.md",
+      "sha256": "fdec79207fc0fdd2e9cb10aae9f93dd1a17b45e6e56c0c7df8f0e01a1f9fb505"
+    }
+  },
+  "capture_specification": {
+    "accepted_event_families": [
+      "single_balloon_pop",
+      "single_wooden_clapper_impact"
+    ],
+    "channel_policy": "mono_preferred_or_stereo_with_complete_independent_chain_log_for_every_channel",
+    "duration_seconds_maximum": "30.000",
+    "duration_seconds_minimum": "15.000",
+    "event_count": 1,
+    "location_policy": "quiet_controlled_indoor_or_sheltered_space_with_no_other_salient_event",
+    "minimum_post_event_quiet_seconds": "5.000",
+    "minimum_pre_event_quiet_seconds": "5.000",
+    "peak_headroom_dbfs_maximum": "-3.000",
+    "physical_safety_policy": "no_firearm_explosive_pyrotechnic_or_hazardous_event",
+    "sample_format": "signed_integer_pcm",
+    "sample_rate_hz_allowed": [
+      48000,
+      96000
+    ],
+    "wav_bits_per_sample_allowed": [
+      24
+    ]
+  },
+  "claim_boundary": {
+    "accepted_delivery_is_descriptor_confirmation": false,
+    "accepted_delivery_is_perceptual_truth": false,
+    "accepted_delivery_is_source_trait_truth": false,
+    "full_objective_complete": false,
+    "public_cli_changed": false,
+    "public_verdict_enabled": false,
+    "source_trait_manifest_frozen": false
+  },
+  "delivery_requirements": {
+    "attribution_text_required": true,
+    "capture_log_fields": [
+      "capture_utc_timestamp",
+      "event_material_and_actuation",
+      "location_and_room_description",
+      "microphone_make_model_and_channel_mapping",
+      "microphone_position_orientation_and_distance",
+      "preamp_interface_or_recorder_make_model_and_firmware",
+      "per_channel_gain_settings",
+      "sample_rate_bit_depth_and_channel_count",
+      "all_filters_limiters_agc_safety_tracks_and_processing_disabled"
+    ],
+    "file_byte_size_required": true,
+    "file_sha256_required": true,
+    "licence_declaration_required": true,
+    "licences_allowed": [
+      "CC0 1.0",
+      "CC BY 4.0"
+    ],
+    "one_exact_take_per_delivery": true,
+    "original_recorder_wav_required": true,
+    "rights_holder_identity_required_privately": true,
+    "source_group_identity_required": true,
+    "transformation_log_required": true
+  },
+  "metadata_first_acceptance": {
+    "audio_preview_or_download_before_metadata_acceptance_authorized": false,
+    "exact_member_checkpoint_required_before_audio_access": true,
+    "fail_closed_on_ambiguous_or_missing_field": true,
+    "fixed_review_order": [
+      "rights_and_attribution",
+      "exact_member_and_source_group_identity",
+      "original_wav_lineage",
+      "complete_channel_capture_chain",
+      "transformation_history",
+      "container_and_duration",
+      "quiet_context_and_single_event_declaration",
+      "safety_declaration"
+    ],
+    "member_substitution_after_audio_observation_allowed": false,
+    "threshold_change_allowed": false
+  },
+  "plan_id": "perceptual-degradation-source-trait-sparse-non-tonal-clean-capture-acquisition-spec-20260819-001",
+  "processing_boundary": {
+    "allowed_transformations": [
+      "none"
+    ],
+    "disallowed_transformations": [
+      "automatic_gain_control",
+      "denoise",
+      "dynamics",
+      "fade",
+      "high_pass_or_low_pass_filter",
+      "limiter",
+      "normalization",
+      "pitch_change",
+      "rendered_or_synthesized_sound_design",
+      "resampling",
+      "reverb",
+      "sample_format_conversion",
+      "trim"
+    ],
+    "original_memory_card_or_recorder_file_required": true
+  },
+  "purpose": "Specify one safe, provenance-complete third-party or commissioned clean capture capable of entering a future metadata-first sparse non-tonal exact-member checkpoint after public metadata search exhaustion.",
+  "schema_version": 1,
+  "state": "clean_capture_acquisition_specification_frozen_without_outreach_spending_collection_or_audio_access"
+}
