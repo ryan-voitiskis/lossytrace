@@ -1,0 +1,147 @@
+{
+  "claim_boundary": {
+    "descriptor_class_is_perceptual_truth": false,
+    "full_objective_complete": false,
+    "public_cli_changed": false,
+    "public_verdict_enabled": false,
+    "source_trait_assigned": false,
+    "source_trait_manifest_frozen": false,
+    "technical_descriptor_confirmation_is_listening_evidence": false
+  },
+  "decision": {
+    "all_exact_member_descriptor_confirmations_passed": false,
+    "candidate_replacement_performed": false,
+    "descriptor_confirmation_complete": true,
+    "source_manifest_allocated": false,
+    "source_trait_assignment_complete": false,
+    "thresholds_changed_after_observation": false
+  },
+  "execution": {
+    "decoded_or_derived_pcm_retained": false,
+    "exact_member_count": 2,
+    "maximum_workers": 1,
+    "minimum_free_disk_gib_preserved": 15,
+    "private_replay_count": 2,
+    "private_reports_byte_identical": true
+  },
+  "implementation_sha256": "79e17d6b7db767f0a8b828093e3e0857b73300fc8b055b7d3442c381f66dcfc0",
+  "plan_id": "perceptual-degradation-source-trait-sparse-tonal-exact-member-confirmation-20260818-001",
+  "plan_sha256": "75f1747d0c98f27b3e1a2d101e42ce0637a8159933d3e69e60a8235cb0687036",
+  "publication_boundary": {
+    "audio_exposed": false,
+    "encoded_or_pcm_hashes_exposed": false,
+    "private_paths_exposed": false,
+    "provider_scores_or_processed_conditions_exposed": false
+  },
+  "report_id": "perceptual-degradation-source-trait-sparse-tonal-exact-member-confirmation-20260818-001",
+  "schema_version": 1,
+  "source_observations": [
+    {
+      "descriptor_confirmation_passed": false,
+      "exact_member_id": "freesound_sound_856645",
+      "expected_descriptor_class": "sparse_non_tonal_contrast",
+      "licence": "CC0 1.0",
+      "measurement": {
+        "all_supported_channels_agree": false,
+        "channel_descriptors": [
+          {
+            "abstain": true,
+            "sparse_non_tonal_contrast": false,
+            "sparse_tonal_overlap": false,
+            "spectral_concentration": {
+              "active_frame_count": 6,
+              "median_spectral_flatness": "0.004123580",
+              "median_top_8_bin_power_share": "0.732814157",
+              "non_tonal": false,
+              "supported": true,
+              "tonal": true
+            },
+            "time_occupancy": {
+              "active_block_count": 3,
+              "active_fraction": "0.300000000",
+              "block_count": 10,
+              "non_sparse": false,
+              "sparse": false,
+              "supported": true
+            },
+            "tonal_non_sparse_contrast": false
+          },
+          {
+            "abstain": true,
+            "sparse_non_tonal_contrast": false,
+            "sparse_tonal_overlap": false,
+            "spectral_concentration": {
+              "active_frame_count": 6,
+              "median_spectral_flatness": "0.004123580",
+              "median_top_8_bin_power_share": "0.732814157",
+              "non_tonal": false,
+              "supported": true,
+              "tonal": true
+            },
+            "time_occupancy": {
+              "active_block_count": 3,
+              "active_fraction": "0.300000000",
+              "block_count": 10,
+              "non_sparse": false,
+              "sparse": false,
+              "supported": true
+            },
+            "tonal_non_sparse_contrast": false
+          }
+        ],
+        "container": {
+          "bits_per_sample": 24,
+          "channel_count": 2,
+          "frame_count": 11714,
+          "sample_format": "signed_integer_pcm",
+          "sample_rate_hz": 44100
+        }
+      },
+      "provider_id": "freesound",
+      "source_trait_assigned": false
+    },
+    {
+      "descriptor_confirmation_passed": true,
+      "exact_member_id": "tinysol_6_0__ob_ord_dsharp4_mf_n_n",
+      "expected_descriptor_class": "tonal_non_sparse_contrast",
+      "licence": "CC BY 4.0",
+      "measurement": {
+        "all_supported_channels_agree": true,
+        "channel_descriptors": [
+          {
+            "abstain": false,
+            "sparse_non_tonal_contrast": false,
+            "sparse_tonal_overlap": false,
+            "spectral_concentration": {
+              "active_frame_count": 548,
+              "median_spectral_flatness": "0.000027177",
+              "median_top_8_bin_power_share": "0.862668303",
+              "non_tonal": false,
+              "supported": true,
+              "tonal": true
+            },
+            "time_occupancy": {
+              "active_block_count": 10,
+              "active_fraction": "1.000000000",
+              "block_count": 10,
+              "non_sparse": true,
+              "sparse": false,
+              "supported": true
+            },
+            "tonal_non_sparse_contrast": true
+          }
+        ],
+        "container": {
+          "bits_per_sample": 16,
+          "channel_count": 1,
+          "frame_count": 291772,
+          "sample_format": "signed_integer_pcm",
+          "sample_rate_hz": 44100
+        }
+      },
+      "provider_id": "tinysol_6_0",
+      "source_trait_assigned": false
+    }
+  ],
+  "state": "two_exact_member_score_free_descriptor_replays_complete"
+}

@@ -1073,3 +1073,22 @@ publishes no private path or encoded/PCM hash. Abstention or class mismatch is
 predeclared as a negative result without threshold changes, substitution, trait
 assignment or manifest allocation. The runner has so far been exercised only on
 synthetic integer-PCM fixtures; no candidate audio has been opened.
+
+The bounded
+[`sparse/tonal exact-member confirmation`](perceptual-degradation-source-trait-sparse-tonal-exact-member-confirmation-20260819.md)
+has now run the two frozen exact members twice. The private reports are
+byte-identical and no derived PCM was retained. The TinySOL oboe passed the
+tonal non-sparse descriptor. The Freesound finger snap abstained: it occupied
+three time blocks rather than the frozen maximum of two and met the tonal rather
+than non-tonal spectral rule. The candidate was not replaced and no threshold
+changed. An independent audit confirms the public result is exact, path-free
+and hash-redacted. No trait or manifest allocation was promoted.
+
+The deterministic
+[`objective completion-audit sparse/tonal confirmation refresh`](perceptual-degradation-objective-completion-audit-sparse-tonal-confirmation-refresh-20260819.md)
+reconciles that rigorous negative. Completion remains four of fourteen, the
+independent sparse/tonal pair remains missing, and the retained ODAQ technical
+negative is unchanged. The next bounded source gate is a new metadata-only
+sparse non-tonal successor checkpoint. Codec generation, perceptual metrics,
+listening responses, sealed evidence, no-reference work, validation claims and
+public verdicts remain closed.

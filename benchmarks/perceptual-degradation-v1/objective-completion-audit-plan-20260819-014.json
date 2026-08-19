@@ -1,0 +1,75 @@
+{
+  "authorization": {
+    "bound_committed_evidence_read_authorized": true,
+    "exact_member_confirmation_reconciliation_authorized": true,
+    "further_audio_sample_access_authorized": false,
+    "human_collection_authorized": false,
+    "no_reference_training_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "public_verdict_enabled": false,
+    "source_manifest_allocation_authorized": false,
+    "source_trait_assignment_authorized": false,
+    "synthetic_audit_execution_authorized": true
+  },
+  "bindings": {
+    "confirmation_audit": {
+      "path": "research/toolchains/evidence/perceptual-degradation-source-trait-sparse-tonal-exact-member-confirmation-audit-20260819-001.json",
+      "sha256": "7a624ef5fd1a2205746423280c385307f20d00c9c6183631eef54c0e5efd841e"
+    },
+    "confirmation_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/source-trait-sparse-tonal-exact-member-confirmation-plan.json",
+      "sha256": "75f1747d0c98f27b3e1a2d101e42ce0637a8159933d3e69e60a8235cb0687036"
+    },
+    "confirmation_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-source-trait-sparse-tonal-exact-member-confirmation-20260818-001.json",
+      "sha256": "4299d28d135531ac0d6535052e3cc17f800ea453e33029d2c81350eeb0496fc0"
+    },
+    "confirmation_runner": {
+      "path": "scripts/perceptual_degradation_source_trait_sparse_tonal_exact_member_confirmation.py",
+      "sha256": "79e17d6b7db767f0a8b828093e3e0857b73300fc8b055b7d3442c381f66dcfc0"
+    },
+    "confirmation_validator": {
+      "path": "scripts/validate_perceptual_degradation_source_trait_sparse_tonal_exact_member_confirmation.py",
+      "sha256": "259ab4faa1a340424ac5e7aa51d8ce754eb676dce39a707b89eea34634e1d50e"
+    },
+    "predecessor_audit_implementation": {
+      "path": "scripts/perceptual_degradation_objective_completion_audit_v13.py",
+      "sha256": "74ecfccefb793426cb05d96ee695af8b24561d7791cf9b4a765579aa09ff9d7c"
+    },
+    "predecessor_audit_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/objective-completion-audit-plan-20260818-013.json",
+      "sha256": "32b7a29b8a35abb47f404c47eb2d952153d6384c504b3cf37b234984afc892c3"
+    },
+    "predecessor_audit_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-objective-completion-audit-20260818-013.json",
+      "sha256": "5618f51078d22b258c3fa56c4ae875d19e5f887f15c2ef869d1b4676e2ad6edc"
+    },
+    "selection_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/source-trait-sparse-tonal-exact-member-selection-plan.json",
+      "sha256": "d41d2b0135d9dfe7a633a0089424afef78cba719b3c223197dbf8d058e2abde3"
+    },
+    "selection_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-source-trait-sparse-tonal-exact-member-selection-20260818-001.json",
+      "sha256": "984cb65e53a72542ac0735cd84573158414915f519f7db8f146dcea841556006"
+    }
+  },
+  "claim_boundary": {
+    "exact_member_descriptor_confirmation_is_source_trait_truth": false,
+    "full_objective_complete": false,
+    "one_confirmed_contrast_is_an_independent_sparse_tonal_pair": false,
+    "public_cli_changed": false,
+    "public_verdict_enabled": false,
+    "source_trait_manifest_frozen": false
+  },
+  "completion_policy": {
+    "abstaining_candidate_may_be_reclassified": false,
+    "all_requirements_must_be_satisfied": true,
+    "exact_member_descriptor_confirmation_counts_as_trait_assignment": false,
+    "one_confirmed_contrast_counts_as_independent_sparse_tonal_pair": false,
+    "source_trait_manifest_requires_assignments_relationships_and_allocation": true
+  },
+  "plan_id": "perceptual-degradation-objective-completion-audit-20260819-014",
+  "purpose": "Reconcile the score-blind exact-member sparse and tonal confirmation result while preserving the abstaining candidate, the frozen thresholds and the separation between technical descriptors, source-trait truth, allocation and scientific validation.",
+  "schema_version": 1,
+  "state": "score_blind_completion_audit_refresh_after_sparse_tonal_exact_member_confirmation"
+}

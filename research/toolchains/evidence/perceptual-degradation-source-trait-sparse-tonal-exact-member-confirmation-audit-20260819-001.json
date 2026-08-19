@@ -1,0 +1,30 @@
+{
+  "claim_boundary": {
+    "descriptor_confirmation_is_perceptual_truth": false,
+    "full_objective_complete": false,
+    "public_verdict_enabled": false,
+    "source_trait_assigned": false,
+    "source_trait_manifest_frozen": false
+  },
+  "decision": {
+    "candidate_replacement_performed": false,
+    "freesound_sparse_non_tonal_confirmation_passed": false,
+    "freesound_terminal_outcome": "abstained",
+    "rigorous_negative_preserved": true,
+    "thresholds_changed_after_observation": false,
+    "tinysol_tonal_non_sparse_confirmation_passed": true
+  },
+  "gates": {
+    "attribution_attachment_matches_plan": true,
+    "private_audio_hashes_well_formed": true,
+    "private_public_projection_exact": true,
+    "private_replays_byte_identical": true,
+    "public_report_path_free_and_audio_hash_redacted": true,
+    "public_report_validation_errors": []
+  },
+  "observed_on": "2026-08-19",
+  "report_id": "perceptual-degradation-source-trait-sparse-tonal-exact-member-confirmation-audit-20260819-001",
+  "schema_version": 1,
+  "source_report_id": "perceptual-degradation-source-trait-sparse-tonal-exact-member-confirmation-20260818-001",
+  "state": "independent_projection_audit_complete_sparse_candidate_abstained_tonal_candidate_passed"
+}
