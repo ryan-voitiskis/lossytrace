@@ -1,0 +1,50 @@
+{
+  "audio_accessed": false,
+  "claim_boundary": {
+    "metadata_acceptance_is_audio_integrity_verification": false,
+    "metadata_acceptance_is_descriptor_confirmation": false,
+    "metadata_acceptance_is_perceptual_truth": false,
+    "metadata_acceptance_is_source_trait_truth": false,
+    "public_cli_changed": false,
+    "public_verdict_enabled": false,
+    "source_trait_manifest_frozen": false
+  },
+  "decision": {
+    "accepted_metadata_requires_separate_exact_member_checkpoint": true,
+    "live_delivery_accepted": false,
+    "synthetic_fixture_passed": true
+  },
+  "execution": {
+    "audio_file_open_attempt_count": 0,
+    "gate_count": 8,
+    "gate_pass_count": 8,
+    "manifest_count": 1,
+    "synthetic_fixture_only": true
+  },
+  "gates": {
+    "complete_channel_capture_chain": true,
+    "container_and_duration": true,
+    "exact_member_and_source_group_identity": true,
+    "original_wav_lineage": true,
+    "quiet_context_and_single_event_declaration": true,
+    "rights_and_attribution": true,
+    "safety_declaration": true,
+    "transformation_history": true
+  },
+  "implementation_sha256": "fe5eda688610412f539aee8a2bcf660dae037a656c62c1e5233882f05757c075",
+  "observed_on": "2026-08-19",
+  "plan_id": "perceptual-degradation-source-trait-sparse-non-tonal-clean-capture-intake-20260819-001",
+  "plan_sha256": "30822990752325876ae662b1f7b8db5077279b911f74a39ba783adc73421ee16",
+  "publication_boundary": {
+    "audio_hash_exposed": false,
+    "capture_location_exposed": false,
+    "channel_details_exposed": false,
+    "file_name_exposed": false,
+    "private_identity_exposed": false,
+    "public_result_is_aggregate_gate_status_only": true
+  },
+  "report_id": "perceptual-degradation-source-trait-sparse-non-tonal-clean-capture-intake-synthetic-20260819-001",
+  "schema_version": 1,
+  "state": "metadata_only_clean_capture_intake_synthetic_validation_passed_without_live_acceptance",
+  "synthetic_fixture_sha256": "9f03b5cc57b54a8dd08be6ee2b827fb2eb49c20cf2e96f781048afc632c94b18"
+}

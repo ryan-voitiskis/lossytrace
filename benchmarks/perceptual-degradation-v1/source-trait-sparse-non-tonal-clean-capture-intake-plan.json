@@ -1,0 +1,78 @@
+{
+  "authorization": {
+    "audio_access_authorized": false,
+    "collection_authorized": false,
+    "external_communication_authorized": false,
+    "live_delivery_acceptance_authorized": false,
+    "metadata_only_synthetic_validation_authorized": true,
+    "payment_or_purchase_authorized": false,
+    "public_verdict_enabled": false,
+    "source_manifest_allocation_authorized": false,
+    "source_trait_assignment_authorized": false
+  },
+  "bindings": {
+    "acquisition_specification": {
+      "path": "benchmarks/perceptual-degradation-v1/source-trait-sparse-non-tonal-clean-capture-acquisition-spec.json",
+      "sha256": "cb828b070189cdd14983bdf7fff41f36e41d459b791d5097d7159c457a0e742c"
+    },
+    "current_objective_audit": {
+      "path": "research/toolchains/evidence/perceptual-degradation-objective-completion-audit-20260819-020.json",
+      "sha256": "4f678d950df185def677cb533f8e04ac6831ad337ca515e7870b8357d8e64177"
+    },
+    "descriptor_implementation": {
+      "path": "scripts/perceptual_degradation_source_trait_sparse_tonal_descriptor.py",
+      "sha256": "90adfa2dec5ad3bd09bdb66094c964fbddd0779765dda54a72fc8b72de557299"
+    },
+    "descriptor_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/source-trait-sparse-tonal-descriptor-plan.json",
+      "sha256": "8b8649fe65ba151f906a544ff08271f2563224e54610156770edcc731f23bdbf"
+    },
+    "research_contract": {
+      "path": "docs/research/perceptual-degradation-contract-20260803.md",
+      "sha256": "fdec79207fc0fdd2e9cb10aae9f93dd1a17b45e6e56c0c7df8f0e01a1f9fb505"
+    }
+  },
+  "claim_boundary": {
+    "metadata_acceptance_is_audio_integrity_verification": false,
+    "metadata_acceptance_is_descriptor_confirmation": false,
+    "metadata_acceptance_is_perceptual_truth": false,
+    "metadata_acceptance_is_source_trait_truth": false,
+    "public_cli_changed": false,
+    "public_verdict_enabled": false,
+    "source_trait_manifest_frozen": false
+  },
+  "input_boundary": {
+    "audio_file_path_field_allowed": false,
+    "audio_payload_field_allowed": false,
+    "live_manifest_must_remain_outside_repository": true,
+    "maximum_manifest_bytes": 65536,
+    "permitted_content_type": "application/json",
+    "synthetic_fixture_inside_repository_authorized": true
+  },
+  "output_boundary": {
+    "audio_hash_exposed": false,
+    "capture_location_exposed": false,
+    "channel_details_exposed": false,
+    "file_name_exposed": false,
+    "private_identity_exposed": false,
+    "public_result_is_aggregate_gate_status_only": true
+  },
+  "plan_id": "perceptual-degradation-source-trait-sparse-non-tonal-clean-capture-intake-20260819-001",
+  "prerequisite_state": {
+    "acquisition_specification_commit": "bea06387ed325008768402641a8bb34c85b77275",
+    "acquisition_specification_exact_head_ci_attempt": 2,
+    "acquisition_specification_exact_head_ci_conclusion": "success",
+    "acquisition_specification_exact_head_ci_run": 32224733497
+  },
+  "purpose": "Implement a deterministic metadata-first intake gate for a future clean-capture delivery without accessing audio, accepting a live delivery, assigning a trait or authorizing external action.",
+  "result_policy": {
+    "accepted_metadata_requires_separate_exact_member_checkpoint": true,
+    "all_gate_groups_must_pass": true,
+    "ambiguous_or_missing_field_fails_closed": true,
+    "member_substitution_after_audio_observation_allowed": false,
+    "synthetic_pass_is_live_delivery_acceptance": false,
+    "threshold_change_allowed": false
+  },
+  "schema_version": 1,
+  "state": "metadata_only_clean_capture_intake_gate_frozen_before_live_delivery"
+}

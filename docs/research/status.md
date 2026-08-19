@@ -1264,3 +1264,21 @@ permissive rights, exact identity and no processing. Metadata acceptance is
 fail-closed and must precede a separately committed exact-member checkpoint.
 The specification authorizes no outreach, payment, collection, preview,
 download, audio access, trait assignment, manifest allocation or verdict.
+
+The
+[`clean-capture metadata intake gate`](perceptual-degradation-source-trait-sparse-non-tonal-clean-capture-intake-20260819.md)
+now operationalizes that specification without opening a live-delivery surface.
+Its synthetic fixture passes eight ordered metadata gates, while focused tamper
+tests reject processing, container, quiet-context, safety, rights, channel,
+path, malformed-input, authority and binding failures. The public result is
+aggregate-only and the implementation makes zero audio-file open attempts.
+Without `--synthetic`, the command fails closed.
+
+The deterministic
+[`objective completion-audit clean-capture intake readiness refresh`](perceptual-degradation-objective-completion-audit-clean-capture-intake-readiness-20260819.md)
+keeps completion at four of fourteen. Acquisition and intake readiness are not
+a live delivery or source evidence. The three failed exact sparse candidates,
+bounded metadata negative and retained ODAQ technical negative are unchanged;
+the independent pair, assignments, relationships and manifest remain missing.
+Further source progress requires explicit authority for one safe capture or a
+decision to terminate source-manifest feasibility as a rigorous negative.

@@ -1,0 +1,67 @@
+{
+  "authorization": {
+    "bound_committed_evidence_read_authorized": true,
+    "clean_capture_readiness_reconciliation_authorized": true,
+    "collection_authorized": false,
+    "external_communication_authorized": false,
+    "further_audio_sample_access_authorized": false,
+    "human_collection_authorized": false,
+    "live_delivery_acceptance_authorized": false,
+    "no_reference_training_authorized": false,
+    "payment_or_purchase_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "public_verdict_enabled": false,
+    "source_manifest_allocation_authorized": false,
+    "source_trait_assignment_authorized": false,
+    "synthetic_audit_execution_authorized": true
+  },
+  "bindings": {
+    "acquisition_specification": {
+      "path": "benchmarks/perceptual-degradation-v1/source-trait-sparse-non-tonal-clean-capture-acquisition-spec.json",
+      "sha256": "cb828b070189cdd14983bdf7fff41f36e41d459b791d5097d7159c457a0e742c"
+    },
+    "intake_implementation": {
+      "path": "scripts/perceptual_degradation_source_trait_sparse_non_tonal_clean_capture_intake.py",
+      "sha256": "fe5eda688610412f539aee8a2bcf660dae037a656c62c1e5233882f05757c075"
+    },
+    "intake_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/source-trait-sparse-non-tonal-clean-capture-intake-plan.json",
+      "sha256": "30822990752325876ae662b1f7b8db5077279b911f74a39ba783adc73421ee16"
+    },
+    "intake_synthetic_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-source-trait-sparse-non-tonal-clean-capture-intake-synthetic-20260819-001.json",
+      "sha256": "7f99c3ac167d27d240ec40b66147c014ab66661cb6505ad5b1439c6315b5f304"
+    },
+    "predecessor_audit_implementation": {
+      "path": "scripts/perceptual_degradation_objective_completion_audit_v20.py",
+      "sha256": "35932307edce6e8fcf2c49b0b2adde77bfd6f9e69e6f6e2e55c1240920560de2"
+    },
+    "predecessor_audit_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/objective-completion-audit-plan-20260819-020.json",
+      "sha256": "0ee3381cb55fe2f7f4aceb3b71c40b964a461d723c3748eba453ba666317d3bd"
+    },
+    "predecessor_audit_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-objective-completion-audit-20260819-020.json",
+      "sha256": "4f678d950df185def677cb533f8e04ac6831ad337ca515e7870b8357d8e64177"
+    }
+  },
+  "claim_boundary": {
+    "acquisition_readiness_is_source_evidence": false,
+    "full_objective_complete": false,
+    "public_cli_changed": false,
+    "public_verdict_enabled": false,
+    "synthetic_intake_pass_is_live_delivery_acceptance": false,
+    "synthetic_intake_pass_is_source_trait_truth": false,
+    "source_trait_manifest_frozen": false
+  },
+  "completion_policy": {
+    "all_requirements_must_be_satisfied": true,
+    "readiness_artifacts_count_as_scientific_coverage": false,
+    "source_trait_manifest_requires_assignments_relationships_and_allocation": true,
+    "synthetic_intake_pass_counts_as_live_delivery": false
+  },
+  "plan_id": "perceptual-degradation-objective-completion-audit-20260819-021",
+  "purpose": "Reconcile the frozen clean-capture acquisition specification and fail-closed synthetic metadata intake gate without treating readiness as a live delivery, audio evidence, trait truth, allocation or scientific completion.",
+  "schema_version": 1,
+  "state": "score_blind_completion_audit_refresh_after_clean_capture_intake_readiness"
+}

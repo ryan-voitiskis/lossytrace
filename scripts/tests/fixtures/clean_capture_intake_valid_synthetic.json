@@ -1,0 +1,67 @@
+{
+  "capture": {
+    "capture_utc_timestamp": "2000-01-01T00:00:00Z",
+    "channels": [
+      {
+        "channel_index": 1,
+        "gain_setting": "fixed 24 dB",
+        "microphone_make_model": "Synthetic Reference Microphone",
+        "microphone_mapping": "left input",
+        "orientation": "on axis",
+        "position": "synthetic stand position",
+        "source_distance_metres": "2.000"
+      }
+    ],
+    "event_count": 1,
+    "event_family": "single_balloon_pop",
+    "event_material_and_actuation": "Synthetic declaration: one balloon actuated mechanically",
+    "location_and_room_description": "Synthetic quiet controlled indoor room",
+    "other_salient_event_present": false,
+    "post_event_quiet_seconds": "6.000",
+    "pre_event_quiet_seconds": "6.000",
+    "processing_controls": {
+      "automatic_gain_control_enabled": false,
+      "filters_enabled": false,
+      "limiter_enabled": false,
+      "safety_track_enabled": false
+    },
+    "recorder_firmware": "synthetic-1.0",
+    "recorder_make_model": "Synthetic Reference Recorder",
+    "safe_non_hazardous_event_confirmed": true
+  },
+  "declarations": {
+    "capture_log_complete_and_accurate": true,
+    "one_exact_take_only": true,
+    "original_recorder_file": true,
+    "rights_information_complete_and_accurate": true
+  },
+  "delivery_id": "synthetic-delivery-0001",
+  "exact_member_id": "synthetic-clean-capture-0001",
+  "file": {
+    "byte_size": 2592000,
+    "container": {
+      "bits_per_sample": 24,
+      "channel_count": 1,
+      "duration_seconds": "18.000",
+      "format": "WAV",
+      "peak_dbfs": "-6.000",
+      "sample_format": "signed_integer_pcm",
+      "sample_rate_hz": 48000
+    },
+    "logical_name": "synthetic-clean-capture-0001.wav",
+    "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "processing": {
+    "transformations": []
+  },
+  "rights": {
+    "attribution_text": "Synthetic fixture only; no real sound or rights holder",
+    "licence": "CC0 1.0",
+    "location_clearance_status": "not_required_synthetic_fixture",
+    "performer_clearance_status": "not_required_synthetic_fixture",
+    "rights_holder_identity": "Synthetic Fixture Rights Holder"
+  },
+  "schema_version": 1,
+  "source_group_id": "synthetic-source-group-0001",
+  "synthetic_fixture": true
+}
