@@ -1112,9 +1112,38 @@ text or JSON metadata may be retrieved; candidate audio, preview players,
 waveform assets, downloads and descriptor execution remain closed. No new
 candidate has yet been inspected or nominated under this checkpoint.
 
+The bounded
+[`sparse non-tonal metadata search v2 result`](perceptual-degradation-source-trait-sparse-non-tonal-metadata-search-v2-20260819.md)
+executed four of the eight declared queries and inspected nine exact Freesound
+records as text-only primary HTML. It stopped at sound 703342: a CC0,
+11.802-second provider WAV described as 192 kHz, 32-bit-float stereo, one
+unprocessed 9 mm round captured with dual Shure SM58 microphones into a Zoom
+F3 and explicitly not assembled sound design. The first eight records were
+rejected under the unchanged prerequisites. No candidate page was rendered and
+no audio, preview, waveform or referenced media asset was requested. The
+result nominates one exact member for technical confirmation only.
+
+The one-member
+[`sparse non-tonal exact-member confirmation v2`](perceptual-degradation-source-trait-sparse-non-tonal-exact-member-confirmation-v2-plan-20260819.md)
+is now frozen before that provider original is downloaded. Its one-worker
+runner accepts only the expected 192 kHz stereo 32-bit-float WAV, supports both
+direct and extensible IEEE-float containers, rejects non-finite samples and
+unexpected geometry, performs two private replays, retains no derived PCM, and
+publishes no channel measurements, hashes or private paths. Focused synthetic
+parser, descriptor, replay and redaction tests pass. Abstention or mismatch is
+predeclared without substitution or threshold change; audio remains unopened.
+
 The deterministic
 [`objective completion-audit sparse-successor metadata refresh`](perceptual-degradation-objective-completion-audit-sparse-successor-metadata-refresh-20260819.md)
 records those rejections without treating them as source evidence. Completion
 remains four of fourteen, the independent sparse/tonal pair remains missing,
 and the retained ODAQ technical negative is unchanged. The public CLI remains
 verdict-free.
+
+The deterministic
+[`objective completion-audit sparse-successor nomination refresh`](perceptual-degradation-objective-completion-audit-sparse-successor-nomination-refresh-20260819.md)
+reconciles the metadata nomination and frozen confirmation checkpoint without
+scientific promotion. Completion remains four of fourteen. The sparse member
+is unmeasured, both contrasts remain unassigned and unallocated, the source
+manifest remains unfrozen, the retained ODAQ technical negative is unchanged,
+and the public CLI remains verdict-free.
