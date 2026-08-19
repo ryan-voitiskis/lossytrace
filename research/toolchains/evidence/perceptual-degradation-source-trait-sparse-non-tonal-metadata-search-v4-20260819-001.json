@@ -1,0 +1,95 @@
+{
+  "audio_accessed": false,
+  "claim_boundary": {
+    "candidate_metadata_is_descriptor_confirmation": false,
+    "candidate_metadata_is_perceptual_truth": false,
+    "candidate_metadata_is_source_trait_truth": false,
+    "full_objective_complete": false,
+    "public_cli_changed": false,
+    "public_verdict_enabled": false,
+    "source_trait_manifest_frozen": false
+  },
+  "decision": {
+    "bounded_negative_preserved": true,
+    "eligible_successor_count": 0,
+    "metadata_nomination_is_descriptor_evidence": false,
+    "metadata_nomination_is_source_trait_truth": false,
+    "next_gate": "Reconcile this bounded negative in the objective audit before selecting a materially different source route; do not repeat the same metadata search or access candidate audio.",
+    "nominated_exact_member_id": null,
+    "search_exhausted_without_eligible_member": true,
+    "source_manifest_allocated": false,
+    "source_trait_assigned": false,
+    "thresholds_changed_after_observation": false
+  },
+  "execution": {
+    "candidate_detail_page_browser_rendered": false,
+    "discovery_query_batch_count": 2,
+    "discovery_query_count_executed": 8,
+    "discovery_query_transport_batch_retry_count": 0,
+    "discovery_query_transport_request_count": 8,
+    "distinct_primary_record_count_attempted": 3,
+    "exact_head_ci_url": "https://github.com/ryan-voitiskis/lossytrace/actions/runs/32220447972",
+    "exact_head_commit": "06b40720a0bd3221f3adf681ee5679438a6e6eb5",
+    "media_asset_request_count": 0,
+    "preview_or_waveform_accessed": false,
+    "primary_record_fetch_timeout_count": 0,
+    "primary_record_request_attempt_count": 3,
+    "primary_records_inspected_as_text_html": 3,
+    "response_bodies_retained": false
+  },
+  "implementation_sha256": "2fe6ba80cb1848eddd84c43d56de15f40de7e9f48ea5aadc8d06854768b22eda",
+  "observed_on": "2026-08-19",
+  "plan_id": "perceptual-degradation-source-trait-sparse-non-tonal-metadata-search-v4-20260819-001",
+  "plan_sha256": "d7e3c8eaa0c13e978b5becd2060f3f6d61a85ac11024455f8c6fe69185c77f9f",
+  "record_dispositions": [
+    {
+      "audio_accessed": false,
+      "eligible_for_exact_member_checkpoint": false,
+      "exact_member_id": "freesound_sound_9679",
+      "fetch_outcome": "inspected_text_html",
+      "provider_id": "freesound",
+      "provider_record_url": "https://freesound.org/people/dobroide/sounds/9679/",
+      "rejection_reasons": [
+        "capture_chain_absent",
+        "duration_below_minimum",
+        "original_format_not_wav",
+        "quiet_context_before_and_after_absent",
+        "transformation_history_absent"
+      ]
+    },
+    {
+      "audio_accessed": false,
+      "eligible_for_exact_member_checkpoint": false,
+      "exact_member_id": "freesound_sound_9677",
+      "fetch_outcome": "inspected_text_html",
+      "provider_id": "freesound",
+      "provider_record_url": "https://freesound.org/people/dobroide/sounds/9677/",
+      "rejection_reasons": [
+        "capture_chain_absent",
+        "duration_below_minimum",
+        "original_format_not_wav",
+        "quiet_context_before_and_after_absent",
+        "transformation_history_absent"
+      ]
+    },
+    {
+      "audio_accessed": false,
+      "eligible_for_exact_member_checkpoint": false,
+      "exact_member_id": "freesound_sound_826162",
+      "fetch_outcome": "inspected_text_html",
+      "provider_id": "freesound",
+      "provider_record_url": "https://freesound.org/people/qubodup/sounds/826162/",
+      "rejection_reasons": [
+        "capture_chain_absent",
+        "disallowed_transformations_disclosed",
+        "duration_below_minimum",
+        "not_natural_recorded_waveform",
+        "quiet_context_before_and_after_absent",
+        "rendered_or_synthesized_sound_design"
+      ]
+    }
+  ],
+  "report_id": "perceptual-degradation-source-trait-sparse-non-tonal-metadata-search-v4-20260819-001",
+  "schema_version": 1,
+  "state": "bounded_metadata_only_search_v4_exhausted_without_eligible_exact_member"
+}

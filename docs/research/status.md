@@ -1235,3 +1235,22 @@ provider-original lossless broadband physical one-shot with explicit quiet
 context before and after the event, exact capture provenance, permissive rights
 and no processing beyond a declared trim. All audio, preview, waveform,
 playback, trait-assignment, manifest and public-verdict surfaces remain closed.
+
+The bounded
+[`sparse non-tonal metadata search v4 result`](perceptual-degradation-source-trait-sparse-non-tonal-metadata-search-v4-20260819.md)
+executed all eight declared queries after exact-head CI passed and exhausted the
+route without an eligible exact member. Three distinct primary Freesound pages
+were inspected as text-only HTML. Two sub-five-second FLAC firecrackers lacked
+capture, transformation and quiet-context evidence; a sub-second designed
+gunshot disclosed fade, amplification and compression. No audio, preview,
+waveform, media asset, page rendering, playback or descriptor was accessed.
+
+The deterministic
+[`objective completion-audit sparse metadata v4 negative refresh`](perceptual-degradation-objective-completion-audit-sparse-metadata-v4-negative-refresh-20260819.md)
+preserves that bounded negative without promotion and keeps completion at four
+of fourteen. Three exact sparse candidates have failed and the narrow metadata
+route is exhausted, so repeating the same search is no longer justified. The
+independent pair, assignments, relationships and manifest remain missing. The
+next meaningful source decision is a separately authorized controlled-source
+route or an objective-level rigorous negative; this checkpoint authorizes
+neither, and the public CLI remains verdict-free.
