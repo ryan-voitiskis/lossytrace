@@ -1,0 +1,104 @@
+{
+  "authority_received": {
+    "authority_source": "explicit_user_instruction_2026-08-19",
+    "one_safe_clean_capture_conduct_or_arrange_authorized": true,
+    "outreach_authorized": false,
+    "spending_authorized": false
+  },
+  "bindings": {
+    "acquisition_specification": {
+      "path": "benchmarks/perceptual-degradation-v1/source-trait-sparse-non-tonal-clean-capture-acquisition-spec.json",
+      "sha256": "cb828b070189cdd14983bdf7fff41f36e41d459b791d5097d7159c457a0e742c"
+    },
+    "objective_audit": {
+      "path": "research/toolchains/evidence/perceptual-degradation-objective-completion-audit-20260819-021.json",
+      "sha256": "874c7a58cb6af973b3c514b36570fb247ea0916dcfffa389ac4213c4e2f439a1"
+    },
+    "research_contract": {
+      "path": "docs/research/perceptual-degradation-contract-20260803.md",
+      "sha256": "fdec79207fc0fdd2e9cb10aae9f93dd1a17b45e6e56c0c7df8f0e01a1f9fb505"
+    },
+    "synthetic_intake_implementation": {
+      "path": "scripts/perceptual_degradation_source_trait_sparse_non_tonal_clean_capture_intake.py",
+      "sha256": "fe5eda688610412f539aee8a2bcf660dae037a656c62c1e5233882f05757c075"
+    },
+    "synthetic_intake_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/source-trait-sparse-non-tonal-clean-capture-intake-plan.json",
+      "sha256": "30822990752325876ae662b1f7b8db5077279b911f74a39ba783adc73421ee16"
+    },
+    "synthetic_intake_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-source-trait-sparse-non-tonal-clean-capture-intake-synthetic-20260819-001.json",
+      "sha256": "7f99c3ac167d27d240ec40b66147c014ab66661cb6505ad5b1439c6315b5f304"
+    }
+  },
+  "claim_boundary": {
+    "accepted_metadata_is_audio_integrity_verification": false,
+    "accepted_metadata_is_descriptor_confirmation": false,
+    "accepted_metadata_is_perceptual_truth": false,
+    "accepted_metadata_is_source_trait_truth": false,
+    "full_objective_complete": false,
+    "public_cli_changed": false,
+    "public_verdict_enabled": false,
+    "source_trait_manifest_frozen": false
+  },
+  "execution_protocol": {
+    "audio_file_open_attempt_limit": 0,
+    "fixed_gate_order": [
+      "rights_and_attribution",
+      "exact_member_and_source_group_identity",
+      "original_wav_lineage",
+      "complete_channel_capture_chain",
+      "transformation_history",
+      "container_and_duration",
+      "quiet_context_and_single_event_declaration",
+      "safety_declaration"
+    ],
+    "manifest_count": 1,
+    "private_replay_count": 2,
+    "public_projection_requires_independent_audit": true,
+    "replays_must_be_byte_identical": true,
+    "worker_count": 1
+  },
+  "input_boundary": {
+    "audio_file_path_field_allowed": false,
+    "audio_payload_field_allowed": false,
+    "live_manifest_must_remain_outside_repository": true,
+    "maximum_manifest_bytes": 65536,
+    "permitted_content_type": "application/json",
+    "synthetic_fixture_allowed": false
+  },
+  "operational_authorization": {
+    "audio_access_authorized": false,
+    "capture_execution_authorized_by_this_checkpoint": false,
+    "external_communication_authorized": false,
+    "human_listener_collection_authorized": false,
+    "live_delivery_metadata_acceptance_authorized": true,
+    "live_manifest_read_authorized": true,
+    "no_reference_training_authorized": false,
+    "payment_or_purchase_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "public_verdict_enabled": false,
+    "source_manifest_allocation_authorized": false,
+    "source_trait_assignment_authorized": false
+  },
+  "output_boundary": {
+    "audio_hash_exposed_by_public_projection": false,
+    "capture_location_exposed_by_public_projection": false,
+    "channel_details_exposed_by_public_projection": false,
+    "file_name_exposed_by_public_projection": false,
+    "manifest_hash_exposed_by_public_projection": false,
+    "private_identity_exposed_by_public_projection": false,
+    "private_replay_reports_must_remain_outside_repository": true,
+    "public_projection_is_aggregate_gate_status_only": true
+  },
+  "plan_id": "perceptual-degradation-source-trait-sparse-non-tonal-clean-capture-live-intake-20260819-001",
+  "post_acceptance_gate": {
+    "audio_access_before_exact_member_checkpoint_allowed": false,
+    "exact_physical_capture_chain_must_be_bound": true,
+    "separate_exact_member_capture_or_confirmation_checkpoint_required": true,
+    "threshold_change_allowed": false
+  },
+  "purpose": "Accept or reject exactly one private live clean-capture metadata manifest under the frozen eight-gate specification after explicit user authority, without opening audio or promoting metadata to source evidence.",
+  "schema_version": 1,
+  "state": "live_metadata_acceptance_checkpoint_frozen_before_delivery_capture_execution_and_audio_access"
+}

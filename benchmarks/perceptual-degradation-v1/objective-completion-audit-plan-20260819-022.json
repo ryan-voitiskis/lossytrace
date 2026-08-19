@@ -1,0 +1,59 @@
+{
+  "authorization": {
+    "bound_committed_evidence_read_authorized": true,
+    "capture_execution_authorized_by_this_audit": false,
+    "clean_capture_authority_reconciliation_authorized": true,
+    "external_communication_authorized": false,
+    "further_audio_sample_access_authorized": false,
+    "human_collection_authorized": false,
+    "live_intake_readiness_audit_authorized": true,
+    "no_reference_training_authorized": false,
+    "payment_or_purchase_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "public_verdict_enabled": false,
+    "source_manifest_allocation_authorized": false,
+    "source_trait_assignment_authorized": false
+  },
+  "bindings": {
+    "live_intake_implementation": {
+      "path": "scripts/perceptual_degradation_source_trait_sparse_non_tonal_clean_capture_live_intake.py",
+      "sha256": "92f7a3e1e079a58dac0131b5dd795fbce85ff98b1bfc23951e1704fe0cda4f25"
+    },
+    "live_intake_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/source-trait-sparse-non-tonal-clean-capture-live-intake-plan.json",
+      "sha256": "edf793ab6ecceed943ce7f2e2b8033e2ce25dff3fab598ce74a724f5cca66634"
+    },
+    "predecessor_audit_implementation": {
+      "path": "scripts/perceptual_degradation_objective_completion_audit_v21.py",
+      "sha256": "870fcd760b8461db0db4fca5d75978490fb905bcea9b354d795fb9bdd87ddeb9"
+    },
+    "predecessor_audit_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/objective-completion-audit-plan-20260819-021.json",
+      "sha256": "0ce95744acf3156663e607bbf404f2e5fbf908fd634535194f19f971e7458fde"
+    },
+    "predecessor_audit_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-objective-completion-audit-20260819-021.json",
+      "sha256": "874c7a58cb6af973b3c514b36570fb247ea0916dcfffa389ac4213c4e2f439a1"
+    }
+  },
+  "claim_boundary": {
+    "authority_is_capture_execution": false,
+    "authority_is_live_delivery": false,
+    "authority_is_source_evidence": false,
+    "full_objective_complete": false,
+    "live_intake_readiness_is_metadata_acceptance": false,
+    "public_cli_changed": false,
+    "public_verdict_enabled": false,
+    "source_trait_manifest_frozen": false
+  },
+  "completion_policy": {
+    "all_requirements_must_be_satisfied": true,
+    "authority_or_readiness_counts_as_scientific_coverage": false,
+    "live_delivery_requires_a_private_manifest_and_two_replays": true,
+    "source_trait_manifest_requires_assignments_relationships_and_allocation": true
+  },
+  "plan_id": "perceptual-degradation-objective-completion-audit-20260819-022",
+  "purpose": "Reconcile explicit authority for one safe clean capture and the frozen live metadata-intake checkpoint without treating authority, local device visibility or readiness as a delivery, audio evidence, trait truth, allocation or scientific completion.",
+  "schema_version": 1,
+  "state": "score_blind_completion_audit_refresh_after_clean_capture_authority_and_live_intake_checkpoint"
+}

@@ -1282,3 +1282,20 @@ bounded metadata negative and retained ODAQ technical negative are unchanged;
 the independent pair, assignments, relationships and manifest remain missing.
 Further source progress requires explicit authority for one safe capture or a
 decision to terminate source-manifest feasibility as a rigorous negative.
+
+The user has now explicitly authorized one safe clean capture. The frozen
+[`live clean-capture metadata-intake checkpoint`](perceptual-degradation-source-trait-sparse-non-tonal-clean-capture-live-intake-plan-20260819.md)
+accepts exactly one private, external-to-Git JSON manifest through the unchanged
+eight gates, requires two byte-identical private replays and exposes only an
+independently audited aggregate projection. External outreach and spending
+remain unauthorized. No live manifest, delivery, recording or audio has been
+opened under this checkpoint.
+
+The deterministic
+[`objective completion-audit authority and live-intake refresh`](perceptual-degradation-objective-completion-audit-clean-capture-authority-live-intake-20260819.md)
+keeps completion at four of fourteen. Authority and readiness are not source
+evidence. The next gate is the exact physical microphone/preamp/event declaration
+needed to freeze a capture-execution checkpoint; local device enumeration alone
+cannot prove that chain. Trait assignment, relationship adjudication, allocation,
+codec generation, perceptual metrics, listening, no-reference work and the public
+verdict remain closed.
