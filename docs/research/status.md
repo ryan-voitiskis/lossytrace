@@ -1178,3 +1178,28 @@ audio, preview, waveform, download, playback, trait-assignment, manifest and
 public-verdict surfaces remain closed. The narrower metadata proxy requires one
 broadband natural transient with recording context in a five-to-sixty-second
 provider-original WAV; it is not descriptor or perceptual evidence.
+
+The bounded
+[`sparse non-tonal metadata search v3 result`](perceptual-degradation-source-trait-sparse-non-tonal-metadata-search-v3-20260819.md)
+executed all eight declared queries and stopped at Freesound sound 476736. The
+candidate is a 26.745-second CC0 stereo 48 kHz 24-bit WAV described as one
+unprocessed thunder clap with light-rain context, captured through a Zoom H6 XY
+capsule. Eleven distinct primary records were attempted; five yielded text-only
+HTML and six timed out without evidence. A single same-query transport retry is
+recorded and did not expand scope. No audio, preview, waveform or media asset was
+requested, and timeout rows carry no discovery-snippet inference.
+
+The one-member
+[`sparse non-tonal exact-member confirmation v3`](perceptual-degradation-source-trait-sparse-non-tonal-exact-member-confirmation-v3-plan-20260819.md)
+is frozen before that original is acquired. Its one-worker runner accepts only
+the expected stereo 48 kHz signed 24-bit integer PCM WAV, performs two private
+replays, retains no derived PCM and redacts channel measurements, hashes and
+paths from the public result. Abstention or mismatch is predeclared without
+substitution or threshold change; audio remains unopened.
+
+The deterministic
+[`objective completion-audit sparse-successor v3 nomination refresh`](perceptual-degradation-objective-completion-audit-sparse-successor-v3-nomination-refresh-20260819.md)
+keeps completion at four of fourteen. The new candidate is unmeasured, the
+independent sparse/tonal pair remains missing, source traits and relationships
+remain unassigned, no manifest is allocated, the retained ODAQ technical
+negative is unchanged and the public CLI remains verdict-free.
