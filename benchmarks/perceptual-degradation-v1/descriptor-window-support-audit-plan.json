@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "plan_id": "descriptor-window-support-audit-20260905-001",
+  "state": "synthetic_mechanism_audit_declared_before_execution",
+  "purpose": "Isolate frame-origin, frame-inventory and post-window spectral-support effects in the existing descriptor, without selecting a replacement or reclassifying natural sources.",
+  "bindings": {
+    "rate_context_plan": {"path": "benchmarks/perceptual-degradation-v1/descriptor-rate-context-audit-plan.json", "sha256": "6a112bd011fc1216f6f0c02f64853b30d35eeac6c8b35c40659d25167339be37"},
+    "rate_context_implementation": {"path": "scripts/perceptual_degradation_descriptor_rate_context.py", "sha256": "3c85c5a17d1843d788026272841a3984eb3ff6ca5dbe2736c9371e25f754f3d1"},
+    "rate_context_report": {"path": "research/toolchains/evidence/perceptual-degradation-descriptor-rate-context-synthetic-20260905-001.json", "sha256": "001fd5b0e6ce3210559a213a4990bae5497e1a1a936f10979a6fbb03dd8e9ccc"},
+    "descriptor_engine": {"path": "scripts/perceptual_degradation_source_trait_sparse_tonal_descriptor.py", "sha256": "90adfa2dec5ad3bd09bdb66094c964fbddd0779765dda54a72fc8b72de557299"}
+  },
+  "constructions": {
+    "sample_rate_hz": 48000,
+    "period_samples": 1024,
+    "underlying_record_periods": 8,
+    "families": ["coherent_harmonics", "impulse_train", "quarter_rate_tone"],
+    "coherent_harmonics": "Integer period x[0]=511*8192, x[n]=-8192 for other even n, and zero for odd n. This equals 8192*sum(k=1..511) cos(2*pi*k*n/1024) on this grid. Require exact equality to the predecessor's 48-kHz coherent period. It is consumed development evidence used for mechanism analysis, not independent validation.",
+    "impulse_train": "Integer period x[0]=511*8192 and all other samples zero. This separates removal of a boundary impulse from the coherent construction's residual background.",
+    "quarter_rate_tone": "Repeat [1048576,0,-1048576,0] to obtain 1024 samples. This exact integer 12000-Hz tone is a spectral control, not an eligible natural member or listening stimulus.",
+    "identity": "Keep each eight-period record fixed. Change only the start of the analyzed frame grid and its declared inventory. Every 1024-sample frame is an exact cyclic rotation of the same period, with identical unwindowed energy. No sample-rate change, padding, new noise, gain change or changed source samples occurs in the origin sweep.",
+    "analytic_dft_check": "Compare the bound FFT of each unwindowed period with its closed-form DFT at every bin. Coherent: 8192*512 at all bins except DC/Nyquist, which are zero. Impulse: 511*8192 at every bin. Tone: 1048576*512 at bins 256 and 768, zero elsewhere. Require maximum error divided by peak expected magnitude <=1e-12; report pass and tolerance, not platform-sensitive residual digits."
+  },
+  "experiment": {
+    "frame_size_samples": 1024,
+    "hop_samples": 512,
+    "origin_samples_inclusive": [0, 1023],
+    "frame_counts": [11, 12],
+    "frame_definition": "For origin o and frame index j, analyze the fixed record from o+j*512 through o+j*512+1024, exclusive at the end. The 11-frame inventory has six first-phase and five second-phase frames; the 12-frame inventory has six of each. All windows fit inside the unchanged eight-period record.",
+    "methods": ["legacy_equal_frame_medians", "analyzed_band_energy_admission", "pooled_raw_admitted_spectra"],
+    "legacy_equal_frame_medians": "Reproduce the unchanged descriptor: admit frames by unwindowed power >=0.001 times the maximum, apply periodic Hann, exclude DC/Nyquist bins, discard zero analyzed-band energy, require three contributing frames, then take separate equally weighted medians of flatness and top-eight-bin power share.",
+    "analyzed_band_energy_admission": "Diagnostic intervention only: after original raw-power admission, additionally require analyzed post-Hann band energy >=0.001 times its maximum and positive. Retain the same three-frame requirement, spectral formulas, medians and class cutoffs. Reusing 0.001 isolates admission location; it is not justification of this cutoff or a proposed validated replacement.",
+    "pooled_raw_admitted_spectra": "Diagnostic intervention only: sum each included bin's power over the original positive-band-energy frames, preserving multiplicities. Apply the same flatness and concentration formulas to this pooled spectrum, still requiring three positive-energy frames. This changes aggregation as well as effective energy weighting; it is not a perceptual truth estimator.",
+    "spectral_formulas": "Use the bound FFT and Hann definition. Exclude bins 0 and 512. Flatness uses a per-spectrum floor of total*1e-12 and geometric/arithmetic mean ratio. Concentration is the largest eight powers divided by total. Tonal iff flatness<=0.1 and concentration>=0.6; non-tonal iff flatness>=0.5 and concentration<=0.2. Otherwise retain indeterminate or unsupported, never a Boolean natural-source truth.",
+    "memoization": "Compute each family's 1024 unique rotated-frame spectra once, then reuse them with exact frame multiplicities. Check frame identity and identical raw energy for the entire grid. This is an exhaustive evaluation, not random sampling or an independence claim.",
+    "unchanged_engine_crosscheck_origins": [0, 1, 128, 256, 511, 512, 640, 1023],
+    "crosscheck": "At all eight declared origins, both inventories and all three families, compare the reconstructed legacy summary against unchanged spectral_concentration on the exact record slice. Require all 48 comparisons to agree, including support counts and nine-decimal features.",
+    "report": "For every family, inventory and method, retain counts of every class, complete run-length encoding of origin-to-class assignments, feature extrema, support-count extrema and agreement/change counts. Retain detailed coherent ledgers at origins 0,128,512 for both inventories, including raw energy equality, retained band-energy fractions, frame multiplicities and method summaries. Do not add seeds, origins, families or methods after observation."
+  },
+  "execution": {
+    "workers": 1,
+    "minimum_free_gib": 15,
+    "replays": 2,
+    "byte_identical_required": true,
+    "waveforms": "generated_in_memory_only_never_saved_or_played",
+    "publication": "synthetic aggregate and mechanism evidence only; no actual audio, private path or PCM hash",
+    "numerical_crosscheck": "A separate available FFT may independently check the declared constructions and summaries without replacing the bound implementation, adding a dependency, or opening actual audio."
+  },
+  "claim_boundary": {
+    "actual_audio_access_authorized": false,
+    "capture_execution_authorized_by_this_audit": false,
+    "playback_or_listening_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "source_trait_assignment_authorized": false,
+    "historical_candidates_reclassified": false,
+    "replacement_descriptor_selected": false,
+    "population_sampling_contract_selected": false,
+    "sealed_evidence_or_training_authorized": false,
+    "external_communication_or_spending_authorized": false,
+    "public_verdict_enabled": false,
+    "objective_complete": false
+  },
+  "next_requirement": "Use the mechanism evidence to specify requirements, not tune a natural-source label. Any selected descriptor still needs independent physical-band, support and context justification plus fresh validation. Capture authority and all prior candidate outcomes remain unchanged."
+}

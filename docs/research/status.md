@@ -1539,3 +1539,32 @@ and event-versus-recording context before treating the descriptor as a
 rate-independent trait adjudicator. Original thresholds, source outcomes and
 capture authority are preserved. No listening, metric, oracle, training or
 public-verdict gate is opened; the full objective remains active.
+
+## Descriptor frame-origin and window-support mechanism — 2026-09-05
+
+The [window-support audit](perceptual-degradation-descriptor-window-support-20260905.md)
+isolates frame origin and inventory at fixed 48-kHz rate on unchanged exact
+integer periodic records. Across three families, 1,024 origins and two frame
+counts, it evaluates 6,144 cases with three declared diagnostic summaries.
+Every frame has identical raw energy within its family. Forty-eight comparisons
+against the unchanged descriptor and a separate NumPy calculation agree.
+
+For the coherent development period at origin zero, six post-Hann weak-spectrum
+frames contribute only 0.029395914% of analyzed-band energy but determine the
+11-frame equal-weight medians and a tonal result. Reversing the 6:5 inventory
+by advancing the grid one hop gives non-tonal; balancing it with a twelfth frame
+gives indeterminate. The full original class changes at 172 of 1,024 origins
+between the two inventories. The exact impulse and tone controls remain stable.
+
+Additional admission by post-window band energy changes the origin-zero result
+while retaining over 99.97% of energy, but still leaves 20 indeterminate origins
+with 11 frames. Pooling spectra is non-tonal throughout this coherent grid,
+without establishing natural-source validity or preserving temporal structure.
+Neither diagnostic is selected as a replacement, and no threshold is tuned.
+
+Two full replays are byte-identical. All 18,432 method decisions are retained as
+complete origin-class encodings, alongside aggregate numeric evidence. The
+next definition must align physical band, frame support, aggregation and the
+intended trait, then use fresh validation. Prior source outcomes, capture
+authority, human/metric/oracle/training gates and the verdict-free CLI remain
+unchanged. The objective stays active and incomplete.

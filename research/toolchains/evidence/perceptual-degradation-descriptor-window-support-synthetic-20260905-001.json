@@ -1,0 +1,1122 @@
+{
+  "actual_audio_accessed": false,
+  "bindings": {
+    "descriptor_engine": {
+      "path": "scripts/perceptual_degradation_source_trait_sparse_tonal_descriptor.py",
+      "sha256": "90adfa2dec5ad3bd09bdb66094c964fbddd0779765dda54a72fc8b72de557299"
+    },
+    "rate_context_implementation": {
+      "path": "scripts/perceptual_degradation_descriptor_rate_context.py",
+      "sha256": "3c85c5a17d1843d788026272841a3984eb3ff6ca5dbe2736c9371e25f754f3d1"
+    },
+    "rate_context_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/descriptor-rate-context-audit-plan.json",
+      "sha256": "6a112bd011fc1216f6f0c02f64853b30d35eeac6c8b35c40659d25167339be37"
+    },
+    "rate_context_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-descriptor-rate-context-synthetic-20260905-001.json",
+      "sha256": "001fd5b0e6ce3210559a213a4990bae5497e1a1a936f10979a6fbb03dd8e9ccc"
+    }
+  },
+  "claim_boundary": {
+    "actual_audio_access_authorized": false,
+    "capture_execution_authorized_by_this_audit": false,
+    "external_communication_or_spending_authorized": false,
+    "historical_candidates_reclassified": false,
+    "objective_complete": false,
+    "perceptual_metric_execution_authorized": false,
+    "playback_or_listening_authorized": false,
+    "population_sampling_contract_selected": false,
+    "public_verdict_enabled": false,
+    "replacement_descriptor_selected": false,
+    "sealed_evidence_or_training_authorized": false,
+    "source_trait_assignment_authorized": false
+  },
+  "consumed_coherent_development_period_identity_verified": true,
+  "families": [
+    {
+      "all_raw_frame_powers_identical_positive": true,
+      "changed_class_between_11_and_12_frames": {
+        "analyzed_band_energy_admission": 20,
+        "legacy_equal_frame_medians": 172,
+        "pooled_raw_admitted_spectra": 0
+      },
+      "closed_form_unwindowed_dft": {
+        "all_1024_bins_checked": true,
+        "passed": true,
+        "relative_error_at_most": "1e-12"
+      },
+      "coherent_mechanism_ledgers": [
+        {
+          "frame_count": 11,
+          "frame_phases": [
+            {
+              "analyzed_band_energy_relative_to_largest_phase": "2.450379808870e-04",
+              "multiplicity": 6,
+              "period_origin": 0,
+              "post_window_power_over_raw_power": "7.338551859100e-04"
+            },
+            {
+              "analyzed_band_energy_relative_to_largest_phase": "1.000000000000e+00",
+              "multiplicity": 5,
+              "period_origin": 512,
+              "post_window_power_over_raw_power": "9.987769080235e-01"
+            }
+          ],
+          "methods": {
+            "analyzed_band_energy_admission": {
+              "class": "non_tonal",
+              "contributing_frame_count": 5,
+              "non_tonal": true,
+              "retained_analyzed_band_energy_fraction": "0.999706040860",
+              "spectral_flatness": "0.999462027",
+              "supported": true,
+              "tonal": false,
+              "top_8_bin_power_share": "0.015682431"
+            },
+            "legacy_equal_frame_medians": {
+              "class": "tonal",
+              "contributing_frame_count": 11,
+              "non_tonal": false,
+              "retained_analyzed_band_energy_fraction": "1.000000000000",
+              "spectral_flatness": "0.000000001",
+              "supported": true,
+              "tonal": true,
+              "top_8_bin_power_share": "1.000000000"
+            },
+            "pooled_raw_admitted_spectra": {
+              "class": "non_tonal",
+              "contributing_frame_count": 11,
+              "non_tonal": true,
+              "retained_analyzed_band_energy_fraction": "1.000000000000",
+              "spectral_flatness": "0.999657814",
+              "supported": true,
+              "tonal": false,
+              "top_8_bin_power_share": "0.015677821"
+            }
+          },
+          "origin_samples": 0,
+          "raw_power_identical_across_all_frames": true
+        },
+        {
+          "frame_count": 11,
+          "frame_phases": [
+            {
+              "analyzed_band_energy_relative_to_largest_phase": "3.008984083559e-02",
+              "multiplicity": 6,
+              "period_origin": 128,
+              "post_window_power_over_raw_power": "2.213849471121e-02"
+            },
+            {
+              "analyzed_band_energy_relative_to_largest_phase": "1.000000000000e+00",
+              "multiplicity": 5,
+              "period_origin": 640,
+              "post_window_power_over_raw_power": "7.278615052888e-01"
+            }
+          ],
+          "methods": {
+            "analyzed_band_energy_admission": {
+              "class": "non_tonal",
+              "contributing_frame_count": 11,
+              "non_tonal": true,
+              "retained_analyzed_band_energy_fraction": "1.000000000000",
+              "spectral_flatness": "0.986670558",
+              "supported": true,
+              "tonal": false,
+              "top_8_bin_power_share": "0.035764611"
+            },
+            "legacy_equal_frame_medians": {
+              "class": "non_tonal",
+              "contributing_frame_count": 11,
+              "non_tonal": true,
+              "retained_analyzed_band_energy_fraction": "1.000000000000",
+              "spectral_flatness": "0.986670558",
+              "supported": true,
+              "tonal": false,
+              "top_8_bin_power_share": "0.035764611"
+            },
+            "pooled_raw_admitted_spectra": {
+              "class": "non_tonal",
+              "contributing_frame_count": 11,
+              "non_tonal": true,
+              "retained_analyzed_band_energy_fraction": "1.000000000000",
+              "spectral_flatness": "0.999960645",
+              "supported": true,
+              "tonal": false,
+              "top_8_bin_power_share": "0.015663879"
+            }
+          },
+          "origin_samples": 128,
+          "raw_power_identical_across_all_frames": true
+        },
+        {
+          "frame_count": 11,
+          "frame_phases": [
+            {
+              "analyzed_band_energy_relative_to_largest_phase": "1.000000000000e+00",
+              "multiplicity": 6,
+              "period_origin": 512,
+              "post_window_power_over_raw_power": "9.987769080235e-01"
+            },
+            {
+              "analyzed_band_energy_relative_to_largest_phase": "2.450379808870e-04",
+              "multiplicity": 5,
+              "period_origin": 0,
+              "post_window_power_over_raw_power": "7.338551859100e-04"
+            }
+          ],
+          "methods": {
+            "analyzed_band_energy_admission": {
+              "class": "non_tonal",
+              "contributing_frame_count": 6,
+              "non_tonal": true,
+              "retained_analyzed_band_energy_fraction": "0.999795843371",
+              "spectral_flatness": "0.999462027",
+              "supported": true,
+              "tonal": false,
+              "top_8_bin_power_share": "0.015682431"
+            },
+            "legacy_equal_frame_medians": {
+              "class": "non_tonal",
+              "contributing_frame_count": 11,
+              "non_tonal": true,
+              "retained_analyzed_band_energy_fraction": "1.000000000000",
+              "spectral_flatness": "0.999462027",
+              "supported": true,
+              "tonal": false,
+              "top_8_bin_power_share": "0.015682431"
+            },
+            "pooled_raw_admitted_spectra": {
+              "class": "non_tonal",
+              "contributing_frame_count": 11,
+              "non_tonal": true,
+              "retained_analyzed_band_energy_fraction": "1.000000000000",
+              "spectral_flatness": "0.999604371",
+              "supported": true,
+              "tonal": false,
+              "top_8_bin_power_share": "0.015679229"
+            }
+          },
+          "origin_samples": 512,
+          "raw_power_identical_across_all_frames": true
+        },
+        {
+          "frame_count": 12,
+          "frame_phases": [
+            {
+              "analyzed_band_energy_relative_to_largest_phase": "2.450379808870e-04",
+              "multiplicity": 6,
+              "period_origin": 0,
+              "post_window_power_over_raw_power": "7.338551859100e-04"
+            },
+            {
+              "analyzed_band_energy_relative_to_largest_phase": "1.000000000000e+00",
+              "multiplicity": 6,
+              "period_origin": 512,
+              "post_window_power_over_raw_power": "9.987769080235e-01"
+            }
+          ],
+          "methods": {
+            "analyzed_band_energy_admission": {
+              "class": "non_tonal",
+              "contributing_frame_count": 6,
+              "non_tonal": true,
+              "retained_analyzed_band_energy_fraction": "0.999755022048",
+              "spectral_flatness": "0.999462027",
+              "supported": true,
+              "tonal": false,
+              "top_8_bin_power_share": "0.015682431"
+            },
+            "legacy_equal_frame_medians": {
+              "class": "indeterminate",
+              "contributing_frame_count": 12,
+              "non_tonal": false,
+              "retained_analyzed_band_energy_fraction": "1.000000000000",
+              "spectral_flatness": "0.499731014",
+              "supported": true,
+              "tonal": false,
+              "top_8_bin_power_share": "0.507841215"
+            },
+            "pooled_raw_admitted_spectra": {
+              "class": "non_tonal",
+              "contributing_frame_count": 12,
+              "non_tonal": true,
+              "retained_analyzed_band_energy_fraction": "1.000000000000",
+              "spectral_flatness": "0.999629313",
+              "supported": true,
+              "tonal": false,
+              "top_8_bin_power_share": "0.015678589"
+            }
+          },
+          "origin_samples": 0,
+          "raw_power_identical_across_all_frames": true
+        },
+        {
+          "frame_count": 12,
+          "frame_phases": [
+            {
+              "analyzed_band_energy_relative_to_largest_phase": "3.008984083559e-02",
+              "multiplicity": 6,
+              "period_origin": 128,
+              "post_window_power_over_raw_power": "2.213849471121e-02"
+            },
+            {
+              "analyzed_band_energy_relative_to_largest_phase": "1.000000000000e+00",
+              "multiplicity": 6,
+              "period_origin": 640,
+              "post_window_power_over_raw_power": "7.278615052888e-01"
+            }
+          ],
+          "methods": {
+            "analyzed_band_energy_admission": {
+              "class": "non_tonal",
+              "contributing_frame_count": 12,
+              "non_tonal": true,
+              "retained_analyzed_band_energy_fraction": "1.000000000000",
+              "spectral_flatness": "0.993199301",
+              "supported": true,
+              "tonal": false,
+              "top_8_bin_power_share": "0.025720169"
+            },
+            "legacy_equal_frame_medians": {
+              "class": "non_tonal",
+              "contributing_frame_count": 12,
+              "non_tonal": true,
+              "retained_analyzed_band_energy_fraction": "1.000000000000",
+              "spectral_flatness": "0.993199301",
+              "supported": true,
+              "tonal": false,
+              "top_8_bin_power_share": "0.025720169"
+            },
+            "pooled_raw_admitted_spectra": {
+              "class": "non_tonal",
+              "contributing_frame_count": 12,
+              "non_tonal": true,
+              "retained_analyzed_band_energy_fraction": "1.000000000000",
+              "spectral_flatness": "0.999938943",
+              "supported": true,
+              "tonal": false,
+              "top_8_bin_power_share": "0.015665796"
+            }
+          },
+          "origin_samples": 128,
+          "raw_power_identical_across_all_frames": true
+        },
+        {
+          "frame_count": 12,
+          "frame_phases": [
+            {
+              "analyzed_band_energy_relative_to_largest_phase": "1.000000000000e+00",
+              "multiplicity": 6,
+              "period_origin": 512,
+              "post_window_power_over_raw_power": "9.987769080235e-01"
+            },
+            {
+              "analyzed_band_energy_relative_to_largest_phase": "2.450379808870e-04",
+              "multiplicity": 6,
+              "period_origin": 0,
+              "post_window_power_over_raw_power": "7.338551859100e-04"
+            }
+          ],
+          "methods": {
+            "analyzed_band_energy_admission": {
+              "class": "non_tonal",
+              "contributing_frame_count": 6,
+              "non_tonal": true,
+              "retained_analyzed_band_energy_fraction": "0.999755022048",
+              "spectral_flatness": "0.999462027",
+              "supported": true,
+              "tonal": false,
+              "top_8_bin_power_share": "0.015682431"
+            },
+            "legacy_equal_frame_medians": {
+              "class": "indeterminate",
+              "contributing_frame_count": 12,
+              "non_tonal": false,
+              "retained_analyzed_band_energy_fraction": "1.000000000000",
+              "spectral_flatness": "0.499731014",
+              "supported": true,
+              "tonal": false,
+              "top_8_bin_power_share": "0.507841215"
+            },
+            "pooled_raw_admitted_spectra": {
+              "class": "non_tonal",
+              "contributing_frame_count": 12,
+              "non_tonal": true,
+              "retained_analyzed_band_energy_fraction": "1.000000000000",
+              "spectral_flatness": "0.999629313",
+              "supported": true,
+              "tonal": false,
+              "top_8_bin_power_share": "0.015678589"
+            }
+          },
+          "origin_samples": 512,
+          "raw_power_identical_across_all_frames": true
+        }
+      ],
+      "family": "coherent_harmonics",
+      "inventories": [
+        {
+          "diagnostic_changed_class_from_legacy_counts": {
+            "analyzed_band_energy_admission": 105,
+            "pooled_raw_admitted_spectra": 125
+          },
+          "frame_count": 11,
+          "methods": {
+            "analyzed_band_energy_admission": {
+              "class_counts": {
+                "indeterminate": 20,
+                "non_tonal": 1004,
+                "tonal": 0,
+                "unsupported": 0
+              },
+              "complete_origin_class_runs": [
+                {
+                  "class": "non_tonal",
+                  "end_origin_exclusive": 53,
+                  "start_origin_inclusive": 0
+                },
+                {
+                  "class": "indeterminate",
+                  "end_origin_exclusive": 63,
+                  "start_origin_inclusive": 53
+                },
+                {
+                  "class": "non_tonal",
+                  "end_origin_exclusive": 962,
+                  "start_origin_inclusive": 63
+                },
+                {
+                  "class": "indeterminate",
+                  "end_origin_exclusive": 972,
+                  "start_origin_inclusive": 962
+                },
+                {
+                  "class": "non_tonal",
+                  "end_origin_exclusive": 1024,
+                  "start_origin_inclusive": 972
+                }
+              ],
+              "contributing_frames_min_max": [
+                5,
+                11
+              ],
+              "different_class_from_origin_zero_count": 20,
+              "origin_count": 1024,
+              "retained_analyzed_band_energy_fraction_min_max": [
+                "0.998826976706",
+                "1.000000000000"
+              ],
+              "spectral_flatness_min_max": [
+                "0.713824218",
+                "1.000000000"
+              ],
+              "top_8_bin_power_share_min_max": [
+                "0.015655578",
+                "0.310161607"
+              ]
+            },
+            "legacy_equal_frame_medians": {
+              "class_counts": {
+                "indeterminate": 78,
+                "non_tonal": 899,
+                "tonal": 47,
+                "unsupported": 0
+              },
+              "complete_origin_class_runs": [
+                {
+                  "class": "tonal",
+                  "end_origin_exclusive": 24,
+                  "start_origin_inclusive": 0
+                },
+                {
+                  "class": "indeterminate",
+                  "end_origin_exclusive": 63,
+                  "start_origin_inclusive": 24
+                },
+                {
+                  "class": "non_tonal",
+                  "end_origin_exclusive": 962,
+                  "start_origin_inclusive": 63
+                },
+                {
+                  "class": "indeterminate",
+                  "end_origin_exclusive": 1001,
+                  "start_origin_inclusive": 962
+                },
+                {
+                  "class": "tonal",
+                  "end_origin_exclusive": 1024,
+                  "start_origin_inclusive": 1001
+                }
+              ],
+              "contributing_frames_min_max": [
+                11,
+                11
+              ],
+              "different_class_from_origin_zero_count": 977,
+              "origin_count": 1024,
+              "retained_analyzed_band_energy_fraction_min_max": [
+                "1.000000000000",
+                "1.000000000000"
+              ],
+              "spectral_flatness_min_max": [
+                "0.000000001",
+                "1.000000000"
+              ],
+              "top_8_bin_power_share_min_max": [
+                "0.015655578",
+                "1.000000000"
+              ]
+            },
+            "pooled_raw_admitted_spectra": {
+              "class_counts": {
+                "indeterminate": 0,
+                "non_tonal": 1024,
+                "tonal": 0,
+                "unsupported": 0
+              },
+              "complete_origin_class_runs": [
+                {
+                  "class": "non_tonal",
+                  "end_origin_exclusive": 1024,
+                  "start_origin_inclusive": 0
+                }
+              ],
+              "contributing_frames_min_max": [
+                11,
+                11
+              ],
+              "different_class_from_origin_zero_count": 0,
+              "origin_count": 1024,
+              "retained_analyzed_band_energy_fraction_min_max": [
+                "1.000000000000",
+                "1.000000000000"
+              ],
+              "spectral_flatness_min_max": [
+                "0.999604371",
+                "0.999999997"
+              ],
+              "top_8_bin_power_share_min_max": [
+                "0.015655728",
+                "0.016632189"
+              ]
+            }
+          }
+        },
+        {
+          "diagnostic_changed_class_from_legacy_counts": {
+            "analyzed_band_energy_admission": 194,
+            "pooled_raw_admitted_spectra": 194
+          },
+          "frame_count": 12,
+          "methods": {
+            "analyzed_band_energy_admission": {
+              "class_counts": {
+                "indeterminate": 0,
+                "non_tonal": 1024,
+                "tonal": 0,
+                "unsupported": 0
+              },
+              "complete_origin_class_runs": [
+                {
+                  "class": "non_tonal",
+                  "end_origin_exclusive": 1024,
+                  "start_origin_inclusive": 0
+                }
+              ],
+              "contributing_frames_min_max": [
+                6,
+                12
+              ],
+              "different_class_from_origin_zero_count": 0,
+              "origin_count": 1024,
+              "retained_analyzed_band_energy_fraction_min_max": [
+                "0.999022289442",
+                "1.000000000000"
+              ],
+              "spectral_flatness_min_max": [
+                "0.856667863",
+                "0.999895371"
+              ],
+              "top_8_bin_power_share_min_max": [
+                "0.015681433",
+                "0.162921501"
+              ]
+            },
+            "legacy_equal_frame_medians": {
+              "class_counts": {
+                "indeterminate": 194,
+                "non_tonal": 830,
+                "tonal": 0,
+                "unsupported": 0
+              },
+              "complete_origin_class_runs": [
+                {
+                  "class": "indeterminate",
+                  "end_origin_exclusive": 49,
+                  "start_origin_inclusive": 0
+                },
+                {
+                  "class": "non_tonal",
+                  "end_origin_exclusive": 464,
+                  "start_origin_inclusive": 49
+                },
+                {
+                  "class": "indeterminate",
+                  "end_origin_exclusive": 561,
+                  "start_origin_inclusive": 464
+                },
+                {
+                  "class": "non_tonal",
+                  "end_origin_exclusive": 976,
+                  "start_origin_inclusive": 561
+                },
+                {
+                  "class": "indeterminate",
+                  "end_origin_exclusive": 1024,
+                  "start_origin_inclusive": 976
+                }
+              ],
+              "contributing_frames_min_max": [
+                12,
+                12
+              ],
+              "different_class_from_origin_zero_count": 830,
+              "origin_count": 1024,
+              "retained_analyzed_band_energy_fraction_min_max": [
+                "1.000000000000",
+                "1.000000000000"
+              ],
+              "spectral_flatness_min_max": [
+                "0.499731014",
+                "0.999895371"
+              ],
+              "top_8_bin_power_share_min_max": [
+                "0.016617791",
+                "0.507841215"
+              ]
+            },
+            "pooled_raw_admitted_spectra": {
+              "class_counts": {
+                "indeterminate": 0,
+                "non_tonal": 1024,
+                "tonal": 0,
+                "unsupported": 0
+              },
+              "complete_origin_class_runs": [
+                {
+                  "class": "non_tonal",
+                  "end_origin_exclusive": 1024,
+                  "start_origin_inclusive": 0
+                }
+              ],
+              "contributing_frames_min_max": [
+                12,
+                12
+              ],
+              "different_class_from_origin_zero_count": 0,
+              "origin_count": 1024,
+              "retained_analyzed_band_energy_fraction_min_max": [
+                "1.000000000000",
+                "1.000000000000"
+              ],
+              "spectral_flatness_min_max": [
+                "0.999629313",
+                "0.999999996"
+              ],
+              "top_8_bin_power_share_min_max": [
+                "0.015655751",
+                "0.016617791"
+              ]
+            }
+          }
+        }
+      ],
+      "unchanged_descriptor_crosschecks_passed": 16,
+      "unique_rotated_frames_checked": 1024
+    },
+    {
+      "all_raw_frame_powers_identical_positive": true,
+      "changed_class_between_11_and_12_frames": {
+        "analyzed_band_energy_admission": 0,
+        "legacy_equal_frame_medians": 0,
+        "pooled_raw_admitted_spectra": 0
+      },
+      "closed_form_unwindowed_dft": {
+        "all_1024_bins_checked": true,
+        "passed": true,
+        "relative_error_at_most": "1e-12"
+      },
+      "coherent_mechanism_ledgers": [],
+      "family": "impulse_train",
+      "inventories": [
+        {
+          "diagnostic_changed_class_from_legacy_counts": {
+            "analyzed_band_energy_admission": 0,
+            "pooled_raw_admitted_spectra": 0
+          },
+          "frame_count": 11,
+          "methods": {
+            "analyzed_band_energy_admission": {
+              "class_counts": {
+                "indeterminate": 0,
+                "non_tonal": 1024,
+                "tonal": 0,
+                "unsupported": 0
+              },
+              "complete_origin_class_runs": [
+                {
+                  "class": "non_tonal",
+                  "end_origin_exclusive": 1024,
+                  "start_origin_inclusive": 0
+                }
+              ],
+              "contributing_frames_min_max": [
+                5,
+                11
+              ],
+              "different_class_from_origin_zero_count": 0,
+              "origin_count": 1024,
+              "retained_analyzed_band_energy_fraction_min_max": [
+                "0.998832092627",
+                "1.000000000000"
+              ],
+              "spectral_flatness_min_max": [
+                "1.000000000",
+                "1.000000000"
+              ],
+              "top_8_bin_power_share_min_max": [
+                "0.015655577",
+                "0.015655577"
+              ]
+            },
+            "legacy_equal_frame_medians": {
+              "class_counts": {
+                "indeterminate": 0,
+                "non_tonal": 1024,
+                "tonal": 0,
+                "unsupported": 0
+              },
+              "complete_origin_class_runs": [
+                {
+                  "class": "non_tonal",
+                  "end_origin_exclusive": 1024,
+                  "start_origin_inclusive": 0
+                }
+              ],
+              "contributing_frames_min_max": [
+                5,
+                11
+              ],
+              "different_class_from_origin_zero_count": 0,
+              "origin_count": 1024,
+              "retained_analyzed_band_energy_fraction_min_max": [
+                "1.000000000000",
+                "1.000000000000"
+              ],
+              "spectral_flatness_min_max": [
+                "1.000000000",
+                "1.000000000"
+              ],
+              "top_8_bin_power_share_min_max": [
+                "0.015655577",
+                "0.015655577"
+              ]
+            },
+            "pooled_raw_admitted_spectra": {
+              "class_counts": {
+                "indeterminate": 0,
+                "non_tonal": 1024,
+                "tonal": 0,
+                "unsupported": 0
+              },
+              "complete_origin_class_runs": [
+                {
+                  "class": "non_tonal",
+                  "end_origin_exclusive": 1024,
+                  "start_origin_inclusive": 0
+                }
+              ],
+              "contributing_frames_min_max": [
+                5,
+                11
+              ],
+              "different_class_from_origin_zero_count": 0,
+              "origin_count": 1024,
+              "retained_analyzed_band_energy_fraction_min_max": [
+                "1.000000000000",
+                "1.000000000000"
+              ],
+              "spectral_flatness_min_max": [
+                "1.000000000",
+                "1.000000000"
+              ],
+              "top_8_bin_power_share_min_max": [
+                "0.015655577",
+                "0.015655577"
+              ]
+            }
+          }
+        },
+        {
+          "diagnostic_changed_class_from_legacy_counts": {
+            "analyzed_band_energy_admission": 0,
+            "pooled_raw_admitted_spectra": 0
+          },
+          "frame_count": 12,
+          "methods": {
+            "analyzed_band_energy_admission": {
+              "class_counts": {
+                "indeterminate": 0,
+                "non_tonal": 1024,
+                "tonal": 0,
+                "unsupported": 0
+              },
+              "complete_origin_class_runs": [
+                {
+                  "class": "non_tonal",
+                  "end_origin_exclusive": 1024,
+                  "start_origin_inclusive": 0
+                }
+              ],
+              "contributing_frames_min_max": [
+                6,
+                12
+              ],
+              "different_class_from_origin_zero_count": 0,
+              "origin_count": 1024,
+              "retained_analyzed_band_energy_fraction_min_max": [
+                "0.999026554374",
+                "1.000000000000"
+              ],
+              "spectral_flatness_min_max": [
+                "1.000000000",
+                "1.000000000"
+              ],
+              "top_8_bin_power_share_min_max": [
+                "0.015655577",
+                "0.015655577"
+              ]
+            },
+            "legacy_equal_frame_medians": {
+              "class_counts": {
+                "indeterminate": 0,
+                "non_tonal": 1024,
+                "tonal": 0,
+                "unsupported": 0
+              },
+              "complete_origin_class_runs": [
+                {
+                  "class": "non_tonal",
+                  "end_origin_exclusive": 1024,
+                  "start_origin_inclusive": 0
+                }
+              ],
+              "contributing_frames_min_max": [
+                6,
+                12
+              ],
+              "different_class_from_origin_zero_count": 0,
+              "origin_count": 1024,
+              "retained_analyzed_band_energy_fraction_min_max": [
+                "1.000000000000",
+                "1.000000000000"
+              ],
+              "spectral_flatness_min_max": [
+                "1.000000000",
+                "1.000000000"
+              ],
+              "top_8_bin_power_share_min_max": [
+                "0.015655577",
+                "0.015655577"
+              ]
+            },
+            "pooled_raw_admitted_spectra": {
+              "class_counts": {
+                "indeterminate": 0,
+                "non_tonal": 1024,
+                "tonal": 0,
+                "unsupported": 0
+              },
+              "complete_origin_class_runs": [
+                {
+                  "class": "non_tonal",
+                  "end_origin_exclusive": 1024,
+                  "start_origin_inclusive": 0
+                }
+              ],
+              "contributing_frames_min_max": [
+                6,
+                12
+              ],
+              "different_class_from_origin_zero_count": 0,
+              "origin_count": 1024,
+              "retained_analyzed_band_energy_fraction_min_max": [
+                "1.000000000000",
+                "1.000000000000"
+              ],
+              "spectral_flatness_min_max": [
+                "1.000000000",
+                "1.000000000"
+              ],
+              "top_8_bin_power_share_min_max": [
+                "0.015655577",
+                "0.015655577"
+              ]
+            }
+          }
+        }
+      ],
+      "unchanged_descriptor_crosschecks_passed": 16,
+      "unique_rotated_frames_checked": 1024
+    },
+    {
+      "all_raw_frame_powers_identical_positive": true,
+      "changed_class_between_11_and_12_frames": {
+        "analyzed_band_energy_admission": 0,
+        "legacy_equal_frame_medians": 0,
+        "pooled_raw_admitted_spectra": 0
+      },
+      "closed_form_unwindowed_dft": {
+        "all_1024_bins_checked": true,
+        "passed": true,
+        "relative_error_at_most": "1e-12"
+      },
+      "coherent_mechanism_ledgers": [],
+      "family": "quarter_rate_tone",
+      "inventories": [
+        {
+          "diagnostic_changed_class_from_legacy_counts": {
+            "analyzed_band_energy_admission": 0,
+            "pooled_raw_admitted_spectra": 0
+          },
+          "frame_count": 11,
+          "methods": {
+            "analyzed_band_energy_admission": {
+              "class_counts": {
+                "indeterminate": 0,
+                "non_tonal": 0,
+                "tonal": 1024,
+                "unsupported": 0
+              },
+              "complete_origin_class_runs": [
+                {
+                  "class": "tonal",
+                  "end_origin_exclusive": 1024,
+                  "start_origin_inclusive": 0
+                }
+              ],
+              "contributing_frames_min_max": [
+                11,
+                11
+              ],
+              "different_class_from_origin_zero_count": 0,
+              "origin_count": 1024,
+              "retained_analyzed_band_energy_fraction_min_max": [
+                "1.000000000000",
+                "1.000000000000"
+              ],
+              "spectral_flatness_min_max": [
+                "0.000000001",
+                "0.000000001"
+              ],
+              "top_8_bin_power_share_min_max": [
+                "1.000000000",
+                "1.000000000"
+              ]
+            },
+            "legacy_equal_frame_medians": {
+              "class_counts": {
+                "indeterminate": 0,
+                "non_tonal": 0,
+                "tonal": 1024,
+                "unsupported": 0
+              },
+              "complete_origin_class_runs": [
+                {
+                  "class": "tonal",
+                  "end_origin_exclusive": 1024,
+                  "start_origin_inclusive": 0
+                }
+              ],
+              "contributing_frames_min_max": [
+                11,
+                11
+              ],
+              "different_class_from_origin_zero_count": 0,
+              "origin_count": 1024,
+              "retained_analyzed_band_energy_fraction_min_max": [
+                "1.000000000000",
+                "1.000000000000"
+              ],
+              "spectral_flatness_min_max": [
+                "0.000000001",
+                "0.000000001"
+              ],
+              "top_8_bin_power_share_min_max": [
+                "1.000000000",
+                "1.000000000"
+              ]
+            },
+            "pooled_raw_admitted_spectra": {
+              "class_counts": {
+                "indeterminate": 0,
+                "non_tonal": 0,
+                "tonal": 1024,
+                "unsupported": 0
+              },
+              "complete_origin_class_runs": [
+                {
+                  "class": "tonal",
+                  "end_origin_exclusive": 1024,
+                  "start_origin_inclusive": 0
+                }
+              ],
+              "contributing_frames_min_max": [
+                11,
+                11
+              ],
+              "different_class_from_origin_zero_count": 0,
+              "origin_count": 1024,
+              "retained_analyzed_band_energy_fraction_min_max": [
+                "1.000000000000",
+                "1.000000000000"
+              ],
+              "spectral_flatness_min_max": [
+                "0.000000001",
+                "0.000000001"
+              ],
+              "top_8_bin_power_share_min_max": [
+                "1.000000000",
+                "1.000000000"
+              ]
+            }
+          }
+        },
+        {
+          "diagnostic_changed_class_from_legacy_counts": {
+            "analyzed_band_energy_admission": 0,
+            "pooled_raw_admitted_spectra": 0
+          },
+          "frame_count": 12,
+          "methods": {
+            "analyzed_band_energy_admission": {
+              "class_counts": {
+                "indeterminate": 0,
+                "non_tonal": 0,
+                "tonal": 1024,
+                "unsupported": 0
+              },
+              "complete_origin_class_runs": [
+                {
+                  "class": "tonal",
+                  "end_origin_exclusive": 1024,
+                  "start_origin_inclusive": 0
+                }
+              ],
+              "contributing_frames_min_max": [
+                12,
+                12
+              ],
+              "different_class_from_origin_zero_count": 0,
+              "origin_count": 1024,
+              "retained_analyzed_band_energy_fraction_min_max": [
+                "1.000000000000",
+                "1.000000000000"
+              ],
+              "spectral_flatness_min_max": [
+                "0.000000001",
+                "0.000000001"
+              ],
+              "top_8_bin_power_share_min_max": [
+                "1.000000000",
+                "1.000000000"
+              ]
+            },
+            "legacy_equal_frame_medians": {
+              "class_counts": {
+                "indeterminate": 0,
+                "non_tonal": 0,
+                "tonal": 1024,
+                "unsupported": 0
+              },
+              "complete_origin_class_runs": [
+                {
+                  "class": "tonal",
+                  "end_origin_exclusive": 1024,
+                  "start_origin_inclusive": 0
+                }
+              ],
+              "contributing_frames_min_max": [
+                12,
+                12
+              ],
+              "different_class_from_origin_zero_count": 0,
+              "origin_count": 1024,
+              "retained_analyzed_band_energy_fraction_min_max": [
+                "1.000000000000",
+                "1.000000000000"
+              ],
+              "spectral_flatness_min_max": [
+                "0.000000001",
+                "0.000000001"
+              ],
+              "top_8_bin_power_share_min_max": [
+                "1.000000000",
+                "1.000000000"
+              ]
+            },
+            "pooled_raw_admitted_spectra": {
+              "class_counts": {
+                "indeterminate": 0,
+                "non_tonal": 0,
+                "tonal": 1024,
+                "unsupported": 0
+              },
+              "complete_origin_class_runs": [
+                {
+                  "class": "tonal",
+                  "end_origin_exclusive": 1024,
+                  "start_origin_inclusive": 0
+                }
+              ],
+              "contributing_frames_min_max": [
+                12,
+                12
+              ],
+              "different_class_from_origin_zero_count": 0,
+              "origin_count": 1024,
+              "retained_analyzed_band_energy_fraction_min_max": [
+                "1.000000000000",
+                "1.000000000000"
+              ],
+              "spectral_flatness_min_max": [
+                "0.000000001",
+                "0.000000001"
+              ],
+              "top_8_bin_power_share_min_max": [
+                "1.000000000",
+                "1.000000000"
+              ]
+            }
+          }
+        }
+      ],
+      "unchanged_descriptor_crosschecks_passed": 16,
+      "unique_rotated_frames_checked": 1024
+    }
+  ],
+  "generated_audio_retained": false,
+  "implementation_sha256": "fab8ef865bedd3cad4894be004c8088a61a1c7fa0457c7939a985b66b8a48dc4",
+  "independent_scientific_validation_claimed": false,
+  "method_summaries_evaluated": 18432,
+  "next_requirement": "Use the mechanism evidence to specify requirements, not tune a natural-source label. Any selected descriptor still needs independent physical-band, support and context justification plus fresh validation. Capture authority and all prior candidate outcomes remain unchanged.",
+  "origin_inventory_family_cases": 6144,
+  "plan_sha256": "4822a5ddf9b1809f5348cb44acd20de38306b37b75d9b29d389785eb9dac45b8",
+  "report_id": "descriptor-window-support-audit-20260905-001",
+  "schema_version": 1,
+  "state": "synthetic_descriptor_window_support_mechanism_audit_complete",
+  "statistical_fits_or_perceptual_metrics_executed": false,
+  "unchanged_descriptor_crosschecks_passed": 48
+}
