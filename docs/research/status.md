@@ -1398,3 +1398,30 @@ statistical work concerns paired-target margins, interval coverage, population
 and source variation, missingness and solver behavior. Source qualification and
 the authorized capture's physical setup declaration remain outstanding. No audio,
 listener collection, metric execution, training or public verdict was enabled.
+
+## Paired uncertainty sensitivity diagnostic — 2026-09-05
+
+The [paired uncertainty audit](perceptual-degradation-paired-uncertainty-20260905.md)
+tests the unchanged fixed-variance solver on bounded, role-linked synthetic
+paired grades. It includes five variance settings and three missingness
+mechanisms, retaining the same pre-missingness population target throughout.
+Complete balanced designs are checked against independent mean/variance
+calculations and finite discrete probability enumeration; 128 actual fitted
+panels per mechanism supply additional diagnostics with Monte Carlo uncertainty.
+
+Enumerated interval coverage is 97.624% with matched variance but 73.595% when
+all three generating standard deviations double. The old multiplier corresponds
+to approximately 97.5% central normal coverage, not ordinary 95% or established
+familywise coverage. Under the declared outcome-dependent missingness mechanism,
+0/128 returned intervals cover the target; 97 panels pass count gates and still
+produce nonmaterial severity support at the diagnostic boundary. Missing-source
+panels all abstain on support. These are conditional synthetic findings, not
+human error rates or a scientific disposition about perceptual estimation.
+
+The fixed-variance, complete-case path remains unqualified for human calibration.
+Variance estimation, valid uncertainty and selective-missingness sensitivity
+need an explicit successor; correct label logic and numerical convergence do
+not substitute for them. No human margin, replacement estimator, audibility
+model or multiplicity rule is selected. Source qualification, physical capture
+setup, human calibration, oracle validation and all no-reference gates remain
+open. No research audio, real listener data or sealed evidence was accessed.
