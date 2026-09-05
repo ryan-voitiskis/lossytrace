@@ -1,0 +1,4917 @@
+{
+  "access_boundary": {
+    "audio_access_authorized": false,
+    "human_collection_authorized": false,
+    "metric_execution_authorized": false,
+    "no_reference_training_authorized": false,
+    "observed_response_input_authorized": false,
+    "playback_authorized": false,
+    "public_verdict_enabled": false,
+    "sealed_evidence_access_authorized": false,
+    "synthetic_execution_only": true
+  },
+  "all_planned_panels_and_empty_draws_accounted_for": true,
+  "audibility_coverage_evaluated": false,
+  "bindings": {
+    "engine": {
+      "path": "scripts/perceptual_degradation_paired_uncertainty.py",
+      "sha256": "8c4d289456fd3ad410ce9d2a228b7a203ec4b5f923df975e1843c35013ecf453"
+    },
+    "predecessor_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-paired-uncertainty-synthetic-20260905-002.json",
+      "sha256": "00aca82b0f37512408f8903524e8ebf433a5c13111ed468f77ca49da87c0b6a5"
+    }
+  },
+  "bootstrap_doubling_draws": 2048,
+  "bootstrap_draws": 1024,
+  "familywise_coverage_evaluated": false,
+  "human_interval_coverage_validated": false,
+  "human_materiality_margin_selected": false,
+  "human_responses_observed": false,
+  "implementation_sha256": "3f3db3f41c65e6c2b8ea495a8274166491cac78c67a98dacb04fe8dc6dba00ea",
+  "independent_method_validation_complete": false,
+  "method_selected_for_human_calibration": false,
+  "no_reference_training_eligible": false,
+  "nominal_pointwise_coverage_reference": 0.975,
+  "objective_complete": false,
+  "oracle_truth_eligible": false,
+  "plan_sha256": "0850f7563592df6c97cc726955dff778915d25eea7f79c2c1879762e59728d4f",
+  "population_estimand": "mean_observed_paired_difference_before_missingness_over_the_declared_generated_listener_and_source_populations",
+  "replicates_per_scenario": 128,
+  "report_id": "paired-resampling-audit-20260905-001",
+  "scenarios": [
+    {
+      "bootstrap_doubling_diagnostic": {
+        "crossed_bounded_missing_basic": {
+          "both_intervals_returned": 8,
+          "decision_changes": 0,
+          "maximum_endpoint_change": 0.0165711806,
+          "maximum_width_change": 0.0168663194,
+          "panels": 8,
+          "return_state_changes": 0
+        },
+        "crossed_complete_case_basic": {
+          "both_intervals_returned": 8,
+          "decision_changes": 0,
+          "maximum_endpoint_change": 0.0165711806,
+          "maximum_width_change": 0.0168663194,
+          "panels": 8,
+          "return_state_changes": 0
+        }
+      },
+      "complete_count_ranges": {
+        "listeners": [
+          24,
+          24
+        ],
+        "responses": [
+          288,
+          288
+        ],
+        "sources": [
+          12,
+          12
+        ]
+      },
+      "finite_panel_bounds": {
+        "containment": {
+          "denominator": 128,
+          "estimate": 1.0,
+          "monte_carlo_standard_error": 0.0,
+          "numerator": 128,
+          "wilson_95_interval": [
+            0.9708630437,
+            1.0
+          ]
+        },
+        "is_population_confidence_interval": false,
+        "mean_width": 0.0
+      },
+      "methods": {
+        "crossed_bounded_missing_basic": {
+          "bias_given_point_estimate": null,
+          "bias_monte_carlo_standard_error": null,
+          "correct_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          },
+          "count_supported_interval_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "coverage_given_count_supported": {
+            "denominator": 128,
+            "estimate": 0.984375,
+            "monte_carlo_standard_error": 0.0109618869,
+            "numerator": 126,
+            "wilson_95_interval": [
+              0.9448190233,
+              0.9957045503
+            ]
+          },
+          "coverage_given_returned": {
+            "denominator": 128,
+            "estimate": 0.984375,
+            "monte_carlo_standard_error": 0.0109618869,
+            "numerator": 126,
+            "wilson_95_interval": [
+              0.9448190233,
+              0.9957045503
+            ]
+          },
+          "diagnostic_decisions": {
+            "indeterminate": 126,
+            "material_supported": 0,
+            "nonmaterial_supported": 2
+          },
+          "empty_bootstrap_draws": 0,
+          "failures": {},
+          "indeterminate_rate": {
+            "denominator": 128,
+            "estimate": 0.984375,
+            "monte_carlo_standard_error": 0.0109618869,
+            "numerator": 126,
+            "wilson_95_interval": [
+              0.9448190233,
+              0.9957045503
+            ]
+          },
+          "interval_return_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "mean_interval_width_given_returned": 0.4850876872,
+          "mean_sampling_se_given_point_estimate": null,
+          "point_estimate_count": 0,
+          "rare_absent_coverage_given_returned": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_absent_return_and_cover_rate": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_source_absent_panels": 0,
+          "return_and_cover_rate": {
+            "denominator": 128,
+            "estimate": 0.984375,
+            "monte_carlo_standard_error": 0.0109618869,
+            "numerator": 126,
+            "wilson_95_interval": [
+              0.9448190233,
+              0.9957045503
+            ]
+          },
+          "returned_intervals": 128,
+          "width_range_given_returned": [
+            0.3589236111,
+            0.5875868056
+          ],
+          "wrong_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.015625,
+            "monte_carlo_standard_error": 0.0109618869,
+            "numerator": 2,
+            "wilson_95_interval": [
+              0.0042954497,
+              0.0551809767
+            ]
+          }
+        },
+        "crossed_complete_case_basic": {
+          "bias_given_point_estimate": 0.0086154514,
+          "bias_monte_carlo_standard_error": 0.0087032677,
+          "correct_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          },
+          "count_supported_interval_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "coverage_given_count_supported": {
+            "denominator": 128,
+            "estimate": 0.984375,
+            "monte_carlo_standard_error": 0.0109618869,
+            "numerator": 126,
+            "wilson_95_interval": [
+              0.9448190233,
+              0.9957045503
+            ]
+          },
+          "coverage_given_returned": {
+            "denominator": 128,
+            "estimate": 0.984375,
+            "monte_carlo_standard_error": 0.0109618869,
+            "numerator": 126,
+            "wilson_95_interval": [
+              0.9448190233,
+              0.9957045503
+            ]
+          },
+          "diagnostic_decisions": {
+            "indeterminate": 126,
+            "material_supported": 0,
+            "nonmaterial_supported": 2
+          },
+          "empty_bootstrap_draws": 0,
+          "failures": {},
+          "indeterminate_rate": {
+            "denominator": 128,
+            "estimate": 0.984375,
+            "monte_carlo_standard_error": 0.0109618869,
+            "numerator": 126,
+            "wilson_95_interval": [
+              0.9448190233,
+              0.9957045503
+            ]
+          },
+          "interval_return_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "mean_interval_width_given_returned": 0.4850876872,
+          "mean_sampling_se_given_point_estimate": 0.1087603406,
+          "point_estimate_count": 128,
+          "rare_absent_coverage_given_returned": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_absent_return_and_cover_rate": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_source_absent_panels": 0,
+          "return_and_cover_rate": {
+            "denominator": 128,
+            "estimate": 0.984375,
+            "monte_carlo_standard_error": 0.0109618869,
+            "numerator": 126,
+            "wilson_95_interval": [
+              0.9448190233,
+              0.9957045503
+            ]
+          },
+          "returned_intervals": 128,
+          "width_range_given_returned": [
+            0.3589236111,
+            0.5875868056
+          ],
+          "wrong_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.015625,
+            "monte_carlo_standard_error": 0.0109618869,
+            "numerator": 2,
+            "wilson_95_interval": [
+              0.0042954497,
+              0.0551809767
+            ]
+          }
+        },
+        "legacy_fixed_variance": {
+          "bias_given_point_estimate": 0.0086154514,
+          "bias_monte_carlo_standard_error": 0.0087032677,
+          "correct_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          },
+          "count_supported_interval_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "coverage_given_count_supported": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "coverage_given_returned": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "diagnostic_decisions": {
+            "indeterminate": 128,
+            "material_supported": 0,
+            "nonmaterial_supported": 0
+          },
+          "empty_bootstrap_draws": 0,
+          "failures": {},
+          "indeterminate_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "interval_return_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "mean_interval_width_given_returned": 0.4695665902,
+          "mean_sampling_se_given_point_estimate": 0.1047483757,
+          "point_estimate_count": 128,
+          "rare_absent_coverage_given_returned": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_absent_return_and_cover_rate": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_source_absent_panels": 0,
+          "return_and_cover_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "returned_intervals": 128,
+          "width_range_given_returned": [
+            0.4695665902,
+            0.4695665902
+          ],
+          "wrong_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          }
+        }
+      },
+      "replicates": 128,
+      "scenario": {
+        "id": "matched_boundary",
+        "mean_ticks": -10,
+        "missingness": "none",
+        "residual_variation": "constant",
+        "scales": [
+          1,
+          1,
+          1
+        ],
+        "source_distribution": "matched"
+      }
+    },
+    {
+      "bootstrap_doubling_diagnostic": {
+        "crossed_bounded_missing_basic": {
+          "both_intervals_returned": 8,
+          "decision_changes": 0,
+          "maximum_endpoint_change": 0.0355381944,
+          "maximum_width_change": 0.050625,
+          "panels": 8,
+          "return_state_changes": 0
+        },
+        "crossed_complete_case_basic": {
+          "both_intervals_returned": 8,
+          "decision_changes": 0,
+          "maximum_endpoint_change": 0.0355381944,
+          "maximum_width_change": 0.050625,
+          "panels": 8,
+          "return_state_changes": 0
+        }
+      },
+      "complete_count_ranges": {
+        "listeners": [
+          24,
+          24
+        ],
+        "responses": [
+          288,
+          288
+        ],
+        "sources": [
+          12,
+          12
+        ]
+      },
+      "finite_panel_bounds": {
+        "containment": {
+          "denominator": 128,
+          "estimate": 1.0,
+          "monte_carlo_standard_error": 0.0,
+          "numerator": 128,
+          "wilson_95_interval": [
+            0.9708630437,
+            1.0
+          ]
+        },
+        "is_population_confidence_interval": false,
+        "mean_width": 0.0
+      },
+      "methods": {
+        "crossed_bounded_missing_basic": {
+          "bias_given_point_estimate": null,
+          "bias_monte_carlo_standard_error": null,
+          "correct_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          },
+          "count_supported_interval_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "coverage_given_count_supported": {
+            "denominator": 128,
+            "estimate": 0.9296875,
+            "monte_carlo_standard_error": 0.0225985087,
+            "numerator": 119,
+            "wilson_95_interval": [
+              0.8717651965,
+              0.9625702317
+            ]
+          },
+          "coverage_given_returned": {
+            "denominator": 128,
+            "estimate": 0.9296875,
+            "monte_carlo_standard_error": 0.0225985087,
+            "numerator": 119,
+            "wilson_95_interval": [
+              0.8717651965,
+              0.9625702317
+            ]
+          },
+          "diagnostic_decisions": {
+            "indeterminate": 119,
+            "material_supported": 6,
+            "nonmaterial_supported": 3
+          },
+          "empty_bootstrap_draws": 0,
+          "failures": {},
+          "indeterminate_rate": {
+            "denominator": 128,
+            "estimate": 0.9296875,
+            "monte_carlo_standard_error": 0.0225985087,
+            "numerator": 119,
+            "wilson_95_interval": [
+              0.8717651965,
+              0.9625702317
+            ]
+          },
+          "interval_return_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "mean_interval_width_given_returned": 0.9688750543,
+          "mean_sampling_se_given_point_estimate": null,
+          "point_estimate_count": 0,
+          "rare_absent_coverage_given_returned": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_absent_return_and_cover_rate": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_source_absent_panels": 0,
+          "return_and_cover_rate": {
+            "denominator": 128,
+            "estimate": 0.9296875,
+            "monte_carlo_standard_error": 0.0225985087,
+            "numerator": 119,
+            "wilson_95_interval": [
+              0.8717651965,
+              0.9625702317
+            ]
+          },
+          "returned_intervals": 128,
+          "width_range_given_returned": [
+            0.745625,
+            1.1413368056
+          ],
+          "wrong_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0703125,
+            "monte_carlo_standard_error": 0.0225985087,
+            "numerator": 9,
+            "wilson_95_interval": [
+              0.0374297683,
+              0.1282348035
+            ]
+          }
+        },
+        "crossed_complete_case_basic": {
+          "bias_given_point_estimate": -0.0068576389,
+          "bias_monte_carlo_standard_error": 0.0205096019,
+          "correct_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          },
+          "count_supported_interval_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "coverage_given_count_supported": {
+            "denominator": 128,
+            "estimate": 0.9296875,
+            "monte_carlo_standard_error": 0.0225985087,
+            "numerator": 119,
+            "wilson_95_interval": [
+              0.8717651965,
+              0.9625702317
+            ]
+          },
+          "coverage_given_returned": {
+            "denominator": 128,
+            "estimate": 0.9296875,
+            "monte_carlo_standard_error": 0.0225985087,
+            "numerator": 119,
+            "wilson_95_interval": [
+              0.8717651965,
+              0.9625702317
+            ]
+          },
+          "diagnostic_decisions": {
+            "indeterminate": 119,
+            "material_supported": 6,
+            "nonmaterial_supported": 3
+          },
+          "empty_bootstrap_draws": 0,
+          "failures": {},
+          "indeterminate_rate": {
+            "denominator": 128,
+            "estimate": 0.9296875,
+            "monte_carlo_standard_error": 0.0225985087,
+            "numerator": 119,
+            "wilson_95_interval": [
+              0.8717651965,
+              0.9625702317
+            ]
+          },
+          "interval_return_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "mean_interval_width_given_returned": 0.9688750543,
+          "mean_sampling_se_given_point_estimate": 0.2176953197,
+          "point_estimate_count": 128,
+          "rare_absent_coverage_given_returned": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_absent_return_and_cover_rate": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_source_absent_panels": 0,
+          "return_and_cover_rate": {
+            "denominator": 128,
+            "estimate": 0.9296875,
+            "monte_carlo_standard_error": 0.0225985087,
+            "numerator": 119,
+            "wilson_95_interval": [
+              0.8717651965,
+              0.9625702317
+            ]
+          },
+          "returned_intervals": 128,
+          "width_range_given_returned": [
+            0.745625,
+            1.1413368056
+          ],
+          "wrong_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0703125,
+            "monte_carlo_standard_error": 0.0225985087,
+            "numerator": 9,
+            "wilson_95_interval": [
+              0.0374297683,
+              0.1282348035
+            ]
+          }
+        },
+        "legacy_fixed_variance": {
+          "bias_given_point_estimate": -0.0068576389,
+          "bias_monte_carlo_standard_error": 0.0205096019,
+          "correct_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          },
+          "count_supported_interval_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "coverage_given_count_supported": {
+            "denominator": 128,
+            "estimate": 0.703125,
+            "monte_carlo_standard_error": 0.0403829553,
+            "numerator": 90,
+            "wilson_95_interval": [
+              0.6189947723,
+              0.7754183392
+            ]
+          },
+          "coverage_given_returned": {
+            "denominator": 128,
+            "estimate": 0.703125,
+            "monte_carlo_standard_error": 0.0403829553,
+            "numerator": 90,
+            "wilson_95_interval": [
+              0.6189947723,
+              0.7754183392
+            ]
+          },
+          "diagnostic_decisions": {
+            "indeterminate": 90,
+            "material_supported": 20,
+            "nonmaterial_supported": 18
+          },
+          "empty_bootstrap_draws": 0,
+          "failures": {},
+          "indeterminate_rate": {
+            "denominator": 128,
+            "estimate": 0.703125,
+            "monte_carlo_standard_error": 0.0403829553,
+            "numerator": 90,
+            "wilson_95_interval": [
+              0.6189947723,
+              0.7754183392
+            ]
+          },
+          "interval_return_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "mean_interval_width_given_returned": 0.4695665902,
+          "mean_sampling_se_given_point_estimate": 0.1047483757,
+          "point_estimate_count": 128,
+          "rare_absent_coverage_given_returned": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_absent_return_and_cover_rate": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_source_absent_panels": 0,
+          "return_and_cover_rate": {
+            "denominator": 128,
+            "estimate": 0.703125,
+            "monte_carlo_standard_error": 0.0403829553,
+            "numerator": 90,
+            "wilson_95_interval": [
+              0.6189947723,
+              0.7754183392
+            ]
+          },
+          "returned_intervals": 128,
+          "width_range_given_returned": [
+            0.4695665902,
+            0.4695665902
+          ],
+          "wrong_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.296875,
+            "monte_carlo_standard_error": 0.0403829553,
+            "numerator": 38,
+            "wilson_95_interval": [
+              0.2245816608,
+              0.3810052277
+            ]
+          }
+        }
+      },
+      "replicates": 128,
+      "scenario": {
+        "id": "all_sd_x2_boundary",
+        "mean_ticks": -10,
+        "missingness": "none",
+        "residual_variation": "constant",
+        "scales": [
+          2,
+          2,
+          2
+        ],
+        "source_distribution": "matched"
+      }
+    },
+    {
+      "bootstrap_doubling_diagnostic": {
+        "crossed_bounded_missing_basic": {
+          "both_intervals_returned": 8,
+          "decision_changes": 0,
+          "maximum_endpoint_change": 0.0311545139,
+          "maximum_width_change": 0.0293402778,
+          "panels": 8,
+          "return_state_changes": 0
+        },
+        "crossed_complete_case_basic": {
+          "both_intervals_returned": 8,
+          "decision_changes": 0,
+          "maximum_endpoint_change": 0.0311545139,
+          "maximum_width_change": 0.0293402778,
+          "panels": 8,
+          "return_state_changes": 0
+        }
+      },
+      "complete_count_ranges": {
+        "listeners": [
+          24,
+          24
+        ],
+        "responses": [
+          288,
+          288
+        ],
+        "sources": [
+          12,
+          12
+        ]
+      },
+      "finite_panel_bounds": {
+        "containment": {
+          "denominator": 128,
+          "estimate": 1.0,
+          "monte_carlo_standard_error": 0.0,
+          "numerator": 128,
+          "wilson_95_interval": [
+            0.9708630437,
+            1.0
+          ]
+        },
+        "is_population_confidence_interval": false,
+        "mean_width": 0.0
+      },
+      "methods": {
+        "crossed_bounded_missing_basic": {
+          "bias_given_point_estimate": null,
+          "bias_monte_carlo_standard_error": null,
+          "correct_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          },
+          "count_supported_interval_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "coverage_given_count_supported": {
+            "denominator": 128,
+            "estimate": 0.9453125,
+            "monte_carlo_standard_error": 0.0200967926,
+            "numerator": 121,
+            "wilson_95_interval": [
+              0.8914150997,
+              0.9732597986
+            ]
+          },
+          "coverage_given_returned": {
+            "denominator": 128,
+            "estimate": 0.9453125,
+            "monte_carlo_standard_error": 0.0200967926,
+            "numerator": 121,
+            "wilson_95_interval": [
+              0.8914150997,
+              0.9732597986
+            ]
+          },
+          "diagnostic_decisions": {
+            "indeterminate": 121,
+            "material_supported": 4,
+            "nonmaterial_supported": 3
+          },
+          "empty_bootstrap_draws": 0,
+          "failures": {},
+          "indeterminate_rate": {
+            "denominator": 128,
+            "estimate": 0.9453125,
+            "monte_carlo_standard_error": 0.0200967926,
+            "numerator": 121,
+            "wilson_95_interval": [
+              0.8914150997,
+              0.9732597986
+            ]
+          },
+          "interval_return_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "mean_interval_width_given_returned": 0.7988614909,
+          "mean_sampling_se_given_point_estimate": null,
+          "point_estimate_count": 0,
+          "rare_absent_coverage_given_returned": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_absent_return_and_cover_rate": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_source_absent_panels": 0,
+          "return_and_cover_rate": {
+            "denominator": 128,
+            "estimate": 0.9453125,
+            "monte_carlo_standard_error": 0.0200967926,
+            "numerator": 121,
+            "wilson_95_interval": [
+              0.8914150997,
+              0.9732597986
+            ]
+          },
+          "returned_intervals": 128,
+          "width_range_given_returned": [
+            0.6248958333,
+            0.9408940972
+          ],
+          "wrong_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0546875,
+            "monte_carlo_standard_error": 0.0200967926,
+            "numerator": 7,
+            "wilson_95_interval": [
+              0.0267402014,
+              0.1085849003
+            ]
+          }
+        },
+        "crossed_complete_case_basic": {
+          "bias_given_point_estimate": -0.0191623264,
+          "bias_monte_carlo_standard_error": 0.0162690842,
+          "correct_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          },
+          "count_supported_interval_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "coverage_given_count_supported": {
+            "denominator": 128,
+            "estimate": 0.9453125,
+            "monte_carlo_standard_error": 0.0200967926,
+            "numerator": 121,
+            "wilson_95_interval": [
+              0.8914150997,
+              0.9732597986
+            ]
+          },
+          "coverage_given_returned": {
+            "denominator": 128,
+            "estimate": 0.9453125,
+            "monte_carlo_standard_error": 0.0200967926,
+            "numerator": 121,
+            "wilson_95_interval": [
+              0.8914150997,
+              0.9732597986
+            ]
+          },
+          "diagnostic_decisions": {
+            "indeterminate": 121,
+            "material_supported": 4,
+            "nonmaterial_supported": 3
+          },
+          "empty_bootstrap_draws": 0,
+          "failures": {},
+          "indeterminate_rate": {
+            "denominator": 128,
+            "estimate": 0.9453125,
+            "monte_carlo_standard_error": 0.0200967926,
+            "numerator": 121,
+            "wilson_95_interval": [
+              0.8914150997,
+              0.9732597986
+            ]
+          },
+          "interval_return_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "mean_interval_width_given_returned": 0.7988614909,
+          "mean_sampling_se_given_point_estimate": 0.1807810665,
+          "point_estimate_count": 128,
+          "rare_absent_coverage_given_returned": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_absent_return_and_cover_rate": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_source_absent_panels": 0,
+          "return_and_cover_rate": {
+            "denominator": 128,
+            "estimate": 0.9453125,
+            "monte_carlo_standard_error": 0.0200967926,
+            "numerator": 121,
+            "wilson_95_interval": [
+              0.8914150997,
+              0.9732597986
+            ]
+          },
+          "returned_intervals": 128,
+          "width_range_given_returned": [
+            0.6248958333,
+            0.9408940972
+          ],
+          "wrong_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0546875,
+            "monte_carlo_standard_error": 0.0200967926,
+            "numerator": 7,
+            "wilson_95_interval": [
+              0.0267402014,
+              0.1085849003
+            ]
+          }
+        },
+        "legacy_fixed_variance": {
+          "bias_given_point_estimate": -0.0191623264,
+          "bias_monte_carlo_standard_error": 0.0162690842,
+          "correct_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          },
+          "count_supported_interval_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "coverage_given_count_supported": {
+            "denominator": 128,
+            "estimate": 0.7421875,
+            "monte_carlo_standard_error": 0.0386637361,
+            "numerator": 95,
+            "wilson_95_interval": [
+              0.6601308077,
+              0.8101309791
+            ]
+          },
+          "coverage_given_returned": {
+            "denominator": 128,
+            "estimate": 0.7421875,
+            "monte_carlo_standard_error": 0.0386637361,
+            "numerator": 95,
+            "wilson_95_interval": [
+              0.6601308077,
+              0.8101309791
+            ]
+          },
+          "diagnostic_decisions": {
+            "indeterminate": 95,
+            "material_supported": 15,
+            "nonmaterial_supported": 18
+          },
+          "empty_bootstrap_draws": 0,
+          "failures": {},
+          "indeterminate_rate": {
+            "denominator": 128,
+            "estimate": 0.7421875,
+            "monte_carlo_standard_error": 0.0386637361,
+            "numerator": 95,
+            "wilson_95_interval": [
+              0.6601308077,
+              0.8101309791
+            ]
+          },
+          "interval_return_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "mean_interval_width_given_returned": 0.4695665902,
+          "mean_sampling_se_given_point_estimate": 0.1047483757,
+          "point_estimate_count": 128,
+          "rare_absent_coverage_given_returned": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_absent_return_and_cover_rate": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_source_absent_panels": 0,
+          "return_and_cover_rate": {
+            "denominator": 128,
+            "estimate": 0.7421875,
+            "monte_carlo_standard_error": 0.0386637361,
+            "numerator": 95,
+            "wilson_95_interval": [
+              0.6601308077,
+              0.8101309791
+            ]
+          },
+          "returned_intervals": 128,
+          "width_range_given_returned": [
+            0.4695665902,
+            0.4695665902
+          ],
+          "wrong_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.2578125,
+            "monte_carlo_standard_error": 0.0386637361,
+            "numerator": 33,
+            "wilson_95_interval": [
+              0.1898690209,
+              0.3398691923
+            ]
+          }
+        }
+      },
+      "replicates": 128,
+      "scenario": {
+        "id": "source_sd_x2_boundary",
+        "mean_ticks": -10,
+        "missingness": "none",
+        "residual_variation": "constant",
+        "scales": [
+          1,
+          2,
+          1
+        ],
+        "source_distribution": "matched"
+      }
+    },
+    {
+      "bootstrap_doubling_diagnostic": {
+        "crossed_bounded_missing_basic": {
+          "both_intervals_returned": 8,
+          "decision_changes": 0,
+          "maximum_endpoint_change": 0.0217274306,
+          "maximum_width_change": 0.0284895833,
+          "panels": 8,
+          "return_state_changes": 0
+        },
+        "crossed_complete_case_basic": {
+          "both_intervals_returned": 8,
+          "decision_changes": 0,
+          "maximum_endpoint_change": 0.0217274306,
+          "maximum_width_change": 0.0284895833,
+          "panels": 8,
+          "return_state_changes": 0
+        }
+      },
+      "complete_count_ranges": {
+        "listeners": [
+          24,
+          24
+        ],
+        "responses": [
+          288,
+          288
+        ],
+        "sources": [
+          12,
+          12
+        ]
+      },
+      "finite_panel_bounds": {
+        "containment": {
+          "denominator": 128,
+          "estimate": 1.0,
+          "monte_carlo_standard_error": 0.0,
+          "numerator": 128,
+          "wilson_95_interval": [
+            0.9708630437,
+            1.0
+          ]
+        },
+        "is_population_confidence_interval": false,
+        "mean_width": 0.0
+      },
+      "methods": {
+        "crossed_bounded_missing_basic": {
+          "bias_given_point_estimate": null,
+          "bias_monte_carlo_standard_error": null,
+          "correct_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          },
+          "count_supported_interval_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "coverage_given_count_supported": {
+            "denominator": 128,
+            "estimate": 0.96875,
+            "monte_carlo_standard_error": 0.0153789216,
+            "numerator": 124,
+            "wilson_95_interval": [
+              0.9224023687,
+              0.9877817348
+            ]
+          },
+          "coverage_given_returned": {
+            "denominator": 128,
+            "estimate": 0.96875,
+            "monte_carlo_standard_error": 0.0153789216,
+            "numerator": 124,
+            "wilson_95_interval": [
+              0.9224023687,
+              0.9877817348
+            ]
+          },
+          "diagnostic_decisions": {
+            "indeterminate": 124,
+            "material_supported": 3,
+            "nonmaterial_supported": 1
+          },
+          "empty_bootstrap_draws": 0,
+          "failures": {},
+          "indeterminate_rate": {
+            "denominator": 128,
+            "estimate": 0.96875,
+            "monte_carlo_standard_error": 0.0153789216,
+            "numerator": 124,
+            "wilson_95_interval": [
+              0.9224023687,
+              0.9877817348
+            ]
+          },
+          "interval_return_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "mean_interval_width_given_returned": 0.5490113661,
+          "mean_sampling_se_given_point_estimate": null,
+          "point_estimate_count": 0,
+          "rare_absent_coverage_given_returned": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_absent_return_and_cover_rate": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_source_absent_panels": 0,
+          "return_and_cover_rate": {
+            "denominator": 128,
+            "estimate": 0.96875,
+            "monte_carlo_standard_error": 0.0153789216,
+            "numerator": 124,
+            "wilson_95_interval": [
+              0.9224023687,
+              0.9877817348
+            ]
+          },
+          "returned_intervals": 128,
+          "width_range_given_returned": [
+            0.398359375,
+            0.6976649306
+          ],
+          "wrong_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.03125,
+            "monte_carlo_standard_error": 0.0153789216,
+            "numerator": 4,
+            "wilson_95_interval": [
+              0.0122182652,
+              0.0775976313
+            ]
+          }
+        },
+        "crossed_complete_case_basic": {
+          "bias_given_point_estimate": 0.0048773872,
+          "bias_monte_carlo_standard_error": 0.0105523521,
+          "correct_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          },
+          "count_supported_interval_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "coverage_given_count_supported": {
+            "denominator": 128,
+            "estimate": 0.96875,
+            "monte_carlo_standard_error": 0.0153789216,
+            "numerator": 124,
+            "wilson_95_interval": [
+              0.9224023687,
+              0.9877817348
+            ]
+          },
+          "coverage_given_returned": {
+            "denominator": 128,
+            "estimate": 0.96875,
+            "monte_carlo_standard_error": 0.0153789216,
+            "numerator": 124,
+            "wilson_95_interval": [
+              0.9224023687,
+              0.9877817348
+            ]
+          },
+          "diagnostic_decisions": {
+            "indeterminate": 124,
+            "material_supported": 3,
+            "nonmaterial_supported": 1
+          },
+          "empty_bootstrap_draws": 0,
+          "failures": {},
+          "indeterminate_rate": {
+            "denominator": 128,
+            "estimate": 0.96875,
+            "monte_carlo_standard_error": 0.0153789216,
+            "numerator": 124,
+            "wilson_95_interval": [
+              0.9224023687,
+              0.9877817348
+            ]
+          },
+          "interval_return_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "mean_interval_width_given_returned": 0.5490113661,
+          "mean_sampling_se_given_point_estimate": 0.1231660733,
+          "point_estimate_count": 128,
+          "rare_absent_coverage_given_returned": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_absent_return_and_cover_rate": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_source_absent_panels": 0,
+          "return_and_cover_rate": {
+            "denominator": 128,
+            "estimate": 0.96875,
+            "monte_carlo_standard_error": 0.0153789216,
+            "numerator": 124,
+            "wilson_95_interval": [
+              0.9224023687,
+              0.9877817348
+            ]
+          },
+          "returned_intervals": 128,
+          "width_range_given_returned": [
+            0.398359375,
+            0.6976649306
+          ],
+          "wrong_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.03125,
+            "monte_carlo_standard_error": 0.0153789216,
+            "numerator": 4,
+            "wilson_95_interval": [
+              0.0122182652,
+              0.0775976313
+            ]
+          }
+        },
+        "legacy_fixed_variance": {
+          "bias_given_point_estimate": 0.0048773872,
+          "bias_monte_carlo_standard_error": 0.0105523521,
+          "correct_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          },
+          "count_supported_interval_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "coverage_given_count_supported": {
+            "denominator": 128,
+            "estimate": 0.9609375,
+            "monte_carlo_standard_error": 0.0171246855,
+            "numerator": 123,
+            "wilson_95_interval": [
+              0.9118129792,
+              0.9832013892
+            ]
+          },
+          "coverage_given_returned": {
+            "denominator": 128,
+            "estimate": 0.9609375,
+            "monte_carlo_standard_error": 0.0171246855,
+            "numerator": 123,
+            "wilson_95_interval": [
+              0.9118129792,
+              0.9832013892
+            ]
+          },
+          "diagnostic_decisions": {
+            "indeterminate": 123,
+            "material_supported": 2,
+            "nonmaterial_supported": 3
+          },
+          "empty_bootstrap_draws": 0,
+          "failures": {},
+          "indeterminate_rate": {
+            "denominator": 128,
+            "estimate": 0.9609375,
+            "monte_carlo_standard_error": 0.0171246855,
+            "numerator": 123,
+            "wilson_95_interval": [
+              0.9118129792,
+              0.9832013892
+            ]
+          },
+          "interval_return_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "mean_interval_width_given_returned": 0.4695665902,
+          "mean_sampling_se_given_point_estimate": 0.1047483757,
+          "point_estimate_count": 128,
+          "rare_absent_coverage_given_returned": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_absent_return_and_cover_rate": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_source_absent_panels": 0,
+          "return_and_cover_rate": {
+            "denominator": 128,
+            "estimate": 0.9609375,
+            "monte_carlo_standard_error": 0.0171246855,
+            "numerator": 123,
+            "wilson_95_interval": [
+              0.9118129792,
+              0.9832013892
+            ]
+          },
+          "returned_intervals": 128,
+          "width_range_given_returned": [
+            0.4695665902,
+            0.4695665902
+          ],
+          "wrong_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0390625,
+            "monte_carlo_standard_error": 0.0171246855,
+            "numerator": 5,
+            "wilson_95_interval": [
+              0.0167986108,
+              0.0881870208
+            ]
+          }
+        }
+      },
+      "replicates": 128,
+      "scenario": {
+        "id": "heteroscedastic_boundary",
+        "mean_ticks": -10,
+        "missingness": "none",
+        "residual_variation": "double_for_positive_source",
+        "scales": [
+          1,
+          1,
+          1
+        ],
+        "source_distribution": "matched"
+      }
+    },
+    {
+      "bootstrap_doubling_diagnostic": {
+        "crossed_bounded_missing_basic": {
+          "both_intervals_returned": 8,
+          "decision_changes": 0,
+          "maximum_endpoint_change": 0.0186892361,
+          "maximum_width_change": 0.0184114583,
+          "panels": 8,
+          "return_state_changes": 0
+        },
+        "crossed_complete_case_basic": {
+          "both_intervals_returned": 8,
+          "decision_changes": 0,
+          "maximum_endpoint_change": 0.0186892361,
+          "maximum_width_change": 0.0184114583,
+          "panels": 8,
+          "return_state_changes": 0
+        }
+      },
+      "complete_count_ranges": {
+        "listeners": [
+          24,
+          24
+        ],
+        "responses": [
+          288,
+          288
+        ],
+        "sources": [
+          12,
+          12
+        ]
+      },
+      "finite_panel_bounds": {
+        "containment": {
+          "denominator": 128,
+          "estimate": 1.0,
+          "monte_carlo_standard_error": 0.0,
+          "numerator": 128,
+          "wilson_95_interval": [
+            0.9708630437,
+            1.0
+          ]
+        },
+        "is_population_confidence_interval": false,
+        "mean_width": 0.0
+      },
+      "methods": {
+        "crossed_bounded_missing_basic": {
+          "bias_given_point_estimate": null,
+          "bias_monte_carlo_standard_error": null,
+          "correct_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          },
+          "count_supported_interval_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "coverage_given_count_supported": {
+            "denominator": 128,
+            "estimate": 0.8203125,
+            "monte_carlo_standard_error": 0.0339346687,
+            "numerator": 105,
+            "wilson_95_interval": [
+              0.7447837371,
+              0.8771754003
+            ]
+          },
+          "coverage_given_returned": {
+            "denominator": 128,
+            "estimate": 0.8203125,
+            "monte_carlo_standard_error": 0.0339346687,
+            "numerator": 105,
+            "wilson_95_interval": [
+              0.7447837371,
+              0.8771754003
+            ]
+          },
+          "diagnostic_decisions": {
+            "indeterminate": 105,
+            "material_supported": 23,
+            "nonmaterial_supported": 0
+          },
+          "empty_bootstrap_draws": 0,
+          "failures": {},
+          "indeterminate_rate": {
+            "denominator": 128,
+            "estimate": 0.8203125,
+            "monte_carlo_standard_error": 0.0339346687,
+            "numerator": 105,
+            "wilson_95_interval": [
+              0.7447837371,
+              0.8771754003
+            ]
+          },
+          "interval_return_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "mean_interval_width_given_returned": 0.7290119765,
+          "mean_sampling_se_given_point_estimate": null,
+          "point_estimate_count": 0,
+          "rare_absent_coverage_given_returned": {
+            "denominator": 33,
+            "estimate": 0.303030303,
+            "monte_carlo_standard_error": 0.0800005565,
+            "numerator": 10,
+            "wilson_95_interval": [
+              0.1737553142,
+              0.4733813515
+            ]
+          },
+          "rare_absent_return_and_cover_rate": {
+            "denominator": 33,
+            "estimate": 0.303030303,
+            "monte_carlo_standard_error": 0.0800005565,
+            "numerator": 10,
+            "wilson_95_interval": [
+              0.1737553142,
+              0.4733813515
+            ]
+          },
+          "rare_source_absent_panels": 33,
+          "return_and_cover_rate": {
+            "denominator": 128,
+            "estimate": 0.8203125,
+            "monte_carlo_standard_error": 0.0339346687,
+            "numerator": 105,
+            "wilson_95_interval": [
+              0.7447837371,
+              0.8771754003
+            ]
+          },
+          "returned_intervals": 128,
+          "width_range_given_returned": [
+            0.2246006944,
+            1.3036197917
+          ],
+          "wrong_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.1796875,
+            "monte_carlo_standard_error": 0.0339346687,
+            "numerator": 23,
+            "wilson_95_interval": [
+              0.1228245997,
+              0.2552162629
+            ]
+          }
+        },
+        "crossed_complete_case_basic": {
+          "bias_given_point_estimate": 0.0080837674,
+          "bias_monte_carlo_standard_error": 0.0156034313,
+          "correct_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          },
+          "count_supported_interval_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "coverage_given_count_supported": {
+            "denominator": 128,
+            "estimate": 0.8203125,
+            "monte_carlo_standard_error": 0.0339346687,
+            "numerator": 105,
+            "wilson_95_interval": [
+              0.7447837371,
+              0.8771754003
+            ]
+          },
+          "coverage_given_returned": {
+            "denominator": 128,
+            "estimate": 0.8203125,
+            "monte_carlo_standard_error": 0.0339346687,
+            "numerator": 105,
+            "wilson_95_interval": [
+              0.7447837371,
+              0.8771754003
+            ]
+          },
+          "diagnostic_decisions": {
+            "indeterminate": 105,
+            "material_supported": 23,
+            "nonmaterial_supported": 0
+          },
+          "empty_bootstrap_draws": 0,
+          "failures": {},
+          "indeterminate_rate": {
+            "denominator": 128,
+            "estimate": 0.8203125,
+            "monte_carlo_standard_error": 0.0339346687,
+            "numerator": 105,
+            "wilson_95_interval": [
+              0.7447837371,
+              0.8771754003
+            ]
+          },
+          "interval_return_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "mean_interval_width_given_returned": 0.7290119765,
+          "mean_sampling_se_given_point_estimate": 0.1679168447,
+          "point_estimate_count": 128,
+          "rare_absent_coverage_given_returned": {
+            "denominator": 33,
+            "estimate": 0.303030303,
+            "monte_carlo_standard_error": 0.0800005565,
+            "numerator": 10,
+            "wilson_95_interval": [
+              0.1737553142,
+              0.4733813515
+            ]
+          },
+          "rare_absent_return_and_cover_rate": {
+            "denominator": 33,
+            "estimate": 0.303030303,
+            "monte_carlo_standard_error": 0.0800005565,
+            "numerator": 10,
+            "wilson_95_interval": [
+              0.1737553142,
+              0.4733813515
+            ]
+          },
+          "rare_source_absent_panels": 33,
+          "return_and_cover_rate": {
+            "denominator": 128,
+            "estimate": 0.8203125,
+            "monte_carlo_standard_error": 0.0339346687,
+            "numerator": 105,
+            "wilson_95_interval": [
+              0.7447837371,
+              0.8771754003
+            ]
+          },
+          "returned_intervals": 128,
+          "width_range_given_returned": [
+            0.2246006944,
+            1.3036197917
+          ],
+          "wrong_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.1796875,
+            "monte_carlo_standard_error": 0.0339346687,
+            "numerator": 23,
+            "wilson_95_interval": [
+              0.1228245997,
+              0.2552162629
+            ]
+          }
+        },
+        "legacy_fixed_variance": {
+          "bias_given_point_estimate": 0.0080837674,
+          "bias_monte_carlo_standard_error": 0.0156034313,
+          "correct_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          },
+          "count_supported_interval_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "coverage_given_count_supported": {
+            "denominator": 128,
+            "estimate": 0.828125,
+            "monte_carlo_standard_error": 0.0333464279,
+            "numerator": 106,
+            "wilson_95_interval": [
+              0.7534600319,
+              0.8836688405
+            ]
+          },
+          "coverage_given_returned": {
+            "denominator": 128,
+            "estimate": 0.828125,
+            "monte_carlo_standard_error": 0.0333464279,
+            "numerator": 106,
+            "wilson_95_interval": [
+              0.7534600319,
+              0.8836688405
+            ]
+          },
+          "diagnostic_decisions": {
+            "indeterminate": 106,
+            "material_supported": 9,
+            "nonmaterial_supported": 13
+          },
+          "empty_bootstrap_draws": 0,
+          "failures": {},
+          "indeterminate_rate": {
+            "denominator": 128,
+            "estimate": 0.828125,
+            "monte_carlo_standard_error": 0.0333464279,
+            "numerator": 106,
+            "wilson_95_interval": [
+              0.7534600319,
+              0.8836688405
+            ]
+          },
+          "interval_return_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "mean_interval_width_given_returned": 0.4695665902,
+          "mean_sampling_se_given_point_estimate": 0.1047483757,
+          "point_estimate_count": 128,
+          "rare_absent_coverage_given_returned": {
+            "denominator": 33,
+            "estimate": 0.7272727273,
+            "monte_carlo_standard_error": 0.0775275332,
+            "numerator": 24,
+            "wilson_95_interval": [
+              0.55782441,
+              0.8493255911
+            ]
+          },
+          "rare_absent_return_and_cover_rate": {
+            "denominator": 33,
+            "estimate": 0.7272727273,
+            "monte_carlo_standard_error": 0.0775275332,
+            "numerator": 24,
+            "wilson_95_interval": [
+              0.55782441,
+              0.8493255911
+            ]
+          },
+          "rare_source_absent_panels": 33,
+          "return_and_cover_rate": {
+            "denominator": 128,
+            "estimate": 0.828125,
+            "monte_carlo_standard_error": 0.0333464279,
+            "numerator": 106,
+            "wilson_95_interval": [
+              0.7534600319,
+              0.8836688405
+            ]
+          },
+          "returned_intervals": 128,
+          "width_range_given_returned": [
+            0.4695665902,
+            0.4695665902
+          ],
+          "wrong_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.171875,
+            "monte_carlo_standard_error": 0.0333464279,
+            "numerator": 22,
+            "wilson_95_interval": [
+              0.1163311595,
+              0.2465399681
+            ]
+          }
+        }
+      },
+      "replicates": 128,
+      "scenario": {
+        "id": "rare_source_boundary",
+        "mean_ticks": -10,
+        "missingness": "none",
+        "residual_variation": "constant",
+        "scales": [
+          1,
+          1,
+          1
+        ],
+        "source_distribution": "rare"
+      }
+    },
+    {
+      "bootstrap_doubling_diagnostic": {
+        "crossed_bounded_missing_basic": {
+          "both_intervals_returned": 8,
+          "decision_changes": 0,
+          "maximum_endpoint_change": 0.0430208333,
+          "maximum_width_change": 0.0445052083,
+          "panels": 8,
+          "return_state_changes": 0
+        },
+        "crossed_complete_case_basic": {
+          "both_intervals_returned": 8,
+          "decision_changes": 0,
+          "maximum_endpoint_change": 0.0152208904,
+          "maximum_width_change": 0.0267138007,
+          "panels": 8,
+          "return_state_changes": 0
+        }
+      },
+      "complete_count_ranges": {
+        "listeners": [
+          24,
+          24
+        ],
+        "responses": [
+          196,
+          239
+        ],
+        "sources": [
+          12,
+          12
+        ]
+      },
+      "finite_panel_bounds": {
+        "containment": {
+          "denominator": 128,
+          "estimate": 1.0,
+          "monte_carlo_standard_error": 0.0,
+          "numerator": 128,
+          "wilson_95_interval": [
+            0.9708630437,
+            1.0
+          ]
+        },
+        "is_population_confidence_interval": false,
+        "mean_width": 2.0266927083
+      },
+      "methods": {
+        "crossed_bounded_missing_basic": {
+          "bias_given_point_estimate": null,
+          "bias_monte_carlo_standard_error": null,
+          "correct_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          },
+          "count_supported_interval_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "coverage_given_count_supported": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "coverage_given_returned": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "diagnostic_decisions": {
+            "indeterminate": 128,
+            "material_supported": 0,
+            "nonmaterial_supported": 0
+          },
+          "empty_bootstrap_draws": 0,
+          "failures": {},
+          "indeterminate_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "interval_return_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "mean_interval_width_given_returned": 2.8732348294,
+          "mean_sampling_se_given_point_estimate": null,
+          "point_estimate_count": 0,
+          "rare_absent_coverage_given_returned": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_absent_return_and_cover_rate": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_source_absent_panels": 0,
+          "return_and_cover_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "returned_intervals": 128,
+          "width_range_given_returned": [
+            2.1190451389,
+            3.4302126736
+          ],
+          "wrong_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          }
+        },
+        "crossed_complete_case_basic": {
+          "bias_given_point_estimate": 0.0038630974,
+          "bias_monte_carlo_standard_error": 0.0101473139,
+          "correct_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          },
+          "count_supported_interval_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "coverage_given_count_supported": {
+            "denominator": 128,
+            "estimate": 0.953125,
+            "monte_carlo_standard_error": 0.0186827407,
+            "numerator": 122,
+            "wilson_95_interval": [
+              0.9015024775,
+              0.9783421558
+            ]
+          },
+          "coverage_given_returned": {
+            "denominator": 128,
+            "estimate": 0.953125,
+            "monte_carlo_standard_error": 0.0186827407,
+            "numerator": 122,
+            "wilson_95_interval": [
+              0.9015024775,
+              0.9783421558
+            ]
+          },
+          "diagnostic_decisions": {
+            "indeterminate": 122,
+            "material_supported": 2,
+            "nonmaterial_supported": 4
+          },
+          "empty_bootstrap_draws": 0,
+          "failures": {},
+          "indeterminate_rate": {
+            "denominator": 128,
+            "estimate": 0.953125,
+            "monte_carlo_standard_error": 0.0186827407,
+            "numerator": 122,
+            "wilson_95_interval": [
+              0.9015024775,
+              0.9783421558
+            ]
+          },
+          "interval_return_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "mean_interval_width_given_returned": 0.5019058728,
+          "mean_sampling_se_given_point_estimate": 0.1132351633,
+          "point_estimate_count": 128,
+          "rare_absent_coverage_given_returned": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_absent_return_and_cover_rate": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_source_absent_panels": 0,
+          "return_and_cover_rate": {
+            "denominator": 128,
+            "estimate": 0.953125,
+            "monte_carlo_standard_error": 0.0186827407,
+            "numerator": 122,
+            "wilson_95_interval": [
+              0.9015024775,
+              0.9783421558
+            ]
+          },
+          "returned_intervals": 128,
+          "width_range_given_returned": [
+            0.3509670106,
+            0.653625544
+          ],
+          "wrong_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.046875,
+            "monte_carlo_standard_error": 0.0186827407,
+            "numerator": 6,
+            "wilson_95_interval": [
+              0.0216578442,
+              0.0984975225
+            ]
+          }
+        },
+        "legacy_fixed_variance": {
+          "bias_given_point_estimate": 0.0045547877,
+          "bias_monte_carlo_standard_error": 0.0101466834,
+          "correct_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          },
+          "count_supported_interval_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "coverage_given_count_supported": {
+            "denominator": 128,
+            "estimate": 0.9765625,
+            "monte_carlo_standard_error": 0.0133721328,
+            "numerator": 125,
+            "wilson_95_interval": [
+              0.9333562549,
+              0.9919975836
+            ]
+          },
+          "coverage_given_returned": {
+            "denominator": 128,
+            "estimate": 0.9765625,
+            "monte_carlo_standard_error": 0.0133721328,
+            "numerator": 125,
+            "wilson_95_interval": [
+              0.9333562549,
+              0.9919975836
+            ]
+          },
+          "diagnostic_decisions": {
+            "indeterminate": 125,
+            "material_supported": 1,
+            "nonmaterial_supported": 2
+          },
+          "empty_bootstrap_draws": 0,
+          "failures": {},
+          "indeterminate_rate": {
+            "denominator": 128,
+            "estimate": 0.9765625,
+            "monte_carlo_standard_error": 0.0133721328,
+            "numerator": 125,
+            "wilson_95_interval": [
+              0.9333562549,
+              0.9919975836
+            ]
+          },
+          "interval_return_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "mean_interval_width_given_returned": 0.4766953338,
+          "mean_sampling_se_given_point_estimate": 0.1063386173,
+          "point_estimate_count": 128,
+          "rare_absent_coverage_given_returned": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_absent_return_and_cover_rate": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_source_absent_panels": 0,
+          "return_and_cover_rate": {
+            "denominator": 128,
+            "estimate": 0.9765625,
+            "monte_carlo_standard_error": 0.0133721328,
+            "numerator": 125,
+            "wilson_95_interval": [
+              0.9333562549,
+              0.9919975836
+            ]
+          },
+          "returned_intervals": 128,
+          "width_range_given_returned": [
+            0.4737402953,
+            0.4792291234
+          ],
+          "wrong_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0234375,
+            "monte_carlo_standard_error": 0.0133721328,
+            "numerator": 3,
+            "wilson_95_interval": [
+              0.0080024164,
+              0.0666437451
+            ]
+          }
+        }
+      },
+      "replicates": 128,
+      "scenario": {
+        "id": "independent_missing_quarter_boundary",
+        "mean_ticks": -10,
+        "missingness": "independent_quarter",
+        "residual_variation": "constant",
+        "scales": [
+          1,
+          1,
+          1
+        ],
+        "source_distribution": "matched"
+      }
+    },
+    {
+      "bootstrap_doubling_diagnostic": {
+        "crossed_bounded_missing_basic": {
+          "both_intervals_returned": 8,
+          "decision_changes": 0,
+          "maximum_endpoint_change": 0.0503689236,
+          "maximum_width_change": 0.0731032986,
+          "panels": 8,
+          "return_state_changes": 0
+        },
+        "crossed_complete_case_basic": {
+          "both_intervals_returned": 8,
+          "decision_changes": 0,
+          "maximum_endpoint_change": 0.0125890999,
+          "maximum_width_change": 0.0117433468,
+          "panels": 8,
+          "return_state_changes": 0
+        }
+      },
+      "complete_count_ranges": {
+        "listeners": [
+          20,
+          24
+        ],
+        "responses": [
+          82,
+          179
+        ],
+        "sources": [
+          12,
+          12
+        ]
+      },
+      "finite_panel_bounds": {
+        "containment": {
+          "denominator": 128,
+          "estimate": 1.0,
+          "monte_carlo_standard_error": 0.0,
+          "numerator": 128,
+          "wilson_95_interval": [
+            0.9708630437,
+            1.0
+          ]
+        },
+        "is_population_confidence_interval": false,
+        "mean_width": 4.541015625
+      },
+      "methods": {
+        "crossed_bounded_missing_basic": {
+          "bias_given_point_estimate": null,
+          "bias_monte_carlo_standard_error": null,
+          "correct_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          },
+          "count_supported_interval_rate": {
+            "denominator": 128,
+            "estimate": 0.6796875,
+            "monte_carlo_standard_error": 0.0412417039,
+            "numerator": 87,
+            "wilson_95_interval": [
+              0.5946341124,
+              0.7542697939
+            ]
+          },
+          "coverage_given_count_supported": {
+            "denominator": 87,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 87,
+            "wilson_95_interval": [
+              0.9577124931,
+              1.0
+            ]
+          },
+          "coverage_given_returned": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "diagnostic_decisions": {
+            "indeterminate": 128,
+            "material_supported": 0,
+            "nonmaterial_supported": 0
+          },
+          "empty_bootstrap_draws": 0,
+          "failures": {},
+          "indeterminate_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "interval_return_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "mean_interval_width_given_returned": 5.8967358059,
+          "mean_sampling_se_given_point_estimate": null,
+          "point_estimate_count": 0,
+          "rare_absent_coverage_given_returned": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_absent_return_and_cover_rate": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_source_absent_panels": 0,
+          "return_and_cover_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "returned_intervals": 128,
+          "width_range_given_returned": [
+            4.3216449653,
+            7.1037847222
+          ],
+          "wrong_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          }
+        },
+        "crossed_complete_case_basic": {
+          "bias_given_point_estimate": 0.6091896312,
+          "bias_monte_carlo_standard_error": 0.0037204169,
+          "correct_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          },
+          "count_supported_interval_rate": {
+            "denominator": 128,
+            "estimate": 0.6796875,
+            "monte_carlo_standard_error": 0.0412417039,
+            "numerator": 87,
+            "wilson_95_interval": [
+              0.5946341124,
+              0.7542697939
+            ]
+          },
+          "coverage_given_count_supported": {
+            "denominator": 87,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0422875069
+            ]
+          },
+          "coverage_given_returned": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          },
+          "diagnostic_decisions": {
+            "indeterminate": 41,
+            "material_supported": 0,
+            "nonmaterial_supported": 87
+          },
+          "empty_bootstrap_draws": 0,
+          "failures": {},
+          "indeterminate_rate": {
+            "denominator": 128,
+            "estimate": 0.3203125,
+            "monte_carlo_standard_error": 0.0412417039,
+            "numerator": 41,
+            "wilson_95_interval": [
+              0.2457302061,
+              0.4053658876
+            ]
+          },
+          "interval_return_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "mean_interval_width_given_returned": 0.2352947674,
+          "mean_sampling_se_given_point_estimate": 0.0520921171,
+          "point_estimate_count": 128,
+          "rare_absent_coverage_given_returned": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_absent_return_and_cover_rate": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_source_absent_panels": 0,
+          "return_and_cover_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          },
+          "returned_intervals": 128,
+          "width_range_given_returned": [
+            0.1484988214,
+            0.3071216562
+          ],
+          "wrong_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.6796875,
+            "monte_carlo_standard_error": 0.0412417039,
+            "numerator": 87,
+            "wilson_95_interval": [
+              0.5946341124,
+              0.7542697939
+            ]
+          }
+        },
+        "legacy_fixed_variance": {
+          "bias_given_point_estimate": 0.5621205785,
+          "bias_monte_carlo_standard_error": 0.0037696717,
+          "correct_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          },
+          "count_supported_interval_rate": {
+            "denominator": 128,
+            "estimate": 0.6796875,
+            "monte_carlo_standard_error": 0.0412417039,
+            "numerator": 87,
+            "wilson_95_interval": [
+              0.5946341124,
+              0.7542697939
+            ]
+          },
+          "coverage_given_count_supported": {
+            "denominator": 87,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0422875069
+            ]
+          },
+          "coverage_given_returned": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          },
+          "diagnostic_decisions": {
+            "indeterminate": 41,
+            "material_supported": 0,
+            "nonmaterial_supported": 87
+          },
+          "empty_bootstrap_draws": 0,
+          "failures": {},
+          "indeterminate_rate": {
+            "denominator": 128,
+            "estimate": 0.3203125,
+            "monte_carlo_standard_error": 0.0412417039,
+            "numerator": 41,
+            "wilson_95_interval": [
+              0.2457302061,
+              0.4053658876
+            ]
+          },
+          "interval_return_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "mean_interval_width_given_returned": 0.5161695722,
+          "mean_sampling_se_given_point_estimate": 0.115144317,
+          "point_estimate_count": 128,
+          "rare_absent_coverage_given_returned": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_absent_return_and_cover_rate": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_source_absent_panels": 0,
+          "return_and_cover_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          },
+          "returned_intervals": 128,
+          "width_range_given_returned": [
+            0.4880412896,
+            0.567857876
+          ],
+          "wrong_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.6796875,
+            "monte_carlo_standard_error": 0.0412417039,
+            "numerator": 87,
+            "wilson_95_interval": [
+              0.5946341124,
+              0.7542697939
+            ]
+          }
+        }
+      },
+      "replicates": 128,
+      "scenario": {
+        "id": "outcome_missing_boundary",
+        "mean_ticks": -10,
+        "missingness": "at_or_below_mean",
+        "residual_variation": "constant",
+        "scales": [
+          1,
+          1,
+          1
+        ],
+        "source_distribution": "matched"
+      }
+    },
+    {
+      "bootstrap_doubling_diagnostic": {
+        "crossed_bounded_missing_basic": {
+          "both_intervals_returned": 8,
+          "decision_changes": 0,
+          "maximum_endpoint_change": 0.2664149306,
+          "maximum_width_change": 0.3624522569,
+          "panels": 8,
+          "return_state_changes": 0
+        },
+        "crossed_complete_case_basic": {
+          "both_intervals_returned": 3,
+          "decision_changes": 0,
+          "maximum_endpoint_change": 0.0181684028,
+          "maximum_width_change": 0.0170225694,
+          "panels": 8,
+          "return_state_changes": 0
+        }
+      },
+      "complete_count_ranges": {
+        "listeners": [
+          24,
+          24
+        ],
+        "responses": [
+          24,
+          264
+        ],
+        "sources": [
+          1,
+          11
+        ]
+      },
+      "finite_panel_bounds": {
+        "containment": {
+          "denominator": 128,
+          "estimate": 1.0,
+          "monte_carlo_standard_error": 0.0,
+          "numerator": 128,
+          "wilson_95_interval": [
+            0.9708630437,
+            1.0
+          ]
+        },
+        "is_population_confidence_interval": false,
+        "mean_width": 3.9270833333
+      },
+      "methods": {
+        "crossed_bounded_missing_basic": {
+          "bias_given_point_estimate": null,
+          "bias_monte_carlo_standard_error": null,
+          "correct_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          },
+          "count_supported_interval_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          },
+          "coverage_given_count_supported": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "coverage_given_returned": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "diagnostic_decisions": {
+            "indeterminate": 128,
+            "material_supported": 0,
+            "nonmaterial_supported": 0
+          },
+          "empty_bootstrap_draws": 752,
+          "failures": {},
+          "indeterminate_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "interval_return_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "mean_interval_width_given_returned": 6.3286273532,
+          "mean_sampling_se_given_point_estimate": null,
+          "point_estimate_count": 0,
+          "rare_absent_coverage_given_returned": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_absent_return_and_cover_rate": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_source_absent_panels": 0,
+          "return_and_cover_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "returned_intervals": 128,
+          "width_range_given_returned": [
+            1.5593663194,
+            8.0
+          ],
+          "wrong_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          }
+        },
+        "crossed_complete_case_basic": {
+          "bias_given_point_estimate": 0.3007118378,
+          "bias_monte_carlo_standard_error": 0.0068961284,
+          "correct_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          },
+          "count_supported_interval_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          },
+          "coverage_given_count_supported": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "coverage_given_returned": {
+            "denominator": 84,
+            "estimate": 0.0357142857,
+            "monte_carlo_standard_error": 0.0202480968,
+            "numerator": 3,
+            "wilson_95_interval": [
+              0.0122196692,
+              0.0998169357
+            ]
+          },
+          "diagnostic_decisions": {
+            "indeterminate": 128,
+            "material_supported": 0,
+            "nonmaterial_supported": 0
+          },
+          "empty_bootstrap_draws": 752,
+          "failures": {
+            "empty_bootstrap_draw": 44
+          },
+          "indeterminate_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "interval_return_rate": {
+            "denominator": 128,
+            "estimate": 0.65625,
+            "monte_carlo_standard_error": 0.0419808306,
+            "numerator": 84,
+            "wilson_95_interval": [
+              0.5704962778,
+              0.7328984233
+            ]
+          },
+          "mean_interval_width_given_returned": 0.3726001293,
+          "mean_sampling_se_given_point_estimate": 0.0824886103,
+          "point_estimate_count": 84,
+          "rare_absent_coverage_given_returned": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_absent_return_and_cover_rate": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_source_absent_panels": 0,
+          "return_and_cover_rate": {
+            "denominator": 128,
+            "estimate": 0.0234375,
+            "monte_carlo_standard_error": 0.0133721328,
+            "numerator": 3,
+            "wilson_95_interval": [
+              0.0080024164,
+              0.0666437451
+            ]
+          },
+          "returned_intervals": 84,
+          "width_range_given_returned": [
+            0.2791098485,
+            0.5148611111
+          ],
+          "wrong_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          }
+        },
+        "legacy_fixed_variance": {
+          "bias_given_point_estimate": 0.2951495282,
+          "bias_monte_carlo_standard_error": 0.0057522055,
+          "correct_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          },
+          "count_supported_interval_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          },
+          "coverage_given_count_supported": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "coverage_given_returned": {
+            "denominator": 128,
+            "estimate": 0.6171875,
+            "monte_carlo_standard_error": 0.042963201,
+            "numerator": 79,
+            "wilson_95_interval": [
+              0.5307322845,
+              0.6968137414
+            ]
+          },
+          "diagnostic_decisions": {
+            "indeterminate": 128,
+            "material_supported": 0,
+            "nonmaterial_supported": 0
+          },
+          "empty_bootstrap_draws": 0,
+          "failures": {},
+          "indeterminate_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "interval_return_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "mean_interval_width_given_returned": 0.6401404939,
+          "mean_sampling_se_given_point_estimate": 0.1427990798,
+          "point_estimate_count": 128,
+          "rare_absent_coverage_given_returned": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_absent_return_and_cover_rate": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_source_absent_panels": 0,
+          "return_and_cover_rate": {
+            "denominator": 128,
+            "estimate": 0.6171875,
+            "monte_carlo_standard_error": 0.042963201,
+            "numerator": 79,
+            "wilson_95_interval": [
+              0.5307322845,
+              0.6968137414
+            ]
+          },
+          "returned_intervals": 128,
+          "width_range_given_returned": [
+            0.4855719443,
+            1.4388397292
+          ],
+          "wrong_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          }
+        }
+      },
+      "replicates": 128,
+      "scenario": {
+        "id": "source_missing_boundary",
+        "mean_ticks": -10,
+        "missingness": "negative_source",
+        "residual_variation": "constant",
+        "scales": [
+          1,
+          1,
+          1
+        ],
+        "source_distribution": "matched"
+      }
+    },
+    {
+      "bootstrap_doubling_diagnostic": {
+        "crossed_bounded_missing_basic": {
+          "both_intervals_returned": 8,
+          "decision_changes": 0,
+          "maximum_endpoint_change": 0.0257986111,
+          "maximum_width_change": 0.0180208333,
+          "panels": 8,
+          "return_state_changes": 0
+        },
+        "crossed_complete_case_basic": {
+          "both_intervals_returned": 8,
+          "decision_changes": 0,
+          "maximum_endpoint_change": 0.0257986111,
+          "maximum_width_change": 0.0180208333,
+          "panels": 8,
+          "return_state_changes": 0
+        }
+      },
+      "complete_count_ranges": {
+        "listeners": [
+          24,
+          24
+        ],
+        "responses": [
+          288,
+          288
+        ],
+        "sources": [
+          12,
+          12
+        ]
+      },
+      "finite_panel_bounds": {
+        "containment": {
+          "denominator": 128,
+          "estimate": 1.0,
+          "monte_carlo_standard_error": 0.0,
+          "numerator": 128,
+          "wilson_95_interval": [
+            0.9708630437,
+            1.0
+          ]
+        },
+        "is_population_confidence_interval": false,
+        "mean_width": 0.0
+      },
+      "methods": {
+        "crossed_bounded_missing_basic": {
+          "bias_given_point_estimate": null,
+          "bias_monte_carlo_standard_error": null,
+          "correct_decision_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "count_supported_interval_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "coverage_given_count_supported": {
+            "denominator": 128,
+            "estimate": 0.953125,
+            "monte_carlo_standard_error": 0.0186827407,
+            "numerator": 122,
+            "wilson_95_interval": [
+              0.9015024775,
+              0.9783421558
+            ]
+          },
+          "coverage_given_returned": {
+            "denominator": 128,
+            "estimate": 0.953125,
+            "monte_carlo_standard_error": 0.0186827407,
+            "numerator": 122,
+            "wilson_95_interval": [
+              0.9015024775,
+              0.9783421558
+            ]
+          },
+          "diagnostic_decisions": {
+            "indeterminate": 0,
+            "material_supported": 128,
+            "nonmaterial_supported": 0
+          },
+          "empty_bootstrap_draws": 0,
+          "failures": {},
+          "indeterminate_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          },
+          "interval_return_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "mean_interval_width_given_returned": 0.4749742974,
+          "mean_sampling_se_given_point_estimate": null,
+          "point_estimate_count": 0,
+          "rare_absent_coverage_given_returned": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_absent_return_and_cover_rate": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_source_absent_panels": 0,
+          "return_and_cover_rate": {
+            "denominator": 128,
+            "estimate": 0.953125,
+            "monte_carlo_standard_error": 0.0186827407,
+            "numerator": 122,
+            "wilson_95_interval": [
+              0.9015024775,
+              0.9783421558
+            ]
+          },
+          "returned_intervals": 128,
+          "width_range_given_returned": [
+            0.3065885417,
+            0.5599131944
+          ],
+          "wrong_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          }
+        },
+        "crossed_complete_case_basic": {
+          "bias_given_point_estimate": -0.0136610243,
+          "bias_monte_carlo_standard_error": 0.0099646557,
+          "correct_decision_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "count_supported_interval_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "coverage_given_count_supported": {
+            "denominator": 128,
+            "estimate": 0.953125,
+            "monte_carlo_standard_error": 0.0186827407,
+            "numerator": 122,
+            "wilson_95_interval": [
+              0.9015024775,
+              0.9783421558
+            ]
+          },
+          "coverage_given_returned": {
+            "denominator": 128,
+            "estimate": 0.953125,
+            "monte_carlo_standard_error": 0.0186827407,
+            "numerator": 122,
+            "wilson_95_interval": [
+              0.9015024775,
+              0.9783421558
+            ]
+          },
+          "diagnostic_decisions": {
+            "indeterminate": 0,
+            "material_supported": 128,
+            "nonmaterial_supported": 0
+          },
+          "empty_bootstrap_draws": 0,
+          "failures": {},
+          "indeterminate_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          },
+          "interval_return_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "mean_interval_width_given_returned": 0.4749742974,
+          "mean_sampling_se_given_point_estimate": 0.106490137,
+          "point_estimate_count": 128,
+          "rare_absent_coverage_given_returned": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_absent_return_and_cover_rate": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_source_absent_panels": 0,
+          "return_and_cover_rate": {
+            "denominator": 128,
+            "estimate": 0.953125,
+            "monte_carlo_standard_error": 0.0186827407,
+            "numerator": 122,
+            "wilson_95_interval": [
+              0.9015024775,
+              0.9783421558
+            ]
+          },
+          "returned_intervals": 128,
+          "width_range_given_returned": [
+            0.3065885417,
+            0.5599131944
+          ],
+          "wrong_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          }
+        },
+        "legacy_fixed_variance": {
+          "bias_given_point_estimate": -0.0136610243,
+          "bias_monte_carlo_standard_error": 0.0099646557,
+          "correct_decision_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "count_supported_interval_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "coverage_given_count_supported": {
+            "denominator": 128,
+            "estimate": 0.96875,
+            "monte_carlo_standard_error": 0.0153789216,
+            "numerator": 124,
+            "wilson_95_interval": [
+              0.9224023687,
+              0.9877817348
+            ]
+          },
+          "coverage_given_returned": {
+            "denominator": 128,
+            "estimate": 0.96875,
+            "monte_carlo_standard_error": 0.0153789216,
+            "numerator": 124,
+            "wilson_95_interval": [
+              0.9224023687,
+              0.9877817348
+            ]
+          },
+          "diagnostic_decisions": {
+            "indeterminate": 0,
+            "material_supported": 128,
+            "nonmaterial_supported": 0
+          },
+          "empty_bootstrap_draws": 0,
+          "failures": {},
+          "indeterminate_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          },
+          "interval_return_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "mean_interval_width_given_returned": 0.4695665902,
+          "mean_sampling_se_given_point_estimate": 0.1047483757,
+          "point_estimate_count": 128,
+          "rare_absent_coverage_given_returned": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_absent_return_and_cover_rate": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_source_absent_panels": 0,
+          "return_and_cover_rate": {
+            "denominator": 128,
+            "estimate": 0.96875,
+            "monte_carlo_standard_error": 0.0153789216,
+            "numerator": 124,
+            "wilson_95_interval": [
+              0.9224023687,
+              0.9877817348
+            ]
+          },
+          "returned_intervals": 128,
+          "width_range_given_returned": [
+            0.4695665902,
+            0.4695665902
+          ],
+          "wrong_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          }
+        }
+      },
+      "replicates": 128,
+      "scenario": {
+        "id": "material_complete",
+        "mean_ticks": -20,
+        "missingness": "none",
+        "residual_variation": "constant",
+        "scales": [
+          1,
+          1,
+          1
+        ],
+        "source_distribution": "matched"
+      }
+    },
+    {
+      "bootstrap_doubling_diagnostic": {
+        "crossed_bounded_missing_basic": {
+          "both_intervals_returned": 8,
+          "decision_changes": 0,
+          "maximum_endpoint_change": 0.0145746528,
+          "maximum_width_change": 0.0145746528,
+          "panels": 8,
+          "return_state_changes": 0
+        },
+        "crossed_complete_case_basic": {
+          "both_intervals_returned": 8,
+          "decision_changes": 0,
+          "maximum_endpoint_change": 0.0145746528,
+          "maximum_width_change": 0.0145746528,
+          "panels": 8,
+          "return_state_changes": 0
+        }
+      },
+      "complete_count_ranges": {
+        "listeners": [
+          24,
+          24
+        ],
+        "responses": [
+          288,
+          288
+        ],
+        "sources": [
+          12,
+          12
+        ]
+      },
+      "finite_panel_bounds": {
+        "containment": {
+          "denominator": 128,
+          "estimate": 1.0,
+          "monte_carlo_standard_error": 0.0,
+          "numerator": 128,
+          "wilson_95_interval": [
+            0.9708630437,
+            1.0
+          ]
+        },
+        "is_population_confidence_interval": false,
+        "mean_width": 0.0
+      },
+      "methods": {
+        "crossed_bounded_missing_basic": {
+          "bias_given_point_estimate": null,
+          "bias_monte_carlo_standard_error": null,
+          "correct_decision_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "count_supported_interval_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "coverage_given_count_supported": {
+            "denominator": 128,
+            "estimate": 0.9609375,
+            "monte_carlo_standard_error": 0.0171246855,
+            "numerator": 123,
+            "wilson_95_interval": [
+              0.9118129792,
+              0.9832013892
+            ]
+          },
+          "coverage_given_returned": {
+            "denominator": 128,
+            "estimate": 0.9609375,
+            "monte_carlo_standard_error": 0.0171246855,
+            "numerator": 123,
+            "wilson_95_interval": [
+              0.9118129792,
+              0.9832013892
+            ]
+          },
+          "diagnostic_decisions": {
+            "indeterminate": 0,
+            "material_supported": 0,
+            "nonmaterial_supported": 128
+          },
+          "empty_bootstrap_draws": 0,
+          "failures": {},
+          "indeterminate_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          },
+          "interval_return_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "mean_interval_width_given_returned": 0.4742359755,
+          "mean_sampling_se_given_point_estimate": null,
+          "point_estimate_count": 0,
+          "rare_absent_coverage_given_returned": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_absent_return_and_cover_rate": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_source_absent_panels": 0,
+          "return_and_cover_rate": {
+            "denominator": 128,
+            "estimate": 0.9609375,
+            "monte_carlo_standard_error": 0.0171246855,
+            "numerator": 123,
+            "wilson_95_interval": [
+              0.9118129792,
+              0.9832013892
+            ]
+          },
+          "returned_intervals": 128,
+          "width_range_given_returned": [
+            0.2779253472,
+            0.6133854167
+          ],
+          "wrong_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          }
+        },
+        "crossed_complete_case_basic": {
+          "bias_given_point_estimate": -0.0002115885,
+          "bias_monte_carlo_standard_error": 0.0096178929,
+          "correct_decision_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "count_supported_interval_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "coverage_given_count_supported": {
+            "denominator": 128,
+            "estimate": 0.9609375,
+            "monte_carlo_standard_error": 0.0171246855,
+            "numerator": 123,
+            "wilson_95_interval": [
+              0.9118129792,
+              0.9832013892
+            ]
+          },
+          "coverage_given_returned": {
+            "denominator": 128,
+            "estimate": 0.9609375,
+            "monte_carlo_standard_error": 0.0171246855,
+            "numerator": 123,
+            "wilson_95_interval": [
+              0.9118129792,
+              0.9832013892
+            ]
+          },
+          "diagnostic_decisions": {
+            "indeterminate": 0,
+            "material_supported": 0,
+            "nonmaterial_supported": 128
+          },
+          "empty_bootstrap_draws": 0,
+          "failures": {},
+          "indeterminate_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          },
+          "interval_return_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "mean_interval_width_given_returned": 0.4742359755,
+          "mean_sampling_se_given_point_estimate": 0.1069912089,
+          "point_estimate_count": 128,
+          "rare_absent_coverage_given_returned": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_absent_return_and_cover_rate": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_source_absent_panels": 0,
+          "return_and_cover_rate": {
+            "denominator": 128,
+            "estimate": 0.9609375,
+            "monte_carlo_standard_error": 0.0171246855,
+            "numerator": 123,
+            "wilson_95_interval": [
+              0.9118129792,
+              0.9832013892
+            ]
+          },
+          "returned_intervals": 128,
+          "width_range_given_returned": [
+            0.2779253472,
+            0.6133854167
+          ],
+          "wrong_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          }
+        },
+        "legacy_fixed_variance": {
+          "bias_given_point_estimate": -0.0002115885,
+          "bias_monte_carlo_standard_error": 0.0096178929,
+          "correct_decision_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "count_supported_interval_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "coverage_given_count_supported": {
+            "denominator": 128,
+            "estimate": 0.984375,
+            "monte_carlo_standard_error": 0.0109618869,
+            "numerator": 126,
+            "wilson_95_interval": [
+              0.9448190233,
+              0.9957045503
+            ]
+          },
+          "coverage_given_returned": {
+            "denominator": 128,
+            "estimate": 0.984375,
+            "monte_carlo_standard_error": 0.0109618869,
+            "numerator": 126,
+            "wilson_95_interval": [
+              0.9448190233,
+              0.9957045503
+            ]
+          },
+          "diagnostic_decisions": {
+            "indeterminate": 0,
+            "material_supported": 0,
+            "nonmaterial_supported": 128
+          },
+          "empty_bootstrap_draws": 0,
+          "failures": {},
+          "indeterminate_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          },
+          "interval_return_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "mean_interval_width_given_returned": 0.4695665902,
+          "mean_sampling_se_given_point_estimate": 0.1047483757,
+          "point_estimate_count": 128,
+          "rare_absent_coverage_given_returned": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_absent_return_and_cover_rate": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_source_absent_panels": 0,
+          "return_and_cover_rate": {
+            "denominator": 128,
+            "estimate": 0.984375,
+            "monte_carlo_standard_error": 0.0109618869,
+            "numerator": 126,
+            "wilson_95_interval": [
+              0.9448190233,
+              0.9957045503
+            ]
+          },
+          "returned_intervals": 128,
+          "width_range_given_returned": [
+            0.4695665902,
+            0.4695665902
+          ],
+          "wrong_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          }
+        }
+      },
+      "replicates": 128,
+      "scenario": {
+        "id": "nonmaterial_complete",
+        "mean_ticks": 0,
+        "missingness": "none",
+        "residual_variation": "constant",
+        "scales": [
+          1,
+          1,
+          1
+        ],
+        "source_distribution": "matched"
+      }
+    },
+    {
+      "bootstrap_doubling_diagnostic": {
+        "crossed_bounded_missing_basic": {
+          "both_intervals_returned": 8,
+          "decision_changes": 0,
+          "maximum_endpoint_change": 0.0332204861,
+          "maximum_width_change": 0.0296744792,
+          "panels": 8,
+          "return_state_changes": 0
+        },
+        "crossed_complete_case_basic": {
+          "both_intervals_returned": 8,
+          "decision_changes": 0,
+          "maximum_endpoint_change": 0.0264433916,
+          "maximum_width_change": 0.0229091352,
+          "panels": 8,
+          "return_state_changes": 0
+        }
+      },
+      "complete_count_ranges": {
+        "listeners": [
+          24,
+          24
+        ],
+        "responses": [
+          246,
+          275
+        ],
+        "sources": [
+          12,
+          12
+        ]
+      },
+      "finite_panel_bounds": {
+        "containment": {
+          "denominator": 128,
+          "estimate": 1.0,
+          "monte_carlo_standard_error": 0.0,
+          "numerator": 128,
+          "wilson_95_interval": [
+            0.9708630437,
+            1.0
+          ]
+        },
+        "is_population_confidence_interval": false,
+        "mean_width": 0.7779947917
+      },
+      "methods": {
+        "crossed_bounded_missing_basic": {
+          "bias_given_point_estimate": null,
+          "bias_monte_carlo_standard_error": null,
+          "correct_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.4765625,
+            "monte_carlo_standard_error": 0.044145594,
+            "numerator": 61,
+            "wilson_95_interval": [
+              0.3919887261,
+              0.5625020688
+            ]
+          },
+          "count_supported_interval_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "coverage_given_count_supported": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "coverage_given_returned": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "diagnostic_decisions": {
+            "indeterminate": 67,
+            "material_supported": 61,
+            "nonmaterial_supported": 0
+          },
+          "empty_bootstrap_draws": 0,
+          "failures": {},
+          "indeterminate_rate": {
+            "denominator": 128,
+            "estimate": 0.5234375,
+            "monte_carlo_standard_error": 0.044145594,
+            "numerator": 67,
+            "wilson_95_interval": [
+              0.4374979312,
+              0.6080112739
+            ]
+          },
+          "interval_return_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "mean_interval_width_given_returned": 1.4493436008,
+          "mean_sampling_se_given_point_estimate": null,
+          "point_estimate_count": 0,
+          "rare_absent_coverage_given_returned": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_absent_return_and_cover_rate": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_source_absent_panels": 0,
+          "return_and_cover_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "returned_intervals": 128,
+          "width_range_given_returned": [
+            0.9417100694,
+            1.8579861111
+          ],
+          "wrong_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          }
+        },
+        "crossed_complete_case_basic": {
+          "bias_given_point_estimate": 0.0115200648,
+          "bias_monte_carlo_standard_error": 0.0088286913,
+          "correct_decision_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "count_supported_interval_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "coverage_given_count_supported": {
+            "denominator": 128,
+            "estimate": 0.9453125,
+            "monte_carlo_standard_error": 0.0200967926,
+            "numerator": 121,
+            "wilson_95_interval": [
+              0.8914150997,
+              0.9732597986
+            ]
+          },
+          "coverage_given_returned": {
+            "denominator": 128,
+            "estimate": 0.9453125,
+            "monte_carlo_standard_error": 0.0200967926,
+            "numerator": 121,
+            "wilson_95_interval": [
+              0.8914150997,
+              0.9732597986
+            ]
+          },
+          "diagnostic_decisions": {
+            "indeterminate": 0,
+            "material_supported": 128,
+            "nonmaterial_supported": 0
+          },
+          "empty_bootstrap_draws": 0,
+          "failures": {},
+          "indeterminate_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          },
+          "interval_return_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "mean_interval_width_given_returned": 0.4852793695,
+          "mean_sampling_se_given_point_estimate": 0.1090699078,
+          "point_estimate_count": 128,
+          "rare_absent_coverage_given_returned": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_absent_return_and_cover_rate": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_source_absent_panels": 0,
+          "return_and_cover_rate": {
+            "denominator": 128,
+            "estimate": 0.9453125,
+            "monte_carlo_standard_error": 0.0200967926,
+            "numerator": 121,
+            "wilson_95_interval": [
+              0.8914150997,
+              0.9732597986
+            ]
+          },
+          "returned_intervals": 128,
+          "width_range_given_returned": [
+            0.3739087072,
+            0.5961292585
+          ],
+          "wrong_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          }
+        },
+        "legacy_fixed_variance": {
+          "bias_given_point_estimate": 0.0121450481,
+          "bias_monte_carlo_standard_error": 0.0087852029,
+          "correct_decision_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "count_supported_interval_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "coverage_given_count_supported": {
+            "denominator": 128,
+            "estimate": 0.9921875,
+            "monte_carlo_standard_error": 0.0077819226,
+            "numerator": 127,
+            "wilson_95_interval": [
+              0.9570737406,
+              0.9986195681
+            ]
+          },
+          "coverage_given_returned": {
+            "denominator": 128,
+            "estimate": 0.9921875,
+            "monte_carlo_standard_error": 0.0077819226,
+            "numerator": 127,
+            "wilson_95_interval": [
+              0.9570737406,
+              0.9986195681
+            ]
+          },
+          "diagnostic_decisions": {
+            "indeterminate": 0,
+            "material_supported": 128,
+            "nonmaterial_supported": 0
+          },
+          "empty_bootstrap_draws": 0,
+          "failures": {},
+          "indeterminate_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          },
+          "interval_return_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "mean_interval_width_given_returned": 0.4717890284,
+          "mean_sampling_se_given_point_estimate": 0.1052441452,
+          "point_estimate_count": 128,
+          "rare_absent_coverage_given_returned": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_absent_return_and_cover_rate": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_source_absent_panels": 0,
+          "return_and_cover_rate": {
+            "denominator": 128,
+            "estimate": 0.9921875,
+            "monte_carlo_standard_error": 0.0077819226,
+            "numerator": 127,
+            "wilson_95_interval": [
+              0.9570737406,
+              0.9986195681
+            ]
+          },
+          "returned_intervals": 128,
+          "width_range_given_returned": [
+            0.470505753,
+            0.4729957077
+          ],
+          "wrong_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          }
+        }
+      },
+      "replicates": 128,
+      "scenario": {
+        "id": "material_missing_tenth",
+        "mean_ticks": -20,
+        "missingness": "independent_tenth",
+        "residual_variation": "constant",
+        "scales": [
+          1,
+          1,
+          1
+        ],
+        "source_distribution": "matched"
+      }
+    },
+    {
+      "bootstrap_doubling_diagnostic": {
+        "crossed_bounded_missing_basic": {
+          "both_intervals_returned": 8,
+          "decision_changes": 0,
+          "maximum_endpoint_change": 0.0375694444,
+          "maximum_width_change": 0.0560026042,
+          "panels": 8,
+          "return_state_changes": 0
+        },
+        "crossed_complete_case_basic": {
+          "both_intervals_returned": 8,
+          "decision_changes": 0,
+          "maximum_endpoint_change": 0.0151439442,
+          "maximum_width_change": 0.0222357508,
+          "panels": 8,
+          "return_state_changes": 0
+        }
+      },
+      "complete_count_ranges": {
+        "listeners": [
+          24,
+          24
+        ],
+        "responses": [
+          247,
+          268
+        ],
+        "sources": [
+          12,
+          12
+        ]
+      },
+      "finite_panel_bounds": {
+        "containment": {
+          "denominator": 128,
+          "estimate": 1.0,
+          "monte_carlo_standard_error": 0.0,
+          "numerator": 128,
+          "wilson_95_interval": [
+            0.9708630437,
+            1.0
+          ]
+        },
+        "is_population_confidence_interval": false,
+        "mean_width": 0.7951388889
+      },
+      "methods": {
+        "crossed_bounded_missing_basic": {
+          "bias_given_point_estimate": null,
+          "bias_monte_carlo_standard_error": null,
+          "correct_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.984375,
+            "monte_carlo_standard_error": 0.0109618869,
+            "numerator": 126,
+            "wilson_95_interval": [
+              0.9448190233,
+              0.9957045503
+            ]
+          },
+          "count_supported_interval_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "coverage_given_count_supported": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "coverage_given_returned": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "diagnostic_decisions": {
+            "indeterminate": 2,
+            "material_supported": 0,
+            "nonmaterial_supported": 126
+          },
+          "empty_bootstrap_draws": 0,
+          "failures": {},
+          "indeterminate_rate": {
+            "denominator": 128,
+            "estimate": 0.015625,
+            "monte_carlo_standard_error": 0.0109618869,
+            "numerator": 2,
+            "wilson_95_interval": [
+              0.0042954497,
+              0.0551809767
+            ]
+          },
+          "interval_return_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "mean_interval_width_given_returned": 1.4586599392,
+          "mean_sampling_se_given_point_estimate": null,
+          "point_estimate_count": 0,
+          "rare_absent_coverage_given_returned": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_absent_return_and_cover_rate": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_source_absent_panels": 0,
+          "return_and_cover_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "returned_intervals": 128,
+          "width_range_given_returned": [
+            1.1063368056,
+            1.9418880208
+          ],
+          "wrong_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          }
+        },
+        "crossed_complete_case_basic": {
+          "bias_given_point_estimate": -0.0011187863,
+          "bias_monte_carlo_standard_error": 0.0091989297,
+          "correct_decision_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "count_supported_interval_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "coverage_given_count_supported": {
+            "denominator": 128,
+            "estimate": 0.9609375,
+            "monte_carlo_standard_error": 0.0171246855,
+            "numerator": 123,
+            "wilson_95_interval": [
+              0.9118129792,
+              0.9832013892
+            ]
+          },
+          "coverage_given_returned": {
+            "denominator": 128,
+            "estimate": 0.9609375,
+            "monte_carlo_standard_error": 0.0171246855,
+            "numerator": 123,
+            "wilson_95_interval": [
+              0.9118129792,
+              0.9832013892
+            ]
+          },
+          "diagnostic_decisions": {
+            "indeterminate": 0,
+            "material_supported": 0,
+            "nonmaterial_supported": 128
+          },
+          "empty_bootstrap_draws": 0,
+          "failures": {},
+          "indeterminate_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          },
+          "interval_return_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "mean_interval_width_given_returned": 0.4857106872,
+          "mean_sampling_se_given_point_estimate": 0.1091086224,
+          "point_estimate_count": 128,
+          "rare_absent_coverage_given_returned": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_absent_return_and_cover_rate": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_source_absent_panels": 0,
+          "return_and_cover_rate": {
+            "denominator": 128,
+            "estimate": 0.9609375,
+            "monte_carlo_standard_error": 0.0171246855,
+            "numerator": 123,
+            "wilson_95_interval": [
+              0.9118129792,
+              0.9832013892
+            ]
+          },
+          "returned_intervals": 128,
+          "width_range_given_returned": [
+            0.3782257235,
+            0.578555744
+          ],
+          "wrong_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          }
+        },
+        "legacy_fixed_variance": {
+          "bias_given_point_estimate": -0.0004661334,
+          "bias_monte_carlo_standard_error": 0.0092275684,
+          "correct_decision_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "count_supported_interval_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "coverage_given_count_supported": {
+            "denominator": 128,
+            "estimate": 0.9765625,
+            "monte_carlo_standard_error": 0.0133721328,
+            "numerator": 125,
+            "wilson_95_interval": [
+              0.9333562549,
+              0.9919975836
+            ]
+          },
+          "coverage_given_returned": {
+            "denominator": 128,
+            "estimate": 0.9765625,
+            "monte_carlo_standard_error": 0.0133721328,
+            "numerator": 125,
+            "wilson_95_interval": [
+              0.9333562549,
+              0.9919975836
+            ]
+          },
+          "diagnostic_decisions": {
+            "indeterminate": 0,
+            "material_supported": 0,
+            "nonmaterial_supported": 128
+          },
+          "empty_bootstrap_draws": 0,
+          "failures": {},
+          "indeterminate_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          },
+          "interval_return_rate": {
+            "denominator": 128,
+            "estimate": 1.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 128,
+            "wilson_95_interval": [
+              0.9708630437,
+              1.0
+            ]
+          },
+          "mean_interval_width_given_returned": 0.4718576171,
+          "mean_sampling_se_given_point_estimate": 0.1052594456,
+          "point_estimate_count": 128,
+          "rare_absent_coverage_given_returned": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_absent_return_and_cover_rate": {
+            "denominator": 0,
+            "estimate": null,
+            "monte_carlo_standard_error": null,
+            "numerator": 0,
+            "wilson_95_interval": null
+          },
+          "rare_source_absent_panels": 0,
+          "return_and_cover_rate": {
+            "denominator": 128,
+            "estimate": 0.9765625,
+            "monte_carlo_standard_error": 0.0133721328,
+            "numerator": 125,
+            "wilson_95_interval": [
+              0.9333562549,
+              0.9919975836
+            ]
+          },
+          "returned_intervals": 128,
+          "width_range_given_returned": [
+            0.4710476821,
+            0.4731795105
+          ],
+          "wrong_decision_rate": {
+            "denominator": 128,
+            "estimate": 0.0,
+            "monte_carlo_standard_error": 0.0,
+            "numerator": 0,
+            "wilson_95_interval": [
+              0.0,
+              0.0291369563
+            ]
+          }
+        }
+      },
+      "replicates": 128,
+      "scenario": {
+        "id": "nonmaterial_missing_tenth",
+        "mean_ticks": 0,
+        "missingness": "independent_tenth",
+        "residual_variation": "constant",
+        "scales": [
+          1,
+          1,
+          1
+        ],
+        "source_distribution": "matched"
+      }
+    }
+  ],
+  "schema_version": 1,
+  "state": "synthetic_resampling_comparison_complete"
+}

@@ -1437,3 +1437,27 @@ are byte-identical; tests require numerical equality of every original scenario
 and exact byte equality with the corrected golden report. No experimental
 assumption, threshold, result or scientific eligibility changes. Remote CI
 verification applies to the corrected commit separately from the failed run.
+
+## Crossed resampling and missing-rating bounds — 2026-09-05
+
+The [paired resampling comparison](perceptual-degradation-paired-resampling-20260905.md)
+evaluates the unchanged fixed-variance solver, a listener/source-resampled
+basic interval and a bounded-missingness extension on 12 declared synthetic
+mechanisms, with 128 panels each. Every method receives completed paired values
+and the planned assignment grid, never the hidden generated outcomes.
+
+Crossed resampling improves doubled-variance coverage from 90/128 to 119/128,
+but rare-source coverage remains 105/128. All 23 crossed misses in that case
+occur among 33 panels lacking the rare source component, despite adequate
+counts. Complete-case resampling also retains 0/128 coverage under selective
+outcome missingness. Bounds cover in those generated missingness cases while
+often abstaining; clear controls expose the cost in useful decisions. Forty-four
+source-missing complete-case intervals fail because a bootstrap draw is empty;
+none is silently dropped or resampled.
+
+Two full CLI replays are byte-identical. Doubling bootstrap draws on 96 panels
+is a limited precision diagnostic, not a validation pass. No replacement is
+selected for human calibration, and no source, capture, listening, metric,
+oracle, training or public-verdict gate is opened. Finite source-sampling
+uncertainty and rare components now require explicit attention alongside
+selective missingness. The full objective remains unachieved.
