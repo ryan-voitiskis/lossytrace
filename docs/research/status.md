@@ -1425,3 +1425,15 @@ not substitute for them. No human margin, replacement estimator, audibility
 model or multiplicity rule is selected. Source qualification, physical capture
 setup, human calibration, oracle validation and all no-reference gates remain
 open. No research audio, real listener data or sealed evidence was accessed.
+
+## Paired uncertainty serialization successor — 2026-09-05
+
+The original uncertainty checkpoint passed locally but failed its Linux CI
+golden-report comparison because a Wilson boundary serialized as `0.0` versus
+`0`. The [serialization correction](perceptual-degradation-paired-uncertainty-serialization-20260905.md)
+uses floating-point clamp constants and retains the original evidence unchanged.
+The successor report binds the original hash. Two full corrected local replays
+are byte-identical; tests require numerical equality of every original scenario
+and exact byte equality with the corrected golden report. No experimental
+assumption, threshold, result or scientific eligibility changes. Remote CI
+verification applies to the corrected commit separately from the failed run.

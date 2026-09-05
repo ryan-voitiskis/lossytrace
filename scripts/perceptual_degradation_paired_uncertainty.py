@@ -19,6 +19,10 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 PLAN = ROOT / "benchmarks/perceptual-degradation-v1/paired-uncertainty-audit-plan.json"
 PLAN_SHA = "8f293719548862263aa7956953c543b665dcd3aec1c3bec33ece163b19777f92"
+PREDECESSOR_REPORT = {
+    "path": "research/toolchains/evidence/perceptual-degradation-paired-uncertainty-synthetic-20260905-001.json",
+    "sha256": "1f764244d2a5356206e3971a138299c75a6d93f8d7e59fb56c902101b27c1f41",
+}
 BINDINGS = {
     "analysis": "scripts/perceptual_degradation_listening_analysis.py",
     "analysis_plan": "benchmarks/perceptual-degradation-v1/listening-analysis-plan.json",
@@ -48,6 +52,8 @@ def load_plan() -> dict[str, Any]:
     for key, relative in BINDINGS.items():
         if plan["bindings"][key] != {"path": relative, "sha256": sha(ROOT / relative)}:
             raise ValueError("uncertainty predecessor binding differs")
+    if sha(ROOT / PREDECESSOR_REPORT["path"]) != PREDECESSOR_REPORT["sha256"]:
+        raise ValueError("uncertainty predecessor report differs")
     return plan
 
 
@@ -211,7 +217,9 @@ def rate(successes: int, total: int) -> dict[str, Any]:
     radius = z*math.sqrt(p*(1-p)/total + z*z/(4*total*total))/divisor
     return {"numerator": successes, "denominator": total, "estimate": p,
             "monte_carlo_standard_error": math.sqrt(p*(1-p)/total),
-            "wilson_95_interval": [max(0, center-radius), min(1, center+radius)]}
+            # Keep endpoint types stable when floating-point cancellation puts
+            # a boundary just inside or outside [0, 1] on different runtimes.
+            "wilson_95_interval": [max(0.0, center-radius), min(1.0, center+radius)]}
 
 
 def simulate_case(experiment: dict[str, Any], scenario: dict[str, Any], replicates: int, analysis, decisions, response) -> dict[str, Any]:
@@ -312,7 +320,9 @@ def build_report(replicates: int | None = None) -> dict[str, Any]:
         scenarios.append({"scenario": scenario, "finite_discrete_enumeration": enumeration, "simulation": simulation})
     response.cache_clear()
     return rounded({
-        "schema_version": 1, "report_id": plan["plan_id"],
+        "schema_version": 1, "report_id": "paired-uncertainty-audit-20260905-002",
+        "plan_id": plan["plan_id"], "serialization_revision": 2,
+        "predecessor_report": PREDECESSOR_REPORT,
         "state": "synthetic_uncertainty_sensitivity_diagnostic_complete" if count == experiment["replicates_per_scenario"] else "reduced_synthetic_smoke_only",
         "plan_sha256": PLAN_SHA, "implementation_sha256": sha(Path(__file__)), "bindings": plan["bindings"],
         "access_boundary": plan["access_boundary"], "replicates_per_scenario": count,

@@ -1,0 +1,880 @@
+{
+  "access_boundary": {
+    "audio_access_authorized": false,
+    "human_collection_authorized": false,
+    "metric_execution_authorized": false,
+    "no_reference_training_authorized": false,
+    "observed_response_input_authorized": false,
+    "playback_authorized": false,
+    "public_verdict_enabled": false,
+    "sealed_evidence_access_authorized": false,
+    "synthetic_execution_only": true
+  },
+  "all_failed_fits_and_missing_replicates_accounted_for": true,
+  "audibility_coverage_evaluated": false,
+  "bindings": {
+    "analysis": {
+      "path": "scripts/perceptual_degradation_listening_analysis.py",
+      "sha256": "215d5c2b49fe4d630c1edd355e576c6fac296958465eb9a30dd88d684df30fff"
+    },
+    "analysis_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/listening-analysis-plan.json",
+      "sha256": "3317a2b039de860a4ec3b152ea83406b5bc8793e825b81918a140e60b8e16fdc"
+    },
+    "decision_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/nonmateriality-evidence-plan.json",
+      "sha256": "913bba83a25290ff362b9e001d0d7a34b499c191059b4786a36042c2d175fd90"
+    },
+    "decisions": {
+      "path": "scripts/perceptual_degradation_nonmateriality.py",
+      "sha256": "87e9118b62566dcc150f06c9c83e9bc59e19d329a85c1473c1f61977661d317f"
+    },
+    "paired": {
+      "path": "scripts/perceptual_degradation_paired_rating.py",
+      "sha256": "6a9753b9064df1d61950775684a25fa19bd4d8c5c77a97c051851187cf795c7e"
+    },
+    "paired_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/paired-rating-protocol-plan.json",
+      "sha256": "d3578a823277d8542c1f4c9cc7d18ead03948324b5103ba9e512585287983192"
+    }
+  },
+  "confidence_interval_coverage_on_humans_validated": false,
+  "estimand": "synthetic_superpopulation_mean_observed_paired_difference_before_missingness_not_selected_completer_mean",
+  "familywise_coverage_evaluated": false,
+  "human_materiality_margin_selected": false,
+  "human_responses_observed": false,
+  "implementation_sha256": "8c4d289456fd3ad410ce9d2a228b7a203ec4b5f923df975e1843c35013ecf453",
+  "no_reference_training_eligible": false,
+  "nominal_pointwise_central_normal_coverage": 0.975,
+  "objective_complete": false,
+  "oracle_truth_eligible": false,
+  "original_interval_multiplier": 2.2414027276,
+  "plan_id": "paired-uncertainty-audit-20260905-001",
+  "plan_sha256": "8f293719548862263aa7956953c543b665dcd3aec1c3bec33ece163b19777f92",
+  "predecessor_report": {
+    "path": "research/toolchains/evidence/perceptual-degradation-paired-uncertainty-synthetic-20260905-001.json",
+    "sha256": "1f764244d2a5356206e3971a138299c75a6d93f8d7e59fb56c902101b27c1f41"
+  },
+  "replicates_per_scenario": 128,
+  "report_id": "paired-uncertainty-audit-20260905-002",
+  "scenarios": [
+    {
+      "finite_discrete_enumeration": {
+        "enumerated_central_coverage": 0.9762436513,
+        "expected_paired_difference": -1.0,
+        "method": "finite_discrete_convolution_float64_no_normal_approximation",
+        "model_interval_half_width": 0.2347832951,
+        "model_standard_error": 0.1047483757,
+        "normal_approximation_under_true_variance": 0.975,
+        "probability_mass": 1.0,
+        "state": "declared_synthetic_population_only_not_human_interval_validation",
+        "true_standard_error": 0.1047483757
+      },
+      "scenario": {
+        "id": "matched",
+        "missingness": "none",
+        "scales": [
+          1,
+          1,
+          1
+        ]
+      },
+      "simulation": {
+        "balanced_solver_comparison": {
+          "maximum_mean_error": 0.0,
+          "maximum_standard_error_error": 0.0
+        },
+        "bias_given_returned": 0.0022894965,
+        "bias_monte_carlo_standard_error": 0.0091225228,
+        "complete_listener_count_range": [
+          24,
+          24
+        ],
+        "complete_response_count_range": [
+          288,
+          288
+        ],
+        "complete_source_count_range": [
+          12,
+          12
+        ],
+        "coverage_given_returned": {
+          "denominator": 128,
+          "estimate": 0.984375,
+          "monte_carlo_standard_error": 0.0109618869,
+          "numerator": 126,
+          "wilson_95_interval": [
+            0.9448190233,
+            0.9957045503
+          ]
+        },
+        "coverage_given_supported": {
+          "denominator": 128,
+          "estimate": 0.984375,
+          "monte_carlo_standard_error": 0.0109618869,
+          "numerator": 126,
+          "wilson_95_interval": [
+            0.9448190233,
+            0.9957045503
+          ]
+        },
+        "diagnostic_severity_evidence_counts": {
+          "indeterminate": 126,
+          "material_supported": 2,
+          "nonmaterial_supported": 0
+        },
+        "empirical_standard_deviation_given_returned": 0.1032095633,
+        "failures": {
+          "no_complete_data": 0,
+          "numerical_failure": 0
+        },
+        "interval_return_rate": {
+          "denominator": 128,
+          "estimate": 1.0,
+          "monte_carlo_standard_error": 0.0,
+          "numerator": 128,
+          "wilson_95_interval": [
+            0.9708630437,
+            1.0
+          ]
+        },
+        "mean_estimate_given_returned": -0.9977105035,
+        "mean_model_standard_error_given_returned": 0.1047483757,
+        "replicates": 128,
+        "returned_intervals": 128,
+        "rmse_given_returned": 0.102831101,
+        "support_rate": {
+          "denominator": 128,
+          "estimate": 1.0,
+          "monte_carlo_standard_error": 0.0,
+          "numerator": 128,
+          "wilson_95_interval": [
+            0.9708630437,
+            1.0
+          ]
+        },
+        "valid_and_covers_rate": {
+          "denominator": 128,
+          "estimate": 0.984375,
+          "monte_carlo_standard_error": 0.0109618869,
+          "numerator": 126,
+          "wilson_95_interval": [
+            0.9448190233,
+            0.9957045503
+          ]
+        }
+      }
+    },
+    {
+      "finite_discrete_enumeration": {
+        "enumerated_central_coverage": 0.9136313574,
+        "expected_paired_difference": -1.0,
+        "method": "finite_discrete_convolution_float64_no_normal_approximation",
+        "model_interval_half_width": 0.2347832951,
+        "model_standard_error": 0.1047483757,
+        "normal_approximation_under_true_variance": 0.9132928605,
+        "probability_mass": 1.0,
+        "state": "declared_synthetic_population_only_not_human_interval_validation",
+        "true_standard_error": 0.1370573684
+      },
+      "scenario": {
+        "id": "listener_sd_x2",
+        "missingness": "none",
+        "scales": [
+          2,
+          1,
+          1
+        ]
+      },
+      "simulation": {
+        "balanced_solver_comparison": {
+          "maximum_mean_error": 0.0,
+          "maximum_standard_error_error": 0.0
+        },
+        "bias_given_returned": -0.0142632378,
+        "bias_monte_carlo_standard_error": 0.0125451295,
+        "complete_listener_count_range": [
+          24,
+          24
+        ],
+        "complete_response_count_range": [
+          288,
+          288
+        ],
+        "complete_source_count_range": [
+          12,
+          12
+        ],
+        "coverage_given_returned": {
+          "denominator": 128,
+          "estimate": 0.8984375,
+          "monte_carlo_standard_error": 0.0266996545,
+          "numerator": 115,
+          "wilson_95_interval": [
+            0.8339751367,
+            0.9396813513
+          ]
+        },
+        "coverage_given_supported": {
+          "denominator": 128,
+          "estimate": 0.8984375,
+          "monte_carlo_standard_error": 0.0266996545,
+          "numerator": 115,
+          "wilson_95_interval": [
+            0.8339751367,
+            0.9396813513
+          ]
+        },
+        "diagnostic_severity_evidence_counts": {
+          "indeterminate": 115,
+          "material_supported": 9,
+          "nonmaterial_supported": 4
+        },
+        "empirical_standard_deviation_given_returned": 0.1419319386,
+        "failures": {
+          "no_complete_data": 0,
+          "numerical_failure": 0
+        },
+        "interval_return_rate": {
+          "denominator": 128,
+          "estimate": 1.0,
+          "monte_carlo_standard_error": 0.0,
+          "numerator": 128,
+          "wilson_95_interval": [
+            0.9708630437,
+            1.0
+          ]
+        },
+        "mean_estimate_given_returned": -1.0142632378,
+        "mean_model_standard_error_given_returned": 0.1047483757,
+        "replicates": 128,
+        "returned_intervals": 128,
+        "rmse_given_returned": 0.1420941057,
+        "support_rate": {
+          "denominator": 128,
+          "estimate": 1.0,
+          "monte_carlo_standard_error": 0.0,
+          "numerator": 128,
+          "wilson_95_interval": [
+            0.9708630437,
+            1.0
+          ]
+        },
+        "valid_and_covers_rate": {
+          "denominator": 128,
+          "estimate": 0.8984375,
+          "monte_carlo_standard_error": 0.0266996545,
+          "numerator": 115,
+          "wilson_95_interval": [
+            0.8339751367,
+            0.9396813513
+          ]
+        }
+      }
+    },
+    {
+      "finite_discrete_enumeration": {
+        "enumerated_central_coverage": 0.7976530083,
+        "expected_paired_difference": -1.0,
+        "method": "finite_discrete_convolution_float64_no_normal_approximation",
+        "model_interval_half_width": 0.2347832951,
+        "model_standard_error": 0.1047483757,
+        "normal_approximation_under_true_variance": 0.8006096194,
+        "probability_mass": 1.0,
+        "state": "declared_synthetic_population_only_not_human_interval_validation",
+        "true_standard_error": 0.1829541533
+      },
+      "scenario": {
+        "id": "source_sd_x2",
+        "missingness": "none",
+        "scales": [
+          1,
+          2,
+          1
+        ]
+      },
+      "simulation": {
+        "balanced_solver_comparison": {
+          "maximum_mean_error": 0.0,
+          "maximum_standard_error_error": 0.0
+        },
+        "bias_given_returned": -0.003765191,
+        "bias_monte_carlo_standard_error": 0.0152891769,
+        "complete_listener_count_range": [
+          24,
+          24
+        ],
+        "complete_response_count_range": [
+          288,
+          288
+        ],
+        "complete_source_count_range": [
+          12,
+          12
+        ],
+        "coverage_given_returned": {
+          "denominator": 128,
+          "estimate": 0.828125,
+          "monte_carlo_standard_error": 0.0333464279,
+          "numerator": 106,
+          "wilson_95_interval": [
+            0.7534600319,
+            0.8836688405
+          ]
+        },
+        "coverage_given_supported": {
+          "denominator": 128,
+          "estimate": 0.828125,
+          "monte_carlo_standard_error": 0.0333464279,
+          "numerator": 106,
+          "wilson_95_interval": [
+            0.7534600319,
+            0.8836688405
+          ]
+        },
+        "diagnostic_severity_evidence_counts": {
+          "indeterminate": 106,
+          "material_supported": 11,
+          "nonmaterial_supported": 11
+        },
+        "empirical_standard_deviation_given_returned": 0.1729772903,
+        "failures": {
+          "no_complete_data": 0,
+          "numerical_failure": 0
+        },
+        "interval_return_rate": {
+          "denominator": 128,
+          "estimate": 1.0,
+          "monte_carlo_standard_error": 0.0,
+          "numerator": 128,
+          "wilson_95_interval": [
+            0.9708630437,
+            1.0
+          ]
+        },
+        "mean_estimate_given_returned": -1.003765191,
+        "mean_model_standard_error_given_returned": 0.1047483757,
+        "replicates": 128,
+        "returned_intervals": 128,
+        "rmse_given_returned": 0.1723414074,
+        "support_rate": {
+          "denominator": 128,
+          "estimate": 1.0,
+          "monte_carlo_standard_error": 0.0,
+          "numerator": 128,
+          "wilson_95_interval": [
+            0.9708630437,
+            1.0
+          ]
+        },
+        "valid_and_covers_rate": {
+          "denominator": 128,
+          "estimate": 0.828125,
+          "monte_carlo_standard_error": 0.0333464279,
+          "numerator": 106,
+          "wilson_95_interval": [
+            0.7534600319,
+            0.8836688405
+          ]
+        }
+      }
+    },
+    {
+      "finite_discrete_enumeration": {
+        "enumerated_central_coverage": 0.9572037836,
+        "expected_paired_difference": -1.0,
+        "method": "finite_discrete_convolution_float64_no_normal_approximation",
+        "model_interval_half_width": 0.2347832951,
+        "model_standard_error": 0.1047483757,
+        "normal_approximation_under_true_variance": 0.9560953549,
+        "probability_mass": 1.0,
+        "state": "declared_synthetic_population_only_not_human_interval_validation",
+        "true_standard_error": 0.1165177621
+      },
+      "scenario": {
+        "id": "residual_sd_x2",
+        "missingness": "none",
+        "scales": [
+          1,
+          1,
+          2
+        ]
+      },
+      "simulation": {
+        "balanced_solver_comparison": {
+          "maximum_mean_error": 0.0,
+          "maximum_standard_error_error": 0.0
+        },
+        "bias_given_returned": 0.0126844618,
+        "bias_monte_carlo_standard_error": 0.0104261446,
+        "complete_listener_count_range": [
+          24,
+          24
+        ],
+        "complete_response_count_range": [
+          288,
+          288
+        ],
+        "complete_source_count_range": [
+          12,
+          12
+        ],
+        "coverage_given_returned": {
+          "denominator": 128,
+          "estimate": 0.9296875,
+          "monte_carlo_standard_error": 0.0225985087,
+          "numerator": 119,
+          "wilson_95_interval": [
+            0.8717651965,
+            0.9625702317
+          ]
+        },
+        "coverage_given_supported": {
+          "denominator": 128,
+          "estimate": 0.9296875,
+          "monte_carlo_standard_error": 0.0225985087,
+          "numerator": 119,
+          "wilson_95_interval": [
+            0.8717651965,
+            0.9625702317
+          ]
+        },
+        "diagnostic_severity_evidence_counts": {
+          "indeterminate": 119,
+          "material_supported": 4,
+          "nonmaterial_supported": 5
+        },
+        "empirical_standard_deviation_given_returned": 0.1179583604,
+        "failures": {
+          "no_complete_data": 0,
+          "numerical_failure": 0
+        },
+        "interval_return_rate": {
+          "denominator": 128,
+          "estimate": 1.0,
+          "monte_carlo_standard_error": 0.0,
+          "numerator": 128,
+          "wilson_95_interval": [
+            0.9708630437,
+            1.0
+          ]
+        },
+        "mean_estimate_given_returned": -0.9873155382,
+        "mean_model_standard_error_given_returned": 0.1047483757,
+        "replicates": 128,
+        "returned_intervals": 128,
+        "rmse_given_returned": 0.11817938,
+        "support_rate": {
+          "denominator": 128,
+          "estimate": 1.0,
+          "monte_carlo_standard_error": 0.0,
+          "numerator": 128,
+          "wilson_95_interval": [
+            0.9708630437,
+            1.0
+          ]
+        },
+        "valid_and_covers_rate": {
+          "denominator": 128,
+          "estimate": 0.9296875,
+          "monte_carlo_standard_error": 0.0225985087,
+          "numerator": 119,
+          "wilson_95_interval": [
+            0.8717651965,
+            0.9625702317
+          ]
+        }
+      }
+    },
+    {
+      "finite_discrete_enumeration": {
+        "enumerated_central_coverage": 0.7359480764,
+        "expected_paired_difference": -1.0,
+        "method": "finite_discrete_convolution_float64_no_normal_approximation",
+        "model_interval_half_width": 0.2347832951,
+        "model_standard_error": 0.1047483757,
+        "normal_approximation_under_true_variance": 0.7375849985,
+        "probability_mass": 1.0,
+        "state": "declared_synthetic_population_only_not_human_interval_validation",
+        "true_standard_error": 0.2094967515
+      },
+      "scenario": {
+        "id": "all_sd_x2",
+        "missingness": "none",
+        "scales": [
+          2,
+          2,
+          2
+        ]
+      },
+      "simulation": {
+        "balanced_solver_comparison": {
+          "maximum_mean_error": 0.0,
+          "maximum_standard_error_error": 0.0
+        },
+        "bias_given_returned": -0.0087565104,
+        "bias_monte_carlo_standard_error": 0.0183249354,
+        "complete_listener_count_range": [
+          24,
+          24
+        ],
+        "complete_response_count_range": [
+          288,
+          288
+        ],
+        "complete_source_count_range": [
+          12,
+          12
+        ],
+        "coverage_given_returned": {
+          "denominator": 128,
+          "estimate": 0.75,
+          "monte_carlo_standard_error": 0.0382732772,
+          "numerator": 96,
+          "wilson_95_interval": [
+            0.6684443705,
+            0.8169871514
+          ]
+        },
+        "coverage_given_supported": {
+          "denominator": 128,
+          "estimate": 0.75,
+          "monte_carlo_standard_error": 0.0382732772,
+          "numerator": 96,
+          "wilson_95_interval": [
+            0.6684443705,
+            0.8169871514
+          ]
+        },
+        "diagnostic_severity_evidence_counts": {
+          "indeterminate": 96,
+          "material_supported": 16,
+          "nonmaterial_supported": 16
+        },
+        "empirical_standard_deviation_given_returned": 0.2073229772,
+        "failures": {
+          "no_complete_data": 0,
+          "numerical_failure": 0
+        },
+        "interval_return_rate": {
+          "denominator": 128,
+          "estimate": 1.0,
+          "monte_carlo_standard_error": 0.0,
+          "numerator": 128,
+          "wilson_95_interval": [
+            0.9708630437,
+            1.0
+          ]
+        },
+        "mean_estimate_given_returned": -1.0087565104,
+        "mean_model_standard_error_given_returned": 0.1047483757,
+        "replicates": 128,
+        "returned_intervals": 128,
+        "rmse_given_returned": 0.2066970974,
+        "support_rate": {
+          "denominator": 128,
+          "estimate": 1.0,
+          "monte_carlo_standard_error": 0.0,
+          "numerator": 128,
+          "wilson_95_interval": [
+            0.9708630437,
+            1.0
+          ]
+        },
+        "valid_and_covers_rate": {
+          "denominator": 128,
+          "estimate": 0.75,
+          "monte_carlo_standard_error": 0.0382732772,
+          "numerator": 96,
+          "wilson_95_interval": [
+            0.6684443705,
+            0.8169871514
+          ]
+        }
+      }
+    },
+    {
+      "finite_discrete_enumeration": null,
+      "scenario": {
+        "id": "independent_missing_quarter",
+        "missingness": "independent_one_in_four",
+        "scales": [
+          1,
+          1,
+          1
+        ]
+      },
+      "simulation": {
+        "balanced_solver_comparison": null,
+        "bias_given_returned": 0.0179279728,
+        "bias_monte_carlo_standard_error": 0.0098372739,
+        "complete_listener_count_range": [
+          24,
+          24
+        ],
+        "complete_response_count_range": [
+          196,
+          239
+        ],
+        "complete_source_count_range": [
+          12,
+          12
+        ],
+        "coverage_given_returned": {
+          "denominator": 128,
+          "estimate": 0.9765625,
+          "monte_carlo_standard_error": 0.0133721328,
+          "numerator": 125,
+          "wilson_95_interval": [
+            0.9333562549,
+            0.9919975836
+          ]
+        },
+        "coverage_given_supported": {
+          "denominator": 128,
+          "estimate": 0.9765625,
+          "monte_carlo_standard_error": 0.0133721328,
+          "numerator": 125,
+          "wilson_95_interval": [
+            0.9333562549,
+            0.9919975836
+          ]
+        },
+        "diagnostic_severity_evidence_counts": {
+          "indeterminate": 125,
+          "material_supported": 1,
+          "nonmaterial_supported": 2
+        },
+        "empirical_standard_deviation_given_returned": 0.1112960494,
+        "failures": {
+          "no_complete_data": 0,
+          "numerical_failure": 0
+        },
+        "interval_return_rate": {
+          "denominator": 128,
+          "estimate": 1.0,
+          "monte_carlo_standard_error": 0.0,
+          "numerator": 128,
+          "wilson_95_interval": [
+            0.9708630437,
+            1.0
+          ]
+        },
+        "mean_estimate_given_returned": -0.9820720272,
+        "mean_model_standard_error_given_returned": 0.1063144273,
+        "replicates": 128,
+        "returned_intervals": 128,
+        "rmse_given_returned": 0.1123007163,
+        "support_rate": {
+          "denominator": 128,
+          "estimate": 1.0,
+          "monte_carlo_standard_error": 0.0,
+          "numerator": 128,
+          "wilson_95_interval": [
+            0.9708630437,
+            1.0
+          ]
+        },
+        "valid_and_covers_rate": {
+          "denominator": 128,
+          "estimate": 0.9765625,
+          "monte_carlo_standard_error": 0.0133721328,
+          "numerator": 125,
+          "wilson_95_interval": [
+            0.9333562549,
+            0.9919975836
+          ]
+        }
+      }
+    },
+    {
+      "finite_discrete_enumeration": null,
+      "scenario": {
+        "id": "outcome_dependent_missing",
+        "missingness": "difference_ticks_less_than_or_equal_to_population_mean",
+        "scales": [
+          1,
+          1,
+          1
+        ]
+      },
+      "simulation": {
+        "balanced_solver_comparison": null,
+        "bias_given_returned": 0.5516331211,
+        "bias_monte_carlo_standard_error": 0.003188026,
+        "complete_listener_count_range": [
+          19,
+          24
+        ],
+        "complete_response_count_range": [
+          74,
+          174
+        ],
+        "complete_source_count_range": [
+          12,
+          12
+        ],
+        "coverage_given_returned": {
+          "denominator": 128,
+          "estimate": 0.0,
+          "monte_carlo_standard_error": 0.0,
+          "numerator": 0,
+          "wilson_95_interval": [
+            0.0,
+            0.0291369563
+          ]
+        },
+        "coverage_given_supported": {
+          "denominator": 97,
+          "estimate": 0.0,
+          "monte_carlo_standard_error": 0.0,
+          "numerator": 0,
+          "wilson_95_interval": [
+            0.0,
+            0.0380940425
+          ]
+        },
+        "diagnostic_severity_evidence_counts": {
+          "indeterminate": 31,
+          "material_supported": 0,
+          "nonmaterial_supported": 97
+        },
+        "empirical_standard_deviation_given_returned": 0.0360683964,
+        "failures": {
+          "no_complete_data": 0,
+          "numerical_failure": 0
+        },
+        "interval_return_rate": {
+          "denominator": 128,
+          "estimate": 1.0,
+          "monte_carlo_standard_error": 0.0,
+          "numerator": 128,
+          "wilson_95_interval": [
+            0.9708630437,
+            1.0
+          ]
+        },
+        "mean_estimate_given_returned": -0.4483668789,
+        "mean_model_standard_error_given_returned": 0.1153871897,
+        "replicates": 128,
+        "returned_intervals": 128,
+        "rmse_given_returned": 0.5528018324,
+        "support_rate": {
+          "denominator": 128,
+          "estimate": 0.7578125,
+          "monte_carlo_standard_error": 0.0378662031,
+          "numerator": 97,
+          "wilson_95_interval": [
+            0.6767886369,
+            0.82381262
+          ]
+        },
+        "valid_and_covers_rate": {
+          "denominator": 128,
+          "estimate": 0.0,
+          "monte_carlo_standard_error": 0.0,
+          "numerator": 0,
+          "wilson_95_interval": [
+            0.0,
+            0.0291369563
+          ]
+        }
+      }
+    },
+    {
+      "finite_discrete_enumeration": null,
+      "scenario": {
+        "id": "source_dependent_missing",
+        "missingness": "negative_source_effect",
+        "scales": [
+          1,
+          1,
+          1
+        ]
+      },
+      "simulation": {
+        "balanced_solver_comparison": null,
+        "bias_given_returned": 0.3000614873,
+        "bias_monte_carlo_standard_error": 0.0057859347,
+        "complete_listener_count_range": [
+          24,
+          24
+        ],
+        "complete_response_count_range": [
+          24,
+          216
+        ],
+        "complete_source_count_range": [
+          1,
+          9
+        ],
+        "coverage_given_returned": {
+          "denominator": 128,
+          "estimate": 0.6328125,
+          "monte_carlo_standard_error": 0.0426065612,
+          "numerator": 81,
+          "wilson_95_interval": [
+            0.5465700425,
+            0.7113154535
+          ]
+        },
+        "coverage_given_supported": {
+          "denominator": 0,
+          "estimate": null,
+          "monte_carlo_standard_error": null,
+          "numerator": 0,
+          "wilson_95_interval": null
+        },
+        "diagnostic_severity_evidence_counts": {
+          "indeterminate": 128,
+          "material_supported": 0,
+          "nonmaterial_supported": 0
+        },
+        "empirical_standard_deviation_given_returned": 0.0654603788,
+        "failures": {
+          "no_complete_data": 0,
+          "numerical_failure": 0
+        },
+        "interval_return_rate": {
+          "denominator": 128,
+          "estimate": 1.0,
+          "monte_carlo_standard_error": 0.0,
+          "numerator": 128,
+          "wilson_95_interval": [
+            0.9708630437,
+            1.0
+          ]
+        },
+        "mean_estimate_given_returned": -0.6999385127,
+        "mean_model_standard_error_given_returned": 0.1460148964,
+        "replicates": 128,
+        "returned_intervals": 128,
+        "rmse_given_returned": 0.3070642934,
+        "support_rate": {
+          "denominator": 128,
+          "estimate": 0.0,
+          "monte_carlo_standard_error": 0.0,
+          "numerator": 0,
+          "wilson_95_interval": [
+            0.0,
+            0.0291369563
+          ]
+        },
+        "valid_and_covers_rate": {
+          "denominator": 128,
+          "estimate": 0.6328125,
+          "monte_carlo_standard_error": 0.0426065612,
+          "numerator": 81,
+          "wilson_95_interval": [
+            0.5465700425,
+            0.7113154535
+          ]
+        }
+      }
+    }
+  ],
+  "schema_version": 1,
+  "serialization_revision": 2,
+  "state": "synthetic_uncertainty_sensitivity_diagnostic_complete",
+  "synthetic_population_mean_paired_difference": -1.0
+}

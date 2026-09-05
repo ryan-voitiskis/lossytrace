@@ -16,7 +16,7 @@ from unittest import mock
 
 ROOT = Path(__file__).resolve().parents[2]
 SCRIPT = ROOT / "scripts/perceptual_degradation_paired_uncertainty.py"
-EVIDENCE = ROOT / "research/toolchains/evidence/perceptual-degradation-paired-uncertainty-synthetic-20260905-001.json"
+EVIDENCE = ROOT / "research/toolchains/evidence/perceptual-degradation-paired-uncertainty-synthetic-20260905-002.json"
 SPEC = importlib.util.spec_from_file_location("paired_uncertainty", SCRIPT)
 assert SPEC and SPEC.loader
 MODULE = importlib.util.module_from_spec(SPEC)
@@ -172,6 +172,22 @@ class PairedUncertaintyTest(unittest.TestCase):
         self.assertIsNone(result["bias_given_returned"])
         self.assertEqual(4, result["diagnostic_severity_evidence_counts"]["indeterminate"])
 
+    def test_wilson_boundary_types_do_not_depend_on_cancellation_sign(self):
+        for total in range(1, 130):
+            for successes in (0, total):
+                interval = MODULE.rate(successes, total)["wilson_95_interval"]
+                self.assertTrue(all(type(value) is float for value in interval))
+                projected = MODULE.rounded(interval)
+                self.assertEqual(0.0 if successes == 0 else 1.0,
+                                 projected[0] if successes == 0 else projected[1])
+
+    def test_original_evidence_is_hash_bound_and_cannot_be_replaced(self):
+        original_sha = MODULE.sha
+        def changed_report(path):
+            return "0"*64 if path == ROOT / MODULE.PREDECESSOR_REPORT["path"] else original_sha(path)
+        with mock.patch.object(MODULE, "sha", side_effect=changed_report), self.assertRaisesRegex(ValueError, "predecessor report"):
+            MODULE.load_plan()
+
     def test_known_numerical_failures_are_retained_without_resampling(self):
         for message in MODULE.NUMERICAL_FAILURES:
             with mock.patch.object(self.analysis, "_fit_gaussian", side_effect=ValueError(message)) as fitted:
@@ -226,6 +242,11 @@ class PairedUncertaintyTest(unittest.TestCase):
     def test_report_matches_full_golden_and_keeps_scientific_gates_closed(self):
         report = MODULE.build_report()
         self.assertEqual(EVIDENCE.read_bytes(), MODULE.canonical_bytes(report))
+        self.assertEqual(2, report["serialization_revision"])
+        original = json.loads((ROOT / MODULE.PREDECESSOR_REPORT["path"]).read_bytes())
+        # Numerical equality here verifies the unchanged findings; the strict
+        # byte assertion above verifies the successor's canonical serialization.
+        self.assertEqual(original["scenarios"], report["scenarios"])
         self.assertEqual(8, len(report["scenarios"]))
         for item in report["scenarios"]:
             result = item["simulation"]
