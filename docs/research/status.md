@@ -1512,3 +1512,30 @@ case linkage, source-conditional listener targets and a population sampling
 contract still need separate justification. The physical capture setup and all
 source, listening, metric, oracle and no-reference prerequisites remain open.
 No existing evidence, scientific gate or public verdict was changed.
+
+## Sparse/tonal descriptor rate and context audit — 2026-09-05
+
+The [descriptor audit](perceptual-degradation-descriptor-rate-context-20260905.md)
+replays four fixed mathematical signals at 48, 96 and 192 kHz, with exact
+sample equality on their shared time grid. A separately declared 15-second
+padded construction passes the sparse/non-tonal contrast at 48 kHz but abstains
+at 96 kHz: flatness changes from 0.986670558 to 0.000039540 while both retain
+one active time block and supported spectral measurements. Both rates are
+permitted by the unchanged clean-capture specification. No actual capture or
+natural-source truth is represented by these synthesized constructions.
+
+Eight occupancy-only cases establish a separate context dependency. A fixed
+1.6-second event occupies three active blocks at onset 5.950 seconds in a
+15-second record, but two after a 50-ms translation or after adding 15 seconds
+of trailing zeros. Its sparse flag changes at both permitted rates. Independent
+exact interval-overlap calculations agree with every case. Whole-recording
+occupancy is intentionally context-relative; this is not declared a coding bug.
+
+Two complete final replays are byte-identical. All controls and non-transition
+results are retained, including the coherent unpadded kernel's tonal result.
+The audit does not isolate every spectral mechanism or reclassify a retained
+candidate. It supports a prospective review of physical-band/window support
+and event-versus-recording context before treating the descriptor as a
+rate-independent trait adjudicator. Original thresholds, source outcomes and
+capture authority are preserved. No listening, metric, oracle, training or
+public-verdict gate is opened; the full objective remains active.

@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "plan_id": "descriptor-rate-context-audit-20260905-001",
+  "state": "synthetic_falsification_audit_declared_before_execution",
+  "purpose": "Test the frozen sparse/tonal descriptor's dependence on sample rate, analysis bandwidth and recorded context before relying on it for the authorized clean capture. Preserve all historical candidate outcomes and thresholds.",
+  "bindings": {
+    "descriptor_plan": {"path": "benchmarks/perceptual-degradation-v1/source-trait-sparse-tonal-descriptor-plan.json", "sha256": "8b8649fe65ba151f906a544ff08271f2563224e54610156770edcc731f23bdbf"},
+    "descriptor_engine": {"path": "scripts/perceptual_degradation_source_trait_sparse_tonal_descriptor.py", "sha256": "90adfa2dec5ad3bd09bdb66094c964fbddd0779765dda54a72fc8b72de557299"},
+    "native_rate_runner": {"path": "scripts/perceptual_degradation_source_trait_sparse_tonal_exact_member_confirmation.py", "sha256": "79e17d6b7db767f0a8b828093e3e0857b73300fc8b055b7d3442c381f66dcfc0"},
+    "capture_specification": {"path": "benchmarks/perceptual-degradation-v1/source-trait-sparse-non-tonal-clean-capture-acquisition-spec.json", "sha256": "cb828b070189cdd14983bdf7fff41f36e41d459b791d5097d7159c457a0e742c"},
+    "restart_review": {"path": "docs/research/perceptual-degradation-strategic-review-20260905.md", "sha256": "6dfa09fa8c5465a08a41fcf8f3eaaa2b518e74a13bde83b2dd4549ff2c709cf4"}
+  },
+  "rate_experiment": {
+    "rates_hz": [48000, 96000, 192000],
+    "capture_permitted_rates_hz": [48000, 96000],
+    "192000_role": "development_diagnostic_only_not_a_new_capture_option",
+    "master_rate_hz": 192000,
+    "master_period_samples": 4096,
+    "period_count": 6,
+    "kernel_duration_seconds": "0.128",
+    "fundamental_hz": "375/8",
+    "coefficient_amplitude": 8192,
+    "families": ["coherent_full_band", "hash_phase_full_band", "hash_phase_lower_band", "single_tone"],
+    "harmonics": {"coherent_full_band": [1, 511], "hash_phase_full_band": [1, 511], "hash_phase_lower_band": [1, 255], "single_tone": [32, 32]},
+    "waveform": "x(t)=8192*sum_k cos(2*pi*k*(375/8)*t+phase_k). Coherent and tone phases are zero. Hash phases use the first 64 bits of SHA256(seed+'/'+decimal k), divided by 2^64 and multiplied by 2*pi; the same harmonic has the same phase in both hash families.",
+    "phase_seed": "lossytrace-descriptor-rate-context-20260905-001",
+    "sampling": "Evaluate one period at the 192000-Hz master grid with math.fsum in ascending harmonic order; Python round to integer once. Stride the common quantized grid by 4, 2 or 1 and repeat six periods. This directly samples the declared periodic function; it does not invoke a media resampler or change its physical frequencies.",
+    "identity_check": "Every lower-rate kernel must equal the corresponding stride of the higher-rate kernel exactly at all shared sample instants. Assert signed 24-bit range. Record counts and boolean equality only, no waveform or PCM hash.",
+    "execution": "Run unchanged classify on all 12 kernels. Report frozen outputs and physical FFT window duration/bin spacing. The short kernels are not eligible source members or listening stimuli.",
+    "padded_capture_geometry": {"family": "coherent_full_band", "duration_seconds": 15, "kernel_start_seconds": 7, "rates_hz": [48000, 96000]},
+    "padded_execution": "Place the unchanged 0.128-second kernel into exact zeros at seven seconds; run classify. This tests permitted rate/duration/quiet geometry only. A synthesized periodic multisine is not one natural transient or an eligible clean capture.",
+    "comparison": "Report changes in each spectral flag and contrast classification relative to 48000 Hz. Do not require a preferred result, tune a seed, substitute a family, or select a new descriptor."
+  },
+  "context_experiment": {
+    "rates_hz": [48000, 96000],
+    "duration_seconds": [15, 30],
+    "event_start_seconds": ["5.950", "6.000"],
+    "event_duration_seconds": "1.600",
+    "amplitude": 1000,
+    "waveform": "A constant nonzero synthetic interval, zero elsewhere. This is an occupancy-only construction, not a natural acoustic event or spectral/non-tonal fixture.",
+    "execution": "Run unchanged time_occupancy on all eight cases. Independently compute exact per-block overlap lengths and Fraction powers from integer interval endpoints, using the same declared 1/1000 threshold.",
+    "comparison": "Separately compare a 50-ms translation at fixed 15-second duration and adding 15 seconds of trailing zeros at fixed 5.950-second onset. Shared event samples are unchanged; report activity and sparse-state differences.",
+    "interpretation": "Whole-recording occupancy is intentionally context-relative. A changed label establishes context dependence, not a programming bug or proof of incorrect natural-source classification."
+  },
+  "execution": {
+    "workers": 1,
+    "minimum_free_gib": 15,
+    "replays": 2,
+    "byte_identical_required": true,
+    "waveforms": "generated_in_memory_only_never_saved_or_played",
+    "public_output": "small_synthetic_construction_ids_aggregate_descriptor_results_and_identity_checks_only",
+    "statistical_fits_or_perceptual_metrics": false
+  },
+  "claim_boundary": {
+    "actual_audio_access_authorized": false,
+    "capture_execution_authorized_by_this_audit": false,
+    "playback_or_listening_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "source_trait_assignment_authorized": false,
+    "historical_candidates_reclassified": false,
+    "replacement_descriptor_selected": false,
+    "population_sampling_contract_selected": false,
+    "sealed_evidence_or_training_authorized": false,
+    "external_communication_or_spending_authorized": false,
+    "public_verdict_enabled": false,
+    "objective_complete": false
+  },
+  "next_requirement": "Use the observed invariance or non-invariance to decide whether a separately justified physical-band/context definition is needed. Any changed descriptor requires a new score-blind plan and fresh validation; do not reinterpret consumed source outcomes or modify this capture specification retrospectively."
+}
