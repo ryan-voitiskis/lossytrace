@@ -1321,3 +1321,30 @@ the remaining statistical design questions. It does not validate an oracle,
 open observed data, change a frozen human threshold, select a new metric,
 qualify a source or make no-reference work eligible. The full scientific
 objective remains incomplete, and the existing one-capture authority persists.
+
+## Paired-rating protocol successor — 2026-09-05
+
+The [paired-rating successor](perceptual-degradation-paired-rating-protocol-20260905.md)
+corrects the preparation path for subtle ratings: collect both concealed
+candidate grades, resolve their roles from the assignment, and preserve the
+signed condition-minus-hidden-reference difference separately from forced
+choice. This is a new protocol and synthetic response processor; the old player,
+schema, analysis and evidence are immutable and remain unsuitable for this
+paired target without an explicit integration successor.
+
+Two independent synthetic CLI replays are byte-identical. Five numerical
+fixtures, each with 288 paired trials across 24 synthetic listeners and 12
+sources, reach the crossed-effects solver with incorrect choices and positive
+differences intact. In the symmetric-error fixture the signed estimate is zero;
+correct-choice filtering gives -0.6 and nonpositive clipping gives -0.3.
+These are counterfactual numerical demonstrations, not measured impairment.
+Twenty-one focused tests cover role/order invariance, incomplete pairs, grade
+entry and locking, assignment linkage, signed support and closed access.
+
+The old -4 through 0 response range cannot represent all legitimate paired
+differences, whose range is -4 through +4. No missing reference grade is assumed,
+and no legacy record, material threshold, variance assumption or power result is
+promoted to paired scientific evidence. Live UI/delivery, privacy/session
+integration, paired-target power and uncertainty, source qualification, human
+calibration and all original oracle/transfer gates remain outstanding. No
+playback, audio access, listener collection or metric execution occurred.
