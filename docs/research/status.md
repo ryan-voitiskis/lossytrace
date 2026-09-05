@@ -1373,3 +1373,28 @@ oracle validation. Paired-target uncertainty, proper nonmateriality evidence,
 population/source estimands and real-study delivery remain open. The authorized
 clean capture still needs the physical equipment/setup declaration; no capture,
 listening session, metric execution or no-reference training occurred.
+
+## Nonmateriality evidence-state successor — 2026-09-05
+
+The [nonmateriality successor](perceptual-degradation-nonmateriality-evidence-20260905.md)
+now separates material support, nonmaterial support, unresolved intervals and
+missing or inadequate support. An actual replay of the unchanged legacy
+classifier on two generated boundary fixtures produces `transparent` and
+`audible_nonmaterial` despite severity intervals crossing its material boundary.
+The successor keeps both indeterminate, without editing any predecessor result.
+
+The paired-rating processor is connected to the evidence-state adapter through
+six synthetic numerical cases. Missing pairs reduce severity support explicitly;
+the all-incorrect fixture's logistic nonconvergence is retained rather than
+converted to a forecast. A 48-case bridge grid distinguishes genuinely opposed
+method evidence from a missing or unresolved required method. Two independent
+CLI replays are byte-identical. These are software observations, not perceptual
+labels, statistical coverage, a new power result or an oracle pass.
+
+Legacy numbers remain diagnostic coordinates, not selected paired scientific
+thresholds. Nonmateriality is not transparency, aggregate fits are not per-source
+truth, and unvalidated intervals cannot become scientific certification. The next
+statistical work concerns paired-target margins, interval coverage, population
+and source variation, missingness and solver behavior. Source qualification and
+the authorized capture's physical setup declaration remain outstanding. No audio,
+listener collection, metric execution, training or public verdict was enabled.

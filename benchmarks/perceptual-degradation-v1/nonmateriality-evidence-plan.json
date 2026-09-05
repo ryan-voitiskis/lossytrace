@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "plan_id": "nonmateriality-evidence-20260905-001",
+  "state": "synthetic_decision_semantics_only",
+  "bindings": {
+    "analysis_plan": {"path": "benchmarks/perceptual-degradation-v1/listening-analysis-plan.json", "sha256": "3317a2b039de860a4ec3b152ea83406b5bc8793e825b81918a140e60b8e16fdc"},
+    "analysis": {"path": "scripts/perceptual_degradation_listening_analysis.py", "sha256": "215d5c2b49fe4d630c1edd355e576c6fac296958465eb9a30dd88d684df30fff"},
+    "paired_plan": {"path": "benchmarks/perceptual-degradation-v1/paired-rating-protocol-plan.json", "sha256": "d3578a823277d8542c1f4c9cc7d18ead03948324b5103ba9e512585287983192"},
+    "paired": {"path": "scripts/perceptual_degradation_paired_rating.py", "sha256": "6a9753b9064df1d61950775684a25fa19bd4d8c5c77a97c051851187cf795c7e"}
+  },
+  "diagnostic_coordinates": {
+    "mean_range_roundoff_tolerance": 1e-9,
+    "minimum_support": {"listeners": 24, "sources": 12, "responses": 96},
+    "paired_sdg_material_boundary": -1.0,
+    "mushra_loss_material_boundary": 10.0,
+    "audibility_chance": 0.5,
+    "audibility_point_gate": 0.75,
+    "chance_equivalence_interval": [0.45, 0.55],
+    "use": "legacy_numbers_as_synthetic_diagnostic_coordinates_only_not_selected_paired_scientific_thresholds"
+  },
+  "decision_contract": {
+    "nonmateriality": "supported_interval_wholly_on_nonmaterial_side_of_boundary",
+    "materiality": "supported_interval_wholly_on_material_side_of_boundary",
+    "boundary_equality_or_crossing": "indeterminate",
+    "missing_insufficient_or_unconverged": "indeterminate_with_reason",
+    "bridge": "all_declared_methods_required_no_dropping_missing_methods",
+    "bridge_conflict": "explicit_material_and_nonmaterial_support_not_material_and_unknown",
+    "detectability": "separate_axis_never_inferred_from_severity",
+    "labels": "synthetic_research_summary_only_no_scientific_truth",
+    "analysis_unit": "aggregate_analysis_group_not_individual_source",
+    "scientific_interval_coverage_validated": false,
+    "scientific_thresholds_selected": false,
+    "legacy_evidence_reclassified": false,
+    "legacy_single_grade_fit_migrated_to_paired_target": false
+  },
+  "execution": {
+    "workers": 1,
+    "replay_count": 2,
+    "byte_identical_required": true,
+    "legacy_witness": "generate_original_fixture_retain_two_subtle_groups_set_every_sdg_to_minus_one_then_validate_and_run_original_primary_classifier",
+    "paired_integration": "replay_five_unchanged_paired_scenarios_plus_declared_half_complete_symmetric_error_fixture_into_bound_numerical_solvers",
+    "missingness_witness": "half_complete_uses_only_first_twelve_listeners_complete_pairs_for_severity_all_locked_choices_for_numerical_audibility_preview_not_a_selected_human_missingness_policy",
+    "report": "path_free_aggregate_synthetic_output_only"
+  },
+  "access_boundary": {
+    "synthetic_execution_only": true,
+    "observed_response_input_authorized": false,
+    "audio_access_authorized": false,
+    "playback_authorized": false,
+    "human_collection_authorized": false,
+    "metric_execution_authorized": false,
+    "sealed_evidence_access_authorized": false,
+    "no_reference_training_authorized": false,
+    "public_verdict_enabled": false
+  },
+  "methodological_source": {
+    "title": "Equivalence Tests: A Practical Primer for t Tests, Correlations, and Meta-Analyses",
+    "author": "Daniel Lakens",
+    "year": 2017,
+    "doi": "10.1177/1948550617697177",
+    "url": "https://pure.tue.nl/ws/portalfiles/portal/80918653/lakeequi2017.pdf",
+    "scope": "absence_of_significance_is_not_evidence_of_equivalence_bounds_need_prior_justification_not_authority_for_LossyTrace_margins_or_crossed_model_coverage"
+  }
+}
