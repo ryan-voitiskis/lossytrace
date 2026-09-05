@@ -1461,3 +1461,28 @@ selected for human calibration, and no source, capture, listening, metric,
 oracle, training or public-verdict gate is opened. Finite source-sampling
 uncertainty and rare components now require explicit attention alongside
 selective missingness. The full objective remains unachieved.
+
+## Independent-group boundary-rate audit — 2026-09-05
+
+The [independent-group audit](perceptual-degradation-independent-groups-20260905.md)
+finds that the frozen full-reference bootstrap and boundary-rate guard use
+source counts even when multiple sources share a partition group. Regrouping
+the existing synthetic fixture's 40 sources into 40, 20 or one partition changes
+only diagnostic counts: record validation accepts each, and both boundary-rate
+components retain the same numeric pass. This is not a whole-oracle evaluation.
+
+Exact enumeration of 128 declared independent-partition/shared-outcome models
+shows how this can overstate generalization evidence. With 20 independent
+partitions, two sources each and true false-alert probability 0.11, the zero-alert
+event alone produces a false combined safety-component claim with probability
+0.0972299658. This is a hypothetical dependence result, not an audio error rate.
+Partition-count Wilson still has small-sample undercoverage; exact binomial
+tails apply only under the audit's explicit Bernoulli assumptions. Unequal-size
+examples also show that changing the grouping can change target weighting.
+
+Two full replays are byte-identical. The next inferential successor must declare
+the sampling population, independent units, dependence and weights, separately
+from leakage-control IDs and source-conditional listener targets. No replacement
+method or group-count cutoff is selected; original evidence is unchanged.
+No capture, human, metric, oracle, training or public-verdict prerequisite is
+opened. The full objective remains active and incomplete.
