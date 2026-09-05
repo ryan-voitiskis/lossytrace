@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "plan_id": "case-linkage-20260905-001",
+  "state": "synthetic_integration_declared_before_execution",
+  "purpose": "Join repeated paired presentations to stable synthetic reference/condition cases without promoting finite listener summaries to source-population truth or independent sampling evidence.",
+  "bindings": {
+    "paired_plan": {"path": "benchmarks/perceptual-degradation-v1/paired-rating-protocol-plan.json", "sha256": "d3578a823277d8542c1f4c9cc7d18ead03948324b5103ba9e512585287983192"},
+    "paired_engine": {"path": "scripts/perceptual_degradation_paired_rating.py", "sha256": "6a9753b9064df1d61950775684a25fa19bd4d8c5c77a97c051851187cf795c7e"},
+    "target_semantics_plan": {"path": "benchmarks/perceptual-degradation-v1/perceptual-target-semantics-plan.json", "sha256": "1801113a3f4b81b8316c8bdfcc1df21ee922a1aa744233dd0585b768b17266d2"},
+    "target_semantics_report": {"path": "research/toolchains/evidence/perceptual-degradation-target-semantics-synthetic-20260905-001.json", "sha256": "dba2b11110b176cdb478cc1643ba6873fff57dd8bd5320d01d25f4ecdb3a7f12"},
+    "independence_report": {"path": "research/toolchains/evidence/perceptual-degradation-independent-groups-synthetic-20260905-001.json", "sha256": "c2295eb1b41b8de87c7ae0685638eba2a13147aebcbacfdec44505fd5411c2d0"}
+  },
+  "fixture": {
+    "scenarios": ["equal-top", "symmetric-error", "choice-correlated", "common-offset", "positive-difference"],
+    "listeners": 24,
+    "sources": 12,
+    "synthetic_sources_per_leakage_group": 2,
+    "case_mapping": "One stable case per scenario/source pair, one reference per synthetic source and one condition per case. Generate a separate assignment-to-case lookup before resolving any responses. These are declared fixture relationships, not inferred media identity.",
+    "presentation_mapping": "Use the bound assignment's explicit role map and lookup; never parse opaque presentation IDs or use listener-specific stimulus IDs as stable cases.",
+    "variants": ["complete", "incorrect_pairs_unsubmitted", "one_case_absent", "all_absent"],
+    "incomplete_variant": "Only choice-correlated: retain all locked choices but omit both grades and submission for incorrect choices. This outcome-dependent synthetic missingness is a stress fixture, not a selected collection or analysis policy.",
+    "one_case_absent_variant": "Only choice-correlated: omit every response for source index 11 while retaining every planned assignment and case.",
+    "all_absent_variant": "Only choice-correlated: retain the full registry but provide no response envelopes.",
+    "unchanged_outcomes": "All supplied complete events come from the bound paired synthetic generator. No audio, human responses, statistical fits or perceptual metrics are used."
+  },
+  "unit_contract": {
+    "presentation_unit": "one assigned listener trial with blinded role aliases",
+    "prediction_unit": "one exact reference/condition case; many listeners can judge it",
+    "source_group_role": "related-source accounting and split control, not proof of independence",
+    "leakage_group_role": "declared synthetic grouping only, not an independently sampled population unit",
+    "observed_case_summary": "Equal weight per completed assigned listener pair; signed tick difference divided by ten. Correct-choice fraction uses every locked choice, including trials with incomplete paired ratings. Report denominators separately.",
+    "finite_planned_panel": "Planned means remain null if any assigned measurement is missing; never replace missing values by zero or a population prediction.",
+    "source_conditional_population_target": "Not estimated: a finite observed listener mean or fraction is not an estimate with validated population support or uncertainty.",
+    "population_average_target": "Not estimated; frame, selection, dependence, weights, uncertainty and prospective gates remain unselected.",
+    "aggregate_to_case_broadcast_allowed": false,
+    "count_as_independence_evidence_allowed": false,
+    "scientific_truth_eligible": false,
+    "legacy_evaluator_replaced": false
+  },
+  "validation": {
+    "registry": "Require exact generated fixture registry and complete unique assignment inventory; each presentation is bound to its expected participant, source, case, reference, condition, analysis and leakage identities before joining responses.",
+    "responses": "Reject unknown or duplicate assignments, wrong presentations, trial IDs, role linkage, or response schemas. Missing entire responses remain visible through the planned registry.",
+    "promotion": "Consumer preflight rejects aggregate target adapters and all scientific source-label or population-inference requests. Finite case-summary routing remains synthetic-only.",
+    "adversarial_tests": "Tampered registry, crossed source/case/reference/condition/partition or role mapping, missing planned assignment, duplicate response, foreign response, forged eligibility, aggregate broadcast, and unsupported inference scope must fail closed.",
+    "exact_arithmetic": "Report means and fractions as reduced rational strings; no fit, rounding-based decision, confidence interval, or threshold is computed.",
+    "replay_count": 2,
+    "byte_identical_required": true,
+    "public_projection": "Only scenario/variant-level counts and histograms; no participant, source, case, assignment or stimulus rows or private paths."
+  },
+  "access_boundary": {
+    "synthetic_only": true,
+    "workers": 1,
+    "minimum_free_gib": 15,
+    "observed_input_authorized": false,
+    "audio_access_authorized": false,
+    "capture_or_playback_authorized": false,
+    "human_collection_authorized": false,
+    "metric_execution_authorized": false,
+    "sealed_evidence_authorized": false,
+    "no_reference_training_authorized": false,
+    "external_communication_or_spending_authorized": false,
+    "public_verdict_enabled": false,
+    "legacy_files_immutable": true
+  },
+  "next_requirements": [
+    "Bind exact real reference and condition identity privately, independently of presentation aliases and grouping IDs, before any observed-response linkage is authorized.",
+    "Freeze the listener population and averaging rule for each source-conditional target; do not transfer aggregate minimum-source counts or intervals to a one-source target.",
+    "Declare source population, sampling frame and selection mechanism, independent units, crossing/nesting and weights before population validation.",
+    "Choose uncertainty, missingness, proper response-level scores and prospective acceptance criteria in a separately justified statistical successor.",
+    "Retain all source, metric, human calibration, full-reference and independent-transfer gates; this linkage checkpoint opens none."
+  ]
+}

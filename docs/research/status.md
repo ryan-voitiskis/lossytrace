@@ -1486,3 +1486,29 @@ from leakage-control IDs and source-conditional listener targets. No replacement
 method or group-count cutoff is selected; original evidence is unchanged.
 No capture, human, metric, oracle, training or public-verdict prerequisite is
 opened. The full objective remains active and incomplete.
+
+## Source-condition linkage and evidence units — 2026-09-05
+
+The [case-linkage successor](perceptual-degradation-case-linkage-20260905.md)
+connects the unchanged paired response reducer to a declared synthetic
+assignment-to-case registry. It separates listener-specific presentation aliases
+from stable reference/condition comparisons and from source/leakage groups.
+Across five complete scenarios, 1,440 presentations map to 60 cases sharing
+12 source groups and six leakage groups. No count is promoted to an independent
+sampling-unit count or population support.
+
+Three missingness variants retain the complete planned case inventory, separate
+choice and paired-rating denominators, and leave missing full-panel targets
+null. Dropping the incorrect-choice pairs changes the observed paired mean
+from −0.5 to −2, but does not replace the original full-panel target. An entirely
+unanswered case remains present. All four bound aggregate target-adapter outputs
+are rejected by the finite case-summary consumer preflight; scientific-label
+and population-inference requests remain closed.
+
+Two full CLI replays are byte-identical. This is synthetic linkage and
+finite-panel arithmetic, not observed source identity, a selected estimator,
+calibrated uncertainty or a replacement full-reference evaluator. Exact real
+case linkage, source-conditional listener targets and a population sampling
+contract still need separate justification. The physical capture setup and all
+source, listening, metric, oracle and no-reference prerequisites remain open.
+No existing evidence, scientific gate or public verdict was changed.
