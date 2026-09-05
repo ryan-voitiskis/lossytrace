@@ -1299,3 +1299,25 @@ needed to freeze a capture-execution checkpoint; local device enumeration alone
 cannot prove that chain. Trait assignment, relationship adjudication, allocation,
 codec generation, perceptual metrics, listening, no-reference work and the public
 verdict remain closed.
+
+## Research restart and target semantics — 2026-09-05
+
+The [strategic review](perceptual-degradation-strategic-review-20260905.md)
+reassesses the central estimand, source-descriptor validity, active-duration
+support, listening feasibility and metric shortlist. It is a proposal, not an
+execution amendment or a new scientific disposition. Prior evidence, including
+the history-detection negative and retained drift failure, remains unchanged.
+
+A separate [target-semantics integration](perceptual-degradation-target-semantics-integration-20260905.md)
+now connects the existing synthetic listening outputs to explicitly named
+targets. Two complete replays are byte-identical. Correct-response probability
+is distinct from audible-condition probability; the former is currently
+conditional on zero listener/source random effects. Indeterminate evidence
+remains null, and aggregate analysis groups cannot become per-source labels.
+The legacy Brier/ECE/AUC thresholds are not transferred to a different target.
+
+This resolves a software-interface ambiguity in the synthetic path and records
+the remaining statistical design questions. It does not validate an oracle,
+open observed data, change a frozen human threshold, select a new metric,
+qualify a source or make no-reference work eligible. The full scientific
+objective remains incomplete, and the existing one-capture authority persists.

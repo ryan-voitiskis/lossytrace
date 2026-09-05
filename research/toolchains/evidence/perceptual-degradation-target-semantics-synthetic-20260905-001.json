@@ -1,0 +1,133 @@
+{
+  "access_boundary": {
+    "audio_access_authorized": false,
+    "bound_repository_text_read_authorized": true,
+    "human_collection_authorized": false,
+    "metric_execution_authorized": false,
+    "no_reference_training_authorized": false,
+    "observed_response_input_authorized": false,
+    "public_verdict_enabled": false,
+    "sealed_evidence_access_authorized": false,
+    "synthetic_response_analysis_authorized": true
+  },
+  "baseline_targets": [
+    {
+      "analysis_unit": "aggregate_analysis_group",
+      "audibility_evidence_state": "audible",
+      "audible_condition_label": true,
+      "audible_condition_probability": null,
+      "correct_response_probability": 0.8511172061,
+      "correct_response_probability_interval": [
+        0.8320952796,
+        0.8683251553
+      ],
+      "per_source_evaluation_eligible": false,
+      "population_marginal_correct_response_probability": null,
+      "probability_scope": "analysis_group_conditional_at_zero_listener_and_source_random_effects",
+      "scientific_truth_eligible": false,
+      "synthetic_analysis_group": "group-audible-nonmaterial"
+    },
+    {
+      "analysis_unit": "aggregate_analysis_group",
+      "audibility_evidence_state": "audible",
+      "audible_condition_label": true,
+      "audible_condition_probability": null,
+      "correct_response_probability": 0.9046706927,
+      "correct_response_probability_interval": [
+        0.889988868,
+        0.9175745839
+      ],
+      "per_source_evaluation_eligible": false,
+      "population_marginal_correct_response_probability": null,
+      "probability_scope": "analysis_group_conditional_at_zero_listener_and_source_random_effects",
+      "scientific_truth_eligible": false,
+      "synthetic_analysis_group": "group-material-bridge"
+    },
+    {
+      "analysis_unit": "aggregate_analysis_group",
+      "audibility_evidence_state": "chance_equivalent",
+      "audible_condition_label": false,
+      "audible_condition_probability": null,
+      "correct_response_probability": 0.4940331175,
+      "correct_response_probability_interval": [
+        0.4634280774,
+        0.5246829414
+      ],
+      "per_source_evaluation_eligible": false,
+      "population_marginal_correct_response_probability": null,
+      "probability_scope": "analysis_group_conditional_at_zero_listener_and_source_random_effects",
+      "scientific_truth_eligible": false,
+      "synthetic_analysis_group": "group-transparent"
+    }
+  ],
+  "full_reference_oracle_validated": false,
+  "human_responses_observed": false,
+  "implementation_sha256": "af6dbc73e6996de0f09785996ebca4587f600b97d2a65ff8938c0fafad84937d",
+  "intermediate_target": {
+    "analysis_unit": "aggregate_analysis_group",
+    "audibility_evidence_state": "indeterminate",
+    "audible_condition_label": null,
+    "audible_condition_probability": null,
+    "correct_response_probability": 0.6529207154,
+    "correct_response_probability_interval": [
+      0.6240716193,
+      0.6806886683
+    ],
+    "per_source_evaluation_eligible": false,
+    "population_marginal_correct_response_probability": null,
+    "probability_scope": "analysis_group_conditional_at_zero_listener_and_source_random_effects",
+    "scientific_truth_eligible": false,
+    "synthetic_analysis_group": "group-audible-nonmaterial"
+  },
+  "next_scientific_requirements": [
+    "Choose and freeze the prediction unit and population averaging rule.",
+    "Carry human target uncertainty and indeterminate support into evaluation without converting missing evidence into negatives.",
+    "Specify matching proper scores, uncertainty intervals and prospective numeric gates for the selected probability target.",
+    "Freeze source-to-condition linkage before any per-source oracle calibration; aggregate treatment labels cannot be broadcast to source cases.",
+    "Preserve the full original source, human, oracle and transfer requirements before claiming objective completion."
+  ],
+  "objective_complete": false,
+  "plan_sha256": "1801113a3f4b81b8316c8bdfcc1df21ee922a1aa744233dd0585b768b17266d2",
+  "predecessor_bindings": {
+    "evaluation_implementation": {
+      "path": "scripts/perceptual_degradation_full_reference_evaluation.py",
+      "sha256": "85dabbb5aefaffe77ddbc59f41bd4354c05a58c7e84162c862c3e7892b9ac95b"
+    },
+    "evaluation_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/full-reference-evaluation-plan.json",
+      "sha256": "517d4bb3f1e504593007bdd85b773e2532de6bf993e173eac3b551bf99d19b0b"
+    },
+    "listening_implementation": {
+      "path": "scripts/perceptual_degradation_listening_analysis.py",
+      "sha256": "215d5c2b49fe4d630c1edd355e576c6fac296958465eb9a30dd88d684df30fff"
+    },
+    "listening_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/listening-analysis-plan.json",
+      "sha256": "3317a2b039de860a4ec3b152ea83406b5bc8793e825b81918a140e60b8e16fdc"
+    },
+    "research_contract": {
+      "path": "docs/research/perceptual-degradation-contract-20260803.md",
+      "sha256": "fdec79207fc0fdd2e9cb10aae9f93dd1a17b45e6e56c0c7df8f0e01a1f9fb505"
+    },
+    "research_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/research-plan.json",
+      "sha256": "e724a3e04fb41458d0568f542283ba33d71a54b1fdfd74b3901cc0dc1d10c352"
+    }
+  },
+  "report_id": "perceptual-target-semantics-20260905-001",
+  "schema_version": 1,
+  "scientific_gate_evaluated": false,
+  "semantic_witnesses": {
+    "all_false_labels_establish_indeterminate_truth": false,
+    "class_brier_using_correct_class_probability": 0.0,
+    "correct_response_prediction": 0.5,
+    "correct_response_truth": 0.5,
+    "gate_transferred_to_response_scoring": false,
+    "legacy_boolean_schema_accepts_all_false_labels": true,
+    "legacy_class_brier_ceiling": 0.15,
+    "legacy_class_brier_using_response_probability": 0.25,
+    "legacy_class_ece_using_response_probability": 0.5,
+    "response_brier_at_chance": 0.25
+  },
+  "state": "synthetic_target_integration_complete_scientific_gates_unresolved"
+}

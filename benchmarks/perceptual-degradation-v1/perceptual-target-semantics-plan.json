@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "plan_id": "perceptual-target-semantics-20260905-001",
+  "state": "synthetic_target_integration_only",
+  "purpose": "Make the existing listening and evaluation probability semantics explicit without changing frozen evidence, numeric gates or permitting observed data.",
+  "bindings": {
+    "research_contract": {
+      "path": "docs/research/perceptual-degradation-contract-20260803.md",
+      "sha256": "fdec79207fc0fdd2e9cb10aae9f93dd1a17b45e6e56c0c7df8f0e01a1f9fb505"
+    },
+    "research_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/research-plan.json",
+      "sha256": "e724a3e04fb41458d0568f542283ba33d71a54b1fdfd74b3901cc0dc1d10c352"
+    },
+    "listening_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/listening-analysis-plan.json",
+      "sha256": "3317a2b039de860a4ec3b152ea83406b5bc8793e825b81918a140e60b8e16fdc"
+    },
+    "listening_implementation": {
+      "path": "scripts/perceptual_degradation_listening_analysis.py",
+      "sha256": "215d5c2b49fe4d630c1edd355e576c6fac296958465eb9a30dd88d684df30fff"
+    },
+    "evaluation_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/full-reference-evaluation-plan.json",
+      "sha256": "517d4bb3f1e504593007bdd85b773e2532de6bf993e173eac3b551bf99d19b0b"
+    },
+    "evaluation_implementation": {
+      "path": "scripts/perceptual_degradation_full_reference_evaluation.py",
+      "sha256": "85dabbb5aefaffe77ddbc59f41bd4354c05a58c7e84162c862c3e7892b9ac95b"
+    }
+  },
+  "target_contract": {
+    "correct_response_probability": "Probability of a correct forced-choice response; chance is 0.5, not zero.",
+    "existing_listening_estimate_scope": "analysis_group_conditional_at_zero_listener_and_source_random_effects",
+    "population_marginal_probability": "not_estimated_by_current_listening_output",
+    "audible_condition_probability": "A distinct probability of an audible condition label; not supplied by the existing listening fit.",
+    "indeterminate_audibility_label": null,
+    "legacy_indeterminate_to_false_conversion_allowed": false,
+    "analysis_group_to_per_source_label_broadcast_allowed": false,
+    "correct_response_brier_target": "independent_forced_choice_response",
+    "audible_condition_brier_target": "separately_defined_condition_class",
+    "legacy_brier_ece_auc_gate_transfer_to_response_target_allowed": false,
+    "replacement_numeric_gates_selected": false,
+    "existing_human_decision_thresholds_changed": false
+  },
+  "synthetic_audit": {
+    "base_fixture": "bound_listening_implementation.synthetic_dataset",
+    "indeterminate_fixture": "Set only the audible-nonmaterial group's forced-choice sequence to thirteen correct responses per twenty trials, retaining all source and listener identities and severity values.",
+    "analytic_witness": "At correct-response truth 0.5, predicting 0.5 yields response Brier 0.25 and audible-class Brier 0.25 against a false label; the correct class prediction zero instead yields class Brier zero.",
+    "legacy_adapter_probe": "The existing Boolean schema accepts all-false human labels; no indeterminate truth is invented for those records.",
+    "replay_count": 2,
+    "replays_byte_identical_required": true,
+    "retained_audio_or_responses_used": false
+  },
+  "access_boundary": {
+    "synthetic_response_analysis_authorized": true,
+    "bound_repository_text_read_authorized": true,
+    "observed_response_input_authorized": false,
+    "audio_access_authorized": false,
+    "metric_execution_authorized": false,
+    "human_collection_authorized": false,
+    "sealed_evidence_access_authorized": false,
+    "no_reference_training_authorized": false,
+    "public_verdict_enabled": false
+  },
+  "next_scientific_requirements": [
+    "Choose and freeze the prediction unit and population averaging rule.",
+    "Carry human target uncertainty and indeterminate support into evaluation without converting missing evidence into negatives.",
+    "Specify matching proper scores, uncertainty intervals and prospective numeric gates for the selected probability target.",
+    "Freeze source-to-condition linkage before any per-source oracle calibration; aggregate treatment labels cannot be broadcast to source cases.",
+    "Preserve the full original source, human, oracle and transfer requirements before claiming objective completion."
+  ]
+}
