@@ -1,0 +1,63 @@
+{
+  "access_boundary": {
+    "audio_access_authorized": false,
+    "external_network_submission_authorized": false,
+    "human_collection_authorized": false,
+    "metric_execution_authorized": false,
+    "no_reference_training_authorized": false,
+    "observed_response_input_authorized": false,
+    "playback_authorized": false,
+    "public_verdict_enabled": false,
+    "response_persistence_authorized": false,
+    "silent_browser_ui_test_authorized": true,
+    "synthetic_execution_only": true
+  },
+  "bindings": {
+    "application": {
+      "path": "research/listening-paired-ui/app.js",
+      "sha256": "58f9222e1a5044fa09ee213745716cd4936ac98663f2c65247c5e85b7a88f94b"
+    },
+    "html": {
+      "path": "research/listening-paired-ui/index.html",
+      "sha256": "9e96bc85e1cfd95f359bb8851f8269a3e809a58f1625a55da87b0a5fd184bd2d"
+    },
+    "paired_implementation": {
+      "path": "scripts/perceptual_degradation_paired_rating.py",
+      "sha256": "6a9753b9064df1d61950775684a25fa19bd4d8c5c77a97c051851187cf795c7e"
+    },
+    "paired_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/paired-rating-protocol-plan.json",
+      "sha256": "d3578a823277d8542c1f4c9cc7d18ead03948324b5103ba9e512585287983192"
+    },
+    "public_fixture": {
+      "path": "research/listening-paired-ui/fixture.js",
+      "sha256": "66b05f0dca64bfbdf72af50a5b868659b68859c85ccb5656070cd016b37fcf27"
+    },
+    "state_machine": {
+      "path": "research/listening-paired-ui/state.js",
+      "sha256": "01e7a12172f87a89a61941f7f6716da09320480ad818c6f5c315954a5064572a"
+    },
+    "style": {
+      "path": "research/listening-paired-ui/style.css",
+      "sha256": "d0102bd33a5c952c23b710afb088a2ac1941e014562d5bc84ac936785e595e13"
+    }
+  },
+  "browser_behavior_verified_by_this_replay": false,
+  "human_responses_observed": false,
+  "implementation_sha256": "44473748ae92915333e6f5a98a0eec466589f5cae9b0b79216128948577ebd9c",
+  "incorrect_choices_retained": 2,
+  "javascript_python_parity_passed": true,
+  "objective_complete": false,
+  "perceptual_truth_eligible": false,
+  "plan_sha256": "9db2c65de718183376458fe891817f841b22d82cb5f56669699cd8d4112c9869",
+  "playback_qualified": false,
+  "report_id": "paired-rating-ui-20260905-001",
+  "schema_version": 1,
+  "signed_mean": 0.0,
+  "signed_pair_differences": [
+    0.6,
+    -0.6
+  ],
+  "state": "silent_ui_synthetic_parity_replay_not_browser_or_listening_qualification",
+  "synthetic_trials": 2
+}

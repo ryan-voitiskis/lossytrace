@@ -1348,3 +1348,28 @@ promoted to paired scientific evidence. Live UI/delivery, privacy/session
 integration, paired-target power and uncertainty, source qualification, human
 calibration and all original oracle/transfer gates remain outstanding. No
 playback, audio access, listener collection or metric execution occurred.
+
+## Silent paired-rating UI integration — 2026-09-05
+
+The [silent UI successor](perceptual-degradation-paired-ui-20260905.md) now
+connects a browser's locked choice and two explicitly entered grades to the
+frozen paired-rating processor. The browser exposes no correctness feedback
+or condition role. It has no audio, microphone, network-submission or response-
+persistence API. All predecessor code and evidence remain unchanged.
+
+Real-browser QA with arbitrary automation values verified field gating,
+submission locking, fresh trial state and reload clearing. The two complete
+browser records matched the declared fixtures and replayed to +0.6 and -0.6,
+retaining both incorrect choices. A cleared-grade termination case exposed and
+resolved a missingness detail: final field state must remain separate from
+earlier valid events. Its missing grade and paired target now remain null.
+Desktop and mobile-width layouts were inspected; the temporary browser and
+loopback server were closed. Separate deterministic JavaScript/Python replays
+are byte-identical, and unit checks cover both valid and invalid event streams.
+
+This is interface and analysis-linkage evidence, not playback qualification,
+participant privacy approval, perceptual data, statistical calibration or
+oracle validation. Paired-target uncertainty, proper nonmateriality evidence,
+population/source estimands and real-study delivery remain open. The authorized
+clean capture still needs the physical equipment/setup declaration; no capture,
+listening session, metric execution or no-reference training occurred.
