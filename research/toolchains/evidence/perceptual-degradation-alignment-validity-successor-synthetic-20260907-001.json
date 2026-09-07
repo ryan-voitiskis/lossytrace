@@ -1,0 +1,2198 @@
+{
+  "additional_alignment_cases": [
+    {
+      "construction": "both_zero",
+      "inputs_unchanged": true,
+      "successor": {
+        "channels": [
+          {
+            "channel": "M",
+            "correlation": null,
+            "drift": null,
+            "gain": null,
+            "reasons": [
+              "no_valid_coarse_correlation"
+            ],
+            "status": "unsupported",
+            "structural": null
+          }
+        ],
+        "legacy_oracle_rejection": "alignment record kind differs",
+        "perceptual_claim": false,
+        "public_verdict_enabled": false,
+        "reasons": [
+          "no_valid_coarse_correlation"
+        ],
+        "sample_correction_applied": false,
+        "status": "unsupported",
+        "summary": {
+          "active_seconds": null,
+          "aligned_frames": null,
+          "channel_lag_spread_samples": null,
+          "clock_drift_ppm": null,
+          "fractional_delay_samples": null,
+          "integer_delay_samples": null,
+          "minimum_correlation": null,
+          "minimum_structural_window_correlation": null
+        }
+      }
+    },
+    {
+      "construction": "zero_reference",
+      "inputs_unchanged": true,
+      "successor": {
+        "channels": [
+          {
+            "channel": "M",
+            "correlation": null,
+            "drift": null,
+            "gain": null,
+            "reasons": [
+              "no_valid_coarse_correlation"
+            ],
+            "status": "unsupported",
+            "structural": null
+          }
+        ],
+        "legacy_oracle_rejection": "alignment record kind differs",
+        "perceptual_claim": false,
+        "public_verdict_enabled": false,
+        "reasons": [
+          "no_valid_coarse_correlation"
+        ],
+        "sample_correction_applied": false,
+        "status": "unsupported",
+        "summary": {
+          "active_seconds": null,
+          "aligned_frames": null,
+          "channel_lag_spread_samples": null,
+          "clock_drift_ppm": null,
+          "fractional_delay_samples": null,
+          "integer_delay_samples": null,
+          "minimum_correlation": null,
+          "minimum_structural_window_correlation": null
+        }
+      }
+    },
+    {
+      "construction": "constant_envelope",
+      "inputs_unchanged": true,
+      "successor": {
+        "channels": [
+          {
+            "channel": "M",
+            "correlation": null,
+            "drift": null,
+            "gain": null,
+            "reasons": [
+              "no_valid_coarse_correlation"
+            ],
+            "status": "unsupported",
+            "structural": null
+          }
+        ],
+        "legacy_oracle_rejection": "alignment record kind differs",
+        "perceptual_claim": false,
+        "public_verdict_enabled": false,
+        "reasons": [
+          "no_valid_coarse_correlation"
+        ],
+        "sample_correction_applied": false,
+        "status": "unsupported",
+        "summary": {
+          "active_seconds": null,
+          "aligned_frames": null,
+          "channel_lag_spread_samples": null,
+          "clock_drift_ppm": null,
+          "fractional_delay_samples": null,
+          "integer_delay_samples": null,
+          "minimum_correlation": null,
+          "minimum_structural_window_correlation": null
+        }
+      }
+    },
+    {
+      "construction": "central_silent_window",
+      "inputs_unchanged": true,
+      "successor": {
+        "channels": [
+          {
+            "channel": "M",
+            "correlation": {
+              "magnitude": "1.000000000",
+              "overlap_frames": 12000,
+              "reason": null,
+              "sampled_frames": 12000,
+              "value": "1.000000000"
+            },
+            "drift": {
+              "clock_drift_ppm": null,
+              "invalid_reasons": {
+                "no_valid_local_candidate": 1
+              },
+              "minimum_correlation": null,
+              "reason": "incomplete_valid_windows",
+              "residual_samples": null,
+              "valid_window_count": 4,
+              "window_count": 5
+            },
+            "gain": {
+              "linear_gain": "1.000000000",
+              "observed_gain_db": "0.000000000",
+              "polarity": "preserved",
+              "reason": null
+            },
+            "reasons": [
+              "drift_windows_unavailable",
+              "structural_windows_unavailable"
+            ],
+            "status": "unsupported",
+            "structural": {
+              "clock_drift_ppm": null,
+              "invalid_reasons": {
+                "no_valid_local_candidate": 1
+              },
+              "minimum_correlation": null,
+              "reason": "incomplete_valid_windows",
+              "residual_samples": null,
+              "valid_window_count": 6,
+              "window_count": 7
+            }
+          }
+        ],
+        "legacy_oracle_rejection": "alignment record kind differs",
+        "perceptual_claim": false,
+        "public_verdict_enabled": false,
+        "reasons": [
+          "drift_windows_unavailable",
+          "structural_windows_unavailable"
+        ],
+        "sample_correction_applied": false,
+        "status": "unsupported",
+        "summary": {
+          "active_seconds": "4.800000000",
+          "aligned_frames": 12000,
+          "channel_lag_spread_samples": "0.000000000",
+          "clock_drift_ppm": null,
+          "fractional_delay_samples": "0.000000000",
+          "integer_delay_samples": 0,
+          "minimum_correlation": "1.000000000",
+          "minimum_structural_window_correlation": null
+        }
+      }
+    },
+    {
+      "construction": "insufficient_overlap",
+      "inputs_unchanged": true,
+      "successor": {
+        "channels": [
+          {
+            "channel": "M",
+            "correlation": null,
+            "drift": null,
+            "gain": null,
+            "reasons": [
+              "no_valid_coarse_correlation"
+            ],
+            "status": "unsupported",
+            "structural": null
+          }
+        ],
+        "legacy_oracle_rejection": "alignment record kind differs",
+        "perceptual_claim": false,
+        "public_verdict_enabled": false,
+        "reasons": [
+          "no_valid_coarse_correlation"
+        ],
+        "sample_correction_applied": false,
+        "status": "unsupported",
+        "summary": {
+          "active_seconds": null,
+          "aligned_frames": null,
+          "channel_lag_spread_samples": null,
+          "clock_drift_ppm": null,
+          "fractional_delay_samples": null,
+          "integer_delay_samples": null,
+          "minimum_correlation": null,
+          "minimum_structural_window_correlation": null
+        }
+      }
+    }
+  ],
+  "bindings": {
+    "channel_alignment": {
+      "path": "scripts/perceptual_degradation_alignment_v2.py",
+      "sha256": "72fe01344a33ffbec3967f0c64ca7cf5a3e7c0f5ba64620800115a646500e61c"
+    },
+    "channel_boundary_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-channel-normalization-boundary-synthetic-20260907-001.json",
+      "sha256": "6e05ed996b1a4e22b23cffcb2bb67313aa7d8ccd672269b76588b8d43e339744"
+    },
+    "channel_fixture_implementation": {
+      "path": "scripts/perceptual_degradation_channel_normalization_boundary.py",
+      "sha256": "cbe6a2cb1e2b0ec24466c74abbe700910a7942ca7482fcf56b13cfacc6d67e14"
+    },
+    "mono_alignment": {
+      "path": "scripts/perceptual_degradation_alignment.py",
+      "sha256": "0e036bc1a430e578523d61e68c7ab0dc659bace2f606710ab3d28b148439dccb"
+    },
+    "score_free_oracle": {
+      "path": "scripts/perceptual_degradation_oracle.py",
+      "sha256": "caed779df79cf1bacdd69bed5846622f26f60377488c4bdbb8ddb2fcd73d05cc"
+    },
+    "topology_freeze": {
+      "path": "benchmarks/perceptual-degradation-v1/alignment-topology-freeze.json",
+      "sha256": "b3508568fb1375f833fd4ba5b0203bdeb6dba1197fb95b054576e79c9deeda45"
+    }
+  },
+  "cases": [
+    {
+      "defined_diagnostic_comparison": {
+        "jointly_defined_fields": 12,
+        "maximum_absolute_difference_from_rounded_prior": "0.000000000000",
+        "unavailable_successor_fields": 0
+      },
+      "inputs_unchanged": true,
+      "matrix_id": "identity",
+      "old_minimum_correlation": "1.000000000",
+      "old_reasons": [],
+      "old_status": "supported",
+      "reference_family": "orthogonal_equal_energy",
+      "successor": {
+        "channels": [
+          {
+            "channel": "L",
+            "correlation": {
+              "magnitude": "1.000000000",
+              "overlap_frames": 12000,
+              "reason": null,
+              "sampled_frames": 12000,
+              "value": "1.000000000"
+            },
+            "drift": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 5,
+              "window_count": 5
+            },
+            "gain": {
+              "linear_gain": "1.000000000",
+              "observed_gain_db": "0.000000000",
+              "polarity": "preserved",
+              "reason": null
+            },
+            "reasons": [],
+            "status": "supported",
+            "structural": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 7,
+              "window_count": 7
+            }
+          },
+          {
+            "channel": "R",
+            "correlation": {
+              "magnitude": "1.000000000",
+              "overlap_frames": 12000,
+              "reason": null,
+              "sampled_frames": 12000,
+              "value": "1.000000000"
+            },
+            "drift": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 5,
+              "window_count": 5
+            },
+            "gain": {
+              "linear_gain": "1.000000000",
+              "observed_gain_db": "0.000000000",
+              "polarity": "preserved",
+              "reason": null
+            },
+            "reasons": [],
+            "status": "supported",
+            "structural": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 7,
+              "window_count": 7
+            }
+          }
+        ],
+        "legacy_oracle_rejection": "alignment record kind differs",
+        "perceptual_claim": false,
+        "public_verdict_enabled": false,
+        "reasons": [],
+        "sample_correction_applied": false,
+        "status": "supported",
+        "summary": {
+          "active_seconds": "6.000000000",
+          "aligned_frames": 12000,
+          "channel_lag_spread_samples": "0.000000000",
+          "clock_drift_ppm": "0.000000000",
+          "fractional_delay_samples": "0.000000000",
+          "integer_delay_samples": 0,
+          "minimum_correlation": "1.000000000",
+          "minimum_structural_window_correlation": "1.000000000"
+        }
+      }
+    },
+    {
+      "defined_diagnostic_comparison": {
+        "jointly_defined_fields": 12,
+        "maximum_absolute_difference_from_rounded_prior": "0.000000000000",
+        "unavailable_successor_fields": 0
+      },
+      "inputs_unchanged": true,
+      "matrix_id": "common_half_gain",
+      "old_minimum_correlation": "1.000000000",
+      "old_reasons": [],
+      "old_status": "supported",
+      "reference_family": "orthogonal_equal_energy",
+      "successor": {
+        "channels": [
+          {
+            "channel": "L",
+            "correlation": {
+              "magnitude": "1.000000000",
+              "overlap_frames": 12000,
+              "reason": null,
+              "sampled_frames": 12000,
+              "value": "1.000000000"
+            },
+            "drift": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 5,
+              "window_count": 5
+            },
+            "gain": {
+              "linear_gain": "0.500000000",
+              "observed_gain_db": "-6.020599913",
+              "polarity": "preserved",
+              "reason": null
+            },
+            "reasons": [],
+            "status": "supported",
+            "structural": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 7,
+              "window_count": 7
+            }
+          },
+          {
+            "channel": "R",
+            "correlation": {
+              "magnitude": "1.000000000",
+              "overlap_frames": 12000,
+              "reason": null,
+              "sampled_frames": 12000,
+              "value": "1.000000000"
+            },
+            "drift": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 5,
+              "window_count": 5
+            },
+            "gain": {
+              "linear_gain": "0.500000000",
+              "observed_gain_db": "-6.020599913",
+              "polarity": "preserved",
+              "reason": null
+            },
+            "reasons": [],
+            "status": "supported",
+            "structural": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 7,
+              "window_count": 7
+            }
+          }
+        ],
+        "legacy_oracle_rejection": "alignment record kind differs",
+        "perceptual_claim": false,
+        "public_verdict_enabled": false,
+        "reasons": [],
+        "sample_correction_applied": false,
+        "status": "supported",
+        "summary": {
+          "active_seconds": "6.000000000",
+          "aligned_frames": 12000,
+          "channel_lag_spread_samples": "0.000000000",
+          "clock_drift_ppm": "0.000000000",
+          "fractional_delay_samples": "0.000000000",
+          "integer_delay_samples": 0,
+          "minimum_correlation": "1.000000000",
+          "minimum_structural_window_correlation": "1.000000000"
+        }
+      }
+    },
+    {
+      "defined_diagnostic_comparison": {
+        "jointly_defined_fields": 12,
+        "maximum_absolute_difference_from_rounded_prior": "0.000000000000",
+        "unavailable_successor_fields": 0
+      },
+      "inputs_unchanged": true,
+      "matrix_id": "common_polarity_inversion",
+      "old_minimum_correlation": "1.000000000",
+      "old_reasons": [],
+      "old_status": "supported",
+      "reference_family": "orthogonal_equal_energy",
+      "successor": {
+        "channels": [
+          {
+            "channel": "L",
+            "correlation": {
+              "magnitude": "1.000000000",
+              "overlap_frames": 12000,
+              "reason": null,
+              "sampled_frames": 12000,
+              "value": "-1.000000000"
+            },
+            "drift": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 5,
+              "window_count": 5
+            },
+            "gain": {
+              "linear_gain": "-1.000000000",
+              "observed_gain_db": "0.000000000",
+              "polarity": "inverted",
+              "reason": null
+            },
+            "reasons": [],
+            "status": "supported",
+            "structural": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 7,
+              "window_count": 7
+            }
+          },
+          {
+            "channel": "R",
+            "correlation": {
+              "magnitude": "1.000000000",
+              "overlap_frames": 12000,
+              "reason": null,
+              "sampled_frames": 12000,
+              "value": "-1.000000000"
+            },
+            "drift": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 5,
+              "window_count": 5
+            },
+            "gain": {
+              "linear_gain": "-1.000000000",
+              "observed_gain_db": "0.000000000",
+              "polarity": "inverted",
+              "reason": null
+            },
+            "reasons": [],
+            "status": "supported",
+            "structural": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 7,
+              "window_count": 7
+            }
+          }
+        ],
+        "legacy_oracle_rejection": "alignment record kind differs",
+        "perceptual_claim": false,
+        "public_verdict_enabled": false,
+        "reasons": [],
+        "sample_correction_applied": false,
+        "status": "supported",
+        "summary": {
+          "active_seconds": "6.000000000",
+          "aligned_frames": 12000,
+          "channel_lag_spread_samples": "0.000000000",
+          "clock_drift_ppm": "0.000000000",
+          "fractional_delay_samples": "0.000000000",
+          "integer_delay_samples": 0,
+          "minimum_correlation": "1.000000000",
+          "minimum_structural_window_correlation": "1.000000000"
+        }
+      }
+    },
+    {
+      "defined_diagnostic_comparison": {
+        "jointly_defined_fields": 12,
+        "maximum_absolute_difference_from_rounded_prior": "0.000000000000",
+        "unavailable_successor_fields": 0
+      },
+      "inputs_unchanged": true,
+      "matrix_id": "left_half_gain",
+      "old_minimum_correlation": "1.000000000",
+      "old_reasons": [],
+      "old_status": "supported",
+      "reference_family": "orthogonal_equal_energy",
+      "successor": {
+        "channels": [
+          {
+            "channel": "L",
+            "correlation": {
+              "magnitude": "1.000000000",
+              "overlap_frames": 12000,
+              "reason": null,
+              "sampled_frames": 12000,
+              "value": "1.000000000"
+            },
+            "drift": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 5,
+              "window_count": 5
+            },
+            "gain": {
+              "linear_gain": "0.500000000",
+              "observed_gain_db": "-6.020599913",
+              "polarity": "preserved",
+              "reason": null
+            },
+            "reasons": [],
+            "status": "supported",
+            "structural": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 7,
+              "window_count": 7
+            }
+          },
+          {
+            "channel": "R",
+            "correlation": {
+              "magnitude": "1.000000000",
+              "overlap_frames": 12000,
+              "reason": null,
+              "sampled_frames": 12000,
+              "value": "1.000000000"
+            },
+            "drift": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 5,
+              "window_count": 5
+            },
+            "gain": {
+              "linear_gain": "1.000000000",
+              "observed_gain_db": "0.000000000",
+              "polarity": "preserved",
+              "reason": null
+            },
+            "reasons": [],
+            "status": "supported",
+            "structural": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 7,
+              "window_count": 7
+            }
+          }
+        ],
+        "legacy_oracle_rejection": "alignment record kind differs",
+        "perceptual_claim": false,
+        "public_verdict_enabled": false,
+        "reasons": [],
+        "sample_correction_applied": false,
+        "status": "supported",
+        "summary": {
+          "active_seconds": "6.000000000",
+          "aligned_frames": 12000,
+          "channel_lag_spread_samples": "0.000000000",
+          "clock_drift_ppm": "0.000000000",
+          "fractional_delay_samples": "0.000000000",
+          "integer_delay_samples": 0,
+          "minimum_correlation": "1.000000000",
+          "minimum_structural_window_correlation": "1.000000000"
+        }
+      }
+    },
+    {
+      "defined_diagnostic_comparison": {
+        "jointly_defined_fields": 12,
+        "maximum_absolute_difference_from_rounded_prior": "0.000000000000",
+        "unavailable_successor_fields": 0
+      },
+      "inputs_unchanged": true,
+      "matrix_id": "right_polarity_inversion",
+      "old_minimum_correlation": "1.000000000",
+      "old_reasons": [],
+      "old_status": "supported",
+      "reference_family": "orthogonal_equal_energy",
+      "successor": {
+        "channels": [
+          {
+            "channel": "L",
+            "correlation": {
+              "magnitude": "1.000000000",
+              "overlap_frames": 12000,
+              "reason": null,
+              "sampled_frames": 12000,
+              "value": "1.000000000"
+            },
+            "drift": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 5,
+              "window_count": 5
+            },
+            "gain": {
+              "linear_gain": "1.000000000",
+              "observed_gain_db": "0.000000000",
+              "polarity": "preserved",
+              "reason": null
+            },
+            "reasons": [],
+            "status": "supported",
+            "structural": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 7,
+              "window_count": 7
+            }
+          },
+          {
+            "channel": "R",
+            "correlation": {
+              "magnitude": "1.000000000",
+              "overlap_frames": 12000,
+              "reason": null,
+              "sampled_frames": 12000,
+              "value": "-1.000000000"
+            },
+            "drift": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 5,
+              "window_count": 5
+            },
+            "gain": {
+              "linear_gain": "-1.000000000",
+              "observed_gain_db": "0.000000000",
+              "polarity": "inverted",
+              "reason": null
+            },
+            "reasons": [],
+            "status": "supported",
+            "structural": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 7,
+              "window_count": 7
+            }
+          }
+        ],
+        "legacy_oracle_rejection": "alignment record kind differs",
+        "perceptual_claim": false,
+        "public_verdict_enabled": false,
+        "reasons": [],
+        "sample_correction_applied": false,
+        "status": "supported",
+        "summary": {
+          "active_seconds": "6.000000000",
+          "aligned_frames": 12000,
+          "channel_lag_spread_samples": "0.000000000",
+          "clock_drift_ppm": "0.000000000",
+          "fractional_delay_samples": "0.000000000",
+          "integer_delay_samples": 0,
+          "minimum_correlation": "1.000000000",
+          "minimum_structural_window_correlation": "1.000000000"
+        }
+      }
+    },
+    {
+      "defined_diagnostic_comparison": {
+        "jointly_defined_fields": 12,
+        "maximum_absolute_difference_from_rounded_prior": "0.000000000000",
+        "unavailable_successor_fields": 0
+      },
+      "inputs_unchanged": true,
+      "matrix_id": "half_gain_opposite_polarities",
+      "old_minimum_correlation": "1.000000000",
+      "old_reasons": [],
+      "old_status": "supported",
+      "reference_family": "orthogonal_equal_energy",
+      "successor": {
+        "channels": [
+          {
+            "channel": "L",
+            "correlation": {
+              "magnitude": "1.000000000",
+              "overlap_frames": 12000,
+              "reason": null,
+              "sampled_frames": 12000,
+              "value": "1.000000000"
+            },
+            "drift": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 5,
+              "window_count": 5
+            },
+            "gain": {
+              "linear_gain": "0.500000000",
+              "observed_gain_db": "-6.020599913",
+              "polarity": "preserved",
+              "reason": null
+            },
+            "reasons": [],
+            "status": "supported",
+            "structural": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 7,
+              "window_count": 7
+            }
+          },
+          {
+            "channel": "R",
+            "correlation": {
+              "magnitude": "1.000000000",
+              "overlap_frames": 12000,
+              "reason": null,
+              "sampled_frames": 12000,
+              "value": "-1.000000000"
+            },
+            "drift": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 5,
+              "window_count": 5
+            },
+            "gain": {
+              "linear_gain": "-0.500000000",
+              "observed_gain_db": "-6.020599913",
+              "polarity": "inverted",
+              "reason": null
+            },
+            "reasons": [],
+            "status": "supported",
+            "structural": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 7,
+              "window_count": 7
+            }
+          }
+        ],
+        "legacy_oracle_rejection": "alignment record kind differs",
+        "perceptual_claim": false,
+        "public_verdict_enabled": false,
+        "reasons": [],
+        "sample_correction_applied": false,
+        "status": "supported",
+        "summary": {
+          "active_seconds": "6.000000000",
+          "aligned_frames": 12000,
+          "channel_lag_spread_samples": "0.000000000",
+          "clock_drift_ppm": "0.000000000",
+          "fractional_delay_samples": "0.000000000",
+          "integer_delay_samples": 0,
+          "minimum_correlation": "1.000000000",
+          "minimum_structural_window_correlation": "1.000000000"
+        }
+      }
+    },
+    {
+      "defined_diagnostic_comparison": {
+        "jointly_defined_fields": 12,
+        "maximum_absolute_difference_from_rounded_prior": "0.000000000000",
+        "unavailable_successor_fields": 0
+      },
+      "inputs_unchanged": true,
+      "matrix_id": "channel_swap_same_declared_map",
+      "old_minimum_correlation": "0.511665106",
+      "old_reasons": [
+        "channel_alignment_disagreement",
+        "clock_drift_exceeds_limit"
+      ],
+      "old_status": "unsupported",
+      "reference_family": "orthogonal_equal_energy",
+      "successor": {
+        "channels": [
+          {
+            "channel": "L",
+            "correlation": {
+              "magnitude": "0.511665106",
+              "overlap_frames": 11999,
+              "reason": null,
+              "sampled_frames": 11999,
+              "value": "0.511665106"
+            },
+            "drift": {
+              "clock_drift_ppm": "-190.476190476",
+              "invalid_reasons": {},
+              "minimum_correlation": "0.485675085",
+              "reason": null,
+              "residual_samples": "1.200000000",
+              "valid_window_count": 5,
+              "window_count": 5
+            },
+            "gain": {
+              "linear_gain": "0.511727584",
+              "observed_gain_db": "-5.819223440",
+              "polarity": "preserved",
+              "reason": null
+            },
+            "reasons": [
+              "clock_drift_exceeds_limit"
+            ],
+            "status": "unsupported",
+            "structural": {
+              "clock_drift_ppm": "-142.857142857",
+              "invalid_reasons": {},
+              "minimum_correlation": "0.450613687",
+              "reason": null,
+              "residual_samples": "1.357142857",
+              "valid_window_count": 7,
+              "window_count": 7
+            }
+          },
+          {
+            "channel": "R",
+            "correlation": {
+              "magnitude": "0.511665106",
+              "overlap_frames": 11999,
+              "reason": null,
+              "sampled_frames": 11999,
+              "value": "0.511665106"
+            },
+            "drift": {
+              "clock_drift_ppm": "190.476190476",
+              "invalid_reasons": {},
+              "minimum_correlation": "0.485675085",
+              "reason": null,
+              "residual_samples": "1.200000000",
+              "valid_window_count": 5,
+              "window_count": 5
+            },
+            "gain": {
+              "linear_gain": "0.511602636",
+              "observed_gain_db": "-5.821344534",
+              "polarity": "preserved",
+              "reason": null
+            },
+            "reasons": [
+              "clock_drift_exceeds_limit"
+            ],
+            "status": "unsupported",
+            "structural": {
+              "clock_drift_ppm": "142.857142857",
+              "invalid_reasons": {},
+              "minimum_correlation": "0.450613687",
+              "reason": null,
+              "residual_samples": "1.357142857",
+              "valid_window_count": 7,
+              "window_count": 7
+            }
+          }
+        ],
+        "legacy_oracle_rejection": "alignment record kind differs",
+        "perceptual_claim": false,
+        "public_verdict_enabled": false,
+        "reasons": [
+          "channel_alignment_disagreement",
+          "clock_drift_exceeds_limit"
+        ],
+        "sample_correction_applied": false,
+        "status": "unsupported",
+        "summary": {
+          "active_seconds": "6.000000000",
+          "aligned_frames": 11999,
+          "channel_lag_spread_samples": "2.012318844",
+          "clock_drift_ppm": "0.000000000",
+          "fractional_delay_samples": "0.000000000",
+          "integer_delay_samples": 0,
+          "minimum_correlation": "0.511665106",
+          "minimum_structural_window_correlation": "0.450613687"
+        }
+      }
+    },
+    {
+      "defined_diagnostic_comparison": {
+        "jointly_defined_fields": 12,
+        "maximum_absolute_difference_from_rounded_prior": "0.000000000000",
+        "unavailable_successor_fields": 0
+      },
+      "inputs_unchanged": true,
+      "matrix_id": "mid_to_dual_mono",
+      "old_minimum_correlation": "0.707106781",
+      "old_reasons": [],
+      "old_status": "supported",
+      "reference_family": "orthogonal_equal_energy",
+      "successor": {
+        "channels": [
+          {
+            "channel": "L",
+            "correlation": {
+              "magnitude": "0.707106781",
+              "overlap_frames": 12000,
+              "reason": null,
+              "sampled_frames": 12000,
+              "value": "0.707106781"
+            },
+            "drift": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "0.707106781",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 5,
+              "window_count": 5
+            },
+            "gain": {
+              "linear_gain": "0.500000000",
+              "observed_gain_db": "-6.020599913",
+              "polarity": "preserved",
+              "reason": null
+            },
+            "reasons": [],
+            "status": "supported",
+            "structural": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "0.707106781",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 7,
+              "window_count": 7
+            }
+          },
+          {
+            "channel": "R",
+            "correlation": {
+              "magnitude": "0.707106781",
+              "overlap_frames": 12000,
+              "reason": null,
+              "sampled_frames": 12000,
+              "value": "0.707106781"
+            },
+            "drift": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "0.707106781",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 5,
+              "window_count": 5
+            },
+            "gain": {
+              "linear_gain": "0.500000000",
+              "observed_gain_db": "-6.020599913",
+              "polarity": "preserved",
+              "reason": null
+            },
+            "reasons": [],
+            "status": "supported",
+            "structural": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "0.707106781",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 7,
+              "window_count": 7
+            }
+          }
+        ],
+        "legacy_oracle_rejection": "alignment record kind differs",
+        "perceptual_claim": false,
+        "public_verdict_enabled": false,
+        "reasons": [],
+        "sample_correction_applied": false,
+        "status": "supported",
+        "summary": {
+          "active_seconds": "6.000000000",
+          "aligned_frames": 12000,
+          "channel_lag_spread_samples": "0.034841235",
+          "clock_drift_ppm": "0.000000000",
+          "fractional_delay_samples": "-0.015632349",
+          "integer_delay_samples": 0,
+          "minimum_correlation": "0.707106781",
+          "minimum_structural_window_correlation": "0.707106781"
+        }
+      }
+    },
+    {
+      "defined_diagnostic_comparison": {
+        "jointly_defined_fields": 2,
+        "maximum_absolute_difference_from_rounded_prior": "0.000000000000",
+        "unavailable_successor_fields": 10
+      },
+      "inputs_unchanged": true,
+      "matrix_id": "right_channel_zero",
+      "old_minimum_correlation": "1.000000000",
+      "old_reasons": [
+        "ambiguous_alignment_peak",
+        "gain_exceeds_limit"
+      ],
+      "old_status": "unsupported",
+      "reference_family": "orthogonal_equal_energy",
+      "successor": {
+        "channels": [
+          {
+            "channel": "L",
+            "correlation": {
+              "magnitude": "1.000000000",
+              "overlap_frames": 12000,
+              "reason": null,
+              "sampled_frames": 12000,
+              "value": "1.000000000"
+            },
+            "drift": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 5,
+              "window_count": 5
+            },
+            "gain": {
+              "linear_gain": "1.000000000",
+              "observed_gain_db": "0.000000000",
+              "polarity": "preserved",
+              "reason": null
+            },
+            "reasons": [],
+            "status": "supported",
+            "structural": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 7,
+              "window_count": 7
+            }
+          },
+          {
+            "channel": "R",
+            "correlation": null,
+            "drift": null,
+            "gain": null,
+            "reasons": [
+              "no_valid_coarse_correlation"
+            ],
+            "status": "unsupported",
+            "structural": null
+          }
+        ],
+        "legacy_oracle_rejection": "alignment record kind differs",
+        "perceptual_claim": false,
+        "public_verdict_enabled": false,
+        "reasons": [
+          "no_valid_coarse_correlation"
+        ],
+        "sample_correction_applied": false,
+        "status": "unsupported",
+        "summary": {
+          "active_seconds": null,
+          "aligned_frames": null,
+          "channel_lag_spread_samples": null,
+          "clock_drift_ppm": null,
+          "fractional_delay_samples": null,
+          "integer_delay_samples": null,
+          "minimum_correlation": null,
+          "minimum_structural_window_correlation": null
+        }
+      }
+    },
+    {
+      "defined_diagnostic_comparison": {
+        "jointly_defined_fields": 12,
+        "maximum_absolute_difference_from_rounded_prior": "0.000000000000",
+        "unavailable_successor_fields": 0
+      },
+      "inputs_unchanged": true,
+      "matrix_id": "identity",
+      "old_minimum_correlation": "1.000000000",
+      "old_reasons": [],
+      "old_status": "supported",
+      "reference_family": "correlated_unequal_energy",
+      "successor": {
+        "channels": [
+          {
+            "channel": "L",
+            "correlation": {
+              "magnitude": "1.000000000",
+              "overlap_frames": 12000,
+              "reason": null,
+              "sampled_frames": 12000,
+              "value": "1.000000000"
+            },
+            "drift": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 5,
+              "window_count": 5
+            },
+            "gain": {
+              "linear_gain": "1.000000000",
+              "observed_gain_db": "0.000000000",
+              "polarity": "preserved",
+              "reason": null
+            },
+            "reasons": [],
+            "status": "supported",
+            "structural": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 7,
+              "window_count": 7
+            }
+          },
+          {
+            "channel": "R",
+            "correlation": {
+              "magnitude": "1.000000000",
+              "overlap_frames": 12000,
+              "reason": null,
+              "sampled_frames": 12000,
+              "value": "1.000000000"
+            },
+            "drift": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 5,
+              "window_count": 5
+            },
+            "gain": {
+              "linear_gain": "1.000000000",
+              "observed_gain_db": "0.000000000",
+              "polarity": "preserved",
+              "reason": null
+            },
+            "reasons": [],
+            "status": "supported",
+            "structural": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 7,
+              "window_count": 7
+            }
+          }
+        ],
+        "legacy_oracle_rejection": "alignment record kind differs",
+        "perceptual_claim": false,
+        "public_verdict_enabled": false,
+        "reasons": [],
+        "sample_correction_applied": false,
+        "status": "supported",
+        "summary": {
+          "active_seconds": "6.000000000",
+          "aligned_frames": 12000,
+          "channel_lag_spread_samples": "0.000000000",
+          "clock_drift_ppm": "0.000000000",
+          "fractional_delay_samples": "0.000000000",
+          "integer_delay_samples": 0,
+          "minimum_correlation": "1.000000000",
+          "minimum_structural_window_correlation": "1.000000000"
+        }
+      }
+    },
+    {
+      "defined_diagnostic_comparison": {
+        "jointly_defined_fields": 12,
+        "maximum_absolute_difference_from_rounded_prior": "0.000000000000",
+        "unavailable_successor_fields": 0
+      },
+      "inputs_unchanged": true,
+      "matrix_id": "common_half_gain",
+      "old_minimum_correlation": "1.000000000",
+      "old_reasons": [],
+      "old_status": "supported",
+      "reference_family": "correlated_unequal_energy",
+      "successor": {
+        "channels": [
+          {
+            "channel": "L",
+            "correlation": {
+              "magnitude": "1.000000000",
+              "overlap_frames": 12000,
+              "reason": null,
+              "sampled_frames": 12000,
+              "value": "1.000000000"
+            },
+            "drift": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 5,
+              "window_count": 5
+            },
+            "gain": {
+              "linear_gain": "0.500000000",
+              "observed_gain_db": "-6.020599913",
+              "polarity": "preserved",
+              "reason": null
+            },
+            "reasons": [],
+            "status": "supported",
+            "structural": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 7,
+              "window_count": 7
+            }
+          },
+          {
+            "channel": "R",
+            "correlation": {
+              "magnitude": "1.000000000",
+              "overlap_frames": 12000,
+              "reason": null,
+              "sampled_frames": 12000,
+              "value": "1.000000000"
+            },
+            "drift": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 5,
+              "window_count": 5
+            },
+            "gain": {
+              "linear_gain": "0.500000000",
+              "observed_gain_db": "-6.020599913",
+              "polarity": "preserved",
+              "reason": null
+            },
+            "reasons": [],
+            "status": "supported",
+            "structural": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 7,
+              "window_count": 7
+            }
+          }
+        ],
+        "legacy_oracle_rejection": "alignment record kind differs",
+        "perceptual_claim": false,
+        "public_verdict_enabled": false,
+        "reasons": [],
+        "sample_correction_applied": false,
+        "status": "supported",
+        "summary": {
+          "active_seconds": "6.000000000",
+          "aligned_frames": 12000,
+          "channel_lag_spread_samples": "0.000000000",
+          "clock_drift_ppm": "0.000000000",
+          "fractional_delay_samples": "0.000000000",
+          "integer_delay_samples": 0,
+          "minimum_correlation": "1.000000000",
+          "minimum_structural_window_correlation": "1.000000000"
+        }
+      }
+    },
+    {
+      "defined_diagnostic_comparison": {
+        "jointly_defined_fields": 12,
+        "maximum_absolute_difference_from_rounded_prior": "0.000000000000",
+        "unavailable_successor_fields": 0
+      },
+      "inputs_unchanged": true,
+      "matrix_id": "common_polarity_inversion",
+      "old_minimum_correlation": "1.000000000",
+      "old_reasons": [],
+      "old_status": "supported",
+      "reference_family": "correlated_unequal_energy",
+      "successor": {
+        "channels": [
+          {
+            "channel": "L",
+            "correlation": {
+              "magnitude": "1.000000000",
+              "overlap_frames": 12000,
+              "reason": null,
+              "sampled_frames": 12000,
+              "value": "-1.000000000"
+            },
+            "drift": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 5,
+              "window_count": 5
+            },
+            "gain": {
+              "linear_gain": "-1.000000000",
+              "observed_gain_db": "0.000000000",
+              "polarity": "inverted",
+              "reason": null
+            },
+            "reasons": [],
+            "status": "supported",
+            "structural": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 7,
+              "window_count": 7
+            }
+          },
+          {
+            "channel": "R",
+            "correlation": {
+              "magnitude": "1.000000000",
+              "overlap_frames": 12000,
+              "reason": null,
+              "sampled_frames": 12000,
+              "value": "-1.000000000"
+            },
+            "drift": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 5,
+              "window_count": 5
+            },
+            "gain": {
+              "linear_gain": "-1.000000000",
+              "observed_gain_db": "0.000000000",
+              "polarity": "inverted",
+              "reason": null
+            },
+            "reasons": [],
+            "status": "supported",
+            "structural": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 7,
+              "window_count": 7
+            }
+          }
+        ],
+        "legacy_oracle_rejection": "alignment record kind differs",
+        "perceptual_claim": false,
+        "public_verdict_enabled": false,
+        "reasons": [],
+        "sample_correction_applied": false,
+        "status": "supported",
+        "summary": {
+          "active_seconds": "6.000000000",
+          "aligned_frames": 12000,
+          "channel_lag_spread_samples": "0.000000000",
+          "clock_drift_ppm": "0.000000000",
+          "fractional_delay_samples": "0.000000000",
+          "integer_delay_samples": 0,
+          "minimum_correlation": "1.000000000",
+          "minimum_structural_window_correlation": "1.000000000"
+        }
+      }
+    },
+    {
+      "defined_diagnostic_comparison": {
+        "jointly_defined_fields": 12,
+        "maximum_absolute_difference_from_rounded_prior": "0.000000000000",
+        "unavailable_successor_fields": 0
+      },
+      "inputs_unchanged": true,
+      "matrix_id": "left_half_gain",
+      "old_minimum_correlation": "1.000000000",
+      "old_reasons": [],
+      "old_status": "supported",
+      "reference_family": "correlated_unequal_energy",
+      "successor": {
+        "channels": [
+          {
+            "channel": "L",
+            "correlation": {
+              "magnitude": "1.000000000",
+              "overlap_frames": 12000,
+              "reason": null,
+              "sampled_frames": 12000,
+              "value": "1.000000000"
+            },
+            "drift": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 5,
+              "window_count": 5
+            },
+            "gain": {
+              "linear_gain": "0.500000000",
+              "observed_gain_db": "-6.020599913",
+              "polarity": "preserved",
+              "reason": null
+            },
+            "reasons": [],
+            "status": "supported",
+            "structural": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 7,
+              "window_count": 7
+            }
+          },
+          {
+            "channel": "R",
+            "correlation": {
+              "magnitude": "1.000000000",
+              "overlap_frames": 12000,
+              "reason": null,
+              "sampled_frames": 12000,
+              "value": "1.000000000"
+            },
+            "drift": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 5,
+              "window_count": 5
+            },
+            "gain": {
+              "linear_gain": "1.000000000",
+              "observed_gain_db": "0.000000000",
+              "polarity": "preserved",
+              "reason": null
+            },
+            "reasons": [],
+            "status": "supported",
+            "structural": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 7,
+              "window_count": 7
+            }
+          }
+        ],
+        "legacy_oracle_rejection": "alignment record kind differs",
+        "perceptual_claim": false,
+        "public_verdict_enabled": false,
+        "reasons": [],
+        "sample_correction_applied": false,
+        "status": "supported",
+        "summary": {
+          "active_seconds": "6.000000000",
+          "aligned_frames": 12000,
+          "channel_lag_spread_samples": "0.000000000",
+          "clock_drift_ppm": "0.000000000",
+          "fractional_delay_samples": "0.000000000",
+          "integer_delay_samples": 0,
+          "minimum_correlation": "1.000000000",
+          "minimum_structural_window_correlation": "1.000000000"
+        }
+      }
+    },
+    {
+      "defined_diagnostic_comparison": {
+        "jointly_defined_fields": 12,
+        "maximum_absolute_difference_from_rounded_prior": "0.000000000000",
+        "unavailable_successor_fields": 0
+      },
+      "inputs_unchanged": true,
+      "matrix_id": "right_polarity_inversion",
+      "old_minimum_correlation": "1.000000000",
+      "old_reasons": [],
+      "old_status": "supported",
+      "reference_family": "correlated_unequal_energy",
+      "successor": {
+        "channels": [
+          {
+            "channel": "L",
+            "correlation": {
+              "magnitude": "1.000000000",
+              "overlap_frames": 12000,
+              "reason": null,
+              "sampled_frames": 12000,
+              "value": "1.000000000"
+            },
+            "drift": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 5,
+              "window_count": 5
+            },
+            "gain": {
+              "linear_gain": "1.000000000",
+              "observed_gain_db": "0.000000000",
+              "polarity": "preserved",
+              "reason": null
+            },
+            "reasons": [],
+            "status": "supported",
+            "structural": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 7,
+              "window_count": 7
+            }
+          },
+          {
+            "channel": "R",
+            "correlation": {
+              "magnitude": "1.000000000",
+              "overlap_frames": 12000,
+              "reason": null,
+              "sampled_frames": 12000,
+              "value": "-1.000000000"
+            },
+            "drift": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 5,
+              "window_count": 5
+            },
+            "gain": {
+              "linear_gain": "-1.000000000",
+              "observed_gain_db": "0.000000000",
+              "polarity": "inverted",
+              "reason": null
+            },
+            "reasons": [],
+            "status": "supported",
+            "structural": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 7,
+              "window_count": 7
+            }
+          }
+        ],
+        "legacy_oracle_rejection": "alignment record kind differs",
+        "perceptual_claim": false,
+        "public_verdict_enabled": false,
+        "reasons": [],
+        "sample_correction_applied": false,
+        "status": "supported",
+        "summary": {
+          "active_seconds": "6.000000000",
+          "aligned_frames": 12000,
+          "channel_lag_spread_samples": "0.000000000",
+          "clock_drift_ppm": "0.000000000",
+          "fractional_delay_samples": "0.000000000",
+          "integer_delay_samples": 0,
+          "minimum_correlation": "1.000000000",
+          "minimum_structural_window_correlation": "1.000000000"
+        }
+      }
+    },
+    {
+      "defined_diagnostic_comparison": {
+        "jointly_defined_fields": 12,
+        "maximum_absolute_difference_from_rounded_prior": "0.000000000000",
+        "unavailable_successor_fields": 0
+      },
+      "inputs_unchanged": true,
+      "matrix_id": "half_gain_opposite_polarities",
+      "old_minimum_correlation": "1.000000000",
+      "old_reasons": [],
+      "old_status": "supported",
+      "reference_family": "correlated_unequal_energy",
+      "successor": {
+        "channels": [
+          {
+            "channel": "L",
+            "correlation": {
+              "magnitude": "1.000000000",
+              "overlap_frames": 12000,
+              "reason": null,
+              "sampled_frames": 12000,
+              "value": "1.000000000"
+            },
+            "drift": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 5,
+              "window_count": 5
+            },
+            "gain": {
+              "linear_gain": "0.500000000",
+              "observed_gain_db": "-6.020599913",
+              "polarity": "preserved",
+              "reason": null
+            },
+            "reasons": [],
+            "status": "supported",
+            "structural": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 7,
+              "window_count": 7
+            }
+          },
+          {
+            "channel": "R",
+            "correlation": {
+              "magnitude": "1.000000000",
+              "overlap_frames": 12000,
+              "reason": null,
+              "sampled_frames": 12000,
+              "value": "-1.000000000"
+            },
+            "drift": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 5,
+              "window_count": 5
+            },
+            "gain": {
+              "linear_gain": "-0.500000000",
+              "observed_gain_db": "-6.020599913",
+              "polarity": "inverted",
+              "reason": null
+            },
+            "reasons": [],
+            "status": "supported",
+            "structural": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 7,
+              "window_count": 7
+            }
+          }
+        ],
+        "legacy_oracle_rejection": "alignment record kind differs",
+        "perceptual_claim": false,
+        "public_verdict_enabled": false,
+        "reasons": [],
+        "sample_correction_applied": false,
+        "status": "supported",
+        "summary": {
+          "active_seconds": "6.000000000",
+          "aligned_frames": 12000,
+          "channel_lag_spread_samples": "0.000000000",
+          "clock_drift_ppm": "0.000000000",
+          "fractional_delay_samples": "0.000000000",
+          "integer_delay_samples": 0,
+          "minimum_correlation": "1.000000000",
+          "minimum_structural_window_correlation": "1.000000000"
+        }
+      }
+    },
+    {
+      "defined_diagnostic_comparison": {
+        "jointly_defined_fields": 12,
+        "maximum_absolute_difference_from_rounded_prior": "0.000000000000",
+        "unavailable_successor_fields": 0
+      },
+      "inputs_unchanged": true,
+      "matrix_id": "channel_swap_same_declared_map",
+      "old_minimum_correlation": "0.948683298",
+      "old_reasons": [],
+      "old_status": "supported",
+      "reference_family": "correlated_unequal_energy",
+      "successor": {
+        "channels": [
+          {
+            "channel": "L",
+            "correlation": {
+              "magnitude": "0.948683298",
+              "overlap_frames": 12000,
+              "reason": null,
+              "sampled_frames": 12000,
+              "value": "0.948683298"
+            },
+            "drift": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "0.948683298",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 5,
+              "window_count": 5
+            },
+            "gain": {
+              "linear_gain": "0.750000000",
+              "observed_gain_db": "-2.498774732",
+              "polarity": "preserved",
+              "reason": null
+            },
+            "reasons": [],
+            "status": "supported",
+            "structural": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "0.948683298",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 7,
+              "window_count": 7
+            }
+          },
+          {
+            "channel": "R",
+            "correlation": {
+              "magnitude": "0.948683298",
+              "overlap_frames": 12000,
+              "reason": null,
+              "sampled_frames": 12000,
+              "value": "0.948683298"
+            },
+            "drift": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "0.948683298",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 5,
+              "window_count": 5
+            },
+            "gain": {
+              "linear_gain": "1.200000000",
+              "observed_gain_db": "1.583624921",
+              "polarity": "preserved",
+              "reason": null
+            },
+            "reasons": [],
+            "status": "supported",
+            "structural": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "0.948683298",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 7,
+              "window_count": 7
+            }
+          }
+        ],
+        "legacy_oracle_rejection": "alignment record kind differs",
+        "perceptual_claim": false,
+        "public_verdict_enabled": false,
+        "reasons": [],
+        "sample_correction_applied": false,
+        "status": "supported",
+        "summary": {
+          "active_seconds": "6.000000000",
+          "aligned_frames": 12000,
+          "channel_lag_spread_samples": "0.006834577",
+          "clock_drift_ppm": "0.000000000",
+          "fractional_delay_samples": "0.000000000",
+          "integer_delay_samples": 0,
+          "minimum_correlation": "0.948683298",
+          "minimum_structural_window_correlation": "0.948683298"
+        }
+      }
+    },
+    {
+      "defined_diagnostic_comparison": {
+        "jointly_defined_fields": 12,
+        "maximum_absolute_difference_from_rounded_prior": "0.000000000000",
+        "unavailable_successor_fields": 0
+      },
+      "inputs_unchanged": true,
+      "matrix_id": "mid_to_dual_mono",
+      "old_minimum_correlation": "0.983869910",
+      "old_reasons": [],
+      "old_status": "supported",
+      "reference_family": "correlated_unequal_energy",
+      "successor": {
+        "channels": [
+          {
+            "channel": "L",
+            "correlation": {
+              "magnitude": "0.989949494",
+              "overlap_frames": 12000,
+              "reason": null,
+              "sampled_frames": 12000,
+              "value": "0.989949494"
+            },
+            "drift": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "0.989949494",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 5,
+              "window_count": 5
+            },
+            "gain": {
+              "linear_gain": "0.875000000",
+              "observed_gain_db": "-1.159838940",
+              "polarity": "preserved",
+              "reason": null
+            },
+            "reasons": [],
+            "status": "supported",
+            "structural": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "0.989949494",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 7,
+              "window_count": 7
+            }
+          },
+          {
+            "channel": "R",
+            "correlation": {
+              "magnitude": "0.983869910",
+              "overlap_frames": 12000,
+              "reason": null,
+              "sampled_frames": 12000,
+              "value": "0.983869910"
+            },
+            "drift": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "0.983869910",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 5,
+              "window_count": 5
+            },
+            "gain": {
+              "linear_gain": "1.100000000",
+              "observed_gain_db": "0.827853703",
+              "polarity": "preserved",
+              "reason": null
+            },
+            "reasons": [],
+            "status": "supported",
+            "structural": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "0.983869910",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 7,
+              "window_count": 7
+            }
+          }
+        ],
+        "legacy_oracle_rejection": "alignment record kind differs",
+        "perceptual_claim": false,
+        "public_verdict_enabled": false,
+        "reasons": [],
+        "sample_correction_applied": false,
+        "status": "supported",
+        "summary": {
+          "active_seconds": "6.000000000",
+          "aligned_frames": 12000,
+          "channel_lag_spread_samples": "0.005823172",
+          "clock_drift_ppm": "0.000000000",
+          "fractional_delay_samples": "-0.001305048",
+          "integer_delay_samples": 0,
+          "minimum_correlation": "0.983869910",
+          "minimum_structural_window_correlation": "0.983869910"
+        }
+      }
+    },
+    {
+      "defined_diagnostic_comparison": {
+        "jointly_defined_fields": 2,
+        "maximum_absolute_difference_from_rounded_prior": "0.000000000000",
+        "unavailable_successor_fields": 10
+      },
+      "inputs_unchanged": true,
+      "matrix_id": "right_channel_zero",
+      "old_minimum_correlation": "1.000000000",
+      "old_reasons": [
+        "ambiguous_alignment_peak",
+        "gain_exceeds_limit"
+      ],
+      "old_status": "unsupported",
+      "reference_family": "correlated_unequal_energy",
+      "successor": {
+        "channels": [
+          {
+            "channel": "L",
+            "correlation": {
+              "magnitude": "1.000000000",
+              "overlap_frames": 12000,
+              "reason": null,
+              "sampled_frames": 12000,
+              "value": "1.000000000"
+            },
+            "drift": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 5,
+              "window_count": 5
+            },
+            "gain": {
+              "linear_gain": "1.000000000",
+              "observed_gain_db": "0.000000000",
+              "polarity": "preserved",
+              "reason": null
+            },
+            "reasons": [],
+            "status": "supported",
+            "structural": {
+              "clock_drift_ppm": "0.000000000",
+              "invalid_reasons": {},
+              "minimum_correlation": "1.000000000",
+              "reason": null,
+              "residual_samples": "0.000000000",
+              "valid_window_count": 7,
+              "window_count": 7
+            }
+          },
+          {
+            "channel": "R",
+            "correlation": null,
+            "drift": null,
+            "gain": null,
+            "reasons": [
+              "no_valid_coarse_correlation"
+            ],
+            "status": "unsupported",
+            "structural": null
+          }
+        ],
+        "legacy_oracle_rejection": "alignment record kind differs",
+        "perceptual_claim": false,
+        "public_verdict_enabled": false,
+        "reasons": [
+          "no_valid_coarse_correlation"
+        ],
+        "sample_correction_applied": false,
+        "status": "unsupported",
+        "summary": {
+          "active_seconds": null,
+          "aligned_frames": null,
+          "channel_lag_spread_samples": null,
+          "clock_drift_ppm": null,
+          "fractional_delay_samples": null,
+          "integer_delay_samples": null,
+          "minimum_correlation": null,
+          "minimum_structural_window_correlation": null
+        }
+      }
+    }
+  ],
+  "claim_boundary": {
+    "actual_audio_access_authorized": false,
+    "capture_execution_authorized": false,
+    "no_reference_training_authorized": false,
+    "normalization_authorized": false,
+    "objective_complete": false,
+    "oracle_validated": false,
+    "perceptual_metrics_or_listening_authorized": false,
+    "public_verdict_enabled": false,
+    "source_assignment_authorized": false
+  },
+  "correction_contract": {
+    "aggregate_fields": "Common estimates and minima are null if any required channel estimate is unavailable. Never average away per-channel rejection or omit an invalid channel from a minimum. Preserve per-channel reasons and validity counts.",
+    "candidate_selection": "Exclude invalid envelope and sampled correlations before ranking. No valid coarse or sample candidate means unsupported with no invented lag. If there is no valid alternative outside the exclusion interval, ambiguity margin is null and support abstains. Fractional interpolation requires both valid neighbors.",
+    "gain_and_polarity": "Zero cross product has linear gain zero but no finite dB gain and no defined polarity. No -999 dB sentinel. Correlation validity is separate from gain. No sample correction or inverse gain is applied.",
+    "invalid_correlation": "An explicit typed result with null value and a reason; never a number in the valid [-1,1] range. Magnitude is null for an invalid result. Valid negative correlations, including exactly -1, retain their sign.",
+    "legacy_oracle_accepts_successor_automatically": false,
+    "local_windows": "Exclude invalid local candidates. Missing windows cannot contribute fallback lags or perfect correlations to drift or structural regression. Require all originally declared windows for each regression; otherwise slope, residual and minimum correlation are null, with explicit support rejection.",
+    "numerics": "Scale finite vectors before dot products and centered products to avoid avoidable overflow and underflow. This is internal diagnostic arithmetic, not waveform normalization. Preserve overlap, stride, lag ordering and existing support thresholds. A genuinely undefined centered correlation on a constant envelope abstains without an undeclared fallback search.",
+    "old_implementations_and_results_changed": false,
+    "record_kind": "perceptual_degradation_alignment_v3",
+    "successor_selected_for_real_audio_or_metric_views": false
+  },
+  "implementation_sha256": "d9296e62a806a811d281cac93ae65f9bfcaab310aa5dfe12127bfc09199b7581",
+  "known_regression_case_count": 18,
+  "known_regression_status_changes": 0,
+  "known_regression_supported": 15,
+  "legacy_oracle_rejects_all_successor_records": true,
+  "next_requirement": "Use explicit validity in any later score-free integration; do not coerce this successor into the legacy oracle schema. Target-matched normalization, source support and controlled human calibration remain separate prerequisites.",
+  "numeric_cases": [
+    {
+      "construction": "valid_antiphase",
+      "correlation": {
+        "magnitude": "1.000000000",
+        "overlap_frames": 32,
+        "reason": null,
+        "sampled_frames": 32,
+        "value": "-1.000000000"
+      }
+    },
+    {
+      "construction": "zero_test",
+      "correlation": {
+        "magnitude": null,
+        "overlap_frames": 32,
+        "reason": "zero_energy",
+        "sampled_frames": 32,
+        "value": null
+      }
+    },
+    {
+      "construction": "constant_pearson",
+      "correlation": {
+        "magnitude": null,
+        "overlap_frames": 32,
+        "reason": "zero_centered_energy",
+        "sampled_frames": 32,
+        "value": null
+      }
+    },
+    {
+      "construction": "very_small_identity",
+      "correlation": {
+        "magnitude": "1.000000000",
+        "overlap_frames": 32,
+        "reason": null,
+        "sampled_frames": 32,
+        "value": "1.000000000"
+      }
+    },
+    {
+      "construction": "very_large_antiphase",
+      "correlation": {
+        "magnitude": "1.000000000",
+        "overlap_frames": 32,
+        "reason": null,
+        "sampled_frames": 32,
+        "value": "-1.000000000"
+      }
+    }
+  ],
+  "plan_sha256": "717e03b6c9e45c1ce57c3298b6a921576a771f96ee7d1fd07405b8e5c19a8a29",
+  "predecessor_files_unchanged": true,
+  "real_audio_accessed": false,
+  "report_id": "alignment-validity-successor-20260907-001",
+  "runner_sha256": "8faff759c74ef27c5c5f8405baf81a19641388d84c690b49ef1e5b35c3cf2c6d",
+  "schema_version": 1,
+  "state": "synthetic_alignment_validity_successor_complete"
+}

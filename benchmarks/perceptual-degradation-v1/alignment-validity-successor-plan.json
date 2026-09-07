@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "plan_id": "alignment-validity-successor-20260907-001",
+  "state": "synthetic_development_correction_declared_before_execution",
+  "purpose": "Replace invalid-correlation numeric sentinels throughout a separate score-free alignment successor. This is development repair after a known defect, not independent validation or a new perceptual result.",
+  "bindings": {
+    "mono_alignment": {"path": "scripts/perceptual_degradation_alignment.py", "sha256": "0e036bc1a430e578523d61e68c7ab0dc659bace2f606710ab3d28b148439dccb"},
+    "channel_alignment": {"path": "scripts/perceptual_degradation_alignment_v2.py", "sha256": "72fe01344a33ffbec3967f0c64ca7cf5a3e7c0f5ba64620800115a646500e61c"},
+    "topology_freeze": {"path": "benchmarks/perceptual-degradation-v1/alignment-topology-freeze.json", "sha256": "b3508568fb1375f833fd4ba5b0203bdeb6dba1197fb95b054576e79c9deeda45"},
+    "score_free_oracle": {"path": "scripts/perceptual_degradation_oracle.py", "sha256": "caed779df79cf1bacdd69bed5846622f26f60377488c4bdbb8ddb2fcd73d05cc"},
+    "channel_fixture_implementation": {"path": "scripts/perceptual_degradation_channel_normalization_boundary.py", "sha256": "cbe6a2cb1e2b0ec24466c74abbe700910a7942ca7482fcf56b13cfacc6d67e14"},
+    "channel_boundary_report": {"path": "research/toolchains/evidence/perceptual-degradation-channel-normalization-boundary-synthetic-20260907-001.json", "sha256": "6e05ed996b1a4e22b23cffcb2bb67313aa7d8ccd672269b76588b8d43e339744"}
+  },
+  "correction_contract": {
+    "record_kind": "perceptual_degradation_alignment_v3",
+    "invalid_correlation": "An explicit typed result with null value and a reason; never a number in the valid [-1,1] range. Magnitude is null for an invalid result. Valid negative correlations, including exactly -1, retain their sign.",
+    "candidate_selection": "Exclude invalid envelope and sampled correlations before ranking. No valid coarse or sample candidate means unsupported with no invented lag. If there is no valid alternative outside the exclusion interval, ambiguity margin is null and support abstains. Fractional interpolation requires both valid neighbors.",
+    "local_windows": "Exclude invalid local candidates. Missing windows cannot contribute fallback lags or perfect correlations to drift or structural regression. Require all originally declared windows for each regression; otherwise slope, residual and minimum correlation are null, with explicit support rejection.",
+    "gain_and_polarity": "Zero cross product has linear gain zero but no finite dB gain and no defined polarity. No -999 dB sentinel. Correlation validity is separate from gain. No sample correction or inverse gain is applied.",
+    "aggregate_fields": "Common estimates and minima are null if any required channel estimate is unavailable. Never average away per-channel rejection or omit an invalid channel from a minimum. Preserve per-channel reasons and validity counts.",
+    "numerics": "Scale finite vectors before dot products and centered products to avoid avoidable overflow and underflow. This is internal diagnostic arithmetic, not waveform normalization. Preserve overlap, stride, lag ordering and existing support thresholds. A genuinely undefined centered correlation on a constant envelope abstains without an undeclared fallback search.",
+    "old_implementations_and_results_changed": false,
+    "legacy_oracle_accepts_successor_automatically": false,
+    "successor_selected_for_real_audio_or_metric_views": false
+  },
+  "development_inventory": {
+    "known_regression_grid": "All 18 previously declared two-family/nine-matrix channel fixtures, unchanged; all outcomes retained and compared with the bound old report. These are consumed development witnesses, not fresh source validation.",
+    "additional_numeric_and_support_tests": [
+      "valid identity and opposite polarity, including exact signed correlation -1",
+      "zero reference, zero test, both zero, insufficient overlap and nonfinite samples",
+      "constant envelope with no defined Pearson candidates",
+      "mixed valid and invalid lag candidates; no invalid candidate may win",
+      "local all-zero window embedded in otherwise active arrays",
+      "missing drift or structural windows produce null rather than fitted fallback values",
+      "zero fitted gain does not imply valid polarity or an invertible correction",
+      "stereo dropout keeps the valid channel but nulls required common summaries",
+      "channel topology, map mismatch, strict configuration and input immutability",
+      "finite very small and very large correlation inputs",
+      "deterministic canonical serialization and unchanged legacy oracle rejection"
+    ],
+    "threshold_tuning_or_source_reclassification": false,
+    "result_scope": "Technical behavior of the declared implementation and synthetic constructions only. No perceptual fidelity, natural-source coverage, coding causation or population independence claim."
+  },
+  "execution": {
+    "workers": 1,
+    "minimum_free_gib": 15,
+    "complete_replays": 2,
+    "byte_identical_required": true,
+    "input_mode": "synthetic_only",
+    "audio_file_reads_or_writes": 0,
+    "retain_waveforms": false,
+    "output": "Path-free synthetic summaries with null invalid values and explicit reasons. Retain every regression case; no audio, private identities or PCM hashes."
+  },
+  "claim_boundary": {
+    "actual_audio_access_authorized": false,
+    "capture_execution_authorized": false,
+    "source_assignment_authorized": false,
+    "normalization_authorized": false,
+    "perceptual_metrics_or_listening_authorized": false,
+    "oracle_validated": false,
+    "no_reference_training_authorized": false,
+    "public_verdict_enabled": false,
+    "objective_complete": false
+  },
+  "next_requirement": "Use explicit validity in any later score-free integration; do not coerce this successor into the legacy oracle schema. Target-matched normalization, source support and controlled human calibration remain separate prerequisites."
+}

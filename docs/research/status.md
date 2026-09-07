@@ -1624,3 +1624,25 @@ a target-matched successor before any real normalization. Original implementatio
 thresholds and research evidence are unchanged. Capture setup, source assignment,
 human calibration, metric execution, oracle validation, no-reference training
 and public-verdict prerequisites remain open; the objective remains incomplete.
+
+## Explicit alignment correlation validity — 2026-09-07
+
+The [validity successor](perceptual-degradation-alignment-validity-successor-20260907.md)
+replaces invalid-correlation sentinels throughout a separate score-free alignment
+implementation. Undefined values cannot enter candidate ranking, local drift or
+structural regression, or complete-channel minima. Valid signed −1 correlation
+remains distinct from invalid zero-energy evidence. No gain correction is applied.
+
+All 18 consumed channel-audit fixtures retain their support decisions: 15 supported,
+three unsupported. The 196 jointly defined diagnostic values match the prior
+report precision, while 20 dropout slots become explicitly unavailable. A new
+central-silence fixture has only four of five valid drift windows and six of seven
+valid structural windows; both local models abstain rather than fitting fallback
+lags. Constant-envelope and zero-energy evidence also remain unsupported.
+
+Two complete synthetic replays are byte-identical. Original code, limits and
+reports remain unchanged. The old oracle rejects the successor's distinct record
+kind for all 23 alignment records, preventing silent integration or coercion of
+null values. No actual audio, source assignment, normalization, metric, listening,
+training, outreach, spending or public-verdict gate opens. The authorized capture
+still requires its physical setup, and the overall objective remains incomplete.
