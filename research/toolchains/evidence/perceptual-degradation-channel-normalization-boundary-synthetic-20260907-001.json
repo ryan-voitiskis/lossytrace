@@ -1,0 +1,1938 @@
+{
+  "bindings": {
+    "alignment_freeze": {
+      "path": "benchmarks/perceptual-degradation-v1/alignment-topology-freeze.json",
+      "sha256": "b3508568fb1375f833fd4ba5b0203bdeb6dba1197fb95b054576e79c9deeda45"
+    },
+    "channel_alignment": {
+      "path": "scripts/perceptual_degradation_alignment_v2.py",
+      "sha256": "72fe01344a33ffbec3967f0c64ca7cf5a3e7c0f5ba64620800115a646500e61c"
+    },
+    "mono_alignment": {
+      "path": "scripts/perceptual_degradation_alignment.py",
+      "sha256": "0e036bc1a430e578523d61e68c7ab0dc659bace2f606710ab3d28b148439dccb"
+    },
+    "research_contract": {
+      "path": "docs/research/perceptual-degradation-contract-20260803.md",
+      "sha256": "fdec79207fc0fdd2e9cb10aae9f93dd1a17b45e6e56c0c7df8f0e01a1f9fb505"
+    },
+    "score_free_oracle": {
+      "path": "scripts/perceptual_degradation_oracle.py",
+      "sha256": "caed779df79cf1bacdd69bed5846622f26f60377488c4bdbb8ddb2fcd73d05cc"
+    },
+    "strategic_review": {
+      "path": "docs/research/perceptual-degradation-strategic-review-20260905.md",
+      "sha256": "6dfa09fa8c5465a08a41fcf8f3eaaa2b518e74a13bde83b2dd4549ff2c709cf4"
+    },
+    "temporal_measure_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-temporal-energy-measure-synthetic-20260907-001.json",
+      "sha256": "b045a49506cc41d2e85ac5bffe944582a67491476f624d256daae6ab94adc871"
+    }
+  },
+  "case_count": 18,
+  "cases": [
+    {
+      "alignment_inputs_unchanged": true,
+      "exact_known_zero_lag_projection": {
+        "common_signed_gain": "1/1",
+        "independent_signed_gains": [
+          "1/1",
+          "1/1"
+        ],
+        "matrix_gram_and_pointwise_calculations_identical": true,
+        "reference_channel_geometry": {
+          "cross_product_over_total_energy": "0/1",
+          "left_energy_share": "1/2",
+          "mid_energy_share": "1/2",
+          "right_energy_share": "1/2",
+          "side_energy_share": "1/2"
+        },
+        "reference_normalized_squared_residuals": {
+          "common_signed_gain": "0/1",
+          "independent_signed_gains": "0/1",
+          "unaltered": "0/1"
+        },
+        "test_channel_geometry": {
+          "cross_product_over_total_energy": "0/1",
+          "left_energy_share": "1/2",
+          "mid_energy_share": "1/2",
+          "right_energy_share": "1/2",
+          "side_energy_share": "1/2"
+        },
+        "zero_fitted_gain_is_not_inverted": false
+      },
+      "matrix_id": "identity",
+      "original_alignment": {
+        "alignment": {
+          "active_seconds": "6.000000000",
+          "aligned_frames": 12000,
+          "channel_lag_spread_samples": "0.000000000",
+          "channels": [
+            {
+              "channel": "L",
+              "correlation": "1.000000000",
+              "fractional_delay_samples": "0.000000000",
+              "integer_delay_samples": 0,
+              "observed_gain_db": "0.000000000",
+              "polarity": "preserved"
+            },
+            {
+              "channel": "R",
+              "correlation": "1.000000000",
+              "fractional_delay_samples": "0.000000000",
+              "integer_delay_samples": 0,
+              "observed_gain_db": "0.000000000",
+              "polarity": "preserved"
+            }
+          ],
+          "clock_drift_ppm": "0.000000000",
+          "edge_trim_seconds": "0.000000000",
+          "fractional_delay_samples": "0.000000000",
+          "integer_delay_samples": 0,
+          "minimum_ambiguity_margin": "0.971402291",
+          "minimum_correlation": "1.000000000",
+          "minimum_structural_window_correlation": "1.000000000",
+          "structural_residual_samples": "0.000000000"
+        },
+        "status": "supported",
+        "support": {
+          "limits_id": "perceptual-degradation-v1-topology-fixtures-20260803-001",
+          "reasons": []
+        }
+      },
+      "original_oracle_assembly": {
+        "assembly": "accepted",
+        "outcomes": {
+          "artifact_profile": {
+            "components": {
+              "bandwidth_loss": null,
+              "masking_relative_error": null,
+              "segment_worst_case_impairment": null,
+              "stereo_image_or_phase_change": null,
+              "temporal_modulation_damage": null,
+              "tonal_or_birdie_noise": null,
+              "transient_smearing_or_pre_echo": null
+            },
+            "state": "unavailable"
+          },
+          "audibility_probability": null,
+          "audibility_probability_interval": null,
+          "categorical_state": "indeterminate",
+          "impairment_severity": null,
+          "impairment_severity_interval": null
+        },
+        "perceptual_claim": false,
+        "result_state": "execution_blocked",
+        "support": {
+          "abstention_reasons": [
+            "human_calibration_unavailable",
+            "perceptual_metric_execution_not_authorized"
+          ],
+          "alignment_reason_codes": [],
+          "supported": false
+        }
+      },
+      "reference_family": "orthogonal_equal_energy"
+    },
+    {
+      "alignment_inputs_unchanged": true,
+      "exact_known_zero_lag_projection": {
+        "common_signed_gain": "1/2",
+        "independent_signed_gains": [
+          "1/2",
+          "1/2"
+        ],
+        "matrix_gram_and_pointwise_calculations_identical": true,
+        "reference_channel_geometry": {
+          "cross_product_over_total_energy": "0/1",
+          "left_energy_share": "1/2",
+          "mid_energy_share": "1/2",
+          "right_energy_share": "1/2",
+          "side_energy_share": "1/2"
+        },
+        "reference_normalized_squared_residuals": {
+          "common_signed_gain": "0/1",
+          "independent_signed_gains": "0/1",
+          "unaltered": "1/4"
+        },
+        "test_channel_geometry": {
+          "cross_product_over_total_energy": "0/1",
+          "left_energy_share": "1/2",
+          "mid_energy_share": "1/2",
+          "right_energy_share": "1/2",
+          "side_energy_share": "1/2"
+        },
+        "zero_fitted_gain_is_not_inverted": false
+      },
+      "matrix_id": "common_half_gain",
+      "original_alignment": {
+        "alignment": {
+          "active_seconds": "6.000000000",
+          "aligned_frames": 12000,
+          "channel_lag_spread_samples": "0.000000000",
+          "channels": [
+            {
+              "channel": "L",
+              "correlation": "1.000000000",
+              "fractional_delay_samples": "0.000000000",
+              "integer_delay_samples": 0,
+              "observed_gain_db": "-6.020599913",
+              "polarity": "preserved"
+            },
+            {
+              "channel": "R",
+              "correlation": "1.000000000",
+              "fractional_delay_samples": "0.000000000",
+              "integer_delay_samples": 0,
+              "observed_gain_db": "-6.020599913",
+              "polarity": "preserved"
+            }
+          ],
+          "clock_drift_ppm": "0.000000000",
+          "edge_trim_seconds": "0.000000000",
+          "fractional_delay_samples": "0.000000000",
+          "integer_delay_samples": 0,
+          "minimum_ambiguity_margin": "0.971402291",
+          "minimum_correlation": "1.000000000",
+          "minimum_structural_window_correlation": "1.000000000",
+          "structural_residual_samples": "0.000000000"
+        },
+        "status": "supported",
+        "support": {
+          "limits_id": "perceptual-degradation-v1-topology-fixtures-20260803-001",
+          "reasons": []
+        }
+      },
+      "original_oracle_assembly": {
+        "assembly": "accepted",
+        "outcomes": {
+          "artifact_profile": {
+            "components": {
+              "bandwidth_loss": null,
+              "masking_relative_error": null,
+              "segment_worst_case_impairment": null,
+              "stereo_image_or_phase_change": null,
+              "temporal_modulation_damage": null,
+              "tonal_or_birdie_noise": null,
+              "transient_smearing_or_pre_echo": null
+            },
+            "state": "unavailable"
+          },
+          "audibility_probability": null,
+          "audibility_probability_interval": null,
+          "categorical_state": "indeterminate",
+          "impairment_severity": null,
+          "impairment_severity_interval": null
+        },
+        "perceptual_claim": false,
+        "result_state": "execution_blocked",
+        "support": {
+          "abstention_reasons": [
+            "human_calibration_unavailable",
+            "perceptual_metric_execution_not_authorized"
+          ],
+          "alignment_reason_codes": [],
+          "supported": false
+        }
+      },
+      "reference_family": "orthogonal_equal_energy"
+    },
+    {
+      "alignment_inputs_unchanged": true,
+      "exact_known_zero_lag_projection": {
+        "common_signed_gain": "-1/1",
+        "independent_signed_gains": [
+          "-1/1",
+          "-1/1"
+        ],
+        "matrix_gram_and_pointwise_calculations_identical": true,
+        "reference_channel_geometry": {
+          "cross_product_over_total_energy": "0/1",
+          "left_energy_share": "1/2",
+          "mid_energy_share": "1/2",
+          "right_energy_share": "1/2",
+          "side_energy_share": "1/2"
+        },
+        "reference_normalized_squared_residuals": {
+          "common_signed_gain": "0/1",
+          "independent_signed_gains": "0/1",
+          "unaltered": "4/1"
+        },
+        "test_channel_geometry": {
+          "cross_product_over_total_energy": "0/1",
+          "left_energy_share": "1/2",
+          "mid_energy_share": "1/2",
+          "right_energy_share": "1/2",
+          "side_energy_share": "1/2"
+        },
+        "zero_fitted_gain_is_not_inverted": false
+      },
+      "matrix_id": "common_polarity_inversion",
+      "original_alignment": {
+        "alignment": {
+          "active_seconds": "6.000000000",
+          "aligned_frames": 12000,
+          "channel_lag_spread_samples": "0.000000000",
+          "channels": [
+            {
+              "channel": "L",
+              "correlation": "1.000000000",
+              "fractional_delay_samples": "0.000000000",
+              "integer_delay_samples": 0,
+              "observed_gain_db": "0.000000000",
+              "polarity": "inverted"
+            },
+            {
+              "channel": "R",
+              "correlation": "1.000000000",
+              "fractional_delay_samples": "0.000000000",
+              "integer_delay_samples": 0,
+              "observed_gain_db": "0.000000000",
+              "polarity": "inverted"
+            }
+          ],
+          "clock_drift_ppm": "0.000000000",
+          "edge_trim_seconds": "0.000000000",
+          "fractional_delay_samples": "0.000000000",
+          "integer_delay_samples": 0,
+          "minimum_ambiguity_margin": "0.971402291",
+          "minimum_correlation": "1.000000000",
+          "minimum_structural_window_correlation": "1.000000000",
+          "structural_residual_samples": "0.000000000"
+        },
+        "status": "supported",
+        "support": {
+          "limits_id": "perceptual-degradation-v1-topology-fixtures-20260803-001",
+          "reasons": []
+        }
+      },
+      "original_oracle_assembly": {
+        "assembly": "accepted",
+        "outcomes": {
+          "artifact_profile": {
+            "components": {
+              "bandwidth_loss": null,
+              "masking_relative_error": null,
+              "segment_worst_case_impairment": null,
+              "stereo_image_or_phase_change": null,
+              "temporal_modulation_damage": null,
+              "tonal_or_birdie_noise": null,
+              "transient_smearing_or_pre_echo": null
+            },
+            "state": "unavailable"
+          },
+          "audibility_probability": null,
+          "audibility_probability_interval": null,
+          "categorical_state": "indeterminate",
+          "impairment_severity": null,
+          "impairment_severity_interval": null
+        },
+        "perceptual_claim": false,
+        "result_state": "execution_blocked",
+        "support": {
+          "abstention_reasons": [
+            "human_calibration_unavailable",
+            "perceptual_metric_execution_not_authorized"
+          ],
+          "alignment_reason_codes": [],
+          "supported": false
+        }
+      },
+      "reference_family": "orthogonal_equal_energy"
+    },
+    {
+      "alignment_inputs_unchanged": true,
+      "exact_known_zero_lag_projection": {
+        "common_signed_gain": "3/4",
+        "independent_signed_gains": [
+          "1/2",
+          "1/1"
+        ],
+        "matrix_gram_and_pointwise_calculations_identical": true,
+        "reference_channel_geometry": {
+          "cross_product_over_total_energy": "0/1",
+          "left_energy_share": "1/2",
+          "mid_energy_share": "1/2",
+          "right_energy_share": "1/2",
+          "side_energy_share": "1/2"
+        },
+        "reference_normalized_squared_residuals": {
+          "common_signed_gain": "1/16",
+          "independent_signed_gains": "0/1",
+          "unaltered": "1/8"
+        },
+        "test_channel_geometry": {
+          "cross_product_over_total_energy": "0/1",
+          "left_energy_share": "1/5",
+          "mid_energy_share": "1/2",
+          "right_energy_share": "4/5",
+          "side_energy_share": "1/2"
+        },
+        "zero_fitted_gain_is_not_inverted": false
+      },
+      "matrix_id": "left_half_gain",
+      "original_alignment": {
+        "alignment": {
+          "active_seconds": "6.000000000",
+          "aligned_frames": 12000,
+          "channel_lag_spread_samples": "0.000000000",
+          "channels": [
+            {
+              "channel": "L",
+              "correlation": "1.000000000",
+              "fractional_delay_samples": "0.000000000",
+              "integer_delay_samples": 0,
+              "observed_gain_db": "-6.020599913",
+              "polarity": "preserved"
+            },
+            {
+              "channel": "R",
+              "correlation": "1.000000000",
+              "fractional_delay_samples": "0.000000000",
+              "integer_delay_samples": 0,
+              "observed_gain_db": "0.000000000",
+              "polarity": "preserved"
+            }
+          ],
+          "clock_drift_ppm": "0.000000000",
+          "edge_trim_seconds": "0.000000000",
+          "fractional_delay_samples": "0.000000000",
+          "integer_delay_samples": 0,
+          "minimum_ambiguity_margin": "0.971402291",
+          "minimum_correlation": "1.000000000",
+          "minimum_structural_window_correlation": "1.000000000",
+          "structural_residual_samples": "0.000000000"
+        },
+        "status": "supported",
+        "support": {
+          "limits_id": "perceptual-degradation-v1-topology-fixtures-20260803-001",
+          "reasons": []
+        }
+      },
+      "original_oracle_assembly": {
+        "assembly": "accepted",
+        "outcomes": {
+          "artifact_profile": {
+            "components": {
+              "bandwidth_loss": null,
+              "masking_relative_error": null,
+              "segment_worst_case_impairment": null,
+              "stereo_image_or_phase_change": null,
+              "temporal_modulation_damage": null,
+              "tonal_or_birdie_noise": null,
+              "transient_smearing_or_pre_echo": null
+            },
+            "state": "unavailable"
+          },
+          "audibility_probability": null,
+          "audibility_probability_interval": null,
+          "categorical_state": "indeterminate",
+          "impairment_severity": null,
+          "impairment_severity_interval": null
+        },
+        "perceptual_claim": false,
+        "result_state": "execution_blocked",
+        "support": {
+          "abstention_reasons": [
+            "human_calibration_unavailable",
+            "perceptual_metric_execution_not_authorized"
+          ],
+          "alignment_reason_codes": [],
+          "supported": false
+        }
+      },
+      "reference_family": "orthogonal_equal_energy"
+    },
+    {
+      "alignment_inputs_unchanged": true,
+      "exact_known_zero_lag_projection": {
+        "common_signed_gain": "0/1",
+        "independent_signed_gains": [
+          "1/1",
+          "-1/1"
+        ],
+        "matrix_gram_and_pointwise_calculations_identical": true,
+        "reference_channel_geometry": {
+          "cross_product_over_total_energy": "0/1",
+          "left_energy_share": "1/2",
+          "mid_energy_share": "1/2",
+          "right_energy_share": "1/2",
+          "side_energy_share": "1/2"
+        },
+        "reference_normalized_squared_residuals": {
+          "common_signed_gain": "1/1",
+          "independent_signed_gains": "0/1",
+          "unaltered": "2/1"
+        },
+        "test_channel_geometry": {
+          "cross_product_over_total_energy": "0/1",
+          "left_energy_share": "1/2",
+          "mid_energy_share": "1/2",
+          "right_energy_share": "1/2",
+          "side_energy_share": "1/2"
+        },
+        "zero_fitted_gain_is_not_inverted": true
+      },
+      "matrix_id": "right_polarity_inversion",
+      "original_alignment": {
+        "alignment": {
+          "active_seconds": "6.000000000",
+          "aligned_frames": 12000,
+          "channel_lag_spread_samples": "0.000000000",
+          "channels": [
+            {
+              "channel": "L",
+              "correlation": "1.000000000",
+              "fractional_delay_samples": "0.000000000",
+              "integer_delay_samples": 0,
+              "observed_gain_db": "0.000000000",
+              "polarity": "preserved"
+            },
+            {
+              "channel": "R",
+              "correlation": "1.000000000",
+              "fractional_delay_samples": "0.000000000",
+              "integer_delay_samples": 0,
+              "observed_gain_db": "0.000000000",
+              "polarity": "inverted"
+            }
+          ],
+          "clock_drift_ppm": "0.000000000",
+          "edge_trim_seconds": "0.000000000",
+          "fractional_delay_samples": "0.000000000",
+          "integer_delay_samples": 0,
+          "minimum_ambiguity_margin": "0.971402291",
+          "minimum_correlation": "1.000000000",
+          "minimum_structural_window_correlation": "1.000000000",
+          "structural_residual_samples": "0.000000000"
+        },
+        "status": "supported",
+        "support": {
+          "limits_id": "perceptual-degradation-v1-topology-fixtures-20260803-001",
+          "reasons": []
+        }
+      },
+      "original_oracle_assembly": {
+        "assembly": "accepted",
+        "outcomes": {
+          "artifact_profile": {
+            "components": {
+              "bandwidth_loss": null,
+              "masking_relative_error": null,
+              "segment_worst_case_impairment": null,
+              "stereo_image_or_phase_change": null,
+              "temporal_modulation_damage": null,
+              "tonal_or_birdie_noise": null,
+              "transient_smearing_or_pre_echo": null
+            },
+            "state": "unavailable"
+          },
+          "audibility_probability": null,
+          "audibility_probability_interval": null,
+          "categorical_state": "indeterminate",
+          "impairment_severity": null,
+          "impairment_severity_interval": null
+        },
+        "perceptual_claim": false,
+        "result_state": "execution_blocked",
+        "support": {
+          "abstention_reasons": [
+            "human_calibration_unavailable",
+            "perceptual_metric_execution_not_authorized"
+          ],
+          "alignment_reason_codes": [],
+          "supported": false
+        }
+      },
+      "reference_family": "orthogonal_equal_energy"
+    },
+    {
+      "alignment_inputs_unchanged": true,
+      "exact_known_zero_lag_projection": {
+        "common_signed_gain": "0/1",
+        "independent_signed_gains": [
+          "1/2",
+          "-1/2"
+        ],
+        "matrix_gram_and_pointwise_calculations_identical": true,
+        "reference_channel_geometry": {
+          "cross_product_over_total_energy": "0/1",
+          "left_energy_share": "1/2",
+          "mid_energy_share": "1/2",
+          "right_energy_share": "1/2",
+          "side_energy_share": "1/2"
+        },
+        "reference_normalized_squared_residuals": {
+          "common_signed_gain": "1/4",
+          "independent_signed_gains": "0/1",
+          "unaltered": "5/4"
+        },
+        "test_channel_geometry": {
+          "cross_product_over_total_energy": "0/1",
+          "left_energy_share": "1/2",
+          "mid_energy_share": "1/2",
+          "right_energy_share": "1/2",
+          "side_energy_share": "1/2"
+        },
+        "zero_fitted_gain_is_not_inverted": true
+      },
+      "matrix_id": "half_gain_opposite_polarities",
+      "original_alignment": {
+        "alignment": {
+          "active_seconds": "6.000000000",
+          "aligned_frames": 12000,
+          "channel_lag_spread_samples": "0.000000000",
+          "channels": [
+            {
+              "channel": "L",
+              "correlation": "1.000000000",
+              "fractional_delay_samples": "0.000000000",
+              "integer_delay_samples": 0,
+              "observed_gain_db": "-6.020599913",
+              "polarity": "preserved"
+            },
+            {
+              "channel": "R",
+              "correlation": "1.000000000",
+              "fractional_delay_samples": "0.000000000",
+              "integer_delay_samples": 0,
+              "observed_gain_db": "-6.020599913",
+              "polarity": "inverted"
+            }
+          ],
+          "clock_drift_ppm": "0.000000000",
+          "edge_trim_seconds": "0.000000000",
+          "fractional_delay_samples": "0.000000000",
+          "integer_delay_samples": 0,
+          "minimum_ambiguity_margin": "0.971402291",
+          "minimum_correlation": "1.000000000",
+          "minimum_structural_window_correlation": "1.000000000",
+          "structural_residual_samples": "0.000000000"
+        },
+        "status": "supported",
+        "support": {
+          "limits_id": "perceptual-degradation-v1-topology-fixtures-20260803-001",
+          "reasons": []
+        }
+      },
+      "original_oracle_assembly": {
+        "assembly": "accepted",
+        "outcomes": {
+          "artifact_profile": {
+            "components": {
+              "bandwidth_loss": null,
+              "masking_relative_error": null,
+              "segment_worst_case_impairment": null,
+              "stereo_image_or_phase_change": null,
+              "temporal_modulation_damage": null,
+              "tonal_or_birdie_noise": null,
+              "transient_smearing_or_pre_echo": null
+            },
+            "state": "unavailable"
+          },
+          "audibility_probability": null,
+          "audibility_probability_interval": null,
+          "categorical_state": "indeterminate",
+          "impairment_severity": null,
+          "impairment_severity_interval": null
+        },
+        "perceptual_claim": false,
+        "result_state": "execution_blocked",
+        "support": {
+          "abstention_reasons": [
+            "human_calibration_unavailable",
+            "perceptual_metric_execution_not_authorized"
+          ],
+          "alignment_reason_codes": [],
+          "supported": false
+        }
+      },
+      "reference_family": "orthogonal_equal_energy"
+    },
+    {
+      "alignment_inputs_unchanged": true,
+      "exact_known_zero_lag_projection": {
+        "common_signed_gain": "0/1",
+        "independent_signed_gains": [
+          "0/1",
+          "0/1"
+        ],
+        "matrix_gram_and_pointwise_calculations_identical": true,
+        "reference_channel_geometry": {
+          "cross_product_over_total_energy": "0/1",
+          "left_energy_share": "1/2",
+          "mid_energy_share": "1/2",
+          "right_energy_share": "1/2",
+          "side_energy_share": "1/2"
+        },
+        "reference_normalized_squared_residuals": {
+          "common_signed_gain": "1/1",
+          "independent_signed_gains": "1/1",
+          "unaltered": "2/1"
+        },
+        "test_channel_geometry": {
+          "cross_product_over_total_energy": "0/1",
+          "left_energy_share": "1/2",
+          "mid_energy_share": "1/2",
+          "right_energy_share": "1/2",
+          "side_energy_share": "1/2"
+        },
+        "zero_fitted_gain_is_not_inverted": true
+      },
+      "matrix_id": "channel_swap_same_declared_map",
+      "original_alignment": {
+        "alignment": {
+          "active_seconds": "6.000000000",
+          "aligned_frames": 11999,
+          "channel_lag_spread_samples": "2.012318844",
+          "channels": [
+            {
+              "channel": "L",
+              "correlation": "0.511665106",
+              "fractional_delay_samples": "0.006159422",
+              "integer_delay_samples": 1,
+              "observed_gain_db": "-5.819223440",
+              "polarity": "preserved"
+            },
+            {
+              "channel": "R",
+              "correlation": "0.511665106",
+              "fractional_delay_samples": "-0.006159422",
+              "integer_delay_samples": -1,
+              "observed_gain_db": "-5.821344534",
+              "polarity": "preserved"
+            }
+          ],
+          "clock_drift_ppm": "0.000000000",
+          "edge_trim_seconds": "0.001000000",
+          "fractional_delay_samples": "0.000000000",
+          "integer_delay_samples": 0,
+          "minimum_ambiguity_margin": "0.022353798",
+          "minimum_correlation": "0.511665106",
+          "minimum_structural_window_correlation": "0.450613687",
+          "structural_residual_samples": "1.357142857"
+        },
+        "status": "unsupported",
+        "support": {
+          "limits_id": "perceptual-degradation-v1-topology-fixtures-20260803-001",
+          "reasons": [
+            "channel_alignment_disagreement",
+            "clock_drift_exceeds_limit"
+          ]
+        }
+      },
+      "original_oracle_assembly": {
+        "assembly": "accepted",
+        "outcomes": {
+          "artifact_profile": {
+            "components": {
+              "bandwidth_loss": null,
+              "masking_relative_error": null,
+              "segment_worst_case_impairment": null,
+              "stereo_image_or_phase_change": null,
+              "temporal_modulation_damage": null,
+              "tonal_or_birdie_noise": null,
+              "transient_smearing_or_pre_echo": null
+            },
+            "state": "unavailable"
+          },
+          "audibility_probability": null,
+          "audibility_probability_interval": null,
+          "categorical_state": "indeterminate",
+          "impairment_severity": null,
+          "impairment_severity_interval": null
+        },
+        "perceptual_claim": false,
+        "result_state": "unsupported_alignment",
+        "support": {
+          "abstention_reasons": [
+            "alignment_unsupported"
+          ],
+          "alignment_reason_codes": [
+            "channel_alignment_disagreement",
+            "clock_drift_exceeds_limit"
+          ],
+          "supported": false
+        }
+      },
+      "reference_family": "orthogonal_equal_energy"
+    },
+    {
+      "alignment_inputs_unchanged": true,
+      "exact_known_zero_lag_projection": {
+        "common_signed_gain": "1/2",
+        "independent_signed_gains": [
+          "1/2",
+          "1/2"
+        ],
+        "matrix_gram_and_pointwise_calculations_identical": true,
+        "reference_channel_geometry": {
+          "cross_product_over_total_energy": "0/1",
+          "left_energy_share": "1/2",
+          "mid_energy_share": "1/2",
+          "right_energy_share": "1/2",
+          "side_energy_share": "1/2"
+        },
+        "reference_normalized_squared_residuals": {
+          "common_signed_gain": "1/4",
+          "independent_signed_gains": "1/4",
+          "unaltered": "1/2"
+        },
+        "test_channel_geometry": {
+          "cross_product_over_total_energy": "1/2",
+          "left_energy_share": "1/2",
+          "mid_energy_share": "1/1",
+          "right_energy_share": "1/2",
+          "side_energy_share": "0/1"
+        },
+        "zero_fitted_gain_is_not_inverted": false
+      },
+      "matrix_id": "mid_to_dual_mono",
+      "original_alignment": {
+        "alignment": {
+          "active_seconds": "6.000000000",
+          "aligned_frames": 12000,
+          "channel_lag_spread_samples": "0.034841235",
+          "channels": [
+            {
+              "channel": "L",
+              "correlation": "0.707106781",
+              "fractional_delay_samples": "0.001788269",
+              "integer_delay_samples": 0,
+              "observed_gain_db": "-6.020599913",
+              "polarity": "preserved"
+            },
+            {
+              "channel": "R",
+              "correlation": "0.707106781",
+              "fractional_delay_samples": "-0.033052966",
+              "integer_delay_samples": 0,
+              "observed_gain_db": "-6.020599913",
+              "polarity": "preserved"
+            }
+          ],
+          "clock_drift_ppm": "0.000000000",
+          "edge_trim_seconds": "0.000000000",
+          "fractional_delay_samples": "-0.015632349",
+          "integer_delay_samples": 0,
+          "minimum_ambiguity_margin": "0.677182919",
+          "minimum_correlation": "0.707106781",
+          "minimum_structural_window_correlation": "0.707106781",
+          "structural_residual_samples": "0.000000000"
+        },
+        "status": "supported",
+        "support": {
+          "limits_id": "perceptual-degradation-v1-topology-fixtures-20260803-001",
+          "reasons": []
+        }
+      },
+      "original_oracle_assembly": {
+        "assembly": "accepted",
+        "outcomes": {
+          "artifact_profile": {
+            "components": {
+              "bandwidth_loss": null,
+              "masking_relative_error": null,
+              "segment_worst_case_impairment": null,
+              "stereo_image_or_phase_change": null,
+              "temporal_modulation_damage": null,
+              "tonal_or_birdie_noise": null,
+              "transient_smearing_or_pre_echo": null
+            },
+            "state": "unavailable"
+          },
+          "audibility_probability": null,
+          "audibility_probability_interval": null,
+          "categorical_state": "indeterminate",
+          "impairment_severity": null,
+          "impairment_severity_interval": null
+        },
+        "perceptual_claim": false,
+        "result_state": "execution_blocked",
+        "support": {
+          "abstention_reasons": [
+            "human_calibration_unavailable",
+            "perceptual_metric_execution_not_authorized"
+          ],
+          "alignment_reason_codes": [],
+          "supported": false
+        }
+      },
+      "reference_family": "orthogonal_equal_energy"
+    },
+    {
+      "alignment_inputs_unchanged": true,
+      "exact_known_zero_lag_projection": {
+        "common_signed_gain": "1/2",
+        "independent_signed_gains": [
+          "1/1",
+          "0/1"
+        ],
+        "matrix_gram_and_pointwise_calculations_identical": true,
+        "reference_channel_geometry": {
+          "cross_product_over_total_energy": "0/1",
+          "left_energy_share": "1/2",
+          "mid_energy_share": "1/2",
+          "right_energy_share": "1/2",
+          "side_energy_share": "1/2"
+        },
+        "reference_normalized_squared_residuals": {
+          "common_signed_gain": "1/4",
+          "independent_signed_gains": "0/1",
+          "unaltered": "1/2"
+        },
+        "test_channel_geometry": {
+          "cross_product_over_total_energy": "0/1",
+          "left_energy_share": "1/1",
+          "mid_energy_share": "1/2",
+          "right_energy_share": "0/1",
+          "side_energy_share": "1/2"
+        },
+        "zero_fitted_gain_is_not_inverted": true
+      },
+      "matrix_id": "right_channel_zero",
+      "original_alignment": {
+        "alignment": {
+          "active_seconds": "6.000000000",
+          "aligned_frames": 12000,
+          "channel_lag_spread_samples": "0.000000000",
+          "channels": [
+            {
+              "channel": "L",
+              "correlation": "1.000000000",
+              "fractional_delay_samples": "0.000000000",
+              "integer_delay_samples": 0,
+              "observed_gain_db": "0.000000000",
+              "polarity": "preserved"
+            },
+            {
+              "channel": "R",
+              "correlation": "1.000000000",
+              "fractional_delay_samples": "0.000000000",
+              "integer_delay_samples": 0,
+              "observed_gain_db": "-999.000000000",
+              "polarity": "preserved"
+            }
+          ],
+          "clock_drift_ppm": "0.000000000",
+          "edge_trim_seconds": "0.000000000",
+          "fractional_delay_samples": "0.000000000",
+          "integer_delay_samples": 0,
+          "minimum_ambiguity_margin": "0.000000000",
+          "minimum_correlation": "1.000000000",
+          "minimum_structural_window_correlation": "1.000000000",
+          "structural_residual_samples": "0.000000000"
+        },
+        "status": "unsupported",
+        "support": {
+          "limits_id": "perceptual-degradation-v1-topology-fixtures-20260803-001",
+          "reasons": [
+            "ambiguous_alignment_peak",
+            "gain_exceeds_limit"
+          ]
+        }
+      },
+      "original_oracle_assembly": {
+        "assembly": "accepted",
+        "outcomes": {
+          "artifact_profile": {
+            "components": {
+              "bandwidth_loss": null,
+              "masking_relative_error": null,
+              "segment_worst_case_impairment": null,
+              "stereo_image_or_phase_change": null,
+              "temporal_modulation_damage": null,
+              "tonal_or_birdie_noise": null,
+              "transient_smearing_or_pre_echo": null
+            },
+            "state": "unavailable"
+          },
+          "audibility_probability": null,
+          "audibility_probability_interval": null,
+          "categorical_state": "indeterminate",
+          "impairment_severity": null,
+          "impairment_severity_interval": null
+        },
+        "perceptual_claim": false,
+        "result_state": "unsupported_alignment",
+        "support": {
+          "abstention_reasons": [
+            "alignment_unsupported"
+          ],
+          "alignment_reason_codes": [
+            "ambiguous_alignment_peak",
+            "gain_exceeds_limit"
+          ],
+          "supported": false
+        }
+      },
+      "reference_family": "orthogonal_equal_energy"
+    },
+    {
+      "alignment_inputs_unchanged": true,
+      "exact_known_zero_lag_projection": {
+        "common_signed_gain": "1/1",
+        "independent_signed_gains": [
+          "1/1",
+          "1/1"
+        ],
+        "matrix_gram_and_pointwise_calculations_identical": true,
+        "reference_channel_geometry": {
+          "cross_product_over_total_energy": "6/13",
+          "left_energy_share": "8/13",
+          "mid_energy_share": "25/26",
+          "right_energy_share": "5/13",
+          "side_energy_share": "1/26"
+        },
+        "reference_normalized_squared_residuals": {
+          "common_signed_gain": "0/1",
+          "independent_signed_gains": "0/1",
+          "unaltered": "0/1"
+        },
+        "test_channel_geometry": {
+          "cross_product_over_total_energy": "6/13",
+          "left_energy_share": "8/13",
+          "mid_energy_share": "25/26",
+          "right_energy_share": "5/13",
+          "side_energy_share": "1/26"
+        },
+        "zero_fitted_gain_is_not_inverted": false
+      },
+      "matrix_id": "identity",
+      "original_alignment": {
+        "alignment": {
+          "active_seconds": "6.000000000",
+          "aligned_frames": 12000,
+          "channel_lag_spread_samples": "0.000000000",
+          "channels": [
+            {
+              "channel": "L",
+              "correlation": "1.000000000",
+              "fractional_delay_samples": "0.000000000",
+              "integer_delay_samples": 0,
+              "observed_gain_db": "0.000000000",
+              "polarity": "preserved"
+            },
+            {
+              "channel": "R",
+              "correlation": "1.000000000",
+              "fractional_delay_samples": "0.000000000",
+              "integer_delay_samples": 0,
+              "observed_gain_db": "0.000000000",
+              "polarity": "preserved"
+            }
+          ],
+          "clock_drift_ppm": "0.000000000",
+          "edge_trim_seconds": "0.000000000",
+          "fractional_delay_samples": "0.000000000",
+          "integer_delay_samples": 0,
+          "minimum_ambiguity_margin": "0.971402291",
+          "minimum_correlation": "1.000000000",
+          "minimum_structural_window_correlation": "1.000000000",
+          "structural_residual_samples": "0.000000000"
+        },
+        "status": "supported",
+        "support": {
+          "limits_id": "perceptual-degradation-v1-topology-fixtures-20260803-001",
+          "reasons": []
+        }
+      },
+      "original_oracle_assembly": {
+        "assembly": "accepted",
+        "outcomes": {
+          "artifact_profile": {
+            "components": {
+              "bandwidth_loss": null,
+              "masking_relative_error": null,
+              "segment_worst_case_impairment": null,
+              "stereo_image_or_phase_change": null,
+              "temporal_modulation_damage": null,
+              "tonal_or_birdie_noise": null,
+              "transient_smearing_or_pre_echo": null
+            },
+            "state": "unavailable"
+          },
+          "audibility_probability": null,
+          "audibility_probability_interval": null,
+          "categorical_state": "indeterminate",
+          "impairment_severity": null,
+          "impairment_severity_interval": null
+        },
+        "perceptual_claim": false,
+        "result_state": "execution_blocked",
+        "support": {
+          "abstention_reasons": [
+            "human_calibration_unavailable",
+            "perceptual_metric_execution_not_authorized"
+          ],
+          "alignment_reason_codes": [],
+          "supported": false
+        }
+      },
+      "reference_family": "correlated_unequal_energy"
+    },
+    {
+      "alignment_inputs_unchanged": true,
+      "exact_known_zero_lag_projection": {
+        "common_signed_gain": "1/2",
+        "independent_signed_gains": [
+          "1/2",
+          "1/2"
+        ],
+        "matrix_gram_and_pointwise_calculations_identical": true,
+        "reference_channel_geometry": {
+          "cross_product_over_total_energy": "6/13",
+          "left_energy_share": "8/13",
+          "mid_energy_share": "25/26",
+          "right_energy_share": "5/13",
+          "side_energy_share": "1/26"
+        },
+        "reference_normalized_squared_residuals": {
+          "common_signed_gain": "0/1",
+          "independent_signed_gains": "0/1",
+          "unaltered": "1/4"
+        },
+        "test_channel_geometry": {
+          "cross_product_over_total_energy": "6/13",
+          "left_energy_share": "8/13",
+          "mid_energy_share": "25/26",
+          "right_energy_share": "5/13",
+          "side_energy_share": "1/26"
+        },
+        "zero_fitted_gain_is_not_inverted": false
+      },
+      "matrix_id": "common_half_gain",
+      "original_alignment": {
+        "alignment": {
+          "active_seconds": "6.000000000",
+          "aligned_frames": 12000,
+          "channel_lag_spread_samples": "0.000000000",
+          "channels": [
+            {
+              "channel": "L",
+              "correlation": "1.000000000",
+              "fractional_delay_samples": "0.000000000",
+              "integer_delay_samples": 0,
+              "observed_gain_db": "-6.020599913",
+              "polarity": "preserved"
+            },
+            {
+              "channel": "R",
+              "correlation": "1.000000000",
+              "fractional_delay_samples": "0.000000000",
+              "integer_delay_samples": 0,
+              "observed_gain_db": "-6.020599913",
+              "polarity": "preserved"
+            }
+          ],
+          "clock_drift_ppm": "0.000000000",
+          "edge_trim_seconds": "0.000000000",
+          "fractional_delay_samples": "0.000000000",
+          "integer_delay_samples": 0,
+          "minimum_ambiguity_margin": "0.971402291",
+          "minimum_correlation": "1.000000000",
+          "minimum_structural_window_correlation": "1.000000000",
+          "structural_residual_samples": "0.000000000"
+        },
+        "status": "supported",
+        "support": {
+          "limits_id": "perceptual-degradation-v1-topology-fixtures-20260803-001",
+          "reasons": []
+        }
+      },
+      "original_oracle_assembly": {
+        "assembly": "accepted",
+        "outcomes": {
+          "artifact_profile": {
+            "components": {
+              "bandwidth_loss": null,
+              "masking_relative_error": null,
+              "segment_worst_case_impairment": null,
+              "stereo_image_or_phase_change": null,
+              "temporal_modulation_damage": null,
+              "tonal_or_birdie_noise": null,
+              "transient_smearing_or_pre_echo": null
+            },
+            "state": "unavailable"
+          },
+          "audibility_probability": null,
+          "audibility_probability_interval": null,
+          "categorical_state": "indeterminate",
+          "impairment_severity": null,
+          "impairment_severity_interval": null
+        },
+        "perceptual_claim": false,
+        "result_state": "execution_blocked",
+        "support": {
+          "abstention_reasons": [
+            "human_calibration_unavailable",
+            "perceptual_metric_execution_not_authorized"
+          ],
+          "alignment_reason_codes": [],
+          "supported": false
+        }
+      },
+      "reference_family": "correlated_unequal_energy"
+    },
+    {
+      "alignment_inputs_unchanged": true,
+      "exact_known_zero_lag_projection": {
+        "common_signed_gain": "-1/1",
+        "independent_signed_gains": [
+          "-1/1",
+          "-1/1"
+        ],
+        "matrix_gram_and_pointwise_calculations_identical": true,
+        "reference_channel_geometry": {
+          "cross_product_over_total_energy": "6/13",
+          "left_energy_share": "8/13",
+          "mid_energy_share": "25/26",
+          "right_energy_share": "5/13",
+          "side_energy_share": "1/26"
+        },
+        "reference_normalized_squared_residuals": {
+          "common_signed_gain": "0/1",
+          "independent_signed_gains": "0/1",
+          "unaltered": "4/1"
+        },
+        "test_channel_geometry": {
+          "cross_product_over_total_energy": "6/13",
+          "left_energy_share": "8/13",
+          "mid_energy_share": "25/26",
+          "right_energy_share": "5/13",
+          "side_energy_share": "1/26"
+        },
+        "zero_fitted_gain_is_not_inverted": false
+      },
+      "matrix_id": "common_polarity_inversion",
+      "original_alignment": {
+        "alignment": {
+          "active_seconds": "6.000000000",
+          "aligned_frames": 12000,
+          "channel_lag_spread_samples": "0.000000000",
+          "channels": [
+            {
+              "channel": "L",
+              "correlation": "1.000000000",
+              "fractional_delay_samples": "0.000000000",
+              "integer_delay_samples": 0,
+              "observed_gain_db": "0.000000000",
+              "polarity": "inverted"
+            },
+            {
+              "channel": "R",
+              "correlation": "1.000000000",
+              "fractional_delay_samples": "0.000000000",
+              "integer_delay_samples": 0,
+              "observed_gain_db": "0.000000000",
+              "polarity": "inverted"
+            }
+          ],
+          "clock_drift_ppm": "0.000000000",
+          "edge_trim_seconds": "0.000000000",
+          "fractional_delay_samples": "0.000000000",
+          "integer_delay_samples": 0,
+          "minimum_ambiguity_margin": "0.971402291",
+          "minimum_correlation": "1.000000000",
+          "minimum_structural_window_correlation": "1.000000000",
+          "structural_residual_samples": "0.000000000"
+        },
+        "status": "supported",
+        "support": {
+          "limits_id": "perceptual-degradation-v1-topology-fixtures-20260803-001",
+          "reasons": []
+        }
+      },
+      "original_oracle_assembly": {
+        "assembly": "accepted",
+        "outcomes": {
+          "artifact_profile": {
+            "components": {
+              "bandwidth_loss": null,
+              "masking_relative_error": null,
+              "segment_worst_case_impairment": null,
+              "stereo_image_or_phase_change": null,
+              "temporal_modulation_damage": null,
+              "tonal_or_birdie_noise": null,
+              "transient_smearing_or_pre_echo": null
+            },
+            "state": "unavailable"
+          },
+          "audibility_probability": null,
+          "audibility_probability_interval": null,
+          "categorical_state": "indeterminate",
+          "impairment_severity": null,
+          "impairment_severity_interval": null
+        },
+        "perceptual_claim": false,
+        "result_state": "execution_blocked",
+        "support": {
+          "abstention_reasons": [
+            "human_calibration_unavailable",
+            "perceptual_metric_execution_not_authorized"
+          ],
+          "alignment_reason_codes": [],
+          "supported": false
+        }
+      },
+      "reference_family": "correlated_unequal_energy"
+    },
+    {
+      "alignment_inputs_unchanged": true,
+      "exact_known_zero_lag_projection": {
+        "common_signed_gain": "9/13",
+        "independent_signed_gains": [
+          "1/2",
+          "1/1"
+        ],
+        "matrix_gram_and_pointwise_calculations_identical": true,
+        "reference_channel_geometry": {
+          "cross_product_over_total_energy": "6/13",
+          "left_energy_share": "8/13",
+          "mid_energy_share": "25/26",
+          "right_energy_share": "5/13",
+          "side_energy_share": "1/26"
+        },
+        "reference_normalized_squared_residuals": {
+          "common_signed_gain": "10/169",
+          "independent_signed_gains": "0/1",
+          "unaltered": "2/13"
+        },
+        "test_channel_geometry": {
+          "cross_product_over_total_energy": "3/7",
+          "left_energy_share": "2/7",
+          "mid_energy_share": "13/14",
+          "right_energy_share": "5/7",
+          "side_energy_share": "1/14"
+        },
+        "zero_fitted_gain_is_not_inverted": false
+      },
+      "matrix_id": "left_half_gain",
+      "original_alignment": {
+        "alignment": {
+          "active_seconds": "6.000000000",
+          "aligned_frames": 12000,
+          "channel_lag_spread_samples": "0.000000000",
+          "channels": [
+            {
+              "channel": "L",
+              "correlation": "1.000000000",
+              "fractional_delay_samples": "0.000000000",
+              "integer_delay_samples": 0,
+              "observed_gain_db": "-6.020599913",
+              "polarity": "preserved"
+            },
+            {
+              "channel": "R",
+              "correlation": "1.000000000",
+              "fractional_delay_samples": "0.000000000",
+              "integer_delay_samples": 0,
+              "observed_gain_db": "0.000000000",
+              "polarity": "preserved"
+            }
+          ],
+          "clock_drift_ppm": "0.000000000",
+          "edge_trim_seconds": "0.000000000",
+          "fractional_delay_samples": "0.000000000",
+          "integer_delay_samples": 0,
+          "minimum_ambiguity_margin": "0.971402291",
+          "minimum_correlation": "1.000000000",
+          "minimum_structural_window_correlation": "1.000000000",
+          "structural_residual_samples": "0.000000000"
+        },
+        "status": "supported",
+        "support": {
+          "limits_id": "perceptual-degradation-v1-topology-fixtures-20260803-001",
+          "reasons": []
+        }
+      },
+      "original_oracle_assembly": {
+        "assembly": "accepted",
+        "outcomes": {
+          "artifact_profile": {
+            "components": {
+              "bandwidth_loss": null,
+              "masking_relative_error": null,
+              "segment_worst_case_impairment": null,
+              "stereo_image_or_phase_change": null,
+              "temporal_modulation_damage": null,
+              "tonal_or_birdie_noise": null,
+              "transient_smearing_or_pre_echo": null
+            },
+            "state": "unavailable"
+          },
+          "audibility_probability": null,
+          "audibility_probability_interval": null,
+          "categorical_state": "indeterminate",
+          "impairment_severity": null,
+          "impairment_severity_interval": null
+        },
+        "perceptual_claim": false,
+        "result_state": "execution_blocked",
+        "support": {
+          "abstention_reasons": [
+            "human_calibration_unavailable",
+            "perceptual_metric_execution_not_authorized"
+          ],
+          "alignment_reason_codes": [],
+          "supported": false
+        }
+      },
+      "reference_family": "correlated_unequal_energy"
+    },
+    {
+      "alignment_inputs_unchanged": true,
+      "exact_known_zero_lag_projection": {
+        "common_signed_gain": "3/13",
+        "independent_signed_gains": [
+          "1/1",
+          "-1/1"
+        ],
+        "matrix_gram_and_pointwise_calculations_identical": true,
+        "reference_channel_geometry": {
+          "cross_product_over_total_energy": "6/13",
+          "left_energy_share": "8/13",
+          "mid_energy_share": "25/26",
+          "right_energy_share": "5/13",
+          "side_energy_share": "1/26"
+        },
+        "reference_normalized_squared_residuals": {
+          "common_signed_gain": "160/169",
+          "independent_signed_gains": "0/1",
+          "unaltered": "20/13"
+        },
+        "test_channel_geometry": {
+          "cross_product_over_total_energy": "-6/13",
+          "left_energy_share": "8/13",
+          "mid_energy_share": "1/26",
+          "right_energy_share": "5/13",
+          "side_energy_share": "25/26"
+        },
+        "zero_fitted_gain_is_not_inverted": false
+      },
+      "matrix_id": "right_polarity_inversion",
+      "original_alignment": {
+        "alignment": {
+          "active_seconds": "6.000000000",
+          "aligned_frames": 12000,
+          "channel_lag_spread_samples": "0.000000000",
+          "channels": [
+            {
+              "channel": "L",
+              "correlation": "1.000000000",
+              "fractional_delay_samples": "0.000000000",
+              "integer_delay_samples": 0,
+              "observed_gain_db": "0.000000000",
+              "polarity": "preserved"
+            },
+            {
+              "channel": "R",
+              "correlation": "1.000000000",
+              "fractional_delay_samples": "0.000000000",
+              "integer_delay_samples": 0,
+              "observed_gain_db": "0.000000000",
+              "polarity": "inverted"
+            }
+          ],
+          "clock_drift_ppm": "0.000000000",
+          "edge_trim_seconds": "0.000000000",
+          "fractional_delay_samples": "0.000000000",
+          "integer_delay_samples": 0,
+          "minimum_ambiguity_margin": "0.971402291",
+          "minimum_correlation": "1.000000000",
+          "minimum_structural_window_correlation": "1.000000000",
+          "structural_residual_samples": "0.000000000"
+        },
+        "status": "supported",
+        "support": {
+          "limits_id": "perceptual-degradation-v1-topology-fixtures-20260803-001",
+          "reasons": []
+        }
+      },
+      "original_oracle_assembly": {
+        "assembly": "accepted",
+        "outcomes": {
+          "artifact_profile": {
+            "components": {
+              "bandwidth_loss": null,
+              "masking_relative_error": null,
+              "segment_worst_case_impairment": null,
+              "stereo_image_or_phase_change": null,
+              "temporal_modulation_damage": null,
+              "tonal_or_birdie_noise": null,
+              "transient_smearing_or_pre_echo": null
+            },
+            "state": "unavailable"
+          },
+          "audibility_probability": null,
+          "audibility_probability_interval": null,
+          "categorical_state": "indeterminate",
+          "impairment_severity": null,
+          "impairment_severity_interval": null
+        },
+        "perceptual_claim": false,
+        "result_state": "execution_blocked",
+        "support": {
+          "abstention_reasons": [
+            "human_calibration_unavailable",
+            "perceptual_metric_execution_not_authorized"
+          ],
+          "alignment_reason_codes": [],
+          "supported": false
+        }
+      },
+      "reference_family": "correlated_unequal_energy"
+    },
+    {
+      "alignment_inputs_unchanged": true,
+      "exact_known_zero_lag_projection": {
+        "common_signed_gain": "3/26",
+        "independent_signed_gains": [
+          "1/2",
+          "-1/2"
+        ],
+        "matrix_gram_and_pointwise_calculations_identical": true,
+        "reference_channel_geometry": {
+          "cross_product_over_total_energy": "6/13",
+          "left_energy_share": "8/13",
+          "mid_energy_share": "25/26",
+          "right_energy_share": "5/13",
+          "side_energy_share": "1/26"
+        },
+        "reference_normalized_squared_residuals": {
+          "common_signed_gain": "40/169",
+          "independent_signed_gains": "0/1",
+          "unaltered": "53/52"
+        },
+        "test_channel_geometry": {
+          "cross_product_over_total_energy": "-6/13",
+          "left_energy_share": "8/13",
+          "mid_energy_share": "1/26",
+          "right_energy_share": "5/13",
+          "side_energy_share": "25/26"
+        },
+        "zero_fitted_gain_is_not_inverted": false
+      },
+      "matrix_id": "half_gain_opposite_polarities",
+      "original_alignment": {
+        "alignment": {
+          "active_seconds": "6.000000000",
+          "aligned_frames": 12000,
+          "channel_lag_spread_samples": "0.000000000",
+          "channels": [
+            {
+              "channel": "L",
+              "correlation": "1.000000000",
+              "fractional_delay_samples": "0.000000000",
+              "integer_delay_samples": 0,
+              "observed_gain_db": "-6.020599913",
+              "polarity": "preserved"
+            },
+            {
+              "channel": "R",
+              "correlation": "1.000000000",
+              "fractional_delay_samples": "0.000000000",
+              "integer_delay_samples": 0,
+              "observed_gain_db": "-6.020599913",
+              "polarity": "inverted"
+            }
+          ],
+          "clock_drift_ppm": "0.000000000",
+          "edge_trim_seconds": "0.000000000",
+          "fractional_delay_samples": "0.000000000",
+          "integer_delay_samples": 0,
+          "minimum_ambiguity_margin": "0.971402291",
+          "minimum_correlation": "1.000000000",
+          "minimum_structural_window_correlation": "1.000000000",
+          "structural_residual_samples": "0.000000000"
+        },
+        "status": "supported",
+        "support": {
+          "limits_id": "perceptual-degradation-v1-topology-fixtures-20260803-001",
+          "reasons": []
+        }
+      },
+      "original_oracle_assembly": {
+        "assembly": "accepted",
+        "outcomes": {
+          "artifact_profile": {
+            "components": {
+              "bandwidth_loss": null,
+              "masking_relative_error": null,
+              "segment_worst_case_impairment": null,
+              "stereo_image_or_phase_change": null,
+              "temporal_modulation_damage": null,
+              "tonal_or_birdie_noise": null,
+              "transient_smearing_or_pre_echo": null
+            },
+            "state": "unavailable"
+          },
+          "audibility_probability": null,
+          "audibility_probability_interval": null,
+          "categorical_state": "indeterminate",
+          "impairment_severity": null,
+          "impairment_severity_interval": null
+        },
+        "perceptual_claim": false,
+        "result_state": "execution_blocked",
+        "support": {
+          "abstention_reasons": [
+            "human_calibration_unavailable",
+            "perceptual_metric_execution_not_authorized"
+          ],
+          "alignment_reason_codes": [],
+          "supported": false
+        }
+      },
+      "reference_family": "correlated_unequal_energy"
+    },
+    {
+      "alignment_inputs_unchanged": true,
+      "exact_known_zero_lag_projection": {
+        "common_signed_gain": "12/13",
+        "independent_signed_gains": [
+          "3/4",
+          "6/5"
+        ],
+        "matrix_gram_and_pointwise_calculations_identical": true,
+        "reference_channel_geometry": {
+          "cross_product_over_total_energy": "6/13",
+          "left_energy_share": "8/13",
+          "mid_energy_share": "25/26",
+          "right_energy_share": "5/13",
+          "side_energy_share": "1/26"
+        },
+        "reference_normalized_squared_residuals": {
+          "common_signed_gain": "25/169",
+          "independent_signed_gains": "1/10",
+          "unaltered": "2/13"
+        },
+        "test_channel_geometry": {
+          "cross_product_over_total_energy": "6/13",
+          "left_energy_share": "5/13",
+          "mid_energy_share": "25/26",
+          "right_energy_share": "8/13",
+          "side_energy_share": "1/26"
+        },
+        "zero_fitted_gain_is_not_inverted": false
+      },
+      "matrix_id": "channel_swap_same_declared_map",
+      "original_alignment": {
+        "alignment": {
+          "active_seconds": "6.000000000",
+          "aligned_frames": 12000,
+          "channel_lag_spread_samples": "0.006834577",
+          "channels": [
+            {
+              "channel": "L",
+              "correlation": "0.948683298",
+              "fractional_delay_samples": "-0.003417288",
+              "integer_delay_samples": 0,
+              "observed_gain_db": "-2.498774732",
+              "polarity": "preserved"
+            },
+            {
+              "channel": "R",
+              "correlation": "0.948683298",
+              "fractional_delay_samples": "0.003417288",
+              "integer_delay_samples": 0,
+              "observed_gain_db": "1.583624921",
+              "polarity": "preserved"
+            }
+          ],
+          "clock_drift_ppm": "0.000000000",
+          "edge_trim_seconds": "0.000000000",
+          "fractional_delay_samples": "0.000000000",
+          "integer_delay_samples": 0,
+          "minimum_ambiguity_margin": "0.917490620",
+          "minimum_correlation": "0.948683298",
+          "minimum_structural_window_correlation": "0.948683298",
+          "structural_residual_samples": "0.000000000"
+        },
+        "status": "supported",
+        "support": {
+          "limits_id": "perceptual-degradation-v1-topology-fixtures-20260803-001",
+          "reasons": []
+        }
+      },
+      "original_oracle_assembly": {
+        "assembly": "accepted",
+        "outcomes": {
+          "artifact_profile": {
+            "components": {
+              "bandwidth_loss": null,
+              "masking_relative_error": null,
+              "segment_worst_case_impairment": null,
+              "stereo_image_or_phase_change": null,
+              "temporal_modulation_damage": null,
+              "tonal_or_birdie_noise": null,
+              "transient_smearing_or_pre_echo": null
+            },
+            "state": "unavailable"
+          },
+          "audibility_probability": null,
+          "audibility_probability_interval": null,
+          "categorical_state": "indeterminate",
+          "impairment_severity": null,
+          "impairment_severity_interval": null
+        },
+        "perceptual_claim": false,
+        "result_state": "execution_blocked",
+        "support": {
+          "abstention_reasons": [
+            "human_calibration_unavailable",
+            "perceptual_metric_execution_not_authorized"
+          ],
+          "alignment_reason_codes": [],
+          "supported": false
+        }
+      },
+      "reference_family": "correlated_unequal_energy"
+    },
+    {
+      "alignment_inputs_unchanged": true,
+      "exact_known_zero_lag_projection": {
+        "common_signed_gain": "25/26",
+        "independent_signed_gains": [
+          "7/8",
+          "11/10"
+        ],
+        "matrix_gram_and_pointwise_calculations_identical": true,
+        "reference_channel_geometry": {
+          "cross_product_over_total_energy": "6/13",
+          "left_energy_share": "8/13",
+          "mid_energy_share": "25/26",
+          "right_energy_share": "5/13",
+          "side_energy_share": "1/26"
+        },
+        "reference_normalized_squared_residuals": {
+          "common_signed_gain": "25/676",
+          "independent_signed_gains": "1/40",
+          "unaltered": "1/26"
+        },
+        "test_channel_geometry": {
+          "cross_product_over_total_energy": "1/2",
+          "left_energy_share": "1/2",
+          "mid_energy_share": "1/1",
+          "right_energy_share": "1/2",
+          "side_energy_share": "0/1"
+        },
+        "zero_fitted_gain_is_not_inverted": false
+      },
+      "matrix_id": "mid_to_dual_mono",
+      "original_alignment": {
+        "alignment": {
+          "active_seconds": "6.000000000",
+          "aligned_frames": 12000,
+          "channel_lag_spread_samples": "0.005823172",
+          "channels": [
+            {
+              "channel": "L",
+              "correlation": "0.989949494",
+              "fractional_delay_samples": "-0.004216634",
+              "integer_delay_samples": 0,
+              "observed_gain_db": "-1.159838940",
+              "polarity": "preserved"
+            },
+            {
+              "channel": "R",
+              "correlation": "0.983869910",
+              "fractional_delay_samples": "0.001606538",
+              "integer_delay_samples": 0,
+              "observed_gain_db": "0.827853703",
+              "polarity": "preserved"
+            }
+          ],
+          "clock_drift_ppm": "0.000000000",
+          "edge_trim_seconds": "0.000000000",
+          "fractional_delay_samples": "-0.001305048",
+          "integer_delay_samples": 0,
+          "minimum_ambiguity_margin": "0.953435382",
+          "minimum_correlation": "0.983869910",
+          "minimum_structural_window_correlation": "0.983869910",
+          "structural_residual_samples": "0.000000000"
+        },
+        "status": "supported",
+        "support": {
+          "limits_id": "perceptual-degradation-v1-topology-fixtures-20260803-001",
+          "reasons": []
+        }
+      },
+      "original_oracle_assembly": {
+        "assembly": "accepted",
+        "outcomes": {
+          "artifact_profile": {
+            "components": {
+              "bandwidth_loss": null,
+              "masking_relative_error": null,
+              "segment_worst_case_impairment": null,
+              "stereo_image_or_phase_change": null,
+              "temporal_modulation_damage": null,
+              "tonal_or_birdie_noise": null,
+              "transient_smearing_or_pre_echo": null
+            },
+            "state": "unavailable"
+          },
+          "audibility_probability": null,
+          "audibility_probability_interval": null,
+          "categorical_state": "indeterminate",
+          "impairment_severity": null,
+          "impairment_severity_interval": null
+        },
+        "perceptual_claim": false,
+        "result_state": "execution_blocked",
+        "support": {
+          "abstention_reasons": [
+            "human_calibration_unavailable",
+            "perceptual_metric_execution_not_authorized"
+          ],
+          "alignment_reason_codes": [],
+          "supported": false
+        }
+      },
+      "reference_family": "correlated_unequal_energy"
+    },
+    {
+      "alignment_inputs_unchanged": true,
+      "exact_known_zero_lag_projection": {
+        "common_signed_gain": "8/13",
+        "independent_signed_gains": [
+          "1/1",
+          "0/1"
+        ],
+        "matrix_gram_and_pointwise_calculations_identical": true,
+        "reference_channel_geometry": {
+          "cross_product_over_total_energy": "6/13",
+          "left_energy_share": "8/13",
+          "mid_energy_share": "25/26",
+          "right_energy_share": "5/13",
+          "side_energy_share": "1/26"
+        },
+        "reference_normalized_squared_residuals": {
+          "common_signed_gain": "40/169",
+          "independent_signed_gains": "0/1",
+          "unaltered": "5/13"
+        },
+        "test_channel_geometry": {
+          "cross_product_over_total_energy": "0/1",
+          "left_energy_share": "1/1",
+          "mid_energy_share": "1/2",
+          "right_energy_share": "0/1",
+          "side_energy_share": "1/2"
+        },
+        "zero_fitted_gain_is_not_inverted": true
+      },
+      "matrix_id": "right_channel_zero",
+      "original_alignment": {
+        "alignment": {
+          "active_seconds": "6.000000000",
+          "aligned_frames": 12000,
+          "channel_lag_spread_samples": "0.000000000",
+          "channels": [
+            {
+              "channel": "L",
+              "correlation": "1.000000000",
+              "fractional_delay_samples": "0.000000000",
+              "integer_delay_samples": 0,
+              "observed_gain_db": "0.000000000",
+              "polarity": "preserved"
+            },
+            {
+              "channel": "R",
+              "correlation": "1.000000000",
+              "fractional_delay_samples": "0.000000000",
+              "integer_delay_samples": 0,
+              "observed_gain_db": "-999.000000000",
+              "polarity": "preserved"
+            }
+          ],
+          "clock_drift_ppm": "0.000000000",
+          "edge_trim_seconds": "0.000000000",
+          "fractional_delay_samples": "0.000000000",
+          "integer_delay_samples": 0,
+          "minimum_ambiguity_margin": "0.000000000",
+          "minimum_correlation": "1.000000000",
+          "minimum_structural_window_correlation": "1.000000000",
+          "structural_residual_samples": "0.000000000"
+        },
+        "status": "unsupported",
+        "support": {
+          "limits_id": "perceptual-degradation-v1-topology-fixtures-20260803-001",
+          "reasons": [
+            "ambiguous_alignment_peak",
+            "gain_exceeds_limit"
+          ]
+        }
+      },
+      "original_oracle_assembly": {
+        "assembly": "accepted",
+        "outcomes": {
+          "artifact_profile": {
+            "components": {
+              "bandwidth_loss": null,
+              "masking_relative_error": null,
+              "segment_worst_case_impairment": null,
+              "stereo_image_or_phase_change": null,
+              "temporal_modulation_damage": null,
+              "tonal_or_birdie_noise": null,
+              "transient_smearing_or_pre_echo": null
+            },
+            "state": "unavailable"
+          },
+          "audibility_probability": null,
+          "audibility_probability_interval": null,
+          "categorical_state": "indeterminate",
+          "impairment_severity": null,
+          "impairment_severity_interval": null
+        },
+        "perceptual_claim": false,
+        "result_state": "unsupported_alignment",
+        "support": {
+          "abstention_reasons": [
+            "alignment_unsupported"
+          ],
+          "alignment_reason_codes": [
+            "ambiguous_alignment_peak",
+            "gain_exceeds_limit"
+          ],
+          "supported": false
+        }
+      },
+      "reference_family": "correlated_unequal_energy"
+    }
+  ],
+  "claim_boundary": {
+    "actual_audio_access_authorized": false,
+    "capture_execution_authorized": false,
+    "coding_causation_demonstrated": false,
+    "full_reference_oracle_validated": false,
+    "no_reference_training_authorized": false,
+    "normalization_of_real_pairs_authorized": false,
+    "objective_complete": false,
+    "original_alignment_support_is_fidelity_validation": false,
+    "perceptual_metric_or_listening_execution_authorized": false,
+    "public_verdict_enabled": false,
+    "source_trait_assignment_authorized": false,
+    "synthetic_channel_change_is_human_impairment_label": false
+  },
+  "gain_or_polarity_corrected_audio_produced": false,
+  "implementation_sha256": "cbe6a2cb1e2b0ec24466c74abbe700910a7942ca7482fcf56b13cfacc6d67e14",
+  "matrix_gram_crosschecks_passed": 18,
+  "next_requirement": "Before creating real metric or listening views, freeze which gain, polarity and channel changes belong to the estimand, which are documented delivery nuisances, and how both original and any adjusted pair will be retained. Matching alignment support does not select that policy. Stereo conclusions need channel-preserving evidence and human validation; this audit does not supply either from synthetic labels.",
+  "perceptual_metric_or_human_execution": false,
+  "plan_sha256": "5dccbdc651cac34bbacdbbc5b47b96e6a507d929dcc2153c31893387e9d1a556",
+  "real_audio_accessed": false,
+  "report_id": "channel-normalization-boundary-20260907-001",
+  "schema_version": 1,
+  "selected_boundary": {
+    "alignment_support_is_normalization_authority": false,
+    "automatic_sample_changes_from_alignment_diagnostics_allowed": false,
+    "common_gain_or_global_polarity_is_assumed_perceptually_irrelevant": false,
+    "current_executable_alignment_or_oracle_changed": false,
+    "independent_channel_correction_is_assumed_perceptually_irrelevant": false,
+    "new_normalization_policy_requires_target_matched_successor": true,
+    "observed_per_channel_gain_is_applied_correction": false,
+    "original_channel_relationships_must_remain_available": true
+  },
+  "state": "synthetic_channel_normalization_boundary_complete"
+}

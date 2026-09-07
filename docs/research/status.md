@@ -1595,3 +1595,32 @@ The authorized capture still needs its physical setup and execution checkpoint.
 No actual audio, source assignment, listening, metric, oracle, training, external
 communication, spending or public-verdict boundary changes. The overall research
 objective remains active and incomplete.
+
+## Channel normalization information boundary — 2026-09-07
+
+The [channel audit](perceptual-degradation-channel-normalization-boundary-20260907.md)
+distinguishes the current diagnostic alignment from prospective normalization.
+The unchanged alignment does not apply its reported gains or polarity, and all
+18 synthetic executions preserve their input arrays. Fifteen alignments are
+supported; the original oracle still returns blocked or unsupported states and
+never supplies perceptual outcomes.
+
+Exact common and independent gain projections show different information loss.
+Independent fits erase residuals for channel imbalance and relative polarity;
+they can also fit a dropped channel with zero gain and zero residual. Both
+dropouts remain alignment-unsupported. A correlated channel swap and both
+dual-mono mixtures are alignment-supported, so support alone cannot exclude
+known channel remixing or authorize sample changes.
+
+The audit also preserves the dropped channel's misleading correlation of 1,
+traced to an invalid-energy sentinel followed by absolute value. Its combined
+support still abstains. Whole-record Gram geometry also misses some waveform
+changes. Neither component diagnostics nor projection residuals establish
+perceptual fidelity, and neither prospective correction method is selected.
+
+Two full replays are byte-identical; all 18 direct/Gram checks agree exactly.
+The selected boundary keeps original channel relationships available and requires
+a target-matched successor before any real normalization. Original implementations,
+thresholds and research evidence are unchanged. Capture setup, source assignment,
+human calibration, metric execution, oracle validation, no-reference training
+and public-verdict prerequisites remain open; the objective remains incomplete.

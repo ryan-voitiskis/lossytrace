@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "plan_id": "channel-normalization-boundary-20260907-001",
+  "state": "synthetic_channel_information_boundary_declared_before_execution",
+  "purpose": "Separate diagnostic alignment support from authority to alter channel relationships, and quantify exactly which differences a prospective common or independent-channel gain projection would discard. This audits potential views, not an existing gain-correction implementation or human impairment.",
+  "bindings": {
+    "research_contract": {"path": "docs/research/perceptual-degradation-contract-20260803.md", "sha256": "fdec79207fc0fdd2e9cb10aae9f93dd1a17b45e6e56c0c7df8f0e01a1f9fb505"},
+    "strategic_review": {"path": "docs/research/perceptual-degradation-strategic-review-20260905.md", "sha256": "6dfa09fa8c5465a08a41fcf8f3eaaa2b518e74a13bde83b2dd4549ff2c709cf4"},
+    "mono_alignment": {"path": "scripts/perceptual_degradation_alignment.py", "sha256": "0e036bc1a430e578523d61e68c7ab0dc659bace2f606710ab3d28b148439dccb"},
+    "channel_alignment": {"path": "scripts/perceptual_degradation_alignment_v2.py", "sha256": "72fe01344a33ffbec3967f0c64ca7cf5a3e7c0f5ba64620800115a646500e61c"},
+    "alignment_freeze": {"path": "benchmarks/perceptual-degradation-v1/alignment-topology-freeze.json", "sha256": "b3508568fb1375f833fd4ba5b0203bdeb6dba1197fb95b054576e79c9deeda45"},
+    "score_free_oracle": {"path": "scripts/perceptual_degradation_oracle.py", "sha256": "caed779df79cf1bacdd69bed5846622f26f60377488c4bdbb8ddb2fcd73d05cc"},
+    "temporal_measure_report": {"path": "research/toolchains/evidence/perceptual-degradation-temporal-energy-measure-synthetic-20260907-001.json", "sha256": "b045a49506cc41d2e85ac5bffe944582a67491476f624d256daae6ab94adc871"}
+  },
+  "selected_boundary": {
+    "alignment_support_is_normalization_authority": false,
+    "observed_per_channel_gain_is_applied_correction": false,
+    "automatic_sample_changes_from_alignment_diagnostics_allowed": false,
+    "original_channel_relationships_must_remain_available": true,
+    "common_gain_or_global_polarity_is_assumed_perceptually_irrelevant": false,
+    "independent_channel_correction_is_assumed_perceptually_irrelevant": false,
+    "new_normalization_policy_requires_target_matched_successor": true,
+    "current_executable_alignment_or_oracle_changed": false
+  },
+  "experiment": {
+    "sample_rate_hz": 2000,
+    "duration_seconds": 6,
+    "signal_definition": "For 6000 pairs, update unsigned 32-bit state from seed 0x35a719c3 twice per pair using state=(1664525*state+1013904223) mod 2^32. Each value is (((state>>16) mod 1024)-512)*32*(1+(pair_index//137 mod 5)). Let u be the concatenated pairs (a,b), and v concatenate (-b,a). Thus u and v have exactly equal energy and zero cross product. No random seed search or resampling.",
+    "reference_families": {
+      "orthogonal_equal_energy": "L=u, R=v",
+      "correlated_unequal_energy": "L=u, R=(3*u+v)/4, exactly integral. This is deliberately correlated synthetic structure, not source or listener independence."
+    },
+    "test_matrices_y_equals_A_x": {
+      "identity": [["1/1", "0/1"], ["0/1", "1/1"]],
+      "common_half_gain": [["1/2", "0/1"], ["0/1", "1/2"]],
+      "common_polarity_inversion": [["-1/1", "0/1"], ["0/1", "-1/1"]],
+      "left_half_gain": [["1/2", "0/1"], ["0/1", "1/1"]],
+      "right_polarity_inversion": [["1/1", "0/1"], ["0/1", "-1/1"]],
+      "half_gain_opposite_polarities": [["1/2", "0/1"], ["0/1", "-1/2"]],
+      "channel_swap_same_declared_map": [["0/1", "1/1"], ["1/1", "0/1"]],
+      "mid_to_dual_mono": [["1/2", "1/2"], ["1/2", "1/2"]],
+      "right_channel_zero": [["1/1", "0/1"], ["0/1", "0/1"]]
+    },
+    "inventory": "All 18 family/matrix cases; retain every alignment support outcome and all exact projections, including unsupported and zero fitted-gain cases. Matrices create development witnesses, not actual codec interventions or perceptual labels.",
+    "exact_projection": "At known zero lag, fit signed common g=sum_c dot(x_c,y_c)/sum_c dot(x_c,x_c), or independent g_c=dot(x_c,y_c)/dot(x_c,x_c). Report sum_c ||y_c-x_c||^2, sum_c ||y_c-g*x_c||^2 and sum_c ||y_c-g_c*x_c||^2, each divided by total reference energy. Use exact rational arithmetic. Projection is diagnostic, not applied output correction. Never divide a waveform by a zero fitted gain.",
+    "channel_relationships": "Report each channel's energy share, cross product divided by total pair energy, and mid/side energy shares from M=(L+R)/2 and S=(L-R)/2. These are exact signal relations, not calibrated spatial or quality judgments. A zero total-energy relationship has null shares.",
+    "independent_arithmetic_check": "Compare direct sample sums and pointwise residuals to matrix/Gram identities R=X*X^T, T=A*R*A^T and C=R*A^T. Check every case without substituting rounded alignment estimates for known-zero-lag exact fits.",
+    "bound_alignment_execution": "Convert the declared integers to exact binary float by division by 2^20. Execute the unchanged align_channels with maps [L,R], minimum_active_seconds=4 and maximum_delay_seconds=2. Preserve support reasons, delays, per-channel gain and polarity. Test input immutability. These 2-kHz arrays are structural numerical fixtures, not full-band audio or listening stimuli.",
+    "oracle_assembly": "Attempt unchanged assemble_score_free on each original alignment record. Preserve a validation error if one occurs; otherwise retain execution/support/outcome unavailability. Do not execute metrics or repair an observed outcome by changing the fixture, thresholds or old implementation.",
+    "projection_scope": "The exact projections isolate gain/channel geometry at the known paired timebase. They are not a replay of alignment's estimated time correction. Nonzero estimated lags must remain visible and must not be conflated with zero-lag projection coefficients."
+  },
+  "execution": {
+    "workers": 1,
+    "minimum_free_gib": 15,
+    "complete_replays": 2,
+    "byte_identical_required": true,
+    "input_mode": "frozen_synthetic_only",
+    "audio_file_reads_or_writes": 0,
+    "retained_pcm": false,
+    "output": "Path-free synthetic aggregate records with exact rational strings and nine-decimal finite alignment summaries. No waveform, source identity or PCM hash."
+  },
+  "claim_boundary": {
+    "actual_audio_access_authorized": false,
+    "capture_execution_authorized": false,
+    "source_trait_assignment_authorized": false,
+    "normalization_of_real_pairs_authorized": false,
+    "perceptual_metric_or_listening_execution_authorized": false,
+    "synthetic_channel_change_is_human_impairment_label": false,
+    "coding_causation_demonstrated": false,
+    "original_alignment_support_is_fidelity_validation": false,
+    "full_reference_oracle_validated": false,
+    "no_reference_training_authorized": false,
+    "public_verdict_enabled": false,
+    "objective_complete": false
+  },
+  "next_requirement": "Before creating real metric or listening views, freeze which gain, polarity and channel changes belong to the estimand, which are documented delivery nuisances, and how both original and any adjusted pair will be retained. Matching alignment support does not select that policy. Stereo conclusions need channel-preserving evidence and human validation; this audit does not supply either from synthetic labels."
+}
