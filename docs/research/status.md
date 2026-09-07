@@ -1646,3 +1646,27 @@ kind for all 23 alignment records, preventing silent integration or coercion of
 null values. No actual audio, source assignment, normalization, metric, listening,
 training, outreach, spending or public-verdict gate opens. The authorized capture
 still requires its physical setup, and the overall objective remains incomplete.
+
+## Score-free oracle validity integration — 2026-09-07
+
+The [oracle successor](perceptual-degradation-oracle-validity-integration-20260907.md)
+consumes validity-aware alignment without silently filling unavailable evidence.
+It validates numeric and support consistency, retains per-channel rejection
+reasons and complete-channel nulls, and explicitly binds the four-second subtle
+or eight-second quality-metric mode. A valid record does not prove the source's
+provenance or the producer's actual configuration.
+
+Seven declared synthetic cases produce three technically supported but
+execution-blocked oracle records and four alignment-unsupported records. The
+six-second identity does not meet the eight-second requirement; the twelve-second
+construction does not enable metric execution. Supported polarity inversion
+does not establish fidelity. No samples are normalized or corrected.
+
+All oracle support remains false. Severity, artifact components, distinct
+correct-response and audible-condition probabilities, and uncertainty intervals
+remain unavailable. Neither a metric suite nor a human-calibration mapping is
+selected. Original evidence and thresholds are unchanged. The physical capture
+setup and all real-data prerequisites remain open; the objective is incomplete.
+
+Two complete final synthetic replays are byte-identical. This establishes only
+repeatable software integration, not perceptual validity or generalization.
