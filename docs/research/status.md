@@ -1670,3 +1670,26 @@ setup and all real-data prerequisites remain open; the objective is incomplete.
 
 Two complete final synthetic replays are byte-identical. This establishes only
 repeatable software integration, not perceptual validity or generalization.
+
+## User-approved digital-development sequencing amendment — 2026-09-07
+
+The user approved [deferring capture and using the retained ODAQ references](perceptual-degradation-digital-development-sequence-20260907.md)
+for the first digital development study. For this study only, the new
+[amendment](../../benchmarks/perceptual-degradation-v1/digital-development-sequence-amendment-20260907.json)
+supersedes the capture-first next-step dependency in historical objective audit
+022. Do not continue requesting microphone/preamp details as a prerequisite for
+preparing this study. The earlier observations and full completion requirements
+remain unchanged; the seven-trait manifest is not declared complete.
+
+Next: prepare one exact execution proposal and tested bounded runner for the
+existing 16-member, 48 kHz stereo canonical-delivery cohort. Freeze recipes,
+matched input controls, exact tools, delay/padding treatment, case accounting
+and private retention before seeking execution approval. The cohort stays
+development-only and colocated; no current file-integrity verification or new
+audio access is claimed. Unsupported members remain in the accounting.
+
+This amendment permits planning, not codec generation, metrics, playback,
+human collection, source assignment, new capture, outreach, spending or training.
+The sparse capture and other missing source traits are deferred, not waived.
+The retained drift negative, original thresholds, sealed evidence and public
+verdict-free boundary are preserved. The full objective remains incomplete.
