@@ -1760,3 +1760,24 @@ or rerun is authorized. Existing proposal, runner, thresholds and negative resul
 remain unchanged. No metric, playback, human truth, source-trait assignment,
 training, independent-validation or public-verdict gate opens. The broader
 research objective remains incomplete.
+
+## Full-rate synthetic runtime feasibility — 2026-09-08
+
+The [synthetic-only runtime checkpoint](perceptual-degradation-alignment-runtime-feasibility-20260908.md)
+ran its four declared full-size cases twice, after a separate local pre-observation
+commit. Both uninstrumented identities exceeded 180 seconds. Both timed identities
+also timed out, spending 83.7% and 82.6% of observed alignment time in structural
+correlations before the first channel completed. This localizes an engineering
+bottleneck on the declared construction, not a perceptual failure.
+
+Full-size constant-envelope and topology controls completed and correctly
+abstained; their numerical alignment records match byte-for-byte. Timings and
+partial counts differ as expected. All eight slots are retained, with null
+completed alignment for timeouts. A separate read-only artifact audit passed.
+
+Next is a separately versioned structural-correlation optimization with semantic
+equivalence and full-size synthetic runtime evidence. Original alignment code,
+thresholds and the consumed real-audio result remain unchanged. No real audio,
+codec execution, playback, metric, human collection, training or public verdict
+was enabled. No complete-run or second-channel timing is inferred, and the full
+research objective remains incomplete.
