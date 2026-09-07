@@ -1733,3 +1733,30 @@ authorization must pass exact-head push CI and the live native tool/runtime gate
 before private path or inventory inspection. Playback, perceptual metrics, human
 collection, source-trait assignment, training and public verdicts remain closed.
 Prior dated records are unchanged; the broader research objective is incomplete.
+
+## Digital technical replays: reproducible runtime failure — 2026-09-08
+
+The [approved two-replay study](perceptual-degradation-digital-technical-result-20260908.md)
+has finished. Both actual private reports are byte-identical: each accounts for
+160 cases, with 20 alignment timeouts and 140 cases not started after the one-hour
+cutoff. Sixteen codec encode/decode pairs and four controls reached alignment per
+replay; no comparison completed. The fixed order attempted the same two sources
+in each replay. All 320 planned slots remain visible, without substitution.
+
+A separate read-only audit verified exact case identity/order, aggregate bytes,
+source preservation and the five-file private JSON retention boundary. No derived
+audio remains in the run directory. Native bindings matched before and after.
+The execution head was `804e10a455c4facf0c5f85cc6a2ece371f98b343`, with successful
+exact-head CI before private access; report publication is a separate checkpoint.
+
+This exposes a runtime-qualification gap: tiny native-rate fixtures and mocked
+replays did not demonstrate full-duration 48 kHz alignment throughput. Static
+inspection suggests the exhaustive structural-window search is costly, but no
+profiling hotspot or perceptual conclusion is established. Next is a separately
+versioned synthetic-only full-rate performance/feasibility checkpoint.
+
+The two-replay authorization is consumed; no third real replay, automatic repair
+or rerun is authorized. Existing proposal, runner, thresholds and negative results
+remain unchanged. No metric, playback, human truth, source-trait assignment,
+training, independent-validation or public-verdict gate opens. The broader
+research objective remains incomplete.
