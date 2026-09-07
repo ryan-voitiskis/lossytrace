@@ -1717,3 +1717,19 @@ Next is explicit approval of the exact two technical replays, followed by a
 separately committed authorization and successful exact-execution-head CI. No
 microphone, loopback, room test, metric, listening, training or public verdict is
 requested or enabled by this preparation checkpoint.
+
+## Exact digital technical execution approved — 2026-09-08
+
+The responsible user explicitly approved the two private technical replays in
+the published [proposal](perceptual-degradation-digital-execution-proposal-20260908.md).
+The [execution authorization](../../benchmarks/perceptual-degradation-v1/digital-development-execution-authorization.json)
+binds that unchanged proposal and runner. It opens only the exact retained
+16-reference cohort, eight codec conditions and two controls, twice: 320 planned
+comparisons with one worker and the frozen resource, accounting and retention
+limits. No substitution, threshold adjustment or automatic rerun is authorized.
+
+This is an approval checkpoint, not an execution result. The separately committed
+authorization must pass exact-head push CI and the live native tool/runtime gate
+before private path or inventory inspection. Playback, perceptual metrics, human
+collection, source-trait assignment, training and public verdicts remain closed.
+Prior dated records are unchanged; the broader research objective is incomplete.
