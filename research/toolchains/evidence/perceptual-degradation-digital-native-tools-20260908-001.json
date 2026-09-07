@@ -1,0 +1,1550 @@
+{
+  "audio_or_private_manifest_accessed": false,
+  "codec_execution_performed": false,
+  "dynamic_plugin_loading_authorized": false,
+  "nodes": [
+    {
+      "bytes": 5452528,
+      "dependencies": [
+        "system:Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "system:libSystem.B.dylib"
+      ],
+      "name": "Python",
+      "package": "python@3.14@3.14.7",
+      "sha256": "b112695af23f5e46d84a7c4ef6057603b70b94aacc32e9d548808c2875759d47"
+    },
+    {
+      "bytes": 102032,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_asyncio.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "6fee37bd3f372e48d73c53e82f3435117c5a71713b6ed82b3b0ebe6f2e1ecd29"
+    },
+    {
+      "bytes": 53040,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_bisect.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "b01948b211758a0d33a50a4557a57b5228e7e7b3a2b87303e7e712dd449da1b0"
+    },
+    {
+      "bytes": 72048,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_blake2.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "1b3f3b2382457e9e97b0a7073c3b8ab4e01ec441b8f7ed5f69d5ee320f7c58ae"
+    },
+    {
+      "bytes": 55056,
+      "dependencies": [
+        "system:libSystem.B.dylib",
+        "system:libbz2.1.0.dylib"
+      ],
+      "name": "_bz2.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "a4103b22eaf08b36fa4a6e55b5d1e4a798768e51632b9012cc971f21fb0ab620"
+    },
+    {
+      "bytes": 168208,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_codecs_cn.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "5c2bb5816a0ddbb9bb1b55ed536a4901ba4f0655c315b82a211eb30e2ccd7572"
+    },
+    {
+      "bytes": 184816,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_codecs_hk.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "2cf8d9466aa115df709204b9e73ee7b91eaacb4b424954e93d309477f78e5eca"
+    },
+    {
+      "bytes": 54336,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_codecs_iso2022.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "766e8b341756d5d9b614fbbd6419749e74467d3e2d7479394a5291e83a8b36cf"
+    },
+    {
+      "bytes": 284736,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_codecs_jp.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "65101a5b2d65c2445933c524a354d46a8daa08a708f9ef9383388f9b84e437f5"
+    },
+    {
+      "bytes": 151776,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_codecs_kr.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "fc7cc4a3ff8d8f37801f6faa37fc878bccf42ec65d936947698adf3558974ab4"
+    },
+    {
+      "bytes": 151280,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_codecs_tw.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "005873be3e9a95402d8b318c6010e0d32dde21e576ad14b76d26e946a615ad3a"
+    },
+    {
+      "bytes": 73664,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_csv.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "07b0bd1af24d047f8ce40e5f6e669efe7509be0d0354f2b3ebf724a09e445eff"
+    },
+    {
+      "bytes": 162624,
+      "dependencies": [
+        "system:libSystem.B.dylib",
+        "system:libffi.dylib"
+      ],
+      "name": "_ctypes.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "81a01f368a195bd723b1437eacf72a0f0ea53ce8c966cf413334ff52a25fadf8"
+    },
+    {
+      "bytes": 107552,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_ctypes_test.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "dc31dde9b46e1b4e578f297d956c2b7dba624261c76b35d5b8cdba1adb06497d"
+    },
+    {
+      "bytes": 160848,
+      "dependencies": [
+        "system:libSystem.B.dylib",
+        "system:libncurses.5.4.dylib"
+      ],
+      "name": "_curses.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "5d3f34d3d7bc238411c9ce55cf68ddda2a435fabe908b832a10010650f514d7d"
+    },
+    {
+      "bytes": 55440,
+      "dependencies": [
+        "system:libSystem.B.dylib",
+        "system:libncurses.5.4.dylib",
+        "system:libpanel.5.4.dylib"
+      ],
+      "name": "_curses_panel.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "30594e8a3f4a3490ae5de6d41d7f0e330eb039f2329abb7f93eb1ddb46753149"
+    },
+    {
+      "bytes": 54368,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_dbm.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "5e39067ef1a3b63c5066257e960df880fb9a1f3724f507eccbee369d7940ef06"
+    },
+    {
+      "bytes": 194608,
+      "dependencies": [
+        "14286ba02244c25537b3b5c74902c5fa81959d5d2c1fcf06f89808badb67dea8",
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_decimal.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "775ce4579a394d71fc7082ce82d74e554e398d6b42168099bcce52aa5253fa07"
+    },
+    {
+      "bytes": 99936,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_elementtree.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "a07c6f29b0c5adff47a0ded8e94eb4f3d7c3c26b636a7d6e37340634168eb10b"
+    },
+    {
+      "bytes": 80448,
+      "dependencies": [
+        "bae675614cd791d37ec35416ea9f87edcc85407d020810504cf458119b63522c",
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_hashlib.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "9ba56f3cc87814c60b43be78cd551c4c253dc6695ac13a10d651439e952a119d"
+    },
+    {
+      "bytes": 52224,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_heapq.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "5a78675310efa537051896eac04fc6575d181a5444796c7280049821b52eb33b"
+    },
+    {
+      "bytes": 128864,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_hmac.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "4d0541423ba2d70c4262afc16c9db3ec0a4ff586f076d331b216caea8f08b6e2"
+    },
+    {
+      "bytes": 75808,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_interpchannels.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "b3435fc4489dd4cd1d601aa1781f14cb596372486252e670fcd88de9c20bc551"
+    },
+    {
+      "bytes": 57264,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_interpqueues.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "a53937b32a7e9711c8df87926e9c075e6598338a2badd6b8c2f20dbab5676347"
+    },
+    {
+      "bytes": 77664,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_interpreters.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "a2d5b99432f4b4a132bcc410e7473c18ddc01e6a0a53984c79a8ff7ba6012ddf"
+    },
+    {
+      "bytes": 72912,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_json.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "e8c918a8ff00e81da1143f1f2d0b20f980d99aa7fbb14e18b4b16f743662616c"
+    },
+    {
+      "bytes": 55952,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_lsprof.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "61998912f010bd1c28fb78301ff1d79be53862439b634e1f38f17b0879f61117"
+    },
+    {
+      "bytes": 74704,
+      "dependencies": [
+        "3d5bfa2f097c31463642b1daab5e662b44368bb4da368f85e412e7f9adcbaa10",
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_lzma.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "12855cca7f1a829479570e6354db8a5a4a8a6558a4361ccd83c91592dc30fdf8"
+    },
+    {
+      "bytes": 53824,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_md5.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "7291c3b368650bf607fc5a4f9b4e877da3789c531cbe09e7d099cafce0d80e9e"
+    },
+    {
+      "bytes": 78672,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_multibytecodec.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "1b3c221be3e3ef3c23459bae478380641573a35545754728af94f04059a1306d"
+    },
+    {
+      "bytes": 55920,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_multiprocessing.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "2b6d0f3307bcd7f3ae2813520629c70d19de8fb626ed2ee5980c6f1dcd01cf5a"
+    },
+    {
+      "bytes": 152080,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_pickle.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "46b5dfb15b25d73e56e3672112298a6bbd0bcc16cac6674c3033d56fe72807b9"
+    },
+    {
+      "bytes": 51744,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_posixshmem.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "233e71aa3cecab92dbb6d32af7c31ad5863e2cc4ed0fc3d38cc70c9929eb2791"
+    },
+    {
+      "bytes": 54784,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_posixsubprocess.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "08d921c33ad5e007549dbe3d3e4ab94a108377fb8defa30ab4e945186844e6b3"
+    },
+    {
+      "bytes": 54192,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_queue.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "69169eb181f35f1133160aac96814730dbdcbc6876fb1c1480b33427c81fcf9f"
+    },
+    {
+      "bytes": 53952,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_random.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "e38fdb28c879432ce2974da47ed562140d4eff409df44e5ea2f7f5548b6f7689"
+    },
+    {
+      "bytes": 107168,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_remote_debugging.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "51ef1f8200914e13d95cfd379bc16decc134419211d676af3ed627918a96c51d"
+    },
+    {
+      "bytes": 53344,
+      "dependencies": [
+        "system:Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "system:Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_scproxy.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "0267ca51a63e08f592fa38c9928aa4f4383ab5c5aa0f700c50e43a70156a8b23"
+    },
+    {
+      "bytes": 53808,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_sha1.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "0e15cdebeda446facc489d98b773ab37cfb089d493b771a7f61b52b40d1a58dd"
+    },
+    {
+      "bytes": 71920,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_sha2.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "fc15a8f36685e49e2d24243e6db29ccf027e7b1ac2c9c2bf6acaf0c2394bf403"
+    },
+    {
+      "bytes": 55888,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_sha3.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "265308ee969043e84a5cf728399a06bca221fc8869d661bf90e5ba28b0fc3653"
+    },
+    {
+      "bytes": 115872,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_socket.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "3567d4aac165686938743bead9e913cd751e8cdf5b89bced0b350ea3108ed1c3"
+    },
+    {
+      "bytes": 148704,
+      "dependencies": [
+        "75feed7151d3e496343ffee9c25960d85188ed99b2ffb1051fe016f912c6c808",
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_sqlite3.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "c729ace3b9bcd1b0927c28e732806a1227024231623d0af3aca9f1c1b7f29c2c"
+    },
+    {
+      "bytes": 205312,
+      "dependencies": [
+        "bae675614cd791d37ec35416ea9f87edcc85407d020810504cf458119b63522c",
+        "c6ee373222087cf31bc2f3817537d268b3c23e56b7fadd44bbf5c2317caed349",
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_ssl.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "d98ddf4fac5d7b6dd96bcfe179743762d31ca06e589ffe06c0ab4d8b628346d1"
+    },
+    {
+      "bytes": 50816,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_statistics.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "d76d185e2aa4fcfec1512fb47412694d1ccfe50a835e93babc881b142b3a6a35"
+    },
+    {
+      "bytes": 77888,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_struct.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "f1fc558b748eb2752643853b9d7428e84f1fb248276859675912e6287583cb88"
+    },
+    {
+      "bytes": 74112,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_testbuffer.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "151c3481d54a250a5886da3df991682564d8ebfb16774e805762f1c002ef5da8"
+    },
+    {
+      "bytes": 345152,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_testcapi.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "d43dca0cec1de7cbeea942f1864102c816faab578d429bf9f566b5c5a2c705c4"
+    },
+    {
+      "bytes": 137376,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_testclinic.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "8fe71f3b9c8cfa8c4b4f629a44e6a38d3324c2059a7f3498acf1e3dff81f05dd"
+    },
+    {
+      "bytes": 51216,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_testclinic_limited.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "bc761b86893fe42d8330a3c6122604f1ce33894f6e567ada17add73333e30ce6"
+    },
+    {
+      "bytes": 50352,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_testimportmultiple.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "461deffbb9f98a4c787b7cdb247418fc1a24c9ded3a516eca3516d354f698299"
+    },
+    {
+      "bytes": 108912,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_testinternalcapi.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "b5307ee2b4c0812a66876ec1fa6f95d7c00b1ad5d6624c4b3788fbd4e362a650"
+    },
+    {
+      "bytes": 174496,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_testlimitedcapi.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "093ba8bf837067613ef35eef3cbc183321cf9315084668b7e144e0508ac21351"
+    },
+    {
+      "bytes": 59184,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_testmultiphase.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "d805c9e693b547178a172185337c41b6a6816be07d680cc9d78d61b61fbde132"
+    },
+    {
+      "bytes": 53440,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_testsinglephase.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "75a72acb9cae8ede51319296c9b61f0b30f976314cbd1b30f10b5f8cebe4aeef"
+    },
+    {
+      "bytes": 50640,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_uuid.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "be9e68affe6cf2dc26010461becc8a0999bb0a257a72822ded511f715bc0ee0d"
+    },
+    {
+      "bytes": 53728,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_xxtestfuzz.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "e11086c998c52851eddf5c4f7bac325a199eb8c4005d245181a317e652113b01"
+    },
+    {
+      "bytes": 74224,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_zoneinfo.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "2a36eadbfaaa0a375756f650f866fdf0ca953d29213bf94f96d2a69864711986"
+    },
+    {
+      "bytes": 96752,
+      "dependencies": [
+        "e2847c4613b386683c234913ae3b7b04299254096caf7616e3b3cd9bb97a39ab",
+        "system:libSystem.B.dylib"
+      ],
+      "name": "_zstd.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "13c1e91144f2c3aa15303f1fdc525dc63452d26972631eb77abcd26ab619610c"
+    },
+    {
+      "bytes": 96656,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "array.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "212750c56a802951b08ea3adb377d187a2797918bceb418a0ecc0b608c91a2be"
+    },
+    {
+      "bytes": 54416,
+      "dependencies": [
+        "system:libSystem.B.dylib",
+        "system:libz.1.dylib"
+      ],
+      "name": "binascii.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "771e52a031a5512829223dbe23be538b239f04e1c88fc0393a680bf026ec032e"
+    },
+    {
+      "bytes": 71088,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "cmath.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "448cbb140027ef354f249de6549d8c774b4eebd188b65ab8813617597cd011e3"
+    },
+    {
+      "bytes": 53120,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "fcntl.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "c070d2c291d780fe3cb486852ec1a61305d8faeb13132e989cd1e269f51e5f7c"
+    },
+    {
+      "bytes": 426496,
+      "dependencies": [
+        "0fd1e974f9f0b1a21c59c05f2ef1befc72cc1f27ba1cfc38966eacb124ee768e",
+        "13379e925ca447b9103cb0846c2dc71d95e454217c744723674cc5fbc79a72db",
+        "13f2894cb10c39db4008e30d12490901eff323e065b4035ccd4e20832bc8f439",
+        "162fc3499e5796991a1a45fb560040dbe6b7b35f3300e80dc7a461375a0ae049",
+        "2b5fbae2158cf11816f2c0de585eebc86929e21299657265e834ab7d58715a3b",
+        "3d5bfa2f097c31463642b1daab5e662b44368bb4da368f85e412e7f9adcbaa10",
+        "443cd530535e976a7fe96a027f3e65acebf41a7055005732422309c207089937",
+        "463453796b54698b8016af58ab86066ffbafe5229c10c500e4fe6b92d7a63934",
+        "60c3a42a79582241ac77bbbba4c0137c2209204aecbc59e5d6392c2dc0a5b439",
+        "90d756bd34eff2e24299fa84243d10f2f90f1411c1534764c34b64ada839efa7",
+        "98dcd3cc62c6cf913b789051536ab246c56cc163c74bd8b4968ac467ec74b68b",
+        "a7687f72175dc87989d4860f4512a15bbd6ffbe795875fd4fc359b5f23b0b713",
+        "ad5852a3387d1961607a28a7d41036ae159b604be33791f8c8dc22704eb2986c",
+        "b3a50884e2d9cecf57fd29c4fba2c4e47b37cd7b4d7ff5d920919efca038d9ae",
+        "bac7066bcd47c31971f61e57cdd0eccabb2ec2ef3ca5aa1e08bd5ca51cd54608",
+        "bae675614cd791d37ec35416ea9f87edcc85407d020810504cf458119b63522c",
+        "c6ee373222087cf31bc2f3817537d268b3c23e56b7fadd44bbf5c2317caed349",
+        "dd765b37f50d44d3ce9593c2c1c2424b48bedac01c7999e93cef87e018bc65b4",
+        "system:Frameworks/AVFoundation.framework/Versions/A/AVFoundation",
+        "system:Frameworks/AppKit.framework/Versions/C/AppKit",
+        "system:Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox",
+        "system:Frameworks/CoreAudio.framework/Versions/A/CoreAudio",
+        "system:Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "system:Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+        "system:Frameworks/CoreImage.framework/Versions/A/CoreImage",
+        "system:Frameworks/CoreMedia.framework/Versions/A/CoreMedia",
+        "system:Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "system:Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+        "system:Frameworks/Foundation.framework/Versions/C/Foundation",
+        "system:Frameworks/Metal.framework/Versions/A/Metal",
+        "system:Frameworks/OpenGL.framework/Versions/A/OpenGL",
+        "system:Frameworks/VideoToolbox.framework/Versions/A/VideoToolbox",
+        "system:libSystem.B.dylib",
+        "system:libbz2.1.0.dylib",
+        "system:libiconv.2.dylib",
+        "system:libz.1.dylib"
+      ],
+      "name": "ffmpeg",
+      "package": "ffmpeg@9.0.1_1",
+      "sha256": "9f5ddd4f8b36eb07b0c5d60ab6ea1e618bedd70bc45feab82b4dc23be1596ad1"
+    },
+    {
+      "bytes": 253488,
+      "dependencies": [
+        "0fd1e974f9f0b1a21c59c05f2ef1befc72cc1f27ba1cfc38966eacb124ee768e",
+        "13379e925ca447b9103cb0846c2dc71d95e454217c744723674cc5fbc79a72db",
+        "13f2894cb10c39db4008e30d12490901eff323e065b4035ccd4e20832bc8f439",
+        "162fc3499e5796991a1a45fb560040dbe6b7b35f3300e80dc7a461375a0ae049",
+        "2b5fbae2158cf11816f2c0de585eebc86929e21299657265e834ab7d58715a3b",
+        "3d5bfa2f097c31463642b1daab5e662b44368bb4da368f85e412e7f9adcbaa10",
+        "443cd530535e976a7fe96a027f3e65acebf41a7055005732422309c207089937",
+        "463453796b54698b8016af58ab86066ffbafe5229c10c500e4fe6b92d7a63934",
+        "60c3a42a79582241ac77bbbba4c0137c2209204aecbc59e5d6392c2dc0a5b439",
+        "90d756bd34eff2e24299fa84243d10f2f90f1411c1534764c34b64ada839efa7",
+        "98dcd3cc62c6cf913b789051536ab246c56cc163c74bd8b4968ac467ec74b68b",
+        "a7687f72175dc87989d4860f4512a15bbd6ffbe795875fd4fc359b5f23b0b713",
+        "ad5852a3387d1961607a28a7d41036ae159b604be33791f8c8dc22704eb2986c",
+        "b3a50884e2d9cecf57fd29c4fba2c4e47b37cd7b4d7ff5d920919efca038d9ae",
+        "bac7066bcd47c31971f61e57cdd0eccabb2ec2ef3ca5aa1e08bd5ca51cd54608",
+        "bae675614cd791d37ec35416ea9f87edcc85407d020810504cf458119b63522c",
+        "c6ee373222087cf31bc2f3817537d268b3c23e56b7fadd44bbf5c2317caed349",
+        "dd765b37f50d44d3ce9593c2c1c2424b48bedac01c7999e93cef87e018bc65b4",
+        "system:Frameworks/AVFoundation.framework/Versions/A/AVFoundation",
+        "system:Frameworks/AppKit.framework/Versions/C/AppKit",
+        "system:Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox",
+        "system:Frameworks/CoreAudio.framework/Versions/A/CoreAudio",
+        "system:Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "system:Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+        "system:Frameworks/CoreImage.framework/Versions/A/CoreImage",
+        "system:Frameworks/CoreMedia.framework/Versions/A/CoreMedia",
+        "system:Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "system:Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+        "system:Frameworks/Foundation.framework/Versions/C/Foundation",
+        "system:Frameworks/Metal.framework/Versions/A/Metal",
+        "system:Frameworks/OpenGL.framework/Versions/A/OpenGL",
+        "system:Frameworks/VideoToolbox.framework/Versions/A/VideoToolbox",
+        "system:libSystem.B.dylib",
+        "system:libbz2.1.0.dylib",
+        "system:libiconv.2.dylib",
+        "system:libz.1.dylib"
+      ],
+      "name": "ffprobe",
+      "package": "ffmpeg@9.0.1_1",
+      "sha256": "0ecd5e1affb1466b129b4f65bee261e9ab625c4d4a2e7c3e9089f63d44808605"
+    },
+    {
+      "bytes": 53216,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "grp.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "b686bdc0a117f83b73a2ca8073a1d98c12d586214850f6bb579ccb9cea6700b7"
+    },
+    {
+      "bytes": 275824,
+      "dependencies": [
+        "57e31e257f6293a07a2fc1e25ec02534fa307f7d94653decd6a98c0b5f961352",
+        "system:libSystem.B.dylib"
+      ],
+      "name": "libFLAC.14.dylib",
+      "package": "flac@1.5.0",
+      "sha256": "ba3ae95a635e92c9ad4206122014fbccabf2a2c429661ed8f744c094f1099e95"
+    },
+    {
+      "bytes": 3057440,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "libSvtAv1Enc.4.2.0.dylib",
+      "package": "svt-av1@4.2.0",
+      "sha256": "bac7066bcd47c31971f61e57cdd0eccabb2ec2ef3ca5aa1e08bd5ca51cd54608"
+    },
+    {
+      "bytes": 9732336,
+      "dependencies": [
+        "13379e925ca447b9103cb0846c2dc71d95e454217c744723674cc5fbc79a72db",
+        "2b5fbae2158cf11816f2c0de585eebc86929e21299657265e834ab7d58715a3b",
+        "3d5bfa2f097c31463642b1daab5e662b44368bb4da368f85e412e7f9adcbaa10",
+        "443cd530535e976a7fe96a027f3e65acebf41a7055005732422309c207089937",
+        "463453796b54698b8016af58ab86066ffbafe5229c10c500e4fe6b92d7a63934",
+        "60c3a42a79582241ac77bbbba4c0137c2209204aecbc59e5d6392c2dc0a5b439",
+        "98dcd3cc62c6cf913b789051536ab246c56cc163c74bd8b4968ac467ec74b68b",
+        "b3a50884e2d9cecf57fd29c4fba2c4e47b37cd7b4d7ff5d920919efca038d9ae",
+        "bac7066bcd47c31971f61e57cdd0eccabb2ec2ef3ca5aa1e08bd5ca51cd54608",
+        "bae675614cd791d37ec35416ea9f87edcc85407d020810504cf458119b63522c",
+        "c6ee373222087cf31bc2f3817537d268b3c23e56b7fadd44bbf5c2317caed349",
+        "dd765b37f50d44d3ce9593c2c1c2424b48bedac01c7999e93cef87e018bc65b4",
+        "system:Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox",
+        "system:Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "system:Frameworks/CoreMedia.framework/Versions/A/CoreMedia",
+        "system:Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "system:Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+        "system:Frameworks/VideoToolbox.framework/Versions/A/VideoToolbox",
+        "system:libSystem.B.dylib",
+        "system:libiconv.2.dylib",
+        "system:libz.1.dylib"
+      ],
+      "name": "libavcodec.63.1.101.dylib",
+      "package": "ffmpeg@9.0.1_1",
+      "sha256": "13f2894cb10c39db4008e30d12490901eff323e065b4035ccd4e20832bc8f439"
+    },
+    {
+      "bytes": 131632,
+      "dependencies": [
+        "13379e925ca447b9103cb0846c2dc71d95e454217c744723674cc5fbc79a72db",
+        "13f2894cb10c39db4008e30d12490901eff323e065b4035ccd4e20832bc8f439",
+        "162fc3499e5796991a1a45fb560040dbe6b7b35f3300e80dc7a461375a0ae049",
+        "2b5fbae2158cf11816f2c0de585eebc86929e21299657265e834ab7d58715a3b",
+        "3d5bfa2f097c31463642b1daab5e662b44368bb4da368f85e412e7f9adcbaa10",
+        "443cd530535e976a7fe96a027f3e65acebf41a7055005732422309c207089937",
+        "463453796b54698b8016af58ab86066ffbafe5229c10c500e4fe6b92d7a63934",
+        "60c3a42a79582241ac77bbbba4c0137c2209204aecbc59e5d6392c2dc0a5b439",
+        "90d756bd34eff2e24299fa84243d10f2f90f1411c1534764c34b64ada839efa7",
+        "98dcd3cc62c6cf913b789051536ab246c56cc163c74bd8b4968ac467ec74b68b",
+        "a7687f72175dc87989d4860f4512a15bbd6ffbe795875fd4fc359b5f23b0b713",
+        "ad5852a3387d1961607a28a7d41036ae159b604be33791f8c8dc22704eb2986c",
+        "b3a50884e2d9cecf57fd29c4fba2c4e47b37cd7b4d7ff5d920919efca038d9ae",
+        "bac7066bcd47c31971f61e57cdd0eccabb2ec2ef3ca5aa1e08bd5ca51cd54608",
+        "bae675614cd791d37ec35416ea9f87edcc85407d020810504cf458119b63522c",
+        "c6ee373222087cf31bc2f3817537d268b3c23e56b7fadd44bbf5c2317caed349",
+        "dd765b37f50d44d3ce9593c2c1c2424b48bedac01c7999e93cef87e018bc65b4",
+        "system:Frameworks/AVFoundation.framework/Versions/A/AVFoundation",
+        "system:Frameworks/AppKit.framework/Versions/C/AppKit",
+        "system:Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox",
+        "system:Frameworks/CoreAudio.framework/Versions/A/CoreAudio",
+        "system:Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "system:Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+        "system:Frameworks/CoreImage.framework/Versions/A/CoreImage",
+        "system:Frameworks/CoreMedia.framework/Versions/A/CoreMedia",
+        "system:Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "system:Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+        "system:Frameworks/Foundation.framework/Versions/C/Foundation",
+        "system:Frameworks/Metal.framework/Versions/A/Metal",
+        "system:Frameworks/OpenGL.framework/Versions/A/OpenGL",
+        "system:Frameworks/VideoToolbox.framework/Versions/A/VideoToolbox",
+        "system:libSystem.B.dylib",
+        "system:libbz2.1.0.dylib",
+        "system:libiconv.2.dylib",
+        "system:libobjc.A.dylib",
+        "system:libz.1.dylib"
+      ],
+      "name": "libavdevice.63.1.101.dylib",
+      "package": "ffmpeg@9.0.1_1",
+      "sha256": "0fd1e974f9f0b1a21c59c05f2ef1befc72cc1f27ba1cfc38966eacb124ee768e"
+    },
+    {
+      "bytes": 2947728,
+      "dependencies": [
+        "13379e925ca447b9103cb0846c2dc71d95e454217c744723674cc5fbc79a72db",
+        "13f2894cb10c39db4008e30d12490901eff323e065b4035ccd4e20832bc8f439",
+        "2b5fbae2158cf11816f2c0de585eebc86929e21299657265e834ab7d58715a3b",
+        "3d5bfa2f097c31463642b1daab5e662b44368bb4da368f85e412e7f9adcbaa10",
+        "443cd530535e976a7fe96a027f3e65acebf41a7055005732422309c207089937",
+        "463453796b54698b8016af58ab86066ffbafe5229c10c500e4fe6b92d7a63934",
+        "60c3a42a79582241ac77bbbba4c0137c2209204aecbc59e5d6392c2dc0a5b439",
+        "90d756bd34eff2e24299fa84243d10f2f90f1411c1534764c34b64ada839efa7",
+        "98dcd3cc62c6cf913b789051536ab246c56cc163c74bd8b4968ac467ec74b68b",
+        "a7687f72175dc87989d4860f4512a15bbd6ffbe795875fd4fc359b5f23b0b713",
+        "ad5852a3387d1961607a28a7d41036ae159b604be33791f8c8dc22704eb2986c",
+        "b3a50884e2d9cecf57fd29c4fba2c4e47b37cd7b4d7ff5d920919efca038d9ae",
+        "bac7066bcd47c31971f61e57cdd0eccabb2ec2ef3ca5aa1e08bd5ca51cd54608",
+        "bae675614cd791d37ec35416ea9f87edcc85407d020810504cf458119b63522c",
+        "c6ee373222087cf31bc2f3817537d268b3c23e56b7fadd44bbf5c2317caed349",
+        "dd765b37f50d44d3ce9593c2c1c2424b48bedac01c7999e93cef87e018bc65b4",
+        "system:Frameworks/AppKit.framework/Versions/C/AppKit",
+        "system:Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox",
+        "system:Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "system:Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+        "system:Frameworks/CoreImage.framework/Versions/A/CoreImage",
+        "system:Frameworks/CoreMedia.framework/Versions/A/CoreMedia",
+        "system:Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "system:Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+        "system:Frameworks/Foundation.framework/Versions/C/Foundation",
+        "system:Frameworks/Metal.framework/Versions/A/Metal",
+        "system:Frameworks/OpenGL.framework/Versions/A/OpenGL",
+        "system:Frameworks/VideoToolbox.framework/Versions/A/VideoToolbox",
+        "system:libSystem.B.dylib",
+        "system:libbz2.1.0.dylib",
+        "system:libiconv.2.dylib",
+        "system:libobjc.A.dylib",
+        "system:libz.1.dylib"
+      ],
+      "name": "libavfilter.12.1.101.dylib",
+      "package": "ffmpeg@9.0.1_1",
+      "sha256": "162fc3499e5796991a1a45fb560040dbe6b7b35f3300e80dc7a461375a0ae049"
+    },
+    {
+      "bytes": 2373376,
+      "dependencies": [
+        "13379e925ca447b9103cb0846c2dc71d95e454217c744723674cc5fbc79a72db",
+        "13f2894cb10c39db4008e30d12490901eff323e065b4035ccd4e20832bc8f439",
+        "2b5fbae2158cf11816f2c0de585eebc86929e21299657265e834ab7d58715a3b",
+        "3d5bfa2f097c31463642b1daab5e662b44368bb4da368f85e412e7f9adcbaa10",
+        "443cd530535e976a7fe96a027f3e65acebf41a7055005732422309c207089937",
+        "463453796b54698b8016af58ab86066ffbafe5229c10c500e4fe6b92d7a63934",
+        "60c3a42a79582241ac77bbbba4c0137c2209204aecbc59e5d6392c2dc0a5b439",
+        "98dcd3cc62c6cf913b789051536ab246c56cc163c74bd8b4968ac467ec74b68b",
+        "b3a50884e2d9cecf57fd29c4fba2c4e47b37cd7b4d7ff5d920919efca038d9ae",
+        "bac7066bcd47c31971f61e57cdd0eccabb2ec2ef3ca5aa1e08bd5ca51cd54608",
+        "bae675614cd791d37ec35416ea9f87edcc85407d020810504cf458119b63522c",
+        "c6ee373222087cf31bc2f3817537d268b3c23e56b7fadd44bbf5c2317caed349",
+        "dd765b37f50d44d3ce9593c2c1c2424b48bedac01c7999e93cef87e018bc65b4",
+        "system:Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox",
+        "system:Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "system:Frameworks/CoreMedia.framework/Versions/A/CoreMedia",
+        "system:Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "system:Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+        "system:Frameworks/VideoToolbox.framework/Versions/A/VideoToolbox",
+        "system:libSystem.B.dylib",
+        "system:libbz2.1.0.dylib",
+        "system:libiconv.2.dylib",
+        "system:libz.1.dylib"
+      ],
+      "name": "libavformat.63.1.101.dylib",
+      "package": "ffmpeg@9.0.1_1",
+      "sha256": "ad5852a3387d1961607a28a7d41036ae159b604be33791f8c8dc22704eb2986c"
+    },
+    {
+      "bytes": 643584,
+      "dependencies": [
+        "bae675614cd791d37ec35416ea9f87edcc85407d020810504cf458119b63522c",
+        "c6ee373222087cf31bc2f3817537d268b3c23e56b7fadd44bbf5c2317caed349",
+        "system:Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "system:Frameworks/CoreMedia.framework/Versions/A/CoreMedia",
+        "system:Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "system:Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+        "system:Frameworks/VideoToolbox.framework/Versions/A/VideoToolbox",
+        "system:libSystem.B.dylib",
+        "system:libz.1.dylib"
+      ],
+      "name": "libavutil.61.1.101.dylib",
+      "package": "ffmpeg@9.0.1_1",
+      "sha256": "13379e925ca447b9103cb0846c2dc71d95e454217c744723674cc5fbc79a72db"
+    },
+    {
+      "bytes": 4872736,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "libcrypto.3.dylib",
+      "package": "openssl@3@3.6.4",
+      "sha256": "bae675614cd791d37ec35416ea9f87edcc85407d020810504cf458119b63522c"
+    },
+    {
+      "bytes": 830176,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "libdav1d.7.dylib",
+      "package": "dav1d@1.5.4",
+      "sha256": "60c3a42a79582241ac77bbbba4c0137c2209204aecbc59e5d6392c2dc0a5b439"
+    },
+    {
+      "bytes": 184512,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "liblzma.5.dylib",
+      "package": "xz@5.8.3",
+      "sha256": "3d5bfa2f097c31463642b1daab5e662b44368bb4da368f85e412e7f9adcbaa10"
+    },
+    {
+      "bytes": 232624,
+      "dependencies": [
+        "435f7bc76659569772b1a90b049a28fe17bc0d605525f1061f830c119807718a",
+        "system:libSystem.B.dylib"
+      ],
+      "name": "libmp3lame.0.dylib",
+      "package": "lame@4.0",
+      "sha256": "463453796b54698b8016af58ab86066ffbafe5229c10c500e4fe6b92d7a63934"
+    },
+    {
+      "bytes": 188176,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "libmpdec.4.0.1.dylib",
+      "package": "mpdecimal@4.0.1",
+      "sha256": "14286ba02244c25537b3b5c74902c5fa81959d5d2c1fcf06f89808badb67dea8"
+    },
+    {
+      "bytes": 271856,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "libmpg123.0.dylib",
+      "package": "mpg123@1.33.7",
+      "sha256": "435f7bc76659569772b1a90b049a28fe17bc0d605525f1061f830c119807718a"
+    },
+    {
+      "bytes": 71712,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "libogg.0.8.6.dylib",
+      "package": "libogg@1.3.6",
+      "sha256": "57e31e257f6293a07a2fc1e25ec02534fa307f7d94653decd6a98c0b5f961352"
+    },
+    {
+      "bytes": 373744,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "libopus.0.dylib",
+      "package": "opus@1.6.1",
+      "sha256": "98dcd3cc62c6cf913b789051536ab246c56cc163c74bd8b4968ac467ec74b68b"
+    },
+    {
+      "bytes": 1276320,
+      "dependencies": [
+        "system:libSystem.B.dylib",
+        "system:libz.1.dylib"
+      ],
+      "name": "libsqlite3.3.53.4.dylib",
+      "package": "sqlite@3.53.4",
+      "sha256": "75feed7151d3e496343ffee9c25960d85188ed99b2ffb1051fe016f912c6c808"
+    },
+    {
+      "bytes": 888928,
+      "dependencies": [
+        "bae675614cd791d37ec35416ea9f87edcc85407d020810504cf458119b63522c",
+        "system:libSystem.B.dylib"
+      ],
+      "name": "libssl.3.dylib",
+      "package": "openssl@3@3.6.4",
+      "sha256": "c6ee373222087cf31bc2f3817537d268b3c23e56b7fadd44bbf5c2317caed349"
+    },
+    {
+      "bytes": 87104,
+      "dependencies": [
+        "13379e925ca447b9103cb0846c2dc71d95e454217c744723674cc5fbc79a72db",
+        "bae675614cd791d37ec35416ea9f87edcc85407d020810504cf458119b63522c",
+        "c6ee373222087cf31bc2f3817537d268b3c23e56b7fadd44bbf5c2317caed349",
+        "system:Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "system:Frameworks/CoreMedia.framework/Versions/A/CoreMedia",
+        "system:Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "system:Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+        "system:Frameworks/VideoToolbox.framework/Versions/A/VideoToolbox",
+        "system:libSystem.B.dylib",
+        "system:libz.1.dylib"
+      ],
+      "name": "libswresample.7.1.101.dylib",
+      "package": "ffmpeg@9.0.1_1",
+      "sha256": "2b5fbae2158cf11816f2c0de585eebc86929e21299657265e834ab7d58715a3b"
+    },
+    {
+      "bytes": 688752,
+      "dependencies": [
+        "13379e925ca447b9103cb0846c2dc71d95e454217c744723674cc5fbc79a72db",
+        "bae675614cd791d37ec35416ea9f87edcc85407d020810504cf458119b63522c",
+        "c6ee373222087cf31bc2f3817537d268b3c23e56b7fadd44bbf5c2317caed349",
+        "system:Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "system:Frameworks/CoreMedia.framework/Versions/A/CoreMedia",
+        "system:Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "system:Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+        "system:Frameworks/VideoToolbox.framework/Versions/A/VideoToolbox",
+        "system:libSystem.B.dylib",
+        "system:libz.1.dylib"
+      ],
+      "name": "libswscale.10.1.101.dylib",
+      "package": "ffmpeg@9.0.1_1",
+      "sha256": "90d756bd34eff2e24299fa84243d10f2f90f1411c1534764c34b64ada839efa7"
+    },
+    {
+      "bytes": 914224,
+      "dependencies": [
+        "system:libSystem.B.dylib",
+        "system:libc++.1.dylib"
+      ],
+      "name": "libvmaf.3.dylib",
+      "package": "libvmaf@3.2.0",
+      "sha256": "a7687f72175dc87989d4860f4512a15bbd6ffbe795875fd4fc359b5f23b0b713"
+    },
+    {
+      "bytes": 193056,
+      "dependencies": [
+        "57e31e257f6293a07a2fc1e25ec02534fa307f7d94653decd6a98c0b5f961352",
+        "system:libSystem.B.dylib"
+      ],
+      "name": "libvorbis.0.dylib",
+      "package": "libvorbis@1.3.7",
+      "sha256": "38df2463cc776f5a4dd58331e0abb46dba0a143b65e345ece328ea61978dd795"
+    },
+    {
+      "bytes": 723792,
+      "dependencies": [
+        "38df2463cc776f5a4dd58331e0abb46dba0a143b65e345ece328ea61978dd795",
+        "57e31e257f6293a07a2fc1e25ec02534fa307f7d94653decd6a98c0b5f961352",
+        "system:libSystem.B.dylib"
+      ],
+      "name": "libvorbisenc.2.dylib",
+      "package": "libvorbis@1.3.7",
+      "sha256": "aae189d5bbbabb0c1369ba62a88e93e7d9c76a40f6424295f6c60b6b9ca8dca2"
+    },
+    {
+      "bytes": 1747904,
+      "dependencies": [
+        "system:libSystem.B.dylib",
+        "system:libc++.1.dylib"
+      ],
+      "name": "libvpx.12.dylib",
+      "package": "libvpx@1.17.0",
+      "sha256": "443cd530535e976a7fe96a027f3e65acebf41a7055005732422309c207089937"
+    },
+    {
+      "bytes": 1274288,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "libx264.165.dylib",
+      "package": "x264@r3222",
+      "sha256": "dd765b37f50d44d3ce9593c2c1c2424b48bedac01c7999e93cef87e018bc65b4"
+    },
+    {
+      "bytes": 7637808,
+      "dependencies": [
+        "system:libSystem.B.dylib",
+        "system:libc++.1.dylib"
+      ],
+      "name": "libx265.217.dylib",
+      "package": "x265@4.3",
+      "sha256": "b3a50884e2d9cecf57fd29c4fba2c4e47b37cd7b4d7ff5d920919efca038d9ae"
+    },
+    {
+      "bytes": 649648,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "libzstd.1.5.7.dylib",
+      "package": "zstd@1.5.7_1",
+      "sha256": "e2847c4613b386683c234913ae3b7b04299254096caf7616e3b3cd9bb97a39ab"
+    },
+    {
+      "bytes": 93488,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "math.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "9e9d2234227db176be37042bc1c2506902c4c2edfeac05424b803928755ae33a"
+    },
+    {
+      "bytes": 73264,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "mmap.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "e7b86376b00b479c9ff78db5006c777bf36534005f5285f4d08d3e1895241578"
+    },
+    {
+      "bytes": 111248,
+      "dependencies": [
+        "38df2463cc776f5a4dd58331e0abb46dba0a143b65e345ece328ea61978dd795",
+        "57e31e257f6293a07a2fc1e25ec02534fa307f7d94653decd6a98c0b5f961352",
+        "aae189d5bbbabb0c1369ba62a88e93e7d9c76a40f6424295f6c60b6b9ca8dca2",
+        "ba3ae95a635e92c9ad4206122014fbccabf2a2c429661ed8f744c094f1099e95",
+        "system:libSystem.B.dylib",
+        "system:libiconv.2.dylib"
+      ],
+      "name": "oggenc",
+      "package": "vorbis-tools@1.4.3",
+      "sha256": "920e29fd11a09fc047e979bd6113dbb5203756738cfd2823264c44d1a48f7566"
+    },
+    {
+      "bytes": 101536,
+      "dependencies": [
+        "system:libSystem.B.dylib",
+        "system:libexpat.1.dylib"
+      ],
+      "name": "pyexpat.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "d3a5adfc30125f114e6b34aa80ab20cd3564f412a815d786487bd797f69f37e5"
+    },
+    {
+      "bytes": 34640,
+      "dependencies": [
+        "b112695af23f5e46d84a7c4ef6057603b70b94aacc32e9d548808c2875759d47",
+        "system:libSystem.B.dylib"
+      ],
+      "name": "python3.14",
+      "package": "python@3.14@3.14.7",
+      "sha256": "87d4df53fd91304be5bac391fb204643c36b7df2023c04a0953bcbc7d4fdf634"
+    },
+    {
+      "bytes": 77264,
+      "dependencies": [
+        "system:libSystem.B.dylib",
+        "system:libedit.3.dylib"
+      ],
+      "name": "readline.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "3cf93aa56bf0832bd221a7a7daa95aaba5644b9c6da522d82c168247525ffdd8"
+    },
+    {
+      "bytes": 53312,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "resource.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "e58977e653c80b8759141ad7d283e2221e2953bff8ba3c9b5c1a8a1c885da467"
+    },
+    {
+      "bytes": 74992,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "select.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "3a36b9beb6d83f33918169a63fcf920349fc8b476e9c4d7a6c47e548018eef2b"
+    },
+    {
+      "bytes": 52640,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "syslog.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "6dd2b7290d900b14ee4f0b6c61f8af2863af704a9d0bc23cd7b68a5d958620d4"
+    },
+    {
+      "bytes": 54272,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "termios.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "adfda876def8983878e1986a4d89e4e75048b3f3a3706102cb3b8e5a13ec6a10"
+    },
+    {
+      "bytes": 783632,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "unicodedata.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "d79ecd27e8d62ca652acfd765ecb9b55a82192454eb8c7b1fc3b96ea0cd3711b"
+    },
+    {
+      "bytes": 52848,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "xxlimited.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "ec925a88281f6b92087c33864d217c73f8d1722e625c1d0c623e434ef423d401"
+    },
+    {
+      "bytes": 52192,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "xxlimited_35.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "fe16ad76a1ddc2186029f0c486681a204a1ee0f052a0fe7f0ff7b6f13c377b92"
+    },
+    {
+      "bytes": 51472,
+      "dependencies": [
+        "system:libSystem.B.dylib"
+      ],
+      "name": "xxsubtype.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "9d75123554a6ff798102e2edf59c8b956d51315860019678e9ebcea73965970d"
+    },
+    {
+      "bytes": 76176,
+      "dependencies": [
+        "system:libSystem.B.dylib",
+        "system:libz.1.dylib"
+      ],
+      "name": "zlib.cpython-314-darwin.so",
+      "package": "python@3.14@3.14.7",
+      "sha256": "d01fbb9cfa43d994fd4254580fa59448565f05a1ebf09bc6c3166b5020f1e375"
+    }
+  ],
+  "operating_system": {
+    "architecture": "arm64",
+    "build": "25G83",
+    "name": "macOS",
+    "version": "26.6.2"
+  },
+  "packages": [
+    {
+      "formula_sha256": "3364a5bd9c26e4c9b73d756f8b99944fe3bf74e59e9ded813235c8aeaec63984",
+      "id": "dav1d@1.5.4",
+      "licence_declaration": "\"BSD-2-Clause\"",
+      "name": "dav1d",
+      "notice_files": [
+        {
+          "name": "COPYING",
+          "sha256": "dd92c3c2247c5651606fc23a5e2d6a1ebc5ace9a3e49cbde0e12f05ad1cb1ee5"
+        }
+      ],
+      "version": "1.5.4"
+    },
+    {
+      "formula_sha256": "39d89275f00246056c4b6787b6932dce87f508d5da4774beeeeb33aaf9469307",
+      "id": "ffmpeg@9.0.1_1",
+      "licence_declaration": "\"GPL-3.0-or-later\"",
+      "name": "ffmpeg",
+      "notice_files": [
+        {
+          "name": "COPYING.GPLv2",
+          "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643"
+        },
+        {
+          "name": "COPYING.GPLv3",
+          "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+        },
+        {
+          "name": "COPYING.LGPLv2.1",
+          "sha256": "246041b6ecf9bc32d718a62c57877c78b5eb397b6467e74ed7ae2626ab189c30"
+        },
+        {
+          "name": "COPYING.LGPLv3",
+          "sha256": "da7eabb7bafdf7d3ae5e9f223aa5bdc1eece45ac569dc21b3b037520b4464768"
+        },
+        {
+          "name": "LICENSE.md",
+          "sha256": "2e1d16c72fd74e12063776371da757322f8b77589386532f4fd8634bde7de1af"
+        }
+      ],
+      "version": "9.0.1_1"
+    },
+    {
+      "formula_sha256": "bb7e020a626bf470004d87060078b5704e3bd692d6ff8fe5ccfd33d266c5b312",
+      "id": "flac@1.5.0",
+      "licence_declaration": "all_of: [\n    \"BSD-3-Clause\",\n    \"GPL-2.0-or-later\",\n    \"ISC\",\n    \"LGPL-2.0-or-later\",\n    \"LGPL-2.1-or-later\",\n    :public_domain,\n    any_of: [\"GPL-2.0-or-later\", \"LGPL-2.1-or-later\"],\n  ]",
+      "name": "flac",
+      "notice_files": [
+        {
+          "name": "COPYING.FDL",
+          "sha256": "c5d2b95c2538d2e41d8eedd9ecc750cd5fee085c7bb2bc3e2f95f4e59cc0b10d"
+        },
+        {
+          "name": "COPYING.GPL",
+          "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643"
+        },
+        {
+          "name": "COPYING.LGPL",
+          "sha256": "5df07007198989c622f5d41de8d703e7bef3d0e79d62e24332ee739a452af62a"
+        },
+        {
+          "name": "COPYING.Xiph",
+          "sha256": "7866ee98760fc1f0156b4fe6bf530257e02be487ab3fd94e2b63799dd32d6b2c"
+        }
+      ],
+      "version": "1.5.0"
+    },
+    {
+      "formula_sha256": "54e93fd2d82f830c4a53f56f61afb352c465ea96d37f7e34db48257c78bb5478",
+      "id": "lame@4.0",
+      "licence_declaration": "\"LGPL-2.0-or-later\"",
+      "name": "lame",
+      "notice_files": [
+        {
+          "name": "COPYING",
+          "sha256": "e64f9c5a18f56828c10a575df13ade641aa3af4512a7afe6c411256943b57aaf"
+        },
+        {
+          "name": "LICENSE",
+          "sha256": "5c1f8d44f1eacbea3e1c31ff6ee11a4e1690ccbed4ee4af16de3b6eb61dc69a8"
+        }
+      ],
+      "version": "4.0"
+    },
+    {
+      "formula_sha256": "e31fcdaf937004b95262421789f2d9c749dc74cdd47f84e15f2cdd974a0b3bf0",
+      "id": "libogg@1.3.6",
+      "licence_declaration": "\"BSD-3-Clause\"",
+      "name": "libogg",
+      "notice_files": [
+        {
+          "name": "COPYING",
+          "sha256": "d2ab5758336489da61c12cc5bb757da5339c4ae9001f9bb0562b4370249af814"
+        }
+      ],
+      "version": "1.3.6"
+    },
+    {
+      "formula_sha256": "be78fefc186b3d539e7e3b20c6bbdb0fb12b50a039b15da274101cc0f34a9f79",
+      "id": "libvmaf@3.2.0",
+      "licence_declaration": "\"BSD-2-Clause-Patent\"",
+      "name": "libvmaf",
+      "notice_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "a6fdb51d02b9dfe198e55534bb8047fe6d756eda117f4ff83de98f92c1952710"
+        }
+      ],
+      "version": "3.2.0"
+    },
+    {
+      "formula_sha256": "877d592b67f88751b839bd00b6d22af1e3eb11dce990750d0a29aacb5ba1f06d",
+      "id": "libvorbis@1.3.7",
+      "licence_declaration": "\"BSD-3-Clause\"",
+      "name": "libvorbis",
+      "notice_files": [
+        {
+          "name": "COPYING",
+          "sha256": "ec1815db59fcd302846df949d7424876cb2e2dc5ed1606c5fb0b36787b1cf43a"
+        }
+      ],
+      "version": "1.3.7"
+    },
+    {
+      "formula_sha256": "6ff28c1e7227a7798851715043d032ed7cf11e77d0e0c14337fdbf0fad4796de",
+      "id": "libvpx@1.17.0",
+      "licence_declaration": "\"BSD-3-Clause\"",
+      "name": "libvpx",
+      "notice_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "8267348d5af1262c11d1a08de2f5afc77457755f1ac658627dd9acf71011d615"
+        }
+      ],
+      "version": "1.17.0"
+    },
+    {
+      "formula_sha256": "cd53326f11e7c84efdd2bcca39ec65d9323f4e40b1bea5245afa62c1917be617",
+      "id": "mpdecimal@4.0.1",
+      "licence_declaration": "\"BSD-2-Clause\"",
+      "name": "mpdecimal",
+      "notice_files": [
+        {
+          "name": "COPYRIGHT.txt",
+          "sha256": "dba079e24a0286052f9f36a5e0b4f6cc95bc83ada657eb26bef8c0b6473f6512"
+        }
+      ],
+      "version": "4.0.1"
+    },
+    {
+      "formula_sha256": "5ad4b706de97c4879ce5f4971acd1ed6acc2045974fdbc3b29f6feaffe3398be",
+      "id": "mpg123@1.33.7",
+      "licence_declaration": "\"LGPL-2.1-only\"",
+      "name": "mpg123",
+      "notice_files": [
+        {
+          "name": "COPYING",
+          "sha256": "c22482728a634a8dfdb4ff72a96d4c1ed64cd8f3e79335c401751ac591609366"
+        }
+      ],
+      "version": "1.33.7"
+    },
+    {
+      "formula_sha256": "df9c2b56e0d961d3c22eb60f5c2e41112be1901a8ee85de1c7472955f6da391a",
+      "id": "openssl@3@3.6.4",
+      "licence_declaration": "\"Apache-2.0\"",
+      "name": "openssl@3",
+      "notice_files": [
+        {
+          "name": "LICENSE.txt",
+          "sha256": "7d5450cb2d142651b8afa315b5f238efc805dad827d91ba367d8516bc9d49e7a"
+        }
+      ],
+      "version": "3.6.4"
+    },
+    {
+      "formula_sha256": "7ebe72e9352ceb9236cfb49c8ba7134556295ca330ea9054135b1401257f03c4",
+      "id": "opus@1.6.1",
+      "licence_declaration": "\"BSD-3-Clause\"",
+      "name": "opus",
+      "notice_files": [
+        {
+          "name": "COPYING",
+          "sha256": "01e1167d54a096d123cf6dfbbeb19587278845c6481d2d66d545669846079551"
+        }
+      ],
+      "version": "1.6.1"
+    },
+    {
+      "formula_sha256": "7a6703f1601fa9801d15ae27fab3239f69dbdbe8de719a07056f42dcfa5be723",
+      "id": "python@3.14@3.14.7",
+      "licence_declaration": "\"Python-2.0\"",
+      "name": "python@3.14",
+      "notice_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "b0e25a78cffb43f4d92de8b61ccfa1f1f98ecbc22330b54b5251e7b6ba010231"
+        }
+      ],
+      "version": "3.14.7"
+    },
+    {
+      "formula_sha256": "d40ca89aaee8ae8817716049b576db517ab4505667aa0f431267450ab9496d2c",
+      "id": "sqlite@3.53.4",
+      "licence_declaration": "\"blessing\"",
+      "name": "sqlite",
+      "notice_files": [],
+      "version": "3.53.4"
+    },
+    {
+      "formula_sha256": "41c026d8329602ecc9de6f581524359836611cab34efa89c2d81ca8b02cf266a",
+      "id": "svt-av1@4.2.0",
+      "licence_declaration": "\"BSD-3-Clause\"",
+      "name": "svt-av1",
+      "notice_files": [
+        {
+          "name": "LICENSE-BSD2.md",
+          "sha256": "c582fcbeb9cf972a60d298bfaf41dc5adff2dd14208946edcb9bb56a281e8438"
+        },
+        {
+          "name": "LICENSE.md",
+          "sha256": "0acc2fcb27472bdc9aaf8b71f37055bbdac4f54671b7d922f241bd7fcd0dd3e6"
+        }
+      ],
+      "version": "4.2.0"
+    },
+    {
+      "formula_sha256": "dc40e4b44dcda9ee44babe262d54d04e6dad0550362c98dcf3a4586c17cbc1c5",
+      "id": "vorbis-tools@1.4.3",
+      "licence_declaration": "all_of: [\n    \"LGPL-2.0-or-later\", # intl/ (libintl)\n    \"GPL-2.0-or-later\", # share/\n    \"GPL-2.0-only\", # oggenc/, vorbiscomment/\n  ]",
+      "name": "vorbis-tools",
+      "notice_files": [
+        {
+          "name": "COPYING",
+          "sha256": "32b1062f7da84967e7019d01ab805935caa7ab7321a7ced0e30ebe75e5df1670"
+        }
+      ],
+      "version": "1.4.3"
+    },
+    {
+      "formula_sha256": "9165e288b689999b374401c1045a1904102ff279fb534f514d6569fcb608e264",
+      "id": "x264@r3222",
+      "licence_declaration": "\"GPL-2.0-or-later\"",
+      "name": "x264",
+      "notice_files": [
+        {
+          "name": "COPYING",
+          "sha256": "32b1062f7da84967e7019d01ab805935caa7ab7321a7ced0e30ebe75e5df1670"
+        }
+      ],
+      "version": "r3222"
+    },
+    {
+      "formula_sha256": "71f05bcabc5e87e350d02b7354473cb31cfaa70c7b1cfe9ed78c7d8574902033",
+      "id": "x265@4.3",
+      "licence_declaration": "\"GPL-2.0-or-later\"",
+      "name": "x265",
+      "notice_files": [
+        {
+          "name": "COPYING",
+          "sha256": "d8afb1bcc7a2cfc603683b168d6987ef0a48e59e0da3693bf55c5d33b67e2b49"
+        }
+      ],
+      "version": "4.3"
+    },
+    {
+      "formula_sha256": "0812ffeca3c6631a261e87c76ff26368eee0df6ecedfe0f458d67494fdf6e9cc",
+      "id": "xz@5.8.3",
+      "licence_declaration": "all_of: [\n    \"0BSD\",\n    \"GPL-2.0-or-later\",\n  ]",
+      "name": "xz",
+      "notice_files": [
+        {
+          "name": "COPYING",
+          "sha256": "616a3ad264ce29b8f1cb97e53037b139d406899ca8d1f799651e17bfa09830b8"
+        },
+        {
+          "name": "COPYING.0BSD",
+          "sha256": "0b01625d853911cd0e2e088dcfb743261034a091bb379246cb25a14cc4c74bf1"
+        },
+        {
+          "name": "COPYING.GPLv2",
+          "sha256": "edaef632cbb643e4e7a221717a6c441a4c1a7c918e6e4d56debc3d8739b233f6"
+        },
+        {
+          "name": "COPYING.GPLv3",
+          "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+        },
+        {
+          "name": "COPYING.LGPLv2.1",
+          "sha256": "20e50fe7aae3e56378ebf0417d9de904f55a0e61e4df315333e632a4d3555d95"
+        }
+      ],
+      "version": "5.8.3"
+    },
+    {
+      "formula_sha256": "9a9b0183896886e82b915af4db576f27d34d1cee7757d6c5beb0e1eb74c68e0d",
+      "id": "zstd@1.5.7_1",
+      "licence_declaration": "all_of: [\n    { any_of: [\"BSD-3-Clause\", \"GPL-2.0-only\"] },\n    \"BSD-2-Clause\", # programs/zstdgrep, lib/libzstd.pc.in\n    \"MIT\", # lib/dictBuilder/divsufsort.c\n  ]",
+      "name": "zstd",
+      "notice_files": [
+        {
+          "name": "COPYING",
+          "sha256": "f9c375a1be4a41f7b70301dd83c91cb89e41567478859b77eef375a52d782505"
+        },
+        {
+          "name": "LICENSE",
+          "sha256": "7055266497633c9025b777c78eb7235af13922117480ed5c674677adc381c9d8"
+        }
+      ],
+      "version": "1.5.7_1"
+    }
+  ],
+  "python_stdlib": {
+    "file_count": 798,
+    "scope": "all_py_and_so_excluding_site_packages_tests_and_caches",
+    "tree_sha256": "474b061d15e4929af2c9a866c3d2a3284160416d08712202c1ba2bfcc73679c1"
+  },
+  "record_kind": "digital_development_native_tool_binding_v1",
+  "roots": {
+    "ffmpeg": "9f5ddd4f8b36eb07b0c5d60ab6ea1e618bedd70bc45feab82b4dc23be1596ad1",
+    "ffprobe": "0ecd5e1affb1466b129b4f65bee261e9ab625c4d4a2e7c3e9089f63d44808605",
+    "oggenc": "920e29fd11a09fc047e979bd6113dbb5203756738cfd2823264c44d1a48f7566",
+    "python": "87d4df53fd91304be5bac391fb204643c36b7df2023c04a0953bcbc7d4fdf634"
+  },
+  "schema_version": 1,
+  "system_library_policy": "Exact macOS build binds dyld shared-cache libraries; they are not individually file-hashed.",
+  "tool_redistribution_authorized": false,
+  "versions": {
+    "ffmpeg": "ffmpeg version 9.0.1 Copyright (c) 2000-2026 the FFmpeg developers",
+    "ffprobe": "ffprobe version 9.0.1 Copyright (c) 2007-2026 the FFmpeg developers",
+    "oggenc": "oggenc from vorbis-tools 1.4.3",
+    "python": "3.14.7"
+  }
+}

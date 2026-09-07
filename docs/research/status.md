@@ -1693,3 +1693,27 @@ human collection, source assignment, new capture, outreach, spending or training
 The sparse capture and other missing source traits are deferred, not waived.
 The retained drift negative, original thresholds, sealed evidence and public
 verdict-free boundary are preserved. The full objective remains incomplete.
+
+## Exact digital execution proposal — 2026-09-08
+
+The [concrete proposal and bounded runner](perceptual-degradation-digital-execution-proposal-20260908.md)
+are prepared for the retained 16-member canonical delivery cohort. Eight new
+native-48-kHz codec recipes and two controls give 160 cases per replay, 320 across
+two replays. The float32 input-adapter control is separate from codec comparisons;
+decoder delay/padding metadata and unmodified alignment diagnostics remain explicit.
+Study duration eligibility is capped at the actual aligned frame count so partial
+activity-block rounding cannot manufacture four/eight seconds of support; the raw
+legacy diagnostic and numeric limits are preserved.
+
+The native tool/runtime closure is newly bound because installed tools and the
+operating system changed since the historical work. All 16 sources and every
+planned case remain in the denominator, including failures, unsupported cases and
+cases not started after a resource/time stop. No family is designated unseen
+validation by this development proposal, and no perceptual outcome is populated.
+
+Constructed-fixture and mocked-boundary tests cover two complete replays without
+actual codec generation. Real retained audio and private manifests remain unread.
+Next is explicit approval of the exact two technical replays, followed by a
+separately committed authorization and successful exact-execution-head CI. No
+microphone, loopback, room test, metric, listening, training or public verdict is
+requested or enabled by this preparation checkpoint.
