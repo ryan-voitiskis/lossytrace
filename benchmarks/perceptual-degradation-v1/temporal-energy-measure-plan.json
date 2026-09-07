@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "plan_id": "temporal-energy-measure-20260907-001",
+  "state": "continuous_temporal_energy_definition_selected_for_synthetic_development_before_execution",
+  "purpose": "Implement an exact temporal-energy description in seconds, separate from recording-relative occupancy, without promoting either to a sparse trait or perceived-duration label.",
+  "bindings": {
+    "trait_contract": {"path": "benchmarks/perceptual-degradation-v1/source-trait-identifiability-plan.json", "sha256": "c15991fbd7062c837db566bb734c5c1bf625fa2cbc5aa5a00983b64d82e28ba3"},
+    "rate_context_implementation": {"path": "scripts/perceptual_degradation_descriptor_rate_context.py", "sha256": "3c85c5a17d1843d788026272841a3984eb3ff6ca5dbe2736c9371e25f754f3d1"},
+    "rate_context_report": {"path": "research/toolchains/evidence/perceptual-degradation-descriptor-rate-context-synthetic-20260905-001.json", "sha256": "001fd5b0e6ce3210559a213a4990bae5497e1a1a936f10979a6fbb03dd8e9ccc"},
+    "window_support_report": {"path": "research/toolchains/evidence/perceptual-degradation-descriptor-window-support-synthetic-20260905-001.json", "sha256": "422117b4175ac4c89be68847f2728baf213d2f39a86dd8c3252751ad3949873c"},
+    "capture_specification": {"path": "benchmarks/perceptual-degradation-v1/source-trait-sparse-non-tonal-clean-capture-acquisition-spec.json", "sha256": "cb828b070189cdd14983bdf7fff41f36e41d459b791d5097d7159c457a0e742c"}
+  },
+  "primary_context": [
+    {"url": "https://brungio.github.io/GP_2011_JASA.pdf", "doi": "10.1121/1.3642604", "read_pages": [2903, 2904, 2906, 2907, 2908], "access_date": "2026-09-07", "use": "Distinguish temporal extent, representation and descriptor concept. The paper's envelope-threshold effective duration and spectral flatness are not adopted as validated LossyTrace cutoffs; this new raw-energy quantile measure is not a Timbre Toolbox implementation."},
+    {"url": "https://mpeg.chiariglione.org/standards/mpeg-7/audio.html", "document": "MPEG N7708, October 2005", "access_date": "2026-09-07", "use": "Distinguish temporal and spectral descriptors and their summaries; no MPEG-7 conformance claim or classifier is adopted."}
+  ],
+  "definition": {
+    "input": "Finite signed-24-bit integer samples and a positive integer sample rate. A run (length, amplitude) is an exact lossless representation of constant consecutive samples; a sample-sequence adapter must agree with runs.",
+    "density": "On sample cell [n/fs,(n+1)/fs), define w(t)=x[n]^2. Its integral is sum(x[n]^2)/fs, in integer-amplitude-squared seconds, not joules, calibrated pressure, loudness or perceived duration. Include DC, all frequencies and background; do not filter, denoise, estimate an envelope or subtract a noise floor.",
+    "quantile": "For positive total mass, t(q)=inf{t: integral(0..t) w / integral(all) w >= q}. Interpolate exactly within each constant-density sample cell using rational arithmetic. At a flat CDF plateau, use its earliest boundary, not its midpoint or the next active sample.",
+    "quantile_fractions": {"q05": "1/20", "q25": "1/4", "q50": "1/2", "q75": "3/4", "q95": "19/20"},
+    "spreads": {"central_90_energy_span_seconds": "t(19/20)-t(1/20)", "central_50_energy_span_seconds": "t(3/4)-t(1/4)"},
+    "centroid": "integral(t*w(t))/integral(w(t)), computed at exact sample-cell midpoints. This uses raw squared samples, not the smoothed envelope of the cited paper.",
+    "context": "Report recording duration, first nonzero cell start, last nonzero cell end, exact total nonzero-cell duration, and central-90 span divided by recording duration. Nonzero support is literal digital support, not salient activity. The ratio is intentionally context-relative; the span in seconds is not.",
+    "zero_mass": "Return unsupported with null quantiles, spans, centroid, support endpoints and context ratio. Preserve the observed recording duration and zero exposure. Do not emit zero duration as a silent sparse label.",
+    "scope": "This is a selected continuous development measurement, not a selected source-trait classifier or perceptual metric. The 5/25/50/75/95 percent positions specify descriptive summaries, not pass/fail margins. No source sparse cutoff is introduced."
+  },
+  "experiment": {
+    "rates_hz": [48000, 96000],
+    "gain_multipliers": [1, -2],
+    "sample_amplitude": 1000,
+    "base_profiles": "All four combinations of duration 15 or 30 seconds and event onset 5.950 or 6.000 seconds, with one 1.600-second constant interval and zeros elsewhere. These are consumed synthetic context witnesses reused to compare measurement meanings, not fresh natural evidence.",
+    "separated_profile": "Duration 30 seconds, zero background, equal-amplitude intervals [6.000,6.800) and [18.000,18.800). Total nonzero duration equals the one-interval base, but temporal energy spread need not.",
+    "background_profiles": "All four combinations of duration 15 or 30 seconds and constant background amplitude 10 or 100, replacing that background with amplitude 1000 on [6.000,7.600). These are declared level constructions, not clean captures or perceptual noise levels. Do not remove positive background to obtain invariance.",
+    "inventory": "Nine physical profiles, two sample rates and two signed gains: 36 summaries. Retain both native-rate base summaries and exact gain-invariance/exposure-scaling checks for every profile. All shared physical profiles are exact cell-density refinements at doubled rate, not a claim about media resamplers or real analog captures.",
+    "comparisons": "Separately check a 50-ms translation, adding 15 seconds of exact zeros, separating equal-energy events, and appending positive background. Preserve any changed energy quantiles under positive background. Compare old base occupancy values through the predecessor's bound exact overlap calculation; do not relabel consumed sources or claim another actual descriptor/audio run.",
+    "independent_check": "At 20 and 40 samples per second, independently expand every profile and signed gain into sample cells, enumerate squared weights and exact cumulative masses, and compute quantiles/centroid directly. Compare all summary fields against the run-integrated implementation, then compare physical-time/exposure fields with 48000/96000 refinements. These low-rate checks are numerical density analogs, not acoustic or perceptual stimuli."
+  },
+  "execution": {
+    "workers": 1,
+    "minimum_free_gib": 15,
+    "replays": 2,
+    "byte_identical_required": true,
+    "media": "Synthetic integer runs and small numerical cell arrays in memory only; no audio file is read, generated, saved or played.",
+    "output": "Exact rational strings and finite synthetic aggregate measurements. No private source identity, path or PCM hash. CLI accepts only the frozen synthetic mode."
+  },
+  "claim_boundary": {
+    "actual_audio_access_authorized": false,
+    "capture_execution_authorized_by_this_measure": false,
+    "source_trait_assignment_authorized": false,
+    "sparse_classifier_selected": false,
+    "spectral_classifier_selected": false,
+    "historical_candidates_reclassified": false,
+    "perceptual_duration_or_quality_claimed": false,
+    "listening_or_perceptual_metrics_authorized": false,
+    "population_inference_or_training_authorized": false,
+    "external_communication_or_spending_authorized": false,
+    "public_verdict_enabled": false,
+    "objective_complete": false
+  },
+  "next_requirement": "Use physical temporal spread and recording context as distinct fields in a future source-structure definition. Background, carrier dependence and spectral time-locality still require scope decisions and fresh validation before source assignment. Do not promote this technical measure to perceived duration, event detection, a clean-source label or a replacement frozen capture rule."
+}

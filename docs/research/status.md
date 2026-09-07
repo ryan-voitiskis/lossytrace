@@ -1568,3 +1568,30 @@ next definition must align physical band, frame support, aggregation and the
 intended trait, then use fresh validation. Prior source outcomes, capture
 authority, human/metric/oracle/training gates and the verdict-free CLI remain
 unchanged. The objective stays active and incomplete.
+
+## Continuous temporal energy measure — 2026-09-07
+
+The [temporal measure](perceptual-degradation-temporal-energy-measure-20260907.md)
+selects and implements exact squared-sample energy-quantile times in seconds,
+separately from literal nonzero support and recording-relative occupancy. It is
+a technical development measure, not a sparse classifier or perceived-duration
+model. Original source outcomes and descriptor thresholds are unchanged.
+
+Nine declared profiles at two native rates and two signed gains produce 36
+summaries. Exact zero append preserves temporal spans while changing the context
+ratio; a 50-ms translation shifts quantile times without changing their spread.
+Separating equal-energy intervals preserves 1.6 seconds of nonzero support while
+widening central-90 spread from 1.44 to 12.64 seconds. Positive background is
+retained: one declared append changes the span from 1.5606 to 14.5458 seconds,
+showing why this raw measure cannot silently stand for event or perceived duration.
+
+Two complete captured replays are byte-identical. Thirty-six dense sample-cell
+checks and independent closed-form unit expectations agree exactly; the dense
+core shares result assembly, so this is numerical corroboration, not scientific
+validation. Background, carrier/DC dependence and spectral time-locality still
+require explicit scope and fresh validation before source assignment.
+
+The authorized capture still needs its physical setup and execution checkpoint.
+No actual audio, source assignment, listening, metric, oracle, training, external
+communication, spending or public-verdict boundary changes. The overall research
+objective remains active and incomplete.
