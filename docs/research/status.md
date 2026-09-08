@@ -1859,3 +1859,34 @@ study and all frozen implementations, limits and negative results are unchanged.
 No hardware, playback, perceptual metric, listening response, source-trait
 assignment, training, independent-validation or public-verdict gate opens.
 The broader objective remains incomplete.
+
+## Bounded native digital canary: partial completion and failed repeatability — 2026-09-08
+
+The [approved one-shot canary](perceptual-degradation-digital-canary-result-20260908.md)
+has finished and its independent saved-artifact audit passed. All 12 planned
+slots were attempted on the one metadata-selected reference. The first replay
+had six alignment timeouts; the second had two timeouts and four completed,
+technically supported comparisons. None completed in both replays. The
+computational-completion and timing-excluded repeatability gates both failed.
+
+All four codec conditions have matching recorded encoded/decoded hashes and
+packet records across the two replays. That limited codec-stage repeatability
+does not override the failed end-to-end gate. No native fallback was recorded;
+the aggregate all-cases/no-fallback conjunction is false because eight cases
+did not complete. No numerical nondeterminism or perceptual-quality conclusion
+follows from timeout-censored comparisons.
+
+The invocation took about 34.5 minutes. The approximately 118-second synthetic
+identity did not establish sufficient margin for this real-source workload.
+Static code leaves global refinement in Python with a content-dependent
+candidate inventory, but no new runtime hotspot or scheduling cause was
+profiled. Next is a separately frozen score-free workload/runtime successor,
+or a prospectively justified controlled-digital alignment design, before any
+further real-audio execution.
+
+All replay-edge checks passed; the selected source is unchanged. The other
+15 waveforms were not reopened by this successor or its audit. Five private
+JSON files and the bound native library remain; no derived audio or case scratch
+is retained. The authorization is consumed, without substitution, changed
+limits or another run. Metrics, listening, source assignment, training and
+public verdicts remain closed. The broader objective remains incomplete.
