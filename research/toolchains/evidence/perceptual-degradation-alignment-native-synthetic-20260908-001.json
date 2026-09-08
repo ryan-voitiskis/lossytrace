@@ -1,0 +1,1593 @@
+{
+  "schema_version": 1,
+  "report_id": "alignment-native-synthetic-result-20260908-001",
+  "date": "2026-09-08",
+  "state": "synthetic_full_rate_native_local_search_qualification_passed_not_pipeline_or_perceptual_validation",
+  "bindings": {
+    "plan": {
+      "path": "benchmarks/perceptual-degradation-v1/alignment-native-qualification-plan-20260908.json",
+      "sha256": "e79784f65e5c21f2dfbfcb733cc6322959580ceacd236a58e55c23a52951d440"
+    },
+    "runner": {
+      "path": "scripts/perceptual_degradation_alignment_native_qualification.py",
+      "sha256": "2c936cd58f1cc8d9e3643375afc3efc3b2b6b4258c2802de7a13b4b300d34c20"
+    },
+    "prior_runtime_result": {
+      "path": "research/toolchains/evidence/perceptual-degradation-alignment-runtime-synthetic-20260908-001.json",
+      "sha256": "a51853e81f88f6470c33991e5df8d7e79c1146d57f97ea4cc6c2a799fa177558"
+    },
+    "prior_real_result": {
+      "path": "research/toolchains/evidence/perceptual-degradation-digital-technical-20260908-001.json",
+      "sha256": "dd1447607eb09cc8dfadb5595c543324f38dd354fa7e77f303e2fbfe58421445"
+    }
+  },
+  "execution": {
+    "local_pre_observation_head": "86011997b57659a64a7b5c8a11c248c9a26717ee",
+    "externally_preregistered": false,
+    "runner_invocations": 1,
+    "planned_rounds": 2,
+    "completed_rounds": 2,
+    "workers": 1,
+    "exit_code": 0,
+    "checkpoint_consumed": true,
+    "additional_measurement_or_real_replay_performed": false
+  },
+  "qualification": {
+    "synthetic_runtime_passed": true,
+    "tested_zero_tolerance_semantic_equivalence_passed": true,
+    "exact_complete_search_inventory_passed": true,
+    "full_size_predecessor_identity_bytes_available": false,
+    "all_inputs_and_platforms_proven_equivalent": false,
+    "large_study_throughput_qualified": false,
+    "full_rate_pipeline_qualified": false
+  },
+  "pre_observation_tests": {
+    "equivalence_tests": 16,
+    "qualification_boundary_and_instrumentation_tests": 11,
+    "all_passed": true,
+    "full_size_alignment_executed_in_default_tests": false
+  },
+  "observations": {
+    "baseline_completed_within_alignment_budget_both_rounds": true,
+    "baseline_instrumented_completed_alignment_bytes_equal": [
+      true,
+      true
+    ],
+    "codec_executed": false,
+    "execution_head": "86011997b57659a64a7b5c8a11c248c9a26717ee",
+    "full_rate_pipeline_qualified": false,
+    "kernel": {
+      "binary_sha256": "05dff42aaea01c399f366b0fb02c40cb3f7c516597b13a7e394253bef4d19bd2",
+      "compiler_dependency_closure_claimed": false,
+      "compiler_sha256": "b8763cf250e607a778bb4603cecb5b90338814d0a3dfcba0d57b1de242f610e9",
+      "compiler_version": [
+        "Apple clang version 21.0.0 (clang-2100.1.1.101)",
+        "Target: arm64-apple-darwin25.6.0",
+        "Thread model: posix"
+      ],
+      "flags": [
+        "-O2",
+        "-std=c11",
+        "-shared",
+        "-fPIC",
+        "-fno-fast-math",
+        "-ffp-contract=off",
+        "-Wall",
+        "-Wextra",
+        "-Werror"
+      ],
+      "link_libraries": [
+        "m"
+      ],
+      "machine": "arm64",
+      "os_release": "25.6.0",
+      "platform": "Darwin",
+      "source_sha256": "632020c11235dcc5f4708563094d230449f9eaebb8fd7d2e07990a90325729f1"
+    },
+    "native_binding_edge_checks_passed": true,
+    "objective_complete": false,
+    "perceptual_support": false,
+    "plan_id": "alignment-native-qualification-20260908-001",
+    "plan_sha256": "e79784f65e5c21f2dfbfcb733cc6322959580ceacd236a58e55c23a52951d440",
+    "planned_case_slots": 8,
+    "public_verdict_enabled": false,
+    "real_audio_accessed": false,
+    "repeatability": [
+      {
+        "case": "identity_baseline",
+        "completed_alignment_bytes_equal": true,
+        "outcome_equal": true
+      },
+      {
+        "case": "identity_instrumented",
+        "completed_alignment_bytes_equal": true,
+        "outcome_equal": true
+      },
+      {
+        "case": "constant_envelope",
+        "completed_alignment_bytes_equal": true,
+        "outcome_equal": true
+      },
+      {
+        "case": "topology_mismatch",
+        "completed_alignment_bytes_equal": true,
+        "outcome_equal": true
+      }
+    ],
+    "replays": [
+      [
+        {
+          "alignment": {
+            "alignment": {
+              "channels": [
+                {
+                  "channel": "L",
+                  "diagnostics": {
+                    "active_seconds": 12.0,
+                    "aligned_frames": 576008,
+                    "ambiguity_margin": 0.9625896001357931,
+                    "correlation": {
+                      "magnitude": 1.0,
+                      "overlap_frames": 576008,
+                      "reason": null,
+                      "sampled_frames": 16458,
+                      "value": 1.0
+                    },
+                    "drift": {
+                      "clock_drift_ppm": 0.0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0.0,
+                      "valid_window_count": 5,
+                      "window_count": 5
+                    },
+                    "edge_trim_seconds": 0.0,
+                    "fractional_delay_samples": -0.0,
+                    "gain": {
+                      "linear_gain": 1.0,
+                      "observed_gain_db": 0.0,
+                      "polarity": "preserved",
+                      "reason": null
+                    },
+                    "integer_delay_samples": 0,
+                    "search": {
+                      "coarse": {
+                        "invalid": {},
+                        "valid": 801
+                      },
+                      "sample": {
+                        "invalid": {},
+                        "valid": 3848
+                      }
+                    },
+                    "structural": {
+                      "clock_drift_ppm": 0.0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0.0,
+                      "valid_window_count": 7,
+                      "window_count": 7
+                    }
+                  },
+                  "reasons": [],
+                  "status": "supported"
+                },
+                {
+                  "channel": "R",
+                  "diagnostics": {
+                    "active_seconds": 12.0,
+                    "aligned_frames": 576008,
+                    "ambiguity_margin": 0.9697505123934722,
+                    "correlation": {
+                      "magnitude": 1.0,
+                      "overlap_frames": 576008,
+                      "reason": null,
+                      "sampled_frames": 16458,
+                      "value": 1.0
+                    },
+                    "drift": {
+                      "clock_drift_ppm": 0.0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0.0,
+                      "valid_window_count": 5,
+                      "window_count": 5
+                    },
+                    "edge_trim_seconds": 0.0,
+                    "fractional_delay_samples": -0.0,
+                    "gain": {
+                      "linear_gain": 1.0,
+                      "observed_gain_db": 0.0,
+                      "polarity": "preserved",
+                      "reason": null
+                    },
+                    "integer_delay_samples": 0,
+                    "search": {
+                      "coarse": {
+                        "invalid": {},
+                        "valid": 801
+                      },
+                      "sample": {
+                        "invalid": {},
+                        "valid": 3848
+                      }
+                    },
+                    "structural": {
+                      "clock_drift_ppm": 0.0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0.0,
+                      "valid_window_count": 7,
+                      "window_count": 7
+                    }
+                  },
+                  "reasons": [],
+                  "status": "supported"
+                }
+              ],
+              "summary": {
+                "active_seconds": 12.0,
+                "aligned_frames": 576008,
+                "channel_lag_spread_samples": 0.0,
+                "clock_drift_ppm": 0.0,
+                "fractional_delay_samples": 0.0,
+                "integer_delay_samples": 0,
+                "minimum_correlation": 1.0,
+                "minimum_structural_window_correlation": 0.9999999999999999
+              }
+            },
+            "case_id": "case-8e733e764094e9ab3963260f2f9b67917d4a6a621bb1b0f3ab61cadcbffae255",
+            "input": {
+              "reference": {
+                "channel_count": 2,
+                "channel_map": [
+                  "L",
+                  "R"
+                ],
+                "frames": 576008
+              },
+              "sample_rate_hz": 48000,
+              "test": {
+                "channel_count": 2,
+                "channel_map": [
+                  "L",
+                  "R"
+                ],
+                "frames": 576008
+              }
+            },
+            "perceptual_claim": false,
+            "public_verdict_enabled": false,
+            "record_kind": "perceptual_degradation_alignment_v4",
+            "sample_correction_applied": false,
+            "schema_version": 1,
+            "status": "supported",
+            "support": {
+              "limits_id": "alignment-validity-successor-20260907-001",
+              "predecessor_limits_ids": [
+                "perceptual-degradation-v1-alignment-fixtures-20260803-001",
+                "perceptual-degradation-v1-topology-fixtures-20260803-001"
+              ],
+              "reasons": []
+            }
+          },
+          "alignment_seconds": 118.043073,
+          "case": "identity_baseline",
+          "frames": 576008,
+          "inputs_immutable": true,
+          "instrumented": false,
+          "native_audit": {
+            "fallback_candidates": 0,
+            "native_candidates": 135624,
+            "searches": [
+              {
+                "candidate_count": 9601,
+                "search_count": 14,
+                "stride": 1,
+                "window_frames": 24000
+              },
+              {
+                "candidate_count": 121,
+                "search_count": 10,
+                "stride": 2,
+                "window_frames": 48000
+              }
+            ]
+          },
+          "outcome": "completed",
+          "perceptual_support": false,
+          "sample_rate_hz": 48000,
+          "stage_timing": null
+        },
+        {
+          "alignment": {
+            "alignment": {
+              "channels": [
+                {
+                  "channel": "L",
+                  "diagnostics": {
+                    "active_seconds": 12.0,
+                    "aligned_frames": 576008,
+                    "ambiguity_margin": 0.9625896001357931,
+                    "correlation": {
+                      "magnitude": 1.0,
+                      "overlap_frames": 576008,
+                      "reason": null,
+                      "sampled_frames": 16458,
+                      "value": 1.0
+                    },
+                    "drift": {
+                      "clock_drift_ppm": 0.0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0.0,
+                      "valid_window_count": 5,
+                      "window_count": 5
+                    },
+                    "edge_trim_seconds": 0.0,
+                    "fractional_delay_samples": -0.0,
+                    "gain": {
+                      "linear_gain": 1.0,
+                      "observed_gain_db": 0.0,
+                      "polarity": "preserved",
+                      "reason": null
+                    },
+                    "integer_delay_samples": 0,
+                    "search": {
+                      "coarse": {
+                        "invalid": {},
+                        "valid": 801
+                      },
+                      "sample": {
+                        "invalid": {},
+                        "valid": 3848
+                      }
+                    },
+                    "structural": {
+                      "clock_drift_ppm": 0.0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0.0,
+                      "valid_window_count": 7,
+                      "window_count": 7
+                    }
+                  },
+                  "reasons": [],
+                  "status": "supported"
+                },
+                {
+                  "channel": "R",
+                  "diagnostics": {
+                    "active_seconds": 12.0,
+                    "aligned_frames": 576008,
+                    "ambiguity_margin": 0.9697505123934722,
+                    "correlation": {
+                      "magnitude": 1.0,
+                      "overlap_frames": 576008,
+                      "reason": null,
+                      "sampled_frames": 16458,
+                      "value": 1.0
+                    },
+                    "drift": {
+                      "clock_drift_ppm": 0.0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0.0,
+                      "valid_window_count": 5,
+                      "window_count": 5
+                    },
+                    "edge_trim_seconds": 0.0,
+                    "fractional_delay_samples": -0.0,
+                    "gain": {
+                      "linear_gain": 1.0,
+                      "observed_gain_db": 0.0,
+                      "polarity": "preserved",
+                      "reason": null
+                    },
+                    "integer_delay_samples": 0,
+                    "search": {
+                      "coarse": {
+                        "invalid": {},
+                        "valid": 801
+                      },
+                      "sample": {
+                        "invalid": {},
+                        "valid": 3848
+                      }
+                    },
+                    "structural": {
+                      "clock_drift_ppm": 0.0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0.0,
+                      "valid_window_count": 7,
+                      "window_count": 7
+                    }
+                  },
+                  "reasons": [],
+                  "status": "supported"
+                }
+              ],
+              "summary": {
+                "active_seconds": 12.0,
+                "aligned_frames": 576008,
+                "channel_lag_spread_samples": 0.0,
+                "clock_drift_ppm": 0.0,
+                "fractional_delay_samples": 0.0,
+                "integer_delay_samples": 0,
+                "minimum_correlation": 1.0,
+                "minimum_structural_window_correlation": 0.9999999999999999
+              }
+            },
+            "case_id": "case-8e733e764094e9ab3963260f2f9b67917d4a6a621bb1b0f3ab61cadcbffae255",
+            "input": {
+              "reference": {
+                "channel_count": 2,
+                "channel_map": [
+                  "L",
+                  "R"
+                ],
+                "frames": 576008
+              },
+              "sample_rate_hz": 48000,
+              "test": {
+                "channel_count": 2,
+                "channel_map": [
+                  "L",
+                  "R"
+                ],
+                "frames": 576008
+              }
+            },
+            "perceptual_claim": false,
+            "public_verdict_enabled": false,
+            "record_kind": "perceptual_degradation_alignment_v4",
+            "sample_correction_applied": false,
+            "schema_version": 1,
+            "status": "supported",
+            "support": {
+              "limits_id": "alignment-validity-successor-20260907-001",
+              "predecessor_limits_ids": [
+                "perceptual-degradation-v1-alignment-fixtures-20260803-001",
+                "perceptual-degradation-v1-topology-fixtures-20260803-001"
+              ],
+              "reasons": []
+            }
+          },
+          "alignment_seconds": 120.457561,
+          "case": "identity_instrumented",
+          "frames": 576008,
+          "inputs_immutable": true,
+          "instrumented": true,
+          "native_audit": {
+            "fallback_candidates": 0,
+            "native_candidates": 135624,
+            "searches": [
+              {
+                "candidate_count": 9601,
+                "search_count": 14,
+                "stride": 1,
+                "window_frames": 24000
+              },
+              {
+                "candidate_count": 121,
+                "search_count": 10,
+                "stride": 2,
+                "window_frames": 48000
+              }
+            ]
+          },
+          "outcome": "completed",
+          "perceptual_support": false,
+          "sample_rate_hz": 48000,
+          "stage_timing": {
+            "completed": {
+              "alignment_other": 1,
+              "channel_other": 2,
+              "coarse_correlation": 1602,
+              "drift_local_search": 10,
+              "drift_other": 2,
+              "envelope": 6,
+              "gain": 2,
+              "sample_correlation": 7696,
+              "structural_local_search": 14,
+              "structural_other": 2
+            },
+            "deadline_stack": null,
+            "entered": {
+              "alignment_other": 1,
+              "channel_other": 2,
+              "coarse_correlation": 1602,
+              "drift_local_search": 10,
+              "drift_other": 2,
+              "envelope": 6,
+              "gain": 2,
+              "sample_correlation": 7696,
+              "structural_local_search": 14,
+              "structural_other": 2
+            },
+            "exclusive_seconds": {
+              "alignment_other": 0.000118,
+              "channel_other": 0.151173,
+              "coarse_correlation": 1.153943,
+              "drift_local_search": 0.808247,
+              "drift_other": 0.000155,
+              "envelope": 0.248858,
+              "gain": 0.134895,
+              "sample_correlation": 35.227202,
+              "structural_local_search": 82.732665,
+              "structural_other": 0.000205
+            }
+          }
+        },
+        {
+          "alignment": {
+            "alignment": {
+              "channels": [
+                {
+                  "channel": "L",
+                  "diagnostics": {
+                    "active_seconds": null,
+                    "aligned_frames": null,
+                    "ambiguity_margin": null,
+                    "correlation": null,
+                    "drift": null,
+                    "edge_trim_seconds": null,
+                    "fractional_delay_samples": null,
+                    "gain": null,
+                    "integer_delay_samples": null,
+                    "search": {
+                      "coarse": {
+                        "invalid": {
+                          "zero_centered_energy": 801
+                        },
+                        "valid": 0
+                      }
+                    },
+                    "structural": null
+                  },
+                  "reasons": [
+                    "no_valid_coarse_correlation"
+                  ],
+                  "status": "unsupported"
+                },
+                {
+                  "channel": "R",
+                  "diagnostics": {
+                    "active_seconds": null,
+                    "aligned_frames": null,
+                    "ambiguity_margin": null,
+                    "correlation": null,
+                    "drift": null,
+                    "edge_trim_seconds": null,
+                    "fractional_delay_samples": null,
+                    "gain": null,
+                    "integer_delay_samples": null,
+                    "search": {
+                      "coarse": {
+                        "invalid": {
+                          "zero_centered_energy": 801
+                        },
+                        "valid": 0
+                      }
+                    },
+                    "structural": null
+                  },
+                  "reasons": [
+                    "no_valid_coarse_correlation"
+                  ],
+                  "status": "unsupported"
+                }
+              ],
+              "summary": {
+                "active_seconds": null,
+                "aligned_frames": null,
+                "channel_lag_spread_samples": null,
+                "clock_drift_ppm": null,
+                "fractional_delay_samples": null,
+                "integer_delay_samples": null,
+                "minimum_correlation": null,
+                "minimum_structural_window_correlation": null
+              }
+            },
+            "case_id": "case-2ab0948d0ffcd4aa82ed23f324ee240c1178e4a4337badd873ae8c8f1a6fde3f",
+            "input": {
+              "reference": {
+                "channel_count": 2,
+                "channel_map": [
+                  "L",
+                  "R"
+                ],
+                "frames": 576008
+              },
+              "sample_rate_hz": 48000,
+              "test": {
+                "channel_count": 2,
+                "channel_map": [
+                  "L",
+                  "R"
+                ],
+                "frames": 576008
+              }
+            },
+            "perceptual_claim": false,
+            "public_verdict_enabled": false,
+            "record_kind": "perceptual_degradation_alignment_v4",
+            "sample_correction_applied": false,
+            "schema_version": 1,
+            "status": "unsupported",
+            "support": {
+              "limits_id": "alignment-validity-successor-20260907-001",
+              "predecessor_limits_ids": [
+                "perceptual-degradation-v1-alignment-fixtures-20260803-001",
+                "perceptual-degradation-v1-topology-fixtures-20260803-001"
+              ],
+              "reasons": [
+                "no_valid_coarse_correlation"
+              ]
+            }
+          },
+          "alignment_seconds": 0.955479,
+          "case": "constant_envelope",
+          "frames": 576008,
+          "inputs_immutable": true,
+          "instrumented": true,
+          "native_audit": {
+            "fallback_candidates": 0,
+            "native_candidates": 0,
+            "searches": []
+          },
+          "outcome": "completed",
+          "perceptual_support": false,
+          "sample_rate_hz": 48000,
+          "stage_timing": {
+            "completed": {
+              "alignment_other": 1,
+              "channel_other": 2,
+              "coarse_correlation": 1602,
+              "drift_local_search": 0,
+              "drift_other": 0,
+              "envelope": 4,
+              "gain": 0,
+              "sample_correlation": 0,
+              "structural_local_search": 0,
+              "structural_other": 0
+            },
+            "deadline_stack": null,
+            "entered": {
+              "alignment_other": 1,
+              "channel_other": 2,
+              "coarse_correlation": 1602,
+              "drift_local_search": 0,
+              "drift_other": 0,
+              "envelope": 4,
+              "gain": 0,
+              "sample_correlation": 0,
+              "structural_local_search": 0,
+              "structural_other": 0
+            },
+            "exclusive_seconds": {
+              "alignment_other": 4.9e-05,
+              "channel_other": 0.107393,
+              "coarse_correlation": 0.740774,
+              "drift_local_search": 0,
+              "drift_other": 0,
+              "envelope": 0.107228,
+              "gain": 0,
+              "sample_correlation": 0,
+              "structural_local_search": 0,
+              "structural_other": 0
+            }
+          }
+        },
+        {
+          "alignment": {
+            "alignment": {
+              "channels": [],
+              "summary": {
+                "active_seconds": null,
+                "aligned_frames": null,
+                "channel_lag_spread_samples": null,
+                "clock_drift_ppm": null,
+                "fractional_delay_samples": null,
+                "integer_delay_samples": null,
+                "minimum_correlation": null,
+                "minimum_structural_window_correlation": null
+              }
+            },
+            "case_id": "case-b9a6029dee09497f82a660b0b677c68463b6a45a8b28647b9d32823167410a8e",
+            "input": {
+              "reference": {
+                "channel_count": 2,
+                "channel_map": [
+                  "L",
+                  "R"
+                ],
+                "frames": 576008
+              },
+              "sample_rate_hz": 48000,
+              "test": {
+                "channel_count": 1,
+                "channel_map": [
+                  "M"
+                ],
+                "frames": 576008
+              }
+            },
+            "perceptual_claim": false,
+            "public_verdict_enabled": false,
+            "record_kind": "perceptual_degradation_alignment_v4",
+            "sample_correction_applied": false,
+            "schema_version": 1,
+            "status": "unsupported",
+            "support": {
+              "limits_id": "alignment-validity-successor-20260907-001",
+              "predecessor_limits_ids": [
+                "perceptual-degradation-v1-alignment-fixtures-20260803-001",
+                "perceptual-degradation-v1-topology-fixtures-20260803-001"
+              ],
+              "reasons": [
+                "channel_map_mismatch",
+                "channel_topology_mismatch"
+              ]
+            }
+          },
+          "alignment_seconds": 6.6e-05,
+          "case": "topology_mismatch",
+          "frames": 576008,
+          "inputs_immutable": true,
+          "instrumented": true,
+          "native_audit": {
+            "fallback_candidates": 0,
+            "native_candidates": 0,
+            "searches": []
+          },
+          "outcome": "completed",
+          "perceptual_support": false,
+          "sample_rate_hz": 48000,
+          "stage_timing": {
+            "completed": {
+              "alignment_other": 1,
+              "channel_other": 0,
+              "coarse_correlation": 0,
+              "drift_local_search": 0,
+              "drift_other": 0,
+              "envelope": 0,
+              "gain": 0,
+              "sample_correlation": 0,
+              "structural_local_search": 0,
+              "structural_other": 0
+            },
+            "deadline_stack": null,
+            "entered": {
+              "alignment_other": 1,
+              "channel_other": 0,
+              "coarse_correlation": 0,
+              "drift_local_search": 0,
+              "drift_other": 0,
+              "envelope": 0,
+              "gain": 0,
+              "sample_correlation": 0,
+              "structural_local_search": 0,
+              "structural_other": 0
+            },
+            "exclusive_seconds": {
+              "alignment_other": 3.4e-05,
+              "channel_other": 0,
+              "coarse_correlation": 0,
+              "drift_local_search": 0,
+              "drift_other": 0,
+              "envelope": 0,
+              "gain": 0,
+              "sample_correlation": 0,
+              "structural_local_search": 0,
+              "structural_other": 0
+            }
+          }
+        }
+      ],
+      [
+        {
+          "alignment": {
+            "alignment": {
+              "channels": [
+                {
+                  "channel": "L",
+                  "diagnostics": {
+                    "active_seconds": 12.0,
+                    "aligned_frames": 576008,
+                    "ambiguity_margin": 0.9625896001357931,
+                    "correlation": {
+                      "magnitude": 1.0,
+                      "overlap_frames": 576008,
+                      "reason": null,
+                      "sampled_frames": 16458,
+                      "value": 1.0
+                    },
+                    "drift": {
+                      "clock_drift_ppm": 0.0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0.0,
+                      "valid_window_count": 5,
+                      "window_count": 5
+                    },
+                    "edge_trim_seconds": 0.0,
+                    "fractional_delay_samples": -0.0,
+                    "gain": {
+                      "linear_gain": 1.0,
+                      "observed_gain_db": 0.0,
+                      "polarity": "preserved",
+                      "reason": null
+                    },
+                    "integer_delay_samples": 0,
+                    "search": {
+                      "coarse": {
+                        "invalid": {},
+                        "valid": 801
+                      },
+                      "sample": {
+                        "invalid": {},
+                        "valid": 3848
+                      }
+                    },
+                    "structural": {
+                      "clock_drift_ppm": 0.0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0.0,
+                      "valid_window_count": 7,
+                      "window_count": 7
+                    }
+                  },
+                  "reasons": [],
+                  "status": "supported"
+                },
+                {
+                  "channel": "R",
+                  "diagnostics": {
+                    "active_seconds": 12.0,
+                    "aligned_frames": 576008,
+                    "ambiguity_margin": 0.9697505123934722,
+                    "correlation": {
+                      "magnitude": 1.0,
+                      "overlap_frames": 576008,
+                      "reason": null,
+                      "sampled_frames": 16458,
+                      "value": 1.0
+                    },
+                    "drift": {
+                      "clock_drift_ppm": 0.0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0.0,
+                      "valid_window_count": 5,
+                      "window_count": 5
+                    },
+                    "edge_trim_seconds": 0.0,
+                    "fractional_delay_samples": -0.0,
+                    "gain": {
+                      "linear_gain": 1.0,
+                      "observed_gain_db": 0.0,
+                      "polarity": "preserved",
+                      "reason": null
+                    },
+                    "integer_delay_samples": 0,
+                    "search": {
+                      "coarse": {
+                        "invalid": {},
+                        "valid": 801
+                      },
+                      "sample": {
+                        "invalid": {},
+                        "valid": 3848
+                      }
+                    },
+                    "structural": {
+                      "clock_drift_ppm": 0.0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0.0,
+                      "valid_window_count": 7,
+                      "window_count": 7
+                    }
+                  },
+                  "reasons": [],
+                  "status": "supported"
+                }
+              ],
+              "summary": {
+                "active_seconds": 12.0,
+                "aligned_frames": 576008,
+                "channel_lag_spread_samples": 0.0,
+                "clock_drift_ppm": 0.0,
+                "fractional_delay_samples": 0.0,
+                "integer_delay_samples": 0,
+                "minimum_correlation": 1.0,
+                "minimum_structural_window_correlation": 0.9999999999999999
+              }
+            },
+            "case_id": "case-8e733e764094e9ab3963260f2f9b67917d4a6a621bb1b0f3ab61cadcbffae255",
+            "input": {
+              "reference": {
+                "channel_count": 2,
+                "channel_map": [
+                  "L",
+                  "R"
+                ],
+                "frames": 576008
+              },
+              "sample_rate_hz": 48000,
+              "test": {
+                "channel_count": 2,
+                "channel_map": [
+                  "L",
+                  "R"
+                ],
+                "frames": 576008
+              }
+            },
+            "perceptual_claim": false,
+            "public_verdict_enabled": false,
+            "record_kind": "perceptual_degradation_alignment_v4",
+            "sample_correction_applied": false,
+            "schema_version": 1,
+            "status": "supported",
+            "support": {
+              "limits_id": "alignment-validity-successor-20260907-001",
+              "predecessor_limits_ids": [
+                "perceptual-degradation-v1-alignment-fixtures-20260803-001",
+                "perceptual-degradation-v1-topology-fixtures-20260803-001"
+              ],
+              "reasons": []
+            }
+          },
+          "alignment_seconds": 118.150284,
+          "case": "identity_baseline",
+          "frames": 576008,
+          "inputs_immutable": true,
+          "instrumented": false,
+          "native_audit": {
+            "fallback_candidates": 0,
+            "native_candidates": 135624,
+            "searches": [
+              {
+                "candidate_count": 9601,
+                "search_count": 14,
+                "stride": 1,
+                "window_frames": 24000
+              },
+              {
+                "candidate_count": 121,
+                "search_count": 10,
+                "stride": 2,
+                "window_frames": 48000
+              }
+            ]
+          },
+          "outcome": "completed",
+          "perceptual_support": false,
+          "sample_rate_hz": 48000,
+          "stage_timing": null
+        },
+        {
+          "alignment": {
+            "alignment": {
+              "channels": [
+                {
+                  "channel": "L",
+                  "diagnostics": {
+                    "active_seconds": 12.0,
+                    "aligned_frames": 576008,
+                    "ambiguity_margin": 0.9625896001357931,
+                    "correlation": {
+                      "magnitude": 1.0,
+                      "overlap_frames": 576008,
+                      "reason": null,
+                      "sampled_frames": 16458,
+                      "value": 1.0
+                    },
+                    "drift": {
+                      "clock_drift_ppm": 0.0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0.0,
+                      "valid_window_count": 5,
+                      "window_count": 5
+                    },
+                    "edge_trim_seconds": 0.0,
+                    "fractional_delay_samples": -0.0,
+                    "gain": {
+                      "linear_gain": 1.0,
+                      "observed_gain_db": 0.0,
+                      "polarity": "preserved",
+                      "reason": null
+                    },
+                    "integer_delay_samples": 0,
+                    "search": {
+                      "coarse": {
+                        "invalid": {},
+                        "valid": 801
+                      },
+                      "sample": {
+                        "invalid": {},
+                        "valid": 3848
+                      }
+                    },
+                    "structural": {
+                      "clock_drift_ppm": 0.0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0.0,
+                      "valid_window_count": 7,
+                      "window_count": 7
+                    }
+                  },
+                  "reasons": [],
+                  "status": "supported"
+                },
+                {
+                  "channel": "R",
+                  "diagnostics": {
+                    "active_seconds": 12.0,
+                    "aligned_frames": 576008,
+                    "ambiguity_margin": 0.9697505123934722,
+                    "correlation": {
+                      "magnitude": 1.0,
+                      "overlap_frames": 576008,
+                      "reason": null,
+                      "sampled_frames": 16458,
+                      "value": 1.0
+                    },
+                    "drift": {
+                      "clock_drift_ppm": 0.0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0.0,
+                      "valid_window_count": 5,
+                      "window_count": 5
+                    },
+                    "edge_trim_seconds": 0.0,
+                    "fractional_delay_samples": -0.0,
+                    "gain": {
+                      "linear_gain": 1.0,
+                      "observed_gain_db": 0.0,
+                      "polarity": "preserved",
+                      "reason": null
+                    },
+                    "integer_delay_samples": 0,
+                    "search": {
+                      "coarse": {
+                        "invalid": {},
+                        "valid": 801
+                      },
+                      "sample": {
+                        "invalid": {},
+                        "valid": 3848
+                      }
+                    },
+                    "structural": {
+                      "clock_drift_ppm": 0.0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0.0,
+                      "valid_window_count": 7,
+                      "window_count": 7
+                    }
+                  },
+                  "reasons": [],
+                  "status": "supported"
+                }
+              ],
+              "summary": {
+                "active_seconds": 12.0,
+                "aligned_frames": 576008,
+                "channel_lag_spread_samples": 0.0,
+                "clock_drift_ppm": 0.0,
+                "fractional_delay_samples": 0.0,
+                "integer_delay_samples": 0,
+                "minimum_correlation": 1.0,
+                "minimum_structural_window_correlation": 0.9999999999999999
+              }
+            },
+            "case_id": "case-8e733e764094e9ab3963260f2f9b67917d4a6a621bb1b0f3ab61cadcbffae255",
+            "input": {
+              "reference": {
+                "channel_count": 2,
+                "channel_map": [
+                  "L",
+                  "R"
+                ],
+                "frames": 576008
+              },
+              "sample_rate_hz": 48000,
+              "test": {
+                "channel_count": 2,
+                "channel_map": [
+                  "L",
+                  "R"
+                ],
+                "frames": 576008
+              }
+            },
+            "perceptual_claim": false,
+            "public_verdict_enabled": false,
+            "record_kind": "perceptual_degradation_alignment_v4",
+            "sample_correction_applied": false,
+            "schema_version": 1,
+            "status": "supported",
+            "support": {
+              "limits_id": "alignment-validity-successor-20260907-001",
+              "predecessor_limits_ids": [
+                "perceptual-degradation-v1-alignment-fixtures-20260803-001",
+                "perceptual-degradation-v1-topology-fixtures-20260803-001"
+              ],
+              "reasons": []
+            }
+          },
+          "alignment_seconds": 118.44131,
+          "case": "identity_instrumented",
+          "frames": 576008,
+          "inputs_immutable": true,
+          "instrumented": true,
+          "native_audit": {
+            "fallback_candidates": 0,
+            "native_candidates": 135624,
+            "searches": [
+              {
+                "candidate_count": 9601,
+                "search_count": 14,
+                "stride": 1,
+                "window_frames": 24000
+              },
+              {
+                "candidate_count": 121,
+                "search_count": 10,
+                "stride": 2,
+                "window_frames": 48000
+              }
+            ]
+          },
+          "outcome": "completed",
+          "perceptual_support": false,
+          "sample_rate_hz": 48000,
+          "stage_timing": {
+            "completed": {
+              "alignment_other": 1,
+              "channel_other": 2,
+              "coarse_correlation": 1602,
+              "drift_local_search": 10,
+              "drift_other": 2,
+              "envelope": 6,
+              "gain": 2,
+              "sample_correlation": 7696,
+              "structural_local_search": 14,
+              "structural_other": 2
+            },
+            "deadline_stack": null,
+            "entered": {
+              "alignment_other": 1,
+              "channel_other": 2,
+              "coarse_correlation": 1602,
+              "drift_local_search": 10,
+              "drift_other": 2,
+              "envelope": 6,
+              "gain": 2,
+              "sample_correlation": 7696,
+              "structural_local_search": 14,
+              "structural_other": 2
+            },
+            "exclusive_seconds": {
+              "alignment_other": 0.000106,
+              "channel_other": 0.132441,
+              "coarse_correlation": 1.145769,
+              "drift_local_search": 0.807829,
+              "drift_other": 0.000133,
+              "envelope": 0.249313,
+              "gain": 0.138792,
+              "sample_correlation": 33.252023,
+              "structural_local_search": 82.714648,
+              "structural_other": 0.000194
+            }
+          }
+        },
+        {
+          "alignment": {
+            "alignment": {
+              "channels": [
+                {
+                  "channel": "L",
+                  "diagnostics": {
+                    "active_seconds": null,
+                    "aligned_frames": null,
+                    "ambiguity_margin": null,
+                    "correlation": null,
+                    "drift": null,
+                    "edge_trim_seconds": null,
+                    "fractional_delay_samples": null,
+                    "gain": null,
+                    "integer_delay_samples": null,
+                    "search": {
+                      "coarse": {
+                        "invalid": {
+                          "zero_centered_energy": 801
+                        },
+                        "valid": 0
+                      }
+                    },
+                    "structural": null
+                  },
+                  "reasons": [
+                    "no_valid_coarse_correlation"
+                  ],
+                  "status": "unsupported"
+                },
+                {
+                  "channel": "R",
+                  "diagnostics": {
+                    "active_seconds": null,
+                    "aligned_frames": null,
+                    "ambiguity_margin": null,
+                    "correlation": null,
+                    "drift": null,
+                    "edge_trim_seconds": null,
+                    "fractional_delay_samples": null,
+                    "gain": null,
+                    "integer_delay_samples": null,
+                    "search": {
+                      "coarse": {
+                        "invalid": {
+                          "zero_centered_energy": 801
+                        },
+                        "valid": 0
+                      }
+                    },
+                    "structural": null
+                  },
+                  "reasons": [
+                    "no_valid_coarse_correlation"
+                  ],
+                  "status": "unsupported"
+                }
+              ],
+              "summary": {
+                "active_seconds": null,
+                "aligned_frames": null,
+                "channel_lag_spread_samples": null,
+                "clock_drift_ppm": null,
+                "fractional_delay_samples": null,
+                "integer_delay_samples": null,
+                "minimum_correlation": null,
+                "minimum_structural_window_correlation": null
+              }
+            },
+            "case_id": "case-2ab0948d0ffcd4aa82ed23f324ee240c1178e4a4337badd873ae8c8f1a6fde3f",
+            "input": {
+              "reference": {
+                "channel_count": 2,
+                "channel_map": [
+                  "L",
+                  "R"
+                ],
+                "frames": 576008
+              },
+              "sample_rate_hz": 48000,
+              "test": {
+                "channel_count": 2,
+                "channel_map": [
+                  "L",
+                  "R"
+                ],
+                "frames": 576008
+              }
+            },
+            "perceptual_claim": false,
+            "public_verdict_enabled": false,
+            "record_kind": "perceptual_degradation_alignment_v4",
+            "sample_correction_applied": false,
+            "schema_version": 1,
+            "status": "unsupported",
+            "support": {
+              "limits_id": "alignment-validity-successor-20260907-001",
+              "predecessor_limits_ids": [
+                "perceptual-degradation-v1-alignment-fixtures-20260803-001",
+                "perceptual-degradation-v1-topology-fixtures-20260803-001"
+              ],
+              "reasons": [
+                "no_valid_coarse_correlation"
+              ]
+            }
+          },
+          "alignment_seconds": 0.954081,
+          "case": "constant_envelope",
+          "frames": 576008,
+          "inputs_immutable": true,
+          "instrumented": true,
+          "native_audit": {
+            "fallback_candidates": 0,
+            "native_candidates": 0,
+            "searches": []
+          },
+          "outcome": "completed",
+          "perceptual_support": false,
+          "sample_rate_hz": 48000,
+          "stage_timing": {
+            "completed": {
+              "alignment_other": 1,
+              "channel_other": 2,
+              "coarse_correlation": 1602,
+              "drift_local_search": 0,
+              "drift_other": 0,
+              "envelope": 4,
+              "gain": 0,
+              "sample_correlation": 0,
+              "structural_local_search": 0,
+              "structural_other": 0
+            },
+            "deadline_stack": null,
+            "entered": {
+              "alignment_other": 1,
+              "channel_other": 2,
+              "coarse_correlation": 1602,
+              "drift_local_search": 0,
+              "drift_other": 0,
+              "envelope": 4,
+              "gain": 0,
+              "sample_correlation": 0,
+              "structural_local_search": 0,
+              "structural_other": 0
+            },
+            "exclusive_seconds": {
+              "alignment_other": 3.9e-05,
+              "channel_other": 0.107909,
+              "coarse_correlation": 0.742849,
+              "drift_local_search": 0,
+              "drift_other": 0,
+              "envelope": 0.103255,
+              "gain": 0,
+              "sample_correlation": 0,
+              "structural_local_search": 0,
+              "structural_other": 0
+            }
+          }
+        },
+        {
+          "alignment": {
+            "alignment": {
+              "channels": [],
+              "summary": {
+                "active_seconds": null,
+                "aligned_frames": null,
+                "channel_lag_spread_samples": null,
+                "clock_drift_ppm": null,
+                "fractional_delay_samples": null,
+                "integer_delay_samples": null,
+                "minimum_correlation": null,
+                "minimum_structural_window_correlation": null
+              }
+            },
+            "case_id": "case-b9a6029dee09497f82a660b0b677c68463b6a45a8b28647b9d32823167410a8e",
+            "input": {
+              "reference": {
+                "channel_count": 2,
+                "channel_map": [
+                  "L",
+                  "R"
+                ],
+                "frames": 576008
+              },
+              "sample_rate_hz": 48000,
+              "test": {
+                "channel_count": 1,
+                "channel_map": [
+                  "M"
+                ],
+                "frames": 576008
+              }
+            },
+            "perceptual_claim": false,
+            "public_verdict_enabled": false,
+            "record_kind": "perceptual_degradation_alignment_v4",
+            "sample_correction_applied": false,
+            "schema_version": 1,
+            "status": "unsupported",
+            "support": {
+              "limits_id": "alignment-validity-successor-20260907-001",
+              "predecessor_limits_ids": [
+                "perceptual-degradation-v1-alignment-fixtures-20260803-001",
+                "perceptual-degradation-v1-topology-fixtures-20260803-001"
+              ],
+              "reasons": [
+                "channel_map_mismatch",
+                "channel_topology_mismatch"
+              ]
+            }
+          },
+          "alignment_seconds": 0.000153,
+          "case": "topology_mismatch",
+          "frames": 576008,
+          "inputs_immutable": true,
+          "instrumented": true,
+          "native_audit": {
+            "fallback_candidates": 0,
+            "native_candidates": 0,
+            "searches": []
+          },
+          "outcome": "completed",
+          "perceptual_support": false,
+          "sample_rate_hz": 48000,
+          "stage_timing": {
+            "completed": {
+              "alignment_other": 1,
+              "channel_other": 0,
+              "coarse_correlation": 0,
+              "drift_local_search": 0,
+              "drift_other": 0,
+              "envelope": 0,
+              "gain": 0,
+              "sample_correlation": 0,
+              "structural_local_search": 0,
+              "structural_other": 0
+            },
+            "deadline_stack": null,
+            "entered": {
+              "alignment_other": 1,
+              "channel_other": 0,
+              "coarse_correlation": 0,
+              "drift_local_search": 0,
+              "drift_other": 0,
+              "envelope": 0,
+              "gain": 0,
+              "sample_correlation": 0,
+              "structural_local_search": 0,
+              "structural_other": 0
+            },
+            "exclusive_seconds": {
+              "alignment_other": 7.9e-05,
+              "channel_other": 0,
+              "coarse_correlation": 0,
+              "drift_local_search": 0,
+              "drift_other": 0,
+              "envelope": 0,
+              "gain": 0,
+              "sample_correlation": 0,
+              "structural_local_search": 0,
+              "structural_other": 0
+            }
+          }
+        }
+      ]
+    ],
+    "schema_version": 1,
+    "state": "synthetic_runtime_observation_complete",
+    "timing_byte_identity_required": false
+  },
+  "summary": [
+    [
+      {
+        "case": "identity_baseline",
+        "alignment_seconds": 118.043073,
+        "alignment_status": "supported",
+        "native_candidates": 135624,
+        "fallback_candidates": 0
+      },
+      {
+        "case": "identity_instrumented",
+        "alignment_seconds": 120.457561,
+        "alignment_status": "supported",
+        "native_candidates": 135624,
+        "fallback_candidates": 0,
+        "structural_local_search_seconds": 82.732665,
+        "sample_correlation_seconds": 35.227202,
+        "structural_percent_of_alignment_seconds": 68.68200245229936
+      },
+      {
+        "case": "constant_envelope",
+        "alignment_seconds": 0.955479,
+        "alignment_status": "unsupported",
+        "native_candidates": 0,
+        "fallback_candidates": 0
+      },
+      {
+        "case": "topology_mismatch",
+        "alignment_seconds": 6.6e-05,
+        "alignment_status": "unsupported",
+        "native_candidates": 0,
+        "fallback_candidates": 0
+      }
+    ],
+    [
+      {
+        "case": "identity_baseline",
+        "alignment_seconds": 118.150284,
+        "alignment_status": "supported",
+        "native_candidates": 135624,
+        "fallback_candidates": 0
+      },
+      {
+        "case": "identity_instrumented",
+        "alignment_seconds": 118.44131,
+        "alignment_status": "supported",
+        "native_candidates": 135624,
+        "fallback_candidates": 0,
+        "structural_local_search_seconds": 82.714648,
+        "sample_correlation_seconds": 33.252023,
+        "structural_percent_of_alignment_seconds": 69.8359786800737
+      },
+      {
+        "case": "constant_envelope",
+        "alignment_seconds": 0.954081,
+        "alignment_status": "unsupported",
+        "native_candidates": 0,
+        "fallback_candidates": 0
+      },
+      {
+        "case": "topology_mismatch",
+        "alignment_seconds": 0.000153,
+        "alignment_status": "unsupported",
+        "native_candidates": 0,
+        "fallback_candidates": 0
+      }
+    ]
+  ],
+  "independent_artifact_audit": {
+    "result_sha256": "f0f4eab8227a6e76f4f191da5533ab6f5a91ae35b009a0b6e40795dafe4e5abd",
+    "all_eight_slots_audited": true,
+    "exact_complete_native_search_inventory": true,
+    "zero_fallback_all_slots": true,
+    "complete_alignment_cross_mode_and_round_bytes_equal": true,
+    "whole_round_bytes_equal": false,
+    "guard_reasons_and_nulls_preserved": true,
+    "four_json_plus_private_native_binary_layout_verified": true,
+    "modes_and_binary_hash_verified": true,
+    "predecessor_and_protocol_hashes_unchanged": true,
+    "no_audio_arrays_or_private_paths_published": true,
+    "audit_implementation": "independent_inline_standard_library_checks_without_importing_runner_or_aggregate",
+    "dynamic_dependency_names": [
+      "libSystem.B.dylib"
+    ],
+    "compiler_dependency_closure_claimed": false
+  },
+  "interpretation": [
+    "All four identity calls completed and produced supported technical alignment with zero lag/drift, unchanged samples, both channels and all 24 valid local windows. Supported alignment is not perceptual support.",
+    "Every identity evaluated 134414 structural candidates plus 1210 drift candidates. Zero fallback was observed. Native search geometry and completed alignment bytes repeat; timings do not.",
+    "Structural local search remains dominant: 82.73 and 82.71 seconds, 68.68 and 69.84 percent of complete instrumented alignment time. This includes bridge and candidate bookkeeping, unlike the predecessor correlation-only stage.",
+    "The preceding v3 identities were censored at 180 seconds. Their total runtime and complete identity records are unknown, so this is not an exact measured total speedup or full-size predecessor-byte comparison.",
+    "Observed instrumented minus baseline wall times are not a controlled overhead estimate: fixed-order sequential executions also include host variation.",
+    "This is one deterministic artificial family and two invalid-support controls. It does not establish codec behavior, representativeness, human audibility or statistical transfer.",
+    "At roughly 118 seconds per identity, a conditional 160-case replay at the same cost would take about 5.2 hours before codec work, exceeding the previous one-hour replay cutoff. This arithmetic is not measured real-audio throughput.",
+    "Native binary and compiler executable/version/flags are bound, and only libSystem is dynamically linked on this host. A complete compiler dependency closure or byte-reproducible rebuild across output paths is not claimed."
+  ],
+  "claim_boundary": {
+    "actual_audio_access_authorized": false,
+    "additional_real_replay_authorized": false,
+    "codec_execution_authorized": false,
+    "capture_authorized": false,
+    "playback_authorized": false,
+    "perceptual_metrics_authorized": false,
+    "threshold_changes_authorized": false,
+    "source_assignment_authorized": false,
+    "human_calibration_complete": false,
+    "full_reference_validated": false,
+    "no_reference_training_authorized": false,
+    "public_verdict_enabled": false,
+    "objective_complete": false
+  },
+  "next_action": "Prepare a separately bounded end-to-end digital canary with explicit new real-audio/codec authority and exact-execution-head CI. Reconsider full-study throughput before any full cohort replay. The consumed earlier real replay is not reopened; no threshold or source-trait changes, metrics, listening or training."
+}

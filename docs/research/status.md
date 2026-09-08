@@ -1781,3 +1781,26 @@ thresholds and the consumed real-audio result remain unchanged. No real audio,
 codec execution, playback, metric, human collection, training or public verdict
 was enabled. No complete-run or second-channel timing is inferred, and the full
 research objective remains incomplete.
+
+## Native local-search synthetic qualification — 2026-09-08
+
+The [separately versioned v4 qualification](perceptual-degradation-alignment-native-qualification-20260908.md)
+completed both full-size uninstrumented identities in about 118 seconds, within
+the unchanged 180-second limit. Both instrumented identities also completed.
+All completed alignment records match across rounds and instrumentation modes;
+all 135,624 local candidates per identity were evaluated, with no Python fallback.
+The constant-envelope and topology controls correctly abstained. An independent
+saved-artifact audit passed; frozen predecessor code and negative results remain
+unchanged.
+
+The native local-search backend preserves exact tested numerical behavior and
+complete search coverage. Structural search still consumes about 83 seconds per
+identity. This is a synthetic per-case execution pass, not a full-study throughput
+or codec-pipeline qualification. A conditional 160 cases at the same 118-second
+cost would take roughly 5.2 hours before codec work, exceeding the earlier
+one-hour replay cutoff.
+
+Next is a separately bounded end-to-end digital canary with new explicit
+real-audio/codec authority and exact-execution-head CI, not an automatic full
+replay. Human calibration, source independence, metrics, training and public
+verdicts remain closed. The overall research objective is incomplete.
