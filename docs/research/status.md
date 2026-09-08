@@ -1926,3 +1926,21 @@ qualification and unchanged codecs/limits, with separate global-native audit
 and an exclusive launch marker. Exact-head CI must pass before source access.
 The prior v4 negative is unchanged. This checkpoint does not claim the new
 canary has run; scientific outputs and the broader objective remain incomplete.
+
+## V5 canary: audited repeatable technical pass — 2026-09-08
+
+The [v5 canary result](perceptual-degradation-digital-v5-canary-result-20260908.md)
+passed its primary technical gate after exact-head CI: all twelve comparisons
+completed, both controls and all codec cases were supported, both complete
+replays matched excluding only declared timing, all replay edges passed and no
+local/global fallback occurred. Cases took 77.3–79.7 seconds under the unchanged
+180-second limit. The independent audit confirmed source preservation and exact
+retention with no derived audio. This single batch is consumed.
+
+This clears the immediate bounded canary's engineering blocker, not full-cohort
+runtime feasibility or perceptual calibration. The same previously consumed
+development reference supplies no independent transfer evidence. The earlier
+v4 negative remains unchanged. New technical batches may use standing authority
+with new prospective scope/budgets; the old full-cohort run is not reopened.
+Metric selection/execution, human collection, source assignment, training and
+public verdicts remain separately gated. The broader objective is incomplete.

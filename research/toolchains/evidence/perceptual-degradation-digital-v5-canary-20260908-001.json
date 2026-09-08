@@ -1,0 +1,204 @@
+{
+  "schema_version": 1,
+  "report_id": "digital-v5-canary-result-20260908-001",
+  "date": "2026-09-08",
+  "state": "audited_bounded_v5_canary_primary_technical_gate_passed",
+  "proposal_id": "digital-v5-canary-20260908-001",
+  "bindings": {
+    "proposal": {
+      "path": "benchmarks/perceptual-degradation-v1/digital-v5-canary-proposal-20260908.json",
+      "sha256": "2bba4c24ddf73db2943523f43e0e42bf711b22006e6edce64ceaf6e08b8e1ee5"
+    },
+    "authorization": {
+      "path": "benchmarks/perceptual-degradation-v1/digital-v5-canary-authorization-20260908.json",
+      "sha256": "3e40a5a4f5c587b7ddb21feb50e280fd1c536286189e0156f13c017fb073dd19"
+    },
+    "runner": {
+      "path": "scripts/perceptual_degradation_digital_canary_v5.py",
+      "sha256": "9ef148237f9d98ee4b0225eaf93c893cf405a27eed1b9c9e6624d2f7f43156ee"
+    },
+    "runner_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_digital_canary_v5.py",
+      "sha256": "dbf0743b8867d7102639f7ede6cf0cf14c54802833b6c0c1f6c17c540a344177"
+    },
+    "independent_artifact_auditor": {
+      "path": "scripts/perceptual_degradation_digital_canary_v5_artifact_audit.py",
+      "sha256": "3e33f28566fc0fd160d986533f1e772790a353692df0d5acaa31ce9f0815e882"
+    },
+    "independent_artifact_auditor_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_digital_canary_v5_artifact_audit.py",
+      "sha256": "a86bb86b54248d8e4827ce118550a3f104749d78b43d1e561f94d01ca070e8db"
+    },
+    "qualification_result": {
+      "path": "research/toolchains/evidence/perceptual-degradation-alignment-global-synthetic-20260908-001.json",
+      "sha256": "2119d4d089eb4e54064b116167ad18f3cff1be9c894be8620622b329fc2540f7"
+    }
+  },
+  "execution": {
+    "head": "524cd679569ec8306d9025bb77c69b610b06de75",
+    "push_ci_run_id": 34201628376,
+    "push_ci_url": "https://github.com/ryan-voitiskis/lossytrace/actions/runs/34201628376",
+    "exact_head_ci_success_verified_before_private_access": true,
+    "ci_python_tests": 1697,
+    "ci_python_skipped": 14,
+    "ci_python_seconds": 1175.181,
+    "ci_rust_passed": true,
+    "runner_invocations": 1,
+    "runner_exit_code": 0,
+    "authorized_replays": 2,
+    "completed_replay_reports": 2,
+    "workers": 1,
+    "authorization_consumed": true,
+    "additional_invocation_under_this_batch_authorized": false,
+    "standing_authority_for_separately_bound_technical_batches_continues": true,
+    "automatic_retry_performed": false,
+    "maximum_case_seconds": 180,
+    "maximum_command_seconds": 60,
+    "stop_starting_cases_after_replay_seconds": 1200,
+    "minimum_free_disk_gib": 15,
+    "scratch_allowance_bytes": 402653184,
+    "proposal_runner_and_thresholds_changed_within_batch": false
+  },
+  "projection": {
+    "all_cases_observed": true,
+    "all_edge_checks_passed": true,
+    "artifacts": null,
+    "audibility": null,
+    "both_controls_technically_supported_both_rounds": true,
+    "codec_comparisons_technically_supported": 8,
+    "deterministic_evidence_byte_identical": true,
+    "full_cohort_validation": false,
+    "human_calibrated": false,
+    "independent_validation": false,
+    "metric_authorized": false,
+    "no_native_fallback_all_cases": true,
+    "perceptual_support": false,
+    "playback_authorized": false,
+    "primary_technical_gate_passed": true,
+    "proposal_id": "digital-v5-canary-20260908-001",
+    "public_verdict_enabled": false,
+    "replays": [
+      {
+        "alignment_unsupported_reasons": {},
+        "case_seconds": 472.0687788729556,
+        "dispositions": {
+          "observed": 6
+        },
+        "failure_or_stop_reasons": {},
+        "fallback_candidates": 0,
+        "global_fallback_candidates": 0,
+        "global_native_candidates": 46176,
+        "global_short_overlap_candidates": 0,
+        "native_candidates": 813744,
+        "planned": 6,
+        "quality_duration_eligible": 6,
+        "subtle_technically_supported": 6
+      },
+      {
+        "alignment_unsupported_reasons": {},
+        "case_seconds": 469.35471008496825,
+        "dispositions": {
+          "observed": 6
+        },
+        "failure_or_stop_reasons": {},
+        "fallback_candidates": 0,
+        "global_fallback_candidates": 0,
+        "global_native_candidates": 46176,
+        "global_short_overlap_candidates": 0,
+        "native_candidates": 813744,
+        "planned": 6,
+        "quality_duration_eligible": 6,
+        "subtle_technically_supported": 6
+      }
+    ],
+    "schema_version": 1,
+    "severity": null,
+    "source_trait_assignment": false,
+    "state": "bounded_canary_computationally_complete",
+    "timings_excluded_from_repeatability": true,
+    "training_authorized": false,
+    "transparency": null
+  },
+  "totals": {
+    "planned_comparisons": 12,
+    "attempted_comparisons": 12,
+    "complete_comparisons": 12,
+    "alignment_timeouts": 0,
+    "not_run": 0,
+    "completed_control_comparisons": 4,
+    "completed_codec_comparisons": 8,
+    "codec_encode_decode_pairs_reaching_alignment": 8,
+    "condition_pairs_completed_in_both_replays": 6,
+    "recorded_local_native_candidates": 1627488,
+    "recorded_global_native_candidates": 92352,
+    "recorded_local_fallback_candidates": 0,
+    "recorded_global_fallback_candidates": 0,
+    "completed_case_seconds_minimum": 77.29625891702017,
+    "completed_case_seconds_maximum": 79.65915695898002,
+    "combined_case_wall_seconds": 941.4234889579238,
+    "combined_case_time_is_not_whole_invocation_wall_time": true
+  },
+  "saved_record_integrity_observations": {
+    "codec_condition_pairs_with_matching_encoded_hashes": 4,
+    "codec_condition_pairs_with_matching_decoded_hashes": 4,
+    "codec_condition_pairs_with_matching_packet_records": 4,
+    "corresponding_case_source_and_adapter_hashes_match": true
+  },
+  "integrity": {
+    "passed": true,
+    "kind": "independent_read_only_saved_artifact_audit",
+    "auditor_and_tests_committed_before_observation": true,
+    "constructed_runner_tests": 37,
+    "constructed_filesystem_audit_tests": 12,
+    "standalone_constructed_accounting_checks": 9,
+    "public_projection_independently_reconstructed": true,
+    "public_projection_sha256": "a6933c896d6a317a89e0305ee14995ca3806f7f3add1845b569d509186f487b8",
+    "first_report_snapshot_unchanged": true,
+    "stdout_matches_saved_projection": true,
+    "stderr_empty": true,
+    "exclusive_launch_marker_verified": true,
+    "exact_identity_order_and_denominators_verified": true,
+    "completed_local_and_global_native_inventory_consistency_verified": true,
+    "source_hashes_post_run_verified_count": 1,
+    "other_15_waveforms_reopened_by_canary_or_auditor": false,
+    "declared_metadata_inventory_verified_count": 16,
+    "retained_output_json_files": 5,
+    "retained_native_libraries": 1,
+    "no_derived_audio_or_case_scratch_retained": true,
+    "private_json_files_mode_0600_directories_0700_library_0500": true,
+    "all_pre_and_post_replay_edge_checks_passed": true,
+    "native_binding_scope": "Replay-edge checks, not continuous attestation; compiler dependency closure and cross-directory binary reproducibility are not claimed.",
+    "audit_scope": "Independent saved-record aggregate reconstruction, identity and accounting checks, launch/retention checks and selected-source preservation; not independent scientific validation or an alignment rerun."
+  },
+  "interpretation": {
+    "computational_completion_gate_passed": true,
+    "preregistered_repeatability_gate_passed": true,
+    "primary_technical_gate_passed": true,
+    "observed": "All twelve comparisons completed and were technically supported. Both ordered replays matched after excluding only the declared per-case timing field. No local or global fallback occurred.",
+    "numerical_scope": "Repeatable v5 evidence on one consumed development reference, plus the separately qualified synthetic equivalence scope; not all-input or all-platform equivalence.",
+    "runtime_scope": "Cases completed within the unchanged 180-second limit on this machine. The historical v4 timeouts remain unchanged; these nonrandomized runs do not isolate implementation effects from host/runtime variation.",
+    "full_cohort_runtime_feasibility_established": false,
+    "conditional_320_case_cost_hours_if_this_mean_held": 6.97350732561425,
+    "conditional_runtime_is_not_an_estimate_for_all_other_sources": true,
+    "no_perceptual_quality_conclusion": true,
+    "objective_complete": false,
+    "final_research_recommendation": null
+  },
+  "access_boundary": {
+    "one_selected_retained_reference_read": true,
+    "actual_codec_generation_performed": true,
+    "source_substitution_performed": false,
+    "threshold_adjustment_performed": false,
+    "derived_pcm_retained": false,
+    "provider_processed_conditions_or_scores_opened": false,
+    "sealed_evidence_opened": false,
+    "playback_performed": false,
+    "sound_card_or_capture_used": false,
+    "perceptual_metric_executed": false,
+    "listener_response_collected": false,
+    "source_trait_assigned": false,
+    "no_reference_training_performed": false,
+    "public_verdict_enabled": false
+  },
+  "next_gate": "This batch is consumed. Any further technical coverage needs a new prospective scope and runtime budget under standing authority; do not restart the old full-cohort study. Metric selection/execution and human pilot collection retain separate scientific and authorization gates."
+}
