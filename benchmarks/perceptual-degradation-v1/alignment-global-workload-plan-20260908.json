@@ -1,0 +1,198 @@
+{
+  "schema_version": 1,
+  "plan_id": "alignment-global-workload-20260908-001",
+  "state": "frozen_before_full_size_synthetic_observation",
+  "purpose": "Qualify exact native global correlations and broaden synthetic workload coverage before another retained-reference canary.",
+  "bindings": {
+    "standing_authority": {
+      "path": "benchmarks/perceptual-degradation-v1/digital-development-standing-authorization-20260908.json",
+      "sha256": "ee86c46a831de432500910190003dcc5ef670832fdb3e0dd7d6f55199793f568"
+    },
+    "canary_negative": {
+      "path": "research/toolchains/evidence/perceptual-degradation-digital-canary-20260908-001.json",
+      "sha256": "de16ee034fffd7c3184bc5d9b2bd3c381a340b4758c7f2ec4b8d9b9f60f53958"
+    },
+    "baseline_canary_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/digital-canary-proposal-20260908.json",
+      "sha256": "85b54faa61f589ea740d10ddd712cf9c4f4d85ba58dec43d0af8133dcd8a92c0"
+    },
+    "alignment_v1": {
+      "path": "scripts/perceptual_degradation_alignment.py",
+      "sha256": "0e036bc1a430e578523d61e68c7ab0dc659bace2f606710ab3d28b148439dccb"
+    },
+    "alignment_v2": {
+      "path": "scripts/perceptual_degradation_alignment_v2.py",
+      "sha256": "72fe01344a33ffbec3967f0c64ca7cf5a3e7c0f5ba64620800115a646500e61c"
+    },
+    "alignment_v3": {
+      "path": "scripts/perceptual_degradation_alignment_v3.py",
+      "sha256": "d9296e62a806a811d281cac93ae65f9bfcaab310aa5dfe12127bfc09199b7581"
+    },
+    "alignment_v4": {
+      "path": "scripts/perceptual_degradation_alignment_v4.py",
+      "sha256": "f5ad2f7e9966a092152601e36520e2b4d12efa969284636458630439553b5278"
+    },
+    "alignment_v5": {
+      "path": "scripts/perceptual_degradation_alignment_v5.py",
+      "sha256": "d53a0835429d3af07252ca3eea99eb5c445e06fe15b7cef3b3c473fad45a8cda"
+    },
+    "local_bridge": {
+      "path": "scripts/perceptual_degradation_correlation_native.py",
+      "sha256": "5aa7b8d3e4ca7d555a2ad68698642a20dad8da5bd6388da73b1fc4c70f0b0db9"
+    },
+    "native_license": {
+      "path": "research/licenses/alignment-kernel-PSF-LICENSE.txt",
+      "sha256": "ebe7dacaa0cc671387c19bf89ab62cf021d883a3c8f4f4b31a413ef0ca77b3c4"
+    },
+    "local_source": {
+      "path": "scripts/perceptual_degradation_correlation_native.c",
+      "sha256": "632020c11235dcc5f4708563094d230449f9eaebb8fd7d2e07990a90325729f1"
+    },
+    "global_bridge": {
+      "path": "scripts/perceptual_degradation_correlation_global.py",
+      "sha256": "d62cd079e7af3ef4f1c32cec59d587a22979820fb9255f0af5d06463f4162cde"
+    },
+    "global_source": {
+      "path": "scripts/perceptual_degradation_correlation_global.c",
+      "sha256": "edba8629878bba1c9de5fd49e5ff013b3125a56c08ec3743a0f5c3ceb2ff992f"
+    },
+    "native_tools": {
+      "path": "research/toolchains/evidence/perceptual-degradation-digital-native-tools-20260908-001.json",
+      "sha256": "befbd97f40cfc8eb2debc40b074cfdba23708e79f59719d032cf5106b40404b6"
+    },
+    "tool_binding": {
+      "path": "scripts/perceptual_degradation_digital_tools.py",
+      "sha256": "71055c715fd4ee75687676db14f2a557eb8d1a6b985b0ca6253f32ddc6124f8d"
+    },
+    "old_qualification": {
+      "path": "scripts/perceptual_degradation_alignment_native_qualification.py",
+      "sha256": "2c936cd58f1cc8d9e3643375afc3efc3b2b6b4258c2802de7a13b4b300d34c20"
+    },
+    "old_runtime": {
+      "path": "scripts/perceptual_degradation_alignment_runtime.py",
+      "sha256": "c7aa45f4e6d1ecff4646693e76143c7be0f60b8098b7d119a2eaf4058a3dbfcc"
+    },
+    "equivalence_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_alignment_v5.py",
+      "sha256": "7915055b9ec2662ad0463bb3569dc2df7da337e876b36086c2bd73141d568b76"
+    },
+    "runner": {
+      "path": "scripts/perceptual_degradation_global_qualification.py",
+      "sha256": "d0a5dbc4ce62e5f092af6ebc57bf16545ef8fe8546096b7f4f763f86451f67c5"
+    },
+    "tests": {
+      "path": "scripts/tests/test_perceptual_degradation_global_qualification.py",
+      "sha256": "e0826675e4bc6061d73fe4d60cf61d01019b96b477dae6c6443bac17cfd91704"
+    }
+  },
+  "geometry": {
+    "frames": 576008,
+    "sample_rate_hz": 48000,
+    "channels": 2
+  },
+  "cases": [
+    "quantized:global_pair",
+    "quantized:full_native",
+    "dense_float:global_pair",
+    "dense_float:full_native",
+    "mixed_scale:global_pair",
+    "mixed_scale:full_native",
+    "sparse_bursts:global_pair",
+    "sparse_bursts:full_native"
+  ],
+  "limits": {
+    "case_seconds": 180,
+    "worker_seconds": 210,
+    "margin_gate_seconds": 120,
+    "rounds": 2,
+    "workers": 1,
+    "minimum_output_free_gib": 15,
+    "minimum_workspace_free_gib": 15
+  },
+  "native_build": {
+    "compiler_dependency_closure_claimed": false,
+    "compiler_sha256": "b8763cf250e607a778bb4603cecb5b90338814d0a3dfcba0d57b1de242f610e9",
+    "compiler_version": [
+      "Apple clang version 21.0.0 (clang-2100.1.1.101)",
+      "Target: arm64-apple-darwin25.6.0",
+      "Thread model: posix"
+    ],
+    "flags": [
+      "-O2",
+      "-std=c11",
+      "-shared",
+      "-fPIC",
+      "-fno-fast-math",
+      "-ffp-contract=off",
+      "-Wall",
+      "-Wextra",
+      "-Werror"
+    ],
+    "link_libraries": [
+      "m"
+    ],
+    "machine": "arm64",
+    "os_release": "25.6.0",
+    "platform": "Darwin",
+    "source_sha256": "edba8629878bba1c9de5fd49e5ff013b3125a56c08ec3743a0f5c3ceb2ff992f",
+    "included_source_sha256": "632020c11235dcc5f4708563094d230449f9eaebb8fd7d2e07990a90325729f1"
+  },
+  "construction": {
+    "quantized": "Exactly the bound prior native-qualification identity generator at 576008 frames.",
+    "others": "Unsigned 64-bit LCG initially 0x56842139D30A0F71; state=(6364136223846793005*state+1442695040888963407) mod 2^64. Generate left then right per frame. value=((state>>11)/2^53-0.5)*0.25, then multiply by (1+(frame//137+channel)%5)/5.",
+    "dense_float": "Use the generated value.",
+    "mixed_scale": "math.ldexp(value,-((frame+channel*7)%41)) per sample.",
+    "sparse_bursts": "Replace value by zero when (frame//2400)%5 is not zero. Not a natural sparse-trait claim.",
+    "immutability": "Two immutable float tuples, with little-endian binary64 input SHA-256 checked before/after measured work. No waveform files.",
+    "scope": "Four declared artificial numeric/activity families, not source-representative coverage or a proof of worst-case runtime."
+  },
+  "measurement": {
+    "global_pair": "Left-channel identity. Unchanged v4 centered coarse correlations at all 801 lags, at most eight peaks under existing exclusion, then every selected fine lag first in Python v4 and then native v5. Compare exact canonical records for every candidate.",
+    "full_native": "Complete stereo v5 identity alignment. Delegating TimedKernel wrappers measure disjoint native global/local stages in CPU and wall seconds. Residual includes coarse envelope, gain and other Python work.",
+    "clock_boundary": "180-second alarm covers alignment/component work and instrumentation, excluding construction, initial input hashing, library loading and report writing. Fresh isolated child per slot, with 210-second subprocess bound.",
+    "order": "Eight fixed cases in listed order twice, one worker. Components always use Python then native. Descriptive timing ratios do not isolate order/cache/scheduling effects.",
+    "censoring": "Timeouts retain partial component/native progress and no completed alignment. Worker/output/schema failures remain visible. Resource/edge failure stops later starts across rounds.",
+    "repeatability": "For completed corresponding slots compare all evidence except exactly wall_seconds,cpu_seconds,stage_wall_seconds,stage_cpu_seconds,other_wall_seconds,other_cpu_seconds. Do not discard timeout progress; completed comparison is unavailable if either slot did not finish.",
+    "margin": "Every full_native observation must finish within 120 seconds under the unchanged 180-second timeout. This prospective one-third margin is a synthetic alignment criterion, not a bound on codec overhead or all real inputs.",
+    "primary_gate": "All 16 slots complete; eight global pairs each contain 3848 exactly matching candidate records; all eight full alignments meet 120 seconds; completed evidence repeats; inputs unchanged; zero fallback; four passing edge checks.",
+    "support": "Runtime completion is distinct from supported/unsupported alignment. Sparse-burst duration/window support may abstain; scientific thresholds stay fixed."
+  },
+  "equivalence": {
+    "implementation": "V5 copies v4, changing only record kind, module description and sampled global-refinement dispatch. Other function/class ASTs match; _channel matches after removing that one assignment.",
+    "native": "Include unchanged PSF-licensed sum/local C source. Normalize both sampled vectors in C; independently accumulate dot and energy sums using the same bounded partial-sum algorithm. Python retains square roots, division, range checks, clamping and lag selection.",
+    "admission": "Exact-float list/tuple inputs up to 1048576 frames each (8 MiB packed/input). Other types/size use original Python. Sampled numeric invalidity precedes zero energy; unsampled invalid values stay ignored. Capacity/environment failures fall back.",
+    "scope": "Finite adversarial tests and code review, not all-input/platform proof. Full-size component equivalence is measured; full-size v4 alignment baselines for every new family are not claimed.",
+    "numerical_tolerance": 0,
+    "changed_scientific_thresholds": false,
+    "changed_search_inventory": false,
+    "automatic_build_on_import": false
+  },
+  "execution": {
+    "standing_authority": true,
+    "local_pre_observation_commit_required": true,
+    "clean_execution_checkout_required": true,
+    "external_preregistration_claim": false,
+    "publication": "Commit tested protocol locally before full-size observations. Publish protocol/result commits after full local CI-equivalent validation, then verify exact publication CI. Real-reference successors require separately committed batch scope and exact-execution-head CI under standing user authority.",
+    "invocations_in_this_batch": 1,
+    "maximum_child_slots": 16,
+    "marker": "Exclusive plan-ID launch JSON in the outside-repository output parent. Do not overwrite or restart this batch.",
+    "retention": "Private no-clobber mode-0600 execution, two rounds and result JSON files plus bound native library in mode-0700 kernel directory. Retain parent launch marker; no arrays or waveforms.",
+    "resource": "One child at a time. 15 GiB workspace/output-volume reserve before execution, every case and replay edge; use verified external working/output storage. No source access or cleanup of user data.",
+    "native_binding": "Bind compiler executable/version, OS/architecture, flags, global/included C sources, bridges and binary. Check arithmetic environment on activation and every candidate. Existing codec tools checked via version/dependency metadata only. Compiler dependency closure and cross-directory binary reproducibility are not claimed."
+  },
+  "claim_boundary": {
+    "real_audio_accessed": false,
+    "codec_executed": false,
+    "capture_authorized": false,
+    "playback_authorized": false,
+    "metric_execution_authorized": false,
+    "perceptual_support": false,
+    "source_trait_assignment": false,
+    "human_calibrated": false,
+    "training_authorized": false,
+    "full_rate_pipeline_qualified": false,
+    "public_verdict_enabled": false,
+    "objective_complete": false
+  },
+  "next_action": "If this gate passes, freeze a bounded v5 real-reference/codec successor under standing authority, and wait for exact-execution-head CI. Otherwise preserve the negative and design a separate prospective successor. No signal replacement, deadline increase or rerun within this batch."
+}

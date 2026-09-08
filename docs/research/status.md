@@ -1890,3 +1890,20 @@ JSON files and the bound native library remain; no derived audio or case scratch
 is retained. The authorization is consumed, without substitution, changed
 limits or another run. Metrics, listening, source assignment, training and
 public verdicts remain closed. The broader objective remains incomplete.
+
+## Standing digital development authority and global-search qualification — 2026-09-08
+
+The user now authorizes additional technical development attempts without a
+fresh permission question for every shot. The [standing authorization](perceptual-degradation-standing-development-authority-20260908.md)
+does not reopen consumed checkpoints. Every batch still has prospective
+scope, immutable implementation/limits, bounded execution and full accounting;
+real-reference batches still require successful exact-execution-head CI.
+
+The [global-search workload successor](perceptual-degradation-global-workload-qualification-20260908.md)
+adds an isolated v5 native global-correlation dispatch while preserving the v4
+alignment model, every lag, numerical method and support threshold. A fixed
+16-slot synthetic qualification spans four numeric/activity families, comparing
+full-size global candidate records with v4 and timing full stereo alignments.
+The unchanged 180-second deadline has a new prospective 120-second margin gate.
+No full-size observation or further real-audio execution is claimed at this
+protocol checkpoint. Metrics, human collection and public verdicts stay closed.
