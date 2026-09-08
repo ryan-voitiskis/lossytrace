@@ -1907,3 +1907,22 @@ full-size global candidate records with v4 and timing full stereo alignments.
 The unchanged 180-second deadline has a new prospective 120-second margin gate.
 No full-size observation or further real-audio execution is claimed at this
 protocol checkpoint. Metrics, human collection and public verdicts stay closed.
+
+## Audited synthetic margin and separately bounded v5 canary — 2026-09-08
+
+The [global workload result](perceptual-degradation-global-workload-result-20260908.md)
+passed all prospective synthetic gates: 16/16 slots completed, 30,784 exact
+global candidate-pair comparisons, repeated completed evidence, unchanged
+inputs, no fallback, all replay edges passed and all eight full alignments
+under 120 seconds. The independent readback reconstructed all four input hashes
+and confirmed exact retention. Sparse bursts still abstain on activity support.
+This was a locally committed preregistration, not prior external publication.
+The batch is consumed; no real-source or codec throughput guarantee follows.
+
+A [new v5 canary](perceptual-degradation-digital-v5-canary-proposal-20260908.md)
+uses the standing authority for one fixed twelve-comparison batch on the same
+metadata-selected largest development reference. It binds the successful
+qualification and unchanged codecs/limits, with separate global-native audit
+and an exclusive launch marker. Exact-head CI must pass before source access.
+The prior v4 negative is unchanged. This checkpoint does not claim the new
+canary has run; scientific outputs and the broader objective remain incomplete.
