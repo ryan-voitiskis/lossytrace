@@ -1838,3 +1838,24 @@ bindings in its initial shallow clone were resolved by fetching the complete
 public Git history and rerunning the full suite. No implementation, consumed
 result or reserve guard was changed. Two generated SBOMs are identical; the
 publication privacy and artifact-boundary audit passed.
+
+## Bounded native digital canary execution approved — 2026-09-08
+
+The responsible user explicitly approved the [frozen canary scope](perceptual-degradation-digital-canary-proposal-20260908.md).
+The [new authorization](../../benchmarks/perceptual-degradation-v1/digital-canary-authorization.json)
+binds the unchanged proposal and runner. It permits one invocation comprising
+two fixed six-condition replays on one full-length reference selected from the
+hash-bound delivery metadata: 12 planned comparisons and at most eight
+encode/decode pairs, with one worker. The other 15 waveforms remain unopened by
+this successor. No substitution, threshold change or automatic rerun is allowed.
+
+This records approval, not execution or a result. Private path, metadata and
+waveform access still require this authorization to be committed, successful
+push CI for the exact execution head, unchanged native tool/compiler bindings
+and the live 15 GiB reserve plus 384 MiB scratch allowance. Failed, unsupported
+and not-started cases remain in the accounting. The consumed predecessor
+study and all frozen implementations, limits and negative results are unchanged.
+
+No hardware, playback, perceptual metric, listening response, source-trait
+assignment, training, independent-validation or public-verdict gate opens.
+The broader objective remains incomplete.
