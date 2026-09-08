@@ -1804,3 +1804,37 @@ Next is a separately bounded end-to-end digital canary with new explicit
 real-audio/codec authority and exact-execution-head CI, not an automatic full
 replay. Human calibration, source independence, metrics, training and public
 verdicts remain closed. The overall research objective is incomplete.
+
+## Bounded native digital canary prepared — 2026-09-08
+
+The [new canary proposal](perceptual-degradation-digital-canary-proposal-20260908.md)
+and separately bound runner reduce the next end-to-end test to one full-length
+reference, selected deterministically by largest declared frame count from the
+frozen delivery metadata. Both input controls and one unchanged setting from
+each of the four development codec families run twice: 12 comparisons and at
+most eight encode/decode pairs. The other 15 waveforms remain unopened by this
+successor. The conditional runtime estimate is about 24 minutes, not a measured
+codec-throughput result or completion guarantee.
+
+Constructed fixtures and mocked codec/CI boundaries test selection, authorization,
+retention, edge-check stops and complete accounting. Timing alone is excluded
+from deterministic replay comparison; numerical records, hashes, packet geometry,
+support/nulls and native counts remain included. Control support, codec support
+and computational completion are reported separately.
+
+No real-source, codec, capture or playback execution occurred in preparing this
+checkpoint. The new exact authorization remains absent and the consumed old
+authorization cannot open this runner. Execution still needs user approval,
+successful exact-execution-head push CI, unchanged native bindings and a live
+15 GiB reserve plus 384 MiB scratch allowance. No cleanup or reserve reduction
+is authorized. Metrics, human collection, trait assignment, training and public
+verdicts remain closed; the overall objective remains incomplete.
+
+Preparation validation passes: 29 focused tests, Rust formatting/Clippy/all-target
+tests, and the full Python suite with 1,599 tests and 14 skips. After the initial
+internal-volume reserve failures, validation ran from a byte-verified external
+checkout with build and temporary storage on that volume. Missing historical
+bindings in its initial shallow clone were resolved by fetching the complete
+public Git history and rerunning the full suite. No implementation, consumed
+result or reserve guard was changed. Two generated SBOMs are identical; the
+publication privacy and artifact-boundary audit passed.
