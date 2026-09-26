@@ -93,12 +93,16 @@ outside the public repository. See
 cargo fmt --check
 cargo clippy --all-targets -- -D warnings
 cargo test --all-targets
-python3 -m unittest discover -s scripts/tests -p 'test_audio_integrity*.py'
+python3 scripts/run_regression_tests.py
 ```
 
 Some corpus and benchmark checks are intentionally opt-in because they require
 licensed or locally retained audio. They must fail closed when their declared
 inputs or fingerprints are missing.
+
+The Python runner preserves and replays byte-bound historical audits at their
+recorded checkpoint while testing current software separately; see
+[Contributing](CONTRIBUTING.md) for runtime and Git-history requirements.
 
 ## Relationship to Reklawdbox
 
