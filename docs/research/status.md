@@ -1988,3 +1988,20 @@ with all their cases retained, a fixed model/threshold and a bounded prospective
 analysis. Exact identities, runner/analyzer and execution-head checks remain
 to be bound. No retained waveform, sealed evidence, listening collection,
 model training, detector integration or release was performed.
+
+## Lossprint fixed challenge and RC disposition — 2026-09-27
+
+The [fixed challenge result](lossprint-challenge-result-20260927.md) is an
+audited statistical negative after a complete technical pass: 1,386/1,386
+calls succeeded, replay/wrapper checks passed, and all input/tool bindings
+remained intact. The baseline detected 317/381 controlled positives but
+alerted on 53/336 benchmark negatives in 6/30 source groups. Four of six
+domains failed the predeclared safety gate. Family correctness was 281/317
+among detected positives; bitrate accuracy was unavailable. These are
+consumed-development counts, not independent real-world accuracy estimates.
+
+The user-authorized fallback is now selected: a verdict-free inspector and
+benchmark release candidate, explicitly not fulfillment of the original
+detector objective. No threshold retuning, rescue selection, source narrowing,
+model integration or sealed-partition access follows. The old scientific
+negatives and unfinished perceptual objective remain preserved.

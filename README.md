@@ -11,10 +11,16 @@ It emits evidence, not a provenance verdict.
 
 ## Quick start
 
+Release-candidate binaries and verification records are published on the
+[releases page](https://github.com/ryan-voitiskis/lossytrace/releases).
+The declared native targets are Apple Silicon macOS and Linux x86-64; see
+[release notes](docs/release-notes.md) for tested OS versions and limitations,
+and the [release process](docs/release-process.md) for reproducibility scope.
+
 Build from source and inspect an audio file:
 
 ```bash
-cargo run --release -- analyze track.flac --pretty
+cargo run --locked --release -- analyze track.flac --pretty
 ```
 
 Explain the fields and their limitations without opening audio:
@@ -73,9 +79,15 @@ perceptual programme's results remain preserved, without a completion claim.
 
 No rejected detector is revived. The external Lossprint baseline has passed a
 [bounded software qualification](docs/research/lossprint-qualification-result-20260927.md),
-but is neither integrated nor independently validated for detection accuracy.
-A [first challenge design](docs/research/lossprint-first-challenge-design-20260927.md)
-records the remaining preparation before scoring real research audio.
+but [failed the fixed development challenge](docs/research/lossprint-challenge-result-20260927.md):
+317/381 controlled positives were detected, alongside 53/336 benchmark-negative
+alerts across six source groups. These selected, related cases are not a
+real-library error-rate estimate. No model or threshold was retuned.
+
+The release candidate is therefore an **inspector and benchmark, not a lossy
+history detector**. It does not fulfill the original detection objective.
+Lossprint is not bundled; historical codec-family and bitrate estimates are
+not exposed. The perceptual-degradation objective also remains unresolved.
 
 ## Data policy
 

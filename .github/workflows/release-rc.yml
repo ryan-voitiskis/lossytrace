@@ -1,0 +1,133 @@
+name: Release candidate artifacts
+
+on:
+  push:
+    branches: [codex/codec-history-rc]
+    tags: ["v*-rc.*"]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      id-token: write
+      attestations: write
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: macos-15
+            target: aarch64-apple-darwin
+          - runner: ubuntu-24.04
+            target: x86_64-unknown-linux-gnu
+    runs-on: ${{ matrix.runner }}
+    env:
+      SOURCE_DATE_EPOCH: "0"
+      ZERO_AR_DATE: "1"
+      CARGO_INCREMENTAL: "0"
+    steps:
+      - uses: actions/checkout@v6
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          toolchain: "1.94.0"
+          targets: ${{ matrix.target }}
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Bind RC version and build paths
+        run: |
+          python - <<'PY'
+          import os, re, tomllib
+          from pathlib import Path
+          version = tomllib.loads(Path('Cargo.toml').read_text())['package']['version']
+          if not re.fullmatch(r'\d+\.\d+\.\d+-rc\.\d+', version):
+              raise SystemExit('not an RC version')
+          tag = 'v' + version
+          if os.environ['GITHUB_REF_TYPE'] == 'tag' and os.environ['GITHUB_REF_NAME'] != tag:
+              raise SystemExit('tag does not match package version')
+          with open(os.environ['GITHUB_ENV'], 'a') as output:
+              output.write(f'RC_TAG={tag}\n')
+              output.write(f"RUSTFLAGS=--remap-path-prefix={os.environ['GITHUB_WORKSPACE']}=/lossytrace --remap-path-prefix={Path.home() / '.cargo'}=/cargo\n")
+          PY
+      - run: cargo fetch --locked
+      - name: Two independent clean native builds
+        run: |
+          cargo build --locked --offline --release --target "${{ matrix.target }}" --target-dir target-first
+          cargo build --locked --offline --release --target "${{ matrix.target }}" --target-dir target-second
+          cmp "target-first/${{ matrix.target }}/release/lossytrace" "target-second/${{ matrix.target }}/release/lossytrace"
+      - name: Package twice and compare
+        run: |
+          python scripts/package_rc.py --root . --binary "target-first/${{ matrix.target }}/release/lossytrace" --target "${{ matrix.target }}" --tag "$RC_TAG" --output "dist/lossytrace-${RC_TAG}-${{ matrix.target }}.tar.gz"
+          python scripts/package_rc.py --root . --binary "target-second/${{ matrix.target }}/release/lossytrace" --target "${{ matrix.target }}" --tag "$RC_TAG" --output "verification/lossytrace-${RC_TAG}-${{ matrix.target }}.tar.gz"
+          cmp "dist/lossytrace-${RC_TAG}-${{ matrix.target }}.tar.gz" "verification/lossytrace-${RC_TAG}-${{ matrix.target }}.tar.gz"
+      - name: Exercise the actual packaged native binary
+        run: |
+          python scripts/smoke_rc.py --bundle "dist/lossytrace-${RC_TAG}-${{ matrix.target }}.tar.gz" --tag "$RC_TAG" --target "${{ matrix.target }}" --output "dist/smoke-${{ matrix.target }}.json"
+          python scripts/generate-sbom.py --timestamp 1970-01-01T00:00:00Z --output "dist/sbom-${{ matrix.target }}.cdx.json"
+      - name: Record repeat-build scope
+        env:
+          RC_TARGET: ${{ matrix.target }}
+        run: |
+          python - <<'PY'
+          import hashlib, json, os, platform, subprocess
+          from pathlib import Path
+          target = os.environ['RC_TARGET']
+          sha = lambda path: hashlib.sha256(Path(path).read_bytes()).hexdigest()
+          a = sha(f'target-first/{target}/release/lossytrace')
+          b = sha(f'target-second/{target}/release/lossytrace')
+          assert a == b
+          result = {'source_commit': os.environ['GITHUB_SHA'], 'target': target,
+                    'first_binary_sha256': a, 'second_binary_sha256': b,
+                    'two_clean_builds_equal': True, 'two_archives_equal': True,
+                    'scope': 'two clean target directories on the same hosted runner and pinned compiler; not a cross-host reproducibility claim',
+                    'platform': platform.platform(),
+                    'rustc': subprocess.check_output(['rustc', '--version'], text=True).strip()}
+          Path(f'dist/reproducibility-{target}.json').write_text(json.dumps(result, indent=2, sort_keys=True) + '\n')
+          PY
+      - uses: actions/attest@v4
+        with:
+          subject-path: dist/*.tar.gz
+      - uses: actions/upload-artifact@v7
+        with:
+          name: ${{ matrix.target }}
+          path: dist/*
+          if-no-files-found: error
+
+  publish:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v6
+      - name: Require successful exact-commit CI before publication
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/ci.yml/runs?head_sha=${GITHUB_SHA}&status=success&per_page=100" | python3 -c 'import json, os, sys; runs=json.load(sys.stdin)["workflow_runs"]; assert any(r["head_sha"] == os.environ["GITHUB_SHA"] and r["conclusion"] == "success" and r["event"] == "push" for r in runs), "no successful exact-commit CI"'
+      - uses: actions/download-artifact@v8
+        with:
+          path: dist
+          merge-multiple: true
+      - name: Checksum every published artifact
+        run: |
+          python3 - <<'PY'
+          import hashlib
+          from pathlib import Path
+          root = Path('dist')
+          files = sorted(p for p in root.iterdir() if p.is_file())
+          assert len(files) == 8, [p.name for p in files]
+          with (root / 'SHA256SUMS').open('x') as output:
+              for path in files:
+                  output.write(hashlib.sha256(path.read_bytes()).hexdigest() + '  ' + path.name + '\n')
+          PY
+      - name: Publish prerelease only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" dist/* --prerelease --verify-tag --title "LossyTrace $GITHUB_REF_NAME release candidate" --notes-file docs/release-notes.md --repo "$GITHUB_REPOSITORY"
