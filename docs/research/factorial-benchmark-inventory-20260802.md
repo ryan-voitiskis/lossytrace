@@ -1,0 +1,259 @@
+# Factorial benchmark source and toolchain inventory - 2026-08-02
+
+**Status:** inventory only; no source allocation, encoder, version, setting, or
+identity is frozen
+
+**Actions so far:** local tools inspected and synthetically probed, provider
+metadata reviewed, every retained new source collection acquired and audited,
+and Speech Commands rejected after its mixed OGG/WAV release history was
+established; no source allocated, no benchmark audio generated, no score
+opened, and no candidate selected
+
+The machine-readable inventory is
+[`benchmarks/audio-integrity-v2/inventory.json`](../../benchmarks/audio-integrity-v2/inventory.json).
+Its validator checks encoder-lineage disjointness and recomputes conservative
+partition/domain totals. Passing it means that the proposal is internally
+consistent; it does not turn provider descriptions into verified local source
+counts or authorize acquisition, generation, or score opening.
+
+## Lineage accounting
+
+The important unit is the codec implementation, not the command used to call
+it. The following aliases therefore count once:
+
+- LAME CLI and FFmpeg `libmp3lame` are one LAME lineage;
+- FFmpeg `aac_at` and `afconvert` are frontends to one Apple AudioToolbox AAC
+  lineage;
+- FFmpeg `libopus` and `opusenc` use the Xiph libopus reference lineage; and
+- FFmpeg `libvorbis` and `oggenc` use the Xiph libvorbis reference lineage.
+
+A historical LAME build can be a useful version challenge, but it is not an
+encoder-lineage holdout. The same distinction applies to libopus and
+libvorbis versions.
+
+### Observed local environment
+
+| Component | Observed version | Binding | Role |
+| --- | --- | --- | --- |
+| FFmpeg / libavcodec | 8.1.2_1 / 62.28.102 | CLI `1332dc...3327`; libavcodec `a49174...853` | native AAC, Opus, Vorbis; codec wrappers and native decoders |
+| LAME / libmp3lame | 4.0 | CLI `11095c...851`; library `463453...934` | development MP3 lineage |
+| Apple AudioToolbox | macOS 26.6 build 25G72; afconvert 2.0 | afconvert `7b31d9...14f`; OS build required | development AAC and independent decoder; MP3 encode rejected |
+| Shine | 3.1.1 at `ab5e352` | CLI `78db87...95d4`; library `4fdb41...579a` | development MP3 lineage |
+| BladeEnc | 0.94.2 at mirror revision `a2d06ec` | CLI `304c26...c8cb` | proposed transfer MP3 lineage |
+| FDK AAC / fdkaac | 2.0.3 / 1.0.8 | CLI `5313c0...f9c5`; library `b5f112...41b4` | proposed transfer AAC lineage |
+| libopus / opus-tools | 1.6.1 / 0.2_2 | opusenc `41935f...fda`; library `98dcd3...68b` | development Opus lineage and independent decoder frontend |
+| libvorbis / vorbis-tools | 1.3.7 / 1.4.3 | oggenc `920e29...7566`; library `38df24...d795` | development Vorbis lineage and independent decoder frontend |
+| mpg123 | 1.33.6 | CLI `da6ff8...05b`; library `7212b7...138` | independent MP3 history decoder |
+
+Full SHA-256 values and source bindings are retained in the JSON inventory and
+the path-free
+[`synthetic probe result`](toolchain-probe-result-20260802.md). The FFmpeg build has
+native AAC, native experimental CELT-only Opus, native experimental Vorbis,
+libmp3lame, libopus, and Apple AAC support. It does not currently have
+libshine, libfdk-aac, or libvorbis encoder wrappers.
+
+The official [FFmpeg codec documentation](https://ffmpeg.org/ffmpeg-codecs.html)
+confirms that native AAC is implemented in FFmpeg, native Opus currently
+implements only CELT, `libopus` is a wrapper, and `libshine` is a fixed-point
+CBR-only wrapper. Xiph documents
+[libopus](https://opus-codec.org/docs/) and
+[libvorbis](https://xiph.org/vorbis/doc/libvorbis/overview.html) as their
+respective reference implementations. This is why native FFmpeg and Xiph
+rows are distinct lineages, but two frontends to one Xiph library are not.
+
+## Proposed encoder separation
+
+The smallest viable design is:
+
+| Codec | Mechanism development | Encoder transfer | Why it is disjoint |
+| --- | --- | --- | --- |
+| MP3 | LAME 4.0; Shine revision `ab5e352` | BladeEnc 0.94.2 revision `a2d06ec` | three implementation lineages |
+| AAC-LC | FFmpeg native; Apple AudioToolbox | Fraunhofer FDK AAC 2.0.3 | three implementation lineages |
+| Opus | libopus 1.6.1 | FFmpeg native Opus | reference versus native FFmpeg implementation |
+| Vorbis | libvorbis 1.3.7 | FFmpeg native Vorbis | reference versus native FFmpeg implementation |
+
+This is a challenge design, not an estimate of encoder prevalence. Shine's
+own [project documentation](https://github.com/toots/shine) says its simple
+encoder has no psychoacoustic model, while FFmpeg calls native Opus and Vorbis
+experimental. They are useful precisely because a representation that claims
+codec-history mechanism should not silently depend on one production
+encoder's habitual cutoff. They must be reported as atypical lineages.
+
+Those pre-freeze tool checks are now complete. Shine and BladeEnc were built
+from exact source revisions, and the Xiph and FDK frontends were bound to exact
+binary and library hashes. Two complete probe replays produced byte-identical
+path-free reports: all ten retained encoders emitted conformant,
+byte-deterministic bitstreams, and all 27 compatible decoder paths emitted
+deterministic PCM within path.
+
+The executed Apple MP3 check corrected the proposal. `afconvert` advertised
+MPEG Layer III in its format inventory but twice failed before producing a
+file. It remains a decoder and AAC encoder binding, not an MP3 encoder. The
+replacement is BladeEnc: a distinct, legacy ISO-derived implementation held
+for encoder transfer. Like Shine and FFmpeg's experimental encoders, it is an
+atypical challenge rather than a prevalence proxy. Its unmodified source also
+emits legacy compiler and format-security warnings, so it is private-only and
+may process only internally controlled WAV inputs.
+
+Exact decoded PCM was different across decoder implementations for all ten
+encoded probes; five also differed in decoded frame count. These are plumbing
+observations, not mechanism scores, but they make decoder identity and
+alignment mandatory crossed factors. Native FFmpeg Ogg output also required
+bitexact mode plus a fixed serial offset for byte reproducibility; those flags
+are part of the recipe rather than tunable settings.
+
+FDK requires special care. The primary Android source carries the
+[Fraunhofer FDK AAC licence](https://android.googlesource.com/platform/external/aac/),
+which permits source and binary redistribution subject to conditions but
+explicitly grants no patent licence. It is acceptable for an internal research
+challenge only; no binary or FDK-derived public integration is proposed.
+
+## Proposed source separation
+
+### Mechanism development
+
+Reuse only already-consumed v1 sources, excluding all 280 future-only SQAM
+cases and every release-held-out case. After excluding the consumed SQAM
+domain, the retained population has 527 source groups across seven broad
+domains. Its purpose is discovery and paired null analysis, not independent
+validation.
+
+### Encoder transfer
+
+The corrected compact proposal uses five previously unused provider
+collections:
+
+| Collection | Domains | Conservative partition basis/count | Provider evidence |
+| --- | --- | ---: | --- |
+| clean VCTK subset | studio speech | 56 speakers after a preregistered provider-ID cap | [Acquired audit](vctk-source-identity-audit-20260802.md) finds 58 released IDs behind the 56-speaker label and binds 23,075 distinct-PCM 48 kHz WAVs; CC BY 4.0 |
+| RAVDESS audio-only | acted speech and song | 24 actors | Complete acquired factorial grid grouped across speech/song by actor; CC BY-NC-SA 4.0 |
+| FSDD v1.0.10 | home-recorded bandwidth-limited digit speech | 6 speakers | Complete acquired 6-speaker × 10-digit × 50-repetition grid, with a bound PCM-domain release path; CC BY-SA 4.0 |
+| TinySOL 6.0 | isolated acoustic instruments | 1 common collection after archive/metadata audit | [official record](https://zenodo.org/records/3685367), expressly distributed 44.1 kHz WAV, CC BY 4.0 |
+| SONYC-Backgrounds | urban sensor soundscapes | 15 sensor IDs observed in the bound archive | [official record](https://zenodo.org/records/5129078), directly acquired sensor WAV, CC BY 4.0 |
+
+The conservative total is 102 partition groups across six source domains,
+only two groups above the v2 encoder-transfer minimum of 100. The
+[source-partition correction](source-partition-correction-20260802.md) records
+why Speech Commands was removed rather than relabelled and why the already
+audited RAVDESS groups moved here. FSDD's
+[source-identity audit](fsdd-source-identity-audit-20260802.md) binds 3,000
+unique-PCM mono 8 kHz WAVs to six complete speaker grids and a repository
+processing path that records/exports WAV then performs PCM-domain
+split/trim/write operations. Its bandwidth is an explicit hard-negative
+factor, not codec evidence. TinySOL has now been
+[archive-audited](tinysol-source-identity-audit-20260802.md): 2,273 of 2,913
+unique-PCM WAVs have no declared per-note retuning and may become paired
+masters, while 640 are PCM-transform candidates. All 40 semitone-resampled
+rows resolve to 39 parent paths and must inherit those source lineages. The
+collection still counts once because performer, physical-instrument,
+microphone, and per-file session identities are absent. SONYC's
+[source-identity audit](sonyc-source-identity-audit-20260802.md) found 550
+canonical, distinct-PCM clips from 15 sensor IDs, with provider splits disjoint
+by sensor. The planning unit is the sensor, not the clip.
+
+VCTK is likewise archive-observed rather than copied from its title. Its
+[source-identity audit](vctk-source-identity-audit-20260802.md) reconciles
+23,075 audio, log, and transcript keys across 58 provider speaker IDs with
+29 speakers per gender. The nominal 56-group contribution is preserved by an
+outcome-blind 28-per-gender SHA-256 ranking rule that remains unapplied until
+source freeze. Every PCM digest is distinct, and the files retain one common
+VCTK normalization and trimming lineage.
+
+### External transfer
+
+The proposed fresh external set combines:
+
+- the [RWC Music Database 2026 v2 re-release](https://zenodo.org/records/18656623),
+  whose five WAV subsets cover classical, genre, jazz, popular, and
+  royalty-free music under CC BY-NC 4.0; and
+- the current [SATP v1.5 soundscapes](https://zenodo.org/records/18715282),
+  with 27 24-bit binaural WAV recordings under CC BY 4.0; and
+- the [Audio-Visual Lombard Grid Speech corpus](https://spandh.dcs.shef.ac.uk/avlombard/),
+  with 54 directly recorded talkers under CC BY 4.0.
+
+RWC's pinned annotation metadata has 328 piece rows and 99 globally unique
+nonempty artist strings, but its
+[identity audit](rwc-source-identity-audit-20260802.md) does not mistake those
+strings for independent sources. It excludes 35 jazz rows that the provider
+identifies as five compositions repeated across seven instrumentations, then
+merges two cross-label identities. The planning count is therefore 85 artist
+families, not 99 strings or 328 rows. The 2026 RWC release paper states that
+these are the original master tracks used for CD production rather than
+consumer-ripped copies, and the original project states that the pieces were
+performed and recorded for the database.
+SATP exact-coordinate grouping contributes 25 and Lombard Grid talker grouping
+contributes 54. Together with RWC's 85 planned artist families, they project
+to 164 independent partitions across seven domains, 14 above the minimum.
+
+The Lombard Grid contribution is archive-observed, not copied from its
+headline: the acquired audio has 5,390 WAVs, metadata has 5,340 rows, and a
+strict filename/metadata/status reconciliation leaves 5,268 eligible WAVs
+while preserving all 54 talkers. Its detailed
+[source identity audit](source-identity-audit-20260802.md) also records a mix
+of 16-bit integer and 32-bit float PCM that must be normalized explicitly.
+SATP is likewise archive-observed: its
+[source-identity audit](satp-source-identity-audit-20260802.md) reconciles all
+27 reference IDs, excludes the calibration signal, and merges two pairs that
+share exact provider coordinates. The current record is v1.5 even though the
+bound README's dataset-count prose still says v1.2.
+RAVDESS is archive-observed as well. Its
+[source-identity audit](ravdess-source-identity-audit-20260802.md) reconciles
+the complete 1,440-speech/1,012-song grid across 24 actors and preserves actor
+18's documented missing-song condition. It also excludes one same-actor
+two-file repeated-PCM group from future reference selection and records six
+stereo outliers rather than silently downmixing them. Neither anomaly changes
+the 24 actor groups. The later provenance correction moved those groups to
+encoder transfer; this is a partition change, not a change to the audit.
+
+The now-smaller margin is deliberately not treated as permission to weaken
+identity. The completed
+[RWC audio audit](rwc-source-identity-audit-20260802.md) binds all five exact
+provider archives, reconciles all 328 annotation identities, and finds 328
+distinct PCM payloads. Its known aliases and repeated-arrangement exclusions
+still leave 85 artist families, while RWC remains one provider stratum because
+artist metadata cannot prove disjoint recording sessions or backing personnel.
+Separately, the encoder-transfer audit found 15—not the
+one-group placeholder or the 26 sensors seen in a related wider 2017
+analysis—inside the bound SONYC archive. Its README says 441 clips, but the
+archive contains 550 canonical WAVs; that mismatch is retained without
+inflating the 15 sensor groups. If either corrected transfer partition falls
+below its floor,
+add an entirely new provider collection; do not weaken grouping.
+
+## Storage and acquisition boundary
+
+All 20,824,778,941 planned source-archive bytes (19.39 GiB) are now acquired
+and identity-verified. The RWC contribution is 13,418,888,925 bytes (12.50
+GiB) across five compressed archives. After the final acquisition and cleanup
+of reproducible installer caches, the rejected incomplete Speech Commands
+download, and Rust build output, the data volume reported 16,762,748,928 bytes
+(15.61 GiB) free. That is only 656,621,568 bytes above the fixed 15 GiB reserve.
+
+The next construction phases remain viable only if the stager:
+
+- streams selected members without full archive expansion;
+- retains at most one bounded reference excerpt per source group;
+- processes one low-priority worker;
+- checkpoints atomically and removes only reproducible intermediates after
+  their hashes and recipes are sealed; and
+- rechecks projected and actual free space before each archive and generation
+  phase.
+
+The resumable SONYC, SATP, RAVDESS, TinySOL, FSDD, VCTK, and RWC audit
+downloads were completed, passed their archive-integrity checks, and were
+independently bound by SHA-256 and their available provider identities.
+Lombard Grid and those seven collections are all treated as acquired and
+identity-verified. The rejected Speech Commands partial was removed after its
+provenance disposition; it is not an acquisition in this total.
+
+## Decision and next gate
+
+The tool and source proposal satisfies the v2 minima under its documented lower
+bounds, although the corrected transfer margins are narrow. Every proposed
+new source identity is now verified, while tool plumbing is verified but not
+frozen. The next checkpoint is a separately committed source-allocation freeze,
+followed by distinct factor-level, toolchain, and fractional-assignment
+freezes.
+
+No factor setting, fractional assignment, audio derivative, mechanism score,
+candidate, support rule, or public output is authorized by this inventory.

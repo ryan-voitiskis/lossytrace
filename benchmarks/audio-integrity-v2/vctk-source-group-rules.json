@@ -1,0 +1,224 @@
+{
+  "artifact": {
+    "bytes": 4770619279,
+    "filename": "clean_trainset_56spk_wav.zip",
+    "local_sha256": "c7a5580c1d96b52886ca7ca080cc1a21ae3ee1cb8eae4903af6d4bb796f90441",
+    "provider_checksum": "md5:c351cbc9db30e41686c988c19f0e1475",
+    "provider_identity": {
+      "bitstream_uuid": "386ac199-5d34-402f-8112-2a123577dd57",
+      "etag": "\"c351cbc9db30e41686c988c19f0e1475\"",
+      "last_modified": "Mon, 21 Aug 2017 10:33:40 GMT",
+      "method": "dspace_bitstream_uuid_bytes_md5_strong_etag_last_modified"
+    }
+  },
+  "audio_generated": false,
+  "expected": {
+    "accent_counts": {
+      "American": 13,
+      "Australian": 2,
+      "Canadian": 7,
+      "Indian": 3,
+      "Irish": 7,
+      "NewZealand": 1,
+      "NorthernIrish": 4,
+      "Scottish": 17,
+      "SouthAfrican": 4
+    },
+    "audio_file_count": 23075,
+    "audio_format": {
+      "bits_per_sample": 16,
+      "channel_count": 1,
+      "format_tag": 1,
+      "sample_format": "signed_integer_pcm",
+      "sample_rate_hz": 48000
+    },
+    "conservative_partition_group_count": 56,
+    "duplicate_pcm_digest_group_count": 0,
+    "duplicate_pcm_file_count_excess": 0,
+    "duplicate_pcm_file_count_excluded": 0,
+    "gender_counts": {
+      "F": 29,
+      "M": 29
+    },
+    "log_summary": {
+      "member_name": "log_trainset_56spk.txt",
+      "noise_counts": {
+        "babble": 2313,
+        "cafeteria": 2307,
+        "car": 2311,
+        "kitchen": 2305,
+        "meeting": 2297,
+        "metro": 2313,
+        "restaurant": 2320,
+        "ssn": 2302,
+        "station": 2304,
+        "traffic": 2303
+      },
+      "row_count": 23075,
+      "snr_db_counts": {
+        "0": 5764,
+        "5": 5775,
+        "10": 5768,
+        "15": 5768
+      },
+      "speaker_count": 58
+    },
+    "speaker_audio_file_counts": {
+      "p234": 357,
+      "p237": 339,
+      "p241": 348,
+      "p245": 347,
+      "p246": 346,
+      "p247": 475,
+      "p248": 366,
+      "p249": 335,
+      "p251": 364,
+      "p255": 373,
+      "p260": 352,
+      "p263": 464,
+      "p264": 481,
+      "p265": 341,
+      "p266": 409,
+      "p271": 441,
+      "p272": 407,
+      "p275": 399,
+      "p281": 450,
+      "p283": 459,
+      "p284": 406,
+      "p285": 390,
+      "p292": 411,
+      "p293": 396,
+      "p295": 414,
+      "p298": 404,
+      "p299": 405,
+      "p301": 409,
+      "p302": 310,
+      "p303": 352,
+      "p304": 421,
+      "p305": 406,
+      "p306": 343,
+      "p307": 419,
+      "p308": 419,
+      "p310": 422,
+      "p312": 415,
+      "p313": 419,
+      "p314": 423,
+      "p316": 420,
+      "p323": 421,
+      "p326": 399,
+      "p333": 421,
+      "p334": 423,
+      "p335": 420,
+      "p336": 415,
+      "p339": 422,
+      "p341": 408,
+      "p343": 388,
+      "p345": 392,
+      "p347": 423,
+      "p351": 413,
+      "p360": 423,
+      "p361": 421,
+      "p363": 417,
+      "p364": 300,
+      "p374": 420,
+      "p376": 292
+    },
+    "speaker_metadata_row_count": 108,
+    "source_group_count": 56,
+    "transcript_summary": {
+      "canonical_transcript_count": 23075,
+      "directory_member_count": 3,
+      "directory_member_ids": [
+        "__MACOSX",
+        "__MACOSX/trainset_56spk_txt",
+        "trainset_56spk_txt"
+      ],
+      "macos_sidecar_file_count": 23076,
+      "unexpected_regular_member_count": 0
+    }
+  },
+  "future_group_cap": {
+    "rationale": "The provider labels this a 56-speaker archive and the primary paper specifies a balanced 28-female plus 28-male design, but the bound archive, log, and transcripts expose the same 58 speakers with 29 female and 29 male identities. Preserve the preregistered 56-group denominator without choosing speakers from audio content.",
+    "ranking_algorithm": "sha256_ascending_domain_separated_speaker_id",
+    "ranking_input": "UTF-8 ranking_prefix bytes followed by the UTF-8 provider speaker identifier; rank ascending by the 32-byte SHA-256 digest within each provider gender and use speaker identifier ascending only as a digest-collision tie break",
+    "ranking_prefix": "lossytrace-v2-vctk-provider-count-cap-20260802\u0000",
+    "selected_speakers_per_gender": 28,
+    "state": "preregistered_not_applied_before_source_freeze"
+  },
+  "grouping_basis": "Group every utterance by the provider VCTK speaker identifier. Treat the collection as one provider stratum because all members share the VCTK recording collection and the derived clean-waveform normalization and silence-trimming path. Do not infer independent export pipelines from utterance count, noise assignment, or accent.",
+  "metadata_artifact": {
+    "bytes": 115932,
+    "filename": "logfiles.zip",
+    "local_sha256": "ab37c41f31bc2b6c204cc10c8e5bb8bde800307fdb49f277e366d986fefc9e39",
+    "provider_checksum": "md5:0d16f5b6afe12d64238d1e4a0e6ff6e8",
+    "provider_identity": {
+      "bitstream_uuid": "11185dc8-9cf1-405b-b858-35bd6a04aedd",
+      "method": "dspace_bitstream_uuid_bytes_md5"
+    }
+  },
+  "processing_chain": "The bound VCTK v0.80 README documents DPA 4035 recording at 96 kHz/24-bit in a hemi-anechoic chamber, conversion to 16-bit, downsampling to 48 kHz using a tool named there as 'STPK', and manual endpointing. The primary paper documents subsequent clean-waveform normalization and trimming of leading and trailing silence segments longer than 200 ms before noisy derivation. The clean derivative is therefore confirmed PCM but not an untouched microphone master.",
+  "provider_record": {
+    "base_corpus_doi": "10.7488/ds/1994",
+    "base_corpus_version": "0.80",
+    "dataset_doi": "10.7488/ds/2117",
+    "dataset_page_url": "https://datashare.ed.ac.uk/items/6ed35425-bf14-4d2b-93a1-0a4984952757/full",
+    "primary_paper_doi": "10.21437/SSW.2016-24",
+    "primary_paper_url": "https://www.isca-archive.org/ssw_2016/valentinibotinhao16_ssw.pdf"
+  },
+  "schema_version": 1,
+  "scores_opened": false,
+  "selection_authorized": false,
+  "source_id": "vctk_clean_56spk_2017",
+  "state": "source_identity_rules_not_allocation",
+  "supporting_artifacts": {
+    "license": {
+      "bytes": 17416,
+      "filename": "license_text",
+      "local_sha256": "b34e17103bfb246f2549fc82a279e6ba28834e0cb42f76a92efc14b72e3a3723",
+      "provider_checksum": "md5:2946b37a07baeba80cea628909e28cae",
+      "provider_identity": {
+        "bitstream_uuid": "7e7bc32f-e94a-436a-8e97-416a972c7e1a",
+        "method": "dspace_bitstream_uuid_bytes_md5"
+      }
+    },
+    "primary_paper": {
+      "bytes": 755633,
+      "filename": "valentinibotinhao16_ssw.pdf",
+      "local_sha256": "3dbb7eb3351729a45b87bed18c8a92b69e7e3ea333c5145f04db7979e27337ac",
+      "provider_identity": {
+        "doi": "10.21437/SSW.2016-24",
+        "method": "isca_archive_doi_publication"
+      }
+    },
+    "speaker_info": {
+      "bytes": 3712,
+      "filename": "vctk-speaker-info.txt",
+      "local_sha256": "daa68d27a01418d113ac79e6914017beeded4e7de65d03f7705f9d81295da236",
+      "provider_checksum": "md5:1a5b42650b13061a67e935aeb08b31ad",
+      "provider_identity": {
+        "bitstream_uuid": "ab3c7d2f-98b2-4271-b7e4-40a6ffb40d1d",
+        "method": "dspace_bitstream_uuid_bytes_md5"
+      }
+    },
+    "transcripts": {
+      "bytes": 12918133,
+      "filename": "trainset_56spk_txt.zip",
+      "local_sha256": "1bd933130da4f5b362536dccdc068ec9e01b0ff8787303c19780405b99a9f175",
+      "provider_checksum": "md5:8aa183b7cfbf148b9558302a0c0c3771",
+      "provider_identity": {
+        "bitstream_uuid": "5dd7f013-dfde-45b0-a9ee-3818ca00951b",
+        "method": "dspace_bitstream_uuid_bytes_md5"
+      }
+    },
+    "vctk_readme": {
+      "bytes": 2790,
+      "filename": "vctk-readme.txt",
+      "local_sha256": "f33acbe652f50e3c4d3afe02665a2cf3b08cb34257bec41e06dd911cda3ae8db",
+      "provider_checksum": "md5:6d59a65471c0e9ff108a41f8eb15e6bc",
+      "provider_identity": {
+        "bitstream_uuid": "b12d100d-e130-4e24-a07b-cb8b57e632fb",
+        "method": "dspace_bitstream_uuid_bytes_md5"
+      }
+    }
+  }
+}

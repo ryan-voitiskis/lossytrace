@@ -1,0 +1,254 @@
+{
+  "schema_version": 1,
+  "observation_id": "perceptual-degradation-breadth-repair-public-metadata-observation-20260814-001",
+  "state": "official_collection_metadata_screen_complete_audio_and_member_access_closed",
+  "observed_on": "2026-08-14",
+  "purpose": "Screen additional CC BY 4.0 or CC0 providers for the remaining speech, natural-sound and mastered-music breadth shortages without opening audio, selecting members or executing a perceptual metric.",
+  "access_boundary": {
+    "official_public_collection_pages_read": true,
+    "official_public_papers_or_structured_metadata_read": true,
+    "mutable_release_pages_read": true,
+    "raw_provider_metadata_persisted_in_research_storage": false,
+    "audio_archive_downloaded": false,
+    "audio_member_accessed": false,
+    "exact_source_member_selected": false,
+    "retained_odaq_reference_accessed": false,
+    "processed_odaq_condition_accessed": false,
+    "perceptual_metric_executed": false,
+    "target_perceptual_degradation_score_accessed": false,
+    "listener_response_collected": false,
+    "sealed_evidence_opened": false,
+    "no_reference_training_performed": false,
+    "public_verdict_enabled": false
+  },
+  "screen_policy": {
+    "allowed_dataset_licences": [
+      "CC BY 4.0",
+      "CC0 1.0"
+    ],
+    "immutable_or_versioned_record_required_before_exact_member_audit": true,
+    "mutable_public_page_can_enter_exact_member_audit_tier": false,
+    "mutable_public_page_can_enter_labelled_arithmetic_sensitivity": true,
+    "documented_direct_recording_or_artist_release_required": true,
+    "lossless_delivery_proves_never_lossy_origin": false,
+    "recording_count_is_independent_group_count": false,
+    "candidate_capacity_is_qualified_truth": false,
+    "same_speaker_contributor_session_work_release_or_derivative_may_cross_partitions": false
+  },
+  "immutable_or_stable_record_candidates": [
+    {
+      "source_id": "english_children_speech_200495",
+      "provider_id": "english_children_speech",
+      "official_record_url": "https://zenodo.org/records/200495",
+      "doi": "10.5281/zenodo.200495",
+      "record_id": 200495,
+      "published": "2016-12-13",
+      "licence": "CC BY 4.0",
+      "recording_provenance": "eleven English-speaking children were purpose-recorded in parallel with a Rode NT1-A, Zoom H1 and NAO robot microphones",
+      "delivered_audio": "lossless WAV inside one ZIP archive",
+      "public_record_count": 11,
+      "candidate_group_capacity": 11,
+      "grouping_key": "child_speaker_across_all_microphones",
+      "grouping_limit": "all parallel microphone versions for one child remain one group; sessions and speaker relationships require exact-member audit",
+      "immutable_files": [
+        {
+          "key": "english_children.zip",
+          "bytes": 607539935,
+          "md5": "1a4fd6116554593324a0a493e44a1eea"
+        }
+      ],
+      "capabilities": [
+        "speech"
+      ],
+      "candidate_status": "immutable_exact_member_metadata_audit_candidate"
+    },
+    {
+      "source_id": "gesma_18315044",
+      "provider_id": "gesma",
+      "official_record_url": "https://zenodo.org/records/18315044",
+      "official_paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13090659/",
+      "doi": "10.5281/zenodo.18315044",
+      "record_id": 18315044,
+      "published": "2026-01-25",
+      "licence": "CC BY 4.0",
+      "recording_provenance": "eighteen field contributors captured Ghanaian environmental soundscapes with fourteen smartphones and Voice Record Pro in named communities",
+      "delivered_audio": "22193 uncompressed 44100 Hz 16-bit stereo PCM WAV recordings with no reported normalization or postprocessing",
+      "public_record_count": 22193,
+      "candidate_group_capacity": 18,
+      "grouping_key": "field_contributor",
+      "grouping_limit": "all recordings from one contributor remain one group; contributor, device, session and location relationships require exact-member audit",
+      "immutable_files": [
+        {
+          "key": "Educational_and_institutional_environment.zip",
+          "bytes": 1389847832,
+          "md5": "95bac900a96e731a66e8a33a101b75a6"
+        },
+        {
+          "key": "Human_non-verbal_and_emotional_sounds.zip",
+          "bytes": 1712887813,
+          "md5": "2d5ef74332d296985efa461295cdcc6f"
+        },
+        {
+          "key": "Urban_life_and_Public_spaces_1.zip",
+          "bytes": 4213233240,
+          "md5": "e71227f0264846f38579c12c6d2303cd"
+        },
+        {
+          "key": "Urban_life_and_Pulic_spaces_2.zip",
+          "bytes": 4983420928,
+          "md5": "0b5b3e37aac1e5e566b80a018222f0ca"
+        },
+        {
+          "key": "Urban_life_and_Public_spaces_3.zip",
+          "bytes": 6233686183,
+          "md5": "a364e66cf4486dcae21338a93004fdd7"
+        }
+      ],
+      "capabilities": [
+        "natural"
+      ],
+      "candidate_status": "immutable_exact_member_metadata_audit_candidate"
+    },
+    {
+      "source_id": "datastorre_acoustic_index_examples_v1",
+      "provider_id": "datastorre_acoustic_examples",
+      "official_record_url": "https://datastorre.stir.ac.uk/handle/11667/220?mode=full",
+      "version": "1",
+      "published": "2023",
+      "licence": "CC BY 4.0",
+      "recording_provenance": "global terrestrial, aquatic and subterranean environmental recordings with public location, country, date, time, equipment and recordist metadata",
+      "delivered_audio": "67 individual 60-second WAV recordings plus metadata CSV",
+      "public_record_count": 67,
+      "candidate_group_capacity_ceiling": 67,
+      "candidate_group_capacity_conservative_floor": 8,
+      "grouping_key": "recordist_session_location_relationship_after_exact_metadata_audit",
+      "grouping_limit": "67 recording files are only a public-record ceiling; recordist, session, site and repeated-capture relationships have not been collapsed",
+      "capabilities": [
+        "natural"
+      ],
+      "candidate_status": "stable_versioned_exact_member_metadata_audit_candidate"
+    }
+  ],
+  "preservation_required_provisional_candidates": [
+    {
+      "source_id": "icsi_meeting_corpus_public_record",
+      "provider_id": "icsi_meeting",
+      "official_record_url": "https://groups.inf.ed.ac.uk/ami/icsi/",
+      "licence": "CC BY 4.0",
+      "recording_provenance": "approximately 70 hours of purpose-recorded meetings with close-talking microphones",
+      "delivered_audio": "SPH close-talking channels and mixed WAV material",
+      "public_meeting_count": 75,
+      "public_unique_speaker_count": 53,
+      "candidate_group_capacity": 53,
+      "grouping_key": "unique_speaker_across_meetings_and_channels",
+      "grouping_limit": "the official page is not an immutable release record; speaker, meeting, channel and derivative relationships need preservation and exact-member audit",
+      "capabilities": [
+        "speech"
+      ],
+      "candidate_status": "provisional_public_record_requires_immutable_preservation"
+    },
+    {
+      "source_id": "grumbles_a_pretty_bad_good_bandcamp",
+      "provider_id": "grumbles_pretty_bad_good",
+      "official_record_url": "https://thegrumbles.bandcamp.com/album/a-pretty-bad-good",
+      "licence": "CC BY 4.0",
+      "public_track_count": 8,
+      "candidate_group_capacity": 8,
+      "recording_provenance": "artist release with named production, engineering, mixing and mastering credits",
+      "delivered_audio": "Bandcamp advertises high-quality MP3, FLAC and other formats at 24-bit 44100 Hz",
+      "grouping_key": "track_within_single_release",
+      "grouping_limit": "mutable transactional page, one release and shared production chain; original upload and prior coding history are not established",
+      "capabilities": [
+        "music",
+        "mastered_music"
+      ],
+      "candidate_status": "provisional_public_record_requires_immutable_preservation"
+    },
+    {
+      "source_id": "stranger_self_imposed_exile_bandcamp",
+      "provider_id": "stranger_self_imposed_exile",
+      "official_record_url": "https://stranger-theband.bandcamp.com/album/self-imposed-exile",
+      "licence": "CC BY 4.0",
+      "public_track_count": 20,
+      "candidate_group_capacity": 20,
+      "recording_provenance": "artist release recorded, mixed and mastered at Studio Depth Zagreb with named engineering credit",
+      "delivered_audio": "Bandcamp advertises high-quality MP3, FLAC and other formats at 24-bit 44100 Hz",
+      "grouping_key": "track_within_single_release",
+      "grouping_limit": "mutable transactional page, one release and shared production chain; original upload and prior coding history are not established",
+      "capabilities": [
+        "music",
+        "mastered_music"
+      ],
+      "candidate_status": "provisional_public_record_requires_immutable_preservation"
+    },
+    {
+      "source_id": "wangleline_honey_bandcamp",
+      "provider_id": "wangleline_honey",
+      "official_record_url": "https://wangleline.bandcamp.com/album/honey",
+      "licence": "CC BY 4.0",
+      "public_track_count": 9,
+      "candidate_group_capacity": 9,
+      "recording_provenance": "finished electronic artist release; the account states its music other than one separately named soundtrack is CC BY 4.0",
+      "delivered_audio": "Bandcamp advertises high-quality download at 24-bit 44100 Hz",
+      "grouping_key": "track_within_single_release",
+      "grouping_limit": "mutable transactional page, no explicit mix or master credit, one release and shared production chain; original upload and prior coding history are not established",
+      "capabilities": [
+        "music",
+        "mastered_music"
+      ],
+      "candidate_status": "provisional_public_record_requires_immutable_preservation_and_production_audit"
+    }
+  ],
+  "screened_not_added": [
+    {
+      "source_id": "freidi_20285754",
+      "official_record_url": "https://zenodo.org/records/20285754",
+      "disposition": "outside_narrow_licence_policy_cc_by_sa_4_0"
+    },
+    {
+      "source_id": "clarity_speech_corpus",
+      "disposition": "rights_conflict_between_cc_by_4_0_collection_page_and_cc_by_sa_4_0_plus_additional_exception_in_paper"
+    },
+    {
+      "source_id": "daps",
+      "disposition": "outside_narrow_licence_policy_noncommercial"
+    },
+    {
+      "source_id": "trustworthy_intent_corpus",
+      "disposition": "remote_browser_capture_and_postprocessing_leave_original_capture_encoding_chain_unresolved"
+    },
+    {
+      "source_id": "anechoic_high_fidelity_speech_corpus",
+      "disposition": "exact_corpus_licence_not_identified_on_bound_record"
+    },
+    {
+      "source_id": "el_dorado_smoke_rings_bandcamp",
+      "disposition": "rights_conflict_explicit_cc_by_text_but_bandcamp_field_all_rights_reserved"
+    },
+    {
+      "source_id": "deep_russian_depression_bandcamp",
+      "disposition": "rights_conflict_explicit_cc_by_text_but_bandcamp_field_all_rights_reserved"
+    }
+  ],
+  "aggregate_observation": {
+    "new_immutable_or_stable_candidate_provider_count": 3,
+    "new_provisional_provider_count": 4,
+    "new_public_record_candidate_capacity_at_recording_ceiling": 186,
+    "new_public_record_candidate_capacity_at_conservative_datastorre_floor": 127,
+    "qualified_reference_group_count": 0,
+    "allocated_group_count": 0
+  },
+  "observation_limits": {
+    "candidate_provider_selected": false,
+    "immutable_preservation_complete_for_provisional_candidates": false,
+    "exact_member_rights_audit_complete": false,
+    "exact_member_origin_audit_complete": false,
+    "exact_relationship_grouping_complete": false,
+    "source_manifest_frozen": false,
+    "provider_allocation_frozen": false,
+    "primary_domain_claim_frozen": false,
+    "source_successor_selected": false,
+    "metric_successor_selected": false,
+    "scientific_feasibility_established": false
+  }
+}

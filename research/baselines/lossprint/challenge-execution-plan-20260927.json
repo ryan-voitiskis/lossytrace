@@ -1,0 +1,28 @@
+{
+  "artifacts": 693,
+  "cases": 717,
+  "per_call_seconds": 10,
+  "planned_slots": 1386,
+  "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "public_verdict_enabled": false,
+  "purpose": "prospective_fixed_external_baseline_challenge",
+  "python_executable_sha256": "87d4df53fd91304be5bac391fb204643c36b7df2023c04a0953bcbc7d4fdf634",
+  "repository_bindings": {
+    "docs/research/lossprint-challenge-preregistration-20260927.md": "f6395f408cea8c1f954d0cf65fbb9fe76b52dffcfc284e93e19a4c7f44bbfade",
+    "docs/research/lossprint-first-challenge-design-20260927.md": "edf2739e5cd2b8745e4e203142c9d8a8bc41ed48ce64a361c49f597c576d48f8",
+    "docs/research/lossprint-qualification-plan-20260927.md": "6441dda42af02cf614bb26876be7a144ca95da2ea6d6eb55d846de4c5e6bc719",
+    "research/baselines/lossprint/evidence/challenge-selection-20260927-001.json": "caa31f3697ea9f5c1be9648d707e20c63dfd158c70d81cce879d153de9aa4c53",
+    "research/baselines/lossprint/evidence/software-qualification-20260927-001.json": "f6f4c9eb27646ec52012207795634f0aadac8a0b841b66f32fa9d33e8e22b768",
+    "scripts/audio_integrity_v2_baseline_common.py": "99537dbe4472be72bf84242850c214c96789f6245d54f89a040fecd792e19527",
+    "scripts/lossprint_challenge.py": "1f8ae1ae1e48995a111825445a13c66571f84742bc04d35e5e557602dc5905ea",
+    "scripts/lossprint_qualification.py": "3ccf5615e5699e374b061c7be1ca3dc27aaf4867235f06b02e9415a4031c7e53",
+    "scripts/run_lossprint_challenge.py": "03006d5fe123ccb1090f14782b11d6fcdadf51bdf4b45d422151262e2604a9e0"
+  },
+  "reserve_gib": 15,
+  "rounds": 2,
+  "schema_version": 1,
+  "scratch_gib": 1,
+  "threshold": 0.5,
+  "total_seconds": 2700,
+  "workers": 1
+}

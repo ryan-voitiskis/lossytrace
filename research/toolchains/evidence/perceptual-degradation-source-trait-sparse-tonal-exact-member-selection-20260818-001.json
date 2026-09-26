@@ -1,0 +1,60 @@
+{
+  "access_boundary": {
+    "audio_descriptors_computed": false,
+    "audio_downloaded": false,
+    "audio_samples_read": false,
+    "private_tinysol_metadata_selection_replayed": true,
+    "provider_scores_or_processed_conditions_accessed": false,
+    "public_and_provider_metadata_read": true,
+    "public_verdict_enabled": false,
+    "source_manifest_allocated": false,
+    "source_traits_assigned": false
+  },
+  "claim_boundary": {
+    "candidate_metadata_is_descriptor_confirmation": false,
+    "candidate_metadata_is_trait_truth": false,
+    "full_objective_complete": false,
+    "public_cli_changed": false,
+    "public_verdict_enabled": false,
+    "source_trait_manifest_frozen": false
+  },
+  "decision": {
+    "audio_accessed": false,
+    "descriptor_confirmation_complete": false,
+    "exact_metadata_candidate_count": 2,
+    "next_gate": "Acquire only the selected Freesound provider original and project only the selected TinySOL archive member into memory, then run the already-frozen sparse/tonal descriptor twice without retaining derived PCM. Preserve attribution and relationship groups; do not allocate a manifest until the descriptor and assignment gates pass.",
+    "public_verdict_enabled": false,
+    "source_trait_assignment_complete": false,
+    "source_trait_manifest_frozen": false,
+    "sparse_non_tonal_candidate_selected": true,
+    "tonal_non_sparse_candidate_selected": true
+  },
+  "observed_on": "2026-08-18",
+  "plan_id": "perceptual-degradation-source-trait-sparse-tonal-exact-member-selection-20260818-001",
+  "plan_sha256": "d41d2b0135d9dfe7a633a0089424afef78cba719b3c223197dbf8d058e2abde3",
+  "report_id": "perceptual-degradation-source-trait-sparse-tonal-exact-member-selection-20260818-001",
+  "schema_version": 1,
+  "selected_candidates": [
+    {
+      "capture_and_transformation_record_supported": true,
+      "descriptor_confirmation_complete": false,
+      "exact_member_id": "freesound_sound_856645",
+      "licence": "CC0 1.0",
+      "original_lossless_upload_supported": true,
+      "provider_id": "freesound",
+      "trait_assigned": false,
+      "trait_contrast": "sparse_non_tonal"
+    },
+    {
+      "descriptor_confirmation_complete": false,
+      "deterministic_metadata_selection_replayed": true,
+      "exact_member_id": "tinysol_6_0__ob_ord_dsharp4_mf_n_n",
+      "licence": "CC BY 4.0",
+      "non_retuned_distributed_wav_supported": true,
+      "provider_id": "tinysol_6_0",
+      "trait_assigned": false,
+      "trait_contrast": "tonal_non_sparse"
+    }
+  ],
+  "state": "two_sparse_tonal_exact_metadata_candidates_selected_audio_access_closed"
+}

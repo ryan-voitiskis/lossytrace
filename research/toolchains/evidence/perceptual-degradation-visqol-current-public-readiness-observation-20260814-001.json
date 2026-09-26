@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "observation_id": "perceptual-degradation-visqol-current-public-readiness-observation-20260814-001",
+  "state": "current_public_record_observed_no_successor_selected",
+  "observed_at": "2026-08-14",
+  "purpose": "Record the current official ViSQOL software, input, output, and interpretation boundary needed to assess a score-blind ViSQOL-only successor without running ViSQOL or opening audio or outcomes.",
+  "access_boundary": {
+    "official_public_repository_and_release_metadata_read": true,
+    "official_pinned_readme_and_license_read": true,
+    "source_or_binary_downloaded_by_this_checkpoint": false,
+    "audio_accessed": false,
+    "visqol_executed_by_this_checkpoint": false,
+    "metric_score_opened_by_this_checkpoint": false,
+    "human_score_opened": false,
+    "sealed_evidence_opened": false,
+    "successor_selected": false,
+    "execution_authorized": false,
+    "public_verdict_enabled": false
+  },
+  "official_repository": {
+    "url": "https://github.com/google/visqol",
+    "archived": false,
+    "disabled": false,
+    "default_branch": "master",
+    "license_spdx": "Apache-2.0",
+    "last_observed_push": "2025-05-17T12:18:13Z",
+    "selected_api_projection_sha256": "6073ecb89989a3e3c1ebd1afa2011768b928d4f5fbe2226e7e5c08edeb9d0f44"
+  },
+  "frozen_release": {
+    "version": "v3.3.3",
+    "release_url": "https://github.com/google/visqol/releases/tag/v3.3.3",
+    "published_at": "2022-04-07T18:05:53Z",
+    "git_commit": "c3aa2e498e0f7f14202643594335a0b9ee40bdd9",
+    "git_tree": "7a0c95a103c4ba40d6337f06f80848e571b00b3c",
+    "selected_release_api_projection_sha256": "244a2634d6a574aa90298e9ab3e07010b87efedf2783f692685b7e196e71d16c",
+    "selected_tag_api_projection_sha256": "c4b395bd65567a412996a7f125adb41c868d9d35e1c58976f97d28069ea3e498"
+  },
+  "current_branch_comparison": {
+    "observed_head_commit": "38d0b0163e441047d4429bf07ad09e5b9031d02c",
+    "observed_head_tree": "1e5feeab6083ac99cf9397016913b05a22478784",
+    "ahead_by_commits": 18,
+    "behind_by_commits": 0,
+    "selected_compare_api_projection_sha256": "d3eb3df6b03234c197f78d93682aafaf8d4b4b4ff940eff6d82040e4af342133",
+    "frozen_release_silently_advanced": false
+  },
+  "pinned_files": {
+    "readme": {
+      "url": "https://raw.githubusercontent.com/google/visqol/c3aa2e498e0f7f14202643594335a0b9ee40bdd9/README.md",
+      "bytes": 15724,
+      "sha256": "2f9d9aa3c9d7adec0bcda9a4145984316e5b1f726e41195aa373dfd8c1ef1984",
+      "retained": false
+    },
+    "license": {
+      "url": "https://raw.githubusercontent.com/google/visqol/c3aa2e498e0f7f14202643594335a0b9ee40bdd9/LICENSE",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "retained": false
+    },
+    "audio_model": {
+      "path": "model/libsvm_nu_svr_model.txt",
+      "bytes": 138117,
+      "sha256": "1e8246ed33bf36dc5c859351f7110f2cd31f98661989715c0fcf974ec48d3e2e",
+      "retained_by_this_checkpoint": false
+    },
+    "model_readme": {
+      "path": "model/README.txt",
+      "bytes": 1821,
+      "sha256": "854d7361b95249df0e16cbea992e6ad7ca90578c6b6b30e5b80000426a99389b",
+      "retained": false
+    }
+  },
+  "official_audio_mode_record": {
+    "full_reference_metric": true,
+    "perceived_audio_quality_proxy": true,
+    "required_sample_rate_hz": 48000,
+    "multi_channel_input_downmixed_to_mono": true,
+    "mapping": "support_vector_regression",
+    "nominal_mos_lqo_range": [1, 5],
+    "audio_mode_approximate_maximum": 4.75,
+    "recommended_active_audio_seconds": {
+      "general_guideline": [8, 10],
+      "faq_range": [3, 10],
+      "faq_typical": 5
+    },
+    "clean_reference_equal_or_higher_quality_expected": true,
+    "too_much_silence_discouraged": true,
+    "single_scores_meaningful_as_treatment_conclusions": false,
+    "treatment_aggregation_over_multiple_samples_recommended": true,
+    "audio_vs_speech_mode_can_materially_change_output": true,
+    "subjective_scores_required_to_train_domain_specific_audio_model": true
+  },
+  "official_output_record": {
+    "mos_lqo_available": true,
+    "overall_similarity_available": true,
+    "per_frequency_similarity_available": true,
+    "per_patch_similarity_available": true,
+    "outputs_documented_as_lossytrace_audibility_probability": false,
+    "outputs_documented_as_lossytrace_materiality_truth": false,
+    "outputs_documented_as_human_calibrated_artifact_labels": false
+  },
+  "documented_domain_limits": {
+    "trained_full_band_audio_minimum_bitrate_kbps": 24,
+    "below_training_bitrate_may_behave_poorly": true,
+    "designed_for_codec_and_voip_degradation": true,
+    "performance_outside_designed_domains_can_be_poor": true,
+    "all_lossytrace_source_domains_validated": false,
+    "stereo_image_or_phase_change_supported": false
+  },
+  "software_rights_record": {
+    "software_copyright_license_identified": true,
+    "software_copyright_license": "Apache License 2.0",
+    "separate_bs_1387_style_consent_gate_observed": false,
+    "dependency_redistribution_and_sbom_review_complete": false,
+    "fact_specific_legal_advice_obtained": false,
+    "this_record_is_legal_advice": false
+  }
+}

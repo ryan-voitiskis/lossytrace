@@ -1,0 +1,304 @@
+{
+  "analysis_plan_id": "perceptual-degradation-listening-analysis-20260813-001",
+  "analysis_plan_sha256": "3317a2b039de860a4ec3b152ea83406b5bc8793e825b81918a140e60b8e16fdc",
+  "bridge_mapping": {
+    "development_bridge_group_count": 1,
+    "knots": [
+      {
+        "mushra_loss": 0.0,
+        "role": "hidden_reference_anchor",
+        "severity": 0.0
+      },
+      {
+        "mushra_loss": 10.0,
+        "role": "material_boundary_anchor",
+        "severity": 25.0
+      },
+      {
+        "mushra_loss": 20.0241666667,
+        "role": "development_bridge",
+        "severity": 38.7369791675
+      },
+      {
+        "mushra_loss": 100.0,
+        "role": "maximum_loss_anchor",
+        "severity": 100.0
+      }
+    ],
+    "material_reference_points": {
+      "mushra_loss": 10.0,
+      "sdg": -1.0,
+      "severity": 25.0
+    },
+    "method": "development_only_hierarchical_estimates_then_bounded_isotonic_pava_v1",
+    "sdg_transform": "severity=clip(-25*sdg,0,100)"
+  },
+  "collection_or_oracle_gate": {
+    "collection_eligible": false,
+    "oracle_truth_eligible": false,
+    "reason": "synthetic responses exercise analysis plumbing but cannot establish audibility or perceptual quality"
+  },
+  "dataset_id": "perceptual-degradation-listening-analysis-synthetic-20260813-001",
+  "eligibility": {
+    "outcome_blind_exclusions_only": true,
+    "sessions_primary": 240,
+    "sessions_sensitivity": 240,
+    "sessions_total": 240
+  },
+  "fixture_only": true,
+  "human_collection_authorized": false,
+  "human_responses_observed": false,
+  "implementation_sha256": "215d5c2b49fe4d630c1edd355e576c6fac296958465eb9a30dd88d684df30fff",
+  "manifest_id": "manifest-synthetic-listening-analysis-v1",
+  "manifest_sha256": "6cdcba860b91465896781828b0238c40119182de90eb78a0fc5ee025f2063e42",
+  "model": {
+    "audibility": "penalized_logistic_crossed_listener_source_random_intercepts",
+    "multiplicity_adjusted_one_sided_z": 2.2414027276,
+    "raw_means_are_ground_truth": false,
+    "severity": "penalized_gaussian_crossed_listener_source_random_intercepts",
+    "variance_components": {
+      "audibility": {
+        "listener_sd": 0.45,
+        "source_sd": 0.35
+      },
+      "mushra_loss": {
+        "listener_sd": 4.0,
+        "residual_sd": 8.0,
+        "source_sd": 5.0
+      },
+      "sdg": {
+        "listener_sd": 0.25,
+        "residual_sd": 0.5,
+        "source_sd": 0.3
+      }
+    },
+    "variance_components_frozen_from_score_blind_power_model": true
+  },
+  "primary_groups": [
+    {
+      "analysis_group_id": "group-audible-nonmaterial",
+      "audibility": {
+        "converged": true,
+        "estimate": 0.8511172061,
+        "iterations": 5,
+        "listeners": 240,
+        "lower": 0.8320952796,
+        "responses": 3600,
+        "sources": 120,
+        "standard_error_link_scale": 0.0637280358,
+        "state": "audible",
+        "upper": 0.8683251553
+      },
+      "bridge_disagreement": false,
+      "human_truth": "audible_nonmaterial",
+      "material_severity_signal": false,
+      "mushra_loss": null,
+      "mushra_material_signal": false,
+      "partition": "development",
+      "sdg": {
+        "converged": true,
+        "estimate": -0.4494236111,
+        "iterations": 1,
+        "listeners": 240,
+        "lower": -0.5230788847,
+        "responses": 3600,
+        "sources": 120,
+        "standard_error": 0.0328612403,
+        "upper": -0.3757683376
+      },
+      "sdg_material_signal": false
+    },
+    {
+      "analysis_group_id": "group-material-bridge",
+      "audibility": {
+        "converged": true,
+        "estimate": 0.9046706927,
+        "iterations": 5,
+        "listeners": 240,
+        "lower": 0.889988868,
+        "responses": 3600,
+        "sources": 120,
+        "standard_error_link_scale": 0.0712082287,
+        "state": "audible",
+        "upper": 0.9175745839
+      },
+      "bridge_disagreement": false,
+      "human_truth": "materially_degraded",
+      "material_severity_signal": true,
+      "mushra_loss": {
+        "converged": true,
+        "estimate": 20.0241666667,
+        "iterations": 1,
+        "listeners": 240,
+        "lower": 18.8113673289,
+        "responses": 3600,
+        "sources": 120,
+        "standard_error": 0.541089436,
+        "upper": 21.2369660044
+      },
+      "mushra_material_signal": true,
+      "partition": "development",
+      "sdg": {
+        "converged": true,
+        "estimate": -1.5494791667,
+        "iterations": 1,
+        "listeners": 240,
+        "lower": -1.6231344402,
+        "responses": 3600,
+        "sources": 120,
+        "standard_error": 0.0328612403,
+        "upper": -1.4758238931
+      },
+      "sdg_material_signal": true
+    },
+    {
+      "analysis_group_id": "group-transparent",
+      "audibility": {
+        "converged": true,
+        "estimate": 0.4940331175,
+        "iterations": 4,
+        "listeners": 240,
+        "lower": 0.4634280774,
+        "responses": 3600,
+        "sources": 120,
+        "standard_error_link_scale": 0.0547339161,
+        "state": "not_demonstrably_audible",
+        "upper": 0.5246829414
+      },
+      "bridge_disagreement": false,
+      "human_truth": "transparent",
+      "material_severity_signal": false,
+      "mushra_loss": null,
+      "mushra_material_signal": false,
+      "partition": "development",
+      "sdg": {
+        "converged": true,
+        "estimate": -0.1504444444,
+        "iterations": 1,
+        "listeners": 240,
+        "lower": -0.224099718,
+        "responses": 3600,
+        "sources": 120,
+        "standard_error": 0.0328612403,
+        "upper": -0.0767891709
+      },
+      "sdg_material_signal": false
+    }
+  ],
+  "report_id": "listening-analysis-6b0f74a6e3961221a4629a64",
+  "schema_version": 1,
+  "scientific_gate_evaluated": false,
+  "sensitivity_disagreements": [],
+  "sensitivity_groups": [
+    {
+      "analysis_group_id": "group-audible-nonmaterial",
+      "audibility": {
+        "converged": true,
+        "estimate": 0.8511172061,
+        "iterations": 5,
+        "listeners": 240,
+        "lower": 0.8320952796,
+        "responses": 3600,
+        "sources": 120,
+        "standard_error_link_scale": 0.0637280358,
+        "state": "audible",
+        "upper": 0.8683251553
+      },
+      "bridge_disagreement": false,
+      "human_truth": "audible_nonmaterial",
+      "material_severity_signal": false,
+      "mushra_loss": null,
+      "mushra_material_signal": false,
+      "partition": "development",
+      "sdg": {
+        "converged": true,
+        "estimate": -0.4494236111,
+        "iterations": 1,
+        "listeners": 240,
+        "lower": -0.5230788847,
+        "responses": 3600,
+        "sources": 120,
+        "standard_error": 0.0328612403,
+        "upper": -0.3757683376
+      },
+      "sdg_material_signal": false
+    },
+    {
+      "analysis_group_id": "group-material-bridge",
+      "audibility": {
+        "converged": true,
+        "estimate": 0.9046706927,
+        "iterations": 5,
+        "listeners": 240,
+        "lower": 0.889988868,
+        "responses": 3600,
+        "sources": 120,
+        "standard_error_link_scale": 0.0712082287,
+        "state": "audible",
+        "upper": 0.9175745839
+      },
+      "bridge_disagreement": false,
+      "human_truth": "materially_degraded",
+      "material_severity_signal": true,
+      "mushra_loss": {
+        "converged": true,
+        "estimate": 20.0241666667,
+        "iterations": 1,
+        "listeners": 240,
+        "lower": 18.8113673289,
+        "responses": 3600,
+        "sources": 120,
+        "standard_error": 0.541089436,
+        "upper": 21.2369660044
+      },
+      "mushra_material_signal": true,
+      "partition": "development",
+      "sdg": {
+        "converged": true,
+        "estimate": -1.5494791667,
+        "iterations": 1,
+        "listeners": 240,
+        "lower": -1.6231344402,
+        "responses": 3600,
+        "sources": 120,
+        "standard_error": 0.0328612403,
+        "upper": -1.4758238931
+      },
+      "sdg_material_signal": true
+    },
+    {
+      "analysis_group_id": "group-transparent",
+      "audibility": {
+        "converged": true,
+        "estimate": 0.4940331175,
+        "iterations": 4,
+        "listeners": 240,
+        "lower": 0.4634280774,
+        "responses": 3600,
+        "sources": 120,
+        "standard_error_link_scale": 0.0547339161,
+        "state": "not_demonstrably_audible",
+        "upper": 0.5246829414
+      },
+      "bridge_disagreement": false,
+      "human_truth": "transparent",
+      "material_severity_signal": false,
+      "mushra_loss": null,
+      "mushra_material_signal": false,
+      "partition": "development",
+      "sdg": {
+        "converged": true,
+        "estimate": -0.1504444444,
+        "iterations": 1,
+        "listeners": 240,
+        "lower": -0.224099718,
+        "responses": 3600,
+        "sources": 120,
+        "standard_error": 0.0328612403,
+        "upper": -0.0767891709
+      },
+      "sdg_material_signal": false
+    }
+  ],
+  "state": "synthetic_listening_analysis_plumbing_only"
+}

@@ -1,0 +1,189 @@
+{
+  "audio_accessed": false,
+  "claim_boundary": {
+    "allocation_reservation_proves_response_atomicity": false,
+    "candidate_audit_authorizes_collection": false,
+    "candidate_audit_selects_operational_policy": false,
+    "contiguous_issued_indices_prove_retained_response_balance": false,
+    "full_objective_complete": false,
+    "logical_fault_injection_proves_power_loss_durability": false,
+    "public_cli_changed": false,
+    "single_database_audit_proves_multi_host_deployment": false,
+    "sqlite_full_proves_filesystem_or_hardware_durability": false,
+    "synthetic_attestation_defines_real_eligibility": false,
+    "threaded_connections_prove_distributed_linearizability": false
+  },
+  "concurrency_audit": {
+    "all_trials_passed": true,
+    "calls_per_request": 3,
+    "conflicting_retries_accepted": 0,
+    "created_reservations": 3072,
+    "idempotent_retries": 6144,
+    "identity_values_included": false,
+    "maximum_workers": 24,
+    "response_or_outcome_values_included": false,
+    "streams_per_trial": 2,
+    "total_calls": 9216,
+    "trial_count": 16,
+    "trials_passed": 16,
+    "unique_requests_per_stream": 96
+  },
+  "database_candidate": {
+    "journal_mode": "WAL",
+    "reservation_transaction": "BEGIN_IMMEDIATE",
+    "single_database_file_only": true,
+    "synchronous_mode": "FULL",
+    "temporary_audit_databases_retained": false
+  },
+  "decision": {
+    "append_only_mutation_guards_passed": true,
+    "candidate_passed_synthetic_single_database_audit": true,
+    "concurrent_unique_reservation_passed": true,
+    "human_collection_authorized": false,
+    "logical_restart_exact_once_passed": true,
+    "missingness_or_exclusion_policy_selected": false,
+    "multi_process_or_multi_host_deployment_proven": false,
+    "next_responsible_human_decision": "Decide whether the synthetic single-database candidate is credible enough to justify a separately frozen operational policy. Selection would still require real pre-reservation eligibility semantics, deployment and backup boundaries, response atomicity, monitoring, exclusions, missingness, recovery and explicit collection authority.",
+    "no_reference_work_eligible": false,
+    "operational_policy_selected": false,
+    "power_loss_durability_proven": false,
+    "privacy_ownership_and_backup_policy_frozen": false,
+    "public_verdict_enabled": false,
+    "real_eligibility_contract_frozen": false,
+    "response_atomicity_proven": false,
+    "tamper_evidence_verifier_passed": true,
+    "v3_contiguous_prefix_integration_passed": true
+  },
+  "human_collection_performed": false,
+  "immutability_and_conflict_audit": {
+    "all_update_and_delete_probes_blocked": true,
+    "conflicting_retry_rejected": true,
+    "conflicting_stream_configuration_rejected": true,
+    "journal_valid_after_probes": true,
+    "probe_results": [
+      {
+        "blocked": true,
+        "probe": "reservation_update"
+      },
+      {
+        "blocked": true,
+        "probe": "reservation_delete"
+      },
+      {
+        "blocked": true,
+        "probe": "stream_update"
+      },
+      {
+        "blocked": true,
+        "probe": "stream_delete"
+      }
+    ],
+    "reservation_count_after_probes": 1
+  },
+  "implementation_sha256": "dfa75f2dfa0bc4a96e4aca8ac37f2f8e80dc1c0220cc9838570d03badfd9c1fa",
+  "outcomes_generated": false,
+  "outcomes_read": false,
+  "participant_identities_accessed": false,
+  "plan_id": "perceptual-degradation-listening-allocation-journal-audit-20260814-001",
+  "plan_sha256": "9845b1ed5ae687535eb829fc1f0a076728c868e5461cbfe38907a11a6cb06034",
+  "public_verdict_enabled": false,
+  "report_id": "perceptual-degradation-listening-allocation-journal-audit-20260814-001",
+  "responses_generated": false,
+  "responses_read": false,
+  "restart_audit": {
+    "all_fault_points_passed": true,
+    "committed_before_reply_count": 24,
+    "contiguous_after_restart": true,
+    "expected_exact_once_reservations": 96,
+    "fault_points_passed": 4,
+    "fault_results": [
+      {
+        "committed_before_reply_count": 0,
+        "expected_semantics_passed": true,
+        "fault_point": "before_begin",
+        "request_count": 24,
+        "retry_created_count": 24,
+        "retry_idempotent_count": 0
+      },
+      {
+        "committed_before_reply_count": 0,
+        "expected_semantics_passed": true,
+        "fault_point": "after_begin_before_insert",
+        "request_count": 24,
+        "retry_created_count": 24,
+        "retry_idempotent_count": 0
+      },
+      {
+        "committed_before_reply_count": 0,
+        "expected_semantics_passed": true,
+        "fault_point": "after_insert_before_commit",
+        "request_count": 24,
+        "retry_created_count": 24,
+        "retry_idempotent_count": 0
+      },
+      {
+        "committed_before_reply_count": 24,
+        "expected_semantics_passed": true,
+        "fault_point": "after_commit_before_reply",
+        "request_count": 24,
+        "retry_created_count": 0,
+        "retry_idempotent_count": 24
+      }
+    ],
+    "logical_connection_close_only": true,
+    "power_loss_simulated": false,
+    "process_kill_simulated": false,
+    "retry_created_count": 72,
+    "retry_idempotent_count": 24,
+    "verified_reservations": 96
+  },
+  "schema_version": 1,
+  "state": "synthetic_allocation_journal_candidate_audit_complete",
+  "tamper_detection_audit": {
+    "all_tamper_probes_detected": true,
+    "base_journal_valid": true,
+    "probe_results": [
+      {
+        "detected": true,
+        "error_classes": [
+          "append-only triggers differ",
+          "event chain differs: stream-tamper-audit-0001",
+          "event hash differs: stream-tamper-audit-0001"
+        ],
+        "probe": "event_hash_change"
+      },
+      {
+        "detected": true,
+        "error_classes": [
+          "append-only triggers differ",
+          "event hash differs: stream-tamper-audit-0001"
+        ],
+        "probe": "request_binding_change"
+      },
+      {
+        "detected": true,
+        "error_classes": [
+          "allocation index gap: stream-tamper-audit-0001",
+          "append-only triggers differ",
+          "event chain differs: stream-tamper-audit-0001"
+        ],
+        "probe": "middle_row_delete"
+      }
+    ]
+  },
+  "v3_integration_audit": {
+    "journal_indices_exact_range": true,
+    "journal_verification_passed": true,
+    "maximum_candidate_position_range": 1,
+    "maximum_trial_block_position_range": 1,
+    "maximum_trial_exposure_range": 1,
+    "participant_keys_stored": false,
+    "prefix": 192,
+    "responses_included": false,
+    "trial_limits": {
+      "mushra": 6,
+      "subtle": 8
+    },
+    "v3_all_prefixes_balance_gate_passed": true
+  }
+}

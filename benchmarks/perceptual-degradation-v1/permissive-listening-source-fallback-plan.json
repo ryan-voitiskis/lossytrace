@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "plan_id": "perceptual-degradation-permissive-listening-source-fallback-20260804-001",
+  "state": "metadata_only_permissive_fallback_identified_audio_and_scores_closed",
+  "purpose": "Define a CC BY and CC0-only development-listening source path that avoids unresolved noncommercial and ShareAlike decisions without treating ODAQ's simulated artifacts as codec evidence or claiming independent music-provider transfer.",
+  "bindings": {
+    "odaq_score_blind_audit": {
+      "path": "research/toolchains/evidence/perceptual-degradation-odaq-score-blind-audit-20260803-001.json",
+      "sha256": "c5b53a5c52f72198194fb81c39abd20a84bb3484f8618322a639225fa96f85d8"
+    },
+    "odaq_attribution_audit": {
+      "path": "research/toolchains/evidence/perceptual-degradation-odaq-attribution-audit-20260804-001.json",
+      "sha256": "08da482eeab4ab51f0e2ed2f05684edac098b51fe81d1b78bec75181336dca61"
+    },
+    "source_condition_qualification": {
+      "path": "benchmarks/perceptual-degradation-v1/source-condition-qualification-plan.json",
+      "sha256": "5ce20a4e10d743e8823810ec89e58d873ea2db47044151f065fa3358e16cf64b"
+    },
+    "listening_protocol": {
+      "path": "docs/research/perceptual-degradation-listening-protocol-20260803.md",
+      "sha256": "7f918b7faa285cb4e2f142907e3d344f6cb11a7e43cfbfa83c82b9135158171b"
+    }
+  },
+  "primary_source_observation": {
+    "observed_on": "2026-08-04",
+    "provider_record": "https://zenodo.org/records/10405774",
+    "paper": "https://arxiv.org/abs/2401.00197",
+    "repository": "https://github.com/Fraunhofer-IIS/ODAQ",
+    "paper_population": "14 music excerpts and 11 movie-like soundtrack excerpts distributed as studio-quality stereo PCM at 44.1 or 48 kHz",
+    "paper_listening_evidence": "240 processed samples rated by 26 post-screened expert listeners in two laboratories",
+    "paper_processing_boundary": "five isolated artifact simulations for music and source-separation/remix systems for soundtracks; no published condition is treated as an actual codec encode"
+  },
+  "access_boundary": {
+    "provider_audio_acquisition_authorized": false,
+    "audio_member_opened": false,
+    "published_processed_condition_opened": false,
+    "listening_score_opened": false,
+    "actual_codec_generation_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "listener_response_collection_authorized": false,
+    "participant_contact_authorized": false,
+    "retained_audio_access_authorized": false,
+    "sealed_evidence_access_authorized": false
+  },
+  "licence_policy": {
+    "allowed_classes": [
+      "cc_by",
+      "cc0"
+    ],
+    "selected_source_record_count": 16,
+    "cc_by_source_record_count": 15,
+    "cc0_source_record_count": 1,
+    "attribution_notice_ready_source_count": 16,
+    "attribution_dependency_record_count": 14,
+    "noncommercial_determination_required_for_this_fallback": false,
+    "share_alike_obligation_present_in_this_fallback": false,
+    "cc_by_notice_requirements": [
+      "preserve creator and supplied title",
+      "link the source and licence",
+      "identify LossyTrace codec or anchor transformations",
+      "do not imply creator endorsement"
+    ],
+    "rights_caveat": "CC deeds do not warrant that every publicity, privacy, moral or other right needed for a particular use is cleared; exact use remains subject to the bound source records and legal code."
+  },
+  "selected_reference_population": {
+    "clean_reference_record_count": 16,
+    "music_reference_count": 9,
+    "movie_like_soundtrack_reference_count": 7,
+    "conservative_work_group_count": 13,
+    "provider_stratum_count": 1,
+    "sample_rates_hz": [
+      44100,
+      48000
+    ],
+    "channel_count": 2,
+    "sample_depth_bits": [
+      16,
+      24
+    ],
+    "source_coding_classes": [
+      "uncoded_or_lossless"
+    ],
+    "soundtrack_work_grouping": {
+      "CosmosLandromat": 2,
+      "ElephantsDream": 1,
+      "Meridian": 2,
+      "SitaSings": 2
+    },
+    "music_content_classes": [
+      "solo trumpet",
+      "solo violin",
+      "choral singing",
+      "solo acoustic guitar",
+      "solo accordion",
+      "modern jazz ensemble",
+      "solo castanets",
+      "single hand claps"
+    ],
+    "selection_basis": "all ODAQ listening groups already audited as CC BY or CC0 with uncoded or lossless original coding; no waveform, processed condition, score or metric informed selection",
+    "same_upstream_work_and_related_remixes_co_located": true,
+    "selected_reference_members_exactly_frozen": false
+  },
+  "eligible_future_roles": {
+    "reference_only_actual_codec_development_listening": true,
+    "reference_only_production_control_development_listening": true,
+    "published_simulated_artifact_metric_sanity_check_after_separate_score_opening": true,
+    "published_simulated_artifacts_as_actual_codec_conditions": false,
+    "grouped_encoder_transfer": false,
+    "independent_music_provider_transfer": false,
+    "fresh_final_validation": false,
+    "broad_commercial_music_claim": false,
+    "all_genre_music_claim": false
+  },
+  "acquisition_preconditions": [
+    "Commit a separate reference-only acquisition authorization binding each selected reference member's ZIP name, CRC32, compressed bytes and uncompressed bytes.",
+    "Keep every processed ODAQ condition and every listening-score member closed during reference acquisition.",
+    "Verify at least 15 GiB free on /System/Volumes/Data immediately before acquisition.",
+    "Use bounded HTTP Range requests and a private external output root; never persist the full 1,048,071,792-byte archive.",
+    "Verify each acquired WAV against its frozen ZIP metadata and inspect only PCM structure until a later stimulus-generation authority is committed.",
+    "Keep audio, member paths and private manifests out of Git."
+  ],
+  "claim_boundary": {
+    "permissive_development_listening_path_available": true,
+    "non_nc_source_path_requires_human_noncommercial_decision": false,
+    "one_provider_is_multiple_independent_providers": false,
+    "published_scores_calibrate_actual_codec_audibility": false,
+    "current_claim": "ODAQ supplies a permissively licensed one-provider studio-music and soundtrack development source stratum; actual codec audibility, independent provider transfer and final validation remain unproven."
+  },
+  "decision": {
+    "permissive_fallback_identified": true,
+    "selected_attribution_metadata_complete": true,
+    "reference_only_acquisition_plan_frozen": false,
+    "source_and_condition_manifest_frozen": false,
+    "physical_playback_qualified": false,
+    "human_collection_authorized": false
+  },
+  "authorized_next_step": "Freeze an exact, bounded, reference-only ODAQ acquisition plan without opening scores or processed conditions. A responsible human must still choose this narrow one-provider fallback versus wider NC/SA source breadth and declare a qualified playback chain before study stimuli or responses are authorized."
+}

@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "report_id": "paired-ui-browser-observed-20260905-001",
+  "state": "silent_synthetic_browser_qa_complete_not_collection_or_playback_qualification",
+  "source_bindings": {
+    "paired_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/paired-rating-protocol-plan.json",
+      "sha256": "d3578a823277d8542c1f4c9cc7d18ead03948324b5103ba9e512585287983192"
+    },
+    "paired_implementation": {
+      "path": "scripts/perceptual_degradation_paired_rating.py",
+      "sha256": "6a9753b9064df1d61950775684a25fa19bd4d8c5c77a97c051851187cf795c7e"
+    },
+    "html": {
+      "path": "research/listening-paired-ui/index.html",
+      "sha256": "9e96bc85e1cfd95f359bb8851f8269a3e809a58f1625a55da87b0a5fd184bd2d"
+    },
+    "style": {
+      "path": "research/listening-paired-ui/style.css",
+      "sha256": "d0102bd33a5c952c23b710afb088a2ac1941e014562d5bc84ac936785e595e13"
+    },
+    "state_machine": {
+      "path": "research/listening-paired-ui/state.js",
+      "sha256": "01e7a12172f87a89a61941f7f6716da09320480ad818c6f5c315954a5064572a"
+    },
+    "application": {
+      "path": "research/listening-paired-ui/app.js",
+      "sha256": "58f9222e1a5044fa09ee213745716cd4936ac98663f2c65247c5e85b7a88f94b"
+    },
+    "public_fixture": {
+      "path": "research/listening-paired-ui/fixture.js",
+      "sha256": "66b05f0dca64bfbdf72af50a5b868659b68859c85ccb5656070cd016b37fcf27"
+    }
+  },
+  "adapter_sha256": "44473748ae92915333e6f5a98a0eec466589f5cae9b0b79216128948577ebd9c",
+  "tests_sha256": "5d5e3024a02a662d7e998f3446ad1437b97062e4b617fb364d46c4a7a6617bee",
+  "plan_sha256": "9db2c65de718183376458fe891817f841b22d82cb5f56669699cd8d4112c9869",
+  "environment": {
+    "playwright_cli_version": "0.1.19",
+    "observed_user_agent_browser_major": 152,
+    "headed": true,
+    "isolated_session": true,
+    "content_route": "temporary_loopback_static_assets_only"
+  },
+  "viewports": [
+    {
+      "width": 390,
+      "height": 844,
+      "document_width": 375
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "document_width": 1265
+    }
+  ],
+  "browser_checks": {
+    "initial_choice_unset": true,
+    "initial_grades_blank_and_disabled": true,
+    "choice_locked_before_grading": true,
+    "choice_controls_disabled_after_lock": true,
+    "single_grade_cannot_submit": true,
+    "complete_current_grades_enable_submission": true,
+    "cleared_grade_disables_submission": true,
+    "out_of_range_grade_disables_submission": true,
+    "restored_valid_grade_enables_submission": true,
+    "submitted_controls_disabled": true,
+    "next_trial_has_blank_fields_and_no_choice": true,
+    "complete_records_match_declared_fixtures": true,
+    "final_draft_missingness_preserved": true,
+    "reload_clears_ephemeral_record": true,
+    "role_free_record_projection": true,
+    "full_page_layouts_visually_inspected": true
+  },
+  "complete_pair_projection": {
+    "browser_records_match_declared_fixture": true,
+    "incorrect_choices_retained": 2,
+    "scientific_truth_eligible": false,
+    "signed_pair_differences": [
+      0.6,
+      -0.6
+    ]
+  },
+  "incomplete_pair_projection": {
+    "complete_pair_analysis_eligible": false,
+    "condition_grade_ticks": 50,
+    "hidden_reference_grade_ticks": null,
+    "paired_sdg": null,
+    "scientific_truth_eligible": false
+  },
+  "request_audit": {
+    "observed_request_count_before_final_reload": 15,
+    "all_observed_requests_were_loopback_static_asset_gets": true,
+    "external_requests_observed": 0,
+    "submission_requests_observed": 0,
+    "console_errors": 0,
+    "console_warnings": 0,
+    "not_byte_delivery_qualification": true
+  },
+  "cleanup": {
+    "browser_session_closed": true,
+    "temporary_server_stopped": true,
+    "screenshots_committed": false
+  },
+  "ci_reruns_browser_interactions": false,
+  "browser_binary_binding_complete": false,
+  "human_responses_observed": false,
+  "perceptual_truth_eligible": false,
+  "playback_qualified": false,
+  "objective_complete": false
+}

@@ -1,0 +1,136 @@
+{
+  "authorization": {
+    "actual_audio_access_authorized": true,
+    "actual_codec_generation_authorized": false,
+    "derived_pcm_retention_authorized": false,
+    "exact_selected_provider_original_acquisition_authorized": true,
+    "human_collection_authorized": false,
+    "no_reference_training_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "playback_authorized": false,
+    "private_replay_and_redaction_audit_authorized": true,
+    "provider_processed_condition_or_score_access_authorized": false,
+    "public_verdict_enabled": false,
+    "sealed_evidence_access_authorized": false,
+    "source_manifest_allocation_authorized": false,
+    "source_trait_assignment_authorized": false,
+    "sparse_tonal_descriptor_execution_authorized": true,
+    "synthetic_fixture_execution_authorized": true
+  },
+  "bindings": {
+    "confirmation_implementation": {
+      "path": "scripts/perceptual_degradation_source_trait_sparse_non_tonal_exact_member_confirmation_v3.py",
+      "sha256": "4d212c0d6e382c3d560b9814b07840b3742258e3d35899f66ec4638c3a938692"
+    },
+    "confirmation_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_source_trait_sparse_non_tonal_exact_member_confirmation_v3.py",
+      "sha256": "e9771e8ed6fc2d5ae52ecdf19cf0f8d0e5630a12b041cfb6dfd5dc21dba9627b"
+    },
+    "current_objective_audit": {
+      "path": "research/toolchains/evidence/perceptual-degradation-objective-completion-audit-20260819-017.json",
+      "sha256": "b4c1802afa1f38219d0eb3365028ce4e4956e032ca7b0f891c4fcd86e3353ef3"
+    },
+    "descriptor_implementation": {
+      "path": "scripts/perceptual_degradation_source_trait_sparse_tonal_descriptor.py",
+      "sha256": "90adfa2dec5ad3bd09bdb66094c964fbddd0779765dda54a72fc8b72de557299"
+    },
+    "descriptor_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/source-trait-sparse-tonal-descriptor-plan.json",
+      "sha256": "8b8649fe65ba151f906a544ff08271f2563224e54610156770edcc731f23bdbf"
+    },
+    "descriptor_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-source-trait-sparse-tonal-descriptor-20260818-001.json",
+      "sha256": "dd98911defc3dcdc3233db3a67e253295bfa0e874cc132d4880c342a72078936"
+    },
+    "failed_exact_member_v2_audit": {
+      "path": "research/toolchains/evidence/perceptual-degradation-source-trait-sparse-non-tonal-exact-member-confirmation-v2-audit-20260819-001.json",
+      "sha256": "56f0fd7d74e5b9c6ea596dbb7d008ca8a321bcca15d6d45fbff4315b63e7f859"
+    },
+    "failed_exact_member_v2_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-source-trait-sparse-non-tonal-exact-member-confirmation-v2-20260819-001.json",
+      "sha256": "4e945b51c68ec2d69a2780b55b715f2a11551d5547a0577cfb65c4ea3128122f"
+    },
+    "metadata_search_implementation": {
+      "path": "scripts/perceptual_degradation_source_trait_sparse_non_tonal_metadata_search_v3_result.py",
+      "sha256": "c4dc3194ac4ad4032d4bebb8ab11a00206ab3a69dc97d0eced3ccefa4bdbfc73"
+    },
+    "metadata_search_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/source-trait-sparse-non-tonal-metadata-search-v3-plan.json",
+      "sha256": "861170d9c3a4a14b2cbb70b42a251de88b2b028d1ae0b7b160d5a323c69c1099"
+    },
+    "metadata_search_plan_validator": {
+      "path": "scripts/perceptual_degradation_source_trait_sparse_non_tonal_metadata_search_v3.py",
+      "sha256": "699fa43f9cd087619d096896c56e7e609f62a16b78193801d058b02725b29506"
+    },
+    "metadata_search_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-source-trait-sparse-non-tonal-metadata-search-v3-20260819-001.json",
+      "sha256": "c0940d60d3645c77b2a3741a5c80fbdfc993969cdd6aa6c692e9fd1444fc01cd"
+    },
+    "research_contract": {
+      "path": "docs/research/perceptual-degradation-contract-20260803.md",
+      "sha256": "fdec79207fc0fdd2e9cb10aae9f93dd1a17b45e6e56c0c7df8f0e01a1f9fb505"
+    }
+  },
+  "claim_boundary": {
+    "descriptor_class_is_perceptual_truth": false,
+    "full_objective_complete": false,
+    "metadata_eligibility_is_descriptor_evidence": false,
+    "public_cli_changed": false,
+    "public_verdict_enabled": false,
+    "source_trait_assigned": false,
+    "source_trait_manifest_frozen": false,
+    "technical_descriptor_confirmation_is_listening_evidence": false
+  },
+  "execution_contract": {
+    "all_supported_channels_must_agree": true,
+    "attribution_attachment_required": true,
+    "candidate_detail_page_may_be_opened_only_to_use_official_authenticated_download": true,
+    "descriptor_threshold_change_after_observation_allowed": false,
+    "exact_provider_original_may_be_retained_privately": true,
+    "member_substitution_after_observation_allowed": false,
+    "private_report_count": 2,
+    "private_reports_must_be_byte_identical": true,
+    "public_report_must_exclude_channel_measurements": true,
+    "public_report_must_exclude_encoded_and_pcm_hashes": true,
+    "public_report_must_exclude_private_paths": true,
+    "public_report_must_exclude_provider_scores_and_processed_conditions": true
+  },
+  "member": {
+    "attribution": "Sound 476736 by elmoustachio on Freesound.org, CC0 1.0",
+    "capture_chain": "Zoom H6 recorder with its XY stereo capsule",
+    "expected_container": {
+      "bits_per_sample": 24,
+      "channel_count": 2,
+      "duration_seconds_maximum": "26.800000",
+      "duration_seconds_minimum": "26.700000",
+      "sample_format": "signed_integer_pcm",
+      "sample_rate_hz": 48000
+    },
+    "expected_descriptor_class": "sparse_non_tonal_contrast",
+    "exact_member_id": "freesound_sound_476736",
+    "licence": "CC0 1.0",
+    "maximum_encoded_bytes": 10485760,
+    "natural_waveform_intent": "one natural thunder clap with light-rain recording context",
+    "private_source_kind": "provider_original_wav",
+    "provider_id": "freesound",
+    "provider_record_url": "https://freesound.org/people/elmoustachio/sounds/476736/",
+    "transformation_history": "none; provider record explicitly states no processing"
+  },
+  "negative_result_policy": {
+    "abstention_or_class_mismatch_is_recorded": true,
+    "candidate_is_not_replaced_inside_this_checkpoint": true,
+    "failed_candidate_is_not_assigned": true,
+    "thresholds_are_not_changed": true
+  },
+  "plan_id": "perceptual-degradation-source-trait-sparse-non-tonal-exact-member-confirmation-v3-20260819-001",
+  "purpose": "Acquire only Freesound sound 476736 through the official authenticated original-download route, then replay the already-frozen sparse non-tonal descriptor twice with one worker and no derived PCM retention or scientific promotion.",
+  "resources": {
+    "fresh_temporary_directories": true,
+    "maximum_workers": 1,
+    "minimum_free_disk_gib": 15,
+    "replay_count": 2,
+    "retain_derived_pcm": false
+  },
+  "schema_version": 1,
+  "state": "one_exact_sparse_non_tonal_successor_v3_confirmation_frozen_before_audio_access"
+}

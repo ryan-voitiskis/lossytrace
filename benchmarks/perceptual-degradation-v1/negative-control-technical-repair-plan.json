@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "plan_id": "perceptual-degradation-negative-control-technical-repair-20260814-001",
+  "state": "score_blind_synthetic_technical_repair_frozen_before_replay",
+  "purpose": "Freeze and replay isolated dither, sample-rate-conversion, bounded-clock-drift decision and paired leading/trailing-silence technical candidates without assigning perceptual truth, selecting listening conditions or accessing actual audio.",
+  "bindings": {
+    "research_contract": {
+      "path": "docs/research/perceptual-degradation-contract-20260803.md",
+      "sha256": "fdec79207fc0fdd2e9cb10aae9f93dd1a17b45e6e56c0c7df8f0e01a1f9fb505"
+    },
+    "research_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/research-plan.json",
+      "sha256": "e724a3e04fb41458d0568f542283ba33d71a54b1fdfd74b3901cc0dc1d10c352"
+    },
+    "factor_levels": {
+      "path": "benchmarks/audio-integrity-v2/factor-levels.json",
+      "sha256": "4065553ef4fbe505ea0d79b149570bc1483396dbcc1de52597890e61f59481bd"
+    },
+    "historical_toolchain_bindings": {
+      "path": "benchmarks/audio-integrity-v2/toolchain-bindings.json",
+      "sha256": "d2af2f0b78b184189806d724c294d7606f37d2763839e17c9289f7957da52070"
+    },
+    "alignment_mono_implementation": {
+      "path": "scripts/perceptual_degradation_alignment.py",
+      "sha256": "0e036bc1a430e578523d61e68c7ab0dc659bace2f606710ab3d28b148439dccb"
+    },
+    "alignment_topology_implementation": {
+      "path": "scripts/perceptual_degradation_alignment_v2.py",
+      "sha256": "72fe01344a33ffbec3967f0c64ca7cf5a3e7c0f5ba64620800115a646500e61c"
+    },
+    "alignment_fixture_freeze": {
+      "path": "benchmarks/perceptual-degradation-v1/alignment-fixture-freeze.json",
+      "sha256": "5cd09e6b69cb0e49a55981467dccac0f6d13f2097d0b8ca6337cc758208eb301"
+    },
+    "alignment_topology_freeze": {
+      "path": "benchmarks/perceptual-degradation-v1/alignment-topology-freeze.json",
+      "sha256": "b3508568fb1375f833fd4ba5b0203bdeb6dba1197fb95b054576e79c9deeda45"
+    },
+    "production_generation_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/production-generation-control-plan.json",
+      "sha256": "cea7450b3c91ad593cef2be6033d0f8b25c7391795d554f697aefd0f8a11760c"
+    },
+    "production_generation_replay": {
+      "path": "research/toolchains/evidence/perceptual-degradation-production-generation-synthetic-replay-20260804-001.json",
+      "sha256": "1dec93a0334e6213ef4b952b4aea11018d5611755e88833e60c22030b25c54b8"
+    },
+    "negative_control_topology_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/negative-control-topology-plan.json",
+      "sha256": "edde1a07fc308c0938f9842046ae21c2640da26ac79924acfaa8c96465c37ea4"
+    },
+    "negative_control_topology_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-negative-control-topology-20260814-001.json",
+      "sha256": "b52b24723144c592887bff03f861ea85fa919736fbc86c25fe45e2c2c4730b09"
+    }
+  },
+  "authorization": {
+    "synthetic_numeric_fixture_execution_authorized": true,
+    "synthetic_pcm_fixture_execution_authorized": true,
+    "actual_source_audio_access_authorized": false,
+    "provider_audio_access_authorized": false,
+    "retained_audio_access_authorized": false,
+    "listening_condition_selection_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "human_collection_authorized": false,
+    "recruitment_authorized": false,
+    "response_or_outcome_access_authorized": false,
+    "sealed_evidence_access_authorized": false,
+    "no_reference_training_authorized": false,
+    "public_verdict_enabled": false
+  },
+  "resources": {
+    "minimum_free_disk_gib": 15,
+    "maximum_workers": 1,
+    "fresh_temporary_directories": true,
+    "replay_count": 2,
+    "byte_identical_reports_required": true,
+    "retain_generated_audio": false
+  },
+  "synthetic_pcm_fixture": {
+    "fixture_id": "negative-control-repair-s16-stereo-48k-v1",
+    "sample_rate_hz": 48000,
+    "channel_count": 2,
+    "sample_format": "signed_s16le",
+    "duration_seconds": 2,
+    "generator": "integer_saw_and_pulse_v1",
+    "perceptual_truth": "absent"
+  },
+  "isolated_dither_candidate": {
+    "recipe_id": "production-isolated-s16-tpdf-1lsb-v1",
+    "class_id": "dither",
+    "algorithm": "For each signed-16 sample, derive two independent SHA-256 counter bits and add their difference, producing integer TPDF noise in {-1,0,1}; saturate to signed-16 without changing frame count, sample rate, channel count or nominal bit depth.",
+    "prng": "SHA-256 counter mode",
+    "seed_prefix": "lossytrace-negative-control-isolated-dither-20260814-v1\\0",
+    "noise_minimum_lsb": -1,
+    "noise_maximum_lsb": 1,
+    "bit_depth_change": false,
+    "comparison_role": "isolated_dither_noise_candidate_not_a_complete_high_precision_quantization_workflow",
+    "human_truth": "absent"
+  },
+  "sample_rate_conversion_candidate": {
+    "recipe_id": "production-src-roundtrip-48k-32k-48k-swr9-v1",
+    "class_id": "sample_rate_conversion",
+    "source_sample_rate_hz": 48000,
+    "intermediate_sample_rate_hz": 32000,
+    "output_sample_rate_hz": 48000,
+    "sample_format": "signed_s16le",
+    "channel_count": 2,
+    "dither_applied": false,
+    "normalization_applied": false,
+    "ffmpeg_filter_template": "aresample={target}:osf=s16:resampler=swr:filter_size=64:phase_shift=10:linear_interp=0:exact_rational=1:cutoff=0.95:filter_type=kaiser:kaiser_beta=9:dither_method=none",
+    "tool": {
+      "tool_id": "ffmpeg_9_0_local_successor_20260814",
+      "version_line": "ffmpeg version 9.0 Copyright (c) 2000-2026 the FFmpeg developers",
+      "binary_sha256": "d1dffe4871ee17878b18e3f305f650265c5b06cbab8007df5bc4dccca71a672f",
+      "version_output_sha256": "3f11e77b3572cbc0e0d85d27eb014d1ecde2d11b05ccb36c18296e0db08869ba"
+    },
+    "historical_ffmpeg_8_1_2_binding_reused": false,
+    "human_truth": "absent"
+  },
+  "bounded_clock_drift_candidate": {
+    "fixture_id": "bounded-drift-cross-validation-2k-v1",
+    "sample_rate_hz": 2000,
+    "duration_seconds": 12,
+    "actual_drift_ppm_cases": [75, -60, 0],
+    "candidate_drift_ppm_minimum": -100,
+    "candidate_drift_ppm_maximum": 100,
+    "candidate_drift_ppm_step": 5,
+    "window_seconds": 1,
+    "window_start_seconds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    "training_window_positions": [0, 2, 4, 6, 8],
+    "held_out_window_positions": [1, 3, 5, 7, 9],
+    "selection_metric": "mean_cosine_correlation",
+    "minimum_selection_margin": 0.0001,
+    "minimum_held_out_correlation_after_correction": 0.99,
+    "minimum_held_out_correlation_improvement_to_apply": 0.05,
+    "zero_drift_apply_correction": false,
+    "fixture_interpolator": "binary64_linear_interpolation",
+    "fixture_interpolator_is_frozen_oracle_resampler": false,
+    "production_resampler_execution_authorized": false,
+    "perceptual_truth": "absent"
+  },
+  "paired_edge_silence_candidate": {
+    "fixture_id": "paired-leading-trailing-silence-2k-v1",
+    "sample_rate_hz": 2000,
+    "active_duration_seconds": 12,
+    "supported_case": {
+      "leading_silence_seconds": 0.4,
+      "trailing_silence_seconds": 0.6,
+      "expected_status": "supported"
+    },
+    "over_limit_case": {
+      "leading_silence_seconds": 1.2,
+      "trailing_silence_seconds": 1.2,
+      "expected_status": "unsupported",
+      "expected_reason": "excessive_trim"
+    },
+    "edge_samples_must_be_exact_zero": true,
+    "alignment_limit_seconds": 2.0,
+    "alignment_limit_fraction": 0.1,
+    "perceptual_truth": "absent"
+  },
+  "claim_boundary": {
+    "synthetic_dither_candidate_is_human_dither_truth": false,
+    "sample_rate_conversion_replay_is_perceptual_truth": false,
+    "ffmpeg_successor_is_selected_oracle_resampler": false,
+    "fixture_drift_interpolator_is_production_resampler": false,
+    "drift_fixture_proves_retained_audio_correction": false,
+    "edge_silence_fixture_proves_perceptual_transparency": false,
+    "technical_repair_selects_listening_conditions": false,
+    "technical_repair_completes_negative_scientific_coverage": false,
+    "technical_repair_authorizes_collection": false,
+    "full_objective_complete": false,
+    "public_cli_changed": false
+  },
+  "authorized_next_step": "Implement and execute exactly two synthetic-only fresh replays, preserve the output as path-free technical evidence and keep all condition selection, perceptual truth, source, metric, human and no-reference gates closed."
+}

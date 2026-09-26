@@ -1,0 +1,982 @@
+{
+  "actual_audio_accessed": false,
+  "bindings": {
+    "capture_specification": {
+      "path": "benchmarks/perceptual-degradation-v1/source-trait-sparse-non-tonal-clean-capture-acquisition-spec.json",
+      "sha256": "cb828b070189cdd14983bdf7fff41f36e41d459b791d5097d7159c457a0e742c"
+    },
+    "descriptor_engine": {
+      "path": "scripts/perceptual_degradation_source_trait_sparse_tonal_descriptor.py",
+      "sha256": "90adfa2dec5ad3bd09bdb66094c964fbddd0779765dda54a72fc8b72de557299"
+    },
+    "descriptor_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/source-trait-sparse-tonal-descriptor-plan.json",
+      "sha256": "8b8649fe65ba151f906a544ff08271f2563224e54610156770edcc731f23bdbf"
+    },
+    "native_rate_runner": {
+      "path": "scripts/perceptual_degradation_source_trait_sparse_tonal_exact_member_confirmation.py",
+      "sha256": "79e17d6b7db767f0a8b828093e3e0857b73300fc8b055b7d3442c381f66dcfc0"
+    },
+    "restart_review": {
+      "path": "docs/research/perceptual-degradation-strategic-review-20260905.md",
+      "sha256": "6dfa09fa8c5465a08a41fcf8f3eaaa2b518e74a13bde83b2dd4549ff2c709cf4"
+    }
+  },
+  "claim_boundary": {
+    "actual_audio_access_authorized": false,
+    "capture_execution_authorized_by_this_audit": false,
+    "external_communication_or_spending_authorized": false,
+    "historical_candidates_reclassified": false,
+    "objective_complete": false,
+    "perceptual_metric_execution_authorized": false,
+    "playback_or_listening_authorized": false,
+    "population_sampling_contract_selected": false,
+    "public_verdict_enabled": false,
+    "replacement_descriptor_selected": false,
+    "sealed_evidence_or_training_authorized": false,
+    "source_trait_assignment_authorized": false
+  },
+  "context_audit": {
+    "comparisons": [
+      {
+        "after_active_blocks": 2,
+        "before_active_blocks": 3,
+        "change": "translate_event_by_50_ms",
+        "event_samples_unchanged": true,
+        "sample_rate_hz": 48000,
+        "sparse_flag_changed": true
+      },
+      {
+        "after_active_blocks": 2,
+        "before_active_blocks": 3,
+        "change": "append_15_seconds_of_quiet",
+        "event_samples_unchanged": true,
+        "sample_rate_hz": 48000,
+        "sparse_flag_changed": true
+      },
+      {
+        "after_active_blocks": 2,
+        "before_active_blocks": 3,
+        "change": "translate_event_by_50_ms",
+        "event_samples_unchanged": true,
+        "sample_rate_hz": 96000,
+        "sparse_flag_changed": true
+      },
+      {
+        "after_active_blocks": 2,
+        "before_active_blocks": 3,
+        "change": "append_15_seconds_of_quiet",
+        "event_samples_unchanged": true,
+        "sample_rate_hz": 96000,
+        "sparse_flag_changed": true
+      }
+    ],
+    "occupancy_only_constructions": [
+      {
+        "analytic": {
+          "active_block_count": 3,
+          "non_sparse": false,
+          "relative_block_powers": [
+            "0/1",
+            "0/1",
+            "0/1",
+            "1/30",
+            "1/1",
+            "1/30",
+            "0/1",
+            "0/1",
+            "0/1",
+            "0/1"
+          ],
+          "sparse": false
+        },
+        "descriptor": {
+          "active_block_count": 3,
+          "active_fraction": "0.300000000",
+          "block_count": 10,
+          "non_sparse": false,
+          "sparse": false,
+          "supported": true
+        },
+        "duration_seconds": 15,
+        "event_start_seconds": "5.950",
+        "exact_overlap_check_passed": true,
+        "sample_rate_hz": 48000
+      },
+      {
+        "analytic": {
+          "active_block_count": 2,
+          "non_sparse": false,
+          "relative_block_powers": [
+            "0/1",
+            "0/1",
+            "0/1",
+            "0/1",
+            "1/1",
+            "1/15",
+            "0/1",
+            "0/1",
+            "0/1",
+            "0/1"
+          ],
+          "sparse": true
+        },
+        "descriptor": {
+          "active_block_count": 2,
+          "active_fraction": "0.200000000",
+          "block_count": 10,
+          "non_sparse": false,
+          "sparse": true,
+          "supported": true
+        },
+        "duration_seconds": 15,
+        "event_start_seconds": "6.000",
+        "exact_overlap_check_passed": true,
+        "sample_rate_hz": 48000
+      },
+      {
+        "analytic": {
+          "active_block_count": 2,
+          "non_sparse": false,
+          "relative_block_powers": [
+            "0/1",
+            "1/31",
+            "1/1",
+            "0/1",
+            "0/1",
+            "0/1",
+            "0/1",
+            "0/1",
+            "0/1",
+            "0/1"
+          ],
+          "sparse": true
+        },
+        "descriptor": {
+          "active_block_count": 2,
+          "active_fraction": "0.200000000",
+          "block_count": 10,
+          "non_sparse": false,
+          "sparse": true,
+          "supported": true
+        },
+        "duration_seconds": 30,
+        "event_start_seconds": "5.950",
+        "exact_overlap_check_passed": true,
+        "sample_rate_hz": 48000
+      },
+      {
+        "analytic": {
+          "active_block_count": 1,
+          "non_sparse": false,
+          "relative_block_powers": [
+            "0/1",
+            "0/1",
+            "1/1",
+            "0/1",
+            "0/1",
+            "0/1",
+            "0/1",
+            "0/1",
+            "0/1",
+            "0/1"
+          ],
+          "sparse": true
+        },
+        "descriptor": {
+          "active_block_count": 1,
+          "active_fraction": "0.100000000",
+          "block_count": 10,
+          "non_sparse": false,
+          "sparse": true,
+          "supported": true
+        },
+        "duration_seconds": 30,
+        "event_start_seconds": "6.000",
+        "exact_overlap_check_passed": true,
+        "sample_rate_hz": 48000
+      },
+      {
+        "analytic": {
+          "active_block_count": 3,
+          "non_sparse": false,
+          "relative_block_powers": [
+            "0/1",
+            "0/1",
+            "0/1",
+            "1/30",
+            "1/1",
+            "1/30",
+            "0/1",
+            "0/1",
+            "0/1",
+            "0/1"
+          ],
+          "sparse": false
+        },
+        "descriptor": {
+          "active_block_count": 3,
+          "active_fraction": "0.300000000",
+          "block_count": 10,
+          "non_sparse": false,
+          "sparse": false,
+          "supported": true
+        },
+        "duration_seconds": 15,
+        "event_start_seconds": "5.950",
+        "exact_overlap_check_passed": true,
+        "sample_rate_hz": 96000
+      },
+      {
+        "analytic": {
+          "active_block_count": 2,
+          "non_sparse": false,
+          "relative_block_powers": [
+            "0/1",
+            "0/1",
+            "0/1",
+            "0/1",
+            "1/1",
+            "1/15",
+            "0/1",
+            "0/1",
+            "0/1",
+            "0/1"
+          ],
+          "sparse": true
+        },
+        "descriptor": {
+          "active_block_count": 2,
+          "active_fraction": "0.200000000",
+          "block_count": 10,
+          "non_sparse": false,
+          "sparse": true,
+          "supported": true
+        },
+        "duration_seconds": 15,
+        "event_start_seconds": "6.000",
+        "exact_overlap_check_passed": true,
+        "sample_rate_hz": 96000
+      },
+      {
+        "analytic": {
+          "active_block_count": 2,
+          "non_sparse": false,
+          "relative_block_powers": [
+            "0/1",
+            "1/31",
+            "1/1",
+            "0/1",
+            "0/1",
+            "0/1",
+            "0/1",
+            "0/1",
+            "0/1",
+            "0/1"
+          ],
+          "sparse": true
+        },
+        "descriptor": {
+          "active_block_count": 2,
+          "active_fraction": "0.200000000",
+          "block_count": 10,
+          "non_sparse": false,
+          "sparse": true,
+          "supported": true
+        },
+        "duration_seconds": 30,
+        "event_start_seconds": "5.950",
+        "exact_overlap_check_passed": true,
+        "sample_rate_hz": 96000
+      },
+      {
+        "analytic": {
+          "active_block_count": 1,
+          "non_sparse": false,
+          "relative_block_powers": [
+            "0/1",
+            "0/1",
+            "1/1",
+            "0/1",
+            "0/1",
+            "0/1",
+            "0/1",
+            "0/1",
+            "0/1",
+            "0/1"
+          ],
+          "sparse": true
+        },
+        "descriptor": {
+          "active_block_count": 1,
+          "active_fraction": "0.100000000",
+          "block_count": 10,
+          "non_sparse": false,
+          "sparse": true,
+          "supported": true
+        },
+        "duration_seconds": 30,
+        "event_start_seconds": "6.000",
+        "exact_overlap_check_passed": true,
+        "sample_rate_hz": 96000
+      }
+    ],
+    "spectral_classification_or_natural_source_truth_claimed": false
+  },
+  "generated_audio_retained": false,
+  "implementation_sha256": "3c85c5a17d1843d788026272841a3984eb3ff6ca5dbe2736c9371e25f754f3d1",
+  "next_requirement": "Use the observed invariance or non-invariance to decide whether a separately justified physical-band/context definition is needed. Any changed descriptor requires a new score-blind plan and fresh validation; do not reinterpret consumed source outcomes or modify this capture specification retrospectively.",
+  "plan_sha256": "6a112bd011fc1216f6f0c02f64853b30d35eeac6c8b35c40659d25167339be37",
+  "rate_audit": {
+    "kernel_constructions": [
+      {
+        "changes_from_48000_hz": [
+          {
+            "compared_rate_hz": 96000,
+            "contrast_class_changed": false,
+            "reference_rate_hz": 48000,
+            "spectral_non_tonal_flag_changed": false,
+            "spectral_tonal_flag_changed": false
+          },
+          {
+            "compared_rate_hz": 192000,
+            "contrast_class_changed": false,
+            "reference_rate_hz": 48000,
+            "spectral_non_tonal_flag_changed": false,
+            "spectral_tonal_flag_changed": false
+          }
+        ],
+        "native_rate_results": [
+          {
+            "descriptor": {
+              "abstain": false,
+              "sparse_non_tonal_contrast": false,
+              "sparse_tonal_overlap": false,
+              "spectral_concentration": {
+                "active_frame_count": 11,
+                "median_spectral_flatness": "0.000000001",
+                "median_top_8_bin_power_share": "1.000000000",
+                "non_tonal": false,
+                "supported": true,
+                "tonal": true
+              },
+              "time_occupancy": {
+                "active_block_count": 10,
+                "active_fraction": "1.000000000",
+                "block_count": 10,
+                "non_sparse": true,
+                "sparse": false,
+                "supported": true
+              },
+              "tonal_non_sparse_contrast": true
+            },
+            "geometry": {
+              "bin_spacing_hz": "375/8",
+              "capture_permitted_rate": true,
+              "fft_window_seconds": "8/375",
+              "highest_included_bin_hz": "191625/8",
+              "hop_seconds": "4/375",
+              "sample_rate_hz": 48000
+            },
+            "sample_count": 6144
+          },
+          {
+            "descriptor": {
+              "abstain": false,
+              "sparse_non_tonal_contrast": false,
+              "sparse_tonal_overlap": false,
+              "spectral_concentration": {
+                "active_frame_count": 17,
+                "median_spectral_flatness": "0.000000092",
+                "median_top_8_bin_power_share": "0.999689897",
+                "non_tonal": false,
+                "supported": true,
+                "tonal": true
+              },
+              "time_occupancy": {
+                "active_block_count": 10,
+                "active_fraction": "1.000000000",
+                "block_count": 10,
+                "non_sparse": true,
+                "sparse": false,
+                "supported": true
+              },
+              "tonal_non_sparse_contrast": true
+            },
+            "geometry": {
+              "bin_spacing_hz": "375/4",
+              "capture_permitted_rate": true,
+              "fft_window_seconds": "4/375",
+              "highest_included_bin_hz": "191625/4",
+              "hop_seconds": "2/375",
+              "sample_rate_hz": 96000
+            },
+            "sample_count": 12288
+          },
+          {
+            "descriptor": {
+              "abstain": false,
+              "sparse_non_tonal_contrast": false,
+              "sparse_tonal_overlap": false,
+              "spectral_concentration": {
+                "active_frame_count": 17,
+                "median_spectral_flatness": "0.000000072",
+                "median_top_8_bin_power_share": "0.999587596",
+                "non_tonal": false,
+                "supported": true,
+                "tonal": true
+              },
+              "time_occupancy": {
+                "active_block_count": 10,
+                "active_fraction": "1.000000000",
+                "block_count": 10,
+                "non_sparse": true,
+                "sparse": false,
+                "supported": true
+              },
+              "tonal_non_sparse_contrast": true
+            },
+            "geometry": {
+              "bin_spacing_hz": "375/2",
+              "capture_permitted_rate": false,
+              "fft_window_seconds": "2/375",
+              "highest_included_bin_hz": "191625/2",
+              "hop_seconds": "1/375",
+              "sample_rate_hz": 192000
+            },
+            "sample_count": 24576
+          }
+        ],
+        "shared_grid_checks": [
+          {
+            "all_shared_samples_identical": true,
+            "higher_rate_hz": 96000,
+            "lower_rate_hz": 48000,
+            "shared_sample_count": 6144
+          },
+          {
+            "all_shared_samples_identical": true,
+            "higher_rate_hz": 192000,
+            "lower_rate_hz": 48000,
+            "shared_sample_count": 6144
+          },
+          {
+            "all_shared_samples_identical": true,
+            "higher_rate_hz": 192000,
+            "lower_rate_hz": 96000,
+            "shared_sample_count": 12288
+          }
+        ],
+        "synthetic_construction": "coherent_full_band"
+      },
+      {
+        "changes_from_48000_hz": [
+          {
+            "compared_rate_hz": 96000,
+            "contrast_class_changed": false,
+            "reference_rate_hz": 48000,
+            "spectral_non_tonal_flag_changed": true,
+            "spectral_tonal_flag_changed": false
+          },
+          {
+            "compared_rate_hz": 192000,
+            "contrast_class_changed": false,
+            "reference_rate_hz": 48000,
+            "spectral_non_tonal_flag_changed": true,
+            "spectral_tonal_flag_changed": false
+          }
+        ],
+        "native_rate_results": [
+          {
+            "descriptor": {
+              "abstain": true,
+              "sparse_non_tonal_contrast": false,
+              "sparse_tonal_overlap": false,
+              "spectral_concentration": {
+                "active_frame_count": 11,
+                "median_spectral_flatness": "0.717675633",
+                "median_top_8_bin_power_share": "0.042495178",
+                "non_tonal": true,
+                "supported": true,
+                "tonal": false
+              },
+              "time_occupancy": {
+                "active_block_count": 10,
+                "active_fraction": "1.000000000",
+                "block_count": 10,
+                "non_sparse": true,
+                "sparse": false,
+                "supported": true
+              },
+              "tonal_non_sparse_contrast": false
+            },
+            "geometry": {
+              "bin_spacing_hz": "375/8",
+              "capture_permitted_rate": true,
+              "fft_window_seconds": "8/375",
+              "highest_included_bin_hz": "191625/8",
+              "hop_seconds": "4/375",
+              "sample_rate_hz": 48000
+            },
+            "sample_count": 6144
+          },
+          {
+            "descriptor": {
+              "abstain": true,
+              "sparse_non_tonal_contrast": false,
+              "sparse_tonal_overlap": false,
+              "spectral_concentration": {
+                "active_frame_count": 23,
+                "median_spectral_flatness": "0.000031235",
+                "median_top_8_bin_power_share": "0.114161843",
+                "non_tonal": false,
+                "supported": true,
+                "tonal": false
+              },
+              "time_occupancy": {
+                "active_block_count": 10,
+                "active_fraction": "1.000000000",
+                "block_count": 10,
+                "non_sparse": true,
+                "sparse": false,
+                "supported": true
+              },
+              "tonal_non_sparse_contrast": false
+            },
+            "geometry": {
+              "bin_spacing_hz": "375/4",
+              "capture_permitted_rate": true,
+              "fft_window_seconds": "4/375",
+              "highest_included_bin_hz": "191625/4",
+              "hop_seconds": "2/375",
+              "sample_rate_hz": 96000
+            },
+            "sample_count": 12288
+          },
+          {
+            "descriptor": {
+              "abstain": true,
+              "sparse_non_tonal_contrast": false,
+              "sparse_tonal_overlap": false,
+              "spectral_concentration": {
+                "active_frame_count": 47,
+                "median_spectral_flatness": "0.000000171",
+                "median_top_8_bin_power_share": "0.219560420",
+                "non_tonal": false,
+                "supported": true,
+                "tonal": false
+              },
+              "time_occupancy": {
+                "active_block_count": 10,
+                "active_fraction": "1.000000000",
+                "block_count": 10,
+                "non_sparse": true,
+                "sparse": false,
+                "supported": true
+              },
+              "tonal_non_sparse_contrast": false
+            },
+            "geometry": {
+              "bin_spacing_hz": "375/2",
+              "capture_permitted_rate": false,
+              "fft_window_seconds": "2/375",
+              "highest_included_bin_hz": "191625/2",
+              "hop_seconds": "1/375",
+              "sample_rate_hz": 192000
+            },
+            "sample_count": 24576
+          }
+        ],
+        "shared_grid_checks": [
+          {
+            "all_shared_samples_identical": true,
+            "higher_rate_hz": 96000,
+            "lower_rate_hz": 48000,
+            "shared_sample_count": 6144
+          },
+          {
+            "all_shared_samples_identical": true,
+            "higher_rate_hz": 192000,
+            "lower_rate_hz": 48000,
+            "shared_sample_count": 6144
+          },
+          {
+            "all_shared_samples_identical": true,
+            "higher_rate_hz": 192000,
+            "lower_rate_hz": 96000,
+            "shared_sample_count": 12288
+          }
+        ],
+        "synthetic_construction": "hash_phase_full_band"
+      },
+      {
+        "changes_from_48000_hz": [
+          {
+            "compared_rate_hz": 96000,
+            "contrast_class_changed": false,
+            "reference_rate_hz": 48000,
+            "spectral_non_tonal_flag_changed": false,
+            "spectral_tonal_flag_changed": false
+          },
+          {
+            "compared_rate_hz": 192000,
+            "contrast_class_changed": false,
+            "reference_rate_hz": 48000,
+            "spectral_non_tonal_flag_changed": false,
+            "spectral_tonal_flag_changed": false
+          }
+        ],
+        "native_rate_results": [
+          {
+            "descriptor": {
+              "abstain": true,
+              "sparse_non_tonal_contrast": false,
+              "sparse_tonal_overlap": false,
+              "spectral_concentration": {
+                "active_frame_count": 11,
+                "median_spectral_flatness": "0.000027328",
+                "median_top_8_bin_power_share": "0.088686498",
+                "non_tonal": false,
+                "supported": true,
+                "tonal": false
+              },
+              "time_occupancy": {
+                "active_block_count": 10,
+                "active_fraction": "1.000000000",
+                "block_count": 10,
+                "non_sparse": true,
+                "sparse": false,
+                "supported": true
+              },
+              "tonal_non_sparse_contrast": false
+            },
+            "geometry": {
+              "bin_spacing_hz": "375/8",
+              "capture_permitted_rate": true,
+              "fft_window_seconds": "8/375",
+              "highest_included_bin_hz": "191625/8",
+              "hop_seconds": "4/375",
+              "sample_rate_hz": 48000
+            },
+            "sample_count": 6144
+          },
+          {
+            "descriptor": {
+              "abstain": true,
+              "sparse_non_tonal_contrast": false,
+              "sparse_tonal_overlap": false,
+              "spectral_concentration": {
+                "active_frame_count": 23,
+                "median_spectral_flatness": "0.000000191",
+                "median_top_8_bin_power_share": "0.202276070",
+                "non_tonal": false,
+                "supported": true,
+                "tonal": false
+              },
+              "time_occupancy": {
+                "active_block_count": 10,
+                "active_fraction": "1.000000000",
+                "block_count": 10,
+                "non_sparse": true,
+                "sparse": false,
+                "supported": true
+              },
+              "tonal_non_sparse_contrast": false
+            },
+            "geometry": {
+              "bin_spacing_hz": "375/4",
+              "capture_permitted_rate": true,
+              "fft_window_seconds": "4/375",
+              "highest_included_bin_hz": "191625/4",
+              "hop_seconds": "2/375",
+              "sample_rate_hz": 96000
+            },
+            "sample_count": 12288
+          },
+          {
+            "descriptor": {
+              "abstain": true,
+              "sparse_non_tonal_contrast": false,
+              "sparse_tonal_overlap": false,
+              "spectral_concentration": {
+                "active_frame_count": 47,
+                "median_spectral_flatness": "0.000000012",
+                "median_top_8_bin_power_share": "0.345693063",
+                "non_tonal": false,
+                "supported": true,
+                "tonal": false
+              },
+              "time_occupancy": {
+                "active_block_count": 10,
+                "active_fraction": "1.000000000",
+                "block_count": 10,
+                "non_sparse": true,
+                "sparse": false,
+                "supported": true
+              },
+              "tonal_non_sparse_contrast": false
+            },
+            "geometry": {
+              "bin_spacing_hz": "375/2",
+              "capture_permitted_rate": false,
+              "fft_window_seconds": "2/375",
+              "highest_included_bin_hz": "191625/2",
+              "hop_seconds": "1/375",
+              "sample_rate_hz": 192000
+            },
+            "sample_count": 24576
+          }
+        ],
+        "shared_grid_checks": [
+          {
+            "all_shared_samples_identical": true,
+            "higher_rate_hz": 96000,
+            "lower_rate_hz": 48000,
+            "shared_sample_count": 6144
+          },
+          {
+            "all_shared_samples_identical": true,
+            "higher_rate_hz": 192000,
+            "lower_rate_hz": 48000,
+            "shared_sample_count": 6144
+          },
+          {
+            "all_shared_samples_identical": true,
+            "higher_rate_hz": 192000,
+            "lower_rate_hz": 96000,
+            "shared_sample_count": 12288
+          }
+        ],
+        "synthetic_construction": "hash_phase_lower_band"
+      },
+      {
+        "changes_from_48000_hz": [
+          {
+            "compared_rate_hz": 96000,
+            "contrast_class_changed": false,
+            "reference_rate_hz": 48000,
+            "spectral_non_tonal_flag_changed": false,
+            "spectral_tonal_flag_changed": false
+          },
+          {
+            "compared_rate_hz": 192000,
+            "contrast_class_changed": false,
+            "reference_rate_hz": 48000,
+            "spectral_non_tonal_flag_changed": false,
+            "spectral_tonal_flag_changed": false
+          }
+        ],
+        "native_rate_results": [
+          {
+            "descriptor": {
+              "abstain": false,
+              "sparse_non_tonal_contrast": false,
+              "sparse_tonal_overlap": false,
+              "spectral_concentration": {
+                "active_frame_count": 11,
+                "median_spectral_flatness": "0.000000001",
+                "median_top_8_bin_power_share": "0.999999999",
+                "non_tonal": false,
+                "supported": true,
+                "tonal": true
+              },
+              "time_occupancy": {
+                "active_block_count": 10,
+                "active_fraction": "1.000000000",
+                "block_count": 10,
+                "non_sparse": true,
+                "sparse": false,
+                "supported": true
+              },
+              "tonal_non_sparse_contrast": true
+            },
+            "geometry": {
+              "bin_spacing_hz": "375/8",
+              "capture_permitted_rate": true,
+              "fft_window_seconds": "8/375",
+              "highest_included_bin_hz": "191625/8",
+              "hop_seconds": "4/375",
+              "sample_rate_hz": 48000
+            },
+            "sample_count": 6144
+          },
+          {
+            "descriptor": {
+              "abstain": false,
+              "sparse_non_tonal_contrast": false,
+              "sparse_tonal_overlap": false,
+              "spectral_concentration": {
+                "active_frame_count": 23,
+                "median_spectral_flatness": "0.000000001",
+                "median_top_8_bin_power_share": "0.999999999",
+                "non_tonal": false,
+                "supported": true,
+                "tonal": true
+              },
+              "time_occupancy": {
+                "active_block_count": 10,
+                "active_fraction": "1.000000000",
+                "block_count": 10,
+                "non_sparse": true,
+                "sparse": false,
+                "supported": true
+              },
+              "tonal_non_sparse_contrast": true
+            },
+            "geometry": {
+              "bin_spacing_hz": "375/4",
+              "capture_permitted_rate": true,
+              "fft_window_seconds": "4/375",
+              "highest_included_bin_hz": "191625/4",
+              "hop_seconds": "2/375",
+              "sample_rate_hz": 96000
+            },
+            "sample_count": 12288
+          },
+          {
+            "descriptor": {
+              "abstain": false,
+              "sparse_non_tonal_contrast": false,
+              "sparse_tonal_overlap": false,
+              "spectral_concentration": {
+                "active_frame_count": 47,
+                "median_spectral_flatness": "0.000000001",
+                "median_top_8_bin_power_share": "0.999999998",
+                "non_tonal": false,
+                "supported": true,
+                "tonal": true
+              },
+              "time_occupancy": {
+                "active_block_count": 10,
+                "active_fraction": "1.000000000",
+                "block_count": 10,
+                "non_sparse": true,
+                "sparse": false,
+                "supported": true
+              },
+              "tonal_non_sparse_contrast": true
+            },
+            "geometry": {
+              "bin_spacing_hz": "375/2",
+              "capture_permitted_rate": false,
+              "fft_window_seconds": "2/375",
+              "highest_included_bin_hz": "191625/2",
+              "hop_seconds": "1/375",
+              "sample_rate_hz": 192000
+            },
+            "sample_count": 24576
+          }
+        ],
+        "shared_grid_checks": [
+          {
+            "all_shared_samples_identical": true,
+            "higher_rate_hz": 96000,
+            "lower_rate_hz": 48000,
+            "shared_sample_count": 6144
+          },
+          {
+            "all_shared_samples_identical": true,
+            "higher_rate_hz": 192000,
+            "lower_rate_hz": 48000,
+            "shared_sample_count": 6144
+          },
+          {
+            "all_shared_samples_identical": true,
+            "higher_rate_hz": 192000,
+            "lower_rate_hz": 96000,
+            "shared_sample_count": 12288
+          }
+        ],
+        "synthetic_construction": "single_tone"
+      }
+    ],
+    "padded_coherent_kernel": {
+      "changes_from_48000_hz": [
+        {
+          "compared_rate_hz": 96000,
+          "contrast_class_changed": true,
+          "reference_rate_hz": 48000,
+          "spectral_non_tonal_flag_changed": true,
+          "spectral_tonal_flag_changed": false
+        }
+      ],
+      "native_rate_results": [
+        {
+          "descriptor": {
+            "abstain": false,
+            "sparse_non_tonal_contrast": true,
+            "sparse_tonal_overlap": false,
+            "spectral_concentration": {
+              "active_frame_count": 13,
+              "median_spectral_flatness": "0.986670558",
+              "median_top_8_bin_power_share": "0.035764611",
+              "non_tonal": true,
+              "supported": true,
+              "tonal": false
+            },
+            "time_occupancy": {
+              "active_block_count": 1,
+              "active_fraction": "0.100000000",
+              "block_count": 10,
+              "non_sparse": false,
+              "sparse": true,
+              "supported": true
+            },
+            "tonal_non_sparse_contrast": false
+          },
+          "duration_and_quiet_geometry_met": true,
+          "eligible_natural_capture": false,
+          "geometry": {
+            "bin_spacing_hz": "375/8",
+            "capture_permitted_rate": true,
+            "fft_window_seconds": "8/375",
+            "highest_included_bin_hz": "191625/8",
+            "hop_seconds": "4/375",
+            "sample_rate_hz": 48000
+          },
+          "sample_count": 720000
+        },
+        {
+          "descriptor": {
+            "abstain": true,
+            "sparse_non_tonal_contrast": false,
+            "sparse_tonal_overlap": false,
+            "spectral_concentration": {
+              "active_frame_count": 14,
+              "median_spectral_flatness": "0.000039540",
+              "median_top_8_bin_power_share": "0.032338455",
+              "non_tonal": false,
+              "supported": true,
+              "tonal": false
+            },
+            "time_occupancy": {
+              "active_block_count": 1,
+              "active_fraction": "0.100000000",
+              "block_count": 10,
+              "non_sparse": false,
+              "sparse": true,
+              "supported": true
+            },
+            "tonal_non_sparse_contrast": false
+          },
+          "duration_and_quiet_geometry_met": true,
+          "eligible_natural_capture": false,
+          "geometry": {
+            "bin_spacing_hz": "375/4",
+            "capture_permitted_rate": true,
+            "fft_window_seconds": "4/375",
+            "highest_included_bin_hz": "191625/4",
+            "hop_seconds": "2/375",
+            "sample_rate_hz": 96000
+          },
+          "sample_count": 1440000
+        }
+      ],
+      "natural_source_or_perceptual_truth": false
+    }
+  },
+  "report_id": "descriptor-rate-context-audit-20260905-001",
+  "schema_version": 1,
+  "state": "synthetic_descriptor_rate_and_context_audit_complete",
+  "statistical_fits_or_perceptual_metrics_executed": false
+}

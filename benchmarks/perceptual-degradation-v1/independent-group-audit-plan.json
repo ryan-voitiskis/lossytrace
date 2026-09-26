@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "plan_id": "independent-group-audit-20260905-001",
+  "state": "synthetic_development_audit_declared_before_execution",
+  "purpose": "Audit whether the frozen full-reference boundary-rate machinery confuses source multiplicity with independent evidence when sources share a partition group. This is a development falsification audit, not a replacement scientific gate.",
+  "bindings": {
+    "evaluation_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/full-reference-evaluation-plan.json",
+      "sha256": "517d4bb3f1e504593007bdd85b773e2532de6bf993e173eac3b551bf99d19b0b"
+    },
+    "evaluation_engine": {
+      "path": "scripts/perceptual_degradation_full_reference_evaluation.py",
+      "sha256": "85dabbb5aefaffe77ddbc59f41bd4354c05a58c7e84162c862c3e7892b9ac95b"
+    },
+    "predecessor_resampling_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-paired-resampling-synthetic-20260905-001.json",
+      "sha256": "1a89033faaebc3a49222ff9dfd939affc707c957e3dc7d7987e4787d7748d2dc"
+    }
+  },
+  "experiment": {
+    "independent_partition_counts": [
+      1,
+      4,
+      20,
+      40
+    ],
+    "sources_per_partition": [
+      1,
+      2,
+      4,
+      40
+    ],
+    "event_probabilities": [
+      [
+        1,
+        20
+      ],
+      [
+        1,
+        10
+      ],
+      [
+        11,
+        100
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        79,
+        100
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        19,
+        20
+      ]
+    ],
+    "model": "C independent identically distributed Bernoulli(theta) partition outcomes; all K distinct synthetic sources in a partition share its outcome exactly. Every source has one relevant condition, every condition is supported, and all assigned outcomes are observed.",
+    "estimand": "theta is the independent-partition event probability. Equal K and perfectly shared outcomes make this also the equal-source event probability in this stress model only.",
+    "dependence_scope": "Perfect within-partition dependence is a declared stress case, not measured audio dependence. Distinct synthetic source identities do not imply duplicate PCM or permission to split one real source.",
+    "methods": [
+      "legacy_source_wilson",
+      "partition_wilson",
+      "partition_exact_binomial"
+    ],
+    "coverage_reference": "separate one-sided 95 percent bounds, not a simultaneous two-sided 95 percent interval",
+    "wilson": "unchanged predecessor wilson_bounds with its frozen one-sided z and source count C*K or partition count C",
+    "exact": "invert one-sided binomial tails at alpha=1/20 using exact integer/Fraction arithmetic; compare tail probabilities rather than numerically estimated interval endpoints",
+    "exact_upper_noncoverage": "P_theta(X<=k)<alpha is equivalent to U(k)<theta",
+    "exact_lower_noncoverage": "P_theta(X>=k)<alpha is equivalent to L(k)>theta",
+    "safety_guard": "point k/C <= 1/20 and upper bound <= 1/10",
+    "sensitivity_guard": "lower bound >= 4/5",
+    "guard_scope": "Grid decisions audit the boundary guard alone, not the combined bootstrap rule, other full-reference gates, or a human verdict.",
+    "false_claims": "A safety guard pass is false only for theta>1/10; a sensitivity guard pass is false only for theta<4/5. At a gate boundary, interval noncoverage is still separately reported.",
+    "enumeration": "enumerate k=0..C; mass choose(C,k)*theta^k*(1-theta)^(C-k); require exact mass sum 1; publish exact aggregate rational probabilities, no Monte Carlo standard errors",
+    "probability_numerics": "coverage and guard-event probabilities are exact; legacy Wilson decisions retain the existing floating-point implementation. Exact boundary endpoint brackets use 64 rational bisections; display rounding is never a decision input.",
+    "fixture_boundary_check": {
+      "base": "unchanged predecessor synthetic_records, 80 cases / 40 source groups / 20 partition groups",
+      "partition_counts": [
+        40,
+        20,
+        1
+      ],
+      "transformation": "replace only synthetic partition_group_id using deterministic source-index grouping; preserve all other record fields exactly and validate each variant with predecessor validate_records",
+      "execution": "call unchanged _rate_summary on transparent and material subsets separately with 10000 bootstrap draws and fixed seed suffixes; compare rate bounds and source guards after excluding the diagnostic partition count",
+      "scope": "only two synthetic boundary-rate components, never evaluate() or actual metric execution",
+      "requirement": "report accepted/rejected variant state, group counts, point, bootstrap limits, Wilson guard limits, combined rate limit and numeric component pass; do not claim the whole full-reference evaluator passes"
+    },
+    "boundary_demonstration": {
+      "counts": "all declared C,K combinations",
+      "observations": "zero events for safety and all events for sensitivity",
+      "checks": "actual legacy source-group guard equals the corresponding wilson_bounds; publish exact partition-binomial endpoint brackets",
+      "false_combined_component_claim_probability": "For each grid theta, publish probability of the all-zero/all-one event when that event passes the legacy combined rate component and the underlying population claim is false. Bootstrap extrema are exactly 0 or 1 for constant samples. This event probability is a lower bound on total false combined-component claims, not a full-gate probability."
+    },
+    "weighting_counterexample": {
+      "partition_source_counts": [
+        1,
+        9
+      ],
+      "partition_event_patterns": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "purpose": "show equal-partition and equal-source event estimands differ under unequal cluster sizes; partition aggregation is not a drop-in repair"
+    },
+    "sampling_variance_identity": "For 0<theta<1 and equal K shared outcomes, true variance of the source mean is theta*(1-theta)/C, versus the independent-source working variance theta*(1-theta)/(C*K), ratio K."
+  },
+  "access_boundary": {
+    "synthetic_only": true,
+    "worker_count": 1,
+    "minimum_free_gib": 15,
+    "no_audio_or_metric_outputs": true,
+    "no_human_responses": true,
+    "no_sealed_evidence": true,
+    "no_training": true,
+    "no_external_communication_or_spending": true,
+    "no_capture_or_playback": true,
+    "public_aggregate_only": true,
+    "legacy_files_immutable": true
+  },
+  "interpretation": {
+    "development_evidence_only": true,
+    "independent_method_validation": false,
+    "human_interval_validation": false,
+    "method_selection_authorized": false,
+    "full_reference_gate_opened": false,
+    "required_successor": [
+      "Declare target population, sampling frame, independent unit, nesting or crossed dependencies, cluster-size weighting, and source-conditional versus population-average targets before collecting outcomes.",
+      "Do not infer independence from opaque IDs, group counts, or split isolation alone.",
+      "Address few independent groups and within-group correlation in uncertainty, support and resampling; increasing related source count is not increasing independent group count.",
+      "Any changed inferential gate needs a score-blind successor; this diagnostic must not rewrite frozen results or relabel consumed evidence."
+    ]
+  },
+  "references": [
+    {
+      "title": "Cameron and Miller (2015), A Practitioner's Guide to Cluster-Robust Inference",
+      "url": "https://cameron.econ.ucdavis.edu/research/Cameron_Miller_JHR_2015_February.pdf",
+      "role": "primary background on within-cluster dependence and independent-cluster assumptions, not a guarantee for this audit or a method selection"
+    },
+    {
+      "title": "NIST/SEMATECH e-Handbook, Confidence intervals",
+      "url": "https://www.itl.nist.gov/div898/handbook/prc/section2/prc241.htm",
+      "role": "Wilson formula and exact binomial tail inversion"
+    }
+  ]
+}

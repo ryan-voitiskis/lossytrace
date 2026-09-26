@@ -1,0 +1,173 @@
+{
+  "authorization": {
+    "browser_authentication_state_verification_authorized": true,
+    "exact_member_metadata_nomination_authorized": true,
+    "human_collection_authorized": false,
+    "metadata_only_network_research_authorized": true,
+    "no_reference_training_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "provider_processed_condition_or_score_access_authorized": false,
+    "public_and_provider_metadata_read_authorized": true,
+    "public_verdict_enabled": false,
+    "sealed_evidence_access_authorized": false,
+    "source_manifest_allocation_authorized": false,
+    "source_trait_assignment_authorized": false
+  },
+  "bindings": {
+    "current_objective_audit": {
+      "path": "research/toolchains/evidence/perceptual-degradation-objective-completion-audit-20260819-019.json",
+      "sha256": "79eab52c79364ecd8575bd71f4ce5995c05c7a45f70b28f72ad69efd038686bb"
+    },
+    "descriptor_implementation": {
+      "path": "scripts/perceptual_degradation_source_trait_sparse_tonal_descriptor.py",
+      "sha256": "90adfa2dec5ad3bd09bdb66094c964fbddd0779765dda54a72fc8b72de557299"
+    },
+    "descriptor_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/source-trait-sparse-tonal-descriptor-plan.json",
+      "sha256": "8b8649fe65ba151f906a544ff08271f2563224e54610156770edcc731f23bdbf"
+    },
+    "failed_exact_member_v3_audit": {
+      "path": "research/toolchains/evidence/perceptual-degradation-source-trait-sparse-non-tonal-exact-member-confirmation-v3-audit-20260819-001.json",
+      "sha256": "fd611cc7857e2d63e4191c98a22b41b41174acfb6ccfa3ea0f42c4527e870a0b"
+    },
+    "failed_exact_member_v3_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-source-trait-sparse-non-tonal-exact-member-confirmation-v3-20260819-001.json",
+      "sha256": "4b1d4e4592bb8b0c65c90c1bc1aa93661c6e92fd12f99adad344b5d56af5c254"
+    },
+    "predecessor_metadata_implementation": {
+      "path": "scripts/perceptual_degradation_source_trait_sparse_non_tonal_metadata_search_v3_result.py",
+      "sha256": "c4dc3194ac4ad4032d4bebb8ab11a00206ab3a69dc97d0eced3ccefa4bdbfc73"
+    },
+    "predecessor_metadata_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/source-trait-sparse-non-tonal-metadata-search-v3-plan.json",
+      "sha256": "861170d9c3a4a14b2cbb70b42a251de88b2b028d1ae0b7b160d5a323c69c1099"
+    },
+    "predecessor_metadata_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-source-trait-sparse-non-tonal-metadata-search-v3-20260819-001.json",
+      "sha256": "c0940d60d3645c77b2a3741a5c80fbdfc993969cdd6aa6c692e9fd1444fc01cd"
+    },
+    "research_contract": {
+      "path": "docs/research/perceptual-degradation-contract-20260803.md",
+      "sha256": "fdec79207fc0fdd2e9cb10aae9f93dd1a17b45e6e56c0c7df8f0e01a1f9fb505"
+    }
+  },
+  "candidate_eligibility": {
+    "all_channel_capture_chain_must_be_explicit": true,
+    "allowed_licences": [
+      "CC0 1.0",
+      "CC BY 4.0"
+    ],
+    "allowed_transformations": [
+      "none",
+      "declared_trim_only"
+    ],
+    "descriptor_class": "sparse_non_tonal_contrast",
+    "disallowed_transformations": [
+      "denoise",
+      "dynamics",
+      "fade",
+      "normalization",
+      "pitch_change",
+      "rendered_or_synthesized_sound_design",
+      "reverb"
+    ],
+    "duration_seconds_maximum": "60.000",
+    "duration_seconds_minimum": "10.000",
+    "exact_transformation_history_must_be_explicit": true,
+    "excluded_exact_member_ids": [
+      "freesound_sound_856645",
+      "freesound_sound_866967",
+      "freesound_sound_273338",
+      "freesound_sound_710084",
+      "freesound_sound_73385",
+      "freesound_sound_728514",
+      "freesound_sound_845921",
+      "freesound_sound_543775",
+      "freesound_sound_193044",
+      "freesound_sound_345762",
+      "freesound_sound_240344",
+      "freesound_sound_151320",
+      "freesound_sound_23040",
+      "freesound_sound_367702",
+      "freesound_sound_703342",
+      "freesound_sound_734657",
+      "freesound_sound_734656",
+      "freesound_sound_734653",
+      "freesound_sound_734658",
+      "freesound_sound_734654",
+      "freesound_sound_734655",
+      "freesound_sound_734651",
+      "freesound_sound_463458",
+      "freesound_sound_463456",
+      "freesound_sound_852111",
+      "freesound_sound_476736"
+    ],
+    "natural_recorded_waveform_intent_must_be_explicit": true,
+    "original_lossless_provider_wav_lineage_must_be_explicit": true,
+    "post_event_quiet_context_seconds_minimum": "3.000",
+    "pre_event_quiet_context_seconds_minimum": "3.000",
+    "single_broadband_physical_one_shot_with_quiet_context_must_be_supported_by_metadata": true
+  },
+  "claim_boundary": {
+    "candidate_metadata_is_descriptor_confirmation": false,
+    "candidate_metadata_is_perceptual_truth": false,
+    "candidate_metadata_is_source_trait_truth": false,
+    "full_objective_complete": false,
+    "public_cli_changed": false,
+    "public_verdict_enabled": false,
+    "source_trait_manifest_frozen": false
+  },
+  "media_boundary": {
+    "audio_download_authorized": false,
+    "audio_element_or_preview_access_authorized": false,
+    "candidate_detail_page_browser_render_authorized": false,
+    "descriptor_execution_authorized": false,
+    "maximum_text_response_bytes": 2097152,
+    "permitted_primary_record_content_types": [
+      "text/html",
+      "application/json"
+    ],
+    "playback_authorized": false,
+    "waveform_or_spectrogram_asset_access_authorized": false
+  },
+  "plan_id": "perceptual-degradation-source-trait-sparse-non-tonal-metadata-search-v4-20260819-001",
+  "purpose": "Freeze a bounded primary-record metadata search for one distinct isolated broadband sparse non-tonal successor after three exact-member negatives, without opening candidate audio, previews, waveform assets or descriptor evidence.",
+  "resources": {
+    "fresh_temporary_directories": true,
+    "maximum_workers": 1,
+    "minimum_free_disk_gib": 15,
+    "retain_network_response_bodies": false
+  },
+  "result_policy": {
+    "bounded_negative_is_valid": true,
+    "eligible_member_requires_new_committed_audio_checkpoint": true,
+    "first_fully_eligible_exact_member_is_nominated": true,
+    "member_substitution_after_audio_observation_allowed": false,
+    "metadata_nomination_is_trait_assignment": false,
+    "search_stops_after_first_fully_eligible_exact_member": true,
+    "threshold_change_allowed": false
+  },
+  "schema_version": 1,
+  "search_protocol": {
+    "discovery_query_count_maximum": 8,
+    "discovery_snippets_are_evidence": false,
+    "exact_primary_record_count_maximum": 20,
+    "primary_record_hosts": [
+      "freesound.org"
+    ],
+    "query_order": [
+      "site:freesound.org/people/ sounds \"balloon pop\" \"silence before\" \"no processing\"",
+      "site:freesound.org/people/ sounds \"balloon pop\" \"quiet before and after\" microphone",
+      "site:freesound.org/people/ sounds firecracker \"silence before\" \"no processing\"",
+      "site:freesound.org/people/ sounds firecracker \"quiet before and after\" recorder",
+      "site:freesound.org/people/ sounds \"single balloon pop\" \"raw recording\" recorder",
+      "site:freesound.org/people/ sounds \"single firecracker\" unprocessed microphone",
+      "site:freesound.org/people/ sounds \"one pop\" \"no processing\" \"room tone\"",
+      "site:freesound.org/people/ sounds \"single bang\" \"no processing\" silence"
+    ],
+    "result_order_policy": "inspect_primary_record_urls_in_discovery_result_order_and_stop_at_the_first_fully_eligible_member",
+    "search_engine_use": "discovery_only",
+    "text_only_fetch_policy": "retrieve_only_primary_record_html_or_json_without_loading_referenced_media_assets"
+  },
+  "state": "bounded_metadata_only_sparse_non_tonal_successor_search_v4_frozen_before_query_execution"
+}

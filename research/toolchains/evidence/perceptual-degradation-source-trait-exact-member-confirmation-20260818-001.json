@@ -1,0 +1,110 @@
+{
+  "claim_boundary": {
+    "absolute_level_measurement_is_quiet_trait_truth": false,
+    "full_objective_complete": false,
+    "metadata_plus_descriptor_is_perceptual_truth": false,
+    "plateau_or_saturation_event_is_clipping_provenance": false,
+    "public_cli_changed": false,
+    "public_verdict_enabled": false,
+    "source_trait_scientific_coverage_complete": false
+  },
+  "decision": {
+    "clipped_plateau_or_saturation_support_event_observed": true,
+    "perceptual_or_validation_claim_available": false,
+    "public_verdict_enabled": false,
+    "quiet_absolute_pcm_level_measured": true,
+    "quiet_nonzero_activity_support_observed": true,
+    "quiet_or_clipped_trait_assigned": false,
+    "source_allocation_performed": false,
+    "source_trait_manifest_frozen": false
+  },
+  "descriptor_observations": {
+    "clipped": {
+      "channels": [
+        {
+          "nonzero_sample_count": 35259227,
+          "peak_abs_code": 8388608,
+          "peak_dbfs": "0.000000",
+          "rms_dbfs": "-48.669069",
+          "sample_count": 35266176,
+          "sum_squares": 33715631061653672
+        }
+      ],
+      "descriptor_ids": [
+        "plateau_or_saturation_support_measurement"
+      ],
+      "exact_rail_sample_count": 66,
+      "frame_count": 35266176,
+      "full_scale_magnitude": 8388608,
+      "identical_high_magnitude_plateau_run_count": 7,
+      "identical_high_magnitude_plateau_sample_count": 34,
+      "intentional_waveform_exclusion_derived_from_pcm": false,
+      "maximum_identical_high_magnitude_plateau_frames": 10,
+      "near_flat_high_magnitude_window_count": 66,
+      "near_rail_sample_count": 94,
+      "peak_abs_code": 8388608,
+      "peak_dbfs": "0.000000",
+      "plateau_or_saturation_support_event_present": true,
+      "rms_dbfs": "-48.669069",
+      "sample_count": 35266176,
+      "sum_squares": 33715631061653672,
+      "trait_assignment_made": false
+    },
+    "quiet": {
+      "active_one_second_block_count": 346,
+      "channels": [
+        {
+          "nonzero_sample_count": 33165007,
+          "peak_abs_code": 444334,
+          "peak_dbfs": "-25.519607",
+          "rms_dbfs": "-52.452516",
+          "sample_count": 33170156,
+          "sum_squares": 13270146769317462
+        },
+        {
+          "nonzero_sample_count": 33165984,
+          "peak_abs_code": 750788,
+          "peak_dbfs": "-20.963452",
+          "rms_dbfs": "-50.925156",
+          "sample_count": 33170156,
+          "sum_squares": 18863041120817785
+        }
+      ],
+      "descriptor_ids": [
+        "absolute_pcm_level_measurement",
+        "nonzero_activity_support"
+      ],
+      "frame_count": 33170156,
+      "full_scale_magnitude": 8388608,
+      "nonzero_activity_present": true,
+      "nonzero_frame_count": 33170154,
+      "nonzero_sample_count": 66330991,
+      "one_second_block_count": 346,
+      "peak_abs_code": 750788,
+      "peak_dbfs": "-20.963452",
+      "quiet_classification_threshold_applied": false,
+      "rms_dbfs": "-51.622035",
+      "sample_count": 66340312,
+      "sum_squares": 32133187890135247
+    }
+  },
+  "execution": {
+    "decoded_or_derived_pcm_retained": false,
+    "exact_provider_original_count_acquired": 2,
+    "maximum_workers": 1,
+    "minimum_free_disk_gib_preserved": 15,
+    "private_replay_count": 2,
+    "private_reports_byte_identical": true
+  },
+  "plan_id": "perceptual-degradation-source-trait-exact-member-confirmation-20260818-001",
+  "plan_sha256": "ab6df82fb2bec8bafaf583f00ea1e9046e9242406ab51f3e433ed8234743a153",
+  "publication_boundary": {
+    "audio_exposed": false,
+    "encoded_or_pcm_hashes_exposed": false,
+    "private_paths_exposed": false,
+    "provider_scores_or_processed_conditions_exposed": false
+  },
+  "report_id": "perceptual-degradation-source-trait-exact-member-confirmation-20260818-001",
+  "schema_version": 1,
+  "state": "two_provider_originals_acquired_two_score_free_integer_pcm_replays_complete"
+}

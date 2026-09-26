@@ -10,6 +10,8 @@ struct Cli {
 
 #[derive(Debug, Subcommand)]
 enum Command {
+    /// Explain the measurements and their limits without opening audio.
+    Explain,
     /// Emit verdict-free compression-trace measurements as JSON.
     Analyze {
         /// Audio file to decode and measure.
@@ -25,6 +27,7 @@ enum Command {
 
 fn run() -> Result<(), String> {
     match Cli::parse().command {
+        Command::Explain => print!("{}", include_str!("../docs/inspection-guide.md")),
         Command::Analyze {
             audio,
             max_seconds,

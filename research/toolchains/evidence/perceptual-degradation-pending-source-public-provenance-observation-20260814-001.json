@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "observation_id": "perceptual-degradation-pending-source-public-provenance-observation-20260814-001",
+  "state": "official_metadata_observed_no_audio_original_coding_history_unresolved",
+  "observed_on": "2026-08-14",
+  "purpose": "Resolve whether the public MusicNet and FSD50K records can establish truth-bearing clean-reference provenance without downloading audio, selecting members, inferring codec history from decoded PCM, or opening any score.",
+  "access_boundary": {
+    "official_public_dataset_pages_read": true,
+    "official_public_papers_read": true,
+    "small_public_metadata_files_streamed_or_read_ephemerally": true,
+    "raw_metadata_persisted_in_research_storage": false,
+    "audio_archive_downloaded": false,
+    "audio_member_accessed": false,
+    "exact_source_member_selected": false,
+    "retained_odaq_reference_accessed": false,
+    "processed_odaq_condition_accessed": false,
+    "perceptual_metric_executed": false,
+    "metric_score_accessed": false,
+    "listening_score_accessed": false,
+    "sealed_evidence_opened": false,
+    "no_reference_training_performed": false,
+    "public_verdict_enabled": false
+  },
+  "musicnet": {
+    "source_id": "musicnet_5120004",
+    "official_record_url": "https://zenodo.org/records/5120004",
+    "official_paper_url": "https://arxiv.org/abs/1611.09827",
+    "doi": "10.5281/zenodo.5120004",
+    "dataset_licence": "CC BY 4.0",
+    "record_count": 330,
+    "delivered_audio_description": "PCM-encoded WAV",
+    "named_upstream_source_families": [
+      "European Archive Foundation",
+      "Isabella Stewart Gardner Museum",
+      "Musopen",
+      "individual artists"
+    ],
+    "metadata_file": {
+      "key": "musicnet_metadata.csv",
+      "bytes": 43775,
+      "md5": "1caef62cee9c875235e62aac368b49d8",
+      "sha256": "1308d938bafb594e3b0471f2bdda3630da352f881857f265f92114cf398de7ca",
+      "row_count": 330,
+      "columns": [
+        "id",
+        "composer",
+        "composition",
+        "movement",
+        "ensemble",
+        "source",
+        "transcriber",
+        "catalog_name",
+        "seconds"
+      ]
+    },
+    "public_record_findings": {
+      "track_level_source_metadata_present": true,
+      "delivered_container_and_encoding_identified": true,
+      "original_acquisition_container_field_present": false,
+      "original_acquisition_codec_field_present": false,
+      "complete_transformation_chain_from_recording_to_delivered_pcm_documented_for_every_track": false,
+      "absence_of_prior_lossy_coding_established_for_every_track": false
+    }
+  },
+  "fsd50k": {
+    "source_id": "fsd50k_4060432_allowed_items",
+    "official_record_url": "https://zenodo.org/records/4060432",
+    "official_paper_url": "https://arxiv.org/abs/2010.00475",
+    "doi": "10.5281/zenodo.4060432",
+    "dataset_entity_licence": "CC BY 4.0",
+    "clip_licence_model": "mixed_item_level_creative_commons",
+    "record_count": 51197,
+    "delivered_audio_description": "uncompressed PCM 16-bit 44.1-kHz mono",
+    "paper_reports_multichannel_sources_are_downmixed_to_mono": true,
+    "metadata_file": {
+      "key": "FSD50K.metadata.zip",
+      "bytes": 6700838,
+      "md5": "b9ea0c829a411c1d42adb9da539ed237",
+      "sha256": "9a738e032546f9a2c6e3d04566928d04a65fb79b422cc9d78bb781723537bd19",
+      "development_record_count": 40966,
+      "evaluation_record_count": 10231,
+      "fields_present_for_every_clip": [
+        "description",
+        "license",
+        "tags",
+        "title",
+        "uploader"
+      ]
+    },
+    "documentation_file": {
+      "key": "FSD50K.doc.zip",
+      "bytes": 6984,
+      "sha256": "a5c314ad2bf93d01b5921aa4270c70c90e28ac9a283ba9f08167490e728deb85"
+    },
+    "public_record_findings": {
+      "clip_level_licence_and_uploader_metadata_present": true,
+      "delivered_container_and_encoding_identified": true,
+      "original_upload_container_field_present_in_released_clip_metadata": false,
+      "original_upload_codec_field_present_in_released_clip_metadata": false,
+      "complete_transformation_chain_from_capture_to_delivered_pcm_documented_for_every_clip": false,
+      "absence_of_prior_lossy_coding_established_for_every_clip": false
+    }
+  },
+  "shared_limits": {
+    "pcm_delivery_container_proves_lossless_origin": false,
+    "creative_commons_permission_proves_lossless_origin": false,
+    "source_description_without_encoding_chain_proves_lossless_origin": false,
+    "absence_of_a_codec_field_proves_lossless_origin": false,
+    "decoded_pcm_history_inference_may_certify_a_clean_reference": false,
+    "unknown_origin_may_be_labelled_a_clean_natural_negative": false,
+    "public_record_establishes_either_dataset_is_actually_lossy": false,
+    "public_record_rejects_either_dataset_for_every_future_stress_or_abstention_role": false
+  }
+}

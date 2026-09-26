@@ -1,0 +1,216 @@
+{
+  "schema_version": 1,
+  "plan_id": "lossytrace-v2-development-baselines-20260802-001",
+  "state": "mechanism_development_baselines_frozen_before_waveform_decode",
+  "upstream_checkpoint_commit": "32dac718dc44e22f6bccbb68643efdbfeaa63f48",
+  "authorized_evidence_partition": "mechanism_development",
+  "encoder_transfer_scores_opened": false,
+  "external_transfer_scores_opened": false,
+  "public_verdict_enabled": false,
+  "bindings": {
+    "private_analysis_manifest_sha256": "0937dfec3f9d5d203ec3d8c1700a3ae947226999e72a379b226c4c825fab96f9",
+    "private_constructor_manifest_sha256": "0fe9bde6eed57a61d3c721d5bfd8cd36031b9981442c39dc502162aeeab3a1b1",
+    "public_analysis_manifest_result_path": "research/sources/evidence/analysis-manifest-observed-20260802-001.json",
+    "public_analysis_manifest_result_sha256": "b3d293c1ffcd226f0cc4323b6c6d3f4ab1eb8a054d3e5d4f532f2e3d27d4c1d6",
+    "identifiability_contract_path": "docs/research/decoded-pcm-identifiability-contract-20260802.md",
+    "identifiability_contract_sha256": "7772033aeccbc256988715336a120e7317f07328ea1eabd6424913af092d41fa",
+    "common_module_path": "scripts/audio_integrity_v2_baseline_common.py",
+    "common_module_sha256": "99537dbe4472be72bf84242850c214c96789f6245d54f89a040fecd792e19527",
+    "fixed_baseline_runner_path": "scripts/run_audio_integrity_v2_fixed_baselines.py",
+    "fixed_baseline_runner_sha256": "60c4a564b0faf9d7c3b1afcff68bcd558418e3d6a95cda4709b74c8cb18b0f01",
+    "fixed_baseline_analyzer_path": "scripts/analyze_audio_integrity_v2_fixed_baselines.py",
+    "fixed_baseline_analyzer_sha256": "e1ea36124d12b8692988efd18eb8864ab9aa7d33190b5b8a79eb145096cc658e",
+    "crnn_runner_path": "scripts/train_audio_integrity_v2_crnn_baseline.py",
+    "crnn_runner_sha256": "4fdc8f9305251211985f8427fd6ab8ab243dff153a41dfd7006465e125ad0c46",
+    "crnn_analyzer_path": "scripts/analyze_audio_integrity_v2_crnn_baselines.py",
+    "crnn_analyzer_sha256": "389684f9fbcf270182ce8a9ad76708487a4efcfe2461299e8bca1238e7f05868",
+    "crnn_requirements_path": "research/baselines/v2/crnn-requirements.txt",
+    "crnn_requirements_sha256": "bac0f23b19fa6868df60e6a64ebd6d15c98f04ccbe8ce95824b44a326d625e0d",
+    "cannam_preregistration_path": "docs/research/baseline-failure-atlas-preregistration-20260802.md",
+    "cannam_preregistration_sha256": "a32d836e89cd9954147ef5dc155b49de25b468effb8ccf4e95dcb2216c665ee1",
+    "cannam_plugin_sha256": "9e989b81061fcc5b6186f7a0ed2534400f6b8de1e1ee711a1f76aee1c547c9e6",
+    "cannam_host_sha256": "a9c197e1d10a4d03748ad2b9a3712013cf9ac8c46dd797dbba44f7f809904a64",
+    "feature_v0_binary_sha256": "c34a229e23f1e182f0965cbb23b07d551dd1098a6d221b9e8a57a343faca2965",
+    "cargo_lock_sha256": "eb8c25b24e0fa1f4b69201c3f5a6b7cddd31692de72746c1c78b18413240ec0c",
+    "exact_hybrid_preregistration_path": "docs/research/exact-hybrid-ablation-preregistration-20260801.md",
+    "exact_hybrid_preregistration_sha256": "f31273c08f512ad427751610cdcee6d6bd62ac335ace638b0df815e5cc6ba4d8",
+    "exact_hybrid_oracle_source_sha256": "6a52a8fa3084382afe6d582d5ecc0c7eecc93e23cab406a2a5e36a94c7d0454a",
+    "codec_projection_preregistration_path": "docs/research/codec-projection-preregistration-20260802.md",
+    "codec_projection_preregistration_sha256": "d6b66a9e6e892c59db64edfb909fd29a1968cedb7100a8a30e5941f0eb7419c1",
+    "codec_projection_oracle_source_sha256": "5adfe351b982c5dfad5709c52fd87e4bc1ebb5eda70fa80faae56c106a165cc7",
+    "codec_projection_config_sha256": "2f122d7eeed263c0700f78675b1382923c09f8f333903b970afe7cfb18670603"
+  },
+  "population": {
+    "factorial_case_count": 9653,
+    "controlled_positive_case_count": 4988,
+    "negative_case_count": 4665,
+    "unique_analysis_pcm_count": 7701,
+    "pcm_wrapper_representative_count": 9513,
+    "source_group_count": 527,
+    "source_domain_count": 6,
+    "source_domains": [
+      "demand_maestro_consumed_transfer",
+      "musdb18hq_consumed_transfer",
+      "nsynth_test_sparse",
+      "nsynth_train_sparse",
+      "private_full_mix_training",
+      "public_tier_a_controlled"
+    ],
+    "mp3_controlled_positive_case_count": 1367,
+    "case_exclusion_after_score": false
+  },
+  "duplicate_pcm_contract": {
+    "training_population": "one_canonical_case_per_unique_analysis_pcm",
+    "artifact_scoring_population": "one_representative_per_unique_artifact_byte_sequence_equal_to_one_per_analysis_pcm_and_lossless_wrapper",
+    "case_results": "propagate_only_after_exact_same_pcm_results_are_verified",
+    "primary_paired_unit": "deduplicate_exact_positive_and_reference_pcm_pairs_then_take_one_median_direction_per_source_group",
+    "factorial_alias_attribution": "prefer_identity_post_transform_then_lexicographic_post_transform_encoder_lineage_and_encoder_setting",
+    "wrapper_invariance": "every represented WAV FLAC and AIFF encoding of identical analysis PCM must produce exactly equal deterministic features scores and window counts",
+    "failure_action": "stop_the_baseline_run"
+  },
+  "baselines": {
+    "cannam_published_fixed_rule": {
+      "status": "exact_revision_and_weights_replay",
+      "repository": "https://github.com/cannam/vamp-lossy-encoding-detector",
+      "repository_revision": "7a70bd8d15e68b0b1942a9d3deac6ad4d8293b8b",
+      "plugin_key": "vamp-lossy-encoding-detector:lossydetector:cf",
+      "window_threshold": 0.5,
+      "file_positive_fraction_threshold": 0.25,
+      "complete_file_supplied": true,
+      "lossytrace_preprocessing_inserted": false,
+      "thresholds_retuned": false,
+      "primary_continuous_score": "positive_window_fraction",
+      "classification_role": "fixed_reference_baseline_not_candidate"
+    },
+    "lossytrace_feature_v0_descriptive": {
+      "status": "exact_current_verdict_free_measurements",
+      "feature_version": 0,
+      "analysis_max_seconds": 0,
+      "classifier_enabled": false,
+      "threshold_available": false,
+      "calibration_available": false,
+      "role": "descriptive_support_and_paired_measurement_control"
+    },
+    "koops_style_crnn_replication": {
+      "status": "paper_aligned_independent_not_exact",
+      "paper": "https://arxiv.org/abs/2407.21545",
+      "conditions": [
+        "naive",
+        "random_high_frequency_mask"
+      ],
+      "model_definition_sha256": "bd76e169b45cdeee904a553f14de3b5994c0fcf5f307a79ada3283936d8d1e8f",
+      "outer_folds": [
+        "demand_maestro_consumed_transfer",
+        "musdb18hq_consumed_transfer",
+        "nsynth_test_sparse",
+        "nsynth_train_sparse",
+        "private_full_mix_training",
+        "public_tier_a_controlled"
+      ],
+      "inner_validation_group_fraction": 0.2,
+      "training_population": "one_canonical_case_per_unique_analysis_pcm",
+      "class_resampling": false,
+      "class_weighting": false,
+      "optimizer": "adam",
+      "learning_rate": 0.001,
+      "batch_size": 32,
+      "maximum_epochs": 30,
+      "early_stopping_patience": 5,
+      "checkpoint_selection": [
+        "minimum_inner_validation_log_loss",
+        "maximum_inner_validation_auc_tiebreak"
+      ],
+      "training_loss": "cross_entropy_only",
+      "source_paired_loss_enabled": false,
+      "fixed_boundary": 0.5,
+      "auc_diagnostic_only": true,
+      "device": "cpu",
+      "torch_threads": 1,
+      "deterministic_algorithms": true,
+      "seed": 20260802,
+      "reference_weights_available": false,
+      "author_code_available": false,
+      "classification_role": "replication_baseline_not_candidate"
+    },
+    "exact_hybrid_a0_through_a4": {
+      "status": "retained_rejected_explainable_control",
+      "scope": "all_mechanism_development_negatives_and_all_mp3_controlled_positives",
+      "representations": ["A0", "A1", "A2", "A3", "A4"],
+      "new_threshold_selection": false,
+      "new_support_rule": false,
+      "primary_use": "paired_raw_direction_and_failure_slice_comparison",
+      "executor_state": "requires_separately_committed_v2_adapter_bound_to_this_frozen_definition_before_execution"
+    },
+    "codec_projection_r1_r2": {
+      "status": "retained_rejected_explainable_control",
+      "scope": "all_mechanism_development_negatives_and_all_mp3_controlled_positives",
+      "representations": ["R1", "R2"],
+      "new_threshold_selection": false,
+      "new_support_rule": false,
+      "primary_use": "paired_raw_direction_and_failure_slice_comparison",
+      "executor_state": "requires_separately_committed_v2_adapter_bound_to_this_frozen_definition_before_execution"
+    },
+    "aac_quantization_lattice": {
+      "status": "historical_rejected_result_only",
+      "new_population_run_authorized": false,
+      "reason": "retained source terms and prior negative result do not justify another population run"
+    }
+  },
+  "fixed_analysis": {
+    "classification_boundary": "only_each_baselines_predeclared_fixed_boundary",
+    "case_metrics": [
+      "recall",
+      "specificity",
+      "false_positive_rate",
+      "selected_population_precision",
+      "selected_population_accuracy",
+      "balanced_accuracy"
+    ],
+    "learned_diagnostics": ["auc", "log_loss"],
+    "source_group_negative_alert": "any_fixed_positive_negative_case",
+    "source_group_positive_detection": "any_fixed_positive_controlled_positive_case",
+    "required_slices": [
+      "source_domain",
+      "negative_history_class",
+      "codec_family",
+      "encoder_lineage",
+      "encoder_setting",
+      "post_transform"
+    ],
+    "paired_delta": "continuous_positive_score_minus_exact_matched_reference_score",
+    "paired_aggregation": "deduplicate_exact_pcm_pairs_prefer_identity_factorial_attribution_then_median_within_source_group",
+    "paired_direction_gate_reported": true,
+    "paired_direction_gate_can_promote_baseline": false,
+    "discovery_gate": {
+      "minimum_positive_direction_rate": 0.9,
+      "minimum_one_sided_95_percent_wilson_lower": 0.85,
+      "eligible_source_domain_may_reverse": false
+    },
+    "public_accuracy_interpretation": "selected_development_population_only_not_real_library_prevalence_or_universal_identifiability"
+  },
+  "execution_order": [
+    "run_and_freeze_cannam_and_feature_v0_path_free_results",
+    "run_and_freeze_naive_and_masked_crnn_path_free_result",
+    "commit_v2_explainable_control_adapter_before_opening_a0_to_a4_or_r1_r2",
+    "freeze_one_baseline_comparison_and_failure_atlas_before_new_representation_design"
+  ],
+  "public_outputs": {
+    "cannam": "research/baselines/v2/evidence/cannam-observed-20260802-001-aggregate.json",
+    "feature_v0": "research/baselines/v2/evidence/feature-v0-observed-20260802-001-aggregate.json",
+    "crnn": "research/baselines/v2/evidence/crnn-observed-20260802-001-aggregate.json",
+    "private_case_rows_outside_git": true,
+    "path_free": true,
+    "public_verdict_enabled": false
+  },
+  "stop_conditions": [
+    "Any plan input implementation tool model or artifact hash differs.",
+    "Any case outside mechanism_development is decoded featured scored trained on or used for checkpoint selection.",
+    "Any encoder-transfer or external-transfer feature score label or positive construction is opened.",
+    "Identical analysis PCM produces a different deterministic feature score window count or support state across wrappers.",
+    "A source or partition group crosses an outer or inner fold.",
+    "A threshold support rule architecture loss sampling policy fold or training schedule is changed after a score is viewed.",
+    "A private identity path audio hash raw row checkpoint or model weight enters Git or a public aggregate.",
+    "A baseline result is described as independent validation a calibrated history probability or a public verdict."
+  ],
+  "authorized_next_step": "Commit this plan, bound implementations, tests, and documentation before decoding any benchmark waveform for baseline analysis. Then execute only Cannam and feature-v0 on mechanism development with one low-priority worker each."
+}

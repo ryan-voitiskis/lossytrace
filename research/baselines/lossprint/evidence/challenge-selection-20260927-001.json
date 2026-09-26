@@ -1,0 +1,192 @@
+{
+  "analysis_manifest_sha256": "0937dfec3f9d5d203ec3d8c1700a3ae947226999e72a379b226c4c825fab96f9",
+  "artifact_count": 693,
+  "case_count": 717,
+  "common_module_sha256": "99537dbe4472be72bf84242850c214c96789f6245d54f89a040fecd792e19527",
+  "constructor_manifest_sha256": "0fe9bde6eed57a61d3c721d5bfd8cd36031b9981442c39dc502162aeeab3a1b1",
+  "design_sha256": "edf2739e5cd2b8745e4e203142c9d8a8bc41ed48ce64a361c49f597c576d48f8",
+  "domain_group_entries": 30,
+  "domains": {
+    "demand_maestro_consumed_transfer": {
+      "cases": 177,
+      "codecs": {
+        "aac_lc": 25,
+        "mp3": 27,
+        "none": 78,
+        "opus": 24,
+        "vorbis": 23
+      },
+      "declared_unsupported_cases": 0,
+      "groups": 5,
+      "history_classes": {
+        "controlled_lossy_history": 99,
+        "pcm_hard_negative": 38,
+        "pcm_reference": 40
+      },
+      "labels": {
+        "controlled_positive": 99,
+        "negative": 78
+      },
+      "post_transforms": {
+        "alternate-channel-topology": 14,
+        "duration-prefix-3s": 7,
+        "gain-minus6db-q31": 16,
+        "identity": 95,
+        "lossless-wrapper-rewrite": 14,
+        "lowpass-16k-cascade8": 8,
+        "prepend-digital-silence-500ms": 8,
+        "requantize-12bit-tpdf": 8,
+        "resample-roundtrip-32k": 7
+      }
+    },
+    "musdb18hq_consumed_transfer": {
+      "cases": 83,
+      "codecs": {
+        "aac_lc": 13,
+        "mp3": 10,
+        "none": 42,
+        "opus": 10,
+        "vorbis": 8
+      },
+      "declared_unsupported_cases": 0,
+      "groups": 5,
+      "history_classes": {
+        "controlled_lossy_history": 41,
+        "pcm_hard_negative": 10,
+        "pcm_reference": 32
+      },
+      "labels": {
+        "controlled_positive": 41,
+        "negative": 42
+      },
+      "post_transforms": {
+        "identity": 61,
+        "lossless-wrapper-rewrite": 14,
+        "prepend-digital-silence-500ms": 8
+      }
+    },
+    "nsynth_test_sparse": {
+      "cases": 120,
+      "codecs": {
+        "aac_lc": 16,
+        "mp3": 19,
+        "none": 55,
+        "opus": 16,
+        "vorbis": 14
+      },
+      "declared_unsupported_cases": 0,
+      "groups": 5,
+      "history_classes": {
+        "controlled_lossy_history": 65,
+        "pcm_hard_negative": 17,
+        "pcm_reference": 38
+      },
+      "labels": {
+        "controlled_positive": 65,
+        "negative": 55
+      },
+      "post_transforms": {
+        "duration-prefix-3s": 7,
+        "gain-minus6db-q31": 8,
+        "identity": 83,
+        "lossless-wrapper-rewrite": 7,
+        "requantize-12bit-tpdf": 8,
+        "resample-roundtrip-32k": 7
+      }
+    },
+    "nsynth_train_sparse": {
+      "cases": 64,
+      "codecs": {
+        "aac_lc": 8,
+        "mp3": 7,
+        "none": 33,
+        "opus": 9,
+        "vorbis": 7
+      },
+      "declared_unsupported_cases": 0,
+      "groups": 5,
+      "history_classes": {
+        "controlled_lossy_history": 31,
+        "pcm_hard_negative": 6,
+        "pcm_reference": 27
+      },
+      "labels": {
+        "controlled_positive": 31,
+        "negative": 33
+      },
+      "post_transforms": {
+        "alternate-channel-topology": 7,
+        "identity": 50,
+        "lossless-wrapper-rewrite": 7
+      }
+    },
+    "private_full_mix_training": {
+      "cases": 134,
+      "codecs": {
+        "aac_lc": 19,
+        "mp3": 18,
+        "none": 63,
+        "opus": 16,
+        "vorbis": 18
+      },
+      "declared_unsupported_cases": 0,
+      "groups": 5,
+      "history_classes": {
+        "controlled_lossy_history": 71,
+        "pcm_hard_negative": 22,
+        "pcm_reference": 41
+      },
+      "labels": {
+        "controlled_positive": 71,
+        "negative": 63
+      },
+      "post_transforms": {
+        "duration-prefix-3s": 14,
+        "gain-minus6db-q31": 8,
+        "identity": 88,
+        "prepend-digital-silence-500ms": 8,
+        "requantize-12bit-tpdf": 16
+      }
+    },
+    "public_tier_a_controlled": {
+      "cases": 139,
+      "codecs": {
+        "aac_lc": 19,
+        "mp3": 18,
+        "none": 65,
+        "opus": 19,
+        "vorbis": 18
+      },
+      "declared_unsupported_cases": 0,
+      "groups": 5,
+      "history_classes": {
+        "controlled_lossy_history": 74,
+        "pcm_hard_negative": 28,
+        "pcm_reference": 37
+      },
+      "labels": {
+        "controlled_positive": 74,
+        "negative": 65
+      },
+      "post_transforms": {
+        "identity": 79,
+        "lossless-wrapper-rewrite": 21,
+        "lowpass-16k-cascade8": 8,
+        "prepend-digital-silence-500ms": 8,
+        "requantize-12bit-tpdf": 16,
+        "resample-roundtrip-32k": 7
+      }
+    }
+  },
+  "maximum_seconds": 12.504716553287983,
+  "minimum_seconds": 3.0,
+  "planned_slots": 1386,
+  "private_selection_sha256": "27ffb173d2add8e302753f1f5bf2d730c60a46c414d89ad1c6de97817ef1d7df",
+  "public_verdict_enabled": false,
+  "purpose": "metadata_only_fixed_selection",
+  "schema_version": 1,
+  "scores_opened": false,
+  "selector_sha256": "1f8ae1ae1e48995a111825445a13c66571f84742bc04d35e5e557602dc5905ea",
+  "unique_pcm_count": 556,
+  "waveforms_opened": false
+}

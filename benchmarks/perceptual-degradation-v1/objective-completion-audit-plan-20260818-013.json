@@ -1,0 +1,58 @@
+{
+  "authorization": {
+    "bound_committed_evidence_read_authorized": true,
+    "further_audio_sample_access_authorized": false,
+    "human_collection_authorized": false,
+    "no_reference_training_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "public_verdict_enabled": false,
+    "source_manifest_allocation_authorized": false,
+    "source_trait_assignment_authorized": false,
+    "sparse_tonal_descriptor_reconciliation_authorized": true,
+    "synthetic_audit_execution_authorized": true
+  },
+  "bindings": {
+    "predecessor_audit_implementation": {
+      "path": "scripts/perceptual_degradation_objective_completion_audit_v12.py",
+      "sha256": "fd5c631eca70febefe9a0447cf35945959773c40d064c59549578bbfb48adf26"
+    },
+    "predecessor_audit_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/objective-completion-audit-plan-20260818-012.json",
+      "sha256": "245f0f9b6a4e92c83ff3a7b7962db043b79adb3822813b975a5ee552378a3403"
+    },
+    "predecessor_audit_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-objective-completion-audit-20260818-012.json",
+      "sha256": "7241b36c7f087952caef63b79888783745cd9105804c4bbd61701cb5cce0501c"
+    },
+    "sparse_tonal_implementation": {
+      "path": "scripts/perceptual_degradation_source_trait_sparse_tonal_descriptor.py",
+      "sha256": "90adfa2dec5ad3bd09bdb66094c964fbddd0779765dda54a72fc8b72de557299"
+    },
+    "sparse_tonal_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/source-trait-sparse-tonal-descriptor-plan.json",
+      "sha256": "8b8649fe65ba151f906a544ff08271f2563224e54610156770edcc731f23bdbf"
+    },
+    "sparse_tonal_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-source-trait-sparse-tonal-descriptor-20260818-001.json",
+      "sha256": "dd98911defc3dcdc3233db3a67e253295bfa0e874cc132d4880c342a72078936"
+    }
+  },
+  "claim_boundary": {
+    "descriptor_freeze_is_source_trait_truth": false,
+    "full_objective_complete": false,
+    "green_synthetic_fixtures_are_source_evidence": false,
+    "public_cli_changed": false,
+    "public_verdict_enabled": false,
+    "source_trait_manifest_frozen": false
+  },
+  "completion_policy": {
+    "all_requirements_must_be_satisfied": true,
+    "descriptor_rules_count_as_exact_member_contrasts": false,
+    "source_trait_manifest_requires_assignments_relationships_and_allocation": true,
+    "synthetic_fixture_pass_counts_as_scientific_coverage": false
+  },
+  "plan_id": "perceptual-degradation-objective-completion-audit-20260818-013",
+  "purpose": "Reconcile the score-blind sparse and tonal descriptor freeze without promoting synthetic fixture behavior into exact-member contrasts, source truth, allocation or validation.",
+  "schema_version": 1,
+  "state": "score_blind_completion_audit_refresh_after_sparse_tonal_descriptor_freeze"
+}

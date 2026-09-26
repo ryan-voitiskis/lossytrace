@@ -1,0 +1,582 @@
+{
+  "archive_bindings": {
+    "audio": {
+      "bytes": 4770619279,
+      "filename": "clean_trainset_56spk_wav.zip",
+      "local_sha256": "c7a5580c1d96b52886ca7ca080cc1a21ae3ee1cb8eae4903af6d4bb796f90441",
+      "provider_checksum_verified": true,
+      "provider_identity": {
+        "bitstream_uuid": "386ac199-5d34-402f-8112-2a123577dd57",
+        "etag": "\"c351cbc9db30e41686c988c19f0e1475\"",
+        "last_modified": "Mon, 21 Aug 2017 10:33:40 GMT",
+        "method": "dspace_bitstream_uuid_bytes_md5_strong_etag_last_modified"
+      },
+      "provider_md5": "c351cbc9db30e41686c988c19f0e1475",
+      "zip_crc_verified": true
+    },
+    "metadata": {
+      "bytes": 115932,
+      "filename": "logfiles.zip",
+      "local_sha256": "ab37c41f31bc2b6c204cc10c8e5bb8bde800307fdb49f277e366d986fefc9e39",
+      "provider_checksum_verified": true,
+      "provider_identity": {
+        "bitstream_uuid": "11185dc8-9cf1-405b-b858-35bd6a04aedd",
+        "method": "dspace_bitstream_uuid_bytes_md5"
+      },
+      "provider_md5": "0d16f5b6afe12d64238d1e4a0e6ff6e8",
+      "zip_crc_verified": true
+    }
+  },
+  "benchmark_audio_generated": false,
+  "conservative_reference_boundary": {
+    "eligible_audio_file_count": 23075,
+    "eligible_group_count": 56,
+    "future_group_cap": {
+      "observed_gender_counts": {
+        "F": 29,
+        "M": 29
+      },
+      "projected_group_count": 56,
+      "ranking_algorithm": "sha256_ascending_domain_separated_speaker_id",
+      "ranking_input": "UTF-8 ranking_prefix bytes followed by the UTF-8 provider speaker identifier; rank ascending by the 32-byte SHA-256 digest within each provider gender and use speaker identifier ascending only as a digest-collision tie break",
+      "ranking_prefix": "lossytrace-v2-vctk-provider-count-cap-20260802\u0000",
+      "selected_speakers_per_gender": 28,
+      "state": "preregistered_not_applied_before_source_freeze"
+    },
+    "future_selection_constraint": "At source freeze, apply the preregistered content-independent speaker cap, then select at most one bounded excerpt per retained speaker. Preserve speaker, utterance, normalization/trim lineage, and provider identity. Do not treat the noisy derivatives as masters.",
+    "independence_limit": "The archive exposes speaker identity but shares one VCTK recording collection and one clean-waveform normalization and trimming path. Keep it as one provider stratum and do not infer independent export pipelines from its utterance count.",
+    "observed_speaker_count": 58,
+    "partition_grouping_unit": "VCTK speaker identifier",
+    "rule": [
+      "canonical clean_trainset_56spk_wav/pNNN_NNN.wav member",
+      "exactly one matching provider log and transcript key",
+      "speaker occurs in the bound VCTK speaker metadata",
+      "WAV matches the bound PCM format",
+      "every member of an exact repeated-PCM group is excluded"
+    ],
+    "source_grouping_unit": "VCTK speaker identifier"
+  },
+  "observed": {
+    "audio_directory_member_ids": [
+      "clean_trainset_56spk_wav"
+    ],
+    "audio_file_count": 23075,
+    "audio_speaker_count": 58,
+    "data_byte_range": {
+      "maximum": 1559700,
+      "minimum": 112650
+    },
+    "distinct_pcm_digest_count": 23075,
+    "duplicate_pcm_archive_member_groups": [],
+    "duplicate_pcm_digest_group_count": 0,
+    "duplicate_pcm_file_count_excess": 0,
+    "duplicate_pcm_file_count_excluded": 0,
+    "encrypted_member_count": 0,
+    "frame_count_range": {
+      "maximum": 779850,
+      "maximum_archive_member_ids": [
+        "clean_trainset_56spk_wav/p271_023.wav"
+      ],
+      "minimum": 56325,
+      "minimum_archive_member_ids": [
+        "clean_trainset_56spk_wav/p275_226.wav"
+      ]
+    },
+    "log": {
+      "member_name": "log_trainset_56spk.txt",
+      "noise_counts": {
+        "babble": 2313,
+        "cafeteria": 2307,
+        "car": 2311,
+        "kitchen": 2305,
+        "meeting": 2297,
+        "metro": 2313,
+        "restaurant": 2320,
+        "ssn": 2302,
+        "station": 2304,
+        "traffic": 2303
+      },
+      "row_count": 23075,
+      "snr_db_counts": {
+        "0": 5764,
+        "10": 5768,
+        "15": 5768,
+        "5": 5775
+      },
+      "speaker_count": 58
+    },
+    "riff_formats": [
+      {
+        "ancillary_chunk_counts": {},
+        "average_bytes_per_second": 96000,
+        "bits_per_sample": 16,
+        "block_align_bytes": 2,
+        "channel_count": 1,
+        "file_count": 23075,
+        "format_chunk_bytes": 16,
+        "format_tag": 1,
+        "sample_format": "signed_integer_pcm",
+        "sample_rate_hz": 48000
+      }
+    ],
+    "speaker_accent_counts": {
+      "American": 13,
+      "Australian": 2,
+      "Canadian": 7,
+      "Indian": 3,
+      "Irish": 7,
+      "NewZealand": 1,
+      "NorthernIrish": 4,
+      "Scottish": 17,
+      "SouthAfrican": 4
+    },
+    "speaker_audio_file_counts": {
+      "p234": 357,
+      "p237": 339,
+      "p241": 348,
+      "p245": 347,
+      "p246": 346,
+      "p247": 475,
+      "p248": 366,
+      "p249": 335,
+      "p251": 364,
+      "p255": 373,
+      "p260": 352,
+      "p263": 464,
+      "p264": 481,
+      "p265": 341,
+      "p266": 409,
+      "p271": 441,
+      "p272": 407,
+      "p275": 399,
+      "p281": 450,
+      "p283": 459,
+      "p284": 406,
+      "p285": 390,
+      "p292": 411,
+      "p293": 396,
+      "p295": 414,
+      "p298": 404,
+      "p299": 405,
+      "p301": 409,
+      "p302": 310,
+      "p303": 352,
+      "p304": 421,
+      "p305": 406,
+      "p306": 343,
+      "p307": 419,
+      "p308": 419,
+      "p310": 422,
+      "p312": 415,
+      "p313": 419,
+      "p314": 423,
+      "p316": 420,
+      "p323": 421,
+      "p326": 399,
+      "p333": 421,
+      "p334": 423,
+      "p335": 420,
+      "p336": 415,
+      "p339": 422,
+      "p341": 408,
+      "p343": 388,
+      "p345": 392,
+      "p347": 423,
+      "p351": 413,
+      "p360": 423,
+      "p361": 421,
+      "p363": 417,
+      "p364": 300,
+      "p374": 420,
+      "p376": 292
+    },
+    "speaker_frame_count_ranges": {
+      "p234": {
+        "maximum": 433920,
+        "minimum": 75582
+      },
+      "p237": {
+        "maximum": 465120,
+        "minimum": 70105
+      },
+      "p241": {
+        "maximum": 476128,
+        "minimum": 69165
+      },
+      "p245": {
+        "maximum": 601211,
+        "minimum": 70140
+      },
+      "p246": {
+        "maximum": 568622,
+        "minimum": 65176
+      },
+      "p247": {
+        "maximum": 487343,
+        "minimum": 68323
+      },
+      "p248": {
+        "maximum": 629434,
+        "minimum": 66647
+      },
+      "p249": {
+        "maximum": 532640,
+        "minimum": 66817
+      },
+      "p251": {
+        "maximum": 513956,
+        "minimum": 68896
+      },
+      "p255": {
+        "maximum": 596435,
+        "minimum": 73945
+      },
+      "p260": {
+        "maximum": 474546,
+        "minimum": 63016
+      },
+      "p263": {
+        "maximum": 485912,
+        "minimum": 71391
+      },
+      "p264": {
+        "maximum": 574080,
+        "minimum": 79698
+      },
+      "p265": {
+        "maximum": 685920,
+        "minimum": 66567
+      },
+      "p266": {
+        "maximum": 492480,
+        "minimum": 60079
+      },
+      "p271": {
+        "maximum": 779850,
+        "minimum": 62810
+      },
+      "p272": {
+        "maximum": 477024,
+        "minimum": 66953
+      },
+      "p275": {
+        "maximum": 505920,
+        "minimum": 56325
+      },
+      "p281": {
+        "maximum": 525004,
+        "minimum": 68187
+      },
+      "p283": {
+        "maximum": 541912,
+        "minimum": 66951
+      },
+      "p284": {
+        "maximum": 445733,
+        "minimum": 65456
+      },
+      "p285": {
+        "maximum": 456462,
+        "minimum": 59900
+      },
+      "p292": {
+        "maximum": 528511,
+        "minimum": 80538
+      },
+      "p293": {
+        "maximum": 526080,
+        "minimum": 94793
+      },
+      "p295": {
+        "maximum": 453120,
+        "minimum": 86880
+      },
+      "p298": {
+        "maximum": 458400,
+        "minimum": 93600
+      },
+      "p299": {
+        "maximum": 482399,
+        "minimum": 77760
+      },
+      "p301": {
+        "maximum": 516000,
+        "minimum": 100800
+      },
+      "p302": {
+        "maximum": 508320,
+        "minimum": 96961
+      },
+      "p303": {
+        "maximum": 560160,
+        "minimum": 104160
+      },
+      "p304": {
+        "maximum": 406080,
+        "minimum": 74749
+      },
+      "p305": {
+        "maximum": 534240,
+        "minimum": 89600
+      },
+      "p306": {
+        "maximum": 686395,
+        "minimum": 107857
+      },
+      "p307": {
+        "maximum": 546938,
+        "minimum": 99840
+      },
+      "p308": {
+        "maximum": 472544,
+        "minimum": 90240
+      },
+      "p310": {
+        "maximum": 619680,
+        "minimum": 85449
+      },
+      "p312": {
+        "maximum": 531252,
+        "minimum": 77043
+      },
+      "p313": {
+        "maximum": 486240,
+        "minimum": 74496
+      },
+      "p314": {
+        "maximum": 529715,
+        "minimum": 78714
+      },
+      "p316": {
+        "maximum": 551040,
+        "minimum": 81600
+      },
+      "p323": {
+        "maximum": 646256,
+        "minimum": 80442
+      },
+      "p326": {
+        "maximum": 500640,
+        "minimum": 82087
+      },
+      "p333": {
+        "maximum": 479280,
+        "minimum": 75866
+      },
+      "p334": {
+        "maximum": 455433,
+        "minimum": 72500
+      },
+      "p335": {
+        "maximum": 693387,
+        "minimum": 83737
+      },
+      "p336": {
+        "maximum": 536640,
+        "minimum": 72545
+      },
+      "p339": {
+        "maximum": 550592,
+        "minimum": 67997
+      },
+      "p341": {
+        "maximum": 613440,
+        "minimum": 93600
+      },
+      "p343": {
+        "maximum": 617071,
+        "minimum": 75840
+      },
+      "p345": {
+        "maximum": 526080,
+        "minimum": 71854
+      },
+      "p347": {
+        "maximum": 596640,
+        "minimum": 83023
+      },
+      "p351": {
+        "maximum": 450056,
+        "minimum": 70607
+      },
+      "p360": {
+        "maximum": 544570,
+        "minimum": 70965
+      },
+      "p361": {
+        "maximum": 475681,
+        "minimum": 68873
+      },
+      "p363": {
+        "maximum": 462717,
+        "minimum": 64336
+      },
+      "p364": {
+        "maximum": 632340,
+        "minimum": 65716
+      },
+      "p374": {
+        "maximum": 610265,
+        "minimum": 80530
+      },
+      "p376": {
+        "maximum": 595680,
+        "minimum": 66328
+      }
+    },
+    "speaker_gender_counts": {
+      "F": 29,
+      "M": 29
+    },
+    "speaker_metadata_ids_absent_from_audio": [
+      "p225",
+      "p226",
+      "p227",
+      "p228",
+      "p229",
+      "p230",
+      "p231",
+      "p232",
+      "p233",
+      "p236",
+      "p238",
+      "p239",
+      "p240",
+      "p243",
+      "p244",
+      "p250",
+      "p252",
+      "p253",
+      "p254",
+      "p256",
+      "p257",
+      "p258",
+      "p259",
+      "p261",
+      "p262",
+      "p267",
+      "p268",
+      "p269",
+      "p270",
+      "p273",
+      "p274",
+      "p276",
+      "p277",
+      "p278",
+      "p279",
+      "p282",
+      "p286",
+      "p287",
+      "p288",
+      "p294",
+      "p297",
+      "p300",
+      "p311",
+      "p315",
+      "p317",
+      "p318",
+      "p329",
+      "p330",
+      "p340",
+      "p362"
+    ],
+    "speaker_metadata_row_count": 108,
+    "special_member_count": 0,
+    "transcripts": {
+      "canonical_transcript_count": 23075,
+      "directory_member_count": 3,
+      "directory_member_ids": [
+        "__MACOSX",
+        "__MACOSX/trainset_56spk_txt",
+        "trainset_56spk_txt"
+      ],
+      "macos_sidecar_file_count": 23076,
+      "unexpected_regular_member_count": 0
+    },
+    "uncompressed_audio_member_bytes": 6578059372
+  },
+  "paths_redacted": true,
+  "provider_record": {
+    "base_corpus_doi": "10.7488/ds/1994",
+    "base_corpus_version": "0.80",
+    "dataset_doi": "10.7488/ds/2117",
+    "dataset_page_url": "https://datashare.ed.ac.uk/items/6ed35425-bf14-4d2b-93a1-0a4984952757/full",
+    "primary_paper_doi": "10.21437/SSW.2016-24",
+    "primary_paper_url": "https://www.isca-archive.org/ssw_2016/valentinibotinhao16_ssw.pdf"
+  },
+  "readme_binding": {
+    "bytes": 2790,
+    "filename": "vctk-readme.txt",
+    "local_sha256": "f33acbe652f50e3c4d3afe02665a2cf3b08cb34257bec41e06dd911cda3ae8db",
+    "provider_checksum_verified": true,
+    "provider_identity": {
+      "bitstream_uuid": "b12d100d-e130-4e24-a07b-cb8b57e632fb",
+      "method": "dspace_bitstream_uuid_bytes_md5"
+    },
+    "provider_md5": "6d59a65471c0e9ff108a41f8eb15e6bc"
+  },
+  "schema_version": 1,
+  "scores_opened": false,
+  "selection_authorized": false,
+  "source_group_rules_binding": {
+    "sha256": "862fa45181cb5118a60f4dbc45e70e18feb0c6bfa17f9445ec8bcc7728544c81"
+  },
+  "source_id": "vctk_clean_56spk_2017",
+  "state": "source_identity_evidence_only",
+  "supporting_artifact_bindings": {
+    "license": {
+      "bytes": 17416,
+      "filename": "license_text",
+      "local_sha256": "b34e17103bfb246f2549fc82a279e6ba28834e0cb42f76a92efc14b72e3a3723",
+      "provider_checksum_verified": true,
+      "provider_identity": {
+        "bitstream_uuid": "7e7bc32f-e94a-436a-8e97-416a972c7e1a",
+        "method": "dspace_bitstream_uuid_bytes_md5"
+      },
+      "provider_md5": "2946b37a07baeba80cea628909e28cae"
+    },
+    "primary_paper": {
+      "bytes": 755633,
+      "filename": "valentinibotinhao16_ssw.pdf",
+      "local_sha256": "3dbb7eb3351729a45b87bed18c8a92b69e7e3ea333c5145f04db7979e27337ac",
+      "provider_identity": {
+        "doi": "10.21437/SSW.2016-24",
+        "method": "isca_archive_doi_publication"
+      }
+    },
+    "speaker_info": {
+      "bytes": 3712,
+      "filename": "vctk-speaker-info.txt",
+      "local_sha256": "daa68d27a01418d113ac79e6914017beeded4e7de65d03f7705f9d81295da236",
+      "provider_checksum_verified": true,
+      "provider_identity": {
+        "bitstream_uuid": "ab3c7d2f-98b2-4271-b7e4-40a6ffb40d1d",
+        "method": "dspace_bitstream_uuid_bytes_md5"
+      },
+      "provider_md5": "1a5b42650b13061a67e935aeb08b31ad"
+    },
+    "transcripts": {
+      "bytes": 12918133,
+      "filename": "trainset_56spk_txt.zip",
+      "local_sha256": "1bd933130da4f5b362536dccdc068ec9e01b0ff8787303c19780405b99a9f175",
+      "provider_checksum_verified": true,
+      "provider_identity": {
+        "bitstream_uuid": "5dd7f013-dfde-45b0-a9ee-3818ca00951b",
+        "method": "dspace_bitstream_uuid_bytes_md5"
+      },
+      "provider_md5": "8aa183b7cfbf148b9558302a0c0c3771",
+      "zip_crc_verified": true
+    },
+    "vctk_readme": {
+      "bytes": 2790,
+      "filename": "vctk-readme.txt",
+      "local_sha256": "f33acbe652f50e3c4d3afe02665a2cf3b08cb34257bec41e06dd911cda3ae8db",
+      "provider_checksum_verified": true,
+      "provider_identity": {
+        "bitstream_uuid": "b12d100d-e130-4e24-a07b-cb8b57e632fb",
+        "method": "dspace_bitstream_uuid_bytes_md5"
+      },
+      "provider_md5": "6d59a65471c0e9ff108a41f8eb15e6bc"
+    }
+  }
+}

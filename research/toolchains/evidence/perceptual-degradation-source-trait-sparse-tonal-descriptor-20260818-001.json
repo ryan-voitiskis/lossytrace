@@ -1,0 +1,119 @@
+{
+  "claim_boundary": {
+    "descriptor_class_is_perceptual_truth": false,
+    "exact_member_selected": false,
+    "full_objective_complete": false,
+    "public_cli_changed": false,
+    "public_verdict_enabled": false,
+    "source_trait_assigned": false,
+    "source_trait_manifest_frozen": false,
+    "synthetic_fixture_is_source_evidence": false
+  },
+  "decision": {
+    "candidate_audio_access_authorized": false,
+    "descriptor_and_non_overlap_rules_frozen": true,
+    "exact_member_selection_authorized": false,
+    "next_gate": "Perform a bounded metadata-only exact-member selection audit. TinySOL may supply a tonal non-sparse candidate, but its pitched-note metadata does not establish the required sparse non-tonal contrast; identify that route before requesting access to any nominated audio.",
+    "public_verdict_enabled": false,
+    "source_trait_assignment_authorized": false,
+    "source_trait_manifest_frozen": false,
+    "synthetic_fixture_gate_count": 3,
+    "synthetic_fixture_gate_pass_count": 3
+  },
+  "execution": {
+    "actual_or_retained_audio_accessed": false,
+    "fresh_temporary_replay_count": 2,
+    "generated_audio_retained": false,
+    "maximum_workers": 1,
+    "payloads_byte_identical": true
+  },
+  "implementation_sha256": "90adfa2dec5ad3bd09bdb66094c964fbddd0779765dda54a72fc8b72de557299",
+  "plan_id": "perceptual-degradation-source-trait-sparse-tonal-descriptor-20260818-001",
+  "plan_sha256": "8b8649fe65ba151f906a544ff08271f2563224e54610156770edcc731f23bdbf",
+  "report_id": "perceptual-degradation-source-trait-sparse-tonal-descriptor-20260818-001",
+  "schema_version": 1,
+  "state": "sparse_tonal_descriptor_synthetic_replay_complete_candidate_access_still_closed",
+  "synthetic_fixture_results": [
+    {
+      "descriptor": {
+        "abstain": false,
+        "sparse_non_tonal_contrast": false,
+        "sparse_tonal_overlap": true,
+        "spectral_concentration": {
+          "active_frame_count": 16,
+          "median_spectral_flatness": "0.000000001",
+          "median_top_8_bin_power_share": "1.000000000",
+          "non_tonal": false,
+          "supported": true,
+          "tonal": true
+        },
+        "time_occupancy": {
+          "active_block_count": 2,
+          "active_fraction": "0.200000000",
+          "block_count": 10,
+          "non_sparse": false,
+          "sparse": true,
+          "supported": true
+        },
+        "tonal_non_sparse_contrast": false
+      },
+      "fixture_id": "sparse-tonal-overlap",
+      "source_member_included": false,
+      "trait_truth_included": false
+    },
+    {
+      "descriptor": {
+        "abstain": false,
+        "sparse_non_tonal_contrast": true,
+        "sparse_tonal_overlap": false,
+        "spectral_concentration": {
+          "active_frame_count": 16,
+          "median_spectral_flatness": "0.567083359",
+          "median_top_8_bin_power_share": "0.077611622",
+          "non_tonal": true,
+          "supported": true,
+          "tonal": false
+        },
+        "time_occupancy": {
+          "active_block_count": 2,
+          "active_fraction": "0.200000000",
+          "block_count": 10,
+          "non_sparse": false,
+          "sparse": true,
+          "supported": true
+        },
+        "tonal_non_sparse_contrast": false
+      },
+      "fixture_id": "sparse-nontonal-contrast",
+      "source_member_included": false,
+      "trait_truth_included": false
+    },
+    {
+      "descriptor": {
+        "abstain": false,
+        "sparse_non_tonal_contrast": false,
+        "sparse_tonal_overlap": false,
+        "spectral_concentration": {
+          "active_frame_count": 61,
+          "median_spectral_flatness": "0.000000001",
+          "median_top_8_bin_power_share": "1.000000000",
+          "non_tonal": false,
+          "supported": true,
+          "tonal": true
+        },
+        "time_occupancy": {
+          "active_block_count": 10,
+          "active_fraction": "1.000000000",
+          "block_count": 10,
+          "non_sparse": true,
+          "sparse": false,
+          "supported": true
+        },
+        "tonal_non_sparse_contrast": true
+      },
+      "fixture_id": "tonal-nonsparse-contrast",
+      "source_member_included": false,
+      "trait_truth_included": false
+    }
+  ]
+}

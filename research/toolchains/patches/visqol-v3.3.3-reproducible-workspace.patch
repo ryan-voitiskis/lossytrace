@@ -1,0 +1,23 @@
+diff --git a/WORKSPACE b/WORKSPACE
+--- a/WORKSPACE
++++ b/WORKSPACE
+@@ -135,5 +135,5 @@
+ git_repository(
+     name = "com_google_googletest",
+     remote = "https://github.com/google/googletest.git",
+-    tag = "release-1.10.0",
++    commit = "703bd9caab50b139428cea1aaff9974ebee5742e",
+ )
+@@ -142,5 +142,5 @@
+ git_repository(
+     name = "com_google_absl",
+     remote = "https://github.com/abseil/abseil-cpp.git",
+-    tag = "20211102",
++    commit = "215105818dfde3174fe799600bb0f3cae233d0bf",
+ )
+@@ -176,4 +176,4 @@
+     sha256 = "d856ea58c18998997bcae6689784d2d3eeb5daf1379d569fddc277fe046a996b",
+     strip_prefix = "armadillo-9.860.2",
+-    urls = ["http://sourceforge.net/projects/arma/files/armadillo-9.860.2.tar.xz"],
++    urls = ["https://distfiles.macports.org/armadillo/armadillo-9.860.2.tar.xz"],
+ )

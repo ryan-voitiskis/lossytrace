@@ -1,0 +1,2409 @@
+{
+  "schema_version": 1,
+  "report_id": "alignment-global-synthetic-workload-result-20260908-001",
+  "date": "2026-09-08",
+  "state": "audited_synthetic_workload_margin_passed",
+  "bindings": {
+    "protocol": {
+      "path": "benchmarks/perceptual-degradation-v1/alignment-global-workload-plan-20260908.json",
+      "sha256": "12def738f8b9b697f14a3c54690080daaf90baf9fada2fe718f54b5a6ecfd6bf"
+    },
+    "standing_authorization": {
+      "path": "benchmarks/perceptual-degradation-v1/digital-development-standing-authorization-20260908.json",
+      "sha256": "ee86c46a831de432500910190003dcc5ef670832fdb3e0dd7d6f55199793f568"
+    },
+    "runner": {
+      "path": "scripts/perceptual_degradation_global_qualification.py",
+      "sha256": "d0a5dbc4ce62e5f092af6ebc57bf16545ef8fe8546096b7f4f763f86451f67c5"
+    },
+    "independent_artifact_auditor": {
+      "path": "scripts/perceptual_degradation_global_artifact_audit.py",
+      "sha256": "02829a7c2535a7d3a1f9a68547c5fd5cfb0e7108b92163b650260e47e3d7021c"
+    },
+    "independent_artifact_auditor_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_global_artifact_audit.py",
+      "sha256": "55e553357c09a71736a54520162fc99802d3ce225ed5976e7265c16dc3f213d9"
+    }
+  },
+  "execution": {
+    "externally_preregistered": false,
+    "head": "93c5607005801a4cce34d8454b2d20b2d26a8c4a",
+    "kernel": {
+      "binary_sha256": "d9e6c02a2983cd97e9bb146fbfe9357ed05cf3975ec28b9d231055b0e75e267b",
+      "compiler_dependency_closure_claimed": false,
+      "compiler_sha256": "b8763cf250e607a778bb4603cecb5b90338814d0a3dfcba0d57b1de242f610e9",
+      "compiler_version": [
+        "Apple clang version 21.0.0 (clang-2100.1.1.101)",
+        "Target: arm64-apple-darwin25.6.0",
+        "Thread model: posix"
+      ],
+      "flags": [
+        "-O2",
+        "-std=c11",
+        "-shared",
+        "-fPIC",
+        "-fno-fast-math",
+        "-ffp-contract=off",
+        "-Wall",
+        "-Wextra",
+        "-Werror"
+      ],
+      "included_source_sha256": "632020c11235dcc5f4708563094d230449f9eaebb8fd7d2e07990a90325729f1",
+      "link_libraries": [
+        "m"
+      ],
+      "machine": "arm64",
+      "os_release": "25.6.0",
+      "platform": "Darwin",
+      "source_sha256": "edba8629878bba1c9de5fd49e5ff013b3125a56c08ec3743a0f5c3ceb2ff992f"
+    },
+    "locally_preregistered": true,
+    "plan_sha256": "12def738f8b9b697f14a3c54690080daaf90baf9fada2fe718f54b5a6ecfd6bf",
+    "synthetic_only": true,
+    "runner_invocations": 1,
+    "runner_exit_code": 0,
+    "workers": 1,
+    "authorization_consumed": true,
+    "additional_invocation_under_this_plan_authorized": false
+  },
+  "observations": {
+    "all_full_alignments_within_120_seconds": true,
+    "all_inputs_preserved": true,
+    "all_slots_completed": true,
+    "codec_executed": false,
+    "completed_evidence_repeated": true,
+    "full_rate_pipeline_qualified": false,
+    "global_candidate_equivalence_passed": true,
+    "no_native_fallback": true,
+    "objective_complete": false,
+    "perceptual_support": false,
+    "plan_id": "alignment-global-workload-20260908-001",
+    "planned_slots": 16,
+    "public_verdict_enabled": false,
+    "real_audio_accessed": false,
+    "repeatability": [
+      {
+        "case": "quantized:global_pair",
+        "completed_evidence_byte_identical": true,
+        "outcome_equal": true
+      },
+      {
+        "case": "quantized:full_native",
+        "completed_evidence_byte_identical": true,
+        "outcome_equal": true
+      },
+      {
+        "case": "dense_float:global_pair",
+        "completed_evidence_byte_identical": true,
+        "outcome_equal": true
+      },
+      {
+        "case": "dense_float:full_native",
+        "completed_evidence_byte_identical": true,
+        "outcome_equal": true
+      },
+      {
+        "case": "mixed_scale:global_pair",
+        "completed_evidence_byte_identical": true,
+        "outcome_equal": true
+      },
+      {
+        "case": "mixed_scale:full_native",
+        "completed_evidence_byte_identical": true,
+        "outcome_equal": true
+      },
+      {
+        "case": "sparse_bursts:global_pair",
+        "completed_evidence_byte_identical": true,
+        "outcome_equal": true
+      },
+      {
+        "case": "sparse_bursts:full_native",
+        "completed_evidence_byte_identical": true,
+        "outcome_equal": true
+      }
+    ],
+    "replay_edges": [
+      "passed",
+      "passed",
+      "passed",
+      "passed"
+    ],
+    "rounds": [
+      [
+        {
+          "alignment": null,
+          "case": "quantized:global_pair",
+          "component": {
+            "all_candidate_records_byte_identical": true,
+            "candidate_inventory_sha256": "14c26a619fc76ade240cb8e49b4f66c1634a357149362d4f9047efe71b08c4a9",
+            "coarse_candidates": 801,
+            "global_candidates": 3848,
+            "predecessor_sha256": "8fea0b27798419881e5ae3caca38a73d3022e8c0b9b18b28c1b68fb03af3f7ad",
+            "selected_peaks": [
+              0,
+              -274,
+              274,
+              -137,
+              137,
+              -40,
+              40,
+              -97
+            ],
+            "successor_sha256": "8fea0b27798419881e5ae3caca38a73d3022e8c0b9b18b28c1b68fb03af3f7ad"
+          },
+          "cpu_seconds": 25.382509,
+          "frames": 576008,
+          "global_native": {
+            "fallback_candidates": 0,
+            "geometry_rows": 2165,
+            "geometry_sha256": "d23c5915b3e95484628ba125f0b70e96ba8cb9f38b89c03628a100c4260cf697",
+            "native_candidates": 3848,
+            "sampled_pair_evaluations": 63665816,
+            "searches": [
+              {
+                "candidate_count": 3848,
+                "reference_frames": 576008,
+                "search_count": 1,
+                "test_frames": 576008
+              }
+            ],
+            "short_overlap_candidates": 0
+          },
+          "input_sha256": "507ca0c2af8094f8a253715be3c4bd0160a9f3965190bf82fb849997e9cc21e0",
+          "inputs_unchanged": true,
+          "local_native": {
+            "fallback_candidates": 0,
+            "native_candidates": 0,
+            "searches": []
+          },
+          "other_cpu_seconds": 0.06633999999999673,
+          "other_wall_seconds": 0.06771683500846848,
+          "outcome": "completed",
+          "perceptual_support": false,
+          "sample_rate_hz": 48000,
+          "stage_cpu_seconds": {
+            "coarse_python": 0.6048070000000001,
+            "global_native": 2.805467,
+            "global_python": 21.905895
+          },
+          "stage_wall_seconds": {
+            "coarse_python": 0.6195841250009835,
+            "global_native": 2.9072387909982353,
+            "global_python": 22.516185540996958
+          },
+          "wall_seconds": 26.110725292004645
+        },
+        {
+          "alignment": {
+            "alignment": {
+              "channels": [
+                {
+                  "channel": "L",
+                  "diagnostics": {
+                    "active_seconds": 12,
+                    "aligned_frames": 576008,
+                    "ambiguity_margin": 0.9625896001357931,
+                    "correlation": {
+                      "magnitude": 1,
+                      "overlap_frames": 576008,
+                      "reason": null,
+                      "sampled_frames": 16458,
+                      "value": 1
+                    },
+                    "drift": {
+                      "clock_drift_ppm": 0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0,
+                      "valid_window_count": 5,
+                      "window_count": 5
+                    },
+                    "edge_trim_seconds": 0,
+                    "fractional_delay_samples": 0,
+                    "gain": {
+                      "linear_gain": 1,
+                      "observed_gain_db": 0,
+                      "polarity": "preserved",
+                      "reason": null
+                    },
+                    "integer_delay_samples": 0,
+                    "search": {
+                      "coarse": {
+                        "invalid": {},
+                        "valid": 801
+                      },
+                      "sample": {
+                        "invalid": {},
+                        "valid": 3848
+                      }
+                    },
+                    "structural": {
+                      "clock_drift_ppm": 0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0,
+                      "valid_window_count": 7,
+                      "window_count": 7
+                    }
+                  },
+                  "reasons": [],
+                  "status": "supported"
+                },
+                {
+                  "channel": "R",
+                  "diagnostics": {
+                    "active_seconds": 12,
+                    "aligned_frames": 576008,
+                    "ambiguity_margin": 0.9697505123934722,
+                    "correlation": {
+                      "magnitude": 1,
+                      "overlap_frames": 576008,
+                      "reason": null,
+                      "sampled_frames": 16458,
+                      "value": 1
+                    },
+                    "drift": {
+                      "clock_drift_ppm": 0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0,
+                      "valid_window_count": 5,
+                      "window_count": 5
+                    },
+                    "edge_trim_seconds": 0,
+                    "fractional_delay_samples": 0,
+                    "gain": {
+                      "linear_gain": 1,
+                      "observed_gain_db": 0,
+                      "polarity": "preserved",
+                      "reason": null
+                    },
+                    "integer_delay_samples": 0,
+                    "search": {
+                      "coarse": {
+                        "invalid": {},
+                        "valid": 801
+                      },
+                      "sample": {
+                        "invalid": {},
+                        "valid": 3848
+                      }
+                    },
+                    "structural": {
+                      "clock_drift_ppm": 0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0,
+                      "valid_window_count": 7,
+                      "window_count": 7
+                    }
+                  },
+                  "reasons": [],
+                  "status": "supported"
+                }
+              ],
+              "summary": {
+                "active_seconds": 12,
+                "aligned_frames": 576008,
+                "channel_lag_spread_samples": 0,
+                "clock_drift_ppm": 0,
+                "fractional_delay_samples": 0,
+                "integer_delay_samples": 0,
+                "minimum_correlation": 1,
+                "minimum_structural_window_correlation": 0.9999999999999999
+              }
+            },
+            "case_id": "case-6acc88dd97bbe7674e935d50d6d29c0b65e44c49bbf197a4d071fda7d14f27da",
+            "input": {
+              "reference": {
+                "channel_count": 2,
+                "channel_map": [
+                  "L",
+                  "R"
+                ],
+                "frames": 576008
+              },
+              "sample_rate_hz": 48000,
+              "test": {
+                "channel_count": 2,
+                "channel_map": [
+                  "L",
+                  "R"
+                ],
+                "frames": 576008
+              }
+            },
+            "perceptual_claim": false,
+            "public_verdict_enabled": false,
+            "record_kind": "perceptual_degradation_alignment_v5",
+            "sample_correction_applied": false,
+            "schema_version": 1,
+            "status": "supported",
+            "support": {
+              "limits_id": "alignment-validity-successor-20260907-001",
+              "predecessor_limits_ids": [
+                "perceptual-degradation-v1-alignment-fixtures-20260803-001",
+                "perceptual-degradation-v1-topology-fixtures-20260803-001"
+              ],
+              "reasons": []
+            }
+          },
+          "case": "quantized:full_native",
+          "component": {},
+          "cpu_seconds": 96.225517,
+          "frames": 576008,
+          "global_native": {
+            "fallback_candidates": 0,
+            "geometry_rows": 2165,
+            "geometry_sha256": "321a1d42e5d1bb6cfcd22b038cf512533d90a48b602a028da3a6dc5a9e713cfc",
+            "native_candidates": 7696,
+            "sampled_pair_evaluations": 127331632,
+            "searches": [
+              {
+                "candidate_count": 3848,
+                "reference_frames": 576008,
+                "search_count": 2,
+                "test_frames": 576008
+              }
+            ],
+            "short_overlap_candidates": 0
+          },
+          "input_sha256": "507ca0c2af8094f8a253715be3c4bd0160a9f3965190bf82fb849997e9cc21e0",
+          "inputs_unchanged": true,
+          "local_native": {
+            "fallback_candidates": 0,
+            "native_candidates": 135624,
+            "searches": [
+              {
+                "candidate_count": 9601,
+                "search_count": 14,
+                "stride": 1,
+                "window_frames": 24000
+              },
+              {
+                "candidate_count": 121,
+                "search_count": 10,
+                "stride": 2,
+                "window_frames": 48000
+              }
+            ]
+          },
+          "other_cpu_seconds": 1.7971000000000288,
+          "other_wall_seconds": 1.8561328320065513,
+          "outcome": "completed",
+          "perceptual_support": false,
+          "sample_rate_hz": 48000,
+          "stage_cpu_seconds": {
+            "global_native": 5.6025459999999985,
+            "local_native": 88.82587099999996
+          },
+          "stage_wall_seconds": {
+            "global_native": 5.73716662498191,
+            "local_native": 93.22698412602767
+          },
+          "wall_seconds": 100.82028358301613
+        },
+        {
+          "alignment": null,
+          "case": "dense_float:global_pair",
+          "component": {
+            "all_candidate_records_byte_identical": true,
+            "candidate_inventory_sha256": "625af441b2d89b1a14f1bc04ffcd2690e1a3a1c713e409b327349423c7c5aa92",
+            "coarse_candidates": 801,
+            "global_candidates": 3848,
+            "predecessor_sha256": "3f3e3d894524e0c032f3e1558121643ff16a409fde37c60ed27019dc717a4c6d",
+            "selected_peaks": [
+              0,
+              -137,
+              137,
+              -274,
+              274,
+              -391,
+              391,
+              -20
+            ],
+            "successor_sha256": "3f3e3d894524e0c032f3e1558121643ff16a409fde37c60ed27019dc717a4c6d"
+          },
+          "cpu_seconds": 29.432428,
+          "frames": 576008,
+          "global_native": {
+            "fallback_candidates": 0,
+            "geometry_rows": 2165,
+            "geometry_sha256": "51095e8aaee28ff2255bd32069c70ee04d324d56cbd68c028bc1d57b300d5ac9",
+            "native_candidates": 3848,
+            "sampled_pair_evaluations": 63658956,
+            "searches": [
+              {
+                "candidate_count": 3848,
+                "reference_frames": 576008,
+                "search_count": 1,
+                "test_frames": 576008
+              }
+            ],
+            "short_overlap_candidates": 0
+          },
+          "input_sha256": "96a51c1c7d278744ae72ca641d3caf13b850569e115937ad2aa48aedc1b599ab",
+          "inputs_unchanged": true,
+          "local_native": {
+            "fallback_candidates": 0,
+            "native_candidates": 0,
+            "searches": []
+          },
+          "other_cpu_seconds": 0.08041900000000268,
+          "other_wall_seconds": 0.08360745897516608,
+          "outcome": "completed",
+          "perceptual_support": false,
+          "sample_rate_hz": 48000,
+          "stage_cpu_seconds": {
+            "coarse_python": 0.734904,
+            "global_native": 4.468855999999999,
+            "global_python": 24.148249
+          },
+          "stage_wall_seconds": {
+            "coarse_python": 0.7540505409706384,
+            "global_native": 5.04228991700802,
+            "global_python": 24.97679495799821
+          },
+          "wall_seconds": 30.856742874952033
+        },
+        {
+          "alignment": {
+            "alignment": {
+              "channels": [
+                {
+                  "channel": "L",
+                  "diagnostics": {
+                    "active_seconds": 12,
+                    "aligned_frames": 576008,
+                    "ambiguity_margin": 0.9703479904469507,
+                    "correlation": {
+                      "magnitude": 1,
+                      "overlap_frames": 576008,
+                      "reason": null,
+                      "sampled_frames": 16458,
+                      "value": 1
+                    },
+                    "drift": {
+                      "clock_drift_ppm": 0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0,
+                      "valid_window_count": 5,
+                      "window_count": 5
+                    },
+                    "edge_trim_seconds": 0,
+                    "fractional_delay_samples": 0,
+                    "gain": {
+                      "linear_gain": 1,
+                      "observed_gain_db": 0,
+                      "polarity": "preserved",
+                      "reason": null
+                    },
+                    "integer_delay_samples": 0,
+                    "search": {
+                      "coarse": {
+                        "invalid": {},
+                        "valid": 801
+                      },
+                      "sample": {
+                        "invalid": {},
+                        "valid": 3848
+                      }
+                    },
+                    "structural": {
+                      "clock_drift_ppm": 0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0,
+                      "valid_window_count": 7,
+                      "window_count": 7
+                    }
+                  },
+                  "reasons": [],
+                  "status": "supported"
+                },
+                {
+                  "channel": "R",
+                  "diagnostics": {
+                    "active_seconds": 12,
+                    "aligned_frames": 576008,
+                    "ambiguity_margin": 0.972464730267912,
+                    "correlation": {
+                      "magnitude": 1,
+                      "overlap_frames": 576008,
+                      "reason": null,
+                      "sampled_frames": 16458,
+                      "value": 1
+                    },
+                    "drift": {
+                      "clock_drift_ppm": 0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0,
+                      "valid_window_count": 5,
+                      "window_count": 5
+                    },
+                    "edge_trim_seconds": 0,
+                    "fractional_delay_samples": 0,
+                    "gain": {
+                      "linear_gain": 1,
+                      "observed_gain_db": 0,
+                      "polarity": "preserved",
+                      "reason": null
+                    },
+                    "integer_delay_samples": 0,
+                    "search": {
+                      "coarse": {
+                        "invalid": {},
+                        "valid": 801
+                      },
+                      "sample": {
+                        "invalid": {},
+                        "valid": 3848
+                      }
+                    },
+                    "structural": {
+                      "clock_drift_ppm": 0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0,
+                      "valid_window_count": 7,
+                      "window_count": 7
+                    }
+                  },
+                  "reasons": [],
+                  "status": "supported"
+                }
+              ],
+              "summary": {
+                "active_seconds": 12,
+                "aligned_frames": 576008,
+                "channel_lag_spread_samples": 0,
+                "clock_drift_ppm": 0,
+                "fractional_delay_samples": 0,
+                "integer_delay_samples": 0,
+                "minimum_correlation": 1,
+                "minimum_structural_window_correlation": 0.9999999999999999
+              }
+            },
+            "case_id": "case-bfd993f5f1b58edfeca2bf6a1e2f083faa4b3b6403b9c96ea4ad37384fd2c527",
+            "input": {
+              "reference": {
+                "channel_count": 2,
+                "channel_map": [
+                  "L",
+                  "R"
+                ],
+                "frames": 576008
+              },
+              "sample_rate_hz": 48000,
+              "test": {
+                "channel_count": 2,
+                "channel_map": [
+                  "L",
+                  "R"
+                ],
+                "frames": 576008
+              }
+            },
+            "perceptual_claim": false,
+            "public_verdict_enabled": false,
+            "record_kind": "perceptual_degradation_alignment_v5",
+            "sample_correction_applied": false,
+            "schema_version": 1,
+            "status": "supported",
+            "support": {
+              "limits_id": "alignment-validity-successor-20260907-001",
+              "predecessor_limits_ids": [
+                "perceptual-degradation-v1-alignment-fixtures-20260803-001",
+                "perceptual-degradation-v1-topology-fixtures-20260803-001"
+              ],
+              "reasons": []
+            }
+          },
+          "case": "dense_float:full_native",
+          "component": {},
+          "cpu_seconds": 108.345422,
+          "frames": 576008,
+          "global_native": {
+            "fallback_candidates": 0,
+            "geometry_rows": 3127,
+            "geometry_sha256": "2cf37a18ed37e2ee5decdf6730eabaeccf22a45897ddeed3d18dd6962987609c",
+            "native_candidates": 7696,
+            "sampled_pair_evaluations": 127319265,
+            "searches": [
+              {
+                "candidate_count": 3848,
+                "reference_frames": 576008,
+                "search_count": 2,
+                "test_frames": 576008
+              }
+            ],
+            "short_overlap_candidates": 0
+          },
+          "input_sha256": "96a51c1c7d278744ae72ca641d3caf13b850569e115937ad2aa48aedc1b599ab",
+          "inputs_unchanged": true,
+          "local_native": {
+            "fallback_candidates": 0,
+            "native_candidates": 135624,
+            "searches": [
+              {
+                "candidate_count": 9601,
+                "search_count": 14,
+                "stride": 1,
+                "window_frames": 24000
+              },
+              {
+                "candidate_count": 121,
+                "search_count": 10,
+                "stride": 2,
+                "window_frames": 48000
+              }
+            ]
+          },
+          "other_cpu_seconds": 1.9078660000000127,
+          "other_wall_seconds": 1.9603330438840203,
+          "outcome": "completed",
+          "perceptual_support": false,
+          "sample_rate_hz": 48000,
+          "stage_cpu_seconds": {
+            "global_native": 6.900982999999995,
+            "local_native": 99.53657299999999
+          },
+          "stage_wall_seconds": {
+            "global_native": 7.121636583004147,
+            "local_native": 102.33218070614384
+          },
+          "wall_seconds": 111.41415033303201
+        },
+        {
+          "alignment": null,
+          "case": "mixed_scale:global_pair",
+          "component": {
+            "all_candidate_records_byte_identical": true,
+            "candidate_inventory_sha256": "35df68040bf4598880b731d67f89a2554fc22998b159911f745f63739553a374",
+            "coarse_candidates": 801,
+            "global_candidates": 3848,
+            "predecessor_sha256": "d9e3a2a45539294225cee35d59e07b189d10a1fea2ba5589c51b8e177f70ede9",
+            "selected_peaks": [
+              0,
+              -117,
+              117,
+              -177,
+              177,
+              -157,
+              157,
+              -137
+            ],
+            "successor_sha256": "d9e3a2a45539294225cee35d59e07b189d10a1fea2ba5589c51b8e177f70ede9"
+          },
+          "cpu_seconds": 31.209496,
+          "frames": 576008,
+          "global_native": {
+            "fallback_candidates": 0,
+            "geometry_rows": 2165,
+            "geometry_sha256": "452c31a2b4469427eeeee92917a0a9340134e26b6c7076219eff6260c0fba5dc",
+            "native_candidates": 3848,
+            "sampled_pair_evaluations": 64028311,
+            "searches": [
+              {
+                "candidate_count": 3848,
+                "reference_frames": 576008,
+                "search_count": 1,
+                "test_frames": 576008
+              }
+            ],
+            "short_overlap_candidates": 0
+          },
+          "input_sha256": "8500b488f43d76ed418cbb2c27e113db5419947c2c3a31841982d0323864ae3d",
+          "inputs_unchanged": true,
+          "local_native": {
+            "fallback_candidates": 0,
+            "native_candidates": 0,
+            "searches": []
+          },
+          "other_cpu_seconds": 0.08119900000000158,
+          "other_wall_seconds": 0.0857614169945009,
+          "outcome": "completed",
+          "perceptual_support": false,
+          "sample_rate_hz": 48000,
+          "stage_cpu_seconds": {
+            "coarse_python": 0.7130110000000001,
+            "global_native": 2.928405999999999,
+            "global_python": 27.48688
+          },
+          "stage_wall_seconds": {
+            "coarse_python": 0.7522705000010319,
+            "global_native": 3.0973861249512993,
+            "global_python": 29.100744499999564
+          },
+          "wall_seconds": 33.036162541946396
+        },
+        {
+          "alignment": {
+            "alignment": {
+              "channels": [
+                {
+                  "channel": "L",
+                  "diagnostics": {
+                    "active_seconds": 12,
+                    "aligned_frames": 576008,
+                    "ambiguity_margin": 0.8634082901331535,
+                    "correlation": {
+                      "magnitude": 0.9999999999999998,
+                      "overlap_frames": 576008,
+                      "reason": null,
+                      "sampled_frames": 16458,
+                      "value": 0.9999999999999998
+                    },
+                    "drift": {
+                      "clock_drift_ppm": 0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0,
+                      "valid_window_count": 5,
+                      "window_count": 5
+                    },
+                    "edge_trim_seconds": 0,
+                    "fractional_delay_samples": 0,
+                    "gain": {
+                      "linear_gain": 1,
+                      "observed_gain_db": 0,
+                      "polarity": "preserved",
+                      "reason": null
+                    },
+                    "integer_delay_samples": 0,
+                    "search": {
+                      "coarse": {
+                        "invalid": {},
+                        "valid": 801
+                      },
+                      "sample": {
+                        "invalid": {},
+                        "valid": 3848
+                      }
+                    },
+                    "structural": {
+                      "clock_drift_ppm": 0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0,
+                      "valid_window_count": 7,
+                      "window_count": 7
+                    }
+                  },
+                  "reasons": [],
+                  "status": "supported"
+                },
+                {
+                  "channel": "R",
+                  "diagnostics": {
+                    "active_seconds": 12,
+                    "aligned_frames": 576008,
+                    "ambiguity_margin": 0.9002530669213457,
+                    "correlation": {
+                      "magnitude": 1,
+                      "overlap_frames": 576008,
+                      "reason": null,
+                      "sampled_frames": 16458,
+                      "value": 1
+                    },
+                    "drift": {
+                      "clock_drift_ppm": 0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0,
+                      "valid_window_count": 5,
+                      "window_count": 5
+                    },
+                    "edge_trim_seconds": 0,
+                    "fractional_delay_samples": 0,
+                    "gain": {
+                      "linear_gain": 1,
+                      "observed_gain_db": 0,
+                      "polarity": "preserved",
+                      "reason": null
+                    },
+                    "integer_delay_samples": 0,
+                    "search": {
+                      "coarse": {
+                        "invalid": {},
+                        "valid": 801
+                      },
+                      "sample": {
+                        "invalid": {},
+                        "valid": 3848
+                      }
+                    },
+                    "structural": {
+                      "clock_drift_ppm": 0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0,
+                      "valid_window_count": 7,
+                      "window_count": 7
+                    }
+                  },
+                  "reasons": [],
+                  "status": "supported"
+                }
+              ],
+              "summary": {
+                "active_seconds": 12,
+                "aligned_frames": 576008,
+                "channel_lag_spread_samples": 0,
+                "clock_drift_ppm": 0,
+                "fractional_delay_samples": 0,
+                "integer_delay_samples": 0,
+                "minimum_correlation": 0.9999999999999998,
+                "minimum_structural_window_correlation": 0.9999999999999999
+              }
+            },
+            "case_id": "case-9c70d67f68fcf38af9eb5c6cb078c05da1e145a4106b104a83b8508f7cc46908",
+            "input": {
+              "reference": {
+                "channel_count": 2,
+                "channel_map": [
+                  "L",
+                  "R"
+                ],
+                "frames": 576008
+              },
+              "sample_rate_hz": 48000,
+              "test": {
+                "channel_count": 2,
+                "channel_map": [
+                  "L",
+                  "R"
+                ],
+                "frames": 576008
+              }
+            },
+            "perceptual_claim": false,
+            "public_verdict_enabled": false,
+            "record_kind": "perceptual_degradation_alignment_v5",
+            "sample_correction_applied": false,
+            "schema_version": 1,
+            "status": "supported",
+            "support": {
+              "limits_id": "alignment-validity-successor-20260907-001",
+              "predecessor_limits_ids": [
+                "perceptual-degradation-v1-alignment-fixtures-20260803-001",
+                "perceptual-degradation-v1-topology-fixtures-20260803-001"
+              ],
+              "reasons": []
+            }
+          },
+          "case": "mixed_scale:full_native",
+          "component": {},
+          "cpu_seconds": 105.347664,
+          "frames": 576008,
+          "global_native": {
+            "fallback_candidates": 0,
+            "geometry_rows": 3127,
+            "geometry_sha256": "61a3ab153c67370281fd814e51bd938cbf671a9cb6ef1c0b11997930a95afe0b",
+            "native_candidates": 7696,
+            "sampled_pair_evaluations": 127611660,
+            "searches": [
+              {
+                "candidate_count": 3848,
+                "reference_frames": 576008,
+                "search_count": 2,
+                "test_frames": 576008
+              }
+            ],
+            "short_overlap_candidates": 0
+          },
+          "input_sha256": "8500b488f43d76ed418cbb2c27e113db5419947c2c3a31841982d0323864ae3d",
+          "inputs_unchanged": true,
+          "local_native": {
+            "fallback_candidates": 0,
+            "native_candidates": 135624,
+            "searches": [
+              {
+                "candidate_count": 9601,
+                "search_count": 14,
+                "stride": 1,
+                "window_frames": 24000
+              },
+              {
+                "candidate_count": 121,
+                "search_count": 10,
+                "stride": 2,
+                "window_frames": 48000
+              }
+            ]
+          },
+          "other_cpu_seconds": 1.9020330000000314,
+          "other_wall_seconds": 1.9760276731685735,
+          "outcome": "completed",
+          "perceptual_support": false,
+          "sample_rate_hz": 48000,
+          "stage_cpu_seconds": {
+            "global_native": 5.583214999999998,
+            "local_native": 97.86241599999997
+          },
+          "stage_wall_seconds": {
+            "global_native": 5.783381999004632,
+            "local_native": 104.26793874480063
+          },
+          "wall_seconds": 112.02734841697384
+        },
+        {
+          "alignment": null,
+          "case": "sparse_bursts:global_pair",
+          "component": {
+            "all_candidate_records_byte_identical": true,
+            "candidate_inventory_sha256": "304b09671edecf1a1fe3c39ed919c665900147dc4605458accb73fa6bd51f32b",
+            "coarse_candidates": 801,
+            "global_candidates": 3848,
+            "predecessor_sha256": "56f85af9d61c628fd4f42460056871a7ae436582bdb753697fefdb98b81501b9",
+            "selected_peaks": [
+              0,
+              -100,
+              100,
+              -200,
+              200,
+              -300,
+              300,
+              -400
+            ],
+            "successor_sha256": "56f85af9d61c628fd4f42460056871a7ae436582bdb753697fefdb98b81501b9"
+          },
+          "cpu_seconds": 18.038972,
+          "frames": 576008,
+          "global_native": {
+            "fallback_candidates": 0,
+            "geometry_rows": 2165,
+            "geometry_sha256": "518b7bec9b0c84366a2908d10d2df4fa8e392713a3dd6e41f4ab31598d0294c2",
+            "native_candidates": 3848,
+            "sampled_pair_evaluations": 64004684,
+            "searches": [
+              {
+                "candidate_count": 3848,
+                "reference_frames": 576008,
+                "search_count": 1,
+                "test_frames": 576008
+              }
+            ],
+            "short_overlap_candidates": 0
+          },
+          "input_sha256": "432986fe2831073d7aed8884ccefed07ea3866bc740ede4572fa592b7a876a87",
+          "inputs_unchanged": true,
+          "local_native": {
+            "fallback_candidates": 0,
+            "native_candidates": 0,
+            "searches": []
+          },
+          "other_cpu_seconds": 0.03908399999999901,
+          "other_wall_seconds": 0.04023299895925447,
+          "outcome": "completed",
+          "perceptual_support": false,
+          "sample_rate_hz": 48000,
+          "stage_cpu_seconds": {
+            "coarse_python": 0.5936640000000001,
+            "global_native": 1.0542240000000014,
+            "global_python": 16.352
+          },
+          "stage_wall_seconds": {
+            "coarse_python": 0.6160044170101173,
+            "global_native": 1.0906077090185136,
+            "global_python": 17.89389291696716
+          },
+          "wall_seconds": 19.640738041955046
+        },
+        {
+          "alignment": {
+            "alignment": {
+              "channels": [
+                {
+                  "channel": "L",
+                  "diagnostics": {
+                    "active_seconds": 2.4,
+                    "aligned_frames": 576008,
+                    "ambiguity_margin": 0.9378500400234442,
+                    "correlation": {
+                      "magnitude": 1,
+                      "overlap_frames": 576008,
+                      "reason": null,
+                      "sampled_frames": 16458,
+                      "value": 1
+                    },
+                    "drift": {
+                      "clock_drift_ppm": 0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0,
+                      "valid_window_count": 5,
+                      "window_count": 5
+                    },
+                    "edge_trim_seconds": 0,
+                    "fractional_delay_samples": 0,
+                    "gain": {
+                      "linear_gain": 1,
+                      "observed_gain_db": 0,
+                      "polarity": "preserved",
+                      "reason": null
+                    },
+                    "integer_delay_samples": 0,
+                    "search": {
+                      "coarse": {
+                        "invalid": {},
+                        "valid": 801
+                      },
+                      "sample": {
+                        "invalid": {},
+                        "valid": 3848
+                      }
+                    },
+                    "structural": {
+                      "clock_drift_ppm": 0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0,
+                      "valid_window_count": 7,
+                      "window_count": 7
+                    }
+                  },
+                  "reasons": [
+                    "insufficient_active_audio"
+                  ],
+                  "status": "unsupported"
+                },
+                {
+                  "channel": "R",
+                  "diagnostics": {
+                    "active_seconds": 2.4,
+                    "aligned_frames": 576008,
+                    "ambiguity_margin": 0.9409332002930808,
+                    "correlation": {
+                      "magnitude": 1,
+                      "overlap_frames": 576008,
+                      "reason": null,
+                      "sampled_frames": 16458,
+                      "value": 1
+                    },
+                    "drift": {
+                      "clock_drift_ppm": 0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999998,
+                      "reason": null,
+                      "residual_samples": 0,
+                      "valid_window_count": 5,
+                      "window_count": 5
+                    },
+                    "edge_trim_seconds": 0,
+                    "fractional_delay_samples": 0,
+                    "gain": {
+                      "linear_gain": 1,
+                      "observed_gain_db": 0,
+                      "polarity": "preserved",
+                      "reason": null
+                    },
+                    "integer_delay_samples": 0,
+                    "search": {
+                      "coarse": {
+                        "invalid": {},
+                        "valid": 801
+                      },
+                      "sample": {
+                        "invalid": {},
+                        "valid": 3848
+                      }
+                    },
+                    "structural": {
+                      "clock_drift_ppm": 0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0,
+                      "valid_window_count": 7,
+                      "window_count": 7
+                    }
+                  },
+                  "reasons": [
+                    "insufficient_active_audio"
+                  ],
+                  "status": "unsupported"
+                }
+              ],
+              "summary": {
+                "active_seconds": 2.4,
+                "aligned_frames": 576008,
+                "channel_lag_spread_samples": 0,
+                "clock_drift_ppm": 0,
+                "fractional_delay_samples": 0,
+                "integer_delay_samples": 0,
+                "minimum_correlation": 1,
+                "minimum_structural_window_correlation": 0.9999999999999999
+              }
+            },
+            "case_id": "case-fd9cfce4de7c044db66e7cee29cfc0a6a6d721f38e6c20eb2697a894ab8fd6d2",
+            "input": {
+              "reference": {
+                "channel_count": 2,
+                "channel_map": [
+                  "L",
+                  "R"
+                ],
+                "frames": 576008
+              },
+              "sample_rate_hz": 48000,
+              "test": {
+                "channel_count": 2,
+                "channel_map": [
+                  "L",
+                  "R"
+                ],
+                "frames": 576008
+              }
+            },
+            "perceptual_claim": false,
+            "public_verdict_enabled": false,
+            "record_kind": "perceptual_degradation_alignment_v5",
+            "sample_correction_applied": false,
+            "schema_version": 1,
+            "status": "unsupported",
+            "support": {
+              "limits_id": "alignment-validity-successor-20260907-001",
+              "predecessor_limits_ids": [
+                "perceptual-degradation-v1-alignment-fixtures-20260803-001",
+                "perceptual-degradation-v1-topology-fixtures-20260803-001"
+              ],
+              "reasons": [
+                "insufficient_active_audio"
+              ]
+            }
+          },
+          "case": "sparse_bursts:full_native",
+          "component": {},
+          "cpu_seconds": 28.563987,
+          "frames": 576008,
+          "global_native": {
+            "fallback_candidates": 0,
+            "geometry_rows": 2165,
+            "geometry_sha256": "63d1e78c2f120138ae2916c64b12c05714b3bb92daf4fb678de4c8d4ebe34746",
+            "native_candidates": 7696,
+            "sampled_pair_evaluations": 128009368,
+            "searches": [
+              {
+                "candidate_count": 3848,
+                "reference_frames": 576008,
+                "search_count": 2,
+                "test_frames": 576008
+              }
+            ],
+            "short_overlap_candidates": 0
+          },
+          "input_sha256": "432986fe2831073d7aed8884ccefed07ea3866bc740ede4572fa592b7a876a87",
+          "inputs_unchanged": true,
+          "local_native": {
+            "fallback_candidates": 0,
+            "native_candidates": 135624,
+            "searches": [
+              {
+                "candidate_count": 9601,
+                "search_count": 14,
+                "stride": 1,
+                "window_frames": 24000
+              },
+              {
+                "candidate_count": 121,
+                "search_count": 10,
+                "stride": 2,
+                "window_frames": 48000
+              }
+            ]
+          },
+          "other_cpu_seconds": 1.507786000000003,
+          "other_wall_seconds": 1.5472193329478614,
+          "outcome": "completed",
+          "perceptual_support": false,
+          "sample_rate_hz": 48000,
+          "stage_cpu_seconds": {
+            "global_native": 1.9787809999999988,
+            "local_native": 25.07742
+          },
+          "stage_wall_seconds": {
+            "global_native": 2.0114745830069296,
+            "local_native": 25.35654512507608
+          },
+          "wall_seconds": 28.915239041030873
+        }
+      ],
+      [
+        {
+          "alignment": null,
+          "case": "quantized:global_pair",
+          "component": {
+            "all_candidate_records_byte_identical": true,
+            "candidate_inventory_sha256": "14c26a619fc76ade240cb8e49b4f66c1634a357149362d4f9047efe71b08c4a9",
+            "coarse_candidates": 801,
+            "global_candidates": 3848,
+            "predecessor_sha256": "8fea0b27798419881e5ae3caca38a73d3022e8c0b9b18b28c1b68fb03af3f7ad",
+            "selected_peaks": [
+              0,
+              -274,
+              274,
+              -137,
+              137,
+              -40,
+              40,
+              -97
+            ],
+            "successor_sha256": "8fea0b27798419881e5ae3caca38a73d3022e8c0b9b18b28c1b68fb03af3f7ad"
+          },
+          "cpu_seconds": 22.186383,
+          "frames": 576008,
+          "global_native": {
+            "fallback_candidates": 0,
+            "geometry_rows": 2165,
+            "geometry_sha256": "d23c5915b3e95484628ba125f0b70e96ba8cb9f38b89c03628a100c4260cf697",
+            "native_candidates": 3848,
+            "sampled_pair_evaluations": 63665816,
+            "searches": [
+              {
+                "candidate_count": 3848,
+                "reference_frames": 576008,
+                "search_count": 1,
+                "test_frames": 576008
+              }
+            ],
+            "short_overlap_candidates": 0
+          },
+          "input_sha256": "507ca0c2af8094f8a253715be3c4bd0160a9f3965190bf82fb849997e9cc21e0",
+          "inputs_unchanged": true,
+          "local_native": {
+            "fallback_candidates": 0,
+            "native_candidates": 0,
+            "searches": []
+          },
+          "other_cpu_seconds": 0.06511000000000067,
+          "other_wall_seconds": 0.06619520805543289,
+          "outcome": "completed",
+          "perceptual_support": false,
+          "sample_rate_hz": 48000,
+          "stage_cpu_seconds": {
+            "coarse_python": 0.600591,
+            "global_native": 2.550615999999998,
+            "global_python": 18.970066
+          },
+          "stage_wall_seconds": {
+            "coarse_python": 0.62880879198201,
+            "global_native": 2.572076875017956,
+            "global_python": 19.386037791962735
+          },
+          "wall_seconds": 22.653118667018134
+        },
+        {
+          "alignment": {
+            "alignment": {
+              "channels": [
+                {
+                  "channel": "L",
+                  "diagnostics": {
+                    "active_seconds": 12,
+                    "aligned_frames": 576008,
+                    "ambiguity_margin": 0.9625896001357931,
+                    "correlation": {
+                      "magnitude": 1,
+                      "overlap_frames": 576008,
+                      "reason": null,
+                      "sampled_frames": 16458,
+                      "value": 1
+                    },
+                    "drift": {
+                      "clock_drift_ppm": 0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0,
+                      "valid_window_count": 5,
+                      "window_count": 5
+                    },
+                    "edge_trim_seconds": 0,
+                    "fractional_delay_samples": 0,
+                    "gain": {
+                      "linear_gain": 1,
+                      "observed_gain_db": 0,
+                      "polarity": "preserved",
+                      "reason": null
+                    },
+                    "integer_delay_samples": 0,
+                    "search": {
+                      "coarse": {
+                        "invalid": {},
+                        "valid": 801
+                      },
+                      "sample": {
+                        "invalid": {},
+                        "valid": 3848
+                      }
+                    },
+                    "structural": {
+                      "clock_drift_ppm": 0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0,
+                      "valid_window_count": 7,
+                      "window_count": 7
+                    }
+                  },
+                  "reasons": [],
+                  "status": "supported"
+                },
+                {
+                  "channel": "R",
+                  "diagnostics": {
+                    "active_seconds": 12,
+                    "aligned_frames": 576008,
+                    "ambiguity_margin": 0.9697505123934722,
+                    "correlation": {
+                      "magnitude": 1,
+                      "overlap_frames": 576008,
+                      "reason": null,
+                      "sampled_frames": 16458,
+                      "value": 1
+                    },
+                    "drift": {
+                      "clock_drift_ppm": 0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0,
+                      "valid_window_count": 5,
+                      "window_count": 5
+                    },
+                    "edge_trim_seconds": 0,
+                    "fractional_delay_samples": 0,
+                    "gain": {
+                      "linear_gain": 1,
+                      "observed_gain_db": 0,
+                      "polarity": "preserved",
+                      "reason": null
+                    },
+                    "integer_delay_samples": 0,
+                    "search": {
+                      "coarse": {
+                        "invalid": {},
+                        "valid": 801
+                      },
+                      "sample": {
+                        "invalid": {},
+                        "valid": 3848
+                      }
+                    },
+                    "structural": {
+                      "clock_drift_ppm": 0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0,
+                      "valid_window_count": 7,
+                      "window_count": 7
+                    }
+                  },
+                  "reasons": [],
+                  "status": "supported"
+                }
+              ],
+              "summary": {
+                "active_seconds": 12,
+                "aligned_frames": 576008,
+                "channel_lag_spread_samples": 0,
+                "clock_drift_ppm": 0,
+                "fractional_delay_samples": 0,
+                "integer_delay_samples": 0,
+                "minimum_correlation": 1,
+                "minimum_structural_window_correlation": 0.9999999999999999
+              }
+            },
+            "case_id": "case-6acc88dd97bbe7674e935d50d6d29c0b65e44c49bbf197a4d071fda7d14f27da",
+            "input": {
+              "reference": {
+                "channel_count": 2,
+                "channel_map": [
+                  "L",
+                  "R"
+                ],
+                "frames": 576008
+              },
+              "sample_rate_hz": 48000,
+              "test": {
+                "channel_count": 2,
+                "channel_map": [
+                  "L",
+                  "R"
+                ],
+                "frames": 576008
+              }
+            },
+            "perceptual_claim": false,
+            "public_verdict_enabled": false,
+            "record_kind": "perceptual_degradation_alignment_v5",
+            "sample_correction_applied": false,
+            "schema_version": 1,
+            "status": "supported",
+            "support": {
+              "limits_id": "alignment-validity-successor-20260907-001",
+              "predecessor_limits_ids": [
+                "perceptual-degradation-v1-alignment-fixtures-20260803-001",
+                "perceptual-degradation-v1-topology-fixtures-20260803-001"
+              ],
+              "reasons": []
+            }
+          },
+          "case": "quantized:full_native",
+          "component": {},
+          "cpu_seconds": 90.239558,
+          "frames": 576008,
+          "global_native": {
+            "fallback_candidates": 0,
+            "geometry_rows": 2165,
+            "geometry_sha256": "321a1d42e5d1bb6cfcd22b038cf512533d90a48b602a028da3a6dc5a9e713cfc",
+            "native_candidates": 7696,
+            "sampled_pair_evaluations": 127331632,
+            "searches": [
+              {
+                "candidate_count": 3848,
+                "reference_frames": 576008,
+                "search_count": 2,
+                "test_frames": 576008
+              }
+            ],
+            "short_overlap_candidates": 0
+          },
+          "input_sha256": "507ca0c2af8094f8a253715be3c4bd0160a9f3965190bf82fb849997e9cc21e0",
+          "inputs_unchanged": true,
+          "local_native": {
+            "fallback_candidates": 0,
+            "native_candidates": 135624,
+            "searches": [
+              {
+                "candidate_count": 9601,
+                "search_count": 14,
+                "stride": 1,
+                "window_frames": 24000
+              },
+              {
+                "candidate_count": 121,
+                "search_count": 10,
+                "stride": 2,
+                "window_frames": 48000
+              }
+            ]
+          },
+          "other_cpu_seconds": 1.6591309999999595,
+          "other_wall_seconds": 1.6723198319086805,
+          "outcome": "completed",
+          "perceptual_support": false,
+          "sample_rate_hz": 48000,
+          "stage_cpu_seconds": {
+            "global_native": 5.302823999999999,
+            "local_native": 83.27760300000004
+          },
+          "stage_wall_seconds": {
+            "global_native": 5.390099874988664,
+            "local_native": 84.88267991808243
+          },
+          "wall_seconds": 91.94509962497978
+        },
+        {
+          "alignment": null,
+          "case": "dense_float:global_pair",
+          "component": {
+            "all_candidate_records_byte_identical": true,
+            "candidate_inventory_sha256": "625af441b2d89b1a14f1bc04ffcd2690e1a3a1c713e409b327349423c7c5aa92",
+            "coarse_candidates": 801,
+            "global_candidates": 3848,
+            "predecessor_sha256": "3f3e3d894524e0c032f3e1558121643ff16a409fde37c60ed27019dc717a4c6d",
+            "selected_peaks": [
+              0,
+              -137,
+              137,
+              -274,
+              274,
+              -391,
+              391,
+              -20
+            ],
+            "successor_sha256": "3f3e3d894524e0c032f3e1558121643ff16a409fde37c60ed27019dc717a4c6d"
+          },
+          "cpu_seconds": 20.554426,
+          "frames": 576008,
+          "global_native": {
+            "fallback_candidates": 0,
+            "geometry_rows": 2165,
+            "geometry_sha256": "51095e8aaee28ff2255bd32069c70ee04d324d56cbd68c028bc1d57b300d5ac9",
+            "native_candidates": 3848,
+            "sampled_pair_evaluations": 63658956,
+            "searches": [
+              {
+                "candidate_count": 3848,
+                "reference_frames": 576008,
+                "search_count": 1,
+                "test_frames": 576008
+              }
+            ],
+            "short_overlap_candidates": 0
+          },
+          "input_sha256": "96a51c1c7d278744ae72ca641d3caf13b850569e115937ad2aa48aedc1b599ab",
+          "inputs_unchanged": true,
+          "local_native": {
+            "fallback_candidates": 0,
+            "native_candidates": 0,
+            "searches": []
+          },
+          "other_cpu_seconds": 0.06642600000000343,
+          "other_wall_seconds": 0.06729679193813354,
+          "outcome": "completed",
+          "perceptual_support": false,
+          "sample_rate_hz": 48000,
+          "stage_cpu_seconds": {
+            "coarse_python": 0.580053,
+            "global_native": 3.4424339999999987,
+            "global_python": 16.465512999999998
+          },
+          "stage_wall_seconds": {
+            "coarse_python": 0.5914913750020787,
+            "global_native": 3.5474537910195068,
+            "global_python": 16.716587834001984
+          },
+          "wall_seconds": 20.922829791961703
+        },
+        {
+          "alignment": {
+            "alignment": {
+              "channels": [
+                {
+                  "channel": "L",
+                  "diagnostics": {
+                    "active_seconds": 12,
+                    "aligned_frames": 576008,
+                    "ambiguity_margin": 0.9703479904469507,
+                    "correlation": {
+                      "magnitude": 1,
+                      "overlap_frames": 576008,
+                      "reason": null,
+                      "sampled_frames": 16458,
+                      "value": 1
+                    },
+                    "drift": {
+                      "clock_drift_ppm": 0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0,
+                      "valid_window_count": 5,
+                      "window_count": 5
+                    },
+                    "edge_trim_seconds": 0,
+                    "fractional_delay_samples": 0,
+                    "gain": {
+                      "linear_gain": 1,
+                      "observed_gain_db": 0,
+                      "polarity": "preserved",
+                      "reason": null
+                    },
+                    "integer_delay_samples": 0,
+                    "search": {
+                      "coarse": {
+                        "invalid": {},
+                        "valid": 801
+                      },
+                      "sample": {
+                        "invalid": {},
+                        "valid": 3848
+                      }
+                    },
+                    "structural": {
+                      "clock_drift_ppm": 0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0,
+                      "valid_window_count": 7,
+                      "window_count": 7
+                    }
+                  },
+                  "reasons": [],
+                  "status": "supported"
+                },
+                {
+                  "channel": "R",
+                  "diagnostics": {
+                    "active_seconds": 12,
+                    "aligned_frames": 576008,
+                    "ambiguity_margin": 0.972464730267912,
+                    "correlation": {
+                      "magnitude": 1,
+                      "overlap_frames": 576008,
+                      "reason": null,
+                      "sampled_frames": 16458,
+                      "value": 1
+                    },
+                    "drift": {
+                      "clock_drift_ppm": 0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0,
+                      "valid_window_count": 5,
+                      "window_count": 5
+                    },
+                    "edge_trim_seconds": 0,
+                    "fractional_delay_samples": 0,
+                    "gain": {
+                      "linear_gain": 1,
+                      "observed_gain_db": 0,
+                      "polarity": "preserved",
+                      "reason": null
+                    },
+                    "integer_delay_samples": 0,
+                    "search": {
+                      "coarse": {
+                        "invalid": {},
+                        "valid": 801
+                      },
+                      "sample": {
+                        "invalid": {},
+                        "valid": 3848
+                      }
+                    },
+                    "structural": {
+                      "clock_drift_ppm": 0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0,
+                      "valid_window_count": 7,
+                      "window_count": 7
+                    }
+                  },
+                  "reasons": [],
+                  "status": "supported"
+                }
+              ],
+              "summary": {
+                "active_seconds": 12,
+                "aligned_frames": 576008,
+                "channel_lag_spread_samples": 0,
+                "clock_drift_ppm": 0,
+                "fractional_delay_samples": 0,
+                "integer_delay_samples": 0,
+                "minimum_correlation": 1,
+                "minimum_structural_window_correlation": 0.9999999999999999
+              }
+            },
+            "case_id": "case-bfd993f5f1b58edfeca2bf6a1e2f083faa4b3b6403b9c96ea4ad37384fd2c527",
+            "input": {
+              "reference": {
+                "channel_count": 2,
+                "channel_map": [
+                  "L",
+                  "R"
+                ],
+                "frames": 576008
+              },
+              "sample_rate_hz": 48000,
+              "test": {
+                "channel_count": 2,
+                "channel_map": [
+                  "L",
+                  "R"
+                ],
+                "frames": 576008
+              }
+            },
+            "perceptual_claim": false,
+            "public_verdict_enabled": false,
+            "record_kind": "perceptual_degradation_alignment_v5",
+            "sample_correction_applied": false,
+            "schema_version": 1,
+            "status": "supported",
+            "support": {
+              "limits_id": "alignment-validity-successor-20260907-001",
+              "predecessor_limits_ids": [
+                "perceptual-degradation-v1-alignment-fixtures-20260803-001",
+                "perceptual-degradation-v1-topology-fixtures-20260803-001"
+              ],
+              "reasons": []
+            }
+          },
+          "case": "dense_float:full_native",
+          "component": {},
+          "cpu_seconds": 109.490808,
+          "frames": 576008,
+          "global_native": {
+            "fallback_candidates": 0,
+            "geometry_rows": 3127,
+            "geometry_sha256": "2cf37a18ed37e2ee5decdf6730eabaeccf22a45897ddeed3d18dd6962987609c",
+            "native_candidates": 7696,
+            "sampled_pair_evaluations": 127319265,
+            "searches": [
+              {
+                "candidate_count": 3848,
+                "reference_frames": 576008,
+                "search_count": 2,
+                "test_frames": 576008
+              }
+            ],
+            "short_overlap_candidates": 0
+          },
+          "input_sha256": "96a51c1c7d278744ae72ca641d3caf13b850569e115937ad2aa48aedc1b599ab",
+          "inputs_unchanged": true,
+          "local_native": {
+            "fallback_candidates": 0,
+            "native_candidates": 135624,
+            "searches": [
+              {
+                "candidate_count": 9601,
+                "search_count": 14,
+                "stride": 1,
+                "window_frames": 24000
+              },
+              {
+                "candidate_count": 121,
+                "search_count": 10,
+                "stride": 2,
+                "window_frames": 48000
+              }
+            ]
+          },
+          "other_cpu_seconds": 1.8481279999999884,
+          "other_wall_seconds": 1.8943720400566235,
+          "outcome": "completed",
+          "perceptual_support": false,
+          "sample_rate_hz": 48000,
+          "stage_cpu_seconds": {
+            "global_native": 6.882075000000006,
+            "local_native": 100.76060500000001
+          },
+          "stage_wall_seconds": {
+            "global_native": 7.072742125950754,
+            "local_native": 105.87347191799199
+          },
+          "wall_seconds": 114.84058608399937
+        },
+        {
+          "alignment": null,
+          "case": "mixed_scale:global_pair",
+          "component": {
+            "all_candidate_records_byte_identical": true,
+            "candidate_inventory_sha256": "35df68040bf4598880b731d67f89a2554fc22998b159911f745f63739553a374",
+            "coarse_candidates": 801,
+            "global_candidates": 3848,
+            "predecessor_sha256": "d9e3a2a45539294225cee35d59e07b189d10a1fea2ba5589c51b8e177f70ede9",
+            "selected_peaks": [
+              0,
+              -117,
+              117,
+              -177,
+              177,
+              -157,
+              157,
+              -137
+            ],
+            "successor_sha256": "d9e3a2a45539294225cee35d59e07b189d10a1fea2ba5589c51b8e177f70ede9"
+          },
+          "cpu_seconds": 35.392377,
+          "frames": 576008,
+          "global_native": {
+            "fallback_candidates": 0,
+            "geometry_rows": 2165,
+            "geometry_sha256": "452c31a2b4469427eeeee92917a0a9340134e26b6c7076219eff6260c0fba5dc",
+            "native_candidates": 3848,
+            "sampled_pair_evaluations": 64028311,
+            "searches": [
+              {
+                "candidate_count": 3848,
+                "reference_frames": 576008,
+                "search_count": 1,
+                "test_frames": 576008
+              }
+            ],
+            "short_overlap_candidates": 0
+          },
+          "input_sha256": "8500b488f43d76ed418cbb2c27e113db5419947c2c3a31841982d0323864ae3d",
+          "inputs_unchanged": true,
+          "local_native": {
+            "fallback_candidates": 0,
+            "native_candidates": 0,
+            "searches": []
+          },
+          "other_cpu_seconds": 0.07968200000000536,
+          "other_wall_seconds": 0.0845946249901317,
+          "outcome": "completed",
+          "perceptual_support": false,
+          "sample_rate_hz": 48000,
+          "stage_cpu_seconds": {
+            "coarse_python": 0.8069590000000001,
+            "global_native": 2.707729999999998,
+            "global_python": 31.798006
+          },
+          "stage_wall_seconds": {
+            "coarse_python": 0.9214824580121785,
+            "global_native": 2.8211063749622554,
+            "global_python": 34.54131704202155
+          },
+          "wall_seconds": 38.36850049998611
+        },
+        {
+          "alignment": {
+            "alignment": {
+              "channels": [
+                {
+                  "channel": "L",
+                  "diagnostics": {
+                    "active_seconds": 12,
+                    "aligned_frames": 576008,
+                    "ambiguity_margin": 0.8634082901331535,
+                    "correlation": {
+                      "magnitude": 0.9999999999999998,
+                      "overlap_frames": 576008,
+                      "reason": null,
+                      "sampled_frames": 16458,
+                      "value": 0.9999999999999998
+                    },
+                    "drift": {
+                      "clock_drift_ppm": 0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0,
+                      "valid_window_count": 5,
+                      "window_count": 5
+                    },
+                    "edge_trim_seconds": 0,
+                    "fractional_delay_samples": 0,
+                    "gain": {
+                      "linear_gain": 1,
+                      "observed_gain_db": 0,
+                      "polarity": "preserved",
+                      "reason": null
+                    },
+                    "integer_delay_samples": 0,
+                    "search": {
+                      "coarse": {
+                        "invalid": {},
+                        "valid": 801
+                      },
+                      "sample": {
+                        "invalid": {},
+                        "valid": 3848
+                      }
+                    },
+                    "structural": {
+                      "clock_drift_ppm": 0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0,
+                      "valid_window_count": 7,
+                      "window_count": 7
+                    }
+                  },
+                  "reasons": [],
+                  "status": "supported"
+                },
+                {
+                  "channel": "R",
+                  "diagnostics": {
+                    "active_seconds": 12,
+                    "aligned_frames": 576008,
+                    "ambiguity_margin": 0.9002530669213457,
+                    "correlation": {
+                      "magnitude": 1,
+                      "overlap_frames": 576008,
+                      "reason": null,
+                      "sampled_frames": 16458,
+                      "value": 1
+                    },
+                    "drift": {
+                      "clock_drift_ppm": 0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0,
+                      "valid_window_count": 5,
+                      "window_count": 5
+                    },
+                    "edge_trim_seconds": 0,
+                    "fractional_delay_samples": 0,
+                    "gain": {
+                      "linear_gain": 1,
+                      "observed_gain_db": 0,
+                      "polarity": "preserved",
+                      "reason": null
+                    },
+                    "integer_delay_samples": 0,
+                    "search": {
+                      "coarse": {
+                        "invalid": {},
+                        "valid": 801
+                      },
+                      "sample": {
+                        "invalid": {},
+                        "valid": 3848
+                      }
+                    },
+                    "structural": {
+                      "clock_drift_ppm": 0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0,
+                      "valid_window_count": 7,
+                      "window_count": 7
+                    }
+                  },
+                  "reasons": [],
+                  "status": "supported"
+                }
+              ],
+              "summary": {
+                "active_seconds": 12,
+                "aligned_frames": 576008,
+                "channel_lag_spread_samples": 0,
+                "clock_drift_ppm": 0,
+                "fractional_delay_samples": 0,
+                "integer_delay_samples": 0,
+                "minimum_correlation": 0.9999999999999998,
+                "minimum_structural_window_correlation": 0.9999999999999999
+              }
+            },
+            "case_id": "case-9c70d67f68fcf38af9eb5c6cb078c05da1e145a4106b104a83b8508f7cc46908",
+            "input": {
+              "reference": {
+                "channel_count": 2,
+                "channel_map": [
+                  "L",
+                  "R"
+                ],
+                "frames": 576008
+              },
+              "sample_rate_hz": 48000,
+              "test": {
+                "channel_count": 2,
+                "channel_map": [
+                  "L",
+                  "R"
+                ],
+                "frames": 576008
+              }
+            },
+            "perceptual_claim": false,
+            "public_verdict_enabled": false,
+            "record_kind": "perceptual_degradation_alignment_v5",
+            "sample_correction_applied": false,
+            "schema_version": 1,
+            "status": "supported",
+            "support": {
+              "limits_id": "alignment-validity-successor-20260907-001",
+              "predecessor_limits_ids": [
+                "perceptual-degradation-v1-alignment-fixtures-20260803-001",
+                "perceptual-degradation-v1-topology-fixtures-20260803-001"
+              ],
+              "reasons": []
+            }
+          },
+          "case": "mixed_scale:full_native",
+          "component": {},
+          "cpu_seconds": 103.10129599999999,
+          "frames": 576008,
+          "global_native": {
+            "fallback_candidates": 0,
+            "geometry_rows": 3127,
+            "geometry_sha256": "61a3ab153c67370281fd814e51bd938cbf671a9cb6ef1c0b11997930a95afe0b",
+            "native_candidates": 7696,
+            "sampled_pair_evaluations": 127611660,
+            "searches": [
+              {
+                "candidate_count": 3848,
+                "reference_frames": 576008,
+                "search_count": 2,
+                "test_frames": 576008
+              }
+            ],
+            "short_overlap_candidates": 0
+          },
+          "input_sha256": "8500b488f43d76ed418cbb2c27e113db5419947c2c3a31841982d0323864ae3d",
+          "inputs_unchanged": true,
+          "local_native": {
+            "fallback_candidates": 0,
+            "native_candidates": 135624,
+            "searches": [
+              {
+                "candidate_count": 9601,
+                "search_count": 14,
+                "stride": 1,
+                "window_frames": 24000
+              },
+              {
+                "candidate_count": 121,
+                "search_count": 10,
+                "stride": 2,
+                "window_frames": 48000
+              }
+            ]
+          },
+          "other_cpu_seconds": 1.7869579999999843,
+          "other_wall_seconds": 1.8219443740672432,
+          "outcome": "completed",
+          "perceptual_support": false,
+          "sample_rate_hz": 48000,
+          "stage_cpu_seconds": {
+            "global_native": 5.414824000000002,
+            "local_native": 95.89951400000001
+          },
+          "stage_wall_seconds": {
+            "global_native": 5.584171376016457,
+            "local_native": 101.2325619169278
+          },
+          "wall_seconds": 108.6386776670115
+        },
+        {
+          "alignment": null,
+          "case": "sparse_bursts:global_pair",
+          "component": {
+            "all_candidate_records_byte_identical": true,
+            "candidate_inventory_sha256": "304b09671edecf1a1fe3c39ed919c665900147dc4605458accb73fa6bd51f32b",
+            "coarse_candidates": 801,
+            "global_candidates": 3848,
+            "predecessor_sha256": "56f85af9d61c628fd4f42460056871a7ae436582bdb753697fefdb98b81501b9",
+            "selected_peaks": [
+              0,
+              -100,
+              100,
+              -200,
+              200,
+              -300,
+              300,
+              -400
+            ],
+            "successor_sha256": "56f85af9d61c628fd4f42460056871a7ae436582bdb753697fefdb98b81501b9"
+          },
+          "cpu_seconds": 18.211761,
+          "frames": 576008,
+          "global_native": {
+            "fallback_candidates": 0,
+            "geometry_rows": 2165,
+            "geometry_sha256": "518b7bec9b0c84366a2908d10d2df4fa8e392713a3dd6e41f4ab31598d0294c2",
+            "native_candidates": 3848,
+            "sampled_pair_evaluations": 64004684,
+            "searches": [
+              {
+                "candidate_count": 3848,
+                "reference_frames": 576008,
+                "search_count": 1,
+                "test_frames": 576008
+              }
+            ],
+            "short_overlap_candidates": 0
+          },
+          "input_sha256": "432986fe2831073d7aed8884ccefed07ea3866bc740ede4572fa592b7a876a87",
+          "inputs_unchanged": true,
+          "local_native": {
+            "fallback_candidates": 0,
+            "native_candidates": 0,
+            "searches": []
+          },
+          "other_cpu_seconds": 0.04221499999999878,
+          "other_wall_seconds": 0.04478045803261921,
+          "outcome": "completed",
+          "perceptual_support": false,
+          "sample_rate_hz": 48000,
+          "stage_cpu_seconds": {
+            "coarse_python": 0.604439,
+            "global_native": 1.1493199999999995,
+            "global_python": 16.415787
+          },
+          "stage_wall_seconds": {
+            "coarse_python": 0.6302707080030814,
+            "global_native": 1.2298741670092568,
+            "global_python": 17.44967383396579
+          },
+          "wall_seconds": 19.354599167010747
+        },
+        {
+          "alignment": {
+            "alignment": {
+              "channels": [
+                {
+                  "channel": "L",
+                  "diagnostics": {
+                    "active_seconds": 2.4,
+                    "aligned_frames": 576008,
+                    "ambiguity_margin": 0.9378500400234442,
+                    "correlation": {
+                      "magnitude": 1,
+                      "overlap_frames": 576008,
+                      "reason": null,
+                      "sampled_frames": 16458,
+                      "value": 1
+                    },
+                    "drift": {
+                      "clock_drift_ppm": 0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0,
+                      "valid_window_count": 5,
+                      "window_count": 5
+                    },
+                    "edge_trim_seconds": 0,
+                    "fractional_delay_samples": 0,
+                    "gain": {
+                      "linear_gain": 1,
+                      "observed_gain_db": 0,
+                      "polarity": "preserved",
+                      "reason": null
+                    },
+                    "integer_delay_samples": 0,
+                    "search": {
+                      "coarse": {
+                        "invalid": {},
+                        "valid": 801
+                      },
+                      "sample": {
+                        "invalid": {},
+                        "valid": 3848
+                      }
+                    },
+                    "structural": {
+                      "clock_drift_ppm": 0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0,
+                      "valid_window_count": 7,
+                      "window_count": 7
+                    }
+                  },
+                  "reasons": [
+                    "insufficient_active_audio"
+                  ],
+                  "status": "unsupported"
+                },
+                {
+                  "channel": "R",
+                  "diagnostics": {
+                    "active_seconds": 2.4,
+                    "aligned_frames": 576008,
+                    "ambiguity_margin": 0.9409332002930808,
+                    "correlation": {
+                      "magnitude": 1,
+                      "overlap_frames": 576008,
+                      "reason": null,
+                      "sampled_frames": 16458,
+                      "value": 1
+                    },
+                    "drift": {
+                      "clock_drift_ppm": 0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999998,
+                      "reason": null,
+                      "residual_samples": 0,
+                      "valid_window_count": 5,
+                      "window_count": 5
+                    },
+                    "edge_trim_seconds": 0,
+                    "fractional_delay_samples": 0,
+                    "gain": {
+                      "linear_gain": 1,
+                      "observed_gain_db": 0,
+                      "polarity": "preserved",
+                      "reason": null
+                    },
+                    "integer_delay_samples": 0,
+                    "search": {
+                      "coarse": {
+                        "invalid": {},
+                        "valid": 801
+                      },
+                      "sample": {
+                        "invalid": {},
+                        "valid": 3848
+                      }
+                    },
+                    "structural": {
+                      "clock_drift_ppm": 0,
+                      "invalid_reasons": {},
+                      "minimum_correlation": 0.9999999999999999,
+                      "reason": null,
+                      "residual_samples": 0,
+                      "valid_window_count": 7,
+                      "window_count": 7
+                    }
+                  },
+                  "reasons": [
+                    "insufficient_active_audio"
+                  ],
+                  "status": "unsupported"
+                }
+              ],
+              "summary": {
+                "active_seconds": 2.4,
+                "aligned_frames": 576008,
+                "channel_lag_spread_samples": 0,
+                "clock_drift_ppm": 0,
+                "fractional_delay_samples": 0,
+                "integer_delay_samples": 0,
+                "minimum_correlation": 1,
+                "minimum_structural_window_correlation": 0.9999999999999999
+              }
+            },
+            "case_id": "case-fd9cfce4de7c044db66e7cee29cfc0a6a6d721f38e6c20eb2697a894ab8fd6d2",
+            "input": {
+              "reference": {
+                "channel_count": 2,
+                "channel_map": [
+                  "L",
+                  "R"
+                ],
+                "frames": 576008
+              },
+              "sample_rate_hz": 48000,
+              "test": {
+                "channel_count": 2,
+                "channel_map": [
+                  "L",
+                  "R"
+                ],
+                "frames": 576008
+              }
+            },
+            "perceptual_claim": false,
+            "public_verdict_enabled": false,
+            "record_kind": "perceptual_degradation_alignment_v5",
+            "sample_correction_applied": false,
+            "schema_version": 1,
+            "status": "unsupported",
+            "support": {
+              "limits_id": "alignment-validity-successor-20260907-001",
+              "predecessor_limits_ids": [
+                "perceptual-degradation-v1-alignment-fixtures-20260803-001",
+                "perceptual-degradation-v1-topology-fixtures-20260803-001"
+              ],
+              "reasons": [
+                "insufficient_active_audio"
+              ]
+            }
+          },
+          "case": "sparse_bursts:full_native",
+          "component": {},
+          "cpu_seconds": 31.060532,
+          "frames": 576008,
+          "global_native": {
+            "fallback_candidates": 0,
+            "geometry_rows": 2165,
+            "geometry_sha256": "63d1e78c2f120138ae2916c64b12c05714b3bb92daf4fb678de4c8d4ebe34746",
+            "native_candidates": 7696,
+            "sampled_pair_evaluations": 128009368,
+            "searches": [
+              {
+                "candidate_count": 3848,
+                "reference_frames": 576008,
+                "search_count": 2,
+                "test_frames": 576008
+              }
+            ],
+            "short_overlap_candidates": 0
+          },
+          "input_sha256": "432986fe2831073d7aed8884ccefed07ea3866bc740ede4572fa592b7a876a87",
+          "inputs_unchanged": true,
+          "local_native": {
+            "fallback_candidates": 0,
+            "native_candidates": 135624,
+            "searches": [
+              {
+                "candidate_count": 9601,
+                "search_count": 14,
+                "stride": 1,
+                "window_frames": 24000
+              },
+              {
+                "candidate_count": 121,
+                "search_count": 10,
+                "stride": 2,
+                "window_frames": 48000
+              }
+            ]
+          },
+          "other_cpu_seconds": 1.6426700000000025,
+          "other_wall_seconds": 1.764773749106098,
+          "outcome": "completed",
+          "perceptual_support": false,
+          "sample_rate_hz": 48000,
+          "stage_cpu_seconds": {
+            "global_native": 2.2124880000000013,
+            "local_native": 27.205373999999996
+          },
+          "stage_wall_seconds": {
+            "global_native": 2.349345291033387,
+            "local_native": 29.17544654291123
+          },
+          "wall_seconds": 33.28956558305072
+        }
+      ]
+    ],
+    "schema_version": 1,
+    "state": "synthetic_workload_margin_passed"
+  },
+  "integrity": {
+    "alignment_executed_by_auditor": false,
+    "audit_helper_sha256": "02829a7c2535a7d3a1f9a68547c5fd5cfb0e7108b92163b650260e47e3d7021c",
+    "exact_private_retention_boundary_passed": true,
+    "execution_head": "93c5607005801a4cce34d8454b2d20b2d26a8c4a",
+    "first_round_snapshot_matched": true,
+    "independent_saved_artifact_audit_passed": true,
+    "native_executed_by_auditor": false,
+    "plan_sha256": "12def738f8b9b697f14a3c54690080daaf90baf9fada2fe718f54b5a6ecfd6bf",
+    "recorded_input_hashes_verified": 16,
+    "report_sha256": {
+      "execution.json": "ffc5a32ff8cff05717b0cea19e327fd42426952fb4c5ed326bd20edc6c118aab",
+      "result.json": "ffda70786a6363e245e005ab2851314e50e32947215e150ae30faaeecab3a756",
+      "round-1.json": "b471a82ff3a950398622e71c9945b81ff0a47d79107f43e2eecadc32121c1c68",
+      "round-2.json": "80bcae1d67cd173fb2083ebf5fe1a96f6b24c21db110cf5f643c025b4df1124f"
+    },
+    "schema_version": 1,
+    "synthetic_construction_hashes_independently_reconstructed": 4,
+    "waveform_or_array_files_retained": false
+  },
+  "conclusions": {
+    "full_size_global_candidate_pairs_exactly_equal": 30784,
+    "full_alignments_completed": 8,
+    "maximum_full_alignment_wall_seconds": 114.84058608399937,
+    "synthetic_margin_gate_seconds": 120,
+    "case_deadline_seconds": 180,
+    "sparse_bursts_unsupported_reason": "insufficient_active_audio",
+    "local_global_semantics_or_thresholds_changed": false,
+    "observed_v4_real_source_runtime_explained": false,
+    "real_source_or_codec_throughput_guaranteed": false,
+    "metric_or_human_truth_established": false,
+    "next": "Separately frozen v5 retained-reference codec canary under the standing authority; exact-head CI before access.",
+    "limitations": [
+      "Four constructed families and one machine are not all-input or all-platform equivalence proof.",
+      "Fixed-order Python-before-native timings do not isolate order, caching or scheduling.",
+      "Full-alignment timing excludes fixture construction, initial hashing, library loading and codec overhead.",
+      "Native accurate-sum cost remains data dependent; the earlier real-audio negative stays frozen.",
+      "This batch was committed locally before observation, not published externally beforehand."
+    ]
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "adapter_id": "lossytrace-v2-explainable-control-adapter-20260803-001",
+  "bindings": {
+    "adapter_analyzer_sha256": "10f4ef983b4695d168250fc418bfd6546a24c5983866aa017ea98baa2ee55bb0",
+    "adapter_preregistration_sha256": "14766be89ace6f2a95c1a287fc2b58fa4b323f3567819bc3f92f865af71c8b99",
+    "adapter_runner_sha256": "1af955ccaf78a96a59bc79799f76a83e0ada60ecc1a314663cb414daa36e9a11",
+    "adapter_tests_sha256": "cf753914131144c22036b70bec664440898b94ca9987ca803493632851611c53",
+    "codec_projection_cargo_lock_sha256": "5c22994382ccb4372e8c2224eea0f4e86cb35c1f3e40b8b9e336a7e6924456bf",
+    "codec_projection_cargo_toml_sha256": "2615683df2645d9b86f4729954f94287d1be8fba690cc03e2c66f56614b316fe",
+    "codec_projection_config_sha256": "2f122d7eeed263c0700f78675b1382923c09f8f333903b970afe7cfb18670603",
+    "codec_projection_oracle_source_sha256": "5adfe351b982c5dfad5709c52fd87e4bc1ebb5eda70fa80faae56c106a165cc7",
+    "common_module_sha256": "99537dbe4472be72bf84242850c214c96789f6245d54f89a040fecd792e19527",
+    "exact_hybrid_cargo_lock_sha256": "5881e4a2c0bf50caaf5a3139dcc7c25fc496768224d1b00144e652122ab5939d",
+    "exact_hybrid_cargo_toml_sha256": "2217279de2d6b022a2c5cbb1724d831b2126bb49b9de24502243136cff0c5089",
+    "exact_hybrid_oracle_source_sha256": "6a52a8fa3084382afe6d582d5ecc0c7eecc93e23cab406a2a5e36a94c7d0454a",
+    "frozen_codec_projection_helper_sha256": "b749397528462970312af71ed9396164b44ab86d2ae9621c592a72268202432d",
+    "frozen_exact_hybrid_helper_sha256": "82fdceec215fc8c03ca6dcfd3b6fe73ec26a906ac48de350b1d79a6e196d161e",
+    "parent_development_baseline_plan_sha256": "9d483ec87365aa4253fa5997458f2fab604b27f029ce42ca20d917f79caa51b0",
+    "private_analysis_manifest_sha256": "0937dfec3f9d5d203ec3d8c1700a3ae947226999e72a379b226c4c825fab96f9",
+    "private_constructor_manifest_sha256": "0fe9bde6eed57a61d3c721d5bfd8cd36031b9981442c39dc502162aeeab3a1b1",
+    "private_feature_v0_report_sha256": "e578f321f3118da055de3835b026e72c1ca61b0ba868a3f89ef08e16463400d2"
+  },
+  "controls": {
+    "codec_projection_r1_r2": {
+      "classification_boundary_available": false,
+      "representations": [
+        "R1",
+        "R2"
+      ],
+      "score_direction": "higher_is_more_consistent_with_prior_mp3_history",
+      "support_and_score_definition": "unchanged_codec_projection_oracle_v1",
+      "threshold_fitted_on_v2": false
+    },
+    "exact_hybrid_a0_through_a4": {
+      "classification_boundary_available": false,
+      "edge_corroboration_role": "fixed_descriptive_diagnostic_only",
+      "representations": [
+        "A0",
+        "A1",
+        "A2",
+        "A3",
+        "A4"
+      ],
+      "score_direction": "higher_is_more_consistent_with_prior_mp3_history",
+      "support_and_score_definition": "unchanged_exact_hybrid_ablation_v1",
+      "threshold_fitted_on_v2": false,
+      "zero_supported_granule_action": "explicit_unsupported_all_scores_absent"
+    }
+  },
+  "encoder_transfer_scores_opened": false,
+  "evidence_partition": "mechanism_development",
+  "execution": {
+    "atomic_per_artifact_checkpoints": true,
+    "maximum_concurrent_workers": 6,
+    "non_timing_output_sorted": true,
+    "timing_stored_separately": true
+  },
+  "external_transfer_scores_opened": false,
+  "fixed_analysis": {
+    "classification_metrics_available": false,
+    "minimum_domain_positive_direction_rate_exclusive": 0.5,
+    "minimum_one_sided_95_percent_wilson_lower": 0.85,
+    "minimum_positive_direction_rate": 0.9,
+    "paired_aggregation": "deduplicate_exact_pcm_pairs_then_median_per_source_group",
+    "threshold_selection_allowed": false,
+    "within_family_correlations": [
+      "pearson",
+      "spearman"
+    ]
+  },
+  "output": {
+    "path_free_aggregate": "research/baselines/v2/evidence/explainable-controls-observed-20260803-001-aggregate.json",
+    "private_case_rows_outside_git": true,
+    "public_verdict_enabled": false
+  },
+  "parent_development_baseline_plan_path": "benchmarks/audio-integrity-v2/development-baseline-plan.json",
+  "preregistration_path": "docs/research/explainable-control-v2-adapter-preregistration-20260803.md",
+  "public_verdict_enabled": false,
+  "schema_version": 1,
+  "scope": {
+    "controlled_mp3_positive_case_count": 1367,
+    "multi_wrapper_pcm_count": 1391,
+    "negative_case_count": 4665,
+    "pcm_wrapper_representative_count": 5895,
+    "selected_factorial_case_count": 6032,
+    "source_group_count": 527,
+    "unique_analysis_pcm_count": 4090
+  },
+  "state": "frozen_before_explainable_control_scores_opened",
+  "upstream_checkpoint_commit": "aae2392cb404393249d14cfb875422eb4156db3e"
+}

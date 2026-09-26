@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "plan_id": "perceptual-degradation-objective-completion-audit-20260817-009",
+  "state": "score_blind_completion_audit_refresh_for_exact_member_source_trait_metadata_result",
+  "purpose": "Reconcile the bounded quiet and naturally clipped exact-member metadata audit into the 14-requirement objective without treating a metadata candidate as source-trait truth, a frozen source manifest, scientific coverage, or a verdict.",
+  "bindings": {
+    "predecessor_audit_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/objective-completion-audit-plan-20260817-008.json",
+      "sha256": "c7b6ecb0f4175eedfadb34c01faa4d654f38cb0f4baaa3fa8f13c0673eadcae6"
+    },
+    "predecessor_audit_implementation": {
+      "path": "scripts/perceptual_degradation_objective_completion_audit_v8.py",
+      "sha256": "2180aef5a47b11c5e9226b3c250728238badc7f96bcca627c7ff3d3ad62d0a2d"
+    },
+    "predecessor_audit_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-objective-completion-audit-20260817-008.json",
+      "sha256": "9d1bac84037cf7e6a019572ca8703c83e2765c8d8a13018942de9b4b8a0334f5"
+    },
+    "source_trait_metadata_audit_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/source-trait-exact-member-metadata-audit-plan.json",
+      "sha256": "f8b12f6da67b790284aee19aecbfa17581f8f9758e55a5d0cdfeeccb25ab66cc"
+    },
+    "source_trait_metadata_audit_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-source-trait-exact-member-metadata-audit-20260817-001.json",
+      "sha256": "b0f048dcaf73fc2885596cdcff1ce06051f00c41bc3bb5116cb9b7f34377184e"
+    },
+    "source_trait_metadata_audit_validator": {
+      "path": "scripts/validate_perceptual_degradation_source_trait_exact_member_metadata_audit.py",
+      "sha256": "9be8a3190486c6ff72e8bded4b56fa00784a03c4d322d53217360093c2d8b7c2"
+    }
+  },
+  "authorization": {
+    "bound_metadata_and_source_read_authorized": true,
+    "synthetic_audit_execution_authorized": true,
+    "exact_member_metadata_audit_reconciliation_authorized": true,
+    "public_and_provider_metadata_read_completed": true,
+    "audio_sample_access_authorized": false,
+    "audio_descriptor_computation_authorized": false,
+    "provider_score_or_processed_condition_access_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "human_response_access_authorized": false,
+    "human_collection_authorized": false,
+    "sealed_evidence_access_authorized": false,
+    "actual_codec_generation_authorized": false,
+    "no_reference_training_authorized": false,
+    "public_verdict_enabled": false
+  },
+  "requirement_ids": [
+    "estimand_is_degradation_not_history",
+    "declared_playback_chain_qualified",
+    "truth_bearing_source_manifest_feasible_and_frozen",
+    "controlled_human_calibration_collected",
+    "perceptual_metric_execution_and_legal_gate_passed",
+    "deterministic_human_calibrated_full_reference_oracle_passed",
+    "transparent_lossy_treated_as_non_degraded",
+    "difficult_natural_and_production_negatives_preserved_in_evaluation",
+    "grouped_source_domain_codec_encoder_transfer_passed",
+    "no_reference_estimator_trained_and_independently_validated",
+    "severity_audibility_artifact_support_uncertainty_abstention_reported",
+    "public_cli_remains_verdict_free",
+    "rigorous_negative_is_accepted_success",
+    "final_research_recommendation_frozen"
+  ],
+  "completion_policy": {
+    "all_requirement_ids_must_be_present": true,
+    "all_completion_required_requirements_must_be_satisfied": true,
+    "exact_metadata_candidate_counts_as_candidate_record": true,
+    "exact_metadata_candidate_counts_as_trait_truth": false,
+    "metadata_only_quiet_route_rejection_counts_as_quiet_coverage": false,
+    "closed_descriptor_obligation_counts_as_satisfied": false,
+    "candidate_without_partition_allocation_counts_as_frozen_manifest": false,
+    "green_tests_count_as_scientific_evidence": false,
+    "missing_or_indirect_evidence_counts_as_satisfied": false,
+    "current_recommendation": null,
+    "allowed_final_recommendations": [
+      "reject_perceptual_estimation",
+      "retain_full_reference_only",
+      "continue_no_reference_research",
+      "freeze_blind_final_validation"
+    ]
+  },
+  "claim_boundary": {
+    "objective_complete": false,
+    "truth_bearing_source_manifest_frozen": false,
+    "quiet_exact_candidate_identified": false,
+    "clipped_metadata_candidate_is_trait_truth": false,
+    "difficult_negative_scientific_coverage_complete": false,
+    "perceptual_truth_collected": false,
+    "independent_transfer_supported": false,
+    "final_recommendation_available": false,
+    "public_verdict_enabled": false
+  }
+}

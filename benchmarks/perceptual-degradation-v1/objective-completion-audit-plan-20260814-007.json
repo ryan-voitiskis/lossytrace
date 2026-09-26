@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "plan_id": "perceptual-degradation-objective-completion-audit-20260814-007",
+  "state": "score_blind_completion_audit_refresh_for_private_odaq_delivery_completion",
+  "purpose": "Reconcile the authorized two-replay ODAQ clean-reference delivery result into the 14-requirement objective without treating deterministic delivery projection as stimuli, perceptual truth, metric evidence, listening evidence, retained-drift validation, or full-reference oracle completion.",
+  "bindings": {
+    "predecessor_audit_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/objective-completion-audit-plan-20260814-006.json",
+      "sha256": "b531626f45d5a5ac8c64db15c3cd18eae772b3ef9b9088d87d4b396a2d183841"
+    },
+    "predecessor_audit_implementation": {
+      "path": "scripts/perceptual_degradation_objective_completion_audit_v6.py",
+      "sha256": "85a12f7f24cca0a4376a988a560f7f277258217f6b6bc211c7fbf8e8d9b1e974"
+    },
+    "predecessor_audit_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-objective-completion-audit-20260814-006.json",
+      "sha256": "e4dfc208e396a50c50d438e13730219e69e8e601e6abed66503f6de19aaad2b9"
+    },
+    "odaq_delivery_result": {
+      "path": "benchmarks/perceptual-degradation-v1/odaq-reference-delivery-result-20260814.json",
+      "sha256": "01cc9fbe0b94c0c77f394f5853b9aab8a99fa9ea61a2d9f74e1f46e6f620616e"
+    },
+    "odaq_delivery_result_validator": {
+      "path": "scripts/validate-perceptual-degradation-odaq-delivery-result.py",
+      "sha256": "622be0a30cbbd28cacdd170bbdc3291bd49d4eb4aeffe74cea711f6559a6edbe"
+    }
+  },
+  "authorization": {
+    "bound_metadata_and_source_read_authorized": true,
+    "synthetic_audit_execution_authorized": true,
+    "private_delivery_result_reconciliation_authorized": true,
+    "retained_clean_reference_delivery_access_completed": true,
+    "retained_drift_validation_protocol_readiness_authorized": true,
+    "retained_drift_validation_audio_access_authorized": false,
+    "retained_drift_correction_authorized": false,
+    "real_audio_drift_estimation_validation_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "human_response_access_authorized": false,
+    "human_collection_authorized": false,
+    "sealed_evidence_access_authorized": false,
+    "no_reference_training_authorized": false,
+    "public_verdict_enabled": false
+  },
+  "requirement_ids": [
+    "estimand_is_degradation_not_history",
+    "declared_playback_chain_qualified",
+    "truth_bearing_source_manifest_feasible_and_frozen",
+    "controlled_human_calibration_collected",
+    "perceptual_metric_execution_and_legal_gate_passed",
+    "deterministic_human_calibrated_full_reference_oracle_passed",
+    "transparent_lossy_treated_as_non_degraded",
+    "difficult_natural_and_production_negatives_preserved_in_evaluation",
+    "grouped_source_domain_codec_encoder_transfer_passed",
+    "no_reference_estimator_trained_and_independently_validated",
+    "severity_audibility_artifact_support_uncertainty_abstention_reported",
+    "public_cli_remains_verdict_free",
+    "rigorous_negative_is_accepted_success",
+    "final_research_recommendation_frozen"
+  ],
+  "completion_policy": {
+    "all_requirement_ids_must_be_present": true,
+    "all_completion_required_requirements_must_be_satisfied": true,
+    "private_delivery_completion_counts_as_stimulus_generation": false,
+    "private_delivery_completion_counts_as_perceptual_truth": false,
+    "private_delivery_completion_counts_as_metric_evidence": false,
+    "private_delivery_completion_counts_as_listening_evidence": false,
+    "private_delivery_completion_counts_as_retained_drift_validation": false,
+    "private_delivery_completion_counts_as_full_reference_oracle_pass": false,
+    "green_tests_count_as_perceptual_evidence": false,
+    "missing_or_indirect_evidence_counts_as_satisfied": false,
+    "current_recommendation": null,
+    "allowed_final_recommendations": [
+      "reject_perceptual_estimation",
+      "retain_full_reference_only",
+      "continue_no_reference_research",
+      "freeze_blind_final_validation"
+    ]
+  },
+  "claim_boundary": {
+    "objective_complete": false,
+    "private_delivery_is_scientific_completion": false,
+    "retained_drift_validation_complete": false,
+    "real_content_full_reference_oracle_validated": false,
+    "perceptual_truth_collected": false,
+    "independent_transfer_supported": false,
+    "final_recommendation_available": false,
+    "public_verdict_enabled": false
+  }
+}

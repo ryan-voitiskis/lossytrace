@@ -1,0 +1,247 @@
+{
+  "schema_version": 1,
+  "plan_id": "perceptual-degradation-permissive-provider-allocation-feasibility-20260814-001",
+  "state": "score_blind_aggregate_capacity_sensitivity_no_member_allocation",
+  "purpose": "Determine whether provider-level capacities can arithmetically support four leakage-safe truth-bearing partitions without selecting source members or promoting pending providers.",
+  "bindings": {
+    "candidate_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/permissive-multiprovider-source-candidate-plan.json",
+      "sha256": "3699fe67c402bb38f4472dd63102212e2a05bd1b315e37d17f39dd4c08f38782"
+    },
+    "full_reference_evaluation_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/full-reference-evaluation-plan.json",
+      "sha256": "517d4bb3f1e504593007bdd85b773e2532de6bf993e173eac3b551bf99d19b0b"
+    }
+  },
+  "authorization": {
+    "aggregate_metadata_computation_authorized": true,
+    "exact_member_selection_authorized": false,
+    "new_audio_acquisition_authorized": false,
+    "retained_odaq_reference_read_authorized": false,
+    "retained_reference_projection_authorized": false,
+    "processed_condition_access_authorized": false,
+    "listening_score_access_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "human_collection_authorized": false,
+    "recruitment_authorized": false,
+    "sealed_evidence_access_authorized": false,
+    "no_reference_training_authorized": false,
+    "public_verdict_enabled": false
+  },
+  "partitions": [
+    "development",
+    "calibration",
+    "transfer",
+    "final_validation"
+  ],
+  "providers": [
+    {
+      "provider_id": "slakh",
+      "source_id": "slakh2100_redux",
+      "tier_id": "exact_member_audit_candidates",
+      "domain": "synthetic",
+      "available_group_capacity": 1710
+    },
+    {
+      "provider_id": "guitarset",
+      "source_id": "guitarset_3371780",
+      "tier_id": "exact_member_audit_candidates",
+      "domain": "music",
+      "available_group_capacity": 6
+    },
+    {
+      "provider_id": "vctk_clean",
+      "source_id": "vctk_clean_56spk_2017",
+      "tier_id": "exact_member_audit_candidates",
+      "domain": "speech",
+      "available_group_capacity": 56
+    },
+    {
+      "provider_id": "sonyc_backgrounds",
+      "source_id": "sonyc_backgrounds_5129078",
+      "tier_id": "exact_member_audit_candidates",
+      "domain": "natural",
+      "available_group_capacity": 15
+    },
+    {
+      "provider_id": "satp",
+      "source_id": "satp_soundscapes_10159673",
+      "tier_id": "exact_member_audit_candidates",
+      "domain": "natural",
+      "available_group_capacity": 25
+    },
+    {
+      "provider_id": "lombard_grid",
+      "source_id": "lombard_grid_3736465",
+      "tier_id": "exact_member_audit_candidates",
+      "domain": "speech",
+      "available_group_capacity": 54
+    },
+    {
+      "provider_id": "tinysol",
+      "source_id": "tinysol_3685367",
+      "tier_id": "exact_member_audit_candidates",
+      "domain": "music",
+      "available_group_capacity": 1
+    },
+    {
+      "provider_id": "musicnet",
+      "source_id": "musicnet_5120004",
+      "tier_id": "upstream_or_clip_origin_pending",
+      "domain": "music",
+      "available_group_capacity": 134
+    },
+    {
+      "provider_id": "fsd50k",
+      "source_id": "fsd50k_4060432_allowed_items",
+      "tier_id": "upstream_or_clip_origin_pending",
+      "domain": "mixed",
+      "available_group_capacity": 6111
+    }
+  ],
+  "solver_policy": {
+    "provider_may_be_assigned_to_at_most_one_partition": true,
+    "unused_provider_allowed": true,
+    "capacity_is_capped_for_state_search_at_each_scenario_threshold": true,
+    "full_provider_capacity_is_not_an_exact_member_selection": true,
+    "domain_labels_are_conservative_single_labels": true,
+    "synthetic_counts_as_music": false,
+    "mixed_counts_as_natural": false,
+    "pending_provider_can_be_scientifically_eligible": false,
+    "capacity_witness_is_operational_allocation": false,
+    "deterministic_provider_order": "provider_id_ascending",
+    "deterministic_assignment_order": "unused_then_partition_order"
+  },
+  "scenarios": [
+    {
+      "scenario_id": "audit_count_only",
+      "allowed_tiers": [
+        "exact_member_audit_candidates"
+      ],
+      "minimum_groups_each_partition": 39,
+      "minimum_providers_each_partition": 0,
+      "domain_minimums_by_partition": {},
+      "expected_arithmetic_feasible": true,
+      "scientifically_eligible": false,
+      "reason_not_eligible": "count-only capacity permits complete domain and provider confounding and selects no exact members"
+    },
+    {
+      "scenario_id": "audit_two_providers_each_partition",
+      "allowed_tiers": [
+        "exact_member_audit_candidates"
+      ],
+      "minimum_groups_each_partition": 39,
+      "minimum_providers_each_partition": 2,
+      "domain_minimums_by_partition": {},
+      "expected_arithmetic_feasible": false,
+      "scientifically_eligible": false,
+      "reason_not_eligible": "seven eligible providers cannot occupy eight partition-provider slots"
+    },
+    {
+      "scenario_id": "audit_final_three_domain_minimum",
+      "allowed_tiers": [
+        "exact_member_audit_candidates"
+      ],
+      "minimum_groups_each_partition": 39,
+      "minimum_providers_each_partition": 0,
+      "domain_minimums_by_partition": {
+        "final_validation": {
+          "music": 8,
+          "speech": 8,
+          "natural": 8
+        }
+      },
+      "expected_arithmetic_feasible": false,
+      "scientifically_eligible": false,
+      "reason_not_eligible": "eligible real-music capacity is only seven groups and synthetic material is not relabelled as music"
+    },
+    {
+      "scenario_id": "add_musicnet_final_three_domain_minimum",
+      "allowed_tiers": [
+        "exact_member_audit_candidates",
+        "upstream_or_clip_origin_pending_musicnet_only"
+      ],
+      "minimum_groups_each_partition": 39,
+      "minimum_providers_each_partition": 0,
+      "domain_minimums_by_partition": {
+        "final_validation": {
+          "music": 8,
+          "speech": 8,
+          "natural": 8
+        }
+      },
+      "expected_arithmetic_feasible": false,
+      "scientifically_eligible": false,
+      "reason_not_eligible": "reserving music, speech and natural providers for final validation leaves insufficient provider-pure capacity for all other partitions"
+    },
+    {
+      "scenario_id": "add_all_pending_final_three_domain_minimum",
+      "allowed_tiers": [
+        "exact_member_audit_candidates",
+        "upstream_or_clip_origin_pending"
+      ],
+      "minimum_groups_each_partition": 39,
+      "minimum_providers_each_partition": 0,
+      "domain_minimums_by_partition": {
+        "final_validation": {
+          "music": 8,
+          "speech": 8,
+          "natural": 8
+        }
+      },
+      "expected_arithmetic_feasible": true,
+      "scientifically_eligible": false,
+      "reason_not_eligible": "arithmetic feasibility depends on MusicNet and FSD50K groups whose original coding history and exact member eligibility remain unresolved"
+    },
+    {
+      "scenario_id": "all_pending_three_domains_each_partition",
+      "allowed_tiers": [
+        "exact_member_audit_candidates",
+        "upstream_or_clip_origin_pending"
+      ],
+      "minimum_groups_each_partition": 39,
+      "minimum_providers_each_partition": 0,
+      "domain_minimums_by_partition": {
+        "development": {
+          "music": 8,
+          "speech": 8,
+          "natural": 8
+        },
+        "calibration": {
+          "music": 8,
+          "speech": 8,
+          "natural": 8
+        },
+        "transfer": {
+          "music": 8,
+          "speech": 8,
+          "natural": 8
+        },
+        "final_validation": {
+          "music": 8,
+          "speech": 8,
+          "natural": 8
+        }
+      },
+      "expected_arithmetic_feasible": false,
+      "scientifically_eligible": false,
+      "reason_not_eligible": "provider-pure domain breadth in every partition needs more independent music, speech and natural providers"
+    }
+  ],
+  "tier_aliases": {
+    "upstream_or_clip_origin_pending_musicnet_only": [
+      "musicnet"
+    ]
+  },
+  "claim_boundary": {
+    "arithmetic_feasibility_is_source_manifest_feasibility": false,
+    "capacity_witness_selects_exact_members": false,
+    "capacity_witness_proves_independence": false,
+    "pending_provider_sensitivity_promotes_provider": false,
+    "synthetic_music_is_real_music": false,
+    "mixed_crowdsourced_audio_is_natural_domain_truth": false,
+    "primary_domains_are_frozen": false,
+    "provider_minimum_is_frozen": false,
+    "public_cli_changed": false
+  }
+}

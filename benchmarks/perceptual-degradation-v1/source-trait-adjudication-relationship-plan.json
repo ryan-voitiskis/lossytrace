@@ -1,0 +1,96 @@
+{
+  "authorization": {
+    "bound_committed_metadata_read_authorized": true,
+    "further_audio_sample_access_authorized": false,
+    "human_collection_authorized": false,
+    "new_exact_member_selection_authorized": false,
+    "no_reference_training_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "provider_processed_condition_or_score_access_authorized": false,
+    "public_verdict_enabled": false,
+    "sealed_evidence_access_authorized": false,
+    "source_manifest_allocation_authorized": false,
+    "source_trait_assignment_authorized": false
+  },
+  "bindings": {
+    "exact_member_confirmation_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/source-trait-exact-member-confirmation-plan.json",
+      "sha256": "ab6df82fb2bec8bafaf583f00ea1e9046e9242406ab51f3e433ed8234743a153"
+    },
+    "exact_member_confirmation_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-source-trait-exact-member-confirmation-20260818-001.json",
+      "sha256": "36bbc563fa0d81d9b3e6a1ede0e920cab4016c957375920285a5bfc776399e7f"
+    },
+    "exact_member_confirmation_validator": {
+      "path": "scripts/validate_perceptual_degradation_source_trait_exact_member_confirmation.py",
+      "sha256": "fe4a52445a9101290126bad4dbca28091d4c6b014ce1e32b3257953bb49982c9"
+    },
+    "quiet_metadata_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-source-trait-quiet-alternative-metadata-audit-20260817-001.json",
+      "sha256": "500648f0ebfc40ca06c542624d0b9fe95f66efdb784180725804f9203cb6de98"
+    },
+    "source_trait_identifiability_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/source-trait-identifiability-plan.json",
+      "sha256": "c15991fbd7062c837db566bb734c5c1bf625fa2cbc5aa5a00983b64d82e28ba3"
+    },
+    "source_trait_identifiability_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-source-trait-identifiability-20260814-001.json",
+      "sha256": "e77bb0bb453941bdf47d1d9062748b27bbae686d781fb7f17efc734e5e632e20"
+    },
+    "tinysol_path_free_observation": {
+      "path": "research/sources/evidence/tinysol-6.0-observed-20260802.json",
+      "sha256": "62d2c3d3b63c4b3ed47c3f23885067650b3e17bc5e1ec1ce7606e03e327f47a5"
+    }
+  },
+  "claim_boundary": {
+    "descriptor_observation_is_perceptual_truth": false,
+    "full_objective_complete": false,
+    "metadata_candidate_is_trait_truth": false,
+    "public_cli_changed": false,
+    "public_verdict_enabled": false,
+    "relationship_readiness_is_partition_allocation": false,
+    "source_trait_manifest_frozen": false,
+    "technical_readiness_is_source_trait_assignment": false
+  },
+  "plan_id": "perceptual-degradation-source-trait-adjudication-relationship-20260818-001",
+  "policy": {
+    "clipped_pre_access_support_predicate_may_be_reconciled": true,
+    "current_quiet_observation_may_be_relabelled_by_new_numeric_cutoff": false,
+    "descriptor_observation_counts_as_provenance": false,
+    "exact_member_assignment_requires_separate_authorization": true,
+    "later_threshold_may_be_retrofit_to_observed_descriptor": false,
+    "metadata_only_sparse_or_tonal_label_allowed": false,
+    "new_quiet_threshold_requires_fresh_score_blind_candidate_or_independent_protocol": true,
+    "partition_allocation_requires_all_trait_and_relationship_gates": true,
+    "sparse_and_tonal_descriptor_rules_must_be_frozen_before_member_audio_access": true,
+    "sparse_and_tonal_independent_contrasts_require_distinct_exact_members": true,
+    "trait_assignment_requires_all_bound_proof_obligations": true
+  },
+  "publication_boundary": {
+    "audio_or_audio_hashes_allowed": false,
+    "encoded_or_pcm_hashes_allowed": false,
+    "paths_allowed": false,
+    "perceptual_claims_allowed": false,
+    "provider_scores_or_processed_conditions_allowed": false,
+    "validation_claims_or_verdicts_allowed": false
+  },
+  "purpose": "Freeze a post-observation adjudication and relationship policy that prevents retrospective quiet-threshold fitting, reconciles only predicates frozen before audio access, and determines the metadata-only readiness of independent sparse and tonal contrasts without selecting or reading another source member.",
+  "relationship_rules": {
+    "exact_member_is_smallest_trait_assignment_unit": true,
+    "provider_identity_does_not_establish_source_independence": true,
+    "quiet_related_upload_grouping": "same_uploader_location_and_recording_period_family",
+    "related_members_must_be_colocated_in_one_partition": true,
+    "sparse_and_tonal_contrast_members_must_use_distinct_source_groups": true,
+    "tinysol_partition_grouping": "entire_common_tinysol_sol_collection",
+    "tinysol_partition_group_count": 1,
+    "tinysol_rows_may_define_distinct_source_groups_only_after_exact_member_selection": true
+  },
+  "resources": {
+    "maximum_workers": 1,
+    "minimum_free_disk_gib": 15,
+    "new_audio_download_bytes": 0,
+    "retain_generated_audio": false
+  },
+  "schema_version": 1,
+  "state": "post_observation_score_blind_adjudication_and_relationship_policy_frozen_without_new_audio_access"
+}

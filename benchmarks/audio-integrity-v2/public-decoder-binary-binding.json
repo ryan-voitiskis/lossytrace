@@ -1,0 +1,59 @@
+{
+  "authorized_next_step": "Commit this path-free binding, then run two complete synthetic wrapper-equivalence replays without changing the binary or scripts.",
+  "base_probe_script_sha256": "ea6ae02980421c720a86093c8169d5de91c2f9d08a1ad4541f57adaa0df0403e",
+  "benchmark_audio_generated": false,
+  "binary": {
+    "byte_count": 3242160,
+    "implementation": "LossyTrace public CLI using Symphonia 0.5",
+    "linked_libraries": [
+      "/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1356.0.0)"
+    ],
+    "sha256": "af8bd1389f55325a01ad7ebd48d2ad050a3f8028dccd6ee69262548028d54cb4",
+    "version": "lossytrace 0.1.0-alpha.1"
+  },
+  "binding_id": "lossytrace-v2-public-decoder-binary-20260802-001",
+  "build_binding": {
+    "binary_relative_path": "release/lossytrace",
+    "cargo": "cargo 1.94.0 (85eff7c80 2026-01-15)",
+    "command": [
+      "cargo",
+      "build",
+      "--locked",
+      "--release",
+      "--jobs",
+      "1"
+    ],
+    "environment": {
+      "CARGO_INCREMENTAL": "0",
+      "LANG": "C",
+      "LC_ALL": "C",
+      "SOURCE_DATE_EPOCH": "0",
+      "TZ": "UTC"
+    },
+    "rustc": "rustc 1.94.0 (4a4ef493e 2026-03-02)",
+    "target_directory_policy": "Use a fresh temporary directory on a volume with sufficient free space; do not consume the benchmark reserve."
+  },
+  "equivalence_probe_executed": false,
+  "plan_binding": {
+    "plan_id": "lossytrace-v2-public-decoder-equivalence-20260802-001",
+    "sha256": "581c76772d93019fba4d12f01dd04f95fdd5f8d51163bcd3dc45519f36f4f30b"
+  },
+  "probe_script_sha256": "3e9463614777d72864137e4be8946bcdd4df7cd68e8739ff1f66256977f85b77",
+  "public_verdict_enabled": false,
+  "rust_source_binding": {
+    "audio_rs_sha256": "202e95df26ab3284e722cc4c708b1366423d09d7c999dc74bddedf34a1e2ecaa",
+    "cargo_lock_sha256": "eb8c25b24e0fa1f4b69201c3f5a6b7cddd31692de72746c1c78b18413240ec0c",
+    "cargo_toml_sha256": "9446599e393bfe87af377feba01d1a0cc3aaad91594e57a0d51aae18ae98d1d8",
+    "checkpoint_commit": "397e288f79ff381711e915f9bea325c1f176e67f",
+    "compression_trace_rs_sha256": "91778aaf9e64ca588d0a6d987092c3453cb151e08eef26916b71016210b45e5e",
+    "lib_rs_sha256": "26ddb6e998991c8859a306630c541afa21860a4290b2b1dc8b238b2cb00c6578",
+    "main_rs_sha256": "c1da3719f1897ce47e4a0c28b8585060a43268575d75e1fa6c6d9418e910cf54",
+    "src_tree_sha1": "8e7c07926bddf48c9af43d99d6a234e5dc82bbfe",
+    "stft_rs_sha256": "a9c8ef3cc9ca2bc2b211ec124228d18290d0e037608eff49f45c157a43806c35"
+  },
+  "schema_version": 1,
+  "scores_opened": false,
+  "selection_authorized": false,
+  "source_groups_assigned": false,
+  "state": "public_decoder_binary_frozen_before_equivalence_probe"
+}

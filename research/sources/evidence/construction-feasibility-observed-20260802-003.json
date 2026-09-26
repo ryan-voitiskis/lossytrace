@@ -1,0 +1,343 @@
+{
+  "audio_generated": false,
+  "audit_id": "lossytrace-v2-construction-feasibility-20260802-003",
+  "duration_inspected": true,
+  "duration_strata": [
+    {
+      "count": 9,
+      "duration_support_stratum": "ge3_lt6",
+      "evidence_partition": "encoder_transfer",
+      "source_domain": "acted_song"
+    },
+    {
+      "count": 15,
+      "duration_support_stratum": "ge3_lt6",
+      "evidence_partition": "encoder_transfer",
+      "source_domain": "acted_speech"
+    },
+    {
+      "count": 6,
+      "duration_support_stratum": "lt1",
+      "evidence_partition": "encoder_transfer",
+      "source_domain": "home_recorded_bandwidth_limited_digit_speech"
+    },
+    {
+      "count": 1,
+      "duration_support_stratum": "ge6_le12",
+      "evidence_partition": "encoder_transfer",
+      "source_domain": "isolated_acoustic_instrument"
+    },
+    {
+      "count": 36,
+      "duration_support_stratum": "ge1_lt3",
+      "evidence_partition": "encoder_transfer",
+      "source_domain": "studio_speech"
+    },
+    {
+      "count": 19,
+      "duration_support_stratum": "ge3_lt6",
+      "evidence_partition": "encoder_transfer",
+      "source_domain": "studio_speech"
+    },
+    {
+      "count": 1,
+      "duration_support_stratum": "ge6_le12",
+      "evidence_partition": "encoder_transfer",
+      "source_domain": "studio_speech"
+    },
+    {
+      "count": 15,
+      "duration_support_stratum": "ge6_le12",
+      "evidence_partition": "encoder_transfer",
+      "source_domain": "urban_sensor_soundscape"
+    },
+    {
+      "count": 17,
+      "duration_support_stratum": "ge6_le12",
+      "evidence_partition": "external_transfer",
+      "source_domain": "classical_music"
+    },
+    {
+      "count": 28,
+      "duration_support_stratum": "ge6_le12",
+      "evidence_partition": "external_transfer",
+      "source_domain": "genre_music"
+    },
+    {
+      "count": 6,
+      "duration_support_stratum": "ge6_le12",
+      "evidence_partition": "external_transfer",
+      "source_domain": "jazz_music"
+    },
+    {
+      "count": 50,
+      "duration_support_stratum": "ge1_lt3",
+      "evidence_partition": "external_transfer",
+      "source_domain": "laboratory_lombard_speech"
+    },
+    {
+      "count": 4,
+      "duration_support_stratum": "ge3_lt6",
+      "evidence_partition": "external_transfer",
+      "source_domain": "laboratory_lombard_speech"
+    },
+    {
+      "count": 33,
+      "duration_support_stratum": "ge6_le12",
+      "evidence_partition": "external_transfer",
+      "source_domain": "popular_music"
+    },
+    {
+      "count": 1,
+      "duration_support_stratum": "ge6_le12",
+      "evidence_partition": "external_transfer",
+      "source_domain": "royalty_free_music"
+    },
+    {
+      "count": 25,
+      "duration_support_stratum": "ge6_le12",
+      "evidence_partition": "external_transfer",
+      "source_domain": "urban_binaural_soundscape"
+    },
+    {
+      "count": 36,
+      "duration_support_stratum": "ge6_le12",
+      "evidence_partition": "mechanism_development",
+      "source_domain": "demand_maestro_consumed_transfer"
+    },
+    {
+      "count": 150,
+      "duration_support_stratum": "ge6_le12",
+      "evidence_partition": "mechanism_development",
+      "source_domain": "musdb18hq_consumed_transfer"
+    },
+    {
+      "count": 53,
+      "duration_support_stratum": "ge6_le12",
+      "evidence_partition": "mechanism_development",
+      "source_domain": "nsynth_test_sparse"
+    },
+    {
+      "count": 200,
+      "duration_support_stratum": "ge6_le12",
+      "evidence_partition": "mechanism_development",
+      "source_domain": "nsynth_train_sparse"
+    },
+    {
+      "count": 40,
+      "duration_support_stratum": "ge6_le12",
+      "evidence_partition": "mechanism_development",
+      "source_domain": "private_full_mix_training"
+    },
+    {
+      "count": 48,
+      "duration_support_stratum": "ge6_le12",
+      "evidence_partition": "mechanism_development",
+      "source_domain": "public_tier_a_controlled"
+    }
+  ],
+  "features_computed": false,
+  "headers_inspected": true,
+  "native_format_counts": [
+    {
+      "codec_name": "pcm_s16le",
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "native_channel_count": 1,
+      "native_sample_rate_hz": 44100
+    },
+    {
+      "codec_name": "pcm_s16le",
+      "count": 95,
+      "evidence_partition": "encoder_transfer",
+      "native_channel_count": 1,
+      "native_sample_rate_hz": 48000
+    },
+    {
+      "codec_name": "pcm_s16le",
+      "count": 6,
+      "evidence_partition": "encoder_transfer",
+      "native_channel_count": 1,
+      "native_sample_rate_hz": 8000
+    },
+    {
+      "codec_name": "pcm_f32le",
+      "count": 52,
+      "evidence_partition": "external_transfer",
+      "native_channel_count": 1,
+      "native_sample_rate_hz": 16000
+    },
+    {
+      "codec_name": "pcm_s16le",
+      "count": 2,
+      "evidence_partition": "external_transfer",
+      "native_channel_count": 1,
+      "native_sample_rate_hz": 16000
+    },
+    {
+      "codec_name": "pcm_s16le",
+      "count": 85,
+      "evidence_partition": "external_transfer",
+      "native_channel_count": 2,
+      "native_sample_rate_hz": 44100
+    },
+    {
+      "codec_name": "pcm_s24le",
+      "count": 25,
+      "evidence_partition": "external_transfer",
+      "native_channel_count": 2,
+      "native_sample_rate_hz": 48000
+    },
+    {
+      "codec_name": "flac",
+      "count": 253,
+      "evidence_partition": "mechanism_development",
+      "native_channel_count": 1,
+      "native_sample_rate_hz": 16000
+    },
+    {
+      "codec_name": "flac",
+      "count": 83,
+      "evidence_partition": "mechanism_development",
+      "native_channel_count": 2,
+      "native_sample_rate_hz": 44100
+    },
+    {
+      "codec_name": "flac",
+      "count": 5,
+      "evidence_partition": "mechanism_development",
+      "native_channel_count": 2,
+      "native_sample_rate_hz": 48000
+    },
+    {
+      "codec_name": "pcm_s16le",
+      "count": 164,
+      "evidence_partition": "mechanism_development",
+      "native_channel_count": 2,
+      "native_sample_rate_hz": 44100
+    },
+    {
+      "codec_name": "pcm_s16le",
+      "count": 18,
+      "evidence_partition": "mechanism_development",
+      "native_channel_count": 1,
+      "native_sample_rate_hz": 48000
+    },
+    {
+      "codec_name": "pcm_s16le",
+      "count": 4,
+      "evidence_partition": "mechanism_development",
+      "native_channel_count": 2,
+      "native_sample_rate_hz": 48000
+    }
+  ],
+  "paths_redacted": true,
+  "plan_sha256": "661213a64da4bee2016ad46f27d8e0c02a012f4b9bce8c035516c3f0e40f5dc7",
+  "private_audit_sha256": "9a4bbfcaa3742b1d665e2738547fd1ffaf74b2a0c245ed063610e8414f271a6c",
+  "private_ids_included": false,
+  "reproducibility": {
+    "complete_replays_observed": 2,
+    "complete_replays_required": 2,
+    "plan_sha256": "661213a64da4bee2016ad46f27d8e0c02a012f4b9bce8c035516c3f0e40f5dc7",
+    "private_audit_sha256": "9a4bbfcaa3742b1d665e2738547fd1ffaf74b2a0c245ed063610e8414f271a6c",
+    "private_audits_byte_identical": true,
+    "run_aggregate_sha256": "ccc22f3120d6c688f62fcc36f777e0246081c030f1d796faed6dd6a02630e844",
+    "run_aggregates_byte_identical": true
+  },
+  "schema_version": 1,
+  "scores_opened": false,
+  "selection_authorized": false,
+  "source_artifacts": [
+    {
+      "bytes": 16419872,
+      "sha256": "c680098f5d2355ba7cc4bd8b0ca9e0a24c00ebe3b4c552208889a4d28d4fbc2b"
+    },
+    {
+      "bytes": 652614041,
+      "sha256": "e36707602fdbeaa2e2284acb29bba883261d5e86857f694ac40cbb56cdcc5e10"
+    },
+    {
+      "bytes": 225505317,
+      "sha256": "89f3df66cc67ebb70c8af6f72f3f359bee497f6f763a9d863b6477619716d428"
+    },
+    {
+      "bytes": 208468073,
+      "sha256": "5d208e01632cc3e5242106fa2af3273e6dc5239fb8143131979ac74c4aa40657"
+    },
+    {
+      "bytes": 2966354301,
+      "sha256": "9c3725ec5b95cf4b7117c5a680471516f1e593dc04ab15817ff88f818cebba0d"
+    },
+    {
+      "bytes": 3933055195,
+      "sha256": "39ec9daee7bbd0f5d8ba7494a1f5192963b84f8de19db3beb861d0deb9902100"
+    },
+    {
+      "bytes": 2127754512,
+      "sha256": "6efeedf80ebaf3adb17a1306c669b11b97bf3389f7691658fd547e6e17ab3e2c"
+    },
+    {
+      "bytes": 4071840278,
+      "sha256": "2ecdad824b4a0ac18734bedf07c893cbc20e04ff7de8c6a50416eeb0a19a0ad1"
+    },
+    {
+      "bytes": 319884639,
+      "sha256": "27e13df7a7600a53ad75bef7e1e71b33464547a657b6306325d6f683634c6d97"
+    },
+    {
+      "bytes": 198110877,
+      "sha256": "7b1c85b4c734e971c5a088f6b23843930012b002213471087dafd8e1f6aa604f"
+    },
+    {
+      "bytes": 307235372,
+      "sha256": "cafd6ef96834d98d3381522253f0c22c4d5cbca1b02c81dc13b8cf37fdcfcb0a"
+    },
+    {
+      "bytes": 1026917185,
+      "sha256": "a537e5de4f64edf0a56032369f66fc76adcb67db875e466f54cad2999e00364c"
+    },
+    {
+      "bytes": 4770619279,
+      "sha256": "c7a5580c1d96b52886ca7ca080cc1a21ae3ee1cb8eae4903af6d4bb796f90441"
+    },
+    {
+      "bytes": 3633418,
+      "sha256": "e19b5b408fedf348fa9b6499d5cdd1b6b734d84b19b895d5b0a528f0c4423b7a"
+    }
+  ],
+  "state": "construction_feasibility_path_free_evidence",
+  "summary": {
+    "construction_authorized": false,
+    "group_count": 793,
+    "unsupported_channel_group_count": 0,
+    "unsupported_transform_group_count": 11
+  },
+  "unsupported_channel_counts": [],
+  "unsupported_transform_counts": [
+    {
+      "count": 4,
+      "evidence_partition": "encoder_transfer",
+      "source_domain": "home_recorded_bandwidth_limited_digit_speech",
+      "transform_id": "duration-prefix-3s"
+    },
+    {
+      "count": 3,
+      "evidence_partition": "encoder_transfer",
+      "source_domain": "home_recorded_bandwidth_limited_digit_speech",
+      "transform_id": "trim-head-250ms"
+    },
+    {
+      "count": 3,
+      "evidence_partition": "encoder_transfer",
+      "source_domain": "studio_speech",
+      "transform_id": "duration-prefix-3s"
+    },
+    {
+      "count": 3,
+      "evidence_partition": "external_transfer",
+      "source_domain": "laboratory_lombard_speech",
+      "transform_id": "duration-prefix-3s"
+    }
+  ],
+  "waveform_content_inspected": false
+}

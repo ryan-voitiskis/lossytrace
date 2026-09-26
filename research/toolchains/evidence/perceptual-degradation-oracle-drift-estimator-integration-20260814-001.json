@@ -1,0 +1,594 @@
+{
+  "all_predeclared_gates_pass": true,
+  "authority": {
+    "committed_metadata_and_source_read_authorized": true,
+    "frozen_resampler_synthetic_execution_authorized": true,
+    "human_collection_authorized": false,
+    "human_response_access_authorized": false,
+    "no_reference_training_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "provider_audio_access_authorized": false,
+    "public_verdict_enabled": false,
+    "retained_audio_access_authorized": false,
+    "sealed_evidence_access_authorized": false,
+    "source_or_condition_selection_authorized": false,
+    "synthetic_drift_estimation_authorized": true,
+    "synthetic_numeric_fixture_execution_authorized": true,
+    "synthetic_pcm_fixture_execution_authorized": true
+  },
+  "cases": [
+    {
+      "actual_drift_ppm": 75,
+      "channel_core_metrics": [
+        {
+          "channel_index": 0,
+          "correlation_after": 0.999158390212,
+          "correlation_before": 0.84163572905,
+          "correlation_improvement": 0.157522661162,
+          "output_core_frame_count": 23872,
+          "reference_core_frame_count": 23872
+        },
+        {
+          "channel_index": 1,
+          "correlation_after": 0.999155400682,
+          "correlation_before": 0.843398822823,
+          "correlation_improvement": 0.155756577859,
+          "output_core_frame_count": 23872,
+          "reference_core_frame_count": 23872
+        }
+      ],
+      "decision": {
+        "apply_correction": true,
+        "held_out_mean_correlation_after_proxy": 0.997027969866,
+        "held_out_mean_correlation_before": 0.836148500788,
+        "held_out_mean_correlation_improvement_proxy": 0.160879469078,
+        "proxy_interpolator_is_frozen_resampler": false,
+        "selected_correction_ppm": 75,
+        "selection_margin": 0.000497744844,
+        "selection_mean_correlation": 0.997263917615,
+        "selection_used_held_out_windows": false
+      },
+      "human_response_accessed": false,
+      "input_f64le_sha256": "fd6096fb9cd90b49ee73c78677925037c07e9d4d65454cb329e9b4a50ac1312a",
+      "mandatory_discard_frames_each_edge": 64,
+      "observed_frame_count": 24001,
+      "output_bit_exact_to_observed": false,
+      "output_f64le_sha256": "a3f236ab1574829ddfb5961883199d1c4fc03d721f7a1f020b260f6c5ee16269",
+      "output_frame_count": 24000,
+      "perceptual_metric_executed": false,
+      "perceptual_truth_included": false,
+      "post_decision_alignment": {
+        "clock_drift_ppm": 0.0,
+        "edge_trim_seconds": 0.0,
+        "minimum_correlation": 0.999155400682,
+        "reasons": [],
+        "status": "supported"
+      },
+      "public_verdict_enabled": false,
+      "reference_frame_count": 24000,
+      "resampler_correction_applied": true,
+      "resampler_invoked": true,
+      "retained_audio_accessed": false,
+      "score_free_oracle": {
+        "audibility_probability": null,
+        "impairment_severity": null,
+        "metric_execution_states": [
+          "not_authorized",
+          "not_authorized"
+        ],
+        "result_state": "execution_blocked",
+        "support": {
+          "abstention_reasons": [
+            "human_calibration_unavailable",
+            "perceptual_metric_execution_not_authorized"
+          ],
+          "alignment_reason_codes": [],
+          "supported": false
+        }
+      }
+    },
+    {
+      "actual_drift_ppm": -60,
+      "channel_core_metrics": [
+        {
+          "channel_index": 0,
+          "correlation_after": 0.999234807755,
+          "correlation_before": 0.893405931973,
+          "correlation_improvement": 0.105828875782,
+          "output_core_frame_count": 23872,
+          "reference_core_frame_count": 23872
+        },
+        {
+          "channel_index": 1,
+          "correlation_after": 0.999230633053,
+          "correlation_before": 0.894589700291,
+          "correlation_improvement": 0.104640932762,
+          "output_core_frame_count": 23872,
+          "reference_core_frame_count": 23872
+        }
+      ],
+      "decision": {
+        "apply_correction": true,
+        "held_out_mean_correlation_after_proxy": 0.997442491258,
+        "held_out_mean_correlation_before": 0.889880514014,
+        "held_out_mean_correlation_improvement_proxy": 0.107561977244,
+        "proxy_interpolator_is_frozen_resampler": false,
+        "selected_correction_ppm": -60,
+        "selection_margin": 0.000545030957,
+        "selection_mean_correlation": 0.997709907987,
+        "selection_used_held_out_windows": false
+      },
+      "human_response_accessed": false,
+      "input_f64le_sha256": "917e5279e265c56ddccd2cda5ea0847189b52f977e1bfc06358f6d981ccaffb0",
+      "mandatory_discard_frames_each_edge": 64,
+      "observed_frame_count": 23998,
+      "output_bit_exact_to_observed": false,
+      "output_f64le_sha256": "788bd8d9be36a60800f36108537758353f72ccd5796106f2b23671704e3e25bd",
+      "output_frame_count": 24000,
+      "perceptual_metric_executed": false,
+      "perceptual_truth_included": false,
+      "post_decision_alignment": {
+        "clock_drift_ppm": 0.0,
+        "edge_trim_seconds": 0.0,
+        "minimum_correlation": 0.999230633053,
+        "reasons": [],
+        "status": "supported"
+      },
+      "public_verdict_enabled": false,
+      "reference_frame_count": 24000,
+      "resampler_correction_applied": true,
+      "resampler_invoked": true,
+      "retained_audio_accessed": false,
+      "score_free_oracle": {
+        "audibility_probability": null,
+        "impairment_severity": null,
+        "metric_execution_states": [
+          "not_authorized",
+          "not_authorized"
+        ],
+        "result_state": "execution_blocked",
+        "support": {
+          "abstention_reasons": [
+            "human_calibration_unavailable",
+            "perceptual_metric_execution_not_authorized"
+          ],
+          "alignment_reason_codes": [],
+          "supported": false
+        }
+      }
+    },
+    {
+      "actual_drift_ppm": 0,
+      "channel_core_metrics": [
+        {
+          "channel_index": 0,
+          "correlation_after": 1.0,
+          "correlation_before": 1.0,
+          "correlation_improvement": 0.0,
+          "output_core_frame_count": 24000,
+          "reference_core_frame_count": 24000
+        },
+        {
+          "channel_index": 1,
+          "correlation_after": 1.0,
+          "correlation_before": 1.0,
+          "correlation_improvement": 0.0,
+          "output_core_frame_count": 24000,
+          "reference_core_frame_count": 24000
+        }
+      ],
+      "decision": {
+        "apply_correction": false,
+        "held_out_mean_correlation_after_proxy": 1.0,
+        "held_out_mean_correlation_before": 1.0,
+        "held_out_mean_correlation_improvement_proxy": 0.0,
+        "proxy_interpolator_is_frozen_resampler": false,
+        "selected_correction_ppm": 0,
+        "selection_margin": 0.000570247686,
+        "selection_mean_correlation": 1.0,
+        "selection_used_held_out_windows": false
+      },
+      "human_response_accessed": false,
+      "input_f64le_sha256": "8e584bfb581d3d7fd445c3b5f839c4cc0e9d6a60a0270c3240f94aa600ed6e42",
+      "mandatory_discard_frames_each_edge": 0,
+      "observed_frame_count": 24000,
+      "output_bit_exact_to_observed": true,
+      "output_f64le_sha256": "8e584bfb581d3d7fd445c3b5f839c4cc0e9d6a60a0270c3240f94aa600ed6e42",
+      "output_frame_count": 24000,
+      "perceptual_metric_executed": false,
+      "perceptual_truth_included": false,
+      "post_decision_alignment": {
+        "clock_drift_ppm": 0.0,
+        "edge_trim_seconds": 0.0,
+        "minimum_correlation": 1.0,
+        "reasons": [],
+        "status": "supported"
+      },
+      "public_verdict_enabled": false,
+      "reference_frame_count": 24000,
+      "resampler_correction_applied": false,
+      "resampler_invoked": true,
+      "retained_audio_accessed": false,
+      "score_free_oracle": {
+        "audibility_probability": null,
+        "impairment_severity": null,
+        "metric_execution_states": [
+          "not_authorized",
+          "not_authorized"
+        ],
+        "result_state": "execution_blocked",
+        "support": {
+          "abstention_reasons": [
+            "human_calibration_unavailable",
+            "perceptual_metric_execution_not_authorized"
+          ],
+          "alignment_reason_codes": [],
+          "supported": false
+        }
+      }
+    },
+    {
+      "actual_drift_ppm": 20,
+      "channel_core_metrics": [
+        {
+          "channel_index": 0,
+          "correlation_after": 0.987482300836,
+          "correlation_before": 0.987482300836,
+          "correlation_improvement": 0.0,
+          "output_core_frame_count": 24000,
+          "reference_core_frame_count": 24000
+        },
+        {
+          "channel_index": 1,
+          "correlation_after": 0.987618606141,
+          "correlation_before": 0.987618606141,
+          "correlation_improvement": 0.0,
+          "output_core_frame_count": 24000,
+          "reference_core_frame_count": 24000
+        }
+      ],
+      "decision": {
+        "apply_correction": false,
+        "held_out_mean_correlation_after_proxy": 0.99744645514,
+        "held_out_mean_correlation_before": 0.98730104252,
+        "held_out_mean_correlation_improvement_proxy": 0.01014541262,
+        "proxy_interpolator_is_frozen_resampler": false,
+        "selected_correction_ppm": 20,
+        "selection_margin": 0.000261349055,
+        "selection_mean_correlation": 0.997900835264,
+        "selection_used_held_out_windows": false
+      },
+      "human_response_accessed": false,
+      "input_f64le_sha256": "ff7461a25fe04fcfedd09423f3e09477a51228fb1075d3fdcbed182ecfac3b5e",
+      "mandatory_discard_frames_each_edge": 0,
+      "observed_frame_count": 24000,
+      "output_bit_exact_to_observed": true,
+      "output_f64le_sha256": "ff7461a25fe04fcfedd09423f3e09477a51228fb1075d3fdcbed182ecfac3b5e",
+      "output_frame_count": 24000,
+      "perceptual_metric_executed": false,
+      "perceptual_truth_included": false,
+      "post_decision_alignment": {
+        "clock_drift_ppm": 0.0,
+        "edge_trim_seconds": 0.0,
+        "minimum_correlation": 0.987482300836,
+        "reasons": [],
+        "status": "supported"
+      },
+      "public_verdict_enabled": false,
+      "reference_frame_count": 24000,
+      "resampler_correction_applied": false,
+      "resampler_invoked": false,
+      "retained_audio_accessed": false,
+      "score_free_oracle": {
+        "audibility_probability": null,
+        "impairment_severity": null,
+        "metric_execution_states": [
+          "not_authorized",
+          "not_authorized"
+        ],
+        "result_state": "execution_blocked",
+        "support": {
+          "abstention_reasons": [
+            "human_calibration_unavailable",
+            "perceptual_metric_execution_not_authorized"
+          ],
+          "alignment_reason_codes": [],
+          "supported": false
+        }
+      }
+    },
+    {
+      "actual_drift_ppm": -20,
+      "channel_core_metrics": [
+        {
+          "channel_index": 0,
+          "correlation_after": 0.987483089122,
+          "correlation_before": 0.987483089122,
+          "correlation_improvement": 0.0,
+          "output_core_frame_count": 23999,
+          "reference_core_frame_count": 24000
+        },
+        {
+          "channel_index": 1,
+          "correlation_after": 0.987619366537,
+          "correlation_before": 0.987619366537,
+          "correlation_improvement": 0.0,
+          "output_core_frame_count": 23999,
+          "reference_core_frame_count": 24000
+        }
+      ],
+      "decision": {
+        "apply_correction": false,
+        "held_out_mean_correlation_after_proxy": 0.99744623741,
+        "held_out_mean_correlation_before": 0.987290670627,
+        "held_out_mean_correlation_improvement_proxy": 0.010155566783,
+        "proxy_interpolator_is_frozen_resampler": false,
+        "selected_correction_ppm": -20,
+        "selection_margin": 0.000260306478,
+        "selection_mean_correlation": 0.997900656718,
+        "selection_used_held_out_windows": false
+      },
+      "human_response_accessed": false,
+      "input_f64le_sha256": "8767d082f2f5eacbbdfa8b9417b7cb09829810ab3a59f3cb5865c0cd3920fd29",
+      "mandatory_discard_frames_each_edge": 0,
+      "observed_frame_count": 23999,
+      "output_bit_exact_to_observed": true,
+      "output_f64le_sha256": "8767d082f2f5eacbbdfa8b9417b7cb09829810ab3a59f3cb5865c0cd3920fd29",
+      "output_frame_count": 23999,
+      "perceptual_metric_executed": false,
+      "perceptual_truth_included": false,
+      "post_decision_alignment": {
+        "clock_drift_ppm": 0.0,
+        "edge_trim_seconds": 0.0005,
+        "minimum_correlation": 0.987483089122,
+        "reasons": [],
+        "status": "supported"
+      },
+      "public_verdict_enabled": false,
+      "reference_frame_count": 24000,
+      "resampler_correction_applied": false,
+      "resampler_invoked": false,
+      "retained_audio_accessed": false,
+      "score_free_oracle": {
+        "audibility_probability": null,
+        "impairment_severity": null,
+        "metric_execution_states": [
+          "not_authorized",
+          "not_authorized"
+        ],
+        "result_state": "execution_blocked",
+        "support": {
+          "abstention_reasons": [
+            "human_calibration_unavailable",
+            "perceptual_metric_execution_not_authorized"
+          ],
+          "alignment_reason_codes": [],
+          "supported": false
+        }
+      }
+    },
+    {
+      "actual_drift_ppm": 100,
+      "channel_core_metrics": [
+        {
+          "channel_index": 0,
+          "correlation_after": 0.999229456674,
+          "correlation_before": 0.741455745321,
+          "correlation_improvement": 0.257773711353,
+          "output_core_frame_count": 23872,
+          "reference_core_frame_count": 23872
+        },
+        {
+          "channel_index": 1,
+          "correlation_after": 0.999225378893,
+          "correlation_before": 0.744342657748,
+          "correlation_improvement": 0.254882721145,
+          "output_core_frame_count": 23872,
+          "reference_core_frame_count": 23872
+        }
+      ],
+      "decision": {
+        "apply_correction": true,
+        "held_out_mean_correlation_after_proxy": 0.99749608812,
+        "held_out_mean_correlation_before": 0.730644705414,
+        "held_out_mean_correlation_improvement_proxy": 0.266851382706,
+        "proxy_interpolator_is_frozen_resampler": false,
+        "selected_correction_ppm": 100,
+        "selection_margin": 0.000623216671,
+        "selection_mean_correlation": 0.997497350125,
+        "selection_used_held_out_windows": false
+      },
+      "human_response_accessed": false,
+      "input_f64le_sha256": "311de9b6e945499fb2217bdce06a76e8958ead072fb2ae3abc6010678a213e9b",
+      "mandatory_discard_frames_each_edge": 64,
+      "observed_frame_count": 24002,
+      "output_bit_exact_to_observed": false,
+      "output_f64le_sha256": "7301339c5a0bf49a47508b7652c782b1c121555e265fecf60d5da068781b98f4",
+      "output_frame_count": 24000,
+      "perceptual_metric_executed": false,
+      "perceptual_truth_included": false,
+      "post_decision_alignment": {
+        "clock_drift_ppm": 0.0,
+        "edge_trim_seconds": 0.0,
+        "minimum_correlation": 0.999225378893,
+        "reasons": [],
+        "status": "supported"
+      },
+      "public_verdict_enabled": false,
+      "reference_frame_count": 24000,
+      "resampler_correction_applied": true,
+      "resampler_invoked": true,
+      "retained_audio_accessed": false,
+      "score_free_oracle": {
+        "audibility_probability": null,
+        "impairment_severity": null,
+        "metric_execution_states": [
+          "not_authorized",
+          "not_authorized"
+        ],
+        "result_state": "execution_blocked",
+        "support": {
+          "abstention_reasons": [
+            "human_calibration_unavailable",
+            "perceptual_metric_execution_not_authorized"
+          ],
+          "alignment_reason_codes": [],
+          "supported": false
+        }
+      }
+    },
+    {
+      "actual_drift_ppm": -100,
+      "channel_core_metrics": [
+        {
+          "channel_index": 0,
+          "correlation_after": 0.999229440221,
+          "correlation_before": 0.741326831349,
+          "correlation_improvement": 0.257902608872,
+          "output_core_frame_count": 23872,
+          "reference_core_frame_count": 23872
+        },
+        {
+          "channel_index": 1,
+          "correlation_after": 0.999225346857,
+          "correlation_before": 0.7442045273,
+          "correlation_improvement": 0.255020819557,
+          "output_core_frame_count": 23872,
+          "reference_core_frame_count": 23872
+        }
+      ],
+      "decision": {
+        "apply_correction": true,
+        "held_out_mean_correlation_after_proxy": 0.997495021287,
+        "held_out_mean_correlation_before": 0.730212346899,
+        "held_out_mean_correlation_improvement_proxy": 0.267282674388,
+        "proxy_interpolator_is_frozen_resampler": false,
+        "selected_correction_ppm": -100,
+        "selection_margin": 0.000621225802,
+        "selection_mean_correlation": 0.997496283308,
+        "selection_used_held_out_windows": false
+      },
+      "human_response_accessed": false,
+      "input_f64le_sha256": "0dc1b385b1ee6ae0db352529effd3db2b465d2296ea6b5d8a3df49d44a22eec6",
+      "mandatory_discard_frames_each_edge": 64,
+      "observed_frame_count": 23997,
+      "output_bit_exact_to_observed": false,
+      "output_f64le_sha256": "f9a301556a232fb96481a255e13aee24f69a5edf96a3efce3293e292d9476b00",
+      "output_frame_count": 24000,
+      "perceptual_metric_executed": false,
+      "perceptual_truth_included": false,
+      "post_decision_alignment": {
+        "clock_drift_ppm": 0.0,
+        "edge_trim_seconds": 0.0,
+        "minimum_correlation": 0.999225346857,
+        "reasons": [],
+        "status": "supported"
+      },
+      "public_verdict_enabled": false,
+      "reference_frame_count": 24000,
+      "resampler_correction_applied": true,
+      "resampler_invoked": true,
+      "retained_audio_accessed": false,
+      "score_free_oracle": {
+        "audibility_probability": null,
+        "impairment_severity": null,
+        "metric_execution_states": [
+          "not_authorized",
+          "not_authorized"
+        ],
+        "result_state": "execution_blocked",
+        "support": {
+          "abstention_reasons": [
+            "human_calibration_unavailable",
+            "perceptual_metric_execution_not_authorized"
+          ],
+          "alignment_reason_codes": [],
+          "supported": false
+        }
+      }
+    }
+  ],
+  "claim_boundary": {
+    "full_objective_complete": false,
+    "integration_authorizes_human_collection": false,
+    "integration_authorizes_metric_execution": false,
+    "integration_proves_negative_class_truth": false,
+    "integration_selects_a_source_or_condition": false,
+    "no_reference_work_eligible": false,
+    "proxy_selection_metric_is_a_perceptual_metric": false,
+    "public_cli_changed": false,
+    "synthetic_estimation_is_perceptual_validation": false,
+    "synthetic_estimation_is_real_audio_estimation_validation": false,
+    "synthetic_estimation_is_retained_audio_validation": false,
+    "technical_alignment_support_is_full_reference_oracle_validation": false,
+    "technical_alignment_support_is_human_calibration": false
+  },
+  "coefficient_table_sha256": "dbe4442199b56cd56880f1f45c09889721519dd7a165a4de76117b5e219dab82",
+  "decision": {
+    "exact_frozen_resampler_integrated_after_estimation": true,
+    "full_reference_oracle_validated": false,
+    "human_collection_authorized": false,
+    "human_or_perceptual_validity_present": false,
+    "next_gate": "Under separate authority, validate the exact estimator, held-out apply rule and correction path on retained development pairs before any perceptual metric execution.",
+    "no_reference_work_eligible": false,
+    "public_verdict_enabled": false,
+    "real_audio_drift_estimation_validated": false,
+    "retained_audio_correction_executed": false,
+    "retained_audio_correction_validated": false,
+    "score_free_oracle_envelope_preserved": true,
+    "synthetic_drift_estimation_executed": true,
+    "training_window_selection_and_held_out_apply_rule_integrated": true
+  },
+  "gate_audit": {
+    "applied_core_correlation": true,
+    "applied_core_improvement": true,
+    "apply_decision": true,
+    "case_inventory": true,
+    "held_out_apply_rule": true,
+    "metric_human_and_public_boundaries": true,
+    "nonzero_no_apply_rule": true,
+    "passthrough_bit_exact": true,
+    "post_decision_alignment_supported": true,
+    "resampler_invocation": true,
+    "score_free_oracle_closed": true,
+    "selected_ppm": true,
+    "training_held_out_isolation": true
+  },
+  "implementation_sha256": "c3479334525a814e25bcc0ee2d5f569d4be07253d927f1e86788881df03bf3bc",
+  "plan_id": "perceptual-degradation-oracle-drift-estimator-integration-20260814-001",
+  "plan_sha256": "d3c35d0c2e82b4424657183e14709a3b40ac91b085ea2618d9b9b3bcb9eb3a81",
+  "replay_observation": {
+    "byte_identical": true,
+    "fresh_temporary_replay_count": 2,
+    "paths_included": false,
+    "payload_sha256s": [
+      "81d90cc7717dba7b3280c44a160dc2d99160d82d36814fb12b959d5644c74920",
+      "81d90cc7717dba7b3280c44a160dc2d99160d82d36814fb12b959d5644c74920"
+    ],
+    "timing_included": false
+  },
+  "report_id": "perceptual-degradation-oracle-drift-estimator-integration-20260814-001",
+  "resources": {
+    "generated_audio_retained": false,
+    "maximum_workers_used": 1,
+    "minimum_free_disk_gib_preserved": 15
+  },
+  "schema_version": 1,
+  "state": "score_blind_synthetic_drift_estimator_and_correction_replayed",
+  "summary": {
+    "actual_audio_accessed": false,
+    "applied_correction_case_count": 4,
+    "estimated_case_count": 7,
+    "human_collection_performed": false,
+    "human_response_accessed": false,
+    "no_reference_training_performed": false,
+    "nonzero_no_apply_case_count": 2,
+    "perceptual_metric_executed": false,
+    "perceptual_truth_included": false,
+    "predeclared_gate_count": 13,
+    "predeclared_gate_pass_count": 13,
+    "public_verdict_enabled": false,
+    "retained_audio_accessed": false,
+    "synthetic_case_count": 7
+  }
+}

@@ -1,0 +1,1245 @@
+{
+  "analysis_plan_id": "perceptual-degradation-listening-feasibility-frontier-20260813-001",
+  "analysis_plan_sha256": "02f3976e485f167469a4c8a0fe7d04a8fb8f55185b6169136c6e8d37e63daf36",
+  "audio_accessed": false,
+  "decision": {
+    "listener_count_frozen": false,
+    "main_collection_authorized": false,
+    "minimum_source_floor_identified": true,
+    "next_score_blind_requirement": "Define a broader multi-provider permissively licensed source manifest with at least 39 independent source groups in every truth-bearing partition, then run balanced incomplete-block allocation and resource feasibility before freezing listener counts. Retain explicit abstention if that source and recruitment scale is not acceptable.",
+    "no_reference_work_eligible": false,
+    "odaq_narrow_path_can_assign_human_transparent_truth": false,
+    "odaq_narrow_path_retained_for_development_plumbing": true,
+    "operational_design_frozen": false,
+    "quality_exclusion_thresholds_frozen": false,
+    "reason": "At least 39 independent source groups per analysis partition are required even with infinitely many listeners, while practical finite designs require far more listeners and source coverage. The accepted 16-reference ODAQ path therefore cannot establish transparent-lossy truth or independent transfer under the frozen equivalence model.",
+    "source_manifest_frozen": false
+  },
+  "frontier_rows": [
+    {
+      "asymptotic_maximum_equivalence_power": 0.0353439413,
+      "asymptotic_source_floor_standard_error": 0.021875,
+      "audible_power_at_truth_0_80": null,
+      "bridge_direct_joint_power_lower_bound": null,
+      "effective_judgments": null,
+      "effective_judgments_per_source": null,
+      "equivalence_power": null,
+      "mapped_severity_power_by_mapping_standard_error": null,
+      "minimum_eligible_listeners": null,
+      "minimum_enrolled_listener_slots": null,
+      "mushra_material_power_at_truth_15": null,
+      "mushra_trials_per_eligible_listener_assumed": 3,
+      "planning_standard_error": null,
+      "sdg_material_power_at_truth_minus_1_25": null,
+      "source_groups": 16,
+      "target_power_attainable_with_finite_listeners": false,
+      "transparent_trials_per_eligible_listener": 3
+    },
+    {
+      "asymptotic_maximum_equivalence_power": 0.0353439413,
+      "asymptotic_source_floor_standard_error": 0.021875,
+      "audible_power_at_truth_0_80": null,
+      "bridge_direct_joint_power_lower_bound": null,
+      "effective_judgments": null,
+      "effective_judgments_per_source": null,
+      "equivalence_power": null,
+      "mapped_severity_power_by_mapping_standard_error": null,
+      "minimum_eligible_listeners": null,
+      "minimum_enrolled_listener_slots": null,
+      "mushra_material_power_at_truth_15": null,
+      "mushra_trials_per_eligible_listener_assumed": 5,
+      "planning_standard_error": null,
+      "sdg_material_power_at_truth_minus_1_25": null,
+      "source_groups": 16,
+      "target_power_attainable_with_finite_listeners": false,
+      "transparent_trials_per_eligible_listener": 5
+    },
+    {
+      "asymptotic_maximum_equivalence_power": 0.0353439413,
+      "asymptotic_source_floor_standard_error": 0.021875,
+      "audible_power_at_truth_0_80": null,
+      "bridge_direct_joint_power_lower_bound": null,
+      "effective_judgments": null,
+      "effective_judgments_per_source": null,
+      "equivalence_power": null,
+      "mapped_severity_power_by_mapping_standard_error": null,
+      "minimum_eligible_listeners": null,
+      "minimum_enrolled_listener_slots": null,
+      "mushra_material_power_at_truth_15": null,
+      "mushra_trials_per_eligible_listener_assumed": 6,
+      "planning_standard_error": null,
+      "sdg_material_power_at_truth_minus_1_25": null,
+      "source_groups": 16,
+      "target_power_attainable_with_finite_listeners": false,
+      "transparent_trials_per_eligible_listener": 8
+    },
+    {
+      "asymptotic_maximum_equivalence_power": 0.0353439413,
+      "asymptotic_source_floor_standard_error": 0.021875,
+      "audible_power_at_truth_0_80": null,
+      "bridge_direct_joint_power_lower_bound": null,
+      "effective_judgments": null,
+      "effective_judgments_per_source": null,
+      "equivalence_power": null,
+      "mapped_severity_power_by_mapping_standard_error": null,
+      "minimum_eligible_listeners": null,
+      "minimum_enrolled_listener_slots": null,
+      "mushra_material_power_at_truth_15": null,
+      "mushra_trials_per_eligible_listener_assumed": 6,
+      "planning_standard_error": null,
+      "sdg_material_power_at_truth_minus_1_25": null,
+      "source_groups": 16,
+      "target_power_attainable_with_finite_listeners": false,
+      "transparent_trials_per_eligible_listener": 15
+    },
+    {
+      "asymptotic_maximum_equivalence_power": 0.4231652586,
+      "asymptotic_source_floor_standard_error": 0.0178608627,
+      "audible_power_at_truth_0_80": null,
+      "bridge_direct_joint_power_lower_bound": null,
+      "effective_judgments": null,
+      "effective_judgments_per_source": null,
+      "equivalence_power": null,
+      "mapped_severity_power_by_mapping_standard_error": null,
+      "minimum_eligible_listeners": null,
+      "minimum_enrolled_listener_slots": null,
+      "mushra_material_power_at_truth_15": null,
+      "mushra_trials_per_eligible_listener_assumed": 3,
+      "planning_standard_error": null,
+      "sdg_material_power_at_truth_minus_1_25": null,
+      "source_groups": 24,
+      "target_power_attainable_with_finite_listeners": false,
+      "transparent_trials_per_eligible_listener": 3
+    },
+    {
+      "asymptotic_maximum_equivalence_power": 0.4231652586,
+      "asymptotic_source_floor_standard_error": 0.0178608627,
+      "audible_power_at_truth_0_80": null,
+      "bridge_direct_joint_power_lower_bound": null,
+      "effective_judgments": null,
+      "effective_judgments_per_source": null,
+      "equivalence_power": null,
+      "mapped_severity_power_by_mapping_standard_error": null,
+      "minimum_eligible_listeners": null,
+      "minimum_enrolled_listener_slots": null,
+      "mushra_material_power_at_truth_15": null,
+      "mushra_trials_per_eligible_listener_assumed": 5,
+      "planning_standard_error": null,
+      "sdg_material_power_at_truth_minus_1_25": null,
+      "source_groups": 24,
+      "target_power_attainable_with_finite_listeners": false,
+      "transparent_trials_per_eligible_listener": 5
+    },
+    {
+      "asymptotic_maximum_equivalence_power": 0.4231652586,
+      "asymptotic_source_floor_standard_error": 0.0178608627,
+      "audible_power_at_truth_0_80": null,
+      "bridge_direct_joint_power_lower_bound": null,
+      "effective_judgments": null,
+      "effective_judgments_per_source": null,
+      "equivalence_power": null,
+      "mapped_severity_power_by_mapping_standard_error": null,
+      "minimum_eligible_listeners": null,
+      "minimum_enrolled_listener_slots": null,
+      "mushra_material_power_at_truth_15": null,
+      "mushra_trials_per_eligible_listener_assumed": 6,
+      "planning_standard_error": null,
+      "sdg_material_power_at_truth_minus_1_25": null,
+      "source_groups": 24,
+      "target_power_attainable_with_finite_listeners": false,
+      "transparent_trials_per_eligible_listener": 8
+    },
+    {
+      "asymptotic_maximum_equivalence_power": 0.4231652586,
+      "asymptotic_source_floor_standard_error": 0.0178608627,
+      "audible_power_at_truth_0_80": null,
+      "bridge_direct_joint_power_lower_bound": null,
+      "effective_judgments": null,
+      "effective_judgments_per_source": null,
+      "equivalence_power": null,
+      "mapped_severity_power_by_mapping_standard_error": null,
+      "minimum_eligible_listeners": null,
+      "minimum_enrolled_listener_slots": null,
+      "mushra_material_power_at_truth_15": null,
+      "mushra_trials_per_eligible_listener_assumed": 6,
+      "planning_standard_error": null,
+      "sdg_material_power_at_truth_minus_1_25": null,
+      "source_groups": 24,
+      "target_power_attainable_with_finite_listeners": false,
+      "transparent_trials_per_eligible_listener": 15
+    },
+    {
+      "asymptotic_maximum_equivalence_power": 0.7998483254,
+      "asymptotic_source_floor_standard_error": 0.0141943743,
+      "audible_power_at_truth_0_80": null,
+      "bridge_direct_joint_power_lower_bound": null,
+      "effective_judgments": null,
+      "effective_judgments_per_source": null,
+      "equivalence_power": null,
+      "mapped_severity_power_by_mapping_standard_error": null,
+      "minimum_eligible_listeners": null,
+      "minimum_enrolled_listener_slots": null,
+      "mushra_material_power_at_truth_15": null,
+      "mushra_trials_per_eligible_listener_assumed": 3,
+      "planning_standard_error": null,
+      "sdg_material_power_at_truth_minus_1_25": null,
+      "source_groups": 38,
+      "target_power_attainable_with_finite_listeners": false,
+      "transparent_trials_per_eligible_listener": 3
+    },
+    {
+      "asymptotic_maximum_equivalence_power": 0.7998483254,
+      "asymptotic_source_floor_standard_error": 0.0141943743,
+      "audible_power_at_truth_0_80": null,
+      "bridge_direct_joint_power_lower_bound": null,
+      "effective_judgments": null,
+      "effective_judgments_per_source": null,
+      "equivalence_power": null,
+      "mapped_severity_power_by_mapping_standard_error": null,
+      "minimum_eligible_listeners": null,
+      "minimum_enrolled_listener_slots": null,
+      "mushra_material_power_at_truth_15": null,
+      "mushra_trials_per_eligible_listener_assumed": 5,
+      "planning_standard_error": null,
+      "sdg_material_power_at_truth_minus_1_25": null,
+      "source_groups": 38,
+      "target_power_attainable_with_finite_listeners": false,
+      "transparent_trials_per_eligible_listener": 5
+    },
+    {
+      "asymptotic_maximum_equivalence_power": 0.7998483254,
+      "asymptotic_source_floor_standard_error": 0.0141943743,
+      "audible_power_at_truth_0_80": null,
+      "bridge_direct_joint_power_lower_bound": null,
+      "effective_judgments": null,
+      "effective_judgments_per_source": null,
+      "equivalence_power": null,
+      "mapped_severity_power_by_mapping_standard_error": null,
+      "minimum_eligible_listeners": null,
+      "minimum_enrolled_listener_slots": null,
+      "mushra_material_power_at_truth_15": null,
+      "mushra_trials_per_eligible_listener_assumed": 6,
+      "planning_standard_error": null,
+      "sdg_material_power_at_truth_minus_1_25": null,
+      "source_groups": 38,
+      "target_power_attainable_with_finite_listeners": false,
+      "transparent_trials_per_eligible_listener": 8
+    },
+    {
+      "asymptotic_maximum_equivalence_power": 0.7998483254,
+      "asymptotic_source_floor_standard_error": 0.0141943743,
+      "audible_power_at_truth_0_80": null,
+      "bridge_direct_joint_power_lower_bound": null,
+      "effective_judgments": null,
+      "effective_judgments_per_source": null,
+      "equivalence_power": null,
+      "mapped_severity_power_by_mapping_standard_error": null,
+      "minimum_eligible_listeners": null,
+      "minimum_enrolled_listener_slots": null,
+      "mushra_material_power_at_truth_15": null,
+      "mushra_trials_per_eligible_listener_assumed": 6,
+      "planning_standard_error": null,
+      "sdg_material_power_at_truth_minus_1_25": null,
+      "source_groups": 38,
+      "target_power_attainable_with_finite_listeners": false,
+      "transparent_trials_per_eligible_listener": 15
+    },
+    {
+      "asymptotic_maximum_equivalence_power": 0.8155467383,
+      "asymptotic_source_floor_standard_error": 0.0140112135,
+      "audible_power_at_truth_0_80": 0.9999999775,
+      "bridge_direct_joint_power_lower_bound": 0.9984005553,
+      "effective_judgments": 55539.0,
+      "effective_judgments_per_source": 1424.0769230769,
+      "equivalence_power": 0.8000004042,
+      "mapped_severity_power_by_mapping_standard_error": [
+        {
+          "mapping_standard_error_points": 0.0,
+          "power": 0.9999675454
+        },
+        {
+          "mapping_standard_error_points": 2.5,
+          "power": 0.9514851724
+        },
+        {
+          "mapping_standard_error_points": 5.0,
+          "power": 0.531503581
+        }
+      ],
+      "minimum_eligible_listeners": 20570,
+      "minimum_enrolled_listener_slots": 31843,
+      "mushra_material_power_at_truth_15": 0.9999675454,
+      "mushra_trials_per_eligible_listener_assumed": 3,
+      "planning_standard_error": 0.0141926291,
+      "sdg_material_power_at_truth_minus_1_25": 0.9984330098,
+      "source_groups": 39,
+      "target_power_attainable_with_finite_listeners": true,
+      "transparent_trials_per_eligible_listener": 3
+    },
+    {
+      "asymptotic_maximum_equivalence_power": 0.8155467383,
+      "asymptotic_source_floor_standard_error": 0.0140112135,
+      "audible_power_at_truth_0_80": 0.9999999779,
+      "bridge_direct_joint_power_lower_bound": 0.9983928234,
+      "effective_judgments": 59994.0,
+      "effective_judgments_per_source": 1538.3076923077,
+      "equivalence_power": 0.8000010839,
+      "mapped_severity_power_by_mapping_standard_error": [
+        {
+          "mapping_standard_error_points": 0.0,
+          "power": 0.9999673212
+        },
+        {
+          "mapping_standard_error_points": 2.5,
+          "power": 0.9514449195
+        },
+        {
+          "mapping_standard_error_points": 5.0,
+          "power": 0.5314701194
+        }
+      ],
+      "minimum_eligible_listeners": 13332,
+      "minimum_enrolled_listener_slots": 20638,
+      "mushra_material_power_at_truth_15": 0.9999673212,
+      "mushra_trials_per_eligible_listener_assumed": 5,
+      "planning_standard_error": 0.0141926213,
+      "sdg_material_power_at_truth_minus_1_25": 0.9984255022,
+      "source_groups": 39,
+      "target_power_attainable_with_finite_listeners": true,
+      "transparent_trials_per_eligible_listener": 5
+    },
+    {
+      "asymptotic_maximum_equivalence_power": 0.8155467383,
+      "asymptotic_source_floor_standard_error": 0.0140112135,
+      "audible_power_at_truth_0_80": 0.9999999783,
+      "bridge_direct_joint_power_lower_bound": 0.9983829039,
+      "effective_judgments": 66672.0,
+      "effective_judgments_per_source": 1709.5384615385,
+      "equivalence_power": 0.8000008733,
+      "mapped_severity_power_by_mapping_standard_error": [
+        {
+          "mapping_standard_error_points": 0.0,
+          "power": 0.9999668232
+        },
+        {
+          "mapping_standard_error_points": 2.5,
+          "power": 0.9513563026
+        },
+        {
+          "mapping_standard_error_points": 5.0,
+          "power": 0.5313965076
+        }
+      ],
+      "minimum_eligible_listeners": 9260,
+      "minimum_enrolled_listener_slots": 14335,
+      "mushra_material_power_at_truth_15": 0.9999668232,
+      "mushra_trials_per_eligible_listener_assumed": 6,
+      "planning_standard_error": 0.0141926237,
+      "sdg_material_power_at_truth_minus_1_25": 0.9984160807,
+      "source_groups": 39,
+      "target_power_attainable_with_finite_listeners": true,
+      "transparent_trials_per_eligible_listener": 8
+    },
+    {
+      "asymptotic_maximum_equivalence_power": 0.8155467383,
+      "asymptotic_source_floor_standard_error": 0.0140112135,
+      "audible_power_at_truth_0_80": 0.9999999789,
+      "bridge_direct_joint_power_lower_bound": 0.9983657046,
+      "effective_judgments": 82255.5,
+      "effective_judgments_per_source": 2109.1153846154,
+      "equivalence_power": 0.8000008012,
+      "mapped_severity_power_by_mapping_standard_error": [
+        {
+          "mapping_standard_error_points": 0.0,
+          "power": 0.9999657515
+        },
+        {
+          "mapping_standard_error_points": 2.5,
+          "power": 0.9511690774
+        },
+        {
+          "mapping_standard_error_points": 5.0,
+          "power": 0.5312412273
+        }
+      ],
+      "minimum_eligible_listeners": 6093,
+      "minimum_enrolled_listener_slots": 9432,
+      "mushra_material_power_at_truth_15": 0.9999657515,
+      "mushra_trials_per_eligible_listener_assumed": 6,
+      "planning_standard_error": 0.0141926246,
+      "sdg_material_power_at_truth_minus_1_25": 0.9983999531,
+      "source_groups": 39,
+      "target_power_attainable_with_finite_listeners": true,
+      "transparent_trials_per_eligible_listener": 15
+    },
+    {
+      "asymptotic_maximum_equivalence_power": 0.9141250236,
+      "asymptotic_source_floor_standard_error": 0.0126295371,
+      "audible_power_at_truth_0_80": 0.9999999204,
+      "bridge_direct_joint_power_lower_bound": 0.9997061008,
+      "effective_judgments": 6779.7,
+      "effective_judgments_per_source": 141.24375,
+      "equivalence_power": 0.8000323321,
+      "mapped_severity_power_by_mapping_standard_error": [
+        {
+          "mapping_standard_error_points": 0.0,
+          "power": 0.9999977188
+        },
+        {
+          "mapping_standard_error_points": 2.5,
+          "power": 0.9634421514
+        },
+        {
+          "mapping_standard_error_points": 5.0,
+          "power": 0.5422409658
+        }
+      ],
+      "minimum_eligible_listeners": 2511,
+      "minimum_enrolled_listener_slots": 3887,
+      "mushra_material_power_at_truth_15": 0.9999977188,
+      "mushra_trials_per_eligible_listener_assumed": 3,
+      "planning_standard_error": 0.0141922626,
+      "sdg_material_power_at_truth_minus_1_25": 0.999708382,
+      "source_groups": 48,
+      "target_power_attainable_with_finite_listeners": true,
+      "transparent_trials_per_eligible_listener": 3
+    },
+    {
+      "asymptotic_maximum_equivalence_power": 0.9141250236,
+      "asymptotic_source_floor_standard_error": 0.0126295371,
+      "audible_power_at_truth_0_80": 0.9999999278,
+      "bridge_direct_joint_power_lower_bound": 0.9996884498,
+      "effective_judgments": 7321.5,
+      "effective_judgments_per_source": 152.53125,
+      "equivalence_power": 0.8000022977,
+      "mapped_severity_power_by_mapping_standard_error": [
+        {
+          "mapping_standard_error_points": 0.0,
+          "power": 0.9999975199
+        },
+        {
+          "mapping_standard_error_points": 2.5,
+          "power": 0.9631511633
+        },
+        {
+          "mapping_standard_error_points": 5.0,
+          "power": 0.5419574451
+        }
+      ],
+      "minimum_eligible_listeners": 1627,
+      "minimum_enrolled_listener_slots": 2519,
+      "mushra_material_power_at_truth_15": 0.9999975199,
+      "mushra_trials_per_eligible_listener_assumed": 5,
+      "planning_standard_error": 0.0141926074,
+      "sdg_material_power_at_truth_minus_1_25": 0.9996909299,
+      "source_groups": 48,
+      "target_power_attainable_with_finite_listeners": true,
+      "transparent_trials_per_eligible_listener": 5
+    },
+    {
+      "asymptotic_maximum_equivalence_power": 0.9141250236,
+      "asymptotic_source_floor_standard_error": 0.0126295371,
+      "audible_power_at_truth_0_80": 0.9999999365,
+      "bridge_direct_joint_power_lower_bound": 0.9996651644,
+      "effective_judgments": 8143.2,
+      "effective_judgments_per_source": 169.65,
+      "equivalence_power": 0.8001070059,
+      "mapped_severity_power_by_mapping_standard_error": [
+        {
+          "mapping_standard_error_points": 0.0,
+          "power": 0.9999970312
+        },
+        {
+          "mapping_standard_error_points": 2.5,
+          "power": 0.9625102361
+        },
+        {
+          "mapping_standard_error_points": 5.0,
+          "power": 0.541337535
+        }
+      ],
+      "minimum_eligible_listeners": 1131,
+      "minimum_enrolled_listener_slots": 1751,
+      "mushra_material_power_at_truth_15": 0.9999970312,
+      "mushra_trials_per_eligible_listener_assumed": 6,
+      "planning_standard_error": 0.0141914054,
+      "sdg_material_power_at_truth_minus_1_25": 0.9996681332,
+      "source_groups": 48,
+      "target_power_attainable_with_finite_listeners": true,
+      "transparent_trials_per_eligible_listener": 8
+    },
+    {
+      "asymptotic_maximum_equivalence_power": 0.9141250236,
+      "asymptotic_source_floor_standard_error": 0.0126295371,
+      "audible_power_at_truth_0_80": 0.999999949,
+      "bridge_direct_joint_power_lower_bound": 0.9996217941,
+      "effective_judgments": 10044.0,
+      "effective_judgments_per_source": 209.25,
+      "equivalence_power": 0.800073889,
+      "mapped_severity_power_by_mapping_standard_error": [
+        {
+          "mapping_standard_error_points": 0.0,
+          "power": 0.9999957161
+        },
+        {
+          "mapping_standard_error_points": 2.5,
+          "power": 0.96113607
+        },
+        {
+          "mapping_standard_error_points": 5.0,
+          "power": 0.5400288657
+        }
+      ],
+      "minimum_eligible_listeners": 744,
+      "minimum_enrolled_listener_slots": 1152,
+      "mushra_material_power_at_truth_15": 0.9999957161,
+      "mushra_trials_per_eligible_listener_assumed": 6,
+      "planning_standard_error": 0.0141917856,
+      "sdg_material_power_at_truth_minus_1_25": 0.999626078,
+      "source_groups": 48,
+      "target_power_attainable_with_finite_listeners": true,
+      "transparent_trials_per_eligible_listener": 15
+    },
+    {
+      "asymptotic_maximum_equivalence_power": 0.9801952148,
+      "asymptotic_source_floor_standard_error": 0.0109375,
+      "audible_power_at_truth_0_80": 0.9999997461,
+      "bridge_direct_joint_power_lower_bound": 0.9999838363,
+      "effective_judgments": 3474.9,
+      "effective_judgments_per_source": 54.2953125,
+      "equivalence_power": 0.8000721709,
+      "mapped_severity_power_by_mapping_standard_error": [
+        {
+          "mapping_standard_error_points": 0.0,
+          "power": 0.9999999762
+        },
+        {
+          "mapping_standard_error_points": 2.5,
+          "power": 0.974550293
+        },
+        {
+          "mapping_standard_error_points": 5.0,
+          "power": 0.5542704149
+        }
+      ],
+      "minimum_eligible_listeners": 1287,
+      "minimum_enrolled_listener_slots": 1993,
+      "mushra_material_power_at_truth_15": 0.9999999762,
+      "mushra_trials_per_eligible_listener_assumed": 3,
+      "planning_standard_error": 0.0141918053,
+      "sdg_material_power_at_truth_minus_1_25": 0.9999838601,
+      "source_groups": 64,
+      "target_power_attainable_with_finite_listeners": true,
+      "transparent_trials_per_eligible_listener": 3
+    },
+    {
+      "asymptotic_maximum_equivalence_power": 0.9801952148,
+      "asymptotic_source_floor_standard_error": 0.0109375,
+      "audible_power_at_truth_0_80": 0.9999997844,
+      "bridge_direct_joint_power_lower_bound": 0.9999804504,
+      "effective_judgments": 3753.0,
+      "effective_judgments_per_source": 58.640625,
+      "equivalence_power": 0.8000405484,
+      "mapped_severity_power_by_mapping_standard_error": [
+        {
+          "mapping_standard_error_points": 0.0,
+          "power": 0.9999999687
+        },
+        {
+          "mapping_standard_error_points": 2.5,
+          "power": 0.9740764752
+        },
+        {
+          "mapping_standard_error_points": 5.0,
+          "power": 0.553698253
+        }
+      ],
+      "minimum_eligible_listeners": 834,
+      "minimum_enrolled_listener_slots": 1292,
+      "mushra_material_power_at_truth_15": 0.9999999687,
+      "mushra_trials_per_eligible_listener_assumed": 5,
+      "planning_standard_error": 0.0141921683,
+      "sdg_material_power_at_truth_minus_1_25": 0.9999804816,
+      "source_groups": 64,
+      "target_power_attainable_with_finite_listeners": true,
+      "transparent_trials_per_eligible_listener": 5
+    },
+    {
+      "asymptotic_maximum_equivalence_power": 0.9801952148,
+      "asymptotic_source_floor_standard_error": 0.0109375,
+      "audible_power_at_truth_0_80": 0.9999998269,
+      "bridge_direct_joint_power_lower_bound": 0.9999754352,
+      "effective_judgments": 4176.0,
+      "effective_judgments_per_source": 65.25,
+      "equivalence_power": 0.8003526762,
+      "mapped_severity_power_by_mapping_standard_error": [
+        {
+          "mapping_standard_error_points": 0.0,
+          "power": 0.9999999446
+        },
+        {
+          "mapping_standard_error_points": 2.5,
+          "power": 0.9730242055
+        },
+        {
+          "mapping_standard_error_points": 5.0,
+          "power": 0.5524502354
+        }
+      ],
+      "minimum_eligible_listeners": 580,
+      "minimum_enrolled_listener_slots": 898,
+      "mushra_material_power_at_truth_15": 0.9999999446,
+      "mushra_trials_per_eligible_listener_assumed": 6,
+      "planning_standard_error": 0.0141885844,
+      "sdg_material_power_at_truth_minus_1_25": 0.9999754906,
+      "source_groups": 64,
+      "target_power_attainable_with_finite_listeners": true,
+      "transparent_trials_per_eligible_listener": 8
+    },
+    {
+      "asymptotic_maximum_equivalence_power": 0.9801952148,
+      "asymptotic_source_floor_standard_error": 0.0109375,
+      "audible_power_at_truth_0_80": 0.9999998818,
+      "bridge_direct_joint_power_lower_bound": 0.999964358,
+      "effective_judgments": 5157.0,
+      "effective_judgments_per_source": 80.578125,
+      "equivalence_power": 0.8005909675,
+      "mapped_severity_power_by_mapping_standard_error": [
+        {
+          "mapping_standard_error_points": 0.0,
+          "power": 0.9999998324
+        },
+        {
+          "mapping_standard_error_points": 2.5,
+          "power": 0.9707295434
+        },
+        {
+          "mapping_standard_error_points": 5.0,
+          "power": 0.5498284822
+        }
+      ],
+      "minimum_eligible_listeners": 382,
+      "minimum_enrolled_listener_slots": 592,
+      "mushra_material_power_at_truth_15": 0.9999998324,
+      "mushra_trials_per_eligible_listener_assumed": 6,
+      "planning_standard_error": 0.0141858467,
+      "sdg_material_power_at_truth_minus_1_25": 0.9999645256,
+      "source_groups": 64,
+      "target_power_attainable_with_finite_listeners": true,
+      "transparent_trials_per_eligible_listener": 15
+    },
+    {
+      "asymptotic_maximum_equivalence_power": 0.9958902138,
+      "asymptotic_source_floor_standard_error": 0.0097827974,
+      "audible_power_at_truth_0_80": 0.9999995334,
+      "bridge_direct_joint_power_lower_bound": 0.9999989538,
+      "effective_judgments": 2689.2,
+      "effective_judgments_per_source": 33.615,
+      "equivalence_power": 0.8001724793,
+      "mapped_severity_power_by_mapping_standard_error": [
+        {
+          "mapping_standard_error_points": 0.0,
+          "power": 0.9999999997
+        },
+        {
+          "mapping_standard_error_points": 2.5,
+          "power": 0.9802121601
+        },
+        {
+          "mapping_standard_error_points": 5.0,
+          "power": 0.5616929565
+        }
+      ],
+      "minimum_eligible_listeners": 996,
+      "minimum_enrolled_listener_slots": 1542,
+      "mushra_material_power_at_truth_15": 0.9999999997,
+      "mushra_trials_per_eligible_listener_assumed": 3,
+      "planning_standard_error": 0.0141906537,
+      "sdg_material_power_at_truth_minus_1_25": 0.9999989542,
+      "source_groups": 80,
+      "target_power_attainable_with_finite_listeners": true,
+      "transparent_trials_per_eligible_listener": 3
+    },
+    {
+      "asymptotic_maximum_equivalence_power": 0.9958902138,
+      "asymptotic_source_floor_standard_error": 0.0097827974,
+      "audible_power_at_truth_0_80": 0.999999618,
+      "bridge_direct_joint_power_lower_bound": 0.9999985064,
+      "effective_judgments": 2907.0,
+      "effective_judgments_per_source": 36.3375,
+      "equivalence_power": 0.8004194718,
+      "mapped_severity_power_by_mapping_standard_error": [
+        {
+          "mapping_standard_error_points": 0.0,
+          "power": 0.9999999995
+        },
+        {
+          "mapping_standard_error_points": 2.5,
+          "power": 0.9796803596
+        },
+        {
+          "mapping_standard_error_points": 5.0,
+          "power": 0.5609427002
+        }
+      ],
+      "minimum_eligible_listeners": 646,
+      "minimum_enrolled_listener_slots": 1000,
+      "mushra_material_power_at_truth_15": 0.9999999995,
+      "mushra_trials_per_eligible_listener_assumed": 5,
+      "planning_standard_error": 0.0141878171,
+      "sdg_material_power_at_truth_minus_1_25": 0.999998507,
+      "source_groups": 80,
+      "target_power_attainable_with_finite_listeners": true,
+      "transparent_trials_per_eligible_listener": 5
+    },
+    {
+      "asymptotic_maximum_equivalence_power": 0.9958902138,
+      "asymptotic_source_floor_standard_error": 0.0097827974,
+      "audible_power_at_truth_0_80": 0.9999997044,
+      "bridge_direct_joint_power_lower_bound": 0.9999977196,
+      "effective_judgments": 3232.8,
+      "effective_judgments_per_source": 40.41,
+      "equivalence_power": 0.800637404,
+      "mapped_severity_power_by_mapping_standard_error": [
+        {
+          "mapping_standard_error_points": 0.0,
+          "power": 0.9999999985
+        },
+        {
+          "mapping_standard_error_points": 2.5,
+          "power": 0.9784809073
+        },
+        {
+          "mapping_standard_error_points": 5.0,
+          "power": 0.5592952531
+        }
+      ],
+      "minimum_eligible_listeners": 449,
+      "minimum_enrolled_listener_slots": 696,
+      "mushra_material_power_at_truth_15": 0.9999999985,
+      "mushra_trials_per_eligible_listener_assumed": 6,
+      "planning_standard_error": 0.0141853131,
+      "sdg_material_power_at_truth_minus_1_25": 0.9999977211,
+      "source_groups": 80,
+      "target_power_attainable_with_finite_listeners": true,
+      "transparent_trials_per_eligible_listener": 8
+    },
+    {
+      "asymptotic_maximum_equivalence_power": 0.9958902138,
+      "asymptotic_source_floor_standard_error": 0.0097827974,
+      "audible_power_at_truth_0_80": 0.9999998094,
+      "bridge_direct_joint_power_lower_bound": 0.9999955118,
+      "effective_judgments": 3982.5,
+      "effective_judgments_per_source": 49.78125,
+      "equivalence_power": 0.8001551324,
+      "mapped_severity_power_by_mapping_standard_error": [
+        {
+          "mapping_standard_error_points": 0.0,
+          "power": 0.9999999891
+        },
+        {
+          "mapping_standard_error_points": 2.5,
+          "power": 0.9758076396
+        },
+        {
+          "mapping_standard_error_points": 5.0,
+          "power": 0.5558214671
+        }
+      ],
+      "minimum_eligible_listeners": 295,
+      "minimum_enrolled_listener_slots": 457,
+      "mushra_material_power_at_truth_15": 0.9999999891,
+      "mushra_trials_per_eligible_listener_assumed": 6,
+      "planning_standard_error": 0.0141908529,
+      "sdg_material_power_at_truth_minus_1_25": 0.9999955227,
+      "source_groups": 80,
+      "target_power_attainable_with_finite_listeners": true,
+      "transparent_trials_per_eligible_listener": 15
+    },
+    {
+      "asymptotic_maximum_equivalence_power": 0.9992132962,
+      "asymptotic_source_floor_standard_error": 0.0089304314,
+      "audible_power_at_truth_0_80": 0.999999317,
+      "bridge_direct_joint_power_lower_bound": 0.9999999195,
+      "effective_judgments": 2335.5,
+      "effective_judgments_per_source": 24.328125,
+      "equivalence_power": 0.8000100862,
+      "mapped_severity_power_by_mapping_standard_error": [
+        {
+          "mapping_standard_error_points": 0.0,
+          "power": 1.0
+        },
+        {
+          "mapping_standard_error_points": 2.5,
+          "power": 0.9835487753
+        },
+        {
+          "mapping_standard_error_points": 5.0,
+          "power": 0.5667249751
+        }
+      ],
+      "minimum_eligible_listeners": 865,
+      "minimum_enrolled_listener_slots": 1340,
+      "mushra_material_power_at_truth_15": 1.0,
+      "mushra_trials_per_eligible_listener_assumed": 3,
+      "planning_standard_error": 0.014192518,
+      "sdg_material_power_at_truth_minus_1_25": 0.9999999195,
+      "source_groups": 96,
+      "target_power_attainable_with_finite_listeners": true,
+      "transparent_trials_per_eligible_listener": 3
+    },
+    {
+      "asymptotic_maximum_equivalence_power": 0.9992132962,
+      "asymptotic_source_floor_standard_error": 0.0089304314,
+      "audible_power_at_truth_0_80": 0.99999945,
+      "bridge_direct_joint_power_lower_bound": 0.9999998606,
+      "effective_judgments": 2524.5,
+      "effective_judgments_per_source": 26.296875,
+      "equivalence_power": 0.8002718344,
+      "mapped_severity_power_by_mapping_standard_error": [
+        {
+          "mapping_standard_error_points": 0.0,
+          "power": 1.0
+        },
+        {
+          "mapping_standard_error_points": 2.5,
+          "power": 0.9829963096
+        },
+        {
+          "mapping_standard_error_points": 5.0,
+          "power": 0.5658487916
+        }
+      ],
+      "minimum_eligible_listeners": 561,
+      "minimum_enrolled_listener_slots": 869,
+      "mushra_material_power_at_truth_15": 1.0,
+      "mushra_trials_per_eligible_listener_assumed": 5,
+      "planning_standard_error": 0.0141895129,
+      "sdg_material_power_at_truth_minus_1_25": 0.9999998607,
+      "source_groups": 96,
+      "target_power_attainable_with_finite_listeners": true,
+      "transparent_trials_per_eligible_listener": 5
+    },
+    {
+      "asymptotic_maximum_equivalence_power": 0.9992132962,
+      "asymptotic_source_floor_standard_error": 0.0089304314,
+      "audible_power_at_truth_0_80": 0.9999995848,
+      "bridge_direct_joint_power_lower_bound": 0.9999997355,
+      "effective_judgments": 2808.0,
+      "effective_judgments_per_source": 29.25,
+      "equivalence_power": 0.8005982724,
+      "mapped_severity_power_by_mapping_standard_error": [
+        {
+          "mapping_standard_error_points": 0.0,
+          "power": 0.9999999999
+        },
+        {
+          "mapping_standard_error_points": 2.5,
+          "power": 0.9817433509
+        },
+        {
+          "mapping_standard_error_points": 5.0,
+          "power": 0.5639280431
+        }
+      ],
+      "minimum_eligible_listeners": 390,
+      "minimum_enrolled_listener_slots": 604,
+      "mushra_material_power_at_truth_15": 0.9999999999,
+      "mushra_trials_per_eligible_listener_assumed": 6,
+      "planning_standard_error": 0.0141857628,
+      "sdg_material_power_at_truth_minus_1_25": 0.9999997356,
+      "source_groups": 96,
+      "target_power_attainable_with_finite_listeners": true,
+      "transparent_trials_per_eligible_listener": 8
+    },
+    {
+      "asymptotic_maximum_equivalence_power": 0.9992132962,
+      "asymptotic_source_floor_standard_error": 0.0089304314,
+      "audible_power_at_truth_0_80": 0.9999997501,
+      "bridge_direct_joint_power_lower_bound": 0.999999288,
+      "effective_judgments": 3469.5,
+      "effective_judgments_per_source": 36.140625,
+      "equivalence_power": 0.8011521961,
+      "mapped_severity_power_by_mapping_standard_error": [
+        {
+          "mapping_standard_error_points": 0.0,
+          "power": 0.999999999
+        },
+        {
+          "mapping_standard_error_points": 2.5,
+          "power": 0.9789370291
+        },
+        {
+          "mapping_standard_error_points": 5.0,
+          "power": 0.5599146956
+        }
+      ],
+      "minimum_eligible_listeners": 257,
+      "minimum_enrolled_listener_slots": 398,
+      "mushra_material_power_at_truth_15": 0.999999999,
+      "mushra_trials_per_eligible_listener_assumed": 6,
+      "planning_standard_error": 0.0141793937,
+      "sdg_material_power_at_truth_minus_1_25": 0.999999289,
+      "source_groups": 96,
+      "target_power_attainable_with_finite_listeners": true,
+      "transparent_trials_per_eligible_listener": 15
+    },
+    {
+      "asymptotic_maximum_equivalence_power": 0.9999413764,
+      "asymptotic_source_floor_standard_error": 0.0079876206,
+      "audible_power_at_truth_0_80": 0.9999990284,
+      "bridge_direct_joint_power_lower_bound": 0.9999999977,
+      "effective_judgments": 2065.5,
+      "effective_judgments_per_source": 17.2125,
+      "equivalence_power": 0.8001491073,
+      "mapped_severity_power_by_mapping_standard_error": [
+        {
+          "mapping_standard_error_points": 0.0,
+          "power": 1.0
+        },
+        {
+          "mapping_standard_error_points": 2.5,
+          "power": 0.9865352588
+        },
+        {
+          "mapping_standard_error_points": 5.0,
+          "power": 0.571831428
+        }
+      ],
+      "minimum_eligible_listeners": 765,
+      "minimum_enrolled_listener_slots": 1185,
+      "mushra_material_power_at_truth_15": 1.0,
+      "mushra_trials_per_eligible_listener_assumed": 3,
+      "planning_standard_error": 0.0141909221,
+      "sdg_material_power_at_truth_minus_1_25": 0.9999999977,
+      "source_groups": 120,
+      "target_power_attainable_with_finite_listeners": true,
+      "transparent_trials_per_eligible_listener": 3
+    },
+    {
+      "asymptotic_maximum_equivalence_power": 0.9999413764,
+      "asymptotic_source_floor_standard_error": 0.0079876206,
+      "audible_power_at_truth_0_80": 0.9999992272,
+      "bridge_direct_joint_power_lower_bound": 0.9999999944,
+      "effective_judgments": 2232.0,
+      "effective_judgments_per_source": 18.6,
+      "equivalence_power": 0.8003221252,
+      "mapped_severity_power_by_mapping_standard_error": [
+        {
+          "mapping_standard_error_points": 0.0,
+          "power": 1.0
+        },
+        {
+          "mapping_standard_error_points": 2.5,
+          "power": 0.9859777685
+        },
+        {
+          "mapping_standard_error_points": 5.0,
+          "power": 0.5708250533
+        }
+      ],
+      "minimum_eligible_listeners": 496,
+      "minimum_enrolled_listener_slots": 768,
+      "mushra_material_power_at_truth_15": 1.0,
+      "mushra_trials_per_eligible_listener_assumed": 5,
+      "planning_standard_error": 0.0141889353,
+      "sdg_material_power_at_truth_minus_1_25": 0.9999999944,
+      "source_groups": 120,
+      "target_power_attainable_with_finite_listeners": true,
+      "transparent_trials_per_eligible_listener": 5
+    },
+    {
+      "asymptotic_maximum_equivalence_power": 0.9999413764,
+      "asymptotic_source_floor_standard_error": 0.0079876206,
+      "audible_power_at_truth_0_80": 0.9999994314,
+      "bridge_direct_joint_power_lower_bound": 0.999999985,
+      "effective_judgments": 2484.0,
+      "effective_judgments_per_source": 20.7,
+      "equivalence_power": 0.8009198846,
+      "mapped_severity_power_by_mapping_standard_error": [
+        {
+          "mapping_standard_error_points": 0.0,
+          "power": 1.0
+        },
+        {
+          "mapping_standard_error_points": 2.5,
+          "power": 0.9847082811
+        },
+        {
+          "mapping_standard_error_points": 5.0,
+          "power": 0.5686285376
+        }
+      ],
+      "minimum_eligible_listeners": 345,
+      "minimum_enrolled_listener_slots": 535,
+      "mushra_material_power_at_truth_15": 1.0,
+      "mushra_trials_per_eligible_listener_assumed": 6,
+      "planning_standard_error": 0.0141820657,
+      "sdg_material_power_at_truth_minus_1_25": 0.999999985,
+      "source_groups": 120,
+      "target_power_attainable_with_finite_listeners": true,
+      "transparent_trials_per_eligible_listener": 8
+    },
+    {
+      "asymptotic_maximum_equivalence_power": 0.9999413764,
+      "asymptotic_source_floor_standard_error": 0.0079876206,
+      "audible_power_at_truth_0_80": 0.9999996665,
+      "bridge_direct_joint_power_lower_bound": 0.9999999328,
+      "effective_judgments": 3064.5,
+      "effective_judgments_per_source": 25.5375,
+      "equivalence_power": 0.8009049318,
+      "mapped_severity_power_by_mapping_standard_error": [
+        {
+          "mapping_standard_error_points": 0.0,
+          "power": 0.9999999999
+        },
+        {
+          "mapping_standard_error_points": 2.5,
+          "power": 0.9818018154
+        },
+        {
+          "mapping_standard_error_points": 5.0,
+          "power": 0.5640157356
+        }
+      ],
+      "minimum_eligible_listeners": 227,
+      "minimum_enrolled_listener_slots": 352,
+      "mushra_material_power_at_truth_15": 0.9999999999,
+      "mushra_trials_per_eligible_listener_assumed": 6,
+      "planning_standard_error": 0.0141822377,
+      "sdg_material_power_at_truth_minus_1_25": 0.9999999328,
+      "source_groups": 120,
+      "target_power_attainable_with_finite_listeners": true,
+      "transparent_trials_per_eligible_listener": 15
+    },
+    {
+      "asymptotic_maximum_equivalence_power": 0.9999993857,
+      "asymptotic_source_floor_standard_error": 0.0069174824,
+      "audible_power_at_truth_0_80": 0.9999986499,
+      "bridge_direct_joint_power_lower_bound": 1.0,
+      "effective_judgments": 1852.2,
+      "effective_judgments_per_source": 11.57625,
+      "equivalence_power": 0.8004766048,
+      "mapped_severity_power_by_mapping_standard_error": [
+        {
+          "mapping_standard_error_points": 0.0,
+          "power": 1.0
+        },
+        {
+          "mapping_standard_error_points": 2.5,
+          "power": 0.9891711951
+        },
+        {
+          "mapping_standard_error_points": 5.0,
+          "power": 0.5770117359
+        }
+      ],
+      "minimum_eligible_listeners": 686,
+      "minimum_enrolled_listener_slots": 1062,
+      "mushra_material_power_at_truth_15": 1.0,
+      "mushra_trials_per_eligible_listener_assumed": 3,
+      "planning_standard_error": 0.0141871608,
+      "sdg_material_power_at_truth_minus_1_25": 1.0,
+      "source_groups": 160,
+      "target_power_attainable_with_finite_listeners": true,
+      "transparent_trials_per_eligible_listener": 3
+    },
+    {
+      "asymptotic_maximum_equivalence_power": 0.9999993857,
+      "asymptotic_source_floor_standard_error": 0.0069174824,
+      "audible_power_at_truth_0_80": 0.999998945,
+      "bridge_direct_joint_power_lower_bound": 0.9999999999,
+      "effective_judgments": 2002.5,
+      "effective_judgments_per_source": 12.515625,
+      "equivalence_power": 0.8009029284,
+      "mapped_severity_power_by_mapping_standard_error": [
+        {
+          "mapping_standard_error_points": 0.0,
+          "power": 1.0
+        },
+        {
+          "mapping_standard_error_points": 2.5,
+          "power": 0.9886270864
+        },
+        {
+          "mapping_standard_error_points": 5.0,
+          "power": 0.5758778019
+        }
+      ],
+      "minimum_eligible_listeners": 445,
+      "minimum_enrolled_listener_slots": 689,
+      "mushra_material_power_at_truth_15": 1.0,
+      "mushra_trials_per_eligible_listener_assumed": 5,
+      "planning_standard_error": 0.0141822607,
+      "sdg_material_power_at_truth_minus_1_25": 0.9999999999,
+      "source_groups": 160,
+      "target_power_attainable_with_finite_listeners": true,
+      "transparent_trials_per_eligible_listener": 5
+    },
+    {
+      "asymptotic_maximum_equivalence_power": 0.9999993857,
+      "asymptotic_source_floor_standard_error": 0.0069174824,
+      "audible_power_at_truth_0_80": 0.9999992252,
+      "bridge_direct_joint_power_lower_bound": 0.9999999997,
+      "effective_judgments": 2224.8,
+      "effective_judgments_per_source": 13.905,
+      "equivalence_power": 0.8007697529,
+      "mapped_severity_power_by_mapping_standard_error": [
+        {
+          "mapping_standard_error_points": 0.0,
+          "power": 1.0
+        },
+        {
+          "mapping_standard_error_points": 2.5,
+          "power": 0.9873637955
+        },
+        {
+          "mapping_standard_error_points": 5.0,
+          "power": 0.5733798131
+        }
+      ],
+      "minimum_eligible_listeners": 309,
+      "minimum_enrolled_listener_slots": 479,
+      "mushra_material_power_at_truth_15": 1.0,
+      "mushra_trials_per_eligible_listener_assumed": 6,
+      "planning_standard_error": 0.0141837919,
+      "sdg_material_power_at_truth_minus_1_25": 0.9999999997,
+      "source_groups": 160,
+      "target_power_attainable_with_finite_listeners": true,
+      "transparent_trials_per_eligible_listener": 8
+    },
+    {
+      "asymptotic_maximum_equivalence_power": 0.9999993857,
+      "asymptotic_source_floor_standard_error": 0.0069174824,
+      "audible_power_at_truth_0_80": 0.9999995544,
+      "bridge_direct_joint_power_lower_bound": 0.9999999971,
+      "effective_judgments": 2740.5,
+      "effective_judgments_per_source": 17.128125,
+      "equivalence_power": 0.8000276303,
+      "mapped_severity_power_by_mapping_standard_error": [
+        {
+          "mapping_standard_error_points": 0.0,
+          "power": 1.0
+        },
+        {
+          "mapping_standard_error_points": 2.5,
+          "power": 0.9844180946
+        },
+        {
+          "mapping_standard_error_points": 5.0,
+          "power": 0.5681434879
+        }
+      ],
+      "minimum_eligible_listeners": 203,
+      "minimum_enrolled_listener_slots": 315,
+      "mushra_material_power_at_truth_15": 1.0,
+      "mushra_trials_per_eligible_listener_assumed": 6,
+      "planning_standard_error": 0.0141923166,
+      "sdg_material_power_at_truth_minus_1_25": 0.9999999971,
+      "source_groups": 160,
+      "target_power_attainable_with_finite_listeners": true,
+      "transparent_trials_per_eligible_listener": 15
+    }
+  ],
+  "human_collection_authorized": false,
+  "implementation_sha256": "1d5a95ca4f0072ead8846bbcb98b5d56c0ce2f55496cb2c520b30b948279a74a",
+  "listener_responses_opened": false,
+  "metric_scores_opened": false,
+  "odaq_narrow_path": {
+    "asymptotic_maximum_equivalence_power": 0.0353439413,
+    "development_only": true,
+    "independent_source_groups": 16,
+    "independent_transfer_supported": false,
+    "provider_count": 1,
+    "reason": "The source random-effect floor alone exceeds the standard-error ceiling required for 80% equivalence power; adding listeners or repeated judgments cannot repair a 16-source aggregate under the frozen model.",
+    "target_attainable_under_frozen_model": false,
+    "target_power": 0.8,
+    "transparent_truth_supported": false
+  },
+  "planning_model": {
+    "attrition_and_missingness_are_score_blind_stress_assumptions": true,
+    "bridge_joint_power_uses_frechet_lower_bound": true,
+    "class": "known_variance_normal_approximation",
+    "device_classes_are_separate_estimands": true,
+    "equivalence_target_standard_error_ceiling": 0.0141926337,
+    "final_hierarchical_analysis_substitute": false,
+    "one_sided_multiplicity_adjusted_z": 2.2414027276
+  },
+  "public_verdict_enabled": false,
+  "reference_workload_sensitivity": {
+    "device_class_workload": [
+      {
+        "device_class_count": 1,
+        "effective_judgments_at_reference_120_source_5_trial_design": 2232.0,
+        "minimum_enrolled_listener_slots_at_reference_120_source_5_trial_design": 768,
+        "pooled_generalization": false
+      },
+      {
+        "device_class_count": 2,
+        "effective_judgments_at_reference_120_source_5_trial_design": 4464.0,
+        "minimum_enrolled_listener_slots_at_reference_120_source_5_trial_design": 1536,
+        "pooled_generalization": false
+      }
+    ],
+    "reference_only": "120 independent source groups and 5 transparent trials per eligible listener",
+    "row": {
+      "asymptotic_maximum_equivalence_power": 0.9999413764,
+      "asymptotic_source_floor_standard_error": 0.0079876206,
+      "audible_power_at_truth_0_80": 0.9999992272,
+      "bridge_direct_joint_power_lower_bound": 0.9999999944,
+      "effective_judgments": 2232.0,
+      "effective_judgments_per_source": 18.6,
+      "equivalence_power": 0.8003221252,
+      "mapped_severity_power_by_mapping_standard_error": [
+        {
+          "mapping_standard_error_points": 0.0,
+          "power": 1.0
+        },
+        {
+          "mapping_standard_error_points": 2.5,
+          "power": 0.9859777685
+        },
+        {
+          "mapping_standard_error_points": 5.0,
+          "power": 0.5708250533
+        }
+      ],
+      "minimum_eligible_listeners": 496,
+      "minimum_enrolled_listener_slots": 768,
+      "mushra_material_power_at_truth_15": 1.0,
+      "mushra_trials_per_eligible_listener_assumed": 5,
+      "planning_standard_error": 0.0141889353,
+      "sdg_material_power_at_truth_minus_1_25": 0.9999999944,
+      "source_groups": 120,
+      "target_power_attainable_with_finite_listeners": true,
+      "transparent_trials_per_eligible_listener": 5
+    },
+    "selected_for_decision": false
+  },
+  "report_id": "perceptual-degradation-listening-feasibility-frontier-20260813-001",
+  "schema_version": 1,
+  "sealed_evidence_opened": false,
+  "source_frontier": {
+    "minimum_source_groups_per_independent_partition_for_asymptotic_80_percent_equivalence_power": 39,
+    "partition_requirements": [
+      {
+        "asymptotic_minimum_unique_source_groups": 39,
+        "partition_count": 1,
+        "reference_120_per_partition_unique_source_groups": 120
+      },
+      {
+        "asymptotic_minimum_unique_source_groups": 117,
+        "partition_count": 3,
+        "reference_120_per_partition_unique_source_groups": 360
+      },
+      {
+        "asymptotic_minimum_unique_source_groups": 156,
+        "partition_count": 4,
+        "reference_120_per_partition_unique_source_groups": 480
+      }
+    ],
+    "source_groups_38_asymptotic_power": 0.7998483254,
+    "source_groups_39_asymptotic_power": 0.8155467383
+  },
+  "state": "score_blind_feasibility_frontier_no_operational_design_frozen"
+}

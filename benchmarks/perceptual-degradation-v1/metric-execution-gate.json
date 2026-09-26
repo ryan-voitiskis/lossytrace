@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "gate_id": "perceptual-degradation-v1-metric-execution-20260803-010",
+  "state": "metric_execution_blocked_pending_legal_and_listening_evidence",
+  "correction_history": [
+    {
+      "correction_id": "score-blind-transparency-candidate-terminology-20260804-001",
+      "scope": "update_research_and_alignment_bindings_only",
+      "metric_authority_changed": false,
+      "scores_opened_before_correction": false
+    }
+  ],
+  "public_verdict_enabled": false,
+  "retained_audio_metric_execution_authorized": false,
+  "public_development_audio_metric_execution_authorized": false,
+  "perceptual_metric_execution_authorized": false,
+  "human_collection_authorized": false,
+  "no_reference_training_authorized": false,
+  "completed_prerequisites": {
+    "research_contract_frozen": true,
+    "primary_metric_families_limited_to_two": true,
+    "score_blind_public_development_manifest_frozen": true,
+    "score_free_alignment_topology_frozen": true,
+    "score_free_decoder_resampler_replayed": true,
+    "visqol_synthetic_replay_plan_frozen": true,
+    "visqol_single_environment_synthetic_replay_complete": true,
+    "visqol_second_environment_plan_frozen_before_scores": true,
+    "visqol_cross_environment_synthetic_replay_complete": true,
+    "visqol_cross_environment_score_determinism_observed": true
+  },
+  "bindings": {
+    "research_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/research-plan.json",
+      "sha256": "e724a3e04fb41458d0568f542283ba33d71a54b1fdfd74b3901cc0dc1d10c352"
+    },
+    "alignment_topology_freeze": {
+      "path": "benchmarks/perceptual-degradation-v1/alignment-topology-freeze.json",
+      "sha256": "b3508568fb1375f833fd4ba5b0203bdeb6dba1197fb95b054576e79c9deeda45"
+    },
+    "inherited_toolchain": {
+      "path": "benchmarks/audio-integrity-v2/toolchain-bindings.json",
+      "sha256": "d2af2f0b78b184189806d724c294d7606f37d2763839e17c9289f7957da52070"
+    },
+    "audio_view_implementation": {
+      "path": "scripts/perceptual_degradation_toolchain.py",
+      "sha256": "521c19ddc448ce5fb92cda5251b06f6d855b3530f74fbd00ce32d736ef54782f"
+    },
+    "audio_view_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_toolchain.py",
+      "sha256": "92c92f4404675c8d98048f2f97b03bf98f6c0240576732b3af2cd4417f3b682e"
+    },
+    "audio_view_replay": {
+      "path": "research/toolchains/evidence/perceptual-degradation-audio-view-observed-20260803-001.json",
+      "sha256": "9219f697d3e50ff6f1149c1dbfd4cf868581b1ebdcabc6f8b666402b21a6d189"
+    },
+    "literature_and_implementation_review": {
+      "path": "docs/research/perceptual-degradation-literature-review-20260803.md",
+      "sha256": "2bba714035c42a40fe1395a2ba94cc57a5b3e324f54846bef74fad01e19ae8e4"
+    },
+    "odaq_score_blind_provider_audit": {
+      "path": "research/toolchains/evidence/perceptual-degradation-odaq-score-blind-audit-20260803-001.json",
+      "sha256": "c5b53a5c52f72198194fb81c39abd20a84bb3484f8618322a639225fa96f85d8"
+    },
+    "public_development_acquisition_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/public-development-acquisition-plan.json",
+      "sha256": "5e5479633803367bdf1ebf242331f97dd24d7abd10ce46012ce11ea32cf27ae7"
+    },
+    "visqol_synthetic_replay_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/visqol-synthetic-replay-plan.json",
+      "sha256": "4932569542bec220b55c42224f2a6525172caa6416aa3a0b60ab2bbe91ad5cd6"
+    },
+    "visqol_build_observation": {
+      "path": "research/toolchains/evidence/visqol-synthetic-build-observed-20260803-001.json",
+      "sha256": "d2b858d192b145c6082ff253126a62b9504ed14dd98fc9668a1b8dd459691506"
+    },
+    "visqol_replay_observation": {
+      "path": "research/toolchains/evidence/visqol-synthetic-replay-observed-20260803-001.json",
+      "sha256": "d21c8d0879ce0a5f1efeac5c8e38105b9c017d0c0777bc48655fc0916befe175"
+    },
+    "visqol_observation_validator": {
+      "path": "scripts/validate-perceptual-degradation-visqol-observation.py",
+      "sha256": "dada2ae02bb579f2fcd49940217feb2c01fea16158850b59c25a09ef88ffbb57"
+    },
+    "visqol_second_environment_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/visqol-synthetic-second-environment-plan.json",
+      "sha256": "c2cbf0e2edc0ec495a277ad2ab705d0ce1809bd31be8b8b32efd24bdd9323af5"
+    },
+    "visqol_second_build_observation": {
+      "path": "research/toolchains/evidence/visqol-synthetic-second-build-observed-20260803-001.json",
+      "sha256": "e25797f734b95d5ef396bdd37a93f3171fc6ef138155df35ef60de79900fe274"
+    },
+    "visqol_cross_environment_observation": {
+      "path": "research/toolchains/evidence/visqol-synthetic-cross-environment-observed-20260803-001.json",
+      "sha256": "63fdf3d6e4c85e42950d735f2a4bba2974bc23a464318708311a750177ae9c66"
+    },
+    "visqol_cross_environment_observation_validator": {
+      "path": "scripts/validate-perceptual-degradation-visqol-cross-environment-observation.py",
+      "sha256": "213ba5b8c63650a9c63b114263bb12a7e39b90b0c873992636f30b636b017ab1"
+    }
+  },
+  "second_environment_execution": {
+    "metric_family": "visqol_audio_v3_3_3",
+    "environment_id": "ubuntu24-gcc13-python312-v1",
+    "synthetic_fixture_execution_authorized": false,
+    "public_or_retained_audio_execution_authorized": false,
+    "human_listening_score_access_authorized": false,
+    "provider_audio_download_authorized": false,
+    "ephemeral_remote_execution_only": true,
+    "maximum_workers": 6,
+    "minimum_local_free_disk_gib": 15,
+    "score_blind_before_execution": true,
+    "execution_complete": true
+  },
+  "metric_families": {
+    "visqol_audio_v3_3_3": {
+      "repository": "https://github.com/google/visqol",
+      "git_commit": "c3aa2e498e0f7f14202643594335a0b9ee40bdd9",
+      "license": "Apache-2.0",
+      "source_binding_complete": true,
+      "build_recipe_frozen": true,
+      "binary_sha256": "7384c8d21725e6fa3921aea4e66ff9cb9481b57acef868304192df437a467319",
+      "model_sha256": "1e8246ed33bf36dc5c859351f7110f2cd31f98661989715c0fcf974ec48d3e2e",
+      "synthetic_fixture_execution_authorized": false,
+      "synthetic_replay_complete": true,
+      "second_environment_synthetic_replay_complete": true,
+      "cross_environment_score_determinism_pass": true,
+      "maximum_observed_absolute_delta": 0,
+      "execution_authorized": false
+    },
+    "gstpeaq_proxy_v0_6_1": {
+      "repository": "https://github.com/HSU-ANT/gstpeaq",
+      "git_commit": "c6e8b23d3374dbc937ef9f7cfbdb3b3f4c864352",
+      "implementation_license": "GNU Library GPL v2",
+      "source_binding_complete": true,
+      "upstream_conforms_to_itu_tolerance": false,
+      "itu_technology_consent_or_licence_cleared": false,
+      "research_use_legal_record_present": false,
+      "redistribution_boundary_approved": false,
+      "build_recipe_frozen": false,
+      "binary_sha256": null,
+      "synthetic_fixture_execution_authorized": false,
+      "synthetic_replay_complete": false,
+      "execution_authorized": false
+    }
+  },
+  "unmet_prerequisites": [
+    "Obtain and commit a qualified legal record for use of the BS.1387-derived GstPEAQ proxy technology and its redistribution boundary.",
+    "Freeze and replay the exact GstPEAQ proxy build only if the legal record permits execution.",
+    "Keep retained audio and all sealed labels unopened until a later committed opening authorization."
+  ],
+  "authorized_next_step": "Keep ViSQOL synthetic execution closed. Qualify the controlled full-reference listening stimuli and playback evidence under the existing score-blind protocol; do not download ODAQ audio or execute a perceptual metric on public, provider or retained audio."
+}

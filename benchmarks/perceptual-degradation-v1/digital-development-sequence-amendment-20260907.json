@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "amendment_id": "digital-development-sequence-20260907-001",
+  "state": "user_approved_sequence_amendment_execution_not_authorized",
+  "authority": {
+    "source": "user_approval_2026_09_07_to_defer_capture_and_revise_plan_for_existing_references",
+    "plan_revision_authorized": true,
+    "public_repository_metadata_review_authorized": true,
+    "execution_protocol_preparation_authorized": true,
+    "retained_waveform_or_private_manifest_read_authorized": false,
+    "codec_generation_authorized": false,
+    "sample_correction_authorized": false,
+    "metric_execution_authorized": false,
+    "playback_or_human_collection_authorized": false,
+    "provider_processed_condition_or_score_access_authorized": false,
+    "sealed_evidence_access_authorized": false,
+    "no_reference_training_authorized": false,
+    "outreach_authorized": false,
+    "spending_authorized": false,
+    "public_verdict_enabled": false
+  },
+  "objective": "Determine whether LossyTrace can estimate material perceptual degradation caused by lossy audio coding, rather than infer prior codec history. Build a deterministic full-reference perceptual oracle anchored by controlled listening evidence, then train and independently validate a no-reference estimator on grouped source-, domain-, codec- and encoder-held-out evidence. Report impairment severity, estimated audibility, artifact profile, support and uncertainty with explicit abstention. Treat perceptually transparent lossy encodes as non-degraded, preserve difficult natural and production negatives, keep the public CLI verdict-free, and treat a rigorous negative result as successful completion.",
+  "bindings": {
+    "research_contract": {"path": "docs/research/perceptual-degradation-contract-20260803.md", "sha256": "fdec79207fc0fdd2e9cb10aae9f93dd1a17b45e6e56c0c7df8f0e01a1f9fb505"},
+    "research_plan": {"path": "benchmarks/perceptual-degradation-v1/research-plan.json", "sha256": "e724a3e04fb41458d0568f542283ba33d71a54b1fdfd74b3901cc0dc1d10c352"},
+    "strategic_review": {"path": "docs/research/perceptual-degradation-strategic-review-20260905.md", "sha256": "6dfa09fa8c5465a08a41fcf8f3eaaa2b518e74a13bde83b2dd4549ff2c709cf4"},
+    "historical_objective_audit": {"path": "research/toolchains/evidence/perceptual-degradation-objective-completion-audit-20260819-022.json", "sha256": "d3dd264e3d1c68a5b044c46d4dd6c457b2488a1cc5100568821f4842c6569406"},
+    "source_condition_candidates": {"path": "benchmarks/perceptual-degradation-v1/source-condition-qualification-plan.json", "sha256": "5ce20a4e10d743e8823810ec89e58d873ea2db47044151f065fa3358e16cf64b"},
+    "source_adjudication": {"path": "benchmarks/perceptual-degradation-v1/source-trait-adjudication-relationship-plan.json", "sha256": "dcd3c2abf17f7721bb240a9a84b55e2953d7f41ac6438a884574ee7511071e8e"},
+    "capture_intake": {"path": "benchmarks/perceptual-degradation-v1/source-trait-sparse-non-tonal-clean-capture-live-intake-plan.json", "sha256": "edf793ab6ecceed943ce7f2e2b8033e2ce25dff3fab598ce74a724f5cca66634"},
+    "reference_acquisition": {"path": "benchmarks/perceptual-degradation-v1/odaq-reference-acquisition-result-20260813.json", "sha256": "b768900901cdcfc88ca4d5918a331961ee01eccd6a6d5d5becf31ddfaa15df4e"},
+    "reference_delivery": {"path": "benchmarks/perceptual-degradation-v1/odaq-reference-delivery-result-20260814.json", "sha256": "01cc9fbe0b94c0c77f394f5853b9aab8a99fa9ea61a2d9f74e1f46e6f620616e"},
+    "retained_drift_negative": {"path": "benchmarks/perceptual-degradation-v1/odaq-retained-drift-validation-result-20260817.json", "sha256": "822752ab412691644be8a8ce0bb88559ca7151489f29358e3c5377830e85138e"},
+    "probability_targets": {"path": "benchmarks/perceptual-degradation-v1/perceptual-target-semantics-plan.json", "sha256": "1801113a3f4b81b8316c8bdfcc1df21ee922a1aa744233dd0585b768b17266d2"},
+    "nonmateriality_semantics": {"path": "benchmarks/perceptual-degradation-v1/nonmateriality-evidence-plan.json", "sha256": "913bba83a25290ff362b9e001d0d7a34b499c191059b4786a36042c2d175fd90"},
+    "score_free_oracle": {"path": "benchmarks/perceptual-degradation-v1/oracle-validity-integration-plan.json", "sha256": "99e87c837c0e7ef365dc03623b781ed46ec0eec5e84dbe12bf2b38549e14d138"}
+  },
+  "sequence_change": {
+    "applies_only_to": "odaq16_digital_development_study",
+    "capture_first_dependency_removed_for_this_study": true,
+    "complete_seven_trait_manifest_required_before_this_study": false,
+    "complete_seven_trait_manifest_required_for_full_objective": true,
+    "historical_audit_next_gate_superseded_for_this_study": true,
+    "historical_observations_or_numeric_thresholds_changed": false,
+    "legacy_execution_plans_or_runners_reauthorized": false,
+    "scope_policy": "This amendment changes prospective ordering for development on the retained ODAQ cohort. It does not declare the broad source manifest complete, erase any failed gate, select a metric suite, or turn development into independent validation. Legacy runners remain closed under their original authorizations."
+  },
+  "development_cohort": {
+    "reference_count": 16,
+    "source": "exact_previously_acquired_odaq_clean_reference_cohort",
+    "selected_input_representation": "one_existing_verified_canonical_integer_pcm_delivery_replay",
+    "sample_rate_hz": 48000,
+    "channel_count": 2,
+    "original_inventory_sha256": "d7f244da55b510b639300d55271b1ebd5fb9f7454b258bec30588bf18eefde2f",
+    "delivery_inventory_sha256": "66e20ac42ae618eb54a09fa91423f339fdca84be3aa3d7a779b220b57faf2abe",
+    "retained_delivery_sample_formats": {"signed_integer_24_bit": 9, "signed_integer_32_bit": 7},
+    "minimum_frame_count": 360701,
+    "maximum_frame_count": 576008,
+    "provider_stratum_count": 1,
+    "development_partition": "odaq_retained_development_only",
+    "all_cohort_members_and_derivatives_colocated": true,
+    "source_count_asserts_independent_group_count": false,
+    "fresh_transfer_or_final_validation_eligible": false,
+    "current_file_presence_and_integrity_reverified": false,
+    "provenance_policy": "Bind the acquired originals, prior canonical-delivery transformation and attribution records. The experiment measures the additional declared codec intervention relative to its exact digital input, not total damage relative to an imagined pristine master. Private inventory and integrity must be reverified under the future execution checkpoint; historical delivery success is not current file verification."
+  },
+  "first_study": {
+    "role": "controlled_digital_development_not_scientific_validation",
+    "scientific_question": "On supported reference/test pairs, can candidate evidence ultimately predict within-source human judgments of impairment introduced by a declared codec intervention? The initial technical stage alone cannot answer that question.",
+    "technical_question": "Can the exact digital reference-to-encode-to-decode comparisons be built reproducibly with preserved channels, traceable codec delay and padding, matched input controls and explicit unsupported cases?",
+    "signal_path": ["verified_existing_digital_reference", "declared_codec_input_view", "bound_encoder", "bound_decoder", "reference_test_comparison"],
+    "sound_card_loopback_required": false,
+    "microphone_or_preamp_required": false,
+    "room_measurement_required": false,
+    "new_corpus_acquisition_required": false,
+    "candidate_codec_families": ["mp3", "aac_lc", "opus", "vorbis"],
+    "exact_conditions_selected": false,
+    "exact_encoder_decoder_bindings_selected": false,
+    "case_count_frozen": false,
+    "condition_design": "Prepare a bounded matrix from the already-qualified development candidates, with more than one operating point per selected family. Use native 48 kHz conditions where supported. Several old templates specify 44.1 kHz and must not be silently reused at 48 kHz: assign new recipe identities and freeze exact arguments and any adapter. Codec, encoder, nominal bitrate and quality settings are interventions, never quality labels. Missing families remain visible coverage limitations.",
+    "required_controls": ["identity_comparison", "matched_pcm_only_input_adapter_control"],
+    "reference_policy": "Compare decoded outputs with the exact reference view supplied to the encoder. If an encoder needs an input conversion, retain its separate PCM-only control relative to the retained reference; do not attribute adapter effects solely to coding. Preserve original delivery samples and channel relationships.",
+    "support_policy": "Retain all 16 source identities and every frozen planned case in the accounting. Report unsupported cases and failures without replacement, padding, looping, repetition, concatenation or outcome-selected excerpts. At least one retained reference is shorter than eight seconds by container geometry alone; native duration is not proof of active duration or alignment support.",
+    "minimum_active_seconds_unchanged": {"subtle": 4.0, "quality_metric": 8.0},
+    "normalization_policy": "Known digital timebase does not imply zero encoder delay or padding. Freeze alignment and delay handling before execution. Do not import the failed hardware-drift correction path, fit away independent channel gain or polarity, apply dynamic time warping, or change support thresholds against observed results. Any metric-specific view needs explicit target-matched justification.",
+    "technical_outputs": ["planned_case_disposition_counts", "input_and_decoder_geometry_checks", "delay_padding_and_alignment_support", "two_replay_determinism", "failure_and_unsupported_reason_counts"],
+    "perceptual_outcomes_before_calibration": "unavailable_not_zero_or_transparent"
+  },
+  "ordered_work": [
+    {
+      "stage_id": "freeze_digital_execution_protocol",
+      "status": "next_authorized_preparation",
+      "deliverable": "One exact ODAQ16 execution proposal and tested bounded runner: private inventory binding, attribution and use scope, selected native-rate recipes and controls, exact binaries/dependencies, input conversion, delay/padding policy, case denominator, replay rules, private retention budget and sanitized public projection. No waveform reads or codec generation during preparation."
+    },
+    {
+      "stage_id": "execute_authorized_digital_technical_study",
+      "status": "requires_separate_execution_approval_and_exact_head_ci",
+      "deliverable": "After approval of that exact proposal and successful exact-head CI, reverify the bound private inventory and run two bounded private replays. Preserve all outcomes. This stage produces technical evidence, not listening stimuli delivered to people or perceptual truth."
+    },
+    {
+      "stage_id": "metric_and_human_development",
+      "status": "separately_gated",
+      "deliverable": "Select any metric through a score-blind successor with exact legal/tool bindings; keep raw features distinct from truth. Prepare and obtain approval for a bounded human development pilot with consent, fresh playback qualification, paired severity, response-probability semantics, source/condition linkage, uncertainty and a feasibility-appropriate analysis. No claim of powered transparency or independent validation follows from this pilot."
+    },
+    {
+      "stage_id": "complete_broad_validation_program",
+      "status": "required_for_full_objective",
+      "deliverable": "Resolve all seven source traits and production negatives, use fresh grouped human calibration and source/domain/codec/encoder transfer, and validate no-reference estimation only after the full-reference pass. Obtain fresh final evidence after model and threshold freeze, or reach an evidence-backed permitted negative/full-reference-only disposition."
+    }
+  ],
+  "deferred_not_waived": {
+    "clean_capture": "Defer the one authorized natural-impulse capture; no office equipment, loopback or room test is requested now. Its physical-chain and metadata-first rules still apply if resumed. The capture is a source challenge, not proof of perceptual support.",
+    "required_source_traits": ["natural_bandwidth_limit", "quiet", "sparse", "tonal", "synthetic", "noisy", "clipped"],
+    "quiet": "Do not choose a cutoff from the observed quiet value. A fresh score-blind candidate or independently justified protocol remains necessary.",
+    "clipped": "Descriptor/provenance readiness is not trait assignment or partition allocation; the separate adjudication remains open.",
+    "production_negatives": "Gain, polarity, delay, resampling, drift, mastering and production controls remain required by the broad contract; development codec outputs do not substitute for them.",
+    "retained_drift": "Keep the six failed applied cases and the reproducible 16-of-17-gate technical negative unchanged. Native digital coding is a different intervention, not a repair or rerun of that experiment.",
+    "metric_selection": "No metric family is selected here. The stopped two-family gate stays closed and the prepared ViSQOL-only option remains unselected.",
+    "human_truth": "Correct-response probability, audible-condition probability and material impairment remain distinct. No legacy class-calibration gate is transferred to response prediction; no nominal codec setting, missing value or nonsignificant result supplies a transparency label.",
+    "required_transfer_axes": ["source", "domain", "codec", "encoder"],
+    "odaq_processed_conditions_and_scores": "Remain unopened; provider-simulated artifacts and scores are not actual-codec truth for this study."
+  },
+  "resources_and_publication": {
+    "maximum_research_workers": 1,
+    "maximum_general_sustained_workers": 6,
+    "minimum_free_disk_gib": 15,
+    "duplicate_retained_corpus_allowed": false,
+    "new_capture_or_derived_pcm_retained_by_this_amendment": false,
+    "future_processing": "One source/condition at a time in bounded temporary storage; two replay reports with exact private integrity evidence, no persistent decoded corpus. Explicit approval is required for any listening-delivery retention beyond the technical replay.",
+    "public_output": "Repository-relative tool/plan bindings and aggregate technical status only; no private paths, identities, per-reference hashes, audio, model caches or listener-level data.",
+    "publication_checks": ["full_staged_diff_review", "credential_private_path_media_model_cache_and_size_audit", "full_local_ci_equivalent", "deterministic_sbom", "conventional_commit", "existing_branch_push", "successful_exact_head_ci"]
+  },
+  "claim_boundary": {
+    "source_manifest_frozen": false,
+    "source_traits_assigned": false,
+    "codec_study_executed": false,
+    "human_calibration_complete": false,
+    "transparent_lossy_truth_established": false,
+    "full_reference_oracle_validated": false,
+    "grouped_transfer_passed": false,
+    "no_reference_estimator_validated": false,
+    "final_recommendation_selected": false,
+    "objective_complete": false,
+    "public_cli_changed": false,
+    "public_verdict_enabled": false
+  }
+}

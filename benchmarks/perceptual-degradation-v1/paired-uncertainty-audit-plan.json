@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "plan_id": "paired-uncertainty-audit-20260905-001",
+  "state": "synthetic_uncertainty_sensitivity_diagnostic_not_human_validation",
+  "bindings": {
+    "analysis": {"path": "scripts/perceptual_degradation_listening_analysis.py", "sha256": "215d5c2b49fe4d630c1edd355e576c6fac296958465eb9a30dd88d684df30fff"},
+    "analysis_plan": {"path": "benchmarks/perceptual-degradation-v1/listening-analysis-plan.json", "sha256": "3317a2b039de860a4ec3b152ea83406b5bc8793e825b81918a140e60b8e16fdc"},
+    "paired": {"path": "scripts/perceptual_degradation_paired_rating.py", "sha256": "6a9753b9064df1d61950775684a25fa19bd4d8c5c77a97c051851187cf795c7e"},
+    "paired_plan": {"path": "benchmarks/perceptual-degradation-v1/paired-rating-protocol-plan.json", "sha256": "d3578a823277d8542c1f4c9cc7d18ead03948324b5103ba9e512585287983192"},
+    "decisions": {"path": "scripts/perceptual_degradation_nonmateriality.py", "sha256": "87e9118b62566dcc150f06c9c83e9bc59e19d329a85c1473c1f61977661d317f"},
+    "decision_plan": {"path": "benchmarks/perceptual-degradation-v1/nonmateriality-evidence-plan.json", "sha256": "913bba83a25290ff362b9e001d0d7a34b499c191059b4786a36042c2d175fd90"}
+  },
+  "experiment": {
+    "seed": "lossytrace-paired-uncertainty-20260905-001",
+    "replicates_per_scenario": 128,
+    "listeners": 24,
+    "sources": 12,
+    "repetitions_per_listener_source_pair": 1,
+    "population_mean_difference_ticks": -10,
+    "listener_ticks_and_integer_weights": [[-3, 9], [-2, 11], [2, 11], [3, 9]],
+    "source_ticks_and_integer_weights": [[-3, 1], [3, 1]],
+    "residual_ticks_and_integer_weights": [[-5, 1], [5, 1]],
+    "paired_grade_construction": "condition=50+min(difference_ticks,0);hidden_reference=50-max(difference_ticks,0);no_clipping",
+    "forced_choice": "fixed_position_A_nuisance_not_an_audibility_generating_model",
+    "assignment": "bound_common_offset_synthetic_assignments_reused_only_as_generated_role_linkage",
+    "missing_trial_events": "lock_choice_and_grade_A_only_no_submit",
+    "estimand": "synthetic_superpopulation_mean_observed_paired_difference_before_missingness_not_selected_completer_mean",
+    "scenarios": [
+      {"id": "matched", "scales": [1, 1, 1], "missingness": "none"},
+      {"id": "listener_sd_x2", "scales": [2, 1, 1], "missingness": "none"},
+      {"id": "source_sd_x2", "scales": [1, 2, 1], "missingness": "none"},
+      {"id": "residual_sd_x2", "scales": [1, 1, 2], "missingness": "none"},
+      {"id": "all_sd_x2", "scales": [2, 2, 2], "missingness": "none"},
+      {"id": "independent_missing_quarter", "scales": [1, 1, 1], "missingness": "independent_one_in_four"},
+      {"id": "outcome_dependent_missing", "scales": [1, 1, 1], "missingness": "difference_ticks_less_than_or_equal_to_population_mean"},
+      {"id": "source_dependent_missing", "scales": [1, 1, 1], "missingness": "negative_source_effect"}
+    ]
+  },
+  "analysis": {
+    "estimator": "unchanged_fixed_variance_crossed_gaussian_solver_on_complete_paired_responses",
+    "interval_multiplier": "unchanged_bound_analysis_Z_THRESHOLD",
+    "nominal_pointwise_central_normal_coverage": "2*Phi(Z_THRESHOLD)-1_not_ordinary_95_percent_or_familywise_coverage",
+    "complete_design_oracle": "grand_mean_variance=listener_variance/24+source_variance/12+residual_variance/288",
+    "complete_design_probability": "finite_discrete_convolution_float64_no_normal_approximation",
+    "fit_oracle_comparison_absolute_tolerance": 1e-8,
+    "performance": "interval_return_rate;valid_and_covers_rate;coverage_given_returned;support_conditioned_coverage;bias;RMSE;empirical_SD;model_SE;directional_boundary_claim_counts",
+    "monte_carlo_uncertainty": "binomial_rate_MCSE_and_Wilson_95_percent_interval;bias_MCSE;all_denominators_explicit",
+    "failures": "retain_no_complete_data_and_known_numerical_failures_no_resampling_or_denominator_deletion",
+    "scientific_pass_threshold_selected": false,
+    "old_power_or_interval_claim_promoted": false,
+    "human_materiality_margin_selected": false,
+    "audibility_coverage_evaluated": false,
+    "familywise_coverage_evaluated": false
+  },
+  "execution": {
+    "workers": 1,
+    "replays": 2,
+    "byte_identical_required": true,
+    "complete_and_incomplete_role_linkage_cache_maximum_entries": 16384,
+    "report": "aggregate_synthetic_diagnostics_no_individual_rows_or_audio",
+    "publication_status": "development_diagnostic_design_declared_before_execution_not_independently_preregistered_confirmatory_study"
+  },
+  "access_boundary": {
+    "synthetic_execution_only": true,
+    "observed_response_input_authorized": false,
+    "audio_access_authorized": false,
+    "playback_authorized": false,
+    "human_collection_authorized": false,
+    "metric_execution_authorized": false,
+    "sealed_evidence_access_authorized": false,
+    "no_reference_training_authorized": false,
+    "public_verdict_enabled": false
+  },
+  "methodological_source": {
+    "title": "Using simulation studies to evaluate statistical methods",
+    "authors": "Morris, White and Crowther",
+    "year": 2019,
+    "doi": "10.1002/sim.8086",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6492164/",
+    "scope": "explicit_estimands_generating_mechanisms_and_performance_measures;Monte_Carlo_uncertainty_and_failure_accounting;not_evidence_for_LossyTrace_variances"
+  }
+}

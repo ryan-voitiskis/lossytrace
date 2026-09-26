@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "plan_id": "oracle-validity-integration-20260907-001",
+  "state": "score_free_synthetic_integration_declared_before_execution",
+  "purpose": "Connect validity-aware alignment to a strict score-free full-reference oracle successor. Preserve unavailable evidence, bind active-duration configuration, and expose distinct future probability targets without selecting metrics or claiming calibration.",
+  "bindings": {
+    "research_contract": {"path": "docs/research/perceptual-degradation-contract-20260803.md", "sha256": "fdec79207fc0fdd2e9cb10aae9f93dd1a17b45e6e56c0c7df8f0e01a1f9fb505"},
+    "alignment_implementation": {"path": "scripts/perceptual_degradation_alignment_v3.py", "sha256": "d9296e62a806a811d281cac93ae65f9bfcaab310aa5dfe12127bfc09199b7581"},
+    "alignment_development_report": {"path": "research/toolchains/evidence/perceptual-degradation-alignment-validity-successor-synthetic-20260907-001.json", "sha256": "a59c68f4bd6619ab688707101f6b18ca2f7556afed3ad45d347432fc93fb734e"},
+    "legacy_oracle": {"path": "scripts/perceptual_degradation_oracle.py", "sha256": "caed779df79cf1bacdd69bed5846622f26f60377488c4bdbb8ddb2fcd73d05cc"},
+    "probability_target_contract": {"path": "benchmarks/perceptual-degradation-v1/perceptual-target-semantics-plan.json", "sha256": "1801113a3f4b81b8316c8bdfcc1df21ee922a1aa744233dd0585b768b17266d2"}
+  },
+  "integration_contract": {
+    "oracle_record_kind": "perceptual_degradation_full_reference_oracle_score_free_v2",
+    "alignment_record_kind": "perceptual_degradation_alignment_v3",
+    "comparison_modes_minimum_active_seconds": {"subtle": 4.0, "quality_metric": 8.0},
+    "maximum_delay_seconds": 2.0,
+    "configuration_policy": "The alignment payload alone cannot establish the producer's minimum-active-duration setting. The runner explicitly passes the selected mode to the bound producer, and the assembler independently checks support consistency against that declared mode. Neither a caller's declaration nor a structurally valid record proves waveform provenance.",
+    "missing_value_policy": "Retain raw nullable diagnostics unchanged. Reject contradictory validity, channel status, reason projection or complete-channel summary claims. Never convert null to zero, one, an invalid numeric sentinel or an invented confidence interval.",
+    "input_origin_policy": "The generic assembler does not infer synthetic, clean, never-lossy or legally eligible origin from an alignment record. Its output explicitly says input provenance is unverified. Only the bound synthetic runner declares how its own fixtures were constructed.",
+    "outcome_policy": "Severity, correct-response probability, audible-condition probability, their intervals and every artifact component remain null. Prediction unit and population averaging remain unselected. No legacy class-level Brier/ECE/AUC gate is transferred to the response target.",
+    "metric_policy": "No metric suite is selected by this integration. Metric execution stays unauthorized; no old two-family or ViSQOL-only gate is promoted to an active execution gate.",
+    "legacy_records_or_runners_changed": false,
+    "real_audio_execution_authorized": false,
+    "sample_normalization_or_correction_authorized": false
+  },
+  "synthetic_inventory": [
+    "Six-second orthogonal stereo identity, subtle mode",
+    "Six-second orthogonal stereo right-polarity inversion, subtle mode",
+    "Six-second orthogonal stereo right-channel dropout, subtle mode",
+    "Six-second mono identity with samples 4800 through 7199 zeroed, subtle mode",
+    "Six-second orthogonal stereo identity, quality-metric mode",
+    "Twelve-second orthogonal stereo identity by concatenating each six-second channel with itself, quality-metric mode",
+    "Stereo reference and mono test with explicit [L,R] versus [M] maps, subtle mode"
+  ],
+  "fixture_boundary": "Reuse the already consumed integer family from the bound channel/validity development implementation. The twelve-second concatenation is a declared numeric integration fixture, not a new natural source, independent group, perceptual stimulus or way to make a sparse real source eligible.",
+  "validation_requirements": [
+    "Validate raw alignment shape, numeric types, explicit validity, configured support predicates, channel reason union and complete-channel aggregates before assembly.",
+    "Separate unsupported alignment from execution-blocked supported alignment; all oracle support remains false.",
+    "Preserve deep-copy isolation so later caller mutation cannot alter assembled evidence.",
+    "Reject missing-to-perfect coercion, forged supported status, dropped channel reasons, mode/configuration mismatch, stale record kind, malformed nested values and fabricated metric/human/uncertainty outputs.",
+    "Two complete byte-identical synthetic replays; independently check expected state transitions and known configured-duration boundaries.",
+    "Keep every declared construction and any failure visible; do not tune thresholds or repair a failed source outcome."
+  ],
+  "execution": {"workers": 1, "minimum_free_gib": 15, "audio_file_reads_or_writes": 0, "retain_waveforms": false, "input_mode": "synthetic_only"},
+  "claim_boundary": {
+    "source_provenance_established": false,
+    "source_manifest_frozen": false,
+    "capture_execution_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "human_collection_authorized": false,
+    "full_reference_oracle_validated": false,
+    "no_reference_training_authorized": false,
+    "public_verdict_enabled": false,
+    "objective_complete": false
+  },
+  "next_requirement": "Real-data adoption still needs an exact source/execution checkpoint, target-matched normalization, metric/legal selection, human calibration and grouped validation. An internally consistent oracle envelope is not evidence that perceptual estimation works."
+}

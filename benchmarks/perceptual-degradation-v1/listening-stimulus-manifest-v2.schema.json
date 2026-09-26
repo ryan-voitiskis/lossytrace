@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lossytrace.invalid/schemas/perceptual-degradation-listening-stimulus-manifest-v2.json",
+  "title": "LossyTrace perceptual-degradation listening stimulus manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "manifest_id",
+    "state",
+    "human_collection_authorized",
+    "condition_recipes_visible_to_listener",
+    "stimuli",
+    "trials"
+  ],
+  "properties": {
+    "schema_version": {"const": 2},
+    "manifest_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]{7,127}$"},
+    "state": {"const": "score_blind_preparation"},
+    "human_collection_authorized": {"const": false},
+    "condition_recipes_visible_to_listener": {"const": false},
+    "stimuli": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/stimulus"}
+    },
+    "trials": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/trial"}
+    }
+  },
+  "$defs": {
+    "opaqueId": {"type": "string", "pattern": "^[a-z][a-z0-9-]{7,63}$"},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "stimulus": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stimulus_id",
+        "source_group_id",
+        "partition_group_id",
+        "partition",
+        "domain",
+        "role",
+        "condition_class",
+        "controlled_codec_intervention",
+        "duration_seconds",
+        "active_seconds",
+        "sample_rate_hz",
+        "channel_count",
+        "channel_map",
+        "delivery",
+        "licence_record_id"
+      ],
+      "properties": {
+        "stimulus_id": {"$ref": "#/$defs/opaqueId"},
+        "source_group_id": {"$ref": "#/$defs/opaqueId"},
+        "partition_group_id": {"$ref": "#/$defs/opaqueId"},
+        "partition": {
+          "enum": ["training", "development", "calibration", "transfer", "final_validation"]
+        },
+        "domain": {"enum": ["music", "speech", "mixed", "natural", "synthetic"]},
+        "role": {"enum": ["reference", "hidden_reference", "condition", "anchor_low", "anchor_mid"]},
+        "condition_class": {
+          "enum": [
+            "reference",
+            "controlled_codec",
+            "transparency_candidate",
+            "simulated_artifact",
+            "pcm_control",
+            "production_control",
+            "natural_negative",
+            "anchor"
+          ]
+        },
+        "controlled_codec_intervention": {"type": "boolean"},
+        "duration_seconds": {"type": "number", "exclusiveMinimum": 0, "maximum": 30},
+        "active_seconds": {"type": "number", "exclusiveMinimum": 0, "maximum": 30},
+        "sample_rate_hz": {"enum": [44100, 48000]},
+        "channel_count": {"enum": [1, 2]},
+        "channel_map": {"enum": ["M", "L_R"]},
+        "delivery": {
+          "oneOf": [
+            {"$ref": "#/$defs/losslessDelivery"},
+            {"$ref": "#/$defs/generatedDelivery"}
+          ]
+        },
+        "licence_record_id": {"$ref": "#/$defs/opaqueId"}
+      }
+    },
+    "losslessDelivery": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["delivery_class", "private_audio_sha256", "container", "bit_depth"],
+      "properties": {
+        "delivery_class": {"const": "lossless_audio_file"},
+        "private_audio_sha256": {"$ref": "#/$defs/sha256"},
+        "container": {"enum": ["wav", "flac"]},
+        "bit_depth": {"enum": [16, 24, 32]}
+      }
+    },
+    "generatedDelivery": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "delivery_class",
+        "recipe_id",
+        "recipe_id_sha256",
+        "generator_source_sha256"
+      ],
+      "properties": {
+        "delivery_class": {"const": "generated_synthetic"},
+        "recipe_id": {"$ref": "#/$defs/opaqueId"},
+        "recipe_id_sha256": {"$ref": "#/$defs/sha256"},
+        "generator_source_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "trial": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["trial_id", "method", "partition", "visible_reference_id", "candidate_ids"],
+      "properties": {
+        "trial_id": {"$ref": "#/$defs/opaqueId"},
+        "method": {"enum": ["subtle", "mushra"]},
+        "partition": {
+          "enum": ["training", "development", "calibration", "transfer", "final_validation"]
+        },
+        "visible_reference_id": {"$ref": "#/$defs/opaqueId"},
+        "candidate_ids": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 11,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/opaqueId"}
+        }
+      }
+    }
+  }
+}

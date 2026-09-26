@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "plan_id": "visqol-audio-v3-3-3-synthetic-replay-20260803-006",
+  "state": "visqol_synthetic_replay_observed_single_environment",
+  "fixture_set_id": "visqol-synthetic-48k-stereo-v1",
+  "authorization": {
+    "synthetic_fixture_execution": false,
+    "public_or_retained_audio_execution": false,
+    "human_listening_score_access": false,
+    "retained_audio_access": false,
+    "provider_audio_download": false,
+    "no_reference_training": false,
+    "public_verdict": false
+  },
+  "visqol": {
+    "family_id": "visqol_audio_v3_3_3",
+    "repository": "https://github.com/google/visqol",
+    "version": "v3.3.3",
+    "git_commit": "c3aa2e498e0f7f14202643594335a0b9ee40bdd9",
+    "git_tree": "7a0c95a103c4ba40d6337f06f80848e571b00b3c",
+    "upstream_blob_bytes": 120367822,
+    "license": "Apache-2.0",
+    "workspace_patch_path": "research/toolchains/patches/visqol-v3.3.3-reproducible-workspace.patch",
+    "workspace_patch_sha256": "d768dc5d312d874d308937454308b48c9ff172a7e648e6314cf2b51110e6a039",
+    "workspace_patch_scope": "Replace the movable googletest tag and the now-missing Abseil tag with their resolved commits, and replace the removed Armadillo URL with a byte-identical SHA-256-bound MacPorts archive; no metric implementation source is changed.",
+    "audio_model_path": "model/libsvm_nu_svr_model.txt",
+    "audio_model_sha256": "1e8246ed33bf36dc5c859351f7110f2cd31f98661989715c0fcf974ec48d3e2e",
+    "binary_sha256": "7384c8d21725e6fa3921aea4e66ff9cb9481b57acef868304192df437a467319",
+    "synthetic_replay_complete": true
+  },
+  "build_environment": {
+    "runner": "ubuntu-22.04",
+    "maximum_workers": 6,
+    "minimum_local_free_disk_gib": 15,
+    "persistent_local_build_authorized": false,
+    "ephemeral_remote_build_authorized": false,
+    "single_environment_execution_complete": true,
+    "bazel": {
+      "version": "3.7.2",
+      "download_url": "https://github.com/bazelbuild/bazel/releases/download/3.7.2/bazel-3.7.2-linux-x86_64",
+      "binary_sha256": "70dc0bee198a4c3d332925a32d464d9036a831977501f66d4996854ad4e4fc0d"
+    },
+    "python": {
+      "major_minor": "3.10",
+      "purpose": "TensorFlow workspace configuration import only; not a ViSQOL metric implementation dependency.",
+      "numpy_wheel": {
+        "version": "1.21.6",
+        "filename": "numpy-1.21.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "download_url": "https://files.pythonhosted.org/packages/6f/7b/036000a55680e6c7eb81502b0aa27ce0ed65d4d8805613909967d9f8baf6/numpy-1.21.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "sha256": "5f30427731561ce75d7048ac254dbe47a2ba576229250fb60f0fb74db96501a1",
+        "bytes": 15906004
+      }
+    },
+    "build_target": "//:visqol",
+    "build_configuration": "opt",
+    "repository_resolution_record_required": true,
+    "artifact_retention_days": 1
+  },
+  "prior_attempts": [
+    {
+      "github_run_id": 30820311311,
+      "github_head_sha": "775287b92391c9f13f978f0e18db606aa491cb2e",
+      "outcome": "failed_before_metric_execution",
+      "failed_step": "build",
+      "failure": "TensorFlow workspace configuration could not import NumPy from the Ubuntu runner Python environment.",
+      "synthetic_scores_produced": false,
+      "completed_evidence_record": false
+    },
+    {
+      "github_run_id": 30820824832,
+      "github_head_sha": "244913241beaf7be33d1b6a1aaafa9c087869cfd",
+      "outcome": "failed_before_metric_execution",
+      "failed_step": "numpy_bootstrap",
+      "failure": "The exact NumPy wheel verified by SHA-256, but pip rejected a local filename that omitted the wheel compatibility tags.",
+      "runner_cleanup_complete": true,
+      "synthetic_scores_produced": false,
+      "completed_evidence_record": false
+    },
+    {
+      "github_run_id": 30821068945,
+      "github_head_sha": "bc39620d2cbe0251910ba181385eaea17fc36ccd",
+      "outcome": "failed_before_metric_execution",
+      "failed_step": "build_dependency_fetch",
+      "failure": "The pinned Armadillo archive had been removed from its upstream SourceForge URL; its byte-identical SHA-256-bound MacPorts distfile remains available.",
+      "runner_cleanup_complete": true,
+      "synthetic_scores_produced": false,
+      "completed_evidence_record": false
+    },
+    {
+      "github_run_id": 30821659496,
+      "github_head_sha": "67587e02a73881ac45c24af6b7cd880e08f49f1c",
+      "outcome": "successful_build_replay_wrapper_rejected_diagnostics",
+      "failed_step": "synthetic_replay_wrapper",
+      "failure": "The first ViSQOL invocation exited successfully but emitted stderr diagnostics; the wrapper rejected diagnostics before inspecting or parsing its ephemeral JSON output.",
+      "runner_cleanup_complete": true,
+      "metric_process_exit_code": 0,
+      "stderr_observed": true,
+      "synthetic_scores_parsed": false,
+      "synthetic_result_file_inspected": false,
+      "completed_evidence_record": false
+    }
+  ],
+  "successful_observation": {
+    "github_run_id": 30822439141,
+    "github_head_sha": "38d88f11e0c31c478ab0b20013f2f0bb6125b13d",
+    "binary_sha256": "7384c8d21725e6fa3921aea4e66ff9cb9481b57acef868304192df437a467319",
+    "complete_replays_per_case": 2,
+    "synthetic_case_count": 4,
+    "synthetic_scores_are_human_truth": false,
+    "threshold_selected": false,
+    "cross_environment_replay_complete": false
+  },
+  "fixture_generation": {
+    "sample_rate_hz": 48000,
+    "channel_count": 2,
+    "channel_map": "L_R",
+    "sample_width_bits": 16,
+    "duration_seconds": 8,
+    "frames": 384000,
+    "files": {
+      "synthetic-reference.wav": {
+        "bytes": 1536044,
+        "sha256": "cd15023c9fab9d2c34e696dd2e0f73db658897cf1e216ae41b2658339e15e49c"
+      },
+      "synthetic-bandwidth-loss.wav": {
+        "bytes": 1536044,
+        "sha256": "20532e4f1b03021169badc4a86659e73372e0fdd56d419e813c30900149d9c6b"
+      },
+      "synthetic-tonal-noise.wav": {
+        "bytes": 1536044,
+        "sha256": "51567950883c13db8faf3a06505f489e74c30abac9d4ae162e0327d706ba97bd"
+      },
+      "synthetic-transient-smear.wav": {
+        "bytes": 1536044,
+        "sha256": "3c16575c237953eb828277e44f62a74e9f48a8d9c46fbb6f41c20a728f352b03"
+      }
+    }
+  },
+  "synthetic_cases": [
+    {
+      "case_id": "synthetic-identity",
+      "reference_file": "synthetic-reference.wav",
+      "degraded_file": "synthetic-reference.wav",
+      "purpose": "exact identity and wrapper replay"
+    },
+    {
+      "case_id": "synthetic-bandwidth-loss",
+      "reference_file": "synthetic-reference.wav",
+      "degraded_file": "synthetic-bandwidth-loss.wav",
+      "purpose": "exercise high-band removal without defining perceptual truth"
+    },
+    {
+      "case_id": "synthetic-tonal-noise",
+      "reference_file": "synthetic-reference.wav",
+      "degraded_file": "synthetic-tonal-noise.wav",
+      "purpose": "exercise deterministic gated tonal addition without defining perceptual truth"
+    },
+    {
+      "case_id": "synthetic-transient-smear",
+      "reference_file": "synthetic-reference.wav",
+      "degraded_file": "synthetic-transient-smear.wav",
+      "purpose": "exercise deterministic transient redistribution without defining perceptual truth"
+    }
+  ],
+  "replay_contract": {
+    "complete_replays_per_case": 2,
+    "numeric_outputs_must_be_identical": true,
+    "paths_removed_before_evidence": true,
+    "timing_removed_before_evidence": true,
+    "synthetic_scores_are_human_truth": false,
+    "threshold_selection_authorized": false,
+    "cross_environment_replay_complete": false
+  },
+  "bindings": {
+    "fixture_generator": {
+      "path": "scripts/perceptual_degradation_visqol_fixtures.py",
+      "sha256": "a269bc1c5d51180048b56b3e0bb5a256b02f8137e1e658af502e20bd5a71796e"
+    },
+    "replay_wrapper": {
+      "path": "scripts/perceptual_degradation_visqol_replay.py",
+      "sha256": "e4bffbd038486910a494b40a421c71eecf910507d40299cbfafc0a032f4a4183"
+    },
+    "plan_validator": {
+      "path": "scripts/validate-perceptual-degradation-visqol-plan.py",
+      "sha256": "39d9719df54867a97eefd78ea971a7083a9585d1706e7cc1d4baafbbbff89bb2"
+    },
+    "tests": {
+      "path": "scripts/tests/test_perceptual_degradation_visqol.py",
+      "sha256": "9e9cd0374a355e83d7f542575de012e595b0d18893c40ffce309a643d8314dfe"
+    },
+    "workspace_patch": {
+      "path": "research/toolchains/patches/visqol-v3.3.3-reproducible-workspace.patch",
+      "sha256": "d768dc5d312d874d308937454308b48c9ff172a7e648e6314cf2b51110e6a039"
+    },
+    "workflow": {
+      "path": ".github/workflows/visqol-synthetic.yml",
+      "sha256": "efd3253c8a0abfd284ebaa2255c724d3fb141bc4c84118963bb5842d0b82dccd"
+    },
+    "build_observation": {
+      "path": "research/toolchains/evidence/visqol-synthetic-build-observed-20260803-001.json",
+      "sha256": "d2b858d192b145c6082ff253126a62b9504ed14dd98fc9668a1b8dd459691506"
+    },
+    "replay_observation": {
+      "path": "research/toolchains/evidence/visqol-synthetic-replay-observed-20260803-001.json",
+      "sha256": "d21c8d0879ce0a5f1efeac5c8e38105b9c017d0c0777bc48655fc0916befe175"
+    },
+    "observation_validator": {
+      "path": "scripts/validate-perceptual-degradation-visqol-observation.py",
+      "sha256": "dada2ae02bb579f2fcd49940217feb2c01fea16158850b59c25a09ef88ffbb57"
+    }
+  },
+  "unmet_prerequisites_after_this_freeze": [
+    "Replay the same synthetic cases in an independently bound second environment before claiming cross-environment score determinism.",
+    "Keep public, provider and retained audio metric execution blocked until a later gate freeze."
+  ],
+  "authorized_next_step": "Freeze an independently bound second environment before any further synthetic execution. Keep the completed first-environment workflow manual-only and do not run metrics on public, provider or retained audio."
+}

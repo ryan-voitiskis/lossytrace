@@ -1,0 +1,10 @@
+{
+  "metric_playback_listener_training_authorized": false,
+  "one_selected_reference_two_six_case_replays_authorized": true,
+  "proposal_id": "digital-v5-canary-20260908-001",
+  "proposal_sha256": "2bba4c24ddf73db2943523f43e0e42bf711b22006e6edce64ceaf6e08b8e1ee5",
+  "responsible_user_execution_approved": true,
+  "runner_sha256": "9ef148237f9d98ee4b0225eaf93c893cf405a27eed1b9c9e6624d2f7f43156ee",
+  "schema_version": 1,
+  "standing_authorization_sha256": "ee86c46a831de432500910190003dcc5ef670832fdb3e0dd7d6f55199793f568"
+}

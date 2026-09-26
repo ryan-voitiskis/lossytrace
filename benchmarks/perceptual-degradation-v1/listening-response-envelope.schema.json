@@ -1,0 +1,179 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lossytrace.invalid/schemas/perceptual-degradation-listening-response-envelope.json",
+  "title": "LossyTrace de-identified listening response envelope",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "dataset_id",
+    "state",
+    "fixture_only",
+    "human_collection_authorized",
+    "human_responses_observed",
+    "manifest_id",
+    "manifest_sha256",
+    "analysis_plan_id",
+    "sessions",
+    "responses"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "dataset_id": {"$ref": "#/$defs/opaqueId"},
+    "state": {"const": "synthetic_fixture_only"},
+    "fixture_only": {"const": true},
+    "human_collection_authorized": {"const": false},
+    "human_responses_observed": {"const": false},
+    "manifest_id": {"$ref": "#/$defs/opaqueId"},
+    "manifest_sha256": {"$ref": "#/$defs/sha256"},
+    "analysis_plan_id": {"const": "perceptual-degradation-listening-analysis-20260813-001"},
+    "sessions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/session"}
+    },
+    "responses": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/response"}
+    }
+  },
+  "$defs": {
+    "opaqueId": {"type": "string", "pattern": "^[a-z][a-z0-9-]{7,63}$"},
+    "participantId": {"type": "string", "pattern": "^participant-[0-9a-f]{24}$"},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "partition": {"enum": ["development", "calibration", "transfer"]},
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "consent_present",
+        "eligibility_pass",
+        "stimulus_binding_pass",
+        "delivery_pass",
+        "fixed_level_pass",
+        "training_complete",
+        "timing_pass",
+        "response_completeness_pass",
+        "duplicate_evidence",
+        "hidden_reference_quality_pass",
+        "anchor_quality_pass"
+      ],
+      "properties": {
+        "consent_present": {"type": "boolean"},
+        "eligibility_pass": {"type": "boolean"},
+        "stimulus_binding_pass": {"type": "boolean"},
+        "delivery_pass": {"type": "boolean"},
+        "fixed_level_pass": {"type": "boolean"},
+        "training_complete": {"type": "boolean"},
+        "timing_pass": {"type": "boolean"},
+        "response_completeness_pass": {"type": "boolean"},
+        "duplicate_evidence": {"type": "boolean"},
+        "hidden_reference_quality_pass": {"type": "boolean"},
+        "anchor_quality_pass": {"type": "boolean"}
+      }
+    },
+    "session": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["session_id", "participant_id", "assignment_id", "partition", "checks"],
+      "properties": {
+        "session_id": {"$ref": "#/$defs/opaqueId"},
+        "participant_id": {"$ref": "#/$defs/participantId"},
+        "assignment_id": {"$ref": "#/$defs/opaqueId"},
+        "partition": {"$ref": "#/$defs/partition"},
+        "checks": {"$ref": "#/$defs/checks"}
+      }
+    },
+    "responseBase": {
+      "type": "object",
+      "required": [
+        "response_id",
+        "idempotency_key",
+        "session_id",
+        "participant_id",
+        "trial_id",
+        "analysis_group_id",
+        "condition_stimulus_id",
+        "source_group_id",
+        "partition_group_id",
+        "partition",
+        "method",
+        "forced_choice_correct",
+        "sdg",
+        "condition_score",
+        "hidden_reference_score"
+      ],
+      "properties": {
+        "response_id": {"$ref": "#/$defs/sha256"},
+        "idempotency_key": {"$ref": "#/$defs/sha256"},
+        "session_id": {"$ref": "#/$defs/opaqueId"},
+        "participant_id": {"$ref": "#/$defs/participantId"},
+        "trial_id": {"$ref": "#/$defs/opaqueId"},
+        "analysis_group_id": {"$ref": "#/$defs/opaqueId"},
+        "condition_stimulus_id": {"$ref": "#/$defs/opaqueId"},
+        "source_group_id": {"$ref": "#/$defs/opaqueId"},
+        "partition_group_id": {"$ref": "#/$defs/opaqueId"},
+        "partition": {"$ref": "#/$defs/partition"}
+      }
+    },
+    "subtleResponse": {
+      "allOf": [
+        {"$ref": "#/$defs/responseBase"},
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "response_id": {"$ref": "#/$defs/sha256"},
+            "idempotency_key": {"$ref": "#/$defs/sha256"},
+            "session_id": {"$ref": "#/$defs/opaqueId"},
+            "participant_id": {"$ref": "#/$defs/participantId"},
+            "trial_id": {"$ref": "#/$defs/opaqueId"},
+            "analysis_group_id": {"$ref": "#/$defs/opaqueId"},
+            "condition_stimulus_id": {"$ref": "#/$defs/opaqueId"},
+            "source_group_id": {"$ref": "#/$defs/opaqueId"},
+            "partition_group_id": {"$ref": "#/$defs/opaqueId"},
+            "partition": {"$ref": "#/$defs/partition"},
+            "method": {"const": "subtle"},
+            "forced_choice_correct": {"type": "boolean"},
+            "sdg": {"type": "number", "minimum": -4, "maximum": 0},
+            "condition_score": {"type": "null"},
+            "hidden_reference_score": {"type": "null"}
+          }
+        }
+      ]
+    },
+    "mushraResponse": {
+      "allOf": [
+        {"$ref": "#/$defs/responseBase"},
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "response_id": {"$ref": "#/$defs/sha256"},
+            "idempotency_key": {"$ref": "#/$defs/sha256"},
+            "session_id": {"$ref": "#/$defs/opaqueId"},
+            "participant_id": {"$ref": "#/$defs/participantId"},
+            "trial_id": {"$ref": "#/$defs/opaqueId"},
+            "analysis_group_id": {"$ref": "#/$defs/opaqueId"},
+            "condition_stimulus_id": {"$ref": "#/$defs/opaqueId"},
+            "source_group_id": {"$ref": "#/$defs/opaqueId"},
+            "partition_group_id": {"$ref": "#/$defs/opaqueId"},
+            "partition": {"$ref": "#/$defs/partition"},
+            "method": {"const": "mushra"},
+            "forced_choice_correct": {"type": "null"},
+            "sdg": {"type": "null"},
+            "condition_score": {"type": "number", "minimum": 0, "maximum": 100},
+            "hidden_reference_score": {"type": "number", "minimum": 0, "maximum": 100}
+          }
+        }
+      ]
+    },
+    "response": {
+      "oneOf": [
+        {"$ref": "#/$defs/subtleResponse"},
+        {"$ref": "#/$defs/mushraResponse"}
+      ]
+    }
+  }
+}

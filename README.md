@@ -11,11 +11,28 @@ It emits evidence, not a provenance verdict.
 
 ## Quick start
 
+Release-candidate binaries and verification records are published on the
+[releases page](https://github.com/ryan-voitiskis/lossytrace/releases).
+The declared native targets are Apple Silicon macOS and Linux x86-64; see
+[release notes](docs/release-notes.md) for tested OS versions and limitations,
+and the [release process](docs/release-process.md) for reproducibility scope.
+
 Build from source and inspect an audio file:
 
 ```bash
-cargo run --release -- analyze track.flac --pretty
+cargo run --locked --release -- analyze track.flac --pretty
 ```
+
+Explain the fields and their limitations without opening audio:
+
+```bash
+cargo run --release -- explain
+```
+
+The [inspection guide](docs/inspection-guide.md) separates observed signal
+properties from processing-history claims. Missing evidence does not certify
+lossless history, and values between zero and one are not calibrated
+probabilities. No automatic deletion or retagging policy is supported.
 
 The JSON contract makes the experimental status explicit:
 
@@ -39,6 +56,8 @@ does not include the input path.
 - `src/`: the verdict-free compression-trace measurements and CLI.
 - `benchmarks/audio-integrity-v1/`: reproducible benchmark contracts,
   manifests, fingerprints, and aggregate development reports.
+- `benchmarks/audio-integrity-v2/`: the source-grouped factorial challenge
+  benchmark, sealed evidence partitions, and frozen baseline plans.
 - `scripts/`: corpus staging, controlled lossy-to-lossless generation,
   evaluation, safety gates, and research tooling.
 - `research/exact-transform/`: source recovered from the final exact-transform
@@ -47,7 +66,28 @@ does not include the input path.
 
 The 33 research iterations were experiments, not 33 software releases. The
 latest candidates remain rejected. See
-[`docs/research/status.md`](docs/research/status.md).
+[`docs/research/status.md`](docs/research/status.md) and the
+[`decoded-PCM identifiability result`](docs/research/decoded-pcm-identifiability-result-20260803.md).
+
+## Current direction
+
+The [September 27 direction review](docs/research/codec-history-direction-20260927.md)
+returns the practical focus to codec-history investigation: an understandable
+verdict-free inspector and a source-grouped challenge benchmark. Human
+recruitment and physical capture are not prerequisites for that work. The
+perceptual programme's results remain preserved, without a completion claim.
+
+No rejected detector is revived. The external Lossprint baseline has passed a
+[bounded software qualification](docs/research/lossprint-qualification-result-20260927.md),
+but [failed the fixed development challenge](docs/research/lossprint-challenge-result-20260927.md):
+317/381 controlled positives were detected, alongside 53/336 benchmark-negative
+alerts across six source groups. These selected, related cases are not a
+real-library error-rate estimate. No model or threshold was retuned.
+
+The release candidate is therefore an **inspector and benchmark, not a lossy
+history detector**. It does not fulfill the original detection objective.
+Lossprint is not bundled; historical codec-family and bitrate estimates are
+not exposed. The perceptual-degradation objective also remains unresolved.
 
 ## Data policy
 
@@ -65,12 +105,16 @@ outside the public repository. See
 cargo fmt --check
 cargo clippy --all-targets -- -D warnings
 cargo test --all-targets
-python3 -m unittest discover -s scripts/tests -p 'test_audio_integrity*.py'
+python3 scripts/run_regression_tests.py
 ```
 
 Some corpus and benchmark checks are intentionally opt-in because they require
 licensed or locally retained audio. They must fail closed when their declared
 inputs or fingerprints are missing.
+
+The Python runner preserves and replays byte-bound historical audits at their
+recorded checkpoint while testing current software separately; see
+[Contributing](CONTRIBUTING.md) for runtime and Git-history requirements.
 
 ## Relationship to Reklawdbox
 

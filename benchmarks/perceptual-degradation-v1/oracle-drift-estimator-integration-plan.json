@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "plan_id": "perceptual-degradation-oracle-drift-estimator-integration-20260814-001",
+  "state": "score_blind_synthetic_drift_estimator_and_correction_frozen",
+  "purpose": "Estimate bounded clock drift from synthetic reference and test PCM on frozen training windows, decide whether to apply correction on disjoint held-out windows, invoke the exact frozen resampler only when the decision permits, and preserve the score-free oracle boundary.",
+  "bindings": {
+    "research_contract": {
+      "path": "docs/research/perceptual-degradation-contract-20260803.md",
+      "sha256": "fdec79207fc0fdd2e9cb10aae9f93dd1a17b45e6e56c0c7df8f0e01a1f9fb505"
+    },
+    "technical_repair_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/negative-control-technical-repair-plan.json",
+      "sha256": "9ef1af1232d894a7cb64c825a39434398bb71abce45edf7170b59d875af374f5"
+    },
+    "technical_repair_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-negative-control-technical-repair-20260814-001.json",
+      "sha256": "937e1ba8079b6603f4af70e66404522215e953ae77075e5f4cfaa97ecfea38e0"
+    },
+    "resampler_freeze": {
+      "path": "benchmarks/perceptual-degradation-v1/oracle-drift-resampler-freeze.json",
+      "sha256": "d96f489a4a11da659d156a0d7135b1501a4b603c8f763caae2071db32d6ca87d"
+    },
+    "resampler_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-oracle-drift-resampler-20260814-001.json",
+      "sha256": "1a05d4acbe100ae749bbfb7ea5f139f165a4c084ae3f5c73f9e0cbe8039ec6fa"
+    },
+    "synthetic_integration_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/oracle-drift-integration-plan.json",
+      "sha256": "3fc4595e9d7e65201aca6d305e29bd627ae49ab46a570bd03fc2e4935053d8bf"
+    },
+    "synthetic_integration_implementation": {
+      "path": "scripts/perceptual_degradation_oracle_drift_integration.py",
+      "sha256": "86435d0775bbd142b452e350bb0ff9010405bb3366d91e2bd34e11d34f3d2668"
+    },
+    "synthetic_integration_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-oracle-drift-integration-20260814-001.json",
+      "sha256": "494e09bd8d728573bdb285889affb8aca4e2d068b134b7b88f96172505de9289"
+    }
+  },
+  "authorization": {
+    "committed_metadata_and_source_read_authorized": true,
+    "synthetic_numeric_fixture_execution_authorized": true,
+    "synthetic_pcm_fixture_execution_authorized": true,
+    "synthetic_drift_estimation_authorized": true,
+    "frozen_resampler_synthetic_execution_authorized": true,
+    "retained_audio_access_authorized": false,
+    "provider_audio_access_authorized": false,
+    "source_or_condition_selection_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "human_response_access_authorized": false,
+    "human_collection_authorized": false,
+    "sealed_evidence_access_authorized": false,
+    "no_reference_training_authorized": false,
+    "public_verdict_enabled": false
+  },
+  "resources": {
+    "minimum_free_disk_gib": 15,
+    "maximum_workers": 1,
+    "fresh_temporary_directories": true,
+    "replay_count": 2,
+    "byte_identical_reports_required": true,
+    "retain_generated_audio": false
+  },
+  "estimator": {
+    "estimator_id": "bounded-drift-stereo-held-out-correlation-v1",
+    "sample_rate_hz": 2000,
+    "duration_seconds": 12,
+    "actual_drift_ppm_cases": [75, -60, 0, 20, -20, 100, -100],
+    "candidate_drift_ppm_minimum": -100,
+    "candidate_drift_ppm_maximum": 100,
+    "candidate_drift_ppm_step": 5,
+    "window_seconds": 1,
+    "window_start_seconds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    "training_window_positions": [0, 2, 4, 6, 8],
+    "held_out_window_positions": [1, 3, 5, 7, 9],
+    "selection_metric": "mean_cosine_correlation_across_channels_and_training_windows",
+    "selection_tie_break": "higher_score_then_lower_abs_ppm_then_lower_signed_ppm",
+    "selection_uses_held_out_windows": false,
+    "proxy_interpolator": "binary64_linear_interpolation",
+    "proxy_interpolator_is_frozen_resampler": false,
+    "minimum_selection_margin": 0.0001,
+    "minimum_held_out_correlation_after_correction": 0.99,
+    "minimum_held_out_correlation_improvement_to_apply": 0.05,
+    "expected_selected_correction_ppm": [75, -60, 0, 20, -20, 100, -100],
+    "expected_apply_correction": [true, true, false, false, false, true, true],
+    "reference_fixture_sample_quantization": "signed_q20_round_half_to_even",
+    "reported_float_quantization_decimal_places": 12
+  },
+  "correction": {
+    "implementation": "oracle-bounded-drift-kaiser-sinc128-q30-v1",
+    "coefficient_table_sha256": "dbe4442199b56cd56880f1f45c09889721519dd7a165a4de76117b5e219dab82",
+    "apply_only_after_held_out_decision": true,
+    "output_frame_count_when_applied": "reference_frame_count",
+    "mandatory_discard_frames_each_edge_when_applied": 64,
+    "zero_drift_policy": "bit_exact_identity_bypass",
+    "nonzero_no_apply_policy": "bit_exact_observed_passthrough",
+    "post_decision_alignment": "perceptual_degradation_alignment_v2",
+    "post_decision_oracle_envelope": "perceptual_degradation_full_reference_oracle_score_free_v1",
+    "pcm_lifetime": "temporary_in_memory_only",
+    "metric_execution": false
+  },
+  "predeclared_gates": {
+    "expected_case_count": 7,
+    "expected_applied_case_count": 4,
+    "expected_nonzero_no_apply_case_count": 2,
+    "selected_ppm_must_match_expected": true,
+    "selection_must_not_use_held_out_windows": true,
+    "apply_decision_must_match_expected": true,
+    "minimum_applied_post_correction_core_correlation_each_channel": 0.999,
+    "minimum_applied_core_correlation_improvement_each_channel": 0.1,
+    "post_decision_alignment_must_be_supported": true,
+    "zero_and_nonzero_no_apply_outputs_must_be_bit_exact": true,
+    "score_free_oracle_must_remain_execution_blocked": true,
+    "perceptual_metric_must_not_execute": true,
+    "fresh_replays_must_be_byte_identical": true
+  },
+  "claim_boundary": {
+    "synthetic_estimation_is_real_audio_estimation_validation": false,
+    "synthetic_estimation_is_retained_audio_validation": false,
+    "synthetic_estimation_is_perceptual_validation": false,
+    "proxy_selection_metric_is_a_perceptual_metric": false,
+    "technical_alignment_support_is_human_calibration": false,
+    "technical_alignment_support_is_full_reference_oracle_validation": false,
+    "integration_authorizes_metric_execution": false,
+    "integration_authorizes_human_collection": false,
+    "integration_proves_negative_class_truth": false,
+    "integration_selects_a_source_or_condition": false,
+    "no_reference_work_eligible": false,
+    "full_objective_complete": false,
+    "public_cli_changed": false
+  },
+  "authorized_next_step": "Replay the exact synthetic estimator, held-out apply rule, frozen resampler and score-free oracle twice. Retained development-pair validation, real-audio estimator validation, perceptual metrics, human truth, collection and no-reference training remain separately gated."
+}

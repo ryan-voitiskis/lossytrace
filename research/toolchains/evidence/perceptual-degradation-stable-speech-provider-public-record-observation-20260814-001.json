@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "observation_id": "perceptual-degradation-stable-speech-provider-public-record-observation-20260814-001",
+  "state": "official_public_record_screen_complete_no_audio_or_member_access",
+  "observed_on": "2026-08-14",
+  "purpose": "Test whether a stable CC BY 4.0 or CC0 directly recorded speech record can remove the stable-only dependence on the mutable ICSI page without opening repository data objects or audio members.",
+  "access_boundary": {
+    "official_public_dataset_pages_read": true,
+    "official_public_paper_read": true,
+    "small_structured_repository_metadata_read_ephemerally": true,
+    "repository_object_names_and_hashes_read_ephemerally": true,
+    "raw_provider_metadata_persisted_in_research_storage": false,
+    "repository_data_object_opened": false,
+    "parquet_content_accessed": false,
+    "audio_member_accessed": false,
+    "exact_source_member_selected": false,
+    "retained_odaq_reference_accessed": false,
+    "processed_odaq_condition_accessed": false,
+    "perceptual_metric_executed": false,
+    "target_perceptual_degradation_score_accessed": false,
+    "listener_response_collected": false,
+    "sealed_evidence_opened": false,
+    "no_reference_training_performed": false,
+    "public_verdict_enabled": false
+  },
+  "screen_policy": {
+    "allowed_dataset_licences": [
+      "CC BY 4.0",
+      "CC0 1.0"
+    ],
+    "version_or_content_addressed_record_required": true,
+    "documented_direct_airborne_microphone_required": true,
+    "clean_speech_subset_required": true,
+    "body_conduction_channel_eligible_as_clean_reference": false,
+    "noisy_or_speechless_subset_eligible_as_clean_speech_reference": false,
+    "participant_crosses_partition_boundary": false,
+    "repository_stability_substitutes_for_exact_member_audit": false,
+    "candidate_capacity_is_qualified_truth": false
+  },
+  "stable_speech_candidates": [
+    {
+      "source_id": "vibravox_hf_2727_revision_7990b7d",
+      "provider_id": "vibravox",
+      "official_project_url": "https://vibravox.cnam.fr/",
+      "official_repository_revision_url": "https://huggingface.co/datasets/Cnam-LMSSC/vibravox/tree/7990b7df7153f5ba543ee89d9bbb65579c21d330",
+      "official_paper_url": "https://arxiv.org/abs/2407.11828",
+      "doi": "10.57967/hf/2727",
+      "doi_cited_revision": "7990b7d",
+      "repository_commit": "7990b7df7153f5ba543ee89d9bbb65579c21d330",
+      "repository_commit_last_modified": "2024-06-28T07:53:20.000Z",
+      "licence": "CC BY 4.0",
+      "public_participant_count": 188,
+      "candidate_group_capacity": 188,
+      "grouping_key": "participant_across_all_utterances_subsets_sensors_and_sessions",
+      "grouping_limit": "one encrypted speaker_id remains one group; only the speech_clean headset-microphone field is candidate material, and exact participants, utterances, relationships and repository data objects remain unaudited",
+      "eligible_public_subset": "speech_clean",
+      "eligible_public_audio_field": "audio.headset_microphone",
+      "excluded_public_subsets": [
+        "speech_noisy",
+        "speechless_clean",
+        "speechless_noisy"
+      ],
+      "excluded_public_audio_fields": [
+        "audio.forehead_accelerometer",
+        "audio.soft_in_ear_microphone",
+        "audio.rigid_in_ear_microphone",
+        "audio.temple_vibration_pickup",
+        "audio.throat_microphone"
+      ],
+      "recording_provenance": "188 participants were recorded directly and synchronously through six sensors into a Zoom F8n; the eligible airborne channel is a cardioid headset microphone aimed toward the mouth and described as a dry reference",
+      "public_capture_format": "48000 Hz, 32-bit, mono WAV for each simultaneously recorded sensor channel, with a 20 Hz high-pass filter applied during acquisition",
+      "repository_distribution_boundary": "the pinned repository distributes Parquet data objects with content-addressed LFS metadata; no Parquet object, embedded WAV member or exact member metadata was opened",
+      "capabilities": [
+        "speech"
+      ],
+      "candidate_status": "content_addressed_exact_member_metadata_audit_candidate"
+    }
+  ],
+  "aggregate_observation": {
+    "new_stable_speech_candidate_provider_count": 1,
+    "new_stable_speech_candidate_group_capacity": 188,
+    "qualified_reference_group_count": 0,
+    "allocated_group_count": 0
+  },
+  "decision": {
+    "stable_fourth_speech_provider_found": true,
+    "mutable_icsi_dependency_for_three_domain_arithmetic_removed": true,
+    "stable_only_three_domain_every_partition_established": true,
+    "stable_only_reference_120_every_partition_established": true,
+    "stable_only_mastered_music_every_partition_established": false,
+    "source_successor_selected": false,
+    "metric_successor_selected": false,
+    "no_reference_work_eligible": false,
+    "next_responsible_human_decision": "Choose whether to authorize bounded preservation and exact-member metadata audit of the identified records, narrow the mastered-music claim, or reject the current truth-source design; this screen does not authorize repository data-object or audio access."
+  },
+  "claim_boundary": {
+    "candidate_capacity_is_scientific_feasibility": false,
+    "repository_commit_proves_exact_member_eligibility": false,
+    "dry_headset_reference_proves_lossless_delivered_origin": false,
+    "stable_speech_repair_clears_mastered_music": false,
+    "screen_authorizes_repository_data_object_or_audio_access": false,
+    "screen_is_full_objective_positive_result": false,
+    "public_cli_changed": false
+  }
+}

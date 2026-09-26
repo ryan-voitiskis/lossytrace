@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "result_id": "perceptual-degradation-odaq-reference-acquisition-result-20260813-001",
+  "state": "exact_clean_reference_acquisition_complete_processed_and_scores_unopened",
+  "observed_on": "2026-08-13",
+  "purpose": "Record a path-free development checkpoint for the exact 16 authorized ODAQ clean references without publishing retained paths, per-member hashes, processed conditions, scores, metrics, stimuli or listener responses.",
+  "bindings": {
+    "reference_metadata_freeze": {
+      "path": "benchmarks/perceptual-degradation-v1/odaq-reference-acquisition-freeze.json",
+      "sha256": "1a39f50013a4274f60ca7c1771ebad22dcafda6950db87d2ffe4acdfb58ab0e7"
+    },
+    "acquisition_authorization": {
+      "path": "benchmarks/perceptual-degradation-v1/odaq-reference-acquisition-authorization-20260813.json",
+      "sha256": "e5d48d0bd2258e6d88b771b8d0dc3365f90cb51ea8c472cc2dacacab070e5a70"
+    },
+    "bounded_extractor": {
+      "path": "scripts/acquire-perceptual-degradation-odaq-references.py",
+      "sha256": "9b288b22061646111ff523ba4021e04d810514f0cc64f6614d6f311e9dc7f34c"
+    }
+  },
+  "execution": {
+    "exact_head_commit": "d94947177ffe2aad9744133d052b256181c1267e",
+    "exact_head_ci_url": "https://github.com/ryan-voitiskis/lossytrace/actions/runs/31686727214",
+    "exact_head_ci_passed": true,
+    "acquisition_identity_sha256": "a328198da9bf4e2c6061db69c4fd961884360074a90b432f53b0ebf739cbf5d3",
+    "maximum_sustained_workers": 1,
+    "minimum_free_disk_gib_preserved": 15,
+    "provider_archive_payload_downloaded": false
+  },
+  "retained_inventory": {
+    "reference_count": 16,
+    "retained_audio_bytes": 54633154,
+    "completed_inventory_sha256": "d7f244da55b510b639300d55271b1ebd5fb9f7454b258bec30588bf18eefde2f",
+    "sample_rate_hz": 48000,
+    "channel_count": 2,
+    "minimum_frame_count": 360701,
+    "maximum_frame_count": 576008,
+    "geometry_distribution": [
+      {
+        "container_encoding": "riff_wave",
+        "sample_encoding": "ieee_float_pcm",
+        "bit_depth": 32,
+        "reference_count": 7
+      },
+      {
+        "container_encoding": "wave_format_extensible",
+        "sample_encoding": "signed_integer_pcm",
+        "bit_depth": 24,
+        "reference_count": 9
+      }
+    ],
+    "partial_file_count": 0,
+    "per_member_hashes_published": false,
+    "retained_paths_published": false
+  },
+  "successful_resume_range_access": {
+    "request_count": 372,
+    "response_bytes": 24268401,
+    "maximum_response_bytes": 58720256,
+    "block_bytes": 65536,
+    "cache_blocks": 16,
+    "accept_ranges_verified": true,
+    "archive_payload_downloaded": false,
+    "scope": "successful_resume_only_not_all_stopped_attempts"
+  },
+  "independent_integrity_audit": {
+    "reference_count_verified": 16,
+    "byte_length_verified": true,
+    "sha256_verified": true,
+    "crc32_verified": true,
+    "authorization_membership_verified": true,
+    "inventory_sha256_verified": true,
+    "ffprobe_geometry_verified": true,
+    "unexpected_retained_file_count": 0,
+    "partial_file_count": 0
+  },
+  "access_boundary": {
+    "clean_reference_members_opened": true,
+    "processed_condition_opened": false,
+    "listening_score_opened": false,
+    "metric_score_opened": false,
+    "stimulus_generated": false,
+    "perceptual_metric_executed": false,
+    "listener_response_collected": false,
+    "sealed_evidence_opened": false
+  },
+  "claim_boundary": {
+    "development_only": true,
+    "one_provider_stratum": true,
+    "independent_transfer_supported": false,
+    "final_validation_supported": false,
+    "provider_references_are_actual_codec_conditions": false,
+    "physical_playback_qualified": false,
+    "browser_delivery_ready_without_conversion": false,
+    "float_to_integer_conversion_authorized": false,
+    "stimulus_generation_authorized": false,
+    "human_collection_authorized": false
+  },
+  "paths_redacted": true
+}

@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "result_id": "perceptual-degradation-playback-qualification-result-20260813-001",
+  "state": "declared_physical_playback_chain_qualified_no_perceptual_truth_collected",
+  "observed_on": "2026-08-13",
+  "purpose": "Record the responsible-human exact-rate, channel-routing, session-condition and conservative-level observations for the declared RME ADI-2 Pro FS to Adam Audio T7V chain without treating them as degradation ratings or perceptual validation.",
+  "bindings": {
+    "playback_qualification_preparation": {
+      "path": "benchmarks/perceptual-degradation-v1/playback-qualification-preparation-20260813.json",
+      "sha256": "4dcde01d7a11a5ea57b69d994c6655ab77b63f5f8eacea68ba465433db0dac16"
+    },
+    "playback_declaration": {
+      "path": "benchmarks/perceptual-degradation-v1/odaq-reference-acquisition-authorization-20260813.json",
+      "sha256": "e5d48d0bd2258e6d88b771b8d0dc3365f90cb51ea8c472cc2dacacab070e5a70"
+    },
+    "private_lossless_delivery": {
+      "path": "benchmarks/perceptual-degradation-v1/private-lossless-delivery-plan.json",
+      "sha256": "9f2661f0a09d06e0a7cdccae20ef21db9c93b2951862dc88818aedd29d175d00"
+    },
+    "fixture_generator": {
+      "path": "scripts/generate-perceptual-degradation-playback-qualification.py",
+      "sha256": "f476e1294f6091d73b62baafb54ad7f1a861108634a01bf55cee8d1c1518b80f"
+    },
+    "loopback_server": {
+      "path": "scripts/serve-perceptual-degradation-lossless.py",
+      "sha256": "3757cfe25c70c30abf34ee1c7376759fa73ebfafabb11e1c36a144a033bcff53"
+    },
+    "player_javascript": {
+      "path": "research/listening-player-lossless/player.js",
+      "sha256": "706839267bf7e6a0de0999f6f1c7e09e9b630eddf4269e41729b514139c05559"
+    },
+    "pcm_wav_parser": {
+      "path": "research/listening-player-lossless/lossless-wav.js",
+      "sha256": "1ff0959830c1fcaeaf354e6c94070ec2b4ed658bf8b624665a2ade7846136c01"
+    }
+  },
+  "execution": {
+    "exact_head_commit": "ce08bf4b8487abcdae8e1b48e757dfc2f115e967",
+    "exact_head_ci_url": "https://github.com/ryan-voitiskis/lossytrace/actions/runs/31689599039",
+    "exact_head_ci_passed": true,
+    "origin_class": "numeric_ipv4_loopback_only",
+    "manifest_id": "manifest-playback-qualification-0001",
+    "player_build_id": "player-lossless-qualification-v1",
+    "session_sample_rate_hz": 48000,
+    "audio_context_state": "running",
+    "audio_context_sample_rate_hz": 48000,
+    "required_sample_rate_hz": 48000,
+    "browser_resampling_requested": false,
+    "collection_enabled": false
+  },
+  "fixture_verification": [
+    {
+      "stimulus_id": "channel-check-0001",
+      "sha256": "9ad35f025a79d5373e7f3ba12c37531ac12879a8fbcca59dd322dec8899f93d2",
+      "byte_length": 1152044,
+      "sample_rate_hz": 48000,
+      "channel_count": 2,
+      "bit_depth": 16,
+      "pcm_frame_count": 288000,
+      "browser_sha256_and_geometry_verified": true,
+      "browser_resampling_requested": false
+    },
+    {
+      "stimulus_id": "level-calibration-0001",
+      "sha256": "3f6c800d6cd2800b1f5bd5d56747cd817cc7b13947bf8170226efed9f422fc7a",
+      "byte_length": 3840044,
+      "sample_rate_hz": 48000,
+      "channel_count": 2,
+      "bit_depth": 16,
+      "pcm_frame_count": 960000,
+      "browser_sha256_and_geometry_verified": true,
+      "browser_resampling_requested": false
+    }
+  ],
+  "system_audio_observation": {
+    "observation_method": "macOS system audio inventory after qualification",
+    "manufacturer": "RME",
+    "device_name": "ADI-2 Pro",
+    "transport": "USB",
+    "default_output": true,
+    "default_system_device": true,
+    "input_channel_count": 2,
+    "output_channel_count": 2,
+    "sample_rate_hz": 48000
+  },
+  "responsible_human_observations": {
+    "interface_set_to_exact_48khz": true,
+    "audio_context_reports_exact_48khz": true,
+    "left_button_audible_from_left_only": true,
+    "right_button_audible_from_right_only": true,
+    "quiet_session_and_fixed_position_present": true,
+    "declared_effects_off_confirmed_for_session": true,
+    "comfortable_conservative_level_set": true,
+    "level_held_fixed_during_testing": true,
+    "no_discomfort_observed": true,
+    "degradation_rating_provided": false
+  },
+  "qualified_chain": {
+    "interface": "RME ADI-2 Pro FS over USB",
+    "transducers": "Adam Audio T7V active loudspeaker pair",
+    "environment": "treated domestic living room",
+    "sample_rate_hz": 48000,
+    "channel_count": 2,
+    "physical_playback_qualified": true
+  },
+  "fixture_disposition": {
+    "loopback_server_stopped": true,
+    "private_fixture_removed_from_active_research_storage": true,
+    "moved_to_recoverable_trash": true,
+    "retained_odaq_reference_corpus_touched": false,
+    "private_path_published": false
+  },
+  "access_boundary": {
+    "synthetic_qualification_fixture_played": true,
+    "retained_reference_played": false,
+    "processed_condition_played": false,
+    "degradation_rating_collected": false,
+    "listener_response_collected": false,
+    "perceptual_metric_executed": false,
+    "sealed_evidence_opened": false
+  },
+  "claim_boundary": {
+    "physical_playback_chain_qualified": true,
+    "comfortable_level_is_calibrated_spl": false,
+    "qualification_is_listening_evidence": false,
+    "qualification_is_perceptual_validation": false,
+    "independent_transfer_supported": false,
+    "final_validation_supported": false,
+    "stimulus_generation_authorized": false,
+    "retained_reference_conversion_authorized": false,
+    "human_collection_authorized": false,
+    "public_verdict_enabled": false
+  },
+  "paths_redacted": true,
+  "authorized_next_step": "Request a separate responsible-human authorization before reading or projecting the retained ODAQ references. Physical playback no longer blocks that future development-only delivery step, but conversion, stimulus generation, metrics, degradation ratings and listener collection remain unauthorized."
+}

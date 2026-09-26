@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "plan_id": "perceptual-degradation-permissive-multiprovider-source-candidate-20260813-001",
+  "state": "score_blind_metadata_only_candidates_unallocated_manifest_not_frozen",
+  "purpose": "Test whether current CC BY and CC0 public metadata exposes enough grouped source capacity to justify exact-member qualification without treating capacity as listening truth, provider transfer, or study authorization.",
+  "bindings": {
+    "listening_feasibility_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/listening-feasibility-frontier-plan.json",
+      "sha256": "02f3976e485f167469a4c8a0fe7d04a8fb8f55185b6169136c6e8d37e63daf36"
+    },
+    "listening_feasibility_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-listening-feasibility-frontier-20260813-001.json",
+      "sha256": "c680fb161f3fca350109c321ee867c727eae6841eba7a6c96ce3278c0657a006"
+    },
+    "source_condition_qualification": {
+      "path": "benchmarks/perceptual-degradation-v1/source-condition-qualification-plan.json",
+      "sha256": "5ce20a4e10d743e8823810ec89e58d873ea2db47044151f065fa3358e16cf64b"
+    },
+    "odaq_permissive_fallback": {
+      "path": "benchmarks/perceptual-degradation-v1/permissive-listening-source-fallback-plan.json",
+      "sha256": "e40b4642080765c0c7502123b39136f5adefa312d5351537ba486c56728b71f9"
+    },
+    "public_metadata_observation": {
+      "path": "research/toolchains/evidence/perceptual-degradation-permissive-multiprovider-source-observation-20260813-001.json",
+      "sha256": "d5c584e269c1ff00974b20310d7de46e5cd25c1ef21f5d177fbe45120a34d08a"
+    },
+    "full_reference_evaluation_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/full-reference-evaluation-plan.json",
+      "sha256": "517d4bb3f1e504593007bdd85b773e2532de6bf993e173eac3b551bf99d19b0b"
+    }
+  },
+  "authorization": {
+    "public_metadata_read_authorized": true,
+    "new_audio_acquisition_authorized": false,
+    "retained_odaq_reference_read_authorized": false,
+    "retained_reference_projection_authorized": false,
+    "processed_condition_access_authorized": false,
+    "listening_score_access_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "human_collection_authorized": false,
+    "recruitment_authorized": false,
+    "sealed_evidence_access_authorized": false,
+    "no_reference_training_authorized": false,
+    "public_verdict_enabled": false
+  },
+  "partition_requirements": {
+    "truth_bearing_partitions": [
+      "development",
+      "calibration",
+      "transfer",
+      "final_validation"
+    ],
+    "minimum_independent_source_groups_per_partition": 39,
+    "minimum_unique_source_groups_across_four_partitions": 156,
+    "reference_sensitivity_source_groups_per_partition": 120,
+    "reference_sensitivity_unique_source_groups_across_four_partitions": 480,
+    "minimum_primary_domain_source_groups_at_evaluation": 8,
+    "primary_domains_must_be_declared_before_evaluation": true,
+    "source_group_may_cross_partitions": false,
+    "same_work_performance_session_duplicate_midi_uploader_or_speaker_may_cross_partitions": false,
+    "provider_assignment_is_frozen": false,
+    "provider_used_as_a_holdout_must_be_wholly_unseen_outside_its_holdout_partition": true,
+    "provider_spanning_partitions_counts_as_provider_held_out_evidence": false,
+    "minimum_provider_count_per_partition": null
+  },
+  "candidate_tiers": [
+    {
+      "tier_id": "exact_member_audit_candidates",
+      "source_ids": [
+        "slakh2100_redux",
+        "guitarset_3371780",
+        "vctk_clean_56spk_2017",
+        "sonyc_backgrounds_5129078",
+        "satp_soundscapes_10159673",
+        "lombard_grid_3736465",
+        "tinysol_3685367"
+      ],
+      "provider_count": 7,
+      "available_group_count": 1867,
+      "qualified_reference_group_count": 0,
+      "allocated_group_count": 0,
+      "role": "candidate_after_exact_member_origin_attribution_and_partition_audit"
+    },
+    {
+      "tier_id": "upstream_or_clip_origin_pending",
+      "source_ids": [
+        "musicnet_5120004",
+        "fsd50k_4060432_allowed_items"
+      ],
+      "provider_count": 2,
+      "available_group_count": 6245,
+      "qualified_reference_group_count": 0,
+      "allocated_group_count": 0,
+      "role": "pending_original_coding_history_and_exact_member_rights_audit"
+    },
+    {
+      "tier_id": "development_only",
+      "source_ids": [
+        "nsynth",
+        "odaq_retained_clean_references"
+      ],
+      "provider_count": 2,
+      "available_group_count": 1022,
+      "qualified_reference_group_count": 0,
+      "allocated_group_count": 0,
+      "role": "bandwidth_limited_or_existing_one_provider_development_plumbing_only"
+    }
+  ],
+  "domain_capacity_observation": {
+    "music_like_candidate_groups": 1717,
+    "speech_candidate_groups": 110,
+    "natural_soundscape_candidate_groups": 40,
+    "mastered_multigenre_real_music_candidate_groups": 0,
+    "counts_are_pooled_capacity_not_partition_feasibility": true,
+    "synthetic_music_substitutes_for_real_mastered_music_transfer": false,
+    "isolated_notes_substitute_for_mastered_music": false,
+    "binaural_soundscapes_generalize_to_declared_loudspeakers": false
+  },
+  "qualification_work_remaining": [
+    "Freeze immutable provider versions, exact candidate members, licence records, creator and title attribution, checksums, duration, channel count, sample rate and integer-PCM or lossless source format.",
+    "Audit original coding history; a PCM WAV or FLAC container alone does not prove the source was never previously lossily coded.",
+    "Deduplicate works, performances, sessions, MIDI UUIDs, uploaders, speakers, sensors and derived or remixed relatives before any group count is allocated.",
+    "Declare primary domains and freeze a four-way source and provider allocation with at least 39 unique groups in every truth-bearing partition and at least eight groups in each primary domain used by evaluation.",
+    "Reserve at least one entire provider for each provider-held-out claim and prevent its members from appearing outside that holdout partition.",
+    "Quantify duration, storage, rendering and balanced incomplete-block workload before listener counts or recruitment are frozen.",
+    "Obtain separate human authorization before any new audio acquisition, retained ODAQ read or projection, stimulus generation, recruitment or response collection."
+  ],
+  "decision": {
+    "public_metadata_exposes_raw_group_capacity_above_156": true,
+    "public_metadata_exposes_raw_group_capacity_above_480": true,
+    "raw_capacity_proves_four_partition_feasibility": false,
+    "exact_member_manifest_frozen": false,
+    "source_manifest_frozen": false,
+    "provider_holdout_manifest_frozen": false,
+    "domain_allocation_frozen": false,
+    "original_coding_history_qualified": false,
+    "attribution_bundle_frozen": false,
+    "resource_feasibility_complete": false,
+    "listener_count_frozen": false,
+    "human_collection_authorized": false,
+    "no_reference_work_eligible": false,
+    "next_score_blind_step": "Freeze a bounded exact-member metadata manifest and four-way grouped allocation proposal from the audit-candidate tier, retaining MusicNet and FSD50K as pending until original coding history is established; do not acquire audio without separate authorization."
+  },
+  "claim_boundary": {
+    "current_claim": "Multiple permissively licensed providers expose enough metadata-level group capacity to justify exact-member qualification, but no source group is yet qualified or allocated for human truth and real mastered-music provider transfer remains absent.",
+    "metadata_capacity_is_listening_truth": false,
+    "available_group_is_independent_human_truth_group": false,
+    "one_large_provider_proves_provider_transfer": false,
+    "source_count_repairs_missing_domain_or_provider_independence": false,
+    "current_candidate_pool_supports_mastered_music_claim": false,
+    "current_candidate_pool_authorizes_audio_access": false,
+    "public_cli_changed": false
+  }
+}

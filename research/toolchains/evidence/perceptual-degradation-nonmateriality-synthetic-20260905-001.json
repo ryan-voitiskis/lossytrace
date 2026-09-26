@@ -1,0 +1,389 @@
+{
+  "access_boundary": {
+    "audio_access_authorized": false,
+    "human_collection_authorized": false,
+    "metric_execution_authorized": false,
+    "no_reference_training_authorized": false,
+    "observed_response_input_authorized": false,
+    "playback_authorized": false,
+    "public_verdict_enabled": false,
+    "sealed_evidence_access_authorized": false,
+    "synthetic_execution_only": true
+  },
+  "bindings": {
+    "analysis": {
+      "path": "scripts/perceptual_degradation_listening_analysis.py",
+      "sha256": "215d5c2b49fe4d630c1edd355e576c6fac296958465eb9a30dd88d684df30fff"
+    },
+    "analysis_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/listening-analysis-plan.json",
+      "sha256": "3317a2b039de860a4ec3b152ea83406b5bc8793e825b81918a140e60b8e16fdc"
+    },
+    "paired": {
+      "path": "scripts/perceptual_degradation_paired_rating.py",
+      "sha256": "6a9753b9064df1d61950775684a25fa19bd4d8c5c77a97c051851187cf795c7e"
+    },
+    "paired_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/paired-rating-protocol-plan.json",
+      "sha256": "d3578a823277d8542c1f4c9cc7d18ead03948324b5103ba9e512585287983192"
+    }
+  },
+  "bridge_grid": {
+    "cases": 48,
+    "explicit_method_conflicts": 6,
+    "summary_counts": {
+      "audible_nonmaterial": 1,
+      "indeterminate": 45,
+      "materially_degraded": 1,
+      "transparent": 1
+    }
+  },
+  "diagnostic_coordinates": {
+    "audibility_chance": 0.5,
+    "audibility_point_gate": 0.75,
+    "chance_equivalence_interval": [
+      0.45,
+      0.55
+    ],
+    "mean_range_roundoff_tolerance": 1e-09,
+    "minimum_support": {
+      "listeners": 24,
+      "responses": 96,
+      "sources": 12
+    },
+    "mushra_loss_material_boundary": 10.0,
+    "paired_sdg_material_boundary": -1.0,
+    "use": "legacy_numbers_as_synthetic_diagnostic_coordinates_only_not_selected_paired_scientific_thresholds"
+  },
+  "human_responses_observed": false,
+  "implementation_sha256": "87e9118b62566dcc150f06c9c83e9bc59e19d329a85c1473c1f61977661d317f",
+  "interval_coverage_validated": false,
+  "legacy_evidence_reclassified": false,
+  "legacy_generated_counterfactuals": [
+    {
+      "legacy_sdg_interval": [
+        -1.0736552735,
+        -0.9263447265
+      ],
+      "legacy_summary": "audible_nonmaterial",
+      "successor": {
+        "detectability": {
+          "reason": "diagnostic_audibility_rule_satisfied",
+          "state": "audible"
+        },
+        "detectability_severity_conflict": false,
+        "interval_coverage_validated": false,
+        "material_condition_label": null,
+        "per_source_evaluation_eligible": false,
+        "scientific_thresholds_selected": false,
+        "scientific_truth_eligible": false,
+        "severity_by_required_method": {
+          "legacy_sdg_diagnostic": {
+            "reason": "material_boundary_not_separated",
+            "state": "indeterminate"
+          }
+        },
+        "severity_evidence_state": "indeterminate",
+        "synthetic_research_summary": "indeterminate"
+      },
+      "synthetic_group": "group-audible-nonmaterial"
+    },
+    {
+      "legacy_sdg_interval": [
+        -1.0736552735,
+        -0.9263447265
+      ],
+      "legacy_summary": "transparent",
+      "successor": {
+        "detectability": {
+          "reason": "interval_inside_diagnostic_equivalence_region",
+          "state": "chance_equivalent"
+        },
+        "detectability_severity_conflict": false,
+        "interval_coverage_validated": false,
+        "material_condition_label": null,
+        "per_source_evaluation_eligible": false,
+        "scientific_thresholds_selected": false,
+        "scientific_truth_eligible": false,
+        "severity_by_required_method": {
+          "legacy_sdg_diagnostic": {
+            "reason": "material_boundary_not_separated",
+            "state": "indeterminate"
+          }
+        },
+        "severity_evidence_state": "indeterminate",
+        "synthetic_research_summary": "indeterminate"
+      },
+      "synthetic_group": "group-transparent"
+    }
+  ],
+  "model_scope": "aggregate_intercept_fixed_variance_numerical_preview_not_validated_population_or_source_truth",
+  "objective_complete": false,
+  "oracle_truth_eligible": false,
+  "paired_numerical_integration": [
+    {
+      "assigned_trials": 288,
+      "complete_pairs": 288,
+      "correct_response_fit": {
+        "converged": true,
+        "estimate": 0.5,
+        "listeners": 24,
+        "lower": 0.4002819589,
+        "responses": 288,
+        "sources": 12,
+        "upper": 0.5997180411
+      },
+      "incomplete_pairs": 0,
+      "paired_fit": {
+        "converged": true,
+        "estimate": 0.0,
+        "listeners": 24,
+        "lower": -0.2347832951,
+        "responses": 288,
+        "sources": 12,
+        "upper": 0.2347832951
+      },
+      "result": {
+        "detectability": {
+          "reason": "detectability_not_resolved",
+          "state": "indeterminate"
+        },
+        "detectability_severity_conflict": false,
+        "interval_coverage_validated": false,
+        "material_condition_label": null,
+        "per_source_evaluation_eligible": false,
+        "scientific_thresholds_selected": false,
+        "scientific_truth_eligible": false,
+        "severity_by_required_method": {
+          "paired_sdg": {
+            "reason": "interval_wholly_nonmaterial",
+            "state": "nonmaterial_supported"
+          }
+        },
+        "severity_evidence_state": "nonmaterial_supported",
+        "synthetic_research_summary": "indeterminate"
+      },
+      "synthetic_scenario": "equal-top"
+    },
+    {
+      "assigned_trials": 288,
+      "complete_pairs": 288,
+      "correct_response_fit": {
+        "converged": true,
+        "estimate": 0.5,
+        "listeners": 24,
+        "lower": 0.4002819589,
+        "responses": 288,
+        "sources": 12,
+        "upper": 0.5997180411
+      },
+      "incomplete_pairs": 0,
+      "paired_fit": {
+        "converged": true,
+        "estimate": 0.0,
+        "listeners": 24,
+        "lower": -0.2347832951,
+        "responses": 288,
+        "sources": 12,
+        "upper": 0.2347832951
+      },
+      "result": {
+        "detectability": {
+          "reason": "detectability_not_resolved",
+          "state": "indeterminate"
+        },
+        "detectability_severity_conflict": false,
+        "interval_coverage_validated": false,
+        "material_condition_label": null,
+        "per_source_evaluation_eligible": false,
+        "scientific_thresholds_selected": false,
+        "scientific_truth_eligible": false,
+        "severity_by_required_method": {
+          "paired_sdg": {
+            "reason": "interval_wholly_nonmaterial",
+            "state": "nonmaterial_supported"
+          }
+        },
+        "severity_evidence_state": "nonmaterial_supported",
+        "synthetic_research_summary": "indeterminate"
+      },
+      "synthetic_scenario": "symmetric-error"
+    },
+    {
+      "assigned_trials": 288,
+      "complete_pairs": 288,
+      "correct_response_fit": {
+        "converged": true,
+        "estimate": 0.5,
+        "listeners": 24,
+        "lower": 0.4002819589,
+        "responses": 288,
+        "sources": 12,
+        "upper": 0.5997180411
+      },
+      "incomplete_pairs": 0,
+      "paired_fit": {
+        "converged": true,
+        "estimate": -0.5,
+        "listeners": 24,
+        "lower": -0.7347832951,
+        "responses": 288,
+        "sources": 12,
+        "upper": -0.2652167049
+      },
+      "result": {
+        "detectability": {
+          "reason": "detectability_not_resolved",
+          "state": "indeterminate"
+        },
+        "detectability_severity_conflict": false,
+        "interval_coverage_validated": false,
+        "material_condition_label": null,
+        "per_source_evaluation_eligible": false,
+        "scientific_thresholds_selected": false,
+        "scientific_truth_eligible": false,
+        "severity_by_required_method": {
+          "paired_sdg": {
+            "reason": "interval_wholly_nonmaterial",
+            "state": "nonmaterial_supported"
+          }
+        },
+        "severity_evidence_state": "nonmaterial_supported",
+        "synthetic_research_summary": "indeterminate"
+      },
+      "synthetic_scenario": "choice-correlated"
+    },
+    {
+      "assigned_trials": 288,
+      "complete_pairs": 288,
+      "correct_response_fit": {
+        "converged": true,
+        "estimate": 0.5,
+        "listeners": 24,
+        "lower": 0.4002819589,
+        "responses": 288,
+        "sources": 12,
+        "upper": 0.5997180411
+      },
+      "incomplete_pairs": 0,
+      "paired_fit": {
+        "converged": true,
+        "estimate": -1.0,
+        "listeners": 24,
+        "lower": -1.2347832951,
+        "responses": 288,
+        "sources": 12,
+        "upper": -0.7652167049
+      },
+      "result": {
+        "detectability": {
+          "reason": "detectability_not_resolved",
+          "state": "indeterminate"
+        },
+        "detectability_severity_conflict": false,
+        "interval_coverage_validated": false,
+        "material_condition_label": null,
+        "per_source_evaluation_eligible": false,
+        "scientific_thresholds_selected": false,
+        "scientific_truth_eligible": false,
+        "severity_by_required_method": {
+          "paired_sdg": {
+            "reason": "material_boundary_not_separated",
+            "state": "indeterminate"
+          }
+        },
+        "severity_evidence_state": "indeterminate",
+        "synthetic_research_summary": "indeterminate"
+      },
+      "synthetic_scenario": "common-offset"
+    },
+    {
+      "assigned_trials": 288,
+      "complete_pairs": 288,
+      "correct_response_fit": {
+        "fit_failure": "nonconvergence"
+      },
+      "incomplete_pairs": 0,
+      "paired_fit": {
+        "converged": true,
+        "estimate": 4.0,
+        "listeners": 24,
+        "lower": 3.7652167049,
+        "responses": 288,
+        "sources": 12,
+        "upper": 4.2347832951
+      },
+      "result": {
+        "detectability": {
+          "reason": "unconverged_estimate",
+          "state": "indeterminate"
+        },
+        "detectability_severity_conflict": false,
+        "interval_coverage_validated": false,
+        "material_condition_label": null,
+        "per_source_evaluation_eligible": false,
+        "scientific_thresholds_selected": false,
+        "scientific_truth_eligible": false,
+        "severity_by_required_method": {
+          "paired_sdg": {
+            "reason": "interval_wholly_nonmaterial",
+            "state": "nonmaterial_supported"
+          }
+        },
+        "severity_evidence_state": "nonmaterial_supported",
+        "synthetic_research_summary": "indeterminate"
+      },
+      "synthetic_scenario": "positive-difference"
+    },
+    {
+      "assigned_trials": 288,
+      "complete_pairs": 144,
+      "correct_response_fit": {
+        "converged": true,
+        "estimate": 0.5,
+        "listeners": 24,
+        "lower": 0.4002819589,
+        "responses": 288,
+        "sources": 12,
+        "upper": 0.5997180411
+      },
+      "incomplete_pairs": 144,
+      "paired_fit": {
+        "converged": true,
+        "estimate": 0.0,
+        "listeners": 12,
+        "lower": -0.2693830821,
+        "responses": 144,
+        "sources": 12,
+        "upper": 0.2693830821
+      },
+      "result": {
+        "detectability": {
+          "reason": "detectability_not_resolved",
+          "state": "indeterminate"
+        },
+        "detectability_severity_conflict": false,
+        "interval_coverage_validated": false,
+        "material_condition_label": null,
+        "per_source_evaluation_eligible": false,
+        "scientific_thresholds_selected": false,
+        "scientific_truth_eligible": false,
+        "severity_by_required_method": {
+          "paired_sdg": {
+            "reason": "insufficient_support",
+            "state": "indeterminate"
+          }
+        },
+        "severity_evidence_state": "indeterminate",
+        "synthetic_research_summary": "indeterminate"
+      },
+      "synthetic_scenario": "half-complete"
+    }
+  ],
+  "per_source_evaluation_eligible": false,
+  "plan_sha256": "913bba83a25290ff362b9e001d0d7a34b499c191059b4786a36042c2d175fd90",
+  "report_id": "nonmateriality-evidence-20260905-001",
+  "schema_version": 1,
+  "scientific_thresholds_selected": false,
+  "state": "synthetic_nonmateriality_semantics_replayed_not_scientific_validation"
+}

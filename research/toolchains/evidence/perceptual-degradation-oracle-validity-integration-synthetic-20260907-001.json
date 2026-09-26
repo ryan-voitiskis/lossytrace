@@ -1,0 +1,284 @@
+{
+  "bindings": {
+    "alignment_development_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-alignment-validity-successor-synthetic-20260907-001.json",
+      "sha256": "a59c68f4bd6619ab688707101f6b18ca2f7556afed3ad45d347432fc93fb734e"
+    },
+    "alignment_implementation": {
+      "path": "scripts/perceptual_degradation_alignment_v3.py",
+      "sha256": "d9296e62a806a811d281cac93ae65f9bfcaab310aa5dfe12127bfc09199b7581"
+    },
+    "legacy_oracle": {
+      "path": "scripts/perceptual_degradation_oracle.py",
+      "sha256": "caed779df79cf1bacdd69bed5846622f26f60377488c4bdbb8ddb2fcd73d05cc"
+    },
+    "probability_target_contract": {
+      "path": "benchmarks/perceptual-degradation-v1/perceptual-target-semantics-plan.json",
+      "sha256": "1801113a3f4b81b8316c8bdfcc1df21ee922a1aa744233dd0585b768b17266d2"
+    },
+    "research_contract": {
+      "path": "docs/research/perceptual-degradation-contract-20260803.md",
+      "sha256": "fdec79207fc0fdd2e9cb10aae9f93dd1a17b45e6e56c0c7df8f0e01a1f9fb505"
+    }
+  },
+  "case_count": 7,
+  "cases": [
+    {
+      "alignment_raw_nulls_preserved": true,
+      "alignment_summary": {
+        "active_seconds": "6.000000000",
+        "aligned_frames": 12000,
+        "channel_lag_spread_samples": "0.000000000",
+        "clock_drift_ppm": "0.000000000",
+        "fractional_delay_samples": "0.000000000",
+        "integer_delay_samples": 0,
+        "minimum_correlation": "1.000000000",
+        "minimum_structural_window_correlation": "1.000000000"
+      },
+      "comparison_mode": "subtle",
+      "construction": "identity_subtle",
+      "result_state": "execution_blocked",
+      "score_free_record_valid": true,
+      "support": {
+        "abstention_reasons": [
+          "source_provenance_unverified",
+          "human_calibration_unavailable",
+          "perceptual_metric_execution_not_authorized"
+        ],
+        "alignment_reason_codes": [],
+        "supported": false
+      }
+    },
+    {
+      "alignment_raw_nulls_preserved": true,
+      "alignment_summary": {
+        "active_seconds": "6.000000000",
+        "aligned_frames": 12000,
+        "channel_lag_spread_samples": "0.000000000",
+        "clock_drift_ppm": "0.000000000",
+        "fractional_delay_samples": "0.000000000",
+        "integer_delay_samples": 0,
+        "minimum_correlation": "1.000000000",
+        "minimum_structural_window_correlation": "1.000000000"
+      },
+      "comparison_mode": "subtle",
+      "construction": "relative_polarity_subtle",
+      "result_state": "execution_blocked",
+      "score_free_record_valid": true,
+      "support": {
+        "abstention_reasons": [
+          "source_provenance_unverified",
+          "human_calibration_unavailable",
+          "perceptual_metric_execution_not_authorized"
+        ],
+        "alignment_reason_codes": [],
+        "supported": false
+      }
+    },
+    {
+      "alignment_raw_nulls_preserved": true,
+      "alignment_summary": {
+        "active_seconds": null,
+        "aligned_frames": null,
+        "channel_lag_spread_samples": null,
+        "clock_drift_ppm": null,
+        "fractional_delay_samples": null,
+        "integer_delay_samples": null,
+        "minimum_correlation": null,
+        "minimum_structural_window_correlation": null
+      },
+      "comparison_mode": "subtle",
+      "construction": "dropout_subtle",
+      "result_state": "unsupported_alignment",
+      "score_free_record_valid": true,
+      "support": {
+        "abstention_reasons": [
+          "alignment_unsupported",
+          "source_provenance_unverified",
+          "human_calibration_unavailable",
+          "perceptual_metric_execution_not_authorized"
+        ],
+        "alignment_reason_codes": [
+          "no_valid_coarse_correlation"
+        ],
+        "supported": false
+      }
+    },
+    {
+      "alignment_raw_nulls_preserved": true,
+      "alignment_summary": {
+        "active_seconds": "4.800000000",
+        "aligned_frames": 12000,
+        "channel_lag_spread_samples": "0.000000000",
+        "clock_drift_ppm": null,
+        "fractional_delay_samples": "0.000000000",
+        "integer_delay_samples": 0,
+        "minimum_correlation": "1.000000000",
+        "minimum_structural_window_correlation": null
+      },
+      "comparison_mode": "subtle",
+      "construction": "silent_window_subtle",
+      "result_state": "unsupported_alignment",
+      "score_free_record_valid": true,
+      "support": {
+        "abstention_reasons": [
+          "alignment_unsupported",
+          "source_provenance_unverified",
+          "human_calibration_unavailable",
+          "perceptual_metric_execution_not_authorized"
+        ],
+        "alignment_reason_codes": [
+          "drift_windows_unavailable",
+          "structural_windows_unavailable"
+        ],
+        "supported": false
+      }
+    },
+    {
+      "alignment_raw_nulls_preserved": true,
+      "alignment_summary": {
+        "active_seconds": "6.000000000",
+        "aligned_frames": 12000,
+        "channel_lag_spread_samples": "0.000000000",
+        "clock_drift_ppm": "0.000000000",
+        "fractional_delay_samples": "0.000000000",
+        "integer_delay_samples": 0,
+        "minimum_correlation": "1.000000000",
+        "minimum_structural_window_correlation": "1.000000000"
+      },
+      "comparison_mode": "quality_metric",
+      "construction": "identity_quality_six_seconds",
+      "result_state": "unsupported_alignment",
+      "score_free_record_valid": true,
+      "support": {
+        "abstention_reasons": [
+          "alignment_unsupported",
+          "source_provenance_unverified",
+          "human_calibration_unavailable",
+          "perceptual_metric_execution_not_authorized"
+        ],
+        "alignment_reason_codes": [
+          "insufficient_active_audio"
+        ],
+        "supported": false
+      }
+    },
+    {
+      "alignment_raw_nulls_preserved": true,
+      "alignment_summary": {
+        "active_seconds": "12.000000000",
+        "aligned_frames": 24000,
+        "channel_lag_spread_samples": "0.000000000",
+        "clock_drift_ppm": "0.000000000",
+        "fractional_delay_samples": "0.000000000",
+        "integer_delay_samples": 0,
+        "minimum_correlation": "1.000000000",
+        "minimum_structural_window_correlation": "1.000000000"
+      },
+      "comparison_mode": "quality_metric",
+      "construction": "identity_quality_twelve_seconds",
+      "result_state": "execution_blocked",
+      "score_free_record_valid": true,
+      "support": {
+        "abstention_reasons": [
+          "source_provenance_unverified",
+          "human_calibration_unavailable",
+          "perceptual_metric_execution_not_authorized"
+        ],
+        "alignment_reason_codes": [],
+        "supported": false
+      }
+    },
+    {
+      "alignment_raw_nulls_preserved": true,
+      "alignment_summary": {
+        "active_seconds": null,
+        "aligned_frames": null,
+        "channel_lag_spread_samples": null,
+        "clock_drift_ppm": null,
+        "fractional_delay_samples": null,
+        "integer_delay_samples": null,
+        "minimum_correlation": null,
+        "minimum_structural_window_correlation": null
+      },
+      "comparison_mode": "subtle",
+      "construction": "topology_mismatch",
+      "result_state": "unsupported_alignment",
+      "score_free_record_valid": true,
+      "support": {
+        "abstention_reasons": [
+          "alignment_unsupported",
+          "source_provenance_unverified",
+          "human_calibration_unavailable",
+          "perceptual_metric_execution_not_authorized"
+        ],
+        "alignment_reason_codes": [
+          "channel_map_mismatch",
+          "channel_topology_mismatch"
+        ],
+        "supported": false
+      }
+    }
+  ],
+  "claim_boundary": {
+    "capture_execution_authorized": false,
+    "full_reference_oracle_validated": false,
+    "human_collection_authorized": false,
+    "no_reference_training_authorized": false,
+    "objective_complete": false,
+    "perceptual_metric_execution_authorized": false,
+    "public_verdict_enabled": false,
+    "source_manifest_frozen": false,
+    "source_provenance_established": false
+  },
+  "common_unavailable_outcomes": {
+    "artifact_profile": {
+      "components": {
+        "bandwidth_loss": null,
+        "masking_relative_error": null,
+        "segment_worst_case_impairment": null,
+        "stereo_image_or_phase_change": null,
+        "temporal_modulation_damage": null,
+        "tonal_or_birdie_noise": null,
+        "transient_smearing_or_pre_echo": null
+      },
+      "state": "unavailable"
+    },
+    "audible_condition_probability": null,
+    "audible_condition_probability_interval": null,
+    "categorical_state": "indeterminate",
+    "correct_response_probability": null,
+    "correct_response_probability_interval": null,
+    "impairment_severity": null,
+    "impairment_severity_interval": null
+  },
+  "execution_blocked_count": 3,
+  "generic_assembler_input_provenance": "unverified_by_assembler",
+  "implementation_sha256": "e56ecec170bd0e29af8569e20df7f98a1deeba0f1e4d54c8afc035609280f781",
+  "integration_contract": {
+    "alignment_record_kind": "perceptual_degradation_alignment_v3",
+    "comparison_modes_minimum_active_seconds": {
+      "quality_metric": 8.0,
+      "subtle": 4.0
+    },
+    "configuration_policy": "The alignment payload alone cannot establish the producer's minimum-active-duration setting. The runner explicitly passes the selected mode to the bound producer, and the assembler independently checks support consistency against that declared mode. Neither a caller's declaration nor a structurally valid record proves waveform provenance.",
+    "input_origin_policy": "The generic assembler does not infer synthetic, clean, never-lossy or legally eligible origin from an alignment record. Its output explicitly says input provenance is unverified. Only the bound synthetic runner declares how its own fixtures were constructed.",
+    "legacy_records_or_runners_changed": false,
+    "maximum_delay_seconds": 2.0,
+    "metric_policy": "No metric suite is selected by this integration. Metric execution stays unauthorized; no old two-family or ViSQOL-only gate is promoted to an active execution gate.",
+    "missing_value_policy": "Retain raw nullable diagnostics unchanged. Reject contradictory validity, channel status, reason projection or complete-channel summary claims. Never convert null to zero, one, an invalid numeric sentinel or an invented confidence interval.",
+    "oracle_record_kind": "perceptual_degradation_full_reference_oracle_score_free_v2",
+    "outcome_policy": "Severity, correct-response probability, audible-condition probability, their intervals and every artifact component remain null. Prediction unit and population averaging remain unselected. No legacy class-level Brier/ECE/AUC gate is transferred to the response target.",
+    "real_audio_execution_authorized": false,
+    "sample_normalization_or_correction_authorized": false
+  },
+  "next_requirement": "Real-data adoption still needs an exact source/execution checkpoint, target-matched normalization, metric/legal selection, human calibration and grouped validation. An internally consistent oracle envelope is not evidence that perceptual estimation works.",
+  "plan_sha256": "99e87c837c0e7ef365dc03623b781ed46ec0eec5e84dbe12bf2b38549e14d138",
+  "real_audio_accessed": false,
+  "report_id": "oracle-validity-integration-20260907-001",
+  "runner_input_origin": "declared_in_memory_synthetic_constructions_only",
+  "samples_changed_by_alignment_or_assembler": false,
+  "schema_version": 1,
+  "state": "synthetic_oracle_validity_integration_complete",
+  "unsupported_alignment_count": 4
+}

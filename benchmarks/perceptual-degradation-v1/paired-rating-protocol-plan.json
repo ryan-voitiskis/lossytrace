@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "plan_id": "paired-rating-protocol-20260905-001",
+  "state": "synthetic_paired_rating_successor_only",
+  "purpose": "Bind both concealed candidate ratings to the assigned stimuli and retain the signed within-trial contrast, separately from forced-choice accuracy.",
+  "bindings": {
+    "predecessor_protocol": {
+      "path": "docs/research/perceptual-degradation-listening-protocol-20260803.md",
+      "sha256": "7f918b7faa285cb4e2f142907e3d344f6cb11a7e43cfbfa83c82b9135158171b"
+    },
+    "predecessor_player": {
+      "path": "research/listening-player/player.js",
+      "sha256": "fda73121463ce5b6d21a7b8f968062cdb75485edf96a6f7452317a3b7574121b"
+    },
+    "predecessor_response_schema": {
+      "path": "benchmarks/perceptual-degradation-v1/listening-response-envelope.schema.json",
+      "sha256": "8a7097a469bd437404b6c48c7bd10311578d110b82fa34c60d528e97b76e2b92"
+    },
+    "predecessor_analysis_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/listening-analysis-plan.json",
+      "sha256": "3317a2b039de860a4ec3b152ea83406b5bc8793e825b81918a140e60b8e16fdc"
+    },
+    "predecessor_analysis": {
+      "path": "scripts/perceptual_degradation_listening_analysis.py",
+      "sha256": "215d5c2b49fe4d630c1edd355e576c6fac296958465eb9a30dd88d684df30fff"
+    },
+    "target_semantics_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/perceptual-target-semantics-plan.json",
+      "sha256": "1801113a3f4b81b8316c8bdfcc1df21ee922a1aa744233dd0585b768b17266d2"
+    },
+    "successor_protocol": {
+      "path": "docs/research/perceptual-degradation-paired-rating-protocol-20260905.md",
+      "sha256": "a96ef134906428e0758cfa7606d6ff4ddeb1df4a70df947e1f80e05fde5bbea2"
+    }
+  },
+  "rating_contract": {
+    "grade_ticks_range": [10, 50],
+    "paired_sdg_range": [-4, 4],
+    "paired_sdg_definition": "condition_minus_hidden_reference_grade",
+    "forced_choice_before_both_ratings": true,
+    "correct_choice_only_filter_allowed": false,
+    "positive_difference_clipping_allowed": false,
+    "missing_grade_imputation_allowed": false,
+    "legacy_numeric_gates_transferred": false,
+    "legacy_single_grade_migration_allowed": false
+  },
+  "access_boundary": {
+    "synthetic_execution_only": true,
+    "observed_response_input_authorized": false,
+    "audio_access_authorized": false,
+    "playback_authorized": false,
+    "human_collection_authorized": false,
+    "metric_execution_authorized": false,
+    "sealed_evidence_access_authorized": false,
+    "no_reference_training_authorized": false,
+    "public_verdict_enabled": false
+  },
+  "execution": {
+    "input": "generated_in_memory_synthetic_assignments_and_events_only",
+    "replay_count": 2,
+    "byte_identical_required": true,
+    "workers": 1,
+    "report": "aggregate_synthetic_witnesses_only_no_participant_or_stimulus_rows",
+    "statistical_solver": "bound_predecessor_gaussian_solver_numerical_integration_only",
+    "variance_power_and_scientific_decisions": "require_separate_paired_target_successor"
+  },
+  "primary_source": {
+    "title": "ITU-R BS.1116-3",
+    "url": "https://www.itu.int/dms_pubrec/itu-r/rec/bs/R-REC-BS.1116-3-201502-I%21%21PDF-E.pdf",
+    "sections": ["4", "10.2", "10.3", "Attachment 1 section 1", "Attachment 3"],
+    "formal_compliance_claimed": false
+  }
+}

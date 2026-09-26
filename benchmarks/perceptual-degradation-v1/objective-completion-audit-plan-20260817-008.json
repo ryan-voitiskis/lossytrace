@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "plan_id": "perceptual-degradation-objective-completion-audit-20260817-008",
+  "state": "score_blind_completion_audit_refresh_for_reproducible_retained_drift_technical_negative",
+  "purpose": "Reconcile the authorized two-replay retained ODAQ controlled-drift result into the 14-requirement objective without treating a reproducible 16-of-17 technical gate outcome as perceptual truth, a full-reference oracle pass, scientific completion, or a verdict.",
+  "bindings": {
+    "predecessor_audit_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/objective-completion-audit-plan-20260814-007.json",
+      "sha256": "387dcf0d5cdc60e085f0e1a48c83c39fbdf4ed4f83e67d62029be375ea8f9235"
+    },
+    "predecessor_audit_implementation": {
+      "path": "scripts/perceptual_degradation_objective_completion_audit_v7.py",
+      "sha256": "a158bfc290ff3302ff7c3c1e0081cd99f7ff18b3b83292bc967328f9f170c348"
+    },
+    "predecessor_audit_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-objective-completion-audit-20260814-007.json",
+      "sha256": "9b8475f67df0fbf8cbf45b80e05b57a6d908d182c237dc1e21c8acbd0009f48a"
+    },
+    "retained_drift_result": {
+      "path": "benchmarks/perceptual-degradation-v1/odaq-retained-drift-validation-result-20260817.json",
+      "sha256": "822752ab412691644be8a8ce0bb88559ca7151489f29358e3c5377830e85138e"
+    },
+    "retained_drift_result_validator": {
+      "path": "scripts/validate-perceptual-degradation-odaq-retained-drift-validation-result.py",
+      "sha256": "cafd4a1ec554738883e26dc3793625b5f285b48c05948d04c6d9cf2482a71796"
+    }
+  },
+  "authorization": {
+    "bound_metadata_and_source_read_authorized": true,
+    "synthetic_audit_execution_authorized": true,
+    "private_retained_drift_result_reconciliation_authorized": true,
+    "retained_clean_reference_access_completed": true,
+    "controlled_synthetic_clock_drift_execution_completed": true,
+    "temporary_in_memory_pcm_execution_completed": true,
+    "perceptual_metric_execution_authorized": false,
+    "human_response_access_authorized": false,
+    "human_collection_authorized": false,
+    "sealed_evidence_access_authorized": false,
+    "actual_codec_generation_authorized": false,
+    "no_reference_training_authorized": false,
+    "public_verdict_enabled": false
+  },
+  "requirement_ids": [
+    "estimand_is_degradation_not_history",
+    "declared_playback_chain_qualified",
+    "truth_bearing_source_manifest_feasible_and_frozen",
+    "controlled_human_calibration_collected",
+    "perceptual_metric_execution_and_legal_gate_passed",
+    "deterministic_human_calibrated_full_reference_oracle_passed",
+    "transparent_lossy_treated_as_non_degraded",
+    "difficult_natural_and_production_negatives_preserved_in_evaluation",
+    "grouped_source_domain_codec_encoder_transfer_passed",
+    "no_reference_estimator_trained_and_independently_validated",
+    "severity_audibility_artifact_support_uncertainty_abstention_reported",
+    "public_cli_remains_verdict_free",
+    "rigorous_negative_is_accepted_success",
+    "final_research_recommendation_frozen"
+  ],
+  "completion_policy": {
+    "all_requirement_ids_must_be_present": true,
+    "all_completion_required_requirements_must_be_satisfied": true,
+    "retained_drift_execution_counts_as_technical_evidence": true,
+    "retained_drift_failed_gate_counts_as_scientific_completion": false,
+    "retained_drift_execution_counts_as_perceptual_truth": false,
+    "retained_drift_execution_counts_as_metric_evidence": false,
+    "retained_drift_execution_counts_as_listening_evidence": false,
+    "retained_drift_execution_counts_as_actual_codec_evidence": false,
+    "retained_drift_execution_counts_as_full_reference_oracle_pass": false,
+    "green_tests_count_as_perceptual_evidence": false,
+    "missing_or_indirect_evidence_counts_as_satisfied": false,
+    "current_recommendation": null,
+    "allowed_final_recommendations": [
+      "reject_perceptual_estimation",
+      "retain_full_reference_only",
+      "continue_no_reference_research",
+      "freeze_blind_final_validation"
+    ]
+  },
+  "claim_boundary": {
+    "objective_complete": false,
+    "retained_drift_technical_negative_is_scientific_completion": false,
+    "retained_drift_all_predeclared_gates_pass": false,
+    "real_content_full_reference_oracle_validated": false,
+    "perceptual_truth_collected": false,
+    "independent_transfer_supported": false,
+    "final_recommendation_available": false,
+    "public_verdict_enabled": false
+  }
+}

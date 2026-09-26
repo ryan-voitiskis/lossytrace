@@ -1,0 +1,113 @@
+{
+  "algorithm": "libmp3lame_cbr128_cycle_residual_v1",
+  "canonical_pcm": {
+    "absolute_active_rms_dbfs": -60.0,
+    "active_block_frames": 4410,
+    "channel_count": 2,
+    "clip_threshold": 0.999969,
+    "duration_seconds": 20.0,
+    "maximum_clipped_fraction": 0.001,
+    "median_active_minimum_dbfs": -50.0,
+    "minimum_active_fraction": 0.5,
+    "minimum_decoded_seconds": 18.0,
+    "peak_cap_dbfs": -1.0,
+    "quantization": "s16le_round_ties_away_from_zero_scale_32768",
+    "relative_active_db": -40.0,
+    "sample_rate_hz": 44100,
+    "start_seconds": 5.0,
+    "target_median_active_rms_dbfs": -20.0
+  },
+  "evaluation": {
+    "domain_family_aliases": {
+      "public_tier_a_controlled": "public_tier_a",
+      "public_tier_a_originals": "public_tier_a"
+    },
+    "maximum_negative_one_sided_95_wilson_upper": 0.025,
+    "minimum_domain_recall": 0.85,
+    "minimum_domain_target_source_groups": 10,
+    "minimum_overall_one_sided_95_wilson_lower": 0.85,
+    "minimum_overall_recall": 0.9,
+    "minimum_positive_group_support": 0.75,
+    "one_sided_95_z": 1.6448536269514722,
+    "threshold": "next_float_above_maximum_supported_training_negative",
+    "threshold_direction": "higher_or_equal_is_more_mp3_128_like"
+  },
+  "feature_version": 0,
+  "measurement": {
+    "block_frames": 44100,
+    "edge_exclusion_frames": 1152,
+    "minimum_power_exclusive": 9.094947017729282e-13,
+    "minimum_supported_block_fraction": 0.5,
+    "minimum_supported_blocks": 8,
+    "quantile_method": "linear_interpolation_index_p_times_n_minus_1"
+  },
+  "projection": {
+    "decode_args_after_input": [
+      "-map_metadata",
+      "-1",
+      "-map_chapters",
+      "-1",
+      "-fflags",
+      "+bitexact",
+      "-flags:a",
+      "+bitexact",
+      "-ar",
+      "44100",
+      "-ac",
+      "2",
+      "-c:a",
+      "pcm_s16le",
+      "-f",
+      "s16le"
+    ],
+    "encode_args_after_input": [
+      "-map_metadata",
+      "-1",
+      "-map_chapters",
+      "-1",
+      "-fflags",
+      "+bitexact",
+      "-flags:a",
+      "+bitexact",
+      "-ar",
+      "44100",
+      "-ac",
+      "2",
+      "-c:a",
+      "libmp3lame",
+      "-b:a",
+      "128k",
+      "-abr",
+      "0",
+      "-reservoir",
+      "1",
+      "-joint_stereo",
+      "1",
+      "-write_xing",
+      "1",
+      "-f",
+      "mp3"
+    ],
+    "maximum_length_difference_frames": 1152,
+    "pcm_boundary": "signed_16_bit_little_endian_stereo_44100_hz"
+  },
+  "public_verdict_enabled": false,
+  "representations": [
+    {
+      "field": "r1_cycle_residual_retention",
+      "formula": "e2/(e1+e2)"
+    },
+    {
+      "field": "r2_residual_directional_recurrence",
+      "formula": "abs(cosine(demean_per_channel(r1),demean_per_channel(r2)))"
+    }
+  ],
+  "schema_version": 1,
+  "selection": {
+    "negative_expectation": "negative",
+    "positive_class_exact": "mp3_128",
+    "positive_class_suffix": "_mp3_128_to_flac16",
+    "positive_expectation": "controlled_positive"
+  },
+  "state": "codec_projection_observed_development_v1"
+}

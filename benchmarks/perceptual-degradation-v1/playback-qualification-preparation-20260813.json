@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "plan_id": "perceptual-degradation-playback-qualification-preparation-20260813-001",
+  "state": "synthetic_48khz_playback_qualification_ready_human_observation_pending",
+  "purpose": "Prepare exact-rate low-level synthetic channel and level fixtures for the declared RME ADI-2 Pro FS and Adam Audio T7V chain without playing retained ODAQ references, collecting ratings or assigning perceptual truth.",
+  "bindings": {
+    "playback_declaration": {
+      "path": "benchmarks/perceptual-degradation-v1/odaq-reference-acquisition-authorization-20260813.json",
+      "sha256": "e5d48d0bd2258e6d88b771b8d0dc3365f90cb51ea8c472cc2dacacab070e5a70"
+    },
+    "private_lossless_delivery": {
+      "path": "benchmarks/perceptual-degradation-v1/private-lossless-delivery-plan.json",
+      "sha256": "9f2661f0a09d06e0a7cdccae20ef21db9c93b2951862dc88818aedd29d175d00"
+    },
+    "loopback_server": {
+      "path": "scripts/serve-perceptual-degradation-lossless.py",
+      "sha256": "3757cfe25c70c30abf34ee1c7376759fa73ebfafabb11e1c36a144a033bcff53"
+    },
+    "player_html": {
+      "path": "research/listening-player-lossless/index.html",
+      "sha256": "73f593918e9a8e1e0ebf6ddbdffdb3593134db8edb1b021bcf4e545d7b6f320d"
+    },
+    "player_javascript": {
+      "path": "research/listening-player-lossless/player.js",
+      "sha256": "706839267bf7e6a0de0999f6f1c7e09e9b630eddf4269e41729b514139c05559"
+    },
+    "pcm_wav_parser": {
+      "path": "research/listening-player-lossless/lossless-wav.js",
+      "sha256": "1ff0959830c1fcaeaf354e6c94070ec2b4ed658bf8b624665a2ade7846136c01"
+    },
+    "fixture_generator": {
+      "path": "scripts/generate-perceptual-degradation-playback-qualification.py",
+      "sha256": "f476e1294f6091d73b62baafb54ad7f1a861108634a01bf55cee8d1c1518b80f"
+    },
+    "fixture_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_playback_qualification.py",
+      "sha256": "ddbabcc40a0e2fe046a33af0ffc29b5d28d2d117e8e1e5200b2d8689def107b6"
+    },
+    "plan_validator": {
+      "path": "scripts/validate-perceptual-degradation-playback-qualification.py",
+      "sha256": "189aeb9c4382ca453dcc3ccbfe14799a29fbd9cdec7002ff22a0be91d4d05e40"
+    }
+  },
+  "signal_contract": {
+    "sample_rate_hz": 48000,
+    "channel_count": 2,
+    "bit_depth": 16,
+    "channel_check": {
+      "duration_seconds": 6,
+      "left_frequency_hz": 440,
+      "right_frequency_hz": 660,
+      "per_channel_peak_dbfs": -30.0,
+      "fade_seconds": 0.25
+    },
+    "level_calibration": {
+      "duration_seconds": 20,
+      "frequencies_hz": [
+        500,
+        1000,
+        2000
+      ],
+      "steady_state_rms_dbfs": -30.0,
+      "maximum_peak_linear": 0.062,
+      "identical_stereo": true,
+      "fade_seconds": 0.5
+    },
+    "random_noise_used": false,
+    "normalization_used": false,
+    "browser_resampling_allowed": false
+  },
+  "synthetic_verification": {
+    "two_generated_replays_byte_identical": true,
+    "delivery_map_loaded_by_bound_server": true,
+    "both_wavs_loaded_by_bound_pcm_parser": true,
+    "channel_check_sha256": "9ad35f025a79d5373e7f3ba12c37531ac12879a8fbcca59dd322dec8899f93d2",
+    "level_calibration_sha256": "3f6c800d6cd2800b1f5bd5d56747cd817cc7b13947bf8170226efed9f422fc7a",
+    "temporary_replay_moved_to_recoverable_trash": true,
+    "actual_audio_output_observed": false
+  },
+  "declared_playback_chain": {
+    "interface": "RME ADI-2 Pro FS over USB",
+    "transducers": "Adam Audio T7V active loudspeaker pair",
+    "environment": "treated domestic living room",
+    "effects_declared_off": [
+      "spatial audio",
+      "equalization",
+      "loudness normalization",
+      "crossfade",
+      "communications ducking",
+      "headphone accommodations",
+      "other audio effects"
+    ],
+    "last_observed_interface_sample_rate_hz": 96000,
+    "required_session_sample_rate_hz": 48000
+  },
+  "human_observations": {
+    "interface_set_to_exact_48khz": false,
+    "audio_context_reports_exact_48khz": false,
+    "left_button_audible_from_left_only": false,
+    "right_button_audible_from_right_only": false,
+    "quiet_session_and_fixed_position_present": false,
+    "declared_effects_off_confirmed_for_session": false,
+    "comfortable_conservative_level_set": false,
+    "level_held_fixed_during_testing": false,
+    "no_discomfort_observed": false,
+    "physical_playback_qualified": false
+  },
+  "operator_safety": {
+    "start_with_monitor_or_interface_level_low": true,
+    "raise_only_to_comfortable_conservative_level": true,
+    "never_raise_level_to_hear_a_subtle_detail": true,
+    "listener_may_lower_level_or_stop_at_any_time": true,
+    "stop_immediately_for_discomfort": true,
+    "signal_digital_level_is_not_an_spl_calibration": true
+  },
+  "access_boundary": {
+    "synthetic_qualification_playback_authorized": true,
+    "retained_reference_playback_authorized": false,
+    "processed_condition_playback_authorized": false,
+    "degradation_rating_collection_authorized": false,
+    "listener_response_collection_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "sealed_evidence_access_authorized": false
+  },
+  "claim_boundary": {
+    "channel_and_level_check_is_listening_evidence": false,
+    "comfortable_level_is_calibrated_spl": false,
+    "physical_chain_qualification_is_perceptual_validation": false,
+    "public_verdict_enabled": false
+  },
+  "authorized_next_step": "After exact-head CI passes, generate a fresh private fixture, run the bound loopback player at 48 kHz, and ask the responsible human only for the nine frozen session observations. Do not play retained references or collect degradation ratings."
+}

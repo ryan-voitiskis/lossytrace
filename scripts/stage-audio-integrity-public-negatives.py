@@ -13,11 +13,17 @@ import re
 import shutil
 import stat
 import subprocess
+import sys
 import tempfile
 import zipfile
 from collections import defaultdict
 from datetime import UTC, datetime
 from pathlib import Path, PurePosixPath
+
+SCRIPT_DIRECTORY = Path(__file__).resolve().parent
+if str(SCRIPT_DIRECTORY) not in sys.path:
+    sys.path.insert(0, str(SCRIPT_DIRECTORY))
+from audio_integrity_relocation import cleanup_target_matches
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_REGISTRY = (
@@ -689,7 +695,7 @@ def verify(args: argparse.Namespace) -> int:
     failures = []
     if seal.get("state") != "sealed_development_corpus":
         failures.append("seal state differs")
-    if seal.get("exact_cleanup_target") != str(root):
+    if not cleanup_target_matches(root, seal.get("exact_cleanup_target")):
         failures.append("seal cleanup target differs")
     if sha256_file(integrity_path) != seal.get("integrity_manifest_sha256"):
         failures.append("integrity manifest SHA-256 differs")

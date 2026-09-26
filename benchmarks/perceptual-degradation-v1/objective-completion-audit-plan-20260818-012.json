@@ -1,0 +1,84 @@
+{
+  "authorization": {
+    "bound_committed_evidence_read_authorized": true,
+    "further_audio_sample_access_authorized": false,
+    "human_collection_authorized": false,
+    "human_response_access_authorized": false,
+    "no_reference_training_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "post_observation_policy_reconciliation_authorized": true,
+    "provider_score_or_processed_condition_access_authorized": false,
+    "public_verdict_enabled": false,
+    "sealed_evidence_access_authorized": false,
+    "source_manifest_allocation_authorized": false,
+    "source_trait_assignment_authorized": false,
+    "synthetic_audit_execution_authorized": true
+  },
+  "bindings": {
+    "adjudication_relationship_implementation": {
+      "path": "scripts/perceptual_degradation_source_trait_adjudication_relationship.py",
+      "sha256": "af384d43b9ca54698cf81297c944a6c901c17d4a9ab57d782d779ce7ff57e9b0"
+    },
+    "adjudication_relationship_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/source-trait-adjudication-relationship-plan.json",
+      "sha256": "dcd3c2abf17f7721bb240a9a84b55e2953d7f41ac6438a884574ee7511071e8e"
+    },
+    "adjudication_relationship_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-source-trait-adjudication-relationship-20260818-001.json",
+      "sha256": "47749055fcb456153a272cd82d844d14af8760de926700a389311f7b8ca813c5"
+    },
+    "predecessor_audit_implementation": {
+      "path": "scripts/perceptual_degradation_objective_completion_audit_v11.py",
+      "sha256": "91d0cb4c026b015220759630d600734447799740c8a03a9c36ca8806cbf21dc2"
+    },
+    "predecessor_audit_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/objective-completion-audit-plan-20260818-011.json",
+      "sha256": "48acaec5c0654c0dd5d2b0eb30fe17ea601960b45a27381fb29daedc088a5161"
+    },
+    "predecessor_audit_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-objective-completion-audit-20260818-011.json",
+      "sha256": "3def1a564e87fd6bdd379127a7e04e4306b1f719048e3d0936d0410fa71e2703"
+    }
+  },
+  "claim_boundary": {
+    "adjudication_readiness_is_trait_truth": false,
+    "clipped_readiness_is_trait_assignment": false,
+    "full_objective_complete": false,
+    "green_tests_are_scientific_evidence": false,
+    "public_cli_changed": false,
+    "public_verdict_enabled": false,
+    "relationship_readiness_is_partition_allocation": false,
+    "source_trait_manifest_frozen": false
+  },
+  "completion_policy": {
+    "adjudication_policy_counts_as_trait_assignment": false,
+    "all_completion_required_requirements_must_be_satisfied": true,
+    "all_requirement_ids_must_be_present": true,
+    "clipped_descriptor_and_provenance_readiness_counts_as_trait_assignment": false,
+    "current_quiet_observation_may_receive_post_hoc_numeric_cutoff": false,
+    "current_recommendation": null,
+    "metadata_capacity_counts_as_independent_sparse_tonal_contrasts": false,
+    "relationship_policy_counts_as_partition_allocation": false,
+    "source_trait_manifest_requires_separately_authorized_assignments_and_allocation": true
+  },
+  "plan_id": "perceptual-degradation-objective-completion-audit-20260818-012",
+  "purpose": "Refresh the objective audit after the path-free source-trait adjudication and relationship readiness checkpoint without promoting descriptor readiness, metadata capacity or green tests into trait truth, allocation or validation.",
+  "requirement_ids": [
+    "estimand_is_degradation_not_history",
+    "declared_playback_chain_qualified",
+    "truth_bearing_source_manifest_feasible_and_frozen",
+    "controlled_human_calibration_collected",
+    "perceptual_metric_execution_and_legal_gate_passed",
+    "deterministic_human_calibrated_full_reference_oracle_passed",
+    "transparent_lossy_treated_as_non_degraded",
+    "difficult_natural_and_production_negatives_preserved_in_evaluation",
+    "grouped_source_domain_codec_encoder_transfer_passed",
+    "no_reference_estimator_trained_and_independently_validated",
+    "severity_audibility_artifact_support_uncertainty_abstention_reported",
+    "public_cli_remains_verdict_free",
+    "rigorous_negative_is_accepted_success",
+    "final_research_recommendation_frozen"
+  ],
+  "schema_version": 1,
+  "state": "score_blind_completion_audit_refresh_after_adjudication_and_relationship_readiness"
+}

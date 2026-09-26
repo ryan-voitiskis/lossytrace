@@ -1,0 +1,95 @@
+{
+  "artifacts": {
+    "audio": {
+      "bytes": 1026917185,
+      "filename": "TinySOL.tar.gz",
+      "provider_checksum": "md5:36030a7fe389da86c3419e5ee48e3b7f"
+    },
+    "metadata": {
+      "bytes": 317576,
+      "filename": "TinySOL_metadata.csv",
+      "provider_checksum": "md5:a86c9bb115f69e61f2f25872e397fc4a"
+    }
+  },
+  "audio_generated": false,
+  "expected": {
+    "ancillary_regular_members": [
+      {"bytes": 10244, "path": ".DS_Store"},
+      {"bytes": 6148, "path": "Brass/Horn/.DS_Store"},
+      {"bytes": 6148, "path": "Strings/Contrabass/.DS_Store"},
+      {"bytes": 6148, "path": "Strings/Viola/.DS_Store"},
+      {"bytes": 6148, "path": "Strings/Violin/.DS_Store"},
+      {"bytes": 8196, "path": "Winds/Flute/.DS_Store"}
+    ],
+    "archive_member_root_prefix": "./",
+    "audio_format": {
+      "bits_per_sample": 16,
+      "channel_count": 1,
+      "format_tag": 1,
+      "sample_format": "signed_integer_pcm",
+      "sample_rate_hz": 44100
+    },
+    "directory_member_count": 33,
+    "conservative_partition_group_count": 1,
+    "digitally_retuned_row_count": 640,
+    "family_counts": {
+      "Brass": 455,
+      "Keyboards": 689,
+      "Strings": 1193,
+      "Winds": 576
+    },
+    "fold_counts": {
+      "0": 583,
+      "1": 582,
+      "2": 583,
+      "3": 582,
+      "4": 583
+    },
+    "instruments": [
+      {"abbreviation": "ASax", "family": "Winds", "folder": "Sax_Alto", "full_name": "Alto Saxophone", "row_count": 99},
+      {"abbreviation": "Acc", "family": "Keyboards", "folder": "Accordion", "full_name": "Accordion", "row_count": 689},
+      {"abbreviation": "BTb", "family": "Brass", "folder": "Bass_Tuba", "full_name": "Bass Tuba", "row_count": 108},
+      {"abbreviation": "Bn", "family": "Winds", "folder": "Bassoon", "full_name": "Bassoon", "row_count": 126},
+      {"abbreviation": "Cb", "family": "Strings", "folder": "Contrabass", "full_name": "Contrabass", "row_count": 309},
+      {"abbreviation": "ClBb", "family": "Winds", "folder": "Clarinet_Bb", "full_name": "Clarinet in Bb", "row_count": 126},
+      {"abbreviation": "Fl", "family": "Winds", "folder": "Flute", "full_name": "Flute", "row_count": 118},
+      {"abbreviation": "Hn", "family": "Brass", "folder": "Horn", "full_name": "French Horn", "row_count": 134},
+      {"abbreviation": "Ob", "family": "Winds", "folder": "Oboe", "full_name": "Oboe", "row_count": 107},
+      {"abbreviation": "Tbn", "family": "Brass", "folder": "Trombone", "full_name": "Trombone", "row_count": 117},
+      {"abbreviation": "TpC", "family": "Brass", "folder": "Trumpet_C", "full_name": "Trumpet in C", "row_count": 96},
+      {"abbreviation": "Va", "family": "Strings", "folder": "Viola", "full_name": "Viola", "row_count": 309},
+      {"abbreviation": "Vc", "family": "Strings", "folder": "Violoncello", "full_name": "Cello", "row_count": 291},
+      {"abbreviation": "Vn", "family": "Strings", "folder": "Violin", "full_name": "Violin", "row_count": 284}
+    ],
+    "metadata_columns": [
+      "Path",
+      "Fold",
+      "Family",
+      "Instrument (abbr.)",
+      "Instrument (in full)",
+      "Technique (abbr.)",
+      "Technique (in full)",
+      "Pitch",
+      "Pitch ID",
+      "Dynamics",
+      "Dynamics ID",
+      "Instance ID",
+      "String ID (if applicable)",
+      "Needed digital retuning"
+    ],
+    "metadata_row_count": 2913,
+    "natural_reference_row_count": 2273,
+    "resampled_and_tuned_row_count": 12,
+    "resampled_row_count": 40,
+    "source_group_count": 1,
+    "tuning_only_row_count": 600
+  },
+  "grouping_basis": "Each non-retuned distributed WAV may be a distinct paired PCM master, and every R-resampled row inherits the source lineage of its uniquely resolved parent. All TinySOL rows share one conservative partition group because the provider metadata does not identify performers, physical instruments, microphones, or recording sessions. The N filename marker means no per-note retuning, not an untouched microphone recording.",
+  "record_id": 3685367,
+  "record_version": "6.0",
+  "schema_version": 1,
+  "scores_opened": false,
+  "selection_authorized": false,
+  "source_id": "tinysol_6_0",
+  "state": "source_identity_rules_not_allocation"
+}

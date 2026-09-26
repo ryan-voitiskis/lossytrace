@@ -1,0 +1,87 @@
+{
+  "access_boundary": {
+    "committed_metadata_schema_and_source_read": true,
+    "consent_collected": false,
+    "human_collection_performed": false,
+    "human_response_accessed": false,
+    "no_reference_training_performed": false,
+    "operational_privacy_values_selected": false,
+    "participant_contacted": false,
+    "public_verdict_enabled": false,
+    "response_stored": false
+  },
+  "claim_boundary": {
+    "audit_authorizes_contact_recruitment_consent_or_collection": false,
+    "audit_changes_public_cli": false,
+    "audit_completes_human_calibration_requirement": false,
+    "audit_enables_no_reference_training": false,
+    "audit_is_ethics_or_legal_approval": false,
+    "audit_selects_operational_values": false,
+    "data_minimization_is_anonymity": false,
+    "local_player_proves_deployed_privacy": false,
+    "pseudonymization_is_deidentification": false,
+    "schema_readiness_authorizes_storage": false
+  },
+  "decision": {
+    "consent_and_withdrawal_successor_required": true,
+    "data_minimization_structure_ready_for_successor_design": true,
+    "human_collection_authorized": false,
+    "next_gate": "A responsible human must resolve every operational field and approve a successor package that calls linkable response data pseudonymous, keeps consent and withdrawal linkage separate, freezes storage, access, retention, deletion, incident, compensation and publication controls, and only then considers a separate storage and collection authorization.",
+    "no_reference_work_eligible": false,
+    "operational_privacy_values_complete": false,
+    "privacy_package_operationally_ready": false,
+    "pseudonymous_classification_correction_required": true,
+    "public_verdict_enabled": false,
+    "response_storage_authorized": false
+  },
+  "implementation_sha256": "502880fbe8e26dfd29acdac2d23527cc6b77c8ff5dabf903e34828373ed0bd5e",
+  "operational_fields": {
+    "compensation_amount_currency_partial_session_rule_and_payment_operator": null,
+    "complaints_or_independent_contact_if_applicable": null,
+    "eligibility_jurisdiction_and_minimum_age": null,
+    "governing_organization_and_ethics_privacy_basis": null,
+    "minimum_public_aggregation_cell_size_and_suppression_policy": null,
+    "protocol_software_consent_privacy_and_analysis_version_hashes": null,
+    "raw_and_aggregate_retention_periods_and_deletion_method": null,
+    "response_storage_system_region_encryption_access_and_incident_process": null,
+    "responsible_researcher_and_contact": null,
+    "withdrawal_contact_code_procedure_and_deidentification_cutoff": null
+  },
+  "plan_id": "perceptual-degradation-listening-privacy-readiness-audit-20260814-001",
+  "plan_sha256": "b8c9b10568dfd04b8a8ac1c1b0d2012204aa336dd53c9d46e12c6590e2b9f074",
+  "predeclared_checks": {
+    "allocation_journal_privacy_ownership_and_backup_policy_remains_unfrozen": true,
+    "consent_version_and_timestamp_absent_from_trial_envelope": true,
+    "local_player_has_no_network_identity_microphone_or_persistence_api": true,
+    "operational_privacy_fields_remain_unresolved": true,
+    "participant_code_links_sessions_and_responses": true,
+    "response_data_classified_as_pseudonymous_not_deidentified": true,
+    "response_schema_contains_no_forbidden_direct_identifier_field": true,
+    "response_schema_is_closed_world": true,
+    "response_storage_and_collection_remain_unauthorized": true,
+    "withdrawal_code_absent_from_trial_envelope": true
+  },
+  "report_id": "perceptual-degradation-listening-privacy-readiness-20260814-001",
+  "response_data_classification": {
+    "classification": "pseudonymous_research_response_data",
+    "cross_record_linkage_present": true,
+    "deidentified_or_anonymous": false,
+    "direct_identifiers_present": false,
+    "participant_code_present": true,
+    "schema_title_claim": "LossyTrace de-identified listening response envelope",
+    "successor_must_not_call_linkable_data_deidentified": true
+  },
+  "schema_version": 1,
+  "state": "privacy_structure_minimized_operational_values_unresolved_collection_closed",
+  "structural_observations": {
+    "consent_version_or_timestamp_in_trial_envelope": [],
+    "contact_and_payment_data_separate": true,
+    "forbidden_direct_identifier_fields_present": [],
+    "local_player_forbidden_api_tokens_present": [],
+    "public_individual_release_authorized": false,
+    "public_small_cell_release_authorized": false,
+    "response_schema_closed_world": true,
+    "response_schema_field_count": 39,
+    "withdrawal_link_fields_in_trial_envelope": []
+  }
+}

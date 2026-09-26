@@ -1,0 +1,88 @@
+{
+  "authorization_id": "perceptual-degradation-odaq-retained-drift-validation-authorization-20260816-001",
+  "authorization_scope": {
+    "actual_codec_generation_authorized": false,
+    "canonical_pcm_projection_in_memory_authorized": true,
+    "controlled_synthetic_clock_drift_generation_authorized": true,
+    "degradation_rating_collection_authorized": false,
+    "human_playback_authorized": false,
+    "listener_response_collection_authorized": false,
+    "no_reference_training_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "provider_listening_score_access_authorized": false,
+    "provider_processed_condition_access_authorized": false,
+    "public_verdict_authorized": false,
+    "retained_derived_audio_authorized": false,
+    "retained_inventory_sha256": "d7f244da55b510b639300d55271b1ebd5fb9f7454b258bec30588bf18eefde2f",
+    "retained_reference_access_authorized": true,
+    "retained_reference_count": 16,
+    "sealed_evidence_access_authorized": false,
+    "temporary_corrected_pcm_in_memory_authorized": true
+  },
+  "authorized_on": "2026-08-16",
+  "bindings": {
+    "acquisition_result": {
+      "path": "benchmarks/perceptual-degradation-v1/odaq-reference-acquisition-result-20260813.json",
+      "sha256": "b768900901cdcfc88ca4d5918a331961ee01eccd6a6d5d5becf31ddfaa15df4e"
+    },
+    "authorization_schema": {
+      "path": "benchmarks/perceptual-degradation-v1/odaq-retained-drift-validation-authorization.schema.json",
+      "sha256": "1eae94fc6274e623a266b8784c7c8642166ee583c28c8a08f0d1469862b82698"
+    },
+    "delivery_preparation": {
+      "path": "benchmarks/perceptual-degradation-v1/odaq-reference-delivery-preparation-plan.json",
+      "sha256": "32355418257aef49aa0532f5b65d1762df7beb41d044d271b99e9b6848598af2"
+    },
+    "projection_implementation": {
+      "path": "scripts/prepare-perceptual-degradation-odaq-delivery.py",
+      "sha256": "d1ec92f29e5a4155e25bb7c46a31af4fdeef2766b6f6670529e8f18848cade7b"
+    },
+    "synthetic_estimator_implementation": {
+      "path": "scripts/perceptual_degradation_oracle_drift_estimator_integration.py",
+      "sha256": "c3479334525a814e25bcc0ee2d5f569d4be07253d927f1e86788881df03bf3bc"
+    },
+    "synthetic_estimator_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/oracle-drift-estimator-integration-plan.json",
+      "sha256": "d3c35d0c2e82b4424657183e14709a3b40ac91b085ea2618d9b9b3bcb9eb3a81"
+    },
+    "synthetic_estimator_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-oracle-drift-estimator-integration-20260814-001.json",
+      "sha256": "3d352e0112e39639b6d3162d5237e0c99f718220c5d527ed93c4b0a75bda5da4"
+    },
+    "validation_execution_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/odaq-retained-drift-validation-execution-plan.json",
+      "sha256": "c91f27e5a448bfe387b913f5240cb0d6f86f3a0e5e79cfaecf7f74d94497e48b"
+    }
+  },
+  "canonical_decision": "Authorize reading only the exact 16 retained ODAQ clean references, projecting their existing PCM representation into memory under the frozen canonical rule, generating only the frozen controlled clock-drift cases, and running the frozen technical estimator, held-out apply rule, exact resampler, alignment, and score-free oracle twice. Derived PCM must remain temporary and in memory. Do not authorize ODAQ processed conditions or scores, actual codec generation, perceptual metrics, playback, ratings, listener collection, sealed evidence, no-reference training, final-validation claims, or public verdicts.",
+  "claim_boundary": {
+    "development_only": true,
+    "final_validation_supported": false,
+    "full_reference_oracle_validated": false,
+    "independent_transfer_supported": false,
+    "no_reference_work_eligible": false,
+    "one_provider_stratum": true,
+    "retained_reference_validation_is_perceptual_truth": false,
+    "synthetic_drift_is_actual_codec_degradation": false,
+    "technical_correlation_is_a_perceptual_metric": false
+  },
+  "execution_constraints": {
+    "analysis_segment_policy": "first_288000_pcm_frames",
+    "derived_pcm_lifetime": "temporary_in_memory_only",
+    "exact_acquired_inventory_only": true,
+    "fresh_replay_count": 2,
+    "maximum_workers": 1,
+    "minimum_free_disk_gib": 15,
+    "private_journal_outside_repository": true,
+    "public_paths_redacted": true,
+    "public_per_reference_hashes_redacted": true,
+    "replay_reports_byte_identical": true,
+    "source_inventory_reverified_before_read": true,
+    "stop_before_read_on_authorization_failure": true,
+    "stop_on_float_domain_violation": true,
+    "stop_on_unexpected_input_geometry": true
+  },
+  "responsible_human_authorization_present": true,
+  "schema_version": 1,
+  "state": "responsible_human_authorized_exact_odaq_clean_reference_drift_validation_only"
+}

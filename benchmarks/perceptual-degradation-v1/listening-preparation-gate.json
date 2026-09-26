@@ -1,0 +1,303 @@
+{
+  "schema_version": 1,
+  "gate_id": "perceptual-degradation-listening-preparation-20260804-012",
+  "state": "protocol_prepared_human_collection_unauthorized",
+  "human_collection_authorized": false,
+  "recruitment_authorized": false,
+  "real_listener_software_authorized": false,
+  "participant_contact_authorized": false,
+  "response_storage_authorized": false,
+  "completed": {
+    "protocol_draft_present": true,
+    "participant_information_draft_present": true,
+    "source_and_condition_manifest_frozen": false,
+    "licences_frozen": false,
+    "player_implementation_frozen": false,
+    "synthetic_dry_run_passed": true,
+    "private_lossless_delivery_dry_run_passed": true,
+    "playback_qualification_frozen": false,
+    "power_report_frozen": true,
+    "privacy_operational_fields_resolved": false,
+    "compensation_and_withdrawal_resolved": false,
+    "analysis_hashes_frozen": false,
+    "responsible_human_approval_present": false
+  },
+  "methods": {
+    "subtle": "bs1116_style_with_pre_rating_forced_choice",
+    "intermediate_severe": "mushra_style",
+    "maximum_subtle_trials_per_session": 15,
+    "maximum_mushra_trials_per_session": 6,
+    "maximum_signals_per_mushra_trial": 12,
+    "target_session_minutes": [20, 30],
+    "feedback_during_scored_trials": false,
+    "condition_recipe_visible": false,
+    "metric_score_visible": false
+  },
+  "privacy": {
+    "participant_identity_in_response_data": false,
+    "raw_ip_address_recorded": false,
+    "precise_location_recorded": false,
+    "microphone_recorded": false,
+    "contact_and_payment_data_separate": true,
+    "public_individual_responses_authorized": false,
+    "public_small_cell_results_authorized": false
+  },
+  "bindings": {
+    "research_contract": {
+      "path": "docs/research/perceptual-degradation-contract-20260803.md",
+      "sha256": "fdec79207fc0fdd2e9cb10aae9f93dd1a17b45e6e56c0c7df8f0e01a1f9fb505"
+    },
+    "listening_protocol": {
+      "path": "docs/research/perceptual-degradation-listening-protocol-20260803.md",
+      "sha256": "7f918b7faa285cb4e2f142907e3d344f6cb11a7e43cfbfa83c82b9135158171b"
+    },
+    "listener_information": {
+      "path": "docs/research/perceptual-degradation-listener-information-20260803.md",
+      "sha256": "a3869ab30c919dee93949a246f5325be3b9827893a46508fc611b96e764f4f21"
+    },
+    "stimulus_manifest_schema": {
+      "path": "benchmarks/perceptual-degradation-v1/listening-stimulus-manifest.schema.json",
+      "sha256": "a9f94e6bc3789de2af78473df0c5f433029186dcb0aad18a709d9a0f237603a6"
+    },
+    "stimulus_manifest_v2_schema": {
+      "path": "benchmarks/perceptual-degradation-v1/listening-stimulus-manifest-v2.schema.json",
+      "sha256": "789bd684dd561b413e174d5d63ed0605b4d46f342683768f9d933147d84ad96e"
+    },
+    "synthetic_stimulus_manifest": {
+      "path": "benchmarks/perceptual-degradation-v1/listening-stimulus-manifest.synthetic.json",
+      "sha256": "030b561ecc08dc4aeecb6be0c319a95780f6b56233c5507540e15eb3487c8adf"
+    },
+    "score_blind_allocator": {
+      "path": "scripts/perceptual_degradation_listening_allocation.py",
+      "sha256": "2fbe6a0782e6f7652bf60924f27141c511402adea6d0bbb532c4b371edb7d2fc"
+    },
+    "score_blind_allocator_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_listening_allocation.py",
+      "sha256": "601c9a9de376013f407514d960f22603edb5a6e68a02cfc51e745079014780ad"
+    },
+    "score_blind_allocator_v2": {
+      "path": "scripts/perceptual_degradation_listening_allocation_v2.py",
+      "sha256": "8895f8cc3900f776a62c15fb115b674820ba24cdee18772f48399f1d3ea6ea12"
+    },
+    "score_blind_allocator_v2_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_listening_allocation_v2.py",
+      "sha256": "e9d4827694db8625390697b61b3a641a2482de0a30af4e94422e6f75459c63c2"
+    },
+    "power_simulation": {
+      "path": "scripts/perceptual_degradation_listening_power.py",
+      "sha256": "fcfc06b4e73a0976bd1d4094bf5df0a16b6663883c17fce8f49f7ca22bebf891"
+    },
+    "power_simulation_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_listening_power.py",
+      "sha256": "ff7aa66a0e16e08b7e02354ebbd3fee01ddcd14898b10094c119c0ba71d67732"
+    },
+    "power_simulation_evidence": {
+      "path": "research/toolchains/evidence/perceptual-degradation-listening-power-simulation-20260803-001.json",
+      "sha256": "7511937ba57c54cefa27208f5cba40272e827cbde5aa0f6dda2109ea888e5f5a"
+    },
+    "power_report": {
+      "path": "docs/research/perceptual-degradation-listening-power-20260803.md",
+      "sha256": "1fa7a0a00946d3af7caf47bb6624e271ca4e776ec9a9aa3b1d0bb7f331249189"
+    },
+    "synthetic_player_html": {
+      "path": "research/listening-player/index.html",
+      "sha256": "4d53807c14cbac0438b5319e40b6d49e9430d4a6b7b3b0992ae3767b2b89b350"
+    },
+    "synthetic_player_css": {
+      "path": "research/listening-player/style.css",
+      "sha256": "d37ff69c92fc8d986c3027395394d1eea0a3722d0ee108b4ba8c9c2ea9e00caf"
+    },
+    "synthetic_player_assignment": {
+      "path": "research/listening-player/synthetic-assignment.js",
+      "sha256": "7ffb7bc701467ce8d6ab0b61b74272c1999755138b841bf5d1d807e1c6803ef6"
+    },
+    "synthetic_player_javascript": {
+      "path": "research/listening-player/player.js",
+      "sha256": "fda73121463ce5b6d21a7b8f968062cdb75485edf96a6f7452317a3b7574121b"
+    },
+    "synthetic_player_icon": {
+      "path": "research/listening-player/favicon.svg",
+      "sha256": "2da3789b595cd99d06a7141004bd5e18b9dc459cbd48345040a0389634b56f27"
+    },
+    "synthetic_player_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_listening_player.py",
+      "sha256": "f6c6d7ea29c58e7f5a3e472c2ea93a1d177fdedaecd7313915a0a32d4af2a228"
+    },
+    "synthetic_player_v1_dry_run_evidence": {
+      "path": "research/toolchains/evidence/perceptual-degradation-listening-player-dry-run-observed-20260803-001.json",
+      "sha256": "7011b1ce890f7c490d9672a8f768c6ff8bb01a994df693f04bd2e2d8f9d1fce0"
+    },
+    "synthetic_player_v2_dry_run_evidence": {
+      "path": "research/toolchains/evidence/perceptual-degradation-listening-player-dry-run-observed-20260803-002.json",
+      "sha256": "69b48a1c512b694bcdcc9e8ef4f4bcb01f12432ea1e573ba9b8a33f45b65fc58"
+    },
+    "synthetic_player_dry_run_evidence": {
+      "path": "research/toolchains/evidence/perceptual-degradation-listening-player-dry-run-observed-20260803-003.json",
+      "sha256": "8be5c9452f6c05be6d7a7e936294df7865c7bd43f076251dad22c3cff8c51e5a"
+    },
+    "private_lossless_delivery_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/private-lossless-delivery-plan.json",
+      "sha256": "9f2661f0a09d06e0a7cdccae20ef21db9c93b2951862dc88818aedd29d175d00"
+    },
+    "private_lossless_delivery_validator": {
+      "path": "scripts/validate-perceptual-degradation-lossless-delivery.py",
+      "sha256": "0b2c5c43087e0fd114283bcdd9a97449a999ab9648baa6f59253dd67aa03a973"
+    },
+    "private_lossless_delivery_evidence": {
+      "path": "research/toolchains/evidence/perceptual-degradation-lossless-delivery-dry-run-observed-20260804-001.json",
+      "sha256": "5456f8886b0debe7537cf95454c92b9d7735fa45727f5536faa6b84d202ef6b5"
+    },
+    "odaq_attribution_audit_script": {
+      "path": "scripts/audit-perceptual-degradation-odaq-attribution.py",
+      "sha256": "565219615102f3035798b31e966f952f87c3da4aad798e690c27b4eb0976cdd9"
+    },
+    "odaq_attribution_audit_evidence": {
+      "path": "research/toolchains/evidence/perceptual-degradation-odaq-attribution-audit-20260804-001.json",
+      "sha256": "08da482eeab4ab51f0e2ed2f05684edac098b51fe81d1b78bec75181336dca61"
+    },
+    "source_condition_qualification_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/source-condition-qualification-plan.json",
+      "sha256": "5ce20a4e10d743e8823810ec89e58d873ea2db47044151f065fa3358e16cf64b"
+    },
+    "source_condition_qualification_report": {
+      "path": "docs/research/perceptual-degradation-source-condition-qualification-20260804.md",
+      "sha256": "970f375e1558e8fa4c00a9975b2a5940bb3529265ae5fe2f59ee6c107f7d455e"
+    },
+    "source_condition_qualification_validator": {
+      "path": "scripts/validate-perceptual-degradation-source-condition-qualification.py",
+      "sha256": "6a782c383703beab8d20c280136f3d067b75cf84905f26927a111dc126a6ecf7"
+    },
+    "source_condition_qualification_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_source_condition_qualification.py",
+      "sha256": "7e5d21231d9e0ca27492a01e46fce9b74721df78e99a109c609394dd94b3125f"
+    },
+    "production_generation_control_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/production-generation-control-plan.json",
+      "sha256": "cea7450b3c91ad593cef2be6033d0f8b25c7391795d554f697aefd0f8a11760c"
+    },
+    "production_generation_control_preregistration": {
+      "path": "docs/research/perceptual-degradation-production-generation-control-preregistration-20260804.md",
+      "sha256": "d9434e3dd8a2d6402c0e3212cebf44e60817a25762f3dfbc231affa9cb21079a"
+    },
+    "production_generation_control_validator": {
+      "path": "scripts/validate-perceptual-degradation-production-generation-plan.py",
+      "sha256": "0105aef49122755c34bdee510325a6bb1c2125630e075a64d3f7a576ae96c8bb"
+    },
+    "production_generation_control_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_production_generation_plan.py",
+      "sha256": "974fbb8d8178d039b76e192c434d718ebc09949f5f5ae6829e85679eb76ca10d"
+    },
+    "production_generation_execution_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/production-generation-execution-plan.json",
+      "sha256": "a9e896ea59cfb11082dea714445f4a89fa6578ab2e7b85626c63f2326cda9830"
+    },
+    "production_generation_implementation": {
+      "path": "scripts/perceptual_degradation_production_generation.py",
+      "sha256": "ae289da83795fc4223ef80f557919f9cb6002666f0636b47065c5fac4fb80039"
+    },
+    "production_generation_implementation_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_production_generation.py",
+      "sha256": "b0faa943e85fb5cc856439fa3fdeb284029fc1f769821aaf993a12043be8ba07"
+    },
+    "production_generation_execution_plan_validator": {
+      "path": "scripts/validate-perceptual-degradation-production-generation-execution-plan.py",
+      "sha256": "e0f2f1dc4396b626b0ba77e9a606b585e41292b2af416a3677d59c1cc458c8ff"
+    },
+    "production_generation_execution_plan_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_production_generation_execution_plan.py",
+      "sha256": "e304fc1429c381e7010aa62176aa45b6f7f74cd34a4e1c35a5cf9c468f3f6ecc"
+    },
+    "production_generation_synthetic_replay_evidence": {
+      "path": "research/toolchains/evidence/perceptual-degradation-production-generation-synthetic-replay-20260804-001.json",
+      "sha256": "1dec93a0334e6213ef4b952b4aea11018d5611755e88833e60c22030b25c54b8"
+    },
+    "production_generation_synthetic_replay_report": {
+      "path": "docs/research/perceptual-degradation-production-generation-synthetic-replay-20260804.md",
+      "sha256": "5bed0b2d7b89da6b0003889462c4de107d1e564a433130f460c89a917451cf04"
+    },
+    "production_generation_synthetic_replay_validator": {
+      "path": "scripts/validate-perceptual-degradation-production-generation-replay.py",
+      "sha256": "a6e1f15263aa63ba415059628b6368a9ac80254eb1857deb07bdc386d828bb25"
+    },
+    "production_generation_synthetic_replay_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_production_generation_replay.py",
+      "sha256": "38985a0be4acc9198b64c5bbcb8bf5e395f2103d3be351fd6ff764cac073f91a"
+    },
+    "mastered_music_playback_qualification_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/mastered-music-playback-qualification-plan.json",
+      "sha256": "e59c80fad02cd23d9223baa988090301d3b42d63a0e8ac1a8edf5c0bed1cfd2b"
+    },
+    "mastered_music_playback_qualification_report": {
+      "path": "docs/research/perceptual-degradation-mastered-music-playback-qualification-20260804.md",
+      "sha256": "a05af7a6e72fa8b1734014d39c59f6cf6253c475d541e79d6418640d3573e455"
+    },
+    "mastered_music_playback_qualification_validator": {
+      "path": "scripts/validate-perceptual-degradation-mastered-music-playback-plan.py",
+      "sha256": "3595e2057623430d9799dced4a273e195749ee0dd33db280d9659eb9588d1aac"
+    },
+    "mastered_music_playback_qualification_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_mastered_music_playback_plan.py",
+      "sha256": "b5cb71fa290a0cbf784d314ed6c698ace674c73d8b6ddf48978d0d5b5aa9fa2b"
+    },
+    "permissive_listening_source_fallback_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/permissive-listening-source-fallback-plan.json",
+      "sha256": "e40b4642080765c0c7502123b39136f5adefa312d5351537ba486c56728b71f9"
+    },
+    "permissive_listening_source_fallback_report": {
+      "path": "docs/research/perceptual-degradation-permissive-listening-source-fallback-20260804.md",
+      "sha256": "2f12743a4384a30933f3702b58be012b6417f19ca463daf02ad36f2d85c7f29c"
+    },
+    "permissive_listening_source_fallback_validator": {
+      "path": "scripts/validate-perceptual-degradation-permissive-source-fallback.py",
+      "sha256": "c46990bc93982611107f6eb9dc3e20e08e42a309c6d4050aae057d34b0518bb3"
+    },
+    "permissive_listening_source_fallback_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_permissive_source_fallback.py",
+      "sha256": "6356117107bbbe8b6418fd19e5236fe533bfdfcc5347aeb4a3852480df03a110"
+    },
+    "odaq_reference_acquisition_freeze": {
+      "path": "benchmarks/perceptual-degradation-v1/odaq-reference-acquisition-freeze.json",
+      "sha256": "1a39f50013a4274f60ca7c1771ebad22dcafda6950db87d2ffe4acdfb58ab0e7"
+    },
+    "odaq_reference_acquisition_report": {
+      "path": "docs/research/perceptual-degradation-odaq-reference-acquisition-freeze-20260804.md",
+      "sha256": "547e50ad568d7f874dbc7b4ffba4dade1c7731f23acb2527b26dafcd0572233e"
+    },
+    "odaq_reference_acquisition_implementation": {
+      "path": "scripts/freeze-perceptual-degradation-odaq-reference-acquisition.py",
+      "sha256": "e53b5170711b2da5d27c0de1dc73e685522ff7fd699997d4b503f673503df9e8"
+    },
+    "odaq_reference_acquisition_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_odaq_reference_acquisition_freeze.py",
+      "sha256": "82985665c41a488a57251e4f55e5129b4a453294b72b626ca789256145975dca"
+    },
+    "odaq_reference_extractor_preparation": {
+      "path": "benchmarks/perceptual-degradation-v1/odaq-reference-extractor-preparation-plan.json",
+      "sha256": "7d8ebd27dc1dfcb958e37a1eb3d8532a5a1249c455d597797da7ec4f9eedecd1"
+    },
+    "odaq_reference_extractor_report": {
+      "path": "docs/research/perceptual-degradation-odaq-reference-extractor-preparation-20260804.md",
+      "sha256": "7fdee87870de4df61b7e7102acaffbbd752ac1246874aae3fb620f43f6dda124"
+    },
+    "odaq_reference_extractor": {
+      "path": "scripts/acquire-perceptual-degradation-odaq-references.py",
+      "sha256": "9b288b22061646111ff523ba4021e04d810514f0cc64f6614d6f311e9dc7f34c"
+    },
+    "odaq_reference_extractor_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_odaq_reference_extractor.py",
+      "sha256": "afdce181094cbb1254795862f645fc18316c5af75063a731fd02b4c057254082"
+    }
+  },
+  "unresolved_operational_fields": [
+    "responsible researcher and contact",
+    "governing organization and ethics/privacy basis",
+    "eligibility jurisdiction and minimum age",
+    "response storage region encryption access and incident process",
+    "retention and deletion periods",
+    "withdrawal contact procedure and de-identification cutoff",
+    "compensation amount currency partial-session rule and operator",
+    "public minimum cell size and suppression policy",
+    "qualified playback chain and calibration method"
+  ],
+  "authorized_next_step": "Obtain the responsible-human choice between the narrow CC BY/CC0-only ODAQ fallback and the wider NC/SA source track, and declare a stable physical playback chain with calibration method. Exact ODAQ metadata and a synthetic-verified fail-closed extractor are ready, but live audio acquisition remains unauthorized. Actual audio access, excerpt listening, stimulus generation, metric execution, participant contact and human collection remain unauthorized."
+}

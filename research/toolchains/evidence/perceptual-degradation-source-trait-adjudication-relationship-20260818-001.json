@@ -1,0 +1,104 @@
+{
+  "access_boundary": {
+    "audio_descriptors_computed": false,
+    "bound_committed_metadata_read": true,
+    "listener_responses_collected": false,
+    "new_audio_samples_read": false,
+    "new_exact_members_selected": false,
+    "perceptual_metrics_executed": false,
+    "playback_performed": false,
+    "provider_scores_or_processed_conditions_accessed": false,
+    "public_verdict_enabled": false,
+    "sealed_evidence_opened": false,
+    "source_manifest_allocated": false,
+    "source_traits_assigned": false
+  },
+  "adjudication": {
+    "clipped": {
+      "disposition": "descriptor_and_provenance_ready_assignment_and_partition_support_not_authorized",
+      "intentional_waveform_exclusion_satisfied_by_pre_audio_record": true,
+      "metadata_provenance_obligation_satisfied": true,
+      "partition_support_frozen": false,
+      "technical_support_event_observed": true,
+      "technical_support_predicate_frozen_before_observation": true,
+      "trait_assigned": false
+    },
+    "quiet": {
+      "absolute_level_observed": true,
+      "classification_rule_frozen_before_observation": false,
+      "disposition": "development_descriptor_observation_not_eligible_for_post_hoc_numeric_relabelling",
+      "metadata_provenance_obligation_satisfied": true,
+      "new_numeric_cutoff_applied": false,
+      "nonzero_activity_observed": true,
+      "trait_assigned": false
+    },
+    "sparse": {
+      "descriptor_observed": false,
+      "disposition": "metadata_only_candidate_not_adjudicable",
+      "exact_member_selected": false,
+      "non_tonal_contrast_established": false,
+      "provider_candidate_record_present": true,
+      "time_occupancy_rule_frozen": false,
+      "trait_assigned": false
+    },
+    "tonal": {
+      "descriptor_observed": false,
+      "disposition": "metadata_only_candidate_not_adjudicable",
+      "exact_member_selected": false,
+      "non_sparse_contrast_established": false,
+      "provider_candidate_record_present": true,
+      "spectral_concentration_rule_frozen": false,
+      "trait_assigned": false
+    }
+  },
+  "claim_boundary": {
+    "clipped_readiness_is_trait_assignment": false,
+    "descriptor_observation_is_perceptual_truth": false,
+    "full_objective_complete": false,
+    "public_cli_changed": false,
+    "public_verdict_enabled": false,
+    "relationship_readiness_is_partition_allocation": false,
+    "source_trait_scientific_coverage_complete": false,
+    "tinysol_capacity_is_independent_contrast": false
+  },
+  "decision": {
+    "clipped_evidence_ready_for_separately_authorized_assignment_gate": true,
+    "next_gate": "Before any additional source audio is read, freeze deterministic sparse time-occupancy and tonal spectral-concentration implementations, thresholds, non-overlap rules and a bounded exact-member selection procedure. Then seek separate authorization for only the nominated exact members. A future quiet route must use a fresh score-blind candidate or an independently justified protocol; the observed quiet descriptor may not receive a new post-hoc cutoff.",
+    "partition_allocation_authorized": false,
+    "public_verdict_enabled": false,
+    "quiet_post_hoc_threshold_route_rejected": true,
+    "source_trait_manifest_freezable_now": false,
+    "sparse_tonal_exact_member_audio_access_authorized": false,
+    "tinysol_metadata_alone_establishes_sparse_tonal_contrasts": false
+  },
+  "observed_on": "2026-08-18",
+  "plan_id": "perceptual-degradation-source-trait-adjudication-relationship-20260818-001",
+  "plan_sha256": "dcd3c2abf17f7721bb240a9a84b55e2953d7f41ac6438a884574ee7511071e8e",
+  "relationship_audit": {
+    "distinct_sparse_and_tonal_exact_members_required": true,
+    "distinct_sparse_and_tonal_source_groups_required": true,
+    "independent_sparse_and_tonal_contrasts_established": false,
+    "quiet_grouping_rule_retained": "same_uploader_location_and_recording_period_family",
+    "quiet_related_upload_is_independent": false,
+    "relationship_audit_complete_for_selected_seven_trait_manifest": false,
+    "tinysol_conservative_partition_group_count": 1,
+    "tinysol_eligible_exact_member_candidate_count": 2273,
+    "tinysol_provider_or_partition_independence_established": false
+  },
+  "report_id": "perceptual-degradation-source-trait-adjudication-relationship-20260818-001",
+  "schema_version": 1,
+  "state": "adjudication_and_relationship_readiness_audited_no_trait_or_manifest_promotion",
+  "summary": {
+    "clipped_descriptor_and_provenance_ready_trait_unassigned": true,
+    "independent_sparse_and_tonal_contrasts_established": false,
+    "new_audio_accessed": false,
+    "new_exact_member_selected": false,
+    "objective_completion_count_changed": false,
+    "partition_allocation_performed": false,
+    "public_verdict_enabled": false,
+    "quiet_descriptor_observed_trait_unassigned": true,
+    "required_source_trait_count": 7,
+    "source_trait_assignment_performed": false,
+    "source_trait_manifest_frozen": false
+  }
+}

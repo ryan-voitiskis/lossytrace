@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ryan-voitiskis/lossytrace/benchmarks/perceptual-degradation-v1/alignment-result.schema.json",
+  "title": "LossyTrace score-free full-reference alignment result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_kind",
+    "case_id",
+    "status",
+    "public_verdict_enabled",
+    "input",
+    "alignment",
+    "support"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "record_kind": {"const": "perceptual_degradation_alignment"},
+    "case_id": {"type": "string", "pattern": "^case-[0-9a-f]{64}$"},
+    "status": {"enum": ["supported", "unsupported"]},
+    "public_verdict_enabled": {"const": false},
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sample_rate_hz", "channel_count", "reference_frames", "test_frames"],
+      "properties": {
+        "sample_rate_hz": {"type": "integer", "minimum": 1},
+        "channel_count": {"enum": [1, 2]},
+        "reference_frames": {"type": "integer", "minimum": 0},
+        "test_frames": {"type": "integer", "minimum": 0}
+      }
+    },
+    "alignment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "integer_delay_samples",
+        "fractional_delay_samples",
+        "clock_drift_ppm",
+        "observed_gain_db",
+        "polarity",
+        "aligned_frames",
+        "active_seconds",
+        "correlation",
+        "ambiguity_margin",
+        "edge_trim_seconds"
+      ],
+      "properties": {
+        "integer_delay_samples": {"type": "integer"},
+        "fractional_delay_samples": {"type": "number", "minimum": -0.5, "maximum": 0.5},
+        "clock_drift_ppm": {"type": "number"},
+        "observed_gain_db": {"type": "number"},
+        "polarity": {"enum": ["preserved", "inverted"]},
+        "aligned_frames": {"type": "integer", "minimum": 0},
+        "active_seconds": {"type": "number", "minimum": 0},
+        "correlation": {"type": "number", "minimum": -1, "maximum": 1},
+        "ambiguity_margin": {"type": "number", "minimum": 0},
+        "edge_trim_seconds": {"type": "number", "minimum": 0}
+      }
+    },
+    "support": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reasons", "limits_id"],
+      "properties": {
+        "reasons": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "ambiguous_alignment_peak",
+              "insufficient_active_audio",
+              "low_alignment_correlation",
+              "clock_drift_exceeds_limit",
+              "nonlinear_drift",
+              "gain_exceeds_limit",
+              "excessive_trim",
+              "channel_alignment_disagreement",
+              "invalid_numeric_input"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "limits_id": {"const": "perceptual-degradation-v1-alignment-fixtures-20260803-001"}
+      }
+    }
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "plan_id": "perceptual-degradation-listening-condition-strata-workload-20260814-001",
+  "state": "score_blind_condition_strata_workload_sensitivity_no_design_selection",
+  "purpose": "Quantify how candidate codec, encoder, quality and control strata multiply the retained-design listening resource frontier without treating the historical toolchain inventory as selected listening conditions or assigning perceptual truth.",
+  "bindings": {
+    "research_contract": {
+      "path": "docs/research/perceptual-degradation-contract-20260803.md",
+      "sha256": "fdec79207fc0fdd2e9cb10aae9f93dd1a17b45e6e56c0c7df8f0e01a1f9fb505"
+    },
+    "listening_protocol": {
+      "path": "docs/research/perceptual-degradation-listening-protocol-20260803.md",
+      "sha256": "7f918b7faa285cb4e2f142907e3d344f6cb11a7e43cfbfa83c82b9135158171b"
+    },
+    "toolchain_bindings": {
+      "path": "benchmarks/audio-integrity-v2/toolchain-bindings.json",
+      "sha256": "d2af2f0b78b184189806d724c294d7606f37d2763839e17c9289f7957da52070"
+    },
+    "toolchain_observation": {
+      "path": "research/toolchains/evidence/factorial-v2-toolchain-observed-20260802-001-aggregate.json",
+      "sha256": "29ddfe00bb419aedcbdee8de530785f5981de279f2bd190f4a337ebbe8c3cc23"
+    },
+    "production_generation_control_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/production-generation-control-plan.json",
+      "sha256": "cea7450b3c91ad593cef2be6033d0f8b25c7391795d554f697aefd0f8a11760c"
+    },
+    "production_generation_replay": {
+      "path": "research/toolchains/evidence/perceptual-degradation-production-generation-synthetic-replay-20260804-001.json",
+      "sha256": "1dec93a0334e6213ef4b952b4aea11018d5611755e88833e60c22030b25c54b8"
+    },
+    "feasibility_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/listening-feasibility-frontier-plan.json",
+      "sha256": "02f3976e485f167469a4c8a0fe7d04a8fb8f55185b6169136c6e8d37e63daf36"
+    },
+    "feasibility_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-listening-feasibility-frontier-20260813-001.json",
+      "sha256": "c680fb161f3fca350109c321ee867c727eae6841eba7a6c96ce3278c0657a006"
+    },
+    "retained_design_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/listening-retained-design-robustness-plan.json",
+      "sha256": "e0b34cdc349ba6e83b86384d58bcc7e2511db5974b7182ecd22a48c2714b75fb"
+    },
+    "retained_design_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-listening-retained-design-robustness-20260814-001.json",
+      "sha256": "f0a43c462d582330d751ff98e925ba59eba3737c0492aff8f18778451cecb30a"
+    }
+  },
+  "authorization": {
+    "score_blind_metadata_arithmetic_authorized": true,
+    "condition_selection_authorized": false,
+    "source_member_selection_authorized": false,
+    "retained_audio_read_authorized": false,
+    "new_audio_acquisition_authorized": false,
+    "stimulus_generation_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "human_collection_authorized": false,
+    "recruitment_authorized": false,
+    "response_or_outcome_access_authorized": false,
+    "sealed_evidence_access_authorized": false,
+    "no_reference_training_authorized": false,
+    "public_verdict_enabled": false
+  },
+  "candidate_codec_grid": {
+    "state": "arithmetic_candidate_only_not_selected_or_truth_bearing",
+    "channel_treatment_id": "stereo",
+    "codec_families": {
+      "mp3": {
+        "quality_levels": ["96k", "128k"],
+        "encoder_settings": {
+          "mp3_lame_4_0": [
+            "dev-mp3-lame-cbr96-default--stereo",
+            "dev-mp3-lame-cbr128-default--stereo"
+          ],
+          "mp3_bladeenc_a2d06ec": [
+            "transfer-mp3-bladeenc-cbr96-default--stereo",
+            "transfer-mp3-bladeenc-cbr128-default--stereo"
+          ]
+        }
+      },
+      "aac_lc": {
+        "quality_levels": ["96k", "128k"],
+        "encoder_settings": {
+          "aac_ffmpeg_native_8_1_2": [
+            "dev-aac-ffmpeg-cbr96-default--stereo",
+            "dev-aac-ffmpeg-cbr128-default--stereo"
+          ],
+          "aac_fdk_2_0_3": [
+            "transfer-aac-fdk-cbr96-default--stereo",
+            "transfer-aac-fdk-cbr128-default--stereo"
+          ]
+        }
+      },
+      "opus": {
+        "quality_levels": ["64k", "96k"],
+        "encoder_settings": {
+          "opus_libopus_1_6_1": [
+            "dev-opus-libopus-cbr64-20ms--stereo",
+            "dev-opus-libopus-cbr96-20ms--stereo"
+          ],
+          "opus_ffmpeg_native_8_1_2": [
+            "transfer-opus-ffmpeg-cbr64-default--stereo",
+            "transfer-opus-ffmpeg-cbr96-default--stereo"
+          ]
+        }
+      },
+      "vorbis": {
+        "quality_levels": ["q2", "q4"],
+        "encoder_settings": {
+          "vorbis_libvorbis_1_3_7": [
+            "dev-vorbis-libvorbis-q2--stereo",
+            "dev-vorbis-libvorbis-q4--stereo"
+          ],
+          "vorbis_ffmpeg_native_8_1_2": [
+            "transfer-vorbis-ffmpeg-q2--stereo",
+            "transfer-vorbis-ffmpeg-q4--stereo"
+          ]
+        }
+      }
+    }
+  },
+  "strata_scenarios": [
+    {
+      "scenario_id": "aggregate-only",
+      "strata_count": 1,
+      "scope": "one pooled aggregate condition estimand; cannot support codec, encoder or quality-specific transparent safety"
+    },
+    {
+      "scenario_id": "codec-family-only",
+      "strata_count": 4,
+      "scope": "one estimand per candidate codec family; cannot support encoder or quality-specific claims"
+    },
+    {
+      "scenario_id": "codec-encoder-cells",
+      "strata_count": 8,
+      "scope": "two encoder estimands per codec family; does not preserve two matched quality levels"
+    },
+    {
+      "scenario_id": "codec-recipe-grid",
+      "strata_count": 16,
+      "scope": "four codecs by two encoders by two matched within-family quality levels"
+    },
+    {
+      "scenario_id": "codec-grid-plus-control-families",
+      "strata_count": 22,
+      "scope": "codec recipe grid plus four production-control and two generation-control family estimands"
+    },
+    {
+      "scenario_id": "codec-grid-plus-control-recipes",
+      "strata_count": 28,
+      "scope": "codec recipe grid plus all four production-control and eight generation-control recipes"
+    }
+  ],
+  "workload_contract": {
+    "retention_rates": [0.85, 0.90, 0.95],
+    "partition_counts": [1, 4],
+    "device_class_counts": [1, 2],
+    "eligible_listener_retention_rate": 0.646,
+    "maximum_subtle_trials_per_session": 15,
+    "maximum_mushra_trials_per_session": 6,
+    "maximum_additional_conditions_per_mushra_trial": 8,
+    "dedicated_stratum_model": "multiply_retained_design_eligible_prefix_before_enrollment_rounding",
+    "exact_block_no_mushra_packing_model": "a_session_may_carry_only_complete_per_stratum_subtle_and_mushra_blocks",
+    "optimistic_mushra_packing_model": "mushra_conditions_share_source_trials_and_only_the_subtle_block_limits_complete_strata_per_session",
+    "unique_people_from_session_slots": "not_identifiable_without_reuse_fatigue_and_correlation_policy"
+  },
+  "claim_boundary": {
+    "historical_toolchain_settings_are_selected_listening_conditions": false,
+    "candidate_grid_is_truth_bearing": false,
+    "candidate_grid_proves_any_condition_is_transparent_or_material": false,
+    "scenario_count_is_a_frozen_study_design": false,
+    "optimistic_packing_is_allocator_or_player_evidence": false,
+    "trial_caps_prove_twenty_to_thirty_minute_session_timing": false,
+    "session_slots_equal_unique_people": false,
+    "four_partition_sensitivity_is_a_selected_partition_policy": false,
+    "one_declared_device_generalizes_to_other_device_classes": false,
+    "control_scenarios_complete_artifact_isolates_or_hard_negatives": false,
+    "workload_sensitivity_authorizes_collection": false,
+    "full_objective_complete": false,
+    "public_cli_changed": false
+  },
+  "authorized_next_step": "Use this workload sensitivity to decide whether condition-specific human truth at the candidate codec/control breadth is feasible enough to justify exact condition selection and a separately frozen pilot. Do not promote toolchain recipes to listening truth, assume optimistic packing, count session slots as people, or authorize collection."
+}

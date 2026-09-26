@@ -1,0 +1,271 @@
+{
+  "schema_version": 1,
+  "proposal_id": "odaq16-digital-technical-20260908-001",
+  "state": "concrete_execution_proposal_pending_user_approval",
+  "execution_authorized": false,
+  "purpose": "Establish a reproducible native-rate codec encode/decode comparison pipeline on consumed development references. This technical study cannot establish perceptual impairment, transparency or generalization.",
+  "bindings": {
+    "amendment": {
+      "path": "benchmarks/perceptual-degradation-v1/digital-development-sequence-amendment-20260907.json",
+      "sha256": "ca3f0e2af8c07c32846c7e349d27c4c0340b9f676ed98f612300c53fd43107f6"
+    },
+    "reference_delivery": {
+      "path": "benchmarks/perceptual-degradation-v1/odaq-reference-delivery-result-20260814.json",
+      "sha256": "01cc9fbe0b94c0c77f394f5853b9aab8a99fa9ea61a2d9f74e1f46e6f620616e"
+    },
+    "candidate_inventory": {
+      "path": "benchmarks/perceptual-degradation-v1/source-condition-qualification-plan.json",
+      "sha256": "5ce20a4e10d743e8823810ec89e58d873ea2db47044151f065fa3358e16cf64b"
+    },
+    "oracle_contract": {
+      "path": "benchmarks/perceptual-degradation-v1/oracle-validity-integration-plan.json",
+      "sha256": "99e87c837c0e7ef365dc03623b781ed46ec0eec5e84dbe12bf2b38549e14d138"
+    },
+    "alignment_v1": {
+      "path": "scripts/perceptual_degradation_alignment.py",
+      "sha256": "0e036bc1a430e578523d61e68c7ab0dc659bace2f606710ab3d28b148439dccb"
+    },
+    "alignment_v2": {
+      "path": "scripts/perceptual_degradation_alignment_v2.py",
+      "sha256": "72fe01344a33ffbec3967f0c64ca7cf5a3e7c0f5ba64620800115a646500e61c"
+    },
+    "alignment_v3": {
+      "path": "scripts/perceptual_degradation_alignment_v3.py",
+      "sha256": "d9296e62a806a811d281cac93ae65f9bfcaab310aa5dfe12127bfc09199b7581"
+    },
+    "runner": {
+      "path": "scripts/perceptual_degradation_digital_development.py",
+      "sha256": "a2a38cefb6ef2b2f71f2c8b8f7360d41b7a0084baca3f376d1cba25e794784bb"
+    },
+    "tool_binding_implementation": {
+      "path": "scripts/perceptual_degradation_digital_tools.py",
+      "sha256": "71055c715fd4ee75687676db14f2a557eb8d1a6b985b0ca6253f32ddc6124f8d"
+    },
+    "attribution_audit": {
+      "path": "research/toolchains/evidence/perceptual-degradation-odaq-attribution-audit-20260804-001.json",
+      "sha256": "08da482eeab4ab51f0e2ed2f05684edac098b51fe81d1b78bec75181336dca61"
+    },
+    "native_tools": {
+      "path": "research/toolchains/evidence/perceptual-degradation-digital-native-tools-20260908-001.json",
+      "sha256": "befbd97f40cfc8eb2debc40b074cfdba23708e79f59719d032cf5106b40404b6"
+    },
+    "runner_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_digital_development.py",
+      "sha256": "fe41c8efe60c388c1f753b2f55bad6d14a8423600be685ab1de2c31ea716becc"
+    }
+  },
+  "cohort": {
+    "delivery_inventory_sha256": "66e20ac42ae618eb54a09fa91423f339fdca84be3aa3d7a779b220b57faf2abe",
+    "original_inventory_sha256": "d7f244da55b510b639300d55271b1ebd5fb9f7454b258bec30588bf18eefde2f",
+    "delivery_authorization_sha256": "ea5b1bfc23f8b3af7dbecf2f2860a077242e3908a80c39106835b9fb257a3562",
+    "attribution_sha256": "9bf06ed7f7acc8979a5d58fca4f78e6dca31379da25d844b9f46da94eb0295a2",
+    "total_bytes": 54631346,
+    "minimum_frames": 360701,
+    "maximum_frames": 576008,
+    "bit_depth_counts": {
+      "24": 9,
+      "32": 7
+    }
+  },
+  "accounting": {
+    "references": 16,
+    "codec_conditions": 8,
+    "controls": 2,
+    "cases_per_replay": 160,
+    "replays": 2,
+    "total_cases": 320
+  },
+  "population": {
+    "partition": "odaq_retained_development_only",
+    "provider_strata": 1,
+    "independent_source_group_count": null,
+    "all_derivatives_colocated": true,
+    "transfer_or_final_validation_eligible": false,
+    "member_selection": "All exact previously retained canonical deliveries; current private inventory is not reopened during preparation."
+  },
+  "input_policy": {
+    "rate_hz": 48000,
+    "channel_map": ["L","R"],
+    "adapter": "Parse the exact canonical signed 24/32-bit PCM payload. Convert integer samples to exactly scaled float64, then pack IEEE binary32 little endian using round-to-nearest/ties-to-even. Write one metadata-free type-3 float WAV with a fact frame count. No resampling, dither, gain adjustment, clipping, fade, padding or excerpt selection.",
+    "controls": ["identity: retained exact float64 representation versus itself","float32_adapter: retained float64 representation versus binary32 roundtrip"],
+    "codec_reference": "Exact binary32 input view, lifted to float64 without further rounding; report its private hash separately from the retained-source hash.",
+    "precision_boundary": "Binary32 conversion may change some signed 32-bit input values, including rounding a value immediately below positive full scale to 1.0. Do not clamp or hide it. This is an explicit adapter effect, not evidence of codec impairment.",
+    "source_protection": "Only read one existing delivery replay. Never rewrite source files, duplicate the retained corpus, read provider processed conditions/scores, or open the original acquired corpus."
+  },
+  "recipes": [
+    {
+      "id": "digital48-mp3-libmp3lame-96k-v1",
+      "codec_family": "mp3",
+      "encoder": "libmp3lame",
+      "setting": "96k",
+      "extension": "mp3",
+      "decoder": "mp3float",
+      "expected_profile": null,
+      "expected_codec_name": "mp3",
+      "encode_argv": ["<ffmpeg>","-nostdin","-hide_banner","-loglevel","error","-n","-protocol_whitelist","file,pipe","-threads","1","-i","<adapter>","-map","0:a:0","-map_metadata","-1","-vn","-sn","-dn","-filter_threads","1","-c:a","libmp3lame","-threads:a","1","-sample_fmt","fltp","-ar","48000","-ac","2","-b:a","96k","-fflags","+bitexact","-flags:a","+bitexact","-abr","0","-joint_stereo","1","-reservoir","1","-write_xing","1","-id3v2_version","0","<encoded>"]
+    },
+    {
+      "id": "digital48-mp3-libmp3lame-128k-v1",
+      "codec_family": "mp3",
+      "encoder": "libmp3lame",
+      "setting": "128k",
+      "extension": "mp3",
+      "decoder": "mp3float",
+      "expected_profile": null,
+      "expected_codec_name": "mp3",
+      "encode_argv": ["<ffmpeg>","-nostdin","-hide_banner","-loglevel","error","-n","-protocol_whitelist","file,pipe","-threads","1","-i","<adapter>","-map","0:a:0","-map_metadata","-1","-vn","-sn","-dn","-filter_threads","1","-c:a","libmp3lame","-threads:a","1","-sample_fmt","fltp","-ar","48000","-ac","2","-b:a","128k","-fflags","+bitexact","-flags:a","+bitexact","-abr","0","-joint_stereo","1","-reservoir","1","-write_xing","1","-id3v2_version","0","<encoded>"]
+    },
+    {
+      "id": "digital48-aac_lc-aac-96k-v1",
+      "codec_family": "aac_lc",
+      "encoder": "aac",
+      "setting": "96k",
+      "extension": "m4a",
+      "decoder": "aac",
+      "expected_profile": "LC",
+      "expected_codec_name": "aac",
+      "encode_argv": ["<ffmpeg>","-nostdin","-hide_banner","-loglevel","error","-n","-protocol_whitelist","file,pipe","-threads","1","-i","<adapter>","-map","0:a:0","-map_metadata","-1","-vn","-sn","-dn","-filter_threads","1","-c:a","aac","-threads:a","1","-sample_fmt","fltp","-ar","48000","-ac","2","-b:a","96k","-fflags","+bitexact","-flags:a","+bitexact","-profile:a","aac_low","-aac_coder","twoloop","<encoded>"]
+    },
+    {
+      "id": "digital48-aac_lc-aac-128k-v1",
+      "codec_family": "aac_lc",
+      "encoder": "aac",
+      "setting": "128k",
+      "extension": "m4a",
+      "decoder": "aac",
+      "expected_profile": "LC",
+      "expected_codec_name": "aac",
+      "encode_argv": ["<ffmpeg>","-nostdin","-hide_banner","-loglevel","error","-n","-protocol_whitelist","file,pipe","-threads","1","-i","<adapter>","-map","0:a:0","-map_metadata","-1","-vn","-sn","-dn","-filter_threads","1","-c:a","aac","-threads:a","1","-sample_fmt","fltp","-ar","48000","-ac","2","-b:a","128k","-fflags","+bitexact","-flags:a","+bitexact","-profile:a","aac_low","-aac_coder","twoloop","<encoded>"]
+    },
+    {
+      "id": "digital48-opus-libopus-64k-v1",
+      "codec_family": "opus",
+      "encoder": "libopus",
+      "setting": "64k",
+      "extension": "opus",
+      "decoder": "opus",
+      "expected_profile": null,
+      "expected_codec_name": "opus",
+      "encode_argv": ["<ffmpeg>","-nostdin","-hide_banner","-loglevel","error","-n","-protocol_whitelist","file,pipe","-threads","1","-i","<adapter>","-map","0:a:0","-map_metadata","-1","-vn","-sn","-dn","-filter_threads","1","-c:a","libopus","-threads:a","1","-sample_fmt","flt","-ar","48000","-ac","2","-b:a","64k","-fflags","+bitexact","-flags:a","+bitexact","-application","audio","-frame_duration","20","-vbr","off","-compression_level","10","-mapping_family","0","-serial_offset","1","<encoded>"]
+    },
+    {
+      "id": "digital48-opus-libopus-128k-v1",
+      "codec_family": "opus",
+      "encoder": "libopus",
+      "setting": "128k",
+      "extension": "opus",
+      "decoder": "opus",
+      "expected_profile": null,
+      "expected_codec_name": "opus",
+      "encode_argv": ["<ffmpeg>","-nostdin","-hide_banner","-loglevel","error","-n","-protocol_whitelist","file,pipe","-threads","1","-i","<adapter>","-map","0:a:0","-map_metadata","-1","-vn","-sn","-dn","-filter_threads","1","-c:a","libopus","-threads:a","1","-sample_fmt","flt","-ar","48000","-ac","2","-b:a","128k","-fflags","+bitexact","-flags:a","+bitexact","-application","audio","-frame_duration","20","-vbr","off","-compression_level","10","-mapping_family","0","-serial_offset","1","<encoded>"]
+    },
+    {
+      "id": "digital48-vorbis-oggenc-2-v1",
+      "codec_family": "vorbis",
+      "encoder": "oggenc",
+      "setting": "2",
+      "extension": "ogg",
+      "decoder": "vorbis",
+      "expected_profile": null,
+      "expected_codec_name": "vorbis",
+      "encode_argv": ["<oggenc>","--quiet","--discard-comments","--serial","1","--quality","2","--output","<encoded>","<adapter>"]
+    },
+    {
+      "id": "digital48-vorbis-oggenc-6-v1",
+      "codec_family": "vorbis",
+      "encoder": "oggenc",
+      "setting": "6",
+      "extension": "ogg",
+      "decoder": "vorbis",
+      "expected_profile": null,
+      "expected_codec_name": "vorbis",
+      "encode_argv": ["<oggenc>","--quiet","--discard-comments","--serial","1","--quality","6","--output","<encoded>","<adapter>"]
+    }
+  ],
+  "probe_argv": ["<ffprobe>","-v","error","-protocol_whitelist","file,pipe","-threads","1","-show_streams","-show_packets","-show_entries","stream=codec_name,profile,sample_rate,channels,channel_layout,time_base,start_pts,duration_ts:packet=pts,dts,duration:packet_side_data=side_data_type,skip_samples,discard_padding","-of","json","<encoded>"],
+  "decode_argv": ["<ffmpeg>","-nostdin","-hide_banner","-loglevel","error","-n","-protocol_whitelist","file,pipe","-threads","1","-c:a","<decoder>","-i","<encoded>","-map","0:a:0","-map_metadata","-1","-vn","-sn","-dn","-filter_threads","1","-c:a","pcm_f64le","-threads:a","1","-f","f64le","<decoded>"],
+  "condition_policy": {
+    "selection": "Two operating points in each already-qualified codec lineage; all new native-48-kHz recipe IDs. MP3 96/128 kbps CBR; native AAC-LC 96/128 kbps target bitrate; libopus 64/128 kbps hard CBR with 20 ms frames; libVorbis quality 2/6.",
+    "encoder_lineages": ["lame via FFmpeg libmp3lame","FFmpeg native AAC","Xiph libopus via FFmpeg","Xiph libVorbis via oggenc"],
+    "decoder_policy": "Explicit FFmpeg mp3float, aac, opus and vorbis decoders; output interleaved little-endian float64 at the stream's native rate and channel layout, with no forced resampling/downmix or integer-output clipping.",
+    "heldout_policy": "These are development lineages only. The FFmpeg libopus wrapper is not the distinct FFmpeg native Opus encoder-transfer candidate. No wrapper or file count creates an independent group.",
+    "defaults": "Freeze exact binary/dependency closure and supplied arguments. Unspecified codec internals, including low-pass and psychoacoustic defaults, belong to that exact intervention. Their outputs are not quality labels.",
+    "determinism": "Request FFmpeg bitexact container/codec modes, explicit Ogg serial offsets and oggenc serial 1. Verify encoded bytes, decoded bytes, packet metadata and comparison records across both replays; flags alone do not establish determinism.",
+    "syntax_verification": "Installed help/version and primary documentation inspected; no actual encoder or decoder condition was run in preparation. Mocked tests do not prove successful real codec invocation.",
+    "family_exposure": "All four families are used for technical development. None is reserved here as an unseen-codec validation set; later transfer claims must explicitly account for prior exposure, rather than treating different files as an unseen family."
+  },
+  "alignment_policy": {
+    "implementation": "perceptual_degradation_alignment_v3",
+    "minimum_active_seconds": {
+      "subtle": 4,
+      "quality_metric": 8
+    },
+    "maximum_delay_seconds": 2,
+    "execution": "Run the unchanged channel-preserving alignment implementation once at the four-active-second mode. For study eligibility, cap its raw block-based active duration by aligned_frames / 48000, preserving both values and the cap-applied flag. Subtle eligibility requires a supported raw record and at least four bounded seconds; quality-duration eligibility requires eight. This is not a metric/oracle execution.",
+    "delay_padding": "Record demuxer packet timestamps, skip-sample and discard-padding fields, stream timebase and decoded frame count. Let the bound decoder apply its own declared container delay/padding semantics; add no manual trimming, delay correction, zero-padding, drift correction, gain/polarity fitting or time warping. Residual alignment is diagnostic only.",
+    "support": "Preserve every per-channel reason, nullable invalid diagnostic and unsupported case. Short, silent, highly impaired or ambiguous cases are not replaced. Alignment failure is not a severity label, and unsupported coverage may be outcome-dependent.",
+    "omissions": "This is not a complete full-reference perceptual oracle report: integrated loudness, true peak, metric-specific views, perceptual outcomes and their uncertainty are not supplied.",
+    "geometry_boundary": "A partial activity block may be rounded upward by the old diagnostic. Never permit that estimate to exceed observed aligned geometry for eligibility. One frame below four/eight seconds fails the corresponding study duration gate; numeric limits and legacy raw records are unchanged."
+  },
+  "resources": {
+    "workers": 1,
+    "minimum_free_gib": 15,
+    "maximum_file_bytes": 33554432,
+    "maximum_command_seconds": 60,
+    "maximum_case_seconds": 180,
+    "stop_starting_cases_after_replay_seconds": 3600,
+    "persistent_derived_pcm_allowed": false
+  },
+  "storage_and_stop": {
+    "scratch_allowance_bytes": 402653184,
+    "processing": "One source/condition at a time. Fresh private temporary case directory, 32 MiB per subprocess output file, bounded metadata, one codec process at a time. Require 15 GiB plus 384 MiB scratch allowance before each case.",
+    "timing": "Stop starting new cases after one hour per replay; an already started case has a 180-second deadline. Codec/probe commands each have at most 60 seconds, capped by the case deadline. Runtime overhead and inventory/binding preflight are additional. Report every remaining case as not_run; no automatic resume or replacement.",
+    "retention": "Keep two private JSON replay reports, exact execution binding, out-of-band attribution and the sanitized projection in a new unique private directory. Do not retain encoded conditions, input adapters or decoded PCM. Only newly created case scratch is automatically removed.",
+    "failures": "A preflight mismatch prevents execution. Within-case codec, geometry, deadline or support failures stay in the denominator. Resource stops preserve unattempted cases. Byte mismatch yields a technical negative, not an automatic repair.",
+    "publication": "Public projection is aggregate only, built from an allowlist. No private path, case/source identity, waveform, per-member hash, packet record, score or listener data is copied into Git."
+  },
+  "software_boundary": {
+    "binding": "Exact executable and recursive non-system shared-library hashes; Python executable, all runtime .py/.so bytes excluding tests/site-packages/caches; package formula and present licence-notice hashes.",
+    "system_binding": "macOS 26.6.2 build 25G83 arm64 binds dyld shared-cache libraries. These system libraries are not individually file-hashed and are not claimed independently reproducible on another OS.",
+    "use_scope": "Existing installed software, local subprocess research only. No installation, patching, distribution of tools/libraries, application linking, metric licence selection or public product change. Package declarations are inventory metadata, not a new redistribution clearance.",
+    "runtime": "Real execution requires Python isolated mode (-I), exact binding equality, controlled subprocess environment and no external media protocols or dynamic plugins."
+  },
+  "execution_gate": {
+    "responsible_user_approval_required": true,
+    "fixed_successor_path": "benchmarks/perceptual-degradation-v1/digital-development-execution-authorization.json",
+    "authorization_fields": ["schema_version","proposal_id","proposal_sha256","runner_sha256","responsible_user_execution_approved","retained_delivery_read_and_codec_replays_authorized","metric_playback_listener_training_authorized"],
+    "authorization_policy": "Create the exact successor only after explicit user approval of this proposal. It must bind the unchanged proposal and runner, open only the two retained-reference technical replays, and keep metric/playback/listener/training permission false.",
+    "commit_and_ci": "Commit and push the approved successor; require a clean checkout and a successful push CI run at the exact execution HEAD. The runner checks that live before inspecting private paths.",
+    "preparation_access": "Public repository records, tool binaries/dependencies/installed help and small constructed numerical/WAV test fixtures only. Real waveform and private-manifest access stays closed in this checkpoint."
+  },
+  "validation_requirements": ["Exact public bindings, recipes and 320-case accounting","Fail closed before private access when approval, clean commit, exact-head CI or native tool binding differs","Constructed 24/32-bit PCM and binary32 conversion controls, finite-value and channel geometry checks","Mocked encoder/probe/decoder boundary with no actual codec conditions generated","Timeout/resource stops, corrupted inventory, symlinks, duplicate identities, extra files and no-clobber behavior","Two complete mocked replays, deliberate non-determinism and every failed/unsupported case retained","Path-free aggregate projection; no perceptual value coercion","Full local Rust/Python checks, deterministic repository SBOM, full staged audit and successful exact-head CI"],
+  "claim_boundary": {
+    "real_reference_read": false,
+    "codec_conditions_generated": false,
+    "source_manifest_complete": false,
+    "metric_selected": false,
+    "metric_executed": false,
+    "human_calibration_complete": false,
+    "transparent_lossy_truth_established": false,
+    "full_reference_validated": false,
+    "no_reference_training_authorized": false,
+    "independent_transfer_passed": false,
+    "public_verdict_enabled": false,
+    "objective_complete": false
+  },
+  "sources": [
+    {
+      "title": "FFmpeg codec options",
+      "url": "https://ffmpeg.org/ffmpeg-codecs.html"
+    },
+    {
+      "title": "FFmpeg format options",
+      "url": "https://ffmpeg.org/ffmpeg-formats.html"
+    },
+    {
+      "title": "Xiph oggenc manual",
+      "url": "https://github.com/xiph/vorbis-tools/blob/main/oggenc/man/oggenc.1"
+    }
+  ],
+  "next_action": "After tested publication, ask the user to approve exactly the two private 160-case technical replays. Do not ask for a microphone, listening participation, recruitment, spending or a broader research waiver."
+}

@@ -1,0 +1,3538 @@
+{
+  "assignment_id": "lossytrace-v2-fractional-assignment-20260802-001",
+  "audio_generated": false,
+  "cell_counts": [
+    {
+      "channel_treatment_id": "mono",
+      "count": 10,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 9,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 11,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 9,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 11,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 10,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 10,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 9,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 11,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 81,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "identity",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 81,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "identity",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 81,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "identity",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 10,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "lossless-wrapper-rewrite",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 20,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "lossless-wrapper-rewrite",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 10,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 11,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 9,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 10,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 10,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 10,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 10,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 9,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 11,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 11,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 10,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 9,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 10,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 10,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 10,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 16,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 19,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 15,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 17,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 16,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 17,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 17,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 16,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 17,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 135,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "identity",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 135,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "identity",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 135,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "identity",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 30,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "lossless-wrapper-rewrite",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 20,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "lossless-wrapper-rewrite",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 17,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 16,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 17,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 16,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 18,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 16,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 18,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 17,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 15,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 16,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 15,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 19,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 16,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 18,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 16,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 7,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 6,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 7,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 9,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 11,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 10,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 10,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 9,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 11,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 10,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "lossless-wrapper-rewrite",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 10,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "lossless-wrapper-rewrite",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 7,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 7,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 6,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 10,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 10,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 10,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 7,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 6,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 7,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 7,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 7,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 6,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 10,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 10,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 10,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 10,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 11,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 9,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 17,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 16,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 17,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 10,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 10,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 10,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 10,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "lossless-wrapper-rewrite",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 10,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "lossless-wrapper-rewrite",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 13,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 13,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 14,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 13,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 14,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 13,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 11,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 10,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 9,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 10,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 9,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 11,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 13,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 14,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 13,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 69,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_reference",
+      "transform_id": "identity",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 59,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_reference",
+      "transform_id": "identity",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 67,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_reference",
+      "transform_id": "identity",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 84,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_reference",
+      "transform_id": "identity",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 76,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_reference",
+      "transform_id": "identity",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 84,
+      "evidence_partition": "encoder_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_reference",
+      "transform_id": "identity",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 3,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 4,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 3,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 4,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 3,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 3,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 4,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 3,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 3,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 10,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "lossless-wrapper-rewrite",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 4,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 3,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 3,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 3,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 4,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 3,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 4,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 3,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 3,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 3,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 3,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 4,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 3,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 4,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 3,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 3,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 3,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 4,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 3,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 4,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 3,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 3,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 4,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 3,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 10,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "lossless-wrapper-rewrite",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 3,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 4,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 3,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 3,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 3,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 4,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 3,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 3,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 4,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 3,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 4,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 3,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 3,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 3,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 4,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 27,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_reference",
+      "transform_id": "identity",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 27,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_reference",
+      "transform_id": "identity",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 28,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_reference",
+      "transform_id": "identity",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 27,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_reference",
+      "transform_id": "identity",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 28,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_reference",
+      "transform_id": "identity",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 27,
+      "evidence_partition": "external_transfer",
+      "expectation": "negative",
+      "history_class": "pcm_reference",
+      "transform_id": "identity",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 27,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 28,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 25,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 27,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 27,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 26,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 28,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 25,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 27,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 591,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "identity",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 591,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "identity",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 591,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "identity",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 80,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "lossless-wrapper-rewrite",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 28,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 26,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 26,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 28,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 26,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 26,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 27,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 26,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 27,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 26,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 28,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 26,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 28,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 26,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 26,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 27,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 25,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 28,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 28,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 25,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 27,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 26,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 27,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 27,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 592,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "identity",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 592,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "identity",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 591,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "identity",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 80,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "lossless-wrapper-rewrite",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 26,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 27,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 27,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 25,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 28,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 27,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 26,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 28,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 26,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 26,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 27,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 27,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 25,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 27,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 28,
+      "evidence_partition": "mechanism_development",
+      "expectation": "controlled_positive",
+      "history_class": "controlled_lossy_history",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 20,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 21,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 19,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 20,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 20,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 20,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 21,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 19,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 20,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 40,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "lossless-wrapper-rewrite",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 28,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 26,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 26,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 21,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 19,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 20,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 27,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 26,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 27,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 19,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 21,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 20,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 21,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 20,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 19,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 20,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 19,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 21,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "alternate-channel-topology",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 21,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 19,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 20,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "duration-prefix-3s",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 20,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 20,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 20,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "gain-minus6db-q31",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 40,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "lossless-wrapper-rewrite",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 26,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 27,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 27,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "lowpass-16k-cascade8",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 19,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 21,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 20,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "prepend-digital-silence-500ms",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 26,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 28,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 26,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "requantize-12bit-tpdf",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 20,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 20,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 20,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "resample-roundtrip-32k",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 19,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 20,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 21,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_hard_negative",
+      "transform_id": "trim-head-250ms",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 406,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_reference",
+      "transform_id": "identity",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 397,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_reference",
+      "transform_id": "identity",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "mono",
+      "count": 355,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_reference",
+      "transform_id": "identity",
+      "wrapper_id": "wav16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 400,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_reference",
+      "transform_id": "identity",
+      "wrapper_id": "aiff16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 392,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_reference",
+      "transform_id": "identity",
+      "wrapper_id": "flac16"
+    },
+    {
+      "channel_treatment_id": "stereo",
+      "count": 364,
+      "evidence_partition": "mechanism_development",
+      "expectation": "negative",
+      "history_class": "pcm_reference",
+      "transform_id": "identity",
+      "wrapper_id": "wav16"
+    }
+  ],
+  "decoder_coverage": [
+    {
+      "codec_family": "mp3",
+      "evidence_partition": "mechanism_development",
+      "group_count": 325,
+      "history_decoder_id": "ffmpeg_native_audio_8_1_2",
+      "template_count": 5
+    },
+    {
+      "codec_family": "aac_lc",
+      "evidence_partition": "mechanism_development",
+      "group_count": 383,
+      "history_decoder_id": "ffmpeg_native_audio_8_1_2",
+      "template_count": 4
+    },
+    {
+      "codec_family": "opus",
+      "evidence_partition": "mechanism_development",
+      "group_count": 284,
+      "history_decoder_id": "ffmpeg_native_audio_8_1_2",
+      "template_count": 4
+    },
+    {
+      "codec_family": "vorbis",
+      "evidence_partition": "mechanism_development",
+      "group_count": 292,
+      "history_decoder_id": "ffmpeg_native_audio_8_1_2",
+      "template_count": 3
+    },
+    {
+      "codec_family": "mp3",
+      "evidence_partition": "mechanism_development",
+      "group_count": 262,
+      "history_decoder_id": "apple_audiotoolbox_25g72",
+      "template_count": 5
+    },
+    {
+      "codec_family": "aac_lc",
+      "evidence_partition": "mechanism_development",
+      "group_count": 370,
+      "history_decoder_id": "apple_audiotoolbox_25g72",
+      "template_count": 4
+    },
+    {
+      "codec_family": "opus",
+      "evidence_partition": "mechanism_development",
+      "group_count": 318,
+      "history_decoder_id": "apple_audiotoolbox_25g72",
+      "template_count": 4
+    },
+    {
+      "codec_family": "vorbis",
+      "evidence_partition": "mechanism_development",
+      "group_count": 261,
+      "history_decoder_id": "apple_audiotoolbox_25g72",
+      "template_count": 3
+    },
+    {
+      "codec_family": "mp3",
+      "evidence_partition": "mechanism_development",
+      "group_count": 252,
+      "history_decoder_id": "mpg123_1_33_6",
+      "template_count": 5
+    },
+    {
+      "codec_family": "opus",
+      "evidence_partition": "mechanism_development",
+      "group_count": 285,
+      "history_decoder_id": "opusdec_0_2_2_libopus_1_6_1",
+      "template_count": 4
+    },
+    {
+      "codec_family": "vorbis",
+      "evidence_partition": "mechanism_development",
+      "group_count": 276,
+      "history_decoder_id": "oggdec_1_4_3_libvorbis_1_3_7",
+      "template_count": 3
+    },
+    {
+      "codec_family": "mp3",
+      "evidence_partition": "encoder_transfer",
+      "group_count": 68,
+      "history_decoder_id": "ffmpeg_native_audio_8_1_2",
+      "template_count": 2
+    },
+    {
+      "codec_family": "aac_lc",
+      "evidence_partition": "encoder_transfer",
+      "group_count": 82,
+      "history_decoder_id": "ffmpeg_native_audio_8_1_2",
+      "template_count": 2
+    },
+    {
+      "codec_family": "opus",
+      "evidence_partition": "encoder_transfer",
+      "group_count": 61,
+      "history_decoder_id": "ffmpeg_native_audio_8_1_2",
+      "template_count": 2
+    },
+    {
+      "codec_family": "vorbis",
+      "evidence_partition": "encoder_transfer",
+      "group_count": 68,
+      "history_decoder_id": "ffmpeg_native_audio_8_1_2",
+      "template_count": 2
+    },
+    {
+      "codec_family": "mp3",
+      "evidence_partition": "encoder_transfer",
+      "group_count": 63,
+      "history_decoder_id": "apple_audiotoolbox_25g72",
+      "template_count": 2
+    },
+    {
+      "codec_family": "aac_lc",
+      "evidence_partition": "encoder_transfer",
+      "group_count": 82,
+      "history_decoder_id": "apple_audiotoolbox_25g72",
+      "template_count": 2
+    },
+    {
+      "codec_family": "opus",
+      "evidence_partition": "encoder_transfer",
+      "group_count": 63,
+      "history_decoder_id": "apple_audiotoolbox_25g72",
+      "template_count": 2
+    },
+    {
+      "codec_family": "vorbis",
+      "evidence_partition": "encoder_transfer",
+      "group_count": 67,
+      "history_decoder_id": "apple_audiotoolbox_25g72",
+      "template_count": 2
+    },
+    {
+      "codec_family": "mp3",
+      "evidence_partition": "encoder_transfer",
+      "group_count": 64,
+      "history_decoder_id": "mpg123_1_33_6",
+      "template_count": 2
+    },
+    {
+      "codec_family": "opus",
+      "evidence_partition": "encoder_transfer",
+      "group_count": 61,
+      "history_decoder_id": "opusdec_0_2_2_libopus_1_6_1",
+      "template_count": 2
+    },
+    {
+      "codec_family": "vorbis",
+      "evidence_partition": "encoder_transfer",
+      "group_count": 65,
+      "history_decoder_id": "oggdec_1_4_3_libvorbis_1_3_7",
+      "template_count": 2
+    }
+  ],
+  "external_positive_reserve": {
+    "encoder_selection_deferred": true,
+    "group_count": 100,
+    "scores_opened": false
+  },
+  "factor_freeze_id": "lossytrace-v2-factor-levels-20260802-002",
+  "group_counts": [
+    {
+      "count": 9,
+      "evidence_partition": "encoder_transfer",
+      "provenance_tier": "tier_a_confirmed_pcm",
+      "source_domain": "acted_song"
+    },
+    {
+      "count": 15,
+      "evidence_partition": "encoder_transfer",
+      "provenance_tier": "tier_a_confirmed_pcm",
+      "source_domain": "acted_speech"
+    },
+    {
+      "count": 6,
+      "evidence_partition": "encoder_transfer",
+      "provenance_tier": "tier_a_confirmed_pcm",
+      "source_domain": "home_recorded_bandwidth_limited_digit_speech"
+    },
+    {
+      "count": 1,
+      "evidence_partition": "encoder_transfer",
+      "provenance_tier": "tier_a_confirmed_pcm",
+      "source_domain": "isolated_acoustic_instrument"
+    },
+    {
+      "count": 56,
+      "evidence_partition": "encoder_transfer",
+      "provenance_tier": "tier_a_confirmed_pcm",
+      "source_domain": "studio_speech"
+    },
+    {
+      "count": 15,
+      "evidence_partition": "encoder_transfer",
+      "provenance_tier": "tier_a_confirmed_pcm",
+      "source_domain": "urban_sensor_soundscape"
+    },
+    {
+      "count": 17,
+      "evidence_partition": "external_transfer",
+      "provenance_tier": "tier_a_confirmed_pcm",
+      "source_domain": "classical_music"
+    },
+    {
+      "count": 28,
+      "evidence_partition": "external_transfer",
+      "provenance_tier": "tier_a_confirmed_pcm",
+      "source_domain": "genre_music"
+    },
+    {
+      "count": 6,
+      "evidence_partition": "external_transfer",
+      "provenance_tier": "tier_a_confirmed_pcm",
+      "source_domain": "jazz_music"
+    },
+    {
+      "count": 54,
+      "evidence_partition": "external_transfer",
+      "provenance_tier": "tier_a_confirmed_pcm",
+      "source_domain": "laboratory_lombard_speech"
+    },
+    {
+      "count": 33,
+      "evidence_partition": "external_transfer",
+      "provenance_tier": "tier_a_confirmed_pcm",
+      "source_domain": "popular_music"
+    },
+    {
+      "count": 1,
+      "evidence_partition": "external_transfer",
+      "provenance_tier": "tier_a_confirmed_pcm",
+      "source_domain": "royalty_free_music"
+    },
+    {
+      "count": 25,
+      "evidence_partition": "external_transfer",
+      "provenance_tier": "tier_a_confirmed_pcm",
+      "source_domain": "urban_binaural_soundscape"
+    },
+    {
+      "count": 36,
+      "evidence_partition": "mechanism_development",
+      "provenance_tier": "tier_a_confirmed_pcm",
+      "source_domain": "demand_maestro_consumed_transfer"
+    },
+    {
+      "count": 150,
+      "evidence_partition": "mechanism_development",
+      "provenance_tier": "tier_a_confirmed_pcm",
+      "source_domain": "musdb18hq_consumed_transfer"
+    },
+    {
+      "count": 53,
+      "evidence_partition": "mechanism_development",
+      "provenance_tier": "tier_b_trusted",
+      "source_domain": "nsynth_test_sparse"
+    },
+    {
+      "count": 200,
+      "evidence_partition": "mechanism_development",
+      "provenance_tier": "tier_b_trusted",
+      "source_domain": "nsynth_train_sparse"
+    },
+    {
+      "count": 40,
+      "evidence_partition": "mechanism_development",
+      "provenance_tier": "tier_b_trusted",
+      "source_domain": "private_full_mix_training"
+    },
+    {
+      "count": 48,
+      "evidence_partition": "mechanism_development",
+      "provenance_tier": "tier_a_confirmed_pcm",
+      "source_domain": "public_tier_a_controlled"
+    }
+  ],
+  "paths_redacted": true,
+  "positive_codec_counts": [
+    {
+      "assignment_role": "anchor_identity",
+      "codec_family": "aac_lc",
+      "count": 102,
+      "evidence_partition": "encoder_transfer"
+    },
+    {
+      "assignment_role": "anchor_identity",
+      "codec_family": "mp3",
+      "count": 102,
+      "evidence_partition": "encoder_transfer"
+    },
+    {
+      "assignment_role": "anchor_identity",
+      "codec_family": "opus",
+      "count": 102,
+      "evidence_partition": "encoder_transfer"
+    },
+    {
+      "assignment_role": "anchor_identity",
+      "codec_family": "vorbis",
+      "count": 102,
+      "evidence_partition": "encoder_transfer"
+    },
+    {
+      "assignment_role": "nonanchor_identity",
+      "codec_family": "aac_lc",
+      "count": 60,
+      "evidence_partition": "encoder_transfer"
+    },
+    {
+      "assignment_role": "nonanchor_identity",
+      "codec_family": "mp3",
+      "count": 60,
+      "evidence_partition": "encoder_transfer"
+    },
+    {
+      "assignment_role": "nonanchor_identity",
+      "codec_family": "opus",
+      "count": 60,
+      "evidence_partition": "encoder_transfer"
+    },
+    {
+      "assignment_role": "nonanchor_identity",
+      "codec_family": "vorbis",
+      "count": 60,
+      "evidence_partition": "encoder_transfer"
+    },
+    {
+      "assignment_role": "transform_positive",
+      "codec_family": "aac_lc",
+      "count": 180,
+      "evidence_partition": "encoder_transfer"
+    },
+    {
+      "assignment_role": "transform_positive",
+      "codec_family": "mp3",
+      "count": 180,
+      "evidence_partition": "encoder_transfer"
+    },
+    {
+      "assignment_role": "transform_positive",
+      "codec_family": "opus",
+      "count": 180,
+      "evidence_partition": "encoder_transfer"
+    },
+    {
+      "assignment_role": "transform_positive",
+      "codec_family": "vorbis",
+      "count": 180,
+      "evidence_partition": "encoder_transfer"
+    },
+    {
+      "assignment_role": "anchor_identity",
+      "codec_family": "aac_lc",
+      "count": 527,
+      "evidence_partition": "mechanism_development"
+    },
+    {
+      "assignment_role": "anchor_identity",
+      "codec_family": "mp3",
+      "count": 527,
+      "evidence_partition": "mechanism_development"
+    },
+    {
+      "assignment_role": "anchor_identity",
+      "codec_family": "opus",
+      "count": 527,
+      "evidence_partition": "mechanism_development"
+    },
+    {
+      "assignment_role": "anchor_identity",
+      "codec_family": "vorbis",
+      "count": 527,
+      "evidence_partition": "mechanism_development"
+    },
+    {
+      "assignment_role": "nonanchor_identity",
+      "codec_family": "aac_lc",
+      "count": 360,
+      "evidence_partition": "mechanism_development"
+    },
+    {
+      "assignment_role": "nonanchor_identity",
+      "codec_family": "mp3",
+      "count": 480,
+      "evidence_partition": "mechanism_development"
+    },
+    {
+      "assignment_role": "nonanchor_identity",
+      "codec_family": "opus",
+      "count": 360,
+      "evidence_partition": "mechanism_development"
+    },
+    {
+      "assignment_role": "nonanchor_identity",
+      "codec_family": "vorbis",
+      "count": 240,
+      "evidence_partition": "mechanism_development"
+    },
+    {
+      "assignment_role": "transform_positive",
+      "codec_family": "aac_lc",
+      "count": 360,
+      "evidence_partition": "mechanism_development"
+    },
+    {
+      "assignment_role": "transform_positive",
+      "codec_family": "mp3",
+      "count": 360,
+      "evidence_partition": "mechanism_development"
+    },
+    {
+      "assignment_role": "transform_positive",
+      "codec_family": "opus",
+      "count": 360,
+      "evidence_partition": "mechanism_development"
+    },
+    {
+      "assignment_role": "transform_positive",
+      "codec_family": "vorbis",
+      "count": 360,
+      "evidence_partition": "mechanism_development"
+    }
+  ],
+  "private_assignment_sha256": "ab57fe19daa6b3f6497df8592ee0173e1159d7606a00ad4ac7f18c9f5c0d5328",
+  "private_ids_included": false,
+  "reproducibility": {
+    "complete_replays_observed": 2,
+    "complete_replays_required": 2,
+    "private_assignment_sha256": "ab57fe19daa6b3f6497df8592ee0173e1159d7606a00ad4ac7f18c9f5c0d5328",
+    "private_assignments_byte_identical": true,
+    "rules_sha256": "aec91fc4e31a080000769d8ea385a08d308014a939a3c1d4f69140fb11ca576f",
+    "run_aggregate_sha256": "ed614760424b438921a6673cc89beaa2a6c9bc309bc5dc71d073b4f0b538fb0f",
+    "run_aggregates_byte_identical": true
+  },
+  "rules_binding": {
+    "path": "benchmarks/audio-integrity-v2/fractional-assignment-rules.json",
+    "sha256": "aec91fc4e31a080000769d8ea385a08d308014a939a3c1d4f69140fb11ca576f"
+  },
+  "schema_version": 1,
+  "scores_opened": false,
+  "selection_authorized": false,
+  "setting_coverage": [
+    {
+      "anchor": false,
+      "channel_group_counts": {
+        "mono": 60,
+        "stereo": 60
+      },
+      "domain_count": 6,
+      "evidence_partition": "mechanism_development",
+      "group_count": 120,
+      "template_id": "dev-aac-apple-cbr128-default"
+    },
+    {
+      "anchor": false,
+      "channel_group_counts": {
+        "mono": 60,
+        "stereo": 60
+      },
+      "domain_count": 6,
+      "evidence_partition": "mechanism_development",
+      "group_count": 120,
+      "template_id": "dev-aac-ffmpeg-cbr128-cutoff16k"
+    },
+    {
+      "anchor": true,
+      "channel_group_counts": {
+        "mono": 263,
+        "stereo": 264
+      },
+      "domain_count": 6,
+      "evidence_partition": "mechanism_development",
+      "group_count": 527,
+      "template_id": "dev-aac-ffmpeg-cbr128-default"
+    },
+    {
+      "anchor": false,
+      "channel_group_counts": {
+        "mono": 60,
+        "stereo": 60
+      },
+      "domain_count": 6,
+      "evidence_partition": "mechanism_development",
+      "group_count": 120,
+      "template_id": "dev-aac-ffmpeg-cbr96-default"
+    },
+    {
+      "anchor": true,
+      "channel_group_counts": {
+        "mono": 263,
+        "stereo": 264
+      },
+      "domain_count": 6,
+      "evidence_partition": "mechanism_development",
+      "group_count": 527,
+      "template_id": "dev-mp3-lame-cbr128-default"
+    },
+    {
+      "anchor": false,
+      "channel_group_counts": {
+        "mono": 60,
+        "stereo": 60
+      },
+      "domain_count": 6,
+      "evidence_partition": "mechanism_development",
+      "group_count": 120,
+      "template_id": "dev-mp3-lame-cbr128-lowpass16k"
+    },
+    {
+      "anchor": false,
+      "channel_group_counts": {
+        "mono": 60,
+        "stereo": 60
+      },
+      "domain_count": 6,
+      "evidence_partition": "mechanism_development",
+      "group_count": 120,
+      "template_id": "dev-mp3-lame-cbr96-default"
+    },
+    {
+      "anchor": false,
+      "channel_group_counts": {
+        "mono": 60,
+        "stereo": 60
+      },
+      "domain_count": 6,
+      "evidence_partition": "mechanism_development",
+      "group_count": 120,
+      "template_id": "dev-mp3-lame-vbr-v2-default"
+    },
+    {
+      "anchor": false,
+      "channel_group_counts": {
+        "mono": 60,
+        "stereo": 60
+      },
+      "domain_count": 6,
+      "evidence_partition": "mechanism_development",
+      "group_count": 120,
+      "template_id": "dev-mp3-shine-cbr128-default"
+    },
+    {
+      "anchor": false,
+      "channel_group_counts": {
+        "mono": 60,
+        "stereo": 60
+      },
+      "domain_count": 6,
+      "evidence_partition": "mechanism_development",
+      "group_count": 120,
+      "template_id": "dev-opus-libopus-cbr128-20ms"
+    },
+    {
+      "anchor": false,
+      "channel_group_counts": {
+        "mono": 60,
+        "stereo": 60
+      },
+      "domain_count": 6,
+      "evidence_partition": "mechanism_development",
+      "group_count": 120,
+      "template_id": "dev-opus-libopus-cbr64-20ms"
+    },
+    {
+      "anchor": false,
+      "channel_group_counts": {
+        "mono": 60,
+        "stereo": 60
+      },
+      "domain_count": 6,
+      "evidence_partition": "mechanism_development",
+      "group_count": 120,
+      "template_id": "dev-opus-libopus-cbr96-10ms"
+    },
+    {
+      "anchor": true,
+      "channel_group_counts": {
+        "mono": 264,
+        "stereo": 263
+      },
+      "domain_count": 6,
+      "evidence_partition": "mechanism_development",
+      "group_count": 527,
+      "template_id": "dev-opus-libopus-cbr96-20ms"
+    },
+    {
+      "anchor": false,
+      "channel_group_counts": {
+        "mono": 60,
+        "stereo": 60
+      },
+      "domain_count": 6,
+      "evidence_partition": "mechanism_development",
+      "group_count": 120,
+      "template_id": "dev-vorbis-libvorbis-q2"
+    },
+    {
+      "anchor": true,
+      "channel_group_counts": {
+        "mono": 263,
+        "stereo": 264
+      },
+      "domain_count": 6,
+      "evidence_partition": "mechanism_development",
+      "group_count": 527,
+      "template_id": "dev-vorbis-libvorbis-q4"
+    },
+    {
+      "anchor": false,
+      "channel_group_counts": {
+        "mono": 60,
+        "stereo": 60
+      },
+      "domain_count": 6,
+      "evidence_partition": "mechanism_development",
+      "group_count": 120,
+      "template_id": "dev-vorbis-libvorbis-q6"
+    },
+    {
+      "anchor": true,
+      "channel_group_counts": {
+        "mono": 51,
+        "stereo": 51
+      },
+      "domain_count": 6,
+      "evidence_partition": "encoder_transfer",
+      "group_count": 102,
+      "template_id": "transfer-aac-fdk-cbr128-default"
+    },
+    {
+      "anchor": false,
+      "channel_group_counts": {
+        "mono": 30,
+        "stereo": 30
+      },
+      "domain_count": 6,
+      "evidence_partition": "encoder_transfer",
+      "group_count": 60,
+      "template_id": "transfer-aac-fdk-cbr96-default"
+    },
+    {
+      "anchor": true,
+      "channel_group_counts": {
+        "mono": 51,
+        "stereo": 51
+      },
+      "domain_count": 6,
+      "evidence_partition": "encoder_transfer",
+      "group_count": 102,
+      "template_id": "transfer-mp3-bladeenc-cbr128-default"
+    },
+    {
+      "anchor": false,
+      "channel_group_counts": {
+        "mono": 30,
+        "stereo": 30
+      },
+      "domain_count": 6,
+      "evidence_partition": "encoder_transfer",
+      "group_count": 60,
+      "template_id": "transfer-mp3-bladeenc-cbr96-default"
+    },
+    {
+      "anchor": false,
+      "channel_group_counts": {
+        "mono": 30,
+        "stereo": 30
+      },
+      "domain_count": 6,
+      "evidence_partition": "encoder_transfer",
+      "group_count": 60,
+      "template_id": "transfer-opus-ffmpeg-cbr64-default"
+    },
+    {
+      "anchor": true,
+      "channel_group_counts": {
+        "mono": 51,
+        "stereo": 51
+      },
+      "domain_count": 6,
+      "evidence_partition": "encoder_transfer",
+      "group_count": 102,
+      "template_id": "transfer-opus-ffmpeg-cbr96-default"
+    },
+    {
+      "anchor": false,
+      "channel_group_counts": {
+        "stereo": 60
+      },
+      "domain_count": 6,
+      "evidence_partition": "encoder_transfer",
+      "group_count": 60,
+      "template_id": "transfer-vorbis-ffmpeg-q2"
+    },
+    {
+      "anchor": true,
+      "channel_group_counts": {
+        "stereo": 102
+      },
+      "domain_count": 6,
+      "evidence_partition": "encoder_transfer",
+      "group_count": 102,
+      "template_id": "transfer-vorbis-ffmpeg-q4"
+    }
+  ],
+  "signal_statistics_used": false,
+  "source_allocation_sha256": "e4b7d2ab42253e00ce0e0b95c8049193f9b6178ecbb6212811fde96d58c088d4",
+  "state": "fractional_assignment_path_free_evidence",
+  "summary": {
+    "all_coverage_checks_passed": true,
+    "cell_count": 11103,
+    "external_reserved_group_count": 100,
+    "group_count": 793,
+    "matched_positive_count": 6356,
+    "negative_cell_count": 4747,
+    "positive_cell_count": 6356,
+    "unmatched_positive_count": 0
+  },
+  "toolchain_freeze_id": "lossytrace-v2-toolchain-bindings-20260802-004",
+  "transform_coverage": [
+    {
+      "evidence_partition": "mechanism_development",
+      "negative_group_count": 40,
+      "positive_group_counts_by_codec": {
+        "aac_lc": 40,
+        "mp3": 40,
+        "opus": 40,
+        "vorbis": 40
+      },
+      "transform_id": "gain-minus6db-q31"
+    },
+    {
+      "evidence_partition": "mechanism_development",
+      "negative_group_count": 40,
+      "positive_group_counts_by_codec": {
+        "aac_lc": 40,
+        "mp3": 40,
+        "opus": 40,
+        "vorbis": 40
+      },
+      "transform_id": "trim-head-250ms"
+    },
+    {
+      "evidence_partition": "mechanism_development",
+      "negative_group_count": 40,
+      "positive_group_counts_by_codec": {
+        "aac_lc": 40,
+        "mp3": 40,
+        "opus": 40,
+        "vorbis": 40
+      },
+      "transform_id": "prepend-digital-silence-500ms"
+    },
+    {
+      "evidence_partition": "mechanism_development",
+      "negative_group_count": 40,
+      "positive_group_counts_by_codec": {
+        "aac_lc": 40,
+        "mp3": 40,
+        "opus": 40,
+        "vorbis": 40
+      },
+      "transform_id": "duration-prefix-3s"
+    },
+    {
+      "evidence_partition": "mechanism_development",
+      "negative_group_count": 40,
+      "positive_group_counts_by_codec": {
+        "aac_lc": 40,
+        "mp3": 40,
+        "opus": 40,
+        "vorbis": 40
+      },
+      "transform_id": "lowpass-16k-cascade8"
+    },
+    {
+      "evidence_partition": "mechanism_development",
+      "negative_group_count": 40,
+      "positive_group_counts_by_codec": {
+        "aac_lc": 40,
+        "mp3": 40,
+        "opus": 40,
+        "vorbis": 40
+      },
+      "transform_id": "resample-roundtrip-32k"
+    },
+    {
+      "evidence_partition": "mechanism_development",
+      "negative_group_count": 40,
+      "positive_group_counts_by_codec": {
+        "aac_lc": 40,
+        "mp3": 40,
+        "opus": 40,
+        "vorbis": 40
+      },
+      "transform_id": "requantize-12bit-tpdf"
+    },
+    {
+      "evidence_partition": "mechanism_development",
+      "negative_group_count": 40,
+      "positive_group_counts_by_codec": {
+        "aac_lc": 40,
+        "mp3": 40,
+        "opus": 40,
+        "vorbis": 40
+      },
+      "transform_id": "alternate-channel-topology"
+    },
+    {
+      "evidence_partition": "mechanism_development",
+      "negative_group_count": 40,
+      "positive_group_counts_by_codec": {
+        "aac_lc": 40,
+        "mp3": 40,
+        "opus": 40,
+        "vorbis": 40
+      },
+      "transform_id": "lossless-wrapper-rewrite"
+    },
+    {
+      "evidence_partition": "encoder_transfer",
+      "negative_group_count": 20,
+      "positive_group_counts_by_codec": {
+        "aac_lc": 20,
+        "mp3": 20,
+        "opus": 20,
+        "vorbis": 20
+      },
+      "transform_id": "gain-minus6db-q31"
+    },
+    {
+      "evidence_partition": "encoder_transfer",
+      "negative_group_count": 20,
+      "positive_group_counts_by_codec": {
+        "aac_lc": 20,
+        "mp3": 20,
+        "opus": 20,
+        "vorbis": 20
+      },
+      "transform_id": "trim-head-250ms"
+    },
+    {
+      "evidence_partition": "encoder_transfer",
+      "negative_group_count": 20,
+      "positive_group_counts_by_codec": {
+        "aac_lc": 20,
+        "mp3": 20,
+        "opus": 20,
+        "vorbis": 20
+      },
+      "transform_id": "prepend-digital-silence-500ms"
+    },
+    {
+      "evidence_partition": "encoder_transfer",
+      "negative_group_count": 20,
+      "positive_group_counts_by_codec": {
+        "aac_lc": 20,
+        "mp3": 20,
+        "opus": 20,
+        "vorbis": 20
+      },
+      "transform_id": "duration-prefix-3s"
+    },
+    {
+      "evidence_partition": "encoder_transfer",
+      "negative_group_count": 20,
+      "positive_group_counts_by_codec": {
+        "aac_lc": 20,
+        "mp3": 20,
+        "opus": 20,
+        "vorbis": 20
+      },
+      "transform_id": "lowpass-16k-cascade8"
+    },
+    {
+      "evidence_partition": "encoder_transfer",
+      "negative_group_count": 20,
+      "positive_group_counts_by_codec": {
+        "aac_lc": 20,
+        "mp3": 20,
+        "opus": 20,
+        "vorbis": 20
+      },
+      "transform_id": "resample-roundtrip-32k"
+    },
+    {
+      "evidence_partition": "encoder_transfer",
+      "negative_group_count": 20,
+      "positive_group_counts_by_codec": {
+        "aac_lc": 20,
+        "mp3": 20,
+        "opus": 20,
+        "vorbis": 20
+      },
+      "transform_id": "requantize-12bit-tpdf"
+    },
+    {
+      "evidence_partition": "encoder_transfer",
+      "negative_group_count": 20,
+      "positive_group_counts_by_codec": {
+        "aac_lc": 20,
+        "mp3": 20,
+        "opus": 20,
+        "vorbis": 20
+      },
+      "transform_id": "alternate-channel-topology"
+    },
+    {
+      "evidence_partition": "encoder_transfer",
+      "negative_group_count": 20,
+      "positive_group_counts_by_codec": {
+        "aac_lc": 20,
+        "mp3": 20,
+        "opus": 20,
+        "vorbis": 20
+      },
+      "transform_id": "lossless-wrapper-rewrite"
+    },
+    {
+      "evidence_partition": "external_transfer",
+      "negative_group_count": 20,
+      "positive_group_counts_by_codec": {},
+      "transform_id": "gain-minus6db-q31"
+    },
+    {
+      "evidence_partition": "external_transfer",
+      "negative_group_count": 20,
+      "positive_group_counts_by_codec": {},
+      "transform_id": "trim-head-250ms"
+    },
+    {
+      "evidence_partition": "external_transfer",
+      "negative_group_count": 20,
+      "positive_group_counts_by_codec": {},
+      "transform_id": "prepend-digital-silence-500ms"
+    },
+    {
+      "evidence_partition": "external_transfer",
+      "negative_group_count": 20,
+      "positive_group_counts_by_codec": {},
+      "transform_id": "duration-prefix-3s"
+    },
+    {
+      "evidence_partition": "external_transfer",
+      "negative_group_count": 20,
+      "positive_group_counts_by_codec": {},
+      "transform_id": "lowpass-16k-cascade8"
+    },
+    {
+      "evidence_partition": "external_transfer",
+      "negative_group_count": 20,
+      "positive_group_counts_by_codec": {},
+      "transform_id": "resample-roundtrip-32k"
+    },
+    {
+      "evidence_partition": "external_transfer",
+      "negative_group_count": 20,
+      "positive_group_counts_by_codec": {},
+      "transform_id": "requantize-12bit-tpdf"
+    },
+    {
+      "evidence_partition": "external_transfer",
+      "negative_group_count": 20,
+      "positive_group_counts_by_codec": {},
+      "transform_id": "alternate-channel-topology"
+    },
+    {
+      "evidence_partition": "external_transfer",
+      "negative_group_count": 20,
+      "positive_group_counts_by_codec": {},
+      "transform_id": "lossless-wrapper-rewrite"
+    }
+  ],
+  "waveform_content_inspected": false
+}

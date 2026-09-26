@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "proposal_id": "odaq16-digital-technical-20260908-001",
+  "proposal_sha256": "2e18a43ccc545d0c707be1ed24625a409930ccdbbd66f803a664ddc5e20abbeb",
+  "runner_sha256": "a2a38cefb6ef2b2f71f2c8b8f7360d41b7a0084baca3f376d1cba25e794784bb",
+  "responsible_user_execution_approved": true,
+  "retained_delivery_read_and_codec_replays_authorized": true,
+  "metric_playback_listener_training_authorized": false
+}

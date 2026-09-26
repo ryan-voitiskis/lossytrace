@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "observation_id": "perceptual-degradation-gstpeaq-public-legal-observation-20260814-001",
+  "state": "public_primary_sources_observed_no_legal_clearance_inferred",
+  "observed_on": "2026-08-14",
+  "purpose": "Record public primary-source facts relevant to the frozen GstPEAQ proxy legal, conformance, execution and redistribution gate without executing the proxy or inspecting any score.",
+  "access_boundary": {
+    "public_legal_and_repository_metadata_read": true,
+    "gstpeaq_source_or_binary_downloaded_to_research_storage": false,
+    "gstpeaq_built": false,
+    "gstpeaq_executed": false,
+    "audio_accessed": false,
+    "metric_score_opened": false,
+    "listening_score_opened": false,
+    "sealed_evidence_opened": false,
+    "legal_advice_obtained": false
+  },
+  "gstpeaq_repository": {
+    "repository": "https://github.com/HSU-ANT/gstpeaq",
+    "frozen_commit": "c6e8b23d3374dbc937ef9f7cfbdb3b3f4c864352",
+    "frozen_commit_date": "2015-11-11T09:48:25Z",
+    "frozen_commit_message": "Merge branch 'hotfix-0.6.1'",
+    "readme_url": "https://raw.githubusercontent.com/HSU-ANT/gstpeaq/c6e8b23d3374dbc937ef9f7cfbdb3b3f4c864352/README",
+    "readme_bytes": 2169,
+    "readme_sha256": "bf2a8afc21a8cb27b1270aff34525abdf67d01b85e3a85987f34408377ab8ce1",
+    "readme_declares_bs1387_1_implementation": true,
+    "readme_declares_values_outside_allowed_itu_tolerance": true,
+    "readme_claims_alternative_to_listening_tests": true,
+    "copying_url": "https://raw.githubusercontent.com/HSU-ANT/gstpeaq/c6e8b23d3374dbc937ef9f7cfbdb3b3f4c864352/COPYING",
+    "copying_bytes": 25265,
+    "copying_sha256": "94b03f1a60a7fd5007149530626a895a6ef5a8b9342abfd56860c5f3956f5d23",
+    "software_copyright_licence": "GNU Library General Public License version 2",
+    "software_copyright_licence_is_patent_consent": false,
+    "software_copyright_licence_proves_itu_technology_clearance": false
+  },
+  "itu_recommendation": {
+    "record_url": "https://www.itu.int/rec/R-REC-BS.1387-2-202305-I/en",
+    "document_url": "https://www.itu.int/dms_pubrec/itu-r/rec/bs/R-REC-BS.1387-2-202305-I%21%21PDF-E.pdf",
+    "recommendation": "ITU-R BS.1387-2",
+    "approved_on": "2023-05-28",
+    "status": "in_force_main",
+    "document_bytes": 2065318,
+    "document_sha256": "ffe3ce073c483fb29c573a3158aa73c6536856468a9539e8b292ef9a0389f135",
+    "document_says_technology_protected_by_international_patents": true,
+    "document_says_prior_owner_consent_by_licence_is_mandatory": true,
+    "document_directs_implementers_to_itu_r_patent_database_or_br_secretariat": true
+  },
+  "itu_patent_database": {
+    "information_page": "https://www.itu.int/en/ITU-R/study-groups/Pages/itu-r-patent-information.aspx",
+    "search_endpoint": "https://www.itu.int/net/ITU-R/asp/patents-search-sp.asp",
+    "query": "recommendation=1387",
+    "response_bytes": 18370,
+    "response_sha256": "018a0e2e7953e86a82004de271f42be1b3a5c5f24451e893dc793aa154545fe7",
+    "returned_record_count": 8,
+    "returned_policy": "2.2",
+    "policy_meaning": "patent holder willing to negotiate licences on a non-discriminatory basis on reasonable terms and conditions; negotiations occur outside ITU",
+    "returned_title": "BS.PEAQ, Method for objective measurement of perceived audio quality",
+    "returned_type": "Patent",
+    "returned_status": "Granted",
+    "returned_patent_number": "No number",
+    "returned_organizations": [
+      "Berkom",
+      "CCETT",
+      "CRC",
+      "Fraunhofer",
+      "IRT",
+      "KPN NV",
+      "OPTICOM",
+      "TU Berlin"
+    ],
+    "received_date_range": [
+      "1998-03-23",
+      "1998-03-26"
+    ],
+    "database_certified_accurate": false,
+    "database_certified_complete": false,
+    "database_proves_current_patent_validity_or_scope": false,
+    "database_proves_a_licence_was_granted_to_lossytrace": false,
+    "database_guidance": "contact declaring organizations or the BR Secretariat to determine whether a patent or software licence must be obtained"
+  },
+  "common_patent_policy": {
+    "url": "https://www.itu.int/en/itu-t/ipr/pages/policy.aspx",
+    "itu_can_give_authoritative_or_comprehensive_patent_validity_or_scope_information": false,
+    "licence_negotiations_left_to_parties": true,
+    "policy_2_2_may_involve_reasonable_terms_and_conditions": true
+  },
+  "australian_experimental_use_context": {
+    "source": "https://www.legislation.gov.au/C2004A04014/2024-10-14/2024-10-14/text/original/epub/OEBPS/document_1/document_1.html",
+    "provision": "Patents Act 1990 section 119C",
+    "provision_contains_exemption_for_experimental_purposes_relating_to_subject_matter_of_invention": true,
+    "using_metric_as_tool_is_experiment_on_subject_matter_established": false,
+    "provision_clears_lossytrace_use_without_fact_specific_legal_review": false,
+    "jurisdictions_outside_australia_addressed": false
+  },
+  "observation_limits": {
+    "public_record_is_legal_advice": false,
+    "software_copyright_permission_resolves_patent_rights": false,
+    "age_of_declarations_proves_patent_expiry": false,
+    "database_granted_status_proves_current_enforceability": false,
+    "research_purpose_automatically_establishes_experimental_use_exemption": false,
+    "subprocess_isolation_resolves_patent_consent": false,
+    "nonredistribution_resolves_execution_rights": false
+  }
+}

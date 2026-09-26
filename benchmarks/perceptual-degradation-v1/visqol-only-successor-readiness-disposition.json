@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "disposition_id": "perceptual-degradation-visqol-only-successor-readiness-disposition-20260814-001",
+  "state": "visqol_only_successor_preregisterable_not_selected_or_execution_ready",
+  "purpose": "Determine whether a responsible human may choose a new score-blind ViSQOL-only full-reference successor after the GstPEAQ stop, without silently changing the frozen candidate or treating synthetic metric behavior as human perceptual truth.",
+  "bindings": {
+    "research_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/research-plan.json",
+      "sha256": "e724a3e04fb41458d0568f542283ba33d71a54b1fdfd74b3901cc0dc1d10c352"
+    },
+    "research_contract": {
+      "path": "docs/research/perceptual-degradation-contract-20260803.md",
+      "sha256": "fdec79207fc0fdd2e9cb10aae9f93dd1a17b45e6e56c0c7df8f0e01a1f9fb505"
+    },
+    "metric_execution_gate": {
+      "path": "benchmarks/perceptual-degradation-v1/metric-execution-gate.json",
+      "sha256": "404f4b15dfd1c32586306c9776d293b7d556489c10b4dd216e6fc543bd9e40af"
+    },
+    "predecessor_disposition": {
+      "path": "benchmarks/perceptual-degradation-v1/gstpeaq-proxy-score-blind-disposition.json",
+      "sha256": "a9d3fdc196d18bb614dcef899c083ad590de19f0d48f069514cda61300e0a0de"
+    },
+    "current_public_observation": {
+      "path": "research/toolchains/evidence/perceptual-degradation-visqol-current-public-readiness-observation-20260814-001.json",
+      "sha256": "7edb0d5b040b32c52de8b50f7185a0a2f5922a89d2dda86910d4447cb8b5786d"
+    },
+    "score_free_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/full-reference-oracle-score-free-plan.json",
+      "sha256": "f6462ecb94f3be1dc5670ad19d6f201abefaf175cfa6c482f095b98bb542de3a"
+    },
+    "score_free_schema": {
+      "path": "benchmarks/perceptual-degradation-v1/full-reference-oracle-score-free.schema.json",
+      "sha256": "986c58245f414af4eb8887aaf98b59f13707ab81faf1c588b0de4b058987a31c"
+    },
+    "full_reference_evaluation_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/full-reference-evaluation-plan.json",
+      "sha256": "517d4bb3f1e504593007bdd85b773e2532de6bf993e173eac3b551bf99d19b0b"
+    },
+    "first_environment_build_observation": {
+      "path": "research/toolchains/evidence/visqol-synthetic-build-observed-20260803-001.json",
+      "sha256": "d2b858d192b145c6082ff253126a62b9504ed14dd98fc9668a1b8dd459691506"
+    },
+    "first_environment_replay_observation": {
+      "path": "research/toolchains/evidence/visqol-synthetic-replay-observed-20260803-001.json",
+      "sha256": "d21c8d0879ce0a5f1efeac5c8e38105b9c017d0c0777bc48655fc0916befe175"
+    },
+    "second_environment_build_observation": {
+      "path": "research/toolchains/evidence/visqol-synthetic-second-build-observed-20260803-001.json",
+      "sha256": "e25797f734b95d5ef396bdd37a93f3171fc6ef138155df35ef60de79900fe274"
+    },
+    "cross_environment_replay_observation": {
+      "path": "research/toolchains/evidence/visqol-synthetic-cross-environment-observed-20260803-001.json",
+      "sha256": "63fdf3d6e4c85e42950d735f2a4bba2974bc23a464318708311a750177ae9c66"
+    }
+  },
+  "access_boundary": {
+    "public_primary_sources_read": true,
+    "retained_audio_access_authorized": false,
+    "public_or_provider_audio_access_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "metric_score_access_authorized": false,
+    "listening_score_access_authorized": false,
+    "human_collection_authorized": false,
+    "sealed_evidence_access_authorized": false,
+    "no_reference_training_authorized": false,
+    "source_successor_selected": false,
+    "metric_successor_selected": false,
+    "public_verdict_enabled": false
+  },
+  "readiness": {
+    "visqol_only_successor_preregisterable": true,
+    "software_copyright_license_record_clear_for_internal_research_candidate": true,
+    "dependency_redistribution_and_sbom_review_complete": false,
+    "technical_synthetic_replay_readiness": true,
+    "cross_environment_numeric_replay_passed": true,
+    "scientific_readiness": false,
+    "human_calibration_complete": false,
+    "source_manifest_complete": false,
+    "eligible_audio_metric_execution_complete": false,
+    "artifact_profile_readiness": false,
+    "stereo_profile_supported_by_visqol": false,
+    "no_reference_work_eligible": false,
+    "final_recommendation_frozen": false
+  },
+  "technical_evidence": {
+    "metric_family": "visqol_audio_v3_3_3",
+    "git_commit": "c3aa2e498e0f7f14202643594335a0b9ee40bdd9",
+    "git_tree": "7a0c95a103c4ba40d6337f06f80848e571b00b3c",
+    "audio_model_sha256": "1e8246ed33bf36dc5c859351f7110f2cd31f98661989715c0fcf974ec48d3e2e",
+    "first_environment_binary_sha256": "7384c8d21725e6fa3921aea4e66ff9cb9481b57acef868304192df437a467319",
+    "second_environment_binary_sha256": "6c7807891cb5cb267649f09fbc20eecc22a3b2f62e50698e38134b2e08d18d5f",
+    "binary_hashes_identical": false,
+    "synthetic_case_count": 4,
+    "maximum_cross_environment_absolute_delta": 0,
+    "synthetic_replay_is_human_truth": false
+  },
+  "required_score_blind_successor_amendment": {
+    "new_successor_id_required": true,
+    "must_be_committed_before_retained_or_human_metric_outcomes": true,
+    "frozen_release_and_model_preserved": true,
+    "audio_mode_only": true,
+    "required_sample_rate_hz": 48000,
+    "mono_downmix_reported": true,
+    "visqol_only_stereo_conclusion_forbidden": true,
+    "raw_mos_lqo_role": "unmapped_supporting_feature_only",
+    "similarity_outputs_role": "supporting_features_only",
+    "human_calibration_required_for_severity_audibility_and_materiality": true,
+    "treatment_and_source_group_aggregation_required": true,
+    "abstention_or_prespecified_strata_required": [
+      "degraded_bitrate_below_24_kbps",
+      "excessive_silence_or_insufficient_active_audio",
+      "out_of_domain_material",
+      "unsupported_alignment",
+      "stereo_image_or_phase_change_claim"
+    ],
+    "predecessor_exactly_two_family_schema_requires_new_version": true,
+    "gstpeaq_family_removed_from_successor": true,
+    "raw_visqol_baseline_retained": true,
+    "signal_distance_baseline_retained": true,
+    "transparent_lossy_non_degraded_control_preserved": true,
+    "hard_natural_and_production_negatives_preserved": true,
+    "grouped_source_domain_codec_encoder_holdouts_preserved": true,
+    "public_cli_remains_verdict_free": true
+  },
+  "artifact_profile_boundary": {
+    "masking_relative_error": "null_until_separately_human_calibrated",
+    "bandwidth_loss": "null_until_separately_human_calibrated",
+    "temporal_modulation_damage": "null_until_separately_human_calibrated",
+    "transient_smearing_or_pre_echo": "null_until_separately_human_calibrated",
+    "tonal_or_birdie_noise": "null_until_separately_human_calibrated",
+    "stereo_image_or_phase_change": "null_visqol_downmixes_to_mono",
+    "segment_worst_case_impairment": "null_until_separately_human_calibrated",
+    "patch_or_frequency_similarity_may_be_used_as_truth_labels": false
+  },
+  "decision": {
+    "recommended_available_metric_successor": "preregister_visqol_only_full_reference_candidate",
+    "selected_successor_option": null,
+    "responsible_human_selection_required": true,
+    "current_two_family_metric_gate_remains_closed": true,
+    "new_successor_metric_gate_exists": false,
+    "execution_authorized_by_this_disposition": false,
+    "next_responsible_human_decision": "Choose whether to authorize a score-blind ViSQOL-only successor amendment. This checkpoint establishes that it can be preregistered responsibly; it does not establish scientific adequacy, select the successor, broaden source authority, or authorize execution."
+  },
+  "claim_boundary": {
+    "this_is_legal_advice": false,
+    "apache_license_completes_dependency_redistribution_review": false,
+    "synthetic_replay_proves_perceptual_validity": false,
+    "mos_lqo_is_lossytrace_audibility_probability": false,
+    "mos_lqo_is_lossytrace_materiality_truth": false,
+    "similarity_outputs_are_artifact_truth": false,
+    "visqol_supports_stereo_profile_conclusions": false,
+    "successor_selected": false,
+    "metric_execution_authorized": false,
+    "no_reference_work_authorized": false,
+    "source_authority_broadened": false,
+    "full_objective_complete": false,
+    "public_cli_changed": false
+  }
+}

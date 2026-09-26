@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "plan_id": "perceptual-degradation-odaq-reference-delivery-preparation-20260813-001",
+  "state": "synthetic_delivery_projection_verified_live_corpus_execution_unauthorized",
+  "purpose": "Freeze and synthetically verify a deterministic integer-PCM browser-delivery projection for the exact acquired ODAQ clean-reference geometry without reading retained audio, generating study stimuli, opening processed conditions or scores, or collecting responses.",
+  "bindings": {
+    "acquisition_result": {
+      "path": "benchmarks/perceptual-degradation-v1/odaq-reference-acquisition-result-20260813.json",
+      "sha256": "b768900901cdcfc88ca4d5918a331961ee01eccd6a6d5d5becf31ddfaa15df4e"
+    },
+    "attribution_audit": {
+      "path": "research/toolchains/evidence/perceptual-degradation-odaq-attribution-audit-20260804-001.json",
+      "sha256": "08da482eeab4ab51f0e2ed2f05684edac098b51fe81d1b78bec75181336dca61"
+    },
+    "private_lossless_delivery": {
+      "path": "benchmarks/perceptual-degradation-v1/private-lossless-delivery-plan.json",
+      "sha256": "9f2661f0a09d06e0a7cdccae20ef21db9c93b2951862dc88818aedd29d175d00"
+    },
+    "projection_implementation": {
+      "path": "scripts/prepare-perceptual-degradation-odaq-delivery.py",
+      "sha256": "d1ec92f29e5a4155e25bb7c46a31af4fdeef2766b6f6670529e8f18848cade7b"
+    },
+    "projection_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_odaq_delivery_preparation.py",
+      "sha256": "e9437e0f71c888f3a09d0e32658778ee132f2b8c75254990db7d0a0274c60d58"
+    }
+  },
+  "projection_scope": {
+    "source_sample_rate_hz": 48000,
+    "source_channel_count": 2,
+    "float_reference_count": 7,
+    "extensible_integer_reference_count": 9,
+    "float_output_bit_depth": 32,
+    "integer_output_bit_depth": 24,
+    "output_container": "canonical_riff_wave_format_tag_1",
+    "float_rounding": "nearest_ties_to_even",
+    "reject_non_finite_float": true,
+    "reject_float_below_negative_one": true,
+    "reject_float_at_or_above_positive_one": true,
+    "dither_applied": false,
+    "gain_applied": false,
+    "normalization_applied": false,
+    "resampling_applied": false,
+    "channel_transform_applied": false
+  },
+  "synthetic_verification": {
+    "two_projections_byte_identical": true,
+    "float_boundary_and_rounding_cases_passed": true,
+    "non_finite_and_out_of_range_rejection_passed": true,
+    "extensible_24_bit_payload_preservation_passed": true,
+    "rate_channel_and_channel_mask_rejection_passed": true,
+    "canonical_output_accepted_by_existing_integer_pcm_contract": true,
+    "temporary_outputs_retained": false,
+    "synthetic_float_projection_sha256": "27b6e8e4a72aa94ee89f42e6621762b565415f70a9e367c380efbf3659a1676e"
+  },
+  "future_private_execution_contract": {
+    "input_inventory_sha256": "d7f244da55b510b639300d55271b1ebd5fb9f7454b258bec30588bf18eefde2f",
+    "input_reference_count": 16,
+    "maximum_sustained_workers": 1,
+    "minimum_free_disk_gib": 15,
+    "opaque_output_names_required": true,
+    "private_output_outside_repository_required": true,
+    "source_and_output_sha256_required": true,
+    "source_and_output_pcm_geometry_required": true,
+    "atomic_partial_write_and_rename_required": true,
+    "journaled_resume_and_retained_reverification_required": true,
+    "two_fresh_byte_identical_private_replays_required": true,
+    "per_reference_attribution_record_ids_required": true,
+    "public_paths_and_per_member_hashes_forbidden": true,
+    "unexpected_input_geometry_action": "stop_before_output_commit",
+    "float_domain_violation_action": "stop_before_output_commit"
+  },
+  "attribution_delivery": {
+    "frozen_record_source": "bound_odaq_attribution_audit",
+    "attribution_attached_out_of_band": true,
+    "audio_metadata_rewrite_authorized": false,
+    "all_reference_licence_record_ids_required": true,
+    "raw_provider_titles_and_dependency_records_preserved": true
+  },
+  "playback_gate": {
+    "declared_interface": "RME ADI-2 Pro FS over USB",
+    "declared_transducers": "Adam Audio T7V active loudspeaker pair",
+    "required_session_sample_rate_hz": 48000,
+    "observed_interface_sample_rate_hz": 96000,
+    "sample_rate_match_qualified": false,
+    "left_right_channel_check_qualified": false,
+    "quiet_session_observed": false,
+    "fixed_listening_position_observed": false,
+    "comfortable_conservative_calibration_observed": false,
+    "level_fixed_during_testing_observed": false,
+    "system_effects_off_observed_for_session": false,
+    "physical_playback_qualified": false
+  },
+  "access_boundary": {
+    "synthetic_fixture_generation_authorized": true,
+    "retained_reference_access_authorized": false,
+    "retained_reference_conversion_authorized": false,
+    "processed_condition_access_authorized": false,
+    "listening_score_access_authorized": false,
+    "stimulus_generation_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "listener_response_collection_authorized": false,
+    "sealed_evidence_access_authorized": false
+  },
+  "claim_boundary": {
+    "development_only": true,
+    "one_provider_stratum": true,
+    "independent_transfer_supported": false,
+    "final_validation_supported": false,
+    "conversion_equivalence_is_perceptual_truth": false,
+    "synthetic_verification_is_physical_playback_qualification": false,
+    "synthetic_verification_is_listening_evidence": false,
+    "public_verdict_enabled": false
+  },
+  "authorized_next_step": "Commit a separate authorization before any retained reference is read or projected. Then create a private path-bound manifest, attach the frozen attribution records, verify two byte-identical projections, and perform the 48 kHz channel and conservative-level qualification without collecting ratings."
+}

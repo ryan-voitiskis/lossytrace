@@ -1,0 +1,376 @@
+{
+  "allocator_v3_sha256": "66e9a787b1e154b80bdeff0350ece2b6264029664b3381b01a7c8e5da1ac6814",
+  "audio_accessed": false,
+  "audio_generated": false,
+  "claim_boundary": {
+    "full_objective_complete": false,
+    "prefix_balance_authorizes_collection": false,
+    "prefix_balance_freezes_listener_count": false,
+    "prefix_balance_freezes_study_design": false,
+    "prefix_balance_proves_condition_stratum_sequence_balance": false,
+    "prefix_balance_proves_cross_method_source_separation": false,
+    "prefix_balance_proves_missingness_balance": false,
+    "public_cli_changed": false,
+    "symbolic_balance_is_listening_evidence": false,
+    "symbolic_balance_is_power_validation": false,
+    "symbolic_balance_selects_an_operational_policy": false
+  },
+  "decision": {
+    "allocated_source_group_count": 0,
+    "allocation_policy_selected": false,
+    "concurrent_append_only_allocation_state_implemented": false,
+    "human_collection_authorized": false,
+    "listener_count_frozen": false,
+    "missingness_or_post_assignment_exclusion_balance_proven": false,
+    "next_responsible_human_decision": "Decide whether the unresolved listening-resource scale warrants a separately frozen operational allocation-state and missingness-policy successor before any collection.",
+    "no_reference_work_eligible": false,
+    "operational_design_selected": false,
+    "public_verdict_enabled": false,
+    "qualified_source_group_count": 0,
+    "raw_minimum_prefix_requires_cycle_rounding_for_schedule_balance": false,
+    "reason": "The v3 construction keeps trial-exposure, within-block trial-position and candidate-position ranges at or below one for every audited contiguous prefix, including all raw power minimums. This repairs the v2 scheduling defect without cycle rounding, but it does not select an operational policy or prove balance after missingness, exclusion, concurrency or restart.",
+    "recruitment_authorized": false,
+    "restart_recovery_implemented": false,
+    "trial_and_candidate_position_scheduling_technically_repaired": true,
+    "v2_all_cycle_rounded_prefixes_passed": false,
+    "v2_all_raw_prefixes_passed": false,
+    "v3_all_audited_contiguous_prefixes_passed": true,
+    "v3_maximum_candidate_position_range_across_all_audits": 1,
+    "v3_maximum_trial_block_position_range_across_all_audits": 1,
+    "v3_maximum_trial_exposure_range_across_all_audits": 1
+  },
+  "frontier": [
+    {
+      "cycle_rounded_eligible_prefix": 840,
+      "mushra_trial_limit": 3,
+      "operational_policy_selected": false,
+      "option_id": "sources120-subtle3-mushra3",
+      "raw_minimum_eligible_prefix": 765,
+      "subtle_trial_limit": 3,
+      "v2_cycle_rounded_prefix_balance_passed": false,
+      "v2_raw_minimum_prefix_balance_passed": false,
+      "v3_prefix_audit": {
+        "all_prefixes_balance_gate_passed": true,
+        "allocation_policy_id": "prefix-balanced-score-blind-v3",
+        "checkpoint_summaries": {
+          "765": {
+            "balance_gate_passed": true,
+            "candidate_position_maximum_range": 1,
+            "methods": {
+              "mushra": {
+                "candidate_position_maximum_range": 1,
+                "trial_block_position_maximum_range": 1,
+                "trial_exposure_max": 20,
+                "trial_exposure_min": 19,
+                "trial_exposure_range": 1,
+                "trial_limit": 3
+              },
+              "subtle": {
+                "candidate_position_maximum_range": 1,
+                "trial_block_position_maximum_range": 1,
+                "trial_exposure_max": 20,
+                "trial_exposure_min": 19,
+                "trial_exposure_range": 1,
+                "trial_limit": 3
+              }
+            },
+            "participant_count": 765,
+            "responses_included": false,
+            "trial_block_position_maximum_range": 1,
+            "trial_exposure_maximum_range": 1
+          },
+          "840": {
+            "balance_gate_passed": true,
+            "candidate_position_maximum_range": 1,
+            "methods": {
+              "mushra": {
+                "candidate_position_maximum_range": 1,
+                "trial_block_position_maximum_range": 0,
+                "trial_exposure_max": 21,
+                "trial_exposure_min": 21,
+                "trial_exposure_range": 0,
+                "trial_limit": 3
+              },
+              "subtle": {
+                "candidate_position_maximum_range": 1,
+                "trial_block_position_maximum_range": 0,
+                "trial_exposure_max": 21,
+                "trial_exposure_min": 21,
+                "trial_exposure_range": 0,
+                "trial_limit": 3
+              }
+            },
+            "participant_count": 840,
+            "responses_included": false,
+            "trial_block_position_maximum_range": 0,
+            "trial_exposure_maximum_range": 0
+          }
+        },
+        "maximum_candidate_position_range_across_all_prefixes": 1,
+        "maximum_participant_count": 840,
+        "maximum_trial_block_position_range_across_all_prefixes": 1,
+        "maximum_trial_exposure_range_across_all_prefixes": 1,
+        "prefixes_audited": 840,
+        "responses_included": false,
+        "schema_version": 1,
+        "state": "score_blind_prefix_balance_audit_no_responses",
+        "trial_limits": {
+          "mushra": 3,
+          "subtle": 3
+        }
+      }
+    },
+    {
+      "cycle_rounded_eligible_prefix": 600,
+      "mushra_trial_limit": 5,
+      "operational_policy_selected": false,
+      "option_id": "sources120-subtle5-mushra5",
+      "raw_minimum_eligible_prefix": 496,
+      "subtle_trial_limit": 5,
+      "v2_cycle_rounded_prefix_balance_passed": false,
+      "v2_raw_minimum_prefix_balance_passed": false,
+      "v3_prefix_audit": {
+        "all_prefixes_balance_gate_passed": true,
+        "allocation_policy_id": "prefix-balanced-score-blind-v3",
+        "checkpoint_summaries": {
+          "496": {
+            "balance_gate_passed": true,
+            "candidate_position_maximum_range": 1,
+            "methods": {
+              "mushra": {
+                "candidate_position_maximum_range": 1,
+                "trial_block_position_maximum_range": 1,
+                "trial_exposure_max": 21,
+                "trial_exposure_min": 20,
+                "trial_exposure_range": 1,
+                "trial_limit": 5
+              },
+              "subtle": {
+                "candidate_position_maximum_range": 1,
+                "trial_block_position_maximum_range": 1,
+                "trial_exposure_max": 21,
+                "trial_exposure_min": 20,
+                "trial_exposure_range": 1,
+                "trial_limit": 5
+              }
+            },
+            "participant_count": 496,
+            "responses_included": false,
+            "trial_block_position_maximum_range": 1,
+            "trial_exposure_maximum_range": 1
+          },
+          "600": {
+            "balance_gate_passed": true,
+            "candidate_position_maximum_range": 1,
+            "methods": {
+              "mushra": {
+                "candidate_position_maximum_range": 1,
+                "trial_block_position_maximum_range": 0,
+                "trial_exposure_max": 25,
+                "trial_exposure_min": 25,
+                "trial_exposure_range": 0,
+                "trial_limit": 5
+              },
+              "subtle": {
+                "candidate_position_maximum_range": 1,
+                "trial_block_position_maximum_range": 0,
+                "trial_exposure_max": 25,
+                "trial_exposure_min": 25,
+                "trial_exposure_range": 0,
+                "trial_limit": 5
+              }
+            },
+            "participant_count": 600,
+            "responses_included": false,
+            "trial_block_position_maximum_range": 0,
+            "trial_exposure_maximum_range": 0
+          }
+        },
+        "maximum_candidate_position_range_across_all_prefixes": 1,
+        "maximum_participant_count": 600,
+        "maximum_trial_block_position_range_across_all_prefixes": 1,
+        "maximum_trial_exposure_range_across_all_prefixes": 1,
+        "prefixes_audited": 600,
+        "responses_included": false,
+        "schema_version": 1,
+        "state": "score_blind_prefix_balance_audit_no_responses",
+        "trial_limits": {
+          "mushra": 5,
+          "subtle": 5
+        }
+      }
+    },
+    {
+      "cycle_rounded_eligible_prefix": 360,
+      "mushra_trial_limit": 6,
+      "operational_policy_selected": false,
+      "option_id": "sources120-subtle8-mushra6",
+      "raw_minimum_eligible_prefix": 345,
+      "subtle_trial_limit": 8,
+      "v2_cycle_rounded_prefix_balance_passed": false,
+      "v2_raw_minimum_prefix_balance_passed": false,
+      "v3_prefix_audit": {
+        "all_prefixes_balance_gate_passed": true,
+        "allocation_policy_id": "prefix-balanced-score-blind-v3",
+        "checkpoint_summaries": {
+          "345": {
+            "balance_gate_passed": true,
+            "candidate_position_maximum_range": 1,
+            "methods": {
+              "mushra": {
+                "candidate_position_maximum_range": 1,
+                "trial_block_position_maximum_range": 1,
+                "trial_exposure_max": 18,
+                "trial_exposure_min": 17,
+                "trial_exposure_range": 1,
+                "trial_limit": 6
+              },
+              "subtle": {
+                "candidate_position_maximum_range": 1,
+                "trial_block_position_maximum_range": 1,
+                "trial_exposure_max": 23,
+                "trial_exposure_min": 23,
+                "trial_exposure_range": 0,
+                "trial_limit": 8
+              }
+            },
+            "participant_count": 345,
+            "responses_included": false,
+            "trial_block_position_maximum_range": 1,
+            "trial_exposure_maximum_range": 1
+          },
+          "360": {
+            "balance_gate_passed": true,
+            "candidate_position_maximum_range": 1,
+            "methods": {
+              "mushra": {
+                "candidate_position_maximum_range": 1,
+                "trial_block_position_maximum_range": 0,
+                "trial_exposure_max": 18,
+                "trial_exposure_min": 18,
+                "trial_exposure_range": 0,
+                "trial_limit": 6
+              },
+              "subtle": {
+                "candidate_position_maximum_range": 0,
+                "trial_block_position_maximum_range": 0,
+                "trial_exposure_max": 24,
+                "trial_exposure_min": 24,
+                "trial_exposure_range": 0,
+                "trial_limit": 8
+              }
+            },
+            "participant_count": 360,
+            "responses_included": false,
+            "trial_block_position_maximum_range": 0,
+            "trial_exposure_maximum_range": 0
+          }
+        },
+        "maximum_candidate_position_range_across_all_prefixes": 1,
+        "maximum_participant_count": 360,
+        "maximum_trial_block_position_range_across_all_prefixes": 1,
+        "maximum_trial_exposure_range_across_all_prefixes": 1,
+        "prefixes_audited": 360,
+        "responses_included": false,
+        "schema_version": 1,
+        "state": "score_blind_prefix_balance_audit_no_responses",
+        "trial_limits": {
+          "mushra": 6,
+          "subtle": 8
+        }
+      }
+    },
+    {
+      "cycle_rounded_eligible_prefix": 240,
+      "mushra_trial_limit": 6,
+      "operational_policy_selected": false,
+      "option_id": "sources120-subtle15-mushra6",
+      "raw_minimum_eligible_prefix": 227,
+      "subtle_trial_limit": 15,
+      "v2_cycle_rounded_prefix_balance_passed": false,
+      "v2_raw_minimum_prefix_balance_passed": false,
+      "v3_prefix_audit": {
+        "all_prefixes_balance_gate_passed": true,
+        "allocation_policy_id": "prefix-balanced-score-blind-v3",
+        "checkpoint_summaries": {
+          "227": {
+            "balance_gate_passed": true,
+            "candidate_position_maximum_range": 1,
+            "methods": {
+              "mushra": {
+                "candidate_position_maximum_range": 1,
+                "trial_block_position_maximum_range": 1,
+                "trial_exposure_max": 12,
+                "trial_exposure_min": 11,
+                "trial_exposure_range": 1,
+                "trial_limit": 6
+              },
+              "subtle": {
+                "candidate_position_maximum_range": 1,
+                "trial_block_position_maximum_range": 1,
+                "trial_exposure_max": 29,
+                "trial_exposure_min": 28,
+                "trial_exposure_range": 1,
+                "trial_limit": 15
+              }
+            },
+            "participant_count": 227,
+            "responses_included": false,
+            "trial_block_position_maximum_range": 1,
+            "trial_exposure_maximum_range": 1
+          },
+          "240": {
+            "balance_gate_passed": true,
+            "candidate_position_maximum_range": 0,
+            "methods": {
+              "mushra": {
+                "candidate_position_maximum_range": 0,
+                "trial_block_position_maximum_range": 0,
+                "trial_exposure_max": 12,
+                "trial_exposure_min": 12,
+                "trial_exposure_range": 0,
+                "trial_limit": 6
+              },
+              "subtle": {
+                "candidate_position_maximum_range": 0,
+                "trial_block_position_maximum_range": 0,
+                "trial_exposure_max": 30,
+                "trial_exposure_min": 30,
+                "trial_exposure_range": 0,
+                "trial_limit": 15
+              }
+            },
+            "participant_count": 240,
+            "responses_included": false,
+            "trial_block_position_maximum_range": 0,
+            "trial_exposure_maximum_range": 0
+          }
+        },
+        "maximum_candidate_position_range_across_all_prefixes": 1,
+        "maximum_participant_count": 240,
+        "maximum_trial_block_position_range_across_all_prefixes": 1,
+        "maximum_trial_exposure_range_across_all_prefixes": 1,
+        "prefixes_audited": 240,
+        "responses_included": false,
+        "schema_version": 1,
+        "state": "score_blind_prefix_balance_audit_no_responses",
+        "trial_limits": {
+          "mushra": 6,
+          "subtle": 15
+        }
+      }
+    }
+  ],
+  "human_collection_performed": false,
+  "implementation_sha256": "d61b4cdb7bf376ee0b8d0e928debebd6db95e173560eeb2d0d87726c4fe4aa77",
+  "listener_responses_opened": false,
+  "plan_id": "perceptual-degradation-listening-allocation-v3-symbolic-audit-20260814-001",
+  "plan_sha256": "b1ec748c90175b64e979542fe7f2647703053a65fc66408cf8796120a58bf931",
+  "report_id": "perceptual-degradation-listening-allocation-v3-symbolic-audit-20260814-001",
+  "schema_version": 1,
+  "state": "score_blind_symbolic_allocator_successor_audit_complete",
+  "symbolic_manifest_sha256": "b4b22b81d73d76085ae3adf65c08c7cbeae4bd759f26e8e14247837f576e4793",
+  "symbolic_manifest_source_group_count": 120,
+  "symbolic_manifest_stimulus_count": 840,
+  "symbolic_manifest_trial_count": 240
+}

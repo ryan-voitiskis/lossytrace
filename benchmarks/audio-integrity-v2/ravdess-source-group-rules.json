@@ -1,0 +1,38 @@
+{
+  "artifacts": [
+    {
+      "bytes": 208468073,
+      "channel_id": "01",
+      "filename": "Audio_Speech_Actors_01-24.zip",
+      "kind": "speech",
+      "provider_checksum": "md5:bc696df654c87fed845eb13823edef8a"
+    },
+    {
+      "bytes": 225505317,
+      "channel_id": "02",
+      "filename": "Audio_Song_Actors_01-24.zip",
+      "kind": "song",
+      "provider_checksum": "md5:5411230427d67a21e18aa4d466e6d1b9"
+    }
+  ],
+  "audio_generated": false,
+  "expected": {
+    "actor_count": 24,
+    "missing_song_actor_ids": [
+      "18"
+    ],
+    "song_file_count": 1012,
+    "song_files_per_present_actor": 44,
+    "source_group_count": 24,
+    "speech_file_count": 1440,
+    "speech_files_per_actor": 60
+  },
+  "grouping_basis": "Actor identity across every speech and song condition; the actor encoded in the member directory must equal the actor field in the seven-part filename.",
+  "record_id": 1188976,
+  "record_version": "1.0.0",
+  "schema_version": 1,
+  "scores_opened": false,
+  "selection_authorized": false,
+  "source_id": "ravdess_audio_1_0_0",
+  "state": "source_identity_rules_not_allocation"
+}

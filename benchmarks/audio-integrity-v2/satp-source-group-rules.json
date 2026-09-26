@@ -1,0 +1,32 @@
+{
+  "audio_bytes": 198110877,
+  "audio_generated": false,
+  "audio_provider_checksum": "md5:1592b4ac667b2944ad3d412212dc669a",
+  "calibration_archive_recording_ids": [
+    "1000 Hz -16 dBFS peak 60 s"
+  ],
+  "calibration_readme_recording_ids": [
+    "1000 Hz - 16 dBFS peak 60 s"
+  ],
+  "expected": {
+    "calibration_row_count": 1,
+    "duplicate_exact_coordinate_group_count": 2,
+    "recording_row_count": 27,
+    "readme_table_row_count": 28,
+    "source_group_count": 25
+  },
+  "grouping_basis": "Merge recordings with the same exact non-missing provider-reported latitude and longitude pair. A recording with missing coordinates remains its own group. Retain date, location label, and recording ID as factors rather than assuming that nearby or same-day recordings are independent sessions.",
+  "grouping_fields": [
+    "latitude",
+    "longitude"
+  ],
+  "readme_sha256": "b7c0a1497d873be59c4135dfa24590e8e04c93b5b0a1bb03f2a3ba3f1f867fac",
+  "readme_provider_checksum": "md5:2c60286df75d1da4eb921d274e5a923e",
+  "record_id": 18715282,
+  "record_version": "v1.5",
+  "schema_version": 1,
+  "scores_opened": false,
+  "selection_authorized": false,
+  "source_id": "satp_soundscapes_1_5",
+  "state": "source_identity_rules_not_allocation"
+}

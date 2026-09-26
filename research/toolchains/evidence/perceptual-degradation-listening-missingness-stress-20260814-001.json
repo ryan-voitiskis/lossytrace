@@ -1,0 +1,2223 @@
+{
+  "allocator_v3_sha256": "66e9a787b1e154b80bdeff0350ece2b6264029664b3381b01a7c8e5da1ac6814",
+  "audio_accessed": false,
+  "audio_generated": false,
+  "claim_boundary": {
+    "full_objective_complete": false,
+    "issued_schedule_balance_proves_retained_balance": false,
+    "mcar_replay_proves_mcar_in_collection": false,
+    "minimum_judgment_count_proves_power": false,
+    "public_cli_changed": false,
+    "stress_audit_authorizes_collection": false,
+    "stress_audit_freezes_exclusions": false,
+    "stress_audit_is_listening_evidence": false,
+    "structured_stress_selects_a_correction": false,
+    "synthetic_mask_is_empirical_missingness": false
+  },
+  "decision": {
+    "all_mcar_replicates_preserve_strict_balance": false,
+    "all_structured_stresses_preserve_strict_balance": false,
+    "allocation_policy_selected": false,
+    "contiguous_90_percent_session_prefixes_pass_balance": true,
+    "exclusion_policy_selected": false,
+    "human_collection_authorized": false,
+    "inverse_probability_weighting_selected": false,
+    "listener_count_frozen": false,
+    "mcar_mechanism_empirically_established": false,
+    "missing_response_imputation_selected": false,
+    "next_responsible_human_decision": "Decide whether the unresolved resource scale warrants a separately frozen score-blind support, missingness and exclusion policy before any operational allocation state or collection is authorized.",
+    "no_reference_work_eligible": false,
+    "operational_design_selected": false,
+    "post_assignment_missingness_policy_ready": false,
+    "power_recalculation_required_for_structured_missingness": true,
+    "public_verdict_enabled": false,
+    "reason": "V3 balances every complete contiguous issued prefix, and a contiguous 90% prefix retains that property. Non-contiguous session or trial loss does not preserve the strict schedule invariant deterministically, while exposure-phase and source-correlated loss show that a scalar 90% usable-rate assumption cannot prove candidate-position balance or source support.",
+    "recruitment_authorized": false,
+    "replacement_assignment_selected": false,
+    "scalar_90_percent_usable_rate_proves_retained_balance": false,
+    "scalar_90_percent_usable_rate_proves_source_support": false,
+    "v3_complete_issued_prefixes_pass": true,
+    "v3_issued_schedule_repair_remains_valid": true
+  },
+  "human_collection_performed": false,
+  "implementation_sha256": "17cd8796a7c86e76e02f250376116cf8d9f5acc0bf7dc31c80636e18650077a3",
+  "listener_identities_accessed": false,
+  "options": [
+    {
+      "eligible_prefix": 765,
+      "issued_schedule_sha256": "8d0d3b2a9a17431a8390ad830c3f780ebf6e334be4f789af6ef8e96c26c32920",
+      "option_id": "sources120-subtle3-mushra3",
+      "scenario_results": [
+        {
+          "kind": "complete",
+          "scenario_id": "complete-issued-prefix",
+          "summary": {
+            "all_methods_minimum_judgment_support_gate_passed": true,
+            "all_methods_strict_retained_balance_gate_passed": true,
+            "methods": {
+              "mushra": {
+                "candidate_position_maximum_range": 1,
+                "minimum_judgment_support_gate_passed": true,
+                "retained_trial_rate": 1.0,
+                "retained_trials": 2295,
+                "scheduled_trials": 2295,
+                "source_groups_below_minimum_judgments": 0,
+                "source_groups_retained": 120,
+                "source_groups_with_zero_judgments": 0,
+                "strict_retained_balance_gate_passed": true,
+                "trial_block_position_maximum_range": 1,
+                "trial_exposure_max": 20,
+                "trial_exposure_min": 19,
+                "trial_exposure_range": 1
+              },
+              "subtle": {
+                "candidate_position_maximum_range": 1,
+                "minimum_judgment_support_gate_passed": true,
+                "retained_trial_rate": 1.0,
+                "retained_trials": 2295,
+                "scheduled_trials": 2295,
+                "source_groups_below_minimum_judgments": 0,
+                "source_groups_retained": 120,
+                "source_groups_with_zero_judgments": 0,
+                "strict_retained_balance_gate_passed": true,
+                "trial_block_position_maximum_range": 1,
+                "trial_exposure_max": 20,
+                "trial_exposure_min": 19,
+                "trial_exposure_range": 1
+              }
+            },
+            "outcomes_included": false,
+            "retained_trial_rate": 1.0,
+            "retained_trials": 4590,
+            "scheduled_session_slots": 765,
+            "scheduled_trials": 4590,
+            "session_slots_with_any_retained_trial": 765
+          }
+        },
+        {
+          "kind": "contiguous_session_prefix",
+          "retained_contiguous_session_slots": 688,
+          "scenario_id": "contiguous-session-prefix-90",
+          "summary": {
+            "all_methods_minimum_judgment_support_gate_passed": true,
+            "all_methods_strict_retained_balance_gate_passed": true,
+            "methods": {
+              "mushra": {
+                "candidate_position_maximum_range": 1,
+                "minimum_judgment_support_gate_passed": true,
+                "retained_trial_rate": 0.8993464052,
+                "retained_trials": 2064,
+                "scheduled_trials": 2295,
+                "source_groups_below_minimum_judgments": 0,
+                "source_groups_retained": 120,
+                "source_groups_with_zero_judgments": 0,
+                "strict_retained_balance_gate_passed": true,
+                "trial_block_position_maximum_range": 1,
+                "trial_exposure_max": 18,
+                "trial_exposure_min": 17,
+                "trial_exposure_range": 1
+              },
+              "subtle": {
+                "candidate_position_maximum_range": 1,
+                "minimum_judgment_support_gate_passed": true,
+                "retained_trial_rate": 0.8993464052,
+                "retained_trials": 2064,
+                "scheduled_trials": 2295,
+                "source_groups_below_minimum_judgments": 0,
+                "source_groups_retained": 120,
+                "source_groups_with_zero_judgments": 0,
+                "strict_retained_balance_gate_passed": true,
+                "trial_block_position_maximum_range": 1,
+                "trial_exposure_max": 18,
+                "trial_exposure_min": 17,
+                "trial_exposure_range": 1
+              }
+            },
+            "outcomes_included": false,
+            "retained_trial_rate": 0.8993464052,
+            "retained_trials": 4128,
+            "scheduled_session_slots": 765,
+            "scheduled_trials": 4590,
+            "session_slots_with_any_retained_trial": 688
+          }
+        },
+        {
+          "aggregate": {
+            "methods": {
+              "mushra": {
+                "candidate_position_maximum_range": {
+                  "max": 4,
+                  "median": 3,
+                  "min": 2,
+                  "p05": 2,
+                  "p95": 4
+                },
+                "retained_trial_rate": {
+                  "max": 0.922875817,
+                  "median": 0.9006535948,
+                  "min": 0.8588235294,
+                  "p05": 0.8849673203,
+                  "p95": 0.9176470588
+                },
+                "source_groups_below_minimum_judgments": {
+                  "max": 0,
+                  "median": 0,
+                  "min": 0,
+                  "p05": 0,
+                  "p95": 0
+                },
+                "source_groups_retained": {
+                  "max": 120,
+                  "median": 120,
+                  "min": 120,
+                  "p05": 120,
+                  "p95": 120
+                },
+                "source_groups_with_zero_judgments": {
+                  "max": 0,
+                  "median": 0,
+                  "min": 0,
+                  "p05": 0,
+                  "p95": 0
+                },
+                "trial_block_position_maximum_range": {
+                  "max": 5,
+                  "median": 3,
+                  "min": 2,
+                  "p05": 3,
+                  "p95": 4
+                },
+                "trial_exposure_min": {
+                  "max": 16,
+                  "median": 14,
+                  "min": 11,
+                  "p05": 12,
+                  "p95": 15
+                },
+                "trial_exposure_range": {
+                  "max": 9,
+                  "median": 5,
+                  "min": 3,
+                  "p05": 4,
+                  "p95": 7
+                }
+              },
+              "subtle": {
+                "candidate_position_maximum_range": {
+                  "max": 7,
+                  "median": 4,
+                  "min": 2,
+                  "p05": 3,
+                  "p95": 5
+                },
+                "retained_trial_rate": {
+                  "max": 0.922875817,
+                  "median": 0.9006535948,
+                  "min": 0.8588235294,
+                  "p05": 0.8849673203,
+                  "p95": 0.9176470588
+                },
+                "source_groups_below_minimum_judgments": {
+                  "max": 0,
+                  "median": 0,
+                  "min": 0,
+                  "p05": 0,
+                  "p95": 0
+                },
+                "source_groups_retained": {
+                  "max": 120,
+                  "median": 120,
+                  "min": 120,
+                  "p05": 120,
+                  "p95": 120
+                },
+                "source_groups_with_zero_judgments": {
+                  "max": 0,
+                  "median": 0,
+                  "min": 0,
+                  "p05": 0,
+                  "p95": 0
+                },
+                "trial_block_position_maximum_range": {
+                  "max": 5,
+                  "median": 3,
+                  "min": 2,
+                  "p05": 3,
+                  "p95": 4
+                },
+                "trial_exposure_min": {
+                  "max": 16,
+                  "median": 14,
+                  "min": 11,
+                  "p05": 12,
+                  "p95": 15
+                },
+                "trial_exposure_range": {
+                  "max": 9,
+                  "median": 5,
+                  "min": 3,
+                  "p05": 4,
+                  "p95": 7
+                }
+              }
+            },
+            "minimum_judgment_support_gate_pass_count": 256,
+            "outcomes_included": false,
+            "replicate_count": 256,
+            "replicate_summaries_sha256": "e2cce3f75ad7c87e8bdcd6080f50a0ffb9bd204e7babe79a3a079c9808803d8d",
+            "strict_retained_balance_gate_pass_count": 0,
+            "worst_replicate_index": 183,
+            "worst_replicate_summary": {
+              "all_methods_minimum_judgment_support_gate_passed": true,
+              "all_methods_strict_retained_balance_gate_passed": false,
+              "methods": {
+                "mushra": {
+                  "candidate_position_maximum_range": 4,
+                  "minimum_judgment_support_gate_passed": true,
+                  "retained_trial_rate": 0.9006535948,
+                  "retained_trials": 2067,
+                  "scheduled_trials": 2295,
+                  "source_groups_below_minimum_judgments": 0,
+                  "source_groups_retained": 120,
+                  "source_groups_with_zero_judgments": 0,
+                  "strict_retained_balance_gate_passed": false,
+                  "trial_block_position_maximum_range": 3,
+                  "trial_exposure_max": 20,
+                  "trial_exposure_min": 11,
+                  "trial_exposure_range": 9
+                },
+                "subtle": {
+                  "candidate_position_maximum_range": 5,
+                  "minimum_judgment_support_gate_passed": true,
+                  "retained_trial_rate": 0.9006535948,
+                  "retained_trials": 2067,
+                  "scheduled_trials": 2295,
+                  "source_groups_below_minimum_judgments": 0,
+                  "source_groups_retained": 120,
+                  "source_groups_with_zero_judgments": 0,
+                  "strict_retained_balance_gate_passed": false,
+                  "trial_block_position_maximum_range": 3,
+                  "trial_exposure_max": 20,
+                  "trial_exposure_min": 11,
+                  "trial_exposure_range": 9
+                }
+              },
+              "outcomes_included": false,
+              "retained_trial_rate": 0.9006535948,
+              "retained_trials": 4134,
+              "scheduled_session_slots": 765,
+              "scheduled_trials": 4590,
+              "session_slots_with_any_retained_trial": 689
+            }
+          },
+          "kind": "hash_mcar_session",
+          "scenario_id": "hash-mcar-session-90"
+        },
+        {
+          "aggregate": {
+            "methods": {
+              "mushra": {
+                "candidate_position_maximum_range": {
+                  "max": 5,
+                  "median": 3,
+                  "min": 3,
+                  "p05": 3,
+                  "p95": 4
+                },
+                "retained_trial_rate": {
+                  "max": 0.9150326797,
+                  "median": 0.9006535948,
+                  "min": 0.8801742919,
+                  "p05": 0.8888888889,
+                  "p95": 0.9102396514
+                },
+                "source_groups_below_minimum_judgments": {
+                  "max": 0,
+                  "median": 0,
+                  "min": 0,
+                  "p05": 0,
+                  "p95": 0
+                },
+                "source_groups_retained": {
+                  "max": 120,
+                  "median": 120,
+                  "min": 120,
+                  "p05": 120,
+                  "p95": 120
+                },
+                "source_groups_with_zero_judgments": {
+                  "max": 0,
+                  "median": 0,
+                  "min": 0,
+                  "p05": 0,
+                  "p95": 0
+                },
+                "trial_block_position_maximum_range": {
+                  "max": 6,
+                  "median": 4,
+                  "min": 3,
+                  "p05": 3,
+                  "p95": 5
+                },
+                "trial_exposure_min": {
+                  "max": 15,
+                  "median": 13,
+                  "min": 10,
+                  "p05": 12,
+                  "p95": 14
+                },
+                "trial_exposure_range": {
+                  "max": 10,
+                  "median": 7,
+                  "min": 4,
+                  "p05": 5,
+                  "p95": 8
+                }
+              },
+              "subtle": {
+                "candidate_position_maximum_range": {
+                  "max": 6,
+                  "median": 4,
+                  "min": 3,
+                  "p05": 3,
+                  "p95": 5
+                },
+                "retained_trial_rate": {
+                  "max": 0.9189542484,
+                  "median": 0.8989106754,
+                  "min": 0.8806100218,
+                  "p05": 0.8897603486,
+                  "p95": 0.9102396514
+                },
+                "source_groups_below_minimum_judgments": {
+                  "max": 0,
+                  "median": 0,
+                  "min": 0,
+                  "p05": 0,
+                  "p95": 0
+                },
+                "source_groups_retained": {
+                  "max": 120,
+                  "median": 120,
+                  "min": 120,
+                  "p05": 120,
+                  "p95": 120
+                },
+                "source_groups_with_zero_judgments": {
+                  "max": 0,
+                  "median": 0,
+                  "min": 0,
+                  "p05": 0,
+                  "p95": 0
+                },
+                "trial_block_position_maximum_range": {
+                  "max": 6,
+                  "median": 4,
+                  "min": 3,
+                  "p05": 3,
+                  "p95": 5
+                },
+                "trial_exposure_min": {
+                  "max": 15,
+                  "median": 13,
+                  "min": 11,
+                  "p05": 12,
+                  "p95": 14
+                },
+                "trial_exposure_range": {
+                  "max": 9,
+                  "median": 7,
+                  "min": 4,
+                  "p05": 5,
+                  "p95": 8
+                }
+              }
+            },
+            "minimum_judgment_support_gate_pass_count": 256,
+            "outcomes_included": false,
+            "replicate_count": 256,
+            "replicate_summaries_sha256": "3d252b533c111feede67b5eaa797beac12da992e4167426f05597ddd0b8de497",
+            "strict_retained_balance_gate_pass_count": 0,
+            "worst_replicate_index": 6,
+            "worst_replicate_summary": {
+              "all_methods_minimum_judgment_support_gate_passed": true,
+              "all_methods_strict_retained_balance_gate_passed": false,
+              "methods": {
+                "mushra": {
+                  "candidate_position_maximum_range": 3,
+                  "minimum_judgment_support_gate_passed": true,
+                  "retained_trial_rate": 0.8945533769,
+                  "retained_trials": 2053,
+                  "scheduled_trials": 2295,
+                  "source_groups_below_minimum_judgments": 0,
+                  "source_groups_retained": 120,
+                  "source_groups_with_zero_judgments": 0,
+                  "strict_retained_balance_gate_passed": false,
+                  "trial_block_position_maximum_range": 4,
+                  "trial_exposure_max": 20,
+                  "trial_exposure_min": 10,
+                  "trial_exposure_range": 10
+                },
+                "subtle": {
+                  "candidate_position_maximum_range": 5,
+                  "minimum_judgment_support_gate_passed": true,
+                  "retained_trial_rate": 0.9067538126,
+                  "retained_trials": 2081,
+                  "scheduled_trials": 2295,
+                  "source_groups_below_minimum_judgments": 0,
+                  "source_groups_retained": 120,
+                  "source_groups_with_zero_judgments": 0,
+                  "strict_retained_balance_gate_passed": false,
+                  "trial_block_position_maximum_range": 4,
+                  "trial_exposure_max": 20,
+                  "trial_exposure_min": 14,
+                  "trial_exposure_range": 6
+                }
+              },
+              "outcomes_included": false,
+              "retained_trial_rate": 0.9006535948,
+              "retained_trials": 4134,
+              "scheduled_session_slots": 765,
+              "scheduled_trials": 4590,
+              "session_slots_with_any_retained_trial": 765
+            }
+          },
+          "kind": "hash_mcar_trial",
+          "scenario_id": "hash-mcar-trial-90"
+        },
+        {
+          "kind": "exposure_phase",
+          "scenario_id": "exposure-phase-every-tenth",
+          "summary": {
+            "all_methods_minimum_judgment_support_gate_passed": true,
+            "all_methods_strict_retained_balance_gate_passed": false,
+            "methods": {
+              "mushra": {
+                "candidate_position_maximum_range": 1,
+                "minimum_judgment_support_gate_passed": true,
+                "retained_trial_rate": 0.8954248366,
+                "retained_trials": 2055,
+                "scheduled_trials": 2295,
+                "source_groups_below_minimum_judgments": 0,
+                "source_groups_retained": 120,
+                "source_groups_with_zero_judgments": 0,
+                "strict_retained_balance_gate_passed": true,
+                "trial_block_position_maximum_range": 1,
+                "trial_exposure_max": 18,
+                "trial_exposure_min": 17,
+                "trial_exposure_range": 1
+              },
+              "subtle": {
+                "candidate_position_maximum_range": 2,
+                "minimum_judgment_support_gate_passed": true,
+                "retained_trial_rate": 0.8954248366,
+                "retained_trials": 2055,
+                "scheduled_trials": 2295,
+                "source_groups_below_minimum_judgments": 0,
+                "source_groups_retained": 120,
+                "source_groups_with_zero_judgments": 0,
+                "strict_retained_balance_gate_passed": false,
+                "trial_block_position_maximum_range": 1,
+                "trial_exposure_max": 18,
+                "trial_exposure_min": 17,
+                "trial_exposure_range": 1
+              }
+            },
+            "outcomes_included": false,
+            "retained_trial_rate": 0.8954248366,
+            "retained_trials": 4110,
+            "scheduled_session_slots": 765,
+            "scheduled_trials": 4590,
+            "session_slots_with_any_retained_trial": 685
+          }
+        },
+        {
+          "excluded_source_group_count": 12,
+          "excluded_source_group_set_sha256": "1a4c87adba64d9c890a04050b6e80bd5f2d8fbcd30a43f33a5b64e4fb0e321f5",
+          "kind": "source_correlated",
+          "scenario_id": "source-correlated-10-percent",
+          "summary": {
+            "all_methods_minimum_judgment_support_gate_passed": false,
+            "all_methods_strict_retained_balance_gate_passed": false,
+            "methods": {
+              "mushra": {
+                "candidate_position_maximum_range": 1,
+                "minimum_judgment_support_gate_passed": false,
+                "retained_trial_rate": 0.8993464052,
+                "retained_trials": 2064,
+                "scheduled_trials": 2295,
+                "source_groups_below_minimum_judgments": 12,
+                "source_groups_retained": 108,
+                "source_groups_with_zero_judgments": 12,
+                "strict_retained_balance_gate_passed": false,
+                "trial_block_position_maximum_range": 1,
+                "trial_exposure_max": 20,
+                "trial_exposure_min": 0,
+                "trial_exposure_range": 20
+              },
+              "subtle": {
+                "candidate_position_maximum_range": 1,
+                "minimum_judgment_support_gate_passed": false,
+                "retained_trial_rate": 0.8997821351,
+                "retained_trials": 2065,
+                "scheduled_trials": 2295,
+                "source_groups_below_minimum_judgments": 12,
+                "source_groups_retained": 108,
+                "source_groups_with_zero_judgments": 12,
+                "strict_retained_balance_gate_passed": false,
+                "trial_block_position_maximum_range": 1,
+                "trial_exposure_max": 20,
+                "trial_exposure_min": 0,
+                "trial_exposure_range": 20
+              }
+            },
+            "outcomes_included": false,
+            "retained_trial_rate": 0.8995642702,
+            "retained_trials": 4129,
+            "scheduled_session_slots": 765,
+            "scheduled_trials": 4590,
+            "session_slots_with_any_retained_trial": 765
+          }
+        }
+      ],
+      "trial_limits": {
+        "mushra": 3,
+        "subtle": 3
+      }
+    },
+    {
+      "eligible_prefix": 496,
+      "issued_schedule_sha256": "2233bd84bfd6604fde0521d45f5470208f32dc98db53842603d214b94ffe074f",
+      "option_id": "sources120-subtle5-mushra5",
+      "scenario_results": [
+        {
+          "kind": "complete",
+          "scenario_id": "complete-issued-prefix",
+          "summary": {
+            "all_methods_minimum_judgment_support_gate_passed": true,
+            "all_methods_strict_retained_balance_gate_passed": true,
+            "methods": {
+              "mushra": {
+                "candidate_position_maximum_range": 1,
+                "minimum_judgment_support_gate_passed": true,
+                "retained_trial_rate": 1.0,
+                "retained_trials": 2480,
+                "scheduled_trials": 2480,
+                "source_groups_below_minimum_judgments": 0,
+                "source_groups_retained": 120,
+                "source_groups_with_zero_judgments": 0,
+                "strict_retained_balance_gate_passed": true,
+                "trial_block_position_maximum_range": 1,
+                "trial_exposure_max": 21,
+                "trial_exposure_min": 20,
+                "trial_exposure_range": 1
+              },
+              "subtle": {
+                "candidate_position_maximum_range": 1,
+                "minimum_judgment_support_gate_passed": true,
+                "retained_trial_rate": 1.0,
+                "retained_trials": 2480,
+                "scheduled_trials": 2480,
+                "source_groups_below_minimum_judgments": 0,
+                "source_groups_retained": 120,
+                "source_groups_with_zero_judgments": 0,
+                "strict_retained_balance_gate_passed": true,
+                "trial_block_position_maximum_range": 1,
+                "trial_exposure_max": 21,
+                "trial_exposure_min": 20,
+                "trial_exposure_range": 1
+              }
+            },
+            "outcomes_included": false,
+            "retained_trial_rate": 1.0,
+            "retained_trials": 4960,
+            "scheduled_session_slots": 496,
+            "scheduled_trials": 4960,
+            "session_slots_with_any_retained_trial": 496
+          }
+        },
+        {
+          "kind": "contiguous_session_prefix",
+          "retained_contiguous_session_slots": 446,
+          "scenario_id": "contiguous-session-prefix-90",
+          "summary": {
+            "all_methods_minimum_judgment_support_gate_passed": true,
+            "all_methods_strict_retained_balance_gate_passed": true,
+            "methods": {
+              "mushra": {
+                "candidate_position_maximum_range": 1,
+                "minimum_judgment_support_gate_passed": true,
+                "retained_trial_rate": 0.8991935484,
+                "retained_trials": 2230,
+                "scheduled_trials": 2480,
+                "source_groups_below_minimum_judgments": 0,
+                "source_groups_retained": 120,
+                "source_groups_with_zero_judgments": 0,
+                "strict_retained_balance_gate_passed": true,
+                "trial_block_position_maximum_range": 1,
+                "trial_exposure_max": 19,
+                "trial_exposure_min": 18,
+                "trial_exposure_range": 1
+              },
+              "subtle": {
+                "candidate_position_maximum_range": 1,
+                "minimum_judgment_support_gate_passed": true,
+                "retained_trial_rate": 0.8991935484,
+                "retained_trials": 2230,
+                "scheduled_trials": 2480,
+                "source_groups_below_minimum_judgments": 0,
+                "source_groups_retained": 120,
+                "source_groups_with_zero_judgments": 0,
+                "strict_retained_balance_gate_passed": true,
+                "trial_block_position_maximum_range": 1,
+                "trial_exposure_max": 19,
+                "trial_exposure_min": 18,
+                "trial_exposure_range": 1
+              }
+            },
+            "outcomes_included": false,
+            "retained_trial_rate": 0.8991935484,
+            "retained_trials": 4460,
+            "scheduled_session_slots": 496,
+            "scheduled_trials": 4960,
+            "session_slots_with_any_retained_trial": 446
+          }
+        },
+        {
+          "aggregate": {
+            "methods": {
+              "mushra": {
+                "candidate_position_maximum_range": {
+                  "max": 5,
+                  "median": 3,
+                  "min": 2,
+                  "p05": 2,
+                  "p95": 4
+                },
+                "retained_trial_rate": {
+                  "max": 0.9294354839,
+                  "median": 0.9012096774,
+                  "min": 0.8467741935,
+                  "p05": 0.877016129,
+                  "p95": 0.9213709677
+                },
+                "source_groups_below_minimum_judgments": {
+                  "max": 0,
+                  "median": 0,
+                  "min": 0,
+                  "p05": 0,
+                  "p95": 0
+                },
+                "source_groups_retained": {
+                  "max": 120,
+                  "median": 120,
+                  "min": 120,
+                  "p05": 120,
+                  "p95": 120
+                },
+                "source_groups_with_zero_judgments": {
+                  "max": 0,
+                  "median": 0,
+                  "min": 0,
+                  "p05": 0,
+                  "p95": 0
+                },
+                "trial_block_position_maximum_range": {
+                  "max": 5,
+                  "median": 3,
+                  "min": 2,
+                  "p05": 2,
+                  "p95": 4
+                },
+                "trial_exposure_min": {
+                  "max": 18,
+                  "median": 16,
+                  "min": 12,
+                  "p05": 14,
+                  "p95": 17
+                },
+                "trial_exposure_range": {
+                  "max": 9,
+                  "median": 5,
+                  "min": 3,
+                  "p05": 4,
+                  "p95": 7
+                }
+              },
+              "subtle": {
+                "candidate_position_maximum_range": {
+                  "max": 6,
+                  "median": 3,
+                  "min": 2,
+                  "p05": 2,
+                  "p95": 5
+                },
+                "retained_trial_rate": {
+                  "max": 0.9294354839,
+                  "median": 0.9012096774,
+                  "min": 0.8467741935,
+                  "p05": 0.877016129,
+                  "p95": 0.9213709677
+                },
+                "source_groups_below_minimum_judgments": {
+                  "max": 0,
+                  "median": 0,
+                  "min": 0,
+                  "p05": 0,
+                  "p95": 0
+                },
+                "source_groups_retained": {
+                  "max": 120,
+                  "median": 120,
+                  "min": 120,
+                  "p05": 120,
+                  "p95": 120
+                },
+                "source_groups_with_zero_judgments": {
+                  "max": 0,
+                  "median": 0,
+                  "min": 0,
+                  "p05": 0,
+                  "p95": 0
+                },
+                "trial_block_position_maximum_range": {
+                  "max": 5,
+                  "median": 3,
+                  "min": 2,
+                  "p05": 2,
+                  "p95": 4
+                },
+                "trial_exposure_min": {
+                  "max": 18,
+                  "median": 16,
+                  "min": 12,
+                  "p05": 14,
+                  "p95": 17
+                },
+                "trial_exposure_range": {
+                  "max": 9,
+                  "median": 5,
+                  "min": 3,
+                  "p05": 4,
+                  "p95": 7
+                }
+              }
+            },
+            "minimum_judgment_support_gate_pass_count": 256,
+            "outcomes_included": false,
+            "replicate_count": 256,
+            "replicate_summaries_sha256": "d4b6f0759dee947df6d3da1cd3b76b40fe5e4a155cef9c69cae247afea1f4909",
+            "strict_retained_balance_gate_pass_count": 0,
+            "worst_replicate_index": 253,
+            "worst_replicate_summary": {
+              "all_methods_minimum_judgment_support_gate_passed": true,
+              "all_methods_strict_retained_balance_gate_passed": false,
+              "methods": {
+                "mushra": {
+                  "candidate_position_maximum_range": 5,
+                  "minimum_judgment_support_gate_passed": true,
+                  "retained_trial_rate": 0.8850806452,
+                  "retained_trials": 2195,
+                  "scheduled_trials": 2480,
+                  "source_groups_below_minimum_judgments": 0,
+                  "source_groups_retained": 120,
+                  "source_groups_with_zero_judgments": 0,
+                  "strict_retained_balance_gate_passed": false,
+                  "trial_block_position_maximum_range": 3,
+                  "trial_exposure_max": 21,
+                  "trial_exposure_min": 12,
+                  "trial_exposure_range": 9
+                },
+                "subtle": {
+                  "candidate_position_maximum_range": 4,
+                  "minimum_judgment_support_gate_passed": true,
+                  "retained_trial_rate": 0.8850806452,
+                  "retained_trials": 2195,
+                  "scheduled_trials": 2480,
+                  "source_groups_below_minimum_judgments": 0,
+                  "source_groups_retained": 120,
+                  "source_groups_with_zero_judgments": 0,
+                  "strict_retained_balance_gate_passed": false,
+                  "trial_block_position_maximum_range": 3,
+                  "trial_exposure_max": 21,
+                  "trial_exposure_min": 12,
+                  "trial_exposure_range": 9
+                }
+              },
+              "outcomes_included": false,
+              "retained_trial_rate": 0.8850806452,
+              "retained_trials": 4390,
+              "scheduled_session_slots": 496,
+              "scheduled_trials": 4960,
+              "session_slots_with_any_retained_trial": 439
+            }
+          },
+          "kind": "hash_mcar_session",
+          "scenario_id": "hash-mcar-session-90"
+        },
+        {
+          "aggregate": {
+            "methods": {
+              "mushra": {
+                "candidate_position_maximum_range": {
+                  "max": 5,
+                  "median": 4,
+                  "min": 3,
+                  "p05": 3,
+                  "p95": 4
+                },
+                "retained_trial_rate": {
+                  "max": 0.9181451613,
+                  "median": 0.8995967742,
+                  "min": 0.8834677419,
+                  "p05": 0.8891129032,
+                  "p95": 0.9108870968
+                },
+                "source_groups_below_minimum_judgments": {
+                  "max": 0,
+                  "median": 0,
+                  "min": 0,
+                  "p05": 0,
+                  "p95": 0
+                },
+                "source_groups_retained": {
+                  "max": 120,
+                  "median": 120,
+                  "min": 120,
+                  "p05": 120,
+                  "p95": 120
+                },
+                "source_groups_with_zero_judgments": {
+                  "max": 0,
+                  "median": 0,
+                  "min": 0,
+                  "p05": 0,
+                  "p95": 0
+                },
+                "trial_block_position_maximum_range": {
+                  "max": 5,
+                  "median": 4,
+                  "min": 3,
+                  "p05": 3,
+                  "p95": 4
+                },
+                "trial_exposure_min": {
+                  "max": 16,
+                  "median": 14,
+                  "min": 11,
+                  "p05": 13,
+                  "p95": 16
+                },
+                "trial_exposure_range": {
+                  "max": 10,
+                  "median": 7,
+                  "min": 5,
+                  "p05": 5,
+                  "p95": 8
+                }
+              },
+              "subtle": {
+                "candidate_position_maximum_range": {
+                  "max": 7,
+                  "median": 4,
+                  "min": 3,
+                  "p05": 3,
+                  "p95": 5
+                },
+                "retained_trial_rate": {
+                  "max": 0.9157258065,
+                  "median": 0.9008064516,
+                  "min": 0.8822580645,
+                  "p05": 0.8899193548,
+                  "p95": 0.9108870968
+                },
+                "source_groups_below_minimum_judgments": {
+                  "max": 0,
+                  "median": 0,
+                  "min": 0,
+                  "p05": 0,
+                  "p95": 0
+                },
+                "source_groups_retained": {
+                  "max": 120,
+                  "median": 120,
+                  "min": 120,
+                  "p05": 120,
+                  "p95": 120
+                },
+                "source_groups_with_zero_judgments": {
+                  "max": 0,
+                  "median": 0,
+                  "min": 0,
+                  "p05": 0,
+                  "p95": 0
+                },
+                "trial_block_position_maximum_range": {
+                  "max": 5,
+                  "median": 4,
+                  "min": 3,
+                  "p05": 3,
+                  "p95": 4
+                },
+                "trial_exposure_min": {
+                  "max": 16,
+                  "median": 14,
+                  "min": 9,
+                  "p05": 13,
+                  "p95": 15
+                },
+                "trial_exposure_range": {
+                  "max": 12,
+                  "median": 6,
+                  "min": 5,
+                  "p05": 6,
+                  "p95": 8
+                }
+              }
+            },
+            "minimum_judgment_support_gate_pass_count": 256,
+            "outcomes_included": false,
+            "replicate_count": 256,
+            "replicate_summaries_sha256": "b25d7beb0590bd53eda09742b4b7d36b534b3295c5e036e7a83fb5eea5a7ea2a",
+            "strict_retained_balance_gate_pass_count": 0,
+            "worst_replicate_index": 239,
+            "worst_replicate_summary": {
+              "all_methods_minimum_judgment_support_gate_passed": true,
+              "all_methods_strict_retained_balance_gate_passed": false,
+              "methods": {
+                "mushra": {
+                  "candidate_position_maximum_range": 4,
+                  "minimum_judgment_support_gate_passed": true,
+                  "retained_trial_rate": 0.9056451613,
+                  "retained_trials": 2246,
+                  "scheduled_trials": 2480,
+                  "source_groups_below_minimum_judgments": 0,
+                  "source_groups_retained": 120,
+                  "source_groups_with_zero_judgments": 0,
+                  "strict_retained_balance_gate_passed": false,
+                  "trial_block_position_maximum_range": 4,
+                  "trial_exposure_max": 21,
+                  "trial_exposure_min": 15,
+                  "trial_exposure_range": 6
+                },
+                "subtle": {
+                  "candidate_position_maximum_range": 4,
+                  "minimum_judgment_support_gate_passed": true,
+                  "retained_trial_rate": 0.8822580645,
+                  "retained_trials": 2188,
+                  "scheduled_trials": 2480,
+                  "source_groups_below_minimum_judgments": 0,
+                  "source_groups_retained": 120,
+                  "source_groups_with_zero_judgments": 0,
+                  "strict_retained_balance_gate_passed": false,
+                  "trial_block_position_maximum_range": 4,
+                  "trial_exposure_max": 21,
+                  "trial_exposure_min": 9,
+                  "trial_exposure_range": 12
+                }
+              },
+              "outcomes_included": false,
+              "retained_trial_rate": 0.8939516129,
+              "retained_trials": 4434,
+              "scheduled_session_slots": 496,
+              "scheduled_trials": 4960,
+              "session_slots_with_any_retained_trial": 496
+            }
+          },
+          "kind": "hash_mcar_trial",
+          "scenario_id": "hash-mcar-trial-90"
+        },
+        {
+          "kind": "exposure_phase",
+          "scenario_id": "exposure-phase-every-tenth",
+          "summary": {
+            "all_methods_minimum_judgment_support_gate_passed": true,
+            "all_methods_strict_retained_balance_gate_passed": false,
+            "methods": {
+              "mushra": {
+                "candidate_position_maximum_range": 1,
+                "minimum_judgment_support_gate_passed": true,
+                "retained_trial_rate": 0.8709677419,
+                "retained_trials": 2160,
+                "scheduled_trials": 2480,
+                "source_groups_below_minimum_judgments": 0,
+                "source_groups_retained": 120,
+                "source_groups_with_zero_judgments": 0,
+                "strict_retained_balance_gate_passed": false,
+                "trial_block_position_maximum_range": 2,
+                "trial_exposure_max": 18,
+                "trial_exposure_min": 18,
+                "trial_exposure_range": 0
+              },
+              "subtle": {
+                "candidate_position_maximum_range": 2,
+                "minimum_judgment_support_gate_passed": true,
+                "retained_trial_rate": 0.8709677419,
+                "retained_trials": 2160,
+                "scheduled_trials": 2480,
+                "source_groups_below_minimum_judgments": 0,
+                "source_groups_retained": 120,
+                "source_groups_with_zero_judgments": 0,
+                "strict_retained_balance_gate_passed": false,
+                "trial_block_position_maximum_range": 2,
+                "trial_exposure_max": 18,
+                "trial_exposure_min": 18,
+                "trial_exposure_range": 0
+              }
+            },
+            "outcomes_included": false,
+            "retained_trial_rate": 0.8709677419,
+            "retained_trials": 4320,
+            "scheduled_session_slots": 496,
+            "scheduled_trials": 4960,
+            "session_slots_with_any_retained_trial": 432
+          }
+        },
+        {
+          "excluded_source_group_count": 12,
+          "excluded_source_group_set_sha256": "1a4c87adba64d9c890a04050b6e80bd5f2d8fbcd30a43f33a5b64e4fb0e321f5",
+          "kind": "source_correlated",
+          "scenario_id": "source-correlated-10-percent",
+          "summary": {
+            "all_methods_minimum_judgment_support_gate_passed": false,
+            "all_methods_strict_retained_balance_gate_passed": false,
+            "methods": {
+              "mushra": {
+                "candidate_position_maximum_range": 1,
+                "minimum_judgment_support_gate_passed": false,
+                "retained_trial_rate": 0.8995967742,
+                "retained_trials": 2231,
+                "scheduled_trials": 2480,
+                "source_groups_below_minimum_judgments": 12,
+                "source_groups_retained": 108,
+                "source_groups_with_zero_judgments": 12,
+                "strict_retained_balance_gate_passed": false,
+                "trial_block_position_maximum_range": 1,
+                "trial_exposure_max": 21,
+                "trial_exposure_min": 0,
+                "trial_exposure_range": 21
+              },
+              "subtle": {
+                "candidate_position_maximum_range": 1,
+                "minimum_judgment_support_gate_passed": false,
+                "retained_trial_rate": 0.9004032258,
+                "retained_trials": 2233,
+                "scheduled_trials": 2480,
+                "source_groups_below_minimum_judgments": 12,
+                "source_groups_retained": 108,
+                "source_groups_with_zero_judgments": 12,
+                "strict_retained_balance_gate_passed": false,
+                "trial_block_position_maximum_range": 1,
+                "trial_exposure_max": 21,
+                "trial_exposure_min": 0,
+                "trial_exposure_range": 21
+              }
+            },
+            "outcomes_included": false,
+            "retained_trial_rate": 0.9,
+            "retained_trials": 4464,
+            "scheduled_session_slots": 496,
+            "scheduled_trials": 4960,
+            "session_slots_with_any_retained_trial": 496
+          }
+        }
+      ],
+      "trial_limits": {
+        "mushra": 5,
+        "subtle": 5
+      }
+    },
+    {
+      "eligible_prefix": 345,
+      "issued_schedule_sha256": "549a5f78fd6fa4fdfe4571f1df9a646f984a9e7a0e429de95f9796092ef8ee35",
+      "option_id": "sources120-subtle8-mushra6",
+      "scenario_results": [
+        {
+          "kind": "complete",
+          "scenario_id": "complete-issued-prefix",
+          "summary": {
+            "all_methods_minimum_judgment_support_gate_passed": true,
+            "all_methods_strict_retained_balance_gate_passed": true,
+            "methods": {
+              "mushra": {
+                "candidate_position_maximum_range": 1,
+                "minimum_judgment_support_gate_passed": true,
+                "retained_trial_rate": 1.0,
+                "retained_trials": 2070,
+                "scheduled_trials": 2070,
+                "source_groups_below_minimum_judgments": 0,
+                "source_groups_retained": 120,
+                "source_groups_with_zero_judgments": 0,
+                "strict_retained_balance_gate_passed": true,
+                "trial_block_position_maximum_range": 1,
+                "trial_exposure_max": 18,
+                "trial_exposure_min": 17,
+                "trial_exposure_range": 1
+              },
+              "subtle": {
+                "candidate_position_maximum_range": 1,
+                "minimum_judgment_support_gate_passed": true,
+                "retained_trial_rate": 1.0,
+                "retained_trials": 2760,
+                "scheduled_trials": 2760,
+                "source_groups_below_minimum_judgments": 0,
+                "source_groups_retained": 120,
+                "source_groups_with_zero_judgments": 0,
+                "strict_retained_balance_gate_passed": true,
+                "trial_block_position_maximum_range": 1,
+                "trial_exposure_max": 23,
+                "trial_exposure_min": 23,
+                "trial_exposure_range": 0
+              }
+            },
+            "outcomes_included": false,
+            "retained_trial_rate": 1.0,
+            "retained_trials": 4830,
+            "scheduled_session_slots": 345,
+            "scheduled_trials": 4830,
+            "session_slots_with_any_retained_trial": 345
+          }
+        },
+        {
+          "kind": "contiguous_session_prefix",
+          "retained_contiguous_session_slots": 310,
+          "scenario_id": "contiguous-session-prefix-90",
+          "summary": {
+            "all_methods_minimum_judgment_support_gate_passed": true,
+            "all_methods_strict_retained_balance_gate_passed": true,
+            "methods": {
+              "mushra": {
+                "candidate_position_maximum_range": 1,
+                "minimum_judgment_support_gate_passed": true,
+                "retained_trial_rate": 0.8985507246,
+                "retained_trials": 1860,
+                "scheduled_trials": 2070,
+                "source_groups_below_minimum_judgments": 0,
+                "source_groups_retained": 120,
+                "source_groups_with_zero_judgments": 0,
+                "strict_retained_balance_gate_passed": true,
+                "trial_block_position_maximum_range": 1,
+                "trial_exposure_max": 16,
+                "trial_exposure_min": 15,
+                "trial_exposure_range": 1
+              },
+              "subtle": {
+                "candidate_position_maximum_range": 1,
+                "minimum_judgment_support_gate_passed": true,
+                "retained_trial_rate": 0.8985507246,
+                "retained_trials": 2480,
+                "scheduled_trials": 2760,
+                "source_groups_below_minimum_judgments": 0,
+                "source_groups_retained": 120,
+                "source_groups_with_zero_judgments": 0,
+                "strict_retained_balance_gate_passed": true,
+                "trial_block_position_maximum_range": 1,
+                "trial_exposure_max": 21,
+                "trial_exposure_min": 20,
+                "trial_exposure_range": 1
+              }
+            },
+            "outcomes_included": false,
+            "retained_trial_rate": 0.8985507246,
+            "retained_trials": 4340,
+            "scheduled_session_slots": 345,
+            "scheduled_trials": 4830,
+            "session_slots_with_any_retained_trial": 310
+          }
+        },
+        {
+          "aggregate": {
+            "methods": {
+              "mushra": {
+                "candidate_position_maximum_range": {
+                  "max": 4,
+                  "median": 3,
+                  "min": 2,
+                  "p05": 2,
+                  "p95": 4
+                },
+                "retained_trial_rate": {
+                  "max": 0.9420289855,
+                  "median": 0.8985507246,
+                  "min": 0.8405797101,
+                  "p05": 0.8695652174,
+                  "p95": 0.9275362319
+                },
+                "source_groups_below_minimum_judgments": {
+                  "max": 0,
+                  "median": 0,
+                  "min": 0,
+                  "p05": 0,
+                  "p95": 0
+                },
+                "source_groups_retained": {
+                  "max": 120,
+                  "median": 120,
+                  "min": 120,
+                  "p05": 120,
+                  "p95": 120
+                },
+                "source_groups_with_zero_judgments": {
+                  "max": 0,
+                  "median": 0,
+                  "min": 0,
+                  "p05": 0,
+                  "p95": 0
+                },
+                "trial_block_position_maximum_range": {
+                  "max": 3,
+                  "median": 2,
+                  "min": 2,
+                  "p05": 2,
+                  "p95": 3
+                },
+                "trial_exposure_min": {
+                  "max": 15,
+                  "median": 13,
+                  "min": 9,
+                  "p05": 11,
+                  "p95": 14
+                },
+                "trial_exposure_range": {
+                  "max": 8,
+                  "median": 5,
+                  "min": 3,
+                  "p05": 3,
+                  "p95": 6
+                }
+              },
+              "subtle": {
+                "candidate_position_maximum_range": {
+                  "max": 6,
+                  "median": 3,
+                  "min": 2,
+                  "p05": 2,
+                  "p95": 5
+                },
+                "retained_trial_rate": {
+                  "max": 0.9420289855,
+                  "median": 0.8985507246,
+                  "min": 0.8405797101,
+                  "p05": 0.8695652174,
+                  "p95": 0.9275362319
+                },
+                "source_groups_below_minimum_judgments": {
+                  "max": 0,
+                  "median": 0,
+                  "min": 0,
+                  "p05": 0,
+                  "p95": 0
+                },
+                "source_groups_retained": {
+                  "max": 120,
+                  "median": 120,
+                  "min": 120,
+                  "p05": 120,
+                  "p95": 120
+                },
+                "source_groups_with_zero_judgments": {
+                  "max": 0,
+                  "median": 0,
+                  "min": 0,
+                  "p05": 0,
+                  "p95": 0
+                },
+                "trial_block_position_maximum_range": {
+                  "max": 3,
+                  "median": 2,
+                  "min": 2,
+                  "p05": 2,
+                  "p95": 3
+                },
+                "trial_exposure_min": {
+                  "max": 20,
+                  "median": 18,
+                  "min": 15,
+                  "p05": 16,
+                  "p95": 19
+                },
+                "trial_exposure_range": {
+                  "max": 8,
+                  "median": 5,
+                  "min": 3,
+                  "p05": 3,
+                  "p95": 6
+                }
+              }
+            },
+            "minimum_judgment_support_gate_pass_count": 256,
+            "outcomes_included": false,
+            "replicate_count": 256,
+            "replicate_summaries_sha256": "a9722c02b367fb6ca094827a7e9203190746f98bb4c20e5ea56d6e014e757ba8",
+            "strict_retained_balance_gate_pass_count": 0,
+            "worst_replicate_index": 30,
+            "worst_replicate_summary": {
+              "all_methods_minimum_judgment_support_gate_passed": true,
+              "all_methods_strict_retained_balance_gate_passed": false,
+              "methods": {
+                "mushra": {
+                  "candidate_position_maximum_range": 3,
+                  "minimum_judgment_support_gate_passed": true,
+                  "retained_trial_rate": 0.8811594203,
+                  "retained_trials": 1824,
+                  "scheduled_trials": 2070,
+                  "source_groups_below_minimum_judgments": 0,
+                  "source_groups_retained": 120,
+                  "source_groups_with_zero_judgments": 0,
+                  "strict_retained_balance_gate_passed": false,
+                  "trial_block_position_maximum_range": 2,
+                  "trial_exposure_max": 18,
+                  "trial_exposure_min": 10,
+                  "trial_exposure_range": 8
+                },
+                "subtle": {
+                  "candidate_position_maximum_range": 4,
+                  "minimum_judgment_support_gate_passed": true,
+                  "retained_trial_rate": 0.8811594203,
+                  "retained_trials": 2432,
+                  "scheduled_trials": 2760,
+                  "source_groups_below_minimum_judgments": 0,
+                  "source_groups_retained": 120,
+                  "source_groups_with_zero_judgments": 0,
+                  "strict_retained_balance_gate_passed": false,
+                  "trial_block_position_maximum_range": 3,
+                  "trial_exposure_max": 22,
+                  "trial_exposure_min": 18,
+                  "trial_exposure_range": 4
+                }
+              },
+              "outcomes_included": false,
+              "retained_trial_rate": 0.8811594203,
+              "retained_trials": 4256,
+              "scheduled_session_slots": 345,
+              "scheduled_trials": 4830,
+              "session_slots_with_any_retained_trial": 304
+            }
+          },
+          "kind": "hash_mcar_session",
+          "scenario_id": "hash-mcar-session-90"
+        },
+        {
+          "aggregate": {
+            "methods": {
+              "mushra": {
+                "candidate_position_maximum_range": {
+                  "max": 5,
+                  "median": 3,
+                  "min": 3,
+                  "p05": 3,
+                  "p95": 4
+                },
+                "retained_trial_rate": {
+                  "max": 0.9207729469,
+                  "median": 0.9,
+                  "min": 0.8806763285,
+                  "p05": 0.8884057971,
+                  "p95": 0.9120772947
+                },
+                "source_groups_below_minimum_judgments": {
+                  "max": 0,
+                  "median": 0,
+                  "min": 0,
+                  "p05": 0,
+                  "p95": 0
+                },
+                "source_groups_retained": {
+                  "max": 120,
+                  "median": 120,
+                  "min": 120,
+                  "p05": 120,
+                  "p95": 120
+                },
+                "source_groups_with_zero_judgments": {
+                  "max": 0,
+                  "median": 0,
+                  "min": 0,
+                  "p05": 0,
+                  "p95": 0
+                },
+                "trial_block_position_maximum_range": {
+                  "max": 3,
+                  "median": 3,
+                  "min": 2,
+                  "p05": 2,
+                  "p95": 3
+                },
+                "trial_exposure_min": {
+                  "max": 13,
+                  "median": 12,
+                  "min": 10,
+                  "p05": 10,
+                  "p95": 13
+                },
+                "trial_exposure_range": {
+                  "max": 8,
+                  "median": 6,
+                  "min": 5,
+                  "p05": 5,
+                  "p95": 8
+                }
+              },
+              "subtle": {
+                "candidate_position_maximum_range": {
+                  "max": 7,
+                  "median": 5,
+                  "min": 3,
+                  "p05": 4,
+                  "p95": 6
+                },
+                "retained_trial_rate": {
+                  "max": 0.9152173913,
+                  "median": 0.9,
+                  "min": 0.8855072464,
+                  "p05": 0.8913043478,
+                  "p95": 0.9097826087
+                },
+                "source_groups_below_minimum_judgments": {
+                  "max": 0,
+                  "median": 0,
+                  "min": 0,
+                  "p05": 0,
+                  "p95": 0
+                },
+                "source_groups_retained": {
+                  "max": 120,
+                  "median": 120,
+                  "min": 120,
+                  "p05": 120,
+                  "p95": 120
+                },
+                "source_groups_with_zero_judgments": {
+                  "max": 0,
+                  "median": 0,
+                  "min": 0,
+                  "p05": 0,
+                  "p95": 0
+                },
+                "trial_block_position_maximum_range": {
+                  "max": 3,
+                  "median": 3,
+                  "min": 2,
+                  "p05": 2,
+                  "p95": 3
+                },
+                "trial_exposure_min": {
+                  "max": 18,
+                  "median": 17,
+                  "min": 13,
+                  "p05": 15,
+                  "p95": 18
+                },
+                "trial_exposure_range": {
+                  "max": 10,
+                  "median": 6,
+                  "min": 5,
+                  "p05": 5,
+                  "p95": 8
+                }
+              }
+            },
+            "minimum_judgment_support_gate_pass_count": 256,
+            "outcomes_included": false,
+            "replicate_count": 256,
+            "replicate_summaries_sha256": "cfe989f6f708ec35c3b035edcc93b30071bd19b4100aae6cd151a74a31333802",
+            "strict_retained_balance_gate_pass_count": 0,
+            "worst_replicate_index": 128,
+            "worst_replicate_summary": {
+              "all_methods_minimum_judgment_support_gate_passed": true,
+              "all_methods_strict_retained_balance_gate_passed": false,
+              "methods": {
+                "mushra": {
+                  "candidate_position_maximum_range": 4,
+                  "minimum_judgment_support_gate_passed": true,
+                  "retained_trial_rate": 0.8942028986,
+                  "retained_trials": 1851,
+                  "scheduled_trials": 2070,
+                  "source_groups_below_minimum_judgments": 0,
+                  "source_groups_retained": 120,
+                  "source_groups_with_zero_judgments": 0,
+                  "strict_retained_balance_gate_passed": false,
+                  "trial_block_position_maximum_range": 3,
+                  "trial_exposure_max": 18,
+                  "trial_exposure_min": 11,
+                  "trial_exposure_range": 7
+                },
+                "subtle": {
+                  "candidate_position_maximum_range": 5,
+                  "minimum_judgment_support_gate_passed": true,
+                  "retained_trial_rate": 0.9014492754,
+                  "retained_trials": 2488,
+                  "scheduled_trials": 2760,
+                  "source_groups_below_minimum_judgments": 0,
+                  "source_groups_retained": 120,
+                  "source_groups_with_zero_judgments": 0,
+                  "strict_retained_balance_gate_passed": false,
+                  "trial_block_position_maximum_range": 3,
+                  "trial_exposure_max": 23,
+                  "trial_exposure_min": 13,
+                  "trial_exposure_range": 10
+                }
+              },
+              "outcomes_included": false,
+              "retained_trial_rate": 0.8983436853,
+              "retained_trials": 4339,
+              "scheduled_session_slots": 345,
+              "scheduled_trials": 4830,
+              "session_slots_with_any_retained_trial": 345
+            }
+          },
+          "kind": "hash_mcar_trial",
+          "scenario_id": "hash-mcar-trial-90"
+        },
+        {
+          "kind": "exposure_phase",
+          "scenario_id": "exposure-phase-every-tenth",
+          "summary": {
+            "all_methods_minimum_judgment_support_gate_passed": true,
+            "all_methods_strict_retained_balance_gate_passed": false,
+            "methods": {
+              "mushra": {
+                "candidate_position_maximum_range": 2,
+                "minimum_judgment_support_gate_passed": true,
+                "retained_trial_rate": 0.884057971,
+                "retained_trials": 1830,
+                "scheduled_trials": 2070,
+                "source_groups_below_minimum_judgments": 0,
+                "source_groups_retained": 120,
+                "source_groups_with_zero_judgments": 0,
+                "strict_retained_balance_gate_passed": false,
+                "trial_block_position_maximum_range": 1,
+                "trial_exposure_max": 16,
+                "trial_exposure_min": 15,
+                "trial_exposure_range": 1
+              },
+              "subtle": {
+                "candidate_position_maximum_range": 2,
+                "minimum_judgment_support_gate_passed": true,
+                "retained_trial_rate": 0.8695652174,
+                "retained_trials": 2400,
+                "scheduled_trials": 2760,
+                "source_groups_below_minimum_judgments": 0,
+                "source_groups_retained": 120,
+                "source_groups_with_zero_judgments": 0,
+                "strict_retained_balance_gate_passed": false,
+                "trial_block_position_maximum_range": 1,
+                "trial_exposure_max": 20,
+                "trial_exposure_min": 20,
+                "trial_exposure_range": 0
+              }
+            },
+            "outcomes_included": false,
+            "retained_trial_rate": 0.8757763975,
+            "retained_trials": 4230,
+            "scheduled_session_slots": 345,
+            "scheduled_trials": 4830,
+            "session_slots_with_any_retained_trial": 330
+          }
+        },
+        {
+          "excluded_source_group_count": 12,
+          "excluded_source_group_set_sha256": "1a4c87adba64d9c890a04050b6e80bd5f2d8fbcd30a43f33a5b64e4fb0e321f5",
+          "kind": "source_correlated",
+          "scenario_id": "source-correlated-10-percent",
+          "summary": {
+            "all_methods_minimum_judgment_support_gate_passed": false,
+            "all_methods_strict_retained_balance_gate_passed": false,
+            "methods": {
+              "mushra": {
+                "candidate_position_maximum_range": 1,
+                "minimum_judgment_support_gate_passed": false,
+                "retained_trial_rate": 0.8990338164,
+                "retained_trials": 1861,
+                "scheduled_trials": 2070,
+                "source_groups_below_minimum_judgments": 12,
+                "source_groups_retained": 108,
+                "source_groups_with_zero_judgments": 12,
+                "strict_retained_balance_gate_passed": false,
+                "trial_block_position_maximum_range": 1,
+                "trial_exposure_max": 18,
+                "trial_exposure_min": 0,
+                "trial_exposure_range": 18
+              },
+              "subtle": {
+                "candidate_position_maximum_range": 1,
+                "minimum_judgment_support_gate_passed": false,
+                "retained_trial_rate": 0.9,
+                "retained_trials": 2484,
+                "scheduled_trials": 2760,
+                "source_groups_below_minimum_judgments": 12,
+                "source_groups_retained": 108,
+                "source_groups_with_zero_judgments": 12,
+                "strict_retained_balance_gate_passed": false,
+                "trial_block_position_maximum_range": 1,
+                "trial_exposure_max": 23,
+                "trial_exposure_min": 0,
+                "trial_exposure_range": 23
+              }
+            },
+            "outcomes_included": false,
+            "retained_trial_rate": 0.8995859213,
+            "retained_trials": 4345,
+            "scheduled_session_slots": 345,
+            "scheduled_trials": 4830,
+            "session_slots_with_any_retained_trial": 345
+          }
+        }
+      ],
+      "trial_limits": {
+        "mushra": 6,
+        "subtle": 8
+      }
+    },
+    {
+      "eligible_prefix": 227,
+      "issued_schedule_sha256": "99c8530495be29a37aa6cd4afaf0351e235fcc851ed58c085878c941d2d7b527",
+      "option_id": "sources120-subtle15-mushra6",
+      "scenario_results": [
+        {
+          "kind": "complete",
+          "scenario_id": "complete-issued-prefix",
+          "summary": {
+            "all_methods_minimum_judgment_support_gate_passed": true,
+            "all_methods_strict_retained_balance_gate_passed": true,
+            "methods": {
+              "mushra": {
+                "candidate_position_maximum_range": 1,
+                "minimum_judgment_support_gate_passed": true,
+                "retained_trial_rate": 1.0,
+                "retained_trials": 1362,
+                "scheduled_trials": 1362,
+                "source_groups_below_minimum_judgments": 0,
+                "source_groups_retained": 120,
+                "source_groups_with_zero_judgments": 0,
+                "strict_retained_balance_gate_passed": true,
+                "trial_block_position_maximum_range": 1,
+                "trial_exposure_max": 12,
+                "trial_exposure_min": 11,
+                "trial_exposure_range": 1
+              },
+              "subtle": {
+                "candidate_position_maximum_range": 1,
+                "minimum_judgment_support_gate_passed": true,
+                "retained_trial_rate": 1.0,
+                "retained_trials": 3405,
+                "scheduled_trials": 3405,
+                "source_groups_below_minimum_judgments": 0,
+                "source_groups_retained": 120,
+                "source_groups_with_zero_judgments": 0,
+                "strict_retained_balance_gate_passed": true,
+                "trial_block_position_maximum_range": 1,
+                "trial_exposure_max": 29,
+                "trial_exposure_min": 28,
+                "trial_exposure_range": 1
+              }
+            },
+            "outcomes_included": false,
+            "retained_trial_rate": 1.0,
+            "retained_trials": 4767,
+            "scheduled_session_slots": 227,
+            "scheduled_trials": 4767,
+            "session_slots_with_any_retained_trial": 227
+          }
+        },
+        {
+          "kind": "contiguous_session_prefix",
+          "retained_contiguous_session_slots": 204,
+          "scenario_id": "contiguous-session-prefix-90",
+          "summary": {
+            "all_methods_minimum_judgment_support_gate_passed": true,
+            "all_methods_strict_retained_balance_gate_passed": true,
+            "methods": {
+              "mushra": {
+                "candidate_position_maximum_range": 1,
+                "minimum_judgment_support_gate_passed": true,
+                "retained_trial_rate": 0.8986784141,
+                "retained_trials": 1224,
+                "scheduled_trials": 1362,
+                "source_groups_below_minimum_judgments": 0,
+                "source_groups_retained": 120,
+                "source_groups_with_zero_judgments": 0,
+                "strict_retained_balance_gate_passed": true,
+                "trial_block_position_maximum_range": 1,
+                "trial_exposure_max": 11,
+                "trial_exposure_min": 10,
+                "trial_exposure_range": 1
+              },
+              "subtle": {
+                "candidate_position_maximum_range": 1,
+                "minimum_judgment_support_gate_passed": true,
+                "retained_trial_rate": 0.8986784141,
+                "retained_trials": 3060,
+                "scheduled_trials": 3405,
+                "source_groups_below_minimum_judgments": 0,
+                "source_groups_retained": 120,
+                "source_groups_with_zero_judgments": 0,
+                "strict_retained_balance_gate_passed": true,
+                "trial_block_position_maximum_range": 1,
+                "trial_exposure_max": 26,
+                "trial_exposure_min": 25,
+                "trial_exposure_range": 1
+              }
+            },
+            "outcomes_included": false,
+            "retained_trial_rate": 0.8986784141,
+            "retained_trials": 4284,
+            "scheduled_session_slots": 227,
+            "scheduled_trials": 4767,
+            "session_slots_with_any_retained_trial": 204
+          }
+        },
+        {
+          "aggregate": {
+            "methods": {
+              "mushra": {
+                "candidate_position_maximum_range": {
+                  "max": 3,
+                  "median": 2,
+                  "min": 1,
+                  "p05": 2,
+                  "p95": 3
+                },
+                "retained_trial_rate": {
+                  "max": 0.9559471366,
+                  "median": 0.9030837004,
+                  "min": 0.8325991189,
+                  "p05": 0.872246696,
+                  "p95": 0.9339207048
+                },
+                "source_groups_below_minimum_judgments": {
+                  "max": 12,
+                  "median": 0,
+                  "min": 0,
+                  "p05": 0,
+                  "p95": 6
+                },
+                "source_groups_retained": {
+                  "max": 120,
+                  "median": 120,
+                  "min": 120,
+                  "p05": 120,
+                  "p95": 120
+                },
+                "source_groups_with_zero_judgments": {
+                  "max": 0,
+                  "median": 0,
+                  "min": 0,
+                  "p05": 0,
+                  "p95": 0
+                },
+                "trial_block_position_maximum_range": {
+                  "max": 2,
+                  "median": 2,
+                  "min": 1,
+                  "p05": 1,
+                  "p95": 2
+                },
+                "trial_exposure_min": {
+                  "max": 9,
+                  "median": 8,
+                  "min": 6,
+                  "p05": 7,
+                  "p95": 9
+                },
+                "trial_exposure_range": {
+                  "max": 6,
+                  "median": 4,
+                  "min": 2,
+                  "p05": 3,
+                  "p95": 5
+                }
+              },
+              "subtle": {
+                "candidate_position_maximum_range": {
+                  "max": 6,
+                  "median": 3,
+                  "min": 1,
+                  "p05": 2,
+                  "p95": 5
+                },
+                "retained_trial_rate": {
+                  "max": 0.9559471366,
+                  "median": 0.9030837004,
+                  "min": 0.8325991189,
+                  "p05": 0.872246696,
+                  "p95": 0.9339207048
+                },
+                "source_groups_below_minimum_judgments": {
+                  "max": 0,
+                  "median": 0,
+                  "min": 0,
+                  "p05": 0,
+                  "p95": 0
+                },
+                "source_groups_retained": {
+                  "max": 120,
+                  "median": 120,
+                  "min": 120,
+                  "p05": 120,
+                  "p95": 120
+                },
+                "source_groups_with_zero_judgments": {
+                  "max": 0,
+                  "median": 0,
+                  "min": 0,
+                  "p05": 0,
+                  "p95": 0
+                },
+                "trial_block_position_maximum_range": {
+                  "max": 2,
+                  "median": 2,
+                  "min": 1,
+                  "p05": 1,
+                  "p95": 2
+                },
+                "trial_exposure_min": {
+                  "max": 26,
+                  "median": 23,
+                  "min": 18,
+                  "p05": 21,
+                  "p95": 25
+                },
+                "trial_exposure_range": {
+                  "max": 10,
+                  "median": 4,
+                  "min": 2,
+                  "p05": 3,
+                  "p95": 7
+                }
+              }
+            },
+            "minimum_judgment_support_gate_pass_count": 200,
+            "outcomes_included": false,
+            "replicate_count": 256,
+            "replicate_summaries_sha256": "f77526c84aad1b7e5bdda725c49225c09e89de07342dff3843935b8326a251d2",
+            "strict_retained_balance_gate_pass_count": 0,
+            "worst_replicate_index": 98,
+            "worst_replicate_summary": {
+              "all_methods_minimum_judgment_support_gate_passed": false,
+              "all_methods_strict_retained_balance_gate_passed": false,
+              "methods": {
+                "mushra": {
+                  "candidate_position_maximum_range": 2,
+                  "minimum_judgment_support_gate_passed": false,
+                  "retained_trial_rate": 0.8810572687,
+                  "retained_trials": 1200,
+                  "scheduled_trials": 1362,
+                  "source_groups_below_minimum_judgments": 12,
+                  "source_groups_retained": 120,
+                  "source_groups_with_zero_judgments": 0,
+                  "strict_retained_balance_gate_passed": false,
+                  "trial_block_position_maximum_range": 2,
+                  "trial_exposure_max": 12,
+                  "trial_exposure_min": 7,
+                  "trial_exposure_range": 5
+                },
+                "subtle": {
+                  "candidate_position_maximum_range": 5,
+                  "minimum_judgment_support_gate_passed": true,
+                  "retained_trial_rate": 0.8810572687,
+                  "retained_trials": 3000,
+                  "scheduled_trials": 3405,
+                  "source_groups_below_minimum_judgments": 0,
+                  "source_groups_retained": 120,
+                  "source_groups_with_zero_judgments": 0,
+                  "strict_retained_balance_gate_passed": false,
+                  "trial_block_position_maximum_range": 2,
+                  "trial_exposure_max": 29,
+                  "trial_exposure_min": 22,
+                  "trial_exposure_range": 7
+                }
+              },
+              "outcomes_included": false,
+              "retained_trial_rate": 0.8810572687,
+              "retained_trials": 4200,
+              "scheduled_session_slots": 227,
+              "scheduled_trials": 4767,
+              "session_slots_with_any_retained_trial": 200
+            }
+          },
+          "kind": "hash_mcar_session",
+          "scenario_id": "hash-mcar-session-90"
+        },
+        {
+          "aggregate": {
+            "methods": {
+              "mushra": {
+                "candidate_position_maximum_range": {
+                  "max": 3,
+                  "median": 3,
+                  "min": 2,
+                  "p05": 2,
+                  "p95": 3
+                },
+                "retained_trial_rate": {
+                  "max": 0.9317180617,
+                  "median": 0.9001468429,
+                  "min": 0.875917768,
+                  "p05": 0.8847283407,
+                  "p95": 0.9148311307
+                },
+                "source_groups_below_minimum_judgments": {
+                  "max": 7,
+                  "median": 2,
+                  "min": 0,
+                  "p05": 0,
+                  "p95": 4
+                },
+                "source_groups_retained": {
+                  "max": 120,
+                  "median": 120,
+                  "min": 120,
+                  "p05": 120,
+                  "p95": 120
+                },
+                "source_groups_with_zero_judgments": {
+                  "max": 0,
+                  "median": 0,
+                  "min": 0,
+                  "p05": 0,
+                  "p95": 0
+                },
+                "trial_block_position_maximum_range": {
+                  "max": 2,
+                  "median": 2,
+                  "min": 2,
+                  "p05": 2,
+                  "p95": 2
+                },
+                "trial_exposure_min": {
+                  "max": 8,
+                  "median": 7,
+                  "min": 5,
+                  "p05": 6,
+                  "p95": 8
+                },
+                "trial_exposure_range": {
+                  "max": 7,
+                  "median": 5,
+                  "min": 4,
+                  "p05": 4,
+                  "p95": 6
+                }
+              },
+              "subtle": {
+                "candidate_position_maximum_range": {
+                  "max": 8,
+                  "median": 5,
+                  "min": 3,
+                  "p05": 4,
+                  "p95": 6
+                },
+                "retained_trial_rate": {
+                  "max": 0.9186490455,
+                  "median": 0.8998531571,
+                  "min": 0.8881057269,
+                  "p05": 0.8919236417,
+                  "p95": 0.9092511013
+                },
+                "source_groups_below_minimum_judgments": {
+                  "max": 0,
+                  "median": 0,
+                  "min": 0,
+                  "p05": 0,
+                  "p95": 0
+                },
+                "source_groups_retained": {
+                  "max": 120,
+                  "median": 120,
+                  "min": 120,
+                  "p05": 120,
+                  "p95": 120
+                },
+                "source_groups_with_zero_judgments": {
+                  "max": 0,
+                  "median": 0,
+                  "min": 0,
+                  "p05": 0,
+                  "p95": 0
+                },
+                "trial_block_position_maximum_range": {
+                  "max": 2,
+                  "median": 2,
+                  "min": 2,
+                  "p05": 2,
+                  "p95": 2
+                },
+                "trial_exposure_min": {
+                  "max": 23,
+                  "median": 21,
+                  "min": 17,
+                  "p05": 19,
+                  "p95": 22
+                },
+                "trial_exposure_range": {
+                  "max": 11,
+                  "median": 8,
+                  "min": 6,
+                  "p05": 7,
+                  "p95": 10
+                }
+              }
+            },
+            "minimum_judgment_support_gate_pass_count": 40,
+            "outcomes_included": false,
+            "replicate_count": 256,
+            "replicate_summaries_sha256": "f7e41a85285fed54a1cdaac6295a5dd5b8ad0a6a38df6dc9ed2cc8c0e77fbf58",
+            "strict_retained_balance_gate_pass_count": 0,
+            "worst_replicate_index": 178,
+            "worst_replicate_summary": {
+              "all_methods_minimum_judgment_support_gate_passed": false,
+              "all_methods_strict_retained_balance_gate_passed": false,
+              "methods": {
+                "mushra": {
+                  "candidate_position_maximum_range": 3,
+                  "minimum_judgment_support_gate_passed": false,
+                  "retained_trial_rate": 0.8825256975,
+                  "retained_trials": 1202,
+                  "scheduled_trials": 1362,
+                  "source_groups_below_minimum_judgments": 7,
+                  "source_groups_retained": 120,
+                  "source_groups_with_zero_judgments": 0,
+                  "strict_retained_balance_gate_passed": false,
+                  "trial_block_position_maximum_range": 2,
+                  "trial_exposure_max": 12,
+                  "trial_exposure_min": 7,
+                  "trial_exposure_range": 5
+                },
+                "subtle": {
+                  "candidate_position_maximum_range": 4,
+                  "minimum_judgment_support_gate_passed": true,
+                  "retained_trial_rate": 0.9030837004,
+                  "retained_trials": 3075,
+                  "scheduled_trials": 3405,
+                  "source_groups_below_minimum_judgments": 0,
+                  "source_groups_retained": 120,
+                  "source_groups_with_zero_judgments": 0,
+                  "strict_retained_balance_gate_passed": false,
+                  "trial_block_position_maximum_range": 2,
+                  "trial_exposure_max": 29,
+                  "trial_exposure_min": 19,
+                  "trial_exposure_range": 10
+                }
+              },
+              "outcomes_included": false,
+              "retained_trial_rate": 0.8972099853,
+              "retained_trials": 4277,
+              "scheduled_session_slots": 227,
+              "scheduled_trials": 4767,
+              "session_slots_with_any_retained_trial": 227
+            }
+          },
+          "kind": "hash_mcar_trial",
+          "scenario_id": "hash-mcar-trial-90"
+        },
+        {
+          "kind": "exposure_phase",
+          "scenario_id": "exposure-phase-every-tenth",
+          "summary": {
+            "all_methods_minimum_judgment_support_gate_passed": true,
+            "all_methods_strict_retained_balance_gate_passed": false,
+            "methods": {
+              "mushra": {
+                "candidate_position_maximum_range": 1,
+                "minimum_judgment_support_gate_passed": true,
+                "retained_trial_rate": 0.8237885463,
+                "retained_trials": 1122,
+                "scheduled_trials": 1362,
+                "source_groups_below_minimum_judgments": 0,
+                "source_groups_retained": 120,
+                "source_groups_with_zero_judgments": 0,
+                "strict_retained_balance_gate_passed": true,
+                "trial_block_position_maximum_range": 1,
+                "trial_exposure_max": 10,
+                "trial_exposure_min": 9,
+                "trial_exposure_range": 1
+              },
+              "subtle": {
+                "candidate_position_maximum_range": 3,
+                "minimum_judgment_support_gate_passed": true,
+                "retained_trial_rate": 0.8942731278,
+                "retained_trials": 3045,
+                "scheduled_trials": 3405,
+                "source_groups_below_minimum_judgments": 0,
+                "source_groups_retained": 120,
+                "source_groups_with_zero_judgments": 0,
+                "strict_retained_balance_gate_passed": false,
+                "trial_block_position_maximum_range": 1,
+                "trial_exposure_max": 26,
+                "trial_exposure_min": 25,
+                "trial_exposure_range": 1
+              }
+            },
+            "outcomes_included": false,
+            "retained_trial_rate": 0.8741346759,
+            "retained_trials": 4167,
+            "scheduled_session_slots": 227,
+            "scheduled_trials": 4767,
+            "session_slots_with_any_retained_trial": 219
+          }
+        },
+        {
+          "excluded_source_group_count": 12,
+          "excluded_source_group_set_sha256": "1a4c87adba64d9c890a04050b6e80bd5f2d8fbcd30a43f33a5b64e4fb0e321f5",
+          "kind": "source_correlated",
+          "scenario_id": "source-correlated-10-percent",
+          "summary": {
+            "all_methods_minimum_judgment_support_gate_passed": false,
+            "all_methods_strict_retained_balance_gate_passed": false,
+            "methods": {
+              "mushra": {
+                "candidate_position_maximum_range": 1,
+                "minimum_judgment_support_gate_passed": false,
+                "retained_trial_rate": 0.8979441997,
+                "retained_trials": 1223,
+                "scheduled_trials": 1362,
+                "source_groups_below_minimum_judgments": 12,
+                "source_groups_retained": 108,
+                "source_groups_with_zero_judgments": 12,
+                "strict_retained_balance_gate_passed": false,
+                "trial_block_position_maximum_range": 1,
+                "trial_exposure_max": 12,
+                "trial_exposure_min": 0,
+                "trial_exposure_range": 12
+              },
+              "subtle": {
+                "candidate_position_maximum_range": 1,
+                "minimum_judgment_support_gate_passed": false,
+                "retained_trial_rate": 0.9004405286,
+                "retained_trials": 3066,
+                "scheduled_trials": 3405,
+                "source_groups_below_minimum_judgments": 12,
+                "source_groups_retained": 108,
+                "source_groups_with_zero_judgments": 12,
+                "strict_retained_balance_gate_passed": false,
+                "trial_block_position_maximum_range": 1,
+                "trial_exposure_max": 29,
+                "trial_exposure_min": 0,
+                "trial_exposure_range": 29
+              }
+            },
+            "outcomes_included": false,
+            "retained_trial_rate": 0.8997272918,
+            "retained_trials": 4289,
+            "scheduled_session_slots": 227,
+            "scheduled_trials": 4767,
+            "session_slots_with_any_retained_trial": 227
+          }
+        }
+      ],
+      "trial_limits": {
+        "mushra": 6,
+        "subtle": 15
+      }
+    }
+  ],
+  "outcome_values_generated": false,
+  "outcome_values_read": false,
+  "plan_id": "perceptual-degradation-listening-missingness-stress-20260814-001",
+  "plan_sha256": "054fb4e91dde0eeed11bd72fe2e9c32ca8f13663dade977a527442f1bedeb344",
+  "report_id": "perceptual-degradation-listening-missingness-stress-20260814-001",
+  "schema_version": 1,
+  "state": "score_blind_synthetic_missingness_stress_complete",
+  "symbolic_manifest_sha256": "b4b22b81d73d76085ae3adf65c08c7cbeae4bd759f26e8e14247837f576e4793"
+}

@@ -14,6 +14,215 @@ holes, band ruptures, and opt-in transform-alignment research probes. It does
 not classify a file, change the Stratum cache schema, or enable a Library
 Health warning.
 
+## Retained observed baseline
+
+The retained corpus may be relocated without rewriting its historical seals.
+The verifier accepts an old `exact_cleanup_target` only when a schema-1
+same-filesystem relocation record maps the same relative path and the retained
+inventory hash in that record still verifies. An unrecorded path change fails
+closed.
+
+Verify the retained inventory and create a private, already-observed baseline
+without opening either holdout:
+
+```bash
+python3 scripts/verify-audio-integrity-retained-inventory.py \
+  --inventory <CORPUS_ROOT>/retained-corpora-inventory-20260731-005.json \
+  --relocation <CORPUS_ROOT>/relocation-20260801.json \
+  --output <PRIVATE_RUN_ROOT>/inventory-verification.json
+
+python3 scripts/compose-audio-integrity-baseline-manifest.py \
+  --corpus-root <CORPUS_ROOT> \
+  --output <PRIVATE_RUN_ROOT>/manifest.json
+
+python3 scripts/shard-audio-integrity-manifest.py \
+  --manifest <PRIVATE_RUN_ROOT>/manifest.json \
+  --output-directory <PRIVATE_RUN_ROOT>/shards \
+  --shard-count 32
+
+cargo build --release --example audio_integrity_benchmark
+caffeinate -is nice -n 15 \
+  python3 scripts/run-audio-integrity-shards.py \
+  --shard-directory <PRIVATE_RUN_ROOT>/shards \
+  --report-directory <PRIVATE_RUN_ROOT>/shard-reports \
+  --audio-root <CORPUS_ROOT> \
+  --jobs 1
+
+python3 scripts/combine-audio-integrity-measurement-shards.py \
+  --manifest <PRIVATE_RUN_ROOT>/manifest.json \
+  --shard-directory <PRIVATE_RUN_ROOT>/shards \
+  --report-directory <PRIVATE_RUN_ROOT>/shard-reports \
+  --output <PRIVATE_RUN_ROOT>/raw-report.json
+
+python3 scripts/analyze-audio-integrity-measurement-baseline.py \
+  --manifest <PRIVATE_RUN_ROOT>/manifest.json \
+  --report <PRIVATE_RUN_ROOT>/raw-report.json \
+  --output <PRIVATE_RUN_ROOT>/aggregate-report.json
+```
+
+Source groups are assigned by a stable SHA-256 rule, so each group remains in
+one shard and a long run can resume only from complete, validated reports. The
+shard driver explicitly disables the benchmark example's legacy full transform
+grid; that archived research probe is not part of the current feature and
+would distort throughput without changing `compression_trace`. The
+composer includes 5,280 cases whose labels or feature scores were previously
+observed. It excludes the 280-case codec-only SQAM transfer subset and the
+sealed release holdout. The schema-2 aggregate contains no paths or case-level
+rows and explicitly states that classification and calibration metrics do not
+exist for the verdict-free feature-version-0 baseline.
+
+## Frozen external-detector failure atlas
+
+The exact Cannam published-weight CNN is replayed as a fixed baseline, not
+tuned or promoted. Its method and metrics are frozen in
+[`baseline-failure-atlas-preregistration-20260802.md`](../../docs/research/baseline-failure-atlas-preregistration-20260802.md).
+Build revision `7a70bd8d15e68b0b1942a9d3deac6ad4d8293b8b` outside the repository,
+bind the plugin and host binaries by hash, and run the complete already-consumed
+manifest with one low-priority worker:
+
+First select the 104 retained case IDs from the historical 112-case report and
+score them with the same runner:
+
+```bash
+python3 scripts/verify-vamp-lossy-detector-pilot-replay.py compose \
+  --full-manifest <PRIVATE_BASELINE_ROOT>/manifest.json \
+  --historical-report <PRIVATE_CANNAM_RUN_ROOT>/historical-pilot-report.json \
+  --output <PRIVATE_CANNAM_RUN_ROOT>/pilot-manifest.json
+
+# Run evaluate-vamp-lossy-detector.py against pilot-manifest.json with the
+# exact tool arguments shown below, writing pilot-raw-report.json.
+
+python3 scripts/verify-vamp-lossy-detector-pilot-replay.py compare \
+  --manifest <PRIVATE_CANNAM_RUN_ROOT>/pilot-manifest.json \
+  --historical-report <PRIVATE_CANNAM_RUN_ROOT>/historical-pilot-report.json \
+  --replay-report <PRIVATE_CANNAM_RUN_ROOT>/pilot-raw-report.json \
+  --output <PRIVATE_CANNAM_RUN_ROOT>/pilot-replay-verification.json
+```
+
+The selector fails unless the overlap is exactly 104 cases and the eight
+unretained cases are the historical private-source sharp-low-pass class. The
+initial comparison stopped because the retained files are 30-second excerpts,
+not full-track wrapper equivalents. See
+[`baseline-failure-atlas-amendment-20260802-001.md`](../../docs/research/baseline-failure-atlas-amendment-20260802-001.md).
+The corrected environment gate replays the retained inputs from bound partials
+and requires byte-identical output. The historical comparison is retained as
+duration-sensitivity evidence, not independent evidence.
+
+Then run P1:
+
+```bash
+caffeinate -is nice -n 15 \
+  python3 scripts/evaluate-vamp-lossy-detector.py \
+  --manifest <PRIVATE_BASELINE_ROOT>/manifest.json \
+  --expected-manifest-sha256 e19b5b408fedf348fa9b6499d5cdd1b6b734d84b19b895d5b0a528f0c4423b7a \
+  --audio-root <CORPUS_ROOT> \
+  --host <VAMP_SIMPLE_HOST> \
+  --vamp-path <EXACT_CANNAM_BUILD_DIRECTORY> \
+  --repository <EXACT_CANNAM_CHECKOUT> \
+  --plugin-sdk-repository <PINNED_VAMP_SDK_CHECKOUT> \
+  --plugin-binary <EXACT_CANNAM_PLUGIN_BINARY> \
+  --partial-directory <PRIVATE_CANNAM_RUN_ROOT>/partials \
+  --jobs 1 \
+  --output <PRIVATE_CANNAM_RUN_ROOT>/raw-report.json
+
+python3 scripts/analyze-vamp-lossy-detector.py \
+  --manifest <PRIVATE_BASELINE_ROOT>/manifest.json \
+  --report <PRIVATE_CANNAM_RUN_ROOT>/raw-report.json \
+  --preregistration docs/research/baseline-failure-atlas-preregistration-20260802.md \
+  --output <PRIVATE_CANNAM_RUN_ROOT>/aggregate-report.json
+```
+
+Partials are bound to the manifest, audio, revision, plugin, host, and fixed
+0.5-window/25%-file rule. Case IDs are hashed in partial filenames and are not
+printed to progress logs. The aggregate is path-free and reports both the
+general 5,280-case population and the task-matched 2,261-case MP3-128 view.
+Neither is independent validation.
+
+## Preregistered exact-hybrid ablation
+
+The only retained detector direction is the exact MP3 hybrid-transform
+measurement described in
+`docs/research/exact-hybrid-ablation-preregistration-20260801.md`. Build its
+isolated research crate and run it only after the raw observed baseline is
+complete:
+
+```bash
+cargo test --manifest-path \
+  research/exact-transform/ablation-v1/Cargo.toml
+cargo build --release --manifest-path \
+  research/exact-transform/ablation-v1/Cargo.toml
+
+caffeinate -is nice -n 15 \
+  python3 scripts/run-audio-integrity-exact-hybrid-ablation.py \
+  --manifest <PRIVATE_RUN_ROOT>/manifest.json \
+  --baseline-report <PRIVATE_RUN_ROOT>/raw-report.json \
+  --corpus-root <CORPUS_ROOT> \
+  --runner research/exact-transform/ablation-v1/target/release/lossytrace-exact-hybrid-ablation \
+  --output <PRIVATE_RUN_ROOT>/exact-hybrid-raw.json \
+  --jobs 1
+
+python3 scripts/verify-audio-integrity-exact-hybrid-replay.py \
+  --archive <CORPUS_ROOT>/private/audio-integrity-exact-transform-research-20260731-001.tar.zst \
+  --ablation-report <PRIVATE_RUN_ROOT>/exact-hybrid-raw.json \
+  --output <PRIVATE_RUN_ROOT>/exact-hybrid-replay.json
+
+python3 scripts/analyze-audio-integrity-exact-hybrid-ablation.py \
+  --manifest <PRIVATE_RUN_ROOT>/manifest.json \
+  --baseline-report <PRIVATE_RUN_ROOT>/raw-report.json \
+  --ablation-report <PRIVATE_RUN_ROOT>/exact-hybrid-raw.json \
+  --replay-report <PRIVATE_RUN_ROOT>/exact-hybrid-replay.json \
+  --output <PRIVATE_RUN_ROOT>/exact-hybrid-evaluation.json
+```
+
+The runner selects all observed negatives and only the scoped MP3-128
+controlled positives. It checkpoints each case, binds audio to the earlier
+baseline hash, and keeps paths and case-level features outside Git. The replay
+verifier reads the archived v32 evidence directly from its checksum-bound
+Zstandard archive. The final evaluator emits a path-free leave-one-source-
+domain-out report; it does not open either holdout or create a probability.
+
+## Lossy-original/container equivalence
+
+Lossy originals and their decoded lossless wrappers are staged ephemerally so
+decoder/container behavior is measured rather than assumed:
+
+```bash
+python3 scripts/stage-audio-integrity-container-equivalence.py stage \
+  --manifest <PRIVATE_RUN_ROOT>/manifest.json \
+  --corpus-root <CORPUS_ROOT> \
+  --destination <PRIVATE_EQUIVALENCE_ROOT> \
+  --groups-per-domain 2
+
+python3 scripts/stage-audio-integrity-container-equivalence.py verify \
+  --root <PRIVATE_EQUIVALENCE_ROOT>
+
+LOSSYTRACE_RESEARCH_SKIP_TRANSFORM_GRID=1 \
+  python3 scripts/benchmark-audio-integrity.py \
+  --manifest <PRIVATE_EQUIVALENCE_ROOT>/manifest.json run \
+  --audio-root <PRIVATE_EQUIVALENCE_ROOT> \
+  --fingerprints <PRIVATE_EQUIVALENCE_ROOT>/fingerprints.json \
+  --binary target/release/examples/audio_integrity_benchmark \
+  --no-build \
+  --jobs 1 \
+  --output <PRIVATE_EQUIVALENCE_ROOT>/raw-report.json
+
+python3 scripts/analyze-audio-integrity-container-equivalence.py \
+  --manifest <PRIVATE_EQUIVALENCE_ROOT>/manifest.json \
+  --report <PRIVATE_EQUIVALENCE_ROOT>/raw-report.json \
+  --output <PRIVATE_EQUIVALENCE_ROOT>/aggregate-report.json
+```
+
+The deterministic selection takes two eligible PCM source groups per observed
+content domain and creates MP3, AAC, Opus, and explicitly named native-FFmpeg
+Vorbis intermediates plus FLAC, WAV, and AIFF wrappers. MP3, AAC, and Vorbis
+originals are also analyzed. The current Symphonia decoder has no Opus codec,
+so the Opus intermediate is checksum-committed and removed after wrapper
+generation; its wrappers are compared with one another and the limitation is
+explicit in the manifest. The current selection yields 210 analysis cases
+from 14 source groups. Generated audio, commands, fingerprints, and private
+source commitments remain outside Git and are removed after the path-free
+aggregate has been verified.
+
 ## Corpus setup
 
 Copy `manifest.example.json` to the ignored `manifest.json`, replace the example

@@ -1,0 +1,186 @@
+{
+  "external_positive_count": 0,
+  "feature_version": 0,
+  "features_computed": false,
+  "inputs": {
+    "analysis_manifest_plan_sha256": "cef15bfd74b3f64f0cccc5d4898e9a4808acb85f9231550e7fc13b577efbf5cc",
+    "constructor_manifest_sha256": "0fe9bde6eed57a61d3c721d5bfd8cd36031b9981442c39dc502162aeeab3a1b1",
+    "constructor_result_sha256": "45588d01d0bbc6afde2245034c297dc799ccc3fb66e52892b9b6f1d92c81d1fa",
+    "contract_sha256": "f965046179818842fcd8f7669f6092f23423d83a426142705393dc4b304252e4",
+    "factor_levels_sha256": "4065553ef4fbe505ea0d79b149570bc1483396dbcc1de52597890e61f59481bd",
+    "fractional_assignment_sha256": "46039d6fc22a6764daf81684d109e43a9f96b97af7d85e99258b1efe0449c5bb",
+    "generator_sha256": "8c3134f5a5abc3cd50be227c6828cf3edc6f395cda6effe91fdb85b47193963c",
+    "inventory_sha256": "f08ed9a176809cc916cf7bce8ebcd1f2aca5297830daf190ff972a49c58660de",
+    "manifest_validator_sha256": "28b2d91814a8943057a089b0ff3b2ebe3ba170a96f463e8ff425a810006a50a3",
+    "private_analysis_manifest_sha256": "0937dfec3f9d5d203ec3d8c1700a3ae947226999e72a379b226c4c825fab96f9",
+    "source_allocation_sha256": "e4b7d2ab42253e00ce0e0b95c8049193f9b6178ecbb6212811fde96d58c088d4",
+    "toolchain_sha256": "d2af2f0b78b184189806d724c294d7606f37d2763839e17c9289f7957da52070"
+  },
+  "inventory": {
+    "case_count": 12885,
+    "decoder_count": 6,
+    "encoder_count": 10,
+    "encoder_setting_count": 46,
+    "recipe_count": 8446,
+    "source_collection_count": 19,
+    "transform_count": 10
+  },
+  "manifest_id": "lossytrace-v2-factorial-manifest-20260802-001",
+  "partition_opening": {
+    "encoder_transfer": "Manifest identities and labels may be materialized and its freeze profile validated, but features and scores remain sealed until any new representation and analysis are frozen.",
+    "external_transfer": "Negative-only manifest identities may be materialized for lineage validation. Positive construction, features, and scores remain sealed for a frozen survivor.",
+    "mechanism_development": "Manifest identities and labels may be materialized. Features and baseline scores require a separately frozen extraction plan."
+  },
+  "partition_summary": {
+    "encoder_transfer": {
+      "case_count": 2738,
+      "controlled_positive_case_count": 1368,
+      "controlled_positive_source_group_count": 102,
+      "encoder_lineage_count_by_codec": {
+        "aac_lc": 1,
+        "mp3": 1,
+        "opus": 1,
+        "vorbis": 1
+      },
+      "encoder_setting_count_by_codec": {
+        "aac_lc": 4,
+        "mp3": 4,
+        "opus": 4,
+        "vorbis": 2
+      },
+      "hard_negative_source_groups_by_class": {
+        "channel_remix_pcm": 20,
+        "container_only_rewrite": 20,
+        "dither_and_bitdepth_pcm": 20,
+        "gain_only_pcm": 20,
+        "leading_silence_pcm": 20,
+        "lowpass_only_pcm": 20,
+        "resample_only_pcm": 20,
+        "short_duration_pcm": 20,
+        "trim_only_pcm": 20
+      },
+      "negative_case_count": 1370,
+      "negative_source_group_count": 102,
+      "partition_group_count": 102,
+      "positive_source_groups_by_codec": {
+        "aac_lc": 102,
+        "mp3": 102,
+        "opus": 102,
+        "vorbis": 102
+      },
+      "source_domain_count": 6,
+      "source_group_count": 102,
+      "tier_a_negative_partition_group_count": 102
+    },
+    "external_transfer": {
+      "case_count": 494,
+      "controlled_positive_case_count": 0,
+      "controlled_positive_source_group_count": 0,
+      "encoder_lineage_count_by_codec": {},
+      "encoder_setting_count_by_codec": {},
+      "hard_negative_source_groups_by_class": {
+        "channel_remix_pcm": 20,
+        "container_only_rewrite": 20,
+        "dither_and_bitdepth_pcm": 20,
+        "gain_only_pcm": 20,
+        "leading_silence_pcm": 20,
+        "lowpass_only_pcm": 20,
+        "resample_only_pcm": 20,
+        "short_duration_pcm": 20,
+        "trim_only_pcm": 20
+      },
+      "negative_case_count": 494,
+      "negative_source_group_count": 164,
+      "partition_group_count": 164,
+      "positive_source_groups_by_codec": {},
+      "source_domain_count": 7,
+      "source_group_count": 164,
+      "tier_a_negative_partition_group_count": 164
+    },
+    "mechanism_development": {
+      "case_count": 9653,
+      "controlled_positive_case_count": 4988,
+      "controlled_positive_source_group_count": 527,
+      "encoder_lineage_count_by_codec": {
+        "aac_lc": 2,
+        "mp3": 2,
+        "opus": 1,
+        "vorbis": 1
+      },
+      "encoder_setting_count_by_codec": {
+        "aac_lc": 8,
+        "mp3": 10,
+        "opus": 8,
+        "vorbis": 6
+      },
+      "hard_negative_source_groups_by_class": {
+        "channel_remix_pcm": 40,
+        "container_only_rewrite": 40,
+        "dither_and_bitdepth_pcm": 40,
+        "gain_only_pcm": 40,
+        "leading_silence_pcm": 40,
+        "lowpass_only_pcm": 40,
+        "resample_only_pcm": 40,
+        "short_duration_pcm": 40,
+        "trim_only_pcm": 40
+      },
+      "negative_case_count": 4665,
+      "negative_source_group_count": 527,
+      "partition_group_count": 527,
+      "positive_source_groups_by_codec": {
+        "aac_lc": 527,
+        "mp3": 527,
+        "opus": 527,
+        "vorbis": 527
+      },
+      "source_domain_count": 6,
+      "source_group_count": 527,
+      "tier_a_negative_partition_group_count": 234
+    }
+  },
+  "plan_id": "lossytrace-v2-analysis-manifest-20260802-001",
+  "public_verdict_enabled": false,
+  "reproducibility": {
+    "complete_replays_observed": 2,
+    "complete_replays_required": 2,
+    "plan_sha256": "cef15bfd74b3f64f0cccc5d4898e9a4808acb85f9231550e7fc13b577efbf5cc",
+    "private_manifest_sha256": "0937dfec3f9d5d203ec3d8c1700a3ae947226999e72a379b226c4c825fab96f9",
+    "private_manifests_byte_identical": true,
+    "run_report_sha256": "1951dd6bd99dc1c8bbe47b8a1b8814c84a6b7a567b3ae8235a1d023c6ae1e7f4",
+    "run_reports_byte_identical": true
+  },
+  "schema_version": 1,
+  "scores_opened": false,
+  "split_checks": {
+    "encoder_transfer_lineage_disjoint": true,
+    "external_encoder_lineage_disjoint": true,
+    "partition_group_single_partition": true,
+    "source_collection_single_partition": true,
+    "source_group_single_partition": true,
+    "source_lineage_single_partition": true
+  },
+  "state": "analysis_manifest_path_free_evidence",
+  "summary": {
+    "all_artifacts_rehashed": true,
+    "analysis_pcm_sha256_set_digest": "fd27fa96b29327583d3226d15adeda9c18df8f46dda620fa0093e24d7b06a305",
+    "artifact_bytes": 13679285412,
+    "artifact_sha256_set_digest": "5490a59466a189c09e9308936ae2967e18778d5963004ce162c3d48eead6de36",
+    "case_count": 12885,
+    "controlled_positive_count": 6356,
+    "negative_count": 6529
+  },
+  "validation_profiles": {
+    "encoder_transfer_freeze": {
+      "valid": true,
+      "validation_profile": "encoder_transfer_freeze"
+    },
+    "mechanism_development_freeze": {
+      "valid": true,
+      "validation_profile": "mechanism_development_freeze"
+    },
+    "structural": {
+      "valid": true,
+      "validation_profile": "structural"
+    }
+  }
+}

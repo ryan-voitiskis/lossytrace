@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "plan_id": "paired-rating-ui-20260905-001",
+  "state": "silent_synthetic_ui_integration_only",
+  "purpose": "Exercise locked forced choice and two explicit candidate grades through an ephemeral silent UI and assignment-bound synthetic Python analysis, without opening playback or human collection.",
+  "bindings": {
+    "paired_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/paired-rating-protocol-plan.json",
+      "sha256": "d3578a823277d8542c1f4c9cc7d18ead03948324b5103ba9e512585287983192"
+    },
+    "paired_implementation": {
+      "path": "scripts/perceptual_degradation_paired_rating.py",
+      "sha256": "6a9753b9064df1d61950775684a25fa19bd4d8c5c77a97c051851187cf795c7e"
+    },
+    "html": {
+      "path": "research/listening-paired-ui/index.html",
+      "sha256": "9e96bc85e1cfd95f359bb8851f8269a3e809a58f1625a55da87b0a5fd184bd2d"
+    },
+    "style": {
+      "path": "research/listening-paired-ui/style.css",
+      "sha256": "d0102bd33a5c952c23b710afb088a2ac1941e014562d5bc84ac936785e595e13"
+    },
+    "state_machine": {
+      "path": "research/listening-paired-ui/state.js",
+      "sha256": "01e7a12172f87a89a61941f7f6716da09320480ad818c6f5c315954a5064572a"
+    },
+    "application": {
+      "path": "research/listening-paired-ui/app.js",
+      "sha256": "58f9222e1a5044fa09ee213745716cd4936ac98663f2c65247c5e85b7a88f94b"
+    },
+    "public_fixture": {
+      "path": "research/listening-paired-ui/fixture.js",
+      "sha256": "66b05f0dca64bfbdf72af50a5b868659b68859c85ccb5656070cd016b37fcf27"
+    }
+  },
+  "access_boundary": {
+    "synthetic_execution_only": true,
+    "silent_browser_ui_test_authorized": true,
+    "audio_access_authorized": false,
+    "playback_authorized": false,
+    "human_collection_authorized": false,
+    "observed_response_input_authorized": false,
+    "response_persistence_authorized": false,
+    "external_network_submission_authorized": false,
+    "metric_execution_authorized": false,
+    "no_reference_training_authorized": false,
+    "public_verdict_enabled": false
+  },
+  "execution": {
+    "cli_input": "generated_synthetic_fixtures_only",
+    "browser_input": "arbitrary_automation_test_values_only_not_operator_ratings",
+    "served_content": "dedicated_loopback_static_asset_directory_only",
+    "browser_evidence": "separate_path_free_observation_record_bound_to_tested_assets",
+    "parity_replays": 2,
+    "byte_identical_required": true,
+    "workers": 1
+  },
+  "retained_boundaries": {
+    "old_player_or_predecessor_modified": false,
+    "default_grade_allowed": false,
+    "incorrect_choices_filtered": false,
+    "signed_differences_clipped": false,
+    "legacy_numeric_gates_transferred": false,
+    "live_listener_collection_qualified": false
+  }
+}

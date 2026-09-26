@@ -1,0 +1,138 @@
+{
+  "authorization": {
+    "audio_sample_access_authorized": false,
+    "exact_member_metadata_audit_authorized": true,
+    "human_collection_authorized": false,
+    "no_reference_training_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "provider_processed_condition_or_score_access_authorized": false,
+    "public_and_provider_metadata_read_authorized": true,
+    "public_verdict_enabled": false,
+    "sealed_evidence_access_authorized": false,
+    "source_manifest_allocation_authorized": false,
+    "source_trait_assignment_authorized": false
+  },
+  "bindings": {
+    "failed_confirmation_audit": {
+      "path": "research/toolchains/evidence/perceptual-degradation-source-trait-sparse-tonal-exact-member-confirmation-audit-20260819-001.json",
+      "sha256": "7a624ef5fd1a2205746423280c385307f20d00c9c6183631eef54c0e5efd841e"
+    },
+    "failed_confirmation_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/source-trait-sparse-tonal-exact-member-confirmation-plan.json",
+      "sha256": "75f1747d0c98f27b3e1a2d101e42ce0637a8159933d3e69e60a8235cb0687036"
+    },
+    "failed_confirmation_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-source-trait-sparse-tonal-exact-member-confirmation-20260818-001.json",
+      "sha256": "4299d28d135531ac0d6535052e3cc17f800ea453e33029d2c81350eeb0496fc0"
+    }
+  },
+  "candidate_eligibility": {
+    "all_channel_capture_chain_must_be_explicit": true,
+    "allowed_licences": [
+      "CC0 1.0",
+      "CC BY 4.0"
+    ],
+    "allowed_transformations": [
+      "none",
+      "declared_trim_only"
+    ],
+    "descriptor_class": "sparse_non_tonal_contrast",
+    "disallowed_transformations": [
+      "denoise",
+      "dynamics",
+      "fade",
+      "normalization",
+      "pitch_change",
+      "rendered_or_synthesized_sound_design",
+      "reverb"
+    ],
+    "exact_transformation_history_must_be_explicit": true,
+    "minimum_duration_seconds": "2.000",
+    "original_lossless_provider_wav_must_be_supported": true,
+    "previously_failed_exact_member_must_be_excluded": true,
+    "single_natural_transient_must_be_supported_by_metadata": true
+  },
+  "claim_boundary": {
+    "candidate_metadata_is_descriptor_confirmation": false,
+    "candidate_metadata_is_source_trait_truth": false,
+    "full_objective_complete": false,
+    "public_cli_changed": false,
+    "public_verdict_enabled": false,
+    "source_trait_manifest_frozen": false
+  },
+  "observed_records": [
+    {
+      "capture_history": "Tascam FR-AV2 with Soundman OKM1 binaural microphones",
+      "container_summary": "provider-original WAV; 1.414 seconds",
+      "exact_member_id": "freesound_sound_866967",
+      "licence": "CC0 1.0",
+      "metadata_supports_single_natural_transient": true,
+      "provider_id": "freesound",
+      "provider_record_url": "https://freesound.org/people/Sadiquecat/sounds/866967/",
+      "rejection_reasons": [
+        "duration_below_frozen_minimum",
+        "normalization_and_fades_disclosed"
+      ],
+      "transformation_history": "trimmed and normalized in Audacity with fade in and fade out"
+    },
+    {
+      "capture_history": "left AKG C2000B; right microphone described as uncertain Rode NTG1; both into Fostex FR2-LE",
+      "container_summary": "provider-original WAV; 48000 Hz; 16 bit; stereo; 5.954 seconds",
+      "exact_member_id": "freesound_sound_273338",
+      "licence": "CC0 1.0",
+      "metadata_supports_single_natural_transient": true,
+      "provider_id": "freesound",
+      "provider_record_url": "https://freesound.org/people/othercee/sounds/273338/",
+      "rejection_reasons": [
+        "capture_chain_uncertain_for_one_channel"
+      ],
+      "transformation_history": "unprocessed"
+    },
+    {
+      "capture_history": "Schoeps CCM41 and CCM8 mid-side setup into Sound Devices 744T; reference KT_111126T023",
+      "container_summary": "provider-original WAV; 48000 Hz; 24 bit; stereo; 4.264 seconds",
+      "exact_member_id": "freesound_sound_710084",
+      "licence": "CC0 1.0",
+      "metadata_supports_single_natural_transient": true,
+      "provider_id": "freesound",
+      "provider_record_url": "https://freesound.org/people/felix.blume/sounds/710084/",
+      "rejection_reasons": [
+        "explicit_transformation_history_absent"
+      ],
+      "transformation_history": "not stated on provider record"
+    },
+    {
+      "capture_history": "Zildjian drum-stick impact recorded through a Digitech RP 100",
+      "container_summary": "provider-original WAV; 1.091 seconds",
+      "exact_member_id": "freesound_sound_73385",
+      "licence": "CC0 1.0",
+      "metadata_supports_single_natural_transient": true,
+      "provider_id": "freesound",
+      "provider_record_url": "https://freesound.org/people/soundhead/sounds/73385/",
+      "rejection_reasons": [
+        "duration_below_frozen_minimum",
+        "transformation_history_ambiguous"
+      ],
+      "transformation_history": "provider description says probably unprocessed"
+    },
+    {
+      "capture_history": "not stated on provider record",
+      "container_summary": "provider-original WAV; 2.449 seconds",
+      "exact_member_id": "freesound_sound_728514",
+      "licence": "CC0 1.0",
+      "metadata_supports_single_natural_transient": false,
+      "provider_id": "freesound",
+      "provider_record_url": "https://freesound.org/people/doudar41/sounds/728514/",
+      "rejection_reasons": [
+        "capture_chain_absent",
+        "designed_impact_intent_disclosed",
+        "explicit_transformation_history_absent"
+      ],
+      "transformation_history": "record is grouped in a designed-impact pack; exact processing is not stated"
+    }
+  ],
+  "plan_id": "perceptual-degradation-source-trait-sparse-non-tonal-successor-metadata-audit-20260819-001",
+  "purpose": "Audit exact sparse non-tonal successor routes using provider metadata only, preserving the previous abstention and rejecting any route that lacks permissive rights, original-lossless support, complete capture history, explicit transformation history or natural-waveform eligibility before audio access.",
+  "schema_version": 1,
+  "state": "metadata_only_sparse_non_tonal_successor_audit_frozen_without_audio_access"
+}

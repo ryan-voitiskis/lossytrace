@@ -1,0 +1,348 @@
+{
+  "authority": {
+    "actual_source_audio_access_authorized": false,
+    "committed_metadata_read_authorized": true,
+    "exact_member_selection_authorized": false,
+    "human_collection_authorized": false,
+    "no_reference_training_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "provider_audio_access_authorized": false,
+    "public_verdict_enabled": false,
+    "response_or_outcome_access_authorized": false,
+    "retained_odaq_reference_read_authorized": false,
+    "sealed_evidence_access_authorized": false,
+    "source_trait_assignment_authorized": false,
+    "stimulus_generation_authorized": false,
+    "synthetic_numeric_fixture_execution_authorized": true
+  },
+  "candidate_record_audit": [
+    {
+      "candidate_ids": [
+        "fsdd_v1_0_10"
+      ],
+      "candidate_record_matches_bound_topology": true,
+      "exact_members_frozen": false,
+      "readiness": "candidate_record_present_exact_members_and_natural_trait_unfrozen",
+      "trait_assigned": false,
+      "trait_id": "natural_bandwidth_limit"
+    },
+    {
+      "candidate_ids": [],
+      "candidate_record_matches_bound_topology": true,
+      "exact_members_frozen": false,
+      "readiness": "no_explicit_candidate_record",
+      "trait_assigned": false,
+      "trait_id": "quiet"
+    },
+    {
+      "candidate_ids": [
+        "tinysol_6_0"
+      ],
+      "candidate_record_matches_bound_topology": true,
+      "exact_members_frozen": false,
+      "readiness": "joint_sparse_tonal_candidate_only_exact_members_unfrozen",
+      "trait_assigned": false,
+      "trait_id": "sparse"
+    },
+    {
+      "candidate_ids": [
+        "tinysol_6_0"
+      ],
+      "candidate_record_matches_bound_topology": true,
+      "exact_members_frozen": false,
+      "readiness": "joint_sparse_tonal_candidate_only_exact_members_unfrozen",
+      "trait_assigned": false,
+      "trait_id": "tonal"
+    },
+    {
+      "candidate_ids": [
+        "slakh2100_redux"
+      ],
+      "candidate_record_matches_bound_topology": true,
+      "exact_members_frozen": false,
+      "readiness": "provider_capability_record_present_exact_members_unfrozen",
+      "trait_assigned": false,
+      "trait_id": "synthetic"
+    },
+    {
+      "candidate_ids": [
+        "sonyc_backgrounds_1_0_0"
+      ],
+      "candidate_record_matches_bound_topology": true,
+      "exact_members_frozen": false,
+      "readiness": "candidate_record_present_exact_members_and_noisy_trait_unfrozen",
+      "trait_assigned": false,
+      "trait_id": "noisy"
+    },
+    {
+      "candidate_ids": [],
+      "candidate_record_matches_bound_topology": true,
+      "exact_members_frozen": false,
+      "readiness": "no_explicit_naturally_clipped_reference_candidate",
+      "trait_assigned": false,
+      "trait_id": "clipped"
+    }
+  ],
+  "claim_boundary": {
+    "candidate_records_establish_exact_member_traits": false,
+    "collection_authorized": false,
+    "full_objective_complete": false,
+    "human_truth_present": false,
+    "naturally_clipped_candidate_identified": false,
+    "no_reference_work_eligible": false,
+    "pcm_descriptors_establish_provenance": false,
+    "public_cli_changed": false,
+    "quiet_candidate_identified": false,
+    "shared_sparse_tonal_candidate_establishes_independent_contrasts": false,
+    "source_trait_members_selected": false,
+    "source_trait_scientific_coverage_complete": false,
+    "synthetic_witnesses_are_source_members": false
+  },
+  "decision": {
+    "exact_member_provenance_audit_ready": true,
+    "exact_source_trait_members_frozen": false,
+    "human_collection_authorized": false,
+    "human_truth_present": false,
+    "independent_sparse_tonal_contrasts_required": true,
+    "naturally_clipped_candidate_identified": false,
+    "next_gate": "Obtain separate authority for an exact-member metadata and provenance audit, then require independent quiet, clipped, sparse and tonal candidates before any source-trait manifest can be frozen.",
+    "no_reference_work_eligible": false,
+    "pcm_only_trait_assignment_rejected": true,
+    "public_verdict_enabled": false,
+    "quiet_candidate_identified": false,
+    "source_trait_proof_contract_ready": true,
+    "source_trait_scientific_coverage_complete": false
+  },
+  "implementation_sha256": "dc1144c7502497ffb0b883db709784e880cb4abaf8a5c678d34c9593dbf79cf2",
+  "non_identifiability_witnesses": [
+    {
+      "conclusion": "pcm_alone_cannot_assign_natural_origin",
+      "first_pcm_sha256": "5730be775aaf04eb1eccb70ce32da55c35b61841df7ec7b2d3610111567784a4",
+      "fixture_id": "bandlimited-multitone-s16-v1",
+      "latent_histories": [
+        "capture_chain_natural_bandwidth_limit",
+        "full_band_source_then_generated_lowpass"
+      ],
+      "latent_history_count": 2,
+      "pcm_byte_count": 16000,
+      "pcm_byte_identical": true,
+      "second_pcm_sha256": "5730be775aaf04eb1eccb70ce32da55c35b61841df7ec7b2d3610111567784a4",
+      "source_member_included": false,
+      "trait_truth_included": false,
+      "witness_id": "natural-bandwidth-versus-generated-lowpass"
+    },
+    {
+      "conclusion": "pcm_alone_cannot_assign_preserved_gain_history",
+      "first_pcm_sha256": "9cf2bfcda48789df63abf533e1af98ed05e0b0d6e1c12209067c0ab25005c388",
+      "fixture_id": "quiet-tone-s16-v1",
+      "latent_histories": [
+        "preserved_low_level_source",
+        "ordinary_level_source_then_gain_attenuation"
+      ],
+      "latent_history_count": 2,
+      "pcm_byte_count": 16000,
+      "pcm_byte_identical": true,
+      "second_pcm_sha256": "9cf2bfcda48789df63abf533e1af98ed05e0b0d6e1c12209067c0ab25005c388",
+      "source_member_included": false,
+      "trait_truth_included": false,
+      "witness_id": "quiet-source-versus-attenuated-source"
+    },
+    {
+      "conclusion": "pcm_alone_cannot_assign_synthetic_origin",
+      "first_pcm_sha256": "1015b2c3cff2b0a3cb72da8f03a1ce8d57996cda95bc126f5ff3b3c42a0a20d1",
+      "fixture_id": "deterministic-noise-s16-v1",
+      "latent_histories": [
+        "documented_synthetic_generation",
+        "captured_noise_rendered_to_same_pcm"
+      ],
+      "latent_history_count": 2,
+      "pcm_byte_count": 16000,
+      "pcm_byte_identical": true,
+      "second_pcm_sha256": "1015b2c3cff2b0a3cb72da8f03a1ce8d57996cda95bc126f5ff3b3c42a0a20d1",
+      "source_member_included": false,
+      "trait_truth_included": false,
+      "witness_id": "synthetic-noise-versus-recorded-noise"
+    },
+    {
+      "conclusion": "pcm_plateaus_alone_cannot_assign_clipping_history",
+      "first_pcm_sha256": "ec4e649af8e6cc068ca69d8f483d2f2d9dbe9d39cd03c5555b640a1f5fbf418e",
+      "fixture_id": "flat-top-wave-s16-v1",
+      "latent_histories": [
+        "source_or_capture_chain_clipping",
+        "intentional_flat_top_waveform_generation"
+      ],
+      "latent_history_count": 2,
+      "pcm_byte_count": 16000,
+      "pcm_byte_identical": true,
+      "second_pcm_sha256": "ec4e649af8e6cc068ca69d8f483d2f2d9dbe9d39cd03c5555b640a1f5fbf418e",
+      "source_member_included": false,
+      "trait_truth_included": false,
+      "witness_id": "source-clipping-versus-intentional-flat-top"
+    }
+  ],
+  "overlap_and_contrast_cases": [
+    {
+      "active_block_count": 2,
+      "block_count": 10,
+      "fixture_id": "sparse-tonal-overlap",
+      "frame_count": 32000,
+      "pcm_sha256": "c5e6f725d69e931a45c96ce1fe5180b5c83b1026c1c292a372c3a3bcc6a1726a",
+      "source_member_included": false,
+      "tone_projection_share": 0.999999999,
+      "trait_truth_included": false
+    },
+    {
+      "active_block_count": 2,
+      "block_count": 10,
+      "fixture_id": "sparse-nontonal-contrast",
+      "frame_count": 32000,
+      "pcm_sha256": "77ba07f99e1458bc792d05504a6757bda8780fa1b78a90f077b06018c2ae2232",
+      "source_member_included": false,
+      "tone_projection_share": 2.1551e-05,
+      "trait_truth_included": false
+    },
+    {
+      "active_block_count": 10,
+      "block_count": 10,
+      "fixture_id": "tonal-nonsparse-contrast",
+      "frame_count": 32000,
+      "pcm_sha256": "fa5b4a1b7320483fa711e407aff0164a31e3bcc707348812653b89a3a27309df",
+      "source_member_included": false,
+      "tone_projection_share": 0.999999999,
+      "trait_truth_included": false
+    }
+  ],
+  "plan_id": "perceptual-degradation-source-trait-identifiability-20260814-001",
+  "plan_sha256": "c15991fbd7062c837db566bb734c5c1bf625fa2cbc5aa5a00983b64d82e28ba3",
+  "proof_obligation_audit": [
+    {
+      "common_proof_obligation_count": 6,
+      "descriptor_evidence": [
+        "bandwidth_support_measurement"
+      ],
+      "independent_contrast": "generated_lowpass_or_codec_cutoff_must_not_define_the_natural_class",
+      "proof_obligations_frozen": true,
+      "proof_obligations_satisfied_by_current_replay": false,
+      "provenance_evidence": [
+        "capture_or_source_bandwidth_record",
+        "no_generated_lowpass_substitution"
+      ],
+      "trait_id": "natural_bandwidth_limit"
+    },
+    {
+      "common_proof_obligation_count": 6,
+      "descriptor_evidence": [
+        "absolute_pcm_level_measurement",
+        "nonzero_activity_support"
+      ],
+      "independent_contrast": "quiet_source_level_must_be_separate_from_gain_control",
+      "proof_obligations_frozen": true,
+      "proof_obligations_satisfied_by_current_replay": false,
+      "provenance_evidence": [
+        "preserved_source_gain_record",
+        "no_attenuation_transform_substitution"
+      ],
+      "trait_id": "quiet"
+    },
+    {
+      "common_proof_obligation_count": 6,
+      "descriptor_evidence": [
+        "time_occupancy_measurement"
+      ],
+      "independent_contrast": "at_least_one_sparse_non_tonal_member_required",
+      "proof_obligations_frozen": true,
+      "proof_obligations_satisfied_by_current_replay": false,
+      "provenance_evidence": [
+        "clean_reference_record"
+      ],
+      "trait_id": "sparse"
+    },
+    {
+      "common_proof_obligation_count": 6,
+      "descriptor_evidence": [
+        "spectral_concentration_measurement"
+      ],
+      "independent_contrast": "at_least_one_tonal_non_sparse_member_required",
+      "proof_obligations_frozen": true,
+      "proof_obligations_satisfied_by_current_replay": false,
+      "provenance_evidence": [
+        "clean_reference_record"
+      ],
+      "trait_id": "tonal"
+    },
+    {
+      "common_proof_obligation_count": 6,
+      "descriptor_evidence": [],
+      "independent_contrast": "waveform_similarity_to_acoustic_or_noise_sources_cannot_assign_origin",
+      "proof_obligations_frozen": true,
+      "proof_obligations_satisfied_by_current_replay": false,
+      "provenance_evidence": [
+        "documented_signal_generation_or_synthesis_origin"
+      ],
+      "trait_id": "synthetic"
+    },
+    {
+      "common_proof_obligation_count": 6,
+      "descriptor_evidence": [
+        "spectral_temporal_noise_support_measurement"
+      ],
+      "independent_contrast": "low_level_or_synthetic_noise_alone_cannot_define_the_natural_noisy_class",
+      "proof_obligations_frozen": true,
+      "proof_obligations_satisfied_by_current_replay": false,
+      "provenance_evidence": [
+        "capture_or_scene_noise_record"
+      ],
+      "trait_id": "noisy"
+    },
+    {
+      "common_proof_obligation_count": 6,
+      "descriptor_evidence": [
+        "plateau_or_saturation_support_measurement"
+      ],
+      "independent_contrast": "generated_hard_clipping_control_cannot_substitute_for_naturally_clipped_reference",
+      "proof_obligations_frozen": true,
+      "proof_obligations_satisfied_by_current_replay": false,
+      "provenance_evidence": [
+        "source_or_capture_chain_clipping_record",
+        "intentional_waveform_exclusion"
+      ],
+      "trait_id": "clipped"
+    }
+  ],
+  "replay_observation": {
+    "byte_identical": true,
+    "fresh_temporary_replay_count": 2,
+    "paths_included": false,
+    "payload_sha256s": [
+      "ebd9d9ca7b17092b5b8dea619ae75c4a587bbbfd688dd3f26096815947c282ca",
+      "ebd9d9ca7b17092b5b8dea619ae75c4a587bbbfd688dd3f26096815947c282ca"
+    ],
+    "timing_included": false
+  },
+  "report_id": "perceptual-degradation-source-trait-identifiability-20260814-001",
+  "resources": {
+    "generated_audio_retained": false,
+    "maximum_workers_used": 1,
+    "minimum_free_disk_gib_preserved": 15
+  },
+  "schema_version": 1,
+  "state": "score_blind_source_trait_identifiability_replayed",
+  "summary": {
+    "actual_audio_accessed": false,
+    "byte_identical_pcm_witness_count": 4,
+    "explicit_candidate_record_count": 5,
+    "listener_response_collected": false,
+    "missing_explicit_candidate_traits": [
+      "quiet",
+      "clipped"
+    ],
+    "non_identifiability_witness_count": 4,
+    "overlap_and_contrast_fixture_count": 3,
+    "perceptual_metric_executed": false,
+    "proof_obligation_record_count": 7,
+    "public_verdict_enabled": false,
+    "required_source_trait_count": 7,
+    "source_member_selected": false,
+    "trait_truth_included": false
+  }
+}

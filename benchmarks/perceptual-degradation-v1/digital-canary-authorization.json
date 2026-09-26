@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "proposal_id": "digital-native-canary-20260908-001",
+  "proposal_sha256": "85b54faa61f589ea740d10ddd712cf9c4f4d85ba58dec43d0af8133dcd8a92c0",
+  "runner_sha256": "1c43e326fd78131e588f23a42a7b8672d312a27b9225c222b7c2b568fbc8d8cb",
+  "responsible_user_execution_approved": true,
+  "one_selected_reference_two_six_case_replays_authorized": true,
+  "metric_playback_listener_training_authorized": false
+}

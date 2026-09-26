@@ -1,0 +1,342 @@
+{
+  "schema_version": 1,
+  "plan_id": "perceptual-degradation-additional-permissive-provider-allocation-feasibility-20260814-001",
+  "state": "score_blind_aggregate_capacity_sensitivity_no_member_allocation",
+  "purpose": "Determine whether four additional permissive purpose-recorded music providers change the prior provider-pure arithmetic feasibility result without selecting source members or promoting metadata capacity to listening truth.",
+  "bindings": {
+    "additional_provider_observation": {
+      "path": "research/toolchains/evidence/perceptual-degradation-additional-permissive-provider-public-metadata-observation-20260814-001.json",
+      "sha256": "53770382c6c6e4f136ec178eb6ccf30e4660d2a54d9326ac3a5da74b6c21fa04"
+    },
+    "pending_source_disposition": {
+      "path": "benchmarks/perceptual-degradation-v1/pending-source-provenance-disposition.json",
+      "sha256": "448e00f4e8370b907d23af2b47fa32a647541bac0f6cc823819a5593e860be7b"
+    },
+    "predecessor_candidate_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/permissive-multiprovider-source-candidate-plan.json",
+      "sha256": "3699fe67c402bb38f4472dd63102212e2a05bd1b315e37d17f39dd4c08f38782"
+    },
+    "predecessor_provider_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/permissive-provider-allocation-feasibility-plan.json",
+      "sha256": "02969f38ae6ad69b221b8285f16769d726c8dc3e3896d5647f0f20a662d3e1a2"
+    },
+    "predecessor_provider_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-permissive-provider-allocation-feasibility-20260814-001.json",
+      "sha256": "cb81d0016ab8ad4916ffdb5ad82203225d0d090af7554e50d86c575047d166d7"
+    },
+    "listening_feasibility_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/listening-feasibility-frontier-plan.json",
+      "sha256": "02f3976e485f167469a4c8a0fe7d04a8fb8f55185b6169136c6e8d37e63daf36"
+    },
+    "listening_feasibility_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-listening-feasibility-frontier-20260813-001.json",
+      "sha256": "c680fb161f3fca350109c321ee867c727eae6841eba7a6c96ce3278c0657a006"
+    },
+    "full_reference_evaluation_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/full-reference-evaluation-plan.json",
+      "sha256": "517d4bb3f1e504593007bdd85b773e2532de6bf993e173eac3b551bf99d19b0b"
+    }
+  },
+  "authorization": {
+    "aggregate_metadata_computation_authorized": true,
+    "exact_member_selection_authorized": false,
+    "new_audio_acquisition_authorized": false,
+    "retained_odaq_reference_read_authorized": false,
+    "retained_reference_projection_authorized": false,
+    "processed_condition_access_authorized": false,
+    "target_perceptual_degradation_metric_score_access_authorized": false,
+    "target_perceptual_degradation_listening_score_access_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "human_collection_authorized": false,
+    "recruitment_authorized": false,
+    "sealed_evidence_access_authorized": false,
+    "no_reference_training_authorized": false,
+    "public_verdict_enabled": false
+  },
+  "partitions": [
+    "development",
+    "calibration",
+    "transfer",
+    "final_validation"
+  ],
+  "providers": [
+    {
+      "provider_id": "slakh",
+      "source_id": "slakh2100_redux",
+      "provenance": "predecessor_exact_member_audit_candidate",
+      "capabilities": [
+        "synthetic"
+      ],
+      "available_group_capacity": 1710
+    },
+    {
+      "provider_id": "guitarset",
+      "source_id": "guitarset_3371780",
+      "provenance": "predecessor_exact_member_audit_candidate",
+      "capabilities": [
+        "music",
+        "controlled_performance_music"
+      ],
+      "available_group_capacity": 6
+    },
+    {
+      "provider_id": "vctk_clean",
+      "source_id": "vctk_clean_56spk_2017",
+      "provenance": "predecessor_exact_member_audit_candidate",
+      "capabilities": [
+        "speech"
+      ],
+      "available_group_capacity": 56
+    },
+    {
+      "provider_id": "sonyc_backgrounds",
+      "source_id": "sonyc_backgrounds_5129078",
+      "provenance": "predecessor_exact_member_audit_candidate",
+      "capabilities": [
+        "natural"
+      ],
+      "available_group_capacity": 15
+    },
+    {
+      "provider_id": "satp",
+      "source_id": "satp_soundscapes_10159673",
+      "provenance": "predecessor_exact_member_audit_candidate",
+      "capabilities": [
+        "natural"
+      ],
+      "available_group_capacity": 25
+    },
+    {
+      "provider_id": "lombard_grid",
+      "source_id": "lombard_grid_3736465",
+      "provenance": "predecessor_exact_member_audit_candidate",
+      "capabilities": [
+        "speech"
+      ],
+      "available_group_capacity": 54
+    },
+    {
+      "provider_id": "tinysol",
+      "source_id": "tinysol_3685367",
+      "provenance": "predecessor_exact_member_audit_candidate",
+      "capabilities": [
+        "music",
+        "controlled_performance_music"
+      ],
+      "available_group_capacity": 1
+    },
+    {
+      "provider_id": "albumdb",
+      "source_id": "albumdb_19683001",
+      "provenance": "additional_exact_member_audit_candidate",
+      "capabilities": [
+        "music",
+        "mastered_music"
+      ],
+      "available_group_capacity": 10
+    },
+    {
+      "provider_id": "choralebricks",
+      "source_id": "choralebricks_20849469",
+      "provenance": "additional_exact_member_audit_candidate",
+      "capabilities": [
+        "music",
+        "controlled_performance_music"
+      ],
+      "available_group_capacity": 10
+    },
+    {
+      "provider_id": "good_sounds",
+      "source_id": "good_sounds_data2314_v1_0",
+      "provenance": "additional_exact_member_audit_candidate",
+      "capabilities": [
+        "music",
+        "controlled_performance_music"
+      ],
+      "available_group_capacity": 15
+    },
+    {
+      "provider_id": "urmp",
+      "source_id": "urmp_5034983",
+      "provenance": "additional_exact_member_audit_candidate",
+      "capabilities": [
+        "music",
+        "controlled_performance_music"
+      ],
+      "available_group_capacity": 28
+    }
+  ],
+  "solver_policy": {
+    "provider_may_be_assigned_to_at_most_one_partition": true,
+    "unused_provider_allowed": true,
+    "capacity_is_capped_for_state_search_at_each_scenario_threshold": true,
+    "full_provider_capacity_is_not_an_exact_member_selection": true,
+    "capability_labels_are_conservative": true,
+    "synthetic_counts_as_music": false,
+    "controlled_performance_music_counts_as_mastered_music": false,
+    "capacity_witness_is_operational_allocation": false,
+    "candidate_provider_can_be_scientifically_eligible_before_exact_member_audit": false,
+    "deterministic_provider_order": "provider_id_ascending",
+    "deterministic_assignment_order": "unused_then_partition_order"
+  },
+  "scenarios": [
+    {
+      "scenario_id": "expanded_count_only_39_each_partition",
+      "minimum_groups_each_partition": 39,
+      "minimum_providers_each_partition": 0,
+      "capability_minimums_by_partition": {},
+      "capability_provider_minimums_by_partition": {},
+      "expected_arithmetic_feasible": true,
+      "reason_not_eligible": "count-only packing remains confounded and selects no exact members"
+    },
+    {
+      "scenario_id": "expanded_two_providers_39_each_partition",
+      "minimum_groups_each_partition": 39,
+      "minimum_providers_each_partition": 2,
+      "capability_minimums_by_partition": {},
+      "capability_provider_minimums_by_partition": {},
+      "expected_arithmetic_feasible": true,
+      "reason_not_eligible": "provider-slot arithmetic does not establish exact members, independence or a scientific provider-holdout design"
+    },
+    {
+      "scenario_id": "expanded_final_three_domain_minimum",
+      "minimum_groups_each_partition": 39,
+      "minimum_providers_each_partition": 0,
+      "capability_minimums_by_partition": {
+        "final_validation": {
+          "music": 8,
+          "speech": 8,
+          "natural": 8
+        }
+      },
+      "capability_provider_minimums_by_partition": {},
+      "expected_arithmetic_feasible": true,
+      "reason_not_eligible": "a final-partition capacity witness does not freeze domains, exact members or independent source relationships"
+    },
+    {
+      "scenario_id": "expanded_music_minimum_every_partition",
+      "minimum_groups_each_partition": 39,
+      "minimum_providers_each_partition": 0,
+      "capability_minimums_by_partition": {
+        "development": {
+          "music": 8
+        },
+        "calibration": {
+          "music": 8
+        },
+        "transfer": {
+          "music": 8
+        },
+        "final_validation": {
+          "music": 8
+        }
+      },
+      "capability_provider_minimums_by_partition": {},
+      "expected_arithmetic_feasible": true,
+      "reason_not_eligible": "music capacity is dominated by narrow controlled and single-album sources and has no exact-member audit"
+    },
+    {
+      "scenario_id": "expanded_three_domains_every_partition",
+      "minimum_groups_each_partition": 39,
+      "minimum_providers_each_partition": 0,
+      "capability_minimums_by_partition": {
+        "development": {
+          "music": 8,
+          "speech": 8,
+          "natural": 8
+        },
+        "calibration": {
+          "music": 8,
+          "speech": 8,
+          "natural": 8
+        },
+        "transfer": {
+          "music": 8,
+          "speech": 8,
+          "natural": 8
+        },
+        "final_validation": {
+          "music": 8,
+          "speech": 8,
+          "natural": 8
+        }
+      },
+      "capability_provider_minimums_by_partition": {},
+      "expected_arithmetic_feasible": false,
+      "reason_not_eligible": "only two speech and two natural providers exist, so whole-provider separation cannot cover those domains in four partitions"
+    },
+    {
+      "scenario_id": "expanded_mastered_music_minimum_every_partition",
+      "minimum_groups_each_partition": 39,
+      "minimum_providers_each_partition": 0,
+      "capability_minimums_by_partition": {
+        "development": {
+          "mastered_music": 8
+        },
+        "calibration": {
+          "mastered_music": 8
+        },
+        "transfer": {
+          "mastered_music": 8
+        },
+        "final_validation": {
+          "mastered_music": 8
+        }
+      },
+      "capability_provider_minimums_by_partition": {},
+      "expected_arithmetic_feasible": false,
+      "reason_not_eligible": "AlbumDB is the only mastered-music provider and represents one album and narrow genre family"
+    },
+    {
+      "scenario_id": "expanded_final_two_mastered_music_providers",
+      "minimum_groups_each_partition": 39,
+      "minimum_providers_each_partition": 0,
+      "capability_minimums_by_partition": {
+        "final_validation": {
+          "mastered_music": 8
+        }
+      },
+      "capability_provider_minimums_by_partition": {
+        "final_validation": {
+          "mastered_music": 2
+        }
+      },
+      "expected_arithmetic_feasible": false,
+      "reason_not_eligible": "only one candidate provider has mastered-music capability"
+    },
+    {
+      "scenario_id": "expanded_reference_sensitivity_120_each_partition",
+      "minimum_groups_each_partition": 120,
+      "minimum_providers_each_partition": 0,
+      "capability_minimums_by_partition": {},
+      "capability_provider_minimums_by_partition": {},
+      "expected_arithmetic_feasible": false,
+      "reason_not_eligible": "after one partition receives Slakh, the remaining provider-pure capacity cannot fill three 120-group partitions"
+    }
+  ],
+  "decision_boundary": {
+    "selected_source_successor": null,
+    "selected_metric_successor": null,
+    "source_manifest_frozen": false,
+    "provider_allocation_frozen": false,
+    "primary_domains_frozen": false,
+    "exact_member_audit_complete": false,
+    "resource_feasibility_complete": false,
+    "human_truth_collection_authorized": false,
+    "no_reference_work_eligible": false,
+    "final_recommendation_frozen": false
+  },
+  "claim_boundary": {
+    "arithmetic_feasibility_is_scientific_feasibility": false,
+    "available_group_capacity_is_independent_truth": false,
+    "capacity_witness_selects_exact_members": false,
+    "provider_slot_count_proves_provider_transfer": false,
+    "controlled_performance_music_proves_mastered_music_transfer": false,
+    "one_album_proves_multigenre_transfer": false,
+    "current_candidate_pool_supports_three_domains_in_every_partition": false,
+    "current_candidate_pool_supports_mastered_music_in_every_partition": false,
+    "candidate_screen_authorizes_audio_access": false,
+    "candidate_screen_is_full_objective_negative_result": false,
+    "public_cli_changed": false
+  }
+}

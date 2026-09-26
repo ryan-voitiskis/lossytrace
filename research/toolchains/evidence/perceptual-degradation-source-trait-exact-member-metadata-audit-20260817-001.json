@@ -1,0 +1,187 @@
+{
+  "schema_version": 1,
+  "report_id": "perceptual-degradation-source-trait-exact-member-metadata-audit-20260817-001",
+  "state": "bounded_metadata_only_exact_member_audit_complete_one_clipped_candidate_quiet_route_rejected",
+  "observed_on": "2026-08-17",
+  "plan_id": "perceptual-degradation-source-trait-exact-member-metadata-audit-20260817-001",
+  "plan_sha256": "f8b12f6da67b790284aee19aecbfa17581f8f9758e55a5d0cdfeeccb25ab66cc",
+  "access_boundary": {
+    "committed_metadata_and_path_free_audits_read": true,
+    "official_provider_records_read": true,
+    "public_exact_member_records_read": true,
+    "licence_and_attribution_metadata_read": true,
+    "provenance_and_transformation_metadata_read": true,
+    "relationship_metadata_read": true,
+    "technical_container_metadata_read": true,
+    "audio_samples_read": false,
+    "audio_descriptors_computed_or_read": false,
+    "audio_downloaded": false,
+    "provider_scores_or_processed_conditions_accessed": false,
+    "codec_generated": false,
+    "perceptual_metric_executed": false,
+    "playback_performed": false,
+    "listener_response_collected": false,
+    "sealed_evidence_opened": false,
+    "no_reference_training_performed": false,
+    "frozen_retained_drift_result_altered": false,
+    "public_verdict_enabled": false
+  },
+  "public_record_sources": [
+    {
+      "source_id": "sonyc_release_record",
+      "url": "https://zenodo.org/records/5129078",
+      "role": "official_release_version_rights_archive_and_acquisition_metadata"
+    },
+    {
+      "source_id": "freesound_exact_clipped_member",
+      "url": "https://freesound.org/people/unfa/sounds/610933/",
+      "role": "exact_member_rights_capture_chain_transformation_and_container_metadata"
+    },
+    {
+      "source_id": "freesound_api_v2_resources",
+      "url": "https://freesound.org/docs/api/resources_apiv2.html",
+      "role": "provider_definition_of_original_file_type_and_original_quality_download"
+    },
+    {
+      "source_id": "freesound_original_download_faq",
+      "url": "https://freesound.org/help/faq/",
+      "role": "provider_statement_that_downloads_preserve_the_original_uploaded_file_without_transcoding_or_editing"
+    },
+    {
+      "source_id": "cc0_1_0_deed",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "role": "permissive_rights_record"
+    }
+  ],
+  "quiet_audit": {
+    "provider_id": "sonyc_backgrounds_5129078",
+    "release_version": "1.0.0",
+    "licence": "CC BY 4.0",
+    "archive_member_metadata": {
+      "wav_member_count": 550,
+      "conservative_sensor_group_count": 15,
+      "member_identity_fields": [
+        "sensor_id",
+        "date",
+        "quantized_hour",
+        "instance_number",
+        "provider_split"
+      ],
+      "member_level_sound_level_field_present": false,
+      "member_level_quiet_label_present": false,
+      "member_level_transformation_record_present": false,
+      "separate_member_sidecar_metadata_present": false
+    },
+    "common_capture_and_distribution_record": {
+      "identical_microphones": true,
+      "identical_gain_settings": true,
+      "ten_second_sensor_snippets": true,
+      "lossless_flac_sensor_upload_documented": true,
+      "pcm_wav_release_documented": true,
+      "background_selection_used_fault_and_event_classifiers": true,
+      "background_selection_used_absolute_level_threshold": false,
+      "post_capture_attenuation_excluded_for_each_member": false
+    },
+    "pre_audio_obligations": {
+      "permissive_rights": "satisfied",
+      "original_lossless_provenance": "satisfied_at_common_collection_level",
+      "capture_chain_evidence": "satisfied_at_common_collection_level",
+      "transformation_history": "incomplete_for_member_level_gain_preservation",
+      "exact_quiet_member_identity": "not_established",
+      "source_and_derivative_group_boundary": "sensor_group_available_member_unselected",
+      "attribution_record": "available"
+    },
+    "descriptor_obligations": {
+      "absolute_pcm_level_measurement": "closed_not_computed",
+      "nonzero_activity_support": "closed_not_computed"
+    },
+    "exact_member_candidate_identified": false,
+    "route_disposition": "rejected_for_metadata_only_quiet_identification",
+    "reason": "Background classification is not quiet-level evidence. The public exact-member metadata exposes no absolute-level field and does not establish member-level absence of post-capture attenuation, so no SONYC member can be nominated as naturally quiet before prohibited audio descriptor access."
+  },
+  "clipped_audit": {
+    "provider_id": "freesound",
+    "exact_member_id": "freesound_sound_610933",
+    "licence": "CC0 1.0",
+    "public_container_metadata": {
+      "original_upload_type": "flac",
+      "original_upload_is_lossless": true,
+      "sample_rate_hz": 192000,
+      "bit_depth": 24,
+      "channel_count": 1,
+      "duration_seconds": 183.677
+    },
+    "capture_and_transformation_record": {
+      "physical_source_recorded": true,
+      "microphone_model_documented": true,
+      "audio_interface_model_documented": true,
+      "capture_software_documented": true,
+      "capture_rate_and_depth_documented": true,
+      "processing_or_editing_applied": false,
+      "capture_chain_clipping_explicitly_documented": true,
+      "clipping_cause": "microphone_gain_too_high_for_transient_pops",
+      "intentional_flat_top_waveform_excluded_by_record": true,
+      "provider_original_file_download_is_byte_preserving": true
+    },
+    "pre_audio_obligations": {
+      "exact_member_identity": "satisfied",
+      "permissive_item_rights": "satisfied",
+      "original_lossless_upload_or_distribution_provenance": "satisfied",
+      "capture_chain_evidence": "satisfied",
+      "transformation_history": "satisfied_no_processing_or_editing",
+      "intentional_waveform_exclusion": "satisfied_by_accidental_capture_gain_record",
+      "source_and_derivative_group_boundary": "satisfied_conservatively_by_uploader_and_recording_session",
+      "attribution_record": "available_optional_under_cc0"
+    },
+    "descriptor_obligations": {
+      "plateau_or_saturation_support_measurement": "closed_not_computed"
+    },
+    "attribution_record": {
+      "required": false,
+      "recommended_text": "Sound 610933 by unfa on Freesound.org, CC0 1.0",
+      "source_url": "https://freesound.org/people/unfa/sounds/610933/"
+    },
+    "exact_member_candidate_identified": true,
+    "trait_assigned": false,
+    "member_acquired": false,
+    "candidate_status": "exact_metadata_candidate_identified_descriptor_confirmation_acquisition_and_allocation_closed"
+  },
+  "summary": {
+    "required_source_trait_count": 7,
+    "explicit_candidate_record_count_before_audit": 5,
+    "explicit_candidate_record_count_after_audit": 6,
+    "quiet_exact_candidate_identified": false,
+    "naturally_clipped_exact_metadata_candidate_identified": true,
+    "source_trait_assigned": false,
+    "source_member_acquired": false,
+    "audio_accessed": false,
+    "audio_descriptor_computed": false,
+    "source_trait_manifest_frozen": false,
+    "public_verdict_enabled": false
+  },
+  "decision": {
+    "quiet_metadata_only_route_accepted": false,
+    "quiet_metadata_only_route_rejected": true,
+    "naturally_clipped_exact_metadata_candidate_identified": true,
+    "naturally_clipped_trait_truth_established": false,
+    "quiet_candidate_still_missing": true,
+    "independent_sparse_and_tonal_contrasts_still_missing": true,
+    "source_trait_manifest_frozen": false,
+    "human_collection_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "no_reference_work_eligible": false,
+    "public_verdict_enabled": false,
+    "next_gate": "For quiet, either obtain provider clarification establishing exact-member level and gain-preservation metadata or separately authorize a frozen bounded descriptor scan; the SONYC metadata-only route is exhausted. For clipped, separately authorize exact-member acquisition and plateau or saturation confirmation before any trait assignment. Independent sparse and tonal exact-member contrasts and all partition allocation remain separate unfrozen gates."
+  },
+  "claim_boundary": {
+    "background_label_proves_quiet": false,
+    "metadata_candidate_proves_clipped_pcm_trait": false,
+    "quiet_or_clipped_scientific_coverage_complete": false,
+    "source_trait_manifest_frozen": false,
+    "perceptual_truth_present": false,
+    "validation_claim_available": false,
+    "full_objective_complete": false,
+    "public_cli_changed": false,
+    "public_verdict_enabled": false
+  }
+}

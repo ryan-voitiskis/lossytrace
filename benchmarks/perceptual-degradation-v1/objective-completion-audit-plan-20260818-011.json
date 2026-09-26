@@ -1,0 +1,92 @@
+{
+  "authorization": {
+    "actual_codec_generation_authorized": false,
+    "bound_committed_evidence_read_authorized": true,
+    "exact_member_confirmation_reconciliation_authorized": true,
+    "frozen_integer_pcm_descriptor_execution_completed": true,
+    "further_audio_sample_access_authorized": false,
+    "human_collection_authorized": false,
+    "human_response_access_authorized": false,
+    "no_reference_training_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "provider_score_or_processed_condition_access_authorized": false,
+    "public_verdict_enabled": false,
+    "sealed_evidence_access_authorized": false,
+    "source_manifest_allocation_authorized": false,
+    "source_trait_assignment_authorized": false,
+    "synthetic_audit_execution_authorized": true,
+    "two_exact_provider_originals_audio_access_completed": true
+  },
+  "bindings": {
+    "exact_member_confirmation_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/source-trait-exact-member-confirmation-plan.json",
+      "sha256": "ab6df82fb2bec8bafaf583f00ea1e9046e9242406ab51f3e433ed8234743a153"
+    },
+    "exact_member_confirmation_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-source-trait-exact-member-confirmation-20260818-001.json",
+      "sha256": "36bbc563fa0d81d9b3e6a1ede0e920cab4016c957375920285a5bfc776399e7f"
+    },
+    "exact_member_confirmation_validator": {
+      "path": "scripts/validate_perceptual_degradation_source_trait_exact_member_confirmation.py",
+      "sha256": "fe4a52445a9101290126bad4dbca28091d4c6b014ce1e32b3257953bb49982c9"
+    },
+    "predecessor_audit_implementation": {
+      "path": "scripts/perceptual_degradation_objective_completion_audit_v10.py",
+      "sha256": "da1997bae0d0e84fa8fd468d12d1cedc7b037749911238eb5339f856fc64896a"
+    },
+    "predecessor_audit_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/objective-completion-audit-plan-20260817-010.json",
+      "sha256": "55fd063c25d5db6860e80aa5be149a8cc6175490b52d837077ef3f4434f9b5bf"
+    },
+    "predecessor_audit_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-objective-completion-audit-20260817-010.json",
+      "sha256": "bd50fe81596d652c12a6dfa5aecf86b9bf978cc02f87002a2a607e9d8383c221"
+    }
+  },
+  "claim_boundary": {
+    "descriptor_observation_is_perceptual_truth": false,
+    "difficult_negative_scientific_coverage_complete": false,
+    "final_recommendation_available": false,
+    "independent_transfer_supported": false,
+    "objective_complete": false,
+    "perceptual_truth_collected": false,
+    "public_verdict_enabled": false,
+    "quiet_or_clipped_trait_assigned": false,
+    "truth_bearing_source_manifest_frozen": false
+  },
+  "completion_policy": {
+    "all_completion_required_requirements_must_be_satisfied": true,
+    "all_requirement_ids_must_be_present": true,
+    "candidate_without_partition_allocation_counts_as_frozen_manifest": false,
+    "current_recommendation": null,
+    "descriptor_observation_counts_as_trait_truth": false,
+    "frozen_descriptor_execution_counts_as_obligation_observed": true,
+    "green_tests_count_as_scientific_evidence": false,
+    "metadata_plus_descriptor_counts_as_trait_assignment": false,
+    "plateau_or_saturation_event_counts_as_clipping_provenance": false,
+    "quiet_level_without_predeclared_classification_counts_as_trait_truth": false,
+    "seven_candidate_records_count_as_frozen_manifest": false,
+    "shared_sparse_tonal_candidate_counts_as_independent_contrasts": false,
+    "two_exact_provider_originals_count_as_acquired_candidates": true
+  },
+  "plan_id": "perceptual-degradation-objective-completion-audit-20260818-011",
+  "purpose": "Reconcile the two exact-member provider-original acquisitions and byte-identical score-free integer-PCM descriptor replays into the 14-requirement objective without assigning source traits, freezing a source manifest, promoting technical events to provenance or issuing perceptual, validation or verdict claims.",
+  "requirement_ids": [
+    "estimand_is_degradation_not_history",
+    "declared_playback_chain_qualified",
+    "truth_bearing_source_manifest_feasible_and_frozen",
+    "controlled_human_calibration_collected",
+    "perceptual_metric_execution_and_legal_gate_passed",
+    "deterministic_human_calibrated_full_reference_oracle_passed",
+    "transparent_lossy_treated_as_non_degraded",
+    "difficult_natural_and_production_negatives_preserved_in_evaluation",
+    "grouped_source_domain_codec_encoder_transfer_passed",
+    "no_reference_estimator_trained_and_independently_validated",
+    "severity_audibility_artifact_support_uncertainty_abstention_reported",
+    "public_cli_remains_verdict_free",
+    "rigorous_negative_is_accepted_success",
+    "final_research_recommendation_frozen"
+  ],
+  "schema_version": 1,
+  "state": "score_blind_completion_audit_refresh_after_two_exact_member_descriptor_replays"
+}

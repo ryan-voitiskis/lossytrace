@@ -1,0 +1,119 @@
+{
+  "authorization": {
+    "actual_audio_access_authorized": true,
+    "actual_codec_generation_authorized": false,
+    "derived_pcm_retention_authorized": false,
+    "exact_selected_freesound_original_acquisition_authorized": true,
+    "exact_selected_tinysol_member_memory_projection_authorized": true,
+    "human_collection_authorized": false,
+    "no_reference_training_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "playback_authorized": false,
+    "provider_processed_condition_or_score_access_authorized": false,
+    "public_verdict_enabled": false,
+    "sealed_evidence_access_authorized": false,
+    "source_manifest_allocation_authorized": false,
+    "source_trait_assignment_authorized": false,
+    "sparse_tonal_descriptor_execution_authorized": true
+  },
+  "bindings": {
+    "descriptor_implementation": {
+      "path": "scripts/perceptual_degradation_source_trait_sparse_tonal_descriptor.py",
+      "sha256": "90adfa2dec5ad3bd09bdb66094c964fbddd0779765dda54a72fc8b72de557299"
+    },
+    "descriptor_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/source-trait-sparse-tonal-descriptor-plan.json",
+      "sha256": "8b8649fe65ba151f906a544ff08271f2563224e54610156770edcc731f23bdbf"
+    },
+    "descriptor_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-source-trait-sparse-tonal-descriptor-20260818-001.json",
+      "sha256": "dd98911defc3dcdc3233db3a67e253295bfa0e874cc132d4880c342a72078936"
+    },
+    "selection_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/source-trait-sparse-tonal-exact-member-selection-plan.json",
+      "sha256": "d41d2b0135d9dfe7a633a0089424afef78cba719b3c223197dbf8d058e2abde3"
+    },
+    "selection_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-source-trait-sparse-tonal-exact-member-selection-20260818-001.json",
+      "sha256": "984cb65e53a72542ac0735cd84573158414915f519f7db8f146dcea841556006"
+    },
+    "tinysol_public_observation": {
+      "path": "research/sources/evidence/tinysol-6.0-observed-20260802.json",
+      "sha256": "62d2c3d3b63c4b3ed47c3f23885067650b3e17bc5e1ec1ce7606e03e327f47a5"
+    }
+  },
+  "claim_boundary": {
+    "descriptor_class_is_perceptual_truth": false,
+    "full_objective_complete": false,
+    "public_cli_changed": false,
+    "public_verdict_enabled": false,
+    "source_trait_assigned": false,
+    "source_trait_manifest_frozen": false,
+    "technical_descriptor_confirmation_is_listening_evidence": false
+  },
+  "execution_contract": {
+    "all_supported_channels_must_agree": true,
+    "attribution_attachment_required": true,
+    "descriptor_threshold_change_after_observation_allowed": false,
+    "freesound_original_may_be_retained_privately": true,
+    "member_substitution_after_observation_allowed": false,
+    "private_report_count": 2,
+    "private_reports_must_be_byte_identical": true,
+    "public_report_must_exclude_encoded_and_pcm_hashes": true,
+    "public_report_must_exclude_private_paths": true,
+    "public_report_must_exclude_provider_scores_and_processed_conditions": true,
+    "tinysol_member_may_be_extracted_to_disk": false
+  },
+  "members": [
+    {
+      "attribution": "Sound 856645 by BeaconStudio on Freesound.org, CC0 1.0",
+      "expected_container": {
+        "bits_per_sample": 24,
+        "channel_count": 2,
+        "sample_format": "signed_integer_pcm",
+        "sample_rate_hz": 44100
+      },
+      "expected_descriptor_class": "sparse_non_tonal_contrast",
+      "exact_member_id": "freesound_sound_856645",
+      "licence": "CC0 1.0",
+      "maximum_encoded_bytes": 1048576,
+      "private_source_kind": "provider_original_wav",
+      "provider_id": "freesound",
+      "provider_record_url": "https://freesound.org/people/BeaconStudio/sounds/856645/"
+    },
+    {
+      "attribution": "TinySOL version 6.0, IRCAM and contributors, CC BY 4.0",
+      "expected_container": {
+        "bits_per_sample": 16,
+        "channel_count": 1,
+        "sample_format": "signed_integer_pcm",
+        "sample_rate_hz": 44100
+      },
+      "expected_descriptor_class": "tonal_non_sparse_contrast",
+      "exact_member_id": "tinysol_6_0__ob_ord_dsharp4_mf_n_n",
+      "licence": "CC BY 4.0",
+      "maximum_encoded_bytes": 2000000,
+      "private_source_kind": "single_member_of_retained_provider_archive",
+      "provider_id": "tinysol_6_0",
+      "provider_record_url": "https://zenodo.org/records/3685367",
+      "selected_archive_member": "Winds/Oboe/ordinario/Ob-ord-D#4-mf-N-N.wav"
+    }
+  ],
+  "negative_result_policy": {
+    "abstention_or_class_mismatch_is_recorded": true,
+    "candidate_is_not_replaced_inside_this_checkpoint": true,
+    "failed_candidate_is_not_assigned": true,
+    "thresholds_are_not_changed": true
+  },
+  "plan_id": "perceptual-degradation-source-trait-sparse-tonal-exact-member-confirmation-20260818-001",
+  "purpose": "Acquire only the selected Freesound provider original and project only the selected retained TinySOL archive member into memory, then replay the already-frozen integer-PCM sparse and tonal descriptor twice without retaining derived PCM or promoting a technical class to perceptual truth.",
+  "resources": {
+    "fresh_temporary_directories": true,
+    "maximum_workers": 1,
+    "minimum_free_disk_gib": 15,
+    "replay_count": 2,
+    "retain_derived_pcm": false
+  },
+  "schema_version": 1,
+  "state": "two_exact_member_descriptor_confirmation_frozen_before_audio_access"
+}

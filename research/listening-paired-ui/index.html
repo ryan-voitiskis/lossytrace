@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark light">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'none'; media-src 'none'; img-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+    <title>LossyTrace · paired-rating interface test</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">LOSSYTRACE / RESEARCH PREPARATION</p>
+        <h1>Paired ratings</h1>
+        <p class="lede">A silent interface test. Use arbitrary test values, not listening judgments.</p>
+        <p class="boundary">No audio · No microphone · No upload · No saved responses</p>
+      </header>
+
+      <section class="panel" aria-labelledby="trial-title">
+        <div class="section-heading">
+          <h2 id="trial-title">Synthetic trial <span id="trial-number">1</span> of 2</h2>
+          <span class="badge">NOT LISTENER EVIDENCE</span>
+        </div>
+        <div class="reference">
+          <strong>Known reference</strong>
+          <span>Delivery is deliberately absent. This page cannot play sound.</span>
+        </div>
+        <fieldset id="choice-field">
+          <legend>1. Lock a test choice</legend>
+          <p>In a listening session, this would identify the candidate that differs more from the reference.</p>
+          <div class="choice-row">
+            <label><input type="radio" name="choice" value="A"> Candidate A</label>
+            <label><input type="radio" name="choice" value="B"> Candidate B</label>
+          </div>
+          <button id="lock-choice" type="button" disabled>Lock choice</button>
+        </fieldset>
+        <p id="choice-status" class="status" aria-live="polite">No choice locked. Grades are unavailable.</p>
+
+        <fieldset id="grade-field" disabled>
+          <legend>2. Grade both candidates against the reference</legend>
+          <p>The choice stays locked. Grade each candidate separately; equal grades are allowed.</p>
+          <div class="candidate-grid">
+            <div class="candidate-card">
+              <label for="grade-a">Candidate A grade</label>
+              <input id="grade-a" type="number" min="1" max="5" step="0.1" inputmode="decimal" autocomplete="off" aria-describedby="scale grade-a-status">
+              <p id="grade-a-status" class="rating-status" aria-live="polite">Not entered</p>
+            </div>
+            <div class="candidate-card">
+              <label for="grade-b">Candidate B grade</label>
+              <input id="grade-b" type="number" min="1" max="5" step="0.1" inputmode="decimal" autocomplete="off" aria-describedby="scale grade-b-status">
+              <p id="grade-b-status" class="rating-status" aria-live="polite">Not entered</p>
+            </div>
+          </div>
+          <ol id="scale" class="scale" reversed>
+            <li value="5"><strong>5</strong> Imperceptible</li>
+            <li value="4"><strong>4</strong> Perceptible, not annoying</li>
+            <li value="3"><strong>3</strong> Slightly annoying</li>
+            <li value="2"><strong>2</strong> Annoying</li>
+            <li value="1"><strong>1</strong> Very annoying</li>
+          </ol>
+          <p class="hint">Enter 1.0–5.0 in tenths. No grade is preselected.</p>
+          <button class="primary" id="submit-pair" type="button" disabled>Submit synthetic pair</button>
+        </fieldset>
+        <div class="footer-actions">
+          <button id="end-incomplete" class="secondary" type="button">End trial without submitting</button>
+          <button id="next-trial" type="button" hidden>Next synthetic trial</button>
+        </div>
+        <p id="trial-status" class="status" aria-live="polite">This test validates controls only, not playback or perception.</p>
+      </section>
+
+      <section id="record-section" class="panel" hidden aria-labelledby="record-title">
+        <h2 id="record-title">Synthetic event record</h2>
+        <p>Ephemeral page memory only. Contains no correctness feedback or condition roles.</p>
+        <details><summary>Inspect test events</summary><pre id="synthetic-record"></pre></details>
+      </section>
+      <footer>Reloading clears this dry run. No collection, privacy, timing, or scientific gate is passed by this interface.</footer>
+    </main>
+    <script src="fixture.js"></script>
+    <script src="state.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

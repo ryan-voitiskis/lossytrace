@@ -1,0 +1,103 @@
+{
+  "audio_generated": false,
+  "candidate_summary": {
+    "candidate_count": 37463,
+    "candidate_counts_by_source": {
+      "consumed_v1_non_holdout": 527,
+      "fsdd_v1_0_10": 3000,
+      "lombard_grid_2018": 5268,
+      "ravdess_audio_1_0_0": 2450,
+      "rwc_music_v2_2026": 293,
+      "satp_soundscapes_1_5": 27,
+      "sonyc_backgrounds_1_0_0": 550,
+      "tinysol_6_0": 2273,
+      "vctk_clean_56spk_2017": 23075
+    }
+  },
+  "constraint_checks": {
+    "one_selected_member_per_retained_group": true,
+    "rwc_normalized_work_titles_unique": true,
+    "rwc_selected_unique_normalized_title_count": 85,
+    "transfer_partition_group_floors_preserved": true,
+    "vctk_selected_groups_per_gender": {
+      "F": 28,
+      "M": 28
+    }
+  },
+  "duration_used_for_selection": false,
+  "existing_v1_holdouts_included": false,
+  "measurements_or_labels_used_for_selection": false,
+  "next_gate": "Freeze factor levels separately; do not generate benchmark audio or open mechanism scores before factor, toolchain, and fractional-assignment freezes are all committed.",
+  "paths_redacted": true,
+  "private_artifact_bindings": {
+    "candidate_index_bytes": 32797130,
+    "candidate_index_sha256": "07a00a0f56570c0778e384c6a816a69be13fffe42596c1aad80d5a6a99357a07",
+    "source_allocation_bytes": 789972,
+    "source_allocation_sha256": "e4b7d2ab42253e00ce0e0b95c8049193f9b6178ecbb6212811fde96d58c088d4"
+  },
+  "reproducibility": {
+    "canonical_json": "UTF-8, sorted keys, two-space indentation, LF newline",
+    "complete_replays_byte_identical": true,
+    "timing_fields_emitted": false
+  },
+  "rules_id": "lossytrace-v2-source-allocation-20260802-001",
+  "rules_sha256": "f7bda6b5b133e83e558e4812bbe5a48f8dddd6659368f11ad4784420efb1590b",
+  "schema_version": 1,
+  "scores_opened": false,
+  "selected_summary": {
+    "selected_counts_by_partition": {
+      "encoder_transfer": 102,
+      "external_transfer": 164,
+      "mechanism_development": 527
+    },
+    "selected_counts_by_source": {
+      "consumed_v1_non_holdout": 527,
+      "fsdd_v1_0_10": 6,
+      "lombard_grid_2018": 54,
+      "ravdess_audio_1_0_0": 24,
+      "rwc_music_v2_2026": 85,
+      "satp_soundscapes_1_5": 25,
+      "sonyc_backgrounds_1_0_0": 15,
+      "tinysol_6_0": 1,
+      "vctk_clean_56spk_2017": 56
+    },
+    "selected_counts_by_source_domain": {
+      "acted_song": 9,
+      "acted_speech": 15,
+      "classical_music": 17,
+      "demand_maestro_consumed_transfer": 36,
+      "genre_music": 28,
+      "home_recorded_bandwidth_limited_digit_speech": 6,
+      "isolated_acoustic_instrument": 1,
+      "jazz_music": 6,
+      "laboratory_lombard_speech": 54,
+      "musdb18hq_consumed_transfer": 150,
+      "nsynth_test_sparse": 53,
+      "nsynth_train_sparse": 200,
+      "popular_music": 33,
+      "private_full_mix_training": 40,
+      "public_tier_a_controlled": 48,
+      "royalty_free_music": 1,
+      "studio_speech": 56,
+      "urban_binaural_soundscape": 25,
+      "urban_sensor_soundscape": 15
+    },
+    "selected_group_count": 793,
+    "selected_member_count": 793,
+    "source_domain_count_by_partition": {
+      "encoder_transfer": 6,
+      "external_transfer": 7,
+      "mechanism_development": 6
+    }
+  },
+  "selection_boundary": {
+    "factor_levels_frozen": false,
+    "fractional_assignment_frozen": false,
+    "private_exact_identities_committed": false,
+    "public_case_level_output_committed": false,
+    "toolchain_bindings_frozen": false
+  },
+  "source_identity_checkpoint_commit": "3049123bfd58de567f65633b2e2d423acf147747",
+  "state": "source_allocation_path_free_evidence",
+  "waveform_content_inspected": false
+}

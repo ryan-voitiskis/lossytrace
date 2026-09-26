@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "execution_plan_id": "perceptual-degradation-production-generation-synthetic-execution-20260804-001",
+  "state": "synthetic_execution_authorized_actual_audio_forbidden",
+  "purpose": "Authorize only two fresh deterministic replays of the 12 frozen synthetic production and codec-generation cases after binding the implementation, without perceptual truth, actual audio, metrics, or listener evidence.",
+  "bindings": {
+    "recipe_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/production-generation-control-plan.json",
+      "sha256": "cea7450b3c91ad593cef2be6033d0f8b25c7391795d554f697aefd0f8a11760c"
+    },
+    "recipe_plan_validator": {
+      "path": "scripts/validate-perceptual-degradation-production-generation-plan.py",
+      "sha256": "0105aef49122755c34bdee510325a6bb1c2125630e075a64d3f7a576ae96c8bb"
+    },
+    "recipe_plan_validator_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_production_generation_plan.py",
+      "sha256": "974fbb8d8178d039b76e192c434d718ebc09949f5f5ae6829e85679eb76ca10d"
+    },
+    "preregistration": {
+      "path": "docs/research/perceptual-degradation-production-generation-control-preregistration-20260804.md",
+      "sha256": "d9434e3dd8a2d6402c0e3212cebf44e60817a25762f3dfbc231affa9cb21079a"
+    },
+    "implementation": {
+      "path": "scripts/perceptual_degradation_production_generation.py",
+      "sha256": "ae289da83795fc4223ef80f557919f9cb6002666f0636b47065c5fac4fb80039"
+    },
+    "implementation_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_production_generation.py",
+      "sha256": "b0faa943e85fb5cc856439fa3fdeb284029fc1f769821aaf993a12043be8ba07"
+    },
+    "execution_plan_validator": {
+      "path": "scripts/validate-perceptual-degradation-production-generation-execution-plan.py",
+      "sha256": "e0f2f1dc4396b626b0ba77e9a606b585e41292b2af416a3677d59c1cc458c8ff"
+    },
+    "execution_plan_validator_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_production_generation_execution_plan.py",
+      "sha256": "e304fc1429c381e7010aa62176aa45b6f7f74cd34a4e1c35a5cf9c468f3f6ecc"
+    }
+  },
+  "authority": {
+    "synthetic_execution_authorized": true,
+    "actual_source_audio_authorized": false,
+    "provider_audio_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "human_collection_authorized": false,
+    "sealed_evidence_access_authorized": false
+  },
+  "synthetic_cases": [
+    "production-hard-clip-minus6dbfs-v1",
+    "production-high-shelf-minus6db-nyquist-fir3-v1",
+    "production-block-limiter-minus6dbfs-5ms-v1",
+    "production-stereo-width-half-mid-side-v1",
+    "generation-repeat-mp3-lame-v2-v1",
+    "generation-repeat-aac-ffmpeg-128-v1",
+    "generation-repeat-opus-libopus-128-v1",
+    "generation-repeat-vorbis-libvorbis-q6-v1",
+    "generation-cross-mp3-v2-to-aac-128-v1",
+    "generation-cross-aac-128-to-opus-128-v1",
+    "generation-cross-opus-128-to-vorbis-q6-v1",
+    "generation-cross-vorbis-q6-to-mp3-v2-v1"
+  ],
+  "replay_protocol": {
+    "fresh_temporary_directories": true,
+    "replay_count": 2,
+    "byte_identical_reports_required": true,
+    "path_free_reports_required": true,
+    "timing_fields_forbidden": true,
+    "retain_generated_audio": false,
+    "minimum_free_disk_gib": 15
+  },
+  "outcome_boundary": {
+    "perceptual_truth_included": false,
+    "metric_scores_included": false,
+    "listener_responses_included": false,
+    "codec_quality_ranking_included": false
+  },
+  "decision": {
+    "implementation_hash_frozen": true,
+    "synthetic_execution_observed": false,
+    "actual_audio_accessed": false,
+    "stimuli_generated": false,
+    "perceptual_metric_executed": false,
+    "listener_response_collected": false
+  },
+  "authorized_next_step": "Commit this execution plan and every bound implementation artifact, pass the full repository gates and exact-head CI, then run exactly two fresh synthetic-only replays and compare their path-free reports byte-for-byte. Do not access retained, provider, public mastered, private, or sealed audio; do not run perceptual metrics or collect listeners."
+}

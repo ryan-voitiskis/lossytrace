@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "evidence_id": "perceptual-degradation-listening-player-dry-run-20260803-001",
+  "state": "synthetic_dry_run_passed_not_listener_evidence",
+  "observed_at_local_date": "2026-08-03",
+  "purpose": "browser_state_and_synthetic_playback_verification_only",
+  "source_bindings": {
+    "index_html_sha256": "f23e5f0b9574f0b6140dd09317daac08b4f40c58dc0fd4cd05dec9f33ba489de",
+    "style_css_sha256": "d37ff69c92fc8d986c3027395394d1eea0a3722d0ee108b4ba8c9c2ea9e00caf",
+    "player_javascript_sha256": "c0bfe0555362e87d2d45fc374e75bd4e1dab123d28be6fad372390261e230087",
+    "favicon_svg_sha256": "2da3789b595cd99d06a7141004bd5e18b9dc459cbd48345040a0389634b56f27",
+    "offline_test_sha256": "e6fa859420203ccdb681533b9981a0620ae1f4db839a0a48d29b0f32677371e6"
+  },
+  "environment": {
+    "operating_system": "macOS 26.6 build 25G72",
+    "architecture": "arm64",
+    "node_version": "24.14.0",
+    "playwright_cli_version": "0.1.17",
+    "browser_family": "chromium",
+    "headed": true,
+    "browser_binary_sha256": null,
+    "browser_binary_binding_complete": false
+  },
+  "served_origin": "http://127.0.0.1:<EPHEMERAL_PORT>",
+  "generated_audio": {
+    "audio_files_used": false,
+    "web_audio_generated_only": true,
+    "requested_sample_rate_hz": 48000,
+    "observed_audio_context_state": "running",
+    "observed_audio_context_sample_rate_hz": 48000,
+    "generated_duration_seconds": 4,
+    "channel_count": 2
+  },
+  "observed_checks": {
+    "fresh_page_load_console_error_count": 0,
+    "all_page_resources_local": true,
+    "external_resource_references_present": false,
+    "network_or_persistence_api_present": false,
+    "microphone_api_present": false,
+    "left_channel_control_played": true,
+    "right_channel_control_played": true,
+    "operator_confirmed_all_generated_sounds_audible": true,
+    "qualification_required_before_trials": true,
+    "both_subtle_candidates_required_before_choice": true,
+    "forced_choice_locked_before_grade": true,
+    "all_mushra_candidates_required_before_submission": true,
+    "final_protocol_state_reached": true
+  },
+  "privacy_and_evidence_boundary": {
+    "participant_identity_collected": false,
+    "listener_response_collected": false,
+    "operator_confirmation_is_listening_truth": false,
+    "metric_score_opened": false,
+    "audio_score_opened": false,
+    "retained_audio_opened": false,
+    "screenshot_committed": false,
+    "browser_artifacts_committed": false,
+    "network_storage_used": false
+  },
+  "limitations": [
+    "The browser binary is not yet SHA-256-bound.",
+    "The synthetic player does not yet consume the frozen assignment schema.",
+    "The delivery path is generated Web Audio, not a lossless real-stimulus pipeline.",
+    "DAC, transducer, room, fixed level, latency, switching discontinuity, and operating-system effects are not qualified.",
+    "The manual audibility confirmation verifies only that generated sounds were heard; it is not a rating or calibration outcome."
+  ],
+  "player_implementation_frozen": false,
+  "playback_qualification_frozen": false,
+  "human_collection_authorized": false,
+  "recruitment_authorized": false,
+  "response_storage_authorized": false,
+  "public_verdict_enabled": false,
+  "paths_redacted": true
+}

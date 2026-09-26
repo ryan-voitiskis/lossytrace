@@ -1,0 +1,240 @@
+{
+  "schema_version": 1,
+  "observation_id": "perceptual-degradation-permissive-multiprovider-source-observation-20260813-001",
+  "state": "official_metadata_observed_audio_and_scores_closed",
+  "observed_on": "2026-08-13",
+  "purpose": "Record only public provider metadata needed to test whether a broader CC BY or CC0 source design is worth exact-member qualification.",
+  "access_boundary": {
+    "provider_metadata_read": true,
+    "small_public_metadata_streamed_without_persistence": true,
+    "provider_audio_downloaded": false,
+    "provider_audio_opened": false,
+    "retained_odaq_audio_opened": false,
+    "processed_condition_opened": false,
+    "listening_score_opened": false,
+    "perceptual_metric_executed": false,
+    "sealed_evidence_opened": false,
+    "human_collection_authorized": false
+  },
+  "licence_policy": {
+    "allowed_classes": [
+      "CC BY 4.0",
+      "CC0 1.0"
+    ],
+    "clip_level_licence_must_also_be_allowed_when_a_collection_is_mixed": true,
+    "provider_page_licence_never_substitutes_for_exact_member_rights_audit": true
+  },
+  "observations": [
+    {
+      "source_id": "slakh2100_redux",
+      "provider_id": "slakh",
+      "official_urls": [
+        "https://www.slakh.com/",
+        "https://github.com/ethman/slakh-utils"
+      ],
+      "licence": "CC BY 4.0",
+      "public_record_count": 1710,
+      "conservative_available_group_count": 1710,
+      "grouping_key": "deduplicated_midi_uuid",
+      "format_observation": "synthesized 44100 Hz 16-bit mono FLAC mixtures and stems",
+      "provenance_observation": "Slakh2100-redux removes duplicate MIDI files across the original splits; generated audio is not real mastered or commercial music",
+      "role_status": "candidate_after_exact_member_origin_and_attribution_audit"
+    },
+    {
+      "source_id": "musicnet_5120004",
+      "provider_id": "musicnet",
+      "official_urls": [
+        "https://zenodo.org/records/5120004"
+      ],
+      "doi": "10.5281/zenodo.5120004",
+      "licence": "CC BY 4.0",
+      "public_record_count": 330,
+      "conservative_available_group_count": 134,
+      "grouping_key": "composer_composition_source_transcriber",
+      "group_count_derivation": "derived from the official 330-row metadata CSV streamed in memory; no title, creator, filename, or waveform was retained",
+      "format_observation": "PCM WAV collection",
+      "archive": {
+        "key": "musicnet.tar.gz",
+        "bytes": 11097394998,
+        "md5": "844764911fa0d5b97c97da944a057590"
+      },
+      "provenance_observation": "recordings originate from multiple named upstream archives, but the provider metadata does not establish that every upstream recording was never previously lossily coded",
+      "role_status": "pending_upstream_coding_history_audit"
+    },
+    {
+      "source_id": "guitarset_3371780",
+      "provider_id": "guitarset",
+      "official_urls": [
+        "https://zenodo.org/records/3371780",
+        "https://github.com/marl/GuitarSet"
+      ],
+      "doi": "10.5281/zenodo.3371780",
+      "licence": "CC BY 4.0",
+      "public_record_count": 360,
+      "conservative_available_group_count": 6,
+      "grouping_key": "performer",
+      "format_observation": "real solo-guitar recordings; mono microphone and pickup archives are separately distributed",
+      "archive": {
+        "key": "audio_mono-mic.zip",
+        "bytes": 656927981,
+        "md5": "275966d6610ac34999b58426beb119c3"
+      },
+      "provenance_observation": "six performer groups are conservative; the corpus is not mastered ensemble or multi-genre music",
+      "role_status": "candidate_after_exact_member_origin_and_attribution_audit"
+    },
+    {
+      "source_id": "vctk_clean_56spk_2017",
+      "provider_id": "vctk_clean",
+      "official_urls": [
+        "https://datashare.ed.ac.uk/items/6ed35425-bf14-4d2b-93a1-0a4984952757/full"
+      ],
+      "licence": "CC BY 4.0",
+      "public_record_count": 56,
+      "conservative_available_group_count": 56,
+      "grouping_key": "speaker",
+      "format_observation": "clean 56-speaker speech WAV bundle",
+      "provenance_observation": "speech-domain candidate inherited from the bound source-condition qualification",
+      "role_status": "candidate_after_exact_member_origin_and_attribution_audit"
+    },
+    {
+      "source_id": "sonyc_backgrounds_5129078",
+      "provider_id": "sonyc_backgrounds",
+      "official_urls": [
+        "https://zenodo.org/records/5129078"
+      ],
+      "doi": "10.5281/zenodo.5129078",
+      "licence": "CC BY 4.0",
+      "public_record_count": 441,
+      "conservative_available_group_count": 15,
+      "grouping_key": "sensor_id",
+      "group_count_derivation": "carry forward only the 15 conservative sensor groups in the bound source-condition qualification rather than expanding from the provider description",
+      "format_observation": "ten-second urban background WAV recordings with sensor-disjoint published splits",
+      "archive": {
+        "key": "SONYC-Backgrounds.tar.gz",
+        "bytes": 307235372,
+        "md5": "62f9f8549134afb1b831aae08eb19a4b"
+      },
+      "provenance_observation": "natural urban soundscape candidate; exact sensor and source-history audit remains open",
+      "role_status": "candidate_after_exact_member_origin_and_attribution_audit"
+    },
+    {
+      "source_id": "satp_soundscapes_10159673",
+      "provider_id": "satp",
+      "official_urls": [
+        "https://zenodo.org/records/10159673"
+      ],
+      "doi": "10.5281/zenodo.10159673",
+      "licence": "CC BY 4.0",
+      "public_record_count": 27,
+      "conservative_available_group_count": 25,
+      "grouping_key": "recording_coordinate",
+      "group_count_derivation": "carry forward the 25 conservative coordinate groups in the bound source-condition qualification",
+      "format_observation": "30-second binaural 24-bit 48000 Hz stereo WAV soundscapes",
+      "archive": {
+        "key": "SATP WAV.zip",
+        "bytes": 198110877,
+        "md5": "1592b4ac667b2944ad3d412212dc669a"
+      },
+      "provenance_observation": "binaural headphone-oriented capture does not establish loudspeaker or cross-device generality",
+      "role_status": "candidate_after_exact_member_origin_and_attribution_audit"
+    },
+    {
+      "source_id": "lombard_grid_3736465",
+      "provider_id": "lombard_grid",
+      "official_urls": [
+        "https://zenodo.org/records/3736465"
+      ],
+      "doi": "10.5281/zenodo.3736465",
+      "licence": "CC BY 4.0",
+      "public_record_count": 5400,
+      "conservative_available_group_count": 54,
+      "grouping_key": "talker",
+      "format_observation": "plain and Lombard laboratory speech",
+      "archive": {
+        "key": "lombardgrid_audio.zip",
+        "bytes": 652614041,
+        "md5": "fa0cfc739705323b53ba50e148b3a144"
+      },
+      "provenance_observation": "talker grouping prevents utterances from one person crossing partitions",
+      "role_status": "candidate_after_exact_member_origin_and_attribution_audit"
+    },
+    {
+      "source_id": "tinysol_3685367",
+      "provider_id": "tinysol",
+      "official_urls": [
+        "https://zenodo.org/records/3685367"
+      ],
+      "doi": "10.5281/zenodo.3685367",
+      "licence": "CC BY 4.0",
+      "public_record_count": 2913,
+      "conservative_available_group_count": 1,
+      "grouping_key": "recording_program",
+      "format_observation": "isolated acoustic-instrument notes distributed as one corpus",
+      "archive": {
+        "key": "TinySOL.tar.gz",
+        "bytes": 1026917185,
+        "md5": "36030a7fe389da86c3419e5ee48e3b7f"
+      },
+      "provenance_observation": "instrument labels do not turn one coordinated collection into independent providers or recording programs",
+      "role_status": "candidate_after_exact_member_origin_and_attribution_audit"
+    },
+    {
+      "source_id": "fsd50k_4060432_allowed_items",
+      "provider_id": "fsd50k",
+      "official_urls": [
+        "https://zenodo.org/records/4060432"
+      ],
+      "doi": "10.5281/zenodo.4060432",
+      "licence": "mixed_clip_level",
+      "public_record_count": 51197,
+      "permissive_clip_count": 43379,
+      "conservative_available_group_count": 6111,
+      "grouping_key": "uploader_id",
+      "group_count_derivation": "derived in memory from the official metadata archive after retaining only CC0 and CC BY clips; no uploader identifiers, titles, filenames, or audio were retained",
+      "format_observation": "crowdsourced WAV clips with clip-level licences and varied upstream histories",
+      "metadata_archive": {
+        "key": "FSD50K.metadata.zip",
+        "bytes": 6700838,
+        "md5": "b9ea0c829a411c1d42adb9da539ed237"
+      },
+      "provenance_observation": "collection-level metadata cannot establish original coding history; non-permissive clips remain excluded",
+      "role_status": "negative_only_or_pending_clip_level_origin_audit"
+    },
+    {
+      "source_id": "nsynth",
+      "provider_id": "nsynth",
+      "official_urls": [
+        "https://magenta.tensorflow.org/datasets/nsynth"
+      ],
+      "licence": "CC BY 4.0",
+      "public_record_count": 305979,
+      "conservative_available_group_count": 1006,
+      "grouping_key": "instrument_id",
+      "format_observation": "four-second monophonic 16000 Hz 16-bit PCM WAV notes with instrument-disjoint splits",
+      "provenance_observation": "bandwidth limitation and commercial sample-library origins prevent promotion to full-band clean music reference breadth",
+      "role_status": "development_only_bandwidth_limited_negative"
+    },
+    {
+      "source_id": "odaq_retained_clean_references",
+      "provider_id": "odaq",
+      "official_urls": [
+        "https://zenodo.org/records/10405774",
+        "https://github.com/Fraunhofer-IIS/ODAQ"
+      ],
+      "licence": "CC BY 4.0 or CC0 1.0 exact-member attribution already audited",
+      "public_record_count": 16,
+      "conservative_available_group_count": 16,
+      "grouping_key": "retained_clean_reference",
+      "format_observation": "privately retained clean references; no retained member was opened during this observation",
+      "provenance_observation": "one-provider development-only stratum under the user's narrow authorization",
+      "role_status": "development_only_authorization_bound"
+    }
+  ],
+  "observation_limits": {
+    "available_group_counts_are_qualified_reference_groups": false,
+    "available_group_counts_are_partition_allocations": false,
+    "available_group_counts_prove_provider_independence": false,
+    "pcm_or_lossless_container_proves_never_lossy_history": false,
+    "metadata_observation_authorizes_acquisition": false
+  }
+}

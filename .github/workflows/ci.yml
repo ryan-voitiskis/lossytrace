@@ -10,6 +10,7 @@ permissions:
 jobs:
   rust:
     runs-on: ubuntu-24.04
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v6
       - uses: dtolnay/rust-toolchain@stable
@@ -22,11 +23,18 @@ jobs:
 
   python:
     runs-on: ubuntu-24.04
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          toolchain: "1.94.0"
       - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
       - name: Install FFmpeg
-        run: sudo apt-get update && sudo apt-get install -y ffmpeg
-      - run: python -m unittest discover -s scripts/tests -p 'test_audio_integrity*.py'
+        timeout-minutes: 8
+        run: sudo apt-get install --no-install-recommends --yes ffmpeg
+      - run: python scripts/run_regression_tests.py

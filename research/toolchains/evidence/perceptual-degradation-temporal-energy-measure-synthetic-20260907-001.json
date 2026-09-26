@@ -1,0 +1,796 @@
+{
+  "actual_audio_accessed": false,
+  "bindings": {
+    "capture_specification": {
+      "path": "benchmarks/perceptual-degradation-v1/source-trait-sparse-non-tonal-clean-capture-acquisition-spec.json",
+      "sha256": "cb828b070189cdd14983bdf7fff41f36e41d459b791d5097d7159c457a0e742c"
+    },
+    "rate_context_implementation": {
+      "path": "scripts/perceptual_degradation_descriptor_rate_context.py",
+      "sha256": "3c85c5a17d1843d788026272841a3984eb3ff6ca5dbe2736c9371e25f754f3d1"
+    },
+    "rate_context_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-descriptor-rate-context-synthetic-20260905-001.json",
+      "sha256": "001fd5b0e6ce3210559a213a4990bae5497e1a1a936f10979a6fbb03dd8e9ccc"
+    },
+    "trait_contract": {
+      "path": "benchmarks/perceptual-degradation-v1/source-trait-identifiability-plan.json",
+      "sha256": "c15991fbd7062c837db566bb734c5c1bf625fa2cbc5aa5a00983b64d82e28ba3"
+    },
+    "window_support_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-descriptor-window-support-synthetic-20260905-001.json",
+      "sha256": "422117b4175ac4c89be68847f2728baf213d2f39a86dd8c3252751ad3949873c"
+    }
+  },
+  "claim_boundary": {
+    "actual_audio_access_authorized": false,
+    "capture_execution_authorized_by_this_measure": false,
+    "external_communication_or_spending_authorized": false,
+    "historical_candidates_reclassified": false,
+    "listening_or_perceptual_metrics_authorized": false,
+    "objective_complete": false,
+    "perceptual_duration_or_quality_claimed": false,
+    "population_inference_or_training_authorized": false,
+    "public_verdict_enabled": false,
+    "source_trait_assignment_authorized": false,
+    "sparse_classifier_selected": false,
+    "spectral_classifier_selected": false
+  },
+  "comparisons": {
+    "50_ms_translation_quantiles_shift_exactly": true,
+    "contiguous_vs_separated": {
+      "central_90_energy_span_seconds": {
+        "contiguous": "36/25",
+        "separated": "316/25"
+      },
+      "literal_nonzero_cell_duration_seconds": {
+        "contiguous": "8/5",
+        "separated": "8/5"
+      },
+      "quantile_times_seconds": {
+        "contiguous": {
+          "q05": "152/25",
+          "q25": "32/5",
+          "q50": "34/5",
+          "q75": "36/5",
+          "q95": "188/25"
+        },
+        "separated": {
+          "q05": "152/25",
+          "q25": "32/5",
+          "q50": "34/5",
+          "q75": "92/5",
+          "q95": "468/25"
+        }
+      }
+    },
+    "exact_zero_append_preserves_temporal_measures": true,
+    "positive_background_append": [
+      {
+        "after_span_seconds": "360639/250000",
+        "background_amplitude": 10,
+        "before_span_seconds": "720603/500000",
+        "exact_zero_padding_invariance_applies": false
+      },
+      {
+        "after_span_seconds": "72729/5000",
+        "background_amplitude": 100,
+        "before_span_seconds": "7803/5000",
+        "exact_zero_padding_invariance_applies": false
+      }
+    ],
+    "zero_append_context_ratio_halves": true
+  },
+  "generated_audio_retained": false,
+  "implementation_sha256": "bf7e7a2c3dca90053b6ecfcb22483dec49f3c92154d51696fb8d97b7ef397a26",
+  "independent_dense_checks_passed": 36,
+  "legacy_occupancy_reused_via_bound_analytic_replay": true,
+  "native_rate_and_signed_gain_summaries_evaluated": 36,
+  "next_requirement": "Use physical temporal spread and recording context as distinct fields in a future source-structure definition. Background, carrier dependence and spectral time-locality still require scope decisions and fresh validation before source assignment. Do not promote this technical measure to perceived duration, event detection, a clean-source label or a replacement frozen capture rule.",
+  "perceptual_or_statistical_fit_executed": false,
+  "physical_profiles": [
+    {
+      "background_amplitude": 0,
+      "consumed_legacy_analytic_occupancy": {
+        "active_block_count": 3,
+        "non_sparse": false,
+        "relative_block_powers": [
+          "0/1",
+          "0/1",
+          "0/1",
+          "1/30",
+          "1/1",
+          "1/30",
+          "0/1",
+          "0/1",
+          "0/1",
+          "0/1"
+        ],
+        "sparse": false
+      },
+      "exact_density_refinement_identity": true,
+      "independent_dense_checks_passed": 4,
+      "native_rate_views": [
+        {
+          "sample_rate_hz": 48000,
+          "summary": {
+            "central_50_energy_span_seconds": "4/5",
+            "central_90_energy_span_seconds": "36/25",
+            "first_nonzero_cell_start_seconds": "119/20",
+            "last_nonzero_cell_end_seconds": "151/20",
+            "literal_nonzero_cell_duration_seconds": "8/5",
+            "quantile_times_seconds": {
+              "q05": "603/100",
+              "q25": "127/20",
+              "q50": "27/4",
+              "q75": "143/20",
+              "q95": "747/100"
+            },
+            "reason": "positive_squared_sample_mass",
+            "recording_duration_seconds": "15/1",
+            "recording_relative_central_90_fraction": "12/125",
+            "sample_count": 720000,
+            "squared_integer_amplitude_exposure_seconds": "1600000/1",
+            "squared_sample_energy_centroid_seconds": "27/4",
+            "supported": true
+          }
+        },
+        {
+          "sample_rate_hz": 96000,
+          "summary": {
+            "central_50_energy_span_seconds": "4/5",
+            "central_90_energy_span_seconds": "36/25",
+            "first_nonzero_cell_start_seconds": "119/20",
+            "last_nonzero_cell_end_seconds": "151/20",
+            "literal_nonzero_cell_duration_seconds": "8/5",
+            "quantile_times_seconds": {
+              "q05": "603/100",
+              "q25": "127/20",
+              "q50": "27/4",
+              "q75": "143/20",
+              "q95": "747/100"
+            },
+            "reason": "positive_squared_sample_mass",
+            "recording_duration_seconds": "15/1",
+            "recording_relative_central_90_fraction": "12/125",
+            "sample_count": 1440000,
+            "squared_integer_amplitude_exposure_seconds": "1600000/1",
+            "squared_sample_energy_centroid_seconds": "27/4",
+            "supported": true
+          }
+        }
+      ],
+      "signed_gain_checks": [
+        {
+          "gain": -2,
+          "sample_rate_hz": 48000,
+          "squared_amplitude_exposure_multiplied_by_four": true,
+          "temporal_and_context_fields_identical": true
+        },
+        {
+          "gain": -2,
+          "sample_rate_hz": 96000,
+          "squared_amplitude_exposure_multiplied_by_four": true,
+          "temporal_and_context_fields_identical": true
+        }
+      ],
+      "synthetic_profile_id": "single-15-5.950"
+    },
+    {
+      "background_amplitude": 0,
+      "consumed_legacy_analytic_occupancy": {
+        "active_block_count": 2,
+        "non_sparse": false,
+        "relative_block_powers": [
+          "0/1",
+          "0/1",
+          "0/1",
+          "0/1",
+          "1/1",
+          "1/15",
+          "0/1",
+          "0/1",
+          "0/1",
+          "0/1"
+        ],
+        "sparse": true
+      },
+      "exact_density_refinement_identity": true,
+      "independent_dense_checks_passed": 4,
+      "native_rate_views": [
+        {
+          "sample_rate_hz": 48000,
+          "summary": {
+            "central_50_energy_span_seconds": "4/5",
+            "central_90_energy_span_seconds": "36/25",
+            "first_nonzero_cell_start_seconds": "6/1",
+            "last_nonzero_cell_end_seconds": "38/5",
+            "literal_nonzero_cell_duration_seconds": "8/5",
+            "quantile_times_seconds": {
+              "q05": "152/25",
+              "q25": "32/5",
+              "q50": "34/5",
+              "q75": "36/5",
+              "q95": "188/25"
+            },
+            "reason": "positive_squared_sample_mass",
+            "recording_duration_seconds": "15/1",
+            "recording_relative_central_90_fraction": "12/125",
+            "sample_count": 720000,
+            "squared_integer_amplitude_exposure_seconds": "1600000/1",
+            "squared_sample_energy_centroid_seconds": "34/5",
+            "supported": true
+          }
+        },
+        {
+          "sample_rate_hz": 96000,
+          "summary": {
+            "central_50_energy_span_seconds": "4/5",
+            "central_90_energy_span_seconds": "36/25",
+            "first_nonzero_cell_start_seconds": "6/1",
+            "last_nonzero_cell_end_seconds": "38/5",
+            "literal_nonzero_cell_duration_seconds": "8/5",
+            "quantile_times_seconds": {
+              "q05": "152/25",
+              "q25": "32/5",
+              "q50": "34/5",
+              "q75": "36/5",
+              "q95": "188/25"
+            },
+            "reason": "positive_squared_sample_mass",
+            "recording_duration_seconds": "15/1",
+            "recording_relative_central_90_fraction": "12/125",
+            "sample_count": 1440000,
+            "squared_integer_amplitude_exposure_seconds": "1600000/1",
+            "squared_sample_energy_centroid_seconds": "34/5",
+            "supported": true
+          }
+        }
+      ],
+      "signed_gain_checks": [
+        {
+          "gain": -2,
+          "sample_rate_hz": 48000,
+          "squared_amplitude_exposure_multiplied_by_four": true,
+          "temporal_and_context_fields_identical": true
+        },
+        {
+          "gain": -2,
+          "sample_rate_hz": 96000,
+          "squared_amplitude_exposure_multiplied_by_four": true,
+          "temporal_and_context_fields_identical": true
+        }
+      ],
+      "synthetic_profile_id": "single-15-6.000"
+    },
+    {
+      "background_amplitude": 0,
+      "consumed_legacy_analytic_occupancy": {
+        "active_block_count": 2,
+        "non_sparse": false,
+        "relative_block_powers": [
+          "0/1",
+          "1/31",
+          "1/1",
+          "0/1",
+          "0/1",
+          "0/1",
+          "0/1",
+          "0/1",
+          "0/1",
+          "0/1"
+        ],
+        "sparse": true
+      },
+      "exact_density_refinement_identity": true,
+      "independent_dense_checks_passed": 4,
+      "native_rate_views": [
+        {
+          "sample_rate_hz": 48000,
+          "summary": {
+            "central_50_energy_span_seconds": "4/5",
+            "central_90_energy_span_seconds": "36/25",
+            "first_nonzero_cell_start_seconds": "119/20",
+            "last_nonzero_cell_end_seconds": "151/20",
+            "literal_nonzero_cell_duration_seconds": "8/5",
+            "quantile_times_seconds": {
+              "q05": "603/100",
+              "q25": "127/20",
+              "q50": "27/4",
+              "q75": "143/20",
+              "q95": "747/100"
+            },
+            "reason": "positive_squared_sample_mass",
+            "recording_duration_seconds": "30/1",
+            "recording_relative_central_90_fraction": "6/125",
+            "sample_count": 1440000,
+            "squared_integer_amplitude_exposure_seconds": "1600000/1",
+            "squared_sample_energy_centroid_seconds": "27/4",
+            "supported": true
+          }
+        },
+        {
+          "sample_rate_hz": 96000,
+          "summary": {
+            "central_50_energy_span_seconds": "4/5",
+            "central_90_energy_span_seconds": "36/25",
+            "first_nonzero_cell_start_seconds": "119/20",
+            "last_nonzero_cell_end_seconds": "151/20",
+            "literal_nonzero_cell_duration_seconds": "8/5",
+            "quantile_times_seconds": {
+              "q05": "603/100",
+              "q25": "127/20",
+              "q50": "27/4",
+              "q75": "143/20",
+              "q95": "747/100"
+            },
+            "reason": "positive_squared_sample_mass",
+            "recording_duration_seconds": "30/1",
+            "recording_relative_central_90_fraction": "6/125",
+            "sample_count": 2880000,
+            "squared_integer_amplitude_exposure_seconds": "1600000/1",
+            "squared_sample_energy_centroid_seconds": "27/4",
+            "supported": true
+          }
+        }
+      ],
+      "signed_gain_checks": [
+        {
+          "gain": -2,
+          "sample_rate_hz": 48000,
+          "squared_amplitude_exposure_multiplied_by_four": true,
+          "temporal_and_context_fields_identical": true
+        },
+        {
+          "gain": -2,
+          "sample_rate_hz": 96000,
+          "squared_amplitude_exposure_multiplied_by_four": true,
+          "temporal_and_context_fields_identical": true
+        }
+      ],
+      "synthetic_profile_id": "single-30-5.950"
+    },
+    {
+      "background_amplitude": 0,
+      "consumed_legacy_analytic_occupancy": {
+        "active_block_count": 1,
+        "non_sparse": false,
+        "relative_block_powers": [
+          "0/1",
+          "0/1",
+          "1/1",
+          "0/1",
+          "0/1",
+          "0/1",
+          "0/1",
+          "0/1",
+          "0/1",
+          "0/1"
+        ],
+        "sparse": true
+      },
+      "exact_density_refinement_identity": true,
+      "independent_dense_checks_passed": 4,
+      "native_rate_views": [
+        {
+          "sample_rate_hz": 48000,
+          "summary": {
+            "central_50_energy_span_seconds": "4/5",
+            "central_90_energy_span_seconds": "36/25",
+            "first_nonzero_cell_start_seconds": "6/1",
+            "last_nonzero_cell_end_seconds": "38/5",
+            "literal_nonzero_cell_duration_seconds": "8/5",
+            "quantile_times_seconds": {
+              "q05": "152/25",
+              "q25": "32/5",
+              "q50": "34/5",
+              "q75": "36/5",
+              "q95": "188/25"
+            },
+            "reason": "positive_squared_sample_mass",
+            "recording_duration_seconds": "30/1",
+            "recording_relative_central_90_fraction": "6/125",
+            "sample_count": 1440000,
+            "squared_integer_amplitude_exposure_seconds": "1600000/1",
+            "squared_sample_energy_centroid_seconds": "34/5",
+            "supported": true
+          }
+        },
+        {
+          "sample_rate_hz": 96000,
+          "summary": {
+            "central_50_energy_span_seconds": "4/5",
+            "central_90_energy_span_seconds": "36/25",
+            "first_nonzero_cell_start_seconds": "6/1",
+            "last_nonzero_cell_end_seconds": "38/5",
+            "literal_nonzero_cell_duration_seconds": "8/5",
+            "quantile_times_seconds": {
+              "q05": "152/25",
+              "q25": "32/5",
+              "q50": "34/5",
+              "q75": "36/5",
+              "q95": "188/25"
+            },
+            "reason": "positive_squared_sample_mass",
+            "recording_duration_seconds": "30/1",
+            "recording_relative_central_90_fraction": "6/125",
+            "sample_count": 2880000,
+            "squared_integer_amplitude_exposure_seconds": "1600000/1",
+            "squared_sample_energy_centroid_seconds": "34/5",
+            "supported": true
+          }
+        }
+      ],
+      "signed_gain_checks": [
+        {
+          "gain": -2,
+          "sample_rate_hz": 48000,
+          "squared_amplitude_exposure_multiplied_by_four": true,
+          "temporal_and_context_fields_identical": true
+        },
+        {
+          "gain": -2,
+          "sample_rate_hz": 96000,
+          "squared_amplitude_exposure_multiplied_by_four": true,
+          "temporal_and_context_fields_identical": true
+        }
+      ],
+      "synthetic_profile_id": "single-30-6.000"
+    },
+    {
+      "background_amplitude": 0,
+      "exact_density_refinement_identity": true,
+      "independent_dense_checks_passed": 4,
+      "native_rate_views": [
+        {
+          "sample_rate_hz": 48000,
+          "summary": {
+            "central_50_energy_span_seconds": "12/1",
+            "central_90_energy_span_seconds": "316/25",
+            "first_nonzero_cell_start_seconds": "6/1",
+            "last_nonzero_cell_end_seconds": "94/5",
+            "literal_nonzero_cell_duration_seconds": "8/5",
+            "quantile_times_seconds": {
+              "q05": "152/25",
+              "q25": "32/5",
+              "q50": "34/5",
+              "q75": "92/5",
+              "q95": "468/25"
+            },
+            "reason": "positive_squared_sample_mass",
+            "recording_duration_seconds": "30/1",
+            "recording_relative_central_90_fraction": "158/375",
+            "sample_count": 1440000,
+            "squared_integer_amplitude_exposure_seconds": "1600000/1",
+            "squared_sample_energy_centroid_seconds": "62/5",
+            "supported": true
+          }
+        },
+        {
+          "sample_rate_hz": 96000,
+          "summary": {
+            "central_50_energy_span_seconds": "12/1",
+            "central_90_energy_span_seconds": "316/25",
+            "first_nonzero_cell_start_seconds": "6/1",
+            "last_nonzero_cell_end_seconds": "94/5",
+            "literal_nonzero_cell_duration_seconds": "8/5",
+            "quantile_times_seconds": {
+              "q05": "152/25",
+              "q25": "32/5",
+              "q50": "34/5",
+              "q75": "92/5",
+              "q95": "468/25"
+            },
+            "reason": "positive_squared_sample_mass",
+            "recording_duration_seconds": "30/1",
+            "recording_relative_central_90_fraction": "158/375",
+            "sample_count": 2880000,
+            "squared_integer_amplitude_exposure_seconds": "1600000/1",
+            "squared_sample_energy_centroid_seconds": "62/5",
+            "supported": true
+          }
+        }
+      ],
+      "signed_gain_checks": [
+        {
+          "gain": -2,
+          "sample_rate_hz": 48000,
+          "squared_amplitude_exposure_multiplied_by_four": true,
+          "temporal_and_context_fields_identical": true
+        },
+        {
+          "gain": -2,
+          "sample_rate_hz": 96000,
+          "squared_amplitude_exposure_multiplied_by_four": true,
+          "temporal_and_context_fields_identical": true
+        }
+      ],
+      "synthetic_profile_id": "separated-equal-intervals"
+    },
+    {
+      "background_amplitude": 10,
+      "exact_density_refinement_identity": true,
+      "independent_dense_checks_passed": 4,
+      "native_rate_views": [
+        {
+          "sample_rate_hz": 48000,
+          "summary": {
+            "central_50_energy_span_seconds": "80067/100000",
+            "central_90_energy_span_seconds": "720603/500000",
+            "first_nonzero_cell_start_seconds": "0/1",
+            "last_nonzero_cell_end_seconds": "15/1",
+            "literal_nonzero_cell_duration_seconds": "15/1",
+            "quantile_times_seconds": {
+              "q05": "6079467/1000000",
+              "q25": "1279947/200000",
+              "q50": "680007/100000",
+              "q75": "1440081/200000",
+              "q95": "7520673/1000000"
+            },
+            "reason": "positive_squared_sample_mass",
+            "recording_duration_seconds": "15/1",
+            "recording_relative_central_90_fraction": "240201/2500000",
+            "sample_count": 720000,
+            "squared_integer_amplitude_exposure_seconds": "1601340/1",
+            "squared_sample_energy_centroid_seconds": "1815027/266890",
+            "supported": true
+          }
+        },
+        {
+          "sample_rate_hz": 96000,
+          "summary": {
+            "central_50_energy_span_seconds": "80067/100000",
+            "central_90_energy_span_seconds": "720603/500000",
+            "first_nonzero_cell_start_seconds": "0/1",
+            "last_nonzero_cell_end_seconds": "15/1",
+            "literal_nonzero_cell_duration_seconds": "15/1",
+            "quantile_times_seconds": {
+              "q05": "6079467/1000000",
+              "q25": "1279947/200000",
+              "q50": "680007/100000",
+              "q75": "1440081/200000",
+              "q95": "7520673/1000000"
+            },
+            "reason": "positive_squared_sample_mass",
+            "recording_duration_seconds": "15/1",
+            "recording_relative_central_90_fraction": "240201/2500000",
+            "sample_count": 1440000,
+            "squared_integer_amplitude_exposure_seconds": "1601340/1",
+            "squared_sample_energy_centroid_seconds": "1815027/266890",
+            "supported": true
+          }
+        }
+      ],
+      "signed_gain_checks": [
+        {
+          "gain": -2,
+          "sample_rate_hz": 48000,
+          "squared_amplitude_exposure_multiplied_by_four": true,
+          "temporal_and_context_fields_identical": true
+        },
+        {
+          "gain": -2,
+          "sample_rate_hz": 96000,
+          "squared_amplitude_exposure_multiplied_by_four": true,
+          "temporal_and_context_fields_identical": true
+        }
+      ],
+      "synthetic_profile_id": "background-10-15"
+    },
+    {
+      "background_amplitude": 100,
+      "exact_density_refinement_identity": true,
+      "independent_dense_checks_passed": 4,
+      "native_rate_views": [
+        {
+          "sample_rate_hz": 48000,
+          "summary": {
+            "central_50_energy_span_seconds": "867/1000",
+            "central_90_energy_span_seconds": "7803/5000",
+            "first_nonzero_cell_start_seconds": "0/1",
+            "last_nonzero_cell_end_seconds": "15/1",
+            "literal_nonzero_cell_duration_seconds": "15/1",
+            "quantile_times_seconds": {
+              "q05": "60267/10000",
+              "q25": "12747/2000",
+              "q50": "6807/1000",
+              "q75": "14481/2000",
+              "q95": "75873/10000"
+            },
+            "reason": "positive_squared_sample_mass",
+            "recording_duration_seconds": "15/1",
+            "recording_relative_central_90_fraction": "2601/25000",
+            "sample_count": 720000,
+            "squared_integer_amplitude_exposure_seconds": "1734000/1",
+            "squared_sample_energy_centroid_seconds": "19827/2890",
+            "supported": true
+          }
+        },
+        {
+          "sample_rate_hz": 96000,
+          "summary": {
+            "central_50_energy_span_seconds": "867/1000",
+            "central_90_energy_span_seconds": "7803/5000",
+            "first_nonzero_cell_start_seconds": "0/1",
+            "last_nonzero_cell_end_seconds": "15/1",
+            "literal_nonzero_cell_duration_seconds": "15/1",
+            "quantile_times_seconds": {
+              "q05": "60267/10000",
+              "q25": "12747/2000",
+              "q50": "6807/1000",
+              "q75": "14481/2000",
+              "q95": "75873/10000"
+            },
+            "reason": "positive_squared_sample_mass",
+            "recording_duration_seconds": "15/1",
+            "recording_relative_central_90_fraction": "2601/25000",
+            "sample_count": 1440000,
+            "squared_integer_amplitude_exposure_seconds": "1734000/1",
+            "squared_sample_energy_centroid_seconds": "19827/2890",
+            "supported": true
+          }
+        }
+      ],
+      "signed_gain_checks": [
+        {
+          "gain": -2,
+          "sample_rate_hz": 48000,
+          "squared_amplitude_exposure_multiplied_by_four": true,
+          "temporal_and_context_fields_identical": true
+        },
+        {
+          "gain": -2,
+          "sample_rate_hz": 96000,
+          "squared_amplitude_exposure_multiplied_by_four": true,
+          "temporal_and_context_fields_identical": true
+        }
+      ],
+      "synthetic_profile_id": "background-100-15"
+    },
+    {
+      "background_amplitude": 10,
+      "exact_density_refinement_identity": true,
+      "independent_dense_checks_passed": 4,
+      "native_rate_views": [
+        {
+          "sample_rate_hz": 48000,
+          "summary": {
+            "central_50_energy_span_seconds": "40071/50000",
+            "central_90_energy_span_seconds": "360639/250000",
+            "first_nonzero_cell_start_seconds": "0/1",
+            "last_nonzero_cell_end_seconds": "30/1",
+            "literal_nonzero_cell_duration_seconds": "30/1",
+            "quantile_times_seconds": {
+              "q05": "3039771/500000",
+              "q25": "640011/100000",
+              "q50": "340041/50000",
+              "q75": "720153/100000",
+              "q95": "3761049/500000"
+            },
+            "reason": "positive_squared_sample_mass",
+            "recording_duration_seconds": "30/1",
+            "recording_relative_central_90_fraction": "120213/2500000",
+            "sample_count": 1440000,
+            "squared_integer_amplitude_exposure_seconds": "1602840/1",
+            "squared_sample_energy_centroid_seconds": "455163/66785",
+            "supported": true
+          }
+        },
+        {
+          "sample_rate_hz": 96000,
+          "summary": {
+            "central_50_energy_span_seconds": "40071/50000",
+            "central_90_energy_span_seconds": "360639/250000",
+            "first_nonzero_cell_start_seconds": "0/1",
+            "last_nonzero_cell_end_seconds": "30/1",
+            "literal_nonzero_cell_duration_seconds": "30/1",
+            "quantile_times_seconds": {
+              "q05": "3039771/500000",
+              "q25": "640011/100000",
+              "q50": "340041/50000",
+              "q75": "720153/100000",
+              "q95": "3761049/500000"
+            },
+            "reason": "positive_squared_sample_mass",
+            "recording_duration_seconds": "30/1",
+            "recording_relative_central_90_fraction": "120213/2500000",
+            "sample_count": 2880000,
+            "squared_integer_amplitude_exposure_seconds": "1602840/1",
+            "squared_sample_energy_centroid_seconds": "455163/66785",
+            "supported": true
+          }
+        }
+      ],
+      "signed_gain_checks": [
+        {
+          "gain": -2,
+          "sample_rate_hz": 48000,
+          "squared_amplitude_exposure_multiplied_by_four": true,
+          "temporal_and_context_fields_identical": true
+        },
+        {
+          "gain": -2,
+          "sample_rate_hz": 96000,
+          "squared_amplitude_exposure_multiplied_by_four": true,
+          "temporal_and_context_fields_identical": true
+        }
+      ],
+      "synthetic_profile_id": "background-10-30"
+    },
+    {
+      "background_amplitude": 100,
+      "exact_density_refinement_identity": true,
+      "independent_dense_checks_passed": 4,
+      "native_rate_views": [
+        {
+          "sample_rate_hz": 48000,
+          "summary": {
+            "central_50_energy_span_seconds": "471/500",
+            "central_90_energy_span_seconds": "72729/5000",
+            "first_nonzero_cell_start_seconds": "0/1",
+            "last_nonzero_cell_end_seconds": "30/1",
+            "literal_nonzero_cell_duration_seconds": "30/1",
+            "quantile_times_seconds": {
+              "q05": "30171/5000",
+              "q25": "6411/1000",
+              "q50": "3441/500",
+              "q75": "7353/1000",
+              "q95": "1029/50"
+            },
+            "reason": "positive_squared_sample_mass",
+            "recording_duration_seconds": "30/1",
+            "recording_relative_central_90_fraction": "24243/50000",
+            "sample_count": 1440000,
+            "squared_integer_amplitude_exposure_seconds": "1884000/1",
+            "squared_sample_energy_centroid_seconds": "6363/785",
+            "supported": true
+          }
+        },
+        {
+          "sample_rate_hz": 96000,
+          "summary": {
+            "central_50_energy_span_seconds": "471/500",
+            "central_90_energy_span_seconds": "72729/5000",
+            "first_nonzero_cell_start_seconds": "0/1",
+            "last_nonzero_cell_end_seconds": "30/1",
+            "literal_nonzero_cell_duration_seconds": "30/1",
+            "quantile_times_seconds": {
+              "q05": "30171/5000",
+              "q25": "6411/1000",
+              "q50": "3441/500",
+              "q75": "7353/1000",
+              "q95": "1029/50"
+            },
+            "reason": "positive_squared_sample_mass",
+            "recording_duration_seconds": "30/1",
+            "recording_relative_central_90_fraction": "24243/50000",
+            "sample_count": 2880000,
+            "squared_integer_amplitude_exposure_seconds": "1884000/1",
+            "squared_sample_energy_centroid_seconds": "6363/785",
+            "supported": true
+          }
+        }
+      ],
+      "signed_gain_checks": [
+        {
+          "gain": -2,
+          "sample_rate_hz": 48000,
+          "squared_amplitude_exposure_multiplied_by_four": true,
+          "temporal_and_context_fields_identical": true
+        },
+        {
+          "gain": -2,
+          "sample_rate_hz": 96000,
+          "squared_amplitude_exposure_multiplied_by_four": true,
+          "temporal_and_context_fields_identical": true
+        }
+      ],
+      "synthetic_profile_id": "background-100-30"
+    }
+  ],
+  "plan_sha256": "9238c8073d2c1b179387ab8083806eeb3c1ab285b8a0b78253d1ad7946789257",
+  "report_id": "temporal-energy-measure-20260907-001",
+  "schema_version": 1,
+  "state": "continuous_temporal_energy_measure_synthetic_development_complete",
+  "technical_measure_definition_selected": true
+}

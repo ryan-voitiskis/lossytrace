@@ -1,0 +1,63 @@
+{
+  "authorization": {
+    "bound_committed_evidence_read_authorized": true,
+    "exact_member_confirmation_readiness_reconciliation_authorized": true,
+    "further_audio_sample_access_authorized": false,
+    "human_collection_authorized": false,
+    "metadata_nomination_reconciliation_authorized": true,
+    "no_reference_training_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "public_verdict_enabled": false,
+    "source_manifest_allocation_authorized": false,
+    "source_trait_assignment_authorized": false,
+    "synthetic_audit_execution_authorized": true
+  },
+  "bindings": {
+    "confirmation_implementation": {
+      "path": "scripts/perceptual_degradation_source_trait_sparse_non_tonal_exact_member_confirmation_v3.py",
+      "sha256": "4d212c0d6e382c3d560b9814b07840b3742258e3d35899f66ec4638c3a938692"
+    },
+    "confirmation_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/source-trait-sparse-non-tonal-exact-member-confirmation-v3-plan.json",
+      "sha256": "2bcf1e53e55947e26540134b0fc6bbb02add58d8323ca4dc6678d2f3ecae83f8"
+    },
+    "metadata_result_implementation": {
+      "path": "scripts/perceptual_degradation_source_trait_sparse_non_tonal_metadata_search_v3_result.py",
+      "sha256": "c4dc3194ac4ad4032d4bebb8ab11a00206ab3a69dc97d0eced3ccefa4bdbfc73"
+    },
+    "metadata_result_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-source-trait-sparse-non-tonal-metadata-search-v3-20260819-001.json",
+      "sha256": "c0940d60d3645c77b2a3741a5c80fbdfc993969cdd6aa6c692e9fd1444fc01cd"
+    },
+    "predecessor_audit_implementation": {
+      "path": "scripts/perceptual_degradation_objective_completion_audit_v17.py",
+      "sha256": "8ef7095a1ea61d7bebff2cda8f52a8165b54a5591b2727677e99a9f313ce8e1e"
+    },
+    "predecessor_audit_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/objective-completion-audit-plan-20260819-017.json",
+      "sha256": "ffaa663be2d582bcdbe6eb930a2204e74d2263746a3bc57517ea4126ef9f87b2"
+    },
+    "predecessor_audit_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-objective-completion-audit-20260819-017.json",
+      "sha256": "b4c1802afa1f38219d0eb3365028ce4e4956e032ca7b0f891c4fcd86e3353ef3"
+    }
+  },
+  "claim_boundary": {
+    "confirmation_plan_is_descriptor_evidence": false,
+    "full_objective_complete": false,
+    "metadata_nomination_is_source_trait_truth": false,
+    "public_cli_changed": false,
+    "public_verdict_enabled": false,
+    "source_trait_manifest_frozen": false
+  },
+  "completion_policy": {
+    "all_requirements_must_be_satisfied": true,
+    "metadata_nomination_counts_as_scientific_coverage": false,
+    "source_trait_manifest_requires_assignments_relationships_and_allocation": true,
+    "technical_descriptor_confirmation_is_not_perceptual_truth": true
+  },
+  "plan_id": "perceptual-degradation-objective-completion-audit-20260819-018",
+  "purpose": "Reconcile the third metadata-qualified sparse non-tonal successor and its frozen integer-PCM confirmation checkpoint without treating nomination or readiness as descriptor evidence, source-trait truth, manifest allocation or scientific completion.",
+  "schema_version": 1,
+  "state": "score_blind_completion_audit_refresh_after_sparse_successor_v3_nomination_and_confirmation_freeze"
+}

@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "plan_id": "alignment-runtime-feasibility-20260908-001",
+  "state": "synthetic_only_protocol_declared_before_full_size_alignment_observation",
+  "purpose": "Qualify unchanged alignment-v3 runtime at the maximum planned native-rate geometry and localize elapsed time without accessing real audio or changing scientific thresholds.",
+  "bindings": {
+    "alignment_v1": {
+      "path": "scripts/perceptual_degradation_alignment.py",
+      "sha256": "0e036bc1a430e578523d61e68c7ab0dc659bace2f606710ab3d28b148439dccb"
+    },
+    "alignment_v2": {
+      "path": "scripts/perceptual_degradation_alignment_v2.py",
+      "sha256": "72fe01344a33ffbec3967f0c64ca7cf5a3e7c0f5ba64620800115a646500e61c"
+    },
+    "alignment_v3": {
+      "path": "scripts/perceptual_degradation_alignment_v3.py",
+      "sha256": "d9296e62a806a811d281cac93ae65f9bfcaab310aa5dfe12127bfc09199b7581"
+    },
+    "topology_freeze": {
+      "path": "benchmarks/perceptual-degradation-v1/alignment-topology-freeze.json",
+      "sha256": "b3508568fb1375f833fd4ba5b0203bdeb6dba1197fb95b054576e79c9deeda45"
+    },
+    "validity_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/alignment-validity-successor-plan.json",
+      "sha256": "717e03b6c9e45c1ce57c3298b6a921576a771f96ee7d1fd07405b8e5c19a8a29"
+    },
+    "digital_runtime_negative": {
+      "path": "research/toolchains/evidence/perceptual-degradation-digital-technical-20260908-001.json",
+      "sha256": "dd1447607eb09cc8dfadb5595c543324f38dd354fa7e77f303e2fbfe58421445"
+    },
+    "native_tools": {
+      "path": "research/toolchains/evidence/perceptual-degradation-digital-native-tools-20260908-001.json",
+      "sha256": "befbd97f40cfc8eb2debc40b074cfdba23708e79f59719d032cf5106b40404b6"
+    },
+    "native_binding_implementation": {
+      "path": "scripts/perceptual_degradation_digital_tools.py",
+      "sha256": "71055c715fd4ee75687676db14f2a557eb8d1a6b985b0ca6253f32ddc6124f8d"
+    },
+    "runner": {
+      "path": "scripts/perceptual_degradation_alignment_runtime.py",
+      "sha256": "c7aa45f4e6d1ecff4646693e76143c7be0f60b8098b7d119a2eaf4058a3dbfcc"
+    },
+    "tests": {
+      "path": "scripts/tests/test_perceptual_degradation_alignment_runtime.py",
+      "sha256": "3c966d2580cbc8763d37dcfef7463d03d1392f340b618eb0696a8359e976fafd"
+    }
+  },
+  "experiment": {
+    "sample_rate_hz": 48000,
+    "frames": 576008,
+    "reference_channels": 2,
+    "cases": [
+      "identity_baseline",
+      "identity_instrumented",
+      "constant_envelope",
+      "topology_mismatch"
+    ],
+    "rounds": 2,
+    "workers": 1,
+    "alignment_deadline_seconds": 180,
+    "worker_deadline_seconds": 210,
+    "minimum_active_seconds": 4,
+    "maximum_delay_seconds": 2,
+    "minimum_free_gib": 15,
+    "input_mode": "constructed_arrays_only"
+  },
+  "construction": {
+    "generator": "Unsigned 32-bit LCG: seed 0x35A719C3; state = (1664525*state+1013904223) modulo 2^32. For each pair index i, generate a,b as (((state>>16) modulo 1024)-512)*32*(1+(i//137) modulo 5)/2^20. Left extends (a,b), right extends (-b,a). Truncate to 576008 frames. Inputs are immutable tuples, not file-backed waveforms.",
+    "identity": "Exact constructed stereo reference versus itself, with the same recipe identity in uninstrumented and instrumented modes.",
+    "constant_envelope": "Both channels are the exact constant 0.125; centered Pearson envelope evidence is undefined and should abstain.",
+    "topology_mismatch": "Constructed stereo reference versus its left channel declared mono; topology rejection should occur without channel alignment.",
+    "selection": "One deterministic artificial active family plus two invalid-support controls. No source representativeness or exhaustive algorithm qualification claim."
+  },
+  "timing_contract": {
+    "baseline": "Uninstrumented call to the unchanged alignment implementation, with a 180-second SIGALRM alignment deadline.",
+    "instrumentation": "Reversible wrappers around channel, envelope, correlation, gain and drift/structural audit calls. Charge exclusive perf_counter time and count stage entries/completions; the alarm saves its active stage stack. Delegate every operation, lag and argument unchanged. Do not use per-line or all-function profiling.",
+    "measurement_boundary": "Input construction, import, process startup and result serialization are outside the isolated alignment timer. Each entire worker has a separate 210-second parent timeout. Passing 180 seconds here is necessary but insufficient for a full codec pipeline sharing that budget.",
+    "censoring": "A timeout is a right-censored runtime with no completed alignment record. The observed stack localizes interruption, not the time for unexecuted channels or a completed-run hotspot. Partial counts and timing fields may differ between rounds.",
+    "replay": "Run the four cases in the listed order twice, each in a fresh isolated process, one worker. Keep both reports unchanged. Compare case outcomes and any completed numerical alignment bytes separately; do not demand byte-identical clocks, counters or deadline locations.",
+    "clock_policy": "No post-observation deadline increase, narrowed lag search, signal replacement, case substitution or automatic retry. This does not change the prior real-audio result.",
+    "primary_feasibility": "Report whether uninstrumented identity completes within 180 seconds in both rounds. A failure rejects current full-rate execution feasibility on this construction; it is not a scientific alignment-support or perceptual-quality rejection.",
+    "pipeline_qualification": false
+  },
+  "execution_boundary": {
+    "local_pre_observation_commit_required": true,
+    "external_preregistration_claim": false,
+    "publication": "Commit the tested protocol locally before full-size alignment observation. Publish the protocol and subsequent result commits together only after full local CI-equivalent checks, then verify exact final-head CI. Synthetic-only development does not claim prior external preregistration.",
+    "native_runtime": "Verify the previously bound installed native closure metadata before execution, each round and after execution. No encode/decode calls are made. Tests on other hosts use constructed small inputs and mocked runtime gates.",
+    "resource": "One worker; 15 GiB disk reserve before construction; fixed maximum input shape; at most eight 210-second worker processes. No encoded/decoded audio, external input or waveform storage. Capture is from the bound worker only; validate its JSON size and schema.",
+    "retention": "A new unique directory outside Git retains execution.json, round-1.json, round-2.json and result.json. Files are no-clobber JSON with mode 0600, directory 0700. Publish only audited synthetic result objects, with no local paths or raw sample arrays.",
+    "full_size_alignment_in_default_tests": false
+  },
+  "expected_guard_behavior": {
+    "constant_envelope": "unsupported, no_valid_coarse_correlation, all common summary fields unavailable",
+    "topology_mismatch": "unsupported, channel_topology_mismatch and channel_map_mismatch, no channel alignment records"
+  },
+  "claim_boundary": {
+    "actual_audio_access_authorized": false,
+    "additional_real_replay_authorized": false,
+    "codec_execution_authorized": false,
+    "capture_authorized": false,
+    "playback_authorized": false,
+    "perceptual_metrics_authorized": false,
+    "threshold_changes_authorized": false,
+    "source_assignment_authorized": false,
+    "human_calibration_complete": false,
+    "full_reference_validated": false,
+    "no_reference_training_authorized": false,
+    "public_verdict_enabled": false,
+    "objective_complete": false
+  },
+  "next_action": "If full-rate feasibility fails, preserve this result and use measured stage localization to design a separately versioned optimization with semantic-equivalence evidence. No optimization or real-data rerun is implicitly accepted by this result."
+}

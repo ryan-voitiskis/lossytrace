@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "report_id": "digital-technical-runtime-result-20260908-001",
+  "date": "2026-09-08",
+  "state": "private_digital_technical_replays_complete_reproducible_runtime_negative",
+  "proposal_id": "odaq16-digital-technical-20260908-001",
+  "bindings": {
+    "proposal": {
+      "path": "benchmarks/perceptual-degradation-v1/digital-development-execution-proposal-20260908.json",
+      "sha256": "2e18a43ccc545d0c707be1ed24625a409930ccdbbd66f803a664ddc5e20abbeb"
+    },
+    "authorization": {
+      "path": "benchmarks/perceptual-degradation-v1/digital-development-execution-authorization.json",
+      "sha256": "5ac07368af9d3e0806c01dcf9ca9096641ce4bd30eef1da0e6342ab3d90298d4"
+    },
+    "runner": {
+      "path": "scripts/perceptual_degradation_digital_development.py",
+      "sha256": "a2a38cefb6ef2b2f71f2c8b8f7360d41b7a0084baca3f376d1cba25e794784bb"
+    },
+    "native_tools": {
+      "path": "research/toolchains/evidence/perceptual-degradation-digital-native-tools-20260908-001.json",
+      "sha256": "befbd97f40cfc8eb2debc40b074cfdba23708e79f59719d032cf5106b40404b6"
+    }
+  },
+  "execution": {
+    "head": "804e10a455c4facf0c5f85cc6a2ece371f98b343",
+    "push_ci_run_id": 34138056332,
+    "push_ci_url": "https://github.com/ryan-voitiskis/lossytrace/actions/runs/34138056332",
+    "exact_head_ci_success_verified_before_private_access": true,
+    "ci_python_tests": 1502,
+    "ci_python_skipped": 14,
+    "runner_invocations": 1,
+    "authorized_replays": 2,
+    "completed_replay_reports": 2,
+    "runner_exit_code": 0,
+    "exit_zero_means_report_written_not_comparison_success": true,
+    "workers": 1,
+    "authorization_consumed": true,
+    "additional_real_replay_authorized": false,
+    "automatic_repair_or_rerun_authorized": false,
+    "maximum_case_seconds": 180,
+    "stop_starting_cases_after_replay_seconds": 3600,
+    "proposal_runner_and_thresholds_changed": false
+  },
+  "projection": {
+    "all_cases_observed": false,
+    "artifacts": null,
+    "audibility": null,
+    "human_calibrated": false,
+    "independent_validation": false,
+    "perceptual_support": false,
+    "private_replays_byte_identical": true,
+    "proposal_id": "odaq16-digital-technical-20260908-001",
+    "public_verdict_enabled": false,
+    "replays": [
+      {
+        "active_duration_geometry_cap_applied_count": 0,
+        "alignment_unsupported_reasons": {},
+        "dispositions": {
+          "failed": 20,
+          "not_run": 140
+        },
+        "failure_or_stop_reasons": {
+          "alignment_timeout": 20,
+          "replay_time_budget": 140
+        },
+        "planned": 160,
+        "quality_duration_eligible": 0,
+        "subtle_technically_supported": 0
+      },
+      {
+        "active_duration_geometry_cap_applied_count": 0,
+        "alignment_unsupported_reasons": {},
+        "dispositions": {
+          "failed": 20,
+          "not_run": 140
+        },
+        "failure_or_stop_reasons": {
+          "alignment_timeout": 20,
+          "replay_time_budget": 140
+        },
+        "planned": 160,
+        "quality_duration_eligible": 0,
+        "subtle_technically_supported": 0
+      }
+    ],
+    "schema_version": 1,
+    "severity": null,
+    "state": "technical_negative_or_incomplete",
+    "transparency": null
+  },
+  "stage_accounting": [
+    {
+      "codec_dispositions": {
+        "failed": 16,
+        "not_run": 112
+      },
+      "codec_encode_decode_pairs_reaching_alignment": 16,
+      "complete_comparisons": 0,
+      "control_dispositions": {
+        "failed": 4,
+        "not_run": 28
+      },
+      "replay": 1,
+      "source_records_with_attempts": 2
+    },
+    {
+      "codec_dispositions": {
+        "failed": 16,
+        "not_run": 112
+      },
+      "codec_encode_decode_pairs_reaching_alignment": 16,
+      "complete_comparisons": 0,
+      "control_dispositions": {
+        "failed": 4,
+        "not_run": 28
+      },
+      "replay": 2,
+      "source_records_with_attempts": 2
+    }
+  ],
+  "totals": {
+    "planned_case_attempt_slots": 320,
+    "alignment_timeouts": 40,
+    "not_run_time_budget": 280,
+    "complete_comparisons": 0,
+    "codec_encode_decode_operations_reaching_alignment": 32,
+    "distinct_codec_source_pairs_with_matching_replay_evidence": 16,
+    "control_attempts_timed_out": 8
+  },
+  "integrity": {
+    "actual_replay_bytes_compared": true,
+    "exact_identity_order_and_denominators_verified": true,
+    "first_report_unchanged": true,
+    "kind": "independent_read_only_runtime_negative_specific_audit",
+    "no_derived_audio_or_case_scratch_retained": true,
+    "passed": true,
+    "private_file_modes_0600_directory_0700": true,
+    "public_projection_independently_reconstructed": true,
+    "public_projection_sha256": "f37932e68df79e86ec9eb562b9411be4a05782492f05bbdc6631f7ba1f608f05",
+    "retained_output_json_files": 5,
+    "source_hashes_post_run_verified_count": 16,
+    "source_hashes_post_run_verified_total_bytes": 54631346,
+    "native_binding_pre_run_equal": true,
+    "native_binding_post_run_equal": true,
+    "native_binding_scope": "Edge checks, not continuous attestation. Exact OS build binds system dyld-cache dependencies; these were not individually file-hashed.",
+    "audit_method": "Separate read-only script, not runner summarize(): bound manifest identity/order, case keys and unavailable comparisons, source hashes and input geometry, control versus codec stage fields, actual replay bytes, reconstructed strict aggregate bytes, post-run source hashes and private retention layout. This is a runtime-negative-specific integrity/accounting audit, not independent scientific validation."
+  },
+  "interpretation": {
+    "observed": "Every attempted case reached alignment and expired under the case deadline. The deterministic source-major order attempted only two of sixteen sources in each replay. All planned cases remain represented.",
+    "repeatability_scope": "Both actual private report byte sequences match, including source/adapter/encoded/decoded hashes and packet metadata where present. This supports repeatability of the sixteen attempted codec/source pairs and the failure accounting only; no completed alignment records exist.",
+    "missingness": "The 280 unstarted slots and 40 timed-out slots are not perceptual negatives. Zero support/eligibility counters and empty alignment-reason maps mean no completed comparison supplied those fields, not that the audio failed the scientific support gates.",
+    "population": "Sixteen consumed development references from one provider, with only two attempted sources. Neither repeated files nor byte identity establish independent groups, transfer or generalization.",
+    "scientific_disposition": "No audibility, severity, artifact or transparency conclusion; no final rejection of perceptual estimation."
+  },
+  "runtime_investigation": {
+    "evidence_type": "static_code_inspection_not_profiled_hotspot",
+    "likely_bottleneck": "Alignment v3 performs exhaustive integer-lag structural-window correlations in Python at the native sample rate.",
+    "full_window_work_estimate": {
+      "channels": 2,
+      "windows_per_channel": 7,
+      "rate_hz": 48000,
+      "search_radius_seconds": 0.1,
+      "candidate_lags_per_window": 9601,
+      "sample_pairs_per_correlation": 24000,
+      "lag_correlations": 134414,
+      "sample_pairs": 3225936000
+    },
+    "estimate_caveat": "Conditional full-window work for the structural audit alone; not a measurement of completed operations, actual internal stage times or the location where each deadline expired.",
+    "test_gap": "New native-rate fixtures contain only 32-47 frames; complete codec replay tests mock alignment and codec boundaries. Longer alignment-validity regression runs at 2000 Hz. The green suite did not qualify full-duration 48000 Hz runtime.",
+    "no_post_observation_algorithm_change": true
+  },
+  "closed_boundaries": {
+    "playback": false,
+    "sound_card_changes": false,
+    "room_test": false,
+    "new_capture": false,
+    "processed_provider_conditions_or_scores_opened": false,
+    "original_acquired_corpus_opened": false,
+    "perceptual_metric_executed": false,
+    "human_calibration_complete": false,
+    "source_manifest_complete": false,
+    "full_reference_validated": false,
+    "no_reference_training_authorized": false,
+    "independent_transfer_passed": false,
+    "public_verdict_enabled": false,
+    "objective_complete": false
+  },
+  "next_action": "Prepare a separately versioned synthetic-only full-duration 48 kHz alignment performance/feasibility checkpoint before proposing any further real replay. Preserve valid-null semantics, topology rejection, full candidate coverage and frozen thresholds. Do not silently raise deadlines, shrink searches, repair this record or promote unstarted development sources to fresh validation."
+}

@@ -1,0 +1,277 @@
+{
+  "schema_version": 1,
+  "observation_id": "perceptual-degradation-additional-permissive-provider-public-metadata-observation-20260814-001",
+  "state": "official_metadata_screen_complete_audio_and_target_scores_closed",
+  "observed_on": "2026-08-14",
+  "purpose": "Screen additional CC BY 4.0 and CC0 music-source providers for immutable rights, documented recording provenance, conservative grouping and domain breadth without acquiring audio or selecting members.",
+  "access_boundary": {
+    "official_public_dataset_pages_read": true,
+    "official_public_papers_and_readmes_read": true,
+    "small_public_metadata_responses_streamed_or_read_ephemerally": true,
+    "raw_provider_metadata_persisted_in_research_storage": false,
+    "audio_archive_downloaded": false,
+    "audio_member_accessed": false,
+    "exact_source_member_selected": false,
+    "retained_odaq_reference_accessed": false,
+    "processed_odaq_condition_accessed": false,
+    "perceptual_metric_executed": false,
+    "target_perceptual_degradation_metric_score_accessed": false,
+    "target_perceptual_degradation_listening_score_accessed": false,
+    "unrelated_urmp_synchronization_study_summary_incidentally_visible_in_search_result": true,
+    "unrelated_urmp_synchronization_study_result_used_for_candidate_classification": false,
+    "sealed_evidence_opened": false,
+    "no_reference_training_performed": false,
+    "public_verdict_enabled": false
+  },
+  "screen_policy": {
+    "allowed_dataset_licences": [
+      "CC BY 4.0",
+      "CC0 1.0"
+    ],
+    "immutable_version_required_before_exact_member_audit": true,
+    "dataset_permission_substitutes_for_original_coding_provenance": false,
+    "pcm_wav_or_lossless_container_proves_never_lossy_origin": false,
+    "documented_purpose_recording_chain_required": true,
+    "same_work_performance_session_performer_or_derivative_may_cross_partitions": false,
+    "available_group_count_is_qualified_independent_group_count": false,
+    "exact_member_audit_candidate_is_qualified_truth_reference": false,
+    "synthetic_or_programmed_music_substitutes_for_real_performed_music": false,
+    "controlled_isolated_performance_substitutes_for_mastered_multigenre_music": false
+  },
+  "exact_member_audit_candidates": [
+    {
+      "source_id": "albumdb_19683001",
+      "provider_id": "albumdb",
+      "official_record_url": "https://zenodo.org/records/19683001",
+      "official_paper_url": "https://www.pure.ed.ac.uk/ws/portalfiles/portal/656673398/2026_McK_Dataset_AES_Europe_2026_2_.pdf",
+      "record_id": 19683001,
+      "concept_record_id": 19683000,
+      "doi": "10.5281/zenodo.19683001",
+      "version": "1.0",
+      "licence": "CC BY 4.0",
+      "canonical_selected_api_metadata_sha256": "46afa2973d69bb3044edd68999299e2b828697f9b05352fcef86c8c527002138",
+      "recording_provenance": "original ten-song indie rock and folk album recorded and produced by one engineer in a documented home-studio chain using a Roland UA-25EX, Reaper, named microphones and direct injection",
+      "delivered_audio": "16-bit 44100 Hz PCM WAV raw, mixed-dry and mixed stems plus stereo and 7.1.4 masters",
+      "public_record_count": 10,
+      "conservative_available_group_count": 10,
+      "grouping_key": "song",
+      "grouping_limit": "all songs share one album, engineer and production environment; exact sessions, reused performances, sample-reinforced drums, software instruments and derivative stem or master relationships remain to be audited",
+      "music_role": "real_mastered_single_album_indie_candidate",
+      "immutable_files": [
+        {
+          "key": "stems_raw.zip",
+          "bytes": 3647271471,
+          "md5": "d38a9539f4a88559f4d7ef61c9b856d1"
+        },
+        {
+          "key": "masters_stereo.zip",
+          "bytes": 339528043,
+          "md5": "06ff09dfe1d03788c71071b419eb0366"
+        },
+        {
+          "key": "stems_mixed_dry.zip",
+          "bytes": 4596886118,
+          "md5": "5857b6d38a69cad42131a96416e25bcc"
+        },
+        {
+          "key": "stems_mixed.zip",
+          "bytes": 4959457891,
+          "md5": "a6ddc38004047879622542f41ab691ed"
+        },
+        {
+          "key": "masters_7.1.4.zip",
+          "bytes": 1750668978,
+          "md5": "d9498bfaba5388b450133537df42b34d"
+        },
+        {
+          "key": "example_usage_automatic_mixing.zip",
+          "bytes": 44655222,
+          "md5": "f1b3d1195d94bd2aa1c42c559a0e3abd"
+        }
+      ],
+      "role_status": "candidate_after_exact_member_origin_attribution_and_relationship_audit"
+    },
+    {
+      "source_id": "choralebricks_20849469",
+      "provider_id": "choralebricks",
+      "official_record_url": "https://zenodo.org/records/20849469",
+      "official_page_url": "https://www.audiolabs-erlangen.de/resources/MIR/2025-ChoraleBricks",
+      "official_paper_url": "https://www.audiolabs-erlangen.de/content/resources/MIR/00_2025-ChoraleBricks/2025_BalkeBM_ChoraleBricks_TISMIR_ePrint.pdf",
+      "record_id": 20849469,
+      "concept_record_id": 15081740,
+      "doi": "10.5281/zenodo.20849469",
+      "version": "1.1.0",
+      "licence": "CC BY 4.0",
+      "canonical_selected_api_metadata_sha256": "2132c721f62df5e0be48c5b0bf7ea4bfe9caaf57393f83c04c82b5acd31bf9b6",
+      "superseded_record_not_bound": {
+        "record_id": 15081741,
+        "version": "1.0.0",
+        "reason": "version 1.1.0 is a breaking release with different archive checksums and corrected metadata"
+      },
+      "recording_provenance": "193 isolated real wind-instrument tracks were sequentially purpose-recorded with a Schoeps MK 4 microphone into Apple Logic Pro in three named controlled environments",
+      "delivered_audio": "raw isolated recordings and derivative modular mixes for ten chorales; reference mixes contain level, pan, reverb and compression processing",
+      "public_record_count": 10,
+      "conservative_available_group_count": 10,
+      "grouping_key": "chorale_work",
+      "grouping_limit": "works share performers, recording program and derivative combinations; performer, session and co-recording relationships remain to be audited and may reduce independent capacity",
+      "music_role": "real_controlled_wind_performance_candidate_not_mastered_multigenre",
+      "immutable_files": [
+        {
+          "key": "01_AudioAndAnnotations.zip",
+          "bytes": 1157617569,
+          "md5": "297f56cd78be1b3277a437c7206cfb7c"
+        },
+        {
+          "key": "02_ConductingVideos.zip",
+          "bytes": 126227750,
+          "md5": "2662e52d7539a342254774f0cc863ad1"
+        },
+        {
+          "key": "CHANGELOG.md",
+          "bytes": 3319,
+          "md5": "6de157afc36e793fd9be6025f2cb4c0e"
+        }
+      ],
+      "role_status": "candidate_after_exact_member_origin_attribution_and_relationship_audit"
+    },
+    {
+      "source_id": "good_sounds_data2314_v1_0",
+      "provider_id": "good_sounds",
+      "official_record_url": "https://doi.org/10.34810/DATA2314",
+      "official_metadata_api_url": "https://dataverse.csuc.cat/api/datasets/:persistentId/?persistentId=doi:10.34810/DATA2314",
+      "dataset_id": 280582,
+      "version_id": 4704,
+      "version": "1.0",
+      "doi": "10.34810/DATA2314",
+      "licence": "CC BY 4.0",
+      "release_time": "2025-06-05T14:43:42Z",
+      "recording_provenance": "15 professional musicians purpose-recorded standardized single-note and scale exercises in controlled studio conditions at Universitat Pompeu Fabra",
+      "delivered_audio": "WAV audio re-release with performer and exercise metadata",
+      "public_record_count": 15,
+      "conservative_available_group_count": 15,
+      "grouping_key": "performer",
+      "grouping_limit": "multiple takes, microphones, notes and scales from one performer remain one group; shared sessions and the coordinated recording program remain to be audited",
+      "music_role": "real_controlled_isolated_instrument_candidate_not_mastered_music",
+      "historical_licence_conflict": {
+        "older_record_url": "https://zenodo.org/records/820937",
+        "older_record_metadata_field": "CC BY 4.0",
+        "older_record_embedded_description": "CC BY-NC 4.0",
+        "candidate_scope": "only_the_exact_2025_dataverse_v1_0_rerelease",
+        "exact_archive_embedded_rights_audit_required": true
+      },
+      "immutable_files": [
+        {
+          "key": "good-sounds.zip",
+          "bytes": 2168063959,
+          "md5": "bb47a9a675b8af7d6c7d0260ac6f7145"
+        },
+        {
+          "key": "Good-sounds-dataset-readme.txt",
+          "bytes": 5499,
+          "md5": "d1c32a618799271274fe7693ecb396da"
+        }
+      ],
+      "role_status": "candidate_after_exact_member_rights_origin_attribution_and_relationship_audit"
+    },
+    {
+      "source_id": "urmp_5034983",
+      "provider_id": "urmp",
+      "official_record_url": "https://zenodo.org/records/5034983",
+      "official_documentation_url": "https://labsites.rochester.edu/air/projects/URMP/URMP_doc.pdf",
+      "official_paper_url": "https://labsites.rochester.edu/air/publications/li2018creating.pdf",
+      "record_id": 5034983,
+      "concept_record_id": 5034982,
+      "doi": "10.5061/dryad.ng3r749",
+      "licence": "CC0 1.0",
+      "recording_provenance": "real musicians purpose-recorded coordinated individual tracks in a documented University of Rochester production procedure",
+      "delivered_audio": "24-bit 48000 Hz mono WAV individual tracks and direct-sum WAV mixes; AAC is confined to separate video audio",
+      "public_arrangement_count": 44,
+      "public_unique_work_count": 28,
+      "conservative_available_group_count": 28,
+      "grouping_key": "unique_musical_work",
+      "grouping_limit": "alternate arrangements of one work are one group; shared musicians, sessions, guide performances and derived direct-sum mixes remain to be audited and may reduce independent capacity",
+      "music_role": "real_controlled_classical_performance_candidate_not_mastered_multigenre",
+      "immutable_files": [
+        {
+          "key": "Dataset.tar.gz",
+          "bytes": 12097672571,
+          "md5": "8452b1a734fad6f3c10bd19940bc09b4"
+        },
+        {
+          "key": "README_for_Dataset.tar.pdf",
+          "bytes": 168924,
+          "md5": "6b29bc5744a7b013f79f3baf57b4913a"
+        }
+      ],
+      "role_status": "candidate_after_exact_member_origin_attribution_and_relationship_audit"
+    }
+  ],
+  "screened_not_added": [
+    {
+      "source_id": "rwc_music_18656623",
+      "official_record_url": "https://zenodo.org/records/18656623",
+      "disposition": "outside_narrow_licence_policy_cc_by_nc_4_0"
+    },
+    {
+      "source_id": "musdb18_hq_3338373",
+      "official_record_url": "https://zenodo.org/records/3338373",
+      "disposition": "outside_narrow_licence_policy_noncommercial"
+    },
+    {
+      "source_id": "anechoic_string_quartet_4955282",
+      "official_record_url": "https://zenodo.org/records/4955282",
+      "disposition": "outside_narrow_licence_policy_cc_by_nc_4_0"
+    },
+    {
+      "source_id": "mshoxxdb_19599752",
+      "official_record_url": "https://zenodo.org/records/19599752",
+      "disposition": "outside_narrow_licence_policy_cc_by_nc_sa_4_0"
+    },
+    {
+      "source_id": "waivops_edm_tr9_10278066",
+      "official_record_url": "https://zenodo.org/records/10278066",
+      "disposition": "programmed_drum_loops_with_upstream_sample_chain_unresolved_not_real_performed_music_truth"
+    },
+    {
+      "source_id": "bsd35k_cs_19187100",
+      "official_record_url": "https://zenodo.org/records/19187100",
+      "disposition": "crowdsourced_freesound_origin_and_conversion_chain_do_not_establish_clean_truth_and_item_licences_include_noncommercial"
+    },
+    {
+      "source_id": "open_multitrack_testbed",
+      "official_record_url": "https://secure.aes.org/forum/pubs/ebriefs/?elib=17400",
+      "disposition": "current_immutable_provider_record_and_exact_member_rights_not_established"
+    },
+    {
+      "source_id": "orchideasol_3740399",
+      "official_record_url": "https://zenodo.org/records/3740399",
+      "disposition": "current_record_binds_metadata_only_not_an_immutable_audio_member_set"
+    },
+    {
+      "source_id": "bach_violin_dataset",
+      "official_record_url": "https://github.com/salu133445/bach-violin-dataset",
+      "disposition": "web_mp3_and_opus_sources_are_not_clean_truth_references"
+    }
+  ],
+  "aggregate_observation": {
+    "new_exact_member_audit_candidate_provider_count": 4,
+    "new_conservative_available_group_count": 63,
+    "new_real_mastered_music_provider_count": 1,
+    "new_real_mastered_music_group_count": 10,
+    "new_real_controlled_performance_provider_count": 3,
+    "new_real_controlled_performance_group_count": 53,
+    "qualified_reference_group_count": 0,
+    "allocated_group_count": 0
+  },
+  "observation_limits": {
+    "candidate_status_proves_exact_member_rights": false,
+    "candidate_status_proves_independent_grouping": false,
+    "candidate_status_proves_absence_of_prior_lossy_coding_for_every_member": false,
+    "candidate_status_freezes_an_audio_manifest": false,
+    "candidate_status_authorizes_audio_acquisition": false,
+    "candidate_status_establishes_mastered_multigenre_transfer": false,
+    "candidate_status_selects_a_source_successor": false,
+    "candidate_status_selects_a_metric_successor": false,
+    "public_cli_changed": false
+  }
+}

@@ -1,0 +1,415 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ryan-voitiskis/lossytrace/benchmarks/perceptual-degradation-v1/full-reference-oracle-score-free.schema.json",
+  "title": "LossyTrace score-free full-reference oracle envelope",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_kind",
+    "assessment_mode",
+    "case_id",
+    "result_state",
+    "public_verdict_enabled",
+    "evidence_scope",
+    "alignment",
+    "metric_families",
+    "human_calibration",
+    "outcomes",
+    "support",
+    "uncertainty",
+    "bindings"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "record_kind": {
+      "const": "perceptual_degradation_full_reference_oracle_score_free_v1"
+    },
+    "assessment_mode": {
+      "const": "full_reference"
+    },
+    "case_id": {
+      "type": "string",
+      "pattern": "^case-[0-9a-f]{64}$"
+    },
+    "result_state": {
+      "enum": [
+        "execution_blocked",
+        "unsupported_alignment"
+      ]
+    },
+    "public_verdict_enabled": {
+      "const": false
+    },
+    "evidence_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fixture_class",
+        "retained_audio_accessed",
+        "public_or_provider_audio_accessed",
+        "perceptual_metric_executed",
+        "human_score_accessed",
+        "sealed_evidence_opened"
+      ],
+      "properties": {
+        "fixture_class": {
+          "const": "synthetic_structural"
+        },
+        "retained_audio_accessed": {
+          "const": false
+        },
+        "public_or_provider_audio_accessed": {
+          "const": false
+        },
+        "perceptual_metric_executed": {
+          "const": false
+        },
+        "human_score_accessed": {
+          "const": false
+        },
+        "sealed_evidence_opened": {
+          "const": false
+        }
+      }
+    },
+    "alignment": {
+      "$ref": "alignment-result-v2.schema.json"
+    },
+    "metric_families": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [
+        {
+          "$ref": "#/$defs/visqol_family"
+        },
+        {
+          "$ref": "#/$defs/gstpeaq_family"
+        }
+      ],
+      "items": false
+    },
+    "human_calibration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state",
+        "mapping_id",
+        "human_evidence_id"
+      ],
+      "properties": {
+        "state": {
+          "const": "unavailable"
+        },
+        "mapping_id": {
+          "type": "null"
+        },
+        "human_evidence_id": {
+          "type": "null"
+        }
+      }
+    },
+    "outcomes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "categorical_state",
+        "impairment_severity",
+        "impairment_severity_interval",
+        "audibility_probability",
+        "audibility_probability_interval",
+        "artifact_profile"
+      ],
+      "properties": {
+        "categorical_state": {
+          "const": "indeterminate"
+        },
+        "impairment_severity": {
+          "type": "null"
+        },
+        "impairment_severity_interval": {
+          "type": "null"
+        },
+        "audibility_probability": {
+          "type": "null"
+        },
+        "audibility_probability_interval": {
+          "type": "null"
+        },
+        "artifact_profile": {
+          "$ref": "#/$defs/artifact_profile"
+        }
+      }
+    },
+    "support": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "supported",
+        "abstention_reasons",
+        "alignment_reason_codes"
+      ],
+      "properties": {
+        "supported": {
+          "const": false
+        },
+        "abstention_reasons": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "alignment_unsupported",
+              "human_calibration_unavailable",
+              "perceptual_metric_execution_not_authorized"
+            ]
+          }
+        },
+        "alignment_reason_codes": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/alignment_reason"
+          }
+        }
+      }
+    },
+    "uncertainty": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state",
+        "interval_level",
+        "source_group_bootstrap_replicates"
+      ],
+      "properties": {
+        "state": {
+          "const": "unquantified"
+        },
+        "interval_level": {
+          "type": "null"
+        },
+        "source_group_bootstrap_replicates": {
+          "const": 0
+        }
+      }
+    },
+    "bindings": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "alignment_limits_id",
+        "metric_execution_gate_id",
+        "oracle_mapping_id"
+      ],
+      "properties": {
+        "alignment_limits_id": {
+          "const": "perceptual-degradation-v1-topology-fixtures-20260803-001"
+        },
+        "metric_execution_gate_id": {
+          "const": "perceptual-degradation-v1-metric-execution-20260803-010"
+        },
+        "oracle_mapping_id": {
+          "type": "null"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "metric_state": {
+      "enum": [
+        "not_authorized",
+        "not_run_alignment_unsupported"
+      ]
+    },
+    "metric_reason": {
+      "enum": [
+        "alignment_unsupported",
+        "perceptual_metric_execution_not_authorized"
+      ]
+    },
+    "visqol_family": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "family_id",
+        "execution_state",
+        "raw_primary_output",
+        "raw_primary_value",
+        "supporting_outputs_present",
+        "reason"
+      ],
+      "properties": {
+        "family_id": {
+          "const": "visqol_audio_v3_3_3"
+        },
+        "execution_state": {
+          "$ref": "#/$defs/metric_state"
+        },
+        "raw_primary_output": {
+          "const": "mos_lqo"
+        },
+        "raw_primary_value": {
+          "type": "null"
+        },
+        "supporting_outputs_present": {
+          "const": false
+        },
+        "reason": {
+          "$ref": "#/$defs/metric_reason"
+        }
+      }
+    },
+    "gstpeaq_family": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "family_id",
+        "execution_state",
+        "raw_primary_output",
+        "raw_primary_value",
+        "supporting_outputs_present",
+        "reason"
+      ],
+      "properties": {
+        "family_id": {
+          "const": "gstpeaq_proxy_v0_6_1"
+        },
+        "execution_state": {
+          "$ref": "#/$defs/metric_state"
+        },
+        "raw_primary_output": {
+          "const": "proxy_odg"
+        },
+        "raw_primary_value": {
+          "type": "null"
+        },
+        "supporting_outputs_present": {
+          "const": false
+        },
+        "reason": {
+          "$ref": "#/$defs/metric_reason"
+        }
+      }
+    },
+    "artifact_profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state",
+        "components"
+      ],
+      "properties": {
+        "state": {
+          "const": "unavailable"
+        },
+        "components": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "masking_relative_error",
+            "bandwidth_loss",
+            "temporal_modulation_damage",
+            "transient_smearing_or_pre_echo",
+            "tonal_or_birdie_noise",
+            "stereo_image_or_phase_change",
+            "segment_worst_case_impairment"
+          ],
+          "properties": {
+            "masking_relative_error": {
+              "type": "null"
+            },
+            "bandwidth_loss": {
+              "type": "null"
+            },
+            "temporal_modulation_damage": {
+              "type": "null"
+            },
+            "transient_smearing_or_pre_echo": {
+              "type": "null"
+            },
+            "tonal_or_birdie_noise": {
+              "type": "null"
+            },
+            "stereo_image_or_phase_change": {
+              "type": "null"
+            },
+            "segment_worst_case_impairment": {
+              "type": "null"
+            }
+          }
+        }
+      }
+    },
+    "alignment_reason": {
+      "enum": [
+        "ambiguous_alignment_peak",
+        "insufficient_active_audio",
+        "low_alignment_correlation",
+        "clock_drift_exceeds_limit",
+        "nonlinear_drift",
+        "gain_exceeds_limit",
+        "excessive_trim",
+        "invalid_numeric_input",
+        "invalid_channel_shape",
+        "unsupported_channel_map",
+        "channel_topology_mismatch",
+        "channel_map_mismatch",
+        "channel_alignment_disagreement",
+        "structural_edit_suspected",
+        "low_structural_window_correlation"
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "result_state": {
+            "const": "execution_blocked"
+          }
+        },
+        "required": [
+          "result_state"
+        ]
+      },
+      "then": {
+        "properties": {
+          "alignment": {
+            "properties": {
+              "status": {
+                "const": "supported"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "result_state": {
+            "const": "unsupported_alignment"
+          }
+        },
+        "required": [
+          "result_state"
+        ]
+      },
+      "then": {
+        "properties": {
+          "alignment": {
+            "properties": {
+              "status": {
+                "const": "unsupported"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

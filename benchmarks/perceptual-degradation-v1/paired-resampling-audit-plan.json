@@ -1,0 +1,281 @@
+{
+  "schema_version": 1,
+  "plan_id": "paired-resampling-audit-20260905-001",
+  "state": "synthetic_development_method_comparison_not_human_calibration",
+  "bindings": {
+    "engine": {
+      "path": "scripts/perceptual_degradation_paired_uncertainty.py",
+      "sha256": "8c4d289456fd3ad410ce9d2a228b7a203ec4b5f923df975e1843c35013ecf453"
+    },
+    "predecessor_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-paired-uncertainty-synthetic-20260905-002.json",
+      "sha256": "00aca82b0f37512408f8903524e8ebf433a5c13111ed468f77ca49da87c0b6a5"
+    }
+  },
+  "experiment": {
+    "seed": "lossytrace-paired-resampling-20260905-001",
+    "replicates": 128,
+    "listeners": 24,
+    "sources": 12,
+    "repetitions": 1,
+    "bootstrap_draws": 1024,
+    "stability_draws": 2048,
+    "stability_replicates": 8,
+    "listener_ticks_and_weights": [
+      [
+        -3,
+        9
+      ],
+      [
+        -2,
+        11
+      ],
+      [
+        2,
+        11
+      ],
+      [
+        3,
+        9
+      ]
+    ],
+    "source_ticks_and_weights": {
+      "matched": [
+        [
+          -3,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "rare": [
+        [
+          -2,
+          9
+        ],
+        [
+          18,
+          1
+        ]
+      ]
+    },
+    "residual_ticks_and_weights": [
+      [
+        -5,
+        1
+      ],
+      [
+        5,
+        1
+      ]
+    ],
+    "scenarios": [
+      {
+        "id": "matched_boundary",
+        "mean_ticks": -10,
+        "scales": [
+          1,
+          1,
+          1
+        ],
+        "source_distribution": "matched",
+        "residual_variation": "constant",
+        "missingness": "none"
+      },
+      {
+        "id": "all_sd_x2_boundary",
+        "mean_ticks": -10,
+        "scales": [
+          2,
+          2,
+          2
+        ],
+        "source_distribution": "matched",
+        "residual_variation": "constant",
+        "missingness": "none"
+      },
+      {
+        "id": "source_sd_x2_boundary",
+        "mean_ticks": -10,
+        "scales": [
+          1,
+          2,
+          1
+        ],
+        "source_distribution": "matched",
+        "residual_variation": "constant",
+        "missingness": "none"
+      },
+      {
+        "id": "heteroscedastic_boundary",
+        "mean_ticks": -10,
+        "scales": [
+          1,
+          1,
+          1
+        ],
+        "source_distribution": "matched",
+        "residual_variation": "double_for_positive_source",
+        "missingness": "none"
+      },
+      {
+        "id": "rare_source_boundary",
+        "mean_ticks": -10,
+        "scales": [
+          1,
+          1,
+          1
+        ],
+        "source_distribution": "rare",
+        "residual_variation": "constant",
+        "missingness": "none"
+      },
+      {
+        "id": "independent_missing_quarter_boundary",
+        "mean_ticks": -10,
+        "scales": [
+          1,
+          1,
+          1
+        ],
+        "source_distribution": "matched",
+        "residual_variation": "constant",
+        "missingness": "independent_quarter"
+      },
+      {
+        "id": "outcome_missing_boundary",
+        "mean_ticks": -10,
+        "scales": [
+          1,
+          1,
+          1
+        ],
+        "source_distribution": "matched",
+        "residual_variation": "constant",
+        "missingness": "at_or_below_mean"
+      },
+      {
+        "id": "source_missing_boundary",
+        "mean_ticks": -10,
+        "scales": [
+          1,
+          1,
+          1
+        ],
+        "source_distribution": "matched",
+        "residual_variation": "constant",
+        "missingness": "negative_source"
+      },
+      {
+        "id": "material_complete",
+        "mean_ticks": -20,
+        "scales": [
+          1,
+          1,
+          1
+        ],
+        "source_distribution": "matched",
+        "residual_variation": "constant",
+        "missingness": "none"
+      },
+      {
+        "id": "nonmaterial_complete",
+        "mean_ticks": 0,
+        "scales": [
+          1,
+          1,
+          1
+        ],
+        "source_distribution": "matched",
+        "residual_variation": "constant",
+        "missingness": "none"
+      },
+      {
+        "id": "material_missing_tenth",
+        "mean_ticks": -20,
+        "scales": [
+          1,
+          1,
+          1
+        ],
+        "source_distribution": "matched",
+        "residual_variation": "constant",
+        "missingness": "independent_tenth"
+      },
+      {
+        "id": "nonmaterial_missing_tenth",
+        "mean_ticks": 0,
+        "scales": [
+          1,
+          1,
+          1
+        ],
+        "source_distribution": "matched",
+        "residual_variation": "constant",
+        "missingness": "independent_tenth"
+      }
+    ],
+    "population_target": "mean_observed_paired_difference_before_missingness_over_the_declared_generated_listener_and_source_populations",
+    "finite_panel_target": "mean_of_all_288_generated_paired_differences_distinct_from_the_population_target",
+    "generation": "independent_listener_source_and_cell_draws;zero_mean_effects;heteroscedastic_residual_is_symmetric_conditional_on_source;fresh_seed_for_each_scenario_and_replicate",
+    "response_linkage": "unchanged_frozen_paired_event_reducer_and_role_resolver;unsubmitted_single_grades_are_not_paired_outcomes",
+    "missingness_rng": "always_consume_one_uniform_integer_in_0_through_19_after_each_residual;quarter_missing_when_less_than_5;tenth_missing_when_less_than_2"
+  },
+  "methods": {
+    "legacy_fixed_variance": "unchanged_crossed_Gaussian_solver_on_complete_pairs",
+    "crossed_complete_case_basic": "independently_resample_all_planned_listener_and_source_indices_with_replacement;ratio_mean_on_observed_intersections;basic_bootstrap_interval;any_empty_draw_invalidates_the_interval_no_dropping_or_resampling",
+    "crossed_bounded_missing_basic": "bound_each_missing_pair_by_minus4_plus4;full_planned_rectangular_endpoint_means;basic_bootstrap_lower_limit_for_lower_endpoint_and_upper_limit_for_upper_endpoint;no_midpoint_or_imputed_point_target",
+    "bounds_formula": "lower=(observed_tick_sum-40*missing)/(10*planned);upper=(observed_tick_sum+40*missing)/(10*planned)",
+    "bootstrap_interval": "basic_limits_2*observed_statistic_minus_opposite_bootstrap_quantile;quantiles_type7_at_1/80_and_79/80;exact_rational_interpolation_and_interval_arithmetic;intersect_candidate_intervals_with_known_population_support_minus4_plus4",
+    "nominal_pointwise_coverage": "0.975_reference_only_not_established_coverage_or_familywise_guarantee",
+    "bootstrap_scope": "approximate_method;crossed_sampling_structure_assumed;complete_case_interval_does_not_identify_population_mean_under_selective_missingness;bounded_endpoint_bootstrap_is_an_evaluated_extension_not_a_guarantee_from_the_cited_variance_theorem",
+    "diagnostic_decisions": "same_frozen_minus1_material_boundary_and_24_listener_12_source_96_complete_response_support_counts;interval_only_severity_decisions;no_audibility_or_combined_truth",
+    "no_variance_floor_or_empirical_threshold_tuning": true
+  },
+  "performance": {
+    "measures": "return_rate;coverage_given_returned;coverage_given_supported;all_replicates_return_and_cover;interval_width;correct_wrong_and_indeterminate_diagnostic_decisions;finite_panel_bound_containment_and_width;rare_source_absence_subgroup_coverage",
+    "uncertainty": "explicit_denominators;Wilson95_intervals_and_MCSE_for_outer_simulation_rates;bootstrap_width_and_endpoint_drift_when_doubling_B_on_first_eight_panels_of_every_scenario",
+    "failures": "retain_all_planned_panels_and_empty_bootstrap_draws;unknown_errors_fail_closed;never_retry_a_seed",
+    "selection": "no_method_selected_for_human_calibration;no_human_materiality_margin_or_scientific_pass_threshold_selected;usefulness_controls_required_so_universal_abstention_is_not_a_success"
+  },
+  "execution": {
+    "workers": 1,
+    "replays": 2,
+    "byte_identical_required": true,
+    "python_minimum": "3.12",
+    "public_output": "aggregate_synthetic_only_no_individual_rows_or_audio",
+    "publication_status": "design_declared_before_execution_development_comparison_not_independently_preregistered_confirmatory_validation",
+    "scope_limits": "no_actual_codec_conditions_metrics_human_responses_or_sealed_evidence;no_source_manifest_or_capture_gate_opened"
+  },
+  "access_boundary": {
+    "synthetic_execution_only": true,
+    "observed_response_input_authorized": false,
+    "audio_access_authorized": false,
+    "playback_authorized": false,
+    "human_collection_authorized": false,
+    "metric_execution_authorized": false,
+    "sealed_evidence_access_authorized": false,
+    "no_reference_training_authorized": false,
+    "public_verdict_enabled": false
+  },
+  "sources": [
+    {
+      "title": "The pigeonhole bootstrap",
+      "author": "Art B. Owen",
+      "year": 2007,
+      "doi": "10.1214/07-AOAS122",
+      "url": "https://arxiv.org/abs/0712.1111",
+      "scope": "independent_row_column_resampling;conditional_variance_limits;not_small_sample_CI_or_MNAR_identification_guarantee"
+    },
+    {
+      "title": "Partial identification with missing data: concepts and findings",
+      "author": "Charles F. Manski",
+      "year": 2005,
+      "doi": "10.1016/j.ijar.2004.10.006",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0888613X04001124",
+      "scope": "missingness_identification_regions_distinct_from_sampling_uncertainty;bounded_pair_arithmetic_is_derived_explicitly_here"
+    }
+  ]
+}

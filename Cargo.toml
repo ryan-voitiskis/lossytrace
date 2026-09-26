@@ -1,8 +1,9 @@
 [package]
 name = "lossytrace"
-version = "0.1.0-alpha.1"
+version = "0.1.0-rc.1"
 authors = ["Ryan Voitiskis"]
 edition = "2021"
+rust-version = "1.94"
 license = "MIT OR Apache-2.0"
 description = "Experimental, evidence-only analysis of possible prior lossy audio compression"
 repository = "https://github.com/ryan-voitiskis/lossytrace"

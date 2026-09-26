@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "plan_id": "perceptual-degradation-listening-retained-design-robustness-20260814-001",
+  "state": "score_blind_retained_design_sensitivity_no_operational_policy",
+  "purpose": "Quantify whether bounded issued-session reserve can preserve planning power, per-source support and position-adjusted candidate-contrast estimability after synthetic session, trial and source-correlated loss without reading outcomes or selecting an operational collection policy.",
+  "bindings": {
+    "feasibility_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/listening-feasibility-frontier-plan.json",
+      "sha256": "02f3976e485f167469a4c8a0fe7d04a8fb8f55185b6169136c6e8d37e63daf36"
+    },
+    "feasibility_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-listening-feasibility-frontier-20260813-001.json",
+      "sha256": "c680fb161f3fca350109c321ee867c727eae6841eba7a6c96ce3278c0657a006"
+    },
+    "resource_frontier_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/listening-operational-resource-frontier-plan.json",
+      "sha256": "85f77980faa25eabb3c8112a8fcdda4a8286e2d12e759863777a0847d5bc1af3"
+    },
+    "resource_frontier_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-listening-operational-resource-frontier-20260814-001.json",
+      "sha256": "23ce05f582477e454a9124b33c29350155f9f43dc9fd2a239cea994d41c88041"
+    },
+    "allocator_v3_audit_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/listening-allocation-v3-symbolic-audit-plan.json",
+      "sha256": "b1ec748c90175b64e979542fe7f2647703053a65fc66408cf8796120a58bf931"
+    },
+    "allocator_v3_audit_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-listening-allocation-v3-symbolic-audit-20260814-001.json",
+      "sha256": "9aa04f07e063aa4e7629db96e7b2b13234e0a26394044d628a462055dad39504"
+    },
+    "missingness_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/listening-missingness-stress-plan.json",
+      "sha256": "054fb4e91dde0eeed11bd72fe2e9c32ca8f13663dade977a527442f1bedeb344"
+    },
+    "missingness_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-listening-missingness-stress-20260814-001.json",
+      "sha256": "bdbb4a821e5a6b19b161c70e1b2dda240d2fb3c698fc04b3dc4649000680629c"
+    },
+    "power_implementation": {
+      "path": "scripts/perceptual_degradation_listening_feasibility.py",
+      "sha256": "1d5a95ca4f0072ead8846bbcb98b5d56c0ce2f55496cb2c520b30b948279a74a"
+    },
+    "missingness_implementation": {
+      "path": "scripts/perceptual_degradation_listening_missingness_stress.py",
+      "sha256": "17cd8796a7c86e76e02f250376116cf8d9f5acc0bf7dc31c80636e18650077a3"
+    },
+    "allocator_v3": {
+      "path": "scripts/perceptual_degradation_listening_allocation_v3.py",
+      "sha256": "66e9a787b1e154b80bdeff0350ece2b6264029664b3381b01a7c8e5da1ac6814"
+    },
+    "symbolic_manifest_builder": {
+      "path": "scripts/perceptual_degradation_listening_resource_frontier.py",
+      "sha256": "5bef0ffba4c37387dd2a4f976fb8b5e7fcc0c6e5344855450491705b62a313c9"
+    }
+  },
+  "authorization": {
+    "synthetic_symbolic_retained_design_replay_authorized": true,
+    "observed_response_access_authorized": false,
+    "listener_identity_access_authorized": false,
+    "exact_source_member_selection_authorized": false,
+    "retained_audio_read_authorized": false,
+    "new_audio_acquisition_authorized": false,
+    "stimulus_generation_authorized": false,
+    "human_collection_authorized": false,
+    "recruitment_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "sealed_evidence_access_authorized": false,
+    "no_reference_training_authorized": false,
+    "public_verdict_enabled": false
+  },
+  "stress_contract": {
+    "source_group_count": 120,
+    "minimum_judgments_per_source": 8,
+    "replicate_count": 256,
+    "retention_rates": [0.85, 0.90, 0.95],
+    "issued_reserve_multipliers": [1.0, 1.1, 1.2, 1.3, 1.4],
+    "source_correlated_loss_counts": [6, 12, 24],
+    "replicate_joint_gate_pass_rate": 0.95,
+    "power_target": 0.80,
+    "planning_truth": {
+      "transparent_audibility_probability": 0.50,
+      "audible_probability": 0.80,
+      "sdg": -1.25,
+      "mushra_loss": 15.0
+    },
+    "retained_design_standard_error": "frozen_random_effect_variances_with_realized_synthetic_design_counts_and_kish_effective_listener_and_source_counts",
+    "position_adjusted_contrast_gate": "candidate_position_bipartite_graph_connected_for_every_retained_symbolic_trial",
+    "source_breadth_after_structured_loss": "unassessed_without_frozen_provider_domain_and_partition_membership",
+    "outcomes_generated": false,
+    "outcomes_read": false
+  },
+  "frontier_options": [
+    {
+      "option_id": "sources120-subtle3-mushra3",
+      "subtle_trial_limit": 3,
+      "mushra_trial_limit": 3,
+      "base_eligible_prefix": 765
+    },
+    {
+      "option_id": "sources120-subtle5-mushra5",
+      "subtle_trial_limit": 5,
+      "mushra_trial_limit": 5,
+      "base_eligible_prefix": 496
+    },
+    {
+      "option_id": "sources120-subtle8-mushra6",
+      "subtle_trial_limit": 8,
+      "mushra_trial_limit": 6,
+      "base_eligible_prefix": 345
+    },
+    {
+      "option_id": "sources120-subtle15-mushra6",
+      "subtle_trial_limit": 15,
+      "mushra_trial_limit": 6,
+      "base_eligible_prefix": 227
+    }
+  ],
+  "claim_boundary": {
+    "synthetic_retention_is_empirical_missingness": false,
+    "kish_approximation_is_fitted_hierarchical_power": false,
+    "planning_power_is_listening_evidence": false,
+    "aggregate_power_preserves_provider_domain_breadth": false,
+    "reserve_sensitivity_selects_recruitment_count": false,
+    "reserve_sensitivity_selects_exclusion_policy": false,
+    "reserve_sensitivity_authorizes_adaptive_replacement": false,
+    "reserve_sensitivity_authorizes_collection": false,
+    "full_objective_complete": false,
+    "public_cli_changed": false
+  },
+  "authorized_next_step": "Use this score-blind frontier to determine whether any bounded reserve option has an acceptable resource and robustness envelope. Operational adoption still requires a responsible-human choice, frozen source membership and breadth, empirical pilot assumptions, append-only allocation state, outcome-blind exclusions and a separately authorized collection protocol."
+}

@@ -1,0 +1,409 @@
+{
+  "access_boundary": {
+    "audio_access_authorized": false,
+    "capture_or_playback_authorized": false,
+    "external_communication_or_spending_authorized": false,
+    "human_collection_authorized": false,
+    "legacy_files_immutable": true,
+    "metric_execution_authorized": false,
+    "minimum_free_gib": 15,
+    "no_reference_training_authorized": false,
+    "observed_input_authorized": false,
+    "public_verdict_enabled": false,
+    "sealed_evidence_authorized": false,
+    "synthetic_only": true,
+    "workers": 1
+  },
+  "aggregate_adapter_targets_rejected": 4,
+  "bindings": {
+    "independence_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-independent-groups-synthetic-20260905-001.json",
+      "sha256": "c2295eb1b41b8de87c7ae0685638eba2a13147aebcbacfdec44505fd5411c2d0"
+    },
+    "paired_engine": {
+      "path": "scripts/perceptual_degradation_paired_rating.py",
+      "sha256": "6a9753b9064df1d61950775684a25fa19bd4d8c5c77a97c051851187cf795c7e"
+    },
+    "paired_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/paired-rating-protocol-plan.json",
+      "sha256": "d3578a823277d8542c1f4c9cc7d18ead03948324b5103ba9e512585287983192"
+    },
+    "target_semantics_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/perceptual-target-semantics-plan.json",
+      "sha256": "1801113a3f4b81b8316c8bdfcc1df21ee922a1aa744233dd0585b768b17266d2"
+    },
+    "target_semantics_report": {
+      "path": "research/toolchains/evidence/perceptual-degradation-target-semantics-synthetic-20260905-001.json",
+      "sha256": "dba2b11110b176cdb478cc1643ba6873fff57dd8bd5320d01d25f4ecdb3a7f12"
+    }
+  },
+  "complete_fixture_inventory": {
+    "independent_sampling_unit_count": null,
+    "leakage_groups": 6,
+    "listeners": 24,
+    "planned_presentations": 1440,
+    "scenarios": 5,
+    "source_groups": 12,
+    "stable_cases": 60
+  },
+  "full_reference_oracle_validated": false,
+  "human_responses_observed": false,
+  "implementation_sha256": "55ac8c101ba58f820e558b5e0eaca025a70510dafe0f3a2102f2f9600fdadadd",
+  "interval_coverage_validated": false,
+  "legacy_evaluator_replaced": false,
+  "next_requirements": [
+    "Bind exact real reference and condition identity privately, independently of presentation aliases and grouping IDs, before any observed-response linkage is authorized.",
+    "Freeze the listener population and averaging rule for each source-conditional target; do not transfer aggregate minimum-source counts or intervals to a one-source target.",
+    "Declare source population, sampling frame and selection mechanism, independent units, crossing/nesting and weights before population validation.",
+    "Choose uncertainty, missingness, proper response-level scores and prospective acceptance criteria in a separately justified statistical successor.",
+    "Retain all source, metric, human calibration, full-reference and independent-transfer gates; this linkage checkpoint opens none."
+  ],
+  "objective_complete": false,
+  "panels": [
+    {
+      "case_summary_histogram": [
+        {
+          "case_count": 12,
+          "summary": {
+            "absent_responses": 0,
+            "assigned_listeners": 24,
+            "audible_condition_label": null,
+            "complete_pairs": 24,
+            "correct_choices": 12,
+            "incorrect_choices_retained": 12,
+            "independent_sampling_unit_count": null,
+            "locked_choices": 24,
+            "material_condition_label": null,
+            "missing_choices": 0,
+            "missing_pairs": 0,
+            "observed_correct_choice_fraction": "1/2",
+            "observed_signed_paired_mean": "0/1",
+            "planned_panel_correct_choice_fraction": "1/2",
+            "planned_panel_signed_paired_mean": "0/1",
+            "population_correct_response_probability": null,
+            "population_interval": null,
+            "population_paired_mean": null,
+            "received_responses": 24
+          }
+        }
+      ],
+      "condition_presentation_aliases": 288,
+      "independent_sampling_unit_count": null,
+      "leakage_groups": 6,
+      "planned_presentations": 288,
+      "reference_presentation_aliases": 288,
+      "source_groups": 12,
+      "stable_cases": 12,
+      "stable_conditions": 12,
+      "stable_references": 12,
+      "synthetic_scenario": "equal-top",
+      "variant": "complete"
+    },
+    {
+      "case_summary_histogram": [
+        {
+          "case_count": 12,
+          "summary": {
+            "absent_responses": 0,
+            "assigned_listeners": 24,
+            "audible_condition_label": null,
+            "complete_pairs": 24,
+            "correct_choices": 12,
+            "incorrect_choices_retained": 12,
+            "independent_sampling_unit_count": null,
+            "locked_choices": 24,
+            "material_condition_label": null,
+            "missing_choices": 0,
+            "missing_pairs": 0,
+            "observed_correct_choice_fraction": "1/2",
+            "observed_signed_paired_mean": "0/1",
+            "planned_panel_correct_choice_fraction": "1/2",
+            "planned_panel_signed_paired_mean": "0/1",
+            "population_correct_response_probability": null,
+            "population_interval": null,
+            "population_paired_mean": null,
+            "received_responses": 24
+          }
+        }
+      ],
+      "condition_presentation_aliases": 288,
+      "independent_sampling_unit_count": null,
+      "leakage_groups": 6,
+      "planned_presentations": 288,
+      "reference_presentation_aliases": 288,
+      "source_groups": 12,
+      "stable_cases": 12,
+      "stable_conditions": 12,
+      "stable_references": 12,
+      "synthetic_scenario": "symmetric-error",
+      "variant": "complete"
+    },
+    {
+      "case_summary_histogram": [
+        {
+          "case_count": 12,
+          "summary": {
+            "absent_responses": 0,
+            "assigned_listeners": 24,
+            "audible_condition_label": null,
+            "complete_pairs": 24,
+            "correct_choices": 12,
+            "incorrect_choices_retained": 12,
+            "independent_sampling_unit_count": null,
+            "locked_choices": 24,
+            "material_condition_label": null,
+            "missing_choices": 0,
+            "missing_pairs": 0,
+            "observed_correct_choice_fraction": "1/2",
+            "observed_signed_paired_mean": "-1/2",
+            "planned_panel_correct_choice_fraction": "1/2",
+            "planned_panel_signed_paired_mean": "-1/2",
+            "population_correct_response_probability": null,
+            "population_interval": null,
+            "population_paired_mean": null,
+            "received_responses": 24
+          }
+        }
+      ],
+      "condition_presentation_aliases": 288,
+      "independent_sampling_unit_count": null,
+      "leakage_groups": 6,
+      "planned_presentations": 288,
+      "reference_presentation_aliases": 288,
+      "source_groups": 12,
+      "stable_cases": 12,
+      "stable_conditions": 12,
+      "stable_references": 12,
+      "synthetic_scenario": "choice-correlated",
+      "variant": "complete"
+    },
+    {
+      "case_summary_histogram": [
+        {
+          "case_count": 12,
+          "summary": {
+            "absent_responses": 0,
+            "assigned_listeners": 24,
+            "audible_condition_label": null,
+            "complete_pairs": 12,
+            "correct_choices": 12,
+            "incorrect_choices_retained": 12,
+            "independent_sampling_unit_count": null,
+            "locked_choices": 24,
+            "material_condition_label": null,
+            "missing_choices": 0,
+            "missing_pairs": 12,
+            "observed_correct_choice_fraction": "1/2",
+            "observed_signed_paired_mean": "-2/1",
+            "planned_panel_correct_choice_fraction": "1/2",
+            "planned_panel_signed_paired_mean": null,
+            "population_correct_response_probability": null,
+            "population_interval": null,
+            "population_paired_mean": null,
+            "received_responses": 24
+          }
+        }
+      ],
+      "condition_presentation_aliases": 288,
+      "independent_sampling_unit_count": null,
+      "leakage_groups": 6,
+      "planned_presentations": 288,
+      "reference_presentation_aliases": 288,
+      "source_groups": 12,
+      "stable_cases": 12,
+      "stable_conditions": 12,
+      "stable_references": 12,
+      "synthetic_scenario": "choice-correlated",
+      "variant": "incorrect_pairs_unsubmitted"
+    },
+    {
+      "case_summary_histogram": [
+        {
+          "case_count": 11,
+          "summary": {
+            "absent_responses": 0,
+            "assigned_listeners": 24,
+            "audible_condition_label": null,
+            "complete_pairs": 24,
+            "correct_choices": 12,
+            "incorrect_choices_retained": 12,
+            "independent_sampling_unit_count": null,
+            "locked_choices": 24,
+            "material_condition_label": null,
+            "missing_choices": 0,
+            "missing_pairs": 0,
+            "observed_correct_choice_fraction": "1/2",
+            "observed_signed_paired_mean": "-1/2",
+            "planned_panel_correct_choice_fraction": "1/2",
+            "planned_panel_signed_paired_mean": "-1/2",
+            "population_correct_response_probability": null,
+            "population_interval": null,
+            "population_paired_mean": null,
+            "received_responses": 24
+          }
+        },
+        {
+          "case_count": 1,
+          "summary": {
+            "absent_responses": 24,
+            "assigned_listeners": 24,
+            "audible_condition_label": null,
+            "complete_pairs": 0,
+            "correct_choices": 0,
+            "incorrect_choices_retained": 0,
+            "independent_sampling_unit_count": null,
+            "locked_choices": 0,
+            "material_condition_label": null,
+            "missing_choices": 24,
+            "missing_pairs": 24,
+            "observed_correct_choice_fraction": null,
+            "observed_signed_paired_mean": null,
+            "planned_panel_correct_choice_fraction": null,
+            "planned_panel_signed_paired_mean": null,
+            "population_correct_response_probability": null,
+            "population_interval": null,
+            "population_paired_mean": null,
+            "received_responses": 0
+          }
+        }
+      ],
+      "condition_presentation_aliases": 288,
+      "independent_sampling_unit_count": null,
+      "leakage_groups": 6,
+      "planned_presentations": 288,
+      "reference_presentation_aliases": 288,
+      "source_groups": 12,
+      "stable_cases": 12,
+      "stable_conditions": 12,
+      "stable_references": 12,
+      "synthetic_scenario": "choice-correlated",
+      "variant": "one_case_absent"
+    },
+    {
+      "case_summary_histogram": [
+        {
+          "case_count": 12,
+          "summary": {
+            "absent_responses": 24,
+            "assigned_listeners": 24,
+            "audible_condition_label": null,
+            "complete_pairs": 0,
+            "correct_choices": 0,
+            "incorrect_choices_retained": 0,
+            "independent_sampling_unit_count": null,
+            "locked_choices": 0,
+            "material_condition_label": null,
+            "missing_choices": 24,
+            "missing_pairs": 24,
+            "observed_correct_choice_fraction": null,
+            "observed_signed_paired_mean": null,
+            "planned_panel_correct_choice_fraction": null,
+            "planned_panel_signed_paired_mean": null,
+            "population_correct_response_probability": null,
+            "population_interval": null,
+            "population_paired_mean": null,
+            "received_responses": 0
+          }
+        }
+      ],
+      "condition_presentation_aliases": 288,
+      "independent_sampling_unit_count": null,
+      "leakage_groups": 6,
+      "planned_presentations": 288,
+      "reference_presentation_aliases": 288,
+      "source_groups": 12,
+      "stable_cases": 12,
+      "stable_conditions": 12,
+      "stable_references": 12,
+      "synthetic_scenario": "choice-correlated",
+      "variant": "all_absent"
+    },
+    {
+      "case_summary_histogram": [
+        {
+          "case_count": 12,
+          "summary": {
+            "absent_responses": 0,
+            "assigned_listeners": 24,
+            "audible_condition_label": null,
+            "complete_pairs": 24,
+            "correct_choices": 12,
+            "incorrect_choices_retained": 12,
+            "independent_sampling_unit_count": null,
+            "locked_choices": 24,
+            "material_condition_label": null,
+            "missing_choices": 0,
+            "missing_pairs": 0,
+            "observed_correct_choice_fraction": "1/2",
+            "observed_signed_paired_mean": "-1/1",
+            "planned_panel_correct_choice_fraction": "1/2",
+            "planned_panel_signed_paired_mean": "-1/1",
+            "population_correct_response_probability": null,
+            "population_interval": null,
+            "population_paired_mean": null,
+            "received_responses": 24
+          }
+        }
+      ],
+      "condition_presentation_aliases": 288,
+      "independent_sampling_unit_count": null,
+      "leakage_groups": 6,
+      "planned_presentations": 288,
+      "reference_presentation_aliases": 288,
+      "source_groups": 12,
+      "stable_cases": 12,
+      "stable_conditions": 12,
+      "stable_references": 12,
+      "synthetic_scenario": "common-offset",
+      "variant": "complete"
+    },
+    {
+      "case_summary_histogram": [
+        {
+          "case_count": 12,
+          "summary": {
+            "absent_responses": 0,
+            "assigned_listeners": 24,
+            "audible_condition_label": null,
+            "complete_pairs": 24,
+            "correct_choices": 0,
+            "incorrect_choices_retained": 24,
+            "independent_sampling_unit_count": null,
+            "locked_choices": 24,
+            "material_condition_label": null,
+            "missing_choices": 0,
+            "missing_pairs": 0,
+            "observed_correct_choice_fraction": "0/1",
+            "observed_signed_paired_mean": "4/1",
+            "planned_panel_correct_choice_fraction": "0/1",
+            "planned_panel_signed_paired_mean": "4/1",
+            "population_correct_response_probability": null,
+            "population_interval": null,
+            "population_paired_mean": null,
+            "received_responses": 24
+          }
+        }
+      ],
+      "condition_presentation_aliases": 288,
+      "independent_sampling_unit_count": null,
+      "leakage_groups": 6,
+      "planned_presentations": 288,
+      "reference_presentation_aliases": 288,
+      "source_groups": 12,
+      "stable_cases": 12,
+      "stable_conditions": 12,
+      "stable_references": 12,
+      "synthetic_scenario": "positive-difference",
+      "variant": "complete"
+    }
+  ],
+  "plan_sha256": "4da321b14be2d9fef2d995882418d58a2bfe2bc87cde67c95d67fe73c751682e",
+  "population_inference_supported": false,
+  "report_id": "case-linkage-20260905-001",
+  "sampling_frame_established": false,
+  "schema_version": 1,
+  "scientific_gate_evaluated": false,
+  "scientific_source_labels_supported": false,
+  "source_identity_verified_from_media": false,
+  "state": "synthetic_case_linkage_complete_no_population_or_source_truth"
+}

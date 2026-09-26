@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "plan_id": "perceptual-degradation-listening-privacy-readiness-audit-20260814-001",
+  "state": "score_blind_privacy_readiness_audit_frozen_no_collection_authority",
+  "purpose": "Audit the listening response, player and operational records for data minimization, linkage, consent, withdrawal, storage and publication readiness without collecting responses or selecting unresolved operational values.",
+  "bindings": {
+    "listening_preparation_gate": {
+      "path": "benchmarks/perceptual-degradation-v1/listening-preparation-gate.json",
+      "sha256": "02a2b2f35aa1e26f2e7fe927fb0e0f8b8b5816b075eee5d481a4b786324080f0"
+    },
+    "listener_information_draft": {
+      "path": "docs/research/perceptual-degradation-listener-information-20260803.md",
+      "sha256": "a3869ab30c919dee93949a246f5325be3b9827893a46508fc611b96e764f4f21"
+    },
+    "response_envelope_schema": {
+      "path": "benchmarks/perceptual-degradation-v1/listening-response-envelope.schema.json",
+      "sha256": "8a7097a469bd437404b6c48c7bd10311578d110b82fa34c60d528e97b76e2b92"
+    },
+    "local_player": {
+      "path": "research/listening-player/player.js",
+      "sha256": "fda73121463ce5b6d21a7b8f968062cdb75485edf96a6f7452317a3b7574121b"
+    },
+    "local_player_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_listening_player.py",
+      "sha256": "f6c6d7ea29c58e7f5a3e472c2ea93a1d177fdedaecd7313915a0a32d4af2a228"
+    },
+    "allocation_journal_audit": {
+      "path": "research/toolchains/evidence/perceptual-degradation-listening-allocation-journal-audit-20260814-001.json",
+      "sha256": "5f63005820775ef6a242058b8ddf904dabb5675181420ecdf79325e70ccc0479"
+    }
+  },
+  "authorization": {
+    "committed_metadata_schema_and_source_read_authorized": true,
+    "synthetic_structural_audit_authorized": true,
+    "operational_privacy_values_selection_authorized": false,
+    "responsible_human_approval_authorized": false,
+    "participant_contact_authorized": false,
+    "recruitment_authorized": false,
+    "consent_collection_authorized": false,
+    "response_storage_authorized": false,
+    "human_collection_authorized": false,
+    "response_or_outcome_access_authorized": false,
+    "public_individual_response_release_authorized": false,
+    "public_small_cell_release_authorized": false,
+    "no_reference_training_authorized": false,
+    "public_verdict_enabled": false
+  },
+  "privacy_classification_policy": {
+    "stable_or_repeated_participant_code_is_pseudonymous": true,
+    "pseudonymous_response_data_is_deidentified": false,
+    "absence_of_direct_identifiers_is_anonymous": false,
+    "contact_and_payment_data_must_be_separate": true,
+    "consent_record_must_be_separate_from_trial_data": true,
+    "withdrawal_link_must_be_separate_and_time_bounded": true,
+    "response_schema_may_contain_direct_identity_contact_or_network_fields": false,
+    "public_individual_responses_may_be_released": false,
+    "public_small_cells_may_be_released": false
+  },
+  "forbidden_response_field_tokens": [
+    "name",
+    "email",
+    "account",
+    "ip_address",
+    "location",
+    "latitude",
+    "longitude",
+    "serial_number",
+    "microphone_audio",
+    "contact",
+    "payment"
+  ],
+  "required_operational_fields": [
+    "responsible_researcher_and_contact",
+    "complaints_or_independent_contact_if_applicable",
+    "governing_organization_and_ethics_privacy_basis",
+    "eligibility_jurisdiction_and_minimum_age",
+    "response_storage_system_region_encryption_access_and_incident_process",
+    "raw_and_aggregate_retention_periods_and_deletion_method",
+    "withdrawal_contact_code_procedure_and_deidentification_cutoff",
+    "compensation_amount_currency_partial_session_rule_and_payment_operator",
+    "minimum_public_aggregation_cell_size_and_suppression_policy",
+    "protocol_software_consent_privacy_and_analysis_version_hashes"
+  ],
+  "predeclared_checks": [
+    "response_schema_is_closed_world",
+    "response_schema_contains_no_forbidden_direct_identifier_field",
+    "participant_code_links_sessions_and_responses",
+    "response_data_classified_as_pseudonymous_not_deidentified",
+    "local_player_has_no_network_identity_microphone_or_persistence_api",
+    "consent_version_and_timestamp_absent_from_trial_envelope",
+    "withdrawal_code_absent_from_trial_envelope",
+    "operational_privacy_fields_remain_unresolved",
+    "response_storage_and_collection_remain_unauthorized",
+    "allocation_journal_privacy_ownership_and_backup_policy_remains_unfrozen"
+  ],
+  "claim_boundary": {
+    "audit_selects_operational_values": false,
+    "audit_is_ethics_or_legal_approval": false,
+    "data_minimization_is_anonymity": false,
+    "pseudonymization_is_deidentification": false,
+    "local_player_proves_deployed_privacy": false,
+    "schema_readiness_authorizes_storage": false,
+    "audit_authorizes_contact_recruitment_consent_or_collection": false,
+    "audit_completes_human_calibration_requirement": false,
+    "audit_enables_no_reference_training": false,
+    "audit_changes_public_cli": false
+  },
+  "authorized_next_step": "Replay the structural audit twice and preserve a fail-closed readiness disposition. A responsible human must later resolve every operational field, approve a successor consent and response package, and explicitly authorize storage and collection; this plan does not select values or contact participants."
+}

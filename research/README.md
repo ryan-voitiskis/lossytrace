@@ -9,3 +9,12 @@ the final exact-transform research archive. Generated per-case JSON, compiled
 artifacts, logs, private paths, and audio are deliberately excluded from Git.
 The complete external archive is recorded in
 [`archive-provenance.md`](archive-provenance.md).
+
+The active successor program starts from the decoded-PCM identifiability
+contract and machine-validated factorial benchmark in
+[`benchmarks/audio-integrity-v2/`](../benchmarks/audio-integrity-v2/). It does
+not revive or relabel source code in this archive as a candidate.
+
+The exact published-weight Cannam baseline replay is preserved under
+[`baselines/cannam/`](baselines/cannam/). Its fixed-rule result is a failure
+atlas for benchmark construction, not a detector candidate.

@@ -6,6 +6,8 @@ __pycache__/
 *.py[cod]
 *.log
 .DS_Store
+/.playwright-cli/
+/output/playwright/
 
 # Real audio, private manifests, generated candidates, and per-case output.
 /benchmarks/**/manifest.json

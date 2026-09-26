@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "plan_id": "alignment-native-qualification-20260908-001",
+  "state": "synthetic_only_native_successor_protocol_before_full_size_observation",
+  "purpose": "Qualify a separately versioned native local-correlation optimization against unchanged v3 semantics and the same bounded full-rate synthetic geometry. This is software qualification, not perceptual evidence.",
+  "bindings": {
+    "alignment_v1": {
+      "path": "scripts/perceptual_degradation_alignment.py",
+      "sha256": "0e036bc1a430e578523d61e68c7ab0dc659bace2f606710ab3d28b148439dccb"
+    },
+    "alignment_v2": {
+      "path": "scripts/perceptual_degradation_alignment_v2.py",
+      "sha256": "72fe01344a33ffbec3967f0c64ca7cf5a3e7c0f5ba64620800115a646500e61c"
+    },
+    "alignment_v3": {
+      "path": "scripts/perceptual_degradation_alignment_v3.py",
+      "sha256": "d9296e62a806a811d281cac93ae65f9bfcaab310aa5dfe12127bfc09199b7581"
+    },
+    "topology_freeze": {
+      "path": "benchmarks/perceptual-degradation-v1/alignment-topology-freeze.json",
+      "sha256": "b3508568fb1375f833fd4ba5b0203bdeb6dba1197fb95b054576e79c9deeda45"
+    },
+    "validity_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/alignment-validity-successor-plan.json",
+      "sha256": "717e03b6c9e45c1ce57c3298b6a921576a771f96ee7d1fd07405b8e5c19a8a29"
+    },
+    "digital_runtime_negative": {
+      "path": "research/toolchains/evidence/perceptual-degradation-digital-technical-20260908-001.json",
+      "sha256": "dd1447607eb09cc8dfadb5595c543324f38dd354fa7e77f303e2fbfe58421445"
+    },
+    "native_tools": {
+      "path": "research/toolchains/evidence/perceptual-degradation-digital-native-tools-20260908-001.json",
+      "sha256": "befbd97f40cfc8eb2debc40b074cfdba23708e79f59719d032cf5106b40404b6"
+    },
+    "native_binding_implementation": {
+      "path": "scripts/perceptual_degradation_digital_tools.py",
+      "sha256": "71055c715fd4ee75687676db14f2a557eb8d1a6b985b0ca6253f32ddc6124f8d"
+    },
+    "runtime_predecessor": {
+      "path": "scripts/perceptual_degradation_alignment_runtime.py",
+      "sha256": "c7aa45f4e6d1ecff4646693e76143c7be0f60b8098b7d119a2eaf4058a3dbfcc"
+    },
+    "runtime_negative": {
+      "path": "research/toolchains/evidence/perceptual-degradation-alignment-runtime-synthetic-20260908-001.json",
+      "sha256": "a51853e81f88f6470c33991e5df8d7e79c1146d57f97ea4cc6c2a799fa177558"
+    },
+    "alignment_v4": {
+      "path": "scripts/perceptual_degradation_alignment_v4.py",
+      "sha256": "f5ad2f7e9966a092152601e36520e2b4d12efa969284636458630439553b5278"
+    },
+    "native_source": {
+      "path": "scripts/perceptual_degradation_correlation_native.c",
+      "sha256": "632020c11235dcc5f4708563094d230449f9eaebb8fd7d2e07990a90325729f1"
+    },
+    "native_bridge": {
+      "path": "scripts/perceptual_degradation_correlation_native.py",
+      "sha256": "5aa7b8d3e4ca7d555a2ad68698642a20dad8da5bd6388da73b1fc4c70f0b0db9"
+    },
+    "native_license": {
+      "path": "research/licenses/alignment-kernel-PSF-LICENSE.txt",
+      "sha256": "ebe7dacaa0cc671387c19bf89ab62cf021d883a3c8f4f4b31a413ef0ca77b3c4"
+    },
+    "equivalence_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_alignment_v4.py",
+      "sha256": "ceef891045ddfd1a5d56405c586efef216e2e983b4fe05d6032c4b5cdced9b00"
+    },
+    "runner": {
+      "path": "scripts/perceptual_degradation_alignment_native_qualification.py",
+      "sha256": "2c936cd58f1cc8d9e3643375afc3efc3b2b6b4258c2802de7a13b4b300d34c20"
+    },
+    "tests": {
+      "path": "scripts/tests/test_perceptual_degradation_alignment_native_qualification.py",
+      "sha256": "14c2ec33a8879f2b7808522e227e7da59f2a154c45ac2472ccb2dcbd1d79ccac"
+    }
+  },
+  "experiment": {
+    "sample_rate_hz": 48000,
+    "frames": 576008,
+    "reference_channels": 2,
+    "cases": [
+      "identity_baseline",
+      "identity_instrumented",
+      "constant_envelope",
+      "topology_mismatch"
+    ],
+    "rounds": 2,
+    "workers": 1,
+    "alignment_deadline_seconds": 180,
+    "worker_deadline_seconds": 210,
+    "minimum_active_seconds": 4,
+    "maximum_delay_seconds": 2,
+    "minimum_free_gib": 15,
+    "input_mode": "constructed_arrays_only"
+  },
+  "construction": {
+    "generator": "Unsigned 32-bit LCG: seed 0x35A719C3; state = (1664525*state+1013904223) modulo 2^32. For each pair index i, generate a,b as (((state>>16) modulo 1024)-512)*32*(1+(i//137) modulo 5)/2^20. Left extends (a,b), right extends (-b,a). Truncate to 576008 frames. Inputs are immutable tuples, not file-backed waveforms.",
+    "identity": "Exact constructed stereo reference versus itself, with the same recipe identity in uninstrumented and instrumented modes.",
+    "constant_envelope": "Both channels are the exact constant 0.125; centered Pearson envelope evidence is undefined and should abstain.",
+    "topology_mismatch": "Constructed stereo reference versus its left channel declared mono; topology rejection should occur without channel alignment.",
+    "selection": "One deterministic artificial active family plus two invalid-support controls. No source representativeness or exhaustive algorithm qualification claim."
+  },
+  "timing_contract": {
+    "baseline": "Uninstrumented v4 with explicitly installed hash-bound native kernel; fixed 180-second alignment deadline.",
+    "instrumentation": "Reversible wrappers time complete drift/structural local searches, not individual native operations. Coarse/sample, envelope and gain stages remain Python. Exclusive stage seconds and completed windows are reported; native candidate and geometry counts are separate.",
+    "measurement_boundary": "Construction, explicit compiler invocation, import, startup and JSON serialization outside isolated alignment timer. Fresh process for each slot, 210-second whole-worker bound. Each native call processes one lag, permitting Python alarm handling between lags. No codec pipeline qualification.",
+    "censoring": "A timeout is a right-censored runtime with no completed alignment record. The observed stack localizes interruption, not the time for unexecuted channels or a completed-run hotspot. Partial counts and timing fields may differ between rounds.",
+    "replay": "Run the four cases in the listed order twice, each in a fresh isolated process, one worker. Keep both reports unchanged. Compare case outcomes and any completed numerical alignment bytes separately; do not demand byte-identical clocks, counters or deadline locations.",
+    "clock_policy": "No post-observation deadline increase, narrowed lag search, signal replacement, case substitution or automatic retry. This does not change the prior real-audio result.",
+    "primary_feasibility": "Report uninstrumented identity completion within 180 seconds in both rounds, separately from supported/unsupported alignment classification. No substitute or deadline increase on failure.",
+    "pipeline_qualification": false,
+    "semantic_qualification": "Require completed cross-mode and cross-round alignment-byte identity, expected invalid-control behavior, and exact identity search inventory with zero fallback: 14 structural searches of 24000 frames, stride 1, 9601 candidates each; 10 drift searches of 48000 frames, stride 2, 121 candidates each. Total 135624 native candidates per complete identity alignment.",
+    "comparison_to_predecessor": "Prior v3 baseline is censored at 180 seconds. At most report a completion-time lower-bound speed ratio, not a measured total v3 speedup. The new local-search stage includes bridge overhead; it is not the predecessor's individual-correlation stage."
+  },
+  "execution_boundary": {
+    "local_pre_observation_commit_required": true,
+    "external_preregistration_claim": false,
+    "publication": "Commit the tested protocol locally before full-size alignment observation. Publish the protocol and subsequent result commits together only after full local CI-equivalent checks, then verify exact final-head CI. Synthetic-only development does not claim prior external preregistration.",
+    "native_runtime": "Reverify previously bound installed runtime metadata before execution, each round and after. Build C once in a private output kernel directory with fixed flags. Bind source, binary, compiler executable/version, flags and OS/architecture; each child checks binary SHA and arithmetic environment. Compiler dependency closure is explicitly not claimed. No codec calls.",
+    "resource": "One worker; 15 GiB disk reserve; eight ordered slots maximum; each worker 210 seconds maximum. One explicit compiler subprocess maximum 60 seconds. No real audio, codecs, playback, capture or metrics.",
+    "retention": "Unique private outside-Git directory: four no-clobber mode-0600 JSON reports plus retained non-Git mode-0500 native binary in a mode-0700 kernel subdirectory. No waveform files. Publish audited JSON and source only, with no local paths or raw arrays.",
+    "full_size_alignment_in_default_tests": false
+  },
+  "expected_guard_behavior": {
+    "constant_envelope": "unsupported, no_valid_coarse_correlation, all common summary fields unavailable",
+    "topology_mismatch": "unsupported, channel_topology_mismatch and channel_map_mismatch, no channel alignment records"
+  },
+  "claim_boundary": {
+    "actual_audio_access_authorized": false,
+    "additional_real_replay_authorized": false,
+    "codec_execution_authorized": false,
+    "capture_authorized": false,
+    "playback_authorized": false,
+    "perceptual_metrics_authorized": false,
+    "threshold_changes_authorized": false,
+    "source_assignment_authorized": false,
+    "human_calibration_complete": false,
+    "full_reference_validated": false,
+    "no_reference_training_authorized": false,
+    "public_verdict_enabled": false,
+    "objective_complete": false
+  },
+  "next_action": "If synthetic qualification passes, design and freeze a separately authorized bounded end-to-end digital technical replay. Passing does not reopen the consumed real-audio authorization, metric gate or human calibration. If it fails, retain the result and investigate without retuning frozen science.",
+  "equivalence_contract": {
+    "numeric_tolerance": 0,
+    "comparison": "Exact canonical correlation records for every candidate in declared small and bounded-window tests; exact full small-alignment records after removing only record_kind. Exact float.hex summation tests. No post-observation tolerance relaxation.",
+    "implementation": "V4 is an isolated copy of v3. All function/class ASTs except local_lag remain identical. Limits, signed correlation, invalidity precedence, sampling stride, candidate order, tie selection, thresholds, support reasons and null aggregation are unchanged.",
+    "optimization": "Hoist invariant reference validation, normalization and fsum energy per local window. Native C computes sampled test normalization and accurate sums for every candidate. Python retains square roots, final division, range check, clamping and lag selection. Both drift and structural local searches use the backend.",
+    "sum_basis": "Finite bounded-product adaptation of CPython v3.14.7 math_fsum partial accumulation and half-even finalization; PSF license and change notice retained. No fast math or fused multiply-add contraction. No FFT, decimation change, approximate pruning or search narrowing.",
+    "native_admission": "Exact-float list/tuple input, bounded window, IEEE binary64, FLT_EVAL_METHOD 0, round-to-nearest and subnormal support. Other inputs use original Python semantics. Numeric-invalid sampled reference also falls back. Capacity/environment failure falls back, never becomes a scientific score.",
+    "coverage": "All eligible ascending offsets are evaluated, including invalid/zero-energy candidates. Candidate counts and search geometries are reported separately from numerical alignment records. No early support rejection is introduced.",
+    "tests": "Every candidate for 48 deterministic random searches; 16 extreme scale pairs and mixed exponent cancellation; direct fsum adversarial rounding/reversal; signed/zero/constant; NaN/infinity precedence and unsampled NaN; short/clipped/no-candidate boundaries; int/bool/huge-int/range fallback; ties/near-ties and .2 threshold neighbors; windows around 16384/32768 including 24000; complete small stereo identity/inversion/dropout/delay and guard records; unchanged input and function AST checks.",
+    "scope_limit": "Finite adversarial testing and algorithm review are evidence, not a proof of all inputs or platforms. No full v3 identity record exists at this geometry within budget, so full-size predecessor byte equivalence is unavailable."
+  }
+}

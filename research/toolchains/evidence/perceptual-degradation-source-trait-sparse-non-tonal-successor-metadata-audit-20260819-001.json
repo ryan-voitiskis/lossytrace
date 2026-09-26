@@ -1,0 +1,93 @@
+{
+  "audio_accessed": false,
+  "claim_boundary": {
+    "candidate_metadata_is_descriptor_confirmation": false,
+    "candidate_metadata_is_source_trait_truth": false,
+    "full_objective_complete": false,
+    "public_cli_changed": false,
+    "public_verdict_enabled": false,
+    "source_trait_manifest_frozen": false
+  },
+  "decision": {
+    "candidate_replacement_performed": false,
+    "eligible_successor_count": 0,
+    "next_gate": "Continue metadata-only research until one new exact member has permissive rights, a provider-original lossless WAV, an explicit all-channel capture chain, an explicit no-processing or trim-only history, and metadata support for one natural transient of at least two seconds. Bind that member in a new checkpoint before any audio access.",
+    "previous_abstention_preserved": true,
+    "source_manifest_allocated": false,
+    "source_trait_assigned": false,
+    "thresholds_changed_after_observation": false
+  },
+  "implementation_sha256": "5213ecfb2473cd2008f52ded4f6f6a9aab1fae4e3cea53ff87878973da4ea372",
+  "observed_on": "2026-08-19",
+  "plan_id": "perceptual-degradation-source-trait-sparse-non-tonal-successor-metadata-audit-20260819-001",
+  "plan_sha256": "15948b5f9b49ec79e56be99bad2df6f4d0a5b7f3d18e73190accd66695d848a7",
+  "record_dispositions": [
+    {
+      "audio_accessed": false,
+      "eligible_for_audio_access_successor": false,
+      "exact_member_id": "freesound_sound_866967",
+      "licence": "CC0 1.0",
+      "metadata_supports_single_natural_transient": true,
+      "provider_id": "freesound",
+      "provider_record_url": "https://freesound.org/people/Sadiquecat/sounds/866967/",
+      "rejection_reasons": [
+        "duration_below_frozen_minimum",
+        "normalization_and_fades_disclosed"
+      ]
+    },
+    {
+      "audio_accessed": false,
+      "eligible_for_audio_access_successor": false,
+      "exact_member_id": "freesound_sound_273338",
+      "licence": "CC0 1.0",
+      "metadata_supports_single_natural_transient": true,
+      "provider_id": "freesound",
+      "provider_record_url": "https://freesound.org/people/othercee/sounds/273338/",
+      "rejection_reasons": [
+        "capture_chain_uncertain_for_one_channel"
+      ]
+    },
+    {
+      "audio_accessed": false,
+      "eligible_for_audio_access_successor": false,
+      "exact_member_id": "freesound_sound_710084",
+      "licence": "CC0 1.0",
+      "metadata_supports_single_natural_transient": true,
+      "provider_id": "freesound",
+      "provider_record_url": "https://freesound.org/people/felix.blume/sounds/710084/",
+      "rejection_reasons": [
+        "explicit_transformation_history_absent"
+      ]
+    },
+    {
+      "audio_accessed": false,
+      "eligible_for_audio_access_successor": false,
+      "exact_member_id": "freesound_sound_73385",
+      "licence": "CC0 1.0",
+      "metadata_supports_single_natural_transient": true,
+      "provider_id": "freesound",
+      "provider_record_url": "https://freesound.org/people/soundhead/sounds/73385/",
+      "rejection_reasons": [
+        "duration_below_frozen_minimum",
+        "transformation_history_ambiguous"
+      ]
+    },
+    {
+      "audio_accessed": false,
+      "eligible_for_audio_access_successor": false,
+      "exact_member_id": "freesound_sound_728514",
+      "licence": "CC0 1.0",
+      "metadata_supports_single_natural_transient": false,
+      "provider_id": "freesound",
+      "provider_record_url": "https://freesound.org/people/doudar41/sounds/728514/",
+      "rejection_reasons": [
+        "capture_chain_absent",
+        "designed_impact_intent_disclosed",
+        "explicit_transformation_history_absent"
+      ]
+    }
+  ],
+  "report_id": "perceptual-degradation-source-trait-sparse-non-tonal-successor-metadata-audit-20260819-001",
+  "schema_version": 1,
+  "state": "metadata_only_sparse_non_tonal_successor_routes_rejected_before_audio_access"
+}

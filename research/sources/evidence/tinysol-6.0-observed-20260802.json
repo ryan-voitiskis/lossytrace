@@ -1,0 +1,383 @@
+{
+  "archive_bindings": {
+    "audio": {
+      "bytes": 1026917185,
+      "filename": "TinySOL.tar.gz",
+      "gzip_tar_stream_verified": true,
+      "provider_checksum_verified": true,
+      "provider_md5": "36030a7fe389da86c3419e5ee48e3b7f",
+      "sha256": "a537e5de4f64edf0a56032369f66fc76adcb67db875e466f54cad2999e00364c"
+    },
+    "metadata": {
+      "bytes": 317576,
+      "csv_parsed_verified": true,
+      "filename": "TinySOL_metadata.csv",
+      "provider_checksum_verified": true,
+      "provider_md5": "a86c9bb115f69e61f2f25872e397fc4a",
+      "sha256": "925727f1036cb3d574856470be6b04af5c9961102902a23cc8eafc7907d040da"
+    }
+  },
+  "benchmark_audio_generated": false,
+  "conservative_reference_boundary": {
+    "eligible_audio_file_count": 2273,
+    "eligible_group_count": 1,
+    "future_selection_constraint": "Digitally retuned rows cannot be base encoder references; retain them only as declared PCM-transform candidates. Every R row must share source lineage with its resolved parent; tuning-only rows have no distributed pre-retuning PCM. The N marker means no per-note retuning, not untouched studio audio. Preserve family, instrument, pitch, dynamics, instance, fold, and retuning fields.",
+    "independence_limit": "Instrument labels do not establish independent performers, physical instruments, microphones, or sessions. Keep every TinySOL row in one partition group and report it as one provider stratum.",
+    "partition_grouping_unit": "common TinySOL/SOL collection",
+    "resampled_source_grouping_unit": "uniquely resolved parent WAV path",
+    "rule": [
+      "metadata path matches exactly one canonical archive WAV",
+      "Needed digital retuning is FALSE and filename MISC is N",
+      "PCM digest occurs exactly once across the full archive"
+    ],
+    "source_grouping_unit": "individual non-retuned distributed WAV path"
+  },
+  "observed": {
+    "ancillary_regular_members": [
+      {
+        "bytes": 10244,
+        "path": ".DS_Store",
+        "sha256": "2f132effc80e8a8d1cb2079395e221906ce5dc3e9164ebf5339d9e2cc11477f5"
+      },
+      {
+        "bytes": 6148,
+        "path": "Brass/Horn/.DS_Store",
+        "sha256": "1ed592c6b3d0f131994fa198f5c39d68b3e72d9e94b7c1763f3e772d3c437dde"
+      },
+      {
+        "bytes": 6148,
+        "path": "Strings/Contrabass/.DS_Store",
+        "sha256": "77d0c0567d2c00b9d8273a904e323d682f52c5fde7beb553c48d6242a0244dce"
+      },
+      {
+        "bytes": 6148,
+        "path": "Strings/Viola/.DS_Store",
+        "sha256": "77d0c0567d2c00b9d8273a904e323d682f52c5fde7beb553c48d6242a0244dce"
+      },
+      {
+        "bytes": 6148,
+        "path": "Strings/Violin/.DS_Store",
+        "sha256": "1ed592c6b3d0f131994fa198f5c39d68b3e72d9e94b7c1763f3e772d3c437dde"
+      },
+      {
+        "bytes": 8196,
+        "path": "Winds/Flute/.DS_Store",
+        "sha256": "467316c463c7e97bd26abfd5bf6adc65bb8a18539cbf1cfd451fdd270ab9e90a"
+      }
+    ],
+    "archive_audio_file_count": 2913,
+    "archive_member_root_prefix": "./",
+    "archive_paths_match_metadata_exactly": true,
+    "data_byte_range": {
+      "maximum": 1431958,
+      "minimum": 115998
+    },
+    "digitally_retuned_row_counts_by_instrument": {
+      "ASax": 2,
+      "Acc": 35,
+      "BTb": 55,
+      "Bn": 35,
+      "Cb": 95,
+      "ClBb": 40,
+      "Fl": 45,
+      "Hn": 17,
+      "Ob": 32,
+      "Tbn": 37,
+      "TpC": 43,
+      "Va": 85,
+      "Vc": 53,
+      "Vn": 66
+    },
+    "directory_member_count": 33,
+    "distinct_natural_pcm_digest_count": 2273,
+    "distinct_pcm_digest_count": 2913,
+    "distinct_resampled_parent_count": 39,
+    "duplicate_natural_pcm_archive_member_groups": [],
+    "duplicate_natural_pcm_digest_group_count": 0,
+    "duplicate_pcm_archive_member_groups": [],
+    "duplicate_pcm_digest_group_count": 0,
+    "duplicate_pcm_file_count_excess": 0,
+    "dynamics_counts": {
+      "ff": 923,
+      "mf": 1045,
+      "p": 10,
+      "pp": 935
+    },
+    "family_counts": {
+      "Brass": 455,
+      "Keyboards": 689,
+      "Strings": 1193,
+      "Winds": 576
+    },
+    "fold_counts": {
+      "0": 583,
+      "1": 582,
+      "2": 583,
+      "3": 582,
+      "4": 583
+    },
+    "frame_count_range": {
+      "maximum": 715979,
+      "maximum_archive_member_ids": [
+        "Keyboards/Accordion/ordinario/Acc-ord-F#3-mf-alt1-N.wav"
+      ],
+      "minimum": 57999,
+      "minimum_archive_member_ids": [
+        "Brass/Bass_Tuba/ordinario/BTb-ord-D3-ff-N-T15u.wav"
+      ]
+    },
+    "instance_id_counts": {
+      "0": 1618,
+      "1": 502,
+      "2": 421,
+      "3": 334,
+      "4": 35,
+      "5": 3
+    },
+    "instrument_row_counts": {
+      "ASax": 99,
+      "Acc": 689,
+      "BTb": 108,
+      "Bn": 126,
+      "Cb": 309,
+      "ClBb": 126,
+      "Fl": 118,
+      "Hn": 134,
+      "Ob": 107,
+      "Tbn": 117,
+      "TpC": 96,
+      "Va": 309,
+      "Vc": 291,
+      "Vn": 284
+    },
+    "metadata_column_count": 14,
+    "metadata_factor_keys_unique": true,
+    "metadata_paths_unique": true,
+    "metadata_row_count": 2913,
+    "natural_reference_row_counts_by_instrument": {
+      "ASax": 97,
+      "Acc": 654,
+      "BTb": 53,
+      "Bn": 91,
+      "Cb": 214,
+      "ClBb": 86,
+      "Fl": 73,
+      "Hn": 117,
+      "Ob": 75,
+      "Tbn": 80,
+      "TpC": 53,
+      "Va": 224,
+      "Vc": 238,
+      "Vn": 218
+    },
+    "natural_retuned_pcm_collision_group_count": 0,
+    "provider_description_discrepancies": [
+      "The v6 description says 13 metadata columns but enumerates and distributes 14.",
+      "The v6 description says Instance ID ranges from 0 to 4, but three rows use 5.",
+      "The v6 description says clips span 2 to 10 seconds, but the bound archive contains shorter and longer WAVs."
+    ],
+    "resampled_parent_class_counts": {
+      "natural": 28,
+      "tuning_only": 12
+    },
+    "resampled_parent_mapping_count": 40,
+    "resampled_parent_mappings": [
+      {
+        "derived_archive_member_id": "Brass/Bass_Tuba/ordinario/BTb-ord-F2-pp-N-T25u_R100u.wav",
+        "parent_archive_member_id": "Brass/Bass_Tuba/ordinario/BTb-ord-E2-pp-N-T25u.wav"
+      },
+      {
+        "derived_archive_member_id": "Brass/Bass_Tuba/ordinario/BTb-ord-G1-pp-N-R100u.wav",
+        "parent_archive_member_id": "Brass/Bass_Tuba/ordinario/BTb-ord-F#1-pp-N-N.wav"
+      },
+      {
+        "derived_archive_member_id": "Brass/Horn/ordinario/Hn-ord-A#2-pp-N-R100d.wav",
+        "parent_archive_member_id": "Brass/Horn/ordinario/Hn-ord-B2-pp-N-N.wav"
+      },
+      {
+        "derived_archive_member_id": "Brass/Horn/ordinario/Hn-ord-A2-pp-N-R100u.wav",
+        "parent_archive_member_id": "Brass/Horn/ordinario/Hn-ord-G#2-pp-N-N.wav"
+      },
+      {
+        "derived_archive_member_id": "Brass/Horn/ordinario/Hn-ord-D#2-pp-N-R100u.wav",
+        "parent_archive_member_id": "Brass/Horn/ordinario/Hn-ord-D2-pp-N-N.wav"
+      },
+      {
+        "derived_archive_member_id": "Brass/Horn/ordinario/Hn-ord-G2-ff-N-R100u.wav",
+        "parent_archive_member_id": "Brass/Horn/ordinario/Hn-ord-F#2-ff-N-N.wav"
+      },
+      {
+        "derived_archive_member_id": "Brass/Trumpet_C/ordinario/TpC-ord-A#3-ff-N-T23u_R100u.wav",
+        "parent_archive_member_id": "Brass/Trumpet_C/ordinario/TpC-ord-A3-ff-N-T23u.wav"
+      },
+      {
+        "derived_archive_member_id": "Brass/Trumpet_C/ordinario/TpC-ord-B3-ff-N-R100d.wav",
+        "parent_archive_member_id": "Brass/Trumpet_C/ordinario/TpC-ord-C4-ff-N-N.wav"
+      },
+      {
+        "derived_archive_member_id": "Brass/Trumpet_C/ordinario/TpC-ord-E5-mf-N-R100u.wav",
+        "parent_archive_member_id": "Brass/Trumpet_C/ordinario/TpC-ord-D#5-mf-N-N.wav"
+      },
+      {
+        "derived_archive_member_id": "Brass/Trumpet_C/ordinario/TpC-ord-G#3-ff-N-T23u_R100d.wav",
+        "parent_archive_member_id": "Brass/Trumpet_C/ordinario/TpC-ord-A3-ff-N-T23u.wav"
+      },
+      {
+        "derived_archive_member_id": "Strings/Contrabass/ordinario/Cb-ord-A2-ff-1c-R100d.wav",
+        "parent_archive_member_id": "Strings/Contrabass/ordinario/Cb-ord-A#2-ff-1c-N.wav"
+      },
+      {
+        "derived_archive_member_id": "Strings/Contrabass/ordinario/Cb-ord-A2-mf-3c-R100d.wav",
+        "parent_archive_member_id": "Strings/Contrabass/ordinario/Cb-ord-A#2-mf-3c-N.wav"
+      },
+      {
+        "derived_archive_member_id": "Strings/Contrabass/ordinario/Cb-ord-B1-mf-3c-R100u.wav",
+        "parent_archive_member_id": "Strings/Contrabass/ordinario/Cb-ord-A#1-mf-3c-N.wav"
+      },
+      {
+        "derived_archive_member_id": "Strings/Contrabass/ordinario/Cb-ord-C#2-pp-4c-R100u.wav",
+        "parent_archive_member_id": "Strings/Contrabass/ordinario/Cb-ord-C2-pp-4c-N.wav"
+      },
+      {
+        "derived_archive_member_id": "Strings/Contrabass/ordinario/Cb-ord-G1-mf-4c-R100u.wav",
+        "parent_archive_member_id": "Strings/Contrabass/ordinario/Cb-ord-F#1-mf-4c-N.wav"
+      },
+      {
+        "derived_archive_member_id": "Strings/Contrabass/ordinario/Cb-ord-G2-mf-4c-T10u_R100u.wav",
+        "parent_archive_member_id": "Strings/Contrabass/ordinario/Cb-ord-F#2-mf-4c-T10u.wav"
+      },
+      {
+        "derived_archive_member_id": "Strings/Viola/ordinario/Va-ord-A3-mf-3c-R100d.wav",
+        "parent_archive_member_id": "Strings/Viola/ordinario/Va-ord-A#3-mf-3c-N.wav"
+      },
+      {
+        "derived_archive_member_id": "Strings/Viola/ordinario/Va-ord-A4-ff-3c-R100d.wav",
+        "parent_archive_member_id": "Strings/Viola/ordinario/Va-ord-A#4-ff-3c-N.wav"
+      },
+      {
+        "derived_archive_member_id": "Strings/Viola/ordinario/Va-ord-C#5-ff-1c-R100u.wav",
+        "parent_archive_member_id": "Strings/Viola/ordinario/Va-ord-C5-ff-1c-N.wav"
+      },
+      {
+        "derived_archive_member_id": "Strings/Viola/ordinario/Va-ord-F#5-pp-2c-R100u.wav",
+        "parent_archive_member_id": "Strings/Viola/ordinario/Va-ord-F5-pp-2c-N.wav"
+      },
+      {
+        "derived_archive_member_id": "Strings/Viola/ordinario/Va-ord-F3-ff-4c-T23u_R100u.wav",
+        "parent_archive_member_id": "Strings/Viola/ordinario/Va-ord-E3-ff-4c-T23u.wav"
+      },
+      {
+        "derived_archive_member_id": "Strings/Violin/ordinario/Vn-ord-A#5-ff-3c-R100u.wav",
+        "parent_archive_member_id": "Strings/Violin/ordinario/Vn-ord-A5-ff-3c-N.wav"
+      },
+      {
+        "derived_archive_member_id": "Strings/Violin/ordinario/Vn-ord-D#7-ff-1c-T23d_R100u.wav",
+        "parent_archive_member_id": "Strings/Violin/ordinario/Vn-ord-D7-ff-1c-T23d.wav"
+      },
+      {
+        "derived_archive_member_id": "Strings/Violin/ordinario/Vn-ord-D#7-mf-1c-T22d_R100u.wav",
+        "parent_archive_member_id": "Strings/Violin/ordinario/Vn-ord-D7-mf-1c-T22d.wav"
+      },
+      {
+        "derived_archive_member_id": "Strings/Violin/ordinario/Vn-ord-G#6-mf-1c-T11d_R100d.wav",
+        "parent_archive_member_id": "Strings/Violin/ordinario/Vn-ord-A6-mf-1c-T11d.wav"
+      },
+      {
+        "derived_archive_member_id": "Strings/Violin/ordinario/Vn-ord-G6-ff-1c-T12d_R100u.wav",
+        "parent_archive_member_id": "Strings/Violin/ordinario/Vn-ord-F#6-ff-1c-T12d.wav"
+      },
+      {
+        "derived_archive_member_id": "Strings/Violoncello/ordinario/Vc-ord-A#3-mf-3c-T16d_R100u.wav",
+        "parent_archive_member_id": "Strings/Violoncello/ordinario/Vc-ord-A3-mf-3c-T16d.wav"
+      },
+      {
+        "derived_archive_member_id": "Winds/Bassoon/ordinario/Bn-ord-A4-mf-N-T14u_R100d.wav",
+        "parent_archive_member_id": "Winds/Bassoon/ordinario/Bn-ord-A#4-mf-N-T14u.wav"
+      },
+      {
+        "derived_archive_member_id": "Winds/Bassoon/ordinario/Bn-ord-C#3-mf-N-R100d.wav",
+        "parent_archive_member_id": "Winds/Bassoon/ordinario/Bn-ord-D3-mf-N-N.wav"
+      },
+      {
+        "derived_archive_member_id": "Winds/Bassoon/ordinario/Bn-ord-C2-pp-N-T11d_R100u.wav",
+        "parent_archive_member_id": "Winds/Bassoon/ordinario/Bn-ord-B1-pp-N-T11d.wav"
+      },
+      {
+        "derived_archive_member_id": "Winds/Bassoon/ordinario/Bn-ord-C3-mf-N-R100u.wav",
+        "parent_archive_member_id": "Winds/Bassoon/ordinario/Bn-ord-B2-mf-N-N.wav"
+      },
+      {
+        "derived_archive_member_id": "Winds/Bassoon/ordinario/Bn-ord-E3-ff-N-R100u.wav",
+        "parent_archive_member_id": "Winds/Bassoon/ordinario/Bn-ord-D#3-ff-N-N.wav"
+      },
+      {
+        "derived_archive_member_id": "Winds/Bassoon/ordinario/Bn-ord-G#2-mf-N-R100d.wav",
+        "parent_archive_member_id": "Winds/Bassoon/ordinario/Bn-ord-A2-mf-N-N.wav"
+      },
+      {
+        "derived_archive_member_id": "Winds/Bassoon/ordinario/Bn-ord-G#4-mf-N-R100u.wav",
+        "parent_archive_member_id": "Winds/Bassoon/ordinario/Bn-ord-G4-mf-N-N.wav"
+      },
+      {
+        "derived_archive_member_id": "Winds/Oboe/ordinario/Ob-ord-A#4-mf-N-R100u.wav",
+        "parent_archive_member_id": "Winds/Oboe/ordinario/Ob-ord-A4-mf-N-N.wav"
+      },
+      {
+        "derived_archive_member_id": "Winds/Oboe/ordinario/Ob-ord-C#4-pp-N-R100u.wav",
+        "parent_archive_member_id": "Winds/Oboe/ordinario/Ob-ord-C4-pp-N-N.wav"
+      },
+      {
+        "derived_archive_member_id": "Winds/Oboe/ordinario/Ob-ord-D6-ff-N-R100u.wav",
+        "parent_archive_member_id": "Winds/Oboe/ordinario/Ob-ord-C#6-ff-N-N.wav"
+      },
+      {
+        "derived_archive_member_id": "Winds/Oboe/ordinario/Ob-ord-E4-pp-N-R100u.wav",
+        "parent_archive_member_id": "Winds/Oboe/ordinario/Ob-ord-D#4-pp-N-N.wav"
+      },
+      {
+        "derived_archive_member_id": "Winds/Oboe/ordinario/Ob-ord-G4-mf-N-R100u.wav",
+        "parent_archive_member_id": "Winds/Oboe/ordinario/Ob-ord-F#4-mf-N-N.wav"
+      },
+      {
+        "derived_archive_member_id": "Winds/Sax_Alto/ordinario/ASax-ord-A3-mf-N-R100d.wav",
+        "parent_archive_member_id": "Winds/Sax_Alto/ordinario/ASax-ord-A#3-mf-N-N.wav"
+      }
+    ],
+    "retuning_class_counts": {
+      "natural": 2273,
+      "resampled_and_tuned": 12,
+      "resampled_only": 28,
+      "tuning_only": 600
+    },
+    "riff_formats": [
+      {
+        "ancillary_chunk_counts": {},
+        "average_bytes_per_second": 88200,
+        "bits_per_sample": 16,
+        "block_align_bytes": 2,
+        "channel_count": 1,
+        "file_count": 2913,
+        "format_chunk_bytes": 16,
+        "format_tag": 1,
+        "sample_format": "signed_integer_pcm",
+        "sample_rate_hz": 44100
+      }
+    ],
+    "special_member_count": 0,
+    "uncompressed_audio_member_bytes": 1715091320,
+    "unexpected_regular_member_count": 0
+  },
+  "paths_redacted": true,
+  "provider_record": {
+    "record_id": 3685367,
+    "record_version": "6.0"
+  },
+  "schema_version": 1,
+  "scores_opened": false,
+  "selection_authorized": false,
+  "source_group_rules_binding": {
+    "sha256": "d1c6d3badcc8a057dffcb1713a4468fc9ba3cc2f76a62d8e72323d66d4cf85ae"
+  },
+  "source_id": "tinysol_6_0",
+  "state": "source_identity_evidence_only"
+}

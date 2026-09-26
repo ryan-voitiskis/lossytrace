@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "plan_id": "full-reference-evaluation-plan-20260813-001",
+  "state": "score_blind_statistics_frozen_synthetic_replay_complete",
+  "purpose": "Freeze and synthetically replay the exact grouped statistics for future human-calibrated full-reference oracle evaluation without opening real metric outputs, human scores, retained or provider audio, sealed evidence, or no-reference training.",
+  "bindings": {
+    "research_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/research-plan.json",
+      "sha256": "e724a3e04fb41458d0568f542283ba33d71a54b1fdfd74b3901cc0dc1d10c352"
+    },
+    "research_contract": {
+      "path": "docs/research/perceptual-degradation-contract-20260803.md",
+      "sha256": "fdec79207fc0fdd2e9cb10aae9f93dd1a17b45e6e56c0c7df8f0e01a1f9fb505"
+    },
+    "score_free_oracle_plan": {
+      "path": "benchmarks/perceptual-degradation-v1/full-reference-oracle-score-free-plan.json",
+      "sha256": "f6462ecb94f3be1dc5670ad19d6f201abefaf175cfa6c482f095b98bb542de3a"
+    },
+    "evaluation_implementation": {
+      "path": "scripts/perceptual_degradation_full_reference_evaluation.py",
+      "sha256": "85dabbb5aefaffe77ddbc59f41bd4354c05a58c7e84162c862c3e7892b9ac95b"
+    },
+    "evaluation_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_full_reference_evaluation.py",
+      "sha256": "7835cb40341ab10e98dcd6c4dea2067a359f9e276f3ee3a9edf4dd452ce67496"
+    },
+    "synthetic_replay": {
+      "path": "research/toolchains/evidence/perceptual-degradation-full-reference-evaluation-synthetic-20260813-001.json",
+      "sha256": "b02e4c1044c9111fc86b6fd91c7814b3c38fb836a5a6100860ff94bce4d1ff11"
+    },
+    "evaluation_report": {
+      "path": "docs/research/perceptual-degradation-full-reference-evaluation-synthetic-replay-20260813.md",
+      "sha256": "f5453ca760994fea86c602a3e3dacfd65c259a4a3632f3174cf5ca32c9c6e2f7"
+    }
+  },
+  "statistics": {
+    "bootstrap_unit": "source_group",
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": "lossytrace-full-reference-source-group-bootstrap-20260813-001",
+    "bootstrap_sampler": "sha256_counter_rejection_uniform_v1",
+    "minimum_valid_bootstrap_fraction": 0.99,
+    "interval_method": "percentile",
+    "two_sided_quantiles": [
+      0.025,
+      0.975
+    ],
+    "one_sided_quantiles": [
+      0.05,
+      0.95
+    ],
+    "spearman_ties": "average_rank",
+    "roc_auc_ties": "average_rank_mann_whitney",
+    "ece_bins": 10,
+    "ece_binning": "equal_width_left_closed_right_open_final_includes_one",
+    "minimum_reversal_source_groups": 8,
+    "minimum_primary_domain_source_groups": 8,
+    "boundary_rate_guard": "source_group_wilson_one_sided_95_conservative_max_or_min",
+    "boundary_rate_guard_z": 1.6448536269514722,
+    "added_value_gate_uses_pairwise_complete_point_estimates": true
+  },
+  "numeric_gates": {
+    "severity_spearman_lower_ci_overall": 0.75,
+    "severity_spearman_lower_ci_each_primary_domain": 0.55,
+    "audibility_brier_max": 0.15,
+    "audibility_ece_max": 0.1,
+    "audibility_auc_lower_ci": 0.75,
+    "transparent_material_rate_point_max": 0.05,
+    "transparent_material_rate_upper_ci_max": 0.1,
+    "material_sensitivity_lower_ci": 0.8,
+    "coverage_overall_min": 0.8,
+    "coverage_each_primary_domain_min": 0.6,
+    "added_value_brier_absolute": 0.02,
+    "added_value_severity_correlation_absolute": 0.05
+  },
+  "subgroup_policy": {
+    "axes": [
+      "primary_domain",
+      "codec_stratum",
+      "encoder_stratum",
+      "artifact_stratum"
+    ],
+    "statistically_supported_reversal": "two_sided_95_upper_spearman_below_zero",
+    "undefined_bootstrap_fraction_above_one_percent_fails_gate": true,
+    "multiplicity_adjustment": "none_stop_oriented_conservative_any_reversal_fails"
+  },
+  "diagnostic_policy": {
+    "axes": [
+      "primary_domain",
+      "codec_stratum",
+      "encoder_stratum",
+      "artifact_stratum",
+      "bitrate_region",
+      "human_truth_stratum"
+    ],
+    "human_truth_strata_derived_from_labels": true,
+    "reported_statistics": [
+      "case_and_group_counts",
+      "coverage",
+      "severity_spearman",
+      "audibility_brier",
+      "audibility_ece",
+      "audibility_roc_auc"
+    ],
+    "point_diagnostics_are_gate_inputs": false
+  },
+  "population_policy": {
+    "severity_and_audibility_use_supported_cases": true,
+    "transparent_safety_uses_supported_human_transparent_cases": true,
+    "material_sensitivity_uses_supported_human_material_cases": true,
+    "coverage_uses_all_eligible_cases": true,
+    "unsupported_cases_remain_visible_through_coverage": true,
+    "primary_domains_are_declared_before_evaluation": true
+  },
+  "boundary_rate_policy": {
+    "bootstrap_interval_retained": true,
+    "transparent_group_event": "any_human_transparent_condition_called_materially_degraded",
+    "transparent_gate_upper": "maximum_of_bootstrap_and_source_group_wilson_upper",
+    "material_group_success": "all_human_material_conditions_called_materially_degraded",
+    "material_gate_lower": "minimum_of_bootstrap_and_source_group_wilson_lower",
+    "policy_can_only_tighten_original_numeric_gates": true
+  },
+  "input_boundary": {
+    "opaque_case_source_and_partition_ids_required": true,
+    "bounded_stratum_codes_required": true,
+    "source_group_may_not_cross_partition_groups": true,
+    "unsupported_predictions_must_have_null_values": true,
+    "human_material_requires_human_audible": true,
+    "human_transparent_conflicts_with_audible_or_material": true,
+    "codec_encoder_and_artifact_strata_are_evaluation_only": true,
+    "metadata_is_model_input": false
+  },
+  "synthetic_replay": {
+    "case_count": 80,
+    "source_group_count": 40,
+    "partition_group_count": 20,
+    "primary_domain_count": 2,
+    "synthetic_record_inventory_sha256": "2c276e71f33984acf0bf1071af42f64a77419365e8cefd0b7c11550a6fe748bd",
+    "evaluation_sha256": "80da8d3c62bb932198be3f887e74277603eec94129dda4b21c12dc8c0035fbbf",
+    "compact_replay_sha256": "b02e4c1044c9111fc86b6fd91c7814b3c38fb836a5a6100860ff94bce4d1ff11",
+    "byte_identical_replay": true,
+    "synthetic_statistical_gates_pass": true,
+    "scientific_gate_evaluated": false
+  },
+  "access_boundary": {
+    "synthetic_fixture_execution_authorized": true,
+    "retained_audio_access_authorized": false,
+    "provider_audio_access_authorized": false,
+    "perceptual_metric_execution_authorized": false,
+    "human_score_access_authorized": false,
+    "human_collection_authorized": false,
+    "no_reference_training_authorized": false,
+    "sealed_evidence_access_authorized": false,
+    "public_verdict_authorized": false
+  },
+  "claim_boundary": {
+    "synthetic_gate_pass_is_scientific_evidence": false,
+    "determinism_gate_evaluated": false,
+    "full_reference_gate_passed": false,
+    "no_reference_work_eligible": false,
+    "public_cli_changed": false,
+    "public_verdict_enabled": false
+  },
+  "authorized_next_step": "Preserve the frozen statistical semantics. Do not evaluate scientific gates until separately authorized metric outputs and valid human-calibration targets exist; do not begin no-reference training unless every prerequisite full-reference gate passes on eligible evidence."
+}

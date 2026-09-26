@@ -12,11 +12,17 @@ import math
 import re
 import shutil
 import subprocess
+import sys
 import tarfile
 import tempfile
 import wave
 from datetime import UTC, datetime
 from pathlib import Path, PurePosixPath
+
+SCRIPT_DIRECTORY = Path(__file__).resolve().parent
+if str(SCRIPT_DIRECTORY) not in sys.path:
+    sys.path.insert(0, str(SCRIPT_DIRECTORY))
+from audio_integrity_relocation import cleanup_target_matches
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_REGISTRY = (
@@ -1232,7 +1238,7 @@ def verify(args: argparse.Namespace) -> int:
         failures.append("seal must refuse release evidence")
     if seal.get("retention_policy") != RETENTION_POLICY:
         failures.append("seal retention policy differs")
-    if seal.get("exact_cleanup_target") != str(root):
+    if not cleanup_target_matches(root, seal.get("exact_cleanup_target")):
         failures.append("seal cleanup target differs")
     if sha256_file(integrity_path) != seal.get(
         "integrity_manifest_sha256"

@@ -1,0 +1,237 @@
+{
+  "schema_version": 1,
+  "qualification_id": "perceptual-degradation-source-condition-qualification-20260804-001",
+  "state": "metadata_only_candidates_qualified_manifest_not_frozen",
+  "purpose": "Qualify source and condition candidates without opening audio, scores, labels, retained private identities, or sealed evidence.",
+  "access_boundary": {
+    "retained_audio_access_authorized": false,
+    "provider_audio_acquisition_authorized": false,
+    "waveform_content_inspected": false,
+    "listening_scores_opened": false,
+    "perceptual_metric_execution_authorized": false,
+    "existing_280_case_future_subset_opened": false,
+    "release_holdout_labels_opened": false,
+    "human_collection_authorized": false
+  },
+  "resources": {
+    "minimum_free_disk_gib": 15,
+    "maximum_sustained_workers": 6,
+    "duplicate_corpus_forbidden": true,
+    "bounded_ephemeral_generation_required": true
+  },
+  "bindings": {
+    "v2_inventory": {
+      "path": "benchmarks/audio-integrity-v2/inventory.json",
+      "sha256": "f08ed9a176809cc916cf7bce8ebcd1f2aca5297830daf190ff972a49c58660de"
+    },
+    "v2_factor_levels": {
+      "path": "benchmarks/audio-integrity-v2/factor-levels.json",
+      "sha256": "4065553ef4fbe505ea0d79b149570bc1483396dbcc1de52597890e61f59481bd"
+    },
+    "v2_toolchain_bindings": {
+      "path": "benchmarks/audio-integrity-v2/toolchain-bindings.json",
+      "sha256": "d2af2f0b78b184189806d724c294d7606f37d2763839e17c9289f7957da52070"
+    },
+    "v2_source_allocation_evidence": {
+      "path": "research/sources/evidence/source-allocation-observed-20260802.json",
+      "sha256": "92558487864280bb1e7d37fe5474b1be3df49ed3a0b549cb382a8f17d06e20a7"
+    },
+    "odaq_attribution_evidence": {
+      "path": "research/toolchains/evidence/perceptual-degradation-odaq-attribution-audit-20260804-001.json",
+      "sha256": "08da482eeab4ab51f0e2ed2f05684edac098b51fe81d1b78bec75181336dca61"
+    },
+    "research_contract": {
+      "path": "docs/research/perceptual-degradation-contract-20260803.md",
+      "sha256": "fdec79207fc0fdd2e9cb10aae9f93dd1a17b45e6e56c0c7df8f0e01a1f9fb505"
+    },
+    "listening_manifest_v2_schema": {
+      "path": "benchmarks/perceptual-degradation-v1/listening-stimulus-manifest-v2.schema.json",
+      "sha256": "789bd684dd561b413e174d5d63ed0605b4d46f342683768f9d933147d84ad96e"
+    },
+    "listening_allocator_v2": {
+      "path": "scripts/perceptual_degradation_listening_allocation_v2.py",
+      "sha256": "8895f8cc3900f776a62c15fb115b674820ba24cdee18772f48399f1d3ea6ea12"
+    },
+    "listening_allocator_v2_tests": {
+      "path": "scripts/tests/test_perceptual_degradation_listening_allocation_v2.py",
+      "sha256": "e9d4827694db8625390697b61b3a641a2482de0a30af4e94422e6f75459c63c2"
+    }
+  },
+  "source_candidates": [
+    {
+      "source_id": "vctk_clean_56spk_2017",
+      "candidate_use": ["actual_codec", "transparency_candidate", "grouped_encoder_transfer"],
+      "domain": "studio_speech",
+      "conservative_group_count": 56,
+      "licence": "CC BY 4.0",
+      "licence_status": "provider_record_bound_attribution_notice_not_frozen"
+    },
+    {
+      "source_id": "tinysol_6_0",
+      "candidate_use": ["actual_codec", "transparency_candidate", "sparse_tonal_hard_negative"],
+      "domain": "isolated_acoustic_instrument",
+      "conservative_group_count": 1,
+      "licence": "CC BY 4.0",
+      "licence_status": "provider_record_bound_attribution_notice_not_frozen"
+    },
+    {
+      "source_id": "sonyc_backgrounds_1_0_0",
+      "candidate_use": ["actual_codec", "transparency_candidate", "noisy_natural_hard_negative"],
+      "domain": "urban_sensor_soundscape",
+      "conservative_group_count": 15,
+      "licence": "CC BY 4.0",
+      "licence_status": "provider_record_bound_attribution_notice_not_frozen"
+    },
+    {
+      "source_id": "satp_soundscapes_1_5",
+      "candidate_use": ["actual_codec", "transparency_candidate", "stereo_ambience_hard_negative", "grouped_domain_transfer"],
+      "domain": "urban_binaural_soundscape",
+      "conservative_group_count": 25,
+      "licence": "CC BY 4.0",
+      "licence_status": "provider_record_bound_attribution_notice_not_frozen"
+    },
+    {
+      "source_id": "lombard_grid_2018",
+      "candidate_use": ["actual_codec", "transparency_candidate", "grouped_domain_transfer"],
+      "domain": "laboratory_lombard_speech",
+      "conservative_group_count": 54,
+      "licence": "CC BY 4.0",
+      "licence_status": "provider_record_bound_attribution_notice_not_frozen"
+    },
+    {
+      "source_id": "fsdd_v1_0_10",
+      "candidate_use": ["natural_bandwidth_limit_hard_negative"],
+      "domain": "home_recorded_bandwidth_limited_digit_speech",
+      "conservative_group_count": 6,
+      "licence": "CC BY-SA 4.0",
+      "licence_status": "share_alike_distribution_review_required"
+    },
+    {
+      "source_id": "ravdess_audio_1_0_0",
+      "candidate_use": ["acted_speech_song_coverage", "grouped_encoder_transfer"],
+      "domain": "acted_speech_and_song",
+      "conservative_group_count": 24,
+      "licence": "CC BY-NC-SA 4.0",
+      "licence_status": "noncommercial_share_alike_and_study_distribution_review_required"
+    },
+    {
+      "source_id": "rwc_music_v2_2026",
+      "candidate_use": ["mastered_music_coverage", "grouped_domain_transfer"],
+      "domain": "mastered_music_multi_domain",
+      "conservative_group_count": 85,
+      "licence": "CC BY-NC 4.0",
+      "licence_status": "noncommercial_and_study_distribution_review_required"
+    }
+  ],
+  "excluded_source_evidence": [
+    {
+      "source_id": "consumed_v1_non_holdout",
+      "reason": "mixed_licence_and_already_consumed_discovery_evidence_not_independent_listening_truth"
+    },
+    {
+      "source_id": "existing_280_case_future_subset",
+      "reason": "sealed_history_detection_subset_not_perceptual_truth"
+    },
+    {
+      "source_id": "release_holdouts",
+      "reason": "sealed_history_detection_labels_not_perceptual_truth"
+    }
+  ],
+  "odaq_development_evidence": {
+    "source_count": 16,
+    "group_count": 16,
+    "wav_member_count": 128,
+    "licence_metadata_complete": true,
+    "published_conditions_are_actual_codec_examples": false,
+    "eligible_partition": "published_development_only",
+    "eligible_for_grouped_transfer": false,
+    "eligible_for_final_validation": false,
+    "audio_acquisition_authorized": false
+  },
+  "codec_condition_candidates": {
+    "ground_truth_policy": {
+      "bitrate_or_quality_is_target": false,
+      "codec_or_encoder_is_target": false,
+      "nominal_upper_quality_implies_transparency": false,
+      "transparency_truth_state": "unresolved_until_frozen_listening_analysis",
+      "future_manifest_schema_version": 2,
+      "future_manifest_condition_class": "transparency_candidate"
+    },
+    "development_template_ids": [
+      "dev-mp3-lame-cbr96-default",
+      "dev-mp3-lame-cbr128-default",
+      "dev-mp3-lame-vbr-v2-default",
+      "dev-aac-ffmpeg-cbr96-default",
+      "dev-aac-ffmpeg-cbr128-default",
+      "dev-aac-apple-cbr128-default",
+      "dev-opus-libopus-cbr64-20ms",
+      "dev-opus-libopus-cbr96-20ms",
+      "dev-opus-libopus-cbr128-20ms",
+      "dev-vorbis-libvorbis-q2",
+      "dev-vorbis-libvorbis-q4",
+      "dev-vorbis-libvorbis-q6"
+    ],
+    "encoder_transfer_template_ids": [
+      "transfer-mp3-bladeenc-cbr96-default",
+      "transfer-mp3-bladeenc-cbr128-default",
+      "transfer-aac-fdk-cbr96-default",
+      "transfer-aac-fdk-cbr128-default",
+      "transfer-opus-ffmpeg-cbr64-default",
+      "transfer-opus-ffmpeg-cbr96-default",
+      "transfer-vorbis-ffmpeg-q2",
+      "transfer-vorbis-ffmpeg-q4"
+    ],
+    "required_codec_families": ["aac_lc", "mp3", "opus", "vorbis"],
+    "actual_stimuli_generated": false,
+    "condition_outcomes_opened": false
+  },
+  "production_and_negative_control_coverage": {
+    "existing_recipe_candidates": [
+      "gain-minus6db-q31",
+      "lowpass-16k-cascade8",
+      "resample-roundtrip-32k",
+      "requantize-12bit-tpdf",
+      "alternate-channel-topology",
+      "lossless-wrapper-rewrite"
+    ],
+    "missing_recipe_families": [
+      "clipping",
+      "equalization",
+      "limiting",
+      "stereo_width_without_topology_change",
+      "repeated_same_codec",
+      "cross_codec_generation"
+    ],
+    "non_codec_condition_truth_state": "unresolved_until_listening",
+    "structural_alignment_controls_are_quality_targets": false
+  },
+  "partition_boundary": {
+    "prior_v2_partition_assignments_reused_as_final_validation": false,
+    "source_collection_and_related_group_co_location_required": true,
+    "fresh_final_validation_sources_designated": false,
+    "codec_holdout_designated": false,
+    "encoder_holdout_candidates_present": true,
+    "domain_transfer_candidates_present": true
+  },
+  "decision": {
+    "actual_codec_candidates_qualified": true,
+    "transparency_candidates_qualified_without_truth_assignment": true,
+    "hard_natural_negative_candidates_qualified": true,
+    "grouped_transfer_candidates_qualified": true,
+    "mastered_music_coverage_qualified": false,
+    "production_control_recipes_complete": false,
+    "repeated_and_cross_codec_recipes_complete": false,
+    "licences_frozen": false,
+    "source_and_condition_manifest_frozen": false,
+    "source_and_condition_manifest_freezable": false
+  },
+  "remaining_gates": [
+    "Resolve study delivery and attribution obligations for every selected source, including CC BY-SA and CC BY-NC candidates.",
+    "Add multiple independently grouped mastered-music sources or explicitly narrow the music claim; TinySOL alone is not mastered-music coverage.",
+    "Freeze score-blind clipping, equalization, limiting, stereo-width, repeated-codec, and cross-codec recipes.",
+    "Select private source members and artifact-sensitive excerpts without opening metric or listener outcomes.",
+    "Designate calibration and transfer groups without reusing prior partitions as fresh final validation.",
+    "Acquire or generate fresh final-validation evidence only after the oracle and any estimator are frozen."
+  ],
+  "authorized_next_step": "Freeze the missing production and repeated-codec recipes and complete source attribution/legal-operational records. Audio access, stimulus generation, score opening, metric execution, recruitment, and human collection remain unauthorized."
+}
