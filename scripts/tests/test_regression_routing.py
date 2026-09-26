@@ -1,5 +1,7 @@
 from pathlib import Path
+import subprocess
 import sys
+import tempfile
 import unittest
 
 sys.path.insert(0, str(Path(__file__).parents[1]))
@@ -31,6 +33,16 @@ class RegressionRoutingTests(unittest.TestCase):
     def test_status_is_append_only(self):
         self.assertTrue(runner.preserved("docs/research/status.md", b"old\n", b"old\nnew\n"))
         self.assertFalse(runner.preserved("docs/research/status.md", b"old\n", b"rewritten\n"))
+
+    def test_script_invocation_can_import_repository_namespace(self):
+        script_dir = str(Path(runner.__file__).parent)
+        code = (f"import sys; sys.path.insert(0, {script_dir!r}); "
+                "import run_regression_tests as r; "
+                "raise SystemExit(not r.run_current(['test_audio_integrity_relocation']))")
+        with tempfile.TemporaryDirectory() as directory:
+            result = subprocess.run([sys.executable, "-c", code], cwd=directory,
+                                    capture_output=True, text=True, timeout=30)
+        self.assertEqual(result.returncode, 0, result.stderr)
 
 
 if __name__ == "__main__":

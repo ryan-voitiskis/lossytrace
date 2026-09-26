@@ -57,8 +57,13 @@ def verify_historical_preservation() -> int:
 
 
 def run_current(names: list[str]) -> bool:
+    # Match `python -m unittest` import semantics even when invoked as a script.
+    sys.path.insert(0, str(ROOT))
     sys.path.insert(0, str(ROOT / "scripts/tests"))
-    suite = unittest.defaultTestLoader.loadTestsFromNames(names)
+    loader = unittest.TestLoader()
+    suite = loader.loadTestsFromNames(names)
+    if loader.errors:
+        raise RuntimeError("test discovery failed before execution:\n" + "\n".join(loader.errors))
     return unittest.TextTestRunner(verbosity=1).run(suite).wasSuccessful()
 
 
