@@ -1944,3 +1944,47 @@ v4 negative remains unchanged. New technical batches may use standing authority
 with new prospective scope/budgets; the old full-cohort run is not reopened.
 Metric selection/execution, human collection, source assignment, training and
 public verdicts remain separately gated. The broader objective is incomplete.
+
+## Codec-history focus and inspector consolidation — 2026-09-27
+
+The user approved a return to codec-history investigation without making human
+recruitment a project dependency. The [direction review](codec-history-direction-20260927.md)
+preserves all prior negatives and the unfinished perceptual programme. No
+consumed batch or sealed partition is reopened, and no home-grown detector
+has been selected for another experiment.
+
+The review identifies Lossprint as one external artifact worth a bounded
+source/model reproducibility qualification, not as a validated detector.
+Its published hard-negative limitations and unbound inference details must
+be resolved before freezing any scoring screen. The previously tested AAC
+quantization family, including short windows and frame search, is not revived.
+
+The public inspector adds `lossytrace explain`, a bundled offline guide to
+measurements, support, alternative explanations and provenance limits. The
+analysis JSON and measurements are unchanged, feature version remains zero,
+and public verdicts remain disabled. All 21 Rust tests, Rustfmt and Clippy
+passed locally; package listing includes the guide. No real-audio experiment,
+listening collection, metric scoring, model training or release occurred.
+
+## Lossprint external-baseline software qualification — 2026-09-27
+
+The [bounded qualification](lossprint-qualification-result-20260927.md) passed
+with pinned source, model and executable identities. All 28 upstream Rust tests
+and 12 local runner tests passed. Two ordered synthetic CLI replays accounted
+for all 24 slots: 18 eligible completions, six expected input rejections,
+zero timeouts, exact repeated outputs and identical results across three
+lossless wrappers of the same PCM. Source, tools and generated inputs remained
+unchanged. This is software evidence, not detection accuracy.
+
+The implementation samples up to six windows on long files and its
+`ffmpeg_aac` output means AAC family, not an identified encoder. The stale
+upstream model notice remains documented. The build used already-installed
+Rust 1.98.0 explicitly, with work isolated on the external research volume;
+the LossyTrace toolchain and public measurement contract are unchanged.
+
+The [first challenge design](lossprint-first-challenge-design-20260927.md)
+fixes metadata-only selection of five consumed development groups per domain,
+with all their cases retained, a fixed model/threshold and a bounded prospective
+analysis. Exact identities, runner/analyzer and execution-head checks remain
+to be bound. No retained waveform, sealed evidence, listening collection,
+model training, detector integration or release was performed.

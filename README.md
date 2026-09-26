@@ -17,6 +17,17 @@ Build from source and inspect an audio file:
 cargo run --release -- analyze track.flac --pretty
 ```
 
+Explain the fields and their limitations without opening audio:
+
+```bash
+cargo run --release -- explain
+```
+
+The [inspection guide](docs/inspection-guide.md) separates observed signal
+properties from processing-history claims. Missing evidence does not certify
+lossless history, and values between zero and one are not calibrated
+probabilities. No automatic deletion or retagging policy is supported.
+
 The JSON contract makes the experimental status explicit:
 
 ```json
@@ -51,6 +62,20 @@ The 33 research iterations were experiments, not 33 software releases. The
 latest candidates remain rejected. See
 [`docs/research/status.md`](docs/research/status.md) and the
 [`decoded-PCM identifiability result`](docs/research/decoded-pcm-identifiability-result-20260803.md).
+
+## Current direction
+
+The [September 27 direction review](docs/research/codec-history-direction-20260927.md)
+returns the practical focus to codec-history investigation: an understandable
+verdict-free inspector and a source-grouped challenge benchmark. Human
+recruitment and physical capture are not prerequisites for that work. The
+perceptual programme's results remain preserved, without a completion claim.
+
+No rejected detector is revived. The external Lossprint baseline has passed a
+[bounded software qualification](docs/research/lossprint-qualification-result-20260927.md),
+but is neither integrated nor independently validated for detection accuracy.
+A [first challenge design](docs/research/lossprint-first-challenge-design-20260927.md)
+records the remaining preparation before scoring real research audio.
 
 ## Data policy
 
