@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "study_id": "music-verdict-v1",
+  "state": "prospective_design_frozen_execution_not_ready",
+  "design_path": "docs/research/music-verdict-successor-20260927.md",
+  "design_sha256": "8bd18d1c1a813ad91e90beac9d01909ff6d954b6e3fe53249b88a3a3093b1c57",
+  "starting_release_commit": "4ca4384dfa897bf68f968deddb6a72e083f3ea90",
+  "new_audio_acquired": false,
+  "models_trained": false,
+  "scores_opened": false,
+  "execution_ready": false,
+  "public_verdict_enabled": false,
+  "binding_scope": "Study question, source requirements, candidate/comparator, budgets, stopping rules and acceptance gates. Exact source and execution bindings remain required before model work."
+}

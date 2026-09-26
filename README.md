@@ -89,6 +89,12 @@ history detector**. It does not fulfill the original detection objective.
 Lossprint is not bundled; historical codec-family and bitrate estimates are
 not exposed. The perceptual-degradation objective also remains unresolved.
 
+A separate [finished-music successor study](docs/research/music-verdict-successor-20260927.md)
+now defines a bounded matched-intervention CNN/comparator experiment. It is
+currently qualifying source provenance and independent-group availability;
+no new model has been trained or validated. The published RC and its
+verdict-free contract are unchanged.
+
 ## Data policy
 
 No copyrighted or privately supplied audio belongs in this repository.
