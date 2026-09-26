@@ -39,6 +39,14 @@ class ReleaseBundleTests(unittest.TestCase):
             self.assertTrue(all(m.mtime == m.uid == m.gid == 0 for m in members))
             self.assertEqual(members[1].mode, 0o755)
 
+    def test_macos_reproducibility_preserves_uuid_and_signature(self):
+        workflow = (Path(__file__).parents[2] / ".github/workflows/release-rc.yml").read_text()
+        self.assertIn("-Wl,-oso_prefix,$GITHUB_WORKSPACE/$build_dir/", workflow)
+        self.assertIn("-Wl,-reproducible", workflow)
+        self.assertIn('cmp "target-first/', workflow)
+        self.assertNotIn("-no_uuid", workflow)
+        self.assertNotIn("-no_adhoc_codesign", workflow)
+
     def test_unsafe_member_rejected(self):
         for name in ("/absolute", "../escape", "a/../../escape", "", "."):
             with self.subTest(name=name), self.assertRaises(ValueError):

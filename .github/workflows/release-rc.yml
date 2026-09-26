@@ -55,8 +55,14 @@ jobs:
       - run: cargo fetch --locked
       - name: Two independent clean native builds
         run: |
-          cargo build --locked --offline --release --target "${{ matrix.target }}" --target-dir target-first
-          cargo build --locked --offline --release --target "${{ matrix.target }}" --target-dir target-second
+          base_flags="$RUSTFLAGS"
+          for build_dir in target-first target-second; do
+            export RUSTFLAGS="$base_flags"
+            if [[ "${{ matrix.target }}" == "aarch64-apple-darwin" ]]; then
+              export RUSTFLAGS="$base_flags -C link-arg=-Wl,-reproducible -C link-arg=-Wl,-oso_prefix,$GITHUB_WORKSPACE/$build_dir/"
+            fi
+            cargo build --locked --offline --release --target "${{ matrix.target }}" --target-dir "$build_dir"
+          done
           cmp "target-first/${{ matrix.target }}/release/lossytrace" "target-second/${{ matrix.target }}/release/lossytrace"
       - name: Package twice and compare
         run: |
@@ -82,6 +88,7 @@ jobs:
           result = {'source_commit': os.environ['GITHUB_SHA'], 'target': target,
                     'first_binary_sha256': a, 'second_binary_sha256': b,
                     'two_clean_builds_equal': True, 'two_archives_equal': True,
+                    'macos_debug_map_prefix_normalized': target == 'aarch64-apple-darwin',
                     'scope': 'two clean target directories on the same hosted runner and pinned compiler; not a cross-host reproducibility claim',
                     'platform': platform.platform(),
                     'rustc': subprocess.check_output(['rustc', '--version'], text=True).strip()}

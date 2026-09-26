@@ -10,8 +10,11 @@ is part of this process.
 2. Require green CI on the exact commit. Python tests include current software
    plus historical byte-bound audit replay; Rust tests check the current CLI.
 3. Use Rust 1.94.0, locked dependencies, the declared native target and fixed
-   source path remapping. Build into two fresh target directories and require
-   identical executable bytes. Package each and require identical archives.
+   source path remapping. On macOS, use the linker's `-reproducible` option and
+   `-oso_prefix` with each absolute target-directory prefix to normalize debug
+   map paths before UUID generation. Build into two fresh target directories
+   and require identical executable bytes. Package each and require identical
+   archives. UUIDs and ad-hoc signatures are retained, not stripped for comparison.
 4. Extract and test the actual native package on macOS 15 arm64 or Ubuntu 24.04
    x86-64. Keep smoke and same-runner reproducibility reports as artifacts.
 5. Review the expected native packages, dependency notices/source, SBOMs and
@@ -52,3 +55,15 @@ and platform differences can affect bytes across hosts. GitHub provenance
 attestations identify an originating workflow; they are not a performance or
 scientific endorsement. See [license provenance](../licenses/README.md) and
 [release notes](release-notes.md) for redistribution and capability scope.
+
+## macOS repeat-build correction
+
+The [initial RC artifact run](https://github.com/ryan-voitiskis/lossytrace/actions/runs/36258832618)
+passed Linux but failed the macOS byte comparison before publication. A local
+reproduction isolated the differences to the UUID and its signature hash.
+Unstripped diagnostics exposed target-directory paths in the debug map.
+`-reproducible` alone did not resolve the mismatch; additionally normalizing
+the object-path prefix with `-oso_prefix` produced identical clean builds.
+The equality requirement was not relaxed and no binary bytes were patched.
+The options are documented in Apple's linker manual (`man ld`); see also
+[Apple's build UUID guidance](https://developer.apple.com/documentation/technotes/tn3178-checking-for-and-resolving-build-uuid-problems).
