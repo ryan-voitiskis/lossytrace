@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "study_id": "music-verdict-v1",
+  "state": "source_feasibility_unresolved_at_discovery_query_limit",
+  "design_sha256": "8bd18d1c1a813ad91e90beac9d01909ff6d954b6e3fe53249b88a3a3093b1c57",
+  "followup_search_queries_used": 12,
+  "followup_search_query_limit": 12,
+  "followup_primary_provider_records_reviewed": 12,
+  "followup_primary_provider_record_limit": 20,
+  "qualified_execution_inventory_exists": false,
+  "models_trained": false,
+  "model_comparison_completed": false,
+  "new_audio_acquired": false,
+  "sealed_partitions_opened": false,
+  "public_verdict_enabled": false,
+  "scientific_negative_result": false,
+  "musicnet_metadata_observation": {
+    "url": "https://zenodo.org/records/5120004/files/musicnet_metadata.csv?download=1",
+    "sha256": "1308d938bafb594e3b0471f2bdda3630da352f881857f265f92114cf398de7ca",
+    "byte_count": 43775,
+    "row_count": 330,
+    "distinct_source_strings": 32,
+    "distinct_composer_catalog_source_tuples": 136,
+    "distinct_composer_catalog_tuples": 123,
+    "counts_are_independent_provenance_qualified_groups": false,
+    "complete_recording_chain_columns_present": false,
+    "note": "Source strings mix providers and performers. These counts are descriptive only; they are not an independence or clean-history certification."
+  },
+  "direct_primary_retry_observations": [
+    {
+      "url": "https://archive.org/metadata/etree",
+      "http_status": 200,
+      "byte_count": 19765,
+      "disposition": "Metadata API accessible; general noncommercial circulation policy and provenance guidance do not qualify individual recordings or clear trained-weight rights."
+    },
+    {
+      "url": "https://zenodo.org/api/records/19683000",
+      "http_status": 200,
+      "byte_count": 8095,
+      "disposition": "AlbumDB accessible with six listed files and CC BY 4.0 metadata; ten songs belong to one named artist's album, not ten artist-disjoint groups. No audio fetched."
+    },
+    {
+      "url": "https://cambridge-mt.com/ms2/mtk-faq/",
+      "http_status": 403,
+      "disposition": "Primary terms page remains inaccessible; no permission inferred and no bypass attempted."
+    }
+  ],
+  "remaining_blocker": "No qualified, independently grouped clean-source inventory for the frozen train/selection/calibration/evaluation allocations. A broader source intake or provision of adequately documented recordings is required; there is no new detector result."
+}

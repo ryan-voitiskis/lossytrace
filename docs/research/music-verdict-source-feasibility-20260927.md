@@ -68,3 +68,89 @@ AlbumDB (institutional/Zenodo record pair), Hi-Audio, Sanidha, Open Multitrack
 Testbed, and the MoisesDB primary research page identified in search. Page
 finds and alternate URLs for the same record are not new providers. No source
 has yet been added to an execution inventory.
+
+## Final four discovery queries and direct-source checks
+
+The remaining four queries examined original DAW/master collections, Live
+Music Archive recording lineages and permissions, MusicNet, and Musopen.
+All twelve follow-up search queries are now consumed. This is the discovery
+query limit, **not** exhaustion of every source on the web or of the separate
+twenty-record primary review allowance. Twelve primary provider records have
+been reviewed, counting MusicNet, Musopen, Live Music Archive and etree's
+seeding guidance in addition to the earlier eight. Retries and metadata files
+for the same source do not add new candidates.
+
+### MusicNet: actual metadata inspected, not audio
+
+The [provider record](https://zenodo.org/records/5120004) links a public
+[metadata CSV](https://zenodo.org/records/5120004/files/musicnet_metadata.csv?download=1).
+A bounded in-memory fetch of that CSV returned 43,775 bytes with SHA-256
+`1308d938bafb594e3b0471f2bdda3630da352f881857f265f92114cf398de7ca`.
+It contains 330 rows, 32 distinct source strings, 136 distinct
+composer/catalog/source tuples, and 123 composer/catalog tuples. Source strings
+mix institutions and named performers; these are **not** independent-group
+counts. Movements recur within works and performers recur across recordings.
+There are no complete capture/codec-chain columns. The transcription labels
+and PCM delivery format do not establish the negative history labels needed
+here. No MusicNet audio or MIDI archive was fetched.
+
+### Live Music Archive: promising intake lead, not a qualified corpus
+
+The [Internet Archive FAQ](https://archivesupport.zendesk.com/hc/en-us/articles/360016553532-Live-Music-Archive-etree-org)
+requires lossless parent material and describes source/lineage metadata, while
+also allowing unknown source fields and describing DAT/MD/cassette transfers.
+The [etree guidelines](https://wiki.etree.org/index.php?page=SeedingGuidelines)
+discourage lossy parents and request full genealogy. These are community
+requirements, not verified provenance for each item. A MiniDisc-origin chain,
+for example, cannot become a negative merely by ending in FLAC.
+
+The collection's browser page did not expose its catalogue to the text fetcher,
+but a direct official metadata-API retry succeeded (HTTP 200). Access is not
+the present blocker. The collection states noncommercial circulation and
+per-artist policy conditions; it does not establish this study's complete
+research/derivative/weight-rights clearance. No artist policy or actual show
+has yet been qualified, and no audio or catalogue-wide search was performed.
+This is the best remaining large-scale lead for a separately bounded, member-
+level metadata intake; claiming 300 suitable independent groups now would be
+unsupported. Audience/live recordings would also require checking their fit
+to the declared finished-music population, not quietly replacing that population.
+
+### Musopen and retry outcomes
+
+[Musopen's FAQ](https://musopen.org/faq/) explicitly distinguishes uploader
+representations from its own verification of recording rights. Its catalogue
+description supplies neither complete capture chains nor artist/session
+independence. No account was created and no audio downloaded.
+
+Direct official API access also resolved the earlier AlbumDB page-fetch
+failure. Its [record](https://zenodo.org/api/records/19683000) reports CC BY 4.0,
+PCM raw/processed/master versions and six downloadable archive entries for
+one named artist's ten-song album. This is useful source documentation but
+does not supply ten artist-disjoint groups. Only metadata was read. A direct
+Mixing Secrets FAQ retry returned HTTP 403; no workaround, permission
+assumption or source download followed.
+
+## Feasibility checkpoint and next decision
+
+The [machine-readable observation](../../research/music-verdict-v1/source-feasibility-observation-20260927.json)
+records the query accounting and MusicNet metadata fingerprint. There is still
+no qualified private inventory for the frozen allocations of 100 training,
+40 selection, 100 calibration and 300 fresh evaluation groups. Those numbers
+were chosen in the prospective design; they are not a theorem that smaller
+exploratory experiments are worthless. They cannot be silently relaxed and
+then presented as this study passing.
+
+**The immediate execution blocker is source qualification and independent
+coverage, not a measured CNN failure.** No training comparison, calibration,
+fresh validation or new release preparation is complete. The original goal
+remains unfulfilled and the public inspector remains verdict-free.
+
+The actionable next choice is either a larger explicitly bounded metadata-only
+intake (the Live Music Archive is a promising lead), or access to an adequately
+documented original-recording collection. Outreach, spending and waveform
+acquisition are not implied by that choice. A smaller development-only pilot
+would require a separately declared successor scope and still could not
+support the promised independent release validation. Manufacturing hundreds
+of synthetic encodes does not manufacture hundreds of independent real-music
+sources. No further discovery queries or model fitting are initiated at this
+checkpoint.
