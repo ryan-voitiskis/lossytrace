@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "study_id": "music-verdict-v1",
+  "date": "2026-10-05",
+  "state": "additional_metadata_checked_no_source_admitted",
+  "prior_ledger": "research/music-verdict-v1/source-intake-observation-20261005.json",
+  "scope": "Read all 124 identifier/title/creator rows from the previously saved Community Audio query, then four selected item records. This is not a provenance review of all 124 recordings.",
+  "snapshot_directory": ".tmp/music-verdict-v1/source-intake-20261005",
+  "items": [
+    {
+      "identifier": "AOC1R",
+      "url": "https://archive.org/metadata/AOC1R",
+      "retrieved_at": "2026-10-05T05:24:41.261308+00:00",
+      "byte_count": 36848,
+      "sha256": "2a84d19a31ddde940ce9d1afc072b0f67e1f84600db1811850ae73926198c391",
+      "finding": "Description advertises master-quality WAV on a separate label site, but the 25 original audio entries in this Archive item are 64-kbps MP3. The external WAV label does not qualify these files or prove that external masters are accessible and cleared.",
+      "disposition": "Archive item cannot supply clean negatives; external master chain and access remain unverified"
+    },
+    {
+      "identifier": "modular-experiments",
+      "url": "https://archive.org/metadata/modular-experiments",
+      "retrieved_at": "2026-10-05T05:24:45.672383+00:00",
+      "byte_count": 5481,
+      "sha256": "0a9493dff8c5554f025ad8c415b8134d1e2f32e8ea40954964c3f4e7d686c913",
+      "finding": "Two original FLAC recordings, tagged CC BY-NC 4.0. Description explicitly says the synthesizer was recorded to MiniDisc; the recording mode and codec are not supplied.",
+      "disposition": "Unresolved potentially lossy stage; not a qualified clean negative. FLAC distribution cannot resolve MiniDisc history."
+    },
+    {
+      "identifier": "2026-05-12_trolley_barn_contra",
+      "url": "https://archive.org/metadata/2026-05-12_trolley_barn_contra",
+      "retrieved_at": "2026-10-05T05:24:59.941949+00:00",
+      "byte_count": 44791,
+      "sha256": "2f100298a64c67638178924d52286e92b939b2d975ac4cdb98e8daf99601033a",
+      "finding": "21 original FLAC entries and a CC BY-NC-SA 4.0 tag. Uploader describes microphones, the band's mixer digital interface, Ardour 9 recording and a later remix from stems. Artist page confirms the May 12 event and describes an open community band, not a fixed complete personnel roster.",
+      "disposition": "Stronger live-music lead; confirm complete work selection, capture/export details, licensor authority and the full performance personnel/lineage before admission. Do not count its 21 files as independent groups.",
+      "artist_page": "https://joyboundliving.com/atlanta-folk-orchestra",
+      "linked_event_metadata": "https://musicbrainz.org/event/99a2c17a-eeee-47f6-9878-5ca898156b52",
+      "event_page_read": "failed; no conclusion from the failed fetch"
+    },
+    {
+      "identifier": "Softwarewolf2007-07-08.WAV",
+      "url": "https://archive.org/metadata/Softwarewolf2007-07-08.WAV",
+      "retrieved_at": "2026-10-05T05:25:04.802293+00:00",
+      "byte_count": 4304,
+      "sha256": "c5d3b3b26775781ebe3c118ee45ff9f463c79ca7c40cec0e0d358917bb9018c1",
+      "finding": "One original WAVE entry, tagged CC BY-NC-ND 3.0. Description calls this a DJ set recorded from software output; upstream source-track histories are unspecified.",
+      "disposition": "Not a qualified negative: direct output capture does not establish the history of DJ source tracks. Derivative-use conditions also remain unresolved."
+    }
+  ],
+  "medleydb_access_followup": {
+    "description_url": "https://medleydb.weebly.com/description.html",
+    "downloads_url": "https://medleydb.weebly.com/downloads.html",
+    "audio_record_urls": ["https://zenodo.org/records/1649325", "https://zenodo.org/records/1715175"],
+    "finding": "Both official full-audio records explicitly restrict files and require an access request. Public metadata remains accessible. The dataset site also documents edited timing, remixes and added/recombined content, so the delivered WAV format alone is not a clean-history label.",
+    "action": "No login, access request, outreach or audio download; do not route around restricted files."
+  },
+  "source_inventory_ready": false,
+  "sources_admitted": 0,
+  "audio_acquired": false,
+  "sealed_data_accessed": false,
+  "new_accuracy_evidence": false,
+  "next_actions": [
+    "Continue recording-level source and historical identity qualification; treat live-only coverage separately from studio finished-music coverage",
+    "Keep the Trolley Barn and Michael Garfield leads open without assuming independence or relaxing allocation minima",
+    "Keep metadata-access restrictions distinct from scientific evidence of detector failure"
+  ]
+}

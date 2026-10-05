@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "study_id": "music-verdict-v1",
+  "date": "2026-10-05",
+  "state": "synthetic_comparator_verified_not_execution_frozen",
+  "design_sha256": "8bd18d1c1a813ad91e90beac9d01909ff6d954b6e3fe53249b88a3a3093b1c57",
+  "files": {
+    "scripts/music_verdict_comparator.py": "f795dbe236f72aaac618240b7d8cb363e1230dbe017cce6b803971e0401e3140",
+    "scripts/tests/test_music_verdict_comparator.py": "de6176f9d29e5ce7eadec2f307253e48095eb29f701a848a4ff2dc95691c58c2",
+    "src/compression_trace.rs": "91778aaf9e64ca588d0a6d987092c3453cb151e08eef26916b71016210b45e5e"
+  },
+  "proposed_bindings": {
+    "measurement_version": 0,
+    "ordered_features": [
+      "median_active_bin_fraction", "spectral_edge_hz", "spectral_edge_drop_db",
+      "spectral_edge_persistence", "spectral_edge_spread_hz", "spectral_hole_ratio",
+      "isolated_hole_ratio", "band_rupture_score", "transform_alignment_score",
+      "transform_alignment_block_samples", "transform_alignment_phase_samples",
+      "transform_alignment_small_coefficient_fraction"
+    ],
+    "expanded_columns": "12 numeric values in the stated order, followed by 12 missing-value flags in the same order",
+    "excluded_fields": [
+      "feature_version", "analyzed_frame_count", "active_frame_count",
+      "high_band_supported_frame_count", "active_duration_seconds"
+    ],
+    "metadata_policy": "Only strict feature-v0 measurement objects are accepted; hashes, paths, format/debug strings and source labels are not feature columns. Source IDs affect training weights only.",
+    "weights": "Equal weight per independent source component, half within each class, equal cases within each component/class; both classes required per training component",
+    "imputation": "Training-weighted observed mean per column, zero for all-missing training columns; held-out observations never change these values",
+    "standardization": "Training-weighted population mean and standard deviation after imputation and flag expansion; constant scale set to one. Anchor-centered summation preserves exact constants. All-missing numeric columns stay zero on held-out data.",
+    "objective": "Source/class-weighted mean binary cross entropy + 0.5 * 1.0 * squared L2 norm of all 24 coefficients; intercept unpenalized",
+    "solver": "Deterministic float64 damped Newton, zero initialization, direct Hessian solve",
+    "gradient_infinity_norm_tolerance": 1e-8,
+    "maximum_newton_iterations": 100,
+    "maximum_line_search_trials": 40,
+    "line_search_step": "1, 1/2, 1/4, ...",
+    "armijo_constant": 0.0001,
+    "failure_policy": "Non-finite values, singular solve, failed line search or nonconvergence stop without a partial model or alternate solver"
+  },
+  "verification": {
+    "command": ".tmp/music-verdict-v1/python-env/bin/python -m unittest scripts.tests.test_music_verdict_comparator scripts.tests.test_music_verdict_candidate scripts.tests.test_music_verdict_archive_metadata scripts.tests.test_music_verdict_study",
+    "python": "3.13.15",
+    "numpy": "2.3.2",
+    "tests_run": 69,
+    "tests_skipped": 0,
+    "failures": 0,
+    "comparator_tests": 20,
+    "checks": [
+      "Ordered feature names exist in the current Rust measurement definition",
+      "Schema, version, finite values, ratio ranges, uint32 fields and edge/support consistency",
+      "Excluded duration/count changes cannot change numeric inputs",
+      "Null missingness remains distinct from malformed values",
+      "Exact hand-calculated source/class weights",
+      "Training-only imputation/scaling with unchanged held-out state",
+      "All-missing and constant-decimal columns, including missing observations",
+      "Analytic objective gradient and Hessian agree with finite differences",
+      "Intercept not regularized; saturated BCE remains finite",
+      "Synthetic one-dimensional optimum satisfies its independent scalar equation",
+      "Constant/missing synthetic data cannot produce spurious discrimination",
+      "Replication within one component does not increase its influence",
+      "Permutation tolerance and deterministic repeated fit",
+      "Forced nonconvergence returns failure, not a partial model"
+    ],
+    "development_fix": "Adversarial constant-decimal tests exposed rounding-induced fake variance. Anchor-centered weighted means resolved it before any execution freeze or real-data fit.",
+    "synthetic_fits_performed": true,
+    "real_audio_read": false,
+    "real_audio_model_fitted": false,
+    "checkpoint_written": false,
+    "calibration_performed": false,
+    "accuracy_measured": false,
+    "release_runtime_measured": false,
+    "historical_files_preserved": 980,
+    "standard_environment_comparator_check": "All 20 tests explicitly skip when NumPy is absent; all 20 ran successfully in the isolated environment above",
+    "broader_regression_rerun": false,
+    "previous_broader_regression_record": "research/music-verdict-v1/synthetic-implementation-observation-20261005.json"
+  },
+  "remaining_gates": "Qualified sources and identity allocations, exact audio construction/toolchain bindings and execution freeze before real-data fitting or scoring; then training, calibration, fresh evaluation and all release gates.",
+  "execution_ready": false,
+  "public_verdict_enabled": false
+}
