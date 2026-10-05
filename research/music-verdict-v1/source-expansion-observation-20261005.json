@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "study_id": "music-verdict-v1",
+  "date": "2026-10-05",
+  "state": "new_metadata_leads_no_source_admitted",
+  "report": "docs/research/music-verdict-source-expansion-20261005.md",
+  "prior_observation": "research/music-verdict-v1/source-intake-followup-20261005.json",
+  "design_sha256": "8bd18d1c1a813ad91e90beac9d01909ff6d954b6e3fe53249b88a3a3093b1c57",
+  "lorenzo_session": {
+    "repository": "https://github.com/lorenzosmusic/with-you",
+    "commit": "939278c798020e7baf78711138ce8cb6bf5a3f23",
+    "url": "https://raw.githubusercontent.com/lorenzosmusic/with-you/939278c798020e7baf78711138ce8cb6bf5a3f23/200119-song-idea-ardour-files/200119-song-idea.ardour",
+    "snapshot": ".tmp/music-verdict-v1/source-intake-20261005/lorenzo-session-939278c.ardour",
+    "byte_count": 1144082,
+    "sha256": "66e042ee2fc59804e064fcdf3862d94e6398a8380b425c1cb4da5c01484b6fa6",
+    "session_rate_hz": 44100,
+    "all_sources": 154,
+    "all_audio_sources": 114,
+    "routes": 26,
+    "referenced_playlists": 25,
+    "referenced_sources": 40,
+    "referenced_audio_sources": 33,
+    "referenced_audio_without_captured_for": 15,
+    "referenced_vokoscreen_sources": 0,
+    "reference_method": "Match Routes/Route/Diskstream playlist names to Playlists/Playlist names; collect Region source-* identifiers. Not an audibility or final-export audit.",
+    "disposition": "Imported-source and final-export histories unresolved; do not infer lossy history from missing captured-for metadata or unused filenames."
+  },
+  "great78": {
+    "provider_preservation": "https://great78.archive.org/preservation/",
+    "provider_research": "https://great78.archive.org/research/",
+    "query": "collection:georgeblood AND year:[1898 TO 1922]",
+    "catalog_matches": 19146,
+    "rows_inspected": 20,
+    "distinct_creator_strings": 44,
+    "creator_strings_are_independent_groups": false,
+    "rows_with_license_url": 0,
+    "snapshots": [
+      {
+        "directory": ".tmp/music-verdict-v1/source-intake-20261005/great78-pre1923-page1",
+        "retrieved_at": "2026-10-05T05:33:36.932843+00:00",
+        "byte_count": 6754,
+        "sha256": "b01fce4c56048fee1af8574fdee9726d585503d12e54861a4a232166662de8a4"
+      },
+      {
+        "directory": ".tmp/music-verdict-v1/source-intake-20261005/great78-aloha-network",
+        "identifier": "78_1-aloha-oe-2-wa-like-no-a-like_louise-ferera_gbia0430117b",
+        "retrieved_at": "2026-10-05T05:37:14.760624+00:00",
+        "byte_count": 9353,
+        "sha256": "63ba1f5c11f0c5fdb2d070fbd7a7f9a3646b7c9f784286dd8d0cb976c2d7a09e",
+        "listed_original_audio_format": "24bit Flac",
+        "listed_duration_seconds": 166.27
+      },
+      {
+        "directory": ".tmp/music-verdict-v1/source-intake-20261005/great78-gavotte",
+        "identifier": "78_1-gavotte-2-tambourin_mischa-elman-percy-b-kahn-gretry-gossec_gbia0288946a",
+        "retrieved_at": "2026-10-05T05:37:15.480796+00:00",
+        "byte_count": 9298,
+        "sha256": "76c328cfd044ff0bfc4c5caa99c81acd1c7c611ad1bd42d7f356768419101f9b",
+        "listed_original_audio_format": "24bit Flac",
+        "listed_duration_seconds": 192.63
+      }
+    ],
+    "failed_attempt": "The first sandboxed item request failed with URLError and left an empty great78-aloha directory. An authorized network retry used a new directory; no earlier snapshot was overwritten.",
+    "disposition": "Direct-disc transfer lead. Actual delivered rates/channels, applicable rights, complete-work and performer/session independence unresolved. No audio or headers accessed; metadata catalog counts are not eligible capacity."
+  },
+  "other_primary_records": [
+    {
+      "url": "https://zenodo.org/records/6519024",
+      "name": "EnsembleSet multitracks",
+      "disposition": "80 synthetic chamber pieces from one sample-library setup; not independent real-recording validation."
+    },
+    {
+      "url": "https://archives.ismir.net/ismir2022/paper/000038.pdf",
+      "name": "KUG Dastgahi Corpus",
+      "disposition": "Four musicians, at most four performer components before further grouping; mixed capture routes and audio-specific rights unresolved."
+    },
+    {
+      "url": "https://zenodo.org/records/6868083",
+      "name": "Broadcast Audio Fingerprinting dataset",
+      "disposition": "8 kHz reference audio outside the frozen population; restricted access, no request submitted."
+    }
+  ],
+  "sources_admitted": 0,
+  "source_inventory_ready": false,
+  "audio_acquired": false,
+  "sealed_data_accessed": false,
+  "models_trained": false,
+  "scores_opened": false,
+  "new_accuracy_evidence": false,
+  "outreach_or_spending": false,
+  "next_step": "Resolve Great 78 technical delivery, rights and identity metadata before broad intake; retain original-session and documented live-recording leads without claiming independent capacity."
+}
