@@ -1,0 +1,5 @@
+# Synthetic implementation checks only; not the real-audio execution freeze.
+# Reuse the historical research stack's primary package versions.
+# This turn uses the already installed CPython 3.13.15 in an isolated venv.
+numpy==2.3.2
+torch==2.8.0
