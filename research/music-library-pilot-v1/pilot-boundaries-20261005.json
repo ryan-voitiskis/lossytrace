@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "study_id": "music-library-pilot-v1",
+  "date": "2026-10-05",
+  "status": "exploratory_pilot_intake_authorized_execution_not_started",
+  "purpose": "Learn from controlled added codec stages on real music, supported by fully controlled synthetic originals, without mistaking unknown-history commercial originals for never-lossy ground truth.",
+  "relationship_to_release_study": {
+    "study_id": "music-verdict-v1",
+    "frozen_design_sha256": "8bd18d1c1a813ad91e90beac9d01909ff6d954b6e3fe53249b88a3a3093b1c57",
+    "design_modified": false,
+    "release_gates_relaxed": false,
+    "pilot_can_satisfy_release_validation": false,
+    "pilot_observed_sources": "Development-only after any waveform experiment; cannot later be presented as fresh blind release validation",
+    "pilot_results": "Must be separately labelled exploratory, not completion or failure of the frozen study"
+  },
+  "input_labels": {
+    "library_original": "unknown_history",
+    "lossless_rewrap_of_library_original": "unknown_history_with_known_lossless_processing",
+    "lossy_roundtrip_of_library_original": "known_added_lossy_stage_with_unknown_prior_history",
+    "synthetic_original": "known_clean_only_if_entire_generation_chain_is_controlled_and_contains_no_unknown_sampled_inputs",
+    "lossy_roundtrip_of_synthetic_original": "known_lossy_derived_with_controlled_history"
+  },
+  "initial_construction_bounds_proposed_before_selection": {
+    "real_music_files_max": 24,
+    "source_quotas": {"bandcamp_user_reported": 12, "beatport_user_reported": 12},
+    "synthetic_compositions_max": 24,
+    "analyzed_seconds_per_source_max": 120,
+    "generated_storage_gib_max": 10,
+    "minimum_filesystem_free_gib": 100,
+    "expansion": "Do not silently expand after observing scores. Record a prospective decision first."
+  },
+  "selection_and_grouping": [
+    "No spectral or model-score screening",
+    "Resolve the known artist/title duplicate before selection; metadata match is a review flag, not proof of identical audio",
+    "Bind deterministic selection order and exact private source list before construction",
+    "Check metadata across the entire inventory for related versions; do not count store folders as independent production providers",
+    "Keep every original, rewrap, codec version, crop and processing variant of a recording together",
+    "Use artist, album, credited remix and known work relationships for conservative pilot grouping; unknown personnel/session lineage remains an explicit limitation",
+    "No claim that 112 artist strings represent 112 independent scientific groups"
+  ],
+  "questions": [
+    "Are equal-PCM WAV and FLAC presentations measurement-equivalent?",
+    "What changes when an additional MP3 or AAC stage is applied to the same music?",
+    "Which changes survive gain, equalization, resampling and dithering?",
+    "Do patterns learned from fully controlled synthesis transfer at all to real-music interventions?"
+  ],
+  "interpretation_limits": [
+    "A paired change or ability to distinguish untreated from re-encoded library files is not accuracy for ever-lossy history",
+    "Unknown originals cannot provide a verified clean false-positive denominator",
+    "Synthetic detection rates describe generated material, not commercial-music accuracy",
+    "Repeated encodes do not enlarge the independent source count",
+    "Any library-based model fit requires a further explicit training and rights decision; intake authority does not clear public weights or copyrighted-audio redistribution"
+  ],
+  "required_before_audio_construction": [
+    "Finalize and bind exact input selection, technical eligibility and duplicate/grouping checks",
+    "Record executable encoder/decoder versions, exact codec settings and transformations",
+    "Whole-file input preservation hashes and no-clobber output manifest",
+    "Explicit distinction between full files and any extracted intervals",
+    "Synthetic generator specification with no unknown audio samples",
+    "Confirm storage headroom and retain outputs only in ignored project temporary storage"
+  ],
+  "required_before_model_scores": [
+    "Separate prospective exploratory analysis plan, split assignments, metrics, model-fit limits and stopping rules",
+    "No borrowing of sealed historical data, release-evaluation sources or scores",
+    "No reuse of pilot observations as blind validation evidence"
+  ],
+  "prohibited_actions": [
+    "Modify original audio or tags",
+    "Upload library audio or private inventory",
+    "Publish or distribute generated commercial-audio copies or trained weights without clearance",
+    "Contact providers, create accounts, spend money or merge/publish a release without separate authority"
+  ]
+}

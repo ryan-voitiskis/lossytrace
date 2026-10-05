@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "study_id": "music-library-pilot-v1",
+  "date": "2026-10-05",
+  "status": "read_only_metadata_inventory_completed_with_32_persistent_read_failures",
+  "authority": "User identified Music/collection and source-labelled play folders, then instructed: great. Please proceed.",
+  "scope": ["/Users/vz/Music/collection", "/Users/vz/Music/play"],
+  "metadata_access": "Installed reklawdbox 0.33.1 MCP server, help then read_file_tags only; no database audit, enrichment, repair or write tool called",
+  "private_inventory": ".tmp/music-verdict-v1/library-inventory-20261005-002/inventory.json",
+  "private_inventory_sha256": "9e0f75da22943e324a85967fcd8f6c0ac4710e3134b1366895325e031b5f5d5e",
+  "private_summary_sha256": "e9570d2c95333de621c7335a6a9d70b3b50ad7758c66ebaae55751c630df8b48",
+  "failed_read_retry_sha256": "b72ed9f770008e8a36faf77bcb89e4cab081f4a0f7af6ce78e2d81ea421633ce",
+  "files_enumerated": 19401,
+  "successful_metadata_reads": 19369,
+  "persistent_metadata_read_failures": 32,
+  "source_counts": {
+    "collection_unspecified": 18650,
+    "bandcamp_user_reported": 56,
+    "beatport_user_reported": 72,
+    "mixed_origins_user_reported": 554,
+    "other_source_unresolved": 69
+  },
+  "extension_counts_not_codec_history": {
+    "flac": 16673,
+    "wav": 2643,
+    "mp3": 72,
+    "aiff": 13
+  },
+  "bandcamp_beatport_pool": {
+    "files": 128,
+    "successful_metadata_reads": 128,
+    "reported_file_format": "wav",
+    "artist_strings_casefolded": 112,
+    "artist_title_pairs_casefolded": 127,
+    "duplicate_artist_title_groups": 1,
+    "missing_id3_artist_or_title": 0,
+    "independent_artist_session_work_components_verified": false,
+    "source_evidence": "User attribution and directory names, not receipts or verified studio chains",
+    "clean_history_verified": false
+  },
+  "read_failures": {
+    "scope": "32 WAV-suffixed files within collection; none in the Bandcamp/Beatport pool",
+    "error": "Wav: WAV file doesn't contain a RIFF chunk",
+    "retry": "One read-only retry of exactly these 32 paths returned the same 32 failures",
+    "interpretation": "Metadata reader failure, not a diagnosis of corruption or evidence of lossy history",
+    "action": "Retain unchanged; exclude from initial pilot selection. Private response retains exact paths."
+  },
+  "integrity": {
+    "input_files_with_changed_device_inode_size_or_mtime": 0,
+    "whole_file_hashes_verified": false,
+    "no_symlink_following": true,
+    "hidden_files_enumerated": false,
+    "gitignored_audio_in_authorized_roots_enumerated": true,
+    "private_outputs_ignored_by_git": true,
+    "first_attempt": "Default rg ignore rules yielded no files and an empty -001 output directory. The successful -002 run disabled ignore filtering within the two authorized roots only; no snapshot overwritten."
+  },
+  "not_performed": [
+    "Audio decoding, playback, encoding or conversion",
+    "Audio header sample-rate, duration, channel or bit-depth qualification",
+    "Tag edits, file moves, deletion or Rekordbox database changes",
+    "Content hashing, duplicate-audio confirmation or historical overlap clearance",
+    "Training, scoring, calibration or release validation",
+    "Uploads, outreach, purchases or redistribution"
+  ],
+  "next_step": "Bound and select a small private exploratory pilot from the readable source-labelled pool, resolve duplicates/grouping and technical eligibility before construction, and keep original history unknown."
+}
