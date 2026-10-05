@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "study_id": "music-library-pilot-v1",
+  "date": "2026-10-05",
+  "state": "24_controlled_synthetic_originals_created_and_verified",
+  "execution_head": "82e25e3",
+  "prospective_plan": "research/music-library-pilot-v1/construction-plan-20261005.json",
+  "prospective_plan_sha256": "7bfa62f6b77567de23cf5b28fbaa58a816b2cbcf1ddbee8bf9628bb8a32746d5",
+  "private_output_directory": ".tmp/music-verdict-v1/library-synthesis-20261005-001",
+  "private_manifest_sha256": "efa2a436e74f4cb7ca9edda78e3d0debb8bfa867e624d7814d359737938e8726",
+  "files": 24,
+  "duration_seconds_each": 120,
+  "total_minutes": 48,
+  "audio_bytes": 530497056,
+  "format": "stereo signed 16-bit PCM WAV",
+  "sample_rate_counts": {"44100": 12, "48000": 12},
+  "family_counts": {
+    "plucked_harmony": 6,
+    "rhythmic_synth": 6,
+    "sparse_bells": 6,
+    "percussive_texture": 6
+  },
+  "quiet_variants_24_db_below_other_peak_targets": 4,
+  "history_label": "controlled_synthesis_no_lossy_stage",
+  "construction": {
+    "external_audio_or_samples": false,
+    "learned_generation_or_plugins": false,
+    "library_audio_read_this_execution": false,
+    "library_audio_modified": false,
+    "playback_or_upload": false,
+    "preexisting_output_overwritten": false,
+    "audio_outputs_ignored_by_git": true,
+    "free_space_floor": "100 GiB reserved in preflight after worst-case render allocation; post-run filesystem check remained above floor"
+  },
+  "independent_verification_after_run": {
+    "file_sha256_verified": 24,
+    "pcm_sha256_verified": 24,
+    "headers_channels_bit_depth_rate_and_frame_count_verified": 24,
+    "distinct_pcm_hashes": 24,
+    "bounded_nonclipping_pcm_and_zero_endpoints_verified": 24,
+    "full_duration_replays": 4,
+    "replay_indices": [0, 6, 12, 18],
+    "replay_pcm_hashes_identical": true,
+    "cross_platform_numerical_equivalence_tested": false
+  },
+  "focused_tests_this_turn": {
+    "synthesis": 7,
+    "metadata_selection": 12,
+    "release_study_metadata_and_bounds": 23,
+    "total_passed": 42,
+    "skipped": 0,
+    "broader_regression_rerun": false
+  },
+  "scientific_limits": [
+    "Four shared procedural recipes and 24 seeds do not establish 24 independent real-world recording chains",
+    "Clean synthetic histories do not resolve the unknown upstream histories of the selected commercial tracks",
+    "Distinct hashes establish distinct PCM bytes, not representative musical diversity or perceptual quality",
+    "No codec variants, model fits, predictions, calibration, detection rates or release-validation results produced in this execution"
+  ],
+  "sealed_data_accessed": false,
+  "release_study_changed": false,
+  "goal_complete": false,
+  "next_step": "Bind conversion runner and shared-library dependencies, pass fixed synthetic priming/frame-count/wrapper checks, then construct the prespecified codec variants in private storage."
+}
