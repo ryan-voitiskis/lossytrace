@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "study_id": "music-library-pilot-v1",
+  "date": "2026-10-05",
+  "state": "synthesis_recipe_bound_before_full_render_codec_construction_pending_runner_and_alignment_checks",
+  "inputs": {
+    "private_real_selection_sha256": "ddb96d36477c279573ec52ea96d2da3e697bb3592cdb35bf3219a8bc64faaf69",
+    "private_real_technical_report_sha256": "640502075e6d106fabfd246a171bba4513a38bfa1044e264487ed6dfa532c75c",
+    "real_sources": 24,
+    "real_source_history": "unknown",
+    "synthetic_sources": 24,
+    "historical_sealed_sources": 0
+  },
+  "synthesis": {
+    "script": "scripts/music_library_pilot_synthesis.py",
+    "script_sha256": "d6d7b2cfb79e2ecda8d53cd08df16ec87fa54412b0f266b22d0c4eb2a44d13e6",
+    "python_version": "3.13.15",
+    "numpy_version": "2.3.2",
+    "duration_seconds": 120,
+    "channels": 2,
+    "format": "PCM signed 16-bit little-endian WAV",
+    "index_range": [0, 23],
+    "seed": "20261005 + index, NumPy Generator(PCG64)",
+    "families_in_order_six_indices_each": ["plucked_harmony", "rhythmic_synth", "sparse_bells", "percussive_texture"],
+    "tempos_each_family_bpm": [80, 96, 112, 128, 144, 160],
+    "sample_rate": "44100 for even index; 48000 for odd index",
+    "root_midi": "45 + index modulo 12",
+    "scale_semitones": [0, 2, 3, 5, 7, 8, 10],
+    "chord_root_sequence_semitones": [0, 5, 3, 7],
+    "arrangement": "Chord changes every eight beats; A/B register sections every 32 beats; deterministic seeded melody and panning, with family-specific bass, chords, kick and noise percussion",
+    "oscillators": "Analytic sine harmonics and inharmonic bells below 0.45 times sample rate; analytic chirped kick; seeded differenced white-noise percussion",
+    "envelopes": "Five-millisecond event ramps; family-specific exponential decay; one-second whole-piece entrance and ending fades",
+    "quantization": "Joint-channel peak normalization to 0.65, except the sixth piece of each family is 24 dB quieter; round to signed 16-bit PCM, no lossy stage",
+    "external_audio_assets": false,
+    "learned_or_plugin_generator": false,
+    "independent_production_chains_claimed": false,
+    "qualification": "Fully controlled synthetic histories only. Four shared recipes and their seeds are not independent real-world performers or studios."
+  },
+  "planned_conversion_matrix": {
+    "scope": "First construction tranche; later nuisance-processing tranches need exact executable bindings before use",
+    "real_interval": "First 120 seconds of each fixed selected track, at native sample rate and input bit depth, not a new complete-song population",
+    "synthetic_interval": "Complete 120-second render",
+    "controls": ["PCM WAV baseline", "FLAC rewrap with identical decoded PCM"],
+    "mp3": {
+      "encoder": "FFmpeg libmp3lame",
+      "mode": "CBR",
+      "bitrates_kbps": [128, 192, 320],
+      "parameters": {"abr": false, "reservoir": true, "joint_stereo": true, "compression_level": 2},
+      "container": "MP3 with Xing/LAME delay metadata retained"
+    },
+    "aac": {
+      "encoder": "FFmpeg native aac",
+      "profile": "AAC-LC",
+      "target_bitrates_kbps": [128, 192, 256],
+      "parameters": {"aac_coder": "twoloop", "aac_is": true, "aac_pns": true, "aac_tns": true},
+      "container": "M4A retaining timing/edit-list metadata",
+      "bitrate_note": "Target rates are not a claim of exact CBR; report measured encoded rates"
+    },
+    "decoded_deliveries": "PCM at the original native rate and bit depth, saved as lossless files. Wrapper equality checked on decoded integer samples, not container bytes.",
+    "alignment": "Before real conversions, verify MP3/AAC priming and trailing-padding handling with fixed synthetic impulses at both rates. Require exact target frame count and documented time origin; do not estimate alignment by searching real-music model scores.",
+    "original_modification": false,
+    "waveform_based_selection": false,
+    "public_redistribution": false
+  },
+  "installed_conversion_tools_observed": {
+    "ffmpeg_version": "9.0.2",
+    "ffmpeg_sha256": "c8173e9755795978bce8e104f8d7044fabe7d6d84044aba37d3648c6f4e4e1a8",
+    "ffprobe_sha256": "56559c234422b0e3722c54b2bd99bbd8cd83d3732a13a6d207589982a6b7085e",
+    "required_encoders_present": ["libmp3lame", "aac", "flac"],
+    "shared_dependency_binding_complete": false,
+    "full_conversion_execution_ready": false
+  },
+  "storage": {
+    "root": ".tmp/music-verdict-v1",
+    "new_synthesis_directory": "library-synthesis-20261005-001",
+    "no_clobber": true,
+    "total_generated_gib_limit": 10,
+    "minimum_filesystem_free_gib": 100,
+    "stop_on_limit": true,
+    "retained_data_destination_when_available": "/Volumes/schwarz"
+  },
+  "synthetic_implementation_verification": {
+    "tests": 7,
+    "passed": 7,
+    "skipped": 0,
+    "test_sha256": "7a1dbb6fe2a0f38ac4f27cfbdd349fa6e4af096394a218a9759a7171c42ac27e",
+    "coverage": "All 24 parameter sets on short renders, deterministic replay, finite bounded amplitude, quiet variants, invalid arguments, exact WAV/PCM round trip and no-clobber writes",
+    "accuracy_evidence": false
+  },
+  "release_study_design_sha256": "8bd18d1c1a813ad91e90beac9d01909ff6d954b6e3fe53249b88a3a3093b1c57",
+  "release_gates_changed": false,
+  "real_library_model_fit_authorized_by_this_plan": false,
+  "model_scores_authorized_by_this_plan": false,
+  "scientific_outcome": "Not yet measured"
+}
