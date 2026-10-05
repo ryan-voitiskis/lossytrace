@@ -1,0 +1,324 @@
+{
+  "schema_version": 1,
+  "study_id": "music-verdict-v1",
+  "date": "2026-10-05",
+  "state": "source_intake_active_no_execution_inventory",
+  "resource_authorization_path": "research/music-verdict-v1/resource-authorization-20261005.json",
+  "snapshots": [
+    {
+      "url": "https://archive.org/metadata/BC2011-06-05.flac",
+      "retrieved_at": "2026-10-05T04:58:27.653702+00:00",
+      "byte_count": 19795,
+      "sha256": "37fc581b415983d9839d644f62e54bb0b638075785f211fb1ef3c69ff1e06353"
+    },
+    {
+      "url": "https://archive.org/metadata/BlastingRod",
+      "retrieved_at": "2026-10-05T04:53:42.945418+00:00",
+      "byte_count": 9534,
+      "sha256": "2689e9001c4733cdb0a5a4073d280cfc024bda4cabeb6d0242347151da5e47ab"
+    },
+    {
+      "url": "https://archive.org/metadata/Bluesphere",
+      "retrieved_at": "2026-10-05T04:53:38.102946+00:00",
+      "byte_count": 2888,
+      "sha256": "288387e5fcd848f0b2f4fcb3420ff1708116e78047e3d1e0b625218ed8a9271f"
+    },
+    {
+      "url": "https://archive.org/metadata/Bluesphere2026-02-12.Bluesphere",
+      "retrieved_at": "2026-10-05T04:53:35.976316+00:00",
+      "byte_count": 4436,
+      "sha256": "22b005f9b600b31662ea467d88f71a2ad5e56f9cf41347940e50b2f14544ef5b"
+    },
+    {
+      "url": "https://archive.org/metadata/GoldRamble",
+      "retrieved_at": "2026-10-05T04:53:34.011283+00:00",
+      "byte_count": 2710,
+      "sha256": "481db37790c67ec066be5621d40263569f96dd5071b23c1940327184cb6ec73d"
+    },
+    {
+      "url": "https://archive.org/metadata/MG2012-07-12",
+      "retrieved_at": "2026-10-05T04:58:20.320165+00:00",
+      "byte_count": 17731,
+      "sha256": "83ee0e6500a18063ac79b08fa27c631e262581e188426f918b52203d6dcecb22"
+    },
+    {
+      "url": "https://archive.org/metadata/Mnemonic1997-11-01",
+      "retrieved_at": "2026-10-05T04:58:25.876701+00:00",
+      "byte_count": 28316,
+      "sha256": "cdd188a20189741a51b6e3c2b00d0ecd5b1b82c3abbccba9fb5f7a77bdef75eb"
+    },
+    {
+      "url": "https://archive.org/metadata/TheBreakfast",
+      "retrieved_at": "2026-10-05T04:53:46.504510+00:00",
+      "byte_count": 6965,
+      "sha256": "8a731f05c2feeeb35bb30a8bb9c99a277defe5de64d14e6799982d02ea2eee1a"
+    },
+    {
+      "url": "https://archive.org/advancedsearch.php?q=mediatype%3Aetree+AND+%28collection%3AMnemonic+OR+collection%3AJoreMusic+OR+collection%3AMichaelGarfield+OR+collection%3ADirtySuperb+OR+collection%3ABreakofReality+OR+collection%3ATacitDynamite+OR+collection%3Anocreamorsugar%29&fl%5B%5D=identifier&fl%5B%5D=creator&fl%5B%5D=title&fl%5B%5D=date&fl%5B%5D=collection&fl%5B%5D=licenseurl&fl%5B%5D=source&fl%5B%5D=lineage&sort%5B%5D=identifier+asc&rows=1000&page=1&output=json",
+      "retrieved_at": "2026-10-05T04:57:32.588907+00:00",
+      "byte_count": 5257,
+      "sha256": "8b758a70e8daaf42f311fe9a17671421cd3f516d02ca19d9eca0425cb222cf18"
+    },
+    {
+      "url": "https://archive.org/metadata/breakfast2019-11-27.Multitrack-Soundboard",
+      "retrieved_at": "2026-10-05T04:53:44.837734+00:00",
+      "byte_count": 40468,
+      "sha256": "b65c7f9f3891dd67b74a032a818fe9ef721778a91cd3e8024bff2b87df16afbb"
+    },
+    {
+      "url": "https://archive.org/metadata/bsr2023-04-08.aud.mn612ja.pcm",
+      "retrieved_at": "2026-10-05T04:53:40.060646+00:00",
+      "byte_count": 9693,
+      "sha256": "a5efccc038e814fcb01e6f5963eab405dacf2df4a23a7a7cb86428a9f9501c5f"
+    },
+    {
+      "url": "https://archive.org/advancedsearch.php?q=collection%3Aopensource_audio+AND+mediatype%3Aaudio+AND+licenseurl%3A%2A+AND+%28description%3A%22recorded+directly%22+OR+description%3A%22original+master%22+OR+description%3A%22recording+chain%22%29&fl%5B%5D=identifier&fl%5B%5D=creator&fl%5B%5D=title&fl%5B%5D=date&fl%5B%5D=collection&fl%5B%5D=licenseurl&fl%5B%5D=source&fl%5B%5D=lineage&sort%5B%5D=identifier+asc&rows=1000&page=1&output=json",
+      "retrieved_at": "2026-10-05T04:54:31.605785+00:00",
+      "byte_count": 35495,
+      "sha256": "fad8a41863cd4480892e66086238b6f250e318ee225303ac3480d5aca848ede1"
+    },
+    {
+      "url": "https://archive.org/metadata/gr2022-07-24",
+      "retrieved_at": "2026-10-05T04:53:32.141443+00:00",
+      "byte_count": 16113,
+      "sha256": "715a8220e247115cd501fc49bcf4611c00a7412d5f3a72981ea1d0c15e310382"
+    },
+    {
+      "url": "https://archive.org/advancedsearch.php?q=collection%3Aetree+AND+mediatype%3Aetree+AND+licenseurl%3A%2A&fl%5B%5D=identifier&fl%5B%5D=creator&fl%5B%5D=title&fl%5B%5D=date&fl%5B%5D=collection&fl%5B%5D=licenseurl&fl%5B%5D=source&fl%5B%5D=lineage&sort%5B%5D=identifier+asc&rows=1000&page=1&output=json",
+      "retrieved_at": "2026-10-05T04:52:21.025655+00:00",
+      "byte_count": 342586,
+      "sha256": "9b89dfd38c984dd764bff5afdc4cb888c61c4d328e023d9512ce84bc63501fc7"
+    },
+    {
+      "url": "https://archive.org/advancedsearch.php?q=collection%3Aetree+AND+mediatype%3Aetree+AND+licenseurl%3A%2A&fl%5B%5D=identifier&fl%5B%5D=creator&fl%5B%5D=title&fl%5B%5D=date&fl%5B%5D=collection&fl%5B%5D=licenseurl&fl%5B%5D=source&fl%5B%5D=lineage&sort%5B%5D=identifier+asc&rows=1000&page=2&output=json",
+      "retrieved_at": "2026-10-05T04:52:43.075207+00:00",
+      "byte_count": 182501,
+      "sha256": "6b8cd02f4c3f2687f6dde07b82c5f9d72a804f5fe7e70b6c493eae54e780bb5f"
+    },
+    {
+      "url": "https://archive.org/advancedsearch.php?q=collection%3Aetree+AND+mediatype%3Acollection+AND+licenseurl%3A%2A&fl%5B%5D=identifier&fl%5B%5D=creator&fl%5B%5D=title&fl%5B%5D=date&fl%5B%5D=collection&fl%5B%5D=licenseurl&fl%5B%5D=source&fl%5B%5D=lineage&sort%5B%5D=identifier+asc&rows=1000&page=1&output=json",
+      "retrieved_at": "2026-10-05T04:54:29.524409+00:00",
+      "byte_count": 372,
+      "sha256": "0e2d8cc0b06a4fa15b345cade26ed871169722957d0419a90fc8c0b264e02a26"
+    },
+    {
+      "url": "https://archive.org/advancedsearch.php?q=collection%3Aetree+AND+mediatype%3Acollection+AND+%28rights%3Aresearch+OR+rights%3A%22creative+commons%22+OR+rights%3A%22any+purpose%22%29&fl%5B%5D=identifier&fl%5B%5D=creator&fl%5B%5D=title&fl%5B%5D=date&fl%5B%5D=collection&fl%5B%5D=licenseurl&fl%5B%5D=source&fl%5B%5D=lineage&sort%5B%5D=identifier+asc&rows=1000&page=1&output=json",
+      "retrieved_at": "2026-10-05T04:54:27.056750+00:00",
+      "byte_count": 4682,
+      "sha256": "bf6b6b82dcf729c7e0aa642fd9487b8b6162837be5358445a39a644c0e19d001"
+    },
+    {
+      "url": "https://archive.org/metadata/michaelgarfield2013-05-01.ca14s.cards.16bit",
+      "retrieved_at": "2026-10-05T04:58:22.027040+00:00",
+      "byte_count": 13696,
+      "sha256": "1f49715c731f97af8c5c0155ab4ed3929e0bb5f0d328f0c1330e20fcb5ca03f3"
+    },
+    {
+      "url": "https://archive.org/metadata/50FootWave",
+      "retrieved_at": "2026-10-05T04:55:16.917325+00:00",
+      "byte_count": 3699,
+      "sha256": "8f8a22002cd424c1f89a23972ecdee5b7ac09776263207094192149272bad1b7"
+    },
+    {
+      "url": "https://archive.org/metadata/AshleyBeachAndTheOddDitties",
+      "retrieved_at": "2026-10-05T04:55:18.828961+00:00",
+      "byte_count": 2708,
+      "sha256": "947e4315b6543690cd30b4fad037dd1c0898eb2756de57c25f555efd30ec9def"
+    },
+    {
+      "url": "https://archive.org/metadata/BoyWithaFish",
+      "retrieved_at": "2026-10-05T04:55:20.856167+00:00",
+      "byte_count": 3251,
+      "sha256": "47a000cd844c11b8915cf2326a4ab18557099a7f56f3dacb5b7e736390021932"
+    },
+    {
+      "url": "https://archive.org/metadata/BreakofReality",
+      "retrieved_at": "2026-10-05T04:55:25.699534+00:00",
+      "byte_count": 3428,
+      "sha256": "bc06f8dfab901ef879b0fd9223a11dc943fc51b8881a5f0301f604599d5341e9"
+    },
+    {
+      "url": "https://archive.org/metadata/BruceMusic",
+      "retrieved_at": "2026-10-05T04:55:27.693276+00:00",
+      "byte_count": 3675,
+      "sha256": "09292bda46e6ff8aec3356be5553d92202a05bd4bbe6b642122eac6eb30a7dca"
+    },
+    {
+      "url": "https://archive.org/metadata/ChaussetteVerte",
+      "retrieved_at": "2026-10-05T04:55:29.577841+00:00",
+      "byte_count": 3532,
+      "sha256": "06181ed0cf7297201d813166572ea3f1047ed7cf680d0bdf9b951b8abe12cafb"
+    },
+    {
+      "url": "https://archive.org/metadata/Clutter",
+      "retrieved_at": "2026-10-05T04:55:31.504636+00:00",
+      "byte_count": 3185,
+      "sha256": "11f15f2ee4f631113fa5acbe29ed1d2462174d7f9e4dee2549da055863ca9429"
+    },
+    {
+      "url": "https://archive.org/metadata/DJSpooky",
+      "retrieved_at": "2026-10-05T04:55:35.809994+00:00",
+      "byte_count": 4872,
+      "sha256": "f2c248d8467218e894c5172397e1d9a9caccf0222dfe4484eb21a84cd3205021"
+    },
+    {
+      "url": "https://archive.org/metadata/DirtySuperb",
+      "retrieved_at": "2026-10-05T04:55:34.138670+00:00",
+      "byte_count": 5318,
+      "sha256": "6243d092f202358b98aa2482441d98ea86c00c8a0c6f4d7068c54f320be7ca30"
+    },
+    {
+      "url": "https://archive.org/metadata/Enamor",
+      "retrieved_at": "2026-10-05T04:55:37.743424+00:00",
+      "byte_count": 2988,
+      "sha256": "07c0e1a84a2e0be4829c2f0d8ca947d2d623ee90f6840fbc18e8ea003d3869b3"
+    },
+    {
+      "url": "https://archive.org/metadata/GlassGoblins",
+      "retrieved_at": "2026-10-05T04:55:43.675650+00:00",
+      "byte_count": 3718,
+      "sha256": "684a6c7d43ceba95e037d3f4abfd9361dc7d146427b07fb458a1eac7f6d392a7"
+    },
+    {
+      "url": "https://archive.org/metadata/HorseFlies",
+      "retrieved_at": "2026-10-05T04:55:46.741220+00:00",
+      "byte_count": 3315,
+      "sha256": "b3cfe9f8e78dea8bd33873ab696d37a97c1fc4c7223f81e185778b934cb31d78"
+    },
+    {
+      "url": "https://archive.org/metadata/JoreMusic",
+      "retrieved_at": "2026-10-05T04:55:48.682498+00:00",
+      "byte_count": 3503,
+      "sha256": "03b95900b99e68f550b2f93ec65b9f69b1e79157ba5d32f545c91a270bda8233"
+    },
+    {
+      "url": "https://archive.org/metadata/KristinHersh",
+      "retrieved_at": "2026-10-05T04:55:50.603538+00:00",
+      "byte_count": 3226,
+      "sha256": "24b90956716ed09f771be2503a8a34af9eafe58f5420fd09c876b22936cd0437"
+    },
+    {
+      "url": "https://archive.org/metadata/MadlyInDub",
+      "retrieved_at": "2026-10-05T04:55:52.771659+00:00",
+      "byte_count": 3349,
+      "sha256": "e837bb5edbfe46b0880f46a8eeab7691c0b9c0a01ef0c6d3dc8450c55146ad62"
+    },
+    {
+      "url": "https://archive.org/metadata/MichaelGarfield",
+      "retrieved_at": "2026-10-05T04:55:54.438775+00:00",
+      "byte_count": 3734,
+      "sha256": "9b3868edf6d53e344e4704a73c7978cc0d43e04ed553bb4a0d3c7bfba2caea56"
+    },
+    {
+      "url": "https://archive.org/metadata/MichaelMunnik",
+      "retrieved_at": "2026-10-05T04:55:56.346929+00:00",
+      "byte_count": 3045,
+      "sha256": "bc6757aaf87a2c663d3ab8d665a0ae67bcb0dff1349d28767e341c3b62cb4251"
+    },
+    {
+      "url": "https://archive.org/metadata/Mnemonic",
+      "retrieved_at": "2026-10-05T04:55:59.442404+00:00",
+      "byte_count": 2918,
+      "sha256": "28321c6427abffef7d303b36db3afe9acfcf04ae707789e72bbd01f0ef9284d2"
+    },
+    {
+      "url": "https://archive.org/metadata/Mysterytrain",
+      "retrieved_at": "2026-10-05T04:56:01.574937+00:00",
+      "byte_count": 6947,
+      "sha256": "976a29eeda246beed0e149e2fbc2766b3afba91a1334cbf1844d4bb10f02ec14"
+    },
+    {
+      "url": "https://archive.org/metadata/RevolutionVoid",
+      "retrieved_at": "2026-10-05T04:56:05.930011+00:00",
+      "byte_count": 3801,
+      "sha256": "547b2526a41aae641990ec12393e036034d611af0da8ac4d78225eb6fd5f179c"
+    },
+    {
+      "url": "https://archive.org/metadata/SnooseJunction",
+      "retrieved_at": "2026-10-05T04:56:09.534834+00:00",
+      "byte_count": 5503,
+      "sha256": "7ae902fa71358e957365f494e0907c1d0ee0439b7e779fc365b6825792be8bb9"
+    },
+    {
+      "url": "https://archive.org/metadata/TacitDynamite",
+      "retrieved_at": "2026-10-05T04:56:11.594766+00:00",
+      "byte_count": 3578,
+      "sha256": "570ad71cfd2b7f6c48577c3e1dec2b74a07600d6c40c5b0478fa57e6f9b4d637"
+    },
+    {
+      "url": "https://archive.org/metadata/TheBajaCollective",
+      "retrieved_at": "2026-10-05T04:56:13.651979+00:00",
+      "byte_count": 3364,
+      "sha256": "5b2b15f35e76c1de7c06b6edd6bf767ff4abe2459a0c66b00054ebddeb02220f"
+    },
+    {
+      "url": "https://archive.org/metadata/TheBandCoverBandBand",
+      "retrieved_at": "2026-10-05T04:56:27.723053+00:00",
+      "byte_count": 3499,
+      "sha256": "ad0c8c77b7be701d5c833e0206364802763e2af63176ca3a86716d90fa88bc8f"
+    },
+    {
+      "url": "https://archive.org/metadata/TheWyrd",
+      "retrieved_at": "2026-10-05T04:56:29.742752+00:00",
+      "byte_count": 3450,
+      "sha256": "3dcf7092e9df7fbbb22e847ee94448eb8af24b5f49902f47da86da73bbe2a37c"
+    },
+    {
+      "url": "https://archive.org/metadata/ThrowingMuses",
+      "retrieved_at": "2026-10-05T04:56:31.859881+00:00",
+      "byte_count": 3221,
+      "sha256": "0d54eb59478ba18eaeb376df557a3737509f131d7808653f9be2ace665c44fe2"
+    },
+    {
+      "url": "https://archive.org/metadata/TraditionDiesHere",
+      "retrieved_at": "2026-10-05T04:56:39.867581+00:00",
+      "byte_count": 3319,
+      "sha256": "35b85e6b482b05d1072562aacce8b105cb0d23e87045637c04faa4400fdf0aa9"
+    },
+    {
+      "url": "https://archive.org/metadata/exoself",
+      "retrieved_at": "2026-10-05T04:55:39.831962+00:00",
+      "byte_count": 2468,
+      "sha256": "3087c0f3c219015ab6f9f37a11fd0623e3759bb99838839c1544b8d0515c1451"
+    },
+    {
+      "url": "https://archive.org/metadata/freeandeasywandering",
+      "retrieved_at": "2026-10-05T04:55:41.830044+00:00",
+      "byte_count": 2358,
+      "sha256": "88d03b88441a51365d514b4794fb9ccd6d5e939a31c36946727dca4933cbd1dd"
+    },
+    {
+      "url": "https://archive.org/metadata/nocreamorsugar",
+      "retrieved_at": "2026-10-05T04:56:03.969775+00:00",
+      "byte_count": 3362,
+      "sha256": "24a954ea309b0b2130a41ea973db1595ba868fab2aa3231878f4483069d7a19f"
+    },
+    {
+      "url": "https://archive.org/metadata/sarana",
+      "retrieved_at": "2026-10-05T04:56:07.597983+00:00",
+      "byte_count": 3694,
+      "sha256": "344fcf8dcc72104bc6188c2afa836656326dca5eff46f97f178d7870823e178b"
+    }
+  ],
+  "total_metadata_response_bytes": 855266,
+  "snapshot_count": 49,
+  "aggregate_observations": {
+    "lma_license_field_search_rows": 1495,
+    "lma_license_field_distinct_creator_strings_casefolded": 300,
+    "lma_by_by_sa_cc0_url_candidate_rows": 398,
+    "lma_by_by_sa_cc0_url_distinct_creator_strings_casefolded": 61,
+    "artist_policy_search_results": 31,
+    "additional_artist_policy_records_read": 4,
+    "individual_recording_metadata_records_read": 8,
+    "community_original_recording_keyword_rows": 124,
+    "community_distinct_creator_strings_casefolded": 85,
+    "seven_artist_cc_followup_rows": 19,
+    "seven_artist_cc_followup_distinct_creators": 5,
+    "counts_are_independent_qualified_groups": false
+  },
+  "new_audio_acquired": false,
+  "models_trained": false,
+  "scores_opened": false,
+  "qualified_execution_inventory_exists": false,
+  "public_verdict_enabled": false
+}

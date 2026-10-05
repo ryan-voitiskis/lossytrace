@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "study_id": "music-verdict-v1",
+  "date": "2026-10-05",
+  "authority": "Direct user instruction in the research thread",
+  "user_instruction": "Please remove the budget and use whatever resources you need and continue.",
+  "original_design_sha256": "8bd18d1c1a813ad91e90beac9d01909ff6d954b6e3fe53249b88a3a3093b1c57",
+  "superseded_resource_caps": {
+    "additional_search_queries": 12,
+    "additional_primary_provider_records": 20,
+    "new_download_gib": 100,
+    "new_working_data_gib": 200,
+    "machine_hours": 24
+  },
+  "replacement": "No fixed source-discovery, local storage or local machine-time budget. Use proportionate public-source research and available local resources with storage and load checks; retain source qualification before audio acquisition and execution freeze before predictions.",
+  "unchanged": [
+    "Supported population, provenance, rights and independent grouping requirements",
+    "All source allocations, scientific gates, analysis policies and sealed-data exclusions",
+    "One prespecified CNN and comparator, fixed seed, epoch limit and no scientific retry or hyperparameter search",
+    "Single training process and no playback or capture",
+    "Preferred long-term storage on /Volumes/schwarz, with the separately authorized temporary laptop exception below",
+    "Separate authority required for expenditure, accounts, outreach, listeners, publishing and merging"
+  ],
+  "temporary_storage_authorization": {
+    "date": "2026-10-05",
+    "authority": "Direct user reply: Yes, use temporary laptop storage",
+    "reason": "User is in Japan for several weeks away from schwarz",
+    "directory": ".tmp/music-verdict-v1",
+    "minimum_filesystem_free_gib": 100,
+    "scope": "Qualified research audio and generated data, with retained data to be moved to schwarz later",
+    "safeguards": "Keep ignored by Git, check free space before writes and during construction, do not delete unrelated data, and do not use unavailable historical audio or sealed partitions."
+  },
+  "scientific_results_at_amendment": {
+    "qualified_execution_inventory_exists": false,
+    "models_trained": false,
+    "scores_opened": false,
+    "new_audio_acquired": false
+  }
+}

@@ -10,5 +10,6 @@
   "scores_opened": false,
   "execution_ready": false,
   "public_verdict_enabled": false,
-  "binding_scope": "Study question, source requirements, candidate/comparator, budgets, stopping rules and acceptance gates. Exact source and execution bindings remain required before model work."
+  "binding_scope": "Study question, source requirements, candidate/comparator, stopping rules and acceptance gates. Original resource caps are superseded only by the listed direct-user authorization. Exact source and execution bindings remain required before model work.",
+  "resource_authorization_path": "research/music-verdict-v1/resource-authorization-20261005.json"
 }

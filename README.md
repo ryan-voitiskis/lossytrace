@@ -95,6 +95,12 @@ currently qualifying source provenance and independent-group availability;
 no new model has been trained or validated. The published RC and its
 verdict-free contract are unchanged.
 
+The [5 October resource amendment](docs/research/music-verdict-resource-authorization-20261005.md)
+removes fixed discovery/local-resource caps while preserving scientific gates.
+[Expanded source intake](docs/research/music-verdict-source-intake-20261005.md)
+is active, with temporary local storage authorized while the external drive
+is unavailable.
+
 ## Data policy
 
 No copyrighted or privately supplied audio belongs in this repository.
