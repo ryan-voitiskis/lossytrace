@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "study_id": "music-library-pilot-v1",
+  "date": "2026-10-05",
+  "state": "conversion_bound_before_48_source_construction",
+  "runner_sha256": "40c5fb4c51fe4ba13a6f28889e3e4bcafeed75cb9caca42cd107d88b1632d59b",
+  "toolchain": ".tmp/music-verdict-v1/library-codec-smoke-20261005-002/toolchain.json",
+  "smoke": ".tmp/music-verdict-v1/library-codec-smoke-20261005-002/smoke.json",
+  "technical_report": ".tmp/music-verdict-v1/library-inventory-20261005-002/pilot-technical-inspection.json",
+  "synthetic_directory": ".tmp/music-verdict-v1/library-synthesis-20261005-001",
+  "bound_files": [
+    {
+      "path": "research/music-library-pilot-v1/construction-plan-20261005.json",
+      "sha256": "7bfa62f6b77567de23cf5b28fbaa58a816b2cbcf1ddbee8bf9628bb8a32746d5"
+    },
+    {
+      "path": ".tmp/music-verdict-v1/library-inventory-20261005-002/pilot-technical-inspection.json",
+      "sha256": "640502075e6d106fabfd246a171bba4513a38bfa1044e264487ed6dfa532c75c"
+    },
+    {
+      "path": ".tmp/music-verdict-v1/library-synthesis-20261005-001/manifest.json",
+      "sha256": "efa2a436e74f4cb7ca9edda78e3d0debb8bfa867e624d7814d359737938e8726"
+    },
+    {
+      "path": ".tmp/music-verdict-v1/library-codec-smoke-20261005-002/toolchain.json",
+      "sha256": "d0cd1212f4b961b4b3a4b64c6e7f0db578a2bb7aa35e3bb8df7f4617216e5af2"
+    },
+    {
+      "path": ".tmp/music-verdict-v1/library-codec-smoke-20261005-002/smoke.json",
+      "sha256": "eca700515f7a20f6e251fdff3013fac330670a671ef1915950fed0d0658f86b8"
+    }
+  ],
+  "matrix": {
+    "sources": 48,
+    "real_unknown_history": 24,
+    "controlled_synthetic": 24,
+    "interval_seconds": [0, 120],
+    "baseline_presentations_each": ["WAV", "FLAC"],
+    "lossy_settings_each": ["MP3 CBR 128", "MP3 CBR 192", "MP3 CBR 320", "AAC-LC target 128", "AAC-LC target 192", "AAC-LC target 256"],
+    "retain_encoded_streams": true,
+    "decoded_presentation": "FLAC at each input's native sample rate and bit depth",
+    "pcm_precision_note": "Codec float output is quantized to the source PCM depth on decode. Report the complete round trip, not an isolated transform without output quantization.",
+    "clip_handling": "No waveform-dependent source removal or normalization; integer decode may saturate. No clipping-free claim is made.",
+    "nuisance_processing_in_this_tranche": false
+  },
+  "alignment_preflight": {
+    "cases_passed": 24,
+    "rates": [44100, 48000],
+    "bit_depths": [16, 24],
+    "impulse_seconds": [0.3, 1.3, 2.5],
+    "duration_seconds": 3,
+    "channels": 2,
+    "tolerance_samples_prespecified": 2,
+    "maximum_observed_peak_offset_samples": 0,
+    "wrapper_pairs_exact": 4,
+    "time_origin": "FFmpeg automatic codec/container skip-sample handling; no leading crop, cross-correlation search or source-dependent correction",
+    "trailing_frames_policy": "Accept exact length or at most 2048 excess tail frames; trim excess only. Short outputs fail, never pad.",
+    "observed_smoke_excess_tail_frames": [0],
+    "first_smoke_record": "-001 passed too; -002 repeated after raising the per-write free-space reserve from 64 to 128 MiB. No codec, timing criterion or waveform recipe changed."
+  },
+  "toolchain_binding": {
+    "non_system_executables_and_libraries_hashed": 21,
+    "dependency_traversal": "Recursive absolute Homebrew dependencies from otool -L; system library version strings plus macOS build and architecture recorded separately",
+    "system_shared_cache_byte_hashes": false,
+    "verify_before_and_after_construction": true,
+    "dyld_environment_overrides_removed": true,
+    "single_conversion_process": true
+  },
+  "verification": {
+    "unit_tests_passed": 9,
+    "unit_tests_skipped": 0,
+    "test_sha256": "862a11d8aa01d08f0a9fe40fb25530ee5a973455c68f6337ba68255606964f89",
+    "input_sha256_before_after_each_source": true,
+    "baseline_wav_flac_pcm_equality_each_source": true,
+    "decoded_flac_pcm_equality_each_case": true,
+    "actual_encoded_stream_properties_recorded": true,
+    "full_source_pcm_deduplication": false
+  },
+  "output": ".tmp/music-verdict-v1/library-variants-20261005-001",
+  "storage_policy": "New directory only, no clobber. Check all library-* pilot artifacts against 10 GiB and preserve 100 GiB free with a 128 MiB reserve before baseline/case writes. Retain partial artifacts on failure; no automatic retries or deletion.",
+  "private_audio_publication": false,
+  "model_fit_or_scores": false,
+  "release_gate_changes": false,
+  "accuracy_claim": false
+}
