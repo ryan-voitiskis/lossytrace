@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "study_id": "music-verdict-v1",
+  "date": "2026-10-05",
+  "state": "source_access_and_provenance_decision_required",
+  "head_at_review": "256015a",
+  "previous_turn_classification": "progress: new primary-source and session metadata evidence, committed source audit; no source admitted",
+  "unchanged_design_sha256": "8bd18d1c1a813ad91e90beac9d01909ff6d954b6e3fe53249b88a3a3093b1c57",
+  "new_findings": [
+    {
+      "provider": "Mixing Secrets",
+      "url": "https://www.cambridge-mt.com/ms3/mtk-faq/",
+      "access": "Primary-site search extract retrieved; direct page returned HTTP 403",
+      "finding": "FAQ expressly requires contributor-specific terms for research and individual licensing for AI training. Free educational downloads are not training permission.",
+      "effect": "No research audio acquisition or training from this library under current authority."
+    },
+    {
+      "provider": "Internet Archive",
+      "url": "https://blog.archive.org/2022/01/01/welcoming-recorded-music-to-the-public-domain/",
+      "access": "Primary page read",
+      "finding": "The provider does assert US public-domain status for pre-1923 recordings, linking its digitized collection. This strengthens the rights lead beyond the missing licenseurl in individual metadata; absence of that field is not proof that rights cannot be established.",
+      "effect": "Keep Great 78 open as a lead. Item/date verification, applicable rights, eligible lossless delivery and independent coverage still unresolved; no blanket denial or worldwide clearance inferred."
+    },
+    {
+      "provider": "Library of Congress National Jukebox",
+      "url": "https://data.labs.loc.gov/jukebox/README.html",
+      "access": "Primary README version 1.1 dated 2024-04-17 read",
+      "finding": "5,882-record package documents 96 kHz/24-bit preservation masters but MP3 distribution. Publication-era rights and original capture documentation are stronger than PCM extension alone, but this package does not provide clean PCM negatives.",
+      "current_item_check": "https://www.loc.gov/item/jukebox-11129/?fo=json",
+      "current_item_check_result": "Web fetch unavailable; direct public metadata request returned HTTP 403. No alternate audio path or mirror used; no claim that the 2024 delivery statement proves all current items remain MP3-only.",
+      "effect": "Lossless access must be established before this can supply a qualified source stratum."
+    },
+    {
+      "provider": "Library of Congress audio duplication service",
+      "url": "https://www.loc.gov/research-centers/recorded-sound/using-the-reading-room/obtaining-copies-of-audio-materials/",
+      "access": "Primary-site search extract retrieved; direct page returned HTTP 403",
+      "finding": "Provider describes requested 96/24 BWF or 44.1/16 WAV copies and an order/price process, not unconditional free access to preservation masters.",
+      "effect": "No order, outreach or expenditure. An availability/provenance inquiry would require outreach authority; any paid proposal needs separate approval."
+    },
+    {
+      "provider": "MedleyDB",
+      "url": "https://zenodo.org/records/1649325",
+      "access": "Primary record read again",
+      "finding": "Files remain restricted and require a request; terms specify noncommercial research use with the linked CC BY-NC-SA license. Access would not itself qualify recording histories, freshness, independence or weight-release rights.",
+      "second_record": "https://zenodo.org/records/1715175",
+      "second_record_check": "Timed out this pass; do not replace the earlier observation with a new access conclusion."
+    }
+  ],
+  "blocked_audit": {
+    "recurring_condition": "No provenance-qualified, rights-cleared and independently grouped corpus meeting the frozen allocations; source correspondence/access and material scope changes remain unauthorized.",
+    "consecutive_goal_turn_evidence": [
+      "ca77806: synthetic candidate implementation completed; qualified execution inventory absent",
+      "640e3ad: synthetic comparator and four source follow-ups completed; no source admitted",
+      "256015a: original-session and archival-transfer audit completed; no source admitted",
+      "current turn: primary access/permission checks still require external clarification; no source admitted"
+    ],
+    "threshold_met": true,
+    "why_stop_now": "Implementation and repeated public metadata checks have not unlocked scientific execution. The next actionable route is provider clarification/access, not further scaffolding or convenient unknown-history negatives. This is an operational impasse under current authority, not proof that all web sources are exhausted.",
+    "proposed_authority_request": "Permit no-cost inquiries to MedleyDB maintainers and the Library of Congress Recorded Sound Research Center about lossless source access, recording provenance and research/model-use permission. No account creation, purchases, contractual commitments or scientific gate changes.",
+    "limitation": "Positive replies would not guarantee 540 independent components or a successful detector. Retain overlap, grouping, population and all release gates."
+  },
+  "sources_admitted": 0,
+  "source_inventory_ready": false,
+  "real_audio_acquired": false,
+  "models_trained": false,
+  "new_accuracy_evidence": false,
+  "sealed_data_accessed": false,
+  "outreach_sent": false,
+  "goal_complete": false,
+  "public_inspector": "unchanged, verdict-free"
+}
