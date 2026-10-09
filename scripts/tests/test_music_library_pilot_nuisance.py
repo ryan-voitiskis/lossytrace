@@ -3,12 +3,17 @@ import sys
 import unittest
 from unittest.mock import patch
 
-import numpy as np
+try:
+    import numpy as np
+except ModuleNotFoundError as exc:
+    if exc.name != 'numpy': raise
+    np = None
+if np is not None:
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+    import music_library_pilot_nuisance as m
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-import music_library_pilot_nuisance as m
 
-
+@unittest.skipIf(np is None, 'requires isolated synthetic-requirements research environment')
 class NuisanceTests(unittest.TestCase):
     def test_integer_roundtrip_including_limits(self):
         for bits in (16, 24):

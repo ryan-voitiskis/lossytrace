@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "study_id": "music-verdict-v1",
+  "date": "2026-10-10",
+  "state": "training_mechanics_verified_on_artificial_tensors_not_scientific_execution",
+  "scope": "Training-core implementation and synthetic mechanical tests only. No library or pilot audio was read by these tests; no fitted scientific model, calibration, detector score, release verdict or accuracy result was produced.",
+  "design_sha256": "8bd18d1c1a813ad91e90beac9d01909ff6d954b6e3fe53249b88a3a3093b1c57",
+  "files": {
+    "scripts/music_verdict_training.py": "4324fd06f7928fc676159e2e098f15e16923d5190e626555acd76abaf8d8f36c",
+    "scripts/tests/test_music_verdict_training.py": "ef6968352ea984befa1fc59a4792cdb840af53c3dfdb4cae8787a1f7b7ce83fe"
+  },
+  "provisional_mechanics": {
+    "optimizer": "PyTorch 2.8.0 AdamW, learning_rate=0.001, weight_decay=0.0001; other settings retain that implementation's defaults",
+    "shuffle": "Separate CPU torch.Generator with seed 20260927; randperm per epoch; does not consume ambient CPU RNG",
+    "source_weighting": "Equal mass per training component, equal quartets within component; each quartet has two negatives and two positives",
+    "accumulation": "One quartet forward/backward at a time, optimizer step every 16 quartets. Short final accumulation uses the same denominator of 16, is not dropped/padded, and is recorded.",
+    "loss": "Existing quartet BCE plus 0.1 squared nuisance-logit consistency, unchanged",
+    "epochs": "At most 20; no scheduler, early stop, retry, alternate seed or clipping added",
+    "selection": "File arithmetic-mean window logit before BCE; equal component weight, half per class; strict minimum source/class-balanced selection BCE; earliest epoch on ties; restore selected state only after all planned epochs succeed",
+    "input_validation": "Finite detached float32 frontend tensors, valid window counts and class labels, complete selection classes per group, no train/selection component overlap; this does not certify recording provenance or legal permission",
+    "not_exposed": ["audio reader", "checkpoint persistence/loading", "calibration or evaluation-set interface", "public verdict"]
+  },
+  "verification": {
+    "training_tests": 11,
+    "all_music_research_tests": 126,
+    "passed": 126,
+    "skipped_in_research_environment": 0,
+    "coverage": [
+      "Partition/epoch limits and cross-partition overlap rejection",
+      "Invalid labels, missing classes, malformed/nonfinite features and window counts",
+      "Component/class-balanced selection despite repeated negative cases",
+      "Mean file logit before BCE",
+      "Accumulated gradients match independently constructed component-weighted full-batch AdamW update",
+      "Short final accumulation is counted, not silently dropped",
+      "Best state restoration and earliest-epoch tie behavior",
+      "Deterministic repeat and preservation of ambient CPU RNG",
+      "Nonfinite gradients fail before optimizer update",
+      "Actual 217201-parameter candidate optimizer step on small artificial feature tensors"
+    ],
+    "native_frontend_backward_smoke": {
+      "input": "Analytic stereo sinusoids, deterministic perturbation and gain, not actual codec cases; four members of four seconds each",
+      "rates": [44100, 48000],
+      "feature_shapes": [[4, 3, 1025, 341], [4, 3, 1025, 372]],
+      "all_parameter_gradients_finite": true,
+      "process_peak_rss_bytes_after_each_rate_macos": [3233808384, 3985162240],
+      "limitation": "Training/backward process high-water marks, not isolated case memory, inference RSS or the release runtime gate"
+    },
+    "minimal_environment_discovery": {
+      "tests_skipped_for_missing_optional_dependencies": 29,
+      "import_errors": 0,
+      "note": "New optional research tests now explicitly skip only when their research dependencies are absent. All executed successfully in the research environment; skipped checks are not counted as passes."
+    }
+  },
+  "broader_regression_at_recording": {
+    "state": "first_full_run_still_in_progress_with_reproduced_optional_dependency_error",
+    "historical_files_preserved": 980,
+    "historical_tests_passed": 136,
+    "historical_tests_skipped": 0,
+    "reproduced_error": "test_audio_integrity_cnn_cache_tools imports soundfile because torch is present; soundfile absent from the minimal research environment",
+    "resolution": "Installed repository-pinned soundfile 0.13.1, cffi 2.1.0 and pycparser 3.0 in a separate test-only target directory from PyPI, with no dependency upgrades or modifications to the live nuisance-run environment",
+    "installation_receipt_sha256": "35c4a33fb0a53285623e48f9f5a4b29a9b4abb9048cd306798699be5a926eef9",
+    "targeted_cache_tests_with_isolated_dependencies_passed": 7,
+    "full_regression_pass_claimed": false
+  },
+  "remaining_scientific_gates": [
+    "Qualified negative histories, independent groups and rights meeting the original allocation minima",
+    "Exact waveform loader, source/crop order, preprocessing-before-encoding cases and full execution bindings",
+    "Prospective scientific fitting, calibration, fresh evaluation and complete acceptance gates"
+  ],
+  "pilot_audio_model_fit": false,
+  "checkpoints_persisted": false,
+  "release_study_modified": false,
+  "nuisance_runner_or_plan_changed": false,
+  "public_verdict_enabled": false
+}

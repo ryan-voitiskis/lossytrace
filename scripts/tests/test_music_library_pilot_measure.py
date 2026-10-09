@@ -4,10 +4,17 @@ import sys
 import tempfile
 import unittest
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-import music_library_pilot_measure as m
+try:
+    import numpy
+except ModuleNotFoundError as exc:
+    if exc.name != 'numpy': raise
+    numpy = None
+if numpy is not None:
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+    import music_library_pilot_measure as m
 
 
+@unittest.skipIf(numpy is None, 'requires isolated synthetic-requirements research environment')
 class MeasurementTests(unittest.TestCase):
     def test_signed_pairs_and_missingness(self):
         result = m.paired_summary([1, 3, 2, None, 5, None], [2, 1, 2, 4, None, None])
