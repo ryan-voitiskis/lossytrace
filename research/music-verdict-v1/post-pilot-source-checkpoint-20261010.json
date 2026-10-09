@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-10",
+  "study_id": "music-verdict-v1",
+  "state": "private_pilot_complete_release_source_and_authority_gate_still_blocked",
+  "release_design_sha256": "8bd18d1c1a813ad91e90beac9d01909ff6d954b6e3fe53249b88a3a3093b1c57",
+  "previous_goal_turn_classification": "progress: verified training mechanics, preserved source gates, and continued the already-live matched-processing experiment",
+  "current_goal_turn_progress": [
+    "Completed all 2016 prospectively specified non-codec processing measurements without restarting the live run",
+    "Completed full saved-output audit, 336 input preservation hashes and all 24 fixed replay cases",
+    "Saved complete aggregate and limited descriptive interpretation",
+    "Resolved isolated optional test dependencies; full regression passed and its four skipped checks passed separately"
+  ],
+  "completion_audit": {
+    "frozen_successor_design": "Present and byte-unchanged",
+    "qualified_source_inventory": "Absent; current intake ledgers admit zero release-study sources",
+    "independent_allocation_minima": "Not met: 100 train, 40 selection, 100 calibration and 300 fresh evaluation components are still required",
+    "pilot_as_substitute": "Not admissible: 24 commercial originals have unknown ancestry; 24 controlled synthetic pieces share four recipes and do not meet the finished real-music source/group/stratum gate",
+    "candidate_and_comparator": "Implemented and mechanically tested; no scientific fitted checkpoints or comparison result",
+    "calibration_and_fresh_evaluation": "Not performed; no false-alert, detection, abstention, calibration or trained-path runtime acceptance evidence",
+    "pilot_integrity": "Passed within its recorded scope; not a release-validation gate pass",
+    "public_product": "Existing measurement-only inspector unchanged; no trained verdict RC",
+    "objective_achieved": false
+  },
+  "blocked_audit": {
+    "condition": "No provenance-qualified, rights-cleared, independently grouped finished-music corpus meeting the frozen study allocations; provider correspondence/access and material scope changes remain unauthorized",
+    "consecutive_resumed_goal_turn_evidence": [
+      "01f6810: nuisance plan preserves unknown library ancestry, descriptive-only allocation and unmet release gate; additional conversions cannot qualify clean negative history",
+      "7785acf: training core verified on artificial tensors only; source qualification and independent counts explicitly remain prerequisites",
+      "Current turn: completed the authorized library/synthetic measurement pilot and audits; source ledgers still admit zero release-study sources and no new authority has arrived"
+    ],
+    "threshold_met": true,
+    "reason_to_stop_after_saving_results": "The authorized pilot has produced its planned evidence. More transformations or abstract implementation do not resolve the missing negative-history and independent-group evidence. The next concrete release-study action is provider access/provenance clarification or a user-directed scope decision.",
+    "safe_alternatives_reviewed": [
+      "Using purchased WAV/FLAC originals as clean negatives would violate known provenance requirements",
+      "Using more synthetic seeds as independent finished-music groups would not validate real-library generalization",
+      "Reusing consumed or sealed sources as fresh validation is prohibited",
+      "Existing metadata-qualified leads require access, lineage or rights clarification; no accounts, correspondence, purchases or licensing workarounds were undertaken"
+    ],
+    "non_exhaustiveness": "This is a blocker under current evidence and authority, not a claim that all public recordings or future research routes are exhausted. Source infeasibility is not a negative CNN experiment."
+  },
+  "pending_user_decision": "May narrowly scoped, no-cost access/provenance inquiries be sent to MedleyDB and the Library of Congress? No audio uploads, accounts, purchases or commitments. Asked asynchronously during this turn; no answer or outreach at recording time.",
+  "data_preservation": {
+    "music_originals_changed": false,
+    "private_evidence_retained": true,
+    "new_scratch_wavs_removed_after_verification": 1992,
+    "scratch_recovery": "Regenerate from retained bound inputs, toolchain, code and seeds",
+    "representative_and_replay_wavs_retained": 48,
+    "pilot_bytes": 7478008455,
+    "free_bytes_at_audit": 164659200000,
+    "minimum_free_bytes": 107374182400
+  },
+  "outreach_sent": false,
+  "published_or_merged": false,
+  "goal_complete": false
+}

@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-10",
+  "study_id": "music-library-pilot-v1",
+  "aggregate": "research/music-library-pilot-v1/nuisance-observation-20261010.json",
+  "aggregate_sha256": "13160f5a8eddf93ea1209c6bc429f9c8bbe5fb3f18073f695a6fc0f2dcf03865",
+  "status": "completed_exploratory_measurements_not_detector_validation",
+  "verification": {
+    "reports": 2016,
+    "sources": 48,
+    "identity_measurements_exact": 336,
+    "input_hashes_preserved": 336,
+    "saved_aggregate_recomputed_exact": true,
+    "fixed_sample_replays_exact": 24
+  },
+  "selected_descriptive_example": {
+    "selection_note": "Illustrative interpretation after the complete analysis, not a newly selected detection rule. All twelve features, all six codec settings and all six processing conditions remain in the full aggregate.",
+    "population": "24 unknown-history library sources",
+    "feature": "transform_alignment_score",
+    "codec": "AAC-LC target 128 kbps",
+    "contrast": "Feature of processed codec-derived copy minus feature of equally processed baseline",
+    "conditions": [
+      {"condition": "identity", "median_contrast": 0.1064521475, "positive_contrasts": 22, "pairs": 24},
+      {"condition": "gain_minus_6db", "median_contrast": 0.097650644, "positive_contrasts": 22, "pairs": 24},
+      {"condition": "dither16", "median_contrast": 0.105538773, "positive_contrasts": 22, "pairs": 24},
+      {"condition": "resample_roundtrip", "median_contrast": 0.1054869675, "positive_contrasts": 22, "pairs": 24},
+      {"condition": "lowpass16k", "median_contrast": 0.002825880500000001, "positive_contrasts": 13, "pairs": 24},
+      {"condition": "eq_dynamics", "median_contrast": 0.0576949275, "positive_contrasts": 21, "pairs": 24}
+    ],
+    "meaning": "The observed median contrast is largely retained after gain/dithering/resampling but much smaller after the low-pass pipeline and reduced by the EQ/dynamics pipeline. This is content- and setting-specific feature behavior, not classifier detection accuracy or evidence that all codec traces were erased.",
+    "causal_limit": "The intervention includes the specified filter and output quantization/saturation. Do not attribute the result to an ideal unclipped filter alone."
+  },
+  "saturation_accounting": {
+    "per_condition_cases": 336,
+    "dither16_cases_with_saturation": 83,
+    "resample_cases_with_saturation": 100,
+    "lowpass16k_cases_with_saturation": 114,
+    "identity_gain_eq_cases_with_saturation": 0,
+    "policy": "Prespecified: retain and count these cases, no retrospective normalization or source exclusion."
+  },
+  "conclusion": "The paired construction and audit machinery is reproducible, and non-codec processing can materially change codec-associated measurements. This supports testing nuisance robustness, not deploying a feature threshold or declaring the untrained CNN successful or failed.",
+  "scope_limits": [
+    "Unknown library ancestry cannot supply verified clean negatives or an ever-lossy false-positive denominator.",
+    "Four controlled synthesis recipes do not establish transfer to independent real-world finished music.",
+    "No pilot model fit, calibration, blind evaluation, probability estimate or verdict was produced.",
+    "The release study's source, grouping, rights and acceptance gates remain unsatisfied and unchanged."
+  ]
+}
