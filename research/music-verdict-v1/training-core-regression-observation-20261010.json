@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-10",
+  "study_id": "music-verdict-v1",
+  "state": "full_regression_passed_with_optional_checks_completed_separately",
+  "tested_code_head": "7785acf",
+  "scope": "Repository software and generated test fixtures, not scientific fitting, source qualification, real held-out evaluation or release-gate success",
+  "initial_attempt": {
+    "environment": "Minimal Python 3.13.15 research environment with numpy 2.3.2 and torch 2.8.0",
+    "historical_tests_run": 136,
+    "historical_failures": 0,
+    "current_tests_run": 1740,
+    "current_skips": 4,
+    "current_errors": 1,
+    "exit_code": 1,
+    "error": "CnnCacheMergeTests.setUpClass could not import soundfile; the class requires soundfile when optional torch is present",
+    "duration_current_suite_seconds": 469.851
+  },
+  "isolated_dependency_resolution": {
+    "live_experiment_environment_changed": false,
+    "historical_source_or_tests_changed": false,
+    "installation": "No-dependency binary-wheel installs from official PyPI into separate ignored test-only target directories; no runtime upgrade",
+    "first_target": {"soundfile": "0.13.1", "cffi": "2.1.0", "pycparser": "3.0"},
+    "first_receipt_sha256": "35c4a33fb0a53285623e48f9f5a4b29a9b4abb9048cd306798699be5a926eef9",
+    "second_target": {"torchaudio": "2.8.0"},
+    "second_receipt_sha256": "2dd6b092449eabf9d7210928d6ea54bc582a41dac66689b558010dd264ec8191",
+    "versions_source": "research/baselines/v2/crnn-requirements.txt"
+  },
+  "full_rerun": {
+    "runner": "scripts/run_regression_tests.py",
+    "python": "3.13.15",
+    "environment": "Original research interpreter, first isolated dependency target added through PYTHONPATH, external TMPDIR=/private/tmp",
+    "historical_checkpoint": "48f0f63f5f87b0afa816ef0ee869c157e7f232b3",
+    "historical_files_preserved": 980,
+    "historical_tests_run": 136,
+    "historical_tests_passed": 136,
+    "historical_skipped": 0,
+    "current_test_modules": 188,
+    "current_tests_run": 1747,
+    "current_tests_passed": 1743,
+    "current_skipped": 4,
+    "failures": 0,
+    "errors": 0,
+    "exit_code": 0,
+    "duration_current_suite_seconds": 454.021
+  },
+  "remaining_optional_checks": {
+    "reason_in_full_rerun": "torchaudio was not installed in that test environment",
+    "followup_environment": "Same interpreter and first target, plus separately installed torchaudio target through PYTHONPATH",
+    "modules": ["test_audio_integrity_crnn_domain_holdout", "test_audio_integrity_source_paired_crnn"],
+    "tests_run": 13,
+    "tests_passed": 13,
+    "tests_skipped": 0,
+    "exit_code": 0,
+    "previously_skipped_checks_passed": [
+      "CrnnDomainHoldoutTests.test_audio_crop_resamples_and_has_exact_shape_when_stack_is_available",
+      "CrnnDomainHoldoutTests.test_model_shape_and_parameterization_when_torch_is_available",
+      "SourcePairedCrnnTests.test_audio_crop_resamples_and_has_exact_shape_when_stack_is_available",
+      "SourcePairedCrnnTests.test_model_shape_and_parameterization_when_torch_is_available"
+    ],
+    "single_full_suite_zero_skip_run_claimed": false
+  },
+  "interpretation": [
+    "All four full-rerun skips were exercised successfully in a separate targeted invocation; they are not silently counted as full-rerun passes.",
+    "Test output about sealed labels and gate passes refers to generated temporary fixtures, not the real sealed research corpus.",
+    "No original recording, pilot scientific fit, learned detector threshold, release criterion or public verdict changed.",
+    "The independently running nuisance experiment retains its original bound code, environment and plan."
+  ]
+}
