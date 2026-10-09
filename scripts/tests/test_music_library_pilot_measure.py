@@ -56,5 +56,26 @@ class MeasurementTests(unittest.TestCase):
             (directory/'link').symlink_to(directory/'missing')
             with self.assertRaises(ValueError): m.contained_file(directory, 'link')
 
+    def test_summary_keeps_strata_and_wrapper_mismatches(self):
+        rows = []
+        files = ['baseline.wav', 'baseline.flac', 'mp3-128.flac', 'mp3-192.flac',
+                 'mp3-320.flac', 'aac-128.flac', 'aac-192.flac', 'aac-256.flac']
+        for index, origin in enumerate(('unknown_history', 'controlled_synthesis_no_lossy_stage')):
+            for name in files:
+                report = self.report()
+                report['compression_trace']['spectral_hole_ratio'] = (
+                    0.5 if name == 'baseline.wav' or (name == 'baseline.flac' and index == 0) else 0.75)
+                rows.append({'source_id': str(index), 'origin': origin, 'file': name,
+                             'report': report, 'seconds': len(rows)+1})
+        result = m.summarize(rows)
+        self.assertEqual(result['wrapper_pairs'], 2)
+        self.assertEqual(result['wrapper_feature_objects_exact'], 1)
+        for origin in ('unknown_history', 'controlled_synthesis_no_lossy_stage'):
+            stats = result['paired_feature_deltas'][origin]['aac-192']['spectral_hole_ratio']
+            self.assertEqual(stats['pairs'], 1)
+            self.assertEqual(stats['median_delta'], 0.25)
+        self.assertEqual(result['timing']['median_seconds'], 8.5)
+        self.assertEqual(result['timing']['p95_nearest_rank_seconds'], 16)
+
 
 if __name__ == '__main__': unittest.main()

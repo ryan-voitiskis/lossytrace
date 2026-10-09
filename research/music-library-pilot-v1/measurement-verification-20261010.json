@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "study_id": "music-library-pilot-v1",
+  "date": "2026-10-10",
+  "analysis_id": "descriptive-feature-response-v1",
+  "analysis_plan_sha256": "b1486c9e06a5749d3553517a3524d0e4d28fe0e0d4b937f9721e602cb8acfe58",
+  "private_summary_sha256": "bebfc025ce611c5f93c9288a5034aae1d4cde58a7949c9650b02524a2341b524",
+  "checks": {
+    "python": {
+      "command": ".tmp/music-verdict-v1/python-env/bin/python -m unittest discover -s scripts/tests -p 'test_music*.py'",
+      "passed": 104,
+      "failed": 0,
+      "skipped": 0,
+      "scope": "Pilot, candidate/comparator implementation, study and archive-metadata tests; not the entire Python regression suite"
+    },
+    "rust": {
+      "command": "cargo +1.94.0 test --locked --offline --all-targets",
+      "passed": 21,
+      "failed": 0,
+      "ignored": 0
+    },
+    "historical_preservation": {
+      "check": "scripts.run_regression_tests.verify_historical_preservation",
+      "files_preserved": 980,
+      "checkpoint": "48f0f63f5f87b0afa816ef0ee869c157e7f232b3",
+      "historical_test_modules_replayed_this_continuation": false
+    },
+    "public_inspector_source_and_cargo_files_unchanged_from": "da307d0",
+    "release_study_design_sha256": "8bd18d1c1a813ad91e90beac9d01909ff6d954b6e3fe53249b88a3a3093b1c57",
+    "saved_reports_validated": 384,
+    "saved_aggregate_recomputed_exactly": true,
+    "derived_audio_hashes_rechecked": 384
+  },
+  "limits": {
+    "detector_accuracy_validation": false,
+    "new_model_fit_on_pilot": false,
+    "public_verdict_enabled": false,
+    "full_ci_run": false,
+    "push_or_release_publication": false
+  }
+}
