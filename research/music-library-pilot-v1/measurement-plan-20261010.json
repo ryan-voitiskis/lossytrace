@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "study_id": "music-library-pilot-v1",
+  "analysis_id": "descriptive-feature-response-v1",
+  "date": "2026-10-10",
+  "state": "prospective_before_any_pilot_feature_extraction",
+  "purpose": "Measure wrapper invariance and paired response to added codec stages using the unchanged public feature-v0 inspector. No classifier, learned score, thresholds or history verdicts.",
+  "runner_sha256": "e2b5717edce7b4c313e9d66fa18f0361cbad1a62f1b55ab052d09650dcc4b48e",
+  "binary": "target/release/lossytrace",
+  "input_directory": ".tmp/music-verdict-v1/library-variants-20261005-001",
+  "bound_files": [
+    {"path": "target/release/lossytrace", "sha256": "a5d17568c91c3de655584faf1715ea6aeb8a1c248ab2e56b7adf325cf2d2c3bb"},
+    {"path": "Cargo.lock", "sha256": "75ee19ccebfe1602b98e9e2dbbadf6539ff2d9810ce0e14436a38b54b1bc95b1"},
+    {"path": "Cargo.toml", "sha256": "7dd06e5243aba2bef380597438e9bfee1d7a1cf916c54c7addedd0f19c98ecd1"},
+    {"path": "scripts/music_library_pilot_convert.py", "sha256": "40c5fb4c51fe4ba13a6f28889e3e4bcafeed75cb9caca42cd107d88b1632d59b"},
+    {"path": "scripts/music_verdict_comparator.py", "sha256": "f795dbe236f72aaac618240b7d8cb363e1230dbe017cce6b803971e0401e3140"},
+    {"path": ".tmp/music-verdict-v1/library-variants-20261005-001/manifest.json", "sha256": "cb3771597b34a9ac993b05f2250511ed7ff9b9135b5a13a152ba2f515068b05a"},
+    {"path": ".tmp/music-verdict-v1/library-variants-20261005-001/saved-output-audit.json", "sha256": "bf439d1960ff5f05940827454e510c884c45faab6503e58db758af73434374ad"}
+  ],
+  "build": {
+    "source_checkpoint": "da307d0",
+    "command": "cargo +1.94.0 build --locked --offline --release",
+    "rustc": "1.94.0 (4a4ef493e 2026-03-02)",
+    "python": "3.13.15",
+    "numpy": "2.3.2",
+    "source_or_decoder_changes": false
+  },
+  "population_and_partitions": {
+    "source_ids": "library-00 through library-23 and synthetic-00 through synthetic-23, in bound manifest order",
+    "assignment": "All 48 sources and all their variants belong to descriptive_development_only; none assigned to train, selection, calibration or blind evaluation",
+    "library_history": "unknown_history; additional-codec cases have a known added lossy stage, not known clean ancestry",
+    "synthetic_history": "controlled synthesis; four shared families, not 24 independent real-world production chains",
+    "library_component_grouping": "Carry existing metadata-connected component IDs; do not claim independent performers or production histories",
+    "sealed_sources_used": 0,
+    "future_blind_evaluation_eligibility": false
+  },
+  "matrix": {
+    "sources": 48,
+    "reports_per_source": 8,
+    "reports_total": 384,
+    "cases": ["baseline.wav", "baseline.flac", "mp3-128.flac", "mp3-192.flac", "mp3-320.flac", "aac-128.flac", "aac-192.flac", "aac-256.flac"],
+    "duration_seconds": 120,
+    "cli_max_seconds": 0,
+    "resampling_or_normalization_added": false,
+    "nuisance_variants_included": false,
+    "input_read_scope": "Saved derived pilot files only, not Music originals"
+  },
+  "analyses": {
+    "wrapper_invariance": "Exact equality of the entire compression_trace object for each WAV/FLAC baseline pair; separately validate equal duration, sample count, rate and channels. Ignore container facts and file hashes when comparing measurements.",
+    "paired_response": "For each of the six codec settings, separately within unknown_history library and controlled synthetic strata, subtract baseline WAV from encoded-then-decoded FLAC for each of the twelve fixed comparator features. No feature ranking or pruning.",
+    "statistics": ["pair count", "both-present count", "before/after missing counts", "became-missing and became-present counts", "positive/negative/zero delta counts", "median/minimum/maximum paired delta"],
+    "missingness": "Null remains missing, never zero. Numerical deltas use only both-present pairs and report their denominator.",
+    "inference": "Descriptive only; no p-values, confidence intervals, group independence claim or direction-selected detection rates",
+    "runtime": "Record each sequential subprocess wall time including startup, file hash, decode, measurement and JSON output. Report median, nearest-rank p95 and max. No cold-cache, peak-RSS or verdict-runtime claim."
+  },
+  "model_fit_limits": {"fits": 0, "checkpoint_loads": 0, "calibration": false, "threshold_selection": false, "classifier_scores": false},
+  "stopping": {
+    "planned_executions": 1,
+    "concurrency": 1,
+    "timeout_seconds_per_file": 180,
+    "hash_or_report_validation_failure": "Stop and retain partial reports; diagnose before any prospectively recorded rerun. Do not silently drop sources.",
+    "wrapper_feature_mismatch": "Record as an invariance failure; do not tune or change decoder/measurements within this run",
+    "analysis_complete": "All 384 validated reports and the prespecified complete descriptive aggregate are saved",
+    "scientific_stop": "No classifier decisions or expansion based on these observations without a separate prospective analysis plan"
+  },
+  "storage": {"maximum_pilot_gib": 10, "minimum_filesystem_free_gib": 100, "private_only": true, "no_clobber": true},
+  "publication": "Only aggregate observations and implementation/control records may enter Git; no audio, track identities or per-case feature reports",
+  "release_study_modified": false,
+  "can_estimate_real_music_ever_lossy_accuracy": false
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "study_id": "music-library-pilot-v1",
+  "date": "2026-10-10",
+  "state": "codec_construction_and_saved_output_audit_complete_sample_replay_passed",
+  "execution_sha256": "2721cc43dfcd71614593e41cd670a5a90b7f37bfea17244bf6b71f2bc86e8f42",
+  "private_manifest_sha256": "cb3771597b34a9ac993b05f2250511ed7ff9b9135b5a13a152ba2f515068b05a",
+  "construction": {
+    "source_count": 48,
+    "unknown_history_library_sources": 24,
+    "controlled_synthetic_sources": 24,
+    "seconds_per_source": 120,
+    "baseline_wav_flac_pairs": 48,
+    "encoded_streams": 288,
+    "decoded_codec_flacs": 288,
+    "lossless_files_total": 384,
+    "audio_files_total": 672,
+    "sample_rate_counts": {"44100": 34, "48000": 14},
+    "codec_cases_requiring_tail_trim": 0,
+    "construction_bytes_before_audit_report": 5671341960
+  },
+  "saved_output_audit": {
+    "sha256": "bf439d1960ff5f05940827454e510c884c45faab6503e58db758af73434374ad",
+    "completed_before_this_continuation": true,
+    "record_rechecked_this_continuation": true,
+    "whole_audit_rerun_this_continuation": false,
+    "original_hashes_preserved": 48,
+    "encoded_file_hashes_verified": 288,
+    "lossless_file_and_decoded_pcm_hashes_verified": 384,
+    "all_checks_passed": true,
+    "decoder_independence": "Separate readback invocation of the same bound FFmpeg decoder, not a second decoder implementation"
+  },
+  "sample_replay": {
+    "private_record_sha256": "b644cf5fff9bdd3c62cf52393c24c7004fbdeb6e6d7fa0c9e560a8388b15445c",
+    "record_label_date": "2026-10-09",
+    "completion_observed_date": "2026-10-10",
+    "selection": "First 24-bit library source in saved manifest order and synthetic-00; MP3 192 and AAC 192 for each",
+    "cases": 4,
+    "encoded_byte_hashes_exact": 4,
+    "decoded_pcm_hashes_exact": 4,
+    "toolchain_verified_before_and_after": true,
+    "inputs": "Saved baseline WAVs only; no new reads of Music originals",
+    "scope": "Same-machine sample replay only, not all-case or cross-platform reproducibility"
+  },
+  "focused_tests_this_continuation": {"passed": 28, "skipped": 0, "modules": ["test_music_library_pilot_convert", "test_music_library_pilot_select", "test_music_library_pilot_synthesis"]},
+  "interpretation": [
+    "Construction success is not detector accuracy or a completed release study.",
+    "Library originals remain unknown-history, including lossless wrappers.",
+    "Synthetic examples share four recipes and do not constitute independent studios.",
+    "No models fitted, no model scores generated, no verdict enabled.",
+    "Nuisance-processing robustness has not yet been measured.",
+    "Frozen release gates and previous negative findings are unchanged."
+  ]
+}
