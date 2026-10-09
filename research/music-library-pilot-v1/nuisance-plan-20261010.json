@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "study_id": "music-library-pilot-v1",
+  "analysis_id": "matched-noncodec-response-v1",
+  "date": "2026-10-10",
+  "state": "prospective_before_pilot_nuisance_processing",
+  "relationship_to_previous_analysis": "Descriptive feature-response-v1 has been observed. This is a new prospective matched postprocessing analysis, not blind confirmation of a selected feature or a modification of the frozen release study.",
+  "runner_sha256": "02c6ba36fc7acb055c4c68250def4b7d05b5899529d6dceeae6bce73456af7d5",
+  "python_version": "3.13.15",
+  "numpy_version": "2.3.2",
+  "binary": "target/release/lossytrace",
+  "input_directory": ".tmp/music-verdict-v1/library-variants-20261005-001",
+  "previous_measurements": ".tmp/music-verdict-v1/library-measurements-20261010-001",
+  "smoke": ".tmp/music-verdict-v1/library-nuisance-smoke-20261010-001/smoke.json",
+  "bound_files": [
+    {"path": "target/release/lossytrace", "sha256": "a5d17568c91c3de655584faf1715ea6aeb8a1c248ab2e56b7adf325cf2d2c3bb"},
+    {"path": "scripts/music_library_pilot_convert.py", "sha256": "40c5fb4c51fe4ba13a6f28889e3e4bcafeed75cb9caca42cd107d88b1632d59b"},
+    {"path": "scripts/music_library_pilot_measure.py", "sha256": "e2b5717edce7b4c313e9d66fa18f0361cbad1a62f1b55ab052d09650dcc4b48e"},
+    {"path": "scripts/music_verdict_comparator.py", "sha256": "f795dbe236f72aaac618240b7d8cb363e1230dbe017cce6b803971e0401e3140"},
+    {"path": ".tmp/music-verdict-v1/library-variants-20261005-001/manifest.json", "sha256": "cb3771597b34a9ac993b05f2250511ed7ff9b9135b5a13a152ba2f515068b05a"},
+    {"path": ".tmp/music-verdict-v1/library-measurements-20261010-001/summary.json", "sha256": "bebfc025ce611c5f93c9288a5034aae1d4cde58a7949c9650b02524a2341b524"},
+    {"path": ".tmp/music-verdict-v1/library-nuisance-smoke-20261010-001/smoke.json", "sha256": "60120e1b44ecf971ee9409687f6c8d8a58b4d8092e358ccfbb8fdfe017ceafdd"}
+  ],
+  "population": {
+    "source_ids": "library-00 through library-23 then synthetic-00 through synthetic-23 in existing manifest order",
+    "assignment": "All sources and variants are descriptive_development_only; no train, selection, calibration or blind evaluation partition",
+    "strata": ["unknown_history library", "controlled synthesis with four shared recipe families"],
+    "history_labels": "Library baseline remains unknown after every non-codec process; added-codec library cases have known added loss with unknown ancestry. Controlled synthetic baselines with only these processes have no lossy codec stage, irrespective of fidelity loss.",
+    "independent_production_chains_claimed": false,
+    "sealed_sources_used": 0,
+    "fresh_release_validation_eligible": false,
+    "original_music_reads_or_changes": false
+  },
+  "matrix": {
+    "sources": 48,
+    "codec_cases": ["baseline", "mp3-128", "mp3-192", "mp3-320", "aac-128", "aac-192", "aac-256"],
+    "postprocessing_conditions": ["identity", "gain", "dither16", "resample", "lowpass16k", "eq_dynamics"],
+    "reports": 2016,
+    "seconds_per_case": 120,
+    "order": "Existing codec round trip, then one postprocessing condition, then PCM quantization and WAV presentation; no new lossy encoding",
+    "baseline_matching": "The non-codec-only baseline traverses the same decode, float processing, quantization, WAV write/read and inspection path as each positive case"
+  },
+  "processing": {
+    "shared_path": "Decode to native signed 16/24-bit stereo integers; map exactly to float64 using 2^(bits-1); FFmpeg float64 filter path; NumPy ties-to-even integer quantization and saturation; write native-rate stereo PCM WAV. Identity must reproduce original PCM and prior public measurements exactly.",
+    "gain": "FFmpeg volume=-6dB:precision=double; no dither, return to source depth",
+    "dither16": "Identity float filter, then 16-bit quantization with additive U(0,1)-U(0,1) TPDF in LSB units. NumPy PCG64 seed 20261010 + source manifest index (0..47), two full stereo-shaped draws. Same realization for every codec case of that source, independent draws across channels. No noise shaping.",
+    "resample": "44100->48000->44100 or 48000->44100->48000. FFmpeg swr, 64-tap filter_size, phase_shift=10, linear_interp=0, exact_rational=1, cutoff=0.97, Kaiser beta=9, double internal/output precision, no resampler dither. Return to source depth.",
+    "lowpass16k": "FFmpeg causal two-pole lowpass, f=16000 Hz, Q=0.7071067811865476, direct form I, float64 precision, no coefficient normalization, blocksize=0. This is a 3 dB cutoff, not a brick-wall filter. Return to source depth.",
+    "eq_dynamics": "FFmpeg 1 kHz peaking EQ, Q=1, gain=-3 dB, direct form I float64, no coefficient normalization, blocksize=0; then downward compressor, input gain=1, threshold=0.125, ratio=2, attack=20 ms, release=250 ms, makeup=1, knee=2.8284271247461903, average stereo linking, RMS detection, sidechain gain=1, mix=1. Return to source depth.",
+    "timing": "Require exact frame count, no crop, padding, alignment search or source-specific correction. Causal IIR phase change is part of the process. Reset filter state at each excerpt start.",
+    "clipping": "Count saturated channel samples for every output and aggregate by condition. Retain clipped cases; no source-dependent normalization or exclusion. No clipping-free claim.",
+    "not_included": "12 kHz stress filter, shorter excerpts, extra encoders and other transformation strengths"
+  },
+  "preflight": {
+    "short_synthetic_cases_passed": 24,
+    "rates": [44100, 48000],
+    "depths": [16, 24],
+    "conditions": 6,
+    "checks": ["byte-exact repeated processing", "exact frames", "identity PCM", "gain RMS within 0.001 of amplitude target", "18 kHz attenuation below 0.6 for lowpass", "resample impulse peak offset exactly zero in both channels"],
+    "unit_tests_passed": 9,
+    "long_pilot_results_observed_before_freeze": false
+  },
+  "analysis": {
+    "features": "All twelve fixed comparator measurements, without feature selection or model fitting",
+    "stratification": "Separate library and synthetic populations; equal weight per source in descriptive summaries, without claiming source independence",
+    "baseline_processing_delta": "f(N(x)) - f(x)",
+    "matched_codec_delta": "f(N(C(x))) - f(N(x))",
+    "interaction_delta": "[f(N(C(x))) - f(N(x))] - [f(C(x)) - f(x)]",
+    "statistics": "Use the preceding prespecified paired_summary: pair/both-present/missing/transition counts, signed-delta counts and median/min/max. Interaction requires all four values; null never becomes zero. Save every condition, setting and feature, including identity sanity comparisons.",
+    "inference": "No p-values, significance selection, probability calibration, thresholds, detection rates, commercial false-positive denominator or real-music accuracy claims",
+    "model_fits": 0,
+    "classifier_scores": false,
+    "runtime_claim": false
+  },
+  "execution_and_stopping": {
+    "full_runs": 1,
+    "concurrency": 1,
+    "timeout_seconds_per_subprocess": 180,
+    "failure": "Stop on changed input/runtime/binary/control hashes, malformed report, nonfinite samples, frame-count mismatch, identity inequality or resource limit. Retain partial outputs; diagnose and prospectively record any rerun. No silent source dropping.",
+    "completion": "2016 validated reports, unchanged bound inputs/toolchain, and the complete prespecified aggregate. This is not completion of the release study.",
+    "sample_replay_after_run": "Regenerate all six conditions for baseline and MP3-192 on library-00 and synthetic-00 (24 cases), verify exact output PCM and WAV hashes against retained samples; no source selection by feature result"
+  },
+  "storage": {
+    "maximum_all_pilot_library_directories_gib": 10,
+    "minimum_filesystem_free_gib": 100,
+    "per_write_reserve_mib": 512,
+    "output": ".tmp/music-verdict-v1/library-nuisance-measurements-20261010-001",
+    "no_clobber": true,
+    "retained_audio": "Exactly 24 WAVs: library-00 and synthetic-00, baseline and MP3-192, every condition",
+    "scratch_audio": "Other newly generated WAVs are removed only after successful PCM readback, hash/report checks and durable per-case report save. Original codec and synthesis artifacts are never removed. Reconstructible from bound inputs, code and seeds.",
+    "reports": "Retain all private per-case metadata, processing diagnostics, PCM/WAV hashes, input fingerprints and feature reports; Git receives only aggregates and control/implementation records",
+    "upload_or_public_audio": false
+  },
+  "release_study_design_modified": false,
+  "library_model_fit_authorized": false,
+  "public_verdict_enabled": false
+}
