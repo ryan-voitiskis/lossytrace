@@ -1,0 +1,235 @@
+{
+  "plan_sha256": "62867d56cc8e47cfa7d4e61939a6f390c957e2cf3d2df965faa4564b4ebc0e02",
+  "runner_sha256": "de2b2056055794a9c3bce81da8e9137685808c0fc988c668c6e8d199835551ac",
+  "binary_sha256": "a5d17568c91c3de655584faf1715ea6aeb8a1c248ab2e56b7adf325cf2d2c3bb",
+  "manifest_set_sha256": "42a5dafb9feb54d6f1352357dbb2bdde8875326069a20fba3a5a1d3c1a9a4a59",
+  "training_report_set_sha256": "f169579ede1e8dfbda9ff1fd852dce78fe97de60889b6ac557bd299a6df5ab4c",
+  "checkpoint_sha256": "adbd30b141562552966cc81324c242d678f37193b098a068db34302a21723796",
+  "thresholds_sha256": "d07a3e1aab7a20d539d0500a943bba7b4af1cfe288c8c87f44c04e0a1022378c",
+  "calibration_count": 224,
+  "evaluation_count": 448,
+  "thresholds": {
+    "lower": -0.20953707089908893,
+    "upper": 0.16230720753874614
+  },
+  "overall": {
+    "by_state": {
+      "baseline": {
+        "flag": 4,
+        "no_evidence": 11,
+        "abstain": 49
+      },
+      "mp3-128": {
+        "flag": 6,
+        "no_evidence": 6,
+        "abstain": 52
+      },
+      "mp3-192": {
+        "flag": 4,
+        "no_evidence": 11,
+        "abstain": 49
+      },
+      "mp3-320": {
+        "flag": 5,
+        "no_evidence": 11,
+        "abstain": 48
+      },
+      "aac-128": {
+        "flag": 6,
+        "no_evidence": 1,
+        "abstain": 57
+      },
+      "aac-192": {
+        "flag": 4,
+        "no_evidence": 4,
+        "abstain": 56
+      },
+      "aac-256": {
+        "flag": 4,
+        "no_evidence": 8,
+        "abstain": 52
+      }
+    },
+    "clean_false_alerts": 4,
+    "clean_sources": 64,
+    "detection": 0.07552083333333333,
+    "balanced_coverage": 0.20833333333333326
+  },
+  "by_recipe": {
+    "pulse_lead": {
+      "by_state": {
+        "baseline": {
+          "flag": 1,
+          "no_evidence": 5,
+          "abstain": 10
+        },
+        "mp3-128": {
+          "flag": 1,
+          "no_evidence": 3,
+          "abstain": 12
+        },
+        "mp3-192": {
+          "flag": 1,
+          "no_evidence": 5,
+          "abstain": 10
+        },
+        "mp3-320": {
+          "flag": 1,
+          "no_evidence": 5,
+          "abstain": 10
+        },
+        "aac-128": {
+          "flag": 2,
+          "no_evidence": 0,
+          "abstain": 14
+        },
+        "aac-192": {
+          "flag": 1,
+          "no_evidence": 1,
+          "abstain": 14
+        },
+        "aac-256": {
+          "flag": 1,
+          "no_evidence": 3,
+          "abstain": 12
+        }
+      },
+      "clean_false_alerts": 1,
+      "clean_sources": 16,
+      "detection": 0.07291666666666667,
+      "balanced_coverage": 0.3125
+    },
+    "mallet": {
+      "by_state": {
+        "baseline": {
+          "flag": 1,
+          "no_evidence": 1,
+          "abstain": 14
+        },
+        "mp3-128": {
+          "flag": 2,
+          "no_evidence": 1,
+          "abstain": 13
+        },
+        "mp3-192": {
+          "flag": 1,
+          "no_evidence": 1,
+          "abstain": 14
+        },
+        "mp3-320": {
+          "flag": 1,
+          "no_evidence": 1,
+          "abstain": 14
+        },
+        "aac-128": {
+          "flag": 2,
+          "no_evidence": 0,
+          "abstain": 14
+        },
+        "aac-192": {
+          "flag": 1,
+          "no_evidence": 1,
+          "abstain": 14
+        },
+        "aac-256": {
+          "flag": 1,
+          "no_evidence": 1,
+          "abstain": 14
+        }
+      },
+      "clean_false_alerts": 1,
+      "clean_sources": 16,
+      "detection": 0.08333333333333333,
+      "balanced_coverage": 0.13020833333333326
+    },
+    "vibrato_strings": {
+      "by_state": {
+        "baseline": {
+          "flag": 2,
+          "no_evidence": 5,
+          "abstain": 9
+        },
+        "mp3-128": {
+          "flag": 3,
+          "no_evidence": 2,
+          "abstain": 11
+        },
+        "mp3-192": {
+          "flag": 2,
+          "no_evidence": 5,
+          "abstain": 9
+        },
+        "mp3-320": {
+          "flag": 3,
+          "no_evidence": 5,
+          "abstain": 8
+        },
+        "aac-128": {
+          "flag": 1,
+          "no_evidence": 1,
+          "abstain": 14
+        },
+        "aac-192": {
+          "flag": 1,
+          "no_evidence": 2,
+          "abstain": 13
+        },
+        "aac-256": {
+          "flag": 1,
+          "no_evidence": 4,
+          "abstain": 11
+        }
+      },
+      "clean_false_alerts": 2,
+      "clean_sources": 16,
+      "detection": 0.11458333333333333,
+      "balanced_coverage": 0.375
+    },
+    "noise_resonator": {
+      "by_state": {
+        "baseline": {
+          "flag": 0,
+          "no_evidence": 0,
+          "abstain": 16
+        },
+        "mp3-128": {
+          "flag": 0,
+          "no_evidence": 0,
+          "abstain": 16
+        },
+        "mp3-192": {
+          "flag": 0,
+          "no_evidence": 0,
+          "abstain": 16
+        },
+        "mp3-320": {
+          "flag": 0,
+          "no_evidence": 0,
+          "abstain": 16
+        },
+        "aac-128": {
+          "flag": 1,
+          "no_evidence": 0,
+          "abstain": 15
+        },
+        "aac-192": {
+          "flag": 1,
+          "no_evidence": 0,
+          "abstain": 15
+        },
+        "aac-256": {
+          "flag": 1,
+          "no_evidence": 0,
+          "abstain": 15
+        }
+      },
+      "clean_false_alerts": 0,
+      "clean_sources": 16,
+      "detection": 0.03125,
+      "balanced_coverage": 0.015625
+    }
+  },
+  "higher_than_matched_control": 225,
+  "roc_auc": 0.5382893880208334,
+  "met_pilot_criteria": false
+}
