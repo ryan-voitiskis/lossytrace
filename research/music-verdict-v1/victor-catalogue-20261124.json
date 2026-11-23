@@ -1,0 +1,215 @@
+{
+  "catalogue_rows": 5882,
+  "transfer_rows": 35,
+  "distinct_matched_takes": 35,
+  "earlier_groups": 8,
+  "rows_without_performer": 172,
+  "audio_mime_counts": {
+    "audio/mpeg": 5882
+  },
+  "modes": {
+    "performer": {
+      "catalogue_components": 320,
+      "largest": 5056,
+      "with_any_named_performer": 148,
+      "shortlisted_transfer_components": [
+        [
+          "a-little-bit-of-heaven",
+          "a-perfect-day_202412",
+          "aint-you-coming-out-malinda",
+          "at-the-jazz-band-ball_202505",
+          "canadian-capers-Whiteman",
+          "dont-turn-my-picture-to-the-wall",
+          "france-we-have-not-forgotten-you",
+          "good-luck-to-the-boys-of-the-allies",
+          "held-fast-in-a-babys-hands",
+          "i-left-her-on-the-beach-at-honolulu",
+          "id-love-to-fall-asleep-and-wake-up-in-my-mammys-arms_202508",
+          "if-it-wasnt-for-you",
+          "ill-pray-for-you-and-you-must-pray-for-me",
+          "im-a-twelve-o-clock-fellow-in-a-nine-o-clock-town",
+          "kathleen-mavourneen",
+          "killarney_202504",
+          "louisiana_202503",
+          "loves-ship",
+          "mary-dear-some-day-we-will-meet-again",
+          "moonlight-bay_202508",
+          "mother-machree_202508",
+          "my-sunny-tennessee",
+          "nobodys-rose",
+          "swanee_202506",
+          "the-canadian-guns",
+          "tired-of-me_202508",
+          "venetian-moon",
+          "when-its-apple-blossom-time-in-normandy",
+          "when-the-angelus-is-ringing",
+          "while-the-years-roll-by"
+        ],
+        [
+          "bimini-bayBenson",
+          "fair-one",
+          "id-love-to-fall-asleep-and-wake-up-in-my-mammys-arms_202503"
+        ],
+        [
+          "the-cross-bow",
+          "way-down-yonder-in-the-cornfield"
+        ]
+      ]
+    },
+    "performer_and_selected_titles": {
+      "catalogue_components": 319,
+      "largest": 5104,
+      "with_any_named_performer": 147,
+      "shortlisted_transfer_components": [
+        [
+          "a-little-bit-of-heaven",
+          "a-perfect-day_202412",
+          "aint-you-coming-out-malinda",
+          "at-the-jazz-band-ball_202505",
+          "bimini-bayBenson",
+          "canadian-capers-Whiteman",
+          "dont-turn-my-picture-to-the-wall",
+          "fair-one",
+          "france-we-have-not-forgotten-you",
+          "good-luck-to-the-boys-of-the-allies",
+          "held-fast-in-a-babys-hands",
+          "i-left-her-on-the-beach-at-honolulu",
+          "id-love-to-fall-asleep-and-wake-up-in-my-mammys-arms_202503",
+          "id-love-to-fall-asleep-and-wake-up-in-my-mammys-arms_202508",
+          "if-it-wasnt-for-you",
+          "ill-pray-for-you-and-you-must-pray-for-me",
+          "im-a-twelve-o-clock-fellow-in-a-nine-o-clock-town",
+          "kathleen-mavourneen",
+          "killarney_202504",
+          "louisiana_202503",
+          "loves-ship",
+          "mary-dear-some-day-we-will-meet-again",
+          "moonlight-bay_202508",
+          "mother-machree_202508",
+          "my-sunny-tennessee",
+          "nobodys-rose",
+          "swanee_202506",
+          "the-canadian-guns",
+          "tired-of-me_202508",
+          "venetian-moon",
+          "when-its-apple-blossom-time-in-normandy",
+          "when-the-angelus-is-ringing",
+          "while-the-years-roll-by"
+        ],
+        [
+          "the-cross-bow",
+          "way-down-yonder-in-the-cornfield"
+        ]
+      ]
+    },
+    "performer_and_composed_title": {
+      "catalogue_components": 273,
+      "largest": 5414,
+      "with_any_named_performer": 101,
+      "shortlisted_transfer_components": [
+        [
+          "a-little-bit-of-heaven",
+          "a-perfect-day_202412",
+          "aint-you-coming-out-malinda",
+          "at-the-jazz-band-ball_202505",
+          "bimini-bayBenson",
+          "canadian-capers-Whiteman",
+          "dont-turn-my-picture-to-the-wall",
+          "fair-one",
+          "france-we-have-not-forgotten-you",
+          "good-luck-to-the-boys-of-the-allies",
+          "held-fast-in-a-babys-hands",
+          "i-left-her-on-the-beach-at-honolulu",
+          "id-love-to-fall-asleep-and-wake-up-in-my-mammys-arms_202503",
+          "id-love-to-fall-asleep-and-wake-up-in-my-mammys-arms_202508",
+          "if-it-wasnt-for-you",
+          "ill-pray-for-you-and-you-must-pray-for-me",
+          "im-a-twelve-o-clock-fellow-in-a-nine-o-clock-town",
+          "kathleen-mavourneen",
+          "killarney_202504",
+          "louisiana_202503",
+          "loves-ship",
+          "mary-dear-some-day-we-will-meet-again",
+          "moonlight-bay_202508",
+          "mother-machree_202508",
+          "my-sunny-tennessee",
+          "nobodys-rose",
+          "swanee_202506",
+          "the-canadian-guns",
+          "the-cross-bow",
+          "tired-of-me_202508",
+          "venetian-moon",
+          "way-down-yonder-in-the-cornfield",
+          "when-its-apple-blossom-time-in-normandy",
+          "when-the-angelus-is-ringing",
+          "while-the-years-roll-by"
+        ]
+      ]
+    },
+    "performer_and_title": {
+      "catalogue_components": 244,
+      "largest": 5473,
+      "with_any_named_performer": 90,
+      "shortlisted_transfer_components": [
+        [
+          "a-little-bit-of-heaven",
+          "a-perfect-day_202412",
+          "aint-you-coming-out-malinda",
+          "at-the-jazz-band-ball_202505",
+          "bimini-bayBenson",
+          "canadian-capers-Whiteman",
+          "dont-turn-my-picture-to-the-wall",
+          "fair-one",
+          "france-we-have-not-forgotten-you",
+          "good-luck-to-the-boys-of-the-allies",
+          "held-fast-in-a-babys-hands",
+          "i-left-her-on-the-beach-at-honolulu",
+          "id-love-to-fall-asleep-and-wake-up-in-my-mammys-arms_202503",
+          "id-love-to-fall-asleep-and-wake-up-in-my-mammys-arms_202508",
+          "if-it-wasnt-for-you",
+          "ill-pray-for-you-and-you-must-pray-for-me",
+          "im-a-twelve-o-clock-fellow-in-a-nine-o-clock-town",
+          "kathleen-mavourneen",
+          "killarney_202504",
+          "louisiana_202503",
+          "loves-ship",
+          "mary-dear-some-day-we-will-meet-again",
+          "moonlight-bay_202508",
+          "mother-machree_202508",
+          "my-sunny-tennessee",
+          "nobodys-rose",
+          "swanee_202506",
+          "the-canadian-guns",
+          "the-cross-bow",
+          "tired-of-me_202508",
+          "venetian-moon",
+          "way-down-yonder-in-the-cornfield",
+          "when-its-apple-blossom-time-in-normandy",
+          "when-the-angelus-is-ringing",
+          "while-the-years-roll-by"
+        ]
+      ]
+    }
+  },
+  "witness_transfers": [
+    "a-little-bit-of-heaven",
+    "dont-turn-my-picture-to-the-wall"
+  ],
+  "performer_only_witness": [
+    {
+      "first": "http://www.loc.gov/item/jukebox-12879/",
+      "name": "charles harrison",
+      "second": "http://www.loc.gov/item/jukebox-190432/"
+    },
+    {
+      "first": "http://www.loc.gov/item/jukebox-190432/",
+      "name": "victor orchestra",
+      "second": "http://www.loc.gov/item/jukebox-130805/"
+    },
+    {
+      "first": "http://www.loc.gov/item/jukebox-130805/",
+      "name": "walter van brunt",
+      "second": "http://www.loc.gov/item/jukebox-132102/"
+    }
+  ]
+}
