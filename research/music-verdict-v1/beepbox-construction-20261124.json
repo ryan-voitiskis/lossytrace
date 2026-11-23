@@ -1,0 +1,443 @@
+{
+  "toolchain": {
+    "files": {
+      "/opt/homebrew/Cellar/dav1d/1.5.5/lib/libdav1d.7.dylib": "f92a2244e72d24ce9b6a62aa0d81424c1da92288efd623ddd42efedfd37fd6f4",
+      "/opt/homebrew/Cellar/ffmpeg/9.0.2_1/bin/ffmpeg": "7f6028378534aa10a2dfa07d807ddcc0d18c869bf5c2f64c89efcc18ee88c4ee",
+      "/opt/homebrew/Cellar/ffmpeg/9.0.2_1/bin/ffprobe": "bfe676bfc3a889bebe63af07c71a926a6167f568c7a932a79c2f1fe51ae6d5a1",
+      "/opt/homebrew/Cellar/ffmpeg/9.0.2_1/lib/libavcodec.63.1.102.dylib": "887a9775777c2fdb45228fb7776c3f040e4cf56a0cce2b773ae1b978e26dce5a",
+      "/opt/homebrew/Cellar/ffmpeg/9.0.2_1/lib/libavdevice.63.1.102.dylib": "99a6af906ee84af0dd5f59cab9e121c7a61a25c2b60bf5c3d1c86de5b11eef7b",
+      "/opt/homebrew/Cellar/ffmpeg/9.0.2_1/lib/libavfilter.12.1.102.dylib": "abe7d1e33964d21e427907accd0671cf79b30725bb73e418c304efacc42cae0a",
+      "/opt/homebrew/Cellar/ffmpeg/9.0.2_1/lib/libavformat.63.1.102.dylib": "29cf1a49a39f4e8e99c7bfa6f7aef3df2e7d91c8282cd7e1ef1fb206aec75779",
+      "/opt/homebrew/Cellar/ffmpeg/9.0.2_1/lib/libavutil.61.1.102.dylib": "0377aea088208e69d29c03caeb960ca395fdbcd646335dc0a87748bfe81f8525",
+      "/opt/homebrew/Cellar/ffmpeg/9.0.2_1/lib/libswresample.7.1.102.dylib": "8d35eb7639343a837ac4e97cfe1742a293b9bc514a790e5db822927628122d2f",
+      "/opt/homebrew/Cellar/ffmpeg/9.0.2_1/lib/libswscale.10.1.102.dylib": "518909dce64a42971a838278cf43ba2bd77bd172ba0eccb3c6ba273e25be7cda",
+      "/opt/homebrew/Cellar/lame/4.0/lib/libmp3lame.0.dylib": "463453796b54698b8016af58ab86066ffbafe5229c10c500e4fe6b92d7a63934",
+      "/opt/homebrew/Cellar/libvmaf/3.2.1/lib/libvmaf.3.dylib": "f9ca4510cb08cca61ecd571fc417f2b4440c25555fbeefdb4b5477a35891de1c",
+      "/opt/homebrew/Cellar/libvpx/1.17.0/lib/libvpx.12.dylib": "443cd530535e976a7fe96a027f3e65acebf41a7055005732422309c207089937",
+      "/opt/homebrew/Cellar/mpg123/1.33.7/lib/libmpg123.0.dylib": "435f7bc76659569772b1a90b049a28fe17bc0d605525f1061f830c119807718a",
+      "/opt/homebrew/Cellar/openssl@4/4.1.0/lib/libcrypto.4.dylib": "efb00fbd817f6f81d59427129d191cc5cfd408671b59c715569e5ebafc81454e",
+      "/opt/homebrew/Cellar/openssl@4/4.1.0/lib/libssl.4.dylib": "79e9d2bd1c442951180071a326061a4efd8db8cd11ed90cfc25886a5a492a10b",
+      "/opt/homebrew/Cellar/opus/1.6.1/lib/libopus.0.dylib": "98dcd3cc62c6cf913b789051536ab246c56cc163c74bd8b4968ac467ec74b68b",
+      "/opt/homebrew/Cellar/svt-av1/4.3.0/lib/libSvtAv1Enc.4.3.0.dylib": "178f6473781230a391fe2f7c998d55f09951010cc9ae0c070b0d97a2b504f149",
+      "/opt/homebrew/Cellar/x264/r3222/lib/libx264.165.dylib": "dd765b37f50d44d3ce9593c2c1c2424b48bedac01c7999e93cef87e018bc65b4",
+      "/opt/homebrew/Cellar/x265/4.3/lib/libx265.217.dylib": "b3a50884e2d9cecf57fd29c4fba2c4e47b37cd7b4d7ff5d920919efca038d9ae",
+      "/opt/homebrew/Cellar/xz/5.8.4/lib/liblzma.5.dylib": "41cdf225f3e10fb54f952c8eca11c8a847d095470540dc42736ae7bd761beaa4"
+    },
+    "system_dependencies": [
+      "/System/Library/Frameworks/AVFoundation.framework/Versions/A/AVFoundation (compatibility version 1.0.0, current version 2.0.0)",
+      "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit (compatibility version 45.0.0, current version 2775.10.103)",
+      "/System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox (compatibility version 1.0.0, current version 1000.0.0)",
+      "/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio (compatibility version 1.0.0, current version 1.0.0)",
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation (compatibility version 150.0.0, current version 5027.0.69)",
+      "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics (compatibility version 64.0.0, current version 2050.0.0)",
+      "/System/Library/Frameworks/CoreImage.framework/Versions/A/CoreImage (compatibility version 1.0.1, current version 7.0.0)",
+      "/System/Library/Frameworks/CoreMedia.framework/Versions/A/CoreMedia (compatibility version 1.0.0, current version 3350.77.5)",
+      "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices (compatibility version 1.0.0, current version 1226.0.0)",
+      "/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo (compatibility version 1.2.0, current version 758.27.0)",
+      "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation (compatibility version 300.0.0, current version 5027.0.69)",
+      "/System/Library/Frameworks/Metal.framework/Versions/A/Metal (compatibility version 1.0.0, current version 382.5.3)",
+      "/System/Library/Frameworks/OpenGL.framework/Versions/A/OpenGL (compatibility version 1.0.0, current version 1.0.0)",
+      "/System/Library/Frameworks/VideoToolbox.framework/Versions/A/VideoToolbox (compatibility version 1.0.0, current version 3350.77.5)",
+      "/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1356.0.0)",
+      "/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1359.0.0)",
+      "/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1359.40.3)",
+      "/usr/lib/libbz2.1.0.dylib (compatibility version 1.0.0, current version 1.0.8)",
+      "/usr/lib/libc++.1.dylib (compatibility version 1.0.0, current version 2100.43.0)",
+      "/usr/lib/libiconv.2.dylib (compatibility version 7.0.0, current version 7.0.0)",
+      "/usr/lib/libobjc.A.dylib (compatibility version 1.0.0, current version 228.0.0)",
+      "/usr/lib/libz.1.dylib (compatibility version 1.0.0, current version 1.2.12)"
+    ],
+    "os": "ProductName:\t\tmacOS\nProductVersion:\t\t27.2.1\nBuildVersion:\t\t26B131\n",
+    "architecture": "arm64",
+    "ffmpeg_version": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers\nbuilt with Apple clang version 21.0.0 (clang-2100.3.34.2)\nconfiguration: --prefix=/opt/homebrew/Cellar/ffmpeg/9.0.2_1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon\nlibavutil      61.  1.102 / 61.  1.102\nlibavcodec     63.  1.102 / 63.  1.102\nlibavformat    63.  1.102 / 63.  1.102\nlibavdevice    63.  1.102 / 63.  1.102\nlibavfilter    12.  1.102 / 12.  1.102\nlibswscale     10.  1.102 / 10.  1.102\nlibswresample   7.  1.102 /  7.  1.102\n\nExiting with exit code 0\n",
+    "ffprobe_version": "ffprobe version 9.0.2 Copyright (c) 2007-2026 the FFmpeg developers\nbuilt with Apple clang version 21.0.0 (clang-2100.3.34.2)\nconfiguration: --prefix=/opt/homebrew/Cellar/ffmpeg/9.0.2_1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon\nlibavutil      61.  1.102 / 61.  1.102\nlibavcodec     63.  1.102 / 63.  1.102\nlibavformat    63.  1.102 / 63.  1.102\nlibavdevice    63.  1.102 / 63.  1.102\nlibavfilter    12.  1.102 / 12.  1.102\nlibswscale     10.  1.102 / 10.  1.102\nlibswresample   7.  1.102 /  7.  1.102\n"
+  },
+  "numpy": "2.3.2",
+  "libsndfile": "1.2.2",
+  "source_sha256": {
+    "music_verdict_beepbox_authored.py": "c3febdeb54e475cf88b3686d0eb26bfd152be769e5201727c2077761fe9c1155",
+    "music_verdict_beepbox_authored.mjs": "cc9de1ce968985e9bc66a1365cc36130f1e14d11acf4a461b5d66be74d0d2f34",
+    "music_library_pilot_convert.py": "40c5fb4c51fe4ba13a6f28889e3e4bcafeed75cb9caca42cd107d88b1632d59b",
+    "music_library_pilot_nuisance.py": "02c6ba36fc7acb055c4c68250def4b7d05b5899529d6dceeae6bce73456af7d5"
+  },
+  "works": [
+    {
+      "render": {
+        "title": "Confrontation",
+        "author": "tapatilorenzo",
+        "score_sha256": "12947bd27b0a4f935bf845bd9faadcd9cb34035e085f6731ce27ecaee2ab9764",
+        "node": "v24.14.0",
+        "v8": "13.6.233.17-node.41",
+        "platform": "darwin",
+        "arch": "arm64",
+        "synth_sha256": "151aac3367db73404eed4404f85b46608a9834d8af3120046328e9ae05b4aa24",
+        "seed": 20261123,
+        "random_draws": 167,
+        "rate": 44100,
+        "frames": 2540160,
+        "f32le_sha256": "c4ef773f29c8b2750e6713f5c3e7ddfcd0f36114f0096de9b99a283c1fa42cd9"
+      },
+      "submission": "https://opengameart.org/content/four-original-midi-loops",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "attribution_sha256": "5d7bea859967ee8e86c72253ae277a778b7030500f7196120e0f582d8973e868",
+      "clipped_sample_values": 0,
+      "originals": {
+        "direct.wav": {
+          "file_sha256": "cf8f5c630166622d7d56c3fc08f36bbe5a716e575d332442e87236125ef1affe",
+          "s16le_sha256": "896e5cbdbd5a13508e267b0a7f56b32c86bd656bc17b2e04f4adcc37a19edc69"
+        },
+        "direct.flac": {
+          "file_sha256": "a62e41d2a739be004336046c86ddc060c3621458a684efb7de26a46dd69338ab",
+          "s16le_sha256": "896e5cbdbd5a13508e267b0a7f56b32c86bd656bc17b2e04f4adcc37a19edc69"
+        }
+      },
+      "variants": [
+        {
+          "family": "mp3",
+          "kbps": 128,
+          "intermediate_sha256": "08d5c816e63146329c7211527fdb7316bd248035077449bc57f9e008187f1367",
+          "decoded_s16le_sha256": "f81dd9f4541a43a428db14d80bb185620327f3a19ffad99abbff14a5a784028e",
+          "trailing_frames_removed": 0,
+          "file_sha256": "11a98dc10322b1ef5988446006392412d040978774e90f2200fe6ac9d8ce7630",
+          "s16le_sha256": "f81dd9f4541a43a428db14d80bb185620327f3a19ffad99abbff14a5a784028e",
+          "alignment": [
+            {
+              "start_frame": 44100,
+              "lag_frames": 0,
+              "correlation": 0.99999998802569
+            },
+            {
+              "start_frame": 1270080,
+              "lag_frames": 0,
+              "correlation": 0.9986180517099555
+            },
+            {
+              "start_frame": 2496060,
+              "lag_frames": 0,
+              "correlation": 0.9999715703682275
+            }
+          ]
+        },
+        {
+          "family": "mp3",
+          "kbps": 192,
+          "intermediate_sha256": "de38300d7b558a8b035a13c421ac34211671dbd8716782ee26b4e408fc58ff45",
+          "decoded_s16le_sha256": "24ed556125569c663b7bff4285cfa35f0a021e08f6c0326266aba4a0121426d0",
+          "trailing_frames_removed": 0,
+          "file_sha256": "ae1ff1387e3d87c396c411d62bc0bc0ea9e460f91b871a8a9824aaacaf2ff4d1",
+          "s16le_sha256": "24ed556125569c663b7bff4285cfa35f0a021e08f6c0326266aba4a0121426d0",
+          "alignment": [
+            {
+              "start_frame": 44100,
+              "lag_frames": 0,
+              "correlation": 0.9999999625519302
+            },
+            {
+              "start_frame": 1270080,
+              "lag_frames": 0,
+              "correlation": 0.999785882626517
+            },
+            {
+              "start_frame": 2496060,
+              "lag_frames": 0,
+              "correlation": 0.9999989265933013
+            }
+          ]
+        },
+        {
+          "family": "mp3",
+          "kbps": 320,
+          "intermediate_sha256": "bf9ad7258cec3a245123972ff0e748c8f1a1af0fc2703411fc90f2238983476c",
+          "decoded_s16le_sha256": "2e1e0b90c6eb2d0f65d1295aba2b70de680677cbbedd030629ba46b83722fd68",
+          "trailing_frames_removed": 0,
+          "file_sha256": "957c57121145da473adebb445585735720cbc68997f3582886ee985b63cff726",
+          "s16le_sha256": "2e1e0b90c6eb2d0f65d1295aba2b70de680677cbbedd030629ba46b83722fd68",
+          "alignment": [
+            {
+              "start_frame": 44100,
+              "lag_frames": 0,
+              "correlation": 0.9999999842283036
+            },
+            {
+              "start_frame": 1270080,
+              "lag_frames": 0,
+              "correlation": 0.9999762856350285
+            },
+            {
+              "start_frame": 2496060,
+              "lag_frames": 0,
+              "correlation": 0.9999999416228382
+            }
+          ]
+        },
+        {
+          "family": "aac",
+          "kbps": 128,
+          "intermediate_sha256": "ce2a7255ad1d7b2e19a1852376070423e71a95a7a907724071783262eaeda929",
+          "decoded_s16le_sha256": "0a7ba39c3070f8529a5c9f28e6bc7f21b57df4bb5b9215c4b0d1fa835d10ba0a",
+          "trailing_frames_removed": 0,
+          "file_sha256": "719750a4d250058bc2c04b19fd0eeb7fc1a107f1a30aad7cbaa63e4b1abc1e6c",
+          "s16le_sha256": "0a7ba39c3070f8529a5c9f28e6bc7f21b57df4bb5b9215c4b0d1fa835d10ba0a",
+          "alignment": [
+            {
+              "start_frame": 44100,
+              "lag_frames": 0,
+              "correlation": 0.9999992206886102
+            },
+            {
+              "start_frame": 1270080,
+              "lag_frames": 0,
+              "correlation": 0.9993575573715804
+            },
+            {
+              "start_frame": 2496060,
+              "lag_frames": 0,
+              "correlation": 0.9999880895752196
+            }
+          ]
+        },
+        {
+          "family": "aac",
+          "kbps": 192,
+          "intermediate_sha256": "06965bd9a223f2b3e83949fa25692c9a45600bbad1a21604b9ade4eac23d308f",
+          "decoded_s16le_sha256": "70cd572279b9a4269575d05cbf4b0f736ff82116c756898f13a593533b975d75",
+          "trailing_frames_removed": 0,
+          "file_sha256": "097cbfe88d79076d9bad89e9a9c47da01214cdc9c3db4db64c067c3e530758a7",
+          "s16le_sha256": "70cd572279b9a4269575d05cbf4b0f736ff82116c756898f13a593533b975d75",
+          "alignment": [
+            {
+              "start_frame": 44100,
+              "lag_frames": 0,
+              "correlation": 0.9999992205539451
+            },
+            {
+              "start_frame": 1270080,
+              "lag_frames": 0,
+              "correlation": 0.9999285899453705
+            },
+            {
+              "start_frame": 2496060,
+              "lag_frames": 0,
+              "correlation": 0.9999976463541908
+            }
+          ]
+        },
+        {
+          "family": "aac",
+          "kbps": 256,
+          "intermediate_sha256": "368e103f02067c13a1b67d02222d82cf873d36880fcea821153694c8079755a0",
+          "decoded_s16le_sha256": "c3af5339121a1502faa07d5d2119c0ead8ca11f76f740e843144d3d15c983c82",
+          "trailing_frames_removed": 0,
+          "file_sha256": "8f75dabd225ca487afce9577b28f168025110059f7fb6fe2ed95e17acb043309",
+          "s16le_sha256": "c3af5339121a1502faa07d5d2119c0ead8ca11f76f740e843144d3d15c983c82",
+          "alignment": [
+            {
+              "start_frame": 44100,
+              "lag_frames": 0,
+              "correlation": 0.9999992216390463
+            },
+            {
+              "start_frame": 1270080,
+              "lag_frames": 0,
+              "correlation": 0.9999911664563788
+            },
+            {
+              "start_frame": 2496060,
+              "lag_frames": 0,
+              "correlation": 0.9999983527809233
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "render": {
+        "title": "radio city",
+        "author": "cubee",
+        "score_sha256": "0f6ced7d163dabd2c789cadb42537887cfbd7947374e96760a98f25fa5cb3c25",
+        "node": "v24.14.0",
+        "v8": "13.6.233.17-node.41",
+        "platform": "darwin",
+        "arch": "arm64",
+        "synth_sha256": "151aac3367db73404eed4404f85b46608a9834d8af3120046328e9ae05b4aa24",
+        "seed": 20261123,
+        "random_draws": 192,
+        "rate": 44100,
+        "frames": 3386880,
+        "f32le_sha256": "35b8a42afb9a493acaad96ab376a56484099df88e4fa58d6920529af366bb9bc"
+      },
+      "submission": "https://opengameart.org/content/random-retro-ish-music-tracks",
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution_sha256": "31bef3e3faf35eddc9c54e8c0929b87ff5a4c67c12441316e7dc9677c50a3530",
+      "clipped_sample_values": 0,
+      "originals": {
+        "direct.wav": {
+          "file_sha256": "a97d620a0daa0fbaff6da6dd18b34145213e07983c12f51ca5b1f69e912ceb2d",
+          "s16le_sha256": "26c64d34782a80d60f93063ddf4e7f7d3edbc1ebfa0eab3cab919cba435d14e5"
+        },
+        "direct.flac": {
+          "file_sha256": "c6f5e396c4d20ab163669fe6454b6e4d6a40568c02acc5803ba32e5d4a810ebf",
+          "s16le_sha256": "26c64d34782a80d60f93063ddf4e7f7d3edbc1ebfa0eab3cab919cba435d14e5"
+        }
+      },
+      "variants": [
+        {
+          "family": "mp3",
+          "kbps": 128,
+          "intermediate_sha256": "b1fe4b22b6849e5adabb4a0391d932f8b3f7bc3c2c9d76da1eaa947643b2baf1",
+          "decoded_s16le_sha256": "cdc285974d0ae714f28819e87573550b462972a39da5fbd949316911851b6b71",
+          "trailing_frames_removed": 0,
+          "file_sha256": "48b4ce804e14b88b9e1ca878271e5833ce7342b9ef2f7a2b82d8fe08b0ef9398",
+          "s16le_sha256": "cdc285974d0ae714f28819e87573550b462972a39da5fbd949316911851b6b71",
+          "alignment": [
+            {
+              "start_frame": 44100,
+              "lag_frames": 0,
+              "correlation": 0.9998564147602047
+            },
+            {
+              "start_frame": 1693440,
+              "lag_frames": 0,
+              "correlation": 0.9994400128440974
+            },
+            {
+              "start_frame": 3342780,
+              "lag_frames": 0,
+              "correlation": 0.9998173798231377
+            }
+          ]
+        },
+        {
+          "family": "mp3",
+          "kbps": 192,
+          "intermediate_sha256": "b71a92543a232a02a1bb6bb39b7dabb3c237126eea9b9bfe092c725ab7d0a6e9",
+          "decoded_s16le_sha256": "a49b322cf8c6398388442b979aefa1b0c249434ee7862b29526b4b615cda737d",
+          "trailing_frames_removed": 0,
+          "file_sha256": "5b7adc8d2b75f6c48d3956105436d3becb6e3c65dd04d2ecf51a3fc46d7e13d5",
+          "s16le_sha256": "a49b322cf8c6398388442b979aefa1b0c249434ee7862b29526b4b615cda737d",
+          "alignment": [
+            {
+              "start_frame": 44100,
+              "lag_frames": 0,
+              "correlation": 0.9999993433874008
+            },
+            {
+              "start_frame": 1693440,
+              "lag_frames": 0,
+              "correlation": 0.9999880821178149
+            },
+            {
+              "start_frame": 3342780,
+              "lag_frames": 0,
+              "correlation": 0.9999982539237269
+            }
+          ]
+        },
+        {
+          "family": "mp3",
+          "kbps": 320,
+          "intermediate_sha256": "3fdb04ce0ec20c99144120b88b38e658237c94d427cd019cc13b9783349afc7f",
+          "decoded_s16le_sha256": "70f9fcad2bbba50f117ea706f6afdf0775f1cbc29c1592d64ae967254b5e9d31",
+          "trailing_frames_removed": 0,
+          "file_sha256": "cb2972547ab0c1b47bde71d9c2acda0038eb188b79f390ad17de62cee4922607",
+          "s16le_sha256": "70f9fcad2bbba50f117ea706f6afdf0775f1cbc29c1592d64ae967254b5e9d31",
+          "alignment": [
+            {
+              "start_frame": 44100,
+              "lag_frames": 0,
+              "correlation": 0.9999997998212102
+            },
+            {
+              "start_frame": 1693440,
+              "lag_frames": 0,
+              "correlation": 0.9999995107571092
+            },
+            {
+              "start_frame": 3342780,
+              "lag_frames": 0,
+              "correlation": 0.999999821985143
+            }
+          ]
+        },
+        {
+          "family": "aac",
+          "kbps": 128,
+          "intermediate_sha256": "402c158872e320d8f23a6dbb7c8efa9a3b456e671b2c3a23fad054f017f9baf7",
+          "decoded_s16le_sha256": "a19527ae5bc83f0be17c1ad4d3f2f216a330cbcdad822a17d7830dc5cf65b373",
+          "trailing_frames_removed": 0,
+          "file_sha256": "f105648f83921f34c03e51e988a15591ee8f553c04bc49d2b4d69447b7777cc7",
+          "s16le_sha256": "a19527ae5bc83f0be17c1ad4d3f2f216a330cbcdad822a17d7830dc5cf65b373",
+          "alignment": [
+            {
+              "start_frame": 44100,
+              "lag_frames": 0,
+              "correlation": 0.9999398254127372
+            },
+            {
+              "start_frame": 1693440,
+              "lag_frames": 0,
+              "correlation": 0.9999239217083911
+            },
+            {
+              "start_frame": 3342780,
+              "lag_frames": 0,
+              "correlation": 0.999757220619453
+            }
+          ]
+        },
+        {
+          "family": "aac",
+          "kbps": 192,
+          "intermediate_sha256": "e728d23f7ddb8711d50583439d013e75ff126e5b0cfce925786de4c3f3393bf7",
+          "decoded_s16le_sha256": "6c76fea41f086bba29fd288bca769bea690aba28ce489173a1da270621da561d",
+          "trailing_frames_removed": 0,
+          "file_sha256": "447042eade58f7c262c1126cbdab60f26716865a9e339e5291c75325c4f4c550",
+          "s16le_sha256": "6c76fea41f086bba29fd288bca769bea690aba28ce489173a1da270621da561d",
+          "alignment": [
+            {
+              "start_frame": 44100,
+              "lag_frames": 0,
+              "correlation": 0.9999835157815813
+            },
+            {
+              "start_frame": 1693440,
+              "lag_frames": 0,
+              "correlation": 0.9994221447458091
+            },
+            {
+              "start_frame": 3342780,
+              "lag_frames": 0,
+              "correlation": 0.9999693394159317
+            }
+          ]
+        },
+        {
+          "family": "aac",
+          "kbps": 256,
+          "intermediate_sha256": "38b125da9b2f36672f281eee3bd9d72f3ce1128c506b09a67c934d586db3bebc",
+          "decoded_s16le_sha256": "e6df8b89c2fbf2f80154ce0c45243bb205fb3aca625d205aaee941d7fd93c03b",
+          "trailing_frames_removed": 0,
+          "file_sha256": "6d38b0e25c42a850677e4c13e70def11f4bc469e444b993c7fa72928ba3ba2cb",
+          "s16le_sha256": "e6df8b89c2fbf2f80154ce0c45243bb205fb3aca625d205aaee941d7fd93c03b",
+          "alignment": [
+            {
+              "start_frame": 44100,
+              "lag_frames": 0,
+              "correlation": 0.9999860015199484
+            },
+            {
+              "start_frame": 1693440,
+              "lag_frames": 0,
+              "correlation": 0.9998539457239112
+            },
+            {
+              "start_frame": 3342780,
+              "lag_frames": 0,
+              "correlation": 0.9999896669171086
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
