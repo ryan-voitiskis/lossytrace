@@ -1,0 +1,112 @@
+{
+  "model": "exchangeable distinct negative group maxima, fixed score function",
+  "small_rank_allocations_enumerated": 3418,
+  "planned_calibration_minimum": 100,
+  "planned_evaluation_minimum": 300,
+  "minimum_group_successes_per_codec": 224,
+  "success_lower_95": 0.7019750214626506,
+  "one_fewer_success_lower_95": 0.6984902262471147,
+  "ci_upper_at_zero_alerts": 0.009936081944457711,
+  "ci_upper_at_one_alert": 0.015714554891584073,
+  "iid_continuous_probability_calibrated_alert_risk_at_most_one_percent": 0.6339676587267709,
+  "iid_continuous_95th_percentile_calibrated_alert_risk": 0.029513049607039932,
+  "fixed_one_percent_risk_probability_of_zero_evaluation_alerts": 0.04904089407128572,
+  "scenarios": [
+    {
+      "calibration": 100,
+      "evaluation": 300,
+      "allowed_alert_groups": 0,
+      "rank_subgate_pass_probability": 0.25,
+      "exact_pass_fraction": "1/4",
+      "expected_alert_groups": 2.9702970297029703
+    },
+    {
+      "calibration": 300,
+      "evaluation": 300,
+      "allowed_alert_groups": 0,
+      "rank_subgate_pass_probability": 0.5,
+      "exact_pass_fraction": "1/2",
+      "expected_alert_groups": 0.9966777408637874
+    },
+    {
+      "calibration": 600,
+      "evaluation": 300,
+      "allowed_alert_groups": 0,
+      "rank_subgate_pass_probability": 0.6666666666666666,
+      "exact_pass_fraction": "2/3",
+      "expected_alert_groups": 0.49916805324459235
+    },
+    {
+      "calibration": 1200,
+      "evaluation": 300,
+      "allowed_alert_groups": 0,
+      "rank_subgate_pass_probability": 0.8,
+      "exact_pass_fraction": "4/5",
+      "expected_alert_groups": 0.2497918401332223
+    },
+    {
+      "calibration": 100,
+      "evaluation": 500,
+      "allowed_alert_groups": 1,
+      "rank_subgate_pass_probability": 0.30578742348358373,
+      "exact_pass_fraction": "1099/3594",
+      "expected_alert_groups": 4.9504950495049505
+    },
+    {
+      "calibration": 300,
+      "evaluation": 500,
+      "allowed_alert_groups": 1,
+      "rank_subgate_pass_probability": 0.6096683354192741,
+      "exact_pass_fraction": "3897/6392",
+      "expected_alert_groups": 1.6611295681063123
+    },
+    {
+      "calibration": 600,
+      "evaluation": 500,
+      "allowed_alert_groups": 1,
+      "rank_subgate_pass_probability": 0.7936140292828191,
+      "exact_pass_fraction": "9594/12089",
+      "expected_alert_groups": 0.831946755407654
+    },
+    {
+      "calibration": 1200,
+      "evaluation": 500,
+      "allowed_alert_groups": 1,
+      "rank_subgate_pass_probability": 0.9136170065436416,
+      "exact_pass_fraction": "26388/28883",
+      "expected_alert_groups": 0.4163197335553705
+    },
+    {
+      "calibration": 100,
+      "evaluation": 1000,
+      "allowed_alert_groups": 4,
+      "rank_subgate_pass_probability": 0.3796445145066182,
+      "exact_pass_fraction": "42075039896/110827466981",
+      "expected_alert_groups": 9.900990099009901
+    },
+    {
+      "calibration": 300,
+      "evaluation": 1000,
+      "allowed_alert_groups": 4,
+      "rank_subgate_pass_probability": 0.7312933882229461,
+      "exact_pass_fraction": "20790207257/28429365822",
+      "expected_alert_groups": 3.3222591362126246
+    },
+    {
+      "calibration": 600,
+      "evaluation": 1000,
+      "allowed_alert_groups": 4,
+      "rank_subgate_pass_probability": 0.9049903973652632,
+      "exact_pass_fraction": "654884186251/723636613336",
+      "expected_alert_groups": 1.663893510815308
+    },
+    {
+      "calibration": 1200,
+      "evaluation": 1000,
+      "allowed_alert_groups": 4,
+      "rank_subgate_pass_probability": 0.9807019896370914,
+      "exact_pass_fraction": "1164638923334/1187556399029",
+      "expected_alert_groups": 0.832639467110741
+    }
+  ]
+}
