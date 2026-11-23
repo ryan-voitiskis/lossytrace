@@ -1,0 +1,115 @@
+{
+  "revision": "5a82f88b87bb442499685c494b7a96278121b4c7",
+  "source_tree_sha256": "6da4b5116c9bf66c50a35b5828a146f82f0540cbd058d556daffd9c6e67b658a",
+  "notices": {
+    "GB/free_demos/README.MD": "ad5a0b315010a0a525df6279bfba4ae45cc841aab9378cd5c78db55cac16868d",
+    "README.md": "b17bc155e95b7dc5361360cd4b9b0e8a46d2fdb802315dcb74bcd59a9363e8e1"
+  },
+  "works": {
+    "bs-cyb-city-night-nodrum.uge": {
+      "title": "Cyberpunk Asset Pack - 3am Skyline",
+      "artist": "Beatscribe",
+      "comment": "beatscribe.com\r\n@beatscribemusic",
+      "version": 5,
+      "initial_speed": 7,
+      "orders": 13,
+      "stored_patterns": 37,
+      "notes": 205,
+      "notes_sha256": "09ca0c2803eaa5958a061fe896fc37c16ff7a8191edab98a36e8cdd4e9f121c4",
+      "instrument_bank_sha256": "51f508fbe5db082f22079bd9d692956a7333b636f93652c8e6a0b8715afcbd1e",
+      "wavetable_sha256": "e60aaca982ddc6180ac0c95ba4c7ba123e4e1e36159e4dc4ed32b6dceb15bd78",
+      "effect_counts": {
+        "1": 174,
+        "2": 142,
+        "8": 1,
+        "12": 2
+      },
+      "single_pass_ticks": 5824,
+      "seconds_at_64hz": 91.0,
+      "score_sha256": "58b5eea752c48e55944633d4785799121cb776bdeff59c16e9095215401bd485"
+    },
+    "bs-mm-metal-faster.uge": {
+      "title": "Beats by Beatscribe",
+      "artist": "Beatscribe",
+      "comment": "Composed by Beatscribe (beatscribe.com) in hUGEtracker.\r\n",
+      "version": 5,
+      "initial_speed": 3,
+      "orders": 8,
+      "stored_patterns": 86,
+      "notes": 676,
+      "notes_sha256": "8f85351344a91bb05ecc527431d4d5424e8248004cc5cb7dbb73229835c4432e",
+      "instrument_bank_sha256": "c1b5a24a475e84b099ab9262f0b8d9c4f1ec1c241a8cf956f086bafeebfc7346",
+      "wavetable_sha256": "33817d3633b410c6bf12e7747b94bb9b070ff82e692b66257eb6602a6182eeb5",
+      "effect_counts": {
+        "2": 64,
+        "12": 64,
+        "15": 1
+      },
+      "single_pass_ticks": 1536,
+      "seconds_at_64hz": 24.0,
+      "score_sha256": "5f6a01a14a3ef4234667d7818fb49e4126e8026c1039edb3f78ff6ceb901b1b3"
+    },
+    "bs-mm-metal.uge": {
+      "title": "Beats by Beatscribe",
+      "artist": "Beatscribe",
+      "comment": "Composed by Beatscribe (beatscribe.com) in hUGEtracker.\r\n",
+      "version": 5,
+      "initial_speed": 3,
+      "orders": 8,
+      "stored_patterns": 86,
+      "notes": 676,
+      "notes_sha256": "8f85351344a91bb05ecc527431d4d5424e8248004cc5cb7dbb73229835c4432e",
+      "instrument_bank_sha256": "c1b5a24a475e84b099ab9262f0b8d9c4f1ec1c241a8cf956f086bafeebfc7346",
+      "wavetable_sha256": "33817d3633b410c6bf12e7747b94bb9b070ff82e692b66257eb6602a6182eeb5",
+      "effect_counts": {
+        "2": 64,
+        "12": 64,
+        "15": 8
+      },
+      "single_pass_ticks": 2048,
+      "seconds_at_64hz": 32.0,
+      "score_sha256": "d8f81604c103aaa3848674f313ba17ca57abde88fdee227857ddfc7f4fd1026f"
+    },
+    "bs-p1-ps-md.uge": {
+      "title": "",
+      "artist": "Beatscribe",
+      "comment": "Platformer Asset Pack Vol. 1\r\nMore stuff available at beatscribe.itch.io!",
+      "version": 5,
+      "initial_speed": 7,
+      "orders": 6,
+      "stored_patterns": 25,
+      "notes": 710,
+      "notes_sha256": "e0799409f758a5f7016d9a34bb0be577ee8e5ccbe78c87f91c07a483e33d55a8",
+      "instrument_bank_sha256": "29ef3e3184221d63016c9ec2f28444a1942e35752e5a419d429383b749fda2f3",
+      "wavetable_sha256": "c47445612d682be221e614c9742cb7aac61a5d759d3c1db6f5bf65f2d04f8b8d",
+      "effect_counts": {
+        "2": 128,
+        "12": 4,
+        "15": 6
+      },
+      "single_pass_ticks": 2688,
+      "seconds_at_64hz": 42.0,
+      "score_sha256": "8f781002718408bd40ac552de311b2359bce3a856d406d69bb65646c3c36d2ce"
+    },
+    "bs-rpg-seaside.uge": {
+      "title": "Seaside Village",
+      "artist": "Beatscribe",
+      "comment": "\"This ship takes you to the other contintent but first you have to find my stolen peg leg!\"",
+      "version": 5,
+      "initial_speed": 7,
+      "orders": 8,
+      "stored_patterns": 38,
+      "notes": 382,
+      "notes_sha256": "6101b3e73d0674274ed8823bdb3d6b24d20b3c1fa982dd6f5abf7aaa315d82cf",
+      "instrument_bank_sha256": "c9dde70c58120b9af4a02c28d8f7470dcaeb4a40467c691bd73d27d75dab995d",
+      "wavetable_sha256": "3b7b8acfba0238f6d65f82e8c65ba93408251de9233b8485693c8a93c6cbfc58",
+      "effect_counts": {
+        "12": 54,
+        "15": 8
+      },
+      "single_pass_ticks": 3584,
+      "seconds_at_64hz": 56.0,
+      "score_sha256": "91a5ba1fa230a54d9cb9d0ec82e203f344975c92dfa803096f6d606c9ad84192"
+    }
+  }
+}

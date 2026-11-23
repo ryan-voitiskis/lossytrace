@@ -1,0 +1,243 @@
+{
+  "score_sha256": "58b5eea752c48e55944633d4785799121cb776bdeff59c16e9095215401bd485",
+  "editor_manifest_sha256": "8f8b7dee0c744edc206717bb4d6e8750805534c60078932dacd34c2fc3c4c050",
+  "direct": {
+    "file_sha256": "e33991eb70e88b5157427ec1fdf6637d6359f572a25d2164f39a6023fd0db410",
+    "s16le_sha256": "6bdbd3c78bd290e33087f32fdc69dbb17e59fa5ec9cd7f5ac2133ccadd2e01bf"
+  },
+  "frames": 4014080,
+  "native_rate": 44100,
+  "channels": 2,
+  "bits": 16,
+  "direct_flac": {
+    "file_sha256": "391293b62dc54de0502fbc1edb77d33047af051dba7ede2074055f31edebd36f",
+    "s16le_sha256": "6bdbd3c78bd290e33087f32fdc69dbb17e59fa5ec9cd7f5ac2133ccadd2e01bf"
+  },
+  "variants": {
+    "mp3-128": {
+      "intermediate_sha256": "dcb55dd8d61560e96c2f0832d07ab6ae08f23db5404c891c1212055c80ccb19f",
+      "decoded_tail_frames_removed": 0,
+      "packets": 3486,
+      "packet_bytes": 1457005,
+      "packet_duration_seconds": 91.06285714285714,
+      "mean_packet_bits_per_second": 127999.93724899598,
+      "file_sha256": "69c6ed63bda37450078481536fbdfde68cd3b75c3564e071baed1915bdb4c43d",
+      "s16le_sha256": "69fe83c6ce4577f185b0a3aed5a978cc90c1b64a8319b72e4d23d9e0693f39e6",
+      "alignment": [
+        {
+          "start_frame": 44100,
+          "lag_frames": 0,
+          "correlation": 0.9988915322750417
+        },
+        {
+          "start_frame": 2007040,
+          "lag_frames": 0,
+          "correlation": 0.9981817398179146
+        },
+        {
+          "start_frame": 3969980,
+          "lag_frames": 0,
+          "correlation": 0.998292019370752
+        }
+      ]
+    },
+    "mp3-192": {
+      "intermediate_sha256": "53775ad6469563d3039378247da3f14778d24b2c463ee17181ca23bdb6db902c",
+      "decoded_tail_frames_removed": 0,
+      "packets": 3486,
+      "packet_bytes": 2185508,
+      "packet_duration_seconds": 91.06285714285714,
+      "mean_packet_bits_per_second": 191999.9497991968,
+      "file_sha256": "d76521f2a4c4a4c4a39323fa8afd24dbead1176d627744c3a689b78df0c3a61e",
+      "s16le_sha256": "ea531d359b712b60bec28bf70484d2c5cd124dfadc39f2b677f3cff371426f01",
+      "alignment": [
+        {
+          "start_frame": 44100,
+          "lag_frames": 0,
+          "correlation": 0.9997953723946567
+        },
+        {
+          "start_frame": 2007040,
+          "lag_frames": 0,
+          "correlation": 0.9995539932815879
+        },
+        {
+          "start_frame": 3969980,
+          "lag_frames": 0,
+          "correlation": 0.9993796442770043
+        }
+      ]
+    },
+    "mp3-320": {
+      "intermediate_sha256": "4e3f7e6274eda5d50ecf70afb76edc0156057b446ce8494fb5d4026183c49b6b",
+      "decoded_tail_frames_removed": 0,
+      "packets": 3486,
+      "packet_bytes": 3642514,
+      "packet_duration_seconds": 91.06285714285714,
+      "mean_packet_bits_per_second": 319999.9748995984,
+      "file_sha256": "97dcaafc33ea6b81a92006ebe4d3dbea27b2ca414314e64f9afb025820e5c653",
+      "s16le_sha256": "61f8959bb18967da341d21654d558a70150ee1e0bdf40b2561853ebe8a3fcb7e",
+      "alignment": [
+        {
+          "start_frame": 44100,
+          "lag_frames": 0,
+          "correlation": 0.9999228774207862
+        },
+        {
+          "start_frame": 2007040,
+          "lag_frames": 0,
+          "correlation": 0.9997955648830911
+        },
+        {
+          "start_frame": 3969980,
+          "lag_frames": 0,
+          "correlation": 0.9997519629922079
+        }
+      ]
+    },
+    "aac-128": {
+      "intermediate_sha256": "b8f5fe911acc3e96638ac2702a6ab1d0702ea4b82937cf03a7c05ed14395123d",
+      "decoded_tail_frames_removed": 0,
+      "packets": 3921,
+      "packet_bytes": 1460915,
+      "packet_duration_seconds": 91.04544217687075,
+      "mean_packet_bits_per_second": 128367.98548680183,
+      "file_sha256": "68ea115370eaa97db580b1f1c3ecccddc5d72d0d6ea416c7d197a5dbdd3f567c",
+      "s16le_sha256": "2fc2eb6093ae6222bcc8e51e65aaae3455dde72e94a39b07b1d001965518aa65",
+      "alignment": [
+        {
+          "start_frame": 44100,
+          "lag_frames": 0,
+          "correlation": 0.9958959572395323
+        },
+        {
+          "start_frame": 2007040,
+          "lag_frames": 0,
+          "correlation": 0.9988420889177078
+        },
+        {
+          "start_frame": 3969980,
+          "lag_frames": 0,
+          "correlation": 0.9980087259828859
+        }
+      ]
+    },
+    "aac-192": {
+      "intermediate_sha256": "d2647278998e21bc7b4c11a06f3f3368ec4da578860f0a9fa365afc594d3f547",
+      "decoded_tail_frames_removed": 0,
+      "packets": 3921,
+      "packet_bytes": 2188599,
+      "packet_duration_seconds": 91.04544217687075,
+      "mean_packet_bits_per_second": 192308.2757507651,
+      "file_sha256": "f62ddb723ce0adbe7bb1fcf06ccaf6c951729454b1e2433c8de3e6080375d962",
+      "s16le_sha256": "3df225ed503fb2740148dbddb33fbdde8260952f39c5f8fc5e019cb455dbfd61",
+      "alignment": [
+        {
+          "start_frame": 44100,
+          "lag_frames": 0,
+          "correlation": 0.9971617732297128
+        },
+        {
+          "start_frame": 2007040,
+          "lag_frames": 0,
+          "correlation": 0.9992218410646809
+        },
+        {
+          "start_frame": 3969980,
+          "lag_frames": 0,
+          "correlation": 0.9995711281907464
+        }
+      ]
+    },
+    "aac-256": {
+      "intermediate_sha256": "ea3e4d0dd0286eec51bafce73d8d08d2848049422b87b9ca3d095f4f03f9300d",
+      "decoded_tail_frames_removed": 0,
+      "packets": 3921,
+      "packet_bytes": 2609215,
+      "packet_duration_seconds": 91.04544217687075,
+      "mean_packet_bits_per_second": 229267.0506168707,
+      "file_sha256": "f10f6ae1cab639d0005da3692a7198b5022f0f1c093ef96610c29cf69967a641",
+      "s16le_sha256": "89b4c499bd5d4548ca6cd54d42c1bc1d1dec1002a94b716830294ea0b67ace2e",
+      "alignment": [
+        {
+          "start_frame": 44100,
+          "lag_frames": 0,
+          "correlation": 0.9985230860896592
+        },
+        {
+          "start_frame": 2007040,
+          "lag_frames": 0,
+          "correlation": 0.9999779968387935
+        },
+        {
+          "start_frame": 3969980,
+          "lag_frames": 0,
+          "correlation": 0.9999597363332874
+        }
+      ]
+    }
+  },
+  "split": null,
+  "scripts": {
+    "music_verdict_uge_construction.py": "8e908ab372f0ca4b83de6291bf0fa7520c7208778e037c5174232804c6a1c85a",
+    "music_library_pilot_convert.py": "05c5d75757e39a7249902ee86708aa2d3d83349833db3a698c919456a4c2c85e",
+    "music_verdict_uge_sources.py": "d37ff79b087ef7a64b757fb9852058616540264e8cbd01b154dc13633a9b2c42",
+    "music_verdict_beepbox_authored.py": "c3febdeb54e475cf88b3686d0eb26bfd152be769e5201727c2077761fe9c1155",
+    "music_verdict_construction.py": "6df6a387e7e59d0502699e8317954057ef9e564e49632b46e0a2b7b3f57da873"
+  },
+  "toolchain": {
+    "files": {
+      "/opt/homebrew/Cellar/dav1d/1.5.5/lib/libdav1d.7.dylib": "f92a2244e72d24ce9b6a62aa0d81424c1da92288efd623ddd42efedfd37fd6f4",
+      "/opt/homebrew/Cellar/ffmpeg/9.0.2_1/bin/ffmpeg": "7f6028378534aa10a2dfa07d807ddcc0d18c869bf5c2f64c89efcc18ee88c4ee",
+      "/opt/homebrew/Cellar/ffmpeg/9.0.2_1/bin/ffprobe": "bfe676bfc3a889bebe63af07c71a926a6167f568c7a932a79c2f1fe51ae6d5a1",
+      "/opt/homebrew/Cellar/ffmpeg/9.0.2_1/lib/libavcodec.63.1.102.dylib": "887a9775777c2fdb45228fb7776c3f040e4cf56a0cce2b773ae1b978e26dce5a",
+      "/opt/homebrew/Cellar/ffmpeg/9.0.2_1/lib/libavdevice.63.1.102.dylib": "99a6af906ee84af0dd5f59cab9e121c7a61a25c2b60bf5c3d1c86de5b11eef7b",
+      "/opt/homebrew/Cellar/ffmpeg/9.0.2_1/lib/libavfilter.12.1.102.dylib": "abe7d1e33964d21e427907accd0671cf79b30725bb73e418c304efacc42cae0a",
+      "/opt/homebrew/Cellar/ffmpeg/9.0.2_1/lib/libavformat.63.1.102.dylib": "29cf1a49a39f4e8e99c7bfa6f7aef3df2e7d91c8282cd7e1ef1fb206aec75779",
+      "/opt/homebrew/Cellar/ffmpeg/9.0.2_1/lib/libavutil.61.1.102.dylib": "0377aea088208e69d29c03caeb960ca395fdbcd646335dc0a87748bfe81f8525",
+      "/opt/homebrew/Cellar/ffmpeg/9.0.2_1/lib/libswresample.7.1.102.dylib": "8d35eb7639343a837ac4e97cfe1742a293b9bc514a790e5db822927628122d2f",
+      "/opt/homebrew/Cellar/ffmpeg/9.0.2_1/lib/libswscale.10.1.102.dylib": "518909dce64a42971a838278cf43ba2bd77bd172ba0eccb3c6ba273e25be7cda",
+      "/opt/homebrew/Cellar/lame/4.0/lib/libmp3lame.0.dylib": "463453796b54698b8016af58ab86066ffbafe5229c10c500e4fe6b92d7a63934",
+      "/opt/homebrew/Cellar/libvmaf/3.2.1/lib/libvmaf.3.dylib": "f9ca4510cb08cca61ecd571fc417f2b4440c25555fbeefdb4b5477a35891de1c",
+      "/opt/homebrew/Cellar/libvpx/1.17.0/lib/libvpx.12.dylib": "443cd530535e976a7fe96a027f3e65acebf41a7055005732422309c207089937",
+      "/opt/homebrew/Cellar/mpg123/1.33.7/lib/libmpg123.0.dylib": "435f7bc76659569772b1a90b049a28fe17bc0d605525f1061f830c119807718a",
+      "/opt/homebrew/Cellar/openssl@4/4.1.0/lib/libcrypto.4.dylib": "efb00fbd817f6f81d59427129d191cc5cfd408671b59c715569e5ebafc81454e",
+      "/opt/homebrew/Cellar/openssl@4/4.1.0/lib/libssl.4.dylib": "79e9d2bd1c442951180071a326061a4efd8db8cd11ed90cfc25886a5a492a10b",
+      "/opt/homebrew/Cellar/opus/1.6.1/lib/libopus.0.dylib": "98dcd3cc62c6cf913b789051536ab246c56cc163c74bd8b4968ac467ec74b68b",
+      "/opt/homebrew/Cellar/svt-av1/4.3.0/lib/libSvtAv1Enc.4.3.0.dylib": "178f6473781230a391fe2f7c998d55f09951010cc9ae0c070b0d97a2b504f149",
+      "/opt/homebrew/Cellar/x264/r3222/lib/libx264.165.dylib": "dd765b37f50d44d3ce9593c2c1c2424b48bedac01c7999e93cef87e018bc65b4",
+      "/opt/homebrew/Cellar/x265/4.3/lib/libx265.217.dylib": "b3a50884e2d9cecf57fd29c4fba2c4e47b37cd7b4d7ff5d920919efca038d9ae",
+      "/opt/homebrew/Cellar/xz/5.8.4/lib/liblzma.5.dylib": "41cdf225f3e10fb54f952c8eca11c8a847d095470540dc42736ae7bd761beaa4"
+    },
+    "system_dependencies": [
+      "/System/Library/Frameworks/AVFoundation.framework/Versions/A/AVFoundation (compatibility version 1.0.0, current version 2.0.0)",
+      "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit (compatibility version 45.0.0, current version 2775.10.103)",
+      "/System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox (compatibility version 1.0.0, current version 1000.0.0)",
+      "/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio (compatibility version 1.0.0, current version 1.0.0)",
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation (compatibility version 150.0.0, current version 5027.0.69)",
+      "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics (compatibility version 64.0.0, current version 2050.0.0)",
+      "/System/Library/Frameworks/CoreImage.framework/Versions/A/CoreImage (compatibility version 1.0.1, current version 7.0.0)",
+      "/System/Library/Frameworks/CoreMedia.framework/Versions/A/CoreMedia (compatibility version 1.0.0, current version 3350.77.5)",
+      "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices (compatibility version 1.0.0, current version 1226.0.0)",
+      "/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo (compatibility version 1.2.0, current version 758.27.0)",
+      "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation (compatibility version 300.0.0, current version 5027.0.69)",
+      "/System/Library/Frameworks/Metal.framework/Versions/A/Metal (compatibility version 1.0.0, current version 382.5.3)",
+      "/System/Library/Frameworks/OpenGL.framework/Versions/A/OpenGL (compatibility version 1.0.0, current version 1.0.0)",
+      "/System/Library/Frameworks/VideoToolbox.framework/Versions/A/VideoToolbox (compatibility version 1.0.0, current version 3350.77.5)",
+      "/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1356.0.0)",
+      "/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1359.0.0)",
+      "/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1359.40.3)",
+      "/usr/lib/libbz2.1.0.dylib (compatibility version 1.0.0, current version 1.0.8)",
+      "/usr/lib/libc++.1.dylib (compatibility version 1.0.0, current version 2100.43.0)",
+      "/usr/lib/libiconv.2.dylib (compatibility version 7.0.0, current version 7.0.0)",
+      "/usr/lib/libobjc.A.dylib (compatibility version 1.0.0, current version 228.0.0)",
+      "/usr/lib/libz.1.dylib (compatibility version 1.0.0, current version 1.2.12)"
+    ],
+    "os": "ProductName:\t\tmacOS\nProductVersion:\t\t27.2.1\nBuildVersion:\t\t26B131\n",
+    "architecture": "arm64",
+    "ffmpeg_version": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers\nbuilt with Apple clang version 21.0.0 (clang-2100.3.34.2)\nconfiguration: --prefix=/opt/homebrew/Cellar/ffmpeg/9.0.2_1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon\nlibavutil      61.  1.102 / 61.  1.102\nlibavcodec     63.  1.102 / 63.  1.102\nlibavformat    63.  1.102 / 63.  1.102\nlibavdevice    63.  1.102 / 63.  1.102\nlibavfilter    12.  1.102 / 12.  1.102\nlibswscale     10.  1.102 / 10.  1.102\nlibswresample   7.  1.102 /  7.  1.102\n\nExiting with exit code 0\n",
+    "ffprobe_version": "ffprobe version 9.0.2 Copyright (c) 2007-2026 the FFmpeg developers\nbuilt with Apple clang version 21.0.0 (clang-2100.3.34.2)\nconfiguration: --prefix=/opt/homebrew/Cellar/ffmpeg/9.0.2_1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon\nlibavutil      61.  1.102 / 61.  1.102\nlibavcodec     63.  1.102 / 63.  1.102\nlibavformat    63.  1.102 / 63.  1.102\nlibavdevice    63.  1.102 / 63.  1.102\nlibavfilter    12.  1.102 / 12.  1.102\nlibswscale     10.  1.102 / 10.  1.102\nlibswresample   7.  1.102 /  7.  1.102\n"
+  },
+  "numpy": "2.3.2",
+  "libsndfile": "1.2.2"
+}
