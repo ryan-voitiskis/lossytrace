@@ -1,0 +1,24 @@
+{
+  "cnn_scores_sha256": "7270a6c433ae5e6fbad06b8f907fd657bd779a65b5307ff5569d792219305986",
+  "measurement_scores_sha256": "71f801a7138f862c7bd4cf1a5d69aaa396ebf5c2ebc0b43497e0822d17d91a02",
+  "models": {
+    "baseline": {
+      "controls": 64,
+      "encodes": 384,
+      "encodes_strictly_above_all_controls": 4,
+      "minimum_control_flags_for_half_detection": 28
+    },
+    "ranking": {
+      "controls": 64,
+      "encodes": 384,
+      "encodes_strictly_above_all_controls": 12,
+      "minimum_control_flags_for_half_detection": 29
+    },
+    "comparator": {
+      "controls": 64,
+      "encodes": 384,
+      "encodes_strictly_above_all_controls": 3,
+      "minimum_control_flags_for_half_detection": 31
+    }
+  }
+}

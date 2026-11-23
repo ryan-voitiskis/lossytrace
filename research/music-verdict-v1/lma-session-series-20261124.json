@@ -1,0 +1,82 @@
+{
+  "allocated_groups": 0,
+  "collections": {
+    "BlueFunk": {
+      "distinct_dates": 71,
+      "items": 71,
+      "licenses": {
+        "https://creativecommons.org/licenses/by-nc-sa/4.0/": 45,
+        "unspecified": 26
+      },
+      "literal_bass_lucas_credits": 71,
+      "native_rate_mentioned_in_capture_and_transfer": 0,
+      "taper": {
+        "lucas krazywaffle": 71
+      },
+      "transferer": {
+        "lucas krazywaffle": 71
+      }
+    },
+    "TheShipsCat": {
+      "distinct_dates": 81,
+      "items": 81,
+      "licenses": {
+        "https://creativecommons.org/licenses/by-nc-sa/4.0/": 70,
+        "unspecified": 11
+      },
+      "literal_bass_lucas_credits": 81,
+      "native_rate_mentioned_in_capture_and_transfer": 13,
+      "taper": {
+        "lucas krazywaffle": 81
+      },
+      "transferer": {
+        "lucas krazywaffle": 81
+      }
+    }
+  },
+  "examples": {
+    "BlueFunk2013-08-02": {
+      "files": [
+        {
+          "archive_reported_flac_sha1": "c4bc2723d141e665ecbebfb4c5b794c9959e41d1",
+          "archive_reported_wav_sha1": "0d3e98fdf1dcfb775720d6d6b4715b58639a6b9c",
+          "bytes": 571467696,
+          "name": "Jam 1 (ED; Wave Part I > Part II > Part III > Part I).wav",
+          "seconds": "1984.26"
+        },
+        {
+          "archive_reported_flac_sha1": "85570f66a46e7d9d4048f2d1ad29167525e7b3a7",
+          "archive_reported_wav_sha1": "e3915a9e7cce406fa38429c29a4981b098a9422e",
+          "bytes": 860407386,
+          "name": "Jam 2 (GFD; Good Funkin' Day).wav",
+          "seconds": "2987.53"
+        }
+      ],
+      "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "lineage": "SD Card > Audacity > 24-bit WAV (tracked, +10dB)",
+      "source": "Tascam DR-07 > SD Card (24-bit WAV; 48KHz)"
+    },
+    "ShipsCat2021-01-07": {
+      "files": [
+        {
+          "archive_reported_flac_sha1": "aa1200c7854b030a85b21c768fa25cf5a6a0d292",
+          "archive_reported_wav_sha1": "b9e8cb4532f5de63c257f4ef4e85a07180a9d036",
+          "bytes": 306154882,
+          "name": "2021.01.07 Jam (Giraffes Are Benevolent Beasts).wav",
+          "seconds": "1063.04"
+        }
+      ],
+      "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "lineage": "SD Card > Audacity > 24-bit 48KHz WAV (tracked, normalized to -1dB)",
+      "source": "Tascam DR-07 (built-in mics) > SD Card (24-bit, 48KHz WAV)"
+    }
+  },
+  "snapshot_sha256": {
+    "BlueFunk": "6391af6664004c76620664febc78bbe2bbb336976c994b54d3691566f22bce34",
+    "BlueFunk-all": "8b42e7fd053c0546a3156486e566e407c312ab585dc80009c9a73ee6a76024e4",
+    "BlueFunk2013-08-02": "f84b895721e48e6b601327eb5698c16a0167a66b94e40580056b1a78b1eecccf",
+    "ShipsCat2021-01-07": "2ec8f82ffbb573a0414848fad94477f0aa8c4a57772484fbeb487f7a651b06bf",
+    "TheShipsCat": "d343f5f5df0af130350b490eee874c96fb146faf96f879b276b5222ff1ca6586",
+    "TheShipsCat-all": "3eeae0b118866caac91a45b2f22691c3e66ca8c6089bd8bd3ab7457636c93da8"
+  }
+}
