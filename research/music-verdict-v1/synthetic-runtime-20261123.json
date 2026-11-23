@@ -1,0 +1,33 @@
+{
+  "scope": "generated five-minute PCM only, deterministic untrained CNN, CPU, one window at a time",
+  "processor": "Apple M5",
+  "platform": "macOS-27.2.1-arm64-arm-64bit-Mach-O",
+  "python": "3.13.18",
+  "versions": {
+    "torch": "2.8.0",
+    "libsndfile": "1.2.2",
+    "soundfile": "0.13.1",
+    "numpy": "2.3.2"
+  },
+  "intraop_threads": 4,
+  "interop_threads": 1,
+  "wrapper_pairs": 8,
+  "warm_count": 48,
+  "warm_median_s": 1.4883344585032319,
+  "warm_nearest_rank_p95_s": 1.6954306659899885,
+  "largest_fresh_process_to_first_result_s": 2.1842317909904523,
+  "peak_worker_rss_bytes": 725155840,
+  "warm_stage_median_s": {
+    "hash_seconds": 0.01455822899879422,
+    "read_seconds": 0.03299877102836035,
+    "frontend_seconds": 0.08760516549955355,
+    "model_seconds": 1.340090585508733
+  },
+  "source_sha256": {
+    "music_verdict_runtime_probe.py": "49d5d1ac49f93a322ec68c81b9f7b282cf1d72054e5b7dbc1aa46e853b36d1f7",
+    "music_verdict_candidate.py": "ccfd5746b6b7e91231ba006ddbbebb29b15a23d9ddabceb0001153987d8ae0e6"
+  },
+  "wrapper_equal_scores_and_pcm": true,
+  "exact_repeats": true,
+  "input_hashes_preserved": true
+}
