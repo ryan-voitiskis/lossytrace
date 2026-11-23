@@ -1,0 +1,91 @@
+{
+  "doi": "10.5281/zenodo.15571083",
+  "sha256": {
+    "PDMX.csv": "fc2187e7e09185f4b28be57b6478a96a1243a037f8fd13624f17de2d8bfd44bd",
+    "metadata.tar.gz": "325b57ad69c34d45b05b8f307d88ebd10ff67554a7a9b4c183676e7586deffa3"
+  },
+  "filters": {
+    "indexed_scores": 254077,
+    "copyright_conflict": 31221,
+    "cc0_consistent_flagged_original": 7549,
+    "also_non_draft_no_custom_audio_or_paywall": 7501,
+    "raw_score_id_differs_from_path": 2
+  },
+  "csv_candidates": 6161,
+  "raw_exclusions": {},
+  "disagreements": {},
+  "stage_sizes": {
+    "digital_lead": {
+      "scores": 0,
+      "uploader_accounts": 0
+    },
+    "score_screen": {
+      "scores": 6161,
+      "uploader_accounts": 3956
+    },
+    "multiple_notated_tracks": {
+      "scores": 3870,
+      "uploader_accounts": 2600
+    },
+    "exact_uploader_composer_credit": {
+      "scores": 356,
+      "uploader_accounts": 230
+    },
+    "first_person_description": {
+      "scores": 33,
+      "uploader_accounts": 31
+    },
+    "adaptation_keyword": {
+      "scores": 258,
+      "uploader_accounts": 224
+    },
+    "exact_credit_or_first_person_no_adaptation_keyword": {
+      "scores": 376,
+      "uploader_accounts": 252
+    }
+  },
+  "reference_graph_counts": {
+    "account_song_and_dataset_cluster": {
+      "digital_lead": 0,
+      "score_screen": 920,
+      "multiple_notated_tracks": 592,
+      "exact_uploader_composer_credit": 68,
+      "first_person_description": 5,
+      "adaptation_keyword": 47,
+      "exact_credit_or_first_person_no_adaptation_keyword": 70
+    },
+    "also_shared_composer_string": {
+      "digital_lead": 0,
+      "score_screen": 883,
+      "multiple_notated_tracks": 564,
+      "exact_uploader_composer_credit": 63,
+      "first_person_description": 5,
+      "adaptation_keyword": 44,
+      "exact_credit_or_first_person_no_adaptation_keyword": 65
+    }
+  },
+  "manual_review_ids": {
+    "first_person": [
+      5855750,
+      5928613,
+      5938079,
+      5832138,
+      5924656
+    ],
+    "arrangement": [
+      5951236,
+      5852483,
+      5917401,
+      5968734,
+      5838961
+    ],
+    "exact_credit": [
+      5925681,
+      5952913,
+      5824751,
+      5863157,
+      5892077
+    ],
+    "digital_lead": []
+  }
+}
