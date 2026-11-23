@@ -1,0 +1,43 @@
+{
+  "torch_version": "2.8.0",
+  "synthetic_pcm_hashes_verified": 168,
+  "library_pcm_hashes_verified": 168,
+  "library_pairs": {
+    "mp3-128": {
+      "higher": 12,
+      "equal": 0,
+      "lower": 12,
+      "median_logit_delta": -0.08647018671035778
+    },
+    "mp3-192": {
+      "higher": 16,
+      "equal": 0,
+      "lower": 8,
+      "median_logit_delta": 0.33573988576730074
+    },
+    "mp3-320": {
+      "higher": 21,
+      "equal": 0,
+      "lower": 3,
+      "median_logit_delta": 0.24777585764726007
+    },
+    "aac-128": {
+      "higher": 19,
+      "equal": 0,
+      "lower": 5,
+      "median_logit_delta": 0.3022005955378212
+    },
+    "aac-192": {
+      "higher": 24,
+      "equal": 0,
+      "lower": 0,
+      "median_logit_delta": 0.41071732838948516
+    },
+    "aac-256": {
+      "higher": 16,
+      "equal": 0,
+      "lower": 8,
+      "median_logit_delta": 0.01659417152404785
+    }
+  }
+}

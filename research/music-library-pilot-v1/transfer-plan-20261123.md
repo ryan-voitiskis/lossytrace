@@ -1,0 +1,9 @@
+# Synthetic training and paired transfer on existing pilot measurements
+
+Recorded before model scores on 2026-11-23. The October descriptive results were already known. All 48 sources are development material.
+
+Use the 2,016 retained October JSON reports. Bind sorted case filenames (UTF-8, followed by NUL) and their binary SHA-256 digests by hashing the concatenation. Expected digest is `f169579ede1e8dfbda9ff1fd852dce78fe97de60889b6ac557bd299a6df5ab4c`. Use the measurement logistic comparator from commit `6bd9b343b5ea95462c1c52899d60a2f073b353ae`, with its existing features, missingness handling, component/class balancing and fixed regularization.
+
+1. Fit four times on synthetic reports. Hold out each of the four generator families in turn, including every variant of its six compositions. Include all six processing conditions in training and testing. Label the baseline 0 and each added codec stage 1. Use the generator family as the training component. Report sensitivity and specificity at fixed logit zero (inclusive positive), and their mean, for each held-out family.
+2. Fit once on all four synthetic families. Evaluate the 24 library tracks by pairing each treated copy with its baseline under identical processing. The primary result is the number scoring strictly higher out of 24 per codec setting without subsequent processing. For each of the six conditions and six settings retain higher, equal and lower counts and median logit difference. These are within-track comparisons and cannot establish a library false-alert rate or single-file accuracy.
+3. Stop after these five specified fits. Use no threshold selection, feature selection, model selection or library fitting. Exact replay for verification is permitted. Record a failed fit if numerical convergence fails. Keep only aggregate results in the repository.

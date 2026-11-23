@@ -1,0 +1,481 @@
+{
+  "plan_sha256": "71a53499e095429c8d7c0ccbe0fbb72f06015d8f15a9f10cd735ca5950ce5903",
+  "runner_sha256": "a395435ece31649e1f503a7ef5da464f250495bfa8f212b7dcec4e8d5ed9f449",
+  "torch_version": "2.8.0",
+  "numpy_version": "2.3.2",
+  "ffmpeg_version": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+  "thresholds": {
+    "baseline": {
+      "lower": -1.1225776672363281,
+      "upper": 0.8953273246685663
+    },
+    "ranking": {
+      "lower": -0.8035173714160919,
+      "upper": 1.28952423731486
+    }
+  },
+  "calibration_cases": 224,
+  "evaluation_cases": 448,
+  "overall": {
+    "baseline": {
+      "by_state": {
+        "baseline": {
+          "flag": 1,
+          "no_evidence": 7,
+          "abstain": 56
+        },
+        "mp3-128": {
+          "flag": 1,
+          "no_evidence": 5,
+          "abstain": 58
+        },
+        "mp3-192": {
+          "flag": 1,
+          "no_evidence": 7,
+          "abstain": 56
+        },
+        "mp3-320": {
+          "flag": 1,
+          "no_evidence": 7,
+          "abstain": 56
+        },
+        "aac-128": {
+          "flag": 0,
+          "no_evidence": 7,
+          "abstain": 57
+        },
+        "aac-192": {
+          "flag": 1,
+          "no_evidence": 7,
+          "abstain": 56
+        },
+        "aac-256": {
+          "flag": 1,
+          "no_evidence": 7,
+          "abstain": 56
+        }
+      },
+      "clean_false_alerts": 1,
+      "clean_sources": 64,
+      "detection": 0.013020833333333334,
+      "balanced_coverage": 0.12109375
+    },
+    "ranking": {
+      "by_state": {
+        "baseline": {
+          "flag": 0,
+          "no_evidence": 5,
+          "abstain": 59
+        },
+        "mp3-128": {
+          "flag": 0,
+          "no_evidence": 5,
+          "abstain": 59
+        },
+        "mp3-192": {
+          "flag": 0,
+          "no_evidence": 5,
+          "abstain": 59
+        },
+        "mp3-320": {
+          "flag": 0,
+          "no_evidence": 5,
+          "abstain": 59
+        },
+        "aac-128": {
+          "flag": 0,
+          "no_evidence": 5,
+          "abstain": 59
+        },
+        "aac-192": {
+          "flag": 0,
+          "no_evidence": 5,
+          "abstain": 59
+        },
+        "aac-256": {
+          "flag": 0,
+          "no_evidence": 5,
+          "abstain": 59
+        }
+      },
+      "clean_false_alerts": 0,
+      "clean_sources": 64,
+      "detection": 0.0,
+      "balanced_coverage": 0.078125
+    }
+  },
+  "by_recipe": {
+    "pulse_lead": {
+      "baseline": {
+        "by_state": {
+          "baseline": {
+            "flag": 1,
+            "no_evidence": 2,
+            "abstain": 13
+          },
+          "mp3-128": {
+            "flag": 1,
+            "no_evidence": 2,
+            "abstain": 13
+          },
+          "mp3-192": {
+            "flag": 1,
+            "no_evidence": 2,
+            "abstain": 13
+          },
+          "mp3-320": {
+            "flag": 1,
+            "no_evidence": 2,
+            "abstain": 13
+          },
+          "aac-128": {
+            "flag": 0,
+            "no_evidence": 2,
+            "abstain": 14
+          },
+          "aac-192": {
+            "flag": 1,
+            "no_evidence": 2,
+            "abstain": 13
+          },
+          "aac-256": {
+            "flag": 1,
+            "no_evidence": 2,
+            "abstain": 13
+          }
+        },
+        "clean_false_alerts": 1,
+        "clean_sources": 16,
+        "detection": 0.052083333333333336,
+        "balanced_coverage": 0.18229166666666674
+      },
+      "ranking": {
+        "by_state": {
+          "baseline": {
+            "flag": 0,
+            "no_evidence": 2,
+            "abstain": 14
+          },
+          "mp3-128": {
+            "flag": 0,
+            "no_evidence": 2,
+            "abstain": 14
+          },
+          "mp3-192": {
+            "flag": 0,
+            "no_evidence": 2,
+            "abstain": 14
+          },
+          "mp3-320": {
+            "flag": 0,
+            "no_evidence": 2,
+            "abstain": 14
+          },
+          "aac-128": {
+            "flag": 0,
+            "no_evidence": 2,
+            "abstain": 14
+          },
+          "aac-192": {
+            "flag": 0,
+            "no_evidence": 2,
+            "abstain": 14
+          },
+          "aac-256": {
+            "flag": 0,
+            "no_evidence": 2,
+            "abstain": 14
+          }
+        },
+        "clean_false_alerts": 0,
+        "clean_sources": 16,
+        "detection": 0.0,
+        "balanced_coverage": 0.125
+      }
+    },
+    "mallet": {
+      "baseline": {
+        "by_state": {
+          "baseline": {
+            "flag": 0,
+            "no_evidence": 0,
+            "abstain": 16
+          },
+          "mp3-128": {
+            "flag": 0,
+            "no_evidence": 0,
+            "abstain": 16
+          },
+          "mp3-192": {
+            "flag": 0,
+            "no_evidence": 0,
+            "abstain": 16
+          },
+          "mp3-320": {
+            "flag": 0,
+            "no_evidence": 0,
+            "abstain": 16
+          },
+          "aac-128": {
+            "flag": 0,
+            "no_evidence": 0,
+            "abstain": 16
+          },
+          "aac-192": {
+            "flag": 0,
+            "no_evidence": 0,
+            "abstain": 16
+          },
+          "aac-256": {
+            "flag": 0,
+            "no_evidence": 0,
+            "abstain": 16
+          }
+        },
+        "clean_false_alerts": 0,
+        "clean_sources": 16,
+        "detection": 0.0,
+        "balanced_coverage": 0.0
+      },
+      "ranking": {
+        "by_state": {
+          "baseline": {
+            "flag": 0,
+            "no_evidence": 0,
+            "abstain": 16
+          },
+          "mp3-128": {
+            "flag": 0,
+            "no_evidence": 0,
+            "abstain": 16
+          },
+          "mp3-192": {
+            "flag": 0,
+            "no_evidence": 0,
+            "abstain": 16
+          },
+          "mp3-320": {
+            "flag": 0,
+            "no_evidence": 0,
+            "abstain": 16
+          },
+          "aac-128": {
+            "flag": 0,
+            "no_evidence": 0,
+            "abstain": 16
+          },
+          "aac-192": {
+            "flag": 0,
+            "no_evidence": 0,
+            "abstain": 16
+          },
+          "aac-256": {
+            "flag": 0,
+            "no_evidence": 0,
+            "abstain": 16
+          }
+        },
+        "clean_false_alerts": 0,
+        "clean_sources": 16,
+        "detection": 0.0,
+        "balanced_coverage": 0.0
+      }
+    },
+    "vibrato_strings": {
+      "baseline": {
+        "by_state": {
+          "baseline": {
+            "flag": 0,
+            "no_evidence": 3,
+            "abstain": 13
+          },
+          "mp3-128": {
+            "flag": 0,
+            "no_evidence": 2,
+            "abstain": 14
+          },
+          "mp3-192": {
+            "flag": 0,
+            "no_evidence": 3,
+            "abstain": 13
+          },
+          "mp3-320": {
+            "flag": 0,
+            "no_evidence": 3,
+            "abstain": 13
+          },
+          "aac-128": {
+            "flag": 0,
+            "no_evidence": 3,
+            "abstain": 13
+          },
+          "aac-192": {
+            "flag": 0,
+            "no_evidence": 3,
+            "abstain": 13
+          },
+          "aac-256": {
+            "flag": 0,
+            "no_evidence": 3,
+            "abstain": 13
+          }
+        },
+        "clean_false_alerts": 0,
+        "clean_sources": 16,
+        "detection": 0.0,
+        "balanced_coverage": 0.18229166666666674
+      },
+      "ranking": {
+        "by_state": {
+          "baseline": {
+            "flag": 0,
+            "no_evidence": 2,
+            "abstain": 14
+          },
+          "mp3-128": {
+            "flag": 0,
+            "no_evidence": 2,
+            "abstain": 14
+          },
+          "mp3-192": {
+            "flag": 0,
+            "no_evidence": 2,
+            "abstain": 14
+          },
+          "mp3-320": {
+            "flag": 0,
+            "no_evidence": 2,
+            "abstain": 14
+          },
+          "aac-128": {
+            "flag": 0,
+            "no_evidence": 2,
+            "abstain": 14
+          },
+          "aac-192": {
+            "flag": 0,
+            "no_evidence": 2,
+            "abstain": 14
+          },
+          "aac-256": {
+            "flag": 0,
+            "no_evidence": 2,
+            "abstain": 14
+          }
+        },
+        "clean_false_alerts": 0,
+        "clean_sources": 16,
+        "detection": 0.0,
+        "balanced_coverage": 0.125
+      }
+    },
+    "noise_resonator": {
+      "baseline": {
+        "by_state": {
+          "baseline": {
+            "flag": 0,
+            "no_evidence": 2,
+            "abstain": 14
+          },
+          "mp3-128": {
+            "flag": 0,
+            "no_evidence": 1,
+            "abstain": 15
+          },
+          "mp3-192": {
+            "flag": 0,
+            "no_evidence": 2,
+            "abstain": 14
+          },
+          "mp3-320": {
+            "flag": 0,
+            "no_evidence": 2,
+            "abstain": 14
+          },
+          "aac-128": {
+            "flag": 0,
+            "no_evidence": 2,
+            "abstain": 14
+          },
+          "aac-192": {
+            "flag": 0,
+            "no_evidence": 2,
+            "abstain": 14
+          },
+          "aac-256": {
+            "flag": 0,
+            "no_evidence": 2,
+            "abstain": 14
+          }
+        },
+        "clean_false_alerts": 0,
+        "clean_sources": 16,
+        "detection": 0.0,
+        "balanced_coverage": 0.11979166666666674
+      },
+      "ranking": {
+        "by_state": {
+          "baseline": {
+            "flag": 0,
+            "no_evidence": 1,
+            "abstain": 15
+          },
+          "mp3-128": {
+            "flag": 0,
+            "no_evidence": 1,
+            "abstain": 15
+          },
+          "mp3-192": {
+            "flag": 0,
+            "no_evidence": 1,
+            "abstain": 15
+          },
+          "mp3-320": {
+            "flag": 0,
+            "no_evidence": 1,
+            "abstain": 15
+          },
+          "aac-128": {
+            "flag": 0,
+            "no_evidence": 1,
+            "abstain": 15
+          },
+          "aac-192": {
+            "flag": 0,
+            "no_evidence": 1,
+            "abstain": 15
+          },
+          "aac-256": {
+            "flag": 0,
+            "no_evidence": 1,
+            "abstain": 15
+          }
+        },
+        "clean_false_alerts": 0,
+        "clean_sources": 16,
+        "detection": 0.0,
+        "balanced_coverage": 0.0625
+      }
+    }
+  },
+  "library_higher_out_of_24": {
+    "baseline": {
+      "mp3-128": 12,
+      "mp3-192": 16,
+      "mp3-320": 21,
+      "aac-128": 19,
+      "aac-192": 24,
+      "aac-256": 16
+    },
+    "ranking": {
+      "mp3-128": 2,
+      "mp3-192": 11,
+      "mp3-320": 17,
+      "aac-128": 10,
+      "aac-192": 22,
+      "aac-256": 13
+    }
+  },
+  "ranking_met_pilot_criteria": false,
+  "evidence_directory": "/Volumes/schwarz/lossytrace/single-file-20261123-001"
+}

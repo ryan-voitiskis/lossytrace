@@ -1,0 +1,160 @@
+{
+  "torch_version": "2.8.0",
+  "numpy_version": "2.3.2",
+  "device": "cpu",
+  "synthetic_pcm_hashes_verified": 168,
+  "folds": [
+    {
+      "family": 0,
+      "cnn": {
+        "true_positive": 36,
+        "positives": 36,
+        "true_negative": 0,
+        "negatives": 6,
+        "sensitivity": 1.0,
+        "specificity": 0.0,
+        "balanced_accuracy": 0.5,
+        "detected_by_setting": {
+          "mp3-128": 6,
+          "mp3-192": 6,
+          "mp3-320": 6,
+          "aac-128": 6,
+          "aac-192": 6,
+          "aac-256": 6
+        }
+      },
+      "logistic": {
+        "true_positive": 3,
+        "positives": 36,
+        "true_negative": 6,
+        "negatives": 6,
+        "sensitivity": 0.08333333333333333,
+        "specificity": 1.0,
+        "balanced_accuracy": 0.5416666666666666,
+        "detected_by_setting": {
+          "mp3-128": 1,
+          "mp3-192": 0,
+          "mp3-320": 0,
+          "aac-128": 1,
+          "aac-192": 0,
+          "aac-256": 1
+        }
+      }
+    },
+    {
+      "family": 1,
+      "cnn": {
+        "true_positive": 33,
+        "positives": 36,
+        "true_negative": 6,
+        "negatives": 6,
+        "sensitivity": 0.9166666666666666,
+        "specificity": 1.0,
+        "balanced_accuracy": 0.9583333333333333,
+        "detected_by_setting": {
+          "mp3-128": 6,
+          "mp3-192": 6,
+          "mp3-320": 6,
+          "aac-128": 6,
+          "aac-192": 6,
+          "aac-256": 3
+        }
+      },
+      "logistic": {
+        "true_positive": 36,
+        "positives": 36,
+        "true_negative": 1,
+        "negatives": 6,
+        "sensitivity": 1.0,
+        "specificity": 0.16666666666666666,
+        "balanced_accuracy": 0.5833333333333334,
+        "detected_by_setting": {
+          "mp3-128": 6,
+          "mp3-192": 6,
+          "mp3-320": 6,
+          "aac-128": 6,
+          "aac-192": 6,
+          "aac-256": 6
+        }
+      }
+    },
+    {
+      "family": 2,
+      "cnn": {
+        "true_positive": 5,
+        "positives": 36,
+        "true_negative": 6,
+        "negatives": 6,
+        "sensitivity": 0.1388888888888889,
+        "specificity": 1.0,
+        "balanced_accuracy": 0.5694444444444444,
+        "detected_by_setting": {
+          "mp3-128": 1,
+          "mp3-192": 1,
+          "mp3-320": 0,
+          "aac-128": 1,
+          "aac-192": 1,
+          "aac-256": 1
+        }
+      },
+      "logistic": {
+        "true_positive": 34,
+        "positives": 36,
+        "true_negative": 0,
+        "negatives": 6,
+        "sensitivity": 0.9444444444444444,
+        "specificity": 0.0,
+        "balanced_accuracy": 0.4722222222222222,
+        "detected_by_setting": {
+          "mp3-128": 5,
+          "mp3-192": 6,
+          "mp3-320": 6,
+          "aac-128": 5,
+          "aac-192": 6,
+          "aac-256": 6
+        }
+      }
+    },
+    {
+      "family": 3,
+      "cnn": {
+        "true_positive": 33,
+        "positives": 36,
+        "true_negative": 6,
+        "negatives": 6,
+        "sensitivity": 0.9166666666666666,
+        "specificity": 1.0,
+        "balanced_accuracy": 0.9583333333333333,
+        "detected_by_setting": {
+          "mp3-128": 6,
+          "mp3-192": 6,
+          "mp3-320": 6,
+          "aac-128": 6,
+          "aac-192": 6,
+          "aac-256": 3
+        }
+      },
+      "logistic": {
+        "true_positive": 34,
+        "positives": 36,
+        "true_negative": 5,
+        "negatives": 6,
+        "sensitivity": 0.9444444444444444,
+        "specificity": 0.8333333333333334,
+        "balanced_accuracy": 0.8888888888888888,
+        "detected_by_setting": {
+          "mp3-128": 5,
+          "mp3-192": 6,
+          "mp3-320": 6,
+          "aac-128": 6,
+          "aac-192": 6,
+          "aac-256": 5
+        }
+      }
+    }
+  ],
+  "mean_balanced_accuracy": {
+    "cnn": 0.7465277777777777,
+    "logistic": 0.6215277777777778
+  }
+}

@@ -1,0 +1,271 @@
+{
+  "report_digest": "f169579ede1e8dfbda9ff1fd852dce78fe97de60889b6ac557bd299a6df5ab4c",
+  "synthetic_family_holdouts": {
+    "0": {
+      "true_positive": 19,
+      "positives": 216,
+      "true_negative": 35,
+      "negatives": 36,
+      "sensitivity": 0.08796296296296297,
+      "specificity": 0.9722222222222222,
+      "balanced_accuracy": 0.5300925925925926
+    },
+    "1": {
+      "true_positive": 214,
+      "positives": 216,
+      "true_negative": 3,
+      "negatives": 36,
+      "sensitivity": 0.9907407407407407,
+      "specificity": 0.08333333333333333,
+      "balanced_accuracy": 0.537037037037037
+    },
+    "2": {
+      "true_positive": 194,
+      "positives": 216,
+      "true_negative": 2,
+      "negatives": 36,
+      "sensitivity": 0.8981481481481481,
+      "specificity": 0.05555555555555555,
+      "balanced_accuracy": 0.47685185185185186
+    },
+    "3": {
+      "true_positive": 188,
+      "positives": 216,
+      "true_negative": 26,
+      "negatives": 36,
+      "sensitivity": 0.8703703703703703,
+      "specificity": 0.7222222222222222,
+      "balanced_accuracy": 0.7962962962962963
+    }
+  },
+  "library_pairs": {
+    "identity": {
+      "mp3-128": {
+        "higher": 12,
+        "equal": 0,
+        "lower": 12,
+        "median_logit_delta": 0.010310376435950327
+      },
+      "mp3-192": {
+        "higher": 14,
+        "equal": 0,
+        "lower": 10,
+        "median_logit_delta": 0.031659242130599896
+      },
+      "mp3-320": {
+        "higher": 16,
+        "equal": 0,
+        "lower": 8,
+        "median_logit_delta": 0.033746762024078183
+      },
+      "aac-128": {
+        "higher": 18,
+        "equal": 0,
+        "lower": 6,
+        "median_logit_delta": 0.07932994482736164
+      },
+      "aac-192": {
+        "higher": 17,
+        "equal": 0,
+        "lower": 7,
+        "median_logit_delta": 0.03192468608505474
+      },
+      "aac-256": {
+        "higher": 16,
+        "equal": 0,
+        "lower": 8,
+        "median_logit_delta": 0.010196208075285505
+      }
+    },
+    "gain": {
+      "mp3-128": {
+        "higher": 13,
+        "equal": 0,
+        "lower": 11,
+        "median_logit_delta": 0.01408415828819579
+      },
+      "mp3-192": {
+        "higher": 15,
+        "equal": 0,
+        "lower": 9,
+        "median_logit_delta": 0.03497897347553154
+      },
+      "mp3-320": {
+        "higher": 15,
+        "equal": 0,
+        "lower": 9,
+        "median_logit_delta": 0.03231782305308453
+      },
+      "aac-128": {
+        "higher": 18,
+        "equal": 0,
+        "lower": 6,
+        "median_logit_delta": 0.07262786702938553
+      },
+      "aac-192": {
+        "higher": 16,
+        "equal": 0,
+        "lower": 8,
+        "median_logit_delta": 0.03212470049950661
+      },
+      "aac-256": {
+        "higher": 16,
+        "equal": 0,
+        "lower": 8,
+        "median_logit_delta": 0.0045708090669970315
+      }
+    },
+    "dither16": {
+      "mp3-128": {
+        "higher": 13,
+        "equal": 0,
+        "lower": 11,
+        "median_logit_delta": 0.015840504836237772
+      },
+      "mp3-192": {
+        "higher": 16,
+        "equal": 0,
+        "lower": 8,
+        "median_logit_delta": 0.04050860523255099
+      },
+      "mp3-320": {
+        "higher": 17,
+        "equal": 0,
+        "lower": 7,
+        "median_logit_delta": 0.03100403061347891
+      },
+      "aac-128": {
+        "higher": 18,
+        "equal": 0,
+        "lower": 6,
+        "median_logit_delta": 0.07340895533662281
+      },
+      "aac-192": {
+        "higher": 17,
+        "equal": 0,
+        "lower": 7,
+        "median_logit_delta": 0.034174712249927054
+      },
+      "aac-256": {
+        "higher": 18,
+        "equal": 0,
+        "lower": 6,
+        "median_logit_delta": 0.01318206790308063
+      }
+    },
+    "resample": {
+      "mp3-128": {
+        "higher": 12,
+        "equal": 0,
+        "lower": 12,
+        "median_logit_delta": -0.006829259100296803
+      },
+      "mp3-192": {
+        "higher": 14,
+        "equal": 0,
+        "lower": 10,
+        "median_logit_delta": 0.016314231990237772
+      },
+      "mp3-320": {
+        "higher": 16,
+        "equal": 0,
+        "lower": 8,
+        "median_logit_delta": 0.029890053544414347
+      },
+      "aac-128": {
+        "higher": 17,
+        "equal": 0,
+        "lower": 7,
+        "median_logit_delta": 0.05865116460919796
+      },
+      "aac-192": {
+        "higher": 17,
+        "equal": 0,
+        "lower": 7,
+        "median_logit_delta": 0.030545877210630498
+      },
+      "aac-256": {
+        "higher": 15,
+        "equal": 0,
+        "lower": 9,
+        "median_logit_delta": 0.01289026683227696
+      }
+    },
+    "lowpass16k": {
+      "mp3-128": {
+        "higher": 17,
+        "equal": 0,
+        "lower": 7,
+        "median_logit_delta": 0.03272199679550643
+      },
+      "mp3-192": {
+        "higher": 16,
+        "equal": 0,
+        "lower": 8,
+        "median_logit_delta": 0.026086899655164024
+      },
+      "mp3-320": {
+        "higher": 15,
+        "equal": 0,
+        "lower": 9,
+        "median_logit_delta": 0.006096561199809669
+      },
+      "aac-128": {
+        "higher": 16,
+        "equal": 0,
+        "lower": 8,
+        "median_logit_delta": 0.025125541671594302
+      },
+      "aac-192": {
+        "higher": 11,
+        "equal": 0,
+        "lower": 13,
+        "median_logit_delta": -0.002868055677980194
+      },
+      "aac-256": {
+        "higher": 10,
+        "equal": 0,
+        "lower": 14,
+        "median_logit_delta": -0.0012202521622266468
+      }
+    },
+    "eq_dynamics": {
+      "mp3-128": {
+        "higher": 11,
+        "equal": 0,
+        "lower": 13,
+        "median_logit_delta": -0.00930775186197108
+      },
+      "mp3-192": {
+        "higher": 14,
+        "equal": 0,
+        "lower": 10,
+        "median_logit_delta": 0.02905360271668929
+      },
+      "mp3-320": {
+        "higher": 14,
+        "equal": 0,
+        "lower": 10,
+        "median_logit_delta": 0.018176365480519388
+      },
+      "aac-128": {
+        "higher": 16,
+        "equal": 0,
+        "lower": 8,
+        "median_logit_delta": 0.03984050862256508
+      },
+      "aac-192": {
+        "higher": 16,
+        "equal": 0,
+        "lower": 8,
+        "median_logit_delta": 0.05235797932730988
+      },
+      "aac-256": {
+        "higher": 16,
+        "equal": 0,
+        "lower": 8,
+        "median_logit_delta": 0.009536221051626333
+      }
+    }
+  }
+}
