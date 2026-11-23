@@ -100,7 +100,7 @@ def from_pcm(raw, path, rate, bits, flac=False, *, channels=2):
         '-flags:a','+bitexact',*codec,path], raw)
 
 
-def encode(source, output, family, bitrate):
+def encode(source, output, family, bitrate, *, known_wav=False):
     if (family,bitrate) not in CASES:
         raise ValueError('unplanned codec setting')
     opts = (['-c:a','libmp3lame','-abr','0','-reservoir','1','-joint_stereo','1',
@@ -108,7 +108,8 @@ def encode(source, output, family, bitrate):
             if family == 'mp3' else
             ['-c:a','aac','-profile:a','aac_low','-aac_coder','twoloop',
              '-aac_is','1','-aac_pns','1','-aac_tns','1'])
-    ff(['-i',source,'-map','0:a:0','-vn','-map_metadata','-1','-threads','1',
+    demux = ['-f', 'wav'] if known_wav else []
+    ff([*demux, '-i',source,'-map','0:a:0','-vn','-map_metadata','-1','-threads','1',
         '-fflags','+bitexact','-flags:a','+bitexact',*opts,'-b:a',f'{bitrate}k',output])
 
 

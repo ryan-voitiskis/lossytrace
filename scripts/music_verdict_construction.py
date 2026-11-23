@@ -69,7 +69,7 @@ def construct_primary(source, expected_sha256, folder, *, group, source_id, part
         if state != "baseline":
             family, target = state.split("-")
             path = folder / (state + (".mp3" if family == "mp3" else ".m4a"))
-            codec.encode(encoder_source, path, family, int(target))
+            codec.encode(encoder_source, path, family, int(target), known_wav=True)
             codec.validate_stream(path, rate, family, channels=channels)
             pcm, trimmed = codec.trim(codec.decode(path, base_bits), base_bits, frames, channels=channels)
             encodes[state] = dict(file=path.name, sha256=codec.sha(path), input_pcm_sha256=base_sha,
