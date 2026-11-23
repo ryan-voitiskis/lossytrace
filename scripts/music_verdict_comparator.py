@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Provisional measurement comparator; synthetic verification only so far.
+"""Research-only feature-v0 logistic comparator and portable fitted parameters.
 
-No audio/file reader, checkpoint persistence, calibration or verdict interface.
+The model consumes numeric measurements. The caller supplies evidence and policy.
 The caller must satisfy source and execution gates before any real-data fitting
 or scoring. A partition argument is a misuse guard, not proof of provenance.
 """
@@ -9,6 +9,8 @@ from __future__ import annotations
 
 from collections import Counter
 from dataclasses import dataclass
+import hashlib
+import json
 import math
 
 import numpy as np
@@ -229,3 +231,67 @@ def fit_logistic(records: list[dict], labels, group_ids: list[str], *, partition
         else:
             raise RuntimeError("comparator line search failed; no fallback")
     raise RuntimeError("comparator did not converge; no partial result")
+
+
+def checkpoint_bytes(model: Comparator) -> bytes:
+    """Encode the fitted transform and model; thresholds are a separate calibration artifact."""
+    pre = model.preprocessing
+    record = {
+        "schema": "lossytrace.research.measurement-logistic.v1", "features": list(FEATURES),
+        "imputation": list(map(float, pre.imputation)), "observed": list(map(bool, pre.observed)),
+        "center": list(map(float, pre.center)), "scale": list(map(float, pre.scale)),
+        "coefficients": list(map(float, model.coefficients)), "intercept": float(model.intercept),
+        "iterations": model.iterations, "gradient_infinity_norm": float(model.gradient_infinity_norm),
+    }
+    return (json.dumps(record, allow_nan=False, sort_keys=True, separators=(",", ":")) + "\n").encode()
+
+
+def load_checkpoint(data: bytes, expected_sha256: str) -> Comparator:
+    """Read the exact artifact committed by the caller and verify inference compatibility."""
+    if hashlib.sha256(data).hexdigest() != expected_sha256:
+        raise ValueError("comparator checkpoint digest mismatch")
+
+    def unique(pairs):
+        obj = dict(pairs)
+        if len(obj) != len(pairs):
+            raise ValueError("duplicate checkpoint key")
+        return obj
+
+    doc = json.loads(data, object_pairs_hook=unique)
+    keys = {"schema", "features", "imputation", "observed", "center", "scale",
+            "coefficients", "intercept", "iterations", "gradient_infinity_norm"}
+    if (not isinstance(doc, dict) or set(doc) != keys
+            or doc["schema"] != "lossytrace.research.measurement-logistic.v1"
+            or doc["features"] != list(FEATURES)):
+        raise ValueError("incompatible comparator checkpoint")
+    width = len(FEATURES)
+
+    def numeric(value):
+        if type(value) not in (float, int):
+            raise ValueError("non-numeric checkpoint value")
+        try:
+            number = float(value)
+        except OverflowError as exc:
+            raise ValueError("unrepresentable checkpoint value") from exc
+        if not math.isfinite(number):
+            raise ValueError("non-finite checkpoint value")
+        return number
+
+    def vector(key, length):
+        values = doc[key]
+        if not isinstance(values, list) or len(values) != length:
+            raise ValueError(f"incorrect {key} dimension")
+        return tuple(map(numeric, values))
+
+    observed = doc["observed"]
+    if not isinstance(observed, list) or len(observed) != width or any(type(v) is not bool for v in observed):
+        raise ValueError("invalid observed-column mask")
+    scale = vector("scale", width * 2)
+    iterations = doc["iterations"]
+    gradient = numeric(doc["gradient_infinity_norm"])
+    if (min(scale) <= 0 or type(iterations) is not int or not 0 <= iterations <= MAX_ITERATIONS
+            or not 0 <= gradient <= GRADIENT_TOLERANCE):
+        raise ValueError("invalid fitted scale or solver status")
+    preprocessing = Preprocessor(vector("imputation", width), tuple(observed), vector("center", width * 2), scale)
+    return Comparator(preprocessing, vector("coefficients", width * 2), numeric(doc["intercept"]),
+                      iterations, gradient)

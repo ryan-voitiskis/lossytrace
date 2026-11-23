@@ -1,5 +1,7 @@
 """Synthetic feature objects only; no audio, real labels or checkpoints."""
+import hashlib
 import importlib.util
+import json
 import math
 from pathlib import Path
 import unittest
@@ -192,6 +194,31 @@ class ComparatorSyntheticTests(unittest.TestCase):
         self.assertEqual(first, again)
         reverse = comparator.fit_logistic(*[list(reversed(a)) for a in args], partition="train")
         np.testing.assert_allclose(first.logits(records), reverse.logits(records), atol=1e-12)
+
+    def test_checkpoint_replays_training_and_new_missingness(self):
+        records = [self.record(v) for v in (None, 0.125, 0.25, 1)]
+        model = comparator.fit_logistic(records, [0, 1, 0, 1], ["a", "a", "b", "b"], partition="train")
+        raw = comparator.checkpoint_bytes(model)
+        restored = comparator.load_checkpoint(raw, hashlib.sha256(raw).hexdigest())
+        self.assertEqual(raw, comparator.checkpoint_bytes(restored))
+        records.append(self.record(0.4) | {"spectral_hole_ratio": 0.75})
+        np.testing.assert_array_equal(model.logits(records), restored.logits(records))
+        with self.assertRaisesRegex(ValueError, "digest"):
+            comparator.load_checkpoint(raw + b" ", hashlib.sha256(raw).hexdigest())
+
+    def test_checkpoint_rejects_incompatible_or_invalid_parameter_records(self):
+        model = comparator.fit_logistic([self.record(0), self.record(1)], [0, 1], ["a", "a"], partition="train")
+        original = json.loads(comparator.checkpoint_bytes(model))
+        for changes in ({"schema": 0}, {"features": list(reversed(comparator.FEATURES))}, {"imputation": []},
+                        {"coefficients": [True] * 24}, {"observed": [1] * 12}, {"scale": [0] * 24},
+                        {"center": [float("inf")] * 24}, {"intercept": 10**400}, {"iterations": True},
+                        {"gradient_infinity_norm": .1}, {"class_probability": 1}):
+            raw = json.dumps(original | changes).encode()
+            with self.subTest(changes=changes), self.assertRaises(ValueError):
+                comparator.load_checkpoint(raw, hashlib.sha256(raw).hexdigest())
+        raw = (json.dumps(original)[:-1] + ', "intercept":0}').encode()
+        with self.assertRaisesRegex(ValueError, "duplicate"):
+            comparator.load_checkpoint(raw, hashlib.sha256(raw).hexdigest())
 
     def test_nonconvergence_fails_without_partial_model(self):
         with patch.object(comparator, "MAX_ITERATIONS", 0), self.assertRaises(RuntimeError):

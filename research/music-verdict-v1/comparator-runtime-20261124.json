@@ -1,0 +1,29 @@
+{
+  "scope": "generated signals only; one synthetic training group; no calibrated verdict",
+  "training_cases": 42,
+  "wrappers": 16,
+  "warm_runs": 48,
+  "python": "3.13.18",
+  "numpy": "2.3.2",
+  "platform": "macOS-27.2.1-arm64-arm-64bit-Mach-O",
+  "machine": "Apple M5",
+  "binary_sha256": "a5d17568c91c3de655584faf1715ea6aeb8a1c248ab2e56b7adf325cf2d2c3bb",
+  "checkpoint_sha256": "78a7f5c1d21a3de8c8d305d6170e5a3cab93938a5b321bfe7de18a01c85e9168",
+  "train_manifest_sha256": "d340008397f29f2fb3083e4cb588b802b42c7e12aa4fdfd853573b2f35da9b63",
+  "warm_median_s": 0.2203127914981451,
+  "warm_p95_s": 0.3049604999978328,
+  "largest_cold_to_first_json_s": 0.3745136670040665,
+  "warm_median_by_wrapper_s": {
+    "flac": 0.2222356040001614,
+    "wav": 0.22014279149880167
+  },
+  "warm_median_inspector_s": 0.22020158298983006,
+  "warm_median_logistic_s": 0.00012037499982398003,
+  "peak_parent_rss_bytes": 35471360,
+  "peak_inspector_rss_bytes": 90128384,
+  "code_sha256": {
+    "music_verdict_comparator_runtime.py": "7e693406d547fc4f66d777cde956d54141033e1d46b92add1f6d79954e5d8ebd",
+    "music_verdict_comparator.py": "704443226742cefb879eac1ee790df348ea03e34f97806a222964f51bf13fad3",
+    "music_verdict_runtime_probe.py": "49d5d1ac49f93a322ec68c81b9f7b282cf1d72054e5b7dbc1aa46e853b36d1f7"
+  }
+}
