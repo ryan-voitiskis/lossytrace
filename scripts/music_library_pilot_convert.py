@@ -71,10 +71,13 @@ def validate_stream(path, rate, codec=None, *, channels=2):
     return p
 
 
-def decode(path, bits):
+def decode(path, bits, *, container=None):
     if bits not in (16,24):
         raise ValueError('unsupported depth')
-    return ff(['-i',path,'-map','0:a:0','-vn','-threads','1',
+    if container not in (None, 'wav', 'flac'):
+        raise ValueError('unexpected PCM demuxer')
+    demux = ['-f', container] if container is not None else []
+    return ff([*demux, '-i',path,'-map','0:a:0','-vn','-threads','1',
                '-c:a',f'pcm_s{bits}le','-f',f's{bits}le','pipe:1'])
 
 

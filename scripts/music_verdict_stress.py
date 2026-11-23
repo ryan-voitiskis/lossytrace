@@ -54,7 +54,7 @@ def construct_stress(source, expected_sha256, folder, *, group, source_id):
             if (stream.format, stream.subtype, stream.channels, stream.samplerate, stream.frames) != (
                     "FLAC", f"PCM_{bits}", channels, rate, expected_frames):
                 raise ValueError("unexpected stress FLAC format")
-        if codec.decode(path, bits) != output:
+        if codec.decode(path, bits, container="flac") != output:
             raise ValueError("stress control PCM readback failed")
         rows.append(dict(condition=condition, frames=expected_frames, path=path.name,
                          sha256=codec.sha(path), pcm_sha256=pcm_hash(output), clipped_samples=clipped))

@@ -34,7 +34,8 @@ def read_bound_pcm(source, expected_sha256):
                 or rate not in (44100, 48000) or channels not in (1, 2) or frames < rate * 30):
             raise ValueError("source outside supported PCM scope")
         bits = int(stream.subtype[4:])
-    native = codec.decode(source, bits)
+        container = "flac" if stream.format == "FLAC" else "wav"
+    native = codec.decode(source, bits, container=container)
     if len(native) != frames * codec.pcm_stride(bits, channels):
         raise ValueError("source header and decoded frame count disagree")
     return native, bits, rate, channels, frames
@@ -57,7 +58,7 @@ def construct_primary(source, expected_sha256, folder, *, group, source_id, part
         native, base_bits, before = process(native, bits, rate, precondition, pre_seed, channels=channels,
                                             match_resampled_length=True)
     codec.from_pcm(native, encoder_source, rate, base_bits, channels=channels)
-    if codec.decode(encoder_source, base_bits) != native:
+    if codec.decode(encoder_source, base_bits, container="wav") != native:
         raise ValueError("encoder input PCM mismatch")
     base_sha = pcm_hash(native)
     base_id = source_id + ":" + base_sha
@@ -83,7 +84,7 @@ def construct_primary(source, expected_sha256, folder, *, group, source_id, part
                 if (check.channels, check.samplerate, check.frames, check.subtype) != (
                         channels, rate, frames, f"PCM_{depth}"):
                     raise ValueError("output native format mismatch")
-            if codec.decode(path, depth) != output:
+            if codec.decode(path, depth, container="flac") != output:
                 raise ValueError("FLAC readback differs from intended PCM")
             cases.append(dict(group=group, source_id=base_id, partition=partition, state=state,
                               condition=condition, path=path.name, sha256=codec.sha(path), rate=rate,
