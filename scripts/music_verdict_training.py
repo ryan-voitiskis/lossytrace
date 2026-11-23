@@ -6,8 +6,10 @@ This code does not authorize fitting on pilot/library data. Scientific execution
 still needs the source gate, exact allocation, loader and execution freeze.
 """
 from collections import Counter
+from collections.abc import Iterator
 from dataclasses import dataclass
 import math
+from typing import Protocol
 
 import torch
 
@@ -25,11 +27,19 @@ class Quartet:
     features: torch.Tensor  # [4, 3, frequency, time], x/Cx/Nx/NCx
 
 
+class SelectionWindows(Protocol):
+    """Re-iterable sequence of native frontend windows for one file."""
+
+    def __len__(self) -> int: ...
+
+    def __iter__(self) -> Iterator[torch.Tensor]: ...
+
+
 @dataclass(frozen=True)
 class SelectionFile:
     group: str
     label: int
-    windows: tuple[torch.Tensor, ...]  # each [1, 3, frequency, time]
+    windows: SelectionWindows  # each [1, 3, frequency, time]
 
 
 def valid_group(group):
@@ -49,14 +59,13 @@ def validate_inputs(quartets, selection):
     if not quartets or not selection:
         raise ValueError('training and model-selection inputs required')
     for item in quartets:
-        valid_group(item.group); validate_features(item.features, 4)
+        valid_group(item.group)
     for item in selection:
         valid_group(item.group)
         if type(item.label) is not int or item.label not in (0, 1):
             raise ValueError('selection label must be zero or one')
         if not 6 <= len(item.windows) <= 24:
             raise ValueError('selection file requires six through 24 windows')
-        for window in item.windows: validate_features(window, 1)
     training_groups = {item.group for item in quartets}
     selection_groups = {item.group for item in selection}
     if training_groups & selection_groups:
@@ -64,6 +73,12 @@ def validate_inputs(quartets, selection):
     cells = Counter((item.group, item.label) for item in selection)
     if any((group, label) not in cells for group in selection_groups for label in (0, 1)):
         raise ValueError('every selection group requires both classes')
+    # Reject invalid allocations before opening any lazily bound PCM inputs.
+    for item in quartets:
+        validate_features(item.features, 4)
+    for item in selection:
+        for window in item.windows:
+            validate_features(window, 1)
 
 
 def class_balanced_selection_bce(model, selection):

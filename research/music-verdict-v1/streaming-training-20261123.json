@@ -1,0 +1,33 @@
+{
+  "scope": "one synthetic mechanics epoch; no scientific model or public verdict",
+  "python": "3.13.18",
+  "torch": "2.8.0",
+  "platform": "macOS-27.2.1-arm64-arm-64bit-Mach-O",
+  "ffmpeg": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+  "train_files": 42,
+  "selection_files": 42,
+  "train_quartets": 36,
+  "selection_windows": 294,
+  "selected_epoch": 1,
+  "optimizer_steps": 3,
+  "last_accumulation_quartets": 4,
+  "fit_seconds": 50.37271804100601,
+  "peak_process_rss_bytes": 4753932288,
+  "input_hashes_preserved": true,
+  "checkpoint_saved": false,
+  "intraop_threads": 4,
+  "interop_threads": 1,
+  "construction_sha256": {
+    "train": "d340008397f29f2fb3083e4cb588b802b42c7e12aa4fdfd853573b2f35da9b63",
+    "selection": "c1bbb6efd6bc71e0e2322ce0247eee6171ad91d7ca6fa74c2e6de3cfdfda45e1"
+  },
+  "code_sha256": {
+    "music_verdict_streaming_smoke.py": "ad12ced6de96c28badb1fd0ea362b43b76d4f11e594fbff444804ea330d09346",
+    "music_verdict_pcm_inputs.py": "1f0e7a3eeed184c00d385cdb4bafec6fccb48d0daf497304722b5f81bebefd91",
+    "music_verdict_training.py": "22b3876b00a3c6879d7b7da31d40beeefb34dc1d081ec05065905a8019a6ae98",
+    "music_verdict_candidate.py": "ccfd5746b6b7e91231ba006ddbbebb29b15a23d9ddabceb0001153987d8ae0e6",
+    "music_verdict_calibration.py": "b525434f626a4147cdfd2526068dd0c150fbf9c017215359ba3445de5c67bceb",
+    "music_library_pilot_convert.py": "40c5fb4c51fe4ba13a6f28889e3e4bcafeed75cb9caca42cd107d88b1632d59b",
+    "music_library_pilot_nuisance.py": "02c6ba36fc7acb055c4c68250def4b7d05b5899529d6dceeae6bce73456af7d5"
+  }
+}
