@@ -64,6 +64,33 @@ class NuisanceTests(unittest.TestCase):
         with patch.object(m.c, 'ff', return_value=b''):
             with self.assertRaises(ValueError): m.process(raw, 24, 44100, 'resample', 1)
 
+    def test_mono_roundtrip_limits_and_declared_shape(self):
+        for bits in (16, 24):
+            limit = 2**(bits-1)
+            samples = np.array([[-limit], [-1], [0], [1], [limit-1]], dtype=np.float64) / limit
+            raw, clipped = m.quantize(samples, bits, channels=1)
+            self.assertEqual(clipped, 0)
+            np.testing.assert_array_equal(m.pcm_samples(raw, bits, channels=1), samples)
+            with self.assertRaises(ValueError):
+                m.quantize(np.zeros((3, 2)), bits, channels=1)
+
+    def test_only_declared_resampling_can_trim_up_to_two_final_frames(self):
+        samples = np.array([[0.25], [-0.25]])
+        raw, _ = m.quantize(samples, 24, channels=1)
+        for extra in (1, 2):
+            returned = np.vstack((samples, np.full((extra, 1), 0.75))).astype('<f8').tobytes()
+            with patch.object(m.c, 'ff', return_value=returned):
+                result, bits, receipt = m.process(raw, 24, 48000, 'resample', 1, channels=1,
+                                                  match_resampled_length=True)
+                self.assertEqual((result, bits, receipt['trailing_resampler_frames_removed']), (raw, 24, extra))
+                with self.assertRaises(ValueError):
+                    m.process(raw, 24, 48000, 'identity', 1, channels=1, match_resampled_length=True)
+                with self.assertRaises(ValueError):
+                    m.process(raw, 24, 48000, 'resample', 1, channels=1)
+        for bad_count in (1, 5):
+            with patch.object(m.c, 'ff', return_value=bytes(8 * bad_count)), self.assertRaises(ValueError):
+                m.process(raw, 24, 48000, 'resample', 1, channels=1, match_resampled_length=True)
+
     def test_interaction_difference_and_missingness(self):
         self.assertEqual(m.difference(4, 2), 2)
         self.assertIsNone(m.difference(None, 2))

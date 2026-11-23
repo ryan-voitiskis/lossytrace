@@ -1,0 +1,139 @@
+{
+  "scope": "generated mono fixtures only; zero model fits or scores",
+  "cases": 210,
+  "results": [
+    {
+      "rate": 44100,
+      "bits": 16,
+      "frames": 1323001,
+      "precondition": "identity",
+      "cases": 42,
+      "alignment_checks": 39,
+      "worst_absolute_lag_frames": 0,
+      "resampling_tail_frames": [
+        1
+      ],
+      "base_pcm_sha256": "c3be1e5f7e012c71e5e89da1b6f485a796b29ee6cc37ebf9567e232d5ac7d498",
+      "manifest_sha256": "61a2630aa165b73181257c7efdc300087f1cdb0de5f9ef5553c80702779af49c",
+      "packet_kbps": {
+        "mp3-128": 128.0,
+        "mp3-192": 192.0,
+        "mp3-320": 320.0,
+        "aac-128": 128.18,
+        "aac-192": 192.43,
+        "aac-256": 203.19
+      }
+    },
+    {
+      "rate": 44100,
+      "bits": 24,
+      "frames": 1323001,
+      "precondition": "identity",
+      "cases": 42,
+      "alignment_checks": 39,
+      "worst_absolute_lag_frames": 0,
+      "resampling_tail_frames": [
+        1
+      ],
+      "base_pcm_sha256": "4eb72719c27709d599856c5bef90b08c2ed884db6d174fcd4dee9605c145cd98",
+      "manifest_sha256": "3728d4abf278261a24252026e49f6c2781cc9810a884520b15c425c9b5bd088b",
+      "packet_kbps": {
+        "mp3-128": 128.0,
+        "mp3-192": 192.0,
+        "mp3-320": 320.0,
+        "aac-128": 128.21,
+        "aac-192": 192.23,
+        "aac-256": 203.29
+      }
+    },
+    {
+      "rate": 48000,
+      "bits": 16,
+      "frames": 1440123,
+      "precondition": "identity",
+      "cases": 42,
+      "alignment_checks": 39,
+      "worst_absolute_lag_frames": 0,
+      "resampling_tail_frames": [
+        2
+      ],
+      "base_pcm_sha256": "343f49f572e937a90ee545f02cf417bf545529e88c55865b15afbdefe378db27",
+      "manifest_sha256": "9454723b572236111de54be725594255ee0d50218409537ba297256203100813",
+      "packet_kbps": {
+        "mp3-128": 128.0,
+        "mp3-192": 192.0,
+        "mp3-320": 320.0,
+        "aac-128": 128.27,
+        "aac-192": 192.27,
+        "aac-256": 219.69
+      }
+    },
+    {
+      "rate": 48000,
+      "bits": 24,
+      "frames": 1440123,
+      "precondition": "identity",
+      "cases": 42,
+      "alignment_checks": 39,
+      "worst_absolute_lag_frames": 0,
+      "resampling_tail_frames": [
+        2
+      ],
+      "base_pcm_sha256": "98f17f45160369c821ecb6a2dee8280d132ee354bd6c8ba8b808e20996b0349b",
+      "manifest_sha256": "c12d71f220317da9dd309b2ab682147546137fb85a5d9293e2d474cc3bfd2e99",
+      "packet_kbps": {
+        "mp3-128": 128.0,
+        "mp3-192": 192.0,
+        "mp3-320": 320.0,
+        "aac-128": 128.33,
+        "aac-192": 192.28,
+        "aac-256": 219.41
+      }
+    },
+    {
+      "rate": 48000,
+      "bits": 24,
+      "frames": 1440123,
+      "precondition": "gain",
+      "cases": 42,
+      "alignment_checks": 39,
+      "worst_absolute_lag_frames": 0,
+      "resampling_tail_frames": [
+        2
+      ],
+      "base_pcm_sha256": "34a3e27d4e9418ee15068df8e46e7b3c90fdd2477f32c069080d7c2b581deb2e",
+      "manifest_sha256": "ed807d5b8f2253ab325b5cd8427ea843249e4ae66fdd678c66a393adac4d5e39",
+      "packet_kbps": {
+        "mp3-128": 128.0,
+        "mp3-192": 192.0,
+        "mp3-320": 320.0,
+        "aac-128": 128.38,
+        "aac-192": 192.27,
+        "aac-256": 236.73
+      }
+    }
+  ],
+  "rounding_excess_counts": {
+    "44100": {
+      "0": 14,
+      "1": 133
+    },
+    "48000": {
+      "0": 14,
+      "1": 134,
+      "2": 12
+    }
+  },
+  "ffmpeg": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+  "libsndfile": "1.2.2",
+  "numpy": "2.3.2",
+  "torch": "2.8.0",
+  "code_sha256": {
+    "music_verdict_native_matrix.py": "f75fd48839754519abcbcc66027e8c0410fd07e9503334435c7d3d8254778014",
+    "music_verdict_construction.py": "6df6a387e7e59d0502699e8317954057ef9e564e49632b46e0a2b7b3f57da873",
+    "music_library_pilot_convert.py": "05c5d75757e39a7249902ee86708aa2d3d83349833db3a698c919456a4c2c85e",
+    "music_library_pilot_nuisance.py": "baf7e7a296e4f55819a0d61580b9aebffb84c98511bbf7243b7138a93f0e7b9b",
+    "music_verdict_pcm_inputs.py": "1f0e7a3eeed184c00d385cdb4bafec6fccb48d0daf497304722b5f81bebefd91",
+    "music_verdict_beepbox_authored.py": "c3febdeb54e475cf88b3686d0eb26bfd152be769e5201727c2077761fe9c1155"
+  }
+}

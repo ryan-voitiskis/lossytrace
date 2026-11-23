@@ -16,21 +16,22 @@ CONDITIONS = ('identity', 'gain', 'dither16', 'resample', 'lowpass16k', 'eq_dyna
 CASES = ('baseline', 'mp3-128', 'mp3-192', 'mp3-320', 'aac-128', 'aac-192', 'aac-256')
 
 
-def pcm_samples(raw, bits):
-    if bits not in (16, 24) or len(raw) % (2*(bits//8)):
-        raise ValueError('expected complete stereo 16/24-bit frames')
+def pcm_samples(raw, bits, *, channels=2):
+    if len(raw) % c.pcm_stride(bits, channels):
+        raise ValueError('expected complete native PCM frames')
     if bits == 16:
         values = np.frombuffer(raw, dtype='<i2').astype(np.float64)
     else:
         b = np.frombuffer(raw, dtype=np.uint8).reshape(-1, 3).astype(np.int32)
         v = b[:, 0] | b[:, 1] << 8 | b[:, 2] << 16
         values = ((v ^ 0x800000)-0x800000).astype(np.float64)
-    return (values/2**(bits-1)).reshape(-1, 2)
+    return (values/2**(bits-1)).reshape(-1, channels)
 
 
-def quantize(samples, bits, seed=None):
-    if bits not in (16, 24) or samples.ndim != 2 or samples.shape[1] != 2 or not np.isfinite(samples).all():
-        raise ValueError('expected finite stereo samples and supported depth')
+def quantize(samples, bits, seed=None, *, channels=2):
+    c.pcm_stride(bits, channels)
+    if samples.ndim != 2 or samples.shape[1] != channels or not np.isfinite(samples).all():
+        raise ValueError('expected finite samples in the declared channel layout')
     limit = 2**(bits-1)
     scaled = samples*limit
     if seed is not None:
@@ -62,21 +63,28 @@ def filter_chain(condition, rate):
             'makeup=1:knee=2.8284271247461903:link=average:detection=rms:level_sc=1:mix=1')
 
 
-def process(raw, bits, rate, condition, seed):
-    samples = pcm_samples(raw, bits)
+def process(raw, bits, rate, condition, seed, *, channels=2, match_resampled_length=False):
+    samples = pcm_samples(raw, bits, channels=channels)
     chain = filter_chain(condition, rate)
-    rendered = c.ff(['-f', 'f64le', '-ar', str(rate), '-ac', '2', '-i', 'pipe:0',
+    rendered = c.ff(['-f', 'f64le', '-ar', str(rate), '-ac', str(channels), '-i', 'pipe:0',
                      '-af', chain, '-threads', '1', '-c:a', 'pcm_f64le', '-f', 'f64le', 'pipe:1'],
                     samples.astype('<f8').tobytes())
-    if len(rendered) != len(samples)*2*8:
-        raise ValueError('processing changed frame count; never silently crop or pad')
-    result = np.frombuffer(rendered, dtype='<f8').reshape(-1, 2)
+    result = np.frombuffer(rendered, dtype='<f8').reshape(-1, channels)
+    excess = len(result) - len(samples)
+    # Each of the two rational sample-rate conversions can round up its tail.
+    # The finished-music recipe retains the original half-open frame interval.
+    if excess and not (condition == 'resample' and match_resampled_length and 0 < excess <= 2):
+        raise ValueError('processing changed frame count outside the declared recipe')
+    result = result[:len(samples)]
     out_bits = 16 if condition == 'dither16' else bits
-    output, clipped = quantize(result, out_bits, seed if condition == 'dither16' else None)
+    output, clipped = quantize(result, out_bits, seed if condition == 'dither16' else None, channels=channels)
     if condition == 'identity' and output != raw:
         raise ValueError('uniform identity path changed PCM')
-    return output, out_bits, {'filter': chain, 'clipped_channel_samples': clipped,
-                             'peak_before_quantization': float(np.max(np.abs(result)))}
+    info = {'filter': chain, 'clipped_channel_samples': clipped,
+            'peak_before_quantization': float(np.max(np.abs(result)))}
+    if match_resampled_length:
+        info['trailing_resampler_frames_removed'] = excess
+    return output, out_bits, info
 
 
 def smoke(output):

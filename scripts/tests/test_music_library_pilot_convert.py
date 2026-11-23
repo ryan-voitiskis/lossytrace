@@ -25,6 +25,19 @@ class ConversionTests(unittest.TestCase):
         with self.assertRaises(ValueError):m.trim(b'\0'*41,16,10)
         with self.assertRaises(ValueError):m.trim(b'\0'*4*(10+2049),16,10)
 
+    def test_native_mono_trim_counts_frames_at_either_depth(self):
+        for bits in (16, 24):
+            stride = bits // 8
+            raw = bytes(range(8 * stride))
+            self.assertEqual(m.trim(raw, bits, 7, channels=1), (raw[:-stride], 1))
+            with self.assertRaises(ValueError):
+                m.trim(raw[:-1], bits, 7, channels=1)
+        with self.assertRaises(ValueError):
+            m.from_pcm(b'abc', 'unused.wav', 44100, 16, channels=1)
+        for count in (0, 3, True):
+            with self.assertRaises(ValueError):
+                m.pcm_stride(24, count)
+
     def test_mp3_options(self):
         with patch.object(m,'ff') as ff:
             m.encode('in.wav','out.mp3','mp3',128)

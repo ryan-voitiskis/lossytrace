@@ -55,9 +55,16 @@ def probe(path):
     return d
 
 
-def validate_stream(path, rate, codec=None):
+def pcm_stride(bits, channels):
+    if type(bits) is not int or bits not in (16, 24) or type(channels) is not int or channels not in (1, 2):
+        raise ValueError('expected native mono/stereo 16/24-bit PCM')
+    return channels * (bits // 8)
+
+
+def validate_stream(path, rate, codec=None, *, channels=2):
     p = probe(path); s = p['streams'][0]
-    if int(s['sample_rate']) != rate or s['channels'] != 2:
+    if (type(channels) is not int or channels not in (1, 2)
+            or int(s['sample_rate']) != rate or s['channels'] != channels):
         raise ValueError('native rate/channel mismatch')
     if codec is not None and s['codec_name'] != codec:
         raise ValueError('codec mismatch')
@@ -71,8 +78,8 @@ def decode(path, bits):
                '-c:a',f'pcm_s{bits}le','-f',f's{bits}le','pipe:1'])
 
 
-def trim(raw, bits, frames):
-    stride = 2*(bits//8)
+def trim(raw, bits, frames, *, channels=2):
+    stride = pcm_stride(bits, channels)
     if len(raw) % stride:
         raise ValueError('partial decoded frame')
     actual = len(raw)//stride
@@ -81,9 +88,11 @@ def trim(raw, bits, frames):
     return raw[:frames*stride], actual-frames
 
 
-def from_pcm(raw, path, rate, bits, flac=False):
+def from_pcm(raw, path, rate, bits, flac=False, *, channels=2):
+    if len(raw) % pcm_stride(bits, channels):
+        raise ValueError('partial input frame')
     codec = ['-c:a','flac','-compression_level','5'] if flac else ['-c:a',f'pcm_s{bits}le']
-    ff(['-f',f's{bits}le','-ar',str(rate),'-ac','2','-i','pipe:0',
+    ff(['-f',f's{bits}le','-ar',str(rate),'-ac',str(channels),'-i','pipe:0',
         '-map_metadata','-1','-threads','1','-fflags','+bitexact',
         '-flags:a','+bitexact',*codec,path], raw)
 
