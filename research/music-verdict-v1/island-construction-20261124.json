@@ -1,0 +1,43 @@
+{
+  "render": {
+    "project_commit": "ed6d3e43e1f5460e6f7d3c38d27dd7328b8adff6",
+    "inputs_sha256": {
+      "LICENSE": "b6bb9e1e8f0842643ede8c2568113b4ef77f18b734e8f9483d0439cf4d04c13c",
+      "text/src/music.ts": "3474df775eee55526ac4cf2556966f32028af7ae4aaa0f8c03d269bda20a8303",
+      "text/src/math/scalar.ts": "5cffa1f3e4ed33fe489d147b7c8b7cbc64d17eb6b1daa4efe0bbfa5e5cd44ecb",
+      "text/src/soundbox/song.js": "a836f598ad0a97e9d5c044163eb245e88796fb6adcf823f1e279e6c13ccf3489",
+      "text/src/soundbox/player.ts": "cb1a652f44ba2db25378720f2ba0bc9cda4399731165334bf9a76ebb07bc9894"
+    },
+    "node": "v24.14.0",
+    "v8": "13.6.233.17-node.41",
+    "arch": "arm64",
+    "platform": "darwin",
+    "v8_random_seed": 20260927,
+    "frames": 5292000,
+    "rate_hz": 44100,
+    "channels": 2,
+    "bits_per_sample": 16,
+    "wav_sha256": "eadad87ab36934675799ad17733fd9a6eae45a3bceeecd6f57779a59aec22b1b",
+    "s16le_sha256": "07eaeca3491b44f3dd5cdceb67ef525e6d3f24bce916147378ddbe12a58e475b"
+  },
+  "ffmpeg": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+  "libsndfile": "1.2.2",
+  "files": {
+    "score.wav": {
+      "file_sha256": "eadad87ab36934675799ad17733fd9a6eae45a3bceeecd6f57779a59aec22b1b",
+      "s16le_sha256": "07eaeca3491b44f3dd5cdceb67ef525e6d3f24bce916147378ddbe12a58e475b"
+    },
+    "direct.flac": {
+      "file_sha256": "fd75f98f1bf958a6eed2200aa91836094a0e58e41a3edecc0762701d278c4e5e",
+      "s16le_sha256": "07eaeca3491b44f3dd5cdceb67ef525e6d3f24bce916147378ddbe12a58e475b"
+    },
+    "intermediate.mp3": {
+      "file_sha256": "07845e8e88fa942637ccf8eacaa007bb5b123e07fa4f28ca7fed601b8298fa9d",
+      "s16le_sha256": "323343b6a11802fd038feb21c07f5693ae349ab6271a4bc3d3992d489a02d601"
+    },
+    "roundtrip.flac": {
+      "file_sha256": "79d533dfba93d73c760f14fdb3eac9adf10b39822c2b68c0c461b32ee9875168",
+      "s16le_sha256": "323343b6a11802fd038feb21c07f5693ae349ab6271a4bc3d3992d489a02d601"
+    }
+  }
+}
