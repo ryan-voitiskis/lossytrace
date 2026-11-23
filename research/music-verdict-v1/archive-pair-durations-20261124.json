@@ -1,0 +1,710 @@
+{
+  "potpourri": {
+    "counts": {
+      "flac_children": 137,
+      "flac_within_two_seconds": 137,
+      "mp3_children": 137,
+      "mp3_within_two_seconds": 137,
+      "original_wavs": 137
+    },
+    "parents_with_discrepant_mp3": 0,
+    "records": []
+  },
+  "raretunes": {
+    "counts": {
+      "affected_parents_also_with_matching_flac": 62,
+      "affected_parents_also_with_matching_mp3": 62,
+      "affected_parents_in_previous_shortlist": 14,
+      "flac_children": 251,
+      "flac_within_two_seconds": 251,
+      "mp3_children": 372,
+      "mp3_within_two_seconds": 310,
+      "original_wavs": 252
+    },
+    "parents_with_discrepant_mp3": 62,
+    "records": [
+      {
+        "declared_parent_length": "106.2",
+        "discrepant_mp3": [
+          {
+            "declared_length": "02:36",
+            "name": "raretuneswhistlebinkiesals_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_165_auld-lang-syne",
+        "parent": "raretuneswhistlebinkiesals.wav"
+      },
+      {
+        "declared_parent_length": "101.73",
+        "discrepant_mp3": [
+          {
+            "declared_length": "08:12",
+            "name": "raretuneswinter_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_167_winter-it-past",
+        "parent": "raretuneswinter.wav"
+      },
+      {
+        "declared_parent_length": "220.71",
+        "discrepant_mp3": [
+          {
+            "declared_length": "18:06",
+            "name": "raretunesbonny_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_169_bonny-morn",
+        "parent": "raretunesbonny.wav"
+      },
+      {
+        "declared_parent_length": "87.63",
+        "discrepant_mp3": [
+          {
+            "declared_length": "08:04",
+            "name": "raretunesbroderickcaesar_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_171_ave-caesar",
+        "parent": "raretunesbroderickcaesar.wav"
+      },
+      {
+        "declared_parent_length": "139.43",
+        "discrepant_mp3": [
+          {
+            "declared_length": "03:10",
+            "name": "raretunesbroderickmark_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_172_mark-had-everything",
+        "parent": "raretunesbroderickmark.wav"
+      },
+      {
+        "declared_parent_length": "645.79",
+        "discrepant_mp3": [
+          {
+            "declared_length": "58:05",
+            "name": "raretunesbroderickprince_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_174_prince-has-landed",
+        "parent": "raretunesbroderickprince.wav"
+      },
+      {
+        "declared_parent_length": "244.62",
+        "discrepant_mp3": [
+          {
+            "declared_length": "20:37",
+            "name": "raretunesbroderickdick_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_175_dick-barton-special-agent",
+        "parent": "raretunesbroderickdick.wav"
+      },
+      {
+        "declared_parent_length": "325.84",
+        "discrepant_mp3": [
+          {
+            "declared_length": "24:34",
+            "name": "raretunesbroderickchanter_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_176_silver-chanter",
+        "parent": "raretunesbroderickchanter.wav"
+      },
+      {
+        "declared_parent_length": "156.44",
+        "discrepant_mp3": [
+          {
+            "declared_length": "03:31",
+            "name": "raretunesrobin_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_177_robin",
+        "parent": "raretunesrobin.wav"
+      },
+      {
+        "declared_parent_length": "191.88",
+        "discrepant_mp3": [
+          {
+            "declared_length": "11:30",
+            "name": "raretunesscotlandia2_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_180_scotlandia-2",
+        "parent": "raretunesscotlandia2.wav"
+      },
+      {
+        "declared_parent_length": "257.82",
+        "discrepant_mp3": [
+          {
+            "declared_length": "25:07",
+            "name": "raretuneschadwickdamihimanum_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_204_da-mihi-manum",
+        "parent": "raretuneschadwickdamihimanum.wav"
+      },
+      {
+        "declared_parent_length": "42.9",
+        "discrepant_mp3": [
+          {
+            "declared_length": "01:04",
+            "name": "raretuneseydmanntrumpet_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_211_trumpet-hornpipe",
+        "parent": "raretuneseydmanntrumpet.wav"
+      },
+      {
+        "declared_parent_length": "139.66",
+        "discrepant_mp3": [
+          {
+            "declared_length": "03:25",
+            "name": "raretuneseydmann1999_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_218_1999",
+        "parent": "raretuneseydmann1999.wav"
+      },
+      {
+        "declared_parent_length": "176.77",
+        "discrepant_mp3": [
+          {
+            "declared_length": "13:26",
+            "name": "raretuneseydmannloopme_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_219_loop-me",
+        "parent": "raretuneseydmannloopme.wav"
+      },
+      {
+        "declared_parent_length": "465.92",
+        "discrepant_mp3": [
+          {
+            "declared_length": "45:51",
+            "name": "raretunesharmonyimpro_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_256_improvisation",
+        "parent": "raretunesharmonyimpro.wav"
+      },
+      {
+        "declared_parent_length": "123.8",
+        "discrepant_mp3": [
+          {
+            "declared_length": "12:06",
+            "name": "raretunesmolendinarpaddy_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_257_paddys-leather-breeches",
+        "parent": "raretunesmolendinarpaddy.wav"
+      },
+      {
+        "declared_parent_length": "80.38",
+        "discrepant_mp3": [
+          {
+            "declared_length": "04:46",
+            "name": "raretunesburlwee_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_264_wee-cooper-o-fife",
+        "parent": "raretunesburlwee.wav"
+      },
+      {
+        "declared_parent_length": "134.95",
+        "discrepant_mp3": [
+          {
+            "declared_length": "04:23",
+            "name": "raretunesmikeberry1_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_265_halting-march",
+        "parent": "raretunesmikeberry1.wav"
+      },
+      {
+        "declared_parent_length": "215.33",
+        "discrepant_mp3": [
+          {
+            "declared_length": "10:07",
+            "name": "raretunesgordonconvict_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_266_convicts-song",
+        "parent": "raretunesgordonconvict.wav"
+      },
+      {
+        "declared_parent_length": "238.71",
+        "discrepant_mp3": [
+          {
+            "declared_length": "04:34",
+            "name": "raretunescarloscamilo_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_267_song-camilo",
+        "parent": "raretunescarloscamilo.wav"
+      },
+      {
+        "declared_parent_length": "40.59",
+        "discrepant_mp3": [
+          {
+            "declared_length": "01:42",
+            "name": "raretunesbethelclyde_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_268_falls-clyde",
+        "parent": "raretunesbethelclyde.wav"
+      },
+      {
+        "declared_parent_length": "151.95",
+        "discrepant_mp3": [
+          {
+            "declared_length": "11:09",
+            "name": "raretuneselricbarnyards_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_269_barnyards-delgaty-2",
+        "parent": "raretuneselricbarnyards.wav"
+      },
+      {
+        "declared_parent_length": "379.18",
+        "discrepant_mp3": [
+          {
+            "declared_length": "07:06",
+            "name": "raretunescarlosneruda_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_270_song-pablo-neruda",
+        "parent": "raretunescarlosneruda.wav"
+      },
+      {
+        "declared_parent_length": "386.17",
+        "discrepant_mp3": [
+          {
+            "declared_length": "05:01",
+            "name": "raretunescarloscoraje_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_271_el-coraje",
+        "parent": "raretunescarloscoraje.wav"
+      },
+      {
+        "declared_parent_length": "151.19",
+        "discrepant_mp3": [
+          {
+            "declared_length": "09:27",
+            "name": "rareunestusonrye_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_273_comin-through-rye",
+        "parent": "rareunestusonrye.wav"
+      },
+      {
+        "declared_parent_length": "94.04",
+        "discrepant_mp3": [
+          {
+            "declared_length": "04:26",
+            "name": "raretunesbaillierye_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_274_coming-through-rye-2",
+        "parent": "raretunesbaillierye.wav"
+      },
+      {
+        "declared_parent_length": "113.51",
+        "discrepant_mp3": [
+          {
+            "declared_length": "07:23",
+            "name": "raretunescuffeauldlang_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_275_auld-lang-syne-2",
+        "parent": "raretunescuffeauldlang.wav"
+      },
+      {
+        "declared_parent_length": "154.39",
+        "discrepant_mp3": [
+          {
+            "declared_length": "12:53",
+            "name": "raretunesrobsonerisk_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_276_eriskay-love-lilt-2",
+        "parent": "raretunesrobsonerisk.wav"
+      },
+      {
+        "declared_parent_length": "144.89",
+        "discrepant_mp3": [
+          {
+            "declared_length": "05:58",
+            "name": "raretunesorganstra__vbr.mp3"
+          }
+        ],
+        "item": "raretunes_277_stracathro-2",
+        "parent": "raretunesorganstra_.wav"
+      },
+      {
+        "declared_parent_length": "64.45",
+        "discrepant_mp3": [
+          {
+            "declared_length": "01:15",
+            "name": "raretunesmikebsligo_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_279_tar-road-sligo",
+        "parent": "raretunesmikebsligo.wav"
+      },
+      {
+        "declared_parent_length": "133",
+        "discrepant_mp3": [
+          {
+            "declared_length": "06:57",
+            "name": "raretunesmikebchristmas_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_280_christmas-eve",
+        "parent": "raretunesmikebchristmas.wav"
+      },
+      {
+        "declared_parent_length": "147.51",
+        "discrepant_mp3": [
+          {
+            "declared_length": "11:44",
+            "name": "raretunesmikebbucks_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_281_bucks-oranmore",
+        "parent": "raretunesmikebbucks.wav"
+      },
+      {
+        "declared_parent_length": "330.09",
+        "discrepant_mp3": [
+          {
+            "declared_length": "18:11",
+            "name": "raretunescuffejraeburn_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_284_jamie-raeburn",
+        "parent": "raretunescuffejraeburn.wav"
+      },
+      {
+        "declared_parent_length": "145.91",
+        "discrepant_mp3": [
+          {
+            "declared_length": "08:19",
+            "name": "raretunescuffewhenfirst_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_285_when-first-i-went-caledonia",
+        "parent": "raretunescuffewhenfirst.wav"
+      },
+      {
+        "declared_parent_length": "200.24",
+        "discrepant_mp3": [
+          {
+            "declared_length": "04:16",
+            "name": "raretunesmarianelegie_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_286_elegie",
+        "parent": "raretunesmarianelegie.wav"
+      },
+      {
+        "declared_parent_length": "189.82",
+        "discrepant_mp3": [
+          {
+            "declared_length": "04:00",
+            "name": "raretunesmarianarye_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_288_comin-through-rye-3",
+        "parent": "raretunesmarianarye.wav"
+      },
+      {
+        "declared_parent_length": "44.38",
+        "discrepant_mp3": [
+          {
+            "declared_length": "02:05",
+            "name": "raretuneswbrownwestering_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_289_westering-home",
+        "parent": "raretuneswbrownwestering.wav"
+      },
+      {
+        "declared_parent_length": "44.56",
+        "discrepant_mp3": [
+          {
+            "declared_length": "02:20",
+            "name": "raretuneswfbrownwaltz_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_290_waltz",
+        "parent": "raretuneswfbrownwaltz.wav"
+      },
+      {
+        "declared_parent_length": "206.28",
+        "discrepant_mp3": [
+          {
+            "declared_length": "13:04",
+            "name": "raretunestrucksessflow_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_291_flow-gently-sweet-afton",
+        "parent": "raretunestrucksessflow.wav"
+      },
+      {
+        "declared_parent_length": "99.69",
+        "discrepant_mp3": [
+          {
+            "declared_length": "05:06",
+            "name": "raretunescuffeharlaw_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_292_battle-harlaw",
+        "parent": "raretunescuffeharlaw.wav"
+      },
+      {
+        "declared_parent_length": "64.4",
+        "discrepant_mp3": [
+          {
+            "declared_length": "03:33",
+            "name": "raretunescuffeparcel_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_293_such-parcel-rougues-nation",
+        "parent": "raretunescuffeparcel.wav"
+      },
+      {
+        "declared_parent_length": "161.16",
+        "discrepant_mp3": [
+          {
+            "declared_length": "11:29",
+            "name": "raretunescuffeparcel2_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_294_such-parcel-rougues-nation-2",
+        "parent": "raretunescuffeparcel2.wav"
+      },
+      {
+        "declared_parent_length": "155.21",
+        "discrepant_mp3": [
+          {
+            "declared_length": "06:22",
+            "name": "raretunesjeandavid_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_295_my-son-david",
+        "parent": "raretunesjeandavid.wav"
+      },
+      {
+        "declared_parent_length": "43.65",
+        "discrepant_mp3": [
+          {
+            "declared_length": "02:07",
+            "name": "raretunesjeantulloch_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_296_reel-tullochgorum",
+        "parent": "raretunesjeantulloch.wav"
+      },
+      {
+        "declared_parent_length": "119.55",
+        "discrepant_mp3": [
+          {
+            "declared_length": "05:54",
+            "name": "raretunesjeanewie_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_297_yowie-wi-crookit-horn",
+        "parent": "raretunesjeanewie.wav"
+      },
+      {
+        "declared_parent_length": "138.63",
+        "discrepant_mp3": [
+          {
+            "declared_length": "04:29",
+            "name": "raretuneshallaggie_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_298_ludgin-wi-big-aggie",
+        "parent": "raretuneshallaggie.wav"
+      },
+      {
+        "declared_parent_length": "58.56",
+        "discrepant_mp3": [
+          {
+            "declared_length": "01:33",
+            "name": "raretuneshallgallus_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_300_yer-ma-wee-gallus-bloke-nae-mair",
+        "parent": "raretuneshallgallus.wav"
+      },
+      {
+        "declared_parent_length": "300.51",
+        "discrepant_mp3": [
+          {
+            "declared_length": "22:19",
+            "name": "raretuneshallbleach_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_302_bleacher-lassie-o-kelvinhaugh",
+        "parent": "raretuneshallbleach.wav"
+      },
+      {
+        "declared_parent_length": "208.67",
+        "discrepant_mp3": [
+          {
+            "declared_length": "16:25",
+            "name": "raretunesdaveybarn_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_303_barnyards-o-delgaty",
+        "parent": "raretunesdaveybarn.wav"
+      },
+      {
+        "declared_parent_length": "79.71",
+        "discrepant_mp3": [
+          {
+            "declared_length": "06:01",
+            "name": "raretunesmacdcromdale_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_304_haughs-cromdale",
+        "parent": "raretunesmacdcromdale.wav"
+      },
+      {
+        "declared_parent_length": "154.2",
+        "discrepant_mp3": [
+          {
+            "declared_length": "06:25",
+            "name": "raretunesalexwillie_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_305_willys-rare",
+        "parent": "raretunesalexwillie.wav"
+      },
+      {
+        "declared_parent_length": "122.9",
+        "discrepant_mp3": [
+          {
+            "declared_length": "06:05",
+            "name": "raretunesrorycraw_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_306_craw-killed-pussie-o",
+        "parent": "raretunesrorycraw.wav"
+      },
+      {
+        "declared_parent_length": "124.45",
+        "discrepant_mp3": [
+          {
+            "declared_length": "03:35",
+            "name": "raretuneslorient20071_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_307_lorient-festival-2007-1",
+        "parent": "raretuneslorient20071.wav"
+      },
+      {
+        "declared_parent_length": "696",
+        "discrepant_mp3": [
+          {
+            "declared_length": "68:44",
+            "name": "raretuneslorient20072_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_308_lorient-festival-2007-2",
+        "parent": "raretuneslorient20072.wav"
+      },
+      {
+        "declared_parent_length": "1055.81",
+        "discrepant_mp3": [
+          {
+            "declared_length": "83:53",
+            "name": "raretuneslorient20073_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_309_lorient-festival-3",
+        "parent": "raretuneslorient20073.wav"
+      },
+      {
+        "declared_parent_length": "160.84",
+        "discrepant_mp3": [
+          {
+            "declared_length": "11:09",
+            "name": "raretunescuffeglencoe_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_310_pride-glencoe",
+        "parent": "raretunescuffeglencoe.wav"
+      },
+      {
+        "declared_parent_length": "62.67",
+        "discrepant_mp3": [
+          {
+            "declared_length": "01:29",
+            "name": "raretunescufferobin_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_311_rantin-rovin-robin-1",
+        "parent": "raretunescufferobin.wav"
+      },
+      {
+        "declared_parent_length": "37.07",
+        "discrepant_mp3": [
+          {
+            "declared_length": "02:50",
+            "name": "raretunescufferobin2__vbr.mp3"
+          }
+        ],
+        "item": "raretunes_312_rantin-rovin-robin-2",
+        "parent": "raretunescufferobin2_.wav"
+      },
+      {
+        "declared_parent_length": "202.46",
+        "discrepant_mp3": [
+          {
+            "declared_length": "05:43",
+            "name": "raretunescuffeforathat__vbr.mp3"
+          }
+        ],
+        "item": "raretunes_314_mans-man",
+        "parent": "raretunescuffeforathat_.wav"
+      },
+      {
+        "declared_parent_length": "131.47",
+        "discrepant_mp3": [
+          {
+            "declared_length": "02:55",
+            "name": "raretunescuffescots_vbr.mp3"
+          }
+        ],
+        "item": "raretunes_315_scots-wha-hae-wi-wallace-bled-2",
+        "parent": "raretunescuffescots.wav"
+      },
+      {
+        "declared_parent_length": "187.3",
+        "discrepant_mp3": [
+          {
+            "declared_length": "14:11",
+            "name": "raretunescuffemorning__vbr.mp3"
+          }
+        ],
+        "item": "raretunes_317_nornins-nae-me",
+        "parent": "raretunescuffemorning_.wav"
+      },
+      {
+        "declared_parent_length": "229.13",
+        "discrepant_mp3": [
+          {
+            "declared_length": "17:45",
+            "name": "raretunescuffeaefond__vbr.mp3"
+          }
+        ],
+        "item": "raretunes_318_ae-fond-kiss",
+        "parent": "raretunescuffeaefond_.wav"
+      }
+    ]
+  }
+}
