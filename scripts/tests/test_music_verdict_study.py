@@ -208,5 +208,82 @@ class InventoryTest(unittest.TestCase):
             self.assertNotIn(directory, result.stdout + result.stderr)
 
 
+class ReferenceGraphTest(unittest.TestCase):
+    def setUp(self):
+        self.doc = inventory()
+        self.doc.update(schema_version=2, identity_references=[])
+        self.train = self.doc["sources"][0]
+        self.evaluation = self.doc["sources"][-1]
+
+    def reference(self, source_id, status="unselected", **edges):
+        row = dict(source_id=source_id, history_status=status, audio_sha256=None,
+                   artist_ids=[], session_ids=[], lineage_ids=[], identity_refs=["synthetic reference"])
+        row.update(edges)
+        self.doc["identity_references"].append(row)
+        return row
+
+    def audit(self):
+        return study.audit_inventory(self.doc)
+
+    def test_reference_bridge_connects_splits_without_allocating_a_reference(self):
+        self.reference("collaboration", artist_ids=self.train["artist_ids"], lineage_ids=["remix"])
+        self.reference("outside-catalogue", lineage_ids=["remix"], session_ids=self.evaluation["session_ids"])
+        result = self.audit()
+        self.assertEqual(result["source_rows"], 540)
+        self.assertEqual(result["identity_components"], 539)
+        self.assertEqual(result["errors"]["cross_partition_identity_component"], 1)
+        self.assertNotIn("collaboration", json.dumps(result))
+        self.doc["sources"].reverse()
+        self.doc["identity_references"].reverse()
+        self.assertEqual(self.audit(), result)
+
+    def test_reference_history_follows_indirect_identity_links_into_fresh_splits(self):
+        for partition in ("calibration", "evaluation"):
+            source = next(r for r in self.doc["sources"] if r["partition"] == partition)
+            self.reference(partition, artist_ids=source["artist_ids"], session_ids=[partition])
+        for partition in ("calibration", "evaluation"):
+            self.reference("archive-" + partition, status="consumed", session_ids=[partition])
+        for status in ("consumed", "sealed", "unresolved"):
+            for row in self.doc["identity_references"][-2:]:
+                row["history_status"] = status
+            self.assertEqual(self.audit()["errors"], {"nonfresh_reference_component": 2})
+
+    def test_exact_copy_history_uses_both_identifiers_even_through_a_reference(self):
+        self.train["consumed"] = False
+        self.reference(self.train["source_id"], audio_sha256="e" * 64)
+        record = self.reference("other-edition", status="consumed", audio_sha256="e" * 64)
+        self.assertEqual(self.audit()["errors"], {"unlabelled_consumed_reference_copy": 1})
+        self.train["consumed"] = True
+        self.assertEqual(self.audit()["errors"], {})
+        record["history_status"] = "sealed"
+        self.assertEqual(self.audit()["errors"], {"historically_sealed_reference_copy": 1})
+
+    def test_reference_only_components_do_not_inflate_counts_or_merge_unknown_keys(self):
+        self.reference("unrelated", status="sealed", artist_ids=["a"])
+        self.reference("other", status="consumed", session_ids=["a"])
+        self.reference("sibling", lineage_ids=self.evaluation["lineage_ids"])
+        result = self.audit()
+        self.assertEqual(result["groups_by_partition"], study.PARTITIONS)
+        self.assertEqual(result["reference_only_components"], 2)
+        self.assertEqual(result["allocated_components_with_references"], 1)
+        self.assertEqual(result["state"], "metadata_checks_passed")
+        self.assertFalse(result["execution_ready"])
+
+    def test_invalid_references_and_duplicate_ids_block_preflight(self):
+        ref = self.reference("private-source")
+        for field, value in (("audio_sha256", ""), ("artist_ids", [None]),
+                             ("history_status", "new"), ("identity_refs", []), ("extra", "private")):
+            with self.subTest(field=field):
+                self.doc["identity_references"] = [ref | {field: value}]
+                self.assertEqual(self.audit()["errors"], {"invalid_identity_reference": 1})
+        self.doc["identity_references"] = [ref, ref]
+        self.assertEqual(self.audit()["errors"], {"duplicate_reference_source_id": 1})
+
+    def test_version_2_requires_an_explicit_reference_list(self):
+        del self.doc["identity_references"]
+        with self.assertRaises(ValueError):
+            self.audit()
+
+
 if __name__ == "__main__":
     unittest.main()

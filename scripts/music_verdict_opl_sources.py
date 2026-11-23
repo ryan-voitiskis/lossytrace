@@ -11,6 +11,7 @@ from urllib.parse import unquote
 from urllib.request import urlopen
 
 from music_verdict_raretunes_groups import group
+from music_verdict_study import identity_components
 
 
 FORMATS = ("opl2", "opl3", "adlib")
@@ -188,12 +189,26 @@ def summarize(root, catalogue=None, lineage=None):
                                      if normalized(a["name"]) == normalized(work["artist"]))
             remaining = originals - held
             reviewed_groups = group(reviewed_keys)
+            # Preserve off-shortlist evidence for the same graph used by study preflight.
+            # Title matches stay provisional and distinct from confirmed work lineages.
+            graph_rows = [
+                dict(source_id=i, artist_ids=[v for kind, v in labels if kind == "artist"],
+                     session_ids=[], lineage_ids=[f"{kind}:{v}" for kind, v in labels if kind != "artist"],
+                     audio_sha256=None)
+                for i, labels in reviewed_keys.items()
+            ]
+            selected = [row for row in graph_rows if row["source_id"] in remaining]
+            linked_count = sum(any(row["source_id"] in remaining for row in members)
+                               for members in identity_components(graph_rows))
+            if linked_count != sum(not remaining.isdisjoint(c) for c in reviewed_groups):
+                raise ValueError("reference graph disagrees with independent catalogue grouping")
             result["lineage_review"] = {
                 "cover_only_event_entries": len(held),
                 "catalogue_originals_held": sorted(originals & held, key=int),
                 "remaining_entry_ids": sorted(remaining, key=int),
                 "remaining_entries": len(remaining),
-                "provisional_groups": sum(not remaining.isdisjoint(c) for c in reviewed_groups),
+                "provisional_groups": linked_count,
+                "shortlist_only_groups": len(identity_components(selected)),
                 "represented_competitions": len({records[i]["battle"] for i in remaining}),
             }
     elif lineage is not None:

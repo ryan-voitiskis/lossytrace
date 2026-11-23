@@ -84,8 +84,9 @@ def _refs(value: object) -> bool:
     return isinstance(value, list) and bool(value) and all(_text(v) for v in value)
 
 
-def _identities(value: object) -> bool:
-    return _refs(value) and len(value) == len(set(value))
+def _identities(value: object, *, allow_empty: bool = False) -> bool:
+    return (isinstance(value, list) and (allow_empty or bool(value))
+            and all(_text(v) for v in value) and len(value) == len(set(value)))
 
 
 def _unique_object(pairs: list[tuple]) -> dict:
@@ -97,6 +98,45 @@ def _unique_object(pairs: list[tuple]) -> dict:
     return result
 
 
+def identity_components(rows: list[dict], keys=("source_id", *IDENTITY_KEYS, "audio_sha256")):
+    """Group rows by transitive equality of typed identities. Empty edges never match."""
+    parent = list(range(len(rows)))
+
+    def root(i: int) -> int:
+        while parent[i] != i:
+            parent[i] = parent[parent[i]]
+            i = parent[i]
+        return i
+
+    identities = {}
+    for i, row in enumerate(rows):
+        for key in keys:
+            values = row[key] if key in IDENTITY_KEYS else [row[key]]
+            for value in values:
+                if value is None:
+                    continue
+                identity = (key, value)
+                if identity in identities:
+                    parent[root(i)] = root(identities[identity])
+                else:
+                    identities[identity] = i
+
+    components = defaultdict(list)
+    for i, row in enumerate(rows):
+        components[root(i)].append(row)
+    return list(components.values())
+
+
+def valid_reference(row: object) -> bool:
+    keys = {"source_id", *IDENTITY_KEYS, "audio_sha256", "history_status", "identity_refs"}
+    return (isinstance(row, dict) and set(row) == keys
+            and _text(row["source_id"]) and _refs(row["identity_refs"])
+            and row["history_status"] in ("unselected", "consumed", "sealed", "unresolved")
+            and all(_identities(row[k], allow_empty=True) for k in IDENTITY_KEYS)
+            and (row["audio_sha256"] is None or (
+                isinstance(row["audio_sha256"], str) and SHA256.fullmatch(row["audio_sha256"]) is not None)))
+
+
 def audit_inventory(document: dict) -> dict:
     """Check a private, manually qualified metadata inventory; fail closed.
 
@@ -105,9 +145,14 @@ def audit_inventory(document: dict) -> dict:
     Shared provider alone is not a grouping edge; its generalization boundary
     is checked separately by a wholly held-out provider requirement.
     """
-    if (not isinstance(document, dict) or set(document) != {"schema_version", "sources"}
-            or type(document["schema_version"]) is not int or document["schema_version"] != 1
-            or not isinstance(document["sources"], list)):
+    if not isinstance(document, dict) or type(document.get("schema_version")) is not int:
+        raise ValueError("invalid inventory envelope")
+    version = document["schema_version"]
+    fields = {"schema_version", "sources"}
+    if version == 2:
+        fields.add("identity_references")
+    if (version not in (1, 2) or set(document) != fields or not isinstance(document["sources"], list)
+            or (version == 2 and not isinstance(document["identity_references"], list))):
         raise ValueError("invalid inventory envelope")
     rows = document["sources"]
     seen = set()
@@ -142,39 +187,49 @@ def audit_inventory(document: dict) -> dict:
             errors["unqualified_research_rights"] += 1
         valid.append(row)
 
-    # Transitive artist/session/work/hash components, not nominal track count.
-    parent = list(range(len(valid)))
+    references = []
+    reference_ids = set()
+    for row in document.get("identity_references", []):
+        if not valid_reference(row):
+            errors["invalid_identity_reference"] += 1
+            continue
+        if row["source_id"] in reference_ids:
+            errors["duplicate_reference_source_id"] += 1
+        reference_ids.add(row["source_id"])
+        references.append(row)
 
-    def root(i: int) -> int:
-        while parent[i] != i:
-            parent[i] = parent[parent[i]]
-            i = parent[i]
-        return i
-
-    identities = {}
-    for i, row in enumerate(valid):
-        for key in (*IDENTITY_KEYS, "audio_sha256"):
-            values = [row[key]] if key == "audio_sha256" else row[key]
-            for value in values:
-                identity = (key, value)
-                if identity in identities:
-                    parent[root(i)] = root(identities[identity])
-                else:
-                    identities[identity] = i
-
-    components = defaultdict(list)
-    for i, row in enumerate(valid):
-        components[root(i)].append(row)
+    graph_rows = valid + references
+    components = (identity_components(graph_rows) if version == 2 else
+                  identity_components(valid, (*IDENTITY_KEYS, "audio_sha256")))
+    if references:
+        for copies in identity_components(graph_rows, ("source_id", "audio_sha256")):
+            history = {r["history_status"] for r in copies if "history_status" in r}
+            for row in copies:
+                if "partition" in row:
+                    if "sealed" in history:
+                        errors["historically_sealed_reference_copy"] += 1
+                    if "consumed" in history and not row["consumed"]:
+                        errors["unlabelled_consumed_reference_copy"] += 1
+    allocated_components = 0
+    linked_components = 0
     counts = Counter()
     eval_providers = Counter()
     non_eval_providers = set()
-    for members in components.values():
+    for component in components:
+        members = [r for r in component if "partition" in r]
+        if not members:
+            continue
+        allocated_components += 1
+        history = {r["history_status"] for r in component if "history_status" in r}
+        linked_components += bool(history)
         partitions = {r["partition"] for r in members}
         if len(partitions) != 1:
             errors["cross_partition_identity_component"] += 1
             continue
         partition = next(iter(partitions))
         counts[partition] += 1
+        if partition in {"calibration", "evaluation"} and history & {"consumed", "sealed", "unresolved"}:
+            errors["nonfresh_reference_component"] += 1
         if partition in {"calibration", "evaluation"} and len(members) != 1:
             errors["multiple_representatives_in_calibration_or_evaluation"] += 1
         if partition == "evaluation":
@@ -196,14 +251,14 @@ def audit_inventory(document: dict) -> dict:
         errors["no_wholly_held_out_evaluation_provider"] += 1
     rights_cleared = bool(rows) and len(valid) == len(rows) and all(
         r["rights_status"] == "research_and_weights_cleared" for r in valid)
-    return {
-        "schema_version": 1,
+    result = {
+        "schema_version": version,
         "state": "metadata_checks_passed" if not errors else "metadata_checks_failed",
         "execution_ready": False,
         "public_verdict_enabled": False,
         "provenance_truth_verified_by_this_tool": False,
         "source_rows": len(rows),
-        "identity_components": len(components),
+        "identity_components": allocated_components,
         "groups_by_partition": {k: counts[k] for k in PARTITIONS},
         "evaluation_provider_group_counts": sorted(eval_providers.values()),
         "errors": dict(sorted(errors.items())),
@@ -211,6 +266,11 @@ def audit_inventory(document: dict) -> dict:
         "zero_alert_sample_minimum_for_one_percent": zero_alert_sample_minimum(),
         "zero_alert_upper_bound_at_300_groups": exact_upper(0, 300),
     }
+    if version == 2:
+        result.update(identity_reference_rows=len(document["identity_references"]),
+                      allocated_components_with_references=linked_components,
+                      reference_only_components=len(components) - allocated_components)
+    return result
 
 
 def main() -> int:
