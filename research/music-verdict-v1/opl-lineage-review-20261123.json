@@ -1,0 +1,17 @@
+{
+  "snapshot_sha256": "ad9cb20959cf5813768b9956a224b7b7356f4ca7b877b5f4b55426a55fd40644",
+  "cover_only_battles": ["2462", "10281"],
+  "battle_rule_url": "https://battleofthebits.com/lyceum/View/Decadent%20Decade",
+  "work_lineage_id": "kfaraday:lagomorph-junction",
+  "related_works": [
+    {"title": "lagomorph junction", "artist": "kfaraday", "artist_id": null, "entry_id": null},
+    {"title": "hot bun crossing", "artist": "Jangler", "artist_id": "1632", "entry_id": "21262"},
+    {"title": "Rabbit Connection", "artist": "Bravoman", "artist_id": "14280", "entry_id": "81658"},
+    {"title": "freshpretzel", "artist": "dogsplusplus", "artist_id": "15428", "entry_id": "83985"}
+  ],
+  "entry_evidence": [
+    "https://battleofthebits.com/arena/Entry/hot%2Bbun%2Bcrossing/21262/",
+    "https://battleofthebits.com/arena/Entry/Rabbit%2BConnection/81658/",
+    "https://battleofthebits.com/api/v1/entry/load/83985"
+  ]
+}

@@ -94,7 +94,7 @@ def capture(root):
             raise ValueError("pagination did not terminate")
 
 
-def summarize(root, catalogue=None):
+def summarize(root, catalogue=None, lineage=None):
     records = {}
     digest = hashlib.sha256()
     for token in FORMATS:
@@ -168,6 +168,36 @@ def summarize(root, catalogue=None):
             "originals": counts(originals), "covers": counts(covers),
             "original_entry_ids": sorted(originals, key=int), "cover_entry_ids": sorted(covers, key=int),
         }
+        if lineage is not None:
+            review = json.loads(lineage.read_bytes())
+            if review["snapshot_sha256"] != result["snapshot_sha256"]:
+                raise ValueError("lineage review refers to a different entry inventory")
+            held = {i for i, row in records.items() if row["battle"] in review["cover_only_battles"]}
+            # Reconcile the reported cover family before counting remaining originals.
+            # Off-catalogue compositions can connect artists represented by other entries.
+            reviewed_keys = {i: labels.copy() for i, labels in keys.items()}
+            for work in review["related_works"]:
+                identity = work["entry_id"] or ("unlisted:" + normalized(work["title"]))
+                edges = reviewed_keys.setdefault(identity, set())
+                edges.update({("lineage", review["work_lineage_id"]), ("title", normalized(work["title"]))})
+                if work["artist_id"]:
+                    edges.add(("artist", work["artist_id"]))
+                else:
+                    for row in records.values():
+                        edges.update(("artist", a["id"]) for a in row["authors"]
+                                     if normalized(a["name"]) == normalized(work["artist"]))
+            remaining = originals - held
+            reviewed_groups = group(reviewed_keys)
+            result["lineage_review"] = {
+                "cover_only_event_entries": len(held),
+                "catalogue_originals_held": sorted(originals & held, key=int),
+                "remaining_entry_ids": sorted(remaining, key=int),
+                "remaining_entries": len(remaining),
+                "provisional_groups": sum(not remaining.isdisjoint(c) for c in reviewed_groups),
+                "represented_competitions": len({records[i]["battle"] for i in remaining}),
+            }
+    elif lineage is not None:
+        raise ValueError("catalogue required for the lineage review")
     return result
 
 
@@ -176,7 +206,8 @@ if __name__ == "__main__":
     parser.add_argument("snapshot", type=Path)
     parser.add_argument("--capture", action="store_true")
     parser.add_argument("--opl-catalogue", type=Path, help="previously saved OPL Archive index HTML")
+    parser.add_argument("--lineage-review", type=Path, help="curated source-work links and cover-only events")
     args = parser.parse_args()
     if args.capture:
         capture(args.snapshot)
-    print(json.dumps(summarize(args.snapshot, args.opl_catalogue), indent=2))
+    print(json.dumps(summarize(args.snapshot, args.opl_catalogue, args.lineage_review), indent=2))
