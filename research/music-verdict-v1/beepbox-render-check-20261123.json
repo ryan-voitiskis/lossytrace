@@ -1,0 +1,236 @@
+{
+  "scope": "single generated score, no model use",
+  "same_seed_byte_replay": true,
+  "numpy": "2.3.2",
+  "soundfile": "0.13.1",
+  "libsndfile": "1.2.2",
+  "ffmpeg": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+  "code_sha256": {
+    "music_verdict_beepbox_fixture.mjs": "30e364a20493e7e130376fe0b7a78d535159b5e4e886e8f686d4cb137f1bebb1",
+    "music_verdict_beepbox_render_check.py": "d4f3945f30c54abe2a7eb831cffc94643467fcdf4f02e405e76008df1a90ecec",
+    "music_library_pilot_convert.py": "40c5fb4c51fe4ba13a6f28889e3e4bcafeed75cb9caca42cd107d88b1632d59b",
+    "music_library_pilot_nuisance.py": "02c6ba36fc7acb055c4c68250def4b7d05b5899529d6dceeae6bce73456af7d5"
+  },
+  "results": [
+    {
+      "render": {
+        "node": "v24.14.0",
+        "v8": "13.6.233.17-node.41",
+        "platform": "darwin",
+        "arch": "arm64",
+        "package_sha256": "e0848d3682b4d85308d10f7993fe9d907731bddb283304ea3fba9b591eb2433a",
+        "library_sha256": "151aac3367db73404eed4404f85b46608a9834d8af3120046328e9ae05b4aa24",
+        "score_sha256": "e495489fb1410fc4714e1b4a22a9ef446df4415c0c9d4d947cec2690d2596004",
+        "rate": 44100,
+        "frames": 1411200,
+        "timbres": [
+          "chip",
+          "FM",
+          "harmonics",
+          "PWM",
+          "Picked String",
+          "noise",
+          "spectrum",
+          "drumset"
+        ],
+        "seed": 20261123,
+        "random_draws": 32792,
+        "f32le_sha256": "1cb85229cdbd008a0a7113fb789d37dd891a45f0a4fac092da66b0c4778b2474"
+      },
+      "alternate_seed_render": {
+        "node": "v24.14.0",
+        "v8": "13.6.233.17-node.41",
+        "platform": "darwin",
+        "arch": "arm64",
+        "package_sha256": "e0848d3682b4d85308d10f7993fe9d907731bddb283304ea3fba9b591eb2433a",
+        "library_sha256": "151aac3367db73404eed4404f85b46608a9834d8af3120046328e9ae05b4aa24",
+        "score_sha256": "e495489fb1410fc4714e1b4a22a9ef446df4415c0c9d4d947cec2690d2596004",
+        "rate": 44100,
+        "frames": 1411200,
+        "timbres": [
+          "chip",
+          "FM",
+          "harmonics",
+          "PWM",
+          "Picked String",
+          "noise",
+          "spectrum",
+          "drumset"
+        ],
+        "seed": 20261124,
+        "random_draws": 32792,
+        "f32le_sha256": "025b76b15f8936d09b583292f0717039bea78b7735f1f422ebb66ea29bbd6125"
+      },
+      "sections": [
+        {
+          "instrument": "chip",
+          "rms": 0.03643931465273161,
+          "changed_frames_with_other_seed": 0
+        },
+        {
+          "instrument": "FM",
+          "rms": 0.02810168321081806,
+          "changed_frames_with_other_seed": 0
+        },
+        {
+          "instrument": "harmonics",
+          "rms": 0.026448997719923012,
+          "changed_frames_with_other_seed": 0
+        },
+        {
+          "instrument": "PWM",
+          "rms": 0.015862838080681067,
+          "changed_frames_with_other_seed": 0
+        },
+        {
+          "instrument": "Picked String",
+          "rms": 0.028811347359925257,
+          "changed_frames_with_other_seed": 0
+        },
+        {
+          "instrument": "noise",
+          "rms": 0.06850133091184607,
+          "changed_frames_with_other_seed": 132304
+        },
+        {
+          "instrument": "spectrum",
+          "rms": 0.06709329088106003,
+          "changed_frames_with_other_seed": 132304
+        },
+        {
+          "instrument": "drumset",
+          "rms": 0.09846691081054205,
+          "changed_frames_with_other_seed": 176400
+        }
+      ],
+      "files": [
+        {
+          "bits": 16,
+          "pcm_sha256": "145d80a257fd4a4fe2067f93019bec260e8a40b96c5d8e3873e57a7b4be968a0",
+          "wrappers": {
+            "wav": "f3ed909dcb1aa30210ecc888aeac30f7c2a5c68e903a9e0fa9edb7f4bdeafe08",
+            "flac": "beae86ffdb829888fe2a90a5ee73b8a3f74af0b7254062be3aa2e0b06f229439"
+          }
+        },
+        {
+          "bits": 24,
+          "pcm_sha256": "1b4abef1bdac684a4ca7d6cbfd54c7144061ed9c03146ee91a5218e943cd506b",
+          "wrappers": {
+            "wav": "d0c80cf8ad0a2eecb2449487d490ebe1c637c06a5620c0ac71a1a35d5daa13b6",
+            "flac": "ce876630cbe499c7e89cc948d116023ba9ed227bdca01cb5608d14be52cae815"
+          }
+        }
+      ]
+    },
+    {
+      "render": {
+        "node": "v24.14.0",
+        "v8": "13.6.233.17-node.41",
+        "platform": "darwin",
+        "arch": "arm64",
+        "package_sha256": "e0848d3682b4d85308d10f7993fe9d907731bddb283304ea3fba9b591eb2433a",
+        "library_sha256": "151aac3367db73404eed4404f85b46608a9834d8af3120046328e9ae05b4aa24",
+        "score_sha256": "e495489fb1410fc4714e1b4a22a9ef446df4415c0c9d4d947cec2690d2596004",
+        "rate": 48000,
+        "frames": 1536000,
+        "timbres": [
+          "chip",
+          "FM",
+          "harmonics",
+          "PWM",
+          "Picked String",
+          "noise",
+          "spectrum",
+          "drumset"
+        ],
+        "seed": 20261123,
+        "random_draws": 32792,
+        "f32le_sha256": "89cb237c9f9867bf2fee7be537af660b939b17337e84ce4d97a6b5c89e514f0a"
+      },
+      "alternate_seed_render": {
+        "node": "v24.14.0",
+        "v8": "13.6.233.17-node.41",
+        "platform": "darwin",
+        "arch": "arm64",
+        "package_sha256": "e0848d3682b4d85308d10f7993fe9d907731bddb283304ea3fba9b591eb2433a",
+        "library_sha256": "151aac3367db73404eed4404f85b46608a9834d8af3120046328e9ae05b4aa24",
+        "score_sha256": "e495489fb1410fc4714e1b4a22a9ef446df4415c0c9d4d947cec2690d2596004",
+        "rate": 48000,
+        "frames": 1536000,
+        "timbres": [
+          "chip",
+          "FM",
+          "harmonics",
+          "PWM",
+          "Picked String",
+          "noise",
+          "spectrum",
+          "drumset"
+        ],
+        "seed": 20261124,
+        "random_draws": 32792,
+        "f32le_sha256": "56d5d6a81d84825f584f0ad32b4b6eaceb851267c050fc4976ce2a6fdc7e9aac"
+      },
+      "sections": [
+        {
+          "instrument": "chip",
+          "rms": 0.036430966455520304,
+          "changed_frames_with_other_seed": 0
+        },
+        {
+          "instrument": "FM",
+          "rms": 0.028100708555734294,
+          "changed_frames_with_other_seed": 0
+        },
+        {
+          "instrument": "harmonics",
+          "rms": 0.026449003680340533,
+          "changed_frames_with_other_seed": 0
+        },
+        {
+          "instrument": "PWM",
+          "rms": 0.01586742512783471,
+          "changed_frames_with_other_seed": 0
+        },
+        {
+          "instrument": "Picked String",
+          "rms": 0.028806618911205926,
+          "changed_frames_with_other_seed": 0
+        },
+        {
+          "instrument": "noise",
+          "rms": 0.06841138581474496,
+          "changed_frames_with_other_seed": 144000
+        },
+        {
+          "instrument": "spectrum",
+          "rms": 0.06708807615532937,
+          "changed_frames_with_other_seed": 144000
+        },
+        {
+          "instrument": "drumset",
+          "rms": 0.09846777815291294,
+          "changed_frames_with_other_seed": 191999
+        }
+      ],
+      "files": [
+        {
+          "bits": 16,
+          "pcm_sha256": "67ab22e5d4edb61f0da48e9de3b94e6962dbc459607d344d4ed1cdd3342496d7",
+          "wrappers": {
+            "wav": "e518b57341b24b7806f183702a76b2245474fd63117817e956d7068239876803",
+            "flac": "bcced34b123d5dcb02a54bd63260a0b39281a495d39d3b1e160d307b0b24e330"
+          }
+        },
+        {
+          "bits": 24,
+          "pcm_sha256": "f461aac1617c673e18039de2f53073c0e04ed4004e6de0609db3d55873a6d0f9",
+          "wrappers": {
+            "wav": "e741c82be56decc6d923b905a2dd313ff5126d9ba1609e53ae28ccd5141422aa",
+            "flac": "d97d6ed42bccd5ce9344f8f86725aae6d5abb0e4d2194933428ed43c5f77380f"
+          }
+        }
+      ]
+    }
+  ]
+}
