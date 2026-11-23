@@ -1,0 +1,23 @@
+{
+  "project_revision": "c5de969696e94c35a635f97f31faa94cb4a6b32c",
+  "inputs_sha256": {
+    "text/src/game/lib/soundbox/music_game.js": "0daca73ccf86e4560b304c1b8ed7b956edee035c8d887d9b6958c5d6ffd81779",
+    "text/src/game/lib/soundbox/soundboxplayer.js": "d71a0a8421a78669bdbeedcc9d9ced48061cbb5d9239fe73efc0eac1d555e412",
+    "text/music_nd_Sound.md": "c1bb6260bcbb9b17169dceffecc01695c1070852b8de3d9a3a96f81018baebe0",
+    "LICENSE": "7eb3cba0e0f53ec7b14712334e7009dbbbf54414a38d269989bad19a2db201dd"
+  },
+  "node": "v24.14.0",
+  "v8": "13.6.233.17-node.41",
+  "arch": "arm64",
+  "platform": "darwin",
+  "random_seed": 20260927,
+  "frames": 4586816,
+  "rate": 44100,
+  "channels": 2,
+  "output_bits": 16,
+  "peak_absolute_mix_integer": 11054,
+  "wav_saturated_channel_samples": 0,
+  "audio_buffer_channel_samples_above_unit_magnitude": 0,
+  "wav_sha256": "2985761d93624330304630d5683af43ca6bb168c8594a818b2c003d4e771d174",
+  "s16le_sha256": "bd2a25d011d327467b18340425b51e4bdf5768c8516f69de1369f0769fdad710"
+}
