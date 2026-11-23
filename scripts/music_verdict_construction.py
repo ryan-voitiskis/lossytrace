@@ -25,13 +25,7 @@ def packet_rate(path):
                 mean_packet_bits_per_second=float(size * 8 / seconds))
 
 
-def construct_primary(source, expected_sha256, folder, *, group, source_id, partition, seed,
-                      precondition="identity"):
-    if (partition not in ("train", "selection", "calibration", "evaluation")
-            or not all(isinstance(s, str) and s.strip() for s in (group, source_id))
-            or type(seed) is not int or seed < 0 or precondition not in CONDITIONS
-            or (partition != "train" and precondition != "identity")):
-        raise ValueError("invalid source allocation or preprocessing recipe")
+def read_bound_pcm(source, expected_sha256):
     if codec.sha(source) != expected_sha256:
         raise ValueError("source file commitment mismatch")
     with sf.SoundFile(source) as stream:
@@ -43,6 +37,17 @@ def construct_primary(source, expected_sha256, folder, *, group, source_id, part
     native = codec.decode(source, bits)
     if len(native) != frames * codec.pcm_stride(bits, channels):
         raise ValueError("source header and decoded frame count disagree")
+    return native, bits, rate, channels, frames
+
+
+def construct_primary(source, expected_sha256, folder, *, group, source_id, partition, seed,
+                      precondition="identity"):
+    if (partition not in ("train", "selection", "calibration", "evaluation")
+            or not all(isinstance(s, str) and s.strip() for s in (group, source_id))
+            or type(seed) is not int or seed < 0 or precondition not in CONDITIONS
+            or (partition != "train" and precondition != "identity")):
+        raise ValueError("invalid source allocation or preprocessing recipe")
+    native, bits, rate, channels, frames = read_bound_pcm(source, expected_sha256)
     folder.mkdir()  # The completion manifest is written only after all checks.
     encoder_source = folder / "base.wav"
     pre_seed = seed ^ 0x80000000
