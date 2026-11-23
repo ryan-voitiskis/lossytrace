@@ -80,6 +80,10 @@ def _text(value: object) -> bool:
     return isinstance(value, str) and bool(value.strip()) and "\x00" not in value
 
 
+def _digest(value: object) -> bool:
+    return isinstance(value, str) and SHA256.fullmatch(value) is not None
+
+
 def _refs(value: object) -> bool:
     return isinstance(value, list) and bool(value) and all(_text(v) for v in value)
 
@@ -127,14 +131,16 @@ def identity_components(rows: list[dict], keys=("source_id", *IDENTITY_KEYS, "au
     return list(components.values())
 
 
-def valid_reference(row: object) -> bool:
+def valid_reference(row: object, *, version: int = 2) -> bool:
     keys = {"source_id", *IDENTITY_KEYS, "audio_sha256", "history_status", "identity_refs"}
+    if version == 3:
+        keys.add("canonical_pcm_sha256")
     return (isinstance(row, dict) and set(row) == keys
+            and (version != 3 or row["canonical_pcm_sha256"] is None or _digest(row["canonical_pcm_sha256"]))
             and _text(row["source_id"]) and _refs(row["identity_refs"])
             and row["history_status"] in ("unselected", "consumed", "sealed", "unresolved")
             and all(_identities(row[k], allow_empty=True) for k in IDENTITY_KEYS)
-            and (row["audio_sha256"] is None or (
-                isinstance(row["audio_sha256"], str) and SHA256.fullmatch(row["audio_sha256"]) is not None)))
+            and (row["audio_sha256"] is None or _digest(row["audio_sha256"])))
 
 
 def audit_inventory(document: dict) -> dict:
@@ -149,24 +155,25 @@ def audit_inventory(document: dict) -> dict:
         raise ValueError("invalid inventory envelope")
     version = document["schema_version"]
     fields = {"schema_version", "sources"}
-    if version == 2:
+    if version >= 2:
         fields.add("identity_references")
-    if (version not in (1, 2) or set(document) != fields or not isinstance(document["sources"], list)
-            or (version == 2 and not isinstance(document["identity_references"], list))):
+    if (version not in (1, 2, 3) or set(document) != fields or not isinstance(document["sources"], list)
+            or (version >= 2 and not isinstance(document["identity_references"], list))):
         raise ValueError("invalid inventory envelope")
     rows = document["sources"]
     seen = set()
     errors = Counter()
     valid = []
+    row_keys = ROW_KEYS | {"canonical_pcm_sha256"} if version == 3 else ROW_KEYS
     for row in rows:
-        if not isinstance(row, dict) or set(row) != ROW_KEYS:
+        if not isinstance(row, dict) or set(row) != row_keys:
             errors["invalid_row_schema"] += 1
             continue
         if (not all(_text(row[k]) for k in ("source_id", "provider_id"))
                 or not all(_identities(row[k]) for k in IDENTITY_KEYS)
                 or not isinstance(row["partition"], str) or row["partition"] not in PARTITIONS
-                or not isinstance(row["audio_sha256"], str)
-                or not SHA256.fullmatch(row["audio_sha256"])
+                or not _digest(row["audio_sha256"])
+                or (version == 3 and not _digest(row["canonical_pcm_sha256"]))
                 or not all(type(row[k]) is bool for k in
                            ("consumed", "sealed", "real_finished_music"))
                 or not _refs(row["provenance_refs"]) or not _refs(row["rights_refs"])):
@@ -190,7 +197,7 @@ def audit_inventory(document: dict) -> dict:
     references = []
     reference_ids = set()
     for row in document.get("identity_references", []):
-        if not valid_reference(row):
+        if not valid_reference(row, version=version):
             errors["invalid_identity_reference"] += 1
             continue
         if row["source_id"] in reference_ids:
@@ -199,10 +206,20 @@ def audit_inventory(document: dict) -> dict:
         references.append(row)
 
     graph_rows = valid + references
-    components = (identity_components(graph_rows) if version == 2 else
-                  identity_components(valid, (*IDENTITY_KEYS, "audio_sha256")))
+    copy_keys = ("source_id", "audio_sha256")
+    if version == 3:
+        copy_keys += ("canonical_pcm_sha256",)
+        known_pcm = defaultdict(set)
+        for row in graph_rows:
+            if row["audio_sha256"] and row["canonical_pcm_sha256"]:
+                known_pcm[row["audio_sha256"]].add(row["canonical_pcm_sha256"])
+        conflicts = sum(len(values) > 1 for values in known_pcm.values())
+        if conflicts:
+            errors["conflicting_pcm_commitment_for_file"] = conflicts
+    component_keys = (*IDENTITY_KEYS, *copy_keys) if version >= 2 else (*IDENTITY_KEYS, "audio_sha256")
+    components = identity_components(graph_rows, component_keys)
     if references:
-        for copies in identity_components(graph_rows, ("source_id", "audio_sha256")):
+        for copies in identity_components(graph_rows, copy_keys):
             history = {r["history_status"] for r in copies if "history_status" in r}
             for row in copies:
                 if "partition" in row:
@@ -266,7 +283,7 @@ def audit_inventory(document: dict) -> dict:
         "zero_alert_sample_minimum_for_one_percent": zero_alert_sample_minimum(),
         "zero_alert_upper_bound_at_300_groups": exact_upper(0, 300),
     }
-    if version == 2:
+    if version >= 2:
         result.update(identity_reference_rows=len(document["identity_references"]),
                       allocated_components_with_references=linked_components,
                       reference_only_components=len(components) - allocated_components)

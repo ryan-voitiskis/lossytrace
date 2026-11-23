@@ -1,0 +1,40 @@
+{
+  "files": 27,
+  "file_hash_groups": 27,
+  "exact_pcm_groups": 23,
+  "source_work_groups": 4,
+  "pcm_by_work_and_construction": {
+    "Confrontation": {
+      "direct": "1a0bb50892d23423180d679867864e3840be583aea094418cd2e0f04ed3981fa",
+      "mp3-128": "9b80284939a35ef8d85cfe3ada39dd4c262ee80aabb7031a65aa58727a3251c8",
+      "mp3-192": "6215de704c5ad046c58d59531629537388ff9ca68ce35141492ed5dbf73700ae",
+      "mp3-320": "4ff680c79bcf606828d239b11e6dcf1538ca1a4ab5da3d46219e22eb7c6a3416",
+      "aac-128": "2f1a9f03745f63f178c27840f140b015c81b36c3ad9c072a33b36218e0733f94",
+      "aac-192": "152862aa7d8791259539b576f7378e0eb3562fcf26294f5cc49ce26b593c99fd",
+      "aac-256": "cc01761d2433dab9040228708fe1d9b85da99af74d0790224f3cd1ed327dfc22"
+    },
+    "radio city": {
+      "direct": "90c7c4095c495045f68bcecdc9a68352601ae1ba65536cf8e447f2a0855c9208",
+      "mp3-128": "cce119790a4fb2410a55a6763cae489f8c546dcb0ae24b42785f7c99e27c230f",
+      "mp3-192": "2fe99e456ae72e1e21031b34ab41e3bd15735e2773c1de22d057b479447a4f13",
+      "mp3-320": "57d50ae8de26382c177bf5745f623360a6410375e345637a5ae2d9db1eb363ca",
+      "aac-128": "d7157698030a1483bab0e118580a2ece9239bd00df1fc5a1b669261262c11dcb",
+      "aac-192": "8024397a9bfcef10bf1786e260ea0724224575b02bda12f44f0a3ca0cbd5f8c9",
+      "aac-256": "90cf00d3bf61a88827dcc274d1e0974b446433c21aca18ff42b060f42962df3e"
+    },
+    "Island Not Found": {
+      "direct": "cc0c80b0a807c7b61c4e5811af18fd49227499b42e6adda319ffd4b6f178c979",
+      "mp3-128": "37d869b197c1ae79b4c228df688b330f624616d41ff0a56ff0c915ccfafa0e2d"
+    },
+    "3am Skyline": {
+      "direct": "e4ed342e00b1a960fa65ce9eb944a00e6a68f908b9b064f029451cf6c0fff7ef",
+      "mp3-128": "5b16d89803f4727434932fb3be8cb9ff7ca8ec57393620dce782f1bf82483db2",
+      "mp3-192": "5262d52f4b29e780943e38689432030482bb5ec5838b6f8b5eac00f17c860645",
+      "mp3-320": "359a435c8e813fecf8ddf849c9c396496d08fe57c8d20e55b1753bd5117da18e",
+      "aac-128": "2cca2ee066e85890369726a625d2eaeb5e9fb37c1ab644eeecf47e60169b5bf3",
+      "aac-192": "e6e19cc389c19b1eafbc147529cde4ca1f2691c0fd37857c7d9b9495bec36aee",
+      "aac-256": "59bb35abb1cd6602673da074d95d2138718a49a8e630456ddbe45b3f270c4ae8"
+    }
+  },
+  "formal_allocations": 0
+}
