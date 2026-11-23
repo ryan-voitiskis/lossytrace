@@ -1,0 +1,44 @@
+{
+  "artist_collections": 17,
+  "index_rows": 1495,
+  "item_original_counts": {
+    "BTS2016-10-07": 18,
+    "Bluesphere2026-05-15.flac24": 1,
+    "Fishbone2022-12-15": 26,
+    "MH2025-03-23": 1,
+    "NTL_MB2025-08-22.mk41v": 37,
+    "NTL_MB2025-08-31.mk4v": 41,
+    "ShipsCat2021-06-10": 3,
+    "SmashingPumpkins2022-11-15": 19,
+    "ThisCloseBand2025-02-28.sbd.flac16": 22,
+    "TwP2024-07-19": 11,
+    "acollective2021-09-06": 17,
+    "breakfast2019-11-27.Multitrack-Soundboard": 19,
+    "bt2026-08-18.MC59H": 17,
+    "escaper2018-02-24.marino.akg483.matrix.flac16": 15,
+    "lf2024-10-01": 24,
+    "lf2026-09-05": 10,
+    "lf2026-09-05.f": 19,
+    "mudhoney2022-05-21.JAL": 24,
+    "sci2004-07-21": 15,
+    "trischka2024-07-19": 16
+  },
+  "license_screen": {
+    "BY-NC_BY-NC-SA": 226,
+    "BY_BY-SA_CC0": 398
+  },
+  "original_flacs": 355,
+  "original_flacs_at_least_30s": 343,
+  "representative_items": 20,
+  "this_close": {
+    "declared_pcm_md5": "7c1fbd5531083364200c8e9b625eeebe",
+    "file_sha1": "d5c4b1c9e8635e404958ac5032de84c9a4db5c77",
+    "seconds": "295.03",
+    "title": "I'll Take Two",
+    "tracks_with_pcm_fingerprint": 22
+  },
+  "wav_flac_screen": {
+    "BY-NC_BY-NC-SA": 15,
+    "BY_BY-SA_CC0": 97
+  }
+}
