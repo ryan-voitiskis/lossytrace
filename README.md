@@ -1,20 +1,23 @@
 # LossyTrace
 
-LossyTrace is an experimental Rust library, CLI, and research harness for
-measuring traces that may be consistent with prior lossy audio compression.
-It emits evidence, not a provenance verdict.
+**Project parked, November 2026.** LossyTrace investigated whether a single
+WAV or FLAC file could reveal that a finished recording had passed through a
+lossy codec. Detection accuracy on finished music remains unvalidated.
 
-> [!WARNING]
-> The current measurement definition is feature version `0`. It has known
-> content-dependence and invariance failures. LossyTrace does not currently
-> label files as lossless, lossy-derived, authentic, or fraudulent.
+The published release candidate provides a local audio inspector and a
+reproducible research benchmark. The inspector reports signal measurements.
+Recording and mastering choices can produce similar patterns, so a measurement
+alone cannot establish codec history. [Release notes and downloads](https://github.com/ryan-voitiskis/lossytrace/releases/tag/v0.1.0-rc.1)
 
 ## Quick start
 
-Build from source and inspect an audio file:
+To build the published inspector in a fresh checkout and inspect a recording,
+replace `/path/to/track.flac` with your audio file’s path.
 
 ```bash
-cargo run --release -- analyze track.flac --pretty
+git clone --branch v0.1.0-rc.1 https://github.com/ryan-voitiskis/lossytrace.git
+cd lossytrace
+cargo run --locked --release -- analyze /path/to/track.flac --pretty
 ```
 
 The JSON contract makes the experimental status explicit:
