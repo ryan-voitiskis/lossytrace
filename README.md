@@ -2,7 +2,11 @@
 
 LossyTrace is an experimental Rust library, CLI, and research harness for
 measuring traces that may be consistent with prior lossy audio compression.
-It emits evidence, not a provenance verdict.
+
+**Project parked on 24 November 2026.** The release candidate provides a local
+audio inspector and a reproducible benchmark. This checkout also compares the
+decoded audio in two files. The original question of whether a single finished
+track passed through a lossy codec remains open. [Research closeout](#research-closeout)
 
 > [!WARNING]
 > The current measurement definition is feature version `0`. It has known
@@ -85,33 +89,30 @@ latest candidates remain rejected. See
 [`docs/research/status.md`](docs/research/status.md) and the
 [`decoded-PCM identifiability result`](docs/research/decoded-pcm-identifiability-result-20260803.md).
 
-## Current direction
+## Research closeout
 
-The [September 27 direction review](docs/research/codec-history-direction-20260927.md)
-returns the practical focus to codec-history investigation: an understandable
-verdict-free inspector and a source-grouped challenge benchmark. Human
-recruitment and physical capture are not prerequisites for that work. The
-perceptual programme's results remain preserved, without a completion claim.
+The clearest result came from testing the same model with and without access
+to a reference. On 64 synthetic compositions, the model scored an encoded
+copy above its own original in 378 of 384 comparisons. Given each file on its
+own, it flagged zero of those 384 copies at the preset threshold. All three
+tested pipelines missed the pilot’s detection and coverage targets.
+[Single-file pilot](research/music-library-pilot-v1/single-file-comparator-20261124.md)
 
-No rejected detector is revived. The external Lossprint baseline has passed a
-[bounded software qualification](docs/research/lossprint-qualification-result-20260927.md),
-but [failed the fixed development challenge](docs/research/lossprint-challenge-result-20260927.md):
-317/381 controlled positives were detected, alongside 53/336 benchmark-negative
-alerts across six source groups. These selected, related cases are not a
-real-library error-rate estimate. No model or threshold was retuned.
+The external Lossprint detector caught 317 of 381 controlled encodes on a
+separate challenge and also flagged 53 of 336 benchmark negatives. The
+finished-music study stopped before training because the available recordings
+could not supply the 540 independent groups with documented histories that
+its design requires. Accuracy on a music library remains unknown.
+[Lossprint challenge](docs/research/lossprint-challenge-result-20260927.md) ·
+[Finished-music study disposition](research/music-verdict-v1/offline-study-disposition-20261124.md)
 
-The release candidate is therefore an **inspector and benchmark, not a lossy
-history detector**. It does not fulfill the original detection objective.
-Lossprint is not bundled; historical codec-family and bitrate estimates are
-not exposed. The perceptual-degradation objective also remains unresolved.
-
-The [offline single-file pilot](research/music-library-pilot-v1/single-file-comparator-20261124.md)
-is complete. All three models missed the preset detection and coverage targets
-on synthetic compositions. The [finished-music study](docs/research/music-verdict-successor-20260927.md)
-is paused before training. Its design requires 540 independent groups with
-documented recording histories. Accuracy on music libraries remains unknown.
-The [study disposition](research/music-verdict-v1/offline-study-disposition-20261124.md)
-records the evidence available to reopen that question.
+**Reopen the research if** a documented collection offers a credible path to
+the frozen study’s source requirements, or a new detection method predicts a
+specific result that the existing benchmark can test. In the meantime,
+`analyze` and `explain` are available in `v0.1.0-rc.1`. For exact WAV/FLAC
+comparison, build from commit `a329951` or this checkout.
+[Study design](docs/research/music-verdict-successor-20260927.md) ·
+[Release notes](docs/release-notes.md)
 
 ## Data policy
 
