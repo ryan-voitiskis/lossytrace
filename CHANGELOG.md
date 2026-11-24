@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented here.
 
+## Unreleased
+
+- Add `lossytrace compare` for exact decoded-audio comparison across complete
+  integer WAV and FLAC files. The JSON includes a match flag, two canonical
+  SHA-256 fingerprints, and the stream properties of each input.
+- Record the completed synthetic verdict pilot and the source requirements for
+  reopening the paused finished-music study.
+
 ## 0.1.0-rc.1 - 2026-09-27
 
 - Add `lossytrace explain`, an offline guide to every current measurement and

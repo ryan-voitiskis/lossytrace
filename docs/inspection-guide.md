@@ -90,3 +90,25 @@ Establish actual history with trustworthy source records or a documented
 processing chain where available. Do not delete, replace or retag recordings
 automatically on the basis of these measurements. Human listening can address
 perceived differences; it cannot certify a file's processing history.
+
+## Compare two copies
+
+Run `lossytrace compare first.wav second.flac --pretty` with a build from
+the current source tree. Both input paths are read-only. The command accepts
+mono or stereo native FLAC and RIFF WAV with packed 16- or 24-bit integer
+samples, a declared sample rate and a known, nonzero frame count. A frame
+contains one sample per channel. Comparison reads every frame.
+
+The JSON field `same_decoded_audio` is `true` when the two canonical SHA-256
+fingerprints match. Each fingerprint includes the native sample rate, channel
+count, frame count and ordered channel samples, scaled exactly to signed
+32-bit integers. File tags and container bytes are excluded. The `left` and
+`right` objects give the fingerprint and stream properties for each input
+in argument order. Each input’s original bit depth is reported separately.
+
+Both `true` and `false` are successful comparisons (exit code 0).
+Unsupported inputs, incomplete decodes and checksum failures reported by
+the decoder produce a nonzero exit code and no comparison JSON.
+A trim, channel swap, gain change or single changed sample can produce
+`false`. Comparison preserves the original timing and gain. Codec history,
+mastering lineage and perceived quality require other evidence.

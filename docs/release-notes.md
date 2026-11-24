@@ -1,11 +1,25 @@
-# LossyTrace 0.1.0-rc.1
+# LossyTrace release notes
+
+## Unreleased source changes
+
+`lossytrace compare first.wav second.flac --pretty` checks the complete decoded
+audio in two supported local files. It returns a boolean match and both PCM
+fingerprints. The [inspection guide](inspection-guide.md#compare-two-copies)
+defines supported inputs and the meaning of a match.
+
+The [offline single-file experiment](../research/music-verdict-v1/offline-study-disposition-20261124.md)
+closed with all three pipelines below their preset targets on synthetic music.
+The finished-music evaluation is paused pending independent sources with
+documented recording histories. Library accuracy remains unmeasured.
+
+## LossyTrace 0.1.0-rc.1
 
 This release candidate is a **verdict-free inspector and research benchmark**.
 It does not fulfill the original objective of detecting whether audio ever
 passed through a lossy codec. No historical encoder/codec or bitrate estimator
 is shipped, and no measurement certifies clean or never-lossy provenance.
 
-## What is available
+### What is available
 
 - The Rust library and `lossytrace analyze` CLI report schema-version-1,
   feature-version-0 experimental measurements. Input audio is not modified.
@@ -18,7 +32,7 @@ is shipped, and no measurement certifies clean or never-lossy provenance.
   smoke-test records, checksums, dependency inventories, SBOMs and notices.
   Unmodified MPL-covered dependency source archives are included.
 
-## Why this is not a detector
+### Why this is not a detector
 
 The pinned Lossprint external baseline passed software qualification, then
 failed the prospectively fixed challenge. All 1,386 calls completed and their
@@ -40,7 +54,7 @@ Full protocol, counts and limitations:
 The bundle's `build-info.json` identifies its exact source commit; use that
 revision when reproducing evidence rather than assuming the branch is fixed.
 
-## Verification and limitations
+### Verification and limitations
 
 The RC workflow requires two clean native builds and two deterministic archive
 constructions to agree on each hosted runner. Packaged-binary tests cover help,

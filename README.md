@@ -51,6 +51,22 @@ By default the CLI inspects at most 120 seconds. Pass `--max-seconds 0` to
 inspect the complete file. The report includes a SHA-256 input fingerprint but
 does not include the input path.
 
+### Compare two copies of a recording
+
+The current source tree adds an exact comparison for two local WAV or FLAC
+files. Build from this checkout to use it. The published RC predates this command.
+
+```bash
+cargo run --locked --release -- compare first.wav second.flac --pretty
+```
+
+Look for `same_decoded_audio`. A value of `true` means the sample rate, channel
+count, length and ordered sample values match across the complete files.
+Retagging, lossless rewrapping, and exact 16-to-24-bit promotion can all give
+a match. A value of `false` tells you the audio differs. Either result can
+occur with recordings that share a lossy ancestor. See the
+[comparison details and supported inputs](docs/inspection-guide.md#compare-two-copies).
+
 ## What is here
 
 - `src/`: the verdict-free compression-trace measurements and CLI.
@@ -89,17 +105,13 @@ history detector**. It does not fulfill the original detection objective.
 Lossprint is not bundled; historical codec-family and bitrate estimates are
 not exposed. The perceptual-degradation objective also remains unresolved.
 
-A separate [finished-music successor study](docs/research/music-verdict-successor-20260927.md)
-now defines a bounded matched-intervention CNN/comparator experiment. It is
-currently qualifying source provenance and independent-group availability;
-no new model has been trained or validated. The published RC and its
-verdict-free contract are unchanged.
-
-The [5 October resource amendment](docs/research/music-verdict-resource-authorization-20261005.md)
-removes fixed discovery/local-resource caps while preserving scientific gates.
-[Expanded source intake](docs/research/music-verdict-source-intake-20261005.md)
-is active, with temporary local storage authorized while the external drive
-is unavailable.
+The [offline single-file pilot](research/music-library-pilot-v1/single-file-comparator-20261124.md)
+is complete. All three models missed the preset detection and coverage targets
+on synthetic compositions. The [finished-music study](docs/research/music-verdict-successor-20260927.md)
+is paused before training. Its design requires 540 independent groups with
+documented recording histories. Accuracy on music libraries remains unknown.
+The [study disposition](research/music-verdict-v1/offline-study-disposition-20261124.md)
+records the evidence available to reopen that question.
 
 ## Data policy
 

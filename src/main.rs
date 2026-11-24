@@ -12,6 +12,14 @@ struct Cli {
 enum Command {
     /// Explain the measurements and their limits without opening audio.
     Explain,
+    /// Compare the complete decoded PCM in two integer WAV or FLAC files.
+    Compare {
+        left: PathBuf,
+        right: PathBuf,
+        /// Pretty-print the JSON report.
+        #[arg(long)]
+        pretty: bool,
+    },
     /// Emit verdict-free compression-trace measurements as JSON.
     Analyze {
         /// Audio file to decode and measure.
@@ -23,6 +31,17 @@ enum Command {
         #[arg(long)]
         pretty: bool,
     },
+}
+
+fn print_json(report: &impl serde::Serialize, pretty: bool) -> Result<(), String> {
+    let output = if pretty {
+        serde_json::to_string_pretty(report)
+    } else {
+        serde_json::to_string(report)
+    }
+    .map_err(|error| format!("serialize report: {error}"))?;
+    println!("{output}");
+    Ok(())
 }
 
 fn run() -> Result<(), String> {
@@ -39,13 +58,15 @@ fn run() -> Result<(), String> {
             let report =
                 lossytrace::analyze_file(&audio, (max_seconds > 0.0).then_some(max_seconds))
                     .map_err(|error| error.to_string())?;
-            let output = if pretty {
-                serde_json::to_string_pretty(&report)
-            } else {
-                serde_json::to_string(&report)
-            }
-            .map_err(|error| format!("serialize evidence: {error}"))?;
-            println!("{output}");
+            print_json(&report, pretty)?;
+        }
+        Command::Compare {
+            left,
+            right,
+            pretty,
+        } => {
+            let comparison = lossytrace::compare_files(&left, &right).map_err(|e| e.to_string())?;
+            print_json(&comparison, pretty)?;
         }
     }
     Ok(())

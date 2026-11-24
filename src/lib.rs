@@ -1,6 +1,7 @@
 //! Experimental, verdict-free measurements of possible prior lossy compression.
 
 mod audio;
+mod compare;
 pub mod compression_trace;
 mod error;
 pub mod stft;
@@ -9,6 +10,7 @@ use serde::Serialize;
 use std::path::Path;
 
 pub use audio::SourceFacts;
+pub use compare::{compare_files, Comparison, PcmIdentity};
 pub use compression_trace::{
     measure_compression_trace, measure_compression_trace_with_samples, CompressionTraceFeatures,
     COMPRESSION_TRACE_PROTOTYPE_FEATURE_VERSION,
